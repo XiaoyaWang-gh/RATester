@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/constraints/constraints_labels.go",
+    "lineno": 16,
+    "focalfunc": "func MatchLabels(labels map[string]string, expr string) (bool, error)",
+    "funcbody": "func MatchLabels(labels map[string]string, expr string) (bool, error) {\n\tif expr == \"\" {\n\t\treturn true, nil\n\t}\n\n\tp, err := predicate.NewParser(predicate.Def{\n\t\tOperators: predicate.Operators{\n\t\t\tAND:\tandLabelFunc,\n\t\t\tNOT:\tnotLabelFunc,\n\t\t\tOR:\torLabelFunc,\n\t\t},\n\t\tFunctions: map[string]interface{}{\n\t\t\t\"Label\":\tlabelFn,\n\t\t\t\"LabelRegex\":\tlabelRegexFn,\n\t\t},\n\t})\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tparse, err := p.Parse(expr)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tfn, ok := parse.(constraintLabelFunc)\n\tif !ok {\n\t\treturn false, errors.New(\"not a constraintLabelFunc\")\n\t}\n\treturn fn(labels), nil\n}",
+    "funcname": "MatchLabels"
+}

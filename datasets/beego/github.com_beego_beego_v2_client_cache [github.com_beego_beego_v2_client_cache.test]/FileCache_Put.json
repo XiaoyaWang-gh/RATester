@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 199,
+    "focalfunc": "func (fc *FileCache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error",
+    "funcbody": "func (fc *FileCache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error {\n\tgob.Register(val)\n\n\titem := FileCacheItem{Data: val}\n\tif timeout == time.Duration(fc.EmbedExpiry) {\n\t\titem.Expired = time.Now().Add((86400 * 365 * 10) * time.Second)\n\t} else {\n\t\titem.Expired = time.Now().Add(timeout)\n\t}\n\titem.Lastaccess = time.Now()\n\tdata, err := GobEncode(item)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tfn, err := fc.getCacheFileName(key)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn FilePutContents(fn, data)\n}",
+    "funcname": "Put"
+}

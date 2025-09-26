@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 253,
+    "focalfunc": "func (ns *Namespace) ExecuteAsTemplate(ctx context.Context, args ...any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) ExecuteAsTemplate(ctx context.Context, args ...any) (resource.Resource, error) {\n\tif len(args) != 3 {\n\t\treturn nil, fmt.Errorf(\"must provide targetPath, the template data context and a Resource object\")\n\t}\n\ttargetPath, err := cast.ToStringE(args[0])\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdata := args[1]\n\n\tr, ok := args[2].(resources.ResourceTransformer)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"type %T not supported in Resource transformations\", args[2])\n\t}\n\n\treturn ns.templatesClient.ExecuteAsTemplate(ctx, r, targetPath, data)\n}",
+    "funcname": "ExecuteAsTemplate"
+}

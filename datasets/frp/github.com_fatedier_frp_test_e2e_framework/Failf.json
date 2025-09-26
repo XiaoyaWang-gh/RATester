@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/log.go",
+    "lineno": 25,
+    "focalfunc": "func Failf(format string, args ...interface{})",
+    "funcbody": "func Failf(format string, args ...interface{}) {\n\tmsg := fmt.Sprintf(format, args...)\n\tskip := 1\n\tginkgo.Fail(msg, skip)\n\tpanic(\"unreachable\")\n}",
+    "funcname": "Failf"
+}

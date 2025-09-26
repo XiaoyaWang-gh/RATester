@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlerterminal.go",
+    "lineno": 28,
+    "focalfunc": "func newNoColoursHandler(outWriter, errWriter io.Writer, noLevelPrefix bool, predicate func(*logg.Entry) bool) *noColoursHandler",
+    "funcbody": "func newNoColoursHandler(outWriter, errWriter io.Writer, noLevelPrefix bool, predicate func(*logg.Entry) bool) *noColoursHandler {\n\tif predicate == nil {\n\t\tpredicate = func(e *logg.Entry) bool { return true }\n\t}\n\treturn &noColoursHandler{\n\t\tnoLevelPrefix:\tnoLevelPrefix,\n\t\toutWriter:\toutWriter,\n\t\terrWriter:\terrWriter,\n\t\tpredicate:\tpredicate,\n\t}\n}",
+    "funcname": "newNoColoursHandler"
+}

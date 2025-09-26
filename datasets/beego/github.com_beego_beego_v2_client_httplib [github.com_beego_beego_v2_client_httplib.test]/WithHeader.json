@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 95,
+    "focalfunc": "func WithHeader(key, value string) BeegoHTTPRequestOption",
+    "funcbody": "func WithHeader(key, value string) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.Header(key, value)\n\t}\n}",
+    "funcname": "WithHeader"
+}

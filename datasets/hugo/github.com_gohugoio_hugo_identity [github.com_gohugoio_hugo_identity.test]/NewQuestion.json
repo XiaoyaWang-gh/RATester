@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/question.go",
+    "lineno": 19,
+    "focalfunc": "func NewQuestion[T any](id Identity) *Question[T]",
+    "funcbody": "func NewQuestion[T any](id Identity) *Question[T] {\n\treturn &Question[T]{\n\t\tIdentity: id,\n\t}\n}",
+    "funcname": "NewQuestion"
+}

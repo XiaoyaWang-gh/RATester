@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 129,
+    "focalfunc": "func validateTCPProxyConfigForClient(c *v1.TCPProxyConfig) error",
+    "funcbody": "func validateTCPProxyConfigForClient(c *v1.TCPProxyConfig) error {\n\treturn nil\n}",
+    "funcname": "validateTCPProxyConfigForClient"
+}

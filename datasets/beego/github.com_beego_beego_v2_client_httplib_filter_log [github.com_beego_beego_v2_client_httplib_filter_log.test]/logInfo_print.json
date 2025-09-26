@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 121,
+    "focalfunc": "func (info *logInfo) print(log func(f interface{}, v ...interface{}))",
+    "funcbody": "func (info *logInfo) print(log func(f interface{}, v ...interface{})) {\n\tlog(\"Request: ====================\")\n\tlog(\"%q\", info.req)\n\tlog(\"Response: ===================\")\n\tlog(\"%q\", info.resp)\n\tif info.err != nil {\n\t\tlog(\"Error: ======================\")\n\t\tlog(\"%q\", info.err)\n\t}\n}",
+    "funcname": "print"
+}

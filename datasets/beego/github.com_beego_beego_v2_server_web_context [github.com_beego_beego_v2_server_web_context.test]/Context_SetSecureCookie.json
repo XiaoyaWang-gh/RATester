@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 254,
+    "focalfunc": "func (ctx *Context) SetSecureCookie(Secret, name, value string, others ...interface{})",
+    "funcbody": "func (ctx *Context) SetSecureCookie(Secret, name, value string, others ...interface{}) {\n\tvs := base64.URLEncoding.EncodeToString([]byte(value))\n\ttimestamp := strconv.FormatInt(time.Now().UnixNano(), 10)\n\th := hmac.New(sha256.New, []byte(Secret))\n\t_, _ = fmt.Fprintf(h, \"%s%s\", vs, timestamp)\n\tsig := fmt.Sprintf(\"%02x\", h.Sum(nil))\n\tcookie := strings.Join([]string{vs, timestamp, sig}, \"|\")\n\tctx.Output.Cookie(name, cookie, others...)\n}",
+    "funcname": "SetSecureCookie"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 242,
+    "focalfunc": "func lexIdentifierInShortcode(l *pageLexer) stateFunc",
+    "funcbody": "func lexIdentifierInShortcode(l *pageLexer) stateFunc {\n\tlookForEnd := false\nLoop:\n\tfor {\n\t\tswitch r := l.next(); {\n\t\tcase isAlphaNumericOrHyphen(r):\n\n\t\tcase r == '/':\n\t\tcase r == '.':\n\t\t\tl.isInline = l.hasPrefix(inlineIdentifier)\n\t\t\tif !l.isInline {\n\t\t\t\treturn l.errorf(\"period in shortcode name only allowed for inline identifiers\")\n\t\t\t}\n\t\tdefault:\n\t\t\tl.backup()\n\t\t\tword := string(l.input[l.start:l.pos])\n\t\t\tif l.closingState > 0 && !l.openShortcodes[word] {\n\t\t\t\treturn l.errorf(\"closing tag for shortcode '%s' does not match start tag\", word)\n\t\t\t} else if l.closingState > 0 {\n\t\t\t\tl.openShortcodes[word] = false\n\t\t\t\tlookForEnd = true\n\t\t\t}\n\n\t\t\tl.closingState = 0\n\t\t\tl.currShortcodeName = word\n\t\t\tl.openShortcodes[word] = true\n\t\t\tl.elementStepNum++\n\t\t\tif l.isInline {\n\t\t\t\tl.emit(tScNameInline)\n\t\t\t} else {\n\t\t\t\tl.emit(tScName)\n\t\t\t}\n\t\t\tbreak Loop\n\t\t}\n\t}\n\n\tif lookForEnd {\n\t\treturn lexEndOfShortcode\n\t}\n\treturn lexInsideShortcode\n}",
+    "funcname": "lexIdentifierInShortcode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 97,
+    "focalfunc": "func (m *serverMetrics) CloseClient()",
+    "funcbody": "func (m *serverMetrics) CloseClient() {\n\tm.info.ClientCounts.Dec(1)\n}",
+    "funcname": "CloseClient"
+}

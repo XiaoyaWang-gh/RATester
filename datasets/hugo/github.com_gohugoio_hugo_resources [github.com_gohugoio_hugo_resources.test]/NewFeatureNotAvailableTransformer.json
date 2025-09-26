@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 205,
+    "focalfunc": "func NewFeatureNotAvailableTransformer(key string, elements ...any) ResourceTransformation",
+    "funcbody": "func NewFeatureNotAvailableTransformer(key string, elements ...any) ResourceTransformation {\n\treturn transformerNotAvailable{\n\t\tkey: internal.NewResourceTransformationKey(key, elements...),\n\t}\n}",
+    "funcname": "NewFeatureNotAvailableTransformer"
+}

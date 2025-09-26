@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 438,
+    "focalfunc": "func nudge(c context) context",
+    "funcbody": "func nudge(c context) context {\n\tswitch c.state {\n\tcase stateTag:\n\n\t\tc.state = stateAttrName\n\tcase stateBeforeValue:\n\n\t\tc.state, c.delim, c.attr = attrStartStates[c.attr], delimSpaceOrTagEnd, attrNone\n\tcase stateAfterName:\n\n\t\tc.state, c.attr = stateAttrName, attrNone\n\t}\n\treturn c\n}",
+    "funcname": "nudge"
+}

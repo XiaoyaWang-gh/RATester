@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 514,
+    "focalfunc": "func (input *BeegoInput) bindValue(val string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindValue(val string, typ reflect.Type) reflect.Value {\n\trv := reflect.Zero(typ)\n\tswitch typ.Kind() {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\trv = input.bindInt(val, typ)\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:\n\t\trv = input.bindUint(val, typ)\n\tcase reflect.Float32, reflect.Float64:\n\t\trv = input.bindFloat(val, typ)\n\tcase reflect.String:\n\t\trv = input.bindString(val, typ)\n\tcase reflect.Bool:\n\t\trv = input.bindBool(val, typ)\n\tcase reflect.Slice:\n\t\trv = input.bindSlice(&url.Values{\"\": {val}}, \"\", typ)\n\tcase reflect.Struct:\n\t\trv = input.bindStruct(&url.Values{\"\": {val}}, \"\", typ)\n\tcase reflect.Ptr:\n\t\trv = input.bindPoint(val, typ)\n\tcase reflect.Map:\n\t\trv = input.bindMap(&url.Values{\"\": {val}}, \"\", typ)\n\t}\n\treturn rv\n}",
+    "funcname": "bindValue"
+}

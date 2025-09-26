@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/helpers.go",
+    "lineno": 21,
+    "focalfunc": "func normalizeOrigin(origin string) (bool, string)",
+    "funcbody": "func normalizeOrigin(origin string) (bool, string) {\n\tparsedOrigin, err := url.Parse(origin)\n\tif err != nil {\n\t\treturn false, \"\"\n\t}\n\n\tif parsedOrigin.Scheme != \"http\" && parsedOrigin.Scheme != \"https\" {\n\t\treturn false, \"\"\n\t}\n\n\tif strings.Contains(parsedOrigin.Host, \"*\") {\n\t\treturn false, \"\"\n\t}\n\n\tif parsedOrigin.Host == \"\" || (parsedOrigin.Path != \"\" && parsedOrigin.Path != \"/\") || parsedOrigin.RawQuery != \"\" || parsedOrigin.Fragment != \"\" {\n\t\treturn false, \"\"\n\t}\n\n\treturn true, strings.ToLower(parsedOrigin.Scheme) + \"://\" + strings.ToLower(parsedOrigin.Host)\n}",
+    "funcname": "normalizeOrigin"
+}

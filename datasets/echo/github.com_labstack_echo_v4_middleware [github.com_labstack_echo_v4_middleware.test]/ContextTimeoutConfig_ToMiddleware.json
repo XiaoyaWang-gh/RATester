@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/context_timeout.go",
+    "lineno": 42,
+    "focalfunc": "func (config ContextTimeoutConfig) ToMiddleware() (echo.MiddlewareFunc, error)",
+    "funcbody": "func (config ContextTimeoutConfig) ToMiddleware() (echo.MiddlewareFunc, error) {\n\tif config.Timeout == 0 {\n\t\treturn nil, errors.New(\"timeout must be set\")\n\t}\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultSkipper\n\t}\n\tif config.ErrorHandler == nil {\n\t\tconfig.ErrorHandler = func(err error, c echo.Context) error {\n\t\t\tif err != nil && errors.Is(err, context.DeadlineExceeded) {\n\t\t\t\treturn echo.ErrServiceUnavailable.WithInternal(err)\n\t\t\t}\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\ttimeoutContext, cancel := context.WithTimeout(c.Request().Context(), config.Timeout)\n\t\t\tdefer cancel()\n\n\t\t\tc.SetRequest(c.Request().WithContext(timeoutContext))\n\n\t\t\tif err := next(c); err != nil {\n\t\t\t\treturn config.ErrorHandler(err, c)\n\t\t\t}\n\t\t\treturn nil\n\t\t}\n\t}, nil\n}",
+    "funcname": "ToMiddleware"
+}

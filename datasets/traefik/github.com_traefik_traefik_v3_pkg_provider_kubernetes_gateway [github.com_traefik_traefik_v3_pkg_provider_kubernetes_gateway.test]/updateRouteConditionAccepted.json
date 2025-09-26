@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1210,
+    "focalfunc": "func updateRouteConditionAccepted(conditions []metav1.Condition, reason string) []metav1.Condition",
+    "funcbody": "func updateRouteConditionAccepted(conditions []metav1.Condition, reason string) []metav1.Condition {\n\tvar conds []metav1.Condition\n\tfor _, c := range conditions {\n\t\tif c.Type == string(gatev1.RouteConditionAccepted) && c.Status != metav1.ConditionTrue {\n\t\t\tc.Reason = reason\n\t\t\tc.LastTransitionTime = metav1.Now()\n\n\t\t\tif reason == string(gatev1.RouteReasonAccepted) {\n\t\t\t\tc.Status = metav1.ConditionTrue\n\t\t\t}\n\t\t}\n\n\t\tconds = append(conds, c)\n\t}\n\n\treturn conds\n}",
+    "funcname": "updateRouteConditionAccepted"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler.go",
+    "lineno": 146,
+    "focalfunc": "func getProviderName(id string) string",
+    "funcbody": "func getProviderName(id string) string {\n\treturn strings.SplitN(id, \"@\", 2)[1]\n}",
+    "funcname": "getProviderName"
+}

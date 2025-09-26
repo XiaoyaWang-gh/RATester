@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/roundtripper.go",
+    "lineno": 62,
+    "focalfunc": "func (r *RoundTripperManager) Update(newConfigs map[string]*dynamic.ServersTransport)",
+    "funcbody": "func (r *RoundTripperManager) Update(newConfigs map[string]*dynamic.ServersTransport) {\n\tr.rtLock.Lock()\n\tdefer r.rtLock.Unlock()\n\n\tfor configName, config := range r.configs {\n\t\tnewConfig, ok := newConfigs[configName]\n\t\tif !ok {\n\t\t\tdelete(r.configs, configName)\n\t\t\tdelete(r.roundTrippers, configName)\n\t\t\tcontinue\n\t\t}\n\n\t\tif reflect.DeepEqual(newConfig, config) {\n\t\t\tcontinue\n\t\t}\n\n\t\tvar err error\n\t\tr.roundTrippers[configName], err = r.createRoundTripper(newConfig)\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Could not configure HTTP Transport %s, fallback on default transport\", configName)\n\t\t\tr.roundTrippers[configName] = http.DefaultTransport\n\t\t}\n\t}\n\n\tfor newConfigName, newConfig := range newConfigs {\n\t\tif _, ok := r.configs[newConfigName]; ok {\n\t\t\tcontinue\n\t\t}\n\n\t\tvar err error\n\t\tr.roundTrippers[newConfigName], err = r.createRoundTripper(newConfig)\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Could not configure HTTP Transport %s, fallback on default transport\", newConfigName)\n\t\t\tr.roundTrippers[newConfigName] = http.DefaultTransport\n\t\t}\n\t}\n\n\tr.configs = newConfigs\n}",
+    "funcname": "Update"
+}

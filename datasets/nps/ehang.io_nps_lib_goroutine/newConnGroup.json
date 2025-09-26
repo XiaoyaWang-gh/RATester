@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/goroutine/pool.go",
+    "lineno": 19,
+    "focalfunc": "func newConnGroup(dst, src io.ReadWriteCloser, wg *sync.WaitGroup, n *int64) connGroup",
+    "funcbody": "func newConnGroup(dst, src io.ReadWriteCloser, wg *sync.WaitGroup, n *int64) connGroup {\n\treturn connGroup{\n\t\tsrc:\tsrc,\n\t\tdst:\tdst,\n\t\twg:\twg,\n\t\tn:\tn,\n\t}\n}",
+    "funcname": "newConnGroup"
+}

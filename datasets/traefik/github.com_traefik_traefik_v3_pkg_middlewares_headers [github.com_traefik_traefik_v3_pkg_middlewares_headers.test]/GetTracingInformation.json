@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/headers.go",
+    "lineno": 63,
+    "focalfunc": "func (h *headers) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (h *headers) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn h.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

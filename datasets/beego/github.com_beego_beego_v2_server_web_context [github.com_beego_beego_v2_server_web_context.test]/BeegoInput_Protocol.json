@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 80,
+    "focalfunc": "func (input *BeegoInput) Protocol() string",
+    "funcbody": "func (input *BeegoInput) Protocol() string {\n\treturn input.Context.Request.Proto\n}",
+    "funcname": "Protocol"
+}

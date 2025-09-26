@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 637,
+    "focalfunc": "func (u *fileToUpload) String() string",
+    "funcbody": "func (u *fileToUpload) String() string {\n\tdetails := []string{humanize.Bytes(uint64(u.Local.UploadSize))}\n\tif s := u.Local.CacheControl(); s != \"\" {\n\t\tdetails = append(details, fmt.Sprintf(\"Cache-Control: %q\", s))\n\t}\n\tif s := u.Local.ContentEncoding(); s != \"\" {\n\t\tdetails = append(details, fmt.Sprintf(\"Content-Encoding: %q\", s))\n\t}\n\tif s := u.Local.ContentType(); s != \"\" {\n\t\tdetails = append(details, fmt.Sprintf(\"Content-Type: %q\", s))\n\t}\n\treturn fmt.Sprintf(\"%s (%s): %v\", u.Local.SlashPath, strings.Join(details, \", \"), u.Reason)\n}",
+    "funcname": "String"
+}

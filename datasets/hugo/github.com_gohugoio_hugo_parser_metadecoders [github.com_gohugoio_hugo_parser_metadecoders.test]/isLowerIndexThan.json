@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/format.go",
+    "lineno": 103,
+    "focalfunc": "func isLowerIndexThan(first int, others ...int) bool",
+    "funcbody": "func isLowerIndexThan(first int, others ...int) bool {\n\tif first == -1 {\n\t\treturn false\n\t}\n\tfor _, other := range others {\n\t\tif other != -1 && other < first {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "isLowerIndexThan"
+}

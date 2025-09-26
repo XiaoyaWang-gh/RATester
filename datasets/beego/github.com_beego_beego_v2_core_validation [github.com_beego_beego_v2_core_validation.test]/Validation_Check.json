@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 359,
+    "focalfunc": "func (v *Validation) Check(obj interface{}, checks ...Validator) *Result",
+    "funcbody": "func (v *Validation) Check(obj interface{}, checks ...Validator) *Result {\n\tvar result *Result\n\tfor _, check := range checks {\n\t\tresult = v.apply(check, obj)\n\t\tif !result.Ok {\n\t\t\treturn result\n\t\t}\n\t}\n\treturn result\n}",
+    "funcname": "Check"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 204,
+    "focalfunc": "func (w *gzipResponseWriter) Push(target string, opts *http.PushOptions) error",
+    "funcbody": "func (w *gzipResponseWriter) Push(target string, opts *http.PushOptions) error {\n\tif p, ok := w.ResponseWriter.(http.Pusher); ok {\n\t\treturn p.Push(target, opts)\n\t}\n\treturn http.ErrNotSupported\n}",
+    "funcname": "Push"
+}

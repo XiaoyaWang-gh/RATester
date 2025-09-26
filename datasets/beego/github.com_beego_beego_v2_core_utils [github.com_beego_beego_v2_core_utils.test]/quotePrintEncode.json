@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 257,
+    "focalfunc": "func quotePrintEncode(w io.Writer, s string) error",
+    "funcbody": "func quotePrintEncode(w io.Writer, s string) error {\n\tvar buf [3]byte\n\tmc := 0\n\tfor i := 0; i < len(s); i++ {\n\t\tc := s[i]\n\n\t\tif c == '\\n' {\n\t\t\tio.WriteString(w, \"\\r\\n\")\n\t\t\tmc = 0\n\t\t\tcontinue\n\t\t}\n\n\t\tvar nextOut []byte\n\t\tif isPrintable(c) {\n\t\t\tnextOut = append(buf[:0], c)\n\t\t} else {\n\t\t\tnextOut = buf[:]\n\t\t\tqpEscape(nextOut, c)\n\t\t}\n\n\t\tif mc+len(nextOut) >= maxLineLength {\n\t\t\tif _, err := io.WriteString(w, \"=\\r\\n\"); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tmc = 0\n\t\t}\n\n\t\tif _, err := w.Write(nextOut); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tmc += len(nextOut)\n\t}\n\n\tif mc > 0 {\n\t\tio.WriteString(w, \"=\\r\\n\")\n\t}\n\treturn nil\n}",
+    "funcname": "quotePrintEncode"
+}

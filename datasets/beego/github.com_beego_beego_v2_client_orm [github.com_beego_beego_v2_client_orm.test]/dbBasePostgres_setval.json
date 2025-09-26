@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 146,
+    "focalfunc": "func (d *dbBasePostgres) setval(ctx context.Context, db dbQuerier, mi *models.ModelInfo, autoFields []string) error",
+    "funcbody": "func (d *dbBasePostgres) setval(ctx context.Context, db dbQuerier, mi *models.ModelInfo, autoFields []string) error {\n\tif len(autoFields) == 0 {\n\t\treturn nil\n\t}\n\n\tQ := d.ins.TableQuote()\n\tfor _, name := range autoFields {\n\t\tquery := fmt.Sprintf(\"SELECT setval(pg_get_serial_sequence('%s', '%s'), (SELECT MAX(%s%s%s) FROM %s%s%s));\",\n\t\t\tmi.Table, name,\n\t\t\tQ, name, Q,\n\t\t\tQ, mi.Table, Q)\n\t\tif _, err := db.ExecContext(ctx, query); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "setval"
+}

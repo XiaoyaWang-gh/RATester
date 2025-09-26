@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/server.go",
+    "lineno": 269,
+    "focalfunc": "func loadHTTPPluginOpt(section *ini.Section) (*HTTPPluginOptions, error)",
+    "funcbody": "func loadHTTPPluginOpt(section *ini.Section) (*HTTPPluginOptions, error) {\n\tname := strings.TrimSpace(strings.TrimPrefix(section.Name(), \"plugin.\"))\n\n\topt := &HTTPPluginOptions{}\n\terr := section.MapTo(opt)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\topt.Name = name\n\n\treturn opt, nil\n}",
+    "funcname": "loadHTTPPluginOpt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/manager.go",
+    "lineno": 161,
+    "focalfunc": "func (m *Manager) Ping(content *PingContent) (*PingContent, error)",
+    "funcbody": "func (m *Manager) Ping(content *PingContent) (*PingContent, error) {\n\tif len(m.pingPlugins) == 0 {\n\t\treturn content, nil\n\t}\n\n\tvar (\n\t\tres\t= &Response{\n\t\t\tReject:\t\tfalse,\n\t\t\tUnchange:\ttrue,\n\t\t}\n\t\tretContent\tinterface{}\n\t\terr\t\terror\n\t)\n\treqid, _ := util.RandID()\n\txl := xlog.New().AppendPrefix(\"reqid: \" + reqid)\n\tctx := xlog.NewContext(context.Background(), xl)\n\tctx = NewReqidContext(ctx, reqid)\n\n\tfor _, p := range m.pingPlugins {\n\t\tres, retContent, err = p.Handle(ctx, OpPing, *content)\n\t\tif err != nil {\n\t\t\txl.Warnf(\"send Ping request to plugin [%s] error: %v\", p.Name(), err)\n\t\t\treturn nil, errors.New(\"send Ping request to plugin error\")\n\t\t}\n\t\tif res.Reject {\n\t\t\treturn nil, fmt.Errorf(\"%s\", res.RejectReason)\n\t\t}\n\t\tif !res.Unchange {\n\t\t\tcontent = retContent.(*PingContent)\n\t\t}\n\t}\n\treturn content, nil\n}",
+    "funcname": "Ping"
+}

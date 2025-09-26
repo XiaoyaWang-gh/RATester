@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 220,
+    "focalfunc": "func copyHeaders(dst, src http.Header)",
+    "funcbody": "func copyHeaders(dst, src http.Header) {\n\tfor key, values := range src {\n\t\tfor _, value := range values {\n\t\t\tdst.Add(key, value)\n\t\t}\n\t}\n}",
+    "funcname": "copyHeaders"
+}

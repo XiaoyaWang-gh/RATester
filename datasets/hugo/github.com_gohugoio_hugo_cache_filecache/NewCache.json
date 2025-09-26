@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 91,
+    "focalfunc": "func NewCache(fs afero.Fs, maxAge time.Duration, pruneAllRootDir string) *Cache",
+    "funcbody": "func NewCache(fs afero.Fs, maxAge time.Duration, pruneAllRootDir string) *Cache {\n\treturn &Cache{\n\t\tFs:\t\t\tfs,\n\t\tnlocker:\t\t&lockTracker{Locker: locker.NewLocker(), seen: make(map[string]struct{})},\n\t\tmaxAge:\t\t\tmaxAge,\n\t\tpruneAllRootDir:\tpruneAllRootDir,\n\t}\n}",
+    "funcname": "NewCache"
+}

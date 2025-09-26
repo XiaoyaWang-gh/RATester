@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 218,
+    "focalfunc": "func VerifyPeerCertificate(uri string, cfg *tls.Config, rawCerts [][]byte) error",
+    "funcbody": "func VerifyPeerCertificate(uri string, cfg *tls.Config, rawCerts [][]byte) error {\n\n\tcert, err := verifyChain(cfg.RootCAs, rawCerts)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif len(uri) > 0 {\n\t\treturn verifyServerCertMatchesURI(uri, cert)\n\t}\n\n\treturn nil\n}",
+    "funcname": "VerifyPeerCertificate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 281,
+    "focalfunc": "func (c *Conn) Write(p []byte) (n int, err error)",
+    "funcbody": "func (c *Conn) Write(p []byte) (n int, err error) {\n\tc.muActivity.Lock()\n\tc.lastActivity = time.Now()\n\tc.muActivity.Unlock()\n\n\treturn c.listener.pConn.WriteTo(p, c.rAddr)\n}",
+    "funcname": "Write"
+}

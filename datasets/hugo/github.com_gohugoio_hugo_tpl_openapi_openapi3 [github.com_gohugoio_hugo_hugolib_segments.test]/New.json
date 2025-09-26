@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/openapi/openapi3/openapi3.go",
+    "lineno": 33,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\treturn &Namespace{\n\t\tcache:\tdynacache.GetOrCreatePartition[string, *OpenAPIDocument](deps.MemCache, \"/tmpl/openapi3\", dynacache.OptionsPartition{Weight: 30, ClearWhen: dynacache.ClearOnChange}),\n\t\tdeps:\tdeps,\n\t}\n}",
+    "funcname": "New"
+}

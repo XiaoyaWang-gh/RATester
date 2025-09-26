@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/roundtripper.go",
+    "lineno": 244,
+    "focalfunc": "func containsNTLMorNegotiate(h []string) bool",
+    "funcbody": "func containsNTLMorNegotiate(h []string) bool {\n\treturn slices.ContainsFunc(h, func(s string) bool {\n\t\treturn strings.HasPrefix(s, \"NTLM\") || strings.HasPrefix(s, \"Negotiate\")\n\t})\n}",
+    "funcname": "containsNTLMorNegotiate"
+}

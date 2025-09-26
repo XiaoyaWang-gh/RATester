@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 880,
+    "focalfunc": "func (b *ValueBinder) Uint8s(sourceParam string, dest *[]uint8) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) Uint8s(sourceParam string, dest *[]uint8) *ValueBinder {\n\treturn b.uintsValue(sourceParam, dest, false)\n}",
+    "funcname": "Uint8s"
+}

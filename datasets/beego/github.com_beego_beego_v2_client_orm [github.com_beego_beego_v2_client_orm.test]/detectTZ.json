@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 300,
+    "focalfunc": "func detectTZ(al *alias)",
+    "funcbody": "func detectTZ(al *alias) {\n\n\tal.TZ = DefaultTimeLoc\n\n\tif al.DriverName == \"sphinx\" {\n\t\treturn\n\t}\n\n\tswitch al.Driver {\n\tcase DRMySQL:\n\t\trow := al.DB.QueryRow(\"SELECT TIMEDIFF(NOW(), UTC_TIMESTAMP)\")\n\t\tvar tz string\n\t\trow.Scan(&tz)\n\t\tif len(tz) >= 8 {\n\t\t\tif tz[0] != '-' {\n\t\t\t\ttz = \"+\" + tz\n\t\t\t}\n\t\t\tt, err := time.Parse(\"-07:00:00\", tz)\n\t\t\tif err == nil {\n\t\t\t\tif t.Location().String() != \"\" {\n\t\t\t\t\tal.TZ = t.Location()\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tDebugLog.Printf(\"Detect DB timezone: %s %s\\n\", tz, err.Error())\n\t\t\t}\n\t\t}\n\n\t\trow = al.DB.QueryRow(\"SELECT ENGINE, TRANSACTIONS FROM information_schema.engines WHERE SUPPORT = 'DEFAULT'\")\n\t\tvar engine string\n\t\tvar tx bool\n\t\trow.Scan(&engine, &tx)\n\n\t\tif engine != \"\" {\n\t\t\tal.Engine = engine\n\t\t} else {\n\t\t\tal.Engine = \"INNODB\"\n\t\t}\n\n\tcase DRSqlite, DROracle:\n\t\tal.TZ = time.UTC\n\n\tcase DRPostgres:\n\t\trow := al.DB.QueryRow(\"SELECT current_setting('TIMEZONE')\")\n\t\tvar tz string\n\t\trow.Scan(&tz)\n\t\tloc, err := time.LoadLocation(tz)\n\t\tif err == nil {\n\t\t\tal.TZ = loc\n\t\t} else {\n\t\t\tDebugLog.Printf(\"Detect DB timezone: %s %s\\n\", tz, err.Error())\n\t\t}\n\t}\n}",
+    "funcname": "detectTZ"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/ctl.go",
+    "lineno": 34,
+    "focalfunc": "func ReadMsg(c io.Reader) (msg Message, err error)",
+    "funcbody": "func ReadMsg(c io.Reader) (msg Message, err error) {\n\treturn msgCtl.ReadMsg(c)\n}",
+    "funcname": "ReadMsg"
+}

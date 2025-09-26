@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 43,
+    "focalfunc": "func (h *indexedHeap) Push(x any)",
+    "funcbody": "func (h *indexedHeap) Push(x any) {\n\th.pushInternal(x.(heapEntry))\n}",
+    "funcname": "Push"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 81,
+    "focalfunc": "func (pxy *BaseProxy) GetName() string",
+    "funcbody": "func (pxy *BaseProxy) GetName() string {\n\treturn pxy.name\n}",
+    "funcname": "GetName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/nathole.go",
+    "lineno": 111,
+    "focalfunc": "func Prepare(stunServers []string) (*PrepareResult, error)",
+    "funcbody": "func Prepare(stunServers []string) (*PrepareResult, error) {\n\n\taddrs, localAddr, err := Discover(stunServers, \"\")\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"discover error: %v\", err)\n\t}\n\tif len(addrs) < 2 {\n\t\treturn nil, fmt.Errorf(\"discover error: not enough addresses\")\n\t}\n\n\tlocalIPs, _ := ListLocalIPsForNatHole(10)\n\tnatFeature, err := ClassifyNATFeature(addrs, localIPs)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"classify nat feature error: %v\", err)\n\t}\n\n\tladdr, err := net.ResolveUDPAddr(\"udp4\", localAddr.String())\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"resolve local udp addr error: %v\", err)\n\t}\n\tlistenConn, err := net.ListenUDP(\"udp4\", laddr)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"listen local udp addr error: %v\", err)\n\t}\n\n\tassistedAddrs := make([]string, 0, len(localIPs))\n\tfor _, ip := range localIPs {\n\t\tassistedAddrs = append(assistedAddrs, net.JoinHostPort(ip, strconv.Itoa(laddr.Port)))\n\t}\n\treturn &PrepareResult{\n\t\tAddrs:\t\taddrs,\n\t\tAssistedAddrs:\tassistedAddrs,\n\t\tListenConn:\tlistenConn,\n\t\tNatType:\tnatFeature.NatType,\n\t\tBehavior:\tnatFeature.Behavior,\n\t}, nil\n}",
+    "funcname": "Prepare"
+}

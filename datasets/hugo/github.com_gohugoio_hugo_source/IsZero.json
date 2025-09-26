@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 183,
+    "focalfunc": "func (g GitInfo) IsZero() bool",
+    "funcbody": "func (g GitInfo) IsZero() bool {\n\treturn g.Hash == \"\"\n}",
+    "funcname": "IsZero"
+}

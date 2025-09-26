@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 273,
+    "focalfunc": "func (c *templateContext) hasIdent(idents []string, ident string) bool",
+    "funcbody": "func (c *templateContext) hasIdent(idents []string, ident string) bool {\n\tfor _, id := range idents {\n\t\tif id == ident {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "hasIdent"
+}

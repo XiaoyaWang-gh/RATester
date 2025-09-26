@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 617,
+    "focalfunc": "func assignConfig(ac config.Configer) error",
+    "funcbody": "func assignConfig(ac config.Configer) error {\n\tparseConfigForV1(ac)\n\n\terr := ac.Unmarshaler(\"\", BConfig)\n\tif err != nil {\n\t\t_, _ = fmt.Fprintln(os.Stderr, fmt.Sprintf(\"Unmarshaler config file to BConfig failed. \"+\n\t\t\t\"And if you are working on v1.x config file, please ignore this, err: %s\", err))\n\t\treturn err\n\t}\n\n\tlogs.Reset()\n\tfor adaptor, cfg := range BConfig.Log.Outputs {\n\t\terr := logs.SetLogger(adaptor, cfg)\n\t\tif err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"%s with the config %q got err:%s\\n\", adaptor, cfg, err.Error())\n\t\t\treturn err\n\t\t}\n\t}\n\tlogs.SetLogFuncCall(BConfig.Log.FileLineNum)\n\treturn nil\n}",
+    "funcname": "assignConfig"
+}

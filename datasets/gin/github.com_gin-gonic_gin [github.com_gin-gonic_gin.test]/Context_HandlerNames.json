@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 153,
+    "focalfunc": "func (c *Context) HandlerNames() []string",
+    "funcbody": "func (c *Context) HandlerNames() []string {\n\thn := make([]string, 0, len(c.handlers))\n\tfor _, val := range c.handlers {\n\t\tif val == nil {\n\t\t\tcontinue\n\t\t}\n\t\thn = append(hn, nameOfFunction(val))\n\t}\n\treturn hn\n}",
+    "funcname": "HandlerNames"
+}

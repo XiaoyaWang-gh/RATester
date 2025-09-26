@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 34,
+    "focalfunc": "func (ctx *WalkContext[T]) AddEventListener(event, path string, handler func(*Event[T]))",
+    "funcbody": "func (ctx *WalkContext[T]) AddEventListener(event, path string, handler func(*Event[T])) {\n\tif ctx.eventHandlers == nil {\n\t\tctx.eventHandlers = make(eventHandlers[T])\n\t}\n\tif ctx.eventHandlers[event] == nil {\n\t\tctx.eventHandlers[event] = make([]func(*Event[T]), 0)\n\t}\n\n\tif !strings.HasSuffix(path, \"/\") {\n\t\tpath += \"/\"\n\t}\n\n\tctx.eventHandlers[event] = append(\n\t\tctx.eventHandlers[event], func(e *Event[T]) {\n\n\t\t\tif strings.HasPrefix(e.Path, path) {\n\t\t\t\thandler(e)\n\t\t\t}\n\t\t},\n\t)\n}",
+    "funcname": "AddEventListener"
+}

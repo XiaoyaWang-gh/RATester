@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 425,
+    "focalfunc": "func (e IntegerField) Value() int32",
+    "funcbody": "func (e IntegerField) Value() int32 {\n\treturn int32(e)\n}",
+    "funcname": "Value"
+}

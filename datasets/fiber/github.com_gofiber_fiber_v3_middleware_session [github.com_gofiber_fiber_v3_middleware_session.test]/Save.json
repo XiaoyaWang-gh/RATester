@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 183,
+    "focalfunc": "func (s *Session) Save() error",
+    "funcbody": "func (s *Session) Save() error {\n\n\tif s.data == nil {\n\t\treturn nil\n\t}\n\n\ts.mu.Lock()\n\n\tif s.exp <= 0 {\n\t\ts.exp = s.config.Expiration\n\t}\n\n\ts.setSession()\n\n\tencCache := gob.NewEncoder(s.byteBuffer)\n\terr := encCache.Encode(&s.data.Data)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to encode data: %w\", err)\n\t}\n\n\tencodedBytes := make([]byte, s.byteBuffer.Len())\n\tcopy(encodedBytes, s.byteBuffer.Bytes())\n\n\tif err := s.config.Storage.Set(s.id, encodedBytes, s.exp); err != nil {\n\t\treturn err\n\t}\n\n\ts.mu.Unlock()\n\n\treleaseSession(s)\n\n\treturn nil\n}",
+    "funcname": "Save"
+}

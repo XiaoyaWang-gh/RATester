@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 101,
+    "focalfunc": "func (app *App) nextCustom(c CustomCtx) (bool, error)",
+    "funcbody": "func (app *App) nextCustom(c CustomCtx) (bool, error) {\n\n\ttree, ok := app.treeStack[c.getMethodINT()][c.getTreePath()]\n\tif !ok {\n\t\ttree = app.treeStack[c.getMethodINT()][\"\"]\n\t}\n\tlenr := len(tree) - 1\n\n\tfor c.getIndexRoute() < lenr {\n\n\t\tc.setIndexRoute(c.getIndexRoute() + 1)\n\n\t\troute := tree[c.getIndexRoute()]\n\n\t\tmatch := route.match(c.getDetectionPath(), c.Path(), c.getValues())\n\n\t\tif !match {\n\t\t\tcontinue\n\t\t}\n\n\t\tc.setRoute(route)\n\n\t\tif !c.getMatched() && !route.use {\n\t\t\tc.setMatched(true)\n\t\t}\n\n\t\tc.setIndexHandler(0)\n\t\terr := route.Handlers[0](c)\n\t\treturn match, err\n\t}\n\n\terr := NewError(StatusNotFound, \"Cannot \"+c.Method()+\" \"+c.getPathOriginal())\n\n\tif !c.getMatched() && app.methodExistCustom(c) {\n\t\terr = ErrMethodNotAllowed\n\t}\n\treturn false, err\n}",
+    "funcname": "nextCustom"
+}

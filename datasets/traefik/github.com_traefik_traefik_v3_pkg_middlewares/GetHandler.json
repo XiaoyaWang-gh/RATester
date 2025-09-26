@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/handler_switcher.go",
+    "lineno": 27,
+    "focalfunc": "func (h *HTTPHandlerSwitcher) GetHandler() (newHandler http.Handler)",
+    "funcbody": "func (h *HTTPHandlerSwitcher) GetHandler() (newHandler http.Handler) {\n\thandler := h.handler.Get().(http.Handler)\n\treturn handler\n}",
+    "funcname": "GetHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/slash.go",
+    "lineno": 78,
+    "focalfunc": "func RemoveTrailingSlash() echo.MiddlewareFunc",
+    "funcbody": "func RemoveTrailingSlash() echo.MiddlewareFunc {\n\treturn RemoveTrailingSlashWithConfig(TrailingSlashConfig{})\n}",
+    "funcname": "RemoveTrailingSlash"
+}

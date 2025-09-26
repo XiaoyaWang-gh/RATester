@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 287,
+    "focalfunc": "func (c *IniConfigContainer) Float(key string) (float64, error)",
+    "funcbody": "func (c *IniConfigContainer) Float(key string) (float64, error) {\n\treturn strconv.ParseFloat(c.getdata(key), 64)\n}",
+    "funcname": "Float"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 622,
+    "focalfunc": "func (e *PositiveBigIntegerField) Set(d uint64)",
+    "funcbody": "func (e *PositiveBigIntegerField) Set(d uint64) {\n\t*e = PositiveBigIntegerField(d)\n}",
+    "funcname": "Set"
+}

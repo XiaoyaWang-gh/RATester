@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 742,
+    "focalfunc": "func eventHandlerFunc(events chan<- interface{}, obj interface{})",
+    "funcbody": "func eventHandlerFunc(events chan<- interface{}, obj interface{}) {\n\tselect {\n\tcase events <- obj:\n\tdefault:\n\t}\n}",
+    "funcname": "eventHandlerFunc"
+}

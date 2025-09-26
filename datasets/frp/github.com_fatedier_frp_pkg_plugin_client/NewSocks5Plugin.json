@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/socks5.go",
+    "lineno": 39,
+    "focalfunc": "func NewSocks5Plugin(options v1.ClientPluginOptions) (p Plugin, err error)",
+    "funcbody": "func NewSocks5Plugin(options v1.ClientPluginOptions) (p Plugin, err error) {\n\topts := options.(*v1.Socks5PluginOptions)\n\n\tcfg := &gosocks5.Config{\n\t\tLogger: log.New(io.Discard, \"\", log.LstdFlags),\n\t}\n\tif opts.Username != \"\" || opts.Password != \"\" {\n\t\tcfg.Credentials = gosocks5.StaticCredentials(map[string]string{opts.Username: opts.Password})\n\t}\n\tsp := &Socks5Plugin{}\n\tsp.Server, err = gosocks5.New(cfg)\n\tp = sp\n\treturn\n}",
+    "funcname": "NewSocks5Plugin"
+}

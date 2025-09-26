@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 84,
+    "focalfunc": "func (r *Response) Save(v any) error",
+    "funcbody": "func (r *Response) Save(v any) error {\n\tswitch p := v.(type) {\n\tcase string:\n\t\tfile := filepath.Clean(p)\n\t\tdir := filepath.Dir(file)\n\n\t\tif _, err := os.Stat(dir); err != nil {\n\t\t\tif !errors.Is(err, fs.ErrNotExist) {\n\t\t\t\treturn fmt.Errorf(\"failed to check directory: %w\", err)\n\t\t\t}\n\n\t\t\tif err = os.MkdirAll(dir, 0o750); err != nil {\n\t\t\t\treturn fmt.Errorf(\"failed to create directory: %w\", err)\n\t\t\t}\n\t\t}\n\n\t\toutFile, err := os.Create(file)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"failed to create file: %w\", err)\n\t\t}\n\t\tdefer func() { _ = outFile.Close() }()\n\n\t\t_, err = io.Copy(outFile, bytes.NewReader(r.Body()))\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"failed to write response body to file: %w\", err)\n\t\t}\n\n\t\treturn nil\n\tcase io.Writer:\n\t\t_, err := io.Copy(p, bytes.NewReader(r.Body()))\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"failed to write response body to io.Writer: %w\", err)\n\t\t}\n\t\tdefer func() {\n\t\t\tif pc, ok := p.(io.WriteCloser); ok {\n\t\t\t\t_ = pc.Close()\n\t\t\t}\n\t\t}()\n\n\t\treturn nil\n\tdefault:\n\t\treturn ErrNotSupportSaveMethod\n\t}\n}",
+    "funcname": "Save"
+}

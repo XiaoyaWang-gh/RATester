@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 404,
+    "focalfunc": "func (t *dbTables) getGroupSQL(groups []string) (groupSQL string)",
+    "funcbody": "func (t *dbTables) getGroupSQL(groups []string) (groupSQL string) {\n\tif len(groups) == 0 {\n\t\treturn\n\t}\n\n\tQ := t.base.TableQuote()\n\n\tgroupSqls := make([]string, 0, len(groups))\n\tfor _, group := range groups {\n\t\texprs := strings.Split(group, ExprSep)\n\n\t\tindex, _, fi, suc := t.parseExprs(t.mi, exprs)\n\t\tif !suc {\n\t\t\tpanic(fmt.Errorf(\"unknown field/column name `%s`\", strings.Join(exprs, ExprSep)))\n\t\t}\n\n\t\tgroupSqls = append(groupSqls, fmt.Sprintf(\"%s.%s%s%s\", index, Q, fi.Column, Q))\n\t}\n\n\tgroupSQL = fmt.Sprintf(\"GROUP BY %s \", strings.Join(groupSqls, \", \"))\n\treturn\n}",
+    "funcname": "getGroupSQL"
+}

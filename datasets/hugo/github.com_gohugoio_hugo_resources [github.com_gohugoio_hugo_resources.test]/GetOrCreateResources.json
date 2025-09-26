@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_cache.go",
+    "lineno": 82,
+    "focalfunc": "func (c *ResourceCache) GetOrCreateResources(key string, f func() (resource.Resources, error)) (resource.Resources, error)",
+    "funcbody": "func (c *ResourceCache) GetOrCreateResources(key string, f func() (resource.Resources, error)) (resource.Resources, error) {\n\treturn c.cacheResources.GetOrCreate(key, func(key string) (resource.Resources, error) {\n\t\treturn f()\n\t})\n}",
+    "funcname": "GetOrCreateResources"
+}

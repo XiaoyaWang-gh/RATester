@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 85,
+    "focalfunc": "func (h *HTMLElements) Sort()",
+    "funcbody": "func (h *HTMLElements) Sort() {\n\tsort.Strings(h.Tags)\n\tsort.Strings(h.Classes)\n\tsort.Strings(h.IDs)\n}",
+    "funcname": "Sort"
+}

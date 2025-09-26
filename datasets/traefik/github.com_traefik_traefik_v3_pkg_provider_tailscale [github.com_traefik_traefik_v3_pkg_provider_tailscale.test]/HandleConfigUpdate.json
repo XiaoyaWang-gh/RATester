@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 52,
+    "focalfunc": "func (p *Provider) HandleConfigUpdate(cfg dynamic.Configuration)",
+    "funcbody": "func (p *Provider) HandleConfigUpdate(cfg dynamic.Configuration) {\n\tp.dynConfigs <- cfg\n}",
+    "funcname": "HandleConfigUpdate"
+}

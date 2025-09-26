@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 830,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tglobalTaskManager = newTaskManager()\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/hqt/checkers.go",
+    "lineno": 73,
+    "focalfunc": "func (c *stringChecker) Check(got any, args []any, note func(key string, value any)) (err error)",
+    "funcbody": "func (c *stringChecker) Check(got any, args []any, note func(key string, value any)) (err error) {\n\ts1, s2 := cast.ToString(got), cast.ToString(args[0])\n\n\tif s1 == s2 {\n\t\treturn nil\n\t}\n\n\ts1, s2 = normalizeString(s1), normalizeString(s2)\n\n\tif s1 == s2 {\n\t\treturn nil\n\t}\n\n\treturn fmt.Errorf(\"values are not the same text: %s\", strings.Join(htesting.DiffStrings(s1, s2), \" | \"))\n}",
+    "funcname": "Check"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/gui/npc/npc.go",
+    "lineno": 23,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\tdaemon.InitDaemon(\"npc\", common.GetRunPath(), common.GetTmpPath())\n\tlogs.SetLogger(\"store\")\n\tapplication := app.New()\n\twindow := application.NewWindow(\"Npc \" + version.VERSION)\n\twindow.SetContent(WidgetScreen())\n\twindow.Resize(fyne.NewSize(910, 350))\n\n\twindow.ShowAndRun()\n\n}",
+    "funcname": "main"
+}

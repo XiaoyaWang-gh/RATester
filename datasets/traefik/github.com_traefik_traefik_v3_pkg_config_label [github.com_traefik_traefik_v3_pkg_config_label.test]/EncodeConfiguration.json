@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/label/label.go",
+    "lineno": 28,
+    "focalfunc": "func EncodeConfiguration(conf *dynamic.Configuration) (map[string]string, error)",
+    "funcbody": "func EncodeConfiguration(conf *dynamic.Configuration) (map[string]string, error) {\n\treturn parser.Encode(conf, parser.DefaultRootName)\n}",
+    "funcname": "EncodeConfiguration"
+}

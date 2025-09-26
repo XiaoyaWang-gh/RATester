@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 116,
+    "focalfunc": "func NewDecoder(options ...func(*Decoder) error) (*Decoder, error)",
+    "funcbody": "func NewDecoder(options ...func(*Decoder) error) (*Decoder, error) {\n\td := &Decoder{}\n\tfor _, opt := range options {\n\t\tif err := opt(d); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\treturn d, nil\n}",
+    "funcname": "NewDecoder"
+}

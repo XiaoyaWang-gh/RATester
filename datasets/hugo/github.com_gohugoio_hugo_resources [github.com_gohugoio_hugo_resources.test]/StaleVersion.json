@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 337,
+    "focalfunc": "func (s *AtomicStaler) StaleVersion() uint32",
+    "funcbody": "func (s *AtomicStaler) StaleVersion() uint32 {\n\treturn atomic.LoadUint32(&(s.stale))\n}",
+    "funcname": "StaleVersion"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/opentracing/filter.go",
+    "lineno": 78,
+    "focalfunc": "func (builder *FilterChainBuilder) operationName(ctx *beegoCtx.Context) string",
+    "funcbody": "func (builder *FilterChainBuilder) operationName(ctx *beegoCtx.Context) string {\n\toperationName := ctx.Input.URL()\n\n\troute, found := web.BeeApp.Handlers.FindRouter(ctx)\n\tif found {\n\t\toperationName = ctx.Input.Method() + \"#\" + route.GetPattern()\n\t}\n\treturn operationName\n}",
+    "funcname": "operationName"
+}

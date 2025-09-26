@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 357,
+    "focalfunc": "func (app *HttpServer) UnregisterFixedRoute(fixedRoute string, method string) *HttpServer",
+    "funcbody": "func (app *HttpServer) UnregisterFixedRoute(fixedRoute string, method string) *HttpServer {\n\tsubPaths := splitPath(fixedRoute)\n\tif method == \"\" || method == \"*\" {\n\t\tfor m := range HTTPMETHOD {\n\t\t\tif _, ok := app.Handlers.routers[m]; !ok {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif app.Handlers.routers[m].prefix == strings.Trim(fixedRoute, \"/ \") {\n\t\t\t\tfindAndRemoveSingleTree(app.Handlers.routers[m])\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tfindAndRemoveTree(subPaths, app.Handlers.routers[m], m)\n\t\t}\n\t\treturn app\n\t}\n\n\tum := strings.ToUpper(method)\n\tif _, ok := app.Handlers.routers[um]; ok {\n\t\tif app.Handlers.routers[um].prefix == strings.Trim(fixedRoute, \"/ \") {\n\t\t\tfindAndRemoveSingleTree(app.Handlers.routers[um])\n\t\t\treturn app\n\t\t}\n\t\tfindAndRemoveTree(subPaths, app.Handlers.routers[um], um)\n\t}\n\treturn app\n}",
+    "funcname": "UnregisterFixedRoute"
+}

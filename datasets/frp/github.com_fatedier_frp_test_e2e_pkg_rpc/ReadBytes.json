@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/rpc/rpc.go",
+    "lineno": 21,
+    "focalfunc": "func ReadBytes(r io.Reader) ([]byte, error)",
+    "funcbody": "func ReadBytes(r io.Reader) ([]byte, error) {\n\tvar length int64\n\tif err := binary.Read(r, binary.BigEndian, &length); err != nil {\n\t\treturn nil, err\n\t}\n\tif length < 0 || length > 10*1024*1024 {\n\t\treturn nil, fmt.Errorf(\"invalid length\")\n\t}\n\tbuffer := make([]byte, length)\n\tn, err := io.ReadFull(r, buffer)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif int64(n) != length {\n\t\treturn nil, errors.New(\"invalid length\")\n\t}\n\treturn buffer, nil\n}",
+    "funcname": "ReadBytes"
+}

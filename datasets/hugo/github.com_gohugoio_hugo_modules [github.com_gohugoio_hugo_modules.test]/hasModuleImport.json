@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/config.go",
+    "lineno": 308,
+    "focalfunc": "func (c Config) hasModuleImport() bool",
+    "funcbody": "func (c Config) hasModuleImport() bool {\n\tfor _, imp := range c.Imports {\n\t\tif isProbablyModule(imp.Path) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "hasModuleImport"
+}

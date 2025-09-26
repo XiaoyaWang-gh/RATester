@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/sheap/heap.go",
+    "lineno": 6,
+    "focalfunc": "func (h IntHeap) Less(i, j int) bool",
+    "funcbody": "func (h IntHeap) Less(i, j int) bool\t{ return h[i] < h[j] }",
+    "funcname": "Less"
+}

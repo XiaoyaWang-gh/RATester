@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 274,
+    "focalfunc": "func (t *NodeShiftTree[T]) String() string",
+    "funcbody": "func (t *NodeShiftTree[T]) String() string {\n\treturn fmt.Sprintf(\"Root{%v}\", t.dims)\n}",
+    "funcname": "String"
+}

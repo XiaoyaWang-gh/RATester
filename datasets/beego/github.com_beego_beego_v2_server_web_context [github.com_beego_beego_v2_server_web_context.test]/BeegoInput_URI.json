@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 85,
+    "focalfunc": "func (input *BeegoInput) URI() string",
+    "funcbody": "func (input *BeegoInput) URI() string {\n\treturn input.Context.Request.RequestURI\n}",
+    "funcname": "URI"
+}

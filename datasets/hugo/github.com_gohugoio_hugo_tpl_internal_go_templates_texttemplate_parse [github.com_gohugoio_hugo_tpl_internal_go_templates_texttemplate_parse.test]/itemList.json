@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 350,
+    "focalfunc": "func (t *Tree) itemList() (list *ListNode, next Node)",
+    "funcbody": "func (t *Tree) itemList() (list *ListNode, next Node) {\n\tlist = t.newList(t.peekNonSpace().pos)\n\tfor t.peekNonSpace().typ != itemEOF {\n\t\tn := t.textOrAction()\n\t\tswitch n.Type() {\n\t\tcase nodeEnd, nodeElse:\n\t\t\treturn list, n\n\t\t}\n\t\tlist.append(n)\n\t}\n\tt.errorf(\"unexpected EOF\")\n\treturn\n}",
+    "funcname": "itemList"
+}

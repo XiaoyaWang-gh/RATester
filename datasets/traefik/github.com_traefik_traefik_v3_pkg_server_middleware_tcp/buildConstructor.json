@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/tcp/middlewares.go",
+    "lineno": 85,
+    "focalfunc": "func (b *Builder) buildConstructor(ctx context.Context, middlewareName string) (tcp.Constructor, error)",
+    "funcbody": "func (b *Builder) buildConstructor(ctx context.Context, middlewareName string) (tcp.Constructor, error) {\n\tconfig := b.configs[middlewareName]\n\tif config == nil || config.TCPMiddleware == nil {\n\t\treturn nil, fmt.Errorf(\"invalid middleware %q configuration\", middlewareName)\n\t}\n\n\tvar middleware tcp.Constructor\n\n\tif config.InFlightConn != nil {\n\t\tmiddleware = func(next tcp.Handler) (tcp.Handler, error) {\n\t\t\treturn inflightconn.New(ctx, next, *config.InFlightConn, middlewareName)\n\t\t}\n\t}\n\n\tif config.IPWhiteList != nil {\n\t\tlog.Warn().Msg(\"IPWhiteList is deprecated, please use IPAllowList instead.\")\n\n\t\tmiddleware = func(next tcp.Handler) (tcp.Handler, error) {\n\t\t\treturn ipwhitelist.New(ctx, next, *config.IPWhiteList, middlewareName)\n\t\t}\n\t}\n\n\tif config.IPAllowList != nil {\n\t\tmiddleware = func(next tcp.Handler) (tcp.Handler, error) {\n\t\t\treturn ipallowlist.New(ctx, next, *config.IPAllowList, middlewareName)\n\t\t}\n\t}\n\n\tif middleware == nil {\n\t\treturn nil, fmt.Errorf(\"invalid middleware %q configuration: invalid middleware type or middleware does not exist\", middlewareName)\n\t}\n\n\treturn middleware, nil\n}",
+    "funcname": "buildConstructor"
+}

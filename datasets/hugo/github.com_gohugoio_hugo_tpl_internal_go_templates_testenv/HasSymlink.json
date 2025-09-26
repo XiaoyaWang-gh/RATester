@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv_notwin.go",
+    "lineno": 16,
+    "focalfunc": "func hasSymlink() (ok bool, reason string)",
+    "funcbody": "func hasSymlink() (ok bool, reason string) {\n\tswitch runtime.GOOS {\n\tcase \"plan9\":\n\t\treturn false, \"\"\n\tcase \"android\", \"wasip1\":\n\n\t\tdir, err := os.MkdirTemp(\"\", \"\")\n\t\tif err != nil {\n\t\t\treturn false, \"\"\n\t\t}\n\t\tdefer func() {\n\t\t\t_ = os.RemoveAll(dir)\n\t\t}()\n\t\tfpath := filepath.Join(dir, \"testfile.txt\")\n\t\tif err := os.WriteFile(fpath, nil, 0644); err != nil {\n\t\t\treturn false, \"\"\n\t\t}\n\t\tif err := os.Symlink(fpath, filepath.Join(dir, \"testlink\")); err != nil {\n\t\t\tif SyscallIsNotSupported(err) {\n\t\t\t\treturn false, fmt.Sprintf(\"symlinks unsupported: %s\", err.Error())\n\t\t\t}\n\t\t\treturn false, \"\"\n\t\t}\n\t}\n\n\treturn true, \"\"\n}",
+    "funcname": "hasSymlink"
+}

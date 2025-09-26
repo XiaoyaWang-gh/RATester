@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 245,
+    "focalfunc": "func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error)",
+    "funcbody": "func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error) {\n\ttc, err := ln.AcceptTCP()\n\tif err != nil {\n\t\treturn\n\t}\n\ttc.SetKeepAlive(true)\n\ttc.SetKeepAlivePeriod(3 * time.Minute)\n\treturn tc, nil\n}",
+    "funcname": "Accept"
+}

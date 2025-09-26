@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 541,
+    "focalfunc": "func (o *orm) BeginWithCtxAndOpts(ctx context.Context, opts *sql.TxOptions) (TxOrmer, error)",
+    "funcbody": "func (o *orm) BeginWithCtxAndOpts(ctx context.Context, opts *sql.TxOptions) (TxOrmer, error) {\n\ttx, err := o.db.(txer).BeginTx(ctx, opts)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\t_txOrm := &txOrm{\n\t\tormBase: ormBase{\n\t\t\talias:\to.alias,\n\t\t\tdb:\t&TxDB{tx: tx},\n\t\t},\n\t}\n\n\tif Debug {\n\t\t_txOrm.db = newDbQueryLog(o.alias, _txOrm.db)\n\t}\n\n\tvar taskTxOrm TxOrmer = _txOrm\n\treturn taskTxOrm, nil\n}",
+    "funcname": "BeginWithCtxAndOpts"
+}

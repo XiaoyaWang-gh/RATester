@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 449,
+    "focalfunc": "func putPagePathBuilder(b *pagePathBuilder)",
+    "funcbody": "func putPagePathBuilder(b *pagePathBuilder) {\n\tb.els = b.els[:0]\n\tb.fullSuffix = \"\"\n\tb.baseNameSameAsType = false\n\tb.isUgly = false\n\tb.noSubResources = false\n\tb.prefixLink = \"\"\n\tb.prefixPath = \"\"\n\tb.linkUpperOffset = 0\n\tpagePathBuilderPool.Put(b)\n}",
+    "funcname": "putPagePathBuilder"
+}

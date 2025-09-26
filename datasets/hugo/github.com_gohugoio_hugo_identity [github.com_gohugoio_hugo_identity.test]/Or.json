@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 470,
+    "focalfunc": "func Or(a, b Identity) Identity",
+    "funcbody": "func Or(a, b Identity) Identity {\n\treturn orIdentity{a: a, b: b}\n}",
+    "funcname": "Or"
+}

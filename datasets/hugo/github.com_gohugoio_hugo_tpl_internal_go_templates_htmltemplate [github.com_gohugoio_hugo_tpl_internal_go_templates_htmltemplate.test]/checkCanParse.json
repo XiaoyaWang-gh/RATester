@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 84,
+    "focalfunc": "func (t *Template) checkCanParse() error",
+    "funcbody": "func (t *Template) checkCanParse() error {\n\tif t == nil {\n\t\treturn nil\n\t}\n\tt.nameSpace.mu.Lock()\n\tdefer t.nameSpace.mu.Unlock()\n\tif t.nameSpace.escaped {\n\t\treturn fmt.Errorf(\"html/template: cannot Parse after Execute\")\n\t}\n\treturn nil\n}",
+    "funcname": "checkCanParse"
+}

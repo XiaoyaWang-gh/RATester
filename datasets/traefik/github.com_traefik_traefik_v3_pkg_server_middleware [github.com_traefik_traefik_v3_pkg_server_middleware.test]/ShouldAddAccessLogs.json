@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 82,
+    "focalfunc": "func (o *ObservabilityMgr) ShouldAddAccessLogs(resourceName string) bool",
+    "funcbody": "func (o *ObservabilityMgr) ShouldAddAccessLogs(resourceName string) bool {\n\tif o == nil {\n\t\treturn false\n\t}\n\n\treturn o.config.AccessLog != nil && (o.config.AccessLog.AddInternals || !strings.HasSuffix(resourceName, \"@internal\"))\n}",
+    "funcname": "ShouldAddAccessLogs"
+}

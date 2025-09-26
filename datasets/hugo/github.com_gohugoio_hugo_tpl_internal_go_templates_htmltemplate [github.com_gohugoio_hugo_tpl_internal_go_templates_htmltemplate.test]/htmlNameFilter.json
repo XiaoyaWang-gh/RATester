@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/html.go",
+    "lineno": 233,
+    "focalfunc": "func htmlNameFilter(args ...any) string",
+    "funcbody": "func htmlNameFilter(args ...any) string {\n\ts, t := stringify(args...)\n\tif t == contentTypeHTMLAttr {\n\t\treturn s\n\t}\n\tif len(s) == 0 {\n\n\t\treturn filterFailsafe\n\t}\n\ts = strings.ToLower(s)\n\tif t := attrType(s); t != contentTypePlain {\n\n\t\treturn filterFailsafe\n\t}\n\tfor _, r := range s {\n\t\tswitch {\n\t\tcase '0' <= r && r <= '9':\n\t\tcase 'a' <= r && r <= 'z':\n\t\tdefault:\n\t\t\treturn filterFailsafe\n\t\t}\n\t}\n\treturn s\n}",
+    "funcname": "htmlNameFilter"
+}

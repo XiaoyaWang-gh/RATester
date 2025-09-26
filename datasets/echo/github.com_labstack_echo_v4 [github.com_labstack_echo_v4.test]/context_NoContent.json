@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 605,
+    "focalfunc": "func (c *context) NoContent(code int) error",
+    "funcbody": "func (c *context) NoContent(code int) error {\n\tc.response.WriteHeader(code)\n\treturn nil\n}",
+    "funcname": "NoContent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/random_expired_cache.go",
+    "lineno": 28,
+    "focalfunc": "func WithRandomExpireOffsetFunc(fn func() time.Duration) RandomExpireCacheOption",
+    "funcbody": "func WithRandomExpireOffsetFunc(fn func() time.Duration) RandomExpireCacheOption {\n\treturn func(cache *RandomExpireCache) {\n\t\tcache.offset = fn\n\t}\n}",
+    "funcname": "WithRandomExpireOffsetFunc"
+}

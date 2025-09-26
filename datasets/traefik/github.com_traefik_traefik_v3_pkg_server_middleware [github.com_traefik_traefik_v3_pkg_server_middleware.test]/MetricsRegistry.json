@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 109,
+    "focalfunc": "func (o *ObservabilityMgr) MetricsRegistry() metrics.Registry",
+    "funcbody": "func (o *ObservabilityMgr) MetricsRegistry() metrics.Registry {\n\tif o == nil {\n\t\treturn nil\n\t}\n\n\treturn o.metricsRegistry\n}",
+    "funcname": "MetricsRegistry"
+}

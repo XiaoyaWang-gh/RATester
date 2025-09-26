@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 724,
+    "focalfunc": "func (u *transformationUpdate) updateFromCtx(ctx *ResourceTransformationCtx)",
+    "funcbody": "func (u *transformationUpdate) updateFromCtx(ctx *ResourceTransformationCtx) {\n\tu.targetPath = ctx.OutPath\n\tu.mediaType = ctx.OutMediaType\n\tu.data = ctx.Data\n\tu.targetPath = ctx.InPath\n}",
+    "funcname": "updateFromCtx"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/grace.go",
+    "lineno": 172,
+    "focalfunc": "func ListenAndServe(addr string, handler http.Handler) error",
+    "funcbody": "func ListenAndServe(addr string, handler http.Handler) error {\n\tserver := NewServer(addr, handler)\n\treturn server.ListenAndServe()\n}",
+    "funcname": "ListenAndServe"
+}

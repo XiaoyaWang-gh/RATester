@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 214,
+    "focalfunc": "func (c *hugoBuilder) initMutexProfile() (func(), error)",
+    "funcbody": "func (c *hugoBuilder) initMutexProfile() (func(), error) {\n\tif c.r.mutexprofile == \"\" {\n\t\treturn nil, nil\n\t}\n\n\tf, err := os.Create(c.r.mutexprofile)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\truntime.SetMutexProfileFraction(1)\n\n\treturn func() {\n\t\tpprof.Lookup(\"mutex\").WriteTo(f, 0)\n\t\tf.Close()\n\t}, nil\n}",
+    "funcname": "initMutexProfile"
+}

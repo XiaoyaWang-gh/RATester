@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 41,
+    "focalfunc": "func (g *Group) DELETE(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) DELETE(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn g.Add(http.MethodDelete, path, h, m...)\n}",
+    "funcname": "DELETE"
+}

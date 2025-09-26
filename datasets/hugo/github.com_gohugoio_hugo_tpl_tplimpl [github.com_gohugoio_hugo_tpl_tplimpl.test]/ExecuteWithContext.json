@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 237,
+    "focalfunc": "func (t *templateExec) ExecuteWithContext(ctx context.Context, templ tpl.Template, wr io.Writer, data any) error",
+    "funcbody": "func (t *templateExec) ExecuteWithContext(ctx context.Context, templ tpl.Template, wr io.Writer, data any) error {\n\tif rlocker, ok := templ.(types.RLocker); ok {\n\t\trlocker.RLock()\n\t\tdefer rlocker.RUnlock()\n\t}\n\tif t.Metrics != nil {\n\t\tdefer t.Metrics.MeasureSince(templ.Name(), time.Now())\n\t}\n\n\tif t.templateUsageTracker != nil {\n\t\tif ts, ok := templ.(*templateState); ok {\n\n\t\t\tt.templateUsageTrackerMu.Lock()\n\t\t\tif _, found := t.templateUsageTracker[ts.Name()]; !found {\n\t\t\t\tt.templateUsageTracker[ts.Name()] = ts.info\n\t\t\t}\n\n\t\t\tif !ts.baseInfo.IsZero() {\n\t\t\t\tif _, found := t.templateUsageTracker[ts.baseInfo.name]; !found {\n\t\t\t\t\tt.templateUsageTracker[ts.baseInfo.name] = ts.baseInfo\n\t\t\t\t}\n\t\t\t}\n\t\t\tt.templateUsageTrackerMu.Unlock()\n\t\t}\n\t}\n\n\texecErr := t.executor.ExecuteWithContext(ctx, templ, wr, data)\n\tif execErr != nil {\n\t\towner := templ\n\t\tif ts, ok := templ.(*templateState); ok && ts.owner != nil {\n\t\t\towner = ts.owner\n\t\t}\n\t\texecErr = t.addFileContext(owner, execErr)\n\t}\n\treturn execErr\n}",
+    "funcname": "ExecuteWithContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 349,
+    "focalfunc": "func (p *pagePathBuilder) Link() string",
+    "funcbody": "func (p *pagePathBuilder) Link() string {\n\tlink := p.Path(p.linkUpperOffset)\n\n\tif p.baseNameSameAsType {\n\t\tlink = strings.TrimSuffix(link, p.d.BaseName)\n\t}\n\n\tif p.prefixLink != \"\" {\n\t\tlink = \"/\" + p.prefixLink + link\n\t}\n\n\tif p.linkUpperOffset > 0 && !strings.HasSuffix(link, \"/\") {\n\t\tlink += \"/\"\n\t}\n\n\treturn link\n}",
+    "funcname": "Link"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 387,
+    "focalfunc": "func (l Length) DefaultMessage() string",
+    "funcbody": "func (l Length) DefaultMessage() string {\n\treturn fmt.Sprintf(MessageTmpls[\"Length\"], l.N)\n}",
+    "funcname": "DefaultMessage"
+}

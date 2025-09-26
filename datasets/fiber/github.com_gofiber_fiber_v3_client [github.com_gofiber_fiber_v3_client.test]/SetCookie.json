@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 648,
+    "focalfunc": "func (c Cookie) SetCookie(key, val string)",
+    "funcbody": "func (c Cookie) SetCookie(key, val string) {\n\tc[key] = val\n}",
+    "funcname": "SetCookie"
+}

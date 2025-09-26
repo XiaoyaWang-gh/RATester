@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/nomad.go",
+    "lineno": 417,
+    "focalfunc": "func (p *Provider) fetchService(ctx context.Context, name string) ([]*api.ServiceRegistration, error)",
+    "funcbody": "func (p *Provider) fetchService(ctx context.Context, name string) ([]*api.ServiceRegistration, error) {\n\tvar tagFilter string\n\tif !p.ExposedByDefault {\n\t\ttagFilter = fmt.Sprintf(`Tags contains %q`, fmt.Sprintf(\"%s.enable=true\", p.Prefix))\n\t}\n\n\topts := &api.QueryOptions{AllowStale: p.Stale, Filter: tagFilter}\n\topts = opts.WithContext(ctx)\n\n\tservices, _, err := p.client.Services().Get(name, opts)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to fetch services: %w\", err)\n\t}\n\treturn services, nil\n}",
+    "funcname": "fetchService"
+}

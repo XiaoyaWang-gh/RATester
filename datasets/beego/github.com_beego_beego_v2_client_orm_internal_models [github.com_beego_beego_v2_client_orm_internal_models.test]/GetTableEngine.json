@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 86,
+    "focalfunc": "func GetTableEngine(val reflect.Value) string",
+    "funcbody": "func GetTableEngine(val reflect.Value) string {\n\tfun := val.MethodByName(\"TableEngine\")\n\tif fun.IsValid() {\n\t\tvals := fun.Call([]reflect.Value{})\n\t\tif len(vals) > 0 && vals[0].Kind() == reflect.String {\n\t\t\treturn vals[0].String()\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetTableEngine"
+}

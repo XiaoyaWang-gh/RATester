@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 131,
+    "focalfunc": "func (c *Captcha) Handler(ctx *context.Context)",
+    "funcbody": "func (c *Captcha) Handler(ctx *context.Context) {\n\tvar chars []byte\n\n\tid := path.Base(ctx.Request.RequestURI)\n\tif i := strings.Index(id, \".\"); i != -1 {\n\t\tid = id[:i]\n\t}\n\n\tkey := c.key(id)\n\n\tif len(ctx.Input.Query(\"reload\")) > 0 {\n\t\tchars = c.genRandChars()\n\t\tif err := c.store.Put(context2.Background(), key, chars, c.Expiration); err != nil {\n\t\t\tctx.Output.SetStatus(500)\n\t\t\tctx.WriteString(\"captcha reload error\")\n\t\t\tlogs.Error(\"Reload Create Captcha Error:\", err)\n\t\t\treturn\n\t\t}\n\t} else {\n\t\tval, _ := c.store.Get(context2.Background(), key)\n\t\tif v, ok := val.([]byte); ok {\n\t\t\tchars = v\n\t\t} else {\n\t\t\tctx.Output.SetStatus(404)\n\t\t\tctx.WriteString(\"captcha not found\")\n\t\t\treturn\n\t\t}\n\t}\n\n\timg := NewImage(chars, c.StdWidth, c.StdHeight)\n\tif _, err := img.WriteTo(ctx.ResponseWriter); err != nil {\n\t\tlogs.Error(\"Write Captcha Image Error:\", err)\n\t}\n}",
+    "funcname": "Handler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 88,
+    "focalfunc": "func (c ConfigLanguage) TemplateMetrics() bool",
+    "funcbody": "func (c ConfigLanguage) TemplateMetrics() bool {\n\treturn c.config.TemplateMetrics\n}",
+    "funcname": "TemplateMetrics"
+}

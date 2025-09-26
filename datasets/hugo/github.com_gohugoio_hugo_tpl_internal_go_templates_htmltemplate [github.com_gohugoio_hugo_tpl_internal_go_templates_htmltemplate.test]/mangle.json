@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/context.go",
+    "lineno": 57,
+    "focalfunc": "func (c context) mangle(templateName string) string",
+    "funcbody": "func (c context) mangle(templateName string) string {\n\n\tif c.state == stateText {\n\t\treturn templateName\n\t}\n\ts := templateName + \"$htmltemplate_\" + c.state.String()\n\tif c.delim != delimNone {\n\t\ts += \"_\" + c.delim.String()\n\t}\n\tif c.urlPart != urlPartNone {\n\t\ts += \"_\" + c.urlPart.String()\n\t}\n\tif c.jsCtx != jsCtxRegexp {\n\t\ts += \"_\" + c.jsCtx.String()\n\t}\n\tif c.attr != attrNone {\n\t\ts += \"_\" + c.attr.String()\n\t}\n\tif c.element != elementNone {\n\t\ts += \"_\" + c.element.String()\n\t}\n\treturn s\n}",
+    "funcname": "mangle"
+}

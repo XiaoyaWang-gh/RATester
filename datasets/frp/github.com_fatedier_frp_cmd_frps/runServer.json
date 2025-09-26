@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frps/root.go",
+    "lineno": 101,
+    "focalfunc": "func runServer(cfg *v1.ServerConfig) (err error)",
+    "funcbody": "func runServer(cfg *v1.ServerConfig) (err error) {\n\tlog.InitLogger(cfg.Log.To, cfg.Log.Level, int(cfg.Log.MaxDays), cfg.Log.DisablePrintColor)\n\n\tif cfgFile != \"\" {\n\t\tlog.Infof(\"frps uses config file: %s\", cfgFile)\n\t} else {\n\t\tlog.Infof(\"frps uses command line arguments for config\")\n\t}\n\n\tsvr, err := server.NewService(cfg)\n\tif err != nil {\n\t\treturn err\n\t}\n\tlog.Infof(\"frps started successfully\")\n\tsvr.Run(context.Background())\n\treturn\n}",
+    "funcname": "runServer"
+}

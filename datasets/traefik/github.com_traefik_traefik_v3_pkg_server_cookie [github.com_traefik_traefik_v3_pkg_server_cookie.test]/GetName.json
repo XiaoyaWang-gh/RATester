@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/cookie/cookie.go",
+    "lineno": 14,
+    "focalfunc": "func GetName(cookieName, backendName string) string",
+    "funcbody": "func GetName(cookieName, backendName string) string {\n\tif len(cookieName) != 0 {\n\t\treturn sanitizeName(cookieName)\n\t}\n\n\treturn GenerateName(backendName)\n}",
+    "funcname": "GetName"
+}

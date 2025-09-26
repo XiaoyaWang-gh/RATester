@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 262,
+    "focalfunc": "func (c *JSONConfigContainer) Set(key, val string) error",
+    "funcbody": "func (c *JSONConfigContainer) Set(key, val string) error {\n\tc.Lock()\n\tdefer c.Unlock()\n\tc.data[key] = val\n\treturn nil\n}",
+    "funcname": "Set"
+}

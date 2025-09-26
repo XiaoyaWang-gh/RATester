@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 259,
+    "focalfunc": "func (c ConfigLanguage) EnableEmoji() bool",
+    "funcbody": "func (c ConfigLanguage) EnableEmoji() bool {\n\treturn c.config.EnableEmoji\n}",
+    "funcname": "EnableEmoji"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/plain.go",
+    "lineno": 14,
+    "focalfunc": "func (plainBinding) Name() string",
+    "funcbody": "func (plainBinding) Name() string {\n\treturn \"plain\"\n}",
+    "funcname": "Name"
+}

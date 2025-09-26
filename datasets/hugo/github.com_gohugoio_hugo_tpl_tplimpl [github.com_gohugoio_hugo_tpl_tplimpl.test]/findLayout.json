@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 478,
+    "focalfunc": "func (t *templateHandler) findLayout(d layouts.LayoutDescriptor, f output.Format) (tpl.Template, bool, error)",
+    "funcbody": "func (t *templateHandler) findLayout(d layouts.LayoutDescriptor, f output.Format) (tpl.Template, bool, error) {\n\td.OutputFormatName = f.Name\n\td.Suffix = f.MediaType.FirstSuffix.Suffix\n\tlayouts, _ := t.layoutHandler.For(d)\n\tfor _, name := range layouts {\n\t\ttempl, found := t.main.Lookup(name)\n\t\tif found {\n\t\t\treturn templ, true, nil\n\t\t}\n\n\t\toverlay, found := t.needsBaseof[name]\n\n\t\tif !found {\n\t\t\tcontinue\n\t\t}\n\n\t\td.Baseof = true\n\t\tbaseLayouts, _ := t.layoutHandler.For(d)\n\t\tvar base templateInfo\n\t\tfound = false\n\t\tfor _, l := range baseLayouts {\n\t\t\tbase, found = t.baseof[l]\n\t\t\tif found {\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\ttempl, err := t.applyBaseTemplate(overlay, base)\n\t\tif err != nil {\n\t\t\treturn nil, false, err\n\t\t}\n\n\t\tts := newTemplateState(nil, templ, overlay, identity.Or(base, overlay))\n\n\t\tif found {\n\t\t\tts.baseInfo = base\n\t\t}\n\n\t\tif _, err := t.applyTemplateTransformers(t.main, ts); err != nil {\n\t\t\treturn nil, false, err\n\t\t}\n\n\t\tif err := t.extractPartials(ts.Template); err != nil {\n\t\t\treturn nil, false, err\n\t\t}\n\n\t\treturn ts, true, nil\n\n\t}\n\n\treturn nil, false, nil\n}",
+    "funcname": "findLayout"
+}

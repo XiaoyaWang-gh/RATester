@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 111,
+    "focalfunc": "func (c Config) CheckAllowedExec(name string) error",
+    "funcbody": "func (c Config) CheckAllowedExec(name string) error {\n\tif !c.Exec.Allow.Accept(name) {\n\t\treturn &AccessDeniedError{\n\t\t\tname:\t\tname,\n\t\t\tpath:\t\t\"security.exec.allow\",\n\t\t\tpolicies:\tc.ToTOML(),\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "CheckAllowedExec"
+}

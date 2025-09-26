@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 44,
+    "focalfunc": "func New(deps *deps.Deps) (*Namespace, error)",
+    "funcbody": "func New(deps *deps.Deps) (*Namespace, error) {\n\tif deps.ResourceSpec == nil {\n\t\treturn &Namespace{}, nil\n\t}\n\n\tminifyClient, err := minifier.New(deps.ResourceSpec)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &Namespace{\n\t\tdeps:\t\t\tdeps,\n\t\tcreateClient:\t\tcreate.New(deps.ResourceSpec),\n\t\tbundlerClient:\t\tbundler.New(deps.ResourceSpec),\n\t\tintegrityClient:\tintegrity.New(deps.ResourceSpec),\n\t\tminifyClient:\t\tminifyClient,\n\t\ttemplatesClient:\ttemplates.New(deps.ResourceSpec, deps),\n\t}, nil\n}",
+    "funcname": "New"
+}

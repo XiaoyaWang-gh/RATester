@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 47,
+    "focalfunc": "func NewOutput() *BeegoOutput",
+    "funcbody": "func NewOutput() *BeegoOutput {\n\treturn &BeegoOutput{}\n}",
+    "funcname": "NewOutput"
+}

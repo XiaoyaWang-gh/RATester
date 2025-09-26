@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 95,
+    "focalfunc": "func FromFileToMap(fs afero.Fs, filename string) (map[string]any, error)",
+    "funcbody": "func FromFileToMap(fs afero.Fs, filename string) (map[string]any, error) {\n\treturn loadConfigFromFile(fs, filename)\n}",
+    "funcname": "FromFileToMap"
+}

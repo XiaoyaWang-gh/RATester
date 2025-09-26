@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 235,
+    "focalfunc": "func (c *Controller) HandlerFunc(fnname string) bool",
+    "funcbody": "func (c *Controller) HandlerFunc(fnname string) bool {\n\tif v, ok := c.methodMapping[fnname]; ok {\n\t\tv()\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "HandlerFunc"
+}

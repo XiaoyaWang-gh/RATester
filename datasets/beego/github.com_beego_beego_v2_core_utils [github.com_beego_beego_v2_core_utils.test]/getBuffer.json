@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 414,
+    "focalfunc": "func getBuffer() *bytes.Buffer",
+    "funcbody": "func getBuffer() *bytes.Buffer {\n\treturn bufPool.Get().(*bytes.Buffer)\n}",
+    "funcname": "getBuffer"
+}

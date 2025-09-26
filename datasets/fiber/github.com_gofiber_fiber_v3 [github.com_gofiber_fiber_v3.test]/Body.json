@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 331,
+    "focalfunc": "func (c *DefaultCtx) Body() []byte",
+    "funcbody": "func (c *DefaultCtx) Body() []byte {\n\tvar (\n\t\terr\t\t\terror\n\t\tbody, originalBody\t[]byte\n\t\theaderEncoding\t\tstring\n\t\tencodingOrder\t\t= []string{\"\", \"\", \"\"}\n\t)\n\n\theaderEncoding = utils.UnsafeString(c.Request().Header.ContentEncoding())\n\n\tif len(headerEncoding) == 0 {\n\t\treturn c.getBody()\n\t}\n\n\tencodingOrder = getSplicedStrList(headerEncoding, encodingOrder)\n\tif len(encodingOrder) == 0 {\n\t\treturn c.getBody()\n\t}\n\n\tvar decodesRealized uint8\n\tbody, decodesRealized, err = c.tryDecodeBodyInOrder(&originalBody, encodingOrder)\n\n\tif originalBody != nil && decodesRealized > 0 {\n\t\tc.fasthttp.Request.SetBodyRaw(originalBody)\n\t}\n\tif err != nil {\n\t\treturn []byte(err.Error())\n\t}\n\n\tif c.app.config.Immutable {\n\t\treturn utils.CopyBytes(body)\n\t}\n\treturn body\n}",
+    "funcname": "Body"
+}

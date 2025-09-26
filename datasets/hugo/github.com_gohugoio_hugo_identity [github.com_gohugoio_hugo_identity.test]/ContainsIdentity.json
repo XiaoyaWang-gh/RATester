@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 332,
+    "focalfunc": "func (im *identityManager) ContainsIdentity(id Identity) FinderResult",
+    "funcbody": "func (im *identityManager) ContainsIdentity(id Identity) FinderResult {\n\tif im.Identity != Anonymous && id == im.Identity {\n\t\treturn FinderFound\n\t}\n\n\tf := NewFinder(FinderConfig{Exact: true})\n\tr := f.Contains(id, im, -1)\n\n\treturn r\n}",
+    "funcname": "ContainsIdentity"
+}

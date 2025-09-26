@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 206,
+    "focalfunc": "func (ln *TCPMuxGroupListener) Accept() (c net.Conn, err error)",
+    "funcbody": "func (ln *TCPMuxGroupListener) Accept() (c net.Conn, err error) {\n\tvar ok bool\n\tselect {\n\tcase <-ln.closeCh:\n\t\treturn nil, ErrListenerClosed\n\tcase c, ok = <-ln.group.Accept():\n\t\tif !ok {\n\t\t\treturn nil, ErrListenerClosed\n\t\t}\n\t\treturn c, nil\n\t}\n}",
+    "funcname": "Accept"
+}

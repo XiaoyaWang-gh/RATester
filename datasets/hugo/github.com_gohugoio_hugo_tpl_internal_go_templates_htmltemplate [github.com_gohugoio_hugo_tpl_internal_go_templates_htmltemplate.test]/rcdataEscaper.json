@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/html.go",
+    "lineno": 36,
+    "focalfunc": "func rcdataEscaper(args ...any) string",
+    "funcbody": "func rcdataEscaper(args ...any) string {\n\ts, t := stringify(args...)\n\tif t == contentTypeHTML {\n\t\treturn htmlReplacer(s, htmlNormReplacementTable, true)\n\t}\n\treturn htmlReplacer(s, htmlReplacementTable, true)\n}",
+    "funcname": "rcdataEscaper"
+}

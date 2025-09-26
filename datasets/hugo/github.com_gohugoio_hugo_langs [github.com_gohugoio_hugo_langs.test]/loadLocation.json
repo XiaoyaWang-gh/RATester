@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 115,
+    "focalfunc": "func (l *Language) loadLocation(tzStr string) error",
+    "funcbody": "func (l *Language) loadLocation(tzStr string) error {\n\tlocation, err := time.LoadLocation(tzStr)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"invalid timeZone for language %q: %w\", l.Lang, err)\n\t}\n\tl.location = location\n\n\treturn nil\n}",
+    "funcname": "loadLocation"
+}

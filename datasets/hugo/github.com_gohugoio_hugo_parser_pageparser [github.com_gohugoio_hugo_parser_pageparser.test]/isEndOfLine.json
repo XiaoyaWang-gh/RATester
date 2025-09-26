@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 524,
+    "focalfunc": "func isEndOfLine(r rune) bool",
+    "funcbody": "func isEndOfLine(r rune) bool {\n\treturn r == '\\r' || r == '\\n'\n}",
+    "funcname": "isEndOfLine"
+}

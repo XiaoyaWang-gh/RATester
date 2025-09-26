@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 254,
+    "focalfunc": "func randIntn(n int) int",
+    "funcbody": "func randIntn(n int) int {\n\treturn prng.Intn(n)\n}",
+    "funcname": "randIntn"
+}

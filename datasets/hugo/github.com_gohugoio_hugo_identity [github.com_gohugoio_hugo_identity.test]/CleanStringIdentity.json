@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 63,
+    "focalfunc": "func CleanStringIdentity(s string) StringIdentity",
+    "funcbody": "func CleanStringIdentity(s string) StringIdentity {\n\treturn StringIdentity(CleanString(s))\n}",
+    "funcname": "CleanStringIdentity"
+}

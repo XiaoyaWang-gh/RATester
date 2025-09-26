@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 130,
+    "focalfunc": "func getTypeMi(mdTyp reflect.Type) *models.ModelInfo",
+    "funcbody": "func getTypeMi(mdTyp reflect.Type) *models.ModelInfo {\n\tname := models.GetFullName(mdTyp)\n\tif mi, ok := defaultModelCache.GetByFullName(name); ok {\n\t\treturn mi\n\t}\n\tpanic(fmt.Errorf(\"<Ormer> table: `%s` not found, make sure it was registered with `RegisterModel()`\", name))\n}",
+    "funcname": "getTypeMi"
+}

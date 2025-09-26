@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 166,
+    "focalfunc": "func (b *tocBuilder) Build()",
+    "funcbody": "func (b *tocBuilder) Build() {\n\tb.writeNav(b.h)\n}",
+    "funcname": "Build"
+}

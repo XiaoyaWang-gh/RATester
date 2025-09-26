@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 152,
+    "focalfunc": "func (provider *EtcdConfigerProvider) Parse(key string) (config.Configer, error)",
+    "funcbody": "func (provider *EtcdConfigerProvider) Parse(key string) (config.Configer, error) {\n\treturn provider.ParseData([]byte(key))\n}",
+    "funcname": "Parse"
+}

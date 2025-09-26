@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 176,
+    "focalfunc": "func (d *DoNothingQuerySetter) RowsToMap(result *orm.Params, keyCol, valueCol string) (int64, error)",
+    "funcbody": "func (d *DoNothingQuerySetter) RowsToMap(result *orm.Params, keyCol, valueCol string) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "RowsToMap"
+}

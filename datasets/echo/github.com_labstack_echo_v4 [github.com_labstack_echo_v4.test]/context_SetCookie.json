@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 425,
+    "focalfunc": "func (c *context) SetCookie(cookie *http.Cookie)",
+    "funcbody": "func (c *context) SetCookie(cookie *http.Cookie) {\n\thttp.SetCookie(c.Response(), cookie)\n}",
+    "funcname": "SetCookie"
+}

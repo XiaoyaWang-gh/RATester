@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 69,
+    "focalfunc": "func (s *Stack[T]) DrainMatching(predicate func(T) bool) []T",
+    "funcbody": "func (s *Stack[T]) DrainMatching(predicate func(T) bool) []T {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\tvar items []T\n\tfor i := len(s.items) - 1; i >= 0; i-- {\n\t\tif predicate(s.items[i]) {\n\t\t\titems = append(items, s.items[i])\n\t\t\ts.items = append(s.items[:i], s.items[i+1:]...)\n\t\t}\n\t}\n\treturn items\n}",
+    "funcname": "DrainMatching"
+}

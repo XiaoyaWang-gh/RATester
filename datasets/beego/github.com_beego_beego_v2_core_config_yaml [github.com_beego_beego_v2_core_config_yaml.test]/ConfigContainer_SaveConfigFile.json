@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 292,
+    "focalfunc": "func (c *ConfigContainer) SaveConfigFile(filename string) (err error)",
+    "funcbody": "func (c *ConfigContainer) SaveConfigFile(filename string) (err error) {\n\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\tbuf, err := yaml.Marshal(c.data)\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = f.Write(buf)\n\treturn err\n}",
+    "funcname": "SaveConfigFile"
+}

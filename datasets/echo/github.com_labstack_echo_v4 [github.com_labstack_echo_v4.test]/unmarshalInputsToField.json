@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 319,
+    "focalfunc": "func unmarshalInputsToField(valueKind reflect.Kind, values []string, field reflect.Value) (bool, error)",
+    "funcbody": "func unmarshalInputsToField(valueKind reflect.Kind, values []string, field reflect.Value) (bool, error) {\n\tif valueKind == reflect.Ptr {\n\t\tif field.IsNil() {\n\t\t\tfield.Set(reflect.New(field.Type().Elem()))\n\t\t}\n\t\tfield = field.Elem()\n\t}\n\n\tfieldIValue := field.Addr().Interface()\n\tunmarshaler, ok := fieldIValue.(bindMultipleUnmarshaler)\n\tif !ok {\n\t\treturn false, nil\n\t}\n\treturn true, unmarshaler.UnmarshalParams(values)\n}",
+    "funcname": "unmarshalInputsToField"
+}

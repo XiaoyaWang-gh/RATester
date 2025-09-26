@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 40,
+    "focalfunc": "func NewTCPMuxGroupCtl(tcpMuxHTTPConnectMuxer *tcpmux.HTTPConnectTCPMuxer) *TCPMuxGroupCtl",
+    "funcbody": "func NewTCPMuxGroupCtl(tcpMuxHTTPConnectMuxer *tcpmux.HTTPConnectTCPMuxer) *TCPMuxGroupCtl {\n\treturn &TCPMuxGroupCtl{\n\t\tgroups:\t\t\tmake(map[string]*TCPMuxGroup),\n\t\ttcpMuxHTTPConnectMuxer:\ttcpMuxHTTPConnectMuxer,\n\t}\n}",
+    "funcname": "NewTCPMuxGroupCtl"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 759,
+    "focalfunc": "func (p *Provider) FillExtensionBuilderRegistry(registry gateway.ExtensionBuilderRegistry)",
+    "funcbody": "func (p *Provider) FillExtensionBuilderRegistry(registry gateway.ExtensionBuilderRegistry) {\n\tregistry.RegisterFilterFuncs(traefikv1alpha1.GroupName, \"Middleware\", func(name, namespace string) (string, *dynamic.Middleware, error) {\n\t\tif len(p.Namespaces) > 0 && !slices.Contains(p.Namespaces, namespace) {\n\t\t\treturn \"\", nil, fmt.Errorf(\"namespace %q is not allowed\", namespace)\n\t\t}\n\n\t\treturn makeID(namespace, name) + providerNamespaceSeparator + providerName, nil, nil\n\t})\n\n\tregistry.RegisterBackendFuncs(traefikv1alpha1.GroupName, \"TraefikService\", func(name, namespace string) (string, *dynamic.Service, error) {\n\t\tif len(p.Namespaces) > 0 && !slices.Contains(p.Namespaces, namespace) {\n\t\t\treturn \"\", nil, fmt.Errorf(\"namespace %q is not allowed\", namespace)\n\t\t}\n\n\t\treturn makeID(namespace, name) + providerNamespaceSeparator + providerName, nil, nil\n\t})\n}",
+    "funcname": "FillExtensionBuilderRegistry"
+}

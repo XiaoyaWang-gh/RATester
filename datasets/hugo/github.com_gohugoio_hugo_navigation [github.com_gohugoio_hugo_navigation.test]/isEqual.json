@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 127,
+    "focalfunc": "func (m *MenuEntry) isEqual(inme *MenuEntry) bool",
+    "funcbody": "func (m *MenuEntry) isEqual(inme *MenuEntry) bool {\n\treturn m.hopefullyUniqueID() == inme.hopefullyUniqueID() && m.Parent == inme.Parent\n}",
+    "funcname": "isEqual"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 14,
+    "focalfunc": "func Error(v ...any)",
+    "funcbody": "func Error(v ...any) {\n\tlogger.Error(v...)\n}",
+    "funcname": "Error"
+}

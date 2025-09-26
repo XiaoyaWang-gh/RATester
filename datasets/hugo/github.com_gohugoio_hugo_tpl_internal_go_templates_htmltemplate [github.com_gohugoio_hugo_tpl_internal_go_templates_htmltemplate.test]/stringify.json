@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/content.go",
+    "lineno": 68,
+    "focalfunc": "func stringify(args ...any) (string, contentType)",
+    "funcbody": "func stringify(args ...any) (string, contentType) {\n\tif len(args) == 1 {\n\t\tswitch s := indirect(args[0]).(type) {\n\t\tcase string:\n\t\t\treturn s, contentTypePlain\n\t\tcase htmltemplate.CSS:\n\t\t\treturn string(s), contentTypeCSS\n\t\tcase htmltemplate.HTML:\n\t\t\treturn string(s), contentTypeHTML\n\t\tcase htmltemplate.HTMLAttr:\n\t\t\treturn string(s), contentTypeHTMLAttr\n\t\tcase htmltemplate.JS:\n\t\t\treturn string(s), contentTypeJS\n\t\tcase htmltemplate.JSStr:\n\t\t\treturn string(s), contentTypeJSStr\n\t\tcase htmltemplate.URL:\n\t\t\treturn string(s), contentTypeURL\n\t\tcase htmltemplate.Srcset:\n\t\t\treturn string(s), contentTypeSrcset\n\t\t}\n\t}\n\ti := 0\n\tfor _, arg := range args {\n\n\t\tif arg == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\targs[i] = indirectToStringerOrError(arg)\n\t\ti++\n\t}\n\treturn fmt.Sprint(args[:i]...), contentTypePlain\n}",
+    "funcname": "stringify"
+}

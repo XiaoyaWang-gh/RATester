@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 621,
+    "focalfunc": "func (e *escaper) escapeTemplate(c context, n *parse.TemplateNode) context",
+    "funcbody": "func (e *escaper) escapeTemplate(c context, n *parse.TemplateNode) context {\n\tc, name := e.escapeTree(c, n, n.Name, n.Line)\n\tif name != n.Name {\n\t\te.editTemplateNode(n, name)\n\t}\n\treturn c\n}",
+    "funcname": "escapeTemplate"
+}

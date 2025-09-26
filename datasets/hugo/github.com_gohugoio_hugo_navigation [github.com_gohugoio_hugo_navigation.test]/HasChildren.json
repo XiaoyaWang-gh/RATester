@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 104,
+    "focalfunc": "func (m *MenuEntry) HasChildren() bool",
+    "funcbody": "func (m *MenuEntry) HasChildren() bool {\n\treturn m.Children != nil\n}",
+    "funcname": "HasChildren"
+}

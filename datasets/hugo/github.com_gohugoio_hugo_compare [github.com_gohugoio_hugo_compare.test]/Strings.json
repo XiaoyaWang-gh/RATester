@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/compare/compare_strings.go",
+    "lineno": 23,
+    "focalfunc": "func Strings(s, t string) int",
+    "funcbody": "func Strings(s, t string) int {\n\tc := compareFold(s, t)\n\n\tif c == 0 {\n\n\t\treturn strings.Compare(s, t)\n\t}\n\n\treturn c\n}",
+    "funcname": "Strings"
+}

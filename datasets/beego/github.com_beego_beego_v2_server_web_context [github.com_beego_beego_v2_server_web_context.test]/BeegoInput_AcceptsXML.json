@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 201,
+    "focalfunc": "func (input *BeegoInput) AcceptsXML() bool",
+    "funcbody": "func (input *BeegoInput) AcceptsXML() bool {\n\treturn acceptsXMLRegex.MatchString(input.Header(\"Accept\"))\n}",
+    "funcname": "AcceptsXML"
+}

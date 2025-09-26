@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 221,
+    "focalfunc": "func (s shortcode) insertPlaceholder() bool",
+    "funcbody": "func (s shortcode) insertPlaceholder() bool {\n\treturn !s.doMarkup || s.configVersion() == 1\n}",
+    "funcname": "insertPlaceholder"
+}

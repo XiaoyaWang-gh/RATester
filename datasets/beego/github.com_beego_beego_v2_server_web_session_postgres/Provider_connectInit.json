@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/postgres/sess_postgresql.go",
+    "lineno": 140,
+    "focalfunc": "func (mp *Provider) connectInit() *sql.DB",
+    "funcbody": "func (mp *Provider) connectInit() *sql.DB {\n\tdb, e := sql.Open(\"postgres\", mp.savePath)\n\tif e != nil {\n\t\treturn nil\n\t}\n\treturn db\n}",
+    "funcname": "connectInit"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentelemetry/filter.go",
+    "lineno": 85,
+    "focalfunc": "func invOperationName(ctx context.Context, inv *orm.Invocation) string",
+    "funcbody": "func invOperationName(ctx context.Context, inv *orm.Invocation) string {\n\tif n, ok := ctx.Value(orm.TxNameKey).(string); ok {\n\t\treturn inv.Method + \"#tx(\" + n + \")\"\n\t}\n\treturn inv.Method + \"#\" + inv.GetTableName()\n}",
+    "funcname": "invOperationName"
+}

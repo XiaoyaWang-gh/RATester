@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 187,
+    "focalfunc": "func normalizePathSlash(path string) string",
+    "funcbody": "func normalizePathSlash(path string) string {\n\tif path == \"\" {\n\t\tpath = \"/\"\n\t} else if path[0] != '/' {\n\t\tpath = \"/\" + path\n\t}\n\treturn path\n}",
+    "funcname": "normalizePathSlash"
+}

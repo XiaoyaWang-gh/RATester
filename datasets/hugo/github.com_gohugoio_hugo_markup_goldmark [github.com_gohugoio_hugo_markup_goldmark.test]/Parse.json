@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 243,
+    "focalfunc": "func (c *goldmarkConverter) Parse(ctx converter.RenderContext) (converter.ResultParse, error)",
+    "funcbody": "func (c *goldmarkConverter) Parse(ctx converter.RenderContext) (converter.ResultParse, error) {\n\tpctx := c.newParserContext(ctx)\n\treader := text.NewReader(ctx.Src)\n\n\tdoc := c.md.Parser().Parse(\n\t\treader,\n\t\tparser.WithContext(pctx),\n\t)\n\n\treturn parserResult{\n\t\tdoc:\tdoc,\n\t\ttoc:\tpctx.TableOfContents(),\n\t}, nil\n}",
+    "funcname": "Parse"
+}

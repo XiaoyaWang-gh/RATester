@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 356,
+    "focalfunc": "func (t *Template) Lookup(name string) *Template",
+    "funcbody": "func (t *Template) Lookup(name string) *Template {\n\tt.nameSpace.mu.Lock()\n\tdefer t.nameSpace.mu.Unlock()\n\treturn t.set[name]\n}",
+    "funcname": "Lookup"
+}

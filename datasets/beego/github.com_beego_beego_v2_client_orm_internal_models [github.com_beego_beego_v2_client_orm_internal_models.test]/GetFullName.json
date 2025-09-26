@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 67,
+    "focalfunc": "func GetFullName(typ reflect.Type) string",
+    "funcbody": "func GetFullName(typ reflect.Type) string {\n\treturn typ.PkgPath() + \".\" + typ.Name()\n}",
+    "funcname": "GetFullName"
+}

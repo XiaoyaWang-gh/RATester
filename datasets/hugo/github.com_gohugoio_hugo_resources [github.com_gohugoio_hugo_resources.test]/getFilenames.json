@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_cache.go",
+    "lineno": 88,
+    "focalfunc": "func (c *ResourceCache) getFilenames(key string) (string, string)",
+    "funcbody": "func (c *ResourceCache) getFilenames(key string) (string, string) {\n\tfilenameMeta := key + \".json\"\n\tfilenameContent := key + \".content\"\n\n\treturn filenameMeta, filenameContent\n}",
+    "funcname": "getFilenames"
+}

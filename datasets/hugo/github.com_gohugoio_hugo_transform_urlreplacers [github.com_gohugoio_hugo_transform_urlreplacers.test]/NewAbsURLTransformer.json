@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurl.go",
+    "lineno": 22,
+    "focalfunc": "func NewAbsURLTransformer(path string) transform.Transformer",
+    "funcbody": "func NewAbsURLTransformer(path string) transform.Transformer {\n\treturn func(ft transform.FromTo) error {\n\t\tar.replaceInHTML(path, ft)\n\t\treturn nil\n\t}\n}",
+    "funcname": "NewAbsURLTransformer"
+}

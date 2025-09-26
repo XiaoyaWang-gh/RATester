@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 327,
+    "focalfunc": "func (e FloatField) Value() float64",
+    "funcbody": "func (e FloatField) Value() float64 {\n\treturn float64(e)\n}",
+    "funcname": "Value"
+}

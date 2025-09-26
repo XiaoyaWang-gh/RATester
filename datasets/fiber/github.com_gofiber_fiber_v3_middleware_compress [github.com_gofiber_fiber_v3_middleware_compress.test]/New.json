@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/compress/compress.go",
+    "lineno": 9,
+    "focalfunc": "func New(config ...Config) fiber.Handler",
+    "funcbody": "func New(config ...Config) fiber.Handler {\n\n\tcfg := configDefault(config...)\n\n\t// Setup request handlers\n\tvar (\n\t\tfctx\t\t= func(_ *fasthttp.RequestCtx) {}\n\t\tcompressor\tfasthttp.RequestHandler\n\t)\n\n\tswitch cfg.Level {\n\tcase LevelDefault:\n\n\t\tcompressor = fasthttp.CompressHandlerBrotliLevel(fctx,\n\t\t\tfasthttp.CompressBrotliDefaultCompression,\n\t\t\tfasthttp.CompressDefaultCompression,\n\t\t)\n\tcase LevelBestSpeed:\n\n\t\tcompressor = fasthttp.CompressHandlerBrotliLevel(fctx,\n\t\t\tfasthttp.CompressBrotliBestSpeed,\n\t\t\tfasthttp.CompressBestSpeed,\n\t\t)\n\tcase LevelBestCompression:\n\n\t\tcompressor = fasthttp.CompressHandlerBrotliLevel(fctx,\n\t\t\tfasthttp.CompressBrotliBestCompression,\n\t\t\tfasthttp.CompressBestCompression,\n\t\t)\n\tdefault:\n\n\t\treturn func(c fiber.Ctx) error {\n\t\t\treturn c.Next()\n\t\t}\n\t}\n\n\treturn func(c fiber.Ctx) error {\n\n\t\tif cfg.Next != nil && cfg.Next(c) {\n\t\t\treturn c.Next()\n\t\t}\n\n\t\tif err := c.Next(); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tcompressor(c.Context())\n\n\t\treturn nil\n\t}\n}",
+    "funcname": "New"
+}

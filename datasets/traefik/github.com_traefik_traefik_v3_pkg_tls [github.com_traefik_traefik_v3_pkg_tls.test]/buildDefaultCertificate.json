@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tlsmanager.go",
+    "lineno": 414,
+    "focalfunc": "func buildDefaultCertificate(defaultCertificate *Certificate) (*tls.Certificate, error)",
+    "funcbody": "func buildDefaultCertificate(defaultCertificate *Certificate) (*tls.Certificate, error) {\n\tcertFile, err := defaultCertificate.CertFile.Read()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to get cert file content: %w\", err)\n\t}\n\n\tkeyFile, err := defaultCertificate.KeyFile.Read()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to get key file content: %w\", err)\n\t}\n\n\tcert, err := tls.X509KeyPair(certFile, keyFile)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to load X509 key pair: %w\", err)\n\t}\n\treturn &cert, nil\n}",
+    "funcname": "buildDefaultCertificate"
+}

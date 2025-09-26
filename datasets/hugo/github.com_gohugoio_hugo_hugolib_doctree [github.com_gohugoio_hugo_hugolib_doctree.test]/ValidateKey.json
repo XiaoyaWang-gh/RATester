@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 83,
+    "focalfunc": "func ValidateKey(key string) error",
+    "funcbody": "func ValidateKey(key string) error {\n\tif key == \"\" {\n\n\t\treturn nil\n\t}\n\n\tif len(key) < 2 {\n\t\treturn fmt.Errorf(\"too short key: %q\", key)\n\t}\n\n\tif key[0] != '/' {\n\t\treturn fmt.Errorf(\"key must start with '/': %q\", key)\n\t}\n\n\tif key[len(key)-1] == '/' {\n\t\treturn fmt.Errorf(\"key must not end with '/': %q\", key)\n\t}\n\n\treturn nil\n}",
+    "funcname": "ValidateKey"
+}

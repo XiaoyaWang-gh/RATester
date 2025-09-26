@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_querym2m.go",
+    "lineno": 113,
+    "focalfunc": "func (o *queryM2M) Remove(mds ...interface{}) (int64, error)",
+    "funcbody": "func (o *queryM2M) Remove(mds ...interface{}) (int64, error) {\n\treturn o.RemoveWithCtx(context.Background(), mds...)\n}",
+    "funcname": "Remove"
+}

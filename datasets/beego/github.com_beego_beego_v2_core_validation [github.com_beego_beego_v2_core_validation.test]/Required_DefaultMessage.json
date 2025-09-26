@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 168,
+    "focalfunc": "func (r Required) DefaultMessage() string",
+    "funcbody": "func (r Required) DefaultMessage() string {\n\treturn MessageTmpls[\"Required\"]\n}",
+    "funcname": "DefaultMessage"
+}

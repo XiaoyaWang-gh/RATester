@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 177,
+    "focalfunc": "func (ns *Namespace) ByType(typ any) resource.Resources",
+    "funcbody": "func (ns *Namespace) ByType(typ any) resource.Resources {\n\treturn ns.createClient.ByType(cast.ToString(typ))\n}",
+    "funcname": "ByType"
+}

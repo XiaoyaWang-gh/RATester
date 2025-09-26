@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 359,
+    "focalfunc": "func (p *ControllerRegister) GetContext() *beecontext.Context",
+    "funcbody": "func (p *ControllerRegister) GetContext() *beecontext.Context {\n\treturn p.pool.Get().(*beecontext.Context)\n}",
+    "funcname": "GetContext"
+}

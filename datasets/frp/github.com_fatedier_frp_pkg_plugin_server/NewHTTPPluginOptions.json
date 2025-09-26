@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/http.go",
+    "lineno": 39,
+    "focalfunc": "func NewHTTPPluginOptions(options v1.HTTPPluginOptions) Plugin",
+    "funcbody": "func NewHTTPPluginOptions(options v1.HTTPPluginOptions) Plugin {\n\turl := fmt.Sprintf(\"%s%s\", options.Addr, options.Path)\n\n\tvar client *http.Client\n\tif strings.HasPrefix(url, \"https://\") {\n\t\ttr := &http.Transport{\n\t\t\tTLSClientConfig: &tls.Config{InsecureSkipVerify: !options.TLSVerify},\n\t\t}\n\t\tclient = &http.Client{Transport: tr}\n\t} else {\n\t\tclient = &http.Client{}\n\t}\n\n\tif !strings.HasPrefix(url, \"https://\") && !strings.HasPrefix(url, \"http://\") {\n\t\turl = \"http://\" + url\n\t}\n\treturn &httpPlugin{\n\t\toptions:\toptions,\n\t\turl:\t\turl,\n\t\tclient:\t\tclient,\n\t}\n}",
+    "funcname": "NewHTTPPluginOptions"
+}

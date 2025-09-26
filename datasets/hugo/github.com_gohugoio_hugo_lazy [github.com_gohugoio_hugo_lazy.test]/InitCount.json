@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 54,
+    "focalfunc": "func (ini *Init) InitCount() int",
+    "funcbody": "func (ini *Init) InitCount() int {\n\ti := atomic.LoadUint64(&ini.initCount)\n\treturn int(i)\n}",
+    "funcname": "InitCount"
+}

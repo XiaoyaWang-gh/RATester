@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1191,
+    "focalfunc": "func makeID(namespace, name string) string",
+    "funcbody": "func makeID(namespace, name string) string {\n\tif namespace == \"\" {\n\t\treturn name\n\t}\n\n\treturn namespace + \"-\" + name\n}",
+    "funcname": "makeID"
+}

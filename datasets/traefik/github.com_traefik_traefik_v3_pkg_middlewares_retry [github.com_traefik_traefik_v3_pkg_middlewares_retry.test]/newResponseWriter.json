@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/retry/retry.go",
+    "lineno": 174,
+    "focalfunc": "func newResponseWriter(rw http.ResponseWriter, shouldRetry bool) *responseWriter",
+    "funcbody": "func newResponseWriter(rw http.ResponseWriter, shouldRetry bool) *responseWriter {\n\treturn &responseWriter{\n\t\tresponseWriter:\trw,\n\t\theaders:\tmake(http.Header),\n\t\tshouldRetry:\tshouldRetry,\n\t}\n}",
+    "funcname": "newResponseWriter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 208,
+    "focalfunc": "func grpcStatusCode(rw http.ResponseWriter) int",
+    "funcbody": "func grpcStatusCode(rw http.ResponseWriter) int {\n\tcode := codes.Unknown\n\tif status := rw.Header().Get(\"Grpc-Status\"); status != \"\" {\n\t\tif err := code.UnmarshalJSON([]byte(status)); err != nil {\n\t\t\treturn int(code)\n\t\t}\n\t}\n\treturn int(code)\n}",
+    "funcname": "grpcStatusCode"
+}

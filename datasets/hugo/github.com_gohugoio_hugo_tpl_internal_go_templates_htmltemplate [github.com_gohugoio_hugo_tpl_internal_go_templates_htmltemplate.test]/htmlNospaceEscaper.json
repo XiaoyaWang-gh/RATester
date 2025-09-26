@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/html.go",
+    "lineno": 15,
+    "focalfunc": "func htmlNospaceEscaper(args ...any) string",
+    "funcbody": "func htmlNospaceEscaper(args ...any) string {\n\ts, t := stringify(args...)\n\tif s == \"\" {\n\t\treturn filterFailsafe\n\t}\n\tif t == contentTypeHTML {\n\t\treturn htmlReplacer(stripTags(s), htmlNospaceNormReplacementTable, false)\n\t}\n\treturn htmlReplacer(s, htmlNospaceReplacementTable, false)\n}",
+    "funcname": "htmlNospaceEscaper"
+}

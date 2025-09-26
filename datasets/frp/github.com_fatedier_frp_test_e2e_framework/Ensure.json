@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 104,
+    "focalfunc": "func (e *RequestExpect) Ensure(fns ...EnsureFunc)",
+    "funcbody": "func (e *RequestExpect) Ensure(fns ...EnsureFunc) {\n\tret, err := e.req.Do()\n\tif e.expectError {\n\t\tExpectErrorWithOffset(1, err, e.explain...)\n\t\treturn\n\t}\n\tExpectNoErrorWithOffset(1, err, e.explain...)\n\n\tif len(fns) == 0 {\n\t\tif !bytes.Equal(e.expectResp, ret.Content) {\n\t\t\tflog.Tracef(\"Response info: %+v\", ret)\n\t\t}\n\t\tExpectEqualValuesWithOffset(1, string(ret.Content), string(e.expectResp), e.explain...)\n\t} else {\n\t\tfor _, fn := range fns {\n\t\t\tok := fn(ret)\n\t\t\tif !ok {\n\t\t\t\tflog.Tracef(\"Response info: %+v\", ret)\n\t\t\t}\n\t\t\tExpectTrueWithOffset(1, ok, e.explain...)\n\t\t}\n\t}\n}",
+    "funcname": "Ensure"
+}

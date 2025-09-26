@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 324,
+    "focalfunc": "func GobDecode(data []byte, to *FileCacheItem) error",
+    "funcbody": "func GobDecode(data []byte, to *FileCacheItem) error {\n\tbuf := bytes.NewBuffer(data)\n\tdec := gob.NewDecoder(buf)\n\terr := dec.Decode(&to)\n\tif err != nil {\n\t\treturn berror.Wrap(err, InvalidGobEncodedData,\n\t\t\t\"could not decode this data to FileCacheItem. Make sure that the data is encoded by GOB.\")\n\t}\n\treturn nil\n}",
+    "funcname": "GobDecode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 151,
+    "focalfunc": "func (input *BeegoInput) IsHead() bool",
+    "funcbody": "func (input *BeegoInput) IsHead() bool {\n\treturn input.Is(\"HEAD\")\n}",
+    "funcname": "IsHead"
+}

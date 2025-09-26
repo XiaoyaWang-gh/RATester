@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 100,
+    "focalfunc": "func (c *Client) GoPath() string",
+    "funcbody": "func (c *Client) GoPath() string {\n\treturn c.goPath\n}",
+    "funcname": "GoPath"
+}

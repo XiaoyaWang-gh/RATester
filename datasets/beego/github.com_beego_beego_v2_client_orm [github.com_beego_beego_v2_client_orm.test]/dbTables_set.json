@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 52,
+    "focalfunc": "func (t *dbTables) set(names []string, mi *models.ModelInfo, fi *models.FieldInfo, inner bool) *dbTable",
+    "funcbody": "func (t *dbTables) set(names []string, mi *models.ModelInfo, fi *models.FieldInfo, inner bool) *dbTable {\n\tname := strings.Join(names, ExprSep)\n\tif j, ok := t.tablesM[name]; ok {\n\t\tj.name = name\n\t\tj.mi = mi\n\t\tj.fi = fi\n\t\tj.inner = inner\n\t} else {\n\t\ti := len(t.tables) + 1\n\t\tjt := &dbTable{i, fmt.Sprintf(\"T%d\", i), name, names, false, inner, mi, fi, nil}\n\t\tt.tablesM[name] = jt\n\t\tt.tables = append(t.tables, jt)\n\t}\n\treturn t.tablesM[name]\n}",
+    "funcname": "set"
+}

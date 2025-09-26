@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 196,
+    "focalfunc": "func headerRegexp(tree *matchersTree, headers ...string) error",
+    "funcbody": "func headerRegexp(tree *matchersTree, headers ...string) error {\n\tkey, value := http.CanonicalHeaderKey(headers[0]), headers[1]\n\n\tre, err := regexp.Compile(value)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"compiling HeaderRegexp matcher: %w\", err)\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\tfor _, headerValue := range req.Header[key] {\n\t\t\tif re.MatchString(headerValue) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn nil\n}",
+    "funcname": "headerRegexp"
+}

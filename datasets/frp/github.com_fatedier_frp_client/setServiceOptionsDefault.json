@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 90,
+    "focalfunc": "func setServiceOptionsDefault(options *ServiceOptions)",
+    "funcbody": "func setServiceOptionsDefault(options *ServiceOptions) {\n\tif options.Common != nil {\n\t\toptions.Common.Complete()\n\t}\n\tif options.ConnectorCreator == nil {\n\t\toptions.ConnectorCreator = NewConnector\n\t}\n}",
+    "funcname": "setServiceOptionsDefault"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 200,
+    "focalfunc": "func (w *gzipResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (w *gzipResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\treturn http.NewResponseController(w.ResponseWriter).Hijack()\n}",
+    "funcname": "Hijack"
+}

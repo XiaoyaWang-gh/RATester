@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 391,
+    "focalfunc": "func resetDirectory(dir string) error",
+    "funcbody": "func resetDirectory(dir string) error {\n\tdirPath, err := filepath.Abs(dir)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to get absolute path of %s: %w\", dir, err)\n\t}\n\n\tcurrentPath, err := os.Getwd()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to get the current directory: %w\", err)\n\t}\n\n\tif strings.HasPrefix(currentPath, dirPath) {\n\t\treturn fmt.Errorf(\"cannot be deleted: the directory path %s is the parent of the current path %s\", dirPath, currentPath)\n\t}\n\n\terr = os.RemoveAll(dir)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to remove directory %s: %w\", dirPath, err)\n\t}\n\n\terr = os.MkdirAll(dir, 0o755)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to create directory %s: %w\", dirPath, err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "resetDirectory"
+}

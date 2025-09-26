@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 294,
+    "focalfunc": "func (r *codeModifier) WriteHeader(code int)",
+    "funcbody": "func (r *codeModifier) WriteHeader(code int) {\n\tif r.headerSent {\n\t\treturn\n\t}\n\n\tif code >= 100 && code <= 199 {\n\n\t\tfor k, v := range r.headerMap {\n\t\t\tr.responseWriter.Header()[k] = v\n\t\t}\n\n\t\tr.responseWriter.WriteHeader(code)\n\t\treturn\n\t}\n\n\tfor k, v := range r.headerMap {\n\t\tr.responseWriter.Header()[k] = v\n\t}\n\tr.responseWriter.WriteHeader(r.code)\n\tr.headerSent = true\n}",
+    "funcname": "WriteHeader"
+}

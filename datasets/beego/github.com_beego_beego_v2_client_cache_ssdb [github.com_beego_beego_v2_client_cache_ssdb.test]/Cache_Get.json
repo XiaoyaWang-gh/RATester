@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 29,
+    "focalfunc": "func (rc *Cache) Get(ctx context.Context, key string) (interface{}, error)",
+    "funcbody": "func (rc *Cache) Get(ctx context.Context, key string) (interface{}, error) {\n\tvalue, err := rc.conn.Get(key)\n\tif err == nil {\n\t\treturn value, nil\n\t}\n\treturn nil, berror.Wrapf(err, cache.SsdbCacheCurdFailed, \"could not get value, key: %s\", key)\n}",
+    "funcname": "Get"
+}

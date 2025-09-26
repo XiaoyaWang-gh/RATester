@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 210,
+    "focalfunc": "func (v *Validation) Email(obj interface{}, key string) *Result",
+    "funcbody": "func (v *Validation) Email(obj interface{}, key string) *Result {\n\treturn v.apply(Email{Match{Regexp: emailPattern}, key}, obj)\n}",
+    "funcname": "Email"
+}

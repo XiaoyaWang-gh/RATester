@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 104,
+    "focalfunc": "func (p *PathSpec) IsAbsURL(in string) (bool, error)",
+    "funcbody": "func (p *PathSpec) IsAbsURL(in string) (bool, error) {\n\n\tif strings.HasPrefix(in, \"http://\") || strings.HasPrefix(in, \"https://\") {\n\t\treturn true, nil\n\t}\n\tu, err := url.Parse(in)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn u.IsAbs(), nil\n}",
+    "funcname": "IsAbsURL"
+}

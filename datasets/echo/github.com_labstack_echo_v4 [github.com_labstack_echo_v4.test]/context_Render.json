@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 460,
+    "focalfunc": "func (c *context) Render(code int, name string, data interface{}) (err error)",
+    "funcbody": "func (c *context) Render(code int, name string, data interface{}) (err error) {\n\tif c.echo.Renderer == nil {\n\t\treturn ErrRendererNotRegistered\n\t}\n\tbuf := new(bytes.Buffer)\n\tif err = c.echo.Renderer.Render(buf, name, data, c); err != nil {\n\t\treturn\n\t}\n\treturn c.HTMLBlob(code, buf.Bytes())\n}",
+    "funcname": "Render"
+}

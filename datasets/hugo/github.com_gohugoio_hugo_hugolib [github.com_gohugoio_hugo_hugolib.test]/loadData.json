@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 495,
+    "focalfunc": "func (h *HugoSites) loadData() error",
+    "funcbody": "func (h *HugoSites) loadData() error {\n\th.data = make(map[string]any)\n\tw := hugofs.NewWalkway(\n\t\thugofs.WalkwayConfig{\n\t\t\tFs:\t\th.PathSpec.BaseFs.Data.Fs,\n\t\t\tIgnoreFile:\th.SourceSpec.IgnoreFile,\n\t\t\tPathParser:\th.Conf.PathParser(),\n\t\t\tWalkFn: func(path string, fi hugofs.FileMetaInfo) error {\n\t\t\t\tif fi.IsDir() {\n\t\t\t\t\treturn nil\n\t\t\t\t}\n\t\t\t\tpi := fi.Meta().PathInfo\n\t\t\t\tif pi == nil {\n\t\t\t\t\tpanic(\"no path info\")\n\t\t\t\t}\n\t\t\t\treturn h.handleDataFile(source.NewFileInfo(fi))\n\t\t\t},\n\t\t})\n\n\tif err := w.Walk(); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "loadData"
+}

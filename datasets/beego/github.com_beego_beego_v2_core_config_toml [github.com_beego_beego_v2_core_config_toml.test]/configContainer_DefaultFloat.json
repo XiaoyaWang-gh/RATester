@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 248,
+    "focalfunc": "func (c *configContainer) DefaultFloat(key string, defaultVal float64) float64",
+    "funcbody": "func (c *configContainer) DefaultFloat(key string, defaultVal float64) float64 {\n\tres, err := c.get(key)\n\tif err != nil {\n\t\treturn defaultVal\n\t}\n\tif f, ok := res.(float64); ok {\n\t\treturn f\n\t} else {\n\t\treturn defaultVal\n\t}\n}",
+    "funcname": "DefaultFloat"
+}

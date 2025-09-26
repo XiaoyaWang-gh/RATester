@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/logger.go",
+    "lineno": 23,
+    "focalfunc": "func setupLogger(staticConfiguration *static.Configuration)",
+    "funcbody": "func setupLogger(staticConfiguration *static.Configuration) {\n\n\tw := getLogWriter(staticConfiguration)\n\n\tlogLevel := getLogLevel(staticConfiguration)\n\n\tlogCtx := zerolog.New(w).With().Timestamp()\n\tif logLevel <= zerolog.DebugLevel {\n\t\tlogCtx = logCtx.Caller()\n\t}\n\n\tlog.Logger = logCtx.Logger().Level(logLevel)\n\tzerolog.DefaultContextLogger = &log.Logger\n\tzerolog.SetGlobalLevel(logLevel)\n\n\tlogrus.StandardLogger().Out = logs.NoLevel(log.Logger, zerolog.DebugLevel)\n\n\tstdlog.SetFlags(stdlog.Lshortfile | stdlog.LstdFlags)\n\tstdlog.SetOutput(logs.NoLevel(log.Logger, zerolog.DebugLevel))\n}",
+    "funcname": "setupLogger"
+}

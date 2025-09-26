@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/publisher.go",
+    "lineno": 135,
+    "focalfunc": "func (p DestinationPublisher) PublishStats() PublishStats",
+    "funcbody": "func (p DestinationPublisher) PublishStats() PublishStats {\n\tif p.htmlElementsCollector == nil {\n\t\treturn PublishStats{}\n\t}\n\n\treturn PublishStats{\n\t\tHTMLElements: p.htmlElementsCollector.getHTMLElements(),\n\t}\n}",
+    "funcname": "PublishStats"
+}

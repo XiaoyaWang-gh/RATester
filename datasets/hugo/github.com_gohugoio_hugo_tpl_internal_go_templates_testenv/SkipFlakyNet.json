@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 370,
+    "focalfunc": "func SkipFlakyNet(t testing.TB)",
+    "funcbody": "func SkipFlakyNet(t testing.TB) {\n\tt.Helper()\n\tif v, _ := strconv.ParseBool(os.Getenv(\"GO_BUILDER_FLAKY_NET\")); v {\n\t\tt.Skip(\"skipping test on builder known to have frequent network failures\")\n\t}\n}",
+    "funcname": "SkipFlakyNet"
+}

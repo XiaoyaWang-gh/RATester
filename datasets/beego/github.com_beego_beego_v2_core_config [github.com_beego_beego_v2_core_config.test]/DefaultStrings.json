@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 68,
+    "focalfunc": "func DefaultStrings(key string, defaultVal []string) []string",
+    "funcbody": "func DefaultStrings(key string, defaultVal []string) []string {\n\treturn globalInstance.DefaultStrings(key, defaultVal)\n}",
+    "funcname": "DefaultStrings"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 135,
+    "focalfunc": "func (t *Template) ExecuteTemplate(wr io.Writer, name string, data any) error",
+    "funcbody": "func (t *Template) ExecuteTemplate(wr io.Writer, name string, data any) error {\n\ttmpl, err := t.lookupAndEscapeTemplate(name)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn tmpl.text.Execute(wr, data)\n}",
+    "funcname": "ExecuteTemplate"
+}

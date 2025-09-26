@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 115,
+    "focalfunc": "func (d *dbBaseSqlite) ShowTablesQuery() string",
+    "funcbody": "func (d *dbBaseSqlite) ShowTablesQuery() string {\n\treturn \"SELECT name FROM sqlite_master WHERE type = 'table'\"\n}",
+    "funcname": "ShowTablesQuery"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 313,
+    "focalfunc": "func (v *Validation) AddError(key, message string)",
+    "funcbody": "func (v *Validation) AddError(key, message string) {\n\tName := key\n\tField := \"\"\n\n\tLabel := \"\"\n\tparts := strings.Split(key, \".\")\n\tif len(parts) == 3 {\n\t\tField = parts[0]\n\t\tName = parts[1]\n\t\tLabel = parts[2]\n\t\tif len(Label) == 0 {\n\t\t\tLabel = Field\n\t\t}\n\t}\n\n\terr := &Error{\n\t\tMessage:\tLabel + \" \" + message,\n\t\tKey:\t\tkey,\n\t\tName:\t\tName,\n\t\tField:\t\tField,\n\t\tLabel:\t\tLabel,\n\t}\n\tv.setError(err)\n}",
+    "funcname": "AddError"
+}

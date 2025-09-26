@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 34,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tLogger = log.New(\n\t\tlog.WithCaller(true),\n\t\tlog.AddCallerSkip(1),\n\t\tlog.WithLevel(log.InfoLevel),\n\t)\n}",
+    "funcname": "init"
+}

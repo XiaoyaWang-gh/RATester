@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/helpers.go",
+    "lineno": 13,
+    "focalfunc": "func compareStrings(a, b string) bool",
+    "funcbody": "func compareStrings(a, b string) bool {\n\treturn subtle.ConstantTimeCompare([]byte(a), []byte(b)) == 1\n}",
+    "funcname": "compareStrings"
+}

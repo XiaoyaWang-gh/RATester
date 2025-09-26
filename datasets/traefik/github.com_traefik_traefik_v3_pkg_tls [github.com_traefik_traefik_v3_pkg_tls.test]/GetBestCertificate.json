@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate_store.go",
+    "lineno": 75,
+    "focalfunc": "func (c *CertificateStore) GetBestCertificate(clientHello *tls.ClientHelloInfo) *tls.Certificate",
+    "funcbody": "func (c *CertificateStore) GetBestCertificate(clientHello *tls.ClientHelloInfo) *tls.Certificate {\n\tif c == nil {\n\t\treturn nil\n\t}\n\tserverName := strings.ToLower(strings.TrimSpace(clientHello.ServerName))\n\tif len(serverName) == 0 {\n\n\t\thost, _, err := net.SplitHostPort(clientHello.Conn.LocalAddr().String())\n\t\tif err != nil {\n\t\t\tlog.Debug().Err(err).Msg(\"Could not split host/port\")\n\t\t}\n\t\tserverName = strings.TrimSpace(host)\n\t}\n\n\tif cert, ok := c.CertCache.Get(serverName); ok {\n\t\treturn cert.(*tls.Certificate)\n\t}\n\n\tmatchedCerts := map[string]*tls.Certificate{}\n\tif c.DynamicCerts != nil && c.DynamicCerts.Get() != nil {\n\t\tfor domains, cert := range c.DynamicCerts.Get().(map[string]*tls.Certificate) {\n\t\t\tfor _, certDomain := range strings.Split(domains, \",\") {\n\t\t\t\tif matchDomain(serverName, certDomain) {\n\t\t\t\t\tmatchedCerts[certDomain] = cert\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tif len(matchedCerts) > 0 {\n\n\t\tkeys := make([]string, 0, len(matchedCerts))\n\t\tfor k := range matchedCerts {\n\t\t\tkeys = append(keys, k)\n\t\t}\n\t\tsort.Strings(keys)\n\n\t\tc.CertCache.SetDefault(serverName, matchedCerts[keys[len(keys)-1]])\n\t\treturn matchedCerts[keys[len(keys)-1]]\n\t}\n\n\treturn nil\n}",
+    "funcname": "GetBestCertificate"
+}

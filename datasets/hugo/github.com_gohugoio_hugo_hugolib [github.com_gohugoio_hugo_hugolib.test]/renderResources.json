@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 500,
+    "focalfunc": "func (p *pageState) renderResources() error",
+    "funcbody": "func (p *pageState) renderResources() error {\n\tvar initErr error\n\n\tp.resourcesPublishInit.Do(func() {\n\t\tfor _, r := range p.Resources() {\n\t\t\tif _, ok := r.(page.Page); ok {\n\n\t\t\t\tp.s.PathSpec.ProcessingStats.Incr(&p.s.PathSpec.ProcessingStats.Pages)\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tif _, isWrapper := r.(resource.ResourceWrapper); isWrapper {\n\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tsrc, ok := r.(resource.Source)\n\t\t\tif !ok {\n\t\t\t\tinitErr = fmt.Errorf(\"resource %T does not support resource.Source\", r)\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\tif err := src.Publish(); err != nil {\n\t\t\t\tif !herrors.IsNotExist(err) {\n\t\t\t\t\tp.s.Log.Errorf(\"Failed to publish Resource for page %q: %s\", p.pathOrTitle(), err)\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tp.s.PathSpec.ProcessingStats.Incr(&p.s.PathSpec.ProcessingStats.Files)\n\t\t\t}\n\t\t}\n\t})\n\n\treturn initErr\n}",
+    "funcname": "renderResources"
+}

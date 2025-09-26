@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/resampling.go",
+    "lineno": 177,
+    "focalfunc": "func (r resamp) String() string",
+    "funcbody": "func (r resamp) String() string {\n\treturn r.name\n}",
+    "funcname": "String"
+}

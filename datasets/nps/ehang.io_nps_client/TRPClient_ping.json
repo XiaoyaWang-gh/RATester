@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 281,
+    "focalfunc": "func (s *TRPClient) ping()",
+    "funcbody": "func (s *TRPClient) ping() {\n\ts.ticker = time.NewTicker(time.Second * 5)\nloop:\n\tfor {\n\t\tselect {\n\t\tcase <-s.ticker.C:\n\t\t\tif s.tunnel != nil && s.tunnel.IsClose {\n\t\t\t\ts.Close()\n\t\t\t\tbreak loop\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "ping"
+}

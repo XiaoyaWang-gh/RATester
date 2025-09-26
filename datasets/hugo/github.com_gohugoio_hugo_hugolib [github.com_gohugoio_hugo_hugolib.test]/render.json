@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 109,
+    "focalfunc": "func (pco *pageContentOutput) Render(ctx context.Context, layout ...string) (template.HTML, error)",
+    "funcbody": "func (pco *pageContentOutput) Render(ctx context.Context, layout ...string) (template.HTML, error) {\n\tif len(layout) == 0 {\n\t\treturn \"\", errors.New(\"no layout given\")\n\t}\n\ttempl, found, err := pco.po.p.resolveTemplate(layout...)\n\tif err != nil {\n\t\treturn \"\", pco.po.p.wrapError(err)\n\t}\n\n\tif !found {\n\t\treturn \"\", nil\n\t}\n\n\tres, err := executeToString(ctx, pco.po.p.s.Tmpl(), templ, pco.po.p)\n\tif err != nil {\n\t\treturn \"\", pco.po.p.wrapError(fmt.Errorf(\"failed to execute template %s: %w\", templ.Name(), err))\n\t}\n\treturn template.HTML(res), nil\n}",
+    "funcname": "Render"
+}

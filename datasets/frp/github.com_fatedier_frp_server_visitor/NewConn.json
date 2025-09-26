@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/visitor/visitor.go",
+    "lineno": 66,
+    "focalfunc": "func (vm *Manager) NewConn(name string, conn net.Conn, timestamp int64, signKey string,\n\tuseEncryption bool, useCompression bool, visitorUser string,\n) (err error)",
+    "funcbody": "func (vm *Manager) NewConn(name string, conn net.Conn, timestamp int64, signKey string,\n\tuseEncryption bool, useCompression bool, visitorUser string,\n) (err error) {\n\tvm.mu.RLock()\n\tdefer vm.mu.RUnlock()\n\n\tif l, ok := vm.listeners[name]; ok {\n\t\tif util.GetAuthKey(l.sk, timestamp) != signKey {\n\t\t\terr = fmt.Errorf(\"visitor connection of [%s] auth failed\", name)\n\t\t\treturn\n\t\t}\n\n\t\tif !slices.Contains(l.allowUsers, visitorUser) && !slices.Contains(l.allowUsers, \"*\") {\n\t\t\terr = fmt.Errorf(\"visitor connection of [%s] user [%s] not allowed\", name, visitorUser)\n\t\t\treturn\n\t\t}\n\n\t\tvar rwc io.ReadWriteCloser = conn\n\t\tif useEncryption {\n\t\t\tif rwc, err = libio.WithEncryption(rwc, []byte(l.sk)); err != nil {\n\t\t\t\terr = fmt.Errorf(\"create encryption connection failed: %v\", err)\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t\tif useCompression {\n\t\t\trwc = libio.WithCompression(rwc)\n\t\t}\n\t\terr = l.l.PutConn(netpkg.WrapReadWriteCloserToConn(rwc, conn))\n\t} else {\n\t\terr = fmt.Errorf(\"custom listener for [%s] doesn't exist\", name)\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "NewConn"
+}

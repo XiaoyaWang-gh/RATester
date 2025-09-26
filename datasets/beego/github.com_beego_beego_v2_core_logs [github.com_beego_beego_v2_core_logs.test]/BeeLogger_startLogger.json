@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 381,
+    "focalfunc": "func (bl *BeeLogger) startLogger()",
+    "funcbody": "func (bl *BeeLogger) startLogger() {\n\tgameOver := false\n\tfor {\n\t\tselect {\n\t\tcase bm, ok := <-bl.msgChan:\n\n\t\t\tif ok {\n\t\t\t\tbl.writeToLoggers(bm)\n\t\t\t\tlogMsgPool.Put(bm)\n\t\t\t}\n\t\tcase <-bl.closeChan:\n\t\t\tbl.flush()\n\t\t\tfor _, l := range bl.outputs {\n\t\t\t\tl.Destroy()\n\t\t\t}\n\t\t\tbl.outputs = nil\n\t\t\tgameOver = true\n\t\t\tbl.wg.Done()\n\t\tcase <-bl.flushChan:\n\t\t\tbl.flush()\n\t\t\tbl.wg.Done()\n\t\t}\n\t\tif gameOver {\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "startLogger"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/connect_tls.go",
+    "lineno": 25,
+    "focalfunc": "func (c *connectCert) getLeaf() traefiktls.Certificate",
+    "funcbody": "func (c *connectCert) getLeaf() traefiktls.Certificate {\n\treturn traefiktls.Certificate{\n\t\tCertFile:\ttypes.FileOrContent(c.leaf.cert),\n\t\tKeyFile:\ttypes.FileOrContent(c.leaf.key),\n\t}\n}",
+    "funcname": "getLeaf"
+}

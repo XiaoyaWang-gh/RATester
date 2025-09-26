@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/dynamic/middlewares.go",
+    "lineno": 355,
+    "focalfunc": "func (h *Headers) HasCustomHeadersDefined() bool",
+    "funcbody": "func (h *Headers) HasCustomHeadersDefined() bool {\n\treturn h != nil && (len(h.CustomResponseHeaders) != 0 ||\n\t\tlen(h.CustomRequestHeaders) != 0)\n}",
+    "funcname": "HasCustomHeadersDefined"
+}

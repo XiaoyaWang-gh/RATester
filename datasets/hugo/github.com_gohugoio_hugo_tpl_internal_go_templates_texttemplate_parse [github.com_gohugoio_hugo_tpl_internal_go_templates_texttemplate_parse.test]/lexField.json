@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 510,
+    "focalfunc": "func lexField(l *lexer) stateFn",
+    "funcbody": "func lexField(l *lexer) stateFn {\n\treturn lexFieldOrVariable(l, itemField)\n}",
+    "funcname": "lexField"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/tasks/tasks.go",
+    "lineno": 117,
+    "focalfunc": "func (r *RunEvery) Remove(name string)",
+    "funcbody": "func (r *RunEvery) Remove(name string) {\n\tr.mu.Lock()\n\tdefer r.mu.Unlock()\n\tdelete(r.funcs, name)\n}",
+    "funcname": "Remove"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/complement.go",
+    "lineno": 30,
+    "focalfunc": "func (ns *Namespace) Complement(ls ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Complement(ls ...any) (any, error) {\n\tif len(ls) < 2 {\n\t\treturn nil, errors.New(\"complement needs at least two arguments\")\n\t}\n\n\tuniverse := ls[len(ls)-1]\n\tas := ls[:len(ls)-1]\n\n\taset, err := collectIdentities(as...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tv := reflect.ValueOf(universe)\n\tswitch v.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\tsl := reflect.MakeSlice(v.Type(), 0, 0)\n\t\tfor i := 0; i < v.Len(); i++ {\n\t\t\tev, _ := indirectInterface(v.Index(i))\n\t\t\tif _, found := aset[normalize(ev)]; !found {\n\t\t\t\tsl = reflect.Append(sl, ev)\n\t\t\t}\n\t\t}\n\t\treturn sl.Interface(), nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"arguments to complement must be slices or arrays\")\n\t}\n}",
+    "funcname": "Complement"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 387,
+    "focalfunc": "func setFloatField(value string, bitSize int, field reflect.Value) error",
+    "funcbody": "func setFloatField(value string, bitSize int, field reflect.Value) error {\n\tif value == \"\" {\n\t\tvalue = \"0.0\"\n\t}\n\tfloatVal, err := strconv.ParseFloat(value, bitSize)\n\tif err == nil {\n\t\tfield.SetFloat(floatVal)\n\t}\n\treturn err\n}",
+    "funcname": "setFloatField"
+}

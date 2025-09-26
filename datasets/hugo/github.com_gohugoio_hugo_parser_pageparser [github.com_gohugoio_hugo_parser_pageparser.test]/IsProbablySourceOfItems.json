@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 215,
+    "focalfunc": "func IsProbablySourceOfItems(source []byte, items Items) bool",
+    "funcbody": "func IsProbablySourceOfItems(source []byte, items Items) bool {\n\tif len(source) == 0 && len(items) == 0 {\n\t\treturn false\n\t}\n\tif len(items) == 0 {\n\t\treturn false\n\t}\n\n\tlast := items[len(items)-1]\n\tif last.Type != tEOF {\n\t\treturn false\n\t}\n\n\tif last.Pos() != len(source) {\n\t\treturn false\n\t}\n\n\tfor _, item := range items {\n\t\tif item.Type == tError {\n\t\t\treturn false\n\t\t}\n\t\tif item.Type == tEOF {\n\t\t\treturn true\n\t\t}\n\n\t\tif item.Pos() >= len(source) {\n\t\t\treturn false\n\t\t}\n\n\t\tif item.firstByte != source[item.Pos()] {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "IsProbablySourceOfItems"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 160,
+    "focalfunc": "func (d *DoNothingQuerySetter) One(container interface{}, cols ...string) error",
+    "funcbody": "func (d *DoNothingQuerySetter) One(container interface{}, cols ...string) error {\n\treturn nil\n}",
+    "funcname": "One"
+}

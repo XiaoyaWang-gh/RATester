@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 315,
+    "focalfunc": "func emptyCall(fn reflect.Value, args ...reflect.Value) reflect.Value",
+    "funcbody": "func emptyCall(fn reflect.Value, args ...reflect.Value) reflect.Value {\n\tpanic(\"unreachable\")\n}",
+    "funcname": "emptyCall"
+}

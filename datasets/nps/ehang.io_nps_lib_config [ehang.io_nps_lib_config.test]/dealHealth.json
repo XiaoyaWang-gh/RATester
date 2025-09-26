@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 191,
+    "focalfunc": "func dealHealth(s string) *file.Health",
+    "funcbody": "func dealHealth(s string) *file.Health {\n\th := &file.Health{}\n\tfor _, v := range splitStr(s) {\n\t\titem := strings.Split(v, \"=\")\n\t\tif len(item) == 0 {\n\t\t\tcontinue\n\t\t} else if len(item) == 1 {\n\t\t\titem = append(item, \"\")\n\t\t}\n\t\tswitch strings.TrimSpace(item[0]) {\n\t\tcase \"health_check_timeout\":\n\t\t\th.HealthCheckTimeout = common.GetIntNoErrByStr(item[1])\n\t\tcase \"health_check_max_failed\":\n\t\t\th.HealthMaxFail = common.GetIntNoErrByStr(item[1])\n\t\tcase \"health_check_interval\":\n\t\t\th.HealthCheckInterval = common.GetIntNoErrByStr(item[1])\n\t\tcase \"health_http_url\":\n\t\t\th.HttpHealthUrl = item[1]\n\t\tcase \"health_check_type\":\n\t\t\th.HealthCheckType = item[1]\n\t\tcase \"health_check_target\":\n\t\t\th.HealthCheckTarget = item[1]\n\t\t}\n\t}\n\treturn h\n}",
+    "funcname": "dealHealth"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1064,
+    "focalfunc": "func (c *Context) String(code int, format string, values ...any)",
+    "funcbody": "func (c *Context) String(code int, format string, values ...any) {\n\tc.Render(code, render.String{Format: format, Data: values})\n}",
+    "funcname": "String"
+}

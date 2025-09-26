@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 125,
+    "focalfunc": "func (l *absurllexer) posAfterURL(q []byte) int",
+    "funcbody": "func (l *absurllexer) posAfterURL(q []byte) int {\n\tif len(q) > 0 {\n\n\t\treturn bytes.Index(l.content[l.pos:], q)\n\t}\n\n\treturn bytes.IndexFunc(l.content[l.pos:], func(r rune) bool {\n\t\treturn r == '>' || unicode.IsSpace(r)\n\t})\n}",
+    "funcname": "posAfterURL"
+}

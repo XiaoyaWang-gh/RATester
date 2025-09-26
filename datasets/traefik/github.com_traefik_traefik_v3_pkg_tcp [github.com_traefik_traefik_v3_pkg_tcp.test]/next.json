@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/wrr_load_balancer.go",
+    "lineno": 96,
+    "focalfunc": "func (b *WRRLoadBalancer) next() (Handler, error)",
+    "funcbody": "func (b *WRRLoadBalancer) next() (Handler, error) {\n\tif len(b.servers) == 0 {\n\t\treturn nil, errNoServersInPool\n\t}\n\n\tmaximum := b.maxWeight()\n\tif maximum == 0 {\n\t\treturn nil, errors.New(\"all servers have 0 weight\")\n\t}\n\n\tgcd := b.weightGcd()\n\n\tfor {\n\t\tb.index = (b.index + 1) % len(b.servers)\n\t\tif b.index == 0 {\n\t\t\tb.currentWeight -= gcd\n\t\t\tif b.currentWeight <= 0 {\n\t\t\t\tb.currentWeight = maximum\n\t\t\t}\n\t\t}\n\t\tsrv := b.servers[b.index]\n\t\tif srv.weight >= b.currentWeight {\n\t\t\treturn srv, nil\n\t\t}\n\t}\n}",
+    "funcname": "next"
+}

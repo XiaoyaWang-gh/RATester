@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 69,
+    "focalfunc": "func WithCustomHandler(handler func(net.Conn)) Option",
+    "funcbody": "func WithCustomHandler(handler func(net.Conn)) Option {\n\treturn func(s *Server) *Server {\n\t\ts.handler = handler\n\t\treturn s\n\t}\n}",
+    "funcname": "WithCustomHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 701,
+    "focalfunc": "func (t *templateHandler) applyBaseTemplate(overlay, base templateInfo) (tpl.Template, error)",
+    "funcbody": "func (t *templateHandler) applyBaseTemplate(overlay, base templateInfo) (tpl.Template, error) {\n\tif overlay.isText {\n\t\tvar (\n\t\t\ttempl\t= t.main.prototypeTextClone.New(overlay.name)\n\t\t\terr\terror\n\t\t)\n\n\t\tif !base.IsZero() {\n\t\t\ttempl, err = templ.Parse(base.template)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, base.errWithFileContext(\"parse failed\", err)\n\t\t\t}\n\t\t}\n\n\t\ttempl, err = texttemplate.Must(templ.Clone()).Parse(overlay.template)\n\t\tif err != nil {\n\t\t\treturn nil, overlay.errWithFileContext(\"parse failed\", err)\n\t\t}\n\n\t\treturn templ, nil\n\t}\n\n\tvar (\n\t\ttempl\t= t.main.prototypeHTMLClone.New(overlay.name)\n\t\terr\terror\n\t)\n\n\tif !base.IsZero() {\n\t\ttempl, err = templ.Parse(base.template)\n\t\tif err != nil {\n\t\t\treturn nil, base.errWithFileContext(\"parse failed\", err)\n\t\t}\n\t}\n\n\ttempl, err = htmltemplate.Must(templ.Clone()).Parse(overlay.template)\n\tif err != nil {\n\t\treturn nil, overlay.errWithFileContext(\"parse failed\", err)\n\t}\n\n\ttempl = templ.Lookup(templ.Name())\n\n\treturn templ, err\n}",
+    "funcname": "applyBaseTemplate"
+}

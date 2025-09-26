@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/manager.go",
+    "lineno": 410,
+    "focalfunc": "func (m *Manager) buildTCPHandler(ctx context.Context, router *runtime.TCPRouterInfo) (tcp.Handler, error)",
+    "funcbody": "func (m *Manager) buildTCPHandler(ctx context.Context, router *runtime.TCPRouterInfo) (tcp.Handler, error) {\n\tvar qualifiedNames []string\n\tfor _, name := range router.Middlewares {\n\t\tqualifiedNames = append(qualifiedNames, provider.GetQualifiedName(ctx, name))\n\t}\n\trouter.Middlewares = qualifiedNames\n\n\tif router.Service == \"\" {\n\t\treturn nil, errors.New(\"the service is missing on the router\")\n\t}\n\n\tsHandler, err := m.serviceManager.BuildTCP(ctx, router.Service)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tmHandler := m.middlewaresBuilder.BuildChain(ctx, router.Middlewares)\n\n\treturn tcp.NewChain().Extend(*mHandler).Then(sHandler)\n}",
+    "funcname": "buildTCPHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 52,
+    "focalfunc": "func GoWithRecover(goroutine func(), customRecover func(err interface{}))",
+    "funcbody": "func GoWithRecover(goroutine func(), customRecover func(err interface{})) {\n\tgo func() {\n\t\tdefer func() {\n\t\t\tif err := recover(); err != nil {\n\t\t\t\tcustomRecover(err)\n\t\t\t}\n\t\t}()\n\t\tgoroutine()\n\t}()\n}",
+    "funcname": "GoWithRecover"
+}

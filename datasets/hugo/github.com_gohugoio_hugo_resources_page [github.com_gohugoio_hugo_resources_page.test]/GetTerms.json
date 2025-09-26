@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 206,
+    "focalfunc": "func (p *nopPage) GetTerms(taxonomy string) Pages",
+    "funcbody": "func (p *nopPage) GetTerms(taxonomy string) Pages {\n\treturn nil\n}",
+    "funcname": "GetTerms"
+}

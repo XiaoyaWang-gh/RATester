@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_http.go",
+    "lineno": 123,
+    "focalfunc": "func getPathParam(uri *url.URL) (string, error)",
+    "funcbody": "func getPathParam(uri *url.URL) (string, error) {\n\texp := regexp.MustCompile(fmt.Sprintf(`^%s([^/]+)/?$`, http01.ChallengePath(\"\")))\n\tparts := exp.FindStringSubmatch(uri.Path)\n\n\tif len(parts) != 2 {\n\t\treturn \"\", errors.New(\"missing token\")\n\t}\n\n\treturn parts[1], nil\n}",
+    "funcname": "getPathParam"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/config.go",
+    "lineno": 238,
+    "focalfunc": "func (p *Provider) addServer(i item, lb *dynamic.ServersLoadBalancer) error",
+    "funcbody": "func (p *Provider) addServer(i item, lb *dynamic.ServersLoadBalancer) error {\n\tif lb == nil {\n\t\treturn errors.New(\"load-balancer is missing\")\n\t}\n\n\tif len(lb.Servers) == 0 {\n\t\tserver := dynamic.Server{}\n\t\tserver.SetDefaults()\n\n\t\tlb.Servers = []dynamic.Server{server}\n\t}\n\n\tif i.Address == \"\" {\n\t\treturn errors.New(\"address is missing\")\n\t}\n\n\tport := lb.Servers[0].Port\n\tlb.Servers[0].Port = \"\"\n\n\tif port == \"\" && i.Port > 0 {\n\t\tport = strconv.Itoa(i.Port)\n\t}\n\n\tif port == \"\" {\n\t\treturn errors.New(\"port is missing\")\n\t}\n\n\tscheme := lb.Servers[0].Scheme\n\tlb.Servers[0].Scheme = \"\"\n\tlb.Servers[0].URL = fmt.Sprintf(\"%s://%s\", scheme, net.JoinHostPort(i.Address, port))\n\n\treturn nil\n}",
+    "funcname": "addServer"
+}

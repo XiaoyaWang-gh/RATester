@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 726,
+    "focalfunc": "func makeRouterKeyWithHash(key, rule string) (string, error)",
+    "funcbody": "func makeRouterKeyWithHash(key, rule string) (string, error) {\n\th := sha256.New()\n\tif _, err := h.Write([]byte(rule)); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tdupKey := fmt.Sprintf(\"%s-%.10x\", key, h.Sum(nil))\n\n\treturn dupKey, nil\n}",
+    "funcname": "makeRouterKeyWithHash"
+}

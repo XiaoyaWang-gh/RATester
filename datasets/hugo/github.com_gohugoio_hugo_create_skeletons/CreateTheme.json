@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/skeletons/skeletons.go",
+    "lineno": 37,
+    "focalfunc": "func CreateTheme(createpath string, sourceFs afero.Fs) error",
+    "funcbody": "func CreateTheme(createpath string, sourceFs afero.Fs) error {\n\tif exists, _ := helpers.Exists(createpath, sourceFs); exists {\n\t\treturn errors.New(createpath + \" already exists\")\n\t}\n\treturn copyFiles(createpath, sourceFs, themeFs)\n}",
+    "funcname": "CreateTheme"
+}

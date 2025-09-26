@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 58,
+    "focalfunc": "func (t *TreeShiftTree[T]) DeleteAllFunc(s string, f func(s string, v T) bool)",
+    "funcbody": "func (t *TreeShiftTree[T]) DeleteAllFunc(s string, f func(s string, v T) bool) {\n\tfor _, tt := range t.trees {\n\t\tif v := tt.Get(s); v != t.zero {\n\t\t\tif f(s, v) {\n\n\t\t\t\ttt.tree.Delete(s)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "DeleteAllFunc"
+}

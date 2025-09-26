@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 56,
+    "focalfunc": "func (e cancelErr) Error() string",
+    "funcbody": "func (e cancelErr) Error() string {\n\treturn e.Err.Error()\n}",
+    "funcname": "Error"
+}

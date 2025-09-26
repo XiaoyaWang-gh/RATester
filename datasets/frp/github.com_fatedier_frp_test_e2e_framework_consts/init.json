@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/consts/consts.go",
+    "lineno": 47,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tPortServerName = port.GenName(\"Server\")\n\tPortClientAdmin = port.GenName(\"ClientAdmin\")\n\tLegacyDefaultServerConfig = fmt.Sprintf(LegacyDefaultServerConfig, port.GenName(\"Server\"))\n\tLegacyDefaultClientConfig = fmt.Sprintf(LegacyDefaultClientConfig, port.GenName(\"Server\"))\n\n\tDefaultServerConfig = fmt.Sprintf(DefaultServerConfig, port.GenName(\"Server\"))\n\tDefaultClientConfig = fmt.Sprintf(DefaultClientConfig, port.GenName(\"Server\"))\n}",
+    "funcname": "init"
+}

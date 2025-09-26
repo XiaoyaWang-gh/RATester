@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 84,
+    "focalfunc": "func (msg Error) Error() string",
+    "funcbody": "func (msg Error) Error() string {\n\treturn msg.Err.Error()\n}",
+    "funcname": "Error"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 110,
+    "focalfunc": "func (*ormBase) getMi(md interface{}) (mi *models.ModelInfo)",
+    "funcbody": "func (*ormBase) getMi(md interface{}) (mi *models.ModelInfo) {\n\tval := reflect.ValueOf(md)\n\tind := reflect.Indirect(val)\n\ttyp := ind.Type()\n\tmi = getTypeMi(typ)\n\treturn\n}",
+    "funcname": "getMi"
+}

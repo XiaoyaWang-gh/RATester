@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_spec.go",
+    "lineno": 157,
+    "focalfunc": "func (r *Spec) NewResourceWrapperFromResourceConfig(rc *pagemeta.ResourceConfig) (resource.Resource, error)",
+    "funcbody": "func (r *Spec) NewResourceWrapperFromResourceConfig(rc *pagemeta.ResourceConfig) (resource.Resource, error) {\n\tcontent := rc.Content\n\tswitch r := content.Value.(type) {\n\tcase resource.Resource:\n\t\treturn cloneWithMetadataFromResourceConfigIfNeeded(rc, r), nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"failed to create resource for path %q, expected a resource.Resource, got %T\", rc.PathInfo.Path(), content.Value)\n\t}\n}",
+    "funcname": "NewResourceWrapperFromResourceConfig"
+}

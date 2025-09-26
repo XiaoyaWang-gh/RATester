@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 97,
+    "focalfunc": "func newFs(source, destination afero.Fs, workingDir, publishDir string) *Fs",
+    "funcbody": "func newFs(source, destination afero.Fs, workingDir, publishDir string) *Fs {\n\tif publishDir == \"\" {\n\t\tpanic(\"publishDir is empty\")\n\t}\n\n\tif workingDir == \".\" {\n\t\tworkingDir = \"\"\n\t}\n\n\tif IsOsFs(source) && len(workingDir) < 2 {\n\t\tpanic(\"workingDir is too short\")\n\t}\n\n\tabsPublishDir := paths.AbsPathify(workingDir, publishDir)\n\n\tpubFs := NewBasePathFs(destination, absPublishDir)\n\n\treturn &Fs{\n\t\tSource:\t\t\tsource,\n\t\tPublishDir:\t\tpubFs,\n\t\tPublishDirServer:\tpubFs,\n\t\tPublishDirStatic:\tpubFs,\n\t\tOs:\t\t\t&afero.OsFs{},\n\t\tWorkingDirReadOnly:\tgetWorkingDirFsReadOnly(source, workingDir),\n\t\tWorkingDirWritable:\tgetWorkingDirFsWritable(source, workingDir),\n\t}\n}",
+    "funcname": "newFs"
+}

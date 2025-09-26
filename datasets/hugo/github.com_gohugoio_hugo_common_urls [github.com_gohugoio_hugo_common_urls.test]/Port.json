@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 42,
+    "focalfunc": "func (b BaseURL) Port() int",
+    "funcbody": "func (b BaseURL) Port() int {\n\tp, _ := strconv.Atoi(b.url.Port())\n\treturn p\n}",
+    "funcname": "Port"
+}

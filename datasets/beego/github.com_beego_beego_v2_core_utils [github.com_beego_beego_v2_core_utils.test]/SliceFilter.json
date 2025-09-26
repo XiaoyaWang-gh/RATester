@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 91,
+    "focalfunc": "func SliceFilter(slice []interface{}, a filtertype) (ftslice []interface{})",
+    "funcbody": "func SliceFilter(slice []interface{}, a filtertype) (ftslice []interface{}) {\n\tfor _, v := range slice {\n\t\tif a(v) {\n\t\t\tftslice = append(ftslice, v)\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "SliceFilter"
+}

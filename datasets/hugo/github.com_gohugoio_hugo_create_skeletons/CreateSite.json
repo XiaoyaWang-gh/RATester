@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/skeletons/skeletons.go",
+    "lineno": 45,
+    "focalfunc": "func CreateSite(createpath string, sourceFs afero.Fs, force bool, format string) error",
+    "funcbody": "func CreateSite(createpath string, sourceFs afero.Fs, force bool, format string) error {\n\tformat = strings.ToLower(format)\n\tif exists, _ := helpers.Exists(createpath, sourceFs); exists {\n\t\tif isDir, _ := helpers.IsDir(createpath, sourceFs); !isDir {\n\t\t\treturn errors.New(createpath + \" already exists but not a directory\")\n\t\t}\n\n\t\tisEmpty, _ := helpers.IsEmpty(createpath, sourceFs)\n\n\t\tswitch {\n\t\tcase !isEmpty && !force:\n\t\t\treturn errors.New(createpath + \" already exists and is not empty. See --force.\")\n\t\tcase !isEmpty && force:\n\t\t\tvar all []string\n\t\t\tfs.WalkDir(siteFs, \".\", func(path string, d fs.DirEntry, err error) error {\n\t\t\t\tif d.IsDir() && path != \".\" {\n\t\t\t\t\tall = append(all, path)\n\t\t\t\t}\n\t\t\t\treturn nil\n\t\t\t})\n\t\t\tall = append(all, filepath.Join(createpath, \"hugo.\"+format))\n\t\t\tfor _, path := range all {\n\t\t\t\tif exists, _ := helpers.Exists(path, sourceFs); exists {\n\t\t\t\t\treturn errors.New(path + \" already exists\")\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\terr := newSiteCreateConfig(sourceFs, createpath, format)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn copyFiles(createpath, sourceFs, siteFs)\n}",
+    "funcname": "CreateSite"
+}

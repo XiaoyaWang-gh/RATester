@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 67,
+    "focalfunc": "func newPageContentOutput(po *pageOutput) (*pageContentOutput, error)",
+    "funcbody": "func newPageContentOutput(po *pageOutput) (*pageContentOutput, error) {\n\tcp := &pageContentOutput{\n\t\tpo:\t\tpo,\n\t\trenderHooks:\t&renderHooks{},\n\t\totherOutputs:\tmaps.NewCache[uint64, *pageContentOutput](),\n\t}\n\treturn cp, nil\n}",
+    "funcname": "newPageContentOutput"
+}

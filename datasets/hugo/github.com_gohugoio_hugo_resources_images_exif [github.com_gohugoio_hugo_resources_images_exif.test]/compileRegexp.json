@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 103,
+    "focalfunc": "func compileRegexp(expression string) (*regexp.Regexp, error)",
+    "funcbody": "func compileRegexp(expression string) (*regexp.Regexp, error) {\n\texpression = strings.TrimSpace(expression)\n\tif expression == \"\" {\n\t\treturn nil, nil\n\t}\n\tif !strings.HasPrefix(expression, \"(\") {\n\n\t\texpression = \"(?i)\" + expression\n\t}\n\n\treturn regexp.Compile(expression)\n}",
+    "funcname": "compileRegexp"
+}

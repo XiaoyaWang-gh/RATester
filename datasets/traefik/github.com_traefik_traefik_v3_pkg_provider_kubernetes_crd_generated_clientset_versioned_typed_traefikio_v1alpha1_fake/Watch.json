@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/fake/fake_traefikservice.go",
+    "lineno": 84,
+    "focalfunc": "func (c *FakeTraefikServices) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error)",
+    "funcbody": "func (c *FakeTraefikServices) Watch(ctx context.Context, opts v1.ListOptions) (watch.Interface, error) {\n\treturn c.Fake.\n\t\tInvokesWatch(testing.NewWatchAction(traefikservicesResource, c.ns, opts))\n\n}",
+    "funcname": "Watch"
+}

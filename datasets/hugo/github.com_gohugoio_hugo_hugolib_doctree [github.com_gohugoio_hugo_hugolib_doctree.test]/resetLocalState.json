@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 397,
+    "focalfunc": "func (r *NodeShiftTreeWalker[T]) resetLocalState()",
+    "funcbody": "func (r *NodeShiftTreeWalker[T]) resetLocalState() {\n\tr.skipPrefixes = nil\n}",
+    "funcname": "resetLocalState"
+}

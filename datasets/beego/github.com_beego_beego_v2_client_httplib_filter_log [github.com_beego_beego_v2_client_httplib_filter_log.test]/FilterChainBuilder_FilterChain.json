@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 76,
+    "focalfunc": "func (builder *FilterChainBuilder) FilterChain(next httplib.Filter) httplib.Filter",
+    "funcbody": "func (builder *FilterChainBuilder) FilterChain(next httplib.Filter) httplib.Filter {\n\treturn func(ctx context.Context, req *httplib.BeegoHTTPRequest) (*http.Response, error) {\n\t\tinfo := &logInfo{}\n\t\tdefer info.print(builder.log)\n\t\tresp, err := next(ctx, req)\n\t\tinfo.err = err\n\t\tcontentType := req.GetRequest().Header.Get(\"Content-Type\")\n\t\tshouldPrintBody := builder.shouldPrintBody(contentType, req.GetRequest().Body)\n\t\tdump, err := httputil.DumpRequest(req.GetRequest(), shouldPrintBody)\n\t\tinfo.req = dump\n\t\tif err != nil {\n\t\t\tlogs.Error(err)\n\t\t}\n\t\tif resp != nil {\n\t\t\tcontentType = resp.Header.Get(\"Content-Type\")\n\t\t\tshouldPrintBody = builder.shouldPrintBody(contentType, resp.Body)\n\t\t\tdump, err = httputil.DumpResponse(resp, shouldPrintBody)\n\t\t\tinfo.resp = dump\n\t\t\tif err != nil {\n\t\t\t\tlogs.Error(err)\n\t\t\t}\n\t\t}\n\t\treturn resp, err\n\t}\n}",
+    "funcname": "FilterChain"
+}

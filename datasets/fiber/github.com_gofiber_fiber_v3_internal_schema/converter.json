@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 204,
+    "focalfunc": "func (c *cache) converter(t reflect.Type) Converter",
+    "funcbody": "func (c *cache) converter(t reflect.Type) Converter {\n\treturn c.regconv[t]\n}",
+    "funcname": "converter"
+}

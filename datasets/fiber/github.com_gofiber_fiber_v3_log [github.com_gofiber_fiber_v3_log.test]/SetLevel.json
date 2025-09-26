@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 139,
+    "focalfunc": "func SetLevel(lv Level)",
+    "funcbody": "func SetLevel(lv Level) {\n\tlogger.SetLevel(lv)\n}",
+    "funcname": "SetLevel"
+}

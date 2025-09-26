@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/redirect.go",
+    "lineno": 29,
+    "focalfunc": "func (r Redirect) WriteContentType(http.ResponseWriter)",
+    "funcbody": "func (r Redirect) WriteContentType(http.ResponseWriter)\t{}",
+    "funcname": "WriteContentType"
+}

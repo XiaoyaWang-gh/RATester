@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 116,
+    "focalfunc": "func (group *RouterGroup) GET(relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) GET(relativePath string, handlers ...HandlerFunc) IRoutes {\n\treturn group.handle(http.MethodGet, relativePath, handlers)\n}",
+    "funcname": "GET"
+}

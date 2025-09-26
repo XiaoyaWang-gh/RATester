@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 169,
+    "focalfunc": "func (lp *Provider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error)",
+    "funcbody": "func (lp *Provider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error) {\n\tcount, _ := c.Exists([]byte(sid))\n\tif count == 0 {\n\n\t\tc.Set([]byte(sid), []byte(\"\"))\n\t\tc.Expire([]byte(sid), lp.maxlifetime)\n\t} else {\n\t\tdata, _ := c.Get([]byte(oldsid))\n\t\tc.Set([]byte(sid), data)\n\t\tc.Expire([]byte(sid), lp.maxlifetime)\n\t}\n\treturn lp.SessionRead(context.Background(), sid)\n}",
+    "funcname": "SessionRegenerate"
+}

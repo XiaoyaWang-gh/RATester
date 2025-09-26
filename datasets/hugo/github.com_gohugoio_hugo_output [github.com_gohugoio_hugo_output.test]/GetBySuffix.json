@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 247,
+    "focalfunc": "func (formats Formats) GetBySuffix(suffix string) (f Format, found bool)",
+    "funcbody": "func (formats Formats) GetBySuffix(suffix string) (f Format, found bool) {\n\tfor _, ff := range formats {\n\t\tfor _, suffix2 := range ff.MediaType.Suffixes() {\n\t\t\tif strings.EqualFold(suffix, suffix2) {\n\t\t\t\tif found {\n\n\t\t\t\t\tfound = false\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tf = ff\n\t\t\t\tfound = true\n\t\t\t}\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "GetBySuffix"
+}

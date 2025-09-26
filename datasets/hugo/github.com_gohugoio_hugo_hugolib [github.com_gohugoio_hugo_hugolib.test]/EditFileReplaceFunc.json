@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 465,
+    "focalfunc": "func (s *IntegrationTestBuilder) EditFileReplaceFunc(filename string, replacementFunc func(s string) string) *IntegrationTestBuilder",
+    "funcbody": "func (s *IntegrationTestBuilder) EditFileReplaceFunc(filename string, replacementFunc func(s string) string) *IntegrationTestBuilder {\n\tabsFilename := s.absFilename(filename)\n\tb, err := afero.ReadFile(s.fs.Source, absFilename)\n\ts.Assert(err, qt.IsNil)\n\ts.changedFiles = append(s.changedFiles, absFilename)\n\toldContent := string(b)\n\ts.writeSource(absFilename, replacementFunc(oldContent))\n\treturn s\n}",
+    "funcname": "EditFileReplaceFunc"
+}

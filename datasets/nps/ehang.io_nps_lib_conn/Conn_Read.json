@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 282,
+    "focalfunc": "func (s *Conn) Read(b []byte) (n int, err error)",
+    "funcbody": "func (s *Conn) Read(b []byte) (n int, err error) {\n\tif s.Rb != nil {\n\n\t\tif len(s.Rb) > 0 {\n\t\t\tn = copy(b, s.Rb)\n\t\t\ts.Rb = s.Rb[n:]\n\t\t\treturn\n\t\t}\n\t\ts.Rb = nil\n\t}\n\treturn s.Conn.Read(b)\n}",
+    "funcname": "Read"
+}

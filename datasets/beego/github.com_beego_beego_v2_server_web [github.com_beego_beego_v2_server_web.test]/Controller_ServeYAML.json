@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 470,
+    "focalfunc": "func (c *Controller) ServeYAML() error",
+    "funcbody": "func (c *Controller) ServeYAML() error {\n\treturn c.Ctx.Output.YAML(c.Data[\"yaml\"])\n}",
+    "funcname": "ServeYAML"
+}

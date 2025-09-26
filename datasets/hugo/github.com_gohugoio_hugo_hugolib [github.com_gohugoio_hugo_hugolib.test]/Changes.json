@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 407,
+    "focalfunc": "func (w *WhatChanged) Changes() []identity.Identity",
+    "funcbody": "func (w *WhatChanged) Changes() []identity.Identity {\n\tif w == nil || w.identitySet == nil {\n\t\treturn nil\n\t}\n\treturn w.identitySet.AsSlice()\n}",
+    "funcname": "Changes"
+}

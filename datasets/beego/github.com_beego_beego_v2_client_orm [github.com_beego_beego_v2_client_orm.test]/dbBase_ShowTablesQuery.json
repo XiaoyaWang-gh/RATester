@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2134,
+    "focalfunc": "func (d *dbBase) ShowTablesQuery() string",
+    "funcbody": "func (d *dbBase) ShowTablesQuery() string {\n\tpanic(ErrNotImplement)\n}",
+    "funcname": "ShowTablesQuery"
+}

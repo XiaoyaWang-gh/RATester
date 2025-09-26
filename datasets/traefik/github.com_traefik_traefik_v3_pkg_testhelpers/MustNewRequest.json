@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/helpers.go",
+    "lineno": 11,
+    "focalfunc": "func MustNewRequest(method, urlStr string, body io.Reader) *http.Request",
+    "funcbody": "func MustNewRequest(method, urlStr string, body io.Reader) *http.Request {\n\trequest, err := http.NewRequest(method, urlStr, body)\n\tif err != nil {\n\t\tpanic(fmt.Sprintf(\"failed to create HTTP %s Request for '%s': %s\", method, urlStr, err))\n\t}\n\treturn request\n}",
+    "funcname": "MustNewRequest"
+}

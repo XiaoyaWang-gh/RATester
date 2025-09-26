@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 472,
+    "focalfunc": "func (r *Request) SetTimeout(t time.Duration) *Request",
+    "funcbody": "func (r *Request) SetTimeout(t time.Duration) *Request {\n\tr.timeout = t\n\treturn r\n}",
+    "funcname": "SetTimeout"
+}

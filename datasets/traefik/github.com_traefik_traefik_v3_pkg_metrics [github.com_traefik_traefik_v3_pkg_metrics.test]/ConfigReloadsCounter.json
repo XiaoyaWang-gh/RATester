@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 224,
+    "focalfunc": "func (r *standardRegistry) ConfigReloadsCounter() metrics.Counter",
+    "funcbody": "func (r *standardRegistry) ConfigReloadsCounter() metrics.Counter {\n\treturn r.configReloadsCounter\n}",
+    "funcname": "ConfigReloadsCounter"
+}

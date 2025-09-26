@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 80,
+    "focalfunc": "func (m *Mirroring) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (m *Mirroring) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tmirrors := m.getActiveMirrors()\n\tif len(mirrors) == 0 {\n\t\tm.handler.ServeHTTP(rw, req)\n\t\treturn\n\t}\n\n\tlogger := log.Ctx(req.Context())\n\trr, bytesRead, err := newReusableRequest(req, m.mirrorBody, m.maxBodySize)\n\tif err != nil && !errors.Is(err, errBodyTooLarge) {\n\t\thttp.Error(rw, fmt.Sprintf(\"%s: creating reusable request: %v\",\n\t\t\thttp.StatusText(http.StatusInternalServerError), err), http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tif errors.Is(err, errBodyTooLarge) {\n\t\treq.Body = io.NopCloser(io.MultiReader(bytes.NewReader(bytesRead), req.Body))\n\t\tm.handler.ServeHTTP(rw, req)\n\t\tlogger.Debug().Msg(\"No mirroring, request body larger than allowed size\")\n\t\treturn\n\t}\n\n\tm.handler.ServeHTTP(rw, rr.clone(req.Context()))\n\n\tselect {\n\tcase <-req.Context().Done():\n\n\t\tlogger.Warn().Msg(\"No mirroring, request has been canceled during main handler ServeHTTP\")\n\t\treturn\n\tdefault:\n\t}\n\n\tm.routinePool.GoCtx(func(_ context.Context) {\n\t\tfor _, handler := range mirrors {\n\n\t\t\tr := rr.clone(req.Context())\n\n\t\t\tctx := context.WithValue(r.Context(), accesslog.DataTableKey, nil)\n\n\t\t\thandler.ServeHTTP(m.rw, r.WithContext(contextStopPropagation{ctx}))\n\t\t}\n\t})\n}",
+    "funcname": "ServeHTTP"
+}

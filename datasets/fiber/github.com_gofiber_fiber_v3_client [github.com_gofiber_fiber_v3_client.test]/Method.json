@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 70,
+    "focalfunc": "func (r *Request) Method() string",
+    "funcbody": "func (r *Request) Method() string {\n\treturn r.method\n}",
+    "funcname": "Method"
+}

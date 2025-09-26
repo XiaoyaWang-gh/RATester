@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 585,
+    "focalfunc": "func (rc *genericResource) cloneWithUpdates(u *transformationUpdate) (baseResource, error)",
+    "funcbody": "func (rc *genericResource) cloneWithUpdates(u *transformationUpdate) (baseResource, error) {\n\tr := rc.clone()\n\n\tif u.content != nil {\n\t\tr.sd.OpenReadSeekCloser = func() (hugio.ReadSeekCloser, error) {\n\t\t\treturn hugio.NewReadSeekerNoOpCloserFromString(*u.content), nil\n\t\t}\n\t}\n\n\tr.sd.MediaType = u.mediaType\n\n\tif u.sourceFilename != nil {\n\t\tif u.sourceFs == nil {\n\t\t\treturn nil, errors.New(\"sourceFs is nil\")\n\t\t}\n\t\tr.setOpenSource(func() (hugio.ReadSeekCloser, error) {\n\t\t\treturn u.sourceFs.Open(*u.sourceFilename)\n\t\t})\n\t} else if u.sourceFs != nil {\n\t\treturn nil, errors.New(\"sourceFs is set without sourceFilename\")\n\t}\n\n\tif u.targetPath == \"\" {\n\t\treturn nil, errors.New(\"missing targetPath\")\n\t}\n\n\tr.setTargetPath(r.paths.FromTargetPath(u.targetPath))\n\tr.mergeData(u.data)\n\n\treturn r, nil\n}",
+    "funcname": "cloneWithUpdates"
+}

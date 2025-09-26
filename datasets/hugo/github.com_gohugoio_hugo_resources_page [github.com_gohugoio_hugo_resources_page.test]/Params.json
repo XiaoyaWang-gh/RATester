@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 346,
+    "focalfunc": "func (p *nopPage) Params() maps.Params",
+    "funcbody": "func (p *nopPage) Params() maps.Params {\n\treturn nil\n}",
+    "funcname": "Params"
+}

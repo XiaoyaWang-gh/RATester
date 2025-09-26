@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 160,
+    "focalfunc": "func validateXTCPProxyConfigForClient(c *v1.XTCPProxyConfig) error",
+    "funcbody": "func validateXTCPProxyConfigForClient(c *v1.XTCPProxyConfig) error {\n\treturn nil\n}",
+    "funcname": "validateXTCPProxyConfigForClient"
+}

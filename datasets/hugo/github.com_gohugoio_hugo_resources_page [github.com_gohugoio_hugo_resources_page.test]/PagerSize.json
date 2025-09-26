@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 205,
+    "focalfunc": "func (p *Paginator) PagerSize() int",
+    "funcbody": "func (p *Paginator) PagerSize() int {\n\treturn p.size\n}",
+    "funcname": "PagerSize"
+}

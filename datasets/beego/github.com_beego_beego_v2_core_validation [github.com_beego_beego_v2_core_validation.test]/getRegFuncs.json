@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 155,
+    "focalfunc": "func getRegFuncs(tag, key string) (vfs []ValidFunc, str string, err error)",
+    "funcbody": "func getRegFuncs(tag, key string) (vfs []ValidFunc, str string, err error) {\n\ttag = strings.TrimSpace(tag)\n\tindex := strings.Index(tag, \"Match(/\")\n\tif index == -1 {\n\t\tstr = tag\n\t\treturn\n\t}\n\tend := strings.LastIndex(tag, \"/)\")\n\tif end < index {\n\t\terr = fmt.Errorf(\"invalid Match function\")\n\t\treturn\n\t}\n\treg, err := regexp.Compile(tag[index+len(\"Match(/\") : end])\n\tif err != nil {\n\t\treturn\n\t}\n\tvfs = []ValidFunc{{\"Match\", []interface{}{reg, key + \".Match\"}}}\n\tstr = strings.TrimSpace(tag[:index]) + strings.TrimSpace(tag[end+len(\"/)\"):])\n\treturn\n}",
+    "funcname": "getRegFuncs"
+}

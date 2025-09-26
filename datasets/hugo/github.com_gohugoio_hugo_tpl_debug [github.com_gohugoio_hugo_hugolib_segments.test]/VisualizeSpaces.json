@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/debug/debug.go",
+    "lineno": 116,
+    "focalfunc": "func (ns *Namespace) VisualizeSpaces(val any) string",
+    "funcbody": "func (ns *Namespace) VisualizeSpaces(val any) string {\n\ts := cast.ToString(val)\n\treturn string(util.VisualizeSpaces([]byte(s)))\n}",
+    "funcname": "VisualizeSpaces"
+}

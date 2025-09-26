@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 78,
+    "focalfunc": "func Infof(format string, v ...interface{})",
+    "funcbody": "func Infof(format string, v ...interface{}) {\n\tLogger.Infof(format, v...)\n}",
+    "funcname": "Infof"
+}

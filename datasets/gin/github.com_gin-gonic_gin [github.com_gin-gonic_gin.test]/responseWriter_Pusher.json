@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 126,
+    "focalfunc": "func (w *responseWriter) Pusher() (pusher http.Pusher)",
+    "funcbody": "func (w *responseWriter) Pusher() (pusher http.Pusher) {\n\tif pusher, ok := w.ResponseWriter.(http.Pusher); ok {\n\t\treturn pusher\n\t}\n\treturn nil\n}",
+    "funcname": "Pusher"
+}

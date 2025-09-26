@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 75,
+    "focalfunc": "func (a *adminController) PrometheusMetrics()",
+    "funcbody": "func (a *adminController) PrometheusMetrics() {\n\tpromhttp.Handler().ServeHTTP(a.Ctx.ResponseWriter, a.Ctx.Request)\n}",
+    "funcname": "PrometheusMetrics"
+}

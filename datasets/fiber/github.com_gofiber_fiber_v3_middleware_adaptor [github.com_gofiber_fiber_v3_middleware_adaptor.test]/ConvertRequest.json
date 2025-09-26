@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/adaptor/adaptor.go",
+    "lineno": 44,
+    "focalfunc": "func ConvertRequest(c fiber.Ctx, forServer bool) (*http.Request, error)",
+    "funcbody": "func ConvertRequest(c fiber.Ctx, forServer bool) (*http.Request, error) {\n\tvar req http.Request\n\tif err := fasthttpadaptor.ConvertRequest(c.Context(), &req, forServer); err != nil {\n\t\treturn nil, err\n\t}\n\treturn &req, nil\n}",
+    "funcname": "ConvertRequest"
+}

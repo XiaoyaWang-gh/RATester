@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 114,
+    "focalfunc": "func (h *HugoSites) isRebuild() bool",
+    "funcbody": "func (h *HugoSites) isRebuild() bool {\n\treturn h.buildCounter.Load() > 0\n}",
+    "funcname": "isRebuild"
+}

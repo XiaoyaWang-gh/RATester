@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1175,
+    "focalfunc": "func isBaseTemplatePath(path string) bool",
+    "funcbody": "func isBaseTemplatePath(path string) bool {\n\treturn strings.Contains(filepath.Base(path), baseFileBase)\n}",
+    "funcname": "isBaseTemplatePath"
+}

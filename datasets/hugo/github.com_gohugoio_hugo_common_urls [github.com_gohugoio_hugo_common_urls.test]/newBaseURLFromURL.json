@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 99,
+    "focalfunc": "func newBaseURLFromURL(u *url.URL) (BaseURL, error)",
+    "funcbody": "func newBaseURLFromURL(u *url.URL) (BaseURL, error) {\n\n\tif !strings.HasSuffix(u.Path, \"/\") {\n\t\tu.Path += \"/\"\n\t}\n\tbaseURL := BaseURL{url: u, WithPath: u.String(), WithPathNoTrailingSlash: strings.TrimSuffix(u.String(), \"/\")}\n\tbaseURLNoPath := baseURL.URL()\n\tbaseURLNoPath.Path = \"\"\n\tbaseURL.WithoutPath = baseURLNoPath.String()\n\tbaseURL.BasePath = u.Path\n\tbaseURL.BasePathNoTrailingSlash = strings.TrimSuffix(u.Path, \"/\")\n\n\treturn baseURL, nil\n}",
+    "funcname": "newBaseURLFromURL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1139,
+    "focalfunc": "func makeListenerKey(l gatev1.Listener) string",
+    "funcbody": "func makeListenerKey(l gatev1.Listener) string {\n\tvar hostname gatev1.Hostname\n\tif l.Hostname != nil {\n\t\thostname = *l.Hostname\n\t}\n\n\treturn fmt.Sprintf(\"%s|%s|%d\", l.Protocol, hostname, l.Port)\n}",
+    "funcname": "makeListenerKey"
+}

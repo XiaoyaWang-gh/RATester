@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 375,
+    "focalfunc": "func (d *dbBase) Insert(ctx context.Context, q dbQuerier, mi *models.ModelInfo, ind reflect.Value, tz *time.Location) (int64, error)",
+    "funcbody": "func (d *dbBase) Insert(ctx context.Context, q dbQuerier, mi *models.ModelInfo, ind reflect.Value, tz *time.Location) (int64, error) {\n\tnames := make([]string, 0, len(mi.Fields.DBcols))\n\tvalues, autoFields, err := d.collectValues(mi, ind, mi.Fields.DBcols, false, true, &names, tz)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\n\tid, err := d.InsertValue(ctx, q, mi, false, names, values)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\n\tif len(autoFields) > 0 {\n\t\terr = d.ins.setval(ctx, q, mi, autoFields)\n\t}\n\treturn id, err\n}",
+    "funcname": "Insert"
+}

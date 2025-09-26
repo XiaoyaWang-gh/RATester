@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/config.go",
+    "lineno": 134,
+    "focalfunc": "func (t ContentTypes) Types() Types",
+    "funcbody": "func (t ContentTypes) Types() Types {\n\treturn t.types\n}",
+    "funcname": "Types"
+}

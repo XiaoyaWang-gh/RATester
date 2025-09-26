@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 577,
+    "focalfunc": "func (p *pageState) getPageInfoForError() string",
+    "funcbody": "func (p *pageState) getPageInfoForError() string {\n\ts := fmt.Sprintf(\"kind: %q, path: %q\", p.Kind(), p.Path())\n\tif p.File() != nil {\n\t\ts += fmt.Sprintf(\", file: %q\", p.File().Filename())\n\t}\n\treturn s\n}",
+    "funcname": "getPageInfoForError"
+}

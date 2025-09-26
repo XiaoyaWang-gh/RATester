@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 84,
+    "focalfunc": "func (ns *Namespace) Anchorize(s any) (string, error)",
+    "funcbody": "func (ns *Namespace) Anchorize(s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn ns.deps.ContentSpec.SanitizeAnchorName(ss), nil\n}",
+    "funcname": "Anchorize"
+}

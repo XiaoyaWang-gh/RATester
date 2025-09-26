@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_limit.go",
+    "lineno": 45,
+    "focalfunc": "func BodyLimit(limit string) echo.MiddlewareFunc",
+    "funcbody": "func BodyLimit(limit string) echo.MiddlewareFunc {\n\tc := DefaultBodyLimitConfig\n\tc.Limit = limit\n\treturn BodyLimitWithConfig(c)\n}",
+    "funcname": "BodyLimit"
+}

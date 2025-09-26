@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 238,
+    "focalfunc": "func (b *roundRobinBalancer) Next(c echo.Context) *ProxyTarget",
+    "funcbody": "func (b *roundRobinBalancer) Next(c echo.Context) *ProxyTarget {\n\tb.mutex.Lock()\n\tdefer b.mutex.Unlock()\n\tif len(b.targets) == 0 {\n\t\treturn nil\n\t} else if len(b.targets) == 1 {\n\t\treturn b.targets[0]\n\t}\n\n\tvar i int\n\tconst lastIdxKey = \"_round_robin_last_index\"\n\n\tif c.Get(lastIdxKey) != nil {\n\t\ti = c.Get(lastIdxKey).(int)\n\t\ti++\n\t\tif i >= len(b.targets) {\n\t\t\ti = 0\n\t\t}\n\t} else {\n\n\t\tif b.i >= len(b.targets) {\n\t\t\tb.i = 0\n\t\t}\n\t\ti = b.i\n\t\tb.i++\n\t}\n\n\tc.Set(lastIdxKey, i)\n\treturn b.targets[i]\n}",
+    "funcname": "Next"
+}

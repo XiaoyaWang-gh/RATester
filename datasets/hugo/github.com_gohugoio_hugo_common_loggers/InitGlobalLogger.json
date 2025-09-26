@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/loggerglobal.go",
+    "lineno": 24,
+    "focalfunc": "func InitGlobalLogger(level logg.Level, panicOnWarnings bool)",
+    "funcbody": "func InitGlobalLogger(level logg.Level, panicOnWarnings bool) {\n\tlogMu.Lock()\n\tdefer logMu.Unlock()\n\tvar logHookLast func(e *logg.Entry) error\n\tif panicOnWarnings {\n\t\tlogHookLast = PanicOnWarningHook\n\t}\n\n\tlog = New(\n\t\tOptions{\n\t\t\tLevel:\t\tlevel,\n\t\t\tDistinctLevel:\tlogg.LevelInfo,\n\t\t\tHandlerPost:\tlogHookLast,\n\t\t},\n\t)\n}",
+    "funcname": "InitGlobalLogger"
+}

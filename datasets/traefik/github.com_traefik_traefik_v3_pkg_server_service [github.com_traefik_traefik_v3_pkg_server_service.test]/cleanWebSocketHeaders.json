@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 70,
+    "focalfunc": "func cleanWebSocketHeaders(req *http.Request)",
+    "funcbody": "func cleanWebSocketHeaders(req *http.Request) {\n\tif !isWebSocketUpgrade(req) {\n\t\treturn\n\t}\n\n\treq.Header[\"Sec-WebSocket-Key\"] = req.Header[\"Sec-Websocket-Key\"]\n\tdelete(req.Header, \"Sec-Websocket-Key\")\n\n\treq.Header[\"Sec-WebSocket-Extensions\"] = req.Header[\"Sec-Websocket-Extensions\"]\n\tdelete(req.Header, \"Sec-Websocket-Extensions\")\n\n\treq.Header[\"Sec-WebSocket-Accept\"] = req.Header[\"Sec-Websocket-Accept\"]\n\tdelete(req.Header, \"Sec-Websocket-Accept\")\n\n\treq.Header[\"Sec-WebSocket-Protocol\"] = req.Header[\"Sec-Websocket-Protocol\"]\n\tdelete(req.Header, \"Sec-Websocket-Protocol\")\n\n\treq.Header[\"Sec-WebSocket-Version\"] = req.Header[\"Sec-Websocket-Version\"]\n\tdelete(req.Header, \"Sec-Websocket-Version\")\n}",
+    "funcname": "cleanWebSocketHeaders"
+}

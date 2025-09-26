@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 247,
+    "focalfunc": "func newAbsURLReplacer() *absURLReplacer",
+    "funcbody": "func newAbsURLReplacer() *absURLReplacer {\n\treturn &absURLReplacer{\n\t\thtmlQuotes:\t[][]byte{[]byte(\"\\\"\"), []byte(\"'\")},\n\t\txmlQuotes:\t[][]byte{[]byte(\"&#34;\"), []byte(\"&#39;\")},\n\t}\n}",
+    "funcname": "newAbsURLReplacer"
+}

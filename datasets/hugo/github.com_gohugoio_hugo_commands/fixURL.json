@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 781,
+    "focalfunc": "func (c *serverCommand) fixURL(baseURLFromConfig, baseURLFromFlag string, port int) (string, error)",
+    "funcbody": "func (c *serverCommand) fixURL(baseURLFromConfig, baseURLFromFlag string, port int) (string, error) {\n\tcertsSet := (c.tlsCertFile != \"\" && c.tlsKeyFile != \"\") || c.tlsAuto\n\tuseLocalhost := false\n\tbaseURL := baseURLFromFlag\n\tif baseURL == \"\" {\n\t\tbaseURL = baseURLFromConfig\n\t\tuseLocalhost = true\n\t}\n\n\tif !strings.HasSuffix(baseURL, \"/\") {\n\t\tbaseURL = baseURL + \"/\"\n\t}\n\n\tu, err := url.Parse(baseURL)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif u.Host == \"\" && baseURL != \"/\" {\n\t\tbaseURL = \"//\" + baseURL\n\n\t\tu, err = url.Parse(baseURL)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\tif useLocalhost {\n\t\tif certsSet {\n\t\t\tu.Scheme = \"https\"\n\t\t} else if u.Scheme == \"https\" {\n\t\t\tu.Scheme = \"http\"\n\t\t}\n\t\tu.Host = \"localhost\"\n\t}\n\n\tif c.serverAppend {\n\t\tif strings.Contains(u.Host, \":\") {\n\t\t\tu.Host, _, err = net.SplitHostPort(u.Host)\n\t\t\tif err != nil {\n\t\t\t\treturn \"\", fmt.Errorf(\"failed to split baseURL hostport: %w\", err)\n\t\t\t}\n\t\t}\n\t\tu.Host += fmt.Sprintf(\":%d\", port)\n\t}\n\n\treturn u.String(), nil\n}",
+    "funcname": "fixURL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_http.go",
+    "lineno": 102,
+    "focalfunc": "func (c *ChallengeHTTP) getTokenValue(ctx context.Context, token, domain string) []byte",
+    "funcbody": "func (c *ChallengeHTTP) getTokenValue(ctx context.Context, token, domain string) []byte {\n\tlogger := log.Ctx(ctx)\n\tlogger.Debug().Msgf(\"Retrieving the ACME challenge for %s (token %q)...\", domain, token)\n\n\tc.lock.RLock()\n\tdefer c.lock.RUnlock()\n\n\tif _, ok := c.httpChallenges[token]; !ok {\n\t\tlogger.Error().Msgf(\"Cannot retrieve the ACME challenge for %s (token %q)\", domain, token)\n\t\treturn nil\n\t}\n\n\tresult, ok := c.httpChallenges[token][domain]\n\tif !ok {\n\t\tlogger.Error().Msgf(\"Cannot retrieve the ACME challenge for %s (token %q)\", domain, token)\n\t\treturn nil\n\t}\n\n\treturn result\n}",
+    "funcname": "getTokenValue"
+}

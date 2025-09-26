@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ip/checker.go",
+    "lineno": 64,
+    "focalfunc": "func (ip *Checker) Contains(addr string) (bool, error)",
+    "funcbody": "func (ip *Checker) Contains(addr string) (bool, error) {\n\tif len(addr) == 0 {\n\t\treturn false, errors.New(\"empty IP address\")\n\t}\n\n\tipAddr, err := parseIP(addr)\n\tif err != nil {\n\t\treturn false, fmt.Errorf(\"unable to parse address: %s: %w\", addr, err)\n\t}\n\n\treturn ip.ContainsIP(ipAddr), nil\n}",
+    "funcname": "Contains"
+}

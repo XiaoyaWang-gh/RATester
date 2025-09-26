@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 36,
+    "focalfunc": "func (d *DoNothingOrm) ReadWithCtx(ctx context.Context, md interface{}, cols ...string) error",
+    "funcbody": "func (d *DoNothingOrm) ReadWithCtx(ctx context.Context, md interface{}, cols ...string) error {\n\treturn nil\n}",
+    "funcname": "ReadWithCtx"
+}

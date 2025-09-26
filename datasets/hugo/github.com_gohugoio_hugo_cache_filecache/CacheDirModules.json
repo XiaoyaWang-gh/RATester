@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_config.go",
+    "lineno": 55,
+    "focalfunc": "func (c Configs) CacheDirModules() string",
+    "funcbody": "func (c Configs) CacheDirModules() string {\n\treturn c[CacheKeyModules].DirCompiled\n}",
+    "funcname": "CacheDirModules"
+}

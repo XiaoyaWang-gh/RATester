@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/plugins.go",
+    "lineno": 81,
+    "focalfunc": "func hasLocalPlugins(staticCfg *static.Configuration) bool",
+    "funcbody": "func hasLocalPlugins(staticCfg *static.Configuration) bool {\n\treturn staticCfg.Experimental != nil && len(staticCfg.Experimental.LocalPlugins) > 0\n}",
+    "funcname": "hasLocalPlugins"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/addprefix/add_prefix.go",
+    "lineno": 46,
+    "focalfunc": "func (a *addPrefix) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (a *addPrefix) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tlogger := middlewares.GetLogger(req.Context(), a.name, typeName)\n\n\toldURLPath := req.URL.Path\n\treq.URL.Path = ensureLeadingSlash(a.prefix + req.URL.Path)\n\tlogger.Debug().Msgf(\"URL.Path is now %s (was %s).\", req.URL.Path, oldURLPath)\n\n\tif req.URL.RawPath != \"\" {\n\t\toldURLRawPath := req.URL.RawPath\n\t\treq.URL.RawPath = ensureLeadingSlash(a.prefix + req.URL.RawPath)\n\t\tlogger.Debug().Msgf(\"URL.RawPath is now %s (was %s).\", req.URL.RawPath, oldURLRawPath)\n\t}\n\treq.RequestURI = req.URL.RequestURI()\n\n\ta.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

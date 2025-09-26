@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 201,
+    "focalfunc": "func (m *pageMap) handleDuplicateResourcePath(s string, updated, existing contentNodeI)",
+    "funcbody": "func (m *pageMap) handleDuplicateResourcePath(s string, updated, existing contentNodeI) {\n\tif m.s.h.isRebuild() || !m.s.conf.PrintPathWarnings {\n\t\treturn\n\t}\n\tvar messageDetail string\n\tif r1, ok := existing.(*resourceSource); ok && r1.fi != nil {\n\t\tmessageDetail = fmt.Sprintf(\" file: %q\", r1.fi.Meta().Filename)\n\t}\n\tif r2, ok := updated.(*resourceSource); ok && r2.fi != nil {\n\t\tmessageDetail += fmt.Sprintf(\" file: %q\", r2.fi.Meta().Filename)\n\t}\n\n\tm.s.Log.Warnf(\"Duplicate resource path: %q%s\", s, messageDetail)\n}",
+    "funcname": "handleDuplicateResourcePath"
+}

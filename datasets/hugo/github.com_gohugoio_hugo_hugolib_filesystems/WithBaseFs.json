@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 456,
+    "focalfunc": "func WithBaseFs(b *BaseFs) func(*BaseFs) error",
+    "funcbody": "func WithBaseFs(b *BaseFs) func(*BaseFs) error {\n\treturn func(bb *BaseFs) error {\n\t\tbb.theBigFs = b.theBigFs\n\t\tbb.SourceFilesystems = b.SourceFilesystems\n\t\treturn nil\n\t}\n}",
+    "funcname": "WithBaseFs"
+}

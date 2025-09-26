@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 81,
+    "focalfunc": "func (s *SessionProvider) SessionGC(ctx context.Context)",
+    "funcbody": "func (s *SessionProvider) SessionGC(ctx context.Context) {\n\n}",
+    "funcname": "SessionGC"
+}

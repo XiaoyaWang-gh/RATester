@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 17,
+    "focalfunc": "func endsWithCSSKeyword(b []byte, kw string) bool",
+    "funcbody": "func endsWithCSSKeyword(b []byte, kw string) bool {\n\ti := len(b) - len(kw)\n\tif i < 0 {\n\n\t\treturn false\n\t}\n\tif i != 0 {\n\t\tr, _ := utf8.DecodeLastRune(b[:i])\n\t\tif isCSSNmchar(r) {\n\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn string(bytes.ToLower(b[i:])) == kw\n}",
+    "funcname": "endsWithCSSKeyword"
+}

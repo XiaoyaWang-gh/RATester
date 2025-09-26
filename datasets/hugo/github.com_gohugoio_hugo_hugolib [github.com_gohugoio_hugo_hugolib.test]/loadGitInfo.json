@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 347,
+    "focalfunc": "func (h *HugoSites) loadGitInfo() error",
+    "funcbody": "func (h *HugoSites) loadGitInfo() error {\n\tif h.Configs.Base.EnableGitInfo {\n\t\tgi, err := newGitInfo(h.Deps)\n\t\tif err != nil {\n\t\t\th.Log.Errorln(\"Failed to read Git log:\", err)\n\t\t} else {\n\t\t\th.gitInfo = gi\n\t\t}\n\n\t\tco, err := newCodeOwners(h.Configs.LoadingInfo.BaseConfig.WorkingDir)\n\t\tif err != nil {\n\t\t\th.Log.Errorln(\"Failed to read CODEOWNERS:\", err)\n\t\t} else {\n\t\t\th.codeownerInfo = co\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "loadGitInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 129,
+    "focalfunc": "func NormalizePath(p string) string",
+    "funcbody": "func NormalizePath(p string) string {\n\treturn strings.ToLower(NormalizePathNoLower(p))\n}",
+    "funcname": "NormalizePath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 88,
+    "focalfunc": "func (t *Tree) newList(pos Pos) *ListNode",
+    "funcbody": "func (t *Tree) newList(pos Pos) *ListNode {\n\treturn &ListNode{tr: t, NodeType: NodeList, Pos: pos}\n}",
+    "funcname": "newList"
+}

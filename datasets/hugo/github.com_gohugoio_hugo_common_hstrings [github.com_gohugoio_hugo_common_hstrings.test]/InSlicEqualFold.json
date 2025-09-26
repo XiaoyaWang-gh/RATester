@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 117,
+    "focalfunc": "func InSlicEqualFold(arr []string, el string) bool",
+    "funcbody": "func InSlicEqualFold(arr []string, el string) bool {\n\tfor _, v := range arr {\n\t\tif strings.EqualFold(v, el) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "InSlicEqualFold"
+}

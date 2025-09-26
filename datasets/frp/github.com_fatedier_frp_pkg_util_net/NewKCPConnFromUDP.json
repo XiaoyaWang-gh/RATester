@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/kcp.go",
+    "lineno": 87,
+    "focalfunc": "func NewKCPConnFromUDP(conn *net.UDPConn, connected bool, raddr string) (net.Conn, error)",
+    "funcbody": "func NewKCPConnFromUDP(conn *net.UDPConn, connected bool, raddr string) (net.Conn, error) {\n\tudpAddr, err := net.ResolveUDPAddr(\"udp\", raddr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tvar pConn net.PacketConn = conn\n\tif connected {\n\t\tpConn = &ConnectedUDPConn{conn}\n\t}\n\tkcpConn, err := kcp.NewConn3(1, udpAddr, nil, 10, 3, pConn)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tkcpConn.SetStreamMode(true)\n\tkcpConn.SetWriteDelay(true)\n\tkcpConn.SetNoDelay(1, 20, 2, 1)\n\tkcpConn.SetMtu(1350)\n\tkcpConn.SetWindowSize(1024, 1024)\n\tkcpConn.SetACKNoDelay(false)\n\treturn kcpConn, nil\n}",
+    "funcname": "NewKCPConnFromUDP"
+}

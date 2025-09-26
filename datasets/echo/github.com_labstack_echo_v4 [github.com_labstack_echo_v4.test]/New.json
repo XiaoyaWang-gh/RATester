@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 367,
+    "focalfunc": "func New() (e *Echo)",
+    "funcbody": "func New() (e *Echo) {\n\te = &Echo{\n\t\tfilesystem:\tcreateFilesystem(),\n\t\tServer:\t\tnew(http.Server),\n\t\tTLSServer:\tnew(http.Server),\n\t\tAutoTLSManager: autocert.Manager{\n\t\t\tPrompt: autocert.AcceptTOS,\n\t\t},\n\t\tLogger:\t\t\tlog.New(\"echo\"),\n\t\tcolorer:\t\tcolor.New(),\n\t\tmaxParam:\t\tnew(int),\n\t\tListenerNetwork:\t\"tcp\",\n\t}\n\te.Server.Handler = e\n\te.TLSServer.Handler = e\n\te.HTTPErrorHandler = e.DefaultHTTPErrorHandler\n\te.Binder = &DefaultBinder{}\n\te.JSONSerializer = &DefaultJSONSerializer{}\n\te.Logger.SetLevel(log.ERROR)\n\te.StdLogger = stdLog.New(e.Logger.Output(), e.Logger.Prefix()+\": \", 0)\n\te.pool.New = func() interface{} {\n\t\treturn e.NewContext(nil, nil)\n\t}\n\te.router = NewRouter(e)\n\te.routers = map[string]*Router{}\n\treturn\n}",
+    "funcname": "New"
+}

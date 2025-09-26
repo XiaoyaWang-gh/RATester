@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/default_validator.go",
+    "lineno": 90,
+    "focalfunc": "func (v *defaultValidator) lazyinit()",
+    "funcbody": "func (v *defaultValidator) lazyinit() {\n\tv.once.Do(func() {\n\t\tv.validate = validator.New()\n\t\tv.validate.SetTagName(\"binding\")\n\t})\n}",
+    "funcname": "lazyinit"
+}

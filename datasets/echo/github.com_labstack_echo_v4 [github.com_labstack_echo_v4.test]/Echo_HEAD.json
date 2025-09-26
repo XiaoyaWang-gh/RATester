@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 502,
+    "focalfunc": "func (e *Echo) HEAD(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (e *Echo) HEAD(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn e.Add(http.MethodHead, path, h, m...)\n}",
+    "funcname": "HEAD"
+}

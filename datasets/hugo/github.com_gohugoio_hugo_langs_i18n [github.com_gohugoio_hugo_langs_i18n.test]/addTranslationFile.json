@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/translationProvider.go",
+    "lineno": 86,
+    "focalfunc": "func addTranslationFile(bundle *i18n.Bundle, r *source.File) error",
+    "funcbody": "func addTranslationFile(bundle *i18n.Bundle, r *source.File) error {\n\tf, err := r.FileInfo().Meta().Open()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to open translations file %q:: %w\", r.LogicalName(), err)\n\t}\n\n\tb := helpers.ReaderToBytes(f)\n\tf.Close()\n\n\tname := r.LogicalName()\n\tlang := paths.Filename(name)\n\ttag := language.Make(lang)\n\tif tag == language.Und {\n\t\ttry := artificialLangTagPrefix + lang\n\t\t_, err = language.Parse(try)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"%q: %s\", try, err)\n\t\t}\n\t\tname = artificialLangTagPrefix + name\n\t}\n\n\t_, err = bundle.ParseMessageFileBytes(b, name)\n\tif err != nil {\n\t\tif strings.Contains(err.Error(), \"no plural rule\") {\n\n\t\t\tname = artificialLangTagPrefix + name\n\t\t\t_, err = bundle.ParseMessageFileBytes(b, name)\n\t\t\tif err == nil {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t}\n\t\treturn errWithFileContext(fmt.Errorf(\"failed to load translations: %w\", err), r)\n\t}\n\n\treturn nil\n}",
+    "funcname": "addTranslationFile"
+}

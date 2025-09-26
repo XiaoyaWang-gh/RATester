@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 751,
+    "focalfunc": "func (p pathChange) isStructuralChange() bool",
+    "funcbody": "func (p pathChange) isStructuralChange() bool {\n\treturn p.delete || p.isDir\n}",
+    "funcname": "isStructuralChange"
+}

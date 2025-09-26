@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 88,
+    "focalfunc": "func WithTimeout(connectTimeout, readWriteTimeout time.Duration) BeegoHTTPRequestOption",
+    "funcbody": "func WithTimeout(connectTimeout, readWriteTimeout time.Duration) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.SetTimeout(connectTimeout, readWriteTimeout)\n\t}\n}",
+    "funcname": "WithTimeout"
+}

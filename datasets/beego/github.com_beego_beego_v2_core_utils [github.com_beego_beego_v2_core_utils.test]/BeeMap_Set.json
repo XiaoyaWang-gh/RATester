@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 47,
+    "focalfunc": "func (m *BeeMap) Set(k interface{}, v interface{}) bool",
+    "funcbody": "func (m *BeeMap) Set(k interface{}, v interface{}) bool {\n\tm.lock.Lock()\n\tdefer m.lock.Unlock()\n\tif val, ok := m.bm[k]; !ok {\n\t\tm.bm[k] = v\n\t} else if val != v {\n\t\tm.bm[k] = v\n\t} else {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "Set"
+}

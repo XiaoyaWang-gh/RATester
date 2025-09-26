@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 95,
+    "focalfunc": "func (c *connWriter) Flush()",
+    "funcbody": "func (c *connWriter) Flush() {\n}",
+    "funcname": "Flush"
+}

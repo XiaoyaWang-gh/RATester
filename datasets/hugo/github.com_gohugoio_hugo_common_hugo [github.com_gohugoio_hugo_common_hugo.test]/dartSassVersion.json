@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 357,
+    "focalfunc": "func dartSassVersion() godartsass.DartSassVersion",
+    "funcbody": "func dartSassVersion() godartsass.DartSassVersion {\n\tif DartSassBinaryName == \"\" {\n\t\treturn godartsass.DartSassVersion{}\n\t}\n\tif IsDartSassV2() {\n\t\tv, _ := godartsass.Version(DartSassBinaryName)\n\t\treturn v\n\t}\n\n\tv, _ := godartsassv1.Version(DartSassBinaryName)\n\tvar vv godartsass.DartSassVersion\n\tmapstructure.WeakDecode(v, &vv)\n\treturn vv\n}",
+    "funcname": "dartSassVersion"
+}

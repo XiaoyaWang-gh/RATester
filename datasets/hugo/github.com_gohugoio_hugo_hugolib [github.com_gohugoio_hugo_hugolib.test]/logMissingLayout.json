@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_render.go",
+    "lineno": 190,
+    "focalfunc": "func (s *Site) logMissingLayout(name, layout, kind, outputFormat string)",
+    "funcbody": "func (s *Site) logMissingLayout(name, layout, kind, outputFormat string) {\n\tlog := s.Log.Warn()\n\tif name != \"\" && infoOnMissingLayout[name] {\n\t\tlog = s.Log.Info()\n\t}\n\n\terrMsg := \"You should create a template file which matches Hugo Layouts Lookup Rules for this combination.\"\n\tvar args []any\n\tmsg := \"found no layout file for\"\n\tif outputFormat != \"\" {\n\t\tmsg += \" %q\"\n\t\targs = append(args, outputFormat)\n\t}\n\n\tif layout != \"\" {\n\t\tmsg += \" for layout %q\"\n\t\targs = append(args, layout)\n\t}\n\n\tif kind != \"\" {\n\t\tmsg += \" for kind %q\"\n\t\targs = append(args, kind)\n\t}\n\n\tif name != \"\" {\n\t\tmsg += \" for %q\"\n\t\targs = append(args, name)\n\t}\n\n\tmsg += \": \" + errMsg\n\n\tlog.Logf(msg, args...)\n}",
+    "funcname": "logMissingLayout"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 211,
+    "focalfunc": "func (w *htmlElementsCollectorWriter) lexElementInside(resolve htmlCollectorStateFunc) htmlCollectorStateFunc",
+    "funcbody": "func (w *htmlElementsCollectorWriter) lexElementInside(resolve htmlCollectorStateFunc) htmlCollectorStateFunc {\n\tvar s htmlCollectorStateFunc\n\ts = func(w *htmlElementsCollectorWriter) htmlCollectorStateFunc {\n\t\tw.buff.WriteRune(w.r)\n\n\t\tif w.r == '\\'' || w.r == '\"' {\n\t\t\tif w.inQuote == w.r {\n\t\t\t\tw.inQuote = 0\n\t\t\t} else if w.inQuote == 0 {\n\t\t\t\tw.inQuote = w.r\n\t\t\t}\n\t\t}\n\n\t\tif w.inQuote != 0 {\n\t\t\treturn s\n\t\t}\n\n\t\tif w.r == '>' {\n\n\t\t\tb := w.buff.Bytes()\n\n\t\t\tdefer func() {\n\t\t\t\tw.buff.Reset()\n\t\t\t}()\n\n\t\t\tw.collector.mu.RLock()\n\n\t\t\tseen := w.collector.elementSet[string(b)]\n\t\t\tw.collector.mu.RUnlock()\n\t\t\tif seen {\n\t\t\t\treturn resolve\n\t\t\t}\n\n\t\t\ts := w.buff.String()\n\n\t\t\tif s == \"\" {\n\t\t\t\treturn resolve\n\t\t\t}\n\n\t\t\tel, err := w.parseHTMLElement(s)\n\t\t\tif err != nil {\n\t\t\t\tw.err = err\n\t\t\t\treturn resolve\n\t\t\t}\n\n\t\t\tw.collector.mu.Lock()\n\t\t\tw.collector.elementSet[s] = true\n\t\t\tw.collector.elements = append(w.collector.elements, el)\n\t\t\tw.collector.mu.Unlock()\n\n\t\t\treturn resolve\n\n\t\t}\n\n\t\treturn s\n\t}\n\n\treturn s\n}",
+    "funcname": "lexElementInside"
+}

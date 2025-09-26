@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 138,
+    "focalfunc": "func (ctx *Context) BindYAML(obj interface{}) error",
+    "funcbody": "func (ctx *Context) BindYAML(obj interface{}) error {\n\treturn yaml.Unmarshal(ctx.Input.RequestBody, obj)\n}",
+    "funcname": "BindYAML"
+}

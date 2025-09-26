@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/fake/fake_traefikservice.go",
+    "lineno": 91,
+    "focalfunc": "func (c *FakeTraefikServices) Create(ctx context.Context, traefikService *v1alpha1.TraefikService, opts v1.CreateOptions) (result *v1alpha1.TraefikService, err error)",
+    "funcbody": "func (c *FakeTraefikServices) Create(ctx context.Context, traefikService *v1alpha1.TraefikService, opts v1.CreateOptions) (result *v1alpha1.TraefikService, err error) {\n\tobj, err := c.Fake.\n\t\tInvokes(testing.NewCreateAction(traefikservicesResource, c.ns, traefikService), &v1alpha1.TraefikService{})\n\n\tif obj == nil {\n\t\treturn nil, err\n\t}\n\treturn obj.(*v1alpha1.TraefikService), err\n}",
+    "funcname": "Create"
+}

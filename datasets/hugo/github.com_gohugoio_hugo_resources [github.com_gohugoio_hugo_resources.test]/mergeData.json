@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 571,
+    "focalfunc": "func (r *genericResource) mergeData(in map[string]any)",
+    "funcbody": "func (r *genericResource) mergeData(in map[string]any) {\n\tif len(in) == 0 {\n\t\treturn\n\t}\n\tif r.sd.Data == nil {\n\t\tr.sd.Data = make(map[string]any)\n\t}\n\tfor k, v := range in {\n\t\tif _, found := r.sd.Data[k]; !found {\n\t\t\tr.sd.Data[k] = v\n\t\t}\n\t}\n}",
+    "funcname": "mergeData"
+}

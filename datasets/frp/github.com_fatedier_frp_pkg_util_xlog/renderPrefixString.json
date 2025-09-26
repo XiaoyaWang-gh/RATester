@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 80,
+    "focalfunc": "func (l *Logger) renderPrefixString()",
+    "funcbody": "func (l *Logger) renderPrefixString() {\n\tslices.SortStableFunc(l.prefixes, func(a, b LogPrefix) int {\n\t\treturn cmp.Compare(a.Priority, b.Priority)\n\t})\n\tl.prefixString = \"\"\n\tfor _, v := range l.prefixes {\n\t\tl.prefixString += \"[\" + v.Value + \"] \"\n\t}\n}",
+    "funcname": "renderPrefixString"
+}

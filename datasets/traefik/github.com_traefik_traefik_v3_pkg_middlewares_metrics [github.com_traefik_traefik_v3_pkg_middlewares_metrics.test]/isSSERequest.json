@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 193,
+    "focalfunc": "func isSSERequest(req *http.Request) bool",
+    "funcbody": "func isSSERequest(req *http.Request) bool {\n\treturn containsHeader(req, \"Accept\", \"text/event-stream\")\n}",
+    "funcname": "isSSERequest"
+}

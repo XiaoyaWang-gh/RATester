@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 43,
+    "focalfunc": "func (fs *FileSessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (fs *FileSessionStore) Set(ctx context.Context, key, value interface{}) error {\n\tfs.lock.Lock()\n\tdefer fs.lock.Unlock()\n\tfs.values[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

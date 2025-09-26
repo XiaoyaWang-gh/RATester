@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 58,
+    "focalfunc": "func (t *Template) New(name string) *Template",
+    "funcbody": "func (t *Template) New(name string) *Template {\n\tt.init()\n\tnt := &Template{\n\t\tname:\t\tname,\n\t\tcommon:\t\tt.common,\n\t\tleftDelim:\tt.leftDelim,\n\t\trightDelim:\tt.rightDelim,\n\t}\n\treturn nt\n}",
+    "funcname": "New"
+}

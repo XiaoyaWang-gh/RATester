@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/create.go",
+    "lineno": 227,
+    "focalfunc": "func (c *Client) FromString(targetPath, content string) (resource.Resource, error)",
+    "funcbody": "func (c *Client) FromString(targetPath, content string) (resource.Resource, error) {\n\ttargetPath = path.Clean(targetPath)\n\tkey := dynacache.CleanKey(targetPath) + hashing.MD5FromStringHexEncoded(content)\n\tr, err := c.rs.ResourceCache.GetOrCreate(key, func() (resource.Resource, error) {\n\t\treturn c.rs.NewResource(\n\t\t\tresources.ResourceSourceDescriptor{\n\t\t\t\tLazyPublish:\ttrue,\n\t\t\t\tGroupIdentity:\tidentity.Anonymous,\n\t\t\t\tOpenReadSeekCloser: func() (hugio.ReadSeekCloser, error) {\n\t\t\t\t\treturn hugio.NewReadSeekerNoOpCloserFromString(content), nil\n\t\t\t\t},\n\t\t\t\tTargetPath:\ttargetPath,\n\t\t\t})\n\t})\n\n\treturn r, err\n}",
+    "funcname": "FromString"
+}

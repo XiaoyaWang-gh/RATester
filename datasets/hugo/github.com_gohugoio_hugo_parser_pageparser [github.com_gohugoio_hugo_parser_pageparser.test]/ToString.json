@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 166,
+    "focalfunc": "func (i Item) ToString(source []byte) string",
+    "funcbody": "func (i Item) ToString(source []byte) string {\n\tval := i.Val(source)\n\tswitch {\n\tcase i.Type == tEOF:\n\t\treturn \"EOF\"\n\tcase i.Type == tError:\n\t\treturn string(val)\n\tcase i.Type == tIndentation:\n\t\treturn fmt.Sprintf(\"%s:[%s]\", i.Type, util.VisualizeSpaces(val))\n\tcase i.Type > tKeywordMarker:\n\t\treturn fmt.Sprintf(\"<%s>\", val)\n\tcase len(val) > 50:\n\t\treturn fmt.Sprintf(\"%v:%.20q...\", i.Type, val)\n\t}\n\treturn fmt.Sprintf(\"%v:[%s]\", i.Type, val)\n}",
+    "funcname": "ToString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 339,
+    "focalfunc": "func (t *Template) Funcs(funcMap FuncMap) *Template",
+    "funcbody": "func (t *Template) Funcs(funcMap FuncMap) *Template {\n\tt.text.Funcs(template.FuncMap(funcMap))\n\treturn t\n}",
+    "funcname": "Funcs"
+}

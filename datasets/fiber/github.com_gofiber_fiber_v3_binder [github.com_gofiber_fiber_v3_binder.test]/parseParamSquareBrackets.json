@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 132,
+    "focalfunc": "func parseParamSquareBrackets(k string) (string, error)",
+    "funcbody": "func parseParamSquareBrackets(k string) (string, error) {\n\tbb := bytebufferpool.Get()\n\tdefer bytebufferpool.Put(bb)\n\n\tkbytes := []byte(k)\n\topenBracketsCount := 0\n\n\tfor i, b := range kbytes {\n\t\tif b == '[' {\n\t\t\topenBracketsCount++\n\t\t\tif i+1 < len(kbytes) && kbytes[i+1] != ']' {\n\t\t\t\tif err := bb.WriteByte('.'); err != nil {\n\t\t\t\t\treturn \"\", err\n\t\t\t\t}\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\n\t\tif b == ']' {\n\t\t\topenBracketsCount--\n\t\t\tif openBracketsCount < 0 {\n\t\t\t\treturn \"\", errors.New(\"unmatched brackets\")\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\n\t\tif err := bb.WriteByte(b); err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\tif openBracketsCount > 0 {\n\t\treturn \"\", errors.New(\"unmatched brackets\")\n\t}\n\n\treturn bb.String(), nil\n}",
+    "funcname": "parseParamSquareBrackets"
+}

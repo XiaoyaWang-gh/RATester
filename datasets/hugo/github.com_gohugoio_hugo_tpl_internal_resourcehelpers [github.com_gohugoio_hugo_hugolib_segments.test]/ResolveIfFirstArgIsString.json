@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/resourcehelpers/helpers.go",
+    "lineno": 27,
+    "focalfunc": "func ResolveIfFirstArgIsString(args []any) (resources.ResourceTransformer, string, bool)",
+    "funcbody": "func ResolveIfFirstArgIsString(args []any) (resources.ResourceTransformer, string, bool) {\n\tif len(args) != 2 {\n\t\treturn nil, \"\", false\n\t}\n\n\tv1, ok1 := args[0].(string)\n\tif !ok1 {\n\t\treturn nil, \"\", false\n\t}\n\tv2, ok2 := args[1].(resources.ResourceTransformer)\n\n\treturn v2, v1, ok2\n}",
+    "funcname": "ResolveIfFirstArgIsString"
+}

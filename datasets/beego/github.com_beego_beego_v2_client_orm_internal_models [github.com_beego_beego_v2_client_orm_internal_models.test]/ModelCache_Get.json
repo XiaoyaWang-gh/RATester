@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 64,
+    "focalfunc": "func (mc *ModelCache) Get(table string) (mi *ModelInfo, ok bool)",
+    "funcbody": "func (mc *ModelCache) Get(table string) (mi *ModelInfo, ok bool) {\n\tmi, ok = mc.cache[table]\n\treturn\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/tcpmux/httpconnect.go",
+    "lineno": 39,
+    "focalfunc": "func NewHTTPConnectTCPMuxer(listener net.Listener, passthrough bool, timeout time.Duration) (*HTTPConnectTCPMuxer, error)",
+    "funcbody": "func NewHTTPConnectTCPMuxer(listener net.Listener, passthrough bool, timeout time.Duration) (*HTTPConnectTCPMuxer, error) {\n\tret := &HTTPConnectTCPMuxer{passthrough: passthrough}\n\tmux, err := vhost.NewMuxer(listener, ret.getHostFromHTTPConnect, timeout)\n\tmux.SetCheckAuthFunc(ret.auth).\n\t\tSetSuccessHookFunc(ret.sendConnectResponse).\n\t\tSetFailHookFunc(vhostFailed)\n\tret.Muxer = mux\n\treturn ret, err\n}",
+    "funcname": "NewHTTPConnectTCPMuxer"
+}

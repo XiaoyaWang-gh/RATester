@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/path/path.go",
+    "lineno": 126,
+    "focalfunc": "func (ns *Namespace) Join(elements ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) Join(elements ...any) (string, error) {\n\tvar pathElements []string\n\tfor _, elem := range elements {\n\t\tswitch v := elem.(type) {\n\t\tcase []string:\n\t\t\tfor _, e := range v {\n\t\t\t\tpathElements = append(pathElements, filepath.ToSlash(e))\n\t\t\t}\n\t\tcase []any:\n\t\t\tfor _, e := range v {\n\t\t\t\telemStr, err := cast.ToStringE(e)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn \"\", err\n\t\t\t\t}\n\t\t\t\tpathElements = append(pathElements, filepath.ToSlash(elemStr))\n\t\t\t}\n\t\tdefault:\n\t\t\telemStr, err := cast.ToStringE(elem)\n\t\t\tif err != nil {\n\t\t\t\treturn \"\", err\n\t\t\t}\n\t\t\tpathElements = append(pathElements, filepath.ToSlash(elemStr))\n\t\t}\n\t}\n\treturn _path.Join(pathElements...), nil\n}",
+    "funcname": "Join"
+}

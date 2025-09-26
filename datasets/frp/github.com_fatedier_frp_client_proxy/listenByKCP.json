@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/xtcp.go",
+    "lineno": 125,
+    "focalfunc": "func (pxy *XTCPProxy) listenByKCP(listenConn *net.UDPConn, raddr *net.UDPAddr, startWorkConnMsg *msg.StartWorkConn)",
+    "funcbody": "func (pxy *XTCPProxy) listenByKCP(listenConn *net.UDPConn, raddr *net.UDPAddr, startWorkConnMsg *msg.StartWorkConn) {\n\txl := pxy.xl\n\tlistenConn.Close()\n\tladdr, _ := net.ResolveUDPAddr(\"udp\", listenConn.LocalAddr().String())\n\tlConn, err := net.DialUDP(\"udp\", laddr, raddr)\n\tif err != nil {\n\t\txl.Warnf(\"dial udp error: %v\", err)\n\t\treturn\n\t}\n\tdefer lConn.Close()\n\n\tremote, err := netpkg.NewKCPConnFromUDP(lConn, true, raddr.String())\n\tif err != nil {\n\t\txl.Warnf(\"create kcp connection from udp connection error: %v\", err)\n\t\treturn\n\t}\n\n\tfmuxCfg := fmux.DefaultConfig()\n\tfmuxCfg.KeepAliveInterval = 10 * time.Second\n\tfmuxCfg.MaxStreamWindowSize = 6 * 1024 * 1024\n\tfmuxCfg.LogOutput = io.Discard\n\tsession, err := fmux.Server(remote, fmuxCfg)\n\tif err != nil {\n\t\txl.Errorf(\"create mux session error: %v\", err)\n\t\treturn\n\t}\n\tdefer session.Close()\n\n\tfor {\n\t\tmuxConn, err := session.Accept()\n\t\tif err != nil {\n\t\t\txl.Errorf(\"accept connection error: %v\", err)\n\t\t\treturn\n\t\t}\n\t\tgo pxy.HandleTCPWorkConnection(muxConn, startWorkConnMsg, []byte(pxy.cfg.Secretkey))\n\t}\n}",
+    "funcname": "listenByKCP"
+}

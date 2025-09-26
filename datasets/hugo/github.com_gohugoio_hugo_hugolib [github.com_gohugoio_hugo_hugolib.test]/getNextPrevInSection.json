@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__common.go",
+    "lineno": 42,
+    "focalfunc": "func (p *pageCommon) getNextPrevInSection() *nextPrev",
+    "funcbody": "func (p *pageCommon) getNextPrevInSection() *nextPrev {\n\treturn p.posNextPrevSection\n}",
+    "funcname": "getNextPrevInSection"
+}

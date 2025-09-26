@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 567,
+    "focalfunc": "func gt(arg1, arg2 interface{}) (bool, error)",
+    "funcbody": "func gt(arg1, arg2 interface{}) (bool, error) {\n\n\tlessOrEqual, err := le(arg1, arg2)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn !lessOrEqual, nil\n}",
+    "funcname": "gt"
+}

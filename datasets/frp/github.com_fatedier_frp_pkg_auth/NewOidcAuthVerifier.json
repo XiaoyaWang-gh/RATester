@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/oidc.go",
+    "lineno": 97,
+    "focalfunc": "func NewOidcAuthVerifier(additionalAuthScopes []v1.AuthScope, cfg v1.AuthOIDCServerConfig) *OidcAuthConsumer",
+    "funcbody": "func NewOidcAuthVerifier(additionalAuthScopes []v1.AuthScope, cfg v1.AuthOIDCServerConfig) *OidcAuthConsumer {\n\tprovider, err := oidc.NewProvider(context.Background(), cfg.Issuer)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tverifierConf := oidc.Config{\n\t\tClientID:\t\tcfg.Audience,\n\t\tSkipClientIDCheck:\tcfg.Audience == \"\",\n\t\tSkipExpiryCheck:\tcfg.SkipExpiryCheck,\n\t\tSkipIssuerCheck:\tcfg.SkipIssuerCheck,\n\t}\n\treturn &OidcAuthConsumer{\n\t\tadditionalAuthScopes:\tadditionalAuthScopes,\n\t\tverifier:\t\tprovider.Verifier(&verifierConf),\n\t}\n}",
+    "funcname": "NewOidcAuthVerifier"
+}

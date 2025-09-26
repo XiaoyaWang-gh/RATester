@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 41,
+    "focalfunc": "func (p *PathSpec) URLEscape(uri string) string",
+    "funcbody": "func (p *PathSpec) URLEscape(uri string) string {\n\n\tparsedURI, err := url.Parse(uri)\n\tif err != nil {\n\n\t\tpanic(err)\n\t}\n\tx := parsedURI.String()\n\treturn x\n}",
+    "funcname": "URLEscape"
+}

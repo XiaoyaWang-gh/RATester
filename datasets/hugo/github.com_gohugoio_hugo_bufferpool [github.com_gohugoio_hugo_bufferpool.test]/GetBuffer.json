@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/bufferpool/bufpool.go",
+    "lineno": 29,
+    "focalfunc": "func GetBuffer() (buf *bytes.Buffer)",
+    "funcbody": "func GetBuffer() (buf *bytes.Buffer) {\n\treturn bufferPool.Get().(*bytes.Buffer)\n}",
+    "funcname": "GetBuffer"
+}

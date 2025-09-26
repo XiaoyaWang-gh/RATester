@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/manager.go",
+    "lineno": 47,
+    "focalfunc": "func (m *Manager) Register(p Plugin)",
+    "funcbody": "func (m *Manager) Register(p Plugin) {\n\tif p.IsSupport(OpLogin) {\n\t\tm.loginPlugins = append(m.loginPlugins, p)\n\t}\n\tif p.IsSupport(OpNewProxy) {\n\t\tm.newProxyPlugins = append(m.newProxyPlugins, p)\n\t}\n\tif p.IsSupport(OpCloseProxy) {\n\t\tm.closeProxyPlugins = append(m.closeProxyPlugins, p)\n\t}\n\tif p.IsSupport(OpPing) {\n\t\tm.pingPlugins = append(m.pingPlugins, p)\n\t}\n\tif p.IsSupport(OpNewWorkConn) {\n\t\tm.newWorkConnPlugins = append(m.newWorkConnPlugins, p)\n\t}\n\tif p.IsSupport(OpNewUserConn) {\n\t\tm.newUserConnPlugins = append(m.newUserConnPlugins, p)\n\t}\n}",
+    "funcname": "Register"
+}

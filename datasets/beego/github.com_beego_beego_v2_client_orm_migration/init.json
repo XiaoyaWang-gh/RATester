@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 77,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tmigrationMap = make(map[string]Migrationer)\n}",
+    "funcname": "init"
+}

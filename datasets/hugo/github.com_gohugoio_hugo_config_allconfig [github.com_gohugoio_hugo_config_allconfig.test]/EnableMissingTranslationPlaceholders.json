@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 239,
+    "focalfunc": "func (c ConfigLanguage) EnableMissingTranslationPlaceholders() bool",
+    "funcbody": "func (c ConfigLanguage) EnableMissingTranslationPlaceholders() bool {\n\treturn c.config.EnableMissingTranslationPlaceholders\n}",
+    "funcname": "EnableMissingTranslationPlaceholders"
+}

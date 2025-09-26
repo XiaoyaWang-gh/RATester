@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 183,
+    "focalfunc": "func (c *BaseConfiger) Strings(key string) ([]string, error)",
+    "funcbody": "func (c *BaseConfiger) Strings(key string) ([]string, error) {\n\tres, err := c.String(key)\n\tif err != nil || res == \"\" {\n\t\treturn nil, err\n\t}\n\treturn strings.Split(res, \";\"), nil\n}",
+    "funcname": "Strings"
+}

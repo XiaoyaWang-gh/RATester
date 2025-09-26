@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/convert.go",
+    "lineno": 118,
+    "focalfunc": "func ToStringE(v any) (string, error)",
+    "funcbody": "func ToStringE(v any) (string, error) {\n\tif s, ok := TypeToString(v); ok {\n\t\treturn s, nil\n\t}\n\n\tswitch s := v.(type) {\n\tcase json.RawMessage:\n\t\treturn string(s), nil\n\tdefault:\n\t\treturn cast.ToStringE(v)\n\t}\n}",
+    "funcname": "ToStringE"
+}

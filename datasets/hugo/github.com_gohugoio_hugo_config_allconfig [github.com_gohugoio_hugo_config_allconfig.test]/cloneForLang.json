@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 212,
+    "focalfunc": "func (c Config) cloneForLang() *Config",
+    "funcbody": "func (c Config) cloneForLang() *Config {\n\tx := c\n\tx.C = nil\n\tcopyStringSlice := func(in []string) []string {\n\t\tif in == nil {\n\t\t\treturn nil\n\t\t}\n\t\tout := make([]string, len(in))\n\t\tcopy(out, in)\n\t\treturn out\n\t}\n\n\tx.DisableKinds = copyStringSlice(x.DisableKinds)\n\tx.DisableLanguages = copyStringSlice(x.DisableLanguages)\n\tx.MainSections = copyStringSlice(x.MainSections)\n\tx.IgnoreLogs = copyStringSlice(x.IgnoreLogs)\n\tx.IgnoreFiles = copyStringSlice(x.IgnoreFiles)\n\tx.Theme = copyStringSlice(x.Theme)\n\n\tx.StaticDir = x.staticDirs()\n\n\tx.StaticDir0 = nil\n\tx.StaticDir1 = nil\n\tx.StaticDir2 = nil\n\tx.StaticDir3 = nil\n\tx.StaticDir4 = nil\n\tx.StaticDir5 = nil\n\tx.StaticDir6 = nil\n\tx.StaticDir7 = nil\n\tx.StaticDir8 = nil\n\tx.StaticDir9 = nil\n\tx.StaticDir10 = nil\n\n\treturn &x\n}",
+    "funcname": "cloneForLang"
+}

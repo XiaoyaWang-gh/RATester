@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 433,
+    "focalfunc": "func (g *giphy) GIF() *gif.GIF",
+    "funcbody": "func (g *giphy) GIF() *gif.GIF {\n\treturn g.gif\n}",
+    "funcname": "GIF"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 734,
+    "focalfunc": "func (p *Provider) createErrorPageMiddleware(client Client, namespace string, errorPage *traefikv1alpha1.ErrorPage) (*dynamic.ErrorPage, *dynamic.Service, error)",
+    "funcbody": "func (p *Provider) createErrorPageMiddleware(client Client, namespace string, errorPage *traefikv1alpha1.ErrorPage) (*dynamic.ErrorPage, *dynamic.Service, error) {\n\tif errorPage == nil {\n\t\treturn nil, nil, nil\n\t}\n\n\terrorPageMiddleware := &dynamic.ErrorPage{\n\t\tStatus:\terrorPage.Status,\n\t\tQuery:\terrorPage.Query,\n\t}\n\n\tcb := configBuilder{\n\t\tclient:\t\t\t\tclient,\n\t\tallowCrossNamespace:\t\tp.AllowCrossNamespace,\n\t\tallowExternalNameServices:\tp.AllowExternalNameServices,\n\t\tallowEmptyServices:\t\tp.AllowEmptyServices,\n\t}\n\n\tbalancerServerHTTP, err := cb.buildServersLB(namespace, errorPage.Service.LoadBalancerSpec)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\n\treturn errorPageMiddleware, balancerServerHTTP, nil\n}",
+    "funcname": "createErrorPageMiddleware"
+}

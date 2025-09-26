@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 716,
+    "focalfunc": "func (ms *MapSorter) Swap(i, j int)",
+    "funcbody": "func (ms *MapSorter) Swap(i, j int) {\n\tms.Vals[i], ms.Vals[j] = ms.Vals[j], ms.Vals[i]\n\tms.Keys[i], ms.Keys[j] = ms.Keys[j], ms.Keys[i]\n}",
+    "funcname": "Swap"
+}

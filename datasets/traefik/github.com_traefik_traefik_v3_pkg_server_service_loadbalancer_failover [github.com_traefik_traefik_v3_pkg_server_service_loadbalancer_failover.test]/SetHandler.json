@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/failover/failover.go",
+    "lineno": 73,
+    "focalfunc": "func (f *Failover) SetHandler(handler http.Handler)",
+    "funcbody": "func (f *Failover) SetHandler(handler http.Handler) {\n\tf.handlerStatusMu.Lock()\n\tdefer f.handlerStatusMu.Unlock()\n\n\tf.handler = handler\n\tf.handlerStatus = true\n}",
+    "funcname": "SetHandler"
+}

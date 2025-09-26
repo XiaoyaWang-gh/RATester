@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/dynamic/plugins.go",
+    "lineno": 38,
+    "focalfunc": "func deepCopyJSONValue(x any) any",
+    "funcbody": "func deepCopyJSONValue(x any) any {\n\tswitch x := x.(type) {\n\tcase map[string]any:\n\t\tif x == nil {\n\n\t\t\treturn x\n\t\t}\n\t\tclone := make(map[string]any, len(x))\n\t\tfor k, v := range x {\n\t\t\tclone[k] = deepCopyJSONValue(v)\n\t\t}\n\t\treturn clone\n\tcase []any:\n\t\tif x == nil {\n\n\t\t\treturn x\n\t\t}\n\t\tclone := make([]any, len(x))\n\t\tfor i, v := range x {\n\t\t\tclone[i] = deepCopyJSONValue(v)\n\t\t}\n\t\treturn clone\n\tcase string, int64, bool, float64, nil, json.Number:\n\t\treturn x\n\tdefault:\n\t\tv := reflect.ValueOf(x)\n\n\t\tif v.NumMethod() == 0 {\n\t\t\tpanic(fmt.Errorf(\"cannot deep copy %T\", x))\n\t\t}\n\n\t\tmethod := v.MethodByName(\"DeepCopy\")\n\t\tif method.Kind() == reflect.Invalid {\n\t\t\tpanic(fmt.Errorf(\"cannot deep copy %T\", x))\n\t\t}\n\n\t\tcall := method.Call(nil)\n\t\treturn call[0].Interface()\n\t}\n}",
+    "funcname": "deepCopyJSONValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/command.go",
+    "lineno": 72,
+    "focalfunc": "func RegisterCommand(module string, commandName string, command Command)",
+    "funcbody": "func RegisterCommand(module string, commandName string, command Command) {\n\tcmdRegistry.Get(module)[commandName] = command\n}",
+    "funcname": "RegisterCommand"
+}

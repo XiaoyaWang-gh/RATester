@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 280,
+    "focalfunc": "func (w *fileLogWriter) hourlyRotate(openTime time.Time)",
+    "funcbody": "func (w *fileLogWriter) hourlyRotate(openTime time.Time) {\n\ty, m, d := openTime.Add(1 * time.Hour).Date()\n\th, _, _ := openTime.Add(1 * time.Hour).Clock()\n\tnextHour := time.Date(y, m, d, h, 0, 0, 0, openTime.Location())\n\ttm := time.NewTimer(time.Duration(nextHour.UnixNano() - openTime.UnixNano() + 100))\n\t<-tm.C\n\tw.Lock()\n\tif w.needRotateHourly(time.Now().Hour()) {\n\t\tif err := w.doRotate(time.Now()); err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"FileLogWriter(%q): %s\\n\", w.Filename, err)\n\t\t}\n\t}\n\tw.Unlock()\n}",
+    "funcname": "hourlyRotate"
+}

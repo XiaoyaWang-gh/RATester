@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 165,
+    "focalfunc": "func hasHeaderValue(m http.Header, key, value string) bool",
+    "funcbody": "func hasHeaderValue(m http.Header, key, value string) bool {\n\tvar s []string\n\tvar ok bool\n\n\tif s, ok = m[key]; !ok {\n\t\treturn false\n\t}\n\n\tfor _, v := range s {\n\t\tif v == value {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "hasHeaderValue"
+}

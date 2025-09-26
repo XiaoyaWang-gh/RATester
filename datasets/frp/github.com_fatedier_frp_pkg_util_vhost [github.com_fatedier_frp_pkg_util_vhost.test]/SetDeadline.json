@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 88,
+    "focalfunc": "func (conn readOnlyConn) SetDeadline(_ time.Time) error",
+    "funcbody": "func (conn readOnlyConn) SetDeadline(_ time.Time) error\t{ return nil }",
+    "funcname": "SetDeadline"
+}

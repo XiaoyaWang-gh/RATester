@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 568,
+    "focalfunc": "func splitSvcNameProvider(name string) (string, string)",
+    "funcbody": "func splitSvcNameProvider(name string) (string, string) {\n\tparts := strings.Split(name, providerNamespaceSeparator)\n\n\tsvc := strings.Join(parts[:len(parts)-1], providerNamespaceSeparator)\n\tpvd := parts[len(parts)-1]\n\n\treturn svc, pvd\n}",
+    "funcname": "splitSvcNameProvider"
+}

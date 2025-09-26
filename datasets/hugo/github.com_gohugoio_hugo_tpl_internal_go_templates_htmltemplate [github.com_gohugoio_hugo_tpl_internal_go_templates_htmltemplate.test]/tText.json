@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 51,
+    "focalfunc": "func tText(c context, s []byte) (context, int)",
+    "funcbody": "func tText(c context, s []byte) (context, int) {\n\tk := 0\n\tfor {\n\t\ti := k + bytes.IndexByte(s[k:], '<')\n\t\tif i < k || i+1 == len(s) {\n\t\t\treturn c, len(s)\n\t\t} else if i+4 <= len(s) && bytes.Equal(commentStart, s[i:i+4]) {\n\t\t\treturn context{state: stateHTMLCmt}, i + 4\n\t\t}\n\t\ti++\n\t\tend := false\n\t\tif s[i] == '/' {\n\t\t\tif i+1 == len(s) {\n\t\t\t\treturn c, len(s)\n\t\t\t}\n\t\t\tend, i = true, i+1\n\t\t}\n\t\tj, e := eatTagName(s, i)\n\t\tif j != i {\n\t\t\tif end {\n\t\t\t\te = elementNone\n\t\t\t}\n\n\t\t\treturn context{state: stateTag, element: e}, j\n\t\t}\n\t\tk = j\n\t}\n}",
+    "funcname": "tText"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 321,
+    "focalfunc": "func (r *Request) ResetPathParams() *Request",
+    "funcbody": "func (r *Request) ResetPathParams() *Request {\n\tr.path.Reset()\n\treturn r\n}",
+    "funcname": "ResetPathParams"
+}

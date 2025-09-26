@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 118,
+    "focalfunc": "func (a errorMsgs) Last() *Error",
+    "funcbody": "func (a errorMsgs) Last() *Error {\n\tif length := len(a); length > 0 {\n\t\treturn a[length-1]\n\t}\n\treturn nil\n}",
+    "funcname": "Last"
+}

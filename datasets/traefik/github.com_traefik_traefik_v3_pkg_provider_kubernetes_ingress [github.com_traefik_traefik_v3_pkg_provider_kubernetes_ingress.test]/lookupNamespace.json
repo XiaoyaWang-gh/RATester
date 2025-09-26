@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 398,
+    "focalfunc": "func (c *clientWrapper) lookupNamespace(ns string) string",
+    "funcbody": "func (c *clientWrapper) lookupNamespace(ns string) string {\n\tif c.isNamespaceAll {\n\t\treturn metav1.NamespaceAll\n\t}\n\treturn ns\n}",
+    "funcname": "lookupNamespace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 409,
+    "focalfunc": "func (c *DefaultCtx) Cookie(cookie *Cookie)",
+    "funcbody": "func (c *DefaultCtx) Cookie(cookie *Cookie) {\n\tfcookie := fasthttp.AcquireCookie()\n\tfcookie.SetKey(cookie.Name)\n\tfcookie.SetValue(cookie.Value)\n\tfcookie.SetPath(cookie.Path)\n\tfcookie.SetDomain(cookie.Domain)\n\n\tif !cookie.SessionOnly {\n\t\tfcookie.SetMaxAge(cookie.MaxAge)\n\t\tfcookie.SetExpire(cookie.Expires)\n\t}\n\tfcookie.SetSecure(cookie.Secure)\n\tfcookie.SetHTTPOnly(cookie.HTTPOnly)\n\n\tswitch utils.ToLower(cookie.SameSite) {\n\tcase CookieSameSiteStrictMode:\n\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteStrictMode)\n\tcase CookieSameSiteNoneMode:\n\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteNoneMode)\n\tcase CookieSameSiteDisabled:\n\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteDisabled)\n\tdefault:\n\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteLaxMode)\n\t}\n\n\tfcookie.SetPartitioned(cookie.Partitioned)\n\n\tc.fasthttp.Response.Header.SetCookie(fcookie)\n\tfasthttp.ReleaseCookie(fcookie)\n}",
+    "funcname": "Cookie"
+}

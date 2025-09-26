@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 613,
+    "focalfunc": "func (s *stats) adjustCurrentMaxSize() bool",
+    "funcbody": "func (s *stats) adjustCurrentMaxSize() bool {\n\tnewCurrentMaxSize := int(math.Floor(float64(s.opts.MaxSize) * s.adjustmentFactor))\n\n\tif newCurrentMaxSize < s.opts.MinMaxSize {\n\t\tnewCurrentMaxSize = int(s.opts.MinMaxSize)\n\t}\n\tchanged := newCurrentMaxSize != s.currentMaxSize\n\ts.currentMaxSize = newCurrentMaxSize\n\treturn changed\n}",
+    "funcname": "adjustCurrentMaxSize"
+}

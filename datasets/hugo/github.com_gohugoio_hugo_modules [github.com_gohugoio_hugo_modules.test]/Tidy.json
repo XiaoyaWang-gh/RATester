@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 682,
+    "focalfunc": "func (c *Client) tidy(mods Modules, goModOnly bool) error",
+    "funcbody": "func (c *Client) tidy(mods Modules, goModOnly bool) error {\n\tisGoMod := make(map[string]bool)\n\tfor _, m := range mods {\n\t\tif m.Owner() == nil {\n\t\t\tcontinue\n\t\t}\n\t\tif m.IsGoMod() {\n\n\t\t\tpathVer := m.Path() + \" \" + m.Version()\n\t\t\tisGoMod[pathVer] = true\n\t\t}\n\t}\n\n\tif err := c.rewriteGoMod(goModFilename, isGoMod); err != nil {\n\t\treturn err\n\t}\n\n\tif goModOnly {\n\t\treturn nil\n\t}\n\n\tif err := c.rewriteGoMod(goSumFilename, isGoMod); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "tidy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/udp.go",
+    "lineno": 65,
+    "focalfunc": "func (pxy *UDPProxy) Run() (err error)",
+    "funcbody": "func (pxy *UDPProxy) Run() (err error) {\n\tpxy.localAddr, err = net.ResolveUDPAddr(\"udp\", net.JoinHostPort(pxy.cfg.LocalIP, strconv.Itoa(pxy.cfg.LocalPort)))\n\tif err != nil {\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "Run"
+}

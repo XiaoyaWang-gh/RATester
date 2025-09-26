@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 273,
+    "focalfunc": "func extractFileTypePos(err error) (string, text.Position)",
+    "funcbody": "func extractFileTypePos(err error) (string, text.Position) {\n\terr = Cause(err)\n\n\tvar fileType string\n\n\tif pos := extractPosition(err); pos.LineNumber > 0 || pos.Offset > 0 {\n\t\t_, fileType = paths.FileAndExtNoDelimiter(pos.Filename)\n\t\treturn fileType, pos\n\t}\n\n\tpos := text.Position{\n\t\tOffset:\t\t-1,\n\t\tLineNumber:\t1,\n\t\tColumnNumber:\t1,\n\t}\n\n\toffset, typ := extractOffsetAndType(err)\n\tif fileType == \"\" {\n\t\tfileType = typ\n\t}\n\n\tif offset >= 0 {\n\t\tpos.Offset = offset\n\t}\n\n\tif line, col := extractLineNumberAndColumnNumber(err); line >= 0 {\n\t\tpos.LineNumber = line\n\t\tpos.ColumnNumber = col\n\t\treturn fileType, pos\n\t}\n\n\tfor _, handle := range lineNumberExtractors {\n\t\tlno, col := handle(err)\n\t\tif lno > 0 {\n\t\t\tpos.ColumnNumber = col\n\t\t\tpos.LineNumber = lno\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif fileType == \"\" && pos.Filename != \"\" {\n\t\t_, fileType = paths.FileAndExtNoDelimiter(pos.Filename)\n\t}\n\n\treturn fileType, pos\n}",
+    "funcname": "extractFileTypePos"
+}

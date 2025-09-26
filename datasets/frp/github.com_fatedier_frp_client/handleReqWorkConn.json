@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 121,
+    "focalfunc": "func (ctl *Control) handleReqWorkConn(_ msg.Message)",
+    "funcbody": "func (ctl *Control) handleReqWorkConn(_ msg.Message) {\n\txl := ctl.xl\n\tworkConn, err := ctl.connectServer()\n\tif err != nil {\n\t\txl.Warnf(\"start new connection to server error: %v\", err)\n\t\treturn\n\t}\n\n\tm := &msg.NewWorkConn{\n\t\tRunID: ctl.sessionCtx.RunID,\n\t}\n\tif err = ctl.sessionCtx.AuthSetter.SetNewWorkConn(m); err != nil {\n\t\txl.Warnf(\"error during NewWorkConn authentication: %v\", err)\n\t\tworkConn.Close()\n\t\treturn\n\t}\n\tif err = msg.WriteMsg(workConn, m); err != nil {\n\t\txl.Warnf(\"work connection write to server error: %v\", err)\n\t\tworkConn.Close()\n\t\treturn\n\t}\n\n\tvar startMsg msg.StartWorkConn\n\tif err = msg.ReadMsgInto(workConn, &startMsg); err != nil {\n\t\txl.Tracef(\"work connection closed before response StartWorkConn message: %v\", err)\n\t\tworkConn.Close()\n\t\treturn\n\t}\n\tif startMsg.Error != \"\" {\n\t\txl.Errorf(\"StartWorkConn contains error: %s\", startMsg.Error)\n\t\tworkConn.Close()\n\t\treturn\n\t}\n\n\tctl.pm.HandleWorkConn(startMsg.ProxyName, workConn, &startMsg)\n}",
+    "funcname": "handleReqWorkConn"
+}

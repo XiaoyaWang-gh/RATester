@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_udp.go",
+    "lineno": 170,
+    "focalfunc": "func keepUDPService(name string, item *runtime.UDPServiceInfo, criterion *searchCriterion) bool",
+    "funcbody": "func keepUDPService(name string, item *runtime.UDPServiceInfo, criterion *searchCriterion) bool {\n\tif criterion == nil {\n\t\treturn true\n\t}\n\n\treturn criterion.withStatus(item.Status) && criterion.searchIn(name)\n}",
+    "funcname": "keepUDPService"
+}

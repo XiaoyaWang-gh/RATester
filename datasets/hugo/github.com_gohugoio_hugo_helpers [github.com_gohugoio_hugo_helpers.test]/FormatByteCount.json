@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 284,
+    "focalfunc": "func FormatByteCount(bc uint64) string",
+    "funcbody": "func FormatByteCount(bc uint64) string {\n\tconst (\n\t\tGigabyte\t= 1 << 30\n\t\tMegabyte\t= 1 << 20\n\t\tKilobyte\t= 1 << 10\n\t)\n\tswitch {\n\tcase bc > Gigabyte || -bc > Gigabyte:\n\t\treturn fmt.Sprintf(\"%.2f GB\", float64(bc)/Gigabyte)\n\tcase bc > Megabyte || -bc > Megabyte:\n\t\treturn fmt.Sprintf(\"%.2f MB\", float64(bc)/Megabyte)\n\tcase bc > Kilobyte || -bc > Kilobyte:\n\t\treturn fmt.Sprintf(\"%.2f KB\", float64(bc)/Kilobyte)\n\t}\n\treturn fmt.Sprintf(\"%d B\", bc)\n}",
+    "funcname": "FormatByteCount"
+}

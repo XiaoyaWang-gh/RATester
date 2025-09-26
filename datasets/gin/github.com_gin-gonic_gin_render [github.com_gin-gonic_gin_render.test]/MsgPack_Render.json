@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/msgpack.go",
+    "lineno": 34,
+    "focalfunc": "func (r MsgPack) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r MsgPack) Render(w http.ResponseWriter) error {\n\treturn WriteMsgPack(w, r.Data)\n}",
+    "funcname": "Render"
+}

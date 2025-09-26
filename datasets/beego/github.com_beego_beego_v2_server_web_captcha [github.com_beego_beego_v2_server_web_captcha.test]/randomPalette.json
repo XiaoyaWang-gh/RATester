@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 268,
+    "focalfunc": "func randomPalette() color.Palette",
+    "funcbody": "func randomPalette() color.Palette {\n\tp := make([]color.Color, circleCount+1)\n\n\tp[0] = color.RGBA{0xFF, 0xFF, 0xFF, 0x00}\n\n\tprim := color.RGBA{\n\t\tuint8(randIntn(129)),\n\t\tuint8(randIntn(129)),\n\t\tuint8(randIntn(129)),\n\t\t0xFF,\n\t}\n\tp[1] = prim\n\n\tfor i := 2; i <= circleCount; i++ {\n\t\tp[i] = randomBrightness(prim, 255)\n\t}\n\treturn p\n}",
+    "funcname": "randomPalette"
+}

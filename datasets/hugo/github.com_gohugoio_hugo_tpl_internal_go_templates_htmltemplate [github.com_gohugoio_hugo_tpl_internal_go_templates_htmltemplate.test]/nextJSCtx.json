@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 34,
+    "focalfunc": "func nextJSCtx(s []byte, preceding jsCtx) jsCtx",
+    "funcbody": "func nextJSCtx(s []byte, preceding jsCtx) jsCtx {\n\n\ts = bytes.TrimRight(s, jsWhitespace)\n\tif len(s) == 0 {\n\t\treturn preceding\n\t}\n\n\tswitch c, n := s[len(s)-1], len(s); c {\n\tcase '+', '-':\n\n\t\tstart := n - 1\n\n\t\tfor start > 0 && s[start-1] == c {\n\t\t\tstart--\n\t\t}\n\t\tif (n-start)&1 == 1 {\n\n\t\t\treturn jsCtxRegexp\n\t\t}\n\t\treturn jsCtxDivOp\n\tcase '.':\n\n\t\tif n != 1 && '0' <= s[n-2] && s[n-2] <= '9' {\n\t\t\treturn jsCtxDivOp\n\t\t}\n\t\treturn jsCtxRegexp\n\n\tcase ',', '<', '>', '=', '*', '%', '&', '|', '^', '?':\n\t\treturn jsCtxRegexp\n\n\tcase '!', '~':\n\t\treturn jsCtxRegexp\n\n\tcase '(', '[':\n\t\treturn jsCtxRegexp\n\n\tcase ':', ';', '{':\n\t\treturn jsCtxRegexp\n\n\tcase '}':\n\t\treturn jsCtxRegexp\n\tdefault:\n\n\t\tj := n\n\t\tfor j > 0 && isJSIdentPart(rune(s[j-1])) {\n\t\t\tj--\n\t\t}\n\t\tif regexpPrecederKeywords[string(s[j:])] {\n\t\t\treturn jsCtxRegexp\n\t\t}\n\t}\n\n\treturn jsCtxDivOp\n}",
+    "funcname": "nextJSCtx"
+}

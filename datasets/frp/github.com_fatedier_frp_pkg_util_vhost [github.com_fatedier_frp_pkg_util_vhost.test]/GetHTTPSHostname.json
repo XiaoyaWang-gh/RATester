@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 39,
+    "focalfunc": "func GetHTTPSHostname(c net.Conn) (_ net.Conn, _ map[string]string, err error)",
+    "funcbody": "func GetHTTPSHostname(c net.Conn) (_ net.Conn, _ map[string]string, err error) {\n\treqInfoMap := make(map[string]string, 0)\n\tsc, rd := libnet.NewSharedConn(c)\n\n\tclientHello, err := readClientHello(rd)\n\tif err != nil {\n\t\treturn nil, reqInfoMap, err\n\t}\n\n\treqInfoMap[\"Host\"] = clientHello.ServerName\n\treqInfoMap[\"Scheme\"] = \"https\"\n\treturn sc, reqInfoMap, nil\n}",
+    "funcname": "GetHTTPSHostname"
+}

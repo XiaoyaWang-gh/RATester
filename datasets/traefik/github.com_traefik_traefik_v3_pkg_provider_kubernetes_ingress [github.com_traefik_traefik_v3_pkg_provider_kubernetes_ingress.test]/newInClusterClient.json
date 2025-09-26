@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 66,
+    "focalfunc": "func newInClusterClient(endpoint string) (*clientWrapper, error)",
+    "funcbody": "func newInClusterClient(endpoint string) (*clientWrapper, error) {\n\tconfig, err := rest.InClusterConfig()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create in-cluster configuration: %w\", err)\n\t}\n\n\tif endpoint != \"\" {\n\t\tconfig.Host = endpoint\n\t}\n\n\treturn createClientFromConfig(config)\n}",
+    "funcname": "newInClusterClient"
+}

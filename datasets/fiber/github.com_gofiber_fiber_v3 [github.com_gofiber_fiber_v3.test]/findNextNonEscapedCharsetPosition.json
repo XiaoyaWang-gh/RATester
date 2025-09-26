@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 463,
+    "focalfunc": "func findNextNonEscapedCharsetPosition(search string, charset []byte) int",
+    "funcbody": "func findNextNonEscapedCharsetPosition(search string, charset []byte) int {\n\tpos := findNextCharsetPosition(search, charset)\n\tfor pos > 0 && search[pos-1] == escapeChar {\n\t\tif len(search) == pos+1 {\n\n\t\t\treturn -1\n\t\t}\n\t\tnextPossiblePos := findNextCharsetPosition(search[pos+1:], charset)\n\t\tif nextPossiblePos == -1 {\n\t\t\treturn -1\n\t\t}\n\n\t\tpos = nextPossiblePos + pos + 1\n\t}\n\n\treturn pos\n}",
+    "funcname": "findNextNonEscapedCharsetPosition"
+}

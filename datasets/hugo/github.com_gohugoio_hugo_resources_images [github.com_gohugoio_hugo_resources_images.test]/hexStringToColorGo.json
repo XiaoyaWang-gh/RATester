@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 167,
+    "focalfunc": "func hexStringToColorGo(s string) (color.Color, error)",
+    "funcbody": "func hexStringToColorGo(s string) (color.Color, error) {\n\ts = strings.TrimPrefix(s, \"#\")\n\n\tif len(s) != 3 && len(s) != 4 && len(s) != 6 && len(s) != 8 {\n\t\treturn nil, fmt.Errorf(\"invalid color code: %q\", s)\n\t}\n\n\ts = strings.ToLower(s)\n\n\tif len(s) == 3 || len(s) == 4 {\n\t\tvar v string\n\t\tfor _, r := range s {\n\t\t\tv += string(r) + string(r)\n\t\t}\n\t\ts = v\n\t}\n\n\tif s == \"ffffff\" {\n\t\treturn color.White, nil\n\t}\n\n\tif s == \"000000\" {\n\t\treturn color.Black, nil\n\t}\n\n\tif len(s) == 6 {\n\t\ts += \"ff\"\n\t}\n\n\tb, err := hex.DecodeString(s)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn color.RGBA{b[0], b[1], b[2], b[3]}, nil\n}",
+    "funcname": "hexStringToColorGo"
+}

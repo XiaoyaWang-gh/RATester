@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 507,
+    "focalfunc": "func (m Match) IsSatisfied(obj interface{}) bool",
+    "funcbody": "func (m Match) IsSatisfied(obj interface{}) bool {\n\treturn m.Regexp.MatchString(fmt.Sprintf(\"%v\", obj))\n}",
+    "funcname": "IsSatisfied"
+}

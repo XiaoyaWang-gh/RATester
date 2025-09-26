@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 1003,
+    "focalfunc": "func decodeConfigFromParams(fs afero.Fs, logger loggers.Logger, bcfg config.BaseConfig, p config.Provider, target *Config, keys []string) error",
+    "funcbody": "func decodeConfigFromParams(fs afero.Fs, logger loggers.Logger, bcfg config.BaseConfig, p config.Provider, target *Config, keys []string) error {\n\tvar decoderSetups []decodeWeight\n\n\tif len(keys) == 0 {\n\t\tfor _, v := range allDecoderSetups {\n\t\t\tdecoderSetups = append(decoderSetups, v)\n\t\t}\n\t} else {\n\t\tfor _, key := range keys {\n\t\t\tif v, found := allDecoderSetups[key]; found {\n\t\t\t\tdecoderSetups = append(decoderSetups, v)\n\t\t\t} else {\n\t\t\t\tlogger.Warnf(\"Skip unknown config key %q\", key)\n\t\t\t}\n\t\t}\n\t}\n\n\tsort.Slice(decoderSetups, func(i, j int) bool {\n\t\tki, kj := decoderSetups[i], decoderSetups[j]\n\t\tif ki.weight == kj.weight {\n\t\t\treturn ki.key < kj.key\n\t\t}\n\t\treturn ki.weight < kj.weight\n\t})\n\n\tfor _, v := range decoderSetups {\n\t\tp := decodeConfig{p: p, c: target, fs: fs, bcfg: bcfg}\n\t\tif err := v.decode(v, p); err != nil {\n\t\t\treturn fmt.Errorf(\"failed to decode %q: %w\", v.key, err)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "decodeConfigFromParams"
+}

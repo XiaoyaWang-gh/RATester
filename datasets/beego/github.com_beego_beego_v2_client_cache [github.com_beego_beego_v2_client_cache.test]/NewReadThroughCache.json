@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/read_through.go",
+    "lineno": 33,
+    "focalfunc": "func NewReadThroughCache(cache Cache, expiration time.Duration,\n\tloadFunc func(ctx context.Context, key string) (any, error),\n) (Cache, error)",
+    "funcbody": "func NewReadThroughCache(cache Cache, expiration time.Duration,\n\tloadFunc func(ctx context.Context, key string) (any, error),\n) (Cache, error) {\n\tif loadFunc == nil {\n\t\treturn nil, berror.Error(InvalidLoadFunc, \"loadFunc cannot be nil\")\n\t}\n\treturn &readThroughCache{\n\t\tCache:\t\tcache,\n\t\texpiration:\texpiration,\n\t\tloadFunc:\tloadFunc,\n\t}, nil\n}",
+    "funcname": "NewReadThroughCache"
+}

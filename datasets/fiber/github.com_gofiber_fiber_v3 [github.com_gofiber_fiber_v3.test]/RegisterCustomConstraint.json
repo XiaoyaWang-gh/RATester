@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 553,
+    "focalfunc": "func (app *App) RegisterCustomConstraint(constraint CustomConstraint)",
+    "funcbody": "func (app *App) RegisterCustomConstraint(constraint CustomConstraint) {\n\tapp.customConstraints = append(app.customConstraints, constraint)\n}",
+    "funcname": "RegisterCustomConstraint"
+}

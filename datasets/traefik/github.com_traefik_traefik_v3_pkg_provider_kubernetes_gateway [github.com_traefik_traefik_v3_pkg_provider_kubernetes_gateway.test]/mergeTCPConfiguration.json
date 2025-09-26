@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/tcproute.go",
+    "lineno": 349,
+    "focalfunc": "func mergeTCPConfiguration(from, to *dynamic.Configuration)",
+    "funcbody": "func mergeTCPConfiguration(from, to *dynamic.Configuration) {\n\tif from == nil || from.TCP == nil || to == nil {\n\t\treturn\n\t}\n\n\tif to.TCP == nil {\n\t\tto.TCP = from.TCP\n\t\treturn\n\t}\n\n\tif to.TCP.Routers == nil {\n\t\tto.TCP.Routers = map[string]*dynamic.TCPRouter{}\n\t}\n\tfor routerName, router := range from.TCP.Routers {\n\t\tto.TCP.Routers[routerName] = router\n\t}\n\n\tif to.TCP.Middlewares == nil {\n\t\tto.TCP.Middlewares = map[string]*dynamic.TCPMiddleware{}\n\t}\n\tfor middlewareName, middleware := range from.TCP.Middlewares {\n\t\tto.TCP.Middlewares[middlewareName] = middleware\n\t}\n\n\tif to.TCP.Services == nil {\n\t\tto.TCP.Services = map[string]*dynamic.TCPService{}\n\t}\n\tfor serviceName, service := range from.TCP.Services {\n\t\tto.TCP.Services[serviceName] = service\n\t}\n}",
+    "funcname": "mergeTCPConfiguration"
+}

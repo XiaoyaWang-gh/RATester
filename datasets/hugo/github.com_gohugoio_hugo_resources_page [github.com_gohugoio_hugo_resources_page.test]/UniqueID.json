@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 526,
+    "focalfunc": "func (p *nopPage) UniqueID() string",
+    "funcbody": "func (p *nopPage) UniqueID() string {\n\treturn \"\"\n}",
+    "funcname": "UniqueID"
+}

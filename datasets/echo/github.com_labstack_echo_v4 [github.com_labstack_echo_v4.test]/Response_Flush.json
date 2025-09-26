@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 88,
+    "focalfunc": "func (r *Response) Flush()",
+    "funcbody": "func (r *Response) Flush() {\n\terr := http.NewResponseController(r.Writer).Flush()\n\tif err != nil && errors.Is(err, http.ErrNotSupported) {\n\t\tpanic(errors.New(\"response writer flushing is not supported\"))\n\t}\n}",
+    "funcname": "Flush"
+}

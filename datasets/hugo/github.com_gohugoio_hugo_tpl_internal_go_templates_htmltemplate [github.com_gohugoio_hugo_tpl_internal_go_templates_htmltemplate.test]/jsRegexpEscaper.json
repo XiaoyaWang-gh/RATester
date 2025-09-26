@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 269,
+    "focalfunc": "func jsRegexpEscaper(args ...any) string",
+    "funcbody": "func jsRegexpEscaper(args ...any) string {\n\ts, _ := stringify(args...)\n\ts = replace(s, jsRegexpReplacementTable)\n\tif s == \"\" {\n\n\t\treturn \"(?:)\"\n\t}\n\treturn s\n}",
+    "funcname": "jsRegexpEscaper"
+}

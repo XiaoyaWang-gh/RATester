@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/plugins.go",
+    "lineno": 45,
+    "focalfunc": "func newTraceablePlugin(ctx context.Context, name string, plug plugins.Constructor, next http.Handler) (*traceablePlugin, error)",
+    "funcbody": "func newTraceablePlugin(ctx context.Context, name string, plug plugins.Constructor, next http.Handler) (*traceablePlugin, error) {\n\th, err := plug(ctx, next)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &traceablePlugin{name: name, h: h}, nil\n}",
+    "funcname": "newTraceablePlugin"
+}

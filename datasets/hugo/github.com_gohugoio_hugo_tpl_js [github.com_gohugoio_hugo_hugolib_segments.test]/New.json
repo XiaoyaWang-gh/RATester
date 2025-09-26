@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/js/js.go",
+    "lineno": 29,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\tif deps.ResourceSpec == nil {\n\t\treturn &Namespace{}\n\t}\n\treturn &Namespace{\n\t\tclient:\t\tjs.New(deps.BaseFs.Assets, deps.ResourceSpec),\n\t\tbabelClient:\tbabel.New(deps.ResourceSpec),\n\t}\n}",
+    "funcname": "New"
+}

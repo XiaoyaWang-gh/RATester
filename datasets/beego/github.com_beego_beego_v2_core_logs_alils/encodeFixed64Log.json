@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 332,
+    "focalfunc": "func encodeFixed64Log(data []byte, offset int, v uint64) int",
+    "funcbody": "func encodeFixed64Log(data []byte, offset int, v uint64) int {\n\tdata[offset] = uint8(v)\n\tdata[offset+1] = uint8(v >> 8)\n\tdata[offset+2] = uint8(v >> 16)\n\tdata[offset+3] = uint8(v >> 24)\n\tdata[offset+4] = uint8(v >> 32)\n\tdata[offset+5] = uint8(v >> 40)\n\tdata[offset+6] = uint8(v >> 48)\n\tdata[offset+7] = uint8(v >> 56)\n\treturn offset + 8\n}",
+    "funcname": "encodeFixed64Log"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_config.go",
+    "lineno": 236,
+    "focalfunc": "func resolveDirPlaceholder(fs afero.Fs, bcfg config.BaseConfig, placeholder string) (cacheDir string, isResource bool, err error)",
+    "funcbody": "func resolveDirPlaceholder(fs afero.Fs, bcfg config.BaseConfig, placeholder string) (cacheDir string, isResource bool, err error) {\n\tswitch strings.ToLower(placeholder) {\n\tcase \":resourcedir\":\n\t\treturn \"\", true, nil\n\tcase \":cachedir\":\n\t\treturn bcfg.CacheDir, false, nil\n\tcase \":project\":\n\t\treturn filepath.Base(bcfg.WorkingDir), false, nil\n\t}\n\n\treturn \"\", false, fmt.Errorf(\"%q is not a valid placeholder (valid values are :cacheDir or :resourceDir)\", placeholder)\n}",
+    "funcname": "resolveDirPlaceholder"
+}

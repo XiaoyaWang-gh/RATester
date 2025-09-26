@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 96,
+    "focalfunc": "func (app *App) quoteString(raw string) string",
+    "funcbody": "func (app *App) quoteString(raw string) string {\n\tbb := bytebufferpool.Get()\n\tquoted := app.getString(fasthttp.AppendQuotedArg(bb.B, app.getBytes(raw)))\n\tbytebufferpool.Put(bb)\n\treturn quoted\n}",
+    "funcname": "quoteString"
+}

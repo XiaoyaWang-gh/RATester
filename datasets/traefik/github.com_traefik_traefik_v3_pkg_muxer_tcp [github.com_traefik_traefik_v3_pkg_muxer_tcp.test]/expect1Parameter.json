@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher.go",
+    "lineno": 21,
+    "focalfunc": "func expect1Parameter(fn func(*matchersTree, ...string) error) func(*matchersTree, ...string) error",
+    "funcbody": "func expect1Parameter(fn func(*matchersTree, ...string) error) func(*matchersTree, ...string) error {\n\treturn func(route *matchersTree, s ...string) error {\n\t\tif len(s) != 1 {\n\t\t\treturn fmt.Errorf(\"unexpected number of parameters; got %d, expected 1\", len(s))\n\t\t}\n\n\t\treturn fn(route, s...)\n\t}\n}",
+    "funcname": "expect1Parameter"
+}

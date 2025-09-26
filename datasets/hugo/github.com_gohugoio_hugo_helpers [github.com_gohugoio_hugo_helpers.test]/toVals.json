@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/processing_stats.go",
+    "lineno": 42,
+    "focalfunc": "func (s *ProcessingStats) toVals() []processingStatsTitleVal",
+    "funcbody": "func (s *ProcessingStats) toVals() []processingStatsTitleVal {\n\treturn []processingStatsTitleVal{\n\t\t{\"Pages\", s.Pages},\n\t\t{\"Paginator pages\", s.PaginatorPages},\n\t\t{\"Non-page files\", s.Files},\n\t\t{\"Static files\", s.Static},\n\t\t{\"Processed images\", s.ProcessedImages},\n\t\t{\"Aliases\", s.Aliases},\n\t\t{\"Cleaned\", s.Cleaned},\n\t}\n}",
+    "funcname": "toVals"
+}

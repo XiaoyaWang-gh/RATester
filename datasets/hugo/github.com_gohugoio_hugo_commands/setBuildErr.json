@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 115,
+    "focalfunc": "func (e *hugoBuilderErrState) setBuildErr(err error)",
+    "funcbody": "func (e *hugoBuilderErrState) setBuildErr(err error) {\n\te.mu.Lock()\n\tdefer e.mu.Unlock()\n\te.builderr = err\n}",
+    "funcname": "setBuildErr"
+}

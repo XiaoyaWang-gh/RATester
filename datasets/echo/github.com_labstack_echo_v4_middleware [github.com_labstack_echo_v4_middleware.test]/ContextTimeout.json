@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/context_timeout.go",
+    "lineno": 28,
+    "focalfunc": "func ContextTimeout(timeout time.Duration) echo.MiddlewareFunc",
+    "funcbody": "func ContextTimeout(timeout time.Duration) echo.MiddlewareFunc {\n\treturn ContextTimeoutWithConfig(ContextTimeoutConfig{Timeout: timeout})\n}",
+    "funcname": "ContextTimeout"
+}

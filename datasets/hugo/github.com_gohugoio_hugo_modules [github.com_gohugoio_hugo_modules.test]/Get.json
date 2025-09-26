@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 367,
+    "focalfunc": "func (c *Client) get(args ...string) error",
+    "funcbody": "func (c *Client) get(args ...string) error {\n\tif err := c.runGo(context.Background(), c.logger.Out(), append([]string{\"get\"}, args...)...); err != nil {\n\t\treturn fmt.Errorf(\"failed to get %q: %w\", args, err)\n\t}\n\treturn nil\n}",
+    "funcname": "get"
+}

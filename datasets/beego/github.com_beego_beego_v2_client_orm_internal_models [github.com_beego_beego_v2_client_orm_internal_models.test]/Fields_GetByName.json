@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_f.go",
+    "lineno": 71,
+    "focalfunc": "func (f *Fields) GetByName(name string) *FieldInfo",
+    "funcbody": "func (f *Fields) GetByName(name string) *FieldInfo {\n\treturn f.Fields[name]\n}",
+    "funcname": "GetByName"
+}

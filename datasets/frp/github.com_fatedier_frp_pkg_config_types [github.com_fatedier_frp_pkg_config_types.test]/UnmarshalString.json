@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 62,
+    "focalfunc": "func (q *BandwidthQuantity) UnmarshalString(s string) error",
+    "funcbody": "func (q *BandwidthQuantity) UnmarshalString(s string) error {\n\ts = strings.TrimSpace(s)\n\tif s == \"\" {\n\t\treturn nil\n\t}\n\n\tvar (\n\t\tbase\tint64\n\t\tf\tfloat64\n\t\terr\terror\n\t)\n\tswitch {\n\tcase strings.HasSuffix(s, \"MB\"):\n\t\tbase = MB\n\t\tfstr := strings.TrimSuffix(s, \"MB\")\n\t\tf, err = strconv.ParseFloat(fstr, 64)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\tcase strings.HasSuffix(s, \"KB\"):\n\t\tbase = KB\n\t\tfstr := strings.TrimSuffix(s, \"KB\")\n\t\tf, err = strconv.ParseFloat(fstr, 64)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\tdefault:\n\t\treturn errors.New(\"unit not support\")\n\t}\n\n\tq.s = s\n\tq.i = int64(f * float64(base))\n\treturn nil\n}",
+    "funcname": "UnmarshalString"
+}

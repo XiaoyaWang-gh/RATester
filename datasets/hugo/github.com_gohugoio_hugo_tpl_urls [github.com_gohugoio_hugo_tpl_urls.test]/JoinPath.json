@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 191,
+    "focalfunc": "func (ns *Namespace) JoinPath(elements ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) JoinPath(elements ...any) (string, error) {\n\tif len(elements) == 0 {\n\t\treturn \"\", nil\n\t}\n\n\tvar selements []string\n\tfor _, e := range elements {\n\t\tswitch v := e.(type) {\n\t\tcase []string:\n\t\t\tselements = append(selements, v...)\n\t\tcase []any:\n\t\t\tfor _, e := range v {\n\t\t\t\tse, err := cast.ToStringE(e)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn \"\", err\n\t\t\t\t}\n\t\t\t\tselements = append(selements, se)\n\t\t\t}\n\t\tdefault:\n\t\t\tse, err := cast.ToStringE(e)\n\t\t\tif err != nil {\n\t\t\t\treturn \"\", err\n\t\t\t}\n\t\t\tselements = append(selements, se)\n\t\t}\n\t}\n\n\tresult, err := url.JoinPath(selements[0], selements[1:]...)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn result, nil\n}",
+    "funcname": "JoinPath"
+}

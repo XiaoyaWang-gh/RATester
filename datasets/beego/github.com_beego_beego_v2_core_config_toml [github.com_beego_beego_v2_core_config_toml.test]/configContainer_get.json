@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 320,
+    "focalfunc": "func (c *configContainer) get(key string) (interface{}, error)",
+    "funcbody": "func (c *configContainer) get(key string) (interface{}, error) {\n\tif len(key) == 0 {\n\t\treturn nil, config.KeyNotFoundError\n\t}\n\n\tsegs := strings.Split(key, keySeparator)\n\tt, err := subTree(c.t, segs[0:len(segs)-1])\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn t.Get(segs[len(segs)-1]), nil\n}",
+    "funcname": "get"
+}

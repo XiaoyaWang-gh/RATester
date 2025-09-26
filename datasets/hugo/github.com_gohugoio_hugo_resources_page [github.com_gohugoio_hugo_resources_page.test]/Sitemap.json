@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 72,
+    "focalfunc": "func (p *nopPage) Sitemap() config.SitemapConfig",
+    "funcbody": "func (p *nopPage) Sitemap() config.SitemapConfig {\n\treturn config.SitemapConfig{}\n}",
+    "funcname": "Sitemap"
+}

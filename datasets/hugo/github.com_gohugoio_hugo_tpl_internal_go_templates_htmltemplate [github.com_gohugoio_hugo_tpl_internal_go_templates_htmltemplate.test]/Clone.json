@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 247,
+    "focalfunc": "func (t *Template) Clone() (*Template, error)",
+    "funcbody": "func (t *Template) Clone() (*Template, error) {\n\tt.nameSpace.mu.Lock()\n\tdefer t.nameSpace.mu.Unlock()\n\tif t.escapeErr != nil {\n\t\treturn nil, fmt.Errorf(\"html/template: cannot Clone %q after it has executed\", t.Name())\n\t}\n\ttextClone, err := t.text.Clone()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tns := &nameSpace{set: make(map[string]*Template)}\n\tns.esc = makeEscaper(ns)\n\tret := &Template{\n\t\tnil,\n\t\ttextClone,\n\t\ttextClone.Tree,\n\t\tns,\n\t}\n\tret.set[ret.Name()] = ret\n\tfor _, x := range textClone.Templates() {\n\t\tname := x.Name()\n\t\tsrc := t.set[name]\n\t\tif src == nil || src.escapeErr != nil {\n\t\t\treturn nil, fmt.Errorf(\"html/template: cannot Clone %q after it has executed\", t.Name())\n\t\t}\n\t\tx.Tree = x.Tree.Copy()\n\t\tret.set[name] = &Template{\n\t\t\tnil,\n\t\t\tx,\n\t\t\tx.Tree,\n\t\t\tret.nameSpace,\n\t\t}\n\t}\n\n\treturn ret.set[ret.Name()], nil\n}",
+    "funcname": "Clone"
+}

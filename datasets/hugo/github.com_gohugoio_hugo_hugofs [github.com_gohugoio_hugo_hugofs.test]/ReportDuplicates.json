@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/createcounting_fs.go",
+    "lineno": 47,
+    "focalfunc": "func (c *createCountingFs) ReportDuplicates() string",
+    "funcbody": "func (c *createCountingFs) ReportDuplicates() string {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\n\tvar dupes []string\n\n\tfor k, v := range c.fileCount {\n\t\tif v > 1 {\n\t\t\tdupes = append(dupes, fmt.Sprintf(\"%s (%d)\", k, v))\n\t\t}\n\t}\n\n\tif len(dupes) == 0 {\n\t\treturn \"\"\n\t}\n\n\tsort.Strings(dupes)\n\n\treturn strings.Join(dupes, \", \")\n}",
+    "funcname": "ReportDuplicates"
+}

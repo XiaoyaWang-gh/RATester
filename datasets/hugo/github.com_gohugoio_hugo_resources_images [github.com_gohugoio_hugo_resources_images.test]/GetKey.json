@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/config.go",
+    "lineno": 370,
+    "focalfunc": "func (i ImageConfig) GetKey(format Format) string",
+    "funcbody": "func (i ImageConfig) GetKey(format Format) string {\n\tif i.Key != \"\" {\n\t\treturn i.Action + \"_\" + i.Key\n\t}\n\n\tk := strconv.Itoa(i.Width) + \"x\" + strconv.Itoa(i.Height)\n\tif i.Action != \"\" {\n\t\tk += \"_\" + i.Action\n\t}\n\n\tif i.qualitySetForImage || i.TargetFormat.RequiresDefaultQuality() {\n\t\tk += \"_q\" + strconv.Itoa(i.Quality)\n\t}\n\tif i.Rotate != 0 {\n\t\tk += \"_r\" + strconv.Itoa(i.Rotate)\n\t}\n\tif i.BgColorStr != \"\" {\n\t\tk += \"_bg\" + i.BgColorStr\n\t}\n\n\tif i.TargetFormat == WEBP {\n\t\tk += \"_h\" + strconv.Itoa(int(i.Hint))\n\t}\n\n\tanchor := i.AnchorStr\n\tif anchor == smartCropIdentifier {\n\t\tanchor = anchor + strconv.Itoa(smartCropVersionNumber)\n\t}\n\n\tk += \"_\" + i.FilterStr\n\n\tif i.Action == ActionFill || i.Action == ActionCrop {\n\t\tk += \"_\" + anchor\n\t}\n\n\tif v, ok := imageFormatsVersions[format]; ok {\n\t\tk += \"_\" + strconv.Itoa(v)\n\t}\n\n\tif mainImageVersionNumber > 0 {\n\t\tk += \"_\" + strconv.Itoa(mainImageVersionNumber)\n\t}\n\n\treturn k\n}",
+    "funcname": "GetKey"
+}

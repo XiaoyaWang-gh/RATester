@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 427,
+    "focalfunc": "func (c *Controller) JSONResp(data interface{}) error",
+    "funcbody": "func (c *Controller) JSONResp(data interface{}) error {\n\treturn c.Ctx.JSONResp(data)\n}",
+    "funcname": "JSONResp"
+}

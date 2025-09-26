@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 122,
+    "focalfunc": "func ReaderToBytes(lines io.Reader) []byte",
+    "funcbody": "func ReaderToBytes(lines io.Reader) []byte {\n\tif lines == nil {\n\t\treturn []byte{}\n\t}\n\tb := bp.GetBuffer()\n\tdefer bp.PutBuffer(b)\n\n\tb.ReadFrom(lines)\n\n\tbc := make([]byte, b.Len())\n\tcopy(bc, b.Bytes())\n\treturn bc\n}",
+    "funcname": "ReaderToBytes"
+}

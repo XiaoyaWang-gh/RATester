@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 439,
+    "focalfunc": "func (t testSite) AllPages() Pages",
+    "funcbody": "func (t testSite) AllPages() Pages {\n\treturn nil\n}",
+    "funcname": "AllPages"
+}

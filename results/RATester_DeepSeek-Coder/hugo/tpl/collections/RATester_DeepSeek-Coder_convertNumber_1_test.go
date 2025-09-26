@@ -1,0 +1,41 @@
+package collections
+
+import (
+	"fmt"
+	"reflect"
+	"testing"
+)
+
+func TestConvertNumber_1(t *testing.T) {
+	type args struct {
+		v  reflect.Value
+		to reflect.Kind
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    reflect.Value
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			got, err := convertNumber(tt.args.v, tt.args.to)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("convertNumber() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("convertNumber() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 88,
+    "focalfunc": "func Offset(d int64) *Hint",
+    "funcbody": "func Offset(d int64) *Hint {\n\treturn NewHint(KeyOffset, d)\n}",
+    "funcname": "Offset"
+}

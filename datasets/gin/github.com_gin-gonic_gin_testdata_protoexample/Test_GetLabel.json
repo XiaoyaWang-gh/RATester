@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 124,
+    "focalfunc": "func (x *Test) GetLabel() string",
+    "funcbody": "func (x *Test) GetLabel() string {\n\tif x != nil && x.Label != nil {\n\t\treturn *x.Label\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetLabel"
+}

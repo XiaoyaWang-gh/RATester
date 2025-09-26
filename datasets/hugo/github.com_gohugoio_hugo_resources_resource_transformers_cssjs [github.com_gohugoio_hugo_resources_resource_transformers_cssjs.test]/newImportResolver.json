@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/inline_imports.go",
+    "lineno": 60,
+    "focalfunc": "func newImportResolver(r io.Reader, inPath string, opts InlineImports, fs afero.Fs, logger loggers.Logger, dependencyManager identity.Manager) *importResolver",
+    "funcbody": "func newImportResolver(r io.Reader, inPath string, opts InlineImports, fs afero.Fs, logger loggers.Logger, dependencyManager identity.Manager) *importResolver {\n\treturn &importResolver{\n\t\tr:\t\t\tr,\n\t\tdependencyManager:\tdependencyManager,\n\t\tinPath:\t\t\tinPath,\n\t\tfs:\t\t\tfs, logger: logger,\n\t\tlinemap:\tmake(map[int]fileOffset), contentSeen: make(map[string]bool),\n\t\topts:\topts,\n\t}\n}",
+    "funcname": "newImportResolver"
+}

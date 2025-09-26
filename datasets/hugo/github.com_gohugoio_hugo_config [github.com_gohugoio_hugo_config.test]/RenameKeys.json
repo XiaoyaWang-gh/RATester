@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 229,
+    "focalfunc": "func RenameKeys(m map[string]any)",
+    "funcbody": "func RenameKeys(m map[string]any) {\n\tkeyAliases.Rename(m)\n}",
+    "funcname": "RenameKeys"
+}

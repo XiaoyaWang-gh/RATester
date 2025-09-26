@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 283,
+    "focalfunc": "func (c *Controller) Render() error",
+    "funcbody": "func (c *Controller) Render() error {\n\tif !c.EnableRender {\n\t\treturn nil\n\t}\n\trb, err := c.RenderBytes()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif c.Ctx.ResponseWriter.Header().Get(\"Content-Type\") == \"\" {\n\t\tc.Ctx.Output.Header(\"Content-Type\", \"text/html; charset=utf-8\")\n\t}\n\n\treturn c.Ctx.Output.Body(rb)\n}",
+    "funcname": "Render"
+}

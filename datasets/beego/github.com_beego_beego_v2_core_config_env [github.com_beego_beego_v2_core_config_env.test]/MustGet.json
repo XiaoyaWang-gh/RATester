@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 50,
+    "focalfunc": "func MustGet(key string) (string, error)",
+    "funcbody": "func MustGet(key string) (string, error) {\n\tif val, ok := env.Load(key); ok {\n\t\treturn val.(string), nil\n\t}\n\treturn \"\", fmt.Errorf(\"no env variable with %s\", key)\n}",
+    "funcname": "MustGet"
+}

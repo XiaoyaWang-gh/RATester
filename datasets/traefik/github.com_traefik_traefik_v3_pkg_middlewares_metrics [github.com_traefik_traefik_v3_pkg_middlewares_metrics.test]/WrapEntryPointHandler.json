@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 97,
+    "focalfunc": "func WrapEntryPointHandler(ctx context.Context, registry metrics.Registry, entryPointName string) alice.Constructor",
+    "funcbody": "func WrapEntryPointHandler(ctx context.Context, registry metrics.Registry, entryPointName string) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\treturn NewEntryPointMiddleware(ctx, next, registry, entryPointName), nil\n\t}\n}",
+    "funcname": "WrapEntryPointHandler"
+}

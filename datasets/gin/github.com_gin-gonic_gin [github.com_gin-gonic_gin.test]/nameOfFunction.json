@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 124,
+    "focalfunc": "func nameOfFunction(f any) string",
+    "funcbody": "func nameOfFunction(f any) string {\n\treturn runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()\n}",
+    "funcname": "nameOfFunction"
+}

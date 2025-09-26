@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/gateway.go",
+    "lineno": 105,
+    "focalfunc": "func (g *Gateway) Run()",
+    "funcbody": "func (g *Gateway) Run() {\n\tfor {\n\t\tconn, err := g.ln.Accept()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tgo g.handleConn(conn)\n\t}\n}",
+    "funcname": "Run"
+}

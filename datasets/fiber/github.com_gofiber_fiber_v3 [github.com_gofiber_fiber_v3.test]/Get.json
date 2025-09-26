@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 55,
+    "focalfunc": "func (r *Registering) Get(handler Handler, middleware ...Handler) Register",
+    "funcbody": "func (r *Registering) Get(handler Handler, middleware ...Handler) Register {\n\tr.app.Add([]string{MethodGet}, r.path, handler, middleware...)\n\treturn r\n}",
+    "funcname": "Get"
+}

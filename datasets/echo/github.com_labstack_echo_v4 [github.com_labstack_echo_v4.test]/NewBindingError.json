@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 78,
+    "focalfunc": "func NewBindingError(sourceParam string, values []string, message interface{}, internalError error) error",
+    "funcbody": "func NewBindingError(sourceParam string, values []string, message interface{}, internalError error) error {\n\treturn &BindingError{\n\t\tField:\tsourceParam,\n\t\tValues:\tvalues,\n\t\tHTTPError: &HTTPError{\n\t\t\tCode:\t\thttp.StatusBadRequest,\n\t\t\tMessage:\tmessage,\n\t\t\tInternal:\tinternalError,\n\t\t},\n\t}\n}",
+    "funcname": "NewBindingError"
+}

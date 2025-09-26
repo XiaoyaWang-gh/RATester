@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/opt.go",
+    "lineno": 10,
+    "focalfunc": "func OptimizationOff() bool",
+    "funcbody": "func OptimizationOff() bool {\n\treturn false\n}",
+    "funcname": "OptimizationOff"
+}

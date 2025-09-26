@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 301,
+    "focalfunc": "func isPrintable(c byte) bool",
+    "funcbody": "func isPrintable(c byte) bool {\n\treturn (c >= '!' && c <= '<') || (c >= '>' && c <= '~') || (c == ' ' || c == '\\n' || c == '\\t')\n}",
+    "funcname": "isPrintable"
+}

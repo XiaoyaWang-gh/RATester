@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 37,
+    "focalfunc": "func (st *MemSessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (st *MemSessionStore) Set(ctx context.Context, key, value interface{}) error {\n\tst.lock.Lock()\n\tdefer st.lock.Unlock()\n\tst.value[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

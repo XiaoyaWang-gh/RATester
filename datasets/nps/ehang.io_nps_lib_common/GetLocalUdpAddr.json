@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 309,
+    "focalfunc": "func GetLocalUdpAddr() (net.Conn, error)",
+    "funcbody": "func GetLocalUdpAddr() (net.Conn, error) {\n\ttmpConn, err := net.Dial(\"udp\", \"114.114.114.114:53\")\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn tmpConn, tmpConn.Close()\n}",
+    "funcname": "GetLocalUdpAddr"
+}

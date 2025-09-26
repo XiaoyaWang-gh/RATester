@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 521,
+    "focalfunc": "func (c *cachedContentScope) keyScope(ctx context.Context) string",
+    "funcbody": "func (c *cachedContentScope) keyScope(ctx context.Context) string {\n\treturn hugo.GetMarkupScope(ctx) + c.pco.po.f.Name\n}",
+    "funcname": "keyScope"
+}

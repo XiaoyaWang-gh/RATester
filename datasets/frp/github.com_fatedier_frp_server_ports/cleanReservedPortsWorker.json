@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/ports/ports.go",
+    "lineno": 177,
+    "focalfunc": "func (pm *Manager) cleanReservedPortsWorker()",
+    "funcbody": "func (pm *Manager) cleanReservedPortsWorker() {\n\tfor {\n\t\ttime.Sleep(CleanReservedPortsInterval)\n\t\tpm.mu.Lock()\n\t\tfor name, ctx := range pm.reservedPorts {\n\t\t\tif ctx.Closed && time.Since(ctx.UpdateTime) > MaxPortReservedDuration {\n\t\t\t\tdelete(pm.reservedPorts, name)\n\t\t\t}\n\t\t}\n\t\tpm.mu.Unlock()\n\t}\n}",
+    "funcname": "cleanReservedPortsWorker"
+}

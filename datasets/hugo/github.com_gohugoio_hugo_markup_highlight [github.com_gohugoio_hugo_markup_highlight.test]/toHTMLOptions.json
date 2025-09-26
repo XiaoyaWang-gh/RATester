@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 87,
+    "focalfunc": "func (cfg Config) toHTMLOptions() []html.Option",
+    "funcbody": "func (cfg Config) toHTMLOptions() []html.Option {\n\tvar lineAnchors string\n\tif cfg.LineAnchors != \"\" {\n\t\tlineAnchors = cfg.LineAnchors + \"-\"\n\t}\n\toptions := []html.Option{\n\t\thtml.TabWidth(cfg.TabWidth),\n\t\thtml.WithLineNumbers(cfg.LineNos),\n\t\thtml.BaseLineNumber(cfg.LineNoStart),\n\t\thtml.LineNumbersInTable(cfg.LineNumbersInTable),\n\t\thtml.WithClasses(!cfg.NoClasses),\n\t\thtml.WithLinkableLineNumbers(cfg.AnchorLineNos, lineAnchors),\n\t\thtml.InlineCode(cfg.Hl_inline),\n\t}\n\n\tif cfg.Hl_Lines != \"\" || cfg.HL_lines_parsed != nil {\n\t\tvar ranges [][2]int\n\t\tif cfg.HL_lines_parsed != nil {\n\t\t\tranges = cfg.HL_lines_parsed\n\t\t} else {\n\t\t\tvar err error\n\t\t\tranges, err = hlLinesToRanges(cfg.LineNoStart, cfg.Hl_Lines)\n\t\t\tif err != nil {\n\t\t\t\tranges = nil\n\t\t\t}\n\t\t}\n\n\t\tif ranges != nil {\n\t\t\toptions = append(options, html.HighlightLines(ranges))\n\t\t}\n\t}\n\n\treturn options\n}",
+    "funcname": "toHTMLOptions"
+}

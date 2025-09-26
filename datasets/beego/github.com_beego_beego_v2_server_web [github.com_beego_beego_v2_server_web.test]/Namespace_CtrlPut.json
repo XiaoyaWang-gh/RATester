@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 212,
+    "focalfunc": "func (n *Namespace) CtrlPut(rootpath string, f interface{}) *Namespace",
+    "funcbody": "func (n *Namespace) CtrlPut(rootpath string, f interface{}) *Namespace {\n\tn.handlers.CtrlPut(rootpath, f)\n\treturn n\n}",
+    "funcname": "CtrlPut"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 246,
+    "focalfunc": "func mustValidateKey(key string) string",
+    "funcbody": "func mustValidateKey(key string) string {\n\tif err := ValidateKey(key); err != nil {\n\t\tpanic(err)\n\t}\n\treturn key\n}",
+    "funcname": "mustValidateKey"
+}

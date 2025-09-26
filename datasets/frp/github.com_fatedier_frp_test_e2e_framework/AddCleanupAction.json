@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/cleanup.go",
+    "lineno": 24,
+    "focalfunc": "func AddCleanupAction(fn func()) CleanupActionHandle",
+    "funcbody": "func AddCleanupAction(fn func()) CleanupActionHandle {\n\tp := CleanupActionHandle(new(int))\n\tcleanupActionsLock.Lock()\n\tdefer cleanupActionsLock.Unlock()\n\tc := cleanupFuncHandle{actionHandle: p, actionHook: fn}\n\tcleanupHookList = append([]cleanupFuncHandle{c}, cleanupHookList...)\n\treturn p\n}",
+    "funcname": "AddCleanupAction"
+}

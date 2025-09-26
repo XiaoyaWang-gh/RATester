@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 194,
+    "focalfunc": "func (h *Hooks) executeOnShutdownHooks()",
+    "funcbody": "func (h *Hooks) executeOnShutdownHooks() {\n\tfor _, v := range h.onShutdown {\n\t\tif err := v(); err != nil {\n\t\t\tlog.Errorf(\"failed to call shutdown hook: %v\", err)\n\t\t}\n\t}\n}",
+    "funcname": "executeOnShutdownHooks"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 170,
+    "focalfunc": "func (c *Certificate) GetTruncatedCertificateName() string",
+    "funcbody": "func (c *Certificate) GetTruncatedCertificateName() string {\n\tcertName := c.CertFile.String()\n\n\tif !c.CertFile.IsPath() && strings.HasPrefix(certName, certificateHeader) && len(certName) > len(certificateHeader)+50 {\n\t\tcertName = strings.TrimPrefix(c.CertFile.String(), certificateHeader)[:50]\n\t}\n\n\treturn certName\n}",
+    "funcname": "GetTruncatedCertificateName"
+}

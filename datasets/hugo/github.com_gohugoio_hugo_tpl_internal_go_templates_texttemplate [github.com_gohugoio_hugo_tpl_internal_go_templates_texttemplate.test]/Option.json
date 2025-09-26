@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/option.go",
+    "lineno": 42,
+    "focalfunc": "func (t *Template) Option(opt ...string) *Template",
+    "funcbody": "func (t *Template) Option(opt ...string) *Template {\n\tt.init()\n\tfor _, s := range opt {\n\t\tt.setOption(s)\n\t}\n\treturn t\n}",
+    "funcname": "Option"
+}

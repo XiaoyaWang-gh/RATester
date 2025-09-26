@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 117,
+    "focalfunc": "func (m *moduleAdapter) Mounts() []Mount",
+    "funcbody": "func (m *moduleAdapter) Mounts() []Mount {\n\treturn m.mounts\n}",
+    "funcname": "Mounts"
+}

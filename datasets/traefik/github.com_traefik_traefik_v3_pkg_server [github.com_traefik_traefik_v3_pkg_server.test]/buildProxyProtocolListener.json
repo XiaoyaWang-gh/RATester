@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 435,
+    "focalfunc": "func buildProxyProtocolListener(ctx context.Context, entryPoint *static.EntryPoint, listener net.Listener) (net.Listener, error)",
+    "funcbody": "func buildProxyProtocolListener(ctx context.Context, entryPoint *static.EntryPoint, listener net.Listener) (net.Listener, error) {\n\ttimeout := entryPoint.Transport.RespondingTimeouts.ReadTimeout\n\n\tif timeout == 0 {\n\t\ttimeout = -1\n\t}\n\tproxyListener := &proxyproto.Listener{Listener: listener, ReadHeaderTimeout: time.Duration(timeout)}\n\n\tif entryPoint.ProxyProtocol.Insecure {\n\t\tlog.Ctx(ctx).Info().Msg(\"Enabling ProxyProtocol without trusted IPs: Insecure\")\n\t\treturn proxyListener, nil\n\t}\n\n\tchecker, err := ip.NewChecker(entryPoint.ProxyProtocol.TrustedIPs)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tproxyListener.Policy = func(upstream net.Addr) (proxyproto.Policy, error) {\n\t\tipAddr, ok := upstream.(*net.TCPAddr)\n\t\tif !ok {\n\t\t\treturn proxyproto.REJECT, fmt.Errorf(\"type error %v\", upstream)\n\t\t}\n\n\t\tif !checker.ContainsIP(ipAddr.IP) {\n\t\t\tlog.Ctx(ctx).Debug().Msgf(\"IP %s is not in trusted IPs list, ignoring ProxyProtocol Headers and bypass connection\", ipAddr.IP)\n\t\t\treturn proxyproto.IGNORE, nil\n\t\t}\n\t\treturn proxyproto.USE, nil\n\t}\n\n\tlog.Ctx(ctx).Info().Msgf(\"Enabling ProxyProtocol for trusted IPs %v\", entryPoint.ProxyProtocol.TrustedIPs)\n\n\treturn proxyListener, nil\n}",
+    "funcname": "buildProxyProtocolListener"
+}

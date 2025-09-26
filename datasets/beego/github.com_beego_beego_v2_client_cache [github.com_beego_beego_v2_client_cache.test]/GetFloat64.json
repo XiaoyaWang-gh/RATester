@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/conv.go",
+    "lineno": 75,
+    "focalfunc": "func GetFloat64(v interface{}) float64",
+    "funcbody": "func GetFloat64(v interface{}) float64 {\n\tswitch result := v.(type) {\n\tcase float64:\n\t\treturn result\n\tdefault:\n\t\tif d := GetString(v); d != \"\" {\n\t\t\tvalue, _ := strconv.ParseFloat(d, 64)\n\t\t\treturn value\n\t\t}\n\t}\n\treturn 0\n}",
+    "funcname": "GetFloat64"
+}

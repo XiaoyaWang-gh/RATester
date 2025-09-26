@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 218,
+    "focalfunc": "func goimports(dir string)",
+    "funcbody": "func goimports(dir string) {\n\tcmf, _ := hexec.SafeCommand(\"goimports\", \"-w\", dir)\n\tout, err := cmf.CombinedOutput()\n\tif err != nil {\n\t\tlog.Fatal(\"goimports failed:\", string(out))\n\t}\n}",
+    "funcname": "goimports"
+}

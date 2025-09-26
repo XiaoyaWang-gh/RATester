@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 135,
+    "focalfunc": "func (rp *MemProvider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error",
+    "funcbody": "func (rp *MemProvider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error {\n\trp.maxlifetime = maxlifetime\n\trp.conninfo = strings.Split(savePath, \";\")\n\tclient = memcache.New(rp.conninfo...)\n\treturn nil\n}",
+    "funcname": "SessionInit"
+}

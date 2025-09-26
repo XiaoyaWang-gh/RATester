@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 113,
+    "focalfunc": "func (fi *File) Open() (hugio.ReadSeekCloser, error)",
+    "funcbody": "func (fi *File) Open() (hugio.ReadSeekCloser, error) {\n\tf, err := fi.fim.Meta().Open()\n\n\treturn f, err\n}",
+    "funcname": "Open"
+}

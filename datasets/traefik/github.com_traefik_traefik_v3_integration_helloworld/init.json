@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 248,
+    "focalfunc": "func init()",
+    "funcbody": "func init()\t{ proto.RegisterFile(\"helloworld.proto\", fileDescriptor0) }",
+    "funcname": "init"
+}

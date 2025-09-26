@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/acceptencoding.go",
+    "lineno": 110,
+    "focalfunc": "func compareEncoding(a, b Encoding) int",
+    "funcbody": "func compareEncoding(a, b Encoding) int {\n\tlhs, rhs := a.Weight, b.Weight\n\n\tif lhs == nil && rhs == nil {\n\t\treturn 0\n\t}\n\n\tif lhs == nil && *rhs == 0 {\n\t\treturn -1\n\t}\n\n\tif lhs == nil {\n\t\treturn 1\n\t}\n\n\tif rhs == nil && *lhs == 0 {\n\t\treturn 1\n\t}\n\n\tif rhs == nil {\n\t\treturn -1\n\t}\n\n\tif *lhs < *rhs {\n\t\treturn 1\n\t}\n\n\tif *lhs > *rhs {\n\t\treturn -1\n\t}\n\n\treturn 0\n}",
+    "funcname": "compareEncoding"
+}

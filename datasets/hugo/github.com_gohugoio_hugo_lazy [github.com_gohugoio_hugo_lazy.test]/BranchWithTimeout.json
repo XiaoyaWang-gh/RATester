@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 76,
+    "focalfunc": "func (ini *Init) BranchWithTimeout(timeout time.Duration, f func(ctx context.Context) (any, error)) *Init",
+    "funcbody": "func (ini *Init) BranchWithTimeout(timeout time.Duration, f func(ctx context.Context) (any, error)) *Init {\n\treturn ini.Branch(func(ctx context.Context) (any, error) {\n\t\treturn ini.withTimeout(ctx, timeout, f)\n\t})\n}",
+    "funcname": "BranchWithTimeout"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 241,
+    "focalfunc": "func WrapFilesystem(container, content afero.Fs) afero.Fs",
+    "funcbody": "func WrapFilesystem(container, content afero.Fs) afero.Fs {\n\treturn filesystemsWrapper{Fs: container, content: content}\n}",
+    "funcname": "WrapFilesystem"
+}

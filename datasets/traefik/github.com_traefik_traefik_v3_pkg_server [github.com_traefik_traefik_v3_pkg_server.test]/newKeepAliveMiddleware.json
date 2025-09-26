@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/keep_alive_middleware.go",
+    "lineno": 11,
+    "focalfunc": "func newKeepAliveMiddleware(next http.Handler, maxRequests int, maxTime ptypes.Duration) http.Handler",
+    "funcbody": "func newKeepAliveMiddleware(next http.Handler, maxRequests int, maxTime ptypes.Duration) http.Handler {\n\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\tstate, ok := req.Context().Value(connStateKey).(*connState)\n\t\tif ok {\n\t\t\tstate.HTTPRequestCount++\n\t\t\tif maxRequests > 0 && state.HTTPRequestCount >= maxRequests {\n\t\t\t\tlog.Debug().Msg(\"Close because of too many requests\")\n\t\t\t\tstate.KeepAliveState = \"Close because of too many requests\"\n\t\t\t\trw.Header().Set(\"Connection\", \"close\")\n\t\t\t}\n\t\t\tif maxTime > 0 && time.Now().After(state.Start.Add(time.Duration(maxTime))) {\n\t\t\t\tlog.Debug().Msg(\"Close because of too long connection\")\n\t\t\t\tstate.KeepAliveState = \"Close because of too long connection\"\n\t\t\t\trw.Header().Set(\"Connection\", \"close\")\n\t\t\t}\n\t\t}\n\t\tnext.ServeHTTP(rw, req)\n\t})\n}",
+    "funcname": "newKeepAliveMiddleware"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resourcetypes.go",
+    "lineno": 249,
+    "focalfunc": "func StaleVersion(os any) uint32",
+    "funcbody": "func StaleVersion(os any) uint32 {\n\tif s, ok := os.(StaleInfo); ok {\n\t\treturn s.StaleVersion()\n\t}\n\treturn 0\n}",
+    "funcname": "StaleVersion"
+}

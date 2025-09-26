@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/env.go",
+    "lineno": 79,
+    "focalfunc": "func SplitEnvVar(v string) (string, string)",
+    "funcbody": "func SplitEnvVar(v string) (string, string) {\n\tname, value, _ := strings.Cut(v, \"=\")\n\treturn name, value\n}",
+    "funcname": "SplitEnvVar"
+}

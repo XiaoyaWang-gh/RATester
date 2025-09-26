@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 234,
+    "focalfunc": "func (t Types) Swap(i, j int)",
+    "funcbody": "func (t Types) Swap(i, j int)\t{ t[i], t[j] = t[j], t[i] }",
+    "funcname": "Swap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 251,
+    "focalfunc": "func (c *Cache) GetOrCreateBytes(id string, create func() ([]byte, error)) (ItemInfo, []byte, error)",
+    "funcbody": "func (c *Cache) GetOrCreateBytes(id string, create func() ([]byte, error)) (ItemInfo, []byte, error) {\n\tif err := c.init(); err != nil {\n\t\treturn ItemInfo{}, nil, err\n\t}\n\tid = cleanID(id)\n\n\tc.nlocker.Lock(id)\n\tdefer c.nlocker.Unlock(id)\n\n\tinfo := ItemInfo{Name: id}\n\n\tif r := c.getOrRemove(id); r != nil {\n\t\tdefer r.Close()\n\t\tb, err := io.ReadAll(r)\n\t\treturn info, b, err\n\t}\n\n\tvar (\n\t\tb\t[]byte\n\t\terr\terror\n\t)\n\n\tb, err = create()\n\tif err != nil {\n\t\treturn info, nil, err\n\t}\n\n\tif c.maxAge == 0 {\n\t\treturn info, b, nil\n\t}\n\n\tif err := c.writeReader(id, bytes.NewReader(b)); err != nil {\n\t\treturn info, nil, err\n\t}\n\n\treturn info, b, nil\n}",
+    "funcname": "GetOrCreateBytes"
+}

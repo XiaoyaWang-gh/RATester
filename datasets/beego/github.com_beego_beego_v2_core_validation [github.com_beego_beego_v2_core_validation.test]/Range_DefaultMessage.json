@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 288,
+    "focalfunc": "func (r Range) DefaultMessage() string",
+    "funcbody": "func (r Range) DefaultMessage() string {\n\treturn fmt.Sprintf(MessageTmpls[\"Range\"], r.Min.Min, r.Max.Max)\n}",
+    "funcname": "DefaultMessage"
+}

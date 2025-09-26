@@ -1,0 +1,31 @@
+package limiter
+
+import (
+	"fmt"
+	"testing"
+)
+
+func TestMarshalMsg_1(t *testing.T) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered in main", r)
+		}
+	}()
+
+	v := item{
+		currHits: 123,
+		prevHits: 456,
+		exp:      789,
+	}
+	bts, err := v.MarshalMsg(nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	left, err := v.UnmarshalMsg(bts)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(left) > 0 {
+		t.Errorf("%d bytes left over after UnmarshalMsg(): %q", len(left), left)
+	}
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 95,
+    "focalfunc": "func (f *fakeLockfileMutex) Lock() (func(), error)",
+    "funcbody": "func (f *fakeLockfileMutex) Lock() (func(), error) {\n\tf.mu.Lock()\n\treturn func() { f.mu.Unlock() }, nil\n}",
+    "funcname": "Lock"
+}

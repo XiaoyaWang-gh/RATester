@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 355,
+    "focalfunc": "func (output *BeegoOutput) IsCachable() bool",
+    "funcbody": "func (output *BeegoOutput) IsCachable() bool {\n\treturn output.Status >= 200 && output.Status < 300 || output.Status == 304\n}",
+    "funcname": "IsCachable"
+}

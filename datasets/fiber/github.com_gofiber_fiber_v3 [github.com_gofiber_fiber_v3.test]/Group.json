@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/group.go",
+    "lineno": 183,
+    "focalfunc": "func (grp *Group) Group(prefix string, handlers ...Handler) Router",
+    "funcbody": "func (grp *Group) Group(prefix string, handlers ...Handler) Router {\n\tprefix = getGroupPath(grp.Prefix, prefix)\n\tif len(handlers) > 0 {\n\t\tgrp.app.register([]string{methodUse}, prefix, grp, nil, handlers...)\n\t}\n\n\tnewGrp := &Group{Prefix: prefix, app: grp.app, parentGroup: grp}\n\tif err := grp.app.hooks.executeOnGroupHooks(*newGrp); err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn newGrp\n}",
+    "funcname": "Group"
+}

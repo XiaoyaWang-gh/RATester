@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 406,
+    "focalfunc": "func (f *fileServer) rewriteRequest(r *http.Request, toPath string) *http.Request",
+    "funcbody": "func (f *fileServer) rewriteRequest(r *http.Request, toPath string) *http.Request {\n\tr2 := new(http.Request)\n\t*r2 = *r\n\tr2.URL = new(url.URL)\n\t*r2.URL = *r.URL\n\tr2.URL.Path = toPath\n\tr2.Header.Set(\"X-Rewrite-Original-URI\", r.URL.RequestURI())\n\n\treturn r2\n}",
+    "funcname": "rewriteRequest"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 124,
+    "focalfunc": "func (l *limiter) getBucket(ctx *context.Context) bucket",
+    "funcbody": "func (l *limiter) getBucket(ctx *context.Context) bucket {\n\tkey := l.sessionKey(ctx)\n\tl.RLock()\n\tb, ok := l.buckets[key]\n\tl.RUnlock()\n\tif !ok {\n\t\tb = l.createBucket(key)\n\t}\n\n\treturn b\n}",
+    "funcname": "getBucket"
+}

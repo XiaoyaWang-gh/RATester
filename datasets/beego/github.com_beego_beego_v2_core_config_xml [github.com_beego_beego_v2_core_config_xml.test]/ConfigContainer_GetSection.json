@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 236,
+    "focalfunc": "func (c *ConfigContainer) GetSection(section string) (map[string]string, error)",
+    "funcbody": "func (c *ConfigContainer) GetSection(section string) (map[string]string, error) {\n\tif v, ok := c.data[section].(map[string]interface{}); ok {\n\t\tmapstr := make(map[string]string)\n\t\tfor k, val := range v {\n\t\t\tmapstr[k] = config.ToString(val)\n\t\t}\n\t\treturn mapstr, nil\n\t}\n\treturn nil, fmt.Errorf(\"section '%s' not found\", section)\n}",
+    "funcname": "GetSection"
+}

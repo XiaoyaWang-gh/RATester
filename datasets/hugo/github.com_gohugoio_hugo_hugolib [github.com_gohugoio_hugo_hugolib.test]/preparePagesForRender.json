@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 478,
+    "focalfunc": "func (s *Site) preparePagesForRender(isRenderingSite bool, idx int) error",
+    "funcbody": "func (s *Site) preparePagesForRender(isRenderingSite bool, idx int) error {\n\tvar err error\n\n\tinitPage := func(p *pageState) error {\n\t\tif err = p.shiftToOutputFormat(isRenderingSite, idx); err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t}\n\n\treturn s.pageMap.forEeachPageIncludingBundledPages(nil,\n\t\tfunc(p *pageState) (bool, error) {\n\t\t\treturn false, initPage(p)\n\t\t},\n\t)\n}",
+    "funcname": "preparePagesForRender"
+}

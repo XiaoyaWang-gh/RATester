@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/static_other.go",
+    "lineno": 13,
+    "focalfunc": "func isIgnorableOpenFileError(err error) bool",
+    "funcbody": "func isIgnorableOpenFileError(err error) bool {\n\treturn os.IsNotExist(err)\n}",
+    "funcname": "isIgnorableOpenFileError"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/tag.go",
+    "lineno": 7,
+    "focalfunc": "func tagsToLabels(tags []string, prefix string) map[string]string",
+    "funcbody": "func tagsToLabels(tags []string, prefix string) map[string]string {\n\tlabels := make(map[string]string, len(tags))\n\tfor _, tag := range tags {\n\t\tif strings.HasPrefix(tag, prefix) {\n\t\t\tif parts := strings.SplitN(tag, \"=\", 2); len(parts) == 2 {\n\t\t\t\tleft, right := strings.TrimSpace(parts[0]), strings.TrimSpace(parts[1])\n\t\t\t\tkey := \"traefik.\" + strings.TrimPrefix(left, prefix+\".\")\n\t\t\t\tlabels[key] = right\n\t\t\t}\n\t\t}\n\t}\n\treturn labels\n}",
+    "funcname": "tagsToLabels"
+}

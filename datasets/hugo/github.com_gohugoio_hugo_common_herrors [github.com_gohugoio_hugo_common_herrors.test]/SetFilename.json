@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 64,
+    "focalfunc": "func (fe *fileError) SetFilename(filename string) FileError",
+    "funcbody": "func (fe *fileError) SetFilename(filename string) FileError {\n\tfe.position.Filename = filename\n\treturn fe\n}",
+    "funcname": "SetFilename"
+}

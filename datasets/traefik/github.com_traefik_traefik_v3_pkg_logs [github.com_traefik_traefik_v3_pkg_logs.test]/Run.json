@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/log.go",
+    "lineno": 22,
+    "focalfunc": "func (n NoLevelHook) Run(e *zerolog.Event, level zerolog.Level, _ string)",
+    "funcbody": "func (n NoLevelHook) Run(e *zerolog.Event, level zerolog.Level, _ string) {\n\tif n.minLevel > n.level {\n\t\te.Discard()\n\t\treturn\n\t}\n\n\tif level == zerolog.NoLevel {\n\t\te.Str(\"level\", n.level.String())\n\t}\n}",
+    "funcname": "Run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/request_id.go",
+    "lineno": 39,
+    "focalfunc": "func RequestIDWithConfig(config RequestIDConfig) echo.MiddlewareFunc",
+    "funcbody": "func RequestIDWithConfig(config RequestIDConfig) echo.MiddlewareFunc {\n\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultRequestIDConfig.Skipper\n\t}\n\tif config.Generator == nil {\n\t\tconfig.Generator = generator\n\t}\n\tif config.TargetHeader == \"\" {\n\t\tconfig.TargetHeader = echo.HeaderXRequestID\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\treq := c.Request()\n\t\t\tres := c.Response()\n\t\t\trid := req.Header.Get(config.TargetHeader)\n\t\t\tif rid == \"\" {\n\t\t\t\trid = config.Generator()\n\t\t\t}\n\t\t\tres.Header().Set(config.TargetHeader, rid)\n\t\t\tif config.RequestIDHandler != nil {\n\t\t\t\tconfig.RequestIDHandler(c, rid)\n\t\t\t}\n\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "RequestIDWithConfig"
+}

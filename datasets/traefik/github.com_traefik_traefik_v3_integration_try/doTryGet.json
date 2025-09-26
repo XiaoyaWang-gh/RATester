@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 129,
+    "focalfunc": "func doTryGet(url string, timeout time.Duration, transport http.RoundTripper, conditions ...ResponseCondition) (*http.Response, error)",
+    "funcbody": "func doTryGet(url string, timeout time.Duration, transport http.RoundTripper, conditions ...ResponseCondition) (*http.Response, error) {\n\treq, err := http.NewRequest(http.MethodGet, url, nil)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn doTryRequest(req, timeout, transport, conditions...)\n}",
+    "funcname": "doTryGet"
+}

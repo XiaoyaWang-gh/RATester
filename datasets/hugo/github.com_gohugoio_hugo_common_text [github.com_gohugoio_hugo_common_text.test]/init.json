@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/text/position.go",
+    "lineno": 98,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tpositionStringFormatfunc = createPositionStringFormatter(os.Getenv(\"HUGO_FILE_LOG_FORMAT\"))\n}",
+    "funcname": "init"
+}

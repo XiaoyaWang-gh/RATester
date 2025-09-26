@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/slice.go",
+    "lineno": 70,
+    "focalfunc": "func StringSliceToInterfaceSlice(ss []string) []any",
+    "funcbody": "func StringSliceToInterfaceSlice(ss []string) []any {\n\tresult := make([]any, len(ss))\n\tfor i, s := range ss {\n\t\tresult[i] = s\n\t}\n\treturn result\n}",
+    "funcname": "StringSliceToInterfaceSlice"
+}

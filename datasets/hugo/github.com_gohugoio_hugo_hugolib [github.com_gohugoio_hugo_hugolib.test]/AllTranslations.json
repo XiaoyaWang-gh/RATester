@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 379,
+    "focalfunc": "func (p *pageState) AllTranslations() page.Pages",
+    "funcbody": "func (p *pageState) AllTranslations() page.Pages {\n\tkey := p.Path() + \"/\" + \"translations-all\"\n\n\tpages, err := p.s.pageMap.getOrCreatePagesFromCache(p.s.pageMap.cachePages2, key, func(string) (page.Pages, error) {\n\t\tif p.m.pageConfig.TranslationKey != \"\" {\n\n\t\t\tpas, _ := p.s.h.translationKeyPages.Get(p.m.pageConfig.TranslationKey)\n\t\t\tpasc := make(page.Pages, len(pas))\n\t\t\tcopy(pasc, pas)\n\t\t\tpage.SortByLanguage(pasc)\n\t\t\treturn pasc, nil\n\t\t}\n\t\tvar pas page.Pages\n\t\tp.s.pageMap.treePages.ForEeachInDimension(p.Path(), doctree.DimensionLanguage.Index(),\n\t\t\tfunc(n contentNodeI) bool {\n\t\t\t\tif n != nil {\n\t\t\t\t\tpas = append(pas, n.(page.Page))\n\t\t\t\t}\n\t\t\t\treturn false\n\t\t\t},\n\t\t)\n\n\t\tpas = pagePredicates.ShouldLink.Filter(pas)\n\t\tpage.SortByLanguage(pas)\n\t\treturn pas, nil\n\t})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn pages\n}",
+    "funcname": "AllTranslations"
+}

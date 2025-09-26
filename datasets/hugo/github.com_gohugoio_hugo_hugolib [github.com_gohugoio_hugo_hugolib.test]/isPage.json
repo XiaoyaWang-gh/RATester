@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 209,
+    "focalfunc": "func (p *pageMeta) IsPage() bool",
+    "funcbody": "func (p *pageMeta) IsPage() bool {\n\treturn p.Kind() == kinds.KindPage\n}",
+    "funcname": "IsPage"
+}

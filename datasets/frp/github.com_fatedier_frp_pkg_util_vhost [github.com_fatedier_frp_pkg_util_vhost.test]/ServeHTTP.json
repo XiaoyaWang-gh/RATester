@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 319,
+    "focalfunc": "func (rp *HTTPReverseProxy) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (rp *HTTPReverseProxy) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tdomain, _ := httppkg.CanonicalHost(req.Host)\n\tlocation := req.URL.Path\n\tuser, passwd, _ := req.BasicAuth()\n\tif !rp.CheckAuth(domain, location, user, user, passwd) {\n\t\trw.Header().Set(\"WWW-Authenticate\", `Basic realm=\"Restricted\"`)\n\t\thttp.Error(rw, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)\n\t\treturn\n\t}\n\n\tnewreq := rp.injectRequestInfoToCtx(req)\n\tif req.Method == http.MethodConnect {\n\t\trp.connectHandler(rw, newreq)\n\t} else {\n\t\trp.proxy.ServeHTTP(rw, newreq)\n\t}\n}",
+    "funcname": "ServeHTTP"
+}

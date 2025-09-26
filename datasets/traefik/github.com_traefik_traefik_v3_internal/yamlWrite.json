@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 163,
+    "focalfunc": "func yamlWrite(outputFile string, element any) error",
+    "funcbody": "func yamlWrite(outputFile string, element any) error {\n\tfile, err := os.OpenFile(outputFile, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0o666)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer file.Close()\n\n\tif _, err := file.WriteString(commentGenerated); err != nil {\n\t\treturn err\n\t}\n\n\tbuf := new(bytes.Buffer)\n\tencoder := yaml.NewEncoder(buf)\n\tencoder.SetIndent(2)\n\terr = encoder.Encode(element)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\t_, err = file.Write(buf.Bytes())\n\treturn err\n}",
+    "funcname": "yamlWrite"
+}

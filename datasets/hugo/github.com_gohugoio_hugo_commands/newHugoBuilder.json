@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 85,
+    "focalfunc": "func newHugoBuilder(r *rootCommand, s *serverCommand, onConfigLoaded ...func(reloaded bool) error) *hugoBuilder",
+    "funcbody": "func newHugoBuilder(r *rootCommand, s *serverCommand, onConfigLoaded ...func(reloaded bool) error) *hugoBuilder {\n\tvar visitedURLs *types.EvictingStringQueue\n\tif s != nil && !s.disableFastRender {\n\t\tvisitedURLs = types.NewEvictingStringQueue(20)\n\t}\n\treturn &hugoBuilder{\n\t\tr:\t\tr,\n\t\ts:\t\ts,\n\t\tvisitedURLs:\tvisitedURLs,\n\t\tfullRebuildSem:\tsemaphore.NewWeighted(1),\n\t\tdebounce:\tdebounce.New(4 * time.Second),\n\t\tonConfigLoaded: func(reloaded bool) error {\n\t\t\tfor _, wc := range onConfigLoaded {\n\t\t\t\tif err := wc(reloaded); err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn nil\n\t\t},\n\t}\n}",
+    "funcname": "newHugoBuilder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/connectionheader/connectionheader.go",
+    "lineno": 25,
+    "focalfunc": "func Remove(req *http.Request) *http.Request",
+    "funcbody": "func Remove(req *http.Request) *http.Request {\n\tvar reqUpType string\n\tif httpguts.HeaderValuesContainsToken(req.Header[connectionHeader], upgradeHeader) {\n\t\treqUpType = req.Header.Get(upgradeHeader)\n\t}\n\n\tremoveConnectionHeaders(req.Header)\n\n\tif reqUpType != \"\" {\n\t\treq.Header.Set(connectionHeader, upgradeHeader)\n\t\treq.Header.Set(upgradeHeader, reqUpType)\n\t} else {\n\t\treq.Header.Del(connectionHeader)\n\t}\n\n\treturn req\n}",
+    "funcname": "Remove"
+}

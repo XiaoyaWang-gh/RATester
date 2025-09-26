@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager_msgp.go",
+    "lineno": 109,
+    "focalfunc": "func (z *item) UnmarshalMsg(bts []byte) (o []byte, err error)",
+    "funcbody": "func (z *item) UnmarshalMsg(bts []byte) (o []byte, err error) {\n\tvar field []byte\n\t_ = field\n\tvar zb0001 uint32\n\tzb0001, bts, err = msgp.ReadMapHeaderBytes(bts)\n\tif err != nil {\n\t\terr = msgp.WrapError(err)\n\t\treturn\n\t}\n\tfor zb0001 > 0 {\n\t\tzb0001--\n\t\tfield, bts, err = msgp.ReadMapKeyZC(bts)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err)\n\t\t\treturn\n\t\t}\n\t\tswitch msgp.UnsafeString(field) {\n\t\tcase \"currHits\":\n\t\t\tz.currHits, bts, err = msgp.ReadIntBytes(bts)\n\t\t\tif err != nil {\n\t\t\t\terr = msgp.WrapError(err, \"currHits\")\n\t\t\t\treturn\n\t\t\t}\n\t\tcase \"prevHits\":\n\t\t\tz.prevHits, bts, err = msgp.ReadIntBytes(bts)\n\t\t\tif err != nil {\n\t\t\t\terr = msgp.WrapError(err, \"prevHits\")\n\t\t\t\treturn\n\t\t\t}\n\t\tcase \"exp\":\n\t\t\tz.exp, bts, err = msgp.ReadUint64Bytes(bts)\n\t\t\tif err != nil {\n\t\t\t\terr = msgp.WrapError(err, \"exp\")\n\t\t\t\treturn\n\t\t\t}\n\t\tdefault:\n\t\t\tbts, err = msgp.Skip(bts)\n\t\t\tif err != nil {\n\t\t\t\terr = msgp.WrapError(err)\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n\to = bts\n\treturn\n}",
+    "funcname": "UnmarshalMsg"
+}

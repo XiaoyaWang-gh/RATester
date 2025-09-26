@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 97,
+    "focalfunc": "func (b *Balancer) Swap(i, j int)",
+    "funcbody": "func (b *Balancer) Swap(i, j int) {\n\tb.handlers[i], b.handlers[j] = b.handlers[j], b.handlers[i]\n}",
+    "funcname": "Swap"
+}

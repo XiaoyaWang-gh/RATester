@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/exec.go",
+    "lineno": 33,
+    "focalfunc": "func MustHaveExec(t testing.TB)",
+    "funcbody": "func MustHaveExec(t testing.TB) {\n\ttryExecOnce.Do(func() {\n\t\ttryExecErr = tryExec()\n\t})\n\tif tryExecErr != nil {\n\t\tt.Skipf(\"skipping test: cannot exec subprocess on %s/%s: %v\", runtime.GOOS, runtime.GOARCH, tryExecErr)\n\t}\n}",
+    "funcname": "MustHaveExec"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/runtime/runtime.go",
+    "lineno": 239,
+    "focalfunc": "func getQualifiedName(provider, elementName string) string",
+    "funcbody": "func getQualifiedName(provider, elementName string) string {\n\tparts := strings.Split(elementName, \"@\")\n\tif len(parts) == 1 {\n\t\treturn elementName + \"@\" + provider\n\t}\n\treturn elementName\n}",
+    "funcname": "getQualifiedName"
+}

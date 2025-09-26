@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/text.go",
+    "lineno": 33,
+    "focalfunc": "func WriteString(w http.ResponseWriter, format string, data []any) (err error)",
+    "funcbody": "func WriteString(w http.ResponseWriter, format string, data []any) (err error) {\n\twriteContentType(w, plainContentType)\n\tif len(data) > 0 {\n\t\t_, err = fmt.Fprintf(w, format, data...)\n\t\treturn\n\t}\n\t_, err = w.Write(bytesconv.StringToBytes(format))\n\treturn\n}",
+    "funcname": "WriteString"
+}

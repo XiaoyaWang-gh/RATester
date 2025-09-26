@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 813,
+    "focalfunc": "func getModlineSplitter(isGoMod bool) func(line string) []string",
+    "funcbody": "func getModlineSplitter(isGoMod bool) func(line string) []string {\n\tif isGoMod {\n\t\treturn func(line string) []string {\n\t\t\tif strings.HasPrefix(line, \"require (\") {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\tif !strings.HasPrefix(line, \"require\") && !strings.HasPrefix(line, \"\\t\") {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\tline = strings.TrimPrefix(line, \"require\")\n\t\t\tline = strings.TrimSpace(line)\n\t\t\tline = strings.TrimSuffix(line, \"// indirect\")\n\n\t\t\treturn strings.Fields(line)\n\t\t}\n\t}\n\n\treturn func(line string) []string {\n\t\treturn strings.Fields(line)\n\t}\n}",
+    "funcname": "getModlineSplitter"
+}

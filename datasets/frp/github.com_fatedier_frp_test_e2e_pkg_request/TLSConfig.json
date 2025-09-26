@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 122,
+    "focalfunc": "func (r *Request) TLSConfig(tlsConfig *tls.Config) *Request",
+    "funcbody": "func (r *Request) TLSConfig(tlsConfig *tls.Config) *Request {\n\tr.tlsConfig = tlsConfig\n\treturn r\n}",
+    "funcname": "TLSConfig"
+}

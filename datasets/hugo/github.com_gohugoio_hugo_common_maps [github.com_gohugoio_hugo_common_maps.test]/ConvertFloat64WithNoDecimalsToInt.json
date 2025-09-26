@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 214,
+    "focalfunc": "func ConvertFloat64WithNoDecimalsToInt(m map[string]any)",
+    "funcbody": "func ConvertFloat64WithNoDecimalsToInt(m map[string]any) {\n\tfor k, v := range m {\n\t\tswitch vv := v.(type) {\n\t\tcase float64:\n\t\t\tif v == float64(int64(vv)) {\n\t\t\t\tm[k] = int64(vv)\n\t\t\t}\n\t\tcase map[string]any:\n\t\t\tConvertFloat64WithNoDecimalsToInt(vv)\n\t\tcase []any:\n\t\t\tfor i, vvv := range vv {\n\t\t\t\tswitch vvvv := vvv.(type) {\n\t\t\t\tcase float64:\n\t\t\t\t\tif vvv == float64(int64(vvvv)) {\n\t\t\t\t\t\tvv[i] = int64(vvvv)\n\t\t\t\t\t}\n\t\t\t\tcase map[string]any:\n\t\t\t\t\tConvertFloat64WithNoDecimalsToInt(vvvv)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "ConvertFloat64WithNoDecimalsToInt"
+}

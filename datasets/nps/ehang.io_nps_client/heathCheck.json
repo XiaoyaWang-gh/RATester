@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/health.go",
+    "lineno": 20,
+    "focalfunc": "func heathCheck(healths []*file.Health, c *conn.Conn) bool",
+    "funcbody": "func heathCheck(healths []*file.Health, c *conn.Conn) bool {\n\tserverConn = c\n\tif isStart {\n\t\tfor _, v := range healths {\n\t\t\tv.HealthMap = make(map[string]int)\n\t\t}\n\t\treturn true\n\t}\n\tisStart = true\n\th := &sheap.IntHeap{}\n\tfor _, v := range healths {\n\t\tif v.HealthMaxFail > 0 && v.HealthCheckTimeout > 0 && v.HealthCheckInterval > 0 {\n\t\t\tv.HealthNextTime = time.Now().Add(time.Duration(v.HealthCheckInterval) * time.Second)\n\t\t\theap.Push(h, v.HealthNextTime.Unix())\n\t\t\tv.HealthMap = make(map[string]int)\n\t\t}\n\t}\n\tgo session(healths, h)\n\treturn true\n}",
+    "funcname": "heathCheck"
+}

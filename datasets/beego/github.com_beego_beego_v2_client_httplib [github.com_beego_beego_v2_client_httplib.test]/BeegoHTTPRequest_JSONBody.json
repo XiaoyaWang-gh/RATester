@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 338,
+    "focalfunc": "func (b *BeegoHTTPRequest) JSONBody(obj interface{}) (*BeegoHTTPRequest, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) JSONBody(obj interface{}) (*BeegoHTTPRequest, error) {\n\tif b.req.Body == nil && obj != nil {\n\t\tbyts, err := b.JSONMarshal(obj)\n\t\tif err != nil {\n\t\t\treturn b, berror.Wrap(err, InvalidJSONBody, \"obj could not be converted to JSON body\")\n\t\t}\n\t\tb.reqBody(byts)\n\t\tb.req.Header.Set(contentTypeKey, \"application/json\")\n\t}\n\treturn b, nil\n}",
+    "funcname": "JSONBody"
+}

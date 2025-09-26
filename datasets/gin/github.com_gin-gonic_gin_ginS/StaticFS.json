@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 118,
+    "focalfunc": "func StaticFS(relativePath string, fs http.FileSystem) gin.IRoutes",
+    "funcbody": "func StaticFS(relativePath string, fs http.FileSystem) gin.IRoutes {\n\treturn engine().StaticFS(relativePath, fs)\n}",
+    "funcname": "StaticFS"
+}

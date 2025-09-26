@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 875,
+    "focalfunc": "func (t *templateHandler) extractPartials(templ tpl.Template) error",
+    "funcbody": "func (t *templateHandler) extractPartials(templ tpl.Template) error {\n\ttempls := templates(templ)\n\tfor _, templ := range templs {\n\t\tif templ.Name() == \"\" || !strings.HasPrefix(templ.Name(), \"partials/\") {\n\t\t\tcontinue\n\t\t}\n\n\t\tts := newTemplateState(nil, templ, templateInfo{name: templ.Name()}, nil)\n\t\tts.typ = templatePartial\n\n\t\tt.main.mu.RLock()\n\t\t_, found := t.main.templates[templ.Name()]\n\t\tt.main.mu.RUnlock()\n\n\t\tif !found {\n\t\t\tt.main.mu.Lock()\n\n\t\t\t_, err := applyTemplateTransformers(ts, t.main.newTemplateLookup(ts))\n\t\t\tif err != nil {\n\t\t\t\tt.main.mu.Unlock()\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tt.main.templates[templ.Name()] = ts\n\t\t\tt.main.mu.Unlock()\n\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "extractPartials"
+}

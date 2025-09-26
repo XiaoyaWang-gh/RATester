@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/configurationwatcher.go",
+    "lineno": 72,
+    "focalfunc": "func (c *ConfigurationWatcher) startProviderAggregator()",
+    "funcbody": "func (c *ConfigurationWatcher) startProviderAggregator() {\n\tlog.Info().Msgf(\"Starting provider aggregator %T\", c.providerAggregator)\n\n\tsafe.Go(func() {\n\t\terr := c.providerAggregator.Provide(c.allProvidersConfigs, c.routinesPool)\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Error starting provider aggregator %T\", c.providerAggregator)\n\t\t}\n\t})\n}",
+    "funcname": "startProviderAggregator"
+}

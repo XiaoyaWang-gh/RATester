@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/event_handler.go",
+    "lineno": 61,
+    "focalfunc": "func endpointSliceChanged(a, b *discoveryv1.EndpointSlice) bool",
+    "funcbody": "func endpointSliceChanged(a, b *discoveryv1.EndpointSlice) bool {\n\tif len(a.Ports) != len(b.Ports) {\n\t\treturn true\n\t}\n\n\tfor i, aport := range a.Ports {\n\t\tbport := b.Ports[i]\n\t\tif aport.Name != bport.Name {\n\t\t\treturn true\n\t\t}\n\t\tif aport.Port != bport.Port {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tif len(a.Endpoints) != len(b.Endpoints) {\n\t\treturn true\n\t}\n\n\tfor i, ea := range a.Endpoints {\n\t\teb := b.Endpoints[i]\n\t\tif endpointChanged(ea, eb) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "endpointSliceChanged"
+}

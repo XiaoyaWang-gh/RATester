@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 20,
+    "focalfunc": "func IsDebugging() bool",
+    "funcbody": "func IsDebugging() bool {\n\treturn atomic.LoadInt32(&ginMode) == debugCode\n}",
+    "funcname": "IsDebugging"
+}

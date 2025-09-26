@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 320,
+    "focalfunc": "func (srv *Server) fork() (err error)",
+    "funcbody": "func (srv *Server) fork() (err error) {\n\tregLock.Lock()\n\tdefer regLock.Unlock()\n\tif runningServersForked {\n\t\treturn\n\t}\n\trunningServersForked = true\n\n\tfiles := make([]*os.File, len(runningServers))\n\torderArgs := make([]string, len(runningServers))\n\tfor _, srvPtr := range runningServers {\n\t\tf, _ := srvPtr.ln.(*net.TCPListener).File()\n\t\tfiles[socketPtrOffsetMap[srvPtr.Server.Addr]] = f\n\t\torderArgs[socketPtrOffsetMap[srvPtr.Server.Addr]] = srvPtr.Server.Addr\n\t}\n\n\tlog.Println(files)\n\tpath := os.Args[0]\n\tvar args []string\n\tif len(os.Args) > 1 {\n\t\tfor _, arg := range os.Args[1:] {\n\t\t\tif strings.TrimLeft(arg, \"-\") == \"graceful\" {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\targs = append(args, arg)\n\t\t}\n\t}\n\targs = append(args, \"--graceful\")\n\tif len(runningServers) > 1 {\n\t\targs = append(args, fmt.Sprintf(`--socketorder=%s`, strings.Join(orderArgs, \",\")))\n\t\tlog.Println(args)\n\t}\n\tcmd := exec.Command(path, args...)\n\tcmd.Stdout = os.Stdout\n\tcmd.Stderr = os.Stderr\n\tcmd.ExtraFiles = files\n\terr = cmd.Start()\n\tif err != nil {\n\t\tlog.Fatalf(\"Restart: Failed to launch, error: %v\", err)\n\t}\n\n\treturn\n}",
+    "funcname": "fork"
+}

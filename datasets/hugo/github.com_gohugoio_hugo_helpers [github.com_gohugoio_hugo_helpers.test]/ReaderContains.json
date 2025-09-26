@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 148,
+    "focalfunc": "func ReaderContains(r io.Reader, subslice []byte) bool",
+    "funcbody": "func ReaderContains(r io.Reader, subslice []byte) bool {\n\tif r == nil || len(subslice) == 0 {\n\t\treturn false\n\t}\n\n\tbufflen := len(subslice) * 4\n\thalflen := bufflen / 2\n\tbuff := make([]byte, bufflen)\n\tvar err error\n\tvar n, i int\n\n\tfor {\n\t\ti++\n\t\tif i == 1 {\n\t\t\tn, err = io.ReadAtLeast(r, buff[:halflen], halflen)\n\t\t} else {\n\t\t\tif i != 2 {\n\n\t\t\t\tcopy(buff[:], buff[halflen:])\n\t\t\t}\n\t\t\tn, err = io.ReadAtLeast(r, buff[halflen:], halflen)\n\t\t}\n\n\t\tif n > 0 && bytes.Contains(buff, subslice) {\n\t\t\treturn true\n\t\t}\n\n\t\tif err != nil {\n\t\t\tbreak\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "ReaderContains"
+}

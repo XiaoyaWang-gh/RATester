@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis/sess_redis.go",
+    "lineno": 254,
+    "focalfunc": "func (rp *Provider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (rp *Provider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tc := rp.poollist\n\n\tif existed, err := c.Exists(ctx, sid).Result(); err != nil || existed == 0 {\n\t\treturn false, err\n\t}\n\treturn true, nil\n}",
+    "funcname": "SessionExist"
+}

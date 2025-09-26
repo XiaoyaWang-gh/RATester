@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 158,
+    "focalfunc": "func (cc *codeCatcher) getCode() int",
+    "funcbody": "func (cc *codeCatcher) getCode() int {\n\treturn cc.code\n}",
+    "funcname": "getCode"
+}

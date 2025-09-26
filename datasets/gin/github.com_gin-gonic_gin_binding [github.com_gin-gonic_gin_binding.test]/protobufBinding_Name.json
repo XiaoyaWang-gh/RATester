@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/protobuf.go",
+    "lineno": 17,
+    "focalfunc": "func (protobufBinding) Name() string",
+    "funcbody": "func (protobufBinding) Name() string {\n\treturn \"protobuf\"\n}",
+    "funcname": "Name"
+}

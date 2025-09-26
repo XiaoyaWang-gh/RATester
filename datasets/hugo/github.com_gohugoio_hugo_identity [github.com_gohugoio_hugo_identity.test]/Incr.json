@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 254,
+    "focalfunc": "func (c *IncrementByOne) Incr() int",
+    "funcbody": "func (c *IncrementByOne) Incr() int {\n\treturn int(atomic.AddUint64(&c.counter, uint64(1)))\n}",
+    "funcname": "Incr"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/utils.go",
+    "lineno": 13,
+    "focalfunc": "func GetGOPATHs() []string",
+    "funcbody": "func GetGOPATHs() []string {\n\tgopath := os.Getenv(\"GOPATH\")\n\tif gopath == \"\" && compareGoVersion(runtime.Version(), \"go1.8\") >= 0 {\n\t\tgopath = defaultGOPATH()\n\t}\n\treturn filepath.SplitList(gopath)\n}",
+    "funcname": "GetGOPATHs"
+}

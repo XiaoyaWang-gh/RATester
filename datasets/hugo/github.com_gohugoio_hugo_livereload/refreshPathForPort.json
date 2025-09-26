@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 130,
+    "focalfunc": "func refreshPathForPort(s string, port int)",
+    "funcbody": "func refreshPathForPort(s string, port int) {\n\n\turlPath := filepath.ToSlash(s)\n\tportStr := \"\"\n\tif port > 0 {\n\t\tportStr = fmt.Sprintf(`, \"overrideURL\": %d`, port)\n\t}\n\tmsg := fmt.Sprintf(`{\"command\":\"reload\",\"path\":%q,\"originalPath\":\"\",\"liveCSS\":true,\"liveImg\":true%s}`, urlPath, portStr)\n\twsHub.broadcast <- []byte(msg)\n}",
+    "funcname": "refreshPathForPort"
+}

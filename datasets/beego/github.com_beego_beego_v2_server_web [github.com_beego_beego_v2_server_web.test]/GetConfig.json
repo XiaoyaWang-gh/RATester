@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 155,
+    "focalfunc": "func GetConfig(returnType, key string, defaultVal interface{}) (value interface{}, err error)",
+    "funcbody": "func GetConfig(returnType, key string, defaultVal interface{}) (value interface{}, err error) {\n\tswitch returnType {\n\tcase \"String\":\n\t\tvalue, err = AppConfig.String(key)\n\tcase \"Bool\":\n\t\tvalue, err = AppConfig.Bool(key)\n\tcase \"Int\":\n\t\tvalue, err = AppConfig.Int(key)\n\tcase \"Int64\":\n\t\tvalue, err = AppConfig.Int64(key)\n\tcase \"Float\":\n\t\tvalue, err = AppConfig.Float(key)\n\tcase \"DIY\":\n\t\tvalue, err = AppConfig.DIY(key)\n\tdefault:\n\t\terr = errors.New(\"config keys must be of type String, Bool, Int, Int64, Float, or DIY\")\n\t}\n\n\tif err != nil {\n\t\tif reflect.TypeOf(returnType) != reflect.TypeOf(defaultVal) {\n\t\t\terr = errors.New(\"defaultVal type does not match returnType\")\n\t\t} else {\n\t\t\tvalue, err = defaultVal, nil\n\t\t}\n\t} else if reflect.TypeOf(value).Kind() == reflect.String {\n\t\tif value == \"\" {\n\t\t\tif reflect.TypeOf(defaultVal).Kind() != reflect.String {\n\t\t\t\terr = errors.New(\"defaultVal type must be a String if the returnType is a String\")\n\t\t\t} else {\n\t\t\t\tvalue = defaultVal.(string)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn\n}",
+    "funcname": "GetConfig"
+}

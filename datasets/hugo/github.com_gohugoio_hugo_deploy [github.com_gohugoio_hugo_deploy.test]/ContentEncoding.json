@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 420,
+    "focalfunc": "func (lf *localFile) ContentEncoding() string",
+    "funcbody": "func (lf *localFile) ContentEncoding() string {\n\tif lf.matcher == nil {\n\t\treturn \"\"\n\t}\n\tif lf.matcher.Gzip {\n\t\treturn \"gzip\"\n\t}\n\treturn lf.matcher.ContentEncoding\n}",
+    "funcname": "ContentEncoding"
+}

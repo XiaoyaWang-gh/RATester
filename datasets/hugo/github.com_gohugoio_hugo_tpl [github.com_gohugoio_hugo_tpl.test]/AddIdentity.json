@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/template.go",
+    "lineno": 109,
+    "focalfunc": "func AddIdentity(t Template) Template",
+    "funcbody": "func AddIdentity(t Template) Template {\n\tif _, ok := t.(identity.IdentityProvider); ok {\n\t\treturn t\n\t}\n\treturn templateIdentityProvider{\n\t\tTemplate:\tt,\n\t\tid:\t\tidentity.StringIdentity(t.Name()),\n\t}\n}",
+    "funcname": "AddIdentity"
+}

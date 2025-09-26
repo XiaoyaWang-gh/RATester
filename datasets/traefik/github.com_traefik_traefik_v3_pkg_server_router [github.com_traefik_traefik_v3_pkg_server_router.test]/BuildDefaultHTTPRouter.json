@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/router.go",
+    "lineno": 248,
+    "focalfunc": "func BuildDefaultHTTPRouter() http.Handler",
+    "funcbody": "func BuildDefaultHTTPRouter() http.Handler {\n\treturn http.NotFoundHandler()\n}",
+    "funcname": "BuildDefaultHTTPRouter"
+}

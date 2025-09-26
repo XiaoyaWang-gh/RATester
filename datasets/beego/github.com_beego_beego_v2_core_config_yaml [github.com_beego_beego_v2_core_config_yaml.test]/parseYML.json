@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 77,
+    "focalfunc": "func parseYML(buf []byte) (map[string]interface{}, error)",
+    "funcbody": "func parseYML(buf []byte) (map[string]interface{}, error) {\n\tcnf := make(map[string]interface{})\n\terr := yaml.Unmarshal(buf, cnf)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tcnf = config.ExpandValueEnvForMap(cnf)\n\treturn cnf, err\n}",
+    "funcname": "parseYML"
+}

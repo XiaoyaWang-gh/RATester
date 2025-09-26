@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 621,
+    "focalfunc": "func (bl *BeeLogger) Reset()",
+    "funcbody": "func (bl *BeeLogger) Reset() {\n\tbl.Flush()\n\tfor _, l := range bl.outputs {\n\t\tl.Destroy()\n\t}\n\tbl.outputs = nil\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logdata.go",
+    "lineno": 115,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tfor _, k := range defaultCoreKeys {\n\t\tallCoreKeys[k] = struct{}{}\n\t}\n\tallCoreKeys[ServiceAddr] = struct{}{}\n\tallCoreKeys[ClientAddr] = struct{}{}\n\tallCoreKeys[RequestAddr] = struct{}{}\n\tallCoreKeys[GzipRatio] = struct{}{}\n\tallCoreKeys[StartLocal] = struct{}{}\n\tallCoreKeys[Overhead] = struct{}{}\n\tallCoreKeys[RetryAttempts] = struct{}{}\n\tallCoreKeys[TLSVersion] = struct{}{}\n\tallCoreKeys[TLSCipher] = struct{}{}\n\tallCoreKeys[TLSClientSubject] = struct{}{}\n}",
+    "funcname": "init"
+}

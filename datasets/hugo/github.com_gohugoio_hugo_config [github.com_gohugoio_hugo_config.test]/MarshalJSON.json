@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/namespace.go",
+    "lineno": 66,
+    "focalfunc": "func (ns *ConfigNamespace[S, C]) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (ns *ConfigNamespace[S, C]) MarshalJSON() ([]byte, error) {\n\treturn json.Marshal(ns.SourceStructure)\n}",
+    "funcname": "MarshalJSON"
+}

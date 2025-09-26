@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 186,
+    "focalfunc": "func (l *Listener) newConn(rAddr net.Addr) *Conn",
+    "funcbody": "func (l *Listener) newConn(rAddr net.Addr) *Conn {\n\treturn &Conn{\n\t\tlistener:\tl,\n\t\trAddr:\t\trAddr,\n\t\treceiveCh:\tmake(chan []byte),\n\t\treadCh:\t\tmake(chan []byte),\n\t\tsizeCh:\t\tmake(chan int),\n\t\tdoneCh:\t\tmake(chan struct{}),\n\t\ttimeout:\tl.timeout,\n\t}\n}",
+    "funcname": "newConn"
+}

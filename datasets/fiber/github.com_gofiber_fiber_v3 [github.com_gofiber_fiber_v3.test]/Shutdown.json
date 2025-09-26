@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 821,
+    "focalfunc": "func (app *App) Shutdown() error",
+    "funcbody": "func (app *App) Shutdown() error {\n\treturn app.ShutdownWithContext(context.Background())\n}",
+    "funcname": "Shutdown"
+}

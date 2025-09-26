@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/debug/debug.go",
+    "lineno": 121,
+    "focalfunc": "func (ns *Namespace) Timer(name string) Timer",
+    "funcbody": "func (ns *Namespace) Timer(name string) Timer {\n\tif ns.timers == nil {\n\t\treturn nopTimer\n\t}\n\tns.timersMu.Lock()\n\tdefer ns.timersMu.Unlock()\n\tt := &timer{start: time.Now()}\n\tns.timers[name] = append(ns.timers[name], t)\n\treturn t\n}",
+    "funcname": "Timer"
+}

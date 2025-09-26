@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_output.go",
+    "lineno": 56,
+    "focalfunc": "func createSiteOutputFormats(allFormats output.Formats, outputs map[string]any, rssDisabled bool) (map[string]output.Formats, error)",
+    "funcbody": "func createSiteOutputFormats(allFormats output.Formats, outputs map[string]any, rssDisabled bool) (map[string]output.Formats, error) {\n\tdefaultOutputFormats := createDefaultOutputFormats(allFormats)\n\n\tif outputs == nil {\n\t\treturn defaultOutputFormats, nil\n\t}\n\n\toutFormats := make(map[string]output.Formats)\n\n\tif len(outputs) == 0 {\n\t\treturn outFormats, nil\n\t}\n\n\tseen := make(map[string]bool)\n\n\tfor k, v := range outputs {\n\t\tk = kinds.GetKindAny(k)\n\t\tif k == \"\" {\n\n\t\t\tcontinue\n\t\t}\n\t\tvar formats output.Formats\n\t\tvals := cast.ToStringSlice(v)\n\t\tfor _, format := range vals {\n\t\t\tf, found := allFormats.GetByName(format)\n\t\t\tif !found {\n\t\t\t\tif rssDisabled && strings.EqualFold(format, \"RSS\") {\n\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\treturn nil, fmt.Errorf(\"failed to resolve output format %q from site config\", format)\n\t\t\t}\n\t\t\tformats = append(formats, f)\n\t\t}\n\n\t\tif len(formats) > 0 {\n\t\t\tseen[k] = true\n\t\t\toutFormats[k] = formats\n\t\t}\n\t}\n\n\tfor k, v := range defaultOutputFormats {\n\t\tif !seen[k] {\n\t\t\toutFormats[k] = v\n\t\t}\n\t}\n\n\treturn outFormats, nil\n}",
+    "funcname": "createSiteOutputFormats"
+}

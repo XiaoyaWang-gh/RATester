@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/redirect/request_redirect.go",
+    "lineno": 31,
+    "focalfunc": "func NewRequestRedirect(ctx context.Context, next http.Handler, conf dynamic.RequestRedirect, name string) (http.Handler, error)",
+    "funcbody": "func NewRequestRedirect(ctx context.Context, next http.Handler, conf dynamic.RequestRedirect, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\tstatusCode := conf.StatusCode\n\tif statusCode == 0 {\n\t\tstatusCode = http.StatusFound\n\t}\n\tif statusCode != http.StatusMovedPermanently && statusCode != http.StatusFound {\n\t\treturn nil, fmt.Errorf(\"unsupported status code: %d\", statusCode)\n\t}\n\n\treturn redirect{\n\t\tname:\t\tname,\n\t\tnext:\t\tnext,\n\t\tscheme:\t\tconf.Scheme,\n\t\thostname:\tconf.Hostname,\n\t\tport:\t\tconf.Port,\n\t\tpath:\t\tconf.Path,\n\t\tpathPrefix:\tconf.PathPrefix,\n\t\tstatusCode:\tstatusCode,\n\t}, nil\n}",
+    "funcname": "NewRequestRedirect"
+}

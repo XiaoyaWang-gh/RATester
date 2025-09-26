@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 446,
+    "focalfunc": "func (p *nopPage) Scratch() *maps.Scratch",
+    "funcbody": "func (p *nopPage) Scratch() *maps.Scratch {\n\treturn nil\n}",
+    "funcname": "Scratch"
+}

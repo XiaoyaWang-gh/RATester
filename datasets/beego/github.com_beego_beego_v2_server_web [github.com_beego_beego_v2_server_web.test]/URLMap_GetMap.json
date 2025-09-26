@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/statistics.go",
+    "lineno": 88,
+    "focalfunc": "func (m *URLMap) GetMap() map[string]interface{}",
+    "funcbody": "func (m *URLMap) GetMap() map[string]interface{} {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\n\tfields := []string{\"requestUrl\", \"method\", \"times\", \"used\", \"max used\", \"min used\", \"avg used\"}\n\n\tvar resultLists [][]string\n\tcontent := make(map[string]interface{})\n\tcontent[\"Fields\"] = fields\n\n\tfor k, v := range m.urlmap {\n\t\tfor kk, vv := range v {\n\t\t\tresult := []string{\n\t\t\t\tfmt.Sprintf(\"% -50s\", template.HTMLEscapeString(k)),\n\t\t\t\tfmt.Sprintf(\"% -10s\", kk),\n\t\t\t\tfmt.Sprintf(\"% -16d\", vv.RequestNum),\n\t\t\t\tfmt.Sprintf(\"%d\", vv.TotalTime),\n\t\t\t\tfmt.Sprintf(\"% -16s\", utils.ToShortTimeFormat(vv.TotalTime)),\n\t\t\t\tfmt.Sprintf(\"%d\", vv.MaxTime),\n\t\t\t\tfmt.Sprintf(\"% -16s\", utils.ToShortTimeFormat(vv.MaxTime)),\n\t\t\t\tfmt.Sprintf(\"%d\", vv.MinTime),\n\t\t\t\tfmt.Sprintf(\"% -16s\", utils.ToShortTimeFormat(vv.MinTime)),\n\t\t\t\tfmt.Sprintf(\"%d\", time.Duration(int64(vv.TotalTime)/vv.RequestNum)),\n\t\t\t\tfmt.Sprintf(\"% -16s\", utils.ToShortTimeFormat(time.Duration(int64(vv.TotalTime)/vv.RequestNum))),\n\t\t\t}\n\t\t\tresultLists = append(resultLists, result)\n\t\t}\n\t}\n\tcontent[\"Data\"] = resultLists\n\treturn content\n}",
+    "funcname": "GetMap"
+}

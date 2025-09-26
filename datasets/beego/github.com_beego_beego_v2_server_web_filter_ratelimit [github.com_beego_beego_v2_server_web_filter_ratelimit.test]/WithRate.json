@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/token_bucket.go",
+    "lineno": 33,
+    "focalfunc": "func withRate(rate time.Duration) bucketOption",
+    "funcbody": "func withRate(rate time.Duration) bucketOption {\n\treturn func(b bucket) {\n\t\tbucket := b.(*tokenBucket)\n\t\tbucket.rate = rate\n\t}\n}",
+    "funcname": "withRate"
+}

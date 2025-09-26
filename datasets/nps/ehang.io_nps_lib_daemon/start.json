@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/daemon/daemon.go",
+    "lineno": 86,
+    "focalfunc": "func start(osArgs []string, f string, pidPath, runPath string)",
+    "funcbody": "func start(osArgs []string, f string, pidPath, runPath string) {\n\tif status(f, pidPath) {\n\t\tlog.Printf(\" %s is running\", f)\n\t\treturn\n\t}\n\tcmd := exec.Command(osArgs[0], osArgs[1:]...)\n\tcmd.Start()\n\tif cmd.Process.Pid > 0 {\n\t\tlog.Println(\"start ok , pid:\", cmd.Process.Pid, \"config path:\", runPath)\n\t\td1 := []byte(strconv.Itoa(cmd.Process.Pid))\n\t\tioutil.WriteFile(filepath.Join(pidPath, f+\".pid\"), d1, 0600)\n\t} else {\n\t\tlog.Println(\"start error\")\n\t}\n}",
+    "funcname": "start"
+}

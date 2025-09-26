@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 416,
+    "focalfunc": "func (t NodeShiftTree[T]) clone() *NodeShiftTree[T]",
+    "funcbody": "func (t NodeShiftTree[T]) clone() *NodeShiftTree[T] {\n\treturn &t\n}",
+    "funcname": "clone"
+}

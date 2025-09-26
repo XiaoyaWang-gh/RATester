@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 142,
+    "focalfunc": "func (d *DoNothingOrm) BeginWithCtx(ctx context.Context) (TxOrmer, error)",
+    "funcbody": "func (d *DoNothingOrm) BeginWithCtx(ctx context.Context) (TxOrmer, error) {\n\treturn nil, nil\n}",
+    "funcname": "BeginWithCtx"
+}

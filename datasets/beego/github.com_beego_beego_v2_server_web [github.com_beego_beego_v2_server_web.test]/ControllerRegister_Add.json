@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 226,
+    "focalfunc": "func (p *ControllerRegister) Add(pattern string, c ControllerInterface, opts ...ControllerOption)",
+    "funcbody": "func (p *ControllerRegister) Add(pattern string, c ControllerInterface, opts ...ControllerOption) {\n\tp.addWithMethodParams(pattern, c, nil, opts...)\n}",
+    "funcname": "Add"
+}

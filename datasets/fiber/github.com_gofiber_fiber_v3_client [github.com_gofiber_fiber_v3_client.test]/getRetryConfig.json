@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 56,
+    "focalfunc": "func (c *core) getRetryConfig() *RetryConfig",
+    "funcbody": "func (c *core) getRetryConfig() *RetryConfig {\n\tc.client.mu.RLock()\n\tdefer c.client.mu.RUnlock()\n\n\tcfg := c.client.RetryConfig()\n\tif cfg == nil {\n\t\treturn nil\n\t}\n\n\treturn &RetryConfig{\n\t\tInitialInterval:\tcfg.InitialInterval,\n\t\tMaxBackoffTime:\t\tcfg.MaxBackoffTime,\n\t\tMultiplier:\t\tcfg.Multiplier,\n\t\tMaxRetryCount:\t\tcfg.MaxRetryCount,\n\t}\n}",
+    "funcname": "getRetryConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 99,
+    "focalfunc": "func (*fileLogWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (*fileLogWriter) Format(lm *LogMsg) string {\n\tmsg := lm.OldStyleFormat()\n\thd, _, _ := formatTimeHeader(lm.When)\n\tmsg = fmt.Sprintf(\"%s %s\\n\", string(hd), msg)\n\treturn msg\n}",
+    "funcname": "Format"
+}

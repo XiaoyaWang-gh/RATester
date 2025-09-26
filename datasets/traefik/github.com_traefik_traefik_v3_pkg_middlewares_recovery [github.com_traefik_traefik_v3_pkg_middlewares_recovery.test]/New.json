@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/recovery/recovery.go",
+    "lineno": 21,
+    "focalfunc": "func New(ctx context.Context, next http.Handler) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, middlewareName, typeName).Debug().Msg(\"Creating middleware\")\n\n\treturn &recovery{\n\t\tnext: next,\n\t}, nil\n}",
+    "funcname": "New"
+}

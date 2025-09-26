@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 103,
+    "focalfunc": "func WithBasicAuth(auth *dynamic.BasicAuth) func(*dynamic.Middleware)",
+    "funcbody": "func WithBasicAuth(auth *dynamic.BasicAuth) func(*dynamic.Middleware) {\n\treturn func(r *dynamic.Middleware) {\n\t\tr.BasicAuth = auth\n\t}\n}",
+    "funcname": "WithBasicAuth"
+}

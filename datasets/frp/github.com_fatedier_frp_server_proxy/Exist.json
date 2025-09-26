@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 344,
+    "focalfunc": "func (pm *Manager) Exist(name string) bool",
+    "funcbody": "func (pm *Manager) Exist(name string) bool {\n\tpm.mu.RLock()\n\tdefer pm.mu.RUnlock()\n\t_, ok := pm.pxys[name]\n\treturn ok\n}",
+    "funcname": "Exist"
+}

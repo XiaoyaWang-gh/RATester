@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 566,
+    "focalfunc": "func (o *orm) DoTxWithCtx(ctx context.Context, task func(ctx context.Context, txOrm TxOrmer) error) error",
+    "funcbody": "func (o *orm) DoTxWithCtx(ctx context.Context, task func(ctx context.Context, txOrm TxOrmer) error) error {\n\treturn o.DoTxWithCtxAndOpts(ctx, nil, task)\n}",
+    "funcname": "DoTxWithCtx"
+}

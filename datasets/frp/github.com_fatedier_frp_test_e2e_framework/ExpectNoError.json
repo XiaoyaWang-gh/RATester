@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 36,
+    "focalfunc": "func ExpectNoError(err error, explain ...interface{})",
+    "funcbody": "func ExpectNoError(err error, explain ...interface{}) {\n\tExpectNoErrorWithOffset(1, err, explain...)\n}",
+    "funcname": "ExpectNoError"
+}

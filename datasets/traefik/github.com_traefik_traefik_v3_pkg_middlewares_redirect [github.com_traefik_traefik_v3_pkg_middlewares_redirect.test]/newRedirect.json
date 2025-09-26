@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/redirect/redirect.go",
+    "lineno": 32,
+    "focalfunc": "func newRedirect(next http.Handler, regex, replacement string, permanent bool, rawURL func(*http.Request) string, name string) (http.Handler, error)",
+    "funcbody": "func newRedirect(next http.Handler, regex, replacement string, permanent bool, rawURL func(*http.Request) string, name string) (http.Handler, error) {\n\tre, err := regexp.Compile(regex)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &redirect{\n\t\tregex:\t\tre,\n\t\treplacement:\treplacement,\n\t\tpermanent:\tpermanent,\n\t\terrHandler:\tutils.DefaultHandler,\n\t\tnext:\t\tnext,\n\t\tname:\t\tname,\n\t\trawURL:\t\trawURL,\n\t}, nil\n}",
+    "funcname": "newRedirect"
+}

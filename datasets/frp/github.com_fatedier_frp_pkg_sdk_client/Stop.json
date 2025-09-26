@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 91,
+    "focalfunc": "func (c *Client) Stop(ctx context.Context) error",
+    "funcbody": "func (c *Client) Stop(ctx context.Context) error {\n\treq, err := http.NewRequestWithContext(ctx, \"POST\", \"http://\"+c.address+\"/api/stop\", nil)\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = c.do(req)\n\treturn err\n}",
+    "funcname": "Stop"
+}

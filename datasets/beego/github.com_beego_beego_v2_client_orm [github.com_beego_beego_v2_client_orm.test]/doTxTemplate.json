@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 578,
+    "focalfunc": "func doTxTemplate(ctx context.Context, o TxBeginner, opts *sql.TxOptions,\n\ttask func(ctx context.Context, txOrm TxOrmer) error) error",
+    "funcbody": "func doTxTemplate(ctx context.Context, o TxBeginner, opts *sql.TxOptions,\n\ttask func(ctx context.Context, txOrm TxOrmer) error) error {\n\t_txOrm, err := o.BeginWithCtxAndOpts(ctx, opts)\n\tif err != nil {\n\t\treturn err\n\t}\n\tpanicked := true\n\tdefer func() {\n\t\tif panicked || err != nil {\n\t\t\te := _txOrm.Rollback()\n\t\t\tif e != nil {\n\t\t\t\tlogs.Error(\"rollback transaction failed: %v,%v\", e, panicked)\n\t\t\t}\n\t\t} else {\n\t\t\te := _txOrm.Commit()\n\t\t\tif e != nil {\n\t\t\t\tlogs.Error(\"commit transaction failed: %v,%v\", e, panicked)\n\t\t\t}\n\t\t}\n\t}()\n\ttaskTxOrm := _txOrm\n\terr = task(ctx, taskTxOrm)\n\tpanicked = false\n\treturn err\n}",
+    "funcname": "doTxTemplate"
+}

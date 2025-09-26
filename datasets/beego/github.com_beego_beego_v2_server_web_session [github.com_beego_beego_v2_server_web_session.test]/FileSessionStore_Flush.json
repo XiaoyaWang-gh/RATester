@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 69,
+    "focalfunc": "func (fs *FileSessionStore) Flush(context.Context) error",
+    "funcbody": "func (fs *FileSessionStore) Flush(context.Context) error {\n\tfs.lock.Lock()\n\tdefer fs.lock.Unlock()\n\tfs.values = make(map[interface{}]interface{})\n\treturn nil\n}",
+    "funcname": "Flush"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 454,
+    "focalfunc": "func (c *contentParseInfo) contentSource(s resource.StaleInfo) ([]byte, error)",
+    "funcbody": "func (c *contentParseInfo) contentSource(s resource.StaleInfo) ([]byte, error) {\n\tkey := c.sourceKey\n\tversionv := s.StaleVersion()\n\n\tv, err := c.h.cacheContentSource.GetOrCreate(key, func(string) (*resources.StaleValue[[]byte], error) {\n\t\tb, err := c.readSourceAll()\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\treturn &resources.StaleValue[[]byte]{\n\t\t\tValue:\tb,\n\t\t\tStaleVersionFunc: func() uint32 {\n\t\t\t\treturn s.StaleVersion() - versionv\n\t\t\t},\n\t\t}, nil\n\t})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn v.Value, nil\n}",
+    "funcname": "contentSource"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 454,
+    "focalfunc": "func lexDone(l *pageLexer) stateFunc",
+    "funcbody": "func lexDone(l *pageLexer) stateFunc {\n\n\tif l.pos > l.start {\n\t\tl.emit(tText)\n\t}\n\tl.emit(tEOF)\n\treturn nil\n}",
+    "funcname": "lexDone"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 408,
+    "focalfunc": "func (r *Request) DelFormDatas(key ...string) *Request",
+    "funcbody": "func (r *Request) DelFormDatas(key ...string) *Request {\n\tr.formData.DelDatas(key...)\n\tr.resetBody(formBody)\n\treturn r\n}",
+    "funcname": "DelFormDatas"
+}

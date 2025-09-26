@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/netpackager.go",
+    "lineno": 103,
+    "focalfunc": "func (h *UDPHeader) Write(w io.Writer) error",
+    "funcbody": "func (h *UDPHeader) Write(w io.Writer) error {\n\tb := BufPoolUdp.Get().([]byte)\n\tdefer BufPoolUdp.Put(b)\n\n\tbinary.BigEndian.PutUint16(b[:2], h.Rsv)\n\tb[2] = h.Frag\n\n\taddr := h.Addr\n\tif addr == nil {\n\t\taddr = &Addr{}\n\t}\n\tlength, _ := addr.Encode(b[3:])\n\n\t_, err := w.Write(b[:3+length])\n\treturn err\n}",
+    "funcname": "Write"
+}

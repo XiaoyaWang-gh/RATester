@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/data_msgp.go",
+    "lineno": 97,
+    "focalfunc": "func (z *data) MarshalMsg(b []byte) (o []byte, err error)",
+    "funcbody": "func (z *data) MarshalMsg(b []byte) (o []byte, err error) {\n\to = msgp.Require(b, z.Msgsize())\n\n\to = append(o, 0x81, 0xa4, 0x44, 0x61, 0x74, 0x61)\n\to = msgp.AppendMapHeader(o, uint32(len(z.Data)))\n\tfor za0001, za0002 := range z.Data {\n\t\to = msgp.AppendString(o, za0001)\n\t\to, err = msgp.AppendIntf(o, za0002)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err, \"Data\", za0001)\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "MarshalMsg"
+}

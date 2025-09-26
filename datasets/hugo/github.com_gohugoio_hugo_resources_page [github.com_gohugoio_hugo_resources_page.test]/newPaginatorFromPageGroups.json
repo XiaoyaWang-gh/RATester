@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 376,
+    "focalfunc": "func newPaginatorFromPageGroups(pageGroups PagesGroup, size int, urlFactory paginationURLFactory) (*Paginator, error)",
+    "funcbody": "func newPaginatorFromPageGroups(pageGroups PagesGroup, size int, urlFactory paginationURLFactory) (*Paginator, error) {\n\tif size <= 0 {\n\t\treturn nil, errors.New(\"Paginator size must be positive\")\n\t}\n\n\tsplit := splitPageGroups(pageGroups, size)\n\n\treturn newPaginator(split, pageGroups.Len(), size, urlFactory)\n}",
+    "funcname": "newPaginatorFromPageGroups"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 194,
+    "focalfunc": "func (m Type) IsHTML() bool",
+    "funcbody": "func (m Type) IsHTML() bool {\n\treturn m.SubType == Builtin.HTMLType.SubType\n}",
+    "funcname": "IsHTML"
+}

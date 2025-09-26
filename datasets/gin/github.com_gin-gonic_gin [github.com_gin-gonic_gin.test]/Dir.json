@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/fs.go",
+    "lineno": 43,
+    "focalfunc": "func Dir(root string, listDirectory bool) http.FileSystem",
+    "funcbody": "func Dir(root string, listDirectory bool) http.FileSystem {\n\tfs := http.Dir(root)\n\n\tif listDirectory {\n\t\treturn fs\n\t}\n\n\treturn &OnlyFilesFS{FileSystem: fs}\n}",
+    "funcname": "Dir"
+}

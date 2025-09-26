@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2149,
+    "focalfunc": "func (d *dbBase) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string",
+    "funcbody": "func (d *dbBase) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string {\n\tvar s []string\n\tQ := d.TableQuote()\n\tfor _, index := range indexes {\n\t\ttmp := fmt.Sprintf(`%s%s%s`, Q, index, Q)\n\t\ts = append(s, tmp)\n\t}\n\n\tvar useWay string\n\n\tswitch useIndex {\n\tcase hints.KeyUseIndex:\n\t\tuseWay = `USE`\n\tcase hints.KeyForceIndex:\n\t\tuseWay = `FORCE`\n\tcase hints.KeyIgnoreIndex:\n\t\tuseWay = `IGNORE`\n\tdefault:\n\t\tDebugLog.Println(\"[WARN] Not a valid specifying action, so that action is ignored\")\n\t\treturn ``\n\t}\n\n\treturn fmt.Sprintf(` %s INDEX(%s) `, useWay, strings.Join(s, `,`))\n}",
+    "funcname": "GenerateSpecifyIndex"
+}

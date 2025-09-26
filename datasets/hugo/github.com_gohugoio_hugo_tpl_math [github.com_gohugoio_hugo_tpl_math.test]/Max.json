@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 142,
+    "focalfunc": "func (ns *Namespace) Max(inputs ...any) (maximum float64, err error)",
+    "funcbody": "func (ns *Namespace) Max(inputs ...any) (maximum float64, err error) {\n\treturn ns.applyOpToScalarsOrSlices(\"Max\", math.Max, inputs...)\n}",
+    "funcname": "Max"
+}

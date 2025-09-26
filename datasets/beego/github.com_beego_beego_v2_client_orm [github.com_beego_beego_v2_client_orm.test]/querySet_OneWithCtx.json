@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 297,
+    "focalfunc": "func (o querySet) OneWithCtx(ctx context.Context, container interface{}, cols ...string) error",
+    "funcbody": "func (o querySet) OneWithCtx(ctx context.Context, container interface{}, cols ...string) error {\n\to.limit = 1\n\tnum, err := o.orm.alias.DbBaser.ReadBatch(ctx, o.orm.db, o, o.mi, o.cond, container, o.orm.alias.TZ, cols)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif num == 0 {\n\t\treturn ErrNoRows\n\t}\n\n\tif num > 1 {\n\t\treturn ErrMultiRows\n\t}\n\treturn nil\n}",
+    "funcname": "OneWithCtx"
+}

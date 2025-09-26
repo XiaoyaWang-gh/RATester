@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 22,
+    "focalfunc": "func (g *Group) Use(middleware ...MiddlewareFunc)",
+    "funcbody": "func (g *Group) Use(middleware ...MiddlewareFunc) {\n\tg.middleware = append(g.middleware, middleware...)\n\tif len(g.middleware) == 0 {\n\t\treturn\n\t}\n\n\tg.RouteNotFound(\"\", NotFoundHandler)\n\tg.RouteNotFound(\"/*\", NotFoundHandler)\n}",
+    "funcname": "Use"
+}

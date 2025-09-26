@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/beego.go",
+    "lineno": 66,
+    "focalfunc": "func initBeforeHTTPRun()",
+    "funcbody": "func initBeforeHTTPRun() {\n\tinitHttpOnce.Do(func() {\n\n\t\tAddAPPStartHook(\n\t\t\tregisterMime,\n\t\t\tregisterDefaultErrorHandler,\n\t\t\tregisterSession,\n\t\t\tregisterTemplate,\n\t\t\tregisterAdmin,\n\t\t\tregisterGzip,\n\t\t)\n\n\t\tfor _, hk := range hooks {\n\t\t\tif err := hk(); err != nil {\n\t\t\t\tpanic(err)\n\t\t\t}\n\t\t}\n\t})\n}",
+    "funcname": "initBeforeHTTPRun"
+}

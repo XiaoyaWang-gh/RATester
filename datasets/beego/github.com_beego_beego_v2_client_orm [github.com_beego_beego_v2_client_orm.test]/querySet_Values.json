@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 316,
+    "focalfunc": "func (o querySet) Values(results *[]Params, exprs ...string) (int64, error)",
+    "funcbody": "func (o querySet) Values(results *[]Params, exprs ...string) (int64, error) {\n\treturn o.ValuesWithCtx(context.Background(), results, exprs...)\n}",
+    "funcname": "Values"
+}

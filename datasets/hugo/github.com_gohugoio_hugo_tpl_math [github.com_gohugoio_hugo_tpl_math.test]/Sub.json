@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 242,
+    "focalfunc": "func (ns *Namespace) Sub(inputs ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Sub(inputs ...any) (any, error) {\n\treturn ns.doArithmetic(inputs, '-')\n}",
+    "funcname": "Sub"
+}

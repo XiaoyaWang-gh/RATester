@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/urlpart_string.go",
+    "lineno": 7,
+    "focalfunc": "func _()",
+    "funcbody": "func _() {\n\t// An \"invalid array index\" compiler error signifies that the constant values have changed.\n\t// Re-run the stringer command to generate them again.\n\tvar x [1]struct{}\n\t_ = x[urlPartNone-0]\n\t_ = x[urlPartPreQuery-1]\n\t_ = x[urlPartQueryOrFrag-2]\n\t_ = x[urlPartUnknown-3]\n}",
+    "funcname": "_"
+}

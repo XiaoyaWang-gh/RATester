@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/tls.go",
+    "lineno": 103,
+    "focalfunc": "func NewClientTLSConfig(certPath, keyPath, caPath, serverName string) (*tls.Config, error)",
+    "funcbody": "func NewClientTLSConfig(certPath, keyPath, caPath, serverName string) (*tls.Config, error) {\n\tbase := &tls.Config{}\n\n\tif certPath != \"\" && keyPath != \"\" {\n\t\tcert, err := newCustomTLSKeyPair(certPath, keyPath)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tbase.Certificates = []tls.Certificate{*cert}\n\t}\n\n\tbase.ServerName = serverName\n\n\tif caPath != \"\" {\n\t\tpool, err := newCertPool(caPath)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tbase.RootCAs = pool\n\t\tbase.InsecureSkipVerify = false\n\t} else {\n\t\tbase.InsecureSkipVerify = true\n\t}\n\n\treturn base, nil\n}",
+    "funcname": "NewClientTLSConfig"
+}

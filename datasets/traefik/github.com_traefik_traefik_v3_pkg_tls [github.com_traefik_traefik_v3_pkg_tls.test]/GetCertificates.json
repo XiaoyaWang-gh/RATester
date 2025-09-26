@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 60,
+    "focalfunc": "func (c Certificates) GetCertificates() []tls.Certificate",
+    "funcbody": "func (c Certificates) GetCertificates() []tls.Certificate {\n\tvar certs []tls.Certificate\n\n\tfor _, certificate := range c {\n\t\tcert, err := certificate.GetCertificate()\n\t\tif err != nil {\n\t\t\tlog.Debug().Err(err).Msg(\"Error while getting certificate\")\n\t\t\tcontinue\n\t\t}\n\n\t\tcerts = append(certs, cert)\n\t}\n\n\treturn certs\n}",
+    "funcname": "GetCertificates"
+}

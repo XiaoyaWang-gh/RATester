@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 94,
+    "focalfunc": "func (c *ConfigContainer) Unmarshaler(prefix string, obj interface{}, _ ...config.DecodeOption) error",
+    "funcbody": "func (c *ConfigContainer) Unmarshaler(prefix string, obj interface{}, _ ...config.DecodeOption) error {\n\tsub, err := c.subMap(prefix)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tbytes, err := yaml.Marshal(sub)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn yaml.Unmarshal(bytes, obj)\n}",
+    "funcname": "Unmarshaler"
+}

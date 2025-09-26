@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 539,
+    "focalfunc": "func (m *taskManager) setTasksStartTime(now time.Time)",
+    "funcbody": "func (m *taskManager) setTasksStartTime(now time.Time) {\n\tm.taskLock.Lock()\n\tfor _, task := range m.adminTaskList {\n\t\ttask.SetNext(context.Background(), now)\n\t}\n\tm.taskLock.Unlock()\n}",
+    "funcname": "setTasksStartTime"
+}

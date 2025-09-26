@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 111,
+    "focalfunc": "func (f *Framework) AfterEach()",
+    "funcbody": "func (f *Framework) AfterEach() {\n\tif !f.beforeEachStarted {\n\t\treturn\n\t}\n\n\tRemoveCleanupAction(f.cleanupHandle)\n\n\tfor _, p := range f.serverProcesses {\n\t\t_ = p.Stop()\n\t\tif TestContext.Debug || ginkgo.CurrentSpecReport().Failed() {\n\t\t\tfmt.Println(p.ErrorOutput())\n\t\t\tfmt.Println(p.StdOutput())\n\t\t}\n\t}\n\tfor _, p := range f.clientProcesses {\n\t\t_ = p.Stop()\n\t\tif TestContext.Debug || ginkgo.CurrentSpecReport().Failed() {\n\t\t\tfmt.Println(p.ErrorOutput())\n\t\t\tfmt.Println(p.StdOutput())\n\t\t}\n\t}\n\tf.serverProcesses = nil\n\tf.clientProcesses = nil\n\n\tf.mockServers.Close()\n\n\tfor _, s := range f.servers {\n\t\ts.Close()\n\t}\n\n\tos.RemoveAll(f.TempDirectory)\n\tf.TempDirectory = \"\"\n\tf.serverConfPaths = []string{}\n\tf.clientConfPaths = []string{}\n\n\tfor _, port := range f.usedPorts {\n\t\tf.portAllocator.Release(port)\n\t}\n\tf.usedPorts = make(map[string]int)\n\n\tfor _, port := range f.allocatedPorts {\n\t\tf.portAllocator.Release(port)\n\t}\n\tf.allocatedPorts = make([]int, 0)\n\n\tf.osEnvs = make([]string, 0)\n}",
+    "funcname": "AfterEach"
+}

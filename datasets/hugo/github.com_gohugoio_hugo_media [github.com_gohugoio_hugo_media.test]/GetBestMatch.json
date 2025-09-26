@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 238,
+    "focalfunc": "func (t Types) GetBestMatch(s string) (Type, bool)",
+    "funcbody": "func (t Types) GetBestMatch(s string) (Type, bool) {\n\n\tif mt, found := t.GetByType(s); found {\n\t\treturn mt, true\n\t}\n\n\tif mt, found := t.GetBySubType(s); found {\n\t\treturn mt, true\n\t}\n\n\tif mt, _, found := t.GetFirstBySuffix(s); found {\n\t\treturn mt, true\n\t}\n\n\treturn Type{}, false\n}",
+    "funcname": "GetBestMatch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 711,
+    "focalfunc": "func (c *serverCommand) verifyCert(rootPEM, certPEM []byte, name string) error",
+    "funcbody": "func (c *serverCommand) verifyCert(rootPEM, certPEM []byte, name string) error {\n\troots := x509.NewCertPool()\n\tok := roots.AppendCertsFromPEM(rootPEM)\n\tif !ok {\n\t\treturn fmt.Errorf(\"failed to parse root certificate\")\n\t}\n\n\tblock, _ := pem.Decode(certPEM)\n\tif block == nil {\n\t\treturn fmt.Errorf(\"failed to parse certificate PEM\")\n\t}\n\tcert, err := x509.ParseCertificate(block.Bytes)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to parse certificate: %v\", err.Error())\n\t}\n\n\topts := x509.VerifyOptions{\n\t\tDNSName:\tname,\n\t\tRoots:\t\troots,\n\t}\n\n\tif _, err := cert.Verify(opts); err != nil {\n\t\treturn fmt.Errorf(\"failed to verify certificate: %v\", err.Error())\n\t}\n\n\treturn nil\n}",
+    "funcname": "verifyCert"
+}

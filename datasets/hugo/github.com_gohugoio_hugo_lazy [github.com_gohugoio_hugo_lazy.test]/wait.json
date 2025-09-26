@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 127,
+    "focalfunc": "func (ini *Init) wait()",
+    "funcbody": "func (ini *Init) wait() {\n\tvar counter time.Duration\n\tfor !ini.init.Done() {\n\t\tcounter += 10\n\t\tif counter > 600000000 {\n\t\t\tpanic(\"BUG: timed out in lazy init\")\n\t\t}\n\t\ttime.Sleep(counter * time.Microsecond)\n\t}\n}",
+    "funcname": "wait"
+}

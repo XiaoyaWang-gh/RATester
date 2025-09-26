@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/beego.go",
+    "lineno": 59,
+    "focalfunc": "func RunWithMiddleWares(addr string, mws ...MiddleWare)",
+    "funcbody": "func RunWithMiddleWares(addr string, mws ...MiddleWare) {\n\tBeeApp.Run(addr, mws...)\n}",
+    "funcname": "RunWithMiddleWares"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 124,
+    "focalfunc": "func (n NamedSlice) String() string",
+    "funcbody": "func (n NamedSlice) String() string {\n\tif len(n.Slice) == 0 {\n\t\treturn n.Name\n\t}\n\treturn fmt.Sprintf(\"%s%s{%s}\", n.Name, FilePathSeparator, strings.Join(n.Slice, \",\"))\n}",
+    "funcname": "String"
+}

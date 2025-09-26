@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 65,
+    "focalfunc": "func (s *state) setVar(name string, value reflect.Value)",
+    "funcbody": "func (s *state) setVar(name string, value reflect.Value) {\n\tfor i := s.mark() - 1; i >= 0; i-- {\n\t\tif s.vars[i].name == name {\n\t\t\ts.vars[i].value = value\n\t\t\treturn\n\t\t}\n\t}\n\ts.errorf(\"undefined variable: %s\", name)\n}",
+    "funcname": "setVar"
+}

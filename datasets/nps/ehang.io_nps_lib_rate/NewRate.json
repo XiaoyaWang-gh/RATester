@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/rate.go",
+    "lineno": 16,
+    "focalfunc": "func NewRate(addSize int64) *Rate",
+    "funcbody": "func NewRate(addSize int64) *Rate {\n\treturn &Rate{\n\t\tbucketSize:\t\taddSize * 2,\n\t\tbucketSurplusSize:\t0,\n\t\tbucketAddSize:\t\taddSize,\n\t\tstopChan:\t\tmake(chan bool),\n\t}\n}",
+    "funcname": "NewRate"
+}

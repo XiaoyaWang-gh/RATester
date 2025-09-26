@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 93,
+    "focalfunc": "func (r SecureJSON) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r SecureJSON) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\tjsonBytes, err := json.Marshal(r.Data)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif bytes.HasPrefix(jsonBytes, bytesconv.StringToBytes(\"[\")) && bytes.HasSuffix(jsonBytes,\n\t\tbytesconv.StringToBytes(\"]\")) {\n\t\tif _, err = w.Write(bytesconv.StringToBytes(r.Prefix)); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\t_, err = w.Write(jsonBytes)\n\treturn err\n}",
+    "funcname": "Render"
+}

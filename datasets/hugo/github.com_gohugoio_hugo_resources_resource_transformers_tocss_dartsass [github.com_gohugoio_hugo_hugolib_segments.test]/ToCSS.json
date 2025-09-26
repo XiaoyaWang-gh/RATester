@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/dartsass/client.go",
+    "lineno": 133,
+    "focalfunc": "func (c *Client) toCSS(args godartsass.Args, src io.Reader) (godartsass.Result, error)",
+    "funcbody": "func (c *Client) toCSS(args godartsass.Args, src io.Reader) (godartsass.Result, error) {\n\tin := helpers.ReaderToString(src)\n\n\targs.Source = in\n\n\tvar (\n\t\terr\terror\n\t\tres\tgodartsass.Result\n\t)\n\n\tif c.transpilerV1 != nil {\n\t\tvar resv1 godartsassv1.Result\n\t\tvar argsv1 godartsassv1.Args\n\t\tmapstructure.Decode(args, &argsv1)\n\t\tif args.ImportResolver != nil {\n\t\t\targsv1.ImportResolver = importResolverV1{args.ImportResolver}\n\t\t}\n\t\tresv1, err = c.transpilerV1.Execute(argsv1)\n\t\tif err == nil {\n\t\t\tmapstructure.Decode(resv1, &res)\n\t\t}\n\t} else {\n\t\tres, err = c.transpiler.Execute(args)\n\t}\n\n\tif err != nil {\n\t\tif err.Error() == \"unexpected EOF\" {\n\n\t\t\treturn res, fmt.Errorf(\"got unexpected EOF when executing %q. The user running hugo must have read and execute permissions on this program. With execute permissions only, this error is thrown.\", hugo.DartSassBinaryName)\n\t\t}\n\t\treturn res, herrors.NewFileErrorFromFileInErr(err, hugofs.Os, herrors.OffsetMatcher)\n\t}\n\n\treturn res, err\n}",
+    "funcname": "toCSS"
+}

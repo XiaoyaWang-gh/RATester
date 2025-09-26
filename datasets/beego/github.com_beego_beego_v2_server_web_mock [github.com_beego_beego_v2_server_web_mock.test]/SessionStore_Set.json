@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 90,
+    "focalfunc": "func (s *SessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (s *SessionStore) Set(ctx context.Context, key, value interface{}) error {\n\ts.values[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

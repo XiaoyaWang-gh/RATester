@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/css/css.go",
+    "lineno": 42,
+    "focalfunc": "func (ns *Namespace) Quoted(v any) css.QuotedString",
+    "funcbody": "func (ns *Namespace) Quoted(v any) css.QuotedString {\n\ts := cast.ToString(v)\n\treturn css.QuotedString(s)\n}",
+    "funcname": "Quoted"
+}

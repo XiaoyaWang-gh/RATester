@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/govenor_command.go",
+    "lineno": 48,
+    "focalfunc": "func (r *runTaskCommand) Execute(params ...interface{}) *admin.Result",
+    "funcbody": "func (r *runTaskCommand) Execute(params ...interface{}) *admin.Result {\n\tif len(params) == 0 {\n\t\treturn &admin.Result{\n\t\t\tStatus:\t400,\n\t\t\tError:\terrors.New(\"task name not passed\"),\n\t\t}\n\t}\n\n\ttn, ok := params[0].(string)\n\n\tif !ok {\n\t\treturn &admin.Result{\n\t\t\tStatus:\t400,\n\t\t\tError:\terrors.New(\"parameter is invalid\"),\n\t\t}\n\t}\n\n\tif t, ok := globalTaskManager.adminTaskList[tn]; ok {\n\t\terr := t.Run(context.Background())\n\t\tif err != nil {\n\t\t\treturn &admin.Result{\n\t\t\t\tStatus:\t500,\n\t\t\t\tError:\terr,\n\t\t\t}\n\t\t}\n\t\treturn &admin.Result{\n\t\t\tStatus:\t\t200,\n\t\t\tContent:\tt.GetStatus(context.Background()),\n\t\t}\n\t} else {\n\t\treturn &admin.Result{\n\t\t\tStatus:\t400,\n\t\t\tError:\tfmt.Errorf(\"task with name %s not found\", tn),\n\t\t}\n\t}\n}",
+    "funcname": "Execute"
+}

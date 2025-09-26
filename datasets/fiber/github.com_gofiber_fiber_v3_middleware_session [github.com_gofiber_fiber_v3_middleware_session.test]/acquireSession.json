@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 32,
+    "focalfunc": "func acquireSession() *Session",
+    "funcbody": "func acquireSession() *Session {\n\ts := sessionPool.Get().(*Session)\n\tif s.data == nil {\n\t\ts.data = acquireData()\n\t}\n\tif s.byteBuffer == nil {\n\t\ts.byteBuffer = new(bytes.Buffer)\n\t}\n\ts.fresh = true\n\treturn s\n}",
+    "funcname": "acquireSession"
+}

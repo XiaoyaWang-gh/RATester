@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 39,
+    "focalfunc": "func (srv *Server) ServeWithListener(ln net.Listener) (err error)",
+    "funcbody": "func (srv *Server) ServeWithListener(ln net.Listener) (err error) {\n\tsrv.ln = ln\n\tgo srv.handleSignals()\n\treturn srv.internalServe(ln)\n}",
+    "funcname": "ServeWithListener"
+}

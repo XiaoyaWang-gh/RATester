@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 262,
+    "focalfunc": "func (p *pageMeta) Type() string",
+    "funcbody": "func (p *pageMeta) Type() string {\n\tif p.pageConfig.Type != \"\" {\n\t\treturn p.pageConfig.Type\n\t}\n\n\tif sect := p.Section(); sect != \"\" {\n\t\treturn sect\n\t}\n\n\treturn defaultContentType\n}",
+    "funcname": "Type"
+}

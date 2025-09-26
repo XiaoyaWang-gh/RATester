@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 263,
+    "focalfunc": "func (input *BeegoInput) Port() int",
+    "funcbody": "func (input *BeegoInput) Port() int {\n\tif _, portPart, err := net.SplitHostPort(input.Context.Request.Host); err == nil {\n\t\tport, _ := strconv.Atoi(portPart)\n\t\treturn port\n\t}\n\treturn 80\n}",
+    "funcname": "Port"
+}

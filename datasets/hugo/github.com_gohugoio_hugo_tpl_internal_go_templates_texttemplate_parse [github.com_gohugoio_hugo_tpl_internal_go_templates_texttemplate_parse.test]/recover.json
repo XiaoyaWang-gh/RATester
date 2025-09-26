@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 206,
+    "focalfunc": "func (t *Tree) recover(errp *error)",
+    "funcbody": "func (t *Tree) recover(errp *error) {\n\te := recover()\n\tif e != nil {\n\t\tif _, ok := e.(runtime.Error); ok {\n\t\t\tpanic(e)\n\t\t}\n\t\tif t != nil {\n\t\t\tt.stopParse()\n\t\t}\n\t\t*errp = e.(error)\n\t}\n}",
+    "funcname": "recover"
+}

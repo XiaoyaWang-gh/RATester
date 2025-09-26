@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/tree.go",
+    "lineno": 44,
+    "focalfunc": "func NewTree() *Tree",
+    "funcbody": "func NewTree() *Tree {\n\treturn &Tree{}\n}",
+    "funcname": "NewTree"
+}

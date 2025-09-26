@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 265,
+    "focalfunc": "func (bl *BeeLogger) Write(p []byte) (n int, err error)",
+    "funcbody": "func (bl *BeeLogger) Write(p []byte) (n int, err error) {\n\tif len(p) == 0 {\n\t\treturn 0, nil\n\t}\n\n\tif p[len(p)-1] == '\\n' {\n\t\tp = p[0 : len(p)-1]\n\t}\n\tlm := &LogMsg{\n\t\tMsg:\tstring(p),\n\t\tLevel:\tlevelLoggerImpl,\n\t\tWhen:\ttime.Now(),\n\t}\n\n\terr = bl.writeMsg(lm)\n\tif err == nil {\n\t\treturn len(p), nil\n\t}\n\treturn 0, err\n}",
+    "funcname": "Write"
+}

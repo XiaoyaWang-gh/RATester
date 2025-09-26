@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/convert.go",
+    "lineno": 112,
+    "focalfunc": "func ToString(v any) string",
+    "funcbody": "func ToString(v any) string {\n\ts, _ := ToStringE(v)\n\treturn s\n}",
+    "funcname": "ToString"
+}

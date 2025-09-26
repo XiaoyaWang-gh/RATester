@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 109,
+    "focalfunc": "func NewManager(provideName string, cf *ManagerConfig) (*Manager, error)",
+    "funcbody": "func NewManager(provideName string, cf *ManagerConfig) (*Manager, error) {\n\tprovider, ok := provides[provideName]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"session: unknown provide %q (forgotten import?)\", provideName)\n\t}\n\n\tif cf.Maxlifetime == 0 {\n\t\tcf.Maxlifetime = cf.Gclifetime\n\t}\n\n\tif cf.EnableSidInHTTPHeader {\n\t\tif cf.SessionNameInHTTPHeader == \"\" {\n\t\t\tpanic(errors.New(\"SessionNameInHTTPHeader is empty\"))\n\t\t}\n\n\t\tstrMimeHeader := textproto.CanonicalMIMEHeaderKey(cf.SessionNameInHTTPHeader)\n\t\tif cf.SessionNameInHTTPHeader != strMimeHeader {\n\t\t\tstrErrMsg := \"SessionNameInHTTPHeader (\" + cf.SessionNameInHTTPHeader + \") has the wrong format, it should be like this : \" + strMimeHeader\n\t\t\tpanic(errors.New(strErrMsg))\n\t\t}\n\t}\n\n\terr := provider.SessionInit(context.Background(), cf.Maxlifetime, cf.ProviderConfig)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif cf.SessionIDLength == 0 {\n\t\tcf.SessionIDLength = 16\n\t}\n\n\treturn &Manager{\n\t\tprovider,\n\t\tcf,\n\t}, nil\n}",
+    "funcname": "NewManager"
+}

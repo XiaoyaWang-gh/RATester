@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher_v2.go",
+    "lineno": 219,
+    "focalfunc": "func braceIndices(s string) ([]int, error)",
+    "funcbody": "func braceIndices(s string) ([]int, error) {\n\tvar level, idx int\n\tvar idxs []int\n\tfor i := range len(s) {\n\t\tswitch s[i] {\n\t\tcase '{':\n\t\t\tif level++; level == 1 {\n\t\t\t\tidx = i\n\t\t\t}\n\t\tcase '}':\n\t\t\tif level--; level == 0 {\n\t\t\t\tidxs = append(idxs, idx, i+1)\n\t\t\t} else if level < 0 {\n\t\t\t\treturn nil, fmt.Errorf(\"mux: unbalanced braces in %q\", s)\n\t\t\t}\n\t\t}\n\t}\n\tif level != 0 {\n\t\treturn nil, fmt.Errorf(\"mux: unbalanced braces in %q\", s)\n\t}\n\treturn idxs, nil\n}",
+    "funcname": "braceIndices"
+}

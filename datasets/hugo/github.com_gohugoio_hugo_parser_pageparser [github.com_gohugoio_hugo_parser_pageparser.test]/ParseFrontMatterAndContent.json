@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 58,
+    "focalfunc": "func ParseFrontMatterAndContent(r io.Reader) (ContentFrontMatter, error)",
+    "funcbody": "func ParseFrontMatterAndContent(r io.Reader) (ContentFrontMatter, error) {\n\tvar cf ContentFrontMatter\n\n\tinput, err := io.ReadAll(r)\n\tif err != nil {\n\t\treturn cf, fmt.Errorf(\"failed to read page content: %w\", err)\n\t}\n\n\tpsr, err := ParseBytes(input, Config{})\n\tif err != nil {\n\t\treturn cf, err\n\t}\n\n\tvar frontMatterSource []byte\n\n\titer := NewIterator(psr)\n\n\twalkFn := func(item Item) bool {\n\t\tif frontMatterSource != nil {\n\n\t\t\tcf.Content = input[item.low:]\n\n\t\t\treturn false\n\t\t} else if item.IsFrontMatter() {\n\t\t\tcf.FrontMatterFormat = FormatFromFrontMatterType(item.Type)\n\t\t\tfrontMatterSource = item.Val(input)\n\t\t}\n\t\treturn true\n\t}\n\n\titer.PeekWalk(walkFn)\n\n\tcf.FrontMatter, err = metadecoders.Default.UnmarshalToMap(frontMatterSource, cf.FrontMatterFormat)\n\treturn cf, err\n}",
+    "funcname": "ParseFrontMatterAndContent"
+}

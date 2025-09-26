@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 61,
+    "focalfunc": "func (l *pageLexer) Input() []byte",
+    "funcbody": "func (l *pageLexer) Input() []byte {\n\treturn l.input\n}",
+    "funcname": "Input"
+}

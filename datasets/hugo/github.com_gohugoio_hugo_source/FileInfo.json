@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 108,
+    "focalfunc": "func (fi *File) FileInfo() hugofs.FileMetaInfo",
+    "funcbody": "func (fi *File) FileInfo() hugofs.FileMetaInfo\t{ return fi.fim }",
+    "funcname": "FileInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 309,
+    "focalfunc": "func (m MinSize) IsSatisfied(obj interface{}) bool",
+    "funcbody": "func (m MinSize) IsSatisfied(obj interface{}) bool {\n\tif str, ok := obj.(string); ok {\n\t\treturn utf8.RuneCountInString(str) >= m.Min\n\t}\n\tv := reflect.ValueOf(obj)\n\tif v.Kind() == reflect.Slice {\n\t\treturn v.Len() >= m.Min\n\t}\n\treturn false\n}",
+    "funcname": "IsSatisfied"
+}

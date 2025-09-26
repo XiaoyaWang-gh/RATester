@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 33,
+    "focalfunc": "func New(skipPush, try bool, step int) (*ReleaseHandler, error)",
+    "funcbody": "func New(skipPush, try bool, step int) (*ReleaseHandler, error) {\n\tif step < 1 || step > 2 {\n\t\treturn nil, fmt.Errorf(\"step must be 1 or 2\")\n\t}\n\n\tprefix := \"release-\"\n\tbranch, err := git(\"rev-parse\", \"--abbrev-ref\", \"HEAD\")\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tbranch = strings.TrimSpace(branch)\n\n\tif !strings.HasPrefix(branch, prefix) {\n\t\treturn nil, fmt.Errorf(\"branch %q is not a release branch\", branch)\n\t}\n\n\tversion := strings.TrimPrefix(branch, prefix)\n\tversion = strings.TrimPrefix(version, \"v\")\n\n\tlogf(\"Branch: %s|Version: v%s\\n\", branch, version)\n\n\trh := &ReleaseHandler{branchVersion: version, skipPush: skipPush, try: try, step: step}\n\n\tif try {\n\t\trh.git = func(args ...string) (string, error) {\n\t\t\tlogln(\"git\", strings.Join(args, \" \"))\n\t\t\treturn \"\", nil\n\t\t}\n\t} else {\n\t\trh.git = git\n\t}\n\n\treturn rh, nil\n}",
+    "funcname": "New"
+}

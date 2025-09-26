@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1785,
+    "focalfunc": "func (c *DefaultCtx) XHR() bool",
+    "funcbody": "func (c *DefaultCtx) XHR() bool {\n\treturn utils.EqualFold(c.app.getBytes(c.Get(HeaderXRequestedWith)), []byte(\"xmlhttprequest\"))\n}",
+    "funcname": "XHR"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/client.go",
+    "lineno": 7,
+    "focalfunc": "func (f *Framework) APIClientForFrpc(port int) *clientsdk.Client",
+    "funcbody": "func (f *Framework) APIClientForFrpc(port int) *clientsdk.Client {\n\treturn clientsdk.New(\"127.0.0.1\", port)\n}",
+    "funcname": "APIClientForFrpc"
+}

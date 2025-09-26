@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 524,
+    "focalfunc": "func optionsMethodHandler(allowMethods string) func(c Context) error",
+    "funcbody": "func optionsMethodHandler(allowMethods string) func(c Context) error {\n\treturn func(c Context) error {\n\n\t\tc.Response().Header().Add(HeaderAllow, allowMethods)\n\t\treturn c.NoContent(http.StatusNoContent)\n\t}\n}",
+    "funcname": "optionsMethodHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/config.go",
+    "lineno": 419,
+    "focalfunc": "func (m Mount) ComponentAndName() (string, string)",
+    "funcbody": "func (m Mount) ComponentAndName() (string, string) {\n\tc, n, _ := strings.Cut(m.Target, fileSeparator)\n\treturn c, n\n}",
+    "funcname": "ComponentAndName"
+}

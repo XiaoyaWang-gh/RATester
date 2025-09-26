@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/rate.go",
+    "lineno": 43,
+    "focalfunc": "func (s *Rate) Stop()",
+    "funcbody": "func (s *Rate) Stop() {\n\ts.stopChan <- true\n}",
+    "funcname": "Stop"
+}

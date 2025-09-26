@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/snicheck/snicheck.go",
+    "lineno": 24,
+    "focalfunc": "func (s SNICheck) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (s SNICheck) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tif req.TLS == nil {\n\t\ts.next.ServeHTTP(rw, req)\n\t\treturn\n\t}\n\n\thost := getHost(req)\n\tserverName := strings.TrimSpace(req.TLS.ServerName)\n\n\tif !strings.EqualFold(host, serverName) {\n\t\ttlsOptionHeader := findTLSOptionName(s.tlsOptionsForHost, host, true)\n\t\ttlsOptionSNI := findTLSOptionName(s.tlsOptionsForHost, serverName, false)\n\n\t\tif tlsOptionHeader != tlsOptionSNI {\n\t\t\tlog.Debug().\n\t\t\t\tStr(\"host\", host).\n\t\t\t\tStr(\"req.Host\", req.Host).\n\t\t\t\tStr(\"req.TLS.ServerName\", req.TLS.ServerName).\n\t\t\t\tMsgf(\"TLS options difference: SNI:%s, Header:%s\", tlsOptionSNI, tlsOptionHeader)\n\t\t\thttp.Error(rw, http.StatusText(http.StatusMisdirectedRequest), http.StatusMisdirectedRequest)\n\t\t\treturn\n\t\t}\n\t}\n\n\ts.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 463,
+    "focalfunc": "func RegisterDataBase(aliasName, driverName, dataSource string, params ...DBOption) error",
+    "funcbody": "func RegisterDataBase(aliasName, driverName, dataSource string, params ...DBOption) error {\n\tvar (\n\t\terr\terror\n\t\tdb\t*sql.DB\n\t\tal\t*alias\n\t)\n\n\tdb, err = sql.Open(driverName, dataSource)\n\tif err != nil {\n\t\terr = fmt.Errorf(\"Register db `%s`, %s\", aliasName, err.Error())\n\t\tgoto end\n\t}\n\n\tal, err = addAliasWthDB(aliasName, driverName, db, params...)\n\tif err != nil {\n\t\tgoto end\n\t}\n\n\tal.DataSource = dataSource\n\nend:\n\tif err != nil {\n\t\tif db != nil {\n\t\t\tdb.Close()\n\t\t}\n\t\tDebugLog.Println(err.Error())\n\t}\n\n\treturn err\n}",
+    "funcname": "RegisterDataBase"
+}

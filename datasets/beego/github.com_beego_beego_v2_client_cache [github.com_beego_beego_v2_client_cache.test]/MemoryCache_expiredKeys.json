@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 212,
+    "focalfunc": "func (bc *MemoryCache) expiredKeys() (keys []string)",
+    "funcbody": "func (bc *MemoryCache) expiredKeys() (keys []string) {\n\tbc.RLock()\n\tdefer bc.RUnlock()\n\tfor key, itm := range bc.items {\n\t\tif itm.isExpire() {\n\t\t\tkeys = append(keys, key)\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "expiredKeys"
+}

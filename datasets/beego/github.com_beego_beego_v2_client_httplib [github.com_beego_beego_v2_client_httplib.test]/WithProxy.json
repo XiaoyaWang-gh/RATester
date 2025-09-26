@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 58,
+    "focalfunc": "func WithProxy(proxy func(*http.Request) (*url.URL, error)) ClientOption",
+    "funcbody": "func WithProxy(proxy func(*http.Request) (*url.URL, error)) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.Proxy = proxy\n\t}\n}",
+    "funcname": "WithProxy"
+}

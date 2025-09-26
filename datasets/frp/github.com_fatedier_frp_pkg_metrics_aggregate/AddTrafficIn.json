@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 83,
+    "focalfunc": "func (m *serverMetrics) AddTrafficIn(name string, proxyType string, trafficBytes int64)",
+    "funcbody": "func (m *serverMetrics) AddTrafficIn(name string, proxyType string, trafficBytes int64) {\n\tfor _, v := range m.ms {\n\t\tv.AddTrafficIn(name, proxyType, trafficBytes)\n\t}\n}",
+    "funcname": "AddTrafficIn"
+}

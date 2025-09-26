@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/i18n.go",
+    "lineno": 146,
+    "focalfunc": "func getPluralCount(v any) any",
+    "funcbody": "func getPluralCount(v any) any {\n\tif v == nil {\n\n\t\treturn nil\n\t}\n\n\tswitch v := v.(type) {\n\tcase map[string]any:\n\t\tfor k, vv := range v {\n\t\t\tif strings.EqualFold(k, countFieldName) {\n\t\t\t\treturn toPluralCountValue(vv)\n\t\t\t}\n\t\t}\n\tdefault:\n\t\tvv := reflect.Indirect(reflect.ValueOf(v))\n\t\tif vv.Kind() == reflect.Interface && !vv.IsNil() {\n\t\t\tvv = vv.Elem()\n\t\t}\n\t\ttp := vv.Type()\n\n\t\tif tp.Kind() == reflect.Struct {\n\t\t\tf := vv.FieldByName(countFieldName)\n\t\t\tif f.IsValid() {\n\t\t\t\treturn toPluralCountValue(f.Interface())\n\t\t\t}\n\t\t\tm := hreflect.GetMethodByName(vv, countFieldName)\n\t\t\tif m.IsValid() && m.Type().NumIn() == 0 && m.Type().NumOut() == 1 {\n\t\t\t\tc := m.Call(nil)\n\t\t\t\treturn toPluralCountValue(c[0].Interface())\n\t\t\t}\n\t\t}\n\t}\n\n\treturn toPluralCountValue(v)\n}",
+    "funcname": "getPluralCount"
+}

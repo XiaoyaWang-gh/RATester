@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 58,
+    "focalfunc": "func (d *Decoder) RegisterConverter(value any, converterFunc Converter)",
+    "funcbody": "func (d *Decoder) RegisterConverter(value any, converterFunc Converter) {\n\td.cache.registerConverter(value, converterFunc)\n}",
+    "funcname": "RegisterConverter"
+}

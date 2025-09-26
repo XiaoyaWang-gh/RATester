@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/common.go",
+    "lineno": 38,
+    "focalfunc": "func ValidatePort(port int, fieldPath string) error",
+    "funcbody": "func ValidatePort(port int, fieldPath string) error {\n\tif 0 <= port && port <= 65535 {\n\t\treturn nil\n\t}\n\treturn fmt.Errorf(\"%s: port number %d must be in the range 0..65535\", fieldPath, port)\n}",
+    "funcname": "ValidatePort"
+}

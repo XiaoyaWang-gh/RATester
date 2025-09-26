@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/predicate_identity.go",
+    "lineno": 55,
+    "focalfunc": "func NewPredicateIdentity(\n\tprobablyDependent func(Identity) bool,\n\tprobablyDependency func(Identity) bool,\n) *predicateIdentity",
+    "funcbody": "func NewPredicateIdentity(\n\tprobablyDependent func(Identity) bool,\n\tprobablyDependency func(Identity) bool,\n) *predicateIdentity {\n\tif probablyDependent == nil {\n\t\tprobablyDependent = func(Identity) bool { return false }\n\t}\n\tif probablyDependency == nil {\n\t\tprobablyDependency = func(Identity) bool { return false }\n\t}\n\treturn &predicateIdentity{probablyDependent: probablyDependent, probablyDependency: probablyDependency, id: fmt.Sprintf(\"predicate%d\", predicateIdentityCounter.Add(1))}\n}",
+    "funcname": "NewPredicateIdentity"
+}

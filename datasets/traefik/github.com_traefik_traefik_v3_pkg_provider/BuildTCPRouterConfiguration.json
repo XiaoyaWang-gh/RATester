@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 412,
+    "focalfunc": "func BuildTCPRouterConfiguration(ctx context.Context, configuration *dynamic.TCPConfiguration)",
+    "funcbody": "func BuildTCPRouterConfiguration(ctx context.Context, configuration *dynamic.TCPConfiguration) {\n\tfor routerName, router := range configuration.Routers {\n\t\tloggerRouter := log.Ctx(ctx).With().Str(logs.RouterName, routerName).Logger()\n\n\t\tif len(router.Rule) == 0 {\n\t\t\tdelete(configuration.Routers, routerName)\n\t\t\tloggerRouter.Error().Msg(\"Empty rule\")\n\t\t\tcontinue\n\t\t}\n\n\t\tif router.Service == \"\" {\n\t\t\tif len(configuration.Services) > 1 {\n\t\t\t\tdelete(configuration.Routers, routerName)\n\t\t\t\tloggerRouter.Error().\n\t\t\t\t\tMsgf(\"Router %s cannot be linked automatically with multiple Services: %q\", routerName, maps.Keys(configuration.Services))\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tfor serviceName := range configuration.Services {\n\t\t\t\trouter.Service = serviceName\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "BuildTCPRouterConfiguration"
+}

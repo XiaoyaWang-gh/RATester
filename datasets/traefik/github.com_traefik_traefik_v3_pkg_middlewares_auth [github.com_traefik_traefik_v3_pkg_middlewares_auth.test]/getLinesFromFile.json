@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/auth.go",
+    "lineno": 48,
+    "focalfunc": "func getLinesFromFile(filename string) ([]string, error)",
+    "funcbody": "func getLinesFromFile(filename string) ([]string, error) {\n\tdat, err := os.ReadFile(filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\trawLines := strings.Split(string(dat), \"\\n\")\n\tvar filteredLines []string\n\tfor _, rawLine := range rawLines {\n\t\tline := strings.TrimSpace(rawLine)\n\t\tif line != \"\" && !strings.HasPrefix(line, \"#\") {\n\t\t\tfilteredLines = append(filteredLines, line)\n\t\t}\n\t}\n\n\treturn filteredLines, nil\n}",
+    "funcname": "getLinesFromFile"
+}

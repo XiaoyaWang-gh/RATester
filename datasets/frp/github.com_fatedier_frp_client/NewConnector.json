@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/connector.go",
+    "lineno": 55,
+    "focalfunc": "func NewConnector(ctx context.Context, cfg *v1.ClientCommonConfig) Connector",
+    "funcbody": "func NewConnector(ctx context.Context, cfg *v1.ClientCommonConfig) Connector {\n\treturn &defaultConnectorImpl{\n\t\tctx:\tctx,\n\t\tcfg:\tcfg,\n\t}\n}",
+    "funcname": "NewConnector"
+}

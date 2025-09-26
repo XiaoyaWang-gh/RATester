@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/buffers/buffers.go",
+    "lineno": 32,
+    "focalfunc": "func Put(bf Buffer)",
+    "funcbody": "func Put(bf Buffer) {\n\tbytebufferpool.Put(bf.(*bytebufferpool.ByteBuffer))\n}",
+    "funcname": "Put"
+}

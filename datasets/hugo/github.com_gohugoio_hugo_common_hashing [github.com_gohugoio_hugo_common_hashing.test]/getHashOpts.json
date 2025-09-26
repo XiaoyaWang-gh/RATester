@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 81,
+    "focalfunc": "func getHashOpts() *hashstructure.HashOptions",
+    "funcbody": "func getHashOpts() *hashstructure.HashOptions {\n\treturn hashOptsPool.Get().(*hashstructure.HashOptions)\n}",
+    "funcname": "getHashOpts"
+}

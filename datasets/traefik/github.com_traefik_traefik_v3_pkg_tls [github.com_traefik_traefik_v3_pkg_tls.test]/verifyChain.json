@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 266,
+    "focalfunc": "func verifyChain(rootCAs *x509.CertPool, rawCerts [][]byte) (*x509.Certificate, error)",
+    "funcbody": "func verifyChain(rootCAs *x509.CertPool, rawCerts [][]byte) (*x509.Certificate, error) {\n\n\tif len(rawCerts) < 1 {\n\t\treturn nil, errors.New(\"tls: no certificates from peer\")\n\t}\n\n\tcerts := make([]*x509.Certificate, len(rawCerts))\n\tfor i, asn1Data := range rawCerts {\n\t\tcert, err := x509.ParseCertificate(asn1Data)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"tls: failed to parse certificate from peer: %w\", err)\n\t\t}\n\n\t\tcerts[i] = cert\n\t}\n\n\topts := x509.VerifyOptions{\n\t\tRoots:\t\trootCAs,\n\t\tIntermediates:\tx509.NewCertPool(),\n\t}\n\n\tfor _, cert := range certs[1:] {\n\t\topts.Intermediates.AddCert(cert)\n\t}\n\n\t_, err := certs[0].Verify(opts)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn certs[0], nil\n}",
+    "funcname": "verifyChain"
+}

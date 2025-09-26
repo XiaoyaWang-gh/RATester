@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 312,
+    "focalfunc": "func (b *BeegoHTTPRequest) XMLBody(obj interface{}) (*BeegoHTTPRequest, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) XMLBody(obj interface{}) (*BeegoHTTPRequest, error) {\n\tif b.req.Body == nil && obj != nil {\n\t\tbyts, err := xml.Marshal(obj)\n\t\tif err != nil {\n\t\t\treturn b, berror.Wrap(err, InvalidXMLBody, \"obj could not be converted to XML data\")\n\t\t}\n\t\tb.reqBody(byts)\n\t\tb.req.Header.Set(contentTypeKey, \"application/xml\")\n\t}\n\treturn b, nil\n}",
+    "funcname": "XMLBody"
+}

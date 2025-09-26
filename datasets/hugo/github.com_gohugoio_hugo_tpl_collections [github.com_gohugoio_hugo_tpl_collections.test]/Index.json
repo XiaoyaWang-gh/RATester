@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/index.go",
+    "lineno": 33,
+    "focalfunc": "func (ns *Namespace) Index(item any, args ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Index(item any, args ...any) (any, error) {\n\tv, err := ns.doIndex(item, args...)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"index of type %T with args %v failed: %s\", item, args, err)\n\t}\n\treturn v, nil\n}",
+    "funcname": "Index"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 321,
+    "focalfunc": "func (p *ControllerRegister) addToRouter(method, pattern string, r *ControllerInfo)",
+    "funcbody": "func (p *ControllerRegister) addToRouter(method, pattern string, r *ControllerInfo) {\n\tif !p.cfg.RouterCaseSensitive {\n\t\tpattern = strings.ToLower(pattern)\n\t}\n\tif t, ok := p.routers[method]; ok {\n\t\tt.AddRouter(pattern, r)\n\t} else {\n\t\tt := NewTree()\n\t\tt.AddRouter(pattern, r)\n\t\tp.routers[method] = t\n\t}\n}",
+    "funcname": "addToRouter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 133,
+    "focalfunc": "func proxyRaw(t *ProxyTarget, c echo.Context) http.Handler",
+    "funcbody": "func proxyRaw(t *ProxyTarget, c echo.Context) http.Handler {\n\treturn http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\tin, _, err := c.Response().Hijack()\n\t\tif err != nil {\n\t\t\tc.Set(\"_error\", fmt.Errorf(\"proxy raw, hijack error=%w, url=%s\", err, t.URL))\n\t\t\treturn\n\t\t}\n\t\tdefer in.Close()\n\n\t\tout, err := net.Dial(\"tcp\", t.URL.Host)\n\t\tif err != nil {\n\t\t\tc.Set(\"_error\", echo.NewHTTPError(http.StatusBadGateway, fmt.Sprintf(\"proxy raw, dial error=%v, url=%s\", err, t.URL)))\n\t\t\treturn\n\t\t}\n\t\tdefer out.Close()\n\n\t\terr = r.Write(out)\n\t\tif err != nil {\n\t\t\tc.Set(\"_error\", echo.NewHTTPError(http.StatusBadGateway, fmt.Sprintf(\"proxy raw, request header copy error=%v, url=%s\", err, t.URL)))\n\t\t\treturn\n\t\t}\n\n\t\terrCh := make(chan error, 2)\n\t\tcp := func(dst io.Writer, src io.Reader) {\n\t\t\t_, err = io.Copy(dst, src)\n\t\t\terrCh <- err\n\t\t}\n\n\t\tgo cp(out, in)\n\t\tgo cp(in, out)\n\t\terr = <-errCh\n\t\tif err != nil && err != io.EOF {\n\t\t\tc.Set(\"_error\", fmt.Errorf(\"proxy raw, copy body error=%w, url=%s\", err, t.URL))\n\t\t}\n\t})\n}",
+    "funcname": "proxyRaw"
+}

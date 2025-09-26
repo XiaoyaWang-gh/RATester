@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 126,
+    "focalfunc": "func ExtNoDelimiter(in string) string",
+    "funcbody": "func ExtNoDelimiter(in string) string {\n\treturn strings.TrimPrefix(Ext(in), \".\")\n}",
+    "funcname": "ExtNoDelimiter"
+}

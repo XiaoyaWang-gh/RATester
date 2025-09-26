@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 55,
+    "focalfunc": "func (ctx *Context) GetAndIncrementOrdinal(kind ast.NodeKind) int",
+    "funcbody": "func (ctx *Context) GetAndIncrementOrdinal(kind ast.NodeKind) int {\n\tif ctx.ordinals == nil {\n\t\tctx.ordinals = make(map[ast.NodeKind]int)\n\t}\n\ti := ctx.ordinals[kind]\n\tctx.ordinals[kind]++\n\treturn i\n}",
+    "funcname": "GetAndIncrementOrdinal"
+}

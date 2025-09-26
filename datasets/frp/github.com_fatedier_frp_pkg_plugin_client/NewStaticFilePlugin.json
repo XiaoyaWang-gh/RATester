@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/static_file.go",
+    "lineno": 43,
+    "focalfunc": "func NewStaticFilePlugin(options v1.ClientPluginOptions) (Plugin, error)",
+    "funcbody": "func NewStaticFilePlugin(options v1.ClientPluginOptions) (Plugin, error) {\n\topts := options.(*v1.StaticFilePluginOptions)\n\n\tlistener := NewProxyListener()\n\n\tsp := &StaticFilePlugin{\n\t\topts:\topts,\n\n\t\tl:\tlistener,\n\t}\n\tvar prefix string\n\tif opts.StripPrefix != \"\" {\n\t\tprefix = \"/\" + opts.StripPrefix + \"/\"\n\t} else {\n\t\tprefix = \"/\"\n\t}\n\n\trouter := mux.NewRouter()\n\trouter.Use(netpkg.NewHTTPAuthMiddleware(opts.HTTPUser, opts.HTTPPassword).SetAuthFailDelay(200 * time.Millisecond).Middleware)\n\trouter.PathPrefix(prefix).Handler(netpkg.MakeHTTPGzipHandler(http.StripPrefix(prefix, http.FileServer(http.Dir(opts.LocalPath))))).Methods(\"GET\")\n\tsp.s = &http.Server{\n\t\tHandler:\t\trouter,\n\t\tReadHeaderTimeout:\t60 * time.Second,\n\t}\n\tgo func() {\n\t\t_ = sp.s.Serve(listener)\n\t}()\n\treturn sp, nil\n}",
+    "funcname": "NewStaticFilePlugin"
+}

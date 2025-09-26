@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/writers.go",
+    "lineno": 45,
+    "focalfunc": "func NewMultiWriteCloser(writeClosers ...io.WriteCloser) io.WriteCloser",
+    "funcbody": "func NewMultiWriteCloser(writeClosers ...io.WriteCloser) io.WriteCloser {\n\twriters := make([]io.Writer, len(writeClosers))\n\tfor i, w := range writeClosers {\n\t\twriters[i] = w\n\t}\n\treturn multiWriteCloser{Writer: io.MultiWriter(writers...), closers: writeClosers}\n}",
+    "funcname": "NewMultiWriteCloser"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 111,
+    "focalfunc": "func (c *Cache) init() error",
+    "funcbody": "func (c *Cache) init() error {\n\tc.initOnce.Do(func() {\n\n\t\tif err := c.Fs.MkdirAll(\"\", 0o777); err != nil && !os.IsExist(err) {\n\t\t\tc.initErr = err\n\t\t}\n\t})\n\treturn c.initErr\n}",
+    "funcname": "init"
+}

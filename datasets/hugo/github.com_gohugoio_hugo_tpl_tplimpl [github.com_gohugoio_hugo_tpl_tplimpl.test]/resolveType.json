@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_errors.go",
+    "lineno": 51,
+    "focalfunc": "func (t templateInfo) resolveType() templateType",
+    "funcbody": "func (t templateInfo) resolveType() templateType {\n\treturn resolveTemplateType(t.name)\n}",
+    "funcname": "resolveType"
+}

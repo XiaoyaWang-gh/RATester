@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 399,
+    "focalfunc": "func GetExtFromPath(path string) string",
+    "funcbody": "func GetExtFromPath(path string) string {\n\ts := strings.Split(path, \".\")\n\tre, err := regexp.Compile(`(\\w+)`)\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\treturn string(re.Find([]byte(s[0])))\n}",
+    "funcname": "GetExtFromPath"
+}

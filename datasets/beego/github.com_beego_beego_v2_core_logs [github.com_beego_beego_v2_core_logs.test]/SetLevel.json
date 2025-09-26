@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 704,
+    "focalfunc": "func SetLevel(l int)",
+    "funcbody": "func SetLevel(l int) {\n\tbeeLogger.SetLevel(l)\n}",
+    "funcname": "SetLevel"
+}

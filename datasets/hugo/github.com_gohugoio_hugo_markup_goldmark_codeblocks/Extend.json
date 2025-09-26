@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/codeblocks/render.go",
+    "lineno": 45,
+    "focalfunc": "func (e *codeBlocksExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (e *codeBlocksExtension) Extend(m goldmark.Markdown) {\n\tm.Renderer().AddOptions(renderer.WithNodeRenderers(\n\t\tutil.Prioritized(newHTMLRenderer(), 100),\n\t))\n}",
+    "funcname": "Extend"
+}

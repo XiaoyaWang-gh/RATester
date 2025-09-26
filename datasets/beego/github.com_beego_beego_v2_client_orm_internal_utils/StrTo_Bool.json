@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 48,
+    "focalfunc": "func (f StrTo) Bool() (bool, error)",
+    "funcbody": "func (f StrTo) Bool() (bool, error) {\n\treturn strconv.ParseBool(f.String())\n}",
+    "funcname": "Bool"
+}

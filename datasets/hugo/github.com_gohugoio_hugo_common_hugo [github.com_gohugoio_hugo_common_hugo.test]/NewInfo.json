@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 165,
+    "focalfunc": "func NewInfo(conf ConfigProvider, deps []*Dependency) HugoInfo",
+    "funcbody": "func NewInfo(conf ConfigProvider, deps []*Dependency) HugoInfo {\n\tif conf.Environment() == \"\" {\n\t\tpanic(\"environment not set\")\n\t}\n\tvar (\n\t\tcommitHash\tstring\n\t\tbuildDate\tstring\n\t\tgoVersion\tstring\n\t)\n\n\tbi := getBuildInfo()\n\tif bi != nil {\n\t\tcommitHash = bi.Revision\n\t\tbuildDate = bi.RevisionTime\n\t\tgoVersion = bi.GoVersion\n\t}\n\n\treturn HugoInfo{\n\t\tCommitHash:\tcommitHash,\n\t\tBuildDate:\tbuildDate,\n\t\tEnvironment:\tconf.Environment(),\n\t\tconf:\t\tconf,\n\t\tdeps:\t\tdeps,\n\t\tGoVersion:\tgoVersion,\n\t}\n}",
+    "funcname": "NewInfo"
+}

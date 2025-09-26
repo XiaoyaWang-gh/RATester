@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 567,
+    "focalfunc": "func (c *importCommand) replaceImageTag(match string) string",
+    "funcbody": "func (c *importCommand) replaceImageTag(match string) string {\n\tr := regexp.MustCompile(`{%\\s+img\\s*(\\p{L}*)\\s+([\\S]*/[\\S]+)\\s+(\\d*)\\s*(\\d*)\\s*(.*?)\\s*%}`)\n\tresult := bytes.NewBufferString(\"{{< figure \")\n\tparts := r.FindStringSubmatch(match)\n\n\tc.replaceOptionalPart(result, \"class\", parts[1])\n\tc.replaceOptionalPart(result, \"src\", parts[2])\n\tc.replaceOptionalPart(result, \"width\", parts[3])\n\tc.replaceOptionalPart(result, \"height\", parts[4])\n\n\tpart := parts[5]\n\tif len(part) > 0 {\n\t\tsplits := strings.Split(part, \"'\")\n\t\tlenSplits := len(splits)\n\t\tif lenSplits == 1 {\n\t\t\tc.replaceOptionalPart(result, \"title\", splits[0])\n\t\t} else if lenSplits == 3 {\n\t\t\tc.replaceOptionalPart(result, \"title\", splits[1])\n\t\t} else if lenSplits == 5 {\n\t\t\tc.replaceOptionalPart(result, \"title\", splits[1])\n\t\t\tc.replaceOptionalPart(result, \"alt\", splits[3])\n\t\t}\n\t}\n\tresult.WriteString(\">}}\")\n\treturn result.String()\n}",
+    "funcname": "replaceImageTag"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 320,
+    "focalfunc": "func refererMatchesHost(c fiber.Ctx, trustedOrigins []string, trustedSubOrigins []subdomain) error",
+    "funcbody": "func refererMatchesHost(c fiber.Ctx, trustedOrigins []string, trustedSubOrigins []subdomain) error {\n\treferer := strings.ToLower(c.Get(fiber.HeaderReferer))\n\tif referer == \"\" {\n\t\treturn ErrRefererNotFound\n\t}\n\n\trefererURL, err := url.Parse(referer)\n\tif err != nil {\n\t\treturn ErrRefererInvalid\n\t}\n\n\tif refererURL.Scheme == c.Scheme() && refererURL.Host == c.Host() {\n\t\treturn nil\n\t}\n\n\treferer = refererURL.String()\n\n\tfor _, trustedOrigin := range trustedOrigins {\n\t\tif referer == trustedOrigin {\n\t\t\treturn nil\n\t\t}\n\t}\n\n\tfor _, trustedSubOrigin := range trustedSubOrigins {\n\t\tif trustedSubOrigin.match(referer) {\n\t\t\treturn nil\n\t\t}\n\t}\n\n\treturn ErrRefererNoMatch\n}",
+    "funcname": "refererMatchesHost"
+}

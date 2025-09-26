@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 112,
+    "focalfunc": "func (svr *Service) apiStop(w http.ResponseWriter, _ *http.Request)",
+    "funcbody": "func (svr *Service) apiStop(w http.ResponseWriter, _ *http.Request) {\n\tres := GeneralResponse{Code: 200}\n\n\tlog.Infof(\"api request [/api/stop]\")\n\tdefer func() {\n\t\tlog.Infof(\"api response [/api/stop], code [%d]\", res.Code)\n\t\tw.WriteHeader(res.Code)\n\t\tif len(res.Msg) > 0 {\n\t\t\t_, _ = w.Write([]byte(res.Msg))\n\t\t}\n\t}()\n\n\tgo svr.GracefulClose(100 * time.Millisecond)\n}",
+    "funcname": "apiStop"
+}

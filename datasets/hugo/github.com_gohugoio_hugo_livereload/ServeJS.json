@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 142,
+    "focalfunc": "func ServeJS(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func ServeJS(w http.ResponseWriter, r *http.Request) {\n\tw.Header().Set(\"Content-Type\", media.Builtin.JavascriptType.Type)\n\tw.Write(liveReloadJS())\n}",
+    "funcname": "ServeJS"
+}

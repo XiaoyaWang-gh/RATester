@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 75,
+    "focalfunc": "func GetAll() map[string]string",
+    "funcbody": "func GetAll() map[string]string {\n\tenvs := make(map[string]string, 32)\n\tenv.Range(func(key, value interface{}) bool {\n\t\tswitch key := key.(type) {\n\t\tcase string:\n\t\t\tswitch val := value.(type) {\n\t\t\tcase string:\n\t\t\t\tenvs[key] = val\n\t\t\t}\n\t\t}\n\t\treturn true\n\t})\n\treturn envs\n}",
+    "funcname": "GetAll"
+}

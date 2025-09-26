@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 66,
+    "focalfunc": "func (s *IndexController) Host()",
+    "funcbody": "func (s *IndexController) Host() {\n\ts.SetInfo(\"host\")\n\ts.SetType(\"hostServer\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "Host"
+}

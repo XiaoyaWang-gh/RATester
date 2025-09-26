@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 184,
+    "focalfunc": "func (c *ConfigContainer) Float(key string) (float64, error)",
+    "funcbody": "func (c *ConfigContainer) Float(key string) (float64, error) {\n\treturn strconv.ParseFloat(c.data[key].(string), 64)\n}",
+    "funcname": "Float"
+}

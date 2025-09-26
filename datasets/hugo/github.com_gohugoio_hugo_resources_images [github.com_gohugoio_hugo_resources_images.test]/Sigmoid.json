@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 347,
+    "focalfunc": "func (*Filters) Sigmoid(midpoint, factor any) gift.Filter",
+    "funcbody": "func (*Filters) Sigmoid(midpoint, factor any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(midpoint, factor),\n\t\tFilter:\t\tgift.Sigmoid(cast.ToFloat32(midpoint), cast.ToFloat32(factor)),\n\t}\n}",
+    "funcname": "Sigmoid"
+}

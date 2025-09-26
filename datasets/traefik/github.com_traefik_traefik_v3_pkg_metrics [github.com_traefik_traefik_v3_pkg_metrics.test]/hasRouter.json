@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 470,
+    "focalfunc": "func (d *dynamicConfig) hasRouter(routerName string) bool",
+    "funcbody": "func (d *dynamicConfig) hasRouter(routerName string) bool {\n\t_, ok := d.routers[routerName]\n\treturn ok\n}",
+    "funcname": "hasRouter"
+}

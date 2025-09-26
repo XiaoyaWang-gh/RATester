@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 36,
+    "focalfunc": "func NewNamespace(prefix string, params ...LinkNamespace) *Namespace",
+    "funcbody": "func NewNamespace(prefix string, params ...LinkNamespace) *Namespace {\n\tns := &Namespace{\n\t\tprefix:\t\tprefix,\n\t\thandlers:\tNewControllerRegister(),\n\t}\n\tfor _, p := range params {\n\t\tp(ns)\n\t}\n\treturn ns\n}",
+    "funcname": "NewNamespace"
+}

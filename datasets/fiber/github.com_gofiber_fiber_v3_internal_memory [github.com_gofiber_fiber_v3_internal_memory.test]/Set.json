@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/memory/memory.go",
+    "lineno": 44,
+    "focalfunc": "func (s *Storage) Set(key string, val any, ttl time.Duration)",
+    "funcbody": "func (s *Storage) Set(key string, val any, ttl time.Duration) {\n\tvar exp uint32\n\tif ttl > 0 {\n\t\texp = uint32(ttl.Seconds()) + utils.Timestamp()\n\t}\n\ti := item{e: exp, v: val}\n\ts.Lock()\n\ts.data[key] = i\n\ts.Unlock()\n}",
+    "funcname": "Set"
+}

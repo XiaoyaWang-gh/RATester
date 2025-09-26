@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 47,
+    "focalfunc": "func (m *serverMetrics) NewClient()",
+    "funcbody": "func (m *serverMetrics) NewClient() {\n\tfor _, v := range m.ms {\n\t\tv.NewClient()\n\t}\n}",
+    "funcname": "NewClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/config.go",
+    "lineno": 108,
+    "focalfunc": "func (t ContentTypes) IsContentFile(filename string) bool",
+    "funcbody": "func (t ContentTypes) IsContentFile(filename string) bool {\n\treturn t.IsContentSuffix(strings.TrimPrefix(filepath.Ext(filename), \".\"))\n}",
+    "funcname": "IsContentFile"
+}

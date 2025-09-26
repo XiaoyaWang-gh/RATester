@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 150,
+    "focalfunc": "func (f *filterOrmDecorator) LoadRelatedWithCtx(ctx context.Context, md interface{}, name string, args ...utils.KV) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) LoadRelatedWithCtx(ctx context.Context, md interface{}, name string, args ...utils.KV) (int64, error) {\n\tmi, _ := defaultModelCache.GetByMd(md)\n\tinv := &Invocation{\n\t\tMethod:\t\t\"LoadRelatedWithCtx\",\n\t\tArgs:\t\t[]interface{}{md, name, args},\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres, err := f.ormer.LoadRelatedWithCtx(c, md, name, args...)\n\t\t\treturn []interface{}{res, err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn res[0].(int64), f.convertError(res[1])\n}",
+    "funcname": "LoadRelatedWithCtx"
+}

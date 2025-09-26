@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 90,
+    "focalfunc": "func (m *StreamExampleReply) Reset()",
+    "funcbody": "func (m *StreamExampleReply) Reset()\t{ *m = StreamExampleReply{} }",
+    "funcname": "Reset"
+}

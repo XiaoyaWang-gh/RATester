@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 64,
+    "focalfunc": "func ExpectHaveKey(actual interface{}, key interface{}, explain ...interface{})",
+    "funcbody": "func ExpectHaveKey(actual interface{}, key interface{}, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1, actual).To(gomega.HaveKey(key), explain...)\n}",
+    "funcname": "ExpectHaveKey"
+}

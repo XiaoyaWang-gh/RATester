@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 74,
+    "focalfunc": "func (c *Client) Reload(ctx context.Context, strictMode bool) error",
+    "funcbody": "func (c *Client) Reload(ctx context.Context, strictMode bool) error {\n\tv := url.Values{}\n\tif strictMode {\n\t\tv.Set(\"strictConfig\", \"true\")\n\t}\n\tqueryStr := \"\"\n\tif len(v) > 0 {\n\t\tqueryStr = \"?\" + v.Encode()\n\t}\n\treq, err := http.NewRequestWithContext(ctx, \"GET\", \"http://\"+c.address+\"/api/reload\"+queryStr, nil)\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = c.do(req)\n\treturn err\n}",
+    "funcname": "Reload"
+}

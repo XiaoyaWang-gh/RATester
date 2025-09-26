@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 262,
+    "focalfunc": "func (l *logAdapter) Out() io.Writer",
+    "funcbody": "func (l *logAdapter) Out() io.Writer {\n\treturn l.out\n}",
+    "funcname": "Out"
+}

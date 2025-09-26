@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 77,
+    "focalfunc": "func (r IndentedJSON) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r IndentedJSON) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\tjsonBytes, err := json.MarshalIndent(r.Data, \"\", \"    \")\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = w.Write(jsonBytes)\n\treturn err\n}",
+    "funcname": "Render"
+}

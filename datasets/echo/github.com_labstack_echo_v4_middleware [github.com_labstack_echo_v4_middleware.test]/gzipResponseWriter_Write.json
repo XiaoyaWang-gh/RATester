@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 153,
+    "focalfunc": "func (w *gzipResponseWriter) Write(b []byte) (int, error)",
+    "funcbody": "func (w *gzipResponseWriter) Write(b []byte) (int, error) {\n\tif w.Header().Get(echo.HeaderContentType) == \"\" {\n\t\tw.Header().Set(echo.HeaderContentType, http.DetectContentType(b))\n\t}\n\tw.wroteBody = true\n\n\tif !w.minLengthExceeded {\n\t\tn, err := w.buffer.Write(b)\n\n\t\tif w.buffer.Len() >= w.minLength {\n\t\t\tw.minLengthExceeded = true\n\n\t\t\tw.Header().Set(echo.HeaderContentEncoding, gzipScheme)\n\t\t\tif w.wroteHeader {\n\t\t\t\tw.ResponseWriter.WriteHeader(w.code)\n\t\t\t}\n\n\t\t\treturn w.Writer.Write(w.buffer.Bytes())\n\t\t}\n\n\t\treturn n, err\n\t}\n\n\treturn w.Writer.Write(b)\n}",
+    "funcname": "Write"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 292,
+    "focalfunc": "func usernameIfPresent(theURL *url.URL) string",
+    "funcbody": "func usernameIfPresent(theURL *url.URL) string {\n\tif theURL.User != nil {\n\t\tif name := theURL.User.Username(); name != \"\" {\n\t\t\treturn name\n\t\t}\n\t}\n\treturn \"-\"\n}",
+    "funcname": "usernameIfPresent"
+}

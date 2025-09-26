@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 523,
+    "focalfunc": "func newSourceFilesystemsBuilder(p *paths.Paths, logger loggers.Logger, b *BaseFs) *sourceFilesystemsBuilder",
+    "funcbody": "func newSourceFilesystemsBuilder(p *paths.Paths, logger loggers.Logger, b *BaseFs) *sourceFilesystemsBuilder {\n\tsourceFs := hugofs.NewBaseFileDecorator(p.Fs.Source)\n\treturn &sourceFilesystemsBuilder{\n\t\tp:\tp, logger: logger, sourceFs: sourceFs, theBigFs: b.theBigFs,\n\t\tresult: &SourceFilesystems{\n\t\t\tconf: p.Cfg,\n\t\t},\n\t}\n}",
+    "funcname": "newSourceFilesystemsBuilder"
+}

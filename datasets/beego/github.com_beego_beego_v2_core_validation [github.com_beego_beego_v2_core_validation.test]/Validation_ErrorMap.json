@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 130,
+    "focalfunc": "func (v *Validation) ErrorMap() map[string][]*Error",
+    "funcbody": "func (v *Validation) ErrorMap() map[string][]*Error {\n\treturn v.ErrorsMap\n}",
+    "funcname": "ErrorMap"
+}

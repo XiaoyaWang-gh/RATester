@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 493,
+    "focalfunc": "func (p *pageState) initPage() error",
+    "funcbody": "func (p *pageState) initPage() error {\n\tif _, err := p.init.Do(context.Background()); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "initPage"
+}

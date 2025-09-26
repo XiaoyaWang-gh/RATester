@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/testing/client.go",
+    "lineno": 54,
+    "focalfunc": "func Put(path string) *TestHTTPRequest",
+    "funcbody": "func Put(path string) *TestHTTPRequest {\n\treturn &TestHTTPRequest{*httplib.Put(baseURL + getPort() + path)}\n}",
+    "funcname": "Put"
+}

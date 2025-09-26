@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/beego.go",
+    "lineno": 88,
+    "focalfunc": "func TestBeegoInit(ap string)",
+    "funcbody": "func TestBeegoInit(ap string) {\n\tpath := filepath.Join(ap, \"conf\", \"app.conf\")\n\tos.Chdir(ap)\n\tInitBeegoBeforeTest(path)\n}",
+    "funcname": "TestBeegoInit"
+}

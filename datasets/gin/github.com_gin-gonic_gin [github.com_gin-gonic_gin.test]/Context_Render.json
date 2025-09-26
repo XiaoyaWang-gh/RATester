@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 973,
+    "focalfunc": "func (c *Context) Render(code int, r render.Render)",
+    "funcbody": "func (c *Context) Render(code int, r render.Render) {\n\tc.Status(code)\n\n\tif !bodyAllowedForStatus(code) {\n\t\tr.WriteContentType(c.Writer)\n\t\tc.Writer.WriteHeaderNow()\n\t\treturn\n\t}\n\n\tif err := r.Render(c.Writer); err != nil {\n\n\t\t_ = c.Error(err)\n\t\tc.Abort()\n\t}\n}",
+    "funcname": "Render"
+}

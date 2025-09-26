@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 63,
+    "focalfunc": "func (p Params) IsZero() bool",
+    "funcbody": "func (p Params) IsZero() bool {\n\tif len(p) == 0 {\n\t\treturn true\n\t}\n\n\tif len(p) > 1 {\n\t\treturn false\n\t}\n\n\tfor k := range p {\n\t\treturn k == MergeStrategyKey\n\t}\n\n\treturn false\n}",
+    "funcname": "IsZero"
+}

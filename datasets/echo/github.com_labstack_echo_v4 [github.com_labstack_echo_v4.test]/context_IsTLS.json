@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 266,
+    "focalfunc": "func (c *context) IsTLS() bool",
+    "funcbody": "func (c *context) IsTLS() bool {\n\treturn c.request.TLS != nil\n}",
+    "funcname": "IsTLS"
+}

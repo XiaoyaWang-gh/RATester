@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/main.go",
+    "lineno": 113,
+    "focalfunc": "func cleanPackage(src string) string",
+    "funcbody": "func cleanPackage(src string) string {\n\tswitch src {\n\tcase \"github.com/traefik/paerser/types\":\n\t\treturn \"\"\n\tcase \"github.com/traefik/traefik/v3/pkg/tls\":\n\t\treturn path.Join(destModuleName, destPkg, \"tls\")\n\tcase \"github.com/traefik/traefik/v3/pkg/types\":\n\t\treturn path.Join(destModuleName, destPkg, \"types\")\n\tdefault:\n\t\treturn src\n\t}\n}",
+    "funcname": "cleanPackage"
+}

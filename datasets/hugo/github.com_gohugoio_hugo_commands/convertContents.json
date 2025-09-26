@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/convert.go",
+    "lineno": 203,
+    "focalfunc": "func (c *convertCommand) convertContents(format metadecoders.Format) error",
+    "funcbody": "func (c *convertCommand) convertContents(format metadecoders.Format) error {\n\tif c.outputDir == \"\" && !c.unsafe {\n\t\treturn newUserError(\"Unsafe operation not allowed, use --unsafe or set a different output path\")\n\t}\n\n\tif err := c.h.Build(hugolib.BuildCfg{SkipRender: true}); err != nil {\n\t\treturn err\n\t}\n\n\tsite := c.h.Sites[0]\n\n\tvar pagesBackedByFile page.Pages\n\tfor _, p := range site.AllPages() {\n\t\tif p.File() == nil {\n\t\t\tcontinue\n\t\t}\n\t\tpagesBackedByFile = append(pagesBackedByFile, p)\n\t}\n\n\tsite.Log.Println(\"processing\", len(pagesBackedByFile), \"content files\")\n\tfor _, p := range site.AllPages() {\n\t\tif err := c.convertAndSavePage(p, site, format); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "convertContents"
+}

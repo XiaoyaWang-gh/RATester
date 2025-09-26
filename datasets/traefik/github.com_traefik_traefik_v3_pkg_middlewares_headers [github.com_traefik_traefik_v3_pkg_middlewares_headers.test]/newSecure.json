@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/secure.go",
+    "lineno": 18,
+    "focalfunc": "func newSecure(next http.Handler, cfg dynamic.Headers, contextKey string) *secureHeader",
+    "funcbody": "func newSecure(next http.Handler, cfg dynamic.Headers, contextKey string) *secureHeader {\n\topt := secure.Options{\n\t\tBrowserXssFilter:\t\t\tcfg.BrowserXSSFilter,\n\t\tContentTypeNosniff:\t\t\tcfg.ContentTypeNosniff,\n\t\tForceSTSHeader:\t\t\t\tcfg.ForceSTSHeader,\n\t\tFrameDeny:\t\t\t\tcfg.FrameDeny,\n\t\tIsDevelopment:\t\t\t\tcfg.IsDevelopment,\n\t\tSTSIncludeSubdomains:\t\t\tcfg.STSIncludeSubdomains,\n\t\tSTSPreload:\t\t\t\tcfg.STSPreload,\n\t\tContentSecurityPolicy:\t\t\tcfg.ContentSecurityPolicy,\n\t\tContentSecurityPolicyReportOnly:\tcfg.ContentSecurityPolicyReportOnly,\n\t\tCustomBrowserXssValue:\t\t\tcfg.CustomBrowserXSSValue,\n\t\tCustomFrameOptionsValue:\t\tcfg.CustomFrameOptionsValue,\n\t\tPublicKey:\t\t\t\tcfg.PublicKey,\n\t\tReferrerPolicy:\t\t\t\tcfg.ReferrerPolicy,\n\t\tAllowedHosts:\t\t\t\tcfg.AllowedHosts,\n\t\tHostsProxyHeaders:\t\t\tcfg.HostsProxyHeaders,\n\t\tSSLProxyHeaders:\t\t\tcfg.SSLProxyHeaders,\n\t\tSTSSeconds:\t\t\t\tcfg.STSSeconds,\n\t\tPermissionsPolicy:\t\t\tcfg.PermissionsPolicy,\n\t\tSecureContextKey:\t\t\tcontextKey,\n\t}\n\n\treturn &secureHeader{\n\t\tnext:\tnext,\n\t\tsecure:\tsecure.New(opt),\n\t\tcfg:\tcfg,\n\t}\n}",
+    "funcname": "newSecure"
+}

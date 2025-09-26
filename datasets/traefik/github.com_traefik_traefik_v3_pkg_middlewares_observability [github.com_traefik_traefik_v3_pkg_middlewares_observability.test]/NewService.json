@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/service.go",
+    "lineno": 24,
+    "focalfunc": "func NewService(ctx context.Context, service string, next http.Handler) http.Handler",
+    "funcbody": "func NewService(ctx context.Context, service string, next http.Handler) http.Handler {\n\tmiddlewares.GetLogger(ctx, \"tracing\", serviceTypeName).\n\t\tDebug().Str(logs.ServiceName, service).Msg(\"Added outgoing tracing middleware\")\n\n\treturn &serviceTracing{\n\t\tservice:\tservice,\n\t\tnext:\t\tnext,\n\t}\n}",
+    "funcname": "NewService"
+}

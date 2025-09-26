@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 129,
+    "focalfunc": "func (r *hugoContextRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer)",
+    "funcbody": "func (r *hugoContextRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer) {\n\treg.Register(kindHugoContext, r.handleHugoContext)\n}",
+    "funcname": "RegisterFuncs"
+}

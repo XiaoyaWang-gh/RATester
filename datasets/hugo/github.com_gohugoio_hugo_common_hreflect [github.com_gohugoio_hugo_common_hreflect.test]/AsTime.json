@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 210,
+    "focalfunc": "func AsTime(v reflect.Value, loc *time.Location) (time.Time, bool)",
+    "funcbody": "func AsTime(v reflect.Value, loc *time.Location) (time.Time, bool) {\n\tif v.Kind() == reflect.Interface {\n\t\treturn AsTime(v.Elem(), loc)\n\t}\n\n\tif v.Type() == timeType {\n\t\treturn v.Interface().(time.Time), true\n\t}\n\n\tif v.Type().Implements(asTimeProviderType) {\n\t\treturn v.Interface().(htime.AsTimeProvider).AsTime(loc), true\n\t}\n\n\treturn time.Time{}, false\n}",
+    "funcname": "AsTime"
+}

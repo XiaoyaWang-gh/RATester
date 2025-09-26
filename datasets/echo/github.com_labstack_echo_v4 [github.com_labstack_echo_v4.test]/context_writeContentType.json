@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 243,
+    "focalfunc": "func (c *context) writeContentType(value string)",
+    "funcbody": "func (c *context) writeContentType(value string) {\n\theader := c.Response().Header()\n\tif header.Get(HeaderContentType) == \"\" {\n\t\theader.Set(HeaderContentType, value)\n\t}\n}",
+    "funcname": "writeContentType"
+}

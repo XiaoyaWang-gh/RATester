@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 73,
+    "focalfunc": "func vhostFailed(c net.Conn)",
+    "funcbody": "func vhostFailed(c net.Conn) {\n\n\t_ = tls.Server(c, &tls.Config{}).Handshake()\n\tc.Close()\n}",
+    "funcname": "vhostFailed"
+}

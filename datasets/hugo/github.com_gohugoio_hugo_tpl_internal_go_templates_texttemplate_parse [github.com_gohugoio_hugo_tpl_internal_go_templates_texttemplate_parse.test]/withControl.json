@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 593,
+    "focalfunc": "func (t *Tree) withControl() Node",
+    "funcbody": "func (t *Tree) withControl() Node {\n\treturn t.newWith(t.parseControl(\"with\"))\n}",
+    "funcname": "withControl"
+}

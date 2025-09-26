@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 148,
+    "focalfunc": "func WithRouterSessionOn(sessionOn bool) ControllerOption",
+    "funcbody": "func WithRouterSessionOn(sessionOn bool) ControllerOption {\n\treturn func(c *ControllerInfo) {\n\t\tc.sessionOn = sessionOn\n\t}\n}",
+    "funcname": "WithRouterSessionOn"
+}

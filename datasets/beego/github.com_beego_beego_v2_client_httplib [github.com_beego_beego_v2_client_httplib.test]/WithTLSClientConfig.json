@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 44,
+    "focalfunc": "func WithTLSClientConfig(config *tls.Config) ClientOption",
+    "funcbody": "func WithTLSClientConfig(config *tls.Config) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.TLSClientConfig = config\n\t}\n}",
+    "funcname": "WithTLSClientConfig"
+}

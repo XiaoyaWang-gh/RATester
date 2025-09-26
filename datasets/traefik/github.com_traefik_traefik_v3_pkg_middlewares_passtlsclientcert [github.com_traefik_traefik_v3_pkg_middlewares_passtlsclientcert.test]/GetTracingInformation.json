@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 142,
+    "focalfunc": "func (p *passTLSClientCert) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (p *passTLSClientCert) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn p.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

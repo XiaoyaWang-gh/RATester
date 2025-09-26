@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 48,
+    "focalfunc": "func (*Namespace) Default(defaultv any, givenv ...any) (any, error)",
+    "funcbody": "func (*Namespace) Default(defaultv any, givenv ...any) (any, error) {\n\n\tif len(givenv) == 0 {\n\t\treturn defaultv, nil\n\t}\n\tif len(givenv) != 1 {\n\t\treturn nil, fmt.Errorf(\"wrong number of args for default: want 2 got %d\", len(givenv)+1)\n\t}\n\n\tg := reflect.ValueOf(givenv[0])\n\tif !g.IsValid() {\n\t\treturn defaultv, nil\n\t}\n\n\tset := false\n\n\tswitch g.Kind() {\n\tcase reflect.Bool:\n\t\tset = true\n\tcase reflect.String, reflect.Array, reflect.Slice, reflect.Map:\n\t\tset = g.Len() != 0\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\tset = g.Int() != 0\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:\n\t\tset = g.Uint() != 0\n\tcase reflect.Float32, reflect.Float64:\n\t\tset = g.Float() != 0\n\tcase reflect.Complex64, reflect.Complex128:\n\t\tset = g.Complex() != 0\n\tcase reflect.Struct:\n\t\tswitch actual := givenv[0].(type) {\n\t\tcase time.Time:\n\t\t\tset = !actual.IsZero()\n\t\tdefault:\n\t\t\tset = true\n\t\t}\n\tdefault:\n\t\tset = !g.IsNil()\n\t}\n\n\tif set {\n\t\treturn givenv[0], nil\n\t}\n\n\treturn defaultv, nil\n}",
+    "funcname": "Default"
+}

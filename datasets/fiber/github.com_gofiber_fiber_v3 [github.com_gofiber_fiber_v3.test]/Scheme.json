@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1120,
+    "focalfunc": "func (c *DefaultCtx) Scheme() string",
+    "funcbody": "func (c *DefaultCtx) Scheme() string {\n\tif c.fasthttp.IsTLS() {\n\t\treturn schemeHTTPS\n\t}\n\tif !c.IsProxyTrusted() {\n\t\treturn schemeHTTP\n\t}\n\n\tscheme := schemeHTTP\n\tconst lenXHeaderName = 12\n\tc.fasthttp.Request.Header.VisitAll(func(key, val []byte) {\n\t\tif len(key) < lenXHeaderName {\n\t\t\treturn\n\t\t}\n\t\tswitch {\n\t\tcase bytes.HasPrefix(key, []byte(\"X-Forwarded-\")):\n\t\t\tif bytes.Equal(key, []byte(HeaderXForwardedProto)) ||\n\t\t\t\tbytes.Equal(key, []byte(HeaderXForwardedProtocol)) {\n\t\t\t\tv := c.app.getString(val)\n\t\t\t\tcommaPos := strings.Index(v, \",\")\n\t\t\t\tif commaPos != -1 {\n\t\t\t\t\tscheme = v[:commaPos]\n\t\t\t\t} else {\n\t\t\t\t\tscheme = v\n\t\t\t\t}\n\t\t\t} else if bytes.Equal(key, []byte(HeaderXForwardedSsl)) && bytes.Equal(val, []byte(\"on\")) {\n\t\t\t\tscheme = schemeHTTPS\n\t\t\t}\n\n\t\tcase bytes.Equal(key, []byte(HeaderXUrlScheme)):\n\t\t\tscheme = c.app.getString(val)\n\t\t}\n\t})\n\treturn scheme\n}",
+    "funcname": "Scheme"
+}

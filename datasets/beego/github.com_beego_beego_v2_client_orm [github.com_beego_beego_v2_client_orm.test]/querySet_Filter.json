@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 92,
+    "focalfunc": "func (o querySet) Filter(expr string, args ...interface{}) QuerySeter",
+    "funcbody": "func (o querySet) Filter(expr string, args ...interface{}) QuerySeter {\n\tif o.cond == nil {\n\t\to.cond = NewCondition()\n\t}\n\to.cond = o.cond.And(expr, args...)\n\treturn &o\n}",
+    "funcname": "Filter"
+}

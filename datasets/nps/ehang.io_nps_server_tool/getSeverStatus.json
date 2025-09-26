@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/tool/utils.go",
+    "lineno": 53,
+    "focalfunc": "func getSeverStatus()",
+    "funcbody": "func getSeverStatus() {\n\tfor {\n\t\tif len(ServerStatus) < 10 {\n\t\t\ttime.Sleep(time.Second)\n\t\t} else {\n\t\t\ttime.Sleep(time.Minute)\n\t\t}\n\t\tcpuPercet, _ := cpu.Percent(0, true)\n\t\tvar cpuAll float64\n\t\tfor _, v := range cpuPercet {\n\t\t\tcpuAll += v\n\t\t}\n\t\tm := make(map[string]interface{})\n\t\tloads, _ := load.Avg()\n\t\tm[\"load1\"] = loads.Load1\n\t\tm[\"load5\"] = loads.Load5\n\t\tm[\"load15\"] = loads.Load15\n\t\tm[\"cpu\"] = math.Round(cpuAll / float64(len(cpuPercet)))\n\t\tswap, _ := mem.SwapMemory()\n\t\tm[\"swap_mem\"] = math.Round(swap.UsedPercent)\n\t\tvir, _ := mem.VirtualMemory()\n\t\tm[\"virtual_mem\"] = math.Round(vir.UsedPercent)\n\t\tconn, _ := net.ProtoCounters(nil)\n\t\tio1, _ := net.IOCounters(false)\n\t\ttime.Sleep(time.Millisecond * 500)\n\t\tio2, _ := net.IOCounters(false)\n\t\tif len(io2) > 0 && len(io1) > 0 {\n\t\t\tm[\"io_send\"] = (io2[0].BytesSent - io1[0].BytesSent) * 2\n\t\t\tm[\"io_recv\"] = (io2[0].BytesRecv - io1[0].BytesRecv) * 2\n\t\t}\n\t\tt := time.Now()\n\t\tm[\"time\"] = strconv.Itoa(t.Hour()) + \":\" + strconv.Itoa(t.Minute()) + \":\" + strconv.Itoa(t.Second())\n\n\t\tfor _, v := range conn {\n\t\t\tm[v.Protocol] = v.Stats[\"CurrEstab\"]\n\t\t}\n\t\tif len(ServerStatus) >= 1440 {\n\t\t\tServerStatus = ServerStatus[1:]\n\t\t}\n\t\tServerStatus = append(ServerStatus, m)\n\t}\n}",
+    "funcname": "getSeverStatus"
+}

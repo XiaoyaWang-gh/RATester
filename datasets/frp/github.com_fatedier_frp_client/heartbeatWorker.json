@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 234,
+    "focalfunc": "func (ctl *Control) heartbeatWorker()",
+    "funcbody": "func (ctl *Control) heartbeatWorker() {\n\txl := ctl.xl\n\n\tif ctl.sessionCtx.Common.Transport.HeartbeatInterval > 0 {\n\n\t\tsendHeartBeat := func() (bool, error) {\n\t\t\txl.Debugf(\"send heartbeat to server\")\n\t\t\tpingMsg := &msg.Ping{}\n\t\t\tif err := ctl.sessionCtx.AuthSetter.SetPing(pingMsg); err != nil {\n\t\t\t\txl.Warnf(\"error during ping authentication: %v, skip sending ping message\", err)\n\t\t\t\treturn false, err\n\t\t\t}\n\t\t\t_ = ctl.msgDispatcher.Send(pingMsg)\n\t\t\treturn false, nil\n\t\t}\n\n\t\tgo wait.BackoffUntil(sendHeartBeat,\n\t\t\twait.NewFastBackoffManager(wait.FastBackoffOptions{\n\t\t\t\tDuration:\t\ttime.Duration(ctl.sessionCtx.Common.Transport.HeartbeatInterval) * time.Second,\n\t\t\t\tInitDurationIfFail:\ttime.Second,\n\t\t\t\tFactor:\t\t\t2.0,\n\t\t\t\tJitter:\t\t\t0.1,\n\t\t\t\tMaxDuration:\t\ttime.Duration(ctl.sessionCtx.Common.Transport.HeartbeatInterval) * time.Second,\n\t\t\t}),\n\t\t\ttrue, ctl.doneCh,\n\t\t)\n\t}\n\n\tif ctl.sessionCtx.Common.Transport.HeartbeatInterval > 0 && ctl.sessionCtx.Common.Transport.HeartbeatTimeout > 0 {\n\t\tgo wait.Until(func() {\n\t\t\tif time.Since(ctl.lastPong.Load().(time.Time)) > time.Duration(ctl.sessionCtx.Common.Transport.HeartbeatTimeout)*time.Second {\n\t\t\t\txl.Warnf(\"heartbeat timeout\")\n\t\t\t\tctl.closeSession()\n\t\t\t\treturn\n\t\t\t}\n\t\t}, time.Second, ctl.doneCh)\n\t}\n}",
+    "funcname": "heartbeatWorker"
+}

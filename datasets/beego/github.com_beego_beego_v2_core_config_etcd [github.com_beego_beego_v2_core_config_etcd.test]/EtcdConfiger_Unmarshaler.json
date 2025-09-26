@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 101,
+    "focalfunc": "func (e *EtcdConfiger) Unmarshaler(prefix string, obj interface{}, opt ...config.DecodeOption) error",
+    "funcbody": "func (e *EtcdConfiger) Unmarshaler(prefix string, obj interface{}, opt ...config.DecodeOption) error {\n\tres, err := e.GetSection(prefix)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"could not read config with prefix: %s: %w\", prefix, err)\n\t}\n\n\tprefixLen := len(e.prefix + prefix)\n\tm := make(map[string]string, len(res))\n\tfor k, v := range res {\n\t\tm[k[prefixLen:]] = v\n\t}\n\treturn mapstructure.Decode(m, obj)\n}",
+    "funcname": "Unmarshaler"
+}

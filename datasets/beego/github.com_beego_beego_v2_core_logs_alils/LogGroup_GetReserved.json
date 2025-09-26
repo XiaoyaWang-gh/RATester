@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 117,
+    "focalfunc": "func (m *LogGroup) GetReserved() string",
+    "funcbody": "func (m *LogGroup) GetReserved() string {\n\tif m != nil && m.Reserved != nil {\n\t\treturn *m.Reserved\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetReserved"
+}

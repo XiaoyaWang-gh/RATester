@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 57,
+    "focalfunc": "func (rc *Cache) Get(ctx context.Context, key string) (interface{}, error)",
+    "funcbody": "func (rc *Cache) Get(ctx context.Context, key string) (interface{}, error) {\n\tif item, err := rc.conn.Get(key); err == nil {\n\t\treturn item.Value, nil\n\t} else {\n\t\treturn nil, berror.Wrapf(err, cache.MemCacheCurdFailed,\n\t\t\t\"could not read data from memcache, please check your key, network and connection. Root cause: %s\",\n\t\t\terr.Error())\n\t}\n}",
+    "funcname": "Get"
+}

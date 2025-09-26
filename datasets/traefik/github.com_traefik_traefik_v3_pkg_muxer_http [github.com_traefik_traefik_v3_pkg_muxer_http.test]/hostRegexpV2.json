@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher_v2.go",
+    "lineno": 205,
+    "focalfunc": "func hostRegexpV2(tree *matchersTree, hosts ...string) error",
+    "funcbody": "func hostRegexpV2(tree *matchersTree, hosts ...string) error {\n\trouter := mux.NewRouter()\n\n\tfor _, host := range hosts {\n\t\tif !IsASCII(host) {\n\t\t\treturn fmt.Errorf(\"invalid value %q for HostRegexp matcher, non-ASCII characters are not allowed\", host)\n\t\t}\n\n\t\ttmpRt := router.Host(host)\n\t\tif tmpRt.GetError() != nil {\n\t\t\treturn tmpRt.GetError()\n\t\t}\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn router.Match(req, &mux.RouteMatch{})\n\t}\n\n\treturn nil\n}",
+    "funcname": "hostRegexpV2"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 142,
+    "focalfunc": "func MockDBStats(stats *sql.DBStats) *Mock",
+    "funcbody": "func MockDBStats(stats *sql.DBStats) *Mock {\n\treturn NewMock(NewSimpleCondition(\"\", \"DBStats\"), []interface{}{stats}, nil)\n}",
+    "funcname": "MockDBStats"
+}

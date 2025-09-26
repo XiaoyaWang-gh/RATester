@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/retry/retry.go",
+    "lineno": 193,
+    "focalfunc": "func (r *responseWriter) DisableRetries()",
+    "funcbody": "func (r *responseWriter) DisableRetries() {\n\tr.shouldRetry = false\n}",
+    "funcname": "DisableRetries"
+}

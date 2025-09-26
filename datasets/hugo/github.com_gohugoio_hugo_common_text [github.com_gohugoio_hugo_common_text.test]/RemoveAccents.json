@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/text/transform.go",
+    "lineno": 33,
+    "focalfunc": "func RemoveAccents(b []byte) []byte",
+    "funcbody": "func RemoveAccents(b []byte) []byte {\n\tt := accentTransformerPool.Get().(transform.Transformer)\n\tb, _, _ = transform.Bytes(t, b)\n\tt.Reset()\n\taccentTransformerPool.Put(t)\n\treturn b\n}",
+    "funcname": "RemoveAccents"
+}

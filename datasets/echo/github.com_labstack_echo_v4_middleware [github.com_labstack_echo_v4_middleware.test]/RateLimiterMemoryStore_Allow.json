@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rate_limiter.go",
+    "lineno": 239,
+    "focalfunc": "func (store *RateLimiterMemoryStore) Allow(identifier string) (bool, error)",
+    "funcbody": "func (store *RateLimiterMemoryStore) Allow(identifier string) (bool, error) {\n\tstore.mutex.Lock()\n\tlimiter, exists := store.visitors[identifier]\n\tif !exists {\n\t\tlimiter = new(Visitor)\n\t\tlimiter.Limiter = rate.NewLimiter(store.rate, store.burst)\n\t\tstore.visitors[identifier] = limiter\n\t}\n\tnow := store.timeNow()\n\tlimiter.lastSeen = now\n\tif now.Sub(store.lastCleanup) > store.expiresIn {\n\t\tstore.cleanupStaleVisitors()\n\t}\n\tstore.mutex.Unlock()\n\treturn limiter.AllowN(store.timeNow(), 1), nil\n}",
+    "funcname": "Allow"
+}

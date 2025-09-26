@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/plugin.go",
+    "lineno": 36,
+    "focalfunc": "func Register(name string, fn CreatorFn)",
+    "funcbody": "func Register(name string, fn CreatorFn) {\n\tif _, exist := creators[name]; exist {\n\t\tpanic(fmt.Sprintf(\"plugin [%s] is already registered\", name))\n\t}\n\tcreators[name] = fn\n}",
+    "funcname": "Register"
+}

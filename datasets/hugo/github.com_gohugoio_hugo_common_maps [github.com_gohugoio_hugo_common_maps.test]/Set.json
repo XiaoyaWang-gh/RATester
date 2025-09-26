@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 86,
+    "focalfunc": "func (c *Scratch) Set(key string, value any) string",
+    "funcbody": "func (c *Scratch) Set(key string, value any) string {\n\tc.mu.Lock()\n\tc.values[key] = value\n\tc.mu.Unlock()\n\treturn \"\"\n}",
+    "funcname": "Set"
+}

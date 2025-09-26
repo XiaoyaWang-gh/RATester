@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 275,
+    "focalfunc": "func RestoreAssets(dir, name string) error",
+    "funcbody": "func RestoreAssets(dir, name string) error {\n\tchildren, err := AssetDir(name)\n\n\tif err != nil {\n\t\treturn RestoreAsset(dir, name)\n\t}\n\n\tfor _, child := range children {\n\t\terr = RestoreAssets(dir, filepath.Join(name, child))\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "RestoreAssets"
+}

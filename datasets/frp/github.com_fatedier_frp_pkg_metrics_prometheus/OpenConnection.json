@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/prometheus/server.go",
+    "lineno": 40,
+    "focalfunc": "func (m *serverMetrics) OpenConnection(name string, proxyType string)",
+    "funcbody": "func (m *serverMetrics) OpenConnection(name string, proxyType string) {\n\tm.connectionCount.WithLabelValues(name, proxyType).Inc()\n}",
+    "funcname": "OpenConnection"
+}

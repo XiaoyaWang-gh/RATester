@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 101,
+    "focalfunc": "func (o querySet) FilterRaw(expr string, sql string) QuerySeter",
+    "funcbody": "func (o querySet) FilterRaw(expr string, sql string) QuerySeter {\n\tif o.cond == nil {\n\t\to.cond = NewCondition()\n\t}\n\to.cond = o.cond.Raw(expr, sql)\n\treturn &o\n}",
+    "funcname": "FilterRaw"
+}

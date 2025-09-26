@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 30,
+    "focalfunc": "func (pathBridge) Clean(in string) string",
+    "funcbody": "func (pathBridge) Clean(in string) string {\n\treturn path.Clean(in)\n}",
+    "funcname": "Clean"
+}

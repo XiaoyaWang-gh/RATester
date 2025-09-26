@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/file.go",
+    "lineno": 49,
+    "focalfunc": "func SearchFile(filename string, paths ...string) (fullpath string, err error)",
+    "funcbody": "func SearchFile(filename string, paths ...string) (fullpath string, err error) {\n\tfor _, path := range paths {\n\t\tif fullpath = filepath.Join(path, filename); FileExists(fullpath) {\n\t\t\treturn\n\t\t}\n\t}\n\terr = errors.New(fullpath + \" not found in paths\")\n\treturn\n}",
+    "funcname": "SearchFile"
+}

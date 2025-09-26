@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 258,
+    "focalfunc": "func (c *goldmarkConverter) Render(ctx converter.RenderContext, doc any) (converter.ResultRender, error)",
+    "funcbody": "func (c *goldmarkConverter) Render(ctx converter.RenderContext, doc any) (converter.ResultRender, error) {\n\tn := doc.(ast.Node)\n\tbuf := &render.BufWriter{Buffer: &bytes.Buffer{}}\n\n\trcx := &render.RenderContextDataHolder{\n\t\tRctx:\tctx,\n\t\tDctx:\tc.ctx,\n\t}\n\n\tw := &render.Context{\n\t\tBufWriter:\tbuf,\n\t\tContextData:\trcx,\n\t}\n\n\tif err := c.md.Renderer().Render(w, ctx.Src, n); err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn renderResult{\n\t\tResultRender: buf,\n\t}, nil\n}",
+    "funcname": "Render"
+}

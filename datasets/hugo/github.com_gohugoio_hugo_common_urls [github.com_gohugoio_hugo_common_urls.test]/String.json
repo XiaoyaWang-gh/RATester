@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 34,
+    "focalfunc": "func (b BaseURL) String() string",
+    "funcbody": "func (b BaseURL) String() string {\n\treturn b.WithPath\n}",
+    "funcname": "String"
+}

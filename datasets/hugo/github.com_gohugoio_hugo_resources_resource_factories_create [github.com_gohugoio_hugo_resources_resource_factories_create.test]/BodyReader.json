@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 353,
+    "focalfunc": "func (o fromRemoteOptions) BodyReader() io.Reader",
+    "funcbody": "func (o fromRemoteOptions) BodyReader() io.Reader {\n\tif o.Body == nil {\n\t\treturn nil\n\t}\n\treturn bytes.NewBuffer(o.Body)\n}",
+    "funcname": "BodyReader"
+}

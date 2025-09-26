@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 82,
+    "focalfunc": "func mapping(value reflect.Value, field reflect.StructField, setter setter, tag string) (bool, error)",
+    "funcbody": "func mapping(value reflect.Value, field reflect.StructField, setter setter, tag string) (bool, error) {\n\tif field.Tag.Get(tag) == \"-\" {\n\t\treturn false, nil\n\t}\n\n\tvKind := value.Kind()\n\n\tif vKind == reflect.Ptr {\n\t\tvar isNew bool\n\t\tvPtr := value\n\t\tif value.IsNil() {\n\t\t\tisNew = true\n\t\t\tvPtr = reflect.New(value.Type().Elem())\n\t\t}\n\t\tisSet, err := mapping(vPtr.Elem(), field, setter, tag)\n\t\tif err != nil {\n\t\t\treturn false, err\n\t\t}\n\t\tif isNew && isSet {\n\t\t\tvalue.Set(vPtr)\n\t\t}\n\t\treturn isSet, nil\n\t}\n\n\tif vKind != reflect.Struct || !field.Anonymous {\n\t\tok, err := tryToSetValue(value, field, setter, tag)\n\t\tif err != nil {\n\t\t\treturn false, err\n\t\t}\n\t\tif ok {\n\t\t\treturn true, nil\n\t\t}\n\t}\n\n\tif vKind == reflect.Struct {\n\t\ttValue := value.Type()\n\n\t\tvar isSet bool\n\t\tfor i := 0; i < value.NumField(); i++ {\n\t\t\tsf := tValue.Field(i)\n\t\t\tif sf.PkgPath != \"\" && !sf.Anonymous {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tok, err := mapping(value.Field(i), sf, setter, tag)\n\t\t\tif err != nil {\n\t\t\t\treturn false, err\n\t\t\t}\n\t\t\tisSet = isSet || ok\n\t\t}\n\t\treturn isSet, nil\n\t}\n\treturn false, nil\n}",
+    "funcname": "mapping"
+}

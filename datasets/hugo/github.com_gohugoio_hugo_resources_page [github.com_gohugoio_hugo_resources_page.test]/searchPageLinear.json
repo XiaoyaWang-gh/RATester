@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort_search.go",
+    "lineno": 46,
+    "focalfunc": "func searchPageLinear(p Page, pages Pages, start int) int",
+    "funcbody": "func searchPageLinear(p Page, pages Pages, start int) int {\n\tfor i := start; i < len(pages); i++ {\n\t\tc := pages[i]\n\t\tif c.Eq(p) {\n\t\t\treturn i\n\t\t}\n\t}\n\treturn -1\n}",
+    "funcname": "searchPageLinear"
+}

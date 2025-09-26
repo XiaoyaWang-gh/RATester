@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1040,
+    "focalfunc": "func (c *DefaultCtx) RestartRouting() error",
+    "funcbody": "func (c *DefaultCtx) RestartRouting() error {\n\tvar err error\n\n\tc.indexRoute = -1\n\tif c.app.newCtxFunc != nil {\n\t\t_, err = c.app.nextCustom(c)\n\t} else {\n\t\t_, err = c.app.next(c)\n\t}\n\treturn err\n}",
+    "funcname": "RestartRouting"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/proxy.go",
+    "lineno": 241,
+    "focalfunc": "func NewProxyConfigurerByType(proxyType ProxyType) ProxyConfigurer",
+    "funcbody": "func NewProxyConfigurerByType(proxyType ProxyType) ProxyConfigurer {\n\tv, ok := proxyConfigTypeMap[proxyType]\n\tif !ok {\n\t\treturn nil\n\t}\n\tpc := reflect.New(v).Interface().(ProxyConfigurer)\n\tpc.GetBaseConfig().Type = string(proxyType)\n\treturn pc\n}",
+    "funcname": "NewProxyConfigurerByType"
+}

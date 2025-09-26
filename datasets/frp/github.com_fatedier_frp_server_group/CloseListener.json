@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 171,
+    "focalfunc": "func (tmg *TCPMuxGroup) CloseListener(ln *TCPMuxGroupListener)",
+    "funcbody": "func (tmg *TCPMuxGroup) CloseListener(ln *TCPMuxGroupListener) {\n\ttmg.mu.Lock()\n\tdefer tmg.mu.Unlock()\n\tfor i, tmpLn := range tmg.lns {\n\t\tif tmpLn == ln {\n\t\t\ttmg.lns = append(tmg.lns[:i], tmg.lns[i+1:]...)\n\t\t\tbreak\n\t\t}\n\t}\n\tif len(tmg.lns) == 0 {\n\t\tclose(tmg.acceptCh)\n\t\ttmg.tcpMuxLn.Close()\n\t\ttmg.ctl.RemoveGroup(tmg.group)\n\t}\n}",
+    "funcname": "CloseListener"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/replacepath/replace_path.go",
+    "lineno": 42,
+    "focalfunc": "func (r *replacePath) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (r *replacePath) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tcurrentPath := req.URL.RawPath\n\tif currentPath == \"\" {\n\t\tcurrentPath = req.URL.EscapedPath()\n\t}\n\n\treq.Header.Add(ReplacedPathHeader, currentPath)\n\treq.URL.RawPath = r.path\n\n\tvar err error\n\treq.URL.Path, err = url.PathUnescape(req.URL.RawPath)\n\tif err != nil {\n\t\tmiddlewares.GetLogger(context.Background(), r.name, typeName).Error().Msgf(\"Unable to unescape url raw path %q: %v\", req.URL.RawPath, err)\n\t\tobservability.SetStatusErrorf(req.Context(), \"Unable to unescape url raw path %q: %v\", req.URL.RawPath, err)\n\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\treq.RequestURI = req.URL.RequestURI()\n\n\tr.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

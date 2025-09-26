@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/statsd.go",
+    "lineno": 100,
+    "focalfunc": "func initStatsdTicker(ctx context.Context, config *types.Statsd) *time.Ticker",
+    "funcbody": "func initStatsdTicker(ctx context.Context, config *types.Statsd) *time.Ticker {\n\taddress := config.Address\n\tif len(address) == 0 {\n\t\taddress = \"localhost:8125\"\n\t}\n\n\treport := time.NewTicker(time.Duration(config.PushInterval))\n\n\tsafe.Go(func() {\n\t\tstatsdClient.SendLoop(ctx, report.C, \"udp\", address)\n\t})\n\n\treturn report\n}",
+    "funcname": "initStatsdTicker"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 241,
+    "focalfunc": "func (manager *Manager) SessionDestroy(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (manager *Manager) SessionDestroy(w http.ResponseWriter, r *http.Request) {\n\tif manager.config.EnableSidInHTTPHeader {\n\t\tr.Header.Del(manager.config.SessionNameInHTTPHeader)\n\t\tw.Header().Del(manager.config.SessionNameInHTTPHeader)\n\t}\n\n\tcookie, err := r.Cookie(manager.config.CookieName)\n\tif err != nil || cookie.Value == \"\" {\n\t\treturn\n\t}\n\n\tsid, _ := url.QueryUnescape(cookie.Value)\n\tmanager.provider.SessionDestroy(context.Background(), sid)\n\tif manager.config.EnableSetCookie {\n\t\texpiration := time.Now()\n\t\tcookie = &http.Cookie{\n\t\t\tName:\t\tmanager.config.CookieName,\n\t\t\tPath:\t\t\"/\",\n\t\t\tHttpOnly:\t!manager.config.DisableHTTPOnly,\n\t\t\tExpires:\texpiration,\n\t\t\tMaxAge:\t\t-1,\n\t\t\tDomain:\t\tmanager.config.Domain,\n\t\t\tSameSite:\tmanager.config.CookieSameSite,\n\t\t}\n\n\t\thttp.SetCookie(w, cookie)\n\t}\n}",
+    "funcname": "SessionDestroy"
+}

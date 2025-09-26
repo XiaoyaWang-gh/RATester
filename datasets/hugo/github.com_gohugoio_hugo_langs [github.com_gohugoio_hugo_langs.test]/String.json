@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 125,
+    "focalfunc": "func (l *Language) String() string",
+    "funcbody": "func (l *Language) String() string {\n\treturn l.Lang\n}",
+    "funcname": "String"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 1042,
+    "focalfunc": "func (s *state) printValue(n parse.Node, v reflect.Value)",
+    "funcbody": "func (s *state) printValue(n parse.Node, v reflect.Value) {\n\ts.at(n)\n\tiface, ok := printableValue(v)\n\tif !ok {\n\t\ts.errorf(\"can't print %s of type %s\", n, v.Type())\n\t}\n\t_, err := fmt.Fprint(s.wr, iface)\n\tif err != nil {\n\t\ts.writeError(err)\n\t}\n}",
+    "funcname": "printValue"
+}

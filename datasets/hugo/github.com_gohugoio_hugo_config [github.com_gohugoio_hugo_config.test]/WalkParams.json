@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 280,
+    "focalfunc": "func (c *defaultConfigProvider) WalkParams(walkFn func(params ...maps.KeyParams) bool)",
+    "funcbody": "func (c *defaultConfigProvider) WalkParams(walkFn func(params ...maps.KeyParams) bool) {\n\tvar walk func(params ...maps.KeyParams)\n\twalk = func(params ...maps.KeyParams) {\n\t\tif walkFn(params...) {\n\t\t\treturn\n\t\t}\n\t\tp1 := params[len(params)-1]\n\t\ti := len(params)\n\t\tfor k, v := range p1.Params {\n\t\t\tif p2, ok := v.(maps.Params); ok {\n\t\t\t\tparamsplus1 := make([]maps.KeyParams, i+1)\n\t\t\t\tcopy(paramsplus1, params)\n\t\t\t\tparamsplus1[i] = maps.KeyParams{Key: k, Params: p2}\n\t\t\t\twalk(paramsplus1...)\n\t\t\t}\n\t\t}\n\t}\n\twalk(maps.KeyParams{Key: \"\", Params: c.root})\n}",
+    "funcname": "WalkParams"
+}

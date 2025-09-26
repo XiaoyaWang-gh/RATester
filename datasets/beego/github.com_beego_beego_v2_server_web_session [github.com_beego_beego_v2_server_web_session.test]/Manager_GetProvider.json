@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 147,
+    "focalfunc": "func (manager *Manager) GetProvider() Provider",
+    "funcbody": "func (manager *Manager) GetProvider() Provider {\n\treturn manager.provider\n}",
+    "funcname": "GetProvider"
+}

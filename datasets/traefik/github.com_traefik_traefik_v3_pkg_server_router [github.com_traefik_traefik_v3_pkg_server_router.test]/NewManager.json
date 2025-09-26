@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/router.go",
+    "lineno": 48,
+    "focalfunc": "func NewManager(conf *runtime.Configuration, serviceManager serviceManager, middlewaresBuilder middlewareBuilder, observabilityMgr *middleware.ObservabilityMgr, tlsManager *tls.Manager) *Manager",
+    "funcbody": "func NewManager(conf *runtime.Configuration, serviceManager serviceManager, middlewaresBuilder middlewareBuilder, observabilityMgr *middleware.ObservabilityMgr, tlsManager *tls.Manager) *Manager {\n\treturn &Manager{\n\t\trouterHandlers:\t\tmake(map[string]http.Handler),\n\t\tserviceManager:\t\tserviceManager,\n\t\tobservabilityMgr:\tobservabilityMgr,\n\t\tmiddlewaresBuilder:\tmiddlewaresBuilder,\n\t\tconf:\t\t\tconf,\n\t\ttlsManager:\t\ttlsManager,\n\t}\n}",
+    "funcname": "NewManager"
+}

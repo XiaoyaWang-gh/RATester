@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 82,
+    "focalfunc": "func (d *DoNothingOrm) DBStats() *sql.DBStats",
+    "funcbody": "func (d *DoNothingOrm) DBStats() *sql.DBStats {\n\treturn nil\n}",
+    "funcname": "DBStats"
+}

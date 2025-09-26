@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/goroutine/pool.go",
+    "lineno": 50,
+    "focalfunc": "func NewConns(c1 io.ReadWriteCloser, c2 net.Conn, flow *file.Flow, wg *sync.WaitGroup) Conns",
+    "funcbody": "func NewConns(c1 io.ReadWriteCloser, c2 net.Conn, flow *file.Flow, wg *sync.WaitGroup) Conns {\n\treturn Conns{\n\t\tconn1:\tc1,\n\t\tconn2:\tc2,\n\t\tflow:\tflow,\n\t\twg:\twg,\n\t}\n}",
+    "funcname": "NewConns"
+}

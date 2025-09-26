@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 81,
+    "focalfunc": "func (fe *fileError) UpdateContent(r io.Reader, linematcher LineMatcherFn) FileError",
+    "funcbody": "func (fe *fileError) UpdateContent(r io.Reader, linematcher LineMatcherFn) FileError {\n\tif linematcher == nil {\n\t\tlinematcher = SimpleLineMatcher\n\t}\n\n\tvar (\n\t\tposle\t= fe.position\n\t\tectx\t*ErrorContext\n\t)\n\n\tif posle.LineNumber <= 1 && posle.Offset > 0 {\n\n\t\tectx = locateError(r, fe, func(m LineMatcher) int {\n\t\t\tif posle.Offset >= m.Offset && posle.Offset < m.Offset+len(m.Line) {\n\t\t\t\tlno := posle.LineNumber - m.Position.LineNumber + m.LineNumber\n\t\t\t\tm.Position = text.Position{LineNumber: lno}\n\t\t\t\treturn linematcher(m)\n\t\t\t}\n\t\t\treturn -1\n\t\t})\n\t} else {\n\t\tectx = locateError(r, fe, linematcher)\n\t}\n\n\tif ectx.ChromaLexer == \"\" {\n\t\tif fe.fileType != \"\" {\n\t\t\tectx.ChromaLexer = chromaLexerFromType(fe.fileType)\n\t\t} else {\n\t\t\tectx.ChromaLexer = chromaLexerFromFilename(fe.Position().Filename)\n\t\t}\n\t}\n\n\tfe.errorContext = ectx\n\n\tif ectx.Position.LineNumber > 0 {\n\t\tfe.position.LineNumber = ectx.Position.LineNumber\n\t}\n\n\tif ectx.Position.ColumnNumber > 0 {\n\t\tfe.position.ColumnNumber = ectx.Position.ColumnNumber\n\t}\n\n\treturn fe\n}",
+    "funcname": "UpdateContent"
+}

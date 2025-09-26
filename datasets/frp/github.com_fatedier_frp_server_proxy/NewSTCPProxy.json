@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/stcp.go",
+    "lineno": 32,
+    "focalfunc": "func NewSTCPProxy(baseProxy *BaseProxy) Proxy",
+    "funcbody": "func NewSTCPProxy(baseProxy *BaseProxy) Proxy {\n\tunwrapped, ok := baseProxy.GetConfigurer().(*v1.STCPProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn &STCPProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t}\n}",
+    "funcname": "NewSTCPProxy"
+}

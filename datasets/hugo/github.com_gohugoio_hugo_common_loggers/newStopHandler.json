@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlersmisc.go",
+    "lineno": 48,
+    "focalfunc": "func newStopHandler(h ...logg.Handler) *stopHandler",
+    "funcbody": "func newStopHandler(h ...logg.Handler) *stopHandler {\n\treturn &stopHandler{\n\t\thandlers: h,\n\t}\n}",
+    "funcname": "newStopHandler"
+}

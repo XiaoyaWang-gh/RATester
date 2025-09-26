@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 534,
+    "focalfunc": "func toLowerSlice(in any) []string",
+    "funcbody": "func toLowerSlice(in any) []string {\n\tout := cast.ToStringSlice(in)\n\tfor i := 0; i < len(out); i++ {\n\t\tout[i] = strings.ToLower(out[i])\n\t}\n\n\treturn out\n}",
+    "funcname": "toLowerSlice"
+}

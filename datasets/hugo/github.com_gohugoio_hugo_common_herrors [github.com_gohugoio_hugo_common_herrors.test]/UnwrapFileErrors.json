@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 340,
+    "focalfunc": "func UnwrapFileErrors(err error) []FileError",
+    "funcbody": "func UnwrapFileErrors(err error) []FileError {\n\tvar errs []FileError\n\tfor err != nil {\n\t\tif v, ok := err.(FileError); ok {\n\t\t\terrs = append(errs, v)\n\t\t}\n\t\terr = errors.Unwrap(err)\n\t}\n\treturn errs\n}",
+    "funcname": "UnwrapFileErrors"
+}

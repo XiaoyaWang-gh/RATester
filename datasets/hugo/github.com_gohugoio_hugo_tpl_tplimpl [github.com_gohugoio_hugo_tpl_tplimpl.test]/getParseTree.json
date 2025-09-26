@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 109,
+    "focalfunc": "func getParseTree(templ tpl.Template) *parse.Tree",
+    "funcbody": "func getParseTree(templ tpl.Template) *parse.Tree {\n\ttempl = unwrap(templ)\n\tif text, ok := templ.(*texttemplate.Template); ok {\n\t\treturn text.Tree\n\t}\n\treturn templ.(*htmltemplate.Template).Tree\n}",
+    "funcname": "getParseTree"
+}

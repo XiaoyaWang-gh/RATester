@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 303,
+    "focalfunc": "func (a *Analyzer) ReportSuccess(key string, mode, index int)",
+    "funcbody": "func (a *Analyzer) ReportSuccess(key string, mode, index int) {\n\ta.mu.Lock()\n\trecords, ok := a.records[key]\n\ta.mu.Unlock()\n\tif !ok {\n\t\treturn\n\t}\n\trecords.ReportSuccess(mode, index)\n}",
+    "funcname": "ReportSuccess"
+}

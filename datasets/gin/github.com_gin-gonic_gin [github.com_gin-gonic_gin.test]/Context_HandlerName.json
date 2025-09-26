@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 147,
+    "focalfunc": "func (c *Context) HandlerName() string",
+    "funcbody": "func (c *Context) HandlerName() string {\n\treturn nameOfFunction(c.handlers.Last())\n}",
+    "funcname": "HandlerName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 156,
+    "focalfunc": "func (ns *Namespace) Dictionary(values ...any) (map[string]any, error)",
+    "funcbody": "func (ns *Namespace) Dictionary(values ...any) (map[string]any, error) {\n\tif len(values)%2 != 0 {\n\t\treturn nil, errors.New(\"invalid dictionary call\")\n\t}\n\n\troot := make(map[string]any)\n\n\tfor i := 0; i < len(values); i += 2 {\n\t\tdict := root\n\t\tvar key string\n\t\tswitch v := values[i].(type) {\n\t\tcase string:\n\t\t\tkey = v\n\t\tcase []string:\n\t\t\tfor i := 0; i < len(v)-1; i++ {\n\t\t\t\tkey = v[i]\n\t\t\t\tvar m map[string]any\n\t\t\t\tv, found := dict[key]\n\t\t\t\tif found {\n\t\t\t\t\tm = v.(map[string]any)\n\t\t\t\t} else {\n\t\t\t\t\tm = make(map[string]any)\n\t\t\t\t\tdict[key] = m\n\t\t\t\t}\n\t\t\t\tdict = m\n\t\t\t}\n\t\t\tkey = v[len(v)-1]\n\t\tdefault:\n\t\t\treturn nil, errors.New(\"invalid dictionary key\")\n\t\t}\n\t\tdict[key] = values[i+1]\n\t}\n\n\treturn root, nil\n}",
+    "funcname": "Dictionary"
+}

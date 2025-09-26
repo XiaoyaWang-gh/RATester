@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 192,
+    "focalfunc": "func compareVersions(inVersion Version, in any) int",
+    "funcbody": "func compareVersions(inVersion Version, in any) int {\n\tvar c int\n\tswitch d := in.(type) {\n\tcase float64:\n\t\tc = compareFloatWithVersion(d, inVersion)\n\tcase float32:\n\t\tc = compareFloatWithVersion(float64(d), inVersion)\n\tcase int:\n\t\tc = compareFloatWithVersion(float64(d), inVersion)\n\tcase int32:\n\t\tc = compareFloatWithVersion(float64(d), inVersion)\n\tcase int64:\n\t\tc = compareFloatWithVersion(float64(d), inVersion)\n\tcase Version:\n\t\tif d.Major == inVersion.Major && d.Minor == inVersion.Minor && d.PatchLevel == inVersion.PatchLevel {\n\t\t\treturn strings.Compare(inVersion.Suffix, d.Suffix)\n\t\t}\n\t\tif d.Major > inVersion.Major {\n\t\t\treturn 1\n\t\t} else if d.Major < inVersion.Major {\n\t\t\treturn -1\n\t\t}\n\t\tif d.Minor > inVersion.Minor {\n\t\t\treturn 1\n\t\t} else if d.Minor < inVersion.Minor {\n\t\t\treturn -1\n\t\t}\n\t\tif d.PatchLevel > inVersion.PatchLevel {\n\t\t\treturn 1\n\t\t} else if d.PatchLevel < inVersion.PatchLevel {\n\t\t\treturn -1\n\t\t}\n\tdefault:\n\t\ts, err := cast.ToStringE(in)\n\t\tif err != nil {\n\t\t\treturn -1\n\t\t}\n\n\t\tv, err := ParseVersion(s)\n\t\tif err != nil {\n\t\t\treturn -1\n\t\t}\n\t\treturn inVersion.Compare(v)\n\n\t}\n\n\treturn c\n}",
+    "funcname": "compareVersions"
+}

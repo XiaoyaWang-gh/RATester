@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 760,
+    "focalfunc": "func Warn(f interface{}, v ...interface{})",
+    "funcbody": "func Warn(f interface{}, v ...interface{}) {\n\tbeeLogger.Warn(formatPattern(f, v...), v...)\n}",
+    "funcname": "Warn"
+}

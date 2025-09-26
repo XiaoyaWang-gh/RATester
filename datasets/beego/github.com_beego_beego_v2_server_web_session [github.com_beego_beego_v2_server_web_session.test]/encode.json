@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 193,
+    "focalfunc": "func encode(value []byte) []byte",
+    "funcbody": "func encode(value []byte) []byte {\n\tencoded := make([]byte, base64.URLEncoding.EncodedLen(len(value)))\n\tbase64.URLEncoding.Encode(encoded, value)\n\treturn encoded\n}",
+    "funcname": "encode"
+}

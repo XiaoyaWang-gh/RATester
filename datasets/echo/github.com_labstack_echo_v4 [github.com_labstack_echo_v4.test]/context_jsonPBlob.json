@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 528,
+    "focalfunc": "func (c *context) JSONPBlob(code int, callback string, b []byte) (err error)",
+    "funcbody": "func (c *context) JSONPBlob(code int, callback string, b []byte) (err error) {\n\tc.writeContentType(MIMEApplicationJavaScriptCharsetUTF8)\n\tc.response.WriteHeader(code)\n\tif _, err = c.response.Write([]byte(callback + \"(\")); err != nil {\n\t\treturn\n\t}\n\tif _, err = c.response.Write(b); err != nil {\n\t\treturn\n\t}\n\t_, err = c.response.Write([]byte(\");\"))\n\treturn\n}",
+    "funcname": "JSONPBlob"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/minifiers/minifiers.go",
+    "lineno": 107,
+    "focalfunc": "func getMinifier(c MinifyConfig, s string) minify.Minifier",
+    "funcbody": "func getMinifier(c MinifyConfig, s string) minify.Minifier {\n\tswitch {\n\tcase s == \"css\" && !c.DisableCSS:\n\t\treturn &c.Tdewolff.CSS\n\tcase s == \"js\" && !c.DisableJS:\n\t\treturn &c.Tdewolff.JS\n\tcase s == \"json\" && !c.DisableJSON:\n\t\treturn &c.Tdewolff.JSON\n\tcase s == \"svg\" && !c.DisableSVG:\n\t\treturn &c.Tdewolff.SVG\n\tcase s == \"xml\" && !c.DisableXML:\n\t\treturn &c.Tdewolff.XML\n\tcase s == \"html\" && !c.DisableHTML:\n\t\treturn &c.Tdewolff.HTML\n\tdefault:\n\t\treturn noopMinifier{}\n\t}\n}",
+    "funcname": "getMinifier"
+}

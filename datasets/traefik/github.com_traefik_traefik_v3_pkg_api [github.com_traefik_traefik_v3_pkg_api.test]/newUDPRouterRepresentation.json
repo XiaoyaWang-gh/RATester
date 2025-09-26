@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_udp.go",
+    "lineno": 22,
+    "focalfunc": "func newUDPRouterRepresentation(name string, rt *runtime.UDPRouterInfo) udpRouterRepresentation",
+    "funcbody": "func newUDPRouterRepresentation(name string, rt *runtime.UDPRouterInfo) udpRouterRepresentation {\n\treturn udpRouterRepresentation{\n\t\tUDPRouterInfo:\trt,\n\t\tName:\t\tname,\n\t\tProvider:\tgetProviderName(name),\n\t}\n}",
+    "funcname": "newUDPRouterRepresentation"
+}

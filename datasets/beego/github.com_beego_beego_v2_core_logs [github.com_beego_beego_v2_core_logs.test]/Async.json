@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 699,
+    "focalfunc": "func Async(msgLen ...int64) *BeeLogger",
+    "funcbody": "func Async(msgLen ...int64) *BeeLogger {\n\treturn beeLogger.Async(msgLen...)\n}",
+    "funcname": "Async"
+}

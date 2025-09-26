@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/prefork.go",
+    "lineno": 157,
+    "focalfunc": "func watchMaster()",
+    "funcbody": "func watchMaster() {\n\tif runtime.GOOS == \"windows\" {\n\n\t\tp, err := os.FindProcess(os.Getppid())\n\t\tif err == nil {\n\t\t\t_, _ = p.Wait()\n\t\t}\n\t\tos.Exit(1)\n\t}\n\t// if it is equal to 1 (init process ID),\n\t// it indicates that the master process has exited\n\tconst watchInterval = 500 * time.Millisecond\n\tfor range time.NewTicker(watchInterval).C {\n\t\tif os.Getppid() == 1 {\n\t\t\tos.Exit(1)\n\t\t}\n\t}\n}",
+    "funcname": "watchMaster"
+}

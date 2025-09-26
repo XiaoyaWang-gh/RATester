@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/websocket.go",
+    "lineno": 27,
+    "focalfunc": "func NewWebsocketListener(ln net.Listener) (wl *WebsocketListener)",
+    "funcbody": "func NewWebsocketListener(ln net.Listener) (wl *WebsocketListener) {\n\twl = &WebsocketListener{\n\t\tacceptCh: make(chan net.Conn),\n\t}\n\n\tmuxer := http.NewServeMux()\n\tmuxer.Handle(FrpWebsocketPath, websocket.Handler(func(c *websocket.Conn) {\n\t\tnotifyCh := make(chan struct{})\n\t\tconn := WrapCloseNotifyConn(c, func() {\n\t\t\tclose(notifyCh)\n\t\t})\n\t\twl.acceptCh <- conn\n\t\t<-notifyCh\n\t}))\n\n\twl.server = &http.Server{\n\t\tAddr:\t\t\tln.Addr().String(),\n\t\tHandler:\t\tmuxer,\n\t\tReadHeaderTimeout:\t60 * time.Second,\n\t}\n\n\tgo func() {\n\t\t_ = wl.server.Serve(ln)\n\t}()\n\treturn\n}",
+    "funcname": "NewWebsocketListener"
+}

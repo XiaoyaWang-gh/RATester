@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 103,
+    "focalfunc": "func Unwrapv(v any) any",
+    "funcbody": "func Unwrapv(v any) any {\n\tif u, ok := v.(Unwrapper); ok {\n\t\treturn u.Unwrapv()\n\t}\n\treturn v\n}",
+    "funcname": "Unwrapv"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 230,
+    "focalfunc": "func (c *JSONConfigContainer) DefaultStrings(key string, defaultVal []string) []string",
+    "funcbody": "func (c *JSONConfigContainer) DefaultStrings(key string, defaultVal []string) []string {\n\tif v, err := c.Strings(key); v != nil && err == nil {\n\t\treturn v\n\t}\n\treturn defaultVal\n}",
+    "funcname": "DefaultStrings"
+}

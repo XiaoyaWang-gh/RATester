@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 370,
+    "focalfunc": "func (ctl *Control) handleNewProxy(m msg.Message)",
+    "funcbody": "func (ctl *Control) handleNewProxy(m msg.Message) {\n\txl := ctl.xl\n\tinMsg := m.(*msg.NewProxy)\n\n\tcontent := &plugin.NewProxyContent{\n\t\tUser: plugin.UserInfo{\n\t\t\tUser:\tctl.loginMsg.User,\n\t\t\tMetas:\tctl.loginMsg.Metas,\n\t\t\tRunID:\tctl.loginMsg.RunID,\n\t\t},\n\t\tNewProxy:\t*inMsg,\n\t}\n\tvar remoteAddr string\n\tretContent, err := ctl.pluginManager.NewProxy(content)\n\tif err == nil {\n\t\tinMsg = &retContent.NewProxy\n\t\tremoteAddr, err = ctl.RegisterProxy(inMsg)\n\t}\n\n\tresp := &msg.NewProxyResp{\n\t\tProxyName: inMsg.ProxyName,\n\t}\n\tif err != nil {\n\t\txl.Warnf(\"new proxy [%s] type [%s] error: %v\", inMsg.ProxyName, inMsg.ProxyType, err)\n\t\tresp.Error = util.GenerateResponseErrorString(fmt.Sprintf(\"new proxy [%s] error\", inMsg.ProxyName),\n\t\t\terr, lo.FromPtr(ctl.serverCfg.DetailedErrorsToClient))\n\t} else {\n\t\tresp.RemoteAddr = remoteAddr\n\t\txl.Infof(\"new proxy [%s] type [%s] success\", inMsg.ProxyName, inMsg.ProxyType)\n\t\tmetrics.Server.NewProxy(inMsg.ProxyName, inMsg.ProxyType)\n\t}\n\t_ = ctl.msgDispatcher.Send(resp)\n}",
+    "funcname": "handleNewProxy"
+}

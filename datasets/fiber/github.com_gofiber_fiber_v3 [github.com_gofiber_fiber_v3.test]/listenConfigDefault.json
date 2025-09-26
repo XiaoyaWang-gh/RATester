@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/listen.go",
+    "lineno": 114,
+    "focalfunc": "func listenConfigDefault(config ...ListenConfig) ListenConfig",
+    "funcbody": "func listenConfigDefault(config ...ListenConfig) ListenConfig {\n\tif len(config) < 1 {\n\t\treturn ListenConfig{\n\t\t\tListenerNetwork:\tNetworkTCP4,\n\t\t\tOnShutdownError: func(err error) {\n\t\t\t\tlog.Fatalf(\"shutdown: %v\", err)\n\t\t\t},\n\t\t}\n\t}\n\n\tcfg := config[0]\n\tif cfg.ListenerNetwork == \"\" {\n\t\tcfg.ListenerNetwork = NetworkTCP4\n\t}\n\n\tif cfg.OnShutdownError == nil {\n\t\tcfg.OnShutdownError = func(err error) {\n\t\t\tlog.Fatalf(\"shutdown: %v\", err)\n\t\t}\n\t}\n\n\treturn cfg\n}",
+    "funcname": "listenConfigDefault"
+}

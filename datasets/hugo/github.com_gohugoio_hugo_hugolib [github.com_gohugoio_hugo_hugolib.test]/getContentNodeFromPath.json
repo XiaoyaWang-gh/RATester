@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 249,
+    "focalfunc": "func (c *pageFinder) getContentNodeFromPath(s string, ref string) (contentNodeI, error)",
+    "funcbody": "func (c *pageFinder) getContentNodeFromPath(s string, ref string) (contentNodeI, error) {\n\tn := c.pageMap.treePages.Get(s)\n\tif n != nil {\n\t\treturn n, nil\n\t}\n\n\treturn nil, nil\n}",
+    "funcname": "getContentNodeFromPath"
+}

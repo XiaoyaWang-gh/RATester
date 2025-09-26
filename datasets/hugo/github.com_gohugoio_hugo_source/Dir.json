@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 55,
+    "focalfunc": "func (fi *File) Dir() string",
+    "funcbody": "func (fi *File) Dir() string {\n\treturn fi.pathToDir(fi.p().Dir())\n}",
+    "funcname": "Dir"
+}

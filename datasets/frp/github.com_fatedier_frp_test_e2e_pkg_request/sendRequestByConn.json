@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 257,
+    "focalfunc": "func (r *Request) sendRequestByConn(c net.Conn, content []byte) ([]byte, error)",
+    "funcbody": "func (r *Request) sendRequestByConn(c net.Conn, content []byte) ([]byte, error) {\n\t_, err := rpc.WriteBytes(c, content)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"write error: %v\", err)\n\t}\n\n\tvar reader io.Reader = c\n\tif r.protocol == \"udp\" {\n\t\treader = bufio.NewReader(c)\n\t}\n\n\tbuf, err := rpc.ReadBytes(reader)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"read error: %v\", err)\n\t}\n\treturn buf, nil\n}",
+    "funcname": "sendRequestByConn"
+}

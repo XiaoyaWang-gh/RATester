@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 116,
+    "focalfunc": "func (c *ConfigContainer) sub(key string) (map[string]interface{}, error)",
+    "funcbody": "func (c *ConfigContainer) sub(key string) (map[string]interface{}, error) {\n\tif key == \"\" {\n\t\treturn c.data, nil\n\t}\n\tvalue, ok := c.data[key]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"the key is not found: %s\", key)\n\t}\n\tres, ok := value.(map[string]interface{})\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"the value of this key is not a structure: %s\", key)\n\t}\n\treturn res, nil\n}",
+    "funcname": "sub"
+}

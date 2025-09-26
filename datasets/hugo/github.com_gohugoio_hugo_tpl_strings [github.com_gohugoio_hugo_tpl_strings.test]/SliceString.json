@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 257,
+    "focalfunc": "func (ns *Namespace) SliceString(a any, startEnd ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) SliceString(a any, startEnd ...any) (string, error) {\n\taStr, err := cast.ToStringE(a)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tvar argStart, argEnd int\n\n\targNum := len(startEnd)\n\n\tif argNum > 0 {\n\t\tif argStart, err = cast.ToIntE(startEnd[0]); err != nil {\n\t\t\treturn \"\", errors.New(\"start argument must be integer\")\n\t\t}\n\t}\n\tif argNum > 1 {\n\t\tif argEnd, err = cast.ToIntE(startEnd[1]); err != nil {\n\t\t\treturn \"\", errors.New(\"end argument must be integer\")\n\t\t}\n\t}\n\n\tif argNum > 2 {\n\t\treturn \"\", errors.New(\"too many arguments\")\n\t}\n\n\tasRunes := []rune(aStr)\n\n\tif argNum > 0 && (argStart < 0 || argStart >= len(asRunes)) {\n\t\treturn \"\", errors.New(\"slice bounds out of range\")\n\t}\n\n\tif argNum == 2 {\n\t\tif argEnd < 0 || argEnd > len(asRunes) {\n\t\t\treturn \"\", errors.New(\"slice bounds out of range\")\n\t\t}\n\t\treturn string(asRunes[argStart:argEnd]), nil\n\t} else if argNum == 1 {\n\t\treturn string(asRunes[argStart:]), nil\n\t} else {\n\t\treturn string(asRunes[:]), nil\n\t}\n}",
+    "funcname": "SliceString"
+}

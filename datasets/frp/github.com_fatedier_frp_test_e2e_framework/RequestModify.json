@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 63,
+    "focalfunc": "func (e *RequestExpect) RequestModify(f func(r *request.Request)) *RequestExpect",
+    "funcbody": "func (e *RequestExpect) RequestModify(f func(r *request.Request)) *RequestExpect {\n\tf(e.req)\n\treturn e\n}",
+    "funcname": "RequestModify"
+}

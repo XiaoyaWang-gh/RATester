@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 474,
+    "focalfunc": "func ClearTask()",
+    "funcbody": "func ClearTask() {\n\tglobalTaskManager.ClearTask()\n}",
+    "funcname": "ClearTask"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/prometheus/filter.go",
+    "lineno": 44,
+    "focalfunc": "func (builder *FilterChainBuilder) FilterChain(next web.FilterFunc) web.FilterFunc",
+    "funcbody": "func (builder *FilterChainBuilder) FilterChain(next web.FilterFunc) web.FilterFunc {\n\tinitSummaryVec.Do(func() {\n\t\tsummaryVec = builder.buildVec()\n\t\terr := prometheus.Register(summaryVec)\n\t\tif _, ok := err.(*prometheus.AlreadyRegisteredError); err != nil && !ok {\n\t\t\tlogs.Error(\"web module register prometheus vector failed, %+v\", err)\n\t\t}\n\t\tregisterBuildInfo()\n\t})\n\n\treturn func(ctx *context.Context) {\n\t\tstartTime := time.Now()\n\t\tnext(ctx)\n\t\tendTime := time.Now()\n\t\tgo report(endTime.Sub(startTime), ctx, summaryVec)\n\t}\n}",
+    "funcname": "FilterChain"
+}

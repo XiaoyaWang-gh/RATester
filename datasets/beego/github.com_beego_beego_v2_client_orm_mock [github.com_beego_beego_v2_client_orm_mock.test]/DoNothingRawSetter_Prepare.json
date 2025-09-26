@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_rawSetter.go",
+    "lineno": 61,
+    "focalfunc": "func (d *DoNothingRawSetter) Prepare() (orm.RawPreparer, error)",
+    "funcbody": "func (d *DoNothingRawSetter) Prepare() (orm.RawPreparer, error) {\n\treturn nil, nil\n}",
+    "funcname": "Prepare"
+}

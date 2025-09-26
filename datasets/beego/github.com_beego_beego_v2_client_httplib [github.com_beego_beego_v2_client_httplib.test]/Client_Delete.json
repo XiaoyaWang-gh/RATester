@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 162,
+    "focalfunc": "func (c *Client) Delete(value interface{}, path string, opts ...BeegoHTTPRequestOption) error",
+    "funcbody": "func (c *Client) Delete(value interface{}, path string, opts ...BeegoHTTPRequestOption) error {\n\treq := Delete(c.Endpoint + path)\n\tc.customReq(req, opts)\n\treturn c.handleResponse(value, req)\n}",
+    "funcname": "Delete"
+}

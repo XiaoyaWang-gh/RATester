@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 649,
+    "focalfunc": "func asciiAlphaNum(c byte) bool",
+    "funcbody": "func asciiAlphaNum(c byte) bool {\n\treturn asciiAlpha(c) || '0' <= c && c <= '9'\n}",
+    "funcname": "asciiAlphaNum"
+}

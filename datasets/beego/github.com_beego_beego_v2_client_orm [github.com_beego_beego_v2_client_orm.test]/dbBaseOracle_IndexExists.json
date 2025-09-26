@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 95,
+    "focalfunc": "func (d *dbBaseOracle) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool",
+    "funcbody": "func (d *dbBaseOracle) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool {\n\trow := db.QueryRowContext(ctx, \"SELECT COUNT(*) FROM USER_IND_COLUMNS, USER_INDEXES \"+\n\t\t\"WHERE USER_IND_COLUMNS.INDEX_NAME = USER_INDEXES.INDEX_NAME \"+\n\t\t\"AND  USER_IND_COLUMNS.TABLE_NAME = ? AND USER_IND_COLUMNS.INDEX_NAME = ?\", strings.ToUpper(table), strings.ToUpper(name))\n\n\tvar cnt int\n\trow.Scan(&cnt)\n\treturn cnt > 0\n}",
+    "funcname": "IndexExists"
+}

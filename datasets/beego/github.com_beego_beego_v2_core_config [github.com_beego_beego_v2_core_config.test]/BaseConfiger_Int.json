@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 99,
+    "focalfunc": "func (c *BaseConfiger) Int(key string) (int, error)",
+    "funcbody": "func (c *BaseConfiger) Int(key string) (int, error) {\n\tres, err := c.reader(context.TODO(), key)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\treturn strconv.Atoi(res)\n}",
+    "funcname": "Int"
+}

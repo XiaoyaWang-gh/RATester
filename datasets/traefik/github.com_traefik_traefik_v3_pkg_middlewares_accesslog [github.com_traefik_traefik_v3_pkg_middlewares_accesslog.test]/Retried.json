@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/save_retries.go",
+    "lineno": 11,
+    "focalfunc": "func (s *SaveRetries) Retried(req *http.Request, attempt int)",
+    "funcbody": "func (s *SaveRetries) Retried(req *http.Request, attempt int) {\n\n\tif attempt > 0 {\n\t\tattempt--\n\t}\n\n\ttable := GetLogData(req)\n\tif table != nil {\n\t\ttable.Core[RetryAttempts] = attempt\n\t}\n}",
+    "funcname": "Retried"
+}

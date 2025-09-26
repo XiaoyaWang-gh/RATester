@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/blockquotes/blockquotes.go",
+    "lineno": 37,
+    "focalfunc": "func New() goldmark.Extender",
+    "funcbody": "func New() goldmark.Extender {\n\treturn &blockquotesExtension{}\n}",
+    "funcname": "New"
+}

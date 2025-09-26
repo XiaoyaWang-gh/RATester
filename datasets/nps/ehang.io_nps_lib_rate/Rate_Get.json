@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/rate.go",
+    "lineno": 47,
+    "focalfunc": "func (s *Rate) Get(size int64)",
+    "funcbody": "func (s *Rate) Get(size int64) {\n\tif s.bucketSurplusSize >= size {\n\t\tatomic.AddInt64(&s.bucketSurplusSize, -size)\n\t\treturn\n\t}\n\tticker := time.NewTicker(time.Millisecond * 100)\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tif s.bucketSurplusSize >= size {\n\t\t\t\tatomic.AddInt64(&s.bucketSurplusSize, -size)\n\t\t\t\tticker.Stop()\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "Get"
+}

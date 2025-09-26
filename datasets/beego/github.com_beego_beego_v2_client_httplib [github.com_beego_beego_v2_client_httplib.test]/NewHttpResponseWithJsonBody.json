@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/http_response.go",
+    "lineno": 26,
+    "focalfunc": "func NewHttpResponseWithJsonBody(data interface{}) *http.Response",
+    "funcbody": "func NewHttpResponseWithJsonBody(data interface{}) *http.Response {\n\tvar body []byte\n\tif str, ok := data.(string); ok {\n\t\tbody = []byte(str)\n\t} else if bts, ok := data.([]byte); ok {\n\t\tbody = bts\n\t} else {\n\t\tbody, _ = json.Marshal(data)\n\t}\n\treturn &http.Response{\n\t\tContentLength:\tint64(len(body)),\n\t\tBody:\t\tio.NopCloser(bytes.NewReader(body)),\n\t}\n}",
+    "funcname": "NewHttpResponseWithJsonBody"
+}

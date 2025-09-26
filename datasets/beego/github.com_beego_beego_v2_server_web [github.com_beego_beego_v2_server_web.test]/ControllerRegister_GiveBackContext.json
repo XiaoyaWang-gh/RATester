@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 364,
+    "focalfunc": "func (p *ControllerRegister) GiveBackContext(ctx *beecontext.Context)",
+    "funcbody": "func (p *ControllerRegister) GiveBackContext(ctx *beecontext.Context) {\n\tp.pool.Put(ctx)\n}",
+    "funcname": "GiveBackContext"
+}

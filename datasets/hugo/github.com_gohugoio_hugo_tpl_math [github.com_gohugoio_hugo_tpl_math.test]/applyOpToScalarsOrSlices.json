@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 283,
+    "focalfunc": "func (ns *Namespace) applyOpToScalarsOrSlices(opName string, op func(x, y float64) float64, inputs ...any) (result float64, err error)",
+    "funcbody": "func (ns *Namespace) applyOpToScalarsOrSlices(opName string, op func(x, y float64) float64, inputs ...any) (result float64, err error) {\n\tvar i int\n\tvar hasValue bool\n\tfor _, input := range inputs {\n\t\tvar values []float64\n\t\tvar isSlice bool\n\t\tvalues, isSlice, err = ns.toFloatsE(input)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"%s operator can't be used with non-float values\", opName)\n\t\t\treturn\n\t\t}\n\t\thasValue = hasValue || len(values) > 0 || isSlice\n\t\tfor _, value := range values {\n\t\t\ti++\n\t\t\tif i == 1 {\n\t\t\t\tresult = value\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tresult = op(result, value)\n\t\t}\n\t}\n\n\tif !hasValue {\n\t\terr = errMustOneNumberError\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "applyOpToScalarsOrSlices"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/multifile.go",
+    "lineno": 125,
+    "focalfunc": "func newFilesWriter() Logger",
+    "funcbody": "func newFilesWriter() Logger {\n\tres := &multiFileLogWriter{}\n\treturn res\n}",
+    "funcname": "newFilesWriter"
+}

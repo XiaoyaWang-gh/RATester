@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/templatefuncsRegistry.go",
+    "lineno": 197,
+    "focalfunc": "func (t *TemplateFuncsNamespace) toJSON(ctx context.Context) ([]byte, error)",
+    "funcbody": "func (t *TemplateFuncsNamespace) toJSON(ctx context.Context) ([]byte, error) {\n\tvar buf bytes.Buffer\n\n\tgodoc := getGetTplPackagesGoDoc()[t.Name]\n\n\tvar funcs []goDocFunc\n\n\tbuf.WriteString(fmt.Sprintf(`%q: {`, t.Name))\n\n\ttctx, err := t.Context(ctx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif tctx == nil {\n\n\t\treturn nil, nil\n\t}\n\tctxType := reflect.TypeOf(tctx)\n\tfor i := 0; i < ctxType.NumMethod(); i++ {\n\t\tmethod := ctxType.Method(i)\n\t\tif ignoreFuncs[method.Name] {\n\t\t\tcontinue\n\t\t}\n\t\tf := goDocFunc{\n\t\t\tName: method.Name,\n\t\t}\n\n\t\tmethodGoDoc := godoc[method.Name]\n\n\t\tif mapping, ok := t.MethodMappings[method.Name]; ok {\n\t\t\tf.Aliases = mapping.Aliases\n\t\t\tf.Examples = mapping.Examples\n\t\t\tf.Description = methodGoDoc.Description\n\t\t\tf.Args = methodGoDoc.Args\n\t\t}\n\n\t\tfuncs = append(funcs, f)\n\t}\n\n\tfor i, f := range funcs {\n\t\tif i != 0 {\n\t\t\tbuf.WriteString(\",\")\n\t\t}\n\t\tfuncStr, err := f.toJSON()\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tbuf.Write(funcStr)\n\t}\n\n\tbuf.WriteString(\"}\")\n\n\treturn buf.Bytes(), nil\n}",
+    "funcname": "toJSON"
+}

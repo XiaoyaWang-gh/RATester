@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/slack.go",
+    "lineno": 51,
+    "focalfunc": "func (s *SLACKWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (s *SLACKWriter) WriteMsg(lm *LogMsg) error {\n\tif lm.Level > s.Level {\n\t\treturn nil\n\t}\n\tmsg := s.Format(lm)\n\tm := make(map[string]string, 1)\n\tm[\"text\"] = msg\n\n\tbody, _ := json.Marshal(m)\n\n\tresp, err := http.Post(s.WebhookURL, \"application/json\", bytes.NewReader(body))\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer resp.Body.Close()\n\tif resp.StatusCode != http.StatusOK {\n\t\treturn fmt.Errorf(\"Post webhook failed %s %d\", resp.Status, resp.StatusCode)\n\t}\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

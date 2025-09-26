@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2102,
+    "focalfunc": "func (d *dbBase) GetColumns(ctx context.Context, db dbQuerier, table string) (map[string][3]string, error)",
+    "funcbody": "func (d *dbBase) GetColumns(ctx context.Context, db dbQuerier, table string) (map[string][3]string, error) {\n\tcolumns := make(map[string][3]string)\n\tquery := d.ins.ShowColumnsQuery(table)\n\trows, err := db.QueryContext(ctx, query)\n\tif err != nil {\n\t\treturn columns, err\n\t}\n\n\tdefer rows.Close()\n\n\tfor rows.Next() {\n\t\tvar (\n\t\t\tname\tstring\n\t\t\ttyp\tstring\n\t\t\tnull\tstring\n\t\t)\n\t\terr := rows.Scan(&name, &typ, &null)\n\t\tif err != nil {\n\t\t\treturn columns, err\n\t\t}\n\t\tcolumns[name] = [3]string{name, typ, null}\n\t}\n\n\treturn columns, rows.Err()\n}",
+    "funcname": "GetColumns"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/attributes/attributes.go",
+    "lineno": 125,
+    "focalfunc": "func (a Attribute) ValueString() string",
+    "funcbody": "func (a Attribute) ValueString() string {\n\treturn cast.ToString(a.Value)\n}",
+    "funcname": "ValueString"
+}

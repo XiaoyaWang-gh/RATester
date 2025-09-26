@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/value.go",
+    "lineno": 48,
+    "focalfunc": "func RenderContent(in []byte) (out []byte, err error)",
+    "funcbody": "func RenderContent(in []byte) (out []byte, err error) {\n\ttmpl, errRet := template.New(\"frp\").Parse(string(in))\n\tif errRet != nil {\n\t\terr = errRet\n\t\treturn\n\t}\n\n\tbuffer := bytes.NewBufferString(\"\")\n\tv := GetValues()\n\terr = tmpl.Execute(buffer, v)\n\tif err != nil {\n\t\treturn\n\t}\n\tout = buffer.Bytes()\n\treturn\n}",
+    "funcname": "RenderContent"
+}

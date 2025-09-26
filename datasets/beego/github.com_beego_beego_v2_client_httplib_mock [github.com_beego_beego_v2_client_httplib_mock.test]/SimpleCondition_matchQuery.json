@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 88,
+    "focalfunc": "func (sc *SimpleCondition) matchQuery(ctx context.Context, req *httplib.BeegoHTTPRequest) bool",
+    "funcbody": "func (sc *SimpleCondition) matchQuery(ctx context.Context, req *httplib.BeegoHTTPRequest) bool {\n\tqs := req.GetRequest().URL.Query()\n\tfor k, v := range sc.query {\n\t\tif uv, ok := qs[k]; !ok || uv[0] != v {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "matchQuery"
+}

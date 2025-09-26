@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 516,
+    "focalfunc": "func (d *lazyDispatcher[Q, R]) start() (Dispatcher[Q, R], error)",
+    "funcbody": "func (d *lazyDispatcher[Q, R]) start() (Dispatcher[Q, R], error) {\n\td.startOnce.Do(func() {\n\t\tstart := time.Now()\n\t\td.dispatcher, d.startErr = Start[Q, R](d.opts)\n\t\td.started = true\n\t\td.opts.Infof(\"started dispatcher in %s\", time.Since(start))\n\t})\n\treturn d.dispatcher, d.startErr\n}",
+    "funcname": "start"
+}

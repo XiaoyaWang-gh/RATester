@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 177,
+    "focalfunc": "func trySetCustom(val string, value reflect.Value) (isSet bool, err error)",
+    "funcbody": "func trySetCustom(val string, value reflect.Value) (isSet bool, err error) {\n\tswitch v := value.Addr().Interface().(type) {\n\tcase BindUnmarshaler:\n\t\treturn true, v.UnmarshalParam(val)\n\t}\n\treturn false, nil\n}",
+    "funcname": "trySetCustom"
+}

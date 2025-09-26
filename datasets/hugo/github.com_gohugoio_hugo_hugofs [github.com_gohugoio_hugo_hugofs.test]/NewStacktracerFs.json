@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/stacktracer_fs.go",
+    "lineno": 35,
+    "focalfunc": "func NewStacktracerFs(fs afero.Fs, pattern string) afero.Fs",
+    "funcbody": "func NewStacktracerFs(fs afero.Fs, pattern string) afero.Fs {\n\treturn &stacktracerFs{Fs: fs, re: regexp.MustCompile(pattern)}\n}",
+    "funcname": "NewStacktracerFs"
+}

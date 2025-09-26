@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 599,
+    "focalfunc": "func (h *HugoSites) errWithFileContext(err error, f *source.File) error",
+    "funcbody": "func (h *HugoSites) errWithFileContext(err error, f *source.File) error {\n\trealFilename := f.FileInfo().Meta().Filename\n\treturn herrors.NewFileErrorFromFile(err, realFilename, h.Fs.Source, nil)\n}",
+    "funcname": "errWithFileContext"
+}

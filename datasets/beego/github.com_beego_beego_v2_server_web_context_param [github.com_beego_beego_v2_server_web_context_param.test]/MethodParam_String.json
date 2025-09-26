@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/methodparams.go",
+    "lineno": 46,
+    "focalfunc": "func (mp *MethodParam) String() string",
+    "funcbody": "func (mp *MethodParam) String() string {\n\toptions := []string{}\n\tresult := \"param.New(\\\"\" + mp.name + \"\\\"\"\n\tif mp.required {\n\t\toptions = append(options, \"param.IsRequired\")\n\t}\n\tswitch mp.in {\n\tcase path:\n\t\toptions = append(options, \"param.InPath\")\n\tcase body:\n\t\toptions = append(options, \"param.InBody\")\n\tcase header:\n\t\toptions = append(options, \"param.InHeader\")\n\t}\n\tif mp.defaultValue != \"\" {\n\t\toptions = append(options, fmt.Sprintf(`param.Default(\"%s\")`, mp.defaultValue))\n\t}\n\tif len(options) > 0 {\n\t\tresult += \", \"\n\t}\n\tresult += strings.Join(options, \", \")\n\tresult += \")\"\n\treturn result\n}",
+    "funcname": "String"
+}

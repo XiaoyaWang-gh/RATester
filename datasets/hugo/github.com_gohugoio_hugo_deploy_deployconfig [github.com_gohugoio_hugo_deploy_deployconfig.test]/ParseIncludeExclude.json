@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deployconfig/deployConfig.go",
+    "lineno": 79,
+    "focalfunc": "func (tgt *Target) ParseIncludeExclude() error",
+    "funcbody": "func (tgt *Target) ParseIncludeExclude() error {\n\tvar err error\n\tif tgt.Include != \"\" {\n\t\ttgt.IncludeGlob, err = hglob.GetGlob(tgt.Include)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"invalid deployment.target.include %q: %v\", tgt.Include, err)\n\t\t}\n\t}\n\tif tgt.Exclude != \"\" {\n\t\ttgt.ExcludeGlob, err = hglob.GetGlob(tgt.Exclude)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"invalid deployment.target.exclude %q: %v\", tgt.Exclude, err)\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "ParseIncludeExclude"
+}

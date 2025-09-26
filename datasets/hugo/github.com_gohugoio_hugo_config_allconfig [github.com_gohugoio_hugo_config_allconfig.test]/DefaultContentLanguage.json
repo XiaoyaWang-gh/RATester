@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 207,
+    "focalfunc": "func (c ConfigLanguage) DefaultContentLanguage() string",
+    "funcbody": "func (c ConfigLanguage) DefaultContentLanguage() string {\n\treturn c.config.DefaultContentLanguage\n}",
+    "funcname": "DefaultContentLanguage"
+}

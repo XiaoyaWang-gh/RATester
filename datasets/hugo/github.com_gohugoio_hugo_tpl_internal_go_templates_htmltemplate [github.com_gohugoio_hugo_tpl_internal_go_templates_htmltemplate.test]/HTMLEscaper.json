@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/html.go",
+    "lineno": 45,
+    "focalfunc": "func htmlEscaper(args ...any) string",
+    "funcbody": "func htmlEscaper(args ...any) string {\n\ts, t := stringify(args...)\n\tif t == contentTypeHTML {\n\t\treturn s\n\t}\n\treturn htmlReplacer(s, htmlReplacementTable, true)\n}",
+    "funcname": "htmlEscaper"
+}

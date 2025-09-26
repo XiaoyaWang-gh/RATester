@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/http_code_range.go",
+    "lineno": 15,
+    "focalfunc": "func NewHTTPCodeRanges(strBlocks []string) (HTTPCodeRanges, error)",
+    "funcbody": "func NewHTTPCodeRanges(strBlocks []string) (HTTPCodeRanges, error) {\n\tvar blocks HTTPCodeRanges\n\tfor _, block := range strBlocks {\n\t\tcodes := strings.Split(block, \"-\")\n\n\t\tif len(codes) == 1 {\n\t\t\tcodes = append(codes, codes[0])\n\t\t}\n\t\tlowCode, err := strconv.Atoi(codes[0])\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\thighCode, err := strconv.Atoi(codes[1])\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tblocks = append(blocks, [2]int{lowCode, highCode})\n\t}\n\treturn blocks, nil\n}",
+    "funcname": "NewHTTPCodeRanges"
+}

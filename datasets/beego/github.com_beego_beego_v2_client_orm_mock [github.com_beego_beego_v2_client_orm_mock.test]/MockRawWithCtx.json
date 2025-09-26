@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 132,
+    "focalfunc": "func MockRawWithCtx(rs orm.RawSeter) *Mock",
+    "funcbody": "func MockRawWithCtx(rs orm.RawSeter) *Mock {\n\treturn NewMock(NewSimpleCondition(\"\", \"RawWithCtx\"), []interface{}{rs}, nil)\n}",
+    "funcname": "MockRawWithCtx"
+}

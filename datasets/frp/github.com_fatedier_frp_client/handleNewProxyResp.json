@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 159,
+    "focalfunc": "func (ctl *Control) handleNewProxyResp(m msg.Message)",
+    "funcbody": "func (ctl *Control) handleNewProxyResp(m msg.Message) {\n\txl := ctl.xl\n\tinMsg := m.(*msg.NewProxyResp)\n\n\terr := ctl.pm.StartProxy(inMsg.ProxyName, inMsg.RemoteAddr, inMsg.Error)\n\tif err != nil {\n\t\txl.Warnf(\"[%s] start error: %v\", inMsg.ProxyName, err)\n\t} else {\n\t\txl.Infof(\"[%s] start proxy success\", inMsg.ProxyName)\n\t}\n}",
+    "funcname": "handleNewProxyResp"
+}

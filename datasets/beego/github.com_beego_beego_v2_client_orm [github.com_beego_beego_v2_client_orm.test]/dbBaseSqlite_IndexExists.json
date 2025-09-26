@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 146,
+    "focalfunc": "func (d *dbBaseSqlite) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool",
+    "funcbody": "func (d *dbBaseSqlite) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool {\n\tquery := fmt.Sprintf(\"PRAGMA index_list('%s')\", table)\n\trows, err := db.QueryContext(ctx, query)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tdefer rows.Close()\n\tfor rows.Next() {\n\t\tvar tmp, index sql.NullString\n\t\trows.Scan(&tmp, &index, &tmp, &tmp, &tmp)\n\t\tif name == index.String {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "IndexExists"
+}

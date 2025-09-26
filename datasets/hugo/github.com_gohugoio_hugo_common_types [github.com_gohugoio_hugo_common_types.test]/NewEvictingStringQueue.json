@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/evictingqueue.go",
+    "lineno": 33,
+    "focalfunc": "func NewEvictingStringQueue(size int) *EvictingStringQueue",
+    "funcbody": "func NewEvictingStringQueue(size int) *EvictingStringQueue {\n\treturn &EvictingStringQueue{size: size, set: make(map[string]bool)}\n}",
+    "funcname": "NewEvictingStringQueue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/middlewareyaegi.go",
+    "lineno": 80,
+    "focalfunc": "func (b yaegiMiddlewareBuilder) createConfig(config map[string]interface{}) (reflect.Value, error)",
+    "funcbody": "func (b yaegiMiddlewareBuilder) createConfig(config map[string]interface{}) (reflect.Value, error) {\n\tresults := b.fnCreateConfig.Call(nil)\n\tif len(results) != 1 {\n\t\treturn reflect.Value{}, fmt.Errorf(\"invalid number of return for the CreateConfig function: %d\", len(results))\n\t}\n\n\tvConfig := results[0]\n\tif len(config) == 0 {\n\t\treturn vConfig, nil\n\t}\n\n\tcfg := &mapstructure.DecoderConfig{\n\t\tDecodeHook:\t\tmapstructure.StringToSliceHookFunc(\",\"),\n\t\tWeaklyTypedInput:\ttrue,\n\t\tResult:\t\t\tvConfig.Interface(),\n\t}\n\n\tdecoder, err := mapstructure.NewDecoder(cfg)\n\tif err != nil {\n\t\treturn reflect.Value{}, fmt.Errorf(\"failed to create configuration decoder: %w\", err)\n\t}\n\n\terr = decoder.Decode(config)\n\tif err != nil {\n\t\treturn reflect.Value{}, fmt.Errorf(\"failed to decode configuration: %w\", err)\n\t}\n\n\treturn vConfig, nil\n}",
+    "funcname": "createConfig"
+}

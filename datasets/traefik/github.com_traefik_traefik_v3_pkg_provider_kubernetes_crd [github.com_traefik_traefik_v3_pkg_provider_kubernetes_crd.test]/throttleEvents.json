@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1291,
+    "focalfunc": "func throttleEvents(ctx context.Context, throttleDuration time.Duration, pool *safe.Pool, eventsChan <-chan interface{}) chan interface{}",
+    "funcbody": "func throttleEvents(ctx context.Context, throttleDuration time.Duration, pool *safe.Pool, eventsChan <-chan interface{}) chan interface{} {\n\tif throttleDuration == 0 {\n\t\treturn nil\n\t}\n\n\teventsChanBuffered := make(chan interface{}, 1)\n\n\tpool.GoCtx(func(ctxPool context.Context) {\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-ctxPool.Done():\n\t\t\t\treturn\n\t\t\tcase nextEvent := <-eventsChan:\n\t\t\t\tselect {\n\t\t\t\tcase eventsChanBuffered <- nextEvent:\n\t\t\t\tdefault:\n\n\t\t\t\t\tlog.Ctx(ctx).Debug().Msgf(\"Dropping event kind %T due to throttling\", nextEvent)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t})\n\n\treturn eventsChanBuffered\n}",
+    "funcname": "throttleEvents"
+}

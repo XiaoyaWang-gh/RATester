@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/udp.go",
+    "lineno": 23,
+    "focalfunc": "func NewUdpModeServer(bridge *bridge.Bridge, task *file.Tunnel) *UdpModeServer",
+    "funcbody": "func NewUdpModeServer(bridge *bridge.Bridge, task *file.Tunnel) *UdpModeServer {\n\ts := new(UdpModeServer)\n\ts.bridge = bridge\n\ts.task = task\n\treturn s\n}",
+    "funcname": "NewUdpModeServer"
+}

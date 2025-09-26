@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 357,
+    "focalfunc": "func defaultFSFunc() http.FileSystem",
+    "funcbody": "func defaultFSFunc() http.FileSystem {\n\treturn FileSystem{}\n}",
+    "funcname": "defaultFSFunc"
+}

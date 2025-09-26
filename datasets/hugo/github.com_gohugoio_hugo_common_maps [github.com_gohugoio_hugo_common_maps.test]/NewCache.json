@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/cache.go",
+    "lineno": 25,
+    "focalfunc": "func NewCache[K comparable, T any]() *Cache[K, T]",
+    "funcbody": "func NewCache[K comparable, T any]() *Cache[K, T] {\n\treturn &Cache[K, T]{m: make(map[K]T)}\n}",
+    "funcname": "NewCache"
+}

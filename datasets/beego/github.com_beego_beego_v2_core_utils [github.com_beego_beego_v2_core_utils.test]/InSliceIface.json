@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 37,
+    "focalfunc": "func InSliceIface(v interface{}, sl []interface{}) bool",
+    "funcbody": "func InSliceIface(v interface{}, sl []interface{}) bool {\n\tfor _, vv := range sl {\n\t\tif vv == v {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "InSliceIface"
+}

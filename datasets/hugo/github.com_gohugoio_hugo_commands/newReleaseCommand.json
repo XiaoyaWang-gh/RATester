@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/release.go",
+    "lineno": 26,
+    "focalfunc": "func newReleaseCommand() simplecobra.Commander",
+    "funcbody": "func newReleaseCommand() simplecobra.Commander {\n\tvar (\n\t\tstep\t\tint\n\t\tskipPush\tbool\n\t\ttry\t\tbool\n\t)\n\n\treturn &simpleCommand{\n\t\tname:\t\"release\",\n\t\tshort:\t\"Release a new version of Hugo.\",\n\t\trun: func(ctx context.Context, cd *simplecobra.Commandeer, r *rootCommand, args []string) error {\n\t\t\trel, err := releaser.New(skipPush, try, step)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t\treturn rel.Run()\n\t\t},\n\t\twithc: func(cmd *cobra.Command, r *rootCommand) {\n\t\t\tcmd.Hidden = true\n\t\t\tcmd.ValidArgsFunction = cobra.NoFileCompletions\n\t\t\tcmd.PersistentFlags().BoolVarP(&skipPush, \"skip-push\", \"\", false, \"skip pushing to remote\")\n\t\t\tcmd.PersistentFlags().BoolVarP(&try, \"try\", \"\", false, \"no changes\")\n\t\t\tcmd.PersistentFlags().IntVarP(&step, \"step\", \"\", 0, \"step to run (1: set new version 2: prepare next dev version)\")\n\t\t\t_ = cmd.RegisterFlagCompletionFunc(\"step\", cobra.FixedCompletions([]string{\"1\", \"2\"}, cobra.ShellCompDirectiveNoFileComp))\n\t\t},\n\t}\n}",
+    "funcname": "newReleaseCommand"
+}

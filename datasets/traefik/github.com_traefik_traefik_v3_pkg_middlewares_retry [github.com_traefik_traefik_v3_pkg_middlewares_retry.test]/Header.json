@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/retry/retry.go",
+    "lineno": 197,
+    "focalfunc": "func (r *responseWriter) Header() http.Header",
+    "funcbody": "func (r *responseWriter) Header() http.Header {\n\tif r.written {\n\t\treturn r.responseWriter.Header()\n\t}\n\treturn r.headers\n}",
+    "funcname": "Header"
+}

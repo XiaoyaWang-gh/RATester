@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 272,
+    "focalfunc": "func (c *ConfigContainer) DIY(key string) (v interface{}, err error)",
+    "funcbody": "func (c *ConfigContainer) DIY(key string) (v interface{}, err error) {\n\tif v, ok := c.data[key]; ok {\n\t\treturn v, nil\n\t}\n\treturn nil, errors.New(\"not exist key\")\n}",
+    "funcname": "DIY"
+}

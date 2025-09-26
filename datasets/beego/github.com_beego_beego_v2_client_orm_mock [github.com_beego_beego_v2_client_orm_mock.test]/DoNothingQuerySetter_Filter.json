@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 76,
+    "focalfunc": "func (d *DoNothingQuerySetter) Filter(s string, i ...interface{}) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) Filter(s string, i ...interface{}) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "Filter"
+}

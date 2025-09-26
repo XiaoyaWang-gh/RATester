@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 93,
+    "focalfunc": "func (pder *MemProvider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error",
+    "funcbody": "func (pder *MemProvider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error {\n\tpder.maxlifetime = maxlifetime\n\tpder.savePath = savePath\n\treturn nil\n}",
+    "funcname": "SessionInit"
+}

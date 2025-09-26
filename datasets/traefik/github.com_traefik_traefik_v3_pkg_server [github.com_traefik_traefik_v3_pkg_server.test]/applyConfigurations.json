@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/configurationwatcher.go",
+    "lineno": 148,
+    "focalfunc": "func (c *ConfigurationWatcher) applyConfigurations(ctx context.Context)",
+    "funcbody": "func (c *ConfigurationWatcher) applyConfigurations(ctx context.Context) {\n\tvar lastConfigurations dynamic.Configurations\n\tfor {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\t\tcase newConfigs, ok := <-c.newConfigs:\n\t\t\tif !ok {\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\tif _, ok := newConfigs[c.requiredProvider]; c.requiredProvider != \"\" && !ok {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tif reflect.DeepEqual(newConfigs, lastConfigurations) {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tconf := mergeConfiguration(newConfigs.DeepCopy(), c.defaultEntryPoints)\n\t\t\tconf = applyModel(conf)\n\n\t\t\tfor _, listener := range c.configurationListeners {\n\t\t\t\tlistener(conf)\n\t\t\t}\n\n\t\t\tlastConfigurations = newConfigs\n\t\t}\n\t}\n}",
+    "funcname": "applyConfigurations"
+}

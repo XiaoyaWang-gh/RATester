@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 687,
+    "focalfunc": "func NewMapSorter(m map[string]Tasker) *MapSorter",
+    "funcbody": "func NewMapSorter(m map[string]Tasker) *MapSorter {\n\tms := &MapSorter{\n\t\tKeys:\tmake([]string, 0, len(m)),\n\t\tVals:\tmake([]Tasker, 0, len(m)),\n\t}\n\tfor k, v := range m {\n\t\tms.Keys = append(ms.Keys, k)\n\t\tms.Vals = append(ms.Vals, v)\n\t}\n\treturn ms\n}",
+    "funcname": "NewMapSorter"
+}

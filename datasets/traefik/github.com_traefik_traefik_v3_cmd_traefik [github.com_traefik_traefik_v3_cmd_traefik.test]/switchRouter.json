@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 420,
+    "focalfunc": "func switchRouter(routerFactory *server.RouterFactory, serverEntryPointsTCP server.TCPEntryPoints, serverEntryPointsUDP server.UDPEntryPoints) func(conf dynamic.Configuration)",
+    "funcbody": "func switchRouter(routerFactory *server.RouterFactory, serverEntryPointsTCP server.TCPEntryPoints, serverEntryPointsUDP server.UDPEntryPoints) func(conf dynamic.Configuration) {\n\treturn func(conf dynamic.Configuration) {\n\t\trtConf := runtime.NewConfig(conf)\n\n\t\trouters, udpRouters := routerFactory.CreateRouters(rtConf)\n\n\t\tserverEntryPointsTCP.Switch(routers)\n\t\tserverEntryPointsUDP.Switch(udpRouters)\n\t}\n}",
+    "funcname": "switchRouter"
+}

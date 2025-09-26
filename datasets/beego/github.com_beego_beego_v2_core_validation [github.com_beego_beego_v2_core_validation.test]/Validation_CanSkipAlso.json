@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 465,
+    "focalfunc": "func (v *Validation) CanSkipAlso(skipFunc string)",
+    "funcbody": "func (v *Validation) CanSkipAlso(skipFunc string) {\n\tif _, ok := CanSkipFuncs[skipFunc]; !ok {\n\t\tCanSkipFuncs[skipFunc] = struct{}{}\n\t}\n}",
+    "funcname": "CanSkipAlso"
+}

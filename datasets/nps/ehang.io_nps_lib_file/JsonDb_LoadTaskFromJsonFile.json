@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 40,
+    "focalfunc": "func (s *JsonDb) LoadTaskFromJsonFile()",
+    "funcbody": "func (s *JsonDb) LoadTaskFromJsonFile() {\n\tloadSyncMapFromFile(s.TaskFilePath, func(v string) {\n\t\tvar err error\n\t\tpost := new(Tunnel)\n\t\tif json.Unmarshal([]byte(v), &post) != nil {\n\t\t\treturn\n\t\t}\n\t\tif post.Client, err = s.GetClient(post.Client.Id); err != nil {\n\t\t\treturn\n\t\t}\n\t\ts.Tasks.Store(post.Id, post)\n\t\tif post.Id > int(s.TaskIncreaseId) {\n\t\t\ts.TaskIncreaseId = int32(post.Id)\n\t\t}\n\t})\n}",
+    "funcname": "LoadTaskFromJsonFile"
+}

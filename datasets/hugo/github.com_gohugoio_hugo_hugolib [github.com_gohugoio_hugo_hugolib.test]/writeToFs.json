@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 825,
+    "focalfunc": "func (s *IntegrationTestBuilder) writeToFs(fs afero.Fs, filename, content string)",
+    "funcbody": "func (s *IntegrationTestBuilder) writeToFs(fs afero.Fs, filename, content string) {\n\ts.Helper()\n\tif err := afero.WriteFile(fs, filepath.FromSlash(filename), []byte(content), 0o755); err != nil {\n\t\ts.Fatalf(\"Failed to write file: %s\", err)\n\t}\n}",
+    "funcname": "writeToFs"
+}

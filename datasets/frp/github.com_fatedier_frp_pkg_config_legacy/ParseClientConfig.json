@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/parse.go",
+    "lineno": 24,
+    "focalfunc": "func ParseClientConfig(filePath string) (\n\tcfg ClientCommonConf,\n\tproxyCfgs map[string]ProxyConf,\n\tvisitorCfgs map[string]VisitorConf,\n\terr error,\n)",
+    "funcbody": "func ParseClientConfig(filePath string) (\n\tcfg ClientCommonConf,\n\tproxyCfgs map[string]ProxyConf,\n\tvisitorCfgs map[string]VisitorConf,\n\terr error,\n) {\n\tvar content []byte\n\tcontent, err = GetRenderedConfFromFile(filePath)\n\tif err != nil {\n\t\treturn\n\t}\n\tconfigBuffer := bytes.NewBuffer(nil)\n\tconfigBuffer.Write(content)\n\n\tcfg, err = UnmarshalClientConfFromIni(content)\n\tif err != nil {\n\t\treturn\n\t}\n\tif err = cfg.Validate(); err != nil {\n\t\terr = fmt.Errorf(\"parse config error: %v\", err)\n\t\treturn\n\t}\n\n\t// Aggregate proxy configs from include files.\n\tvar buf []byte\n\tbuf, err = getIncludeContents(cfg.IncludeConfigFiles)\n\tif err != nil {\n\t\terr = fmt.Errorf(\"getIncludeContents error: %v\", err)\n\t\treturn\n\t}\n\tconfigBuffer.WriteString(\"\\n\")\n\tconfigBuffer.Write(buf)\n\n\tproxyCfgs, visitorCfgs, err = LoadAllProxyConfsFromIni(cfg.User, configBuffer.Bytes(), cfg.Start)\n\tif err != nil {\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "ParseClientConfig"
+}

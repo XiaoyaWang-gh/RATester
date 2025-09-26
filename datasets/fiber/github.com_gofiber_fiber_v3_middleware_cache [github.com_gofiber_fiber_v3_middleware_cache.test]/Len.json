@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 29,
+    "focalfunc": "func (h indexedHeap) Len() int",
+    "funcbody": "func (h indexedHeap) Len() int {\n\treturn len(h.entries)\n}",
+    "funcname": "Len"
+}

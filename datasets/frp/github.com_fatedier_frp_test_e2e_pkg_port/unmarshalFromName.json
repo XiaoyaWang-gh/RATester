@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/util.go",
+    "lineno": 21,
+    "focalfunc": "func unmarshalFromName(name string) (*nameBuilder, error)",
+    "funcbody": "func unmarshalFromName(name string) (*nameBuilder, error) {\n\tvar builder nameBuilder\n\tarrs := strings.Split(name, NameDelimiter)\n\tswitch len(arrs) {\n\tcase 2:\n\t\tbuilder.name = arrs[1]\n\tcase 4:\n\t\tbuilder.name = arrs[1]\n\t\tfromPort, err := strconv.Atoi(arrs[2])\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error range port from\")\n\t\t}\n\t\tbuilder.rangePortFrom = fromPort\n\n\t\ttoPort, err := strconv.Atoi(arrs[3])\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error range port to\")\n\t\t}\n\t\tbuilder.rangePortTo = toPort\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"error port name format\")\n\t}\n\treturn &builder, nil\n}",
+    "funcname": "unmarshalFromName"
+}

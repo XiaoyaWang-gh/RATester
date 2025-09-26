@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 65,
+    "focalfunc": "func FromContext(ctx context.Context) (Capture, error)",
+    "funcbody": "func FromContext(ctx context.Context) (Capture, error) {\n\tc := ctx.Value(capturedData)\n\tif c == nil {\n\t\treturn Capture{}, errors.New(\"value not found in context\")\n\t}\n\tcapt, ok := c.(*Capture)\n\tif !ok {\n\t\treturn Capture{}, errors.New(\"value stored in context is not a *Capture\")\n\t}\n\treturn *capt, nil\n}",
+    "funcname": "FromContext"
+}

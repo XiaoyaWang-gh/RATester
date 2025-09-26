@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 390,
+    "focalfunc": "func SkipIfShortAndSlow(t testing.TB)",
+    "funcbody": "func SkipIfShortAndSlow(t testing.TB) {\n\tif testing.Short() && CPUIsSlow() {\n\t\tt.Helper()\n\t\tt.Skipf(\"skipping test in -short mode on %s\", runtime.GOARCH)\n\t}\n}",
+    "funcname": "SkipIfShortAndSlow"
+}

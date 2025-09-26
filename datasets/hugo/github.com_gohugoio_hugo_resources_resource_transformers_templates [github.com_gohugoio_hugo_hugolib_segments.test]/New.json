@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/templates/execute_as_template.go",
+    "lineno": 36,
+    "focalfunc": "func New(rs *resources.Spec, t tpl.TemplatesProvider) *Client",
+    "funcbody": "func New(rs *resources.Spec, t tpl.TemplatesProvider) *Client {\n\tif rs == nil {\n\t\tpanic(\"must provide a resource Spec\")\n\t}\n\tif t == nil {\n\t\tpanic(\"must provide a template provider\")\n\t}\n\treturn &Client{rs: rs, t: t}\n}",
+    "funcname": "New"
+}

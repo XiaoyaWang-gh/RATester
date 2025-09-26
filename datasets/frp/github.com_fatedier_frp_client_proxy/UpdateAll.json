@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_manager.go",
+    "lineno": 132,
+    "focalfunc": "func (pm *Manager) UpdateAll(proxyCfgs []v1.ProxyConfigurer)",
+    "funcbody": "func (pm *Manager) UpdateAll(proxyCfgs []v1.ProxyConfigurer) {\n\txl := xlog.FromContextSafe(pm.ctx)\n\tproxyCfgsMap := lo.KeyBy(proxyCfgs, func(c v1.ProxyConfigurer) string {\n\t\treturn c.GetBaseConfig().Name\n\t})\n\tpm.mu.Lock()\n\tdefer pm.mu.Unlock()\n\n\tdelPxyNames := make([]string, 0)\n\tfor name, pxy := range pm.proxies {\n\t\tdel := false\n\t\tcfg, ok := proxyCfgsMap[name]\n\t\tif !ok || !reflect.DeepEqual(pxy.Cfg, cfg) {\n\t\t\tdel = true\n\t\t}\n\n\t\tif del {\n\t\t\tdelPxyNames = append(delPxyNames, name)\n\t\t\tdelete(pm.proxies, name)\n\t\t\tpxy.Stop()\n\t\t}\n\t}\n\tif len(delPxyNames) > 0 {\n\t\txl.Infof(\"proxy removed: %s\", delPxyNames)\n\t}\n\n\taddPxyNames := make([]string, 0)\n\tfor _, cfg := range proxyCfgs {\n\t\tname := cfg.GetBaseConfig().Name\n\t\tif _, ok := pm.proxies[name]; !ok {\n\t\t\tpxy := NewWrapper(pm.ctx, cfg, pm.clientCfg, pm.HandleEvent, pm.msgTransporter)\n\t\t\tif pm.inWorkConnCallback != nil {\n\t\t\t\tpxy.SetInWorkConnCallback(pm.inWorkConnCallback)\n\t\t\t}\n\t\t\tpm.proxies[name] = pxy\n\t\t\taddPxyNames = append(addPxyNames, name)\n\n\t\t\tpxy.Start()\n\t\t}\n\t}\n\tif len(addPxyNames) > 0 {\n\t\txl.Infof(\"proxy added: %s\", addPxyNames)\n\t}\n}",
+    "funcname": "UpdateAll"
+}

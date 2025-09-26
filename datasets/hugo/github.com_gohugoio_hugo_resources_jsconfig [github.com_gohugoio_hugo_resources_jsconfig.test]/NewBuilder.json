@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/jsconfig/jsconfig.go",
+    "lineno": 30,
+    "focalfunc": "func NewBuilder() *Builder",
+    "funcbody": "func NewBuilder() *Builder {\n\treturn &Builder{sourceRoots: make(map[string]bool)}\n}",
+    "funcname": "NewBuilder"
+}

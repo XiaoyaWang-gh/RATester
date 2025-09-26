@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 762,
+    "focalfunc": "func (c *Controller) IsAjax() bool",
+    "funcbody": "func (c *Controller) IsAjax() bool {\n\treturn c.Ctx.Input.IsAjax()\n}",
+    "funcname": "IsAjax"
+}

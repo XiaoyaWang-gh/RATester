@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 398,
+    "focalfunc": "func SkipIfOptimizationOff(t testing.TB)",
+    "funcbody": "func SkipIfOptimizationOff(t testing.TB) {\n\tif OptimizationOff() {\n\t\tt.Helper()\n\t\tt.Skip(\"skipping test with optimization disabled\")\n\t}\n}",
+    "funcname": "SkipIfOptimizationOff"
+}

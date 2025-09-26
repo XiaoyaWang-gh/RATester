@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 222,
+    "focalfunc": "func (p parserResult) Doc() any",
+    "funcbody": "func (p parserResult) Doc() any {\n\treturn p.doc\n}",
+    "funcname": "Doc"
+}

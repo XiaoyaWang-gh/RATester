@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 225,
+    "focalfunc": "func (ctl *Control) Replaced(newCtl *Control)",
+    "funcbody": "func (ctl *Control) Replaced(newCtl *Control) {\n\txl := ctl.xl\n\txl.Infof(\"Replaced by client [%s]\", newCtl.runID)\n\tctl.runID = \"\"\n\tctl.conn.Close()\n}",
+    "funcname": "Replaced"
+}

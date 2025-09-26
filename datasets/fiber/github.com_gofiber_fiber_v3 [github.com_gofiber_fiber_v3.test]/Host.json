@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 688,
+    "focalfunc": "func (c *DefaultCtx) Host() string",
+    "funcbody": "func (c *DefaultCtx) Host() string {\n\tif c.IsProxyTrusted() {\n\t\tif host := c.Get(HeaderXForwardedHost); len(host) > 0 {\n\t\t\tcommaPos := strings.Index(host, \",\")\n\t\t\tif commaPos != -1 {\n\t\t\t\treturn host[:commaPos]\n\t\t\t}\n\t\t\treturn host\n\t\t}\n\t}\n\treturn c.app.getString(c.fasthttp.Request.URI().Host())\n}",
+    "funcname": "Host"
+}

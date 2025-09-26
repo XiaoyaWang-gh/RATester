@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/js/js.go",
+    "lineno": 46,
+    "focalfunc": "func (ns *Namespace) Build(args ...any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Build(args ...any) (resource.Resource, error) {\n\tvar (\n\t\tr\t\tresources.ResourceTransformer\n\t\tm\t\tmap[string]any\n\t\ttargetPath\tstring\n\t\terr\t\terror\n\t\tok\t\tbool\n\t)\n\n\tr, targetPath, ok = resourcehelpers.ResolveIfFirstArgIsString(args)\n\n\tif !ok {\n\t\tr, m, err = resourcehelpers.ResolveArgs(args)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tif targetPath != \"\" {\n\t\tm = map[string]any{\"targetPath\": targetPath}\n\t}\n\n\treturn ns.client.Process(r, m)\n}",
+    "funcname": "Build"
+}

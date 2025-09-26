@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 452,
+    "focalfunc": "func parseStartTag(s string) string",
+    "funcbody": "func parseStartTag(s string) string {\n\tspaceIndex := strings.IndexFunc(s, func(r rune) bool {\n\t\treturn unicode.IsSpace(r)\n\t})\n\n\tif spaceIndex == -1 {\n\t\ts = s[1 : len(s)-1]\n\t} else {\n\t\ts = s[1:spaceIndex]\n\t}\n\n\tif s[len(s)-1] == '/' {\n\n\t\ts = s[:len(s)-1]\n\t}\n\n\treturn s\n}",
+    "funcname": "parseStartTag"
+}

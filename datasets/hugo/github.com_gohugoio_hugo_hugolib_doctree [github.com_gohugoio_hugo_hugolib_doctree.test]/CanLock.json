@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 183,
+    "focalfunc": "func (t MutableTrees) CanLock() bool",
+    "funcbody": "func (t MutableTrees) CanLock() bool {\n\tfor _, tree := range t {\n\t\tif !tree.CanLock() {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "CanLock"
+}

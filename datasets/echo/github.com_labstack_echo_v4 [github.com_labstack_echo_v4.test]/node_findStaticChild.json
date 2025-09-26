@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 431,
+    "focalfunc": "func (n *node) findStaticChild(l byte) *node",
+    "funcbody": "func (n *node) findStaticChild(l byte) *node {\n\tfor _, c := range n.staticChildren {\n\t\tif c.label == l {\n\t\t\treturn c\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "findStaticChild"
+}

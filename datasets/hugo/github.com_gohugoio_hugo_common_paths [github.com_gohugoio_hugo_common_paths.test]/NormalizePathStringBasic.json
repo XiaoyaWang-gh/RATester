@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 41,
+    "focalfunc": "func NormalizePathStringBasic(s string) string",
+    "funcbody": "func NormalizePathStringBasic(s string) string {\n\n\ts = strings.ToLower(s)\n\n\ts = strings.ReplaceAll(s, \" \", \"-\")\n\n\treturn s\n}",
+    "funcname": "NormalizePathStringBasic"
+}

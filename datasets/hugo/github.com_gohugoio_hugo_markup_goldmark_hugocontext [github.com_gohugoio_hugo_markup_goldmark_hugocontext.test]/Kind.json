@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 87,
+    "focalfunc": "func (h *HugoContext) Kind() ast.NodeKind",
+    "funcbody": "func (h *HugoContext) Kind() ast.NodeKind {\n\treturn kindHugoContext\n}",
+    "funcname": "Kind"
+}

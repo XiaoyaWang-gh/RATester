@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 95,
+    "focalfunc": "func isGlobWithExtension(s string) bool",
+    "funcbody": "func isGlobWithExtension(s string) bool {\n\tpathParts := strings.Split(s, \"/\")\n\tlast := pathParts[len(pathParts)-1]\n\treturn strings.Count(last, \".\") > 0\n}",
+    "funcname": "isGlobWithExtension"
+}

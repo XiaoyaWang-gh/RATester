@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/counter.go",
+    "lineno": 39,
+    "focalfunc": "func (c *StandardCounter) Count() int32",
+    "funcbody": "func (c *StandardCounter) Count() int32 {\n\treturn atomic.LoadInt32(&c.count)\n}",
+    "funcname": "Count"
+}

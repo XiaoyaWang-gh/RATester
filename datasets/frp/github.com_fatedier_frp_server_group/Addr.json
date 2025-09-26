@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 219,
+    "focalfunc": "func (ln *TCPMuxGroupListener) Addr() net.Addr",
+    "funcbody": "func (ln *TCPMuxGroupListener) Addr() net.Addr {\n\treturn ln.addr\n}",
+    "funcname": "Addr"
+}

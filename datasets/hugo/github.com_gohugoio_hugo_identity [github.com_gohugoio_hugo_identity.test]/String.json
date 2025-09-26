@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 358,
+    "focalfunc": "func (im *identityManager) String() string",
+    "funcbody": "func (im *identityManager) String() string {\n\treturn fmt.Sprintf(\"IdentityManager(%s)\", im.name)\n}",
+    "funcname": "String"
+}

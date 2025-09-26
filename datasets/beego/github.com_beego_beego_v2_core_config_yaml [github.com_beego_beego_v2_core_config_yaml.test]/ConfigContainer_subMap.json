@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 117,
+    "focalfunc": "func (c *ConfigContainer) subMap(key string) (map[string]interface{}, error)",
+    "funcbody": "func (c *ConfigContainer) subMap(key string) (map[string]interface{}, error) {\n\ttmpData := c.data\n\tkeys := strings.Split(key, \".\")\n\tfor idx, k := range keys {\n\t\tif v, ok := tmpData[k]; ok {\n\t\t\tswitch val := v.(type) {\n\t\t\tcase map[string]interface{}:\n\t\t\t\ttmpData = val\n\t\t\t\tif idx == len(keys)-1 {\n\t\t\t\t\treturn tmpData, nil\n\t\t\t\t}\n\t\t\tdefault:\n\t\t\t\treturn nil, fmt.Errorf(\"the key is invalid: %s\", key)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn tmpData, nil\n}",
+    "funcname": "subMap"
+}

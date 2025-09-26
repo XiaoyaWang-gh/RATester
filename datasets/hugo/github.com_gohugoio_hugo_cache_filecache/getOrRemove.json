@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 329,
+    "focalfunc": "func (c *Cache) getOrRemove(id string) hugio.ReadSeekCloser",
+    "funcbody": "func (c *Cache) getOrRemove(id string) hugio.ReadSeekCloser {\n\tif c.maxAge == 0 {\n\n\t\treturn nil\n\t}\n\n\tif removed, err := c.removeIfExpired(id); err != nil || removed {\n\t\treturn nil\n\t}\n\n\tf, err := c.Fs.Open(id)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\treturn f\n}",
+    "funcname": "getOrRemove"
+}

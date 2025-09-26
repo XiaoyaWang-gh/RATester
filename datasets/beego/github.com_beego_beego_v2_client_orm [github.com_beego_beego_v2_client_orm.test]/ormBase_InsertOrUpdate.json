@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 262,
+    "focalfunc": "func (o *ormBase) InsertOrUpdate(md interface{}, colConflictAndArgs ...string) (int64, error)",
+    "funcbody": "func (o *ormBase) InsertOrUpdate(md interface{}, colConflictAndArgs ...string) (int64, error) {\n\treturn o.InsertOrUpdateWithCtx(context.Background(), md, colConflictAndArgs...)\n}",
+    "funcname": "InsertOrUpdate"
+}

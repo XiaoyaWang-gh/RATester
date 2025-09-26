@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 423,
+    "focalfunc": "func (input *BeegoInput) ParseFormOrMultiForm(maxMemory int64) error",
+    "funcbody": "func (input *BeegoInput) ParseFormOrMultiForm(maxMemory int64) error {\n\n\tif input.IsUpload() {\n\t\tif err := input.Context.Request.ParseMultipartForm(maxMemory); err != nil {\n\t\t\treturn errors.New(\"Error parsing request body:\" + err.Error())\n\t\t}\n\t} else if err := input.Context.Request.ParseForm(); err != nil {\n\t\treturn errors.New(\"Error parsing request body:\" + err.Error())\n\t}\n\treturn nil\n}",
+    "funcname": "ParseFormOrMultiForm"
+}

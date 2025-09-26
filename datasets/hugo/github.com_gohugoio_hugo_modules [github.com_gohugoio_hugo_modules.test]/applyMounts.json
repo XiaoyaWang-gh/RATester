@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 362,
+    "focalfunc": "func (c *collector) applyMounts(moduleImport Import, mod *moduleAdapter) error",
+    "funcbody": "func (c *collector) applyMounts(moduleImport Import, mod *moduleAdapter) error {\n\tif moduleImport.NoMounts {\n\t\tmod.mounts = nil\n\t\treturn nil\n\t}\n\n\tmounts := moduleImport.Mounts\n\n\tmodConfig := mod.Config()\n\n\tif len(mounts) == 0 {\n\n\t\tmounts = modConfig.Mounts\n\t}\n\n\tif !mod.projectMod && len(mounts) == 0 {\n\n\t\tfor _, componentFolder := range files.ComponentFolders {\n\t\t\tsourceDir := filepath.Join(mod.Dir(), componentFolder)\n\t\t\t_, err := c.fs.Stat(sourceDir)\n\t\t\tif err == nil {\n\t\t\t\tmounts = append(mounts, Mount{\n\t\t\t\t\tSource:\tcomponentFolder,\n\t\t\t\t\tTarget:\tcomponentFolder,\n\t\t\t\t})\n\t\t\t}\n\t\t}\n\t}\n\n\tvar err error\n\tmounts, err = c.normalizeMounts(mod, mounts)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tmounts, err = c.mountCommonJSConfig(mod, mounts)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tmod.mounts = mounts\n\treturn nil\n}",
+    "funcname": "applyMounts"
+}

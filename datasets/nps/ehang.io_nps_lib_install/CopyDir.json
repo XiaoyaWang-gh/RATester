@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 276,
+    "focalfunc": "func CopyDir(srcPath string, destPath string) error",
+    "funcbody": "func CopyDir(srcPath string, destPath string) error {\n\n\tif srcInfo, err := os.Stat(srcPath); err != nil {\n\t\tfmt.Println(err.Error())\n\t\treturn err\n\t} else {\n\t\tif !srcInfo.IsDir() {\n\t\t\te := errors.New(\"SrcPath is not the right directory!\")\n\t\t\treturn e\n\t\t}\n\t}\n\tif destInfo, err := os.Stat(destPath); err != nil {\n\t\treturn err\n\t} else {\n\t\tif !destInfo.IsDir() {\n\t\t\te := errors.New(\"DestInfo is not the right directory!\")\n\t\t\treturn e\n\t\t}\n\t}\n\terr := filepath.Walk(srcPath, func(path string, f os.FileInfo, err error) error {\n\t\tif f == nil {\n\t\t\treturn err\n\t\t}\n\t\tif !f.IsDir() {\n\t\t\tdestNewPath := strings.Replace(path, srcPath, destPath, -1)\n\t\t\tlog.Println(\"copy file ::\" + path + \" to \" + destNewPath)\n\t\t\tcopyFile(path, destNewPath)\n\t\t\tif !common.IsWindows() {\n\t\t\t\tchMod(destNewPath, 0766)\n\t\t\t}\n\t\t}\n\t\treturn nil\n\t})\n\treturn err\n}",
+    "funcname": "CopyDir"
+}

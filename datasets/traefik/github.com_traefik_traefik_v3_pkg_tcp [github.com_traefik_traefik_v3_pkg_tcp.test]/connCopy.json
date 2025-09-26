@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/proxy.go",
+    "lineno": 91,
+    "focalfunc": "func (p Proxy) connCopy(dst, src WriteCloser, errCh chan error)",
+    "funcbody": "func (p Proxy) connCopy(dst, src WriteCloser, errCh chan error) {\n\t_, err := io.Copy(dst, src)\n\terrCh <- err\n\n\terrClose := dst.CloseWrite()\n\tif errClose != nil {\n\n\t\tif !isSocketNotConnectedError(errClose) {\n\t\t\tlog.Debug().Err(errClose).Msg(\"Error while terminating TCP connection\")\n\t\t}\n\n\t\treturn\n\t}\n\n\tif p.dialer.TerminationDelay() >= 0 {\n\t\terr := dst.SetReadDeadline(time.Now().Add(p.dialer.TerminationDelay()))\n\t\tif err != nil {\n\t\t\tlog.Debug().Err(err).Msg(\"Error while setting TCP connection deadline\")\n\t\t}\n\t}\n}",
+    "funcname": "connCopy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/proxy.go",
+    "lineno": 78,
+    "focalfunc": "func NewProxyConfFromIni(prefix, name string, section *ini.Section) (ProxyConf, error)",
+    "funcbody": "func NewProxyConfFromIni(prefix, name string, section *ini.Section) (ProxyConf, error) {\n\n\tproxyType := ProxyType(section.Key(\"type\").String())\n\tif proxyType == \"\" {\n\t\tproxyType = ProxyTypeTCP\n\t}\n\n\tconf := DefaultProxyConf(proxyType)\n\tif conf == nil {\n\t\treturn nil, fmt.Errorf(\"invalid type [%s]\", proxyType)\n\t}\n\n\tif err := conf.UnmarshalFromIni(prefix, name, section); err != nil {\n\t\treturn nil, err\n\t}\n\treturn conf, nil\n}",
+    "funcname": "NewProxyConfFromIni"
+}

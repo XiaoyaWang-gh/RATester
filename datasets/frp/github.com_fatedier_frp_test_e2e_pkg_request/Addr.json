@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 84,
+    "focalfunc": "func (r *Request) Addr(addr string) *Request",
+    "funcbody": "func (r *Request) Addr(addr string) *Request {\n\tr.addr = addr\n\treturn r\n}",
+    "funcname": "Addr"
+}

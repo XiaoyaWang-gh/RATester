@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 202,
+    "focalfunc": "func (v *visitorHelperImpl) MsgTransporter() transport.MessageTransporter",
+    "funcbody": "func (v *visitorHelperImpl) MsgTransporter() transport.MessageTransporter {\n\treturn v.msgTransporter\n}",
+    "funcname": "MsgTransporter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/apiauth/apiauth.go",
+    "lineno": 133,
+    "focalfunc": "func Signature(appsecret, method string, params url.Values, RequestURL string) (result string)",
+    "funcbody": "func Signature(appsecret, method string, params url.Values, RequestURL string) (result string) {\n\tvar b bytes.Buffer\n\tkeys := make([]string, 0, len(params))\n\tpa := make(map[string]string)\n\tfor k, v := range params {\n\t\tpa[k] = v[0]\n\t\tkeys = append(keys, k)\n\t}\n\n\tsort.Strings(keys)\n\n\tfor _, key := range keys {\n\t\tif key == \"signature\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tval := pa[key]\n\t\tif key != \"\" && val != \"\" {\n\t\t\tb.WriteString(key)\n\t\t\tb.WriteString(val)\n\t\t}\n\t}\n\n\tstringToSign := fmt.Sprintf(\"%v\\n%v\\n%v\\n\", method, b.String(), RequestURL)\n\n\tsha256 := sha256.New\n\thash := hmac.New(sha256, []byte(appsecret))\n\thash.Write([]byte(stringToSign))\n\treturn base64.StdEncoding.EncodeToString(hash.Sum(nil))\n}",
+    "funcname": "Signature"
+}

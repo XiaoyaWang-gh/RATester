@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 61,
+    "focalfunc": "func NewFileCache() Cache",
+    "funcbody": "func NewFileCache() Cache {\n\n\treturn &FileCache{}\n}",
+    "funcname": "NewFileCache"
+}

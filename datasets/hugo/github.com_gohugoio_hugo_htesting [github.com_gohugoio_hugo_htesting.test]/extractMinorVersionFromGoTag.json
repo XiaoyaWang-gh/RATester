@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 137,
+    "focalfunc": "func extractMinorVersionFromGoTag(tag string) int",
+    "funcbody": "func extractMinorVersionFromGoTag(tag string) int {\n\n\tmatch := goMinorVersionRe.FindStringSubmatch(tag)\n\n\tif len(match) == 2 {\n\t\ti, err := strconv.Atoi(match[1])\n\t\tif err != nil {\n\t\t\treturn -1\n\t\t}\n\t\treturn i\n\t}\n\n\treturn -1\n}",
+    "funcname": "extractMinorVersionFromGoTag"
+}

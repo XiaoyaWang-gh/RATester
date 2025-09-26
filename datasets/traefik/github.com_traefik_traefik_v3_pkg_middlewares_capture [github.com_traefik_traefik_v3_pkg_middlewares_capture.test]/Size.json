@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 161,
+    "focalfunc": "func (crw *captureResponseWriter) Size() int64",
+    "funcbody": "func (crw *captureResponseWriter) Size() int64 {\n\treturn crw.size\n}",
+    "funcname": "Size"
+}

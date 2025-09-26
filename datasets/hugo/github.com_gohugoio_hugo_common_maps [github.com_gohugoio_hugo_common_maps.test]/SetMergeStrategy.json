@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 144,
+    "focalfunc": "func (p Params) SetMergeStrategy(s ParamsMergeStrategy)",
+    "funcbody": "func (p Params) SetMergeStrategy(s ParamsMergeStrategy) {\n\tswitch s {\n\tcase ParamsMergeStrategyDeep, ParamsMergeStrategyNone, ParamsMergeStrategyShallow:\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"invalid merge strategy %q\", s))\n\t}\n\tp[MergeStrategyKey] = s\n}",
+    "funcname": "SetMergeStrategy"
+}

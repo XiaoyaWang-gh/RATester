@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 326,
+    "focalfunc": "func sanitize(cert []byte) string",
+    "funcbody": "func sanitize(cert []byte) string {\n\treturn strings.NewReplacer(\n\t\t\"-----BEGIN CERTIFICATE-----\", \"\",\n\t\t\"-----END CERTIFICATE-----\", \"\",\n\t\t\"\\n\", \"\",\n\t).Replace(string(cert))\n}",
+    "funcname": "sanitize"
+}

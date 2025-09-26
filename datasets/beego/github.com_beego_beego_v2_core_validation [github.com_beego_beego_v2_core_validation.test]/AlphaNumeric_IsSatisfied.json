@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 473,
+    "focalfunc": "func (a AlphaNumeric) IsSatisfied(obj interface{}) bool",
+    "funcbody": "func (a AlphaNumeric) IsSatisfied(obj interface{}) bool {\n\tif str, ok := obj.(string); ok {\n\t\tfor _, v := range str {\n\t\t\tif ('Z' < v || v < 'A') && ('z' < v || v < 'a') && ('9' < v || v < '0') {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "IsSatisfied"
+}

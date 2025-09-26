@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 299,
+    "focalfunc": "func (s *state) walkIfOrWith(typ parse.NodeType, dot reflect.Value, pipe *parse.PipeNode, list, elseList *parse.ListNode)",
+    "funcbody": "func (s *state) walkIfOrWith(typ parse.NodeType, dot reflect.Value, pipe *parse.PipeNode, list, elseList *parse.ListNode) {\n\tdefer s.pop(s.mark())\n\tval := s.evalPipeline(dot, pipe)\n\ttruth, ok := isTrue(indirectInterface(val))\n\tif !ok {\n\t\ts.errorf(\"if/with can't use %v\", val)\n\t}\n\tif truth {\n\t\tif typ == parse.NodeWith {\n\t\t\ts.walk(val, list)\n\t\t} else {\n\t\t\ts.walk(dot, list)\n\t\t}\n\t} else if elseList != nil {\n\t\ts.walk(dot, elseList)\n\t}\n}",
+    "funcname": "walkIfOrWith"
+}

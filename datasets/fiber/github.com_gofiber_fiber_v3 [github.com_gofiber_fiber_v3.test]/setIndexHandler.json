@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1932,
+    "focalfunc": "func (c *DefaultCtx) setIndexHandler(handler int)",
+    "funcbody": "func (c *DefaultCtx) setIndexHandler(handler int) {\n\tc.indexHandler = handler\n}",
+    "funcname": "setIndexHandler"
+}

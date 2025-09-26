@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 296,
+    "focalfunc": "func (s *Conn) WriteClose() (int, error)",
+    "funcbody": "func (s *Conn) WriteClose() (int, error) {\n\treturn s.Write([]byte(common.RES_CLOSE))\n}",
+    "funcname": "WriteClose"
+}

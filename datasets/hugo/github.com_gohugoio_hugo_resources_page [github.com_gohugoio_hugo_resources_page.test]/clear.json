@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page.go",
+    "lineno": 38,
+    "focalfunc": "func Clear() error",
+    "funcbody": "func Clear() error {\n\tspc.clear()\n\treturn nil\n}",
+    "funcname": "Clear"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/datadog.go",
+    "lineno": 9,
+    "focalfunc": "func NewDatadogLogger(logger zerolog.Logger) *DatadogLogger",
+    "funcbody": "func NewDatadogLogger(logger zerolog.Logger) *DatadogLogger {\n\treturn &DatadogLogger{logger: logger}\n}",
+    "funcname": "NewDatadogLogger"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 298,
+    "focalfunc": "func CamelString(s string) string",
+    "funcbody": "func CamelString(s string) string {\n\tdata := make([]byte, 0, len(s))\n\tflag, num := true, len(s)-1\n\tfor i := 0; i <= num; i++ {\n\t\td := s[i]\n\t\tif d == '_' {\n\t\t\tflag = true\n\t\t\tcontinue\n\t\t} else if flag {\n\t\t\tif d >= 'a' && d <= 'z' {\n\t\t\t\td = d - 32\n\t\t\t}\n\t\t\tflag = false\n\t\t}\n\t\tdata = append(data, d)\n\t}\n\treturn string(data)\n}",
+    "funcname": "CamelString"
+}

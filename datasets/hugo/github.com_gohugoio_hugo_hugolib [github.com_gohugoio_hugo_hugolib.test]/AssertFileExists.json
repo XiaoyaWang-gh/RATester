@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 368,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertFileExists(filename string, b bool)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertFileExists(filename string, b bool) {\n\tchecker := qt.IsNil\n\tif !b {\n\t\tchecker = qt.IsNotNil\n\t}\n\t_, err := s.fs.WorkingDirReadOnly.Stat(filename)\n\tif !herrors.IsNotExist(err) {\n\t\ts.Assert(err, qt.IsNil)\n\t}\n\ts.Assert(err, checker)\n}",
+    "funcname": "AssertFileExists"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/transport.go",
+    "lineno": 24,
+    "focalfunc": "func getAddress(conn net.Conn) (string, error)",
+    "funcbody": "func getAddress(conn net.Conn) (string, error) {\n\tsysrawconn, f := conn.(syscall.Conn)\n\tif !f {\n\t\treturn \"\", nil\n\t}\n\trawConn, err := sysrawconn.SyscallConn()\n\tif err != nil {\n\t\treturn \"\", nil\n\t}\n\tvar ip string\n\tvar port uint16\n\terr = rawConn.Control(func(fd uintptr) {\n\t\taddr, err := syscall.GetsockoptIPv6Mreq(int(fd), syscall.IPPROTO_IP, SO_ORIGINAL_DST)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tip = net.IP(addr.Multiaddr[4:8]).String()\n\t\tport = uint16(addr.Multiaddr[2])<<8 + uint16(addr.Multiaddr[3])\n\t})\n\treturn ip + \":\" + strconv.Itoa(int(port)), nil\n}",
+    "funcname": "getAddress"
+}

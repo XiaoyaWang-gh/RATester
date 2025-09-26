@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 68,
+    "focalfunc": "func (ns *Namespace) FormatNumber(precision, number any) (string, error)",
+    "funcbody": "func (ns *Namespace) FormatNumber(precision, number any) (string, error) {\n\tp, n, err := ns.castPrecisionNumber(precision, number)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn ns.translator.FmtNumber(n, p), nil\n}",
+    "funcname": "FormatNumber"
+}

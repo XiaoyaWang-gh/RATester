@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 268,
+    "focalfunc": "func indirectType(typ reflect.Type) reflect.Type",
+    "funcbody": "func indirectType(typ reflect.Type) reflect.Type {\n\tif typ.Kind() == reflect.Ptr {\n\t\treturn typ.Elem()\n\t}\n\treturn typ\n}",
+    "funcname": "indirectType"
+}

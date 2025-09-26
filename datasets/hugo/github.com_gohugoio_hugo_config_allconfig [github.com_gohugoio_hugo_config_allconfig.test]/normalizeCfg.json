@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 223,
+    "focalfunc": "func (l configLoader) normalizeCfg(cfg config.Provider) error",
+    "funcbody": "func (l configLoader) normalizeCfg(cfg config.Provider) error {\n\tif b, ok := cfg.Get(\"minifyOutput\").(bool); ok && b {\n\t\tcfg.Set(\"minify.minifyOutput\", true)\n\t} else if b, ok := cfg.Get(\"minify\").(bool); ok && b {\n\t\tcfg.Set(\"minify\", maps.Params{\"minifyOutput\": true})\n\t}\n\n\treturn nil\n}",
+    "funcname": "normalizeCfg"
+}

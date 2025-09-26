@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/redirect.go",
+    "lineno": 59,
+    "focalfunc": "func HTTPSWWWRedirect() echo.MiddlewareFunc",
+    "funcbody": "func HTTPSWWWRedirect() echo.MiddlewareFunc {\n\treturn HTTPSWWWRedirectWithConfig(DefaultRedirectConfig)\n}",
+    "funcname": "HTTPSWWWRedirect"
+}

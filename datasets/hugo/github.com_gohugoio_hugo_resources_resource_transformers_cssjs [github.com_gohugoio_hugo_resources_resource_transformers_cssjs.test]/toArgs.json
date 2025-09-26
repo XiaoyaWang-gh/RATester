@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/tailwindcss.go",
+    "lineno": 69,
+    "focalfunc": "func (opts TailwindCSSOptions) toArgs() []any",
+    "funcbody": "func (opts TailwindCSSOptions) toArgs() []any {\n\tvar args []any\n\tif opts.Minify {\n\t\targs = append(args, \"--minify\")\n\t}\n\tif opts.Optimize {\n\t\targs = append(args, \"--optimize\")\n\t}\n\treturn args\n}",
+    "funcname": "toArgs"
+}

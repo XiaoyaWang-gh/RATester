@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 300,
+    "focalfunc": "func newOTLPCounterFrom(meter metric.Meter, name, desc string) *otelCounter",
+    "funcbody": "func newOTLPCounterFrom(meter metric.Meter, name, desc string) *otelCounter {\n\tc, _ := meter.Float64Counter(name,\n\t\tmetric.WithDescription(desc),\n\t\tmetric.WithUnit(\"1\"),\n\t)\n\n\treturn &otelCounter{\n\t\tip: c,\n\t}\n}",
+    "funcname": "newOTLPCounterFrom"
+}

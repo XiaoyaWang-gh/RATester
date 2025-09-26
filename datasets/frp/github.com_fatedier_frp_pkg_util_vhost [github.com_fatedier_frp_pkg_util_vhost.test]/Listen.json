@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 127,
+    "focalfunc": "func (v *Muxer) Listen(ctx context.Context, cfg *RouteConfig) (l *Listener, err error)",
+    "funcbody": "func (v *Muxer) Listen(ctx context.Context, cfg *RouteConfig) (l *Listener, err error) {\n\tl = &Listener{\n\t\tname:\t\t\tcfg.Domain,\n\t\tlocation:\t\tcfg.Location,\n\t\trouteByHTTPUser:\tcfg.RouteByHTTPUser,\n\t\trewriteHost:\t\tcfg.RewriteHost,\n\t\tusername:\t\tcfg.Username,\n\t\tpassword:\t\tcfg.Password,\n\t\tmux:\t\t\tv,\n\t\taccept:\t\t\tmake(chan net.Conn),\n\t\tctx:\t\t\tctx,\n\t}\n\terr = v.registryRouter.Add(cfg.Domain, cfg.Location, cfg.RouteByHTTPUser, l)\n\tif err != nil {\n\t\treturn\n\t}\n\treturn l, nil\n}",
+    "funcname": "Listen"
+}

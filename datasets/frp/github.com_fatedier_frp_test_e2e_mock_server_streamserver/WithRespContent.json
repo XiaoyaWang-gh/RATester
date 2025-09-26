@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 62,
+    "focalfunc": "func WithRespContent(content []byte) Option",
+    "funcbody": "func WithRespContent(content []byte) Option {\n\treturn func(s *Server) *Server {\n\t\ts.respContent = content\n\t\treturn s\n\t}\n}",
+    "funcname": "WithRespContent"
+}

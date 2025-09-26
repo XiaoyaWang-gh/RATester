@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 338,
+    "focalfunc": "func (p *pagePathBuilder) IsHtmlIndex() bool",
+    "funcbody": "func (p *pagePathBuilder) IsHtmlIndex() bool {\n\treturn p.Last() == \"index.html\"\n}",
+    "funcname": "IsHtmlIndex"
+}

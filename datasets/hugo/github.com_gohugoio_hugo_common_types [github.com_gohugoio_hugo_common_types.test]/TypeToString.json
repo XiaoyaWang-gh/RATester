@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/convert.go",
+    "lineno": 88,
+    "focalfunc": "func TypeToString(v any) (string, bool)",
+    "funcbody": "func TypeToString(v any) (string, bool) {\n\tswitch s := v.(type) {\n\tcase string:\n\t\treturn s, true\n\tcase template.HTML:\n\t\treturn string(s), true\n\tcase template.CSS:\n\t\treturn string(s), true\n\tcase template.HTMLAttr:\n\t\treturn string(s), true\n\tcase template.JS:\n\t\treturn string(s), true\n\tcase template.JSStr:\n\t\treturn string(s), true\n\tcase template.URL:\n\t\treturn string(s), true\n\tcase template.Srcset:\n\t\treturn string(s), true\n\t}\n\n\treturn \"\", false\n}",
+    "funcname": "TypeToString"
+}

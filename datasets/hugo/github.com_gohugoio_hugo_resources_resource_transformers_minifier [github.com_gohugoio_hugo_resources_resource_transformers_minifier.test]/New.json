@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/minifier/minify.go",
+    "lineno": 32,
+    "focalfunc": "func New(rs *resources.Spec) (*Client, error)",
+    "funcbody": "func New(rs *resources.Spec) (*Client, error) {\n\tm, err := minifiers.New(rs.MediaTypes(), rs.OutputFormats(), rs.Cfg)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &Client{rs: rs, m: m}, nil\n}",
+    "funcname": "New"
+}

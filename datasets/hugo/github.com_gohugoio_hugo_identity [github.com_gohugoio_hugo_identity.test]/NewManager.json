@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 41,
+    "focalfunc": "func NewManager(name string, opts ...ManagerOption) Manager",
+    "funcbody": "func NewManager(name string, opts ...ManagerOption) Manager {\n\tidm := &identityManager{\n\t\tIdentity:\tAnonymous,\n\t\tname:\t\tname,\n\t\tids:\t\tIdentities{},\n\t}\n\n\tfor _, o := range opts {\n\t\to(idm)\n\t}\n\n\treturn idm\n}",
+    "funcname": "NewManager"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 716,
+    "focalfunc": "func (p PathParam) DelParams(key ...string)",
+    "funcbody": "func (p PathParam) DelParams(key ...string) {\n\tfor _, v := range key {\n\t\tp.Del(v)\n\t}\n}",
+    "funcname": "DelParams"
+}

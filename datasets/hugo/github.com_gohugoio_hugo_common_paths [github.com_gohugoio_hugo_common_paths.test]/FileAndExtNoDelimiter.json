@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 149,
+    "focalfunc": "func FileAndExtNoDelimiter(in string) (string, string)",
+    "funcbody": "func FileAndExtNoDelimiter(in string) (string, string) {\n\tfile, ext := fileAndExt(in, fpb)\n\treturn file, strings.TrimPrefix(ext, \".\")\n}",
+    "funcname": "FileAndExtNoDelimiter"
+}

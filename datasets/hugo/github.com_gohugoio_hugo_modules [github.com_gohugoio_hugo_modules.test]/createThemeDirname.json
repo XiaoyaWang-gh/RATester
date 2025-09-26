@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 714,
+    "focalfunc": "func (c *Client) createThemeDirname(modulePath string, isProjectMod bool) (string, error)",
+    "funcbody": "func (c *Client) createThemeDirname(modulePath string, isProjectMod bool) (string, error) {\n\tinvalid := fmt.Errorf(\"invalid module path %q; must be relative to themesDir when defined outside of the project\", modulePath)\n\n\tmodulePath = filepath.Clean(modulePath)\n\tif filepath.IsAbs(modulePath) {\n\t\tif isProjectMod {\n\t\t\treturn modulePath, nil\n\t\t}\n\t\treturn \"\", invalid\n\t}\n\n\tmoduleDir := filepath.Join(c.ccfg.ThemesDir, modulePath)\n\tif !isProjectMod && !strings.HasPrefix(moduleDir, c.ccfg.ThemesDir) {\n\t\treturn \"\", invalid\n\t}\n\treturn moduleDir, nil\n}",
+    "funcname": "createThemeDirname"
+}

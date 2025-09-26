@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 125,
+    "focalfunc": "func (tf *templateFile) visit(paths string, f os.FileInfo, err error) error",
+    "funcbody": "func (tf *templateFile) visit(paths string, f os.FileInfo, err error) error {\n\tif f == nil {\n\t\treturn err\n\t}\n\tif f.IsDir() || (f.Mode()&os.ModeSymlink) > 0 {\n\t\treturn nil\n\t}\n\tif !HasTemplateExt(paths) {\n\t\treturn nil\n\t}\n\n\treplace := strings.NewReplacer(\"\\\\\", \"/\")\n\tfile := strings.TrimLeft(replace.Replace(paths[len(tf.root):]), \"/\")\n\tsubDir := filepath.Dir(file)\n\n\ttf.files[subDir] = append(tf.files[subDir], file)\n\treturn nil\n}",
+    "funcname": "visit"
+}

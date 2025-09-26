@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 158,
+    "focalfunc": "func (srv *Server) ServeTLS(ln net.Listener) error",
+    "funcbody": "func (srv *Server) ServeTLS(ln net.Listener) error {\n\tif srv.isChild {\n\t\tprocess, err := os.FindProcess(os.Getppid())\n\t\tif err != nil {\n\t\t\tlog.Println(err)\n\t\t\treturn err\n\t\t}\n\t\terr = process.Signal(syscall.SIGTERM)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tgo srv.handleSignals()\n\treturn srv.internalServe(ln)\n}",
+    "funcname": "ServeTLS"
+}

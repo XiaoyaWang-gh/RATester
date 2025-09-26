@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 259,
+    "focalfunc": "func keepMiddleware(name string, item *runtime.MiddlewareInfo, criterion *searchCriterion) bool",
+    "funcbody": "func keepMiddleware(name string, item *runtime.MiddlewareInfo, criterion *searchCriterion) bool {\n\tif criterion == nil {\n\t\treturn true\n\t}\n\n\treturn criterion.withStatus(item.Status) && criterion.searchIn(name)\n}",
+    "funcname": "keepMiddleware"
+}

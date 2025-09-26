@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 611,
+    "focalfunc": "func tError(c context, s []byte) (context, int)",
+    "funcbody": "func tError(c context, s []byte) (context, int) {\n\treturn c, len(s)\n}",
+    "funcname": "tError"
+}

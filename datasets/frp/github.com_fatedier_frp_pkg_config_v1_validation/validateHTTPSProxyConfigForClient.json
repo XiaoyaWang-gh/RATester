@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 152,
+    "focalfunc": "func validateHTTPSProxyConfigForClient(c *v1.HTTPSProxyConfig) error",
+    "funcbody": "func validateHTTPSProxyConfigForClient(c *v1.HTTPSProxyConfig) error {\n\treturn validateDomainConfigForClient(&c.DomainConfig)\n}",
+    "funcname": "validateHTTPSProxyConfigForClient"
+}

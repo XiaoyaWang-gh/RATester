@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 303,
+    "focalfunc": "func (s *Session) decodeSessionData(rawData []byte) error",
+    "funcbody": "func (s *Session) decodeSessionData(rawData []byte) error {\n\t_, _ = s.byteBuffer.Write(rawData)\n\tencCache := gob.NewDecoder(s.byteBuffer)\n\tif err := encCache.Decode(&s.data.Data); err != nil {\n\t\treturn fmt.Errorf(\"failed to decode session data: %w\", err)\n\t}\n\treturn nil\n}",
+    "funcname": "decodeSessionData"
+}

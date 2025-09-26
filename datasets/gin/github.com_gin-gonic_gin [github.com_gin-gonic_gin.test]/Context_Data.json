@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1078,
+    "focalfunc": "func (c *Context) Data(code int, contentType string, data []byte)",
+    "funcbody": "func (c *Context) Data(code int, contentType string, data []byte) {\n\tc.Render(code, render.Data{\n\t\tContentType:\tcontentType,\n\t\tData:\t\tdata,\n\t})\n}",
+    "funcname": "Data"
+}

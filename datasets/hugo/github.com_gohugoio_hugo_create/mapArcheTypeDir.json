@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/content.go",
+    "lineno": 289,
+    "focalfunc": "func (b *contentBuilder) mapArcheTypeDir() error",
+    "funcbody": "func (b *contentBuilder) mapArcheTypeDir() error {\n\tvar m archetypeMap\n\n\tseen := map[hstrings.Tuple]bool{}\n\n\twalkFn := func(path string, fim hugofs.FileMetaInfo) error {\n\t\tif fim.IsDir() {\n\t\t\treturn nil\n\t\t}\n\n\t\tpi := fim.Meta().PathInfo\n\n\t\tif pi.IsContent() {\n\t\t\tpathLang := hstrings.Tuple{First: pi.PathNoIdentifier(), Second: fim.Meta().Lang}\n\t\t\tif seen[pathLang] {\n\n\t\t\t\treturn fmt.Errorf(\"duplicate content file found in archetype folder: %q; having both e.g. %s.md and %s.html is ambigous\", path, pi.BaseNameNoIdentifier(), pi.BaseNameNoIdentifier())\n\t\t\t}\n\t\t\tseen[pathLang] = true\n\t\t\tm.contentFiles = append(m.contentFiles, fim)\n\t\t\tif !m.siteUsed {\n\t\t\t\tvar err error\n\t\t\t\tm.siteUsed, err = b.usesSiteVar(fim)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn nil\n\t\t}\n\n\t\tm.otherFiles = append(m.otherFiles, fim)\n\n\t\treturn nil\n\t}\n\n\twalkCfg := hugofs.WalkwayConfig{\n\t\tWalkFn:\twalkFn,\n\t\tFs:\tb.archeTypeFs,\n\t\tRoot:\tfilepath.FromSlash(b.archetypeFi.Meta().PathInfo.Path()),\n\t}\n\n\tw := hugofs.NewWalkway(walkCfg)\n\n\tif err := w.Walk(); err != nil {\n\t\treturn fmt.Errorf(\"failed to walk archetype dir %q: %w\", b.archetypeFi.Meta().Filename, err)\n\t}\n\n\tb.dirMap = m\n\n\treturn nil\n}",
+    "funcname": "mapArcheTypeDir"
+}

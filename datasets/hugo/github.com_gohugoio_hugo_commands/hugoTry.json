@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 1012,
+    "focalfunc": "func (c *hugoBuilder) hugoTry() *hugolib.HugoSites",
+    "funcbody": "func (c *hugoBuilder) hugoTry() *hugolib.HugoSites {\n\tvar h *hugolib.HugoSites\n\tc.withConf(func(conf *commonConfig) {\n\t\th, _ = c.r.HugFromConfig(conf)\n\t})\n\treturn h\n}",
+    "funcname": "hugoTry"
+}

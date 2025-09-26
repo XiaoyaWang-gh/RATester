@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 816,
+    "focalfunc": "func (t *Tree) popVars(n int)",
+    "funcbody": "func (t *Tree) popVars(n int) {\n\tt.vars = t.vars[:n]\n}",
+    "funcname": "popVars"
+}

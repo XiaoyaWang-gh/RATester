@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/builder.go",
+    "lineno": 131,
+    "focalfunc": "func newMiddlewareBuilder(ctx context.Context, goPath string, manifest *Manifest, moduleName string, settings Settings) (middlewareBuilder, error)",
+    "funcbody": "func newMiddlewareBuilder(ctx context.Context, goPath string, manifest *Manifest, moduleName string, settings Settings) (middlewareBuilder, error) {\n\tswitch manifest.Runtime {\n\tcase runtimeWasm:\n\t\twasmPath, err := getWasmPath(manifest)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"wasm path: %w\", err)\n\t\t}\n\n\t\treturn newWasmMiddlewareBuilder(goPath, moduleName, wasmPath, settings)\n\n\tcase runtimeYaegi, \"\":\n\t\ti, err := newInterpreter(ctx, goPath, manifest.Import)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to create Yaegi interpreter: %w\", err)\n\t\t}\n\n\t\treturn newYaegiMiddlewareBuilder(i, manifest.BasePkg, manifest.Import)\n\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"unknown plugin runtime: %s\", manifest.Runtime)\n\t}\n}",
+    "funcname": "newMiddlewareBuilder"
+}

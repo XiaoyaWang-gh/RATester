@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/provider/provider.go",
+    "lineno": 32,
+    "focalfunc": "func GetQualifiedName(ctx context.Context, elementName string) string",
+    "funcbody": "func GetQualifiedName(ctx context.Context, elementName string) string {\n\tparts := strings.Split(elementName, \"@\")\n\tif len(parts) == 1 {\n\t\tif providerName, ok := ctx.Value(key).(string); ok {\n\t\t\treturn MakeQualifiedName(providerName, parts[0])\n\t\t}\n\t}\n\treturn elementName\n}",
+    "funcname": "GetQualifiedName"
+}

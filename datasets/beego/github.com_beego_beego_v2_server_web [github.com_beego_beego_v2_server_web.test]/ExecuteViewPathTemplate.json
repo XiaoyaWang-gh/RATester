@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 56,
+    "focalfunc": "func ExecuteViewPathTemplate(wr io.Writer, name string, viewPath string, data interface{}) error",
+    "funcbody": "func ExecuteViewPathTemplate(wr io.Writer, name string, viewPath string, data interface{}) error {\n\tif BConfig.RunMode == DEV {\n\t\ttemplatesLock.RLock()\n\t\tdefer templatesLock.RUnlock()\n\t}\n\tif beeTemplates, ok := beeViewPathTemplates[viewPath]; ok {\n\t\tif t, ok := beeTemplates[name]; ok {\n\t\t\tvar err error\n\t\t\tif t.Lookup(name) != nil {\n\t\t\t\terr = t.ExecuteTemplate(wr, name, data)\n\t\t\t} else {\n\t\t\t\terr = t.Execute(wr, data)\n\t\t\t}\n\t\t\tif err != nil {\n\t\t\t\tlogs.Trace(\"template Execute err:\", err)\n\t\t\t}\n\t\t\treturn err\n\t\t}\n\t\tpanic(\"can't find templatefile in the path:\" + viewPath + \"/\" + name)\n\t}\n\tpanic(\"Unknown view path:\" + viewPath)\n}",
+    "funcname": "ExecuteViewPathTemplate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 835,
+    "focalfunc": "func pathVersion(m Module) string",
+    "funcbody": "func pathVersion(m Module) string {\n\tversionStr := m.Version()\n\tif m.Vendor() {\n\t\tversionStr += \"+vendor\"\n\t}\n\tif versionStr == \"\" {\n\t\treturn m.Path()\n\t}\n\treturn fmt.Sprintf(\"%s@%s\", m.Path(), versionStr)\n}",
+    "funcname": "pathVersion"
+}

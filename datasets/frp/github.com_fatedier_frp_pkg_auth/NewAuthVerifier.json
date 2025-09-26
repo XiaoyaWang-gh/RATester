@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/auth.go",
+    "lineno": 48,
+    "focalfunc": "func NewAuthVerifier(cfg v1.AuthServerConfig) (authVerifier Verifier)",
+    "funcbody": "func NewAuthVerifier(cfg v1.AuthServerConfig) (authVerifier Verifier) {\n\tswitch cfg.Method {\n\tcase v1.AuthMethodToken:\n\t\tauthVerifier = NewTokenAuth(cfg.AdditionalScopes, cfg.Token)\n\tcase v1.AuthMethodOIDC:\n\t\tauthVerifier = NewOidcAuthVerifier(cfg.AdditionalScopes, cfg.OIDC)\n\t}\n\treturn authVerifier\n}",
+    "funcname": "NewAuthVerifier"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 35,
+    "focalfunc": "func NewHTTPRequest() *request.Request",
+    "funcbody": "func NewHTTPRequest() *request.Request {\n\treturn request.New().HTTP().HTTPParams(\"GET\", \"\", \"/\", nil)\n}",
+    "funcname": "NewHTTPRequest"
+}

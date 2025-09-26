@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 117,
+    "focalfunc": "func (scp *ShortcodeWithPage) Ref(args map[string]any) (string, error)",
+    "funcbody": "func (scp *ShortcodeWithPage) Ref(args map[string]any) (string, error) {\n\treturn scp.Page.RefFrom(args, scp)\n}",
+    "funcname": "Ref"
+}

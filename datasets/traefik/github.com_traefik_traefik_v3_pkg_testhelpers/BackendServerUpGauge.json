@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/metrics.go",
+    "lineno": 50,
+    "focalfunc": "func (m *CollectingHealthCheckMetrics) BackendServerUpGauge() metrics.Gauge",
+    "funcbody": "func (m *CollectingHealthCheckMetrics) BackendServerUpGauge() metrics.Gauge {\n\treturn m.Gauge\n}",
+    "funcname": "BackendServerUpGauge"
+}

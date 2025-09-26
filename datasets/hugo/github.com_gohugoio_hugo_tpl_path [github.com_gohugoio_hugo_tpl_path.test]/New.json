@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/path/path.go",
+    "lineno": 28,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\treturn &Namespace{\n\t\tdeps: deps,\n\t}\n}",
+    "funcname": "New"
+}

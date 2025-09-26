@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 335,
+    "focalfunc": "func clientStatus(code int) (codes.Code, string)",
+    "funcbody": "func clientStatus(code int) (codes.Code, string) {\n\tif code < 100 || code >= 600 {\n\t\treturn codes.Error, fmt.Sprintf(\"Invalid HTTP status code %d\", code)\n\t}\n\tif code >= 400 {\n\t\treturn codes.Error, \"\"\n\t}\n\treturn codes.Unset, \"\"\n}",
+    "funcname": "clientStatus"
+}

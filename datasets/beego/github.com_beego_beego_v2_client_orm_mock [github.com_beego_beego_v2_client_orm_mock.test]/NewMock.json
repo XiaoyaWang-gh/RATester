@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/condition.go",
+    "lineno": 29,
+    "focalfunc": "func NewMock(cond Condition, resp []interface{}, cb func(inv *orm.Invocation)) *Mock",
+    "funcbody": "func NewMock(cond Condition, resp []interface{}, cb func(inv *orm.Invocation)) *Mock {\n\treturn &Mock{\n\t\tcond:\tcond,\n\t\tresp:\tresp,\n\t\tcb:\tcb,\n\t}\n}",
+    "funcname": "NewMock"
+}

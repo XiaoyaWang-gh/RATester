@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/response_modifier.go",
+    "lineno": 78,
+    "focalfunc": "func (r *ResponseModifier) Header() http.Header",
+    "funcbody": "func (r *ResponseModifier) Header() http.Header {\n\treturn r.rw.Header()\n}",
+    "funcname": "Header"
+}

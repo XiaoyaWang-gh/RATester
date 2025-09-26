@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 216,
+    "focalfunc": "func (group *RouterGroup) createStaticHandler(relativePath string, fs http.FileSystem) HandlerFunc",
+    "funcbody": "func (group *RouterGroup) createStaticHandler(relativePath string, fs http.FileSystem) HandlerFunc {\n\tabsolutePath := group.calculateAbsolutePath(relativePath)\n\tfileServer := http.StripPrefix(absolutePath, http.FileServer(fs))\n\n\treturn func(c *Context) {\n\t\tif _, noListing := fs.(*OnlyFilesFS); noListing {\n\t\t\tc.Writer.WriteHeader(http.StatusNotFound)\n\t\t}\n\n\t\tfile := c.Param(\"filepath\")\n\n\t\tf, err := fs.Open(file)\n\t\tif err != nil {\n\t\t\tc.Writer.WriteHeader(http.StatusNotFound)\n\t\t\tc.handlers = group.engine.noRoute\n\n\t\t\tc.index = -1\n\t\t\treturn\n\t\t}\n\t\tf.Close()\n\n\t\tfileServer.ServeHTTP(c.Writer, c.Request)\n\t}\n}",
+    "funcname": "createStaticHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/command.go",
+    "lineno": 59,
+    "focalfunc": "func (c commandRegistry) Get(moduleName string) moduleCommands",
+    "funcbody": "func (c commandRegistry) Get(moduleName string) moduleCommands {\n\tif mcs, ok := c[moduleName]; ok {\n\t\treturn mcs\n\t}\n\tres := make(moduleCommands)\n\tc[moduleName] = res\n\treturn res\n}",
+    "funcname": "Get"
+}

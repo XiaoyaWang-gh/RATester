@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 83,
+    "focalfunc": "func (ctx *Context) PushPid(pid uint64)",
+    "funcbody": "func (ctx *Context) PushPid(pid uint64) {\n\tctx.pids = append(ctx.pids, pid)\n}",
+    "funcname": "PushPid"
+}

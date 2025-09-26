@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 138,
+    "focalfunc": "func applyOptionsFromString(opts string, cfg *Config) error",
+    "funcbody": "func applyOptionsFromString(opts string, cfg *Config) error {\n\toptsm, err := parseHighlightOptions(opts)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn mapstructure.WeakDecode(optsm, cfg)\n}",
+    "funcname": "applyOptionsFromString"
+}

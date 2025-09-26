@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1125,
+    "focalfunc": "func (t *templateState) String() string",
+    "funcbody": "func (t *templateState) String() string {\n\treturn t.Name()\n}",
+    "funcname": "String"
+}

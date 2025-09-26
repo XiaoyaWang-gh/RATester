@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 224,
+    "focalfunc": "func (r *Request) Boundary() string",
+    "funcbody": "func (r *Request) Boundary() string {\n\treturn r.boundary\n}",
+    "funcname": "Boundary"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 615,
+    "focalfunc": "func (c *nopMarkup) Fragments(context.Context) *tableofcontents.Fragments",
+    "funcbody": "func (c *nopMarkup) Fragments(context.Context) *tableofcontents.Fragments {\n\treturn nil\n}",
+    "funcname": "Fragments"
+}

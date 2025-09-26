@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 76,
+    "focalfunc": "func (d *dbBase) collectValues(mi *models.ModelInfo, ind reflect.Value, cols []string, skipAuto bool, insert bool, names *[]string, tz *time.Location) (values []interface{}, autoFields []string, err error)",
+    "funcbody": "func (d *dbBase) collectValues(mi *models.ModelInfo, ind reflect.Value, cols []string, skipAuto bool, insert bool, names *[]string, tz *time.Location) (values []interface{}, autoFields []string, err error) {\n\tif names == nil {\n\t\tns := make([]string, 0, len(cols))\n\t\tnames = &ns\n\t}\n\tvalues = make([]interface{}, 0, len(cols))\n\n\tfor _, column := range cols {\n\t\tvar fi *models.FieldInfo\n\t\tif fi, _ = mi.Fields.GetByAny(column); fi != nil {\n\t\t\tcolumn = fi.Column\n\t\t} else {\n\t\t\tpanic(fmt.Errorf(\"wrong db field/column name `%s` for model `%s`\", column, mi.FullName))\n\t\t}\n\t\tif !fi.DBcol || fi.Auto && skipAuto {\n\t\t\tcontinue\n\t\t}\n\t\tvalue, err := d.collectFieldValue(mi, fi, ind, insert, tz)\n\t\tif err != nil {\n\t\t\treturn nil, nil, err\n\t\t}\n\n\t\tif insert && fi.Auto {\n\t\t\tif fi.FieldType&IsPositiveIntegerField > 0 {\n\t\t\t\tif vu, ok := value.(uint64); !ok || vu == 0 {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tif vu, ok := value.(int64); !ok || vu == 0 {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t}\n\t\t\tautoFields = append(autoFields, fi.Column)\n\t\t}\n\n\t\t*names, values = append(*names, column), append(values, value)\n\t}\n\n\treturn\n}",
+    "funcname": "collectValues"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/tasks/tasks.go",
+    "lineno": 124,
+    "focalfunc": "func (r *RunEvery) Has(name string) bool",
+    "funcbody": "func (r *RunEvery) Has(name string) bool {\n\tr.mu.Lock()\n\tdefer r.mu.Unlock()\n\t_, found := r.funcs[name]\n\treturn found\n}",
+    "funcname": "Has"
+}

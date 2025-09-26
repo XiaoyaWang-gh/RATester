@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 243,
+    "focalfunc": "func (c *Context) Error(err error) *Error",
+    "funcbody": "func (c *Context) Error(err error) *Error {\n\tif err == nil {\n\t\tpanic(\"err is nil\")\n\t}\n\n\tvar parsedError *Error\n\tok := errors.As(err, &parsedError)\n\tif !ok {\n\t\tparsedError = &Error{\n\t\t\tErr:\terr,\n\t\t\tType:\tErrorTypePrivate,\n\t\t}\n\t}\n\n\tc.Errors = append(c.Errors, parsedError)\n\treturn parsedError\n}",
+    "funcname": "Error"
+}

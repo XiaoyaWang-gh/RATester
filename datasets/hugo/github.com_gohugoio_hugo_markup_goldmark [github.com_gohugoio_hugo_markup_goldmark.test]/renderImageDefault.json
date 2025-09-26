@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 227,
+    "focalfunc": "func (r *hookedRenderer) renderImageDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderImageDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tif !entering {\n\t\treturn ast.WalkContinue, nil\n\t}\n\tn := node.(*ast.Image)\n\t_, _ = w.WriteString(\"<img src=\\\"\")\n\tif r.Unsafe || !html.IsDangerousURL(n.Destination) {\n\t\t_, _ = w.Write(util.EscapeHTML(util.URLEscape(n.Destination, true)))\n\t}\n\t_, _ = w.WriteString(`\" alt=\"`)\n\t_, _ = w.Write(nodeToHTMLText(n, source))\n\t_ = w.WriteByte('\"')\n\tif n.Title != nil {\n\t\t_, _ = w.WriteString(` title=\"`)\n\t\tr.Writer.Write(w, n.Title)\n\t\t_ = w.WriteByte('\"')\n\t}\n\tif n.Attributes() != nil {\n\t\tattrs := r.filterInternalAttributes(n.Attributes())\n\t\tattributes.RenderASTAttributes(w, attrs...)\n\t}\n\tif r.XHTML {\n\t\t_, _ = w.WriteString(\" />\")\n\t} else {\n\t\t_, _ = w.WriteString(\">\")\n\t}\n\treturn ast.WalkSkipChildren, nil\n}",
+    "funcname": "renderImageDefault"
+}

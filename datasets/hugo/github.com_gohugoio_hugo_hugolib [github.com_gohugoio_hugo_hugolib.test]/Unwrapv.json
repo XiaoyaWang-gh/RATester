@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 763,
+    "focalfunc": "func (p pageWithWeight0) Unwrapv() any",
+    "funcbody": "func (p pageWithWeight0) Unwrapv() any {\n\treturn p.pageState\n}",
+    "funcname": "Unwrapv"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/logs.go",
+    "lineno": 29,
+    "focalfunc": "func (lg *StoreMsg) WriteMsg(when time.Time, msg string, level int) error",
+    "funcbody": "func (lg *StoreMsg) WriteMsg(when time.Time, msg string, level int) error {\n\tm := when.Format(\"2006-01-02 15:04:05\") + \" \" + msg + \"\\r\\n\"\n\tif len(logMsgs) > MaxMsgLen {\n\t\tstart := MaxMsgLen - len(m)\n\t\tif start <= 0 {\n\t\t\tstart = MaxMsgLen\n\t\t}\n\t\tlogMsgs = logMsgs[start:]\n\t}\n\tlogMsgs += m\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 401,
+    "focalfunc": "func (c *Cache) GetString(id string) string",
+    "funcbody": "func (c *Cache) GetString(id string) string {\n\tid = cleanID(id)\n\n\tc.nlocker.Lock(id)\n\tdefer c.nlocker.Unlock(id)\n\n\tf, err := c.Fs.Open(id)\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\tdefer f.Close()\n\n\tb, _ := io.ReadAll(f)\n\treturn string(b)\n}",
+    "funcname": "GetString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 278,
+    "focalfunc": "func (t *Tracer) safeURL(originalURL *url.URL) *url.URL",
+    "funcbody": "func (t *Tracer) safeURL(originalURL *url.URL) *url.URL {\n\tif originalURL == nil {\n\t\treturn nil\n\t}\n\n\tredactedURL := *originalURL\n\n\tif redactedURL.User != nil {\n\t\tredactedURL.User = url.UserPassword(\"REDACTED\", \"REDACTED\")\n\t}\n\n\tquery := redactedURL.Query()\n\tfor k := range query {\n\t\tif slices.Contains(t.safeQueryParams, k) {\n\t\t\tcontinue\n\t\t}\n\n\t\tquery.Set(k, \"REDACTED\")\n\t}\n\tredactedURL.RawQuery = query.Encode()\n\n\treturn &redactedURL\n}",
+    "funcname": "safeURL"
+}

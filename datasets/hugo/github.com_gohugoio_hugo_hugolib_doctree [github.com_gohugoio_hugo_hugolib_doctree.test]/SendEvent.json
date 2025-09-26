@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 73,
+    "focalfunc": "func (ctx *WalkContext[T]) SendEvent(event *Event[T])",
+    "funcbody": "func (ctx *WalkContext[T]) SendEvent(event *Event[T]) {\n\tctx.events = append(ctx.events, event)\n}",
+    "funcname": "SendEvent"
+}

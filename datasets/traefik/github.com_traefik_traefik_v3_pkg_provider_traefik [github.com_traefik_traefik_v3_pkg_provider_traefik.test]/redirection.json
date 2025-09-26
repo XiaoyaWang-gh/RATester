@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 120,
+    "focalfunc": "func (i *Provider) redirection(ctx context.Context, cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) redirection(ctx context.Context, cfg *dynamic.Configuration) {\n\tfor name, ep := range i.staticCfg.EntryPoints {\n\t\tif ep.HTTP.Redirections == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tlogger := log.Ctx(ctx).With().Str(logs.EntryPointName, name).Logger()\n\n\t\tdef := ep.HTTP.Redirections\n\t\tif def.EntryPoint == nil || def.EntryPoint.To == \"\" {\n\t\t\tlogger.Error().Msg(\"Unable to create redirection: the entry point or the port is missing\")\n\t\t\tcontinue\n\t\t}\n\n\t\tport, err := i.getRedirectPort(name, def)\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\n\t\trtName := provider.Normalize(name + \"-to-\" + def.EntryPoint.To)\n\t\tmdName := \"redirect-\" + rtName\n\n\t\trt := &dynamic.Router{\n\t\t\tRule:\t\t\"HostRegexp(`^.+$`)\",\n\t\t\tRuleSyntax:\t\"v3\",\n\t\t\tEntryPoints:\t[]string{name},\n\t\t\tMiddlewares:\t[]string{mdName},\n\t\t\tService:\t\"noop@internal\",\n\t\t\tPriority:\tdef.EntryPoint.Priority,\n\t\t}\n\n\t\tcfg.HTTP.Routers[rtName] = rt\n\n\t\trs := &dynamic.Middleware{\n\t\t\tRedirectScheme: &dynamic.RedirectScheme{\n\t\t\t\tScheme:\t\tdef.EntryPoint.Scheme,\n\t\t\t\tPort:\t\tport,\n\t\t\t\tPermanent:\tdef.EntryPoint.Permanent,\n\t\t\t},\n\t\t}\n\n\t\tcfg.HTTP.Middlewares[mdName] = rs\n\t}\n}",
+    "funcname": "redirection"
+}

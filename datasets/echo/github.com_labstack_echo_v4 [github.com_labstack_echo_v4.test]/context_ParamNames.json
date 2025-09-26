@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 339,
+    "focalfunc": "func (c *context) ParamNames() []string",
+    "funcbody": "func (c *context) ParamNames() []string {\n\treturn c.pnames\n}",
+    "funcname": "ParamNames"
+}

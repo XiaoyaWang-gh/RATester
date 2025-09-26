@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 125,
+    "focalfunc": "func (h chromaHighlighter) RenderCodeblock(cctx context.Context, w hugio.FlexiWriter, ctx hooks.CodeblockContext) error",
+    "funcbody": "func (h chromaHighlighter) RenderCodeblock(cctx context.Context, w hugio.FlexiWriter, ctx hooks.CodeblockContext) error {\n\tcfg := h.cfg\n\n\tattributes := ctx.(hooks.AttributesOptionsSliceProvider).AttributesSlice()\n\n\tif err := applyOptionsFromMap(ctx.Options(), &cfg); err != nil {\n\t\treturn err\n\t}\n\n\tif err := applyOptionsFromCodeBlockContext(ctx, &cfg); err != nil {\n\t\treturn err\n\t}\n\n\tcode := text.Puts(ctx.Inner())\n\n\t_, _, err := highlight(w, code, ctx.Type(), attributes, cfg)\n\treturn err\n}",
+    "funcname": "RenderCodeblock"
+}

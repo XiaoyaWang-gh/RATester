@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 57,
+    "focalfunc": "func Handle(httpMethod, relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes",
+    "funcbody": "func Handle(httpMethod, relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes {\n\treturn engine().Handle(httpMethod, relativePath, handlers...)\n}",
+    "funcname": "Handle"
+}

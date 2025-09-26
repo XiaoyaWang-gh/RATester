@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 642,
+    "focalfunc": "func (h *histogram) Describe(ch chan<- *stdprometheus.Desc)",
+    "funcbody": "func (h *histogram) Describe(ch chan<- *stdprometheus.Desc) {\n\th.hv.Describe(ch)\n}",
+    "funcname": "Describe"
+}

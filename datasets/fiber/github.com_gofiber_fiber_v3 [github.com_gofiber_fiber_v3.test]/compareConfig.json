@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 123,
+    "focalfunc": "func (sf *sendFileStore) compareConfig(cfg SendFile) bool",
+    "funcbody": "func (sf *sendFileStore) compareConfig(cfg SendFile) bool {\n\tif sf.config.FS != cfg.FS {\n\t\treturn false\n\t}\n\n\tif sf.config.Compress != cfg.Compress {\n\t\treturn false\n\t}\n\n\tif sf.config.ByteRange != cfg.ByteRange {\n\t\treturn false\n\t}\n\n\tif sf.config.Download != cfg.Download {\n\t\treturn false\n\t}\n\n\tif sf.config.CacheDuration != cfg.CacheDuration {\n\t\treturn false\n\t}\n\n\tif sf.config.MaxAge != cfg.MaxAge {\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "compareConfig"
+}

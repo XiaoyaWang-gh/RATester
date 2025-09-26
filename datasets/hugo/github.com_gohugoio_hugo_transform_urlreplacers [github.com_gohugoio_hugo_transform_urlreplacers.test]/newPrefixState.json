@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 68,
+    "focalfunc": "func newPrefixState() []*prefix",
+    "funcbody": "func newPrefixState() []*prefix {\n\treturn []*prefix{\n\t\t{b: []byte(\"src=\"), f: checkCandidateBase},\n\t\t{b: []byte(\"href=\"), f: checkCandidateBase},\n\t\t{b: []byte(\"url=\"), f: checkCandidateBase},\n\t\t{b: []byte(\"action=\"), f: checkCandidateBase},\n\t\t{b: []byte(\"srcset=\"), f: checkCandidateSrcset},\n\t}\n}",
+    "funcname": "newPrefixState"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/datadog.go",
+    "lineno": 104,
+    "focalfunc": "func initDatadogClient(ctx context.Context, config *types.Datadog)",
+    "funcbody": "func initDatadogClient(ctx context.Context, config *types.Datadog) {\n\tnetwork, address := parseDatadogAddress(config.Address)\n\n\tctx, datadogLoopCancelFunc = context.WithCancel(ctx)\n\n\tsafe.Go(func() {\n\t\tticker := time.NewTicker(time.Duration(config.PushInterval))\n\t\tdefer ticker.Stop()\n\n\t\tdatadogClient.SendLoop(ctx, ticker.C, network, address)\n\t})\n}",
+    "funcname": "initDatadogClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 53,
+    "focalfunc": "func lexShortcodeComment(l *pageLexer) stateFunc",
+    "funcbody": "func lexShortcodeComment(l *pageLexer) stateFunc {\n\tposRightComment := l.index(append(rightComment, l.currentRightShortcodeDelim()...))\n\tif posRightComment <= 1 {\n\t\treturn l.errorf(\"comment must be closed\")\n\t}\n\n\tl.emit(tText)\n\tl.pos += len(leftComment)\n\tl.ignore()\n\tl.pos += posRightComment - len(leftComment)\n\tl.emit(tText)\n\tl.pos += len(rightComment)\n\tl.ignore()\n\tl.pos += len(l.currentRightShortcodeDelim())\n\tl.emit(tText)\n\treturn lexMainSection\n}",
+    "funcname": "lexShortcodeComment"
+}

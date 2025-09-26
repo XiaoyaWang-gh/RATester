@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 70,
+    "focalfunc": "func Errorf(format string, v ...interface{})",
+    "funcbody": "func Errorf(format string, v ...interface{}) {\n\tLogger.Errorf(format, v...)\n}",
+    "funcname": "Errorf"
+}

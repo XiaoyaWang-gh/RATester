@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 101,
+    "focalfunc": "func getTimer(d time.Duration) *time.Timer",
+    "funcbody": "func getTimer(d time.Duration) *time.Timer {\n\tif v := timerPool.Get(); v != nil {\n\t\ttimer := v.(*time.Timer)\n\t\ttimer.Reset(d)\n\t\treturn timer\n\t}\n\treturn time.NewTimer(d)\n}",
+    "funcname": "getTimer"
+}

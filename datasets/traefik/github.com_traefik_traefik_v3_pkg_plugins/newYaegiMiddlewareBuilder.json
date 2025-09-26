@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/middlewareyaegi.go",
+    "lineno": 25,
+    "focalfunc": "func newYaegiMiddlewareBuilder(i *interp.Interpreter, basePkg, imp string) (*yaegiMiddlewareBuilder, error)",
+    "funcbody": "func newYaegiMiddlewareBuilder(i *interp.Interpreter, basePkg, imp string) (*yaegiMiddlewareBuilder, error) {\n\tif basePkg == \"\" {\n\t\tbasePkg = strings.ReplaceAll(path.Base(imp), \"-\", \"_\")\n\t}\n\n\tfnNew, err := i.Eval(basePkg + `.New`)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to eval New: %w\", err)\n\t}\n\n\tfnCreateConfig, err := i.Eval(basePkg + `.CreateConfig`)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to eval CreateConfig: %w\", err)\n\t}\n\n\treturn &yaegiMiddlewareBuilder{\n\t\tfnNew:\t\tfnNew,\n\t\tfnCreateConfig:\tfnCreateConfig,\n\t}, nil\n}",
+    "funcname": "newYaegiMiddlewareBuilder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/proxy.go",
+    "lineno": 82,
+    "focalfunc": "func (p Proxy) dialBackend() (WriteCloser, error)",
+    "funcbody": "func (p Proxy) dialBackend() (WriteCloser, error) {\n\tconn, err := p.dialer.Dial(\"tcp\", p.address)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn conn.(WriteCloser), nil\n}",
+    "funcname": "dialBackend"
+}

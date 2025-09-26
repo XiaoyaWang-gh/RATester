@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 37,
+    "focalfunc": "func GetMapKeys(m sync.Map, isSort bool, sortKey, order string) (keys []int)",
+    "funcbody": "func GetMapKeys(m sync.Map, isSort bool, sortKey, order string) (keys []int) {\n\tif sortKey != \"\" && isSort {\n\t\treturn sortClientByKey(m, sortKey, order)\n\t}\n\tm.Range(func(key, value interface{}) bool {\n\t\tkeys = append(keys, key.(int))\n\t\treturn true\n\t})\n\tsort.Ints(keys)\n\treturn\n}",
+    "funcname": "GetMapKeys"
+}

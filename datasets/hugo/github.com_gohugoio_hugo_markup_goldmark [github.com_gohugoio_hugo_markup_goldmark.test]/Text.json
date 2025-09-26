@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 124,
+    "focalfunc": "func (ctx headingContext) Text() hstring.HTML",
+    "funcbody": "func (ctx headingContext) Text() hstring.HTML {\n\treturn ctx.text\n}",
+    "funcname": "Text"
+}

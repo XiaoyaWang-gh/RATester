@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/params.go",
+    "lineno": 22,
+    "focalfunc": "func Param(r ResourceParamsProvider, fallback maps.Params, key any) (any, error)",
+    "funcbody": "func Param(r ResourceParamsProvider, fallback maps.Params, key any) (any, error) {\n\tkeyStr, err := cast.ToStringE(key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif fallback == nil {\n\t\treturn maps.GetNestedParam(keyStr, \".\", r.Params())\n\t}\n\n\treturn maps.GetNestedParam(keyStr, \".\", r.Params(), fallback)\n}",
+    "funcname": "Param"
+}

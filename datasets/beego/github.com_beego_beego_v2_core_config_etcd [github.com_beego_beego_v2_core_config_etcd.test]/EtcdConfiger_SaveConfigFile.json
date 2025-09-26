@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 94,
+    "focalfunc": "func (e *EtcdConfiger) SaveConfigFile(filename string) error",
+    "funcbody": "func (e *EtcdConfiger) SaveConfigFile(filename string) error {\n\treturn errors.New(\"Unsupported operation\")\n}",
+    "funcname": "SaveConfigFile"
+}

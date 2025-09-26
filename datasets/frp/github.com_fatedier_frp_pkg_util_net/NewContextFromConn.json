@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 46,
+    "focalfunc": "func NewContextFromConn(conn net.Conn) context.Context",
+    "funcbody": "func NewContextFromConn(conn net.Conn) context.Context {\n\tif c, ok := conn.(ContextGetter); ok {\n\t\treturn c.Context()\n\t}\n\treturn context.Background()\n}",
+    "funcname": "NewContextFromConn"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 44,
+    "focalfunc": "func mapFormByTag(ptr any, form map[string][]string, tag string) error",
+    "funcbody": "func mapFormByTag(ptr any, form map[string][]string, tag string) error {\n\n\tptrVal := reflect.ValueOf(ptr)\n\tvar pointed any\n\tif ptrVal.Kind() == reflect.Ptr {\n\t\tptrVal = ptrVal.Elem()\n\t\tpointed = ptrVal.Interface()\n\t}\n\tif ptrVal.Kind() == reflect.Map &&\n\t\tptrVal.Type().Key().Kind() == reflect.String {\n\t\tif pointed != nil {\n\t\t\tptr = pointed\n\t\t}\n\t\treturn setFormMap(ptr, form)\n\t}\n\n\treturn mappingByPtr(ptr, formSource(form), tag)\n}",
+    "funcname": "mapFormByTag"
+}

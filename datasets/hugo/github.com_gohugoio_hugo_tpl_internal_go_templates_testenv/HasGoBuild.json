@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 47,
+    "focalfunc": "func HasGoBuild() bool",
+    "funcbody": "func HasGoBuild() bool {\n\treturn false\n}",
+    "funcname": "HasGoBuild"
+}

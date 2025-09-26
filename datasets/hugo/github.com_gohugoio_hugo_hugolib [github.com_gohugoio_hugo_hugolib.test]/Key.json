@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 145,
+    "focalfunc": "func (p *pageState) Key() string",
+    "funcbody": "func (p *pageState) Key() string {\n\treturn \"page-\" + strconv.FormatUint(p.pid, 10)\n}",
+    "funcname": "Key"
+}

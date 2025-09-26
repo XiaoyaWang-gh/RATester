@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 136,
+    "focalfunc": "func (e *CharField) SetRaw(value interface{}) error",
+    "funcbody": "func (e *CharField) SetRaw(value interface{}) error {\n\tswitch d := value.(type) {\n\tcase string:\n\t\te.Set(d)\n\tdefault:\n\t\treturn fmt.Errorf(\"<CharField.SetRaw> unknown value `%s`\", value)\n\t}\n\treturn nil\n}",
+    "funcname": "SetRaw"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_lazy_contentprovider.go",
+    "lineno": 58,
+    "focalfunc": "func NewLazyContentProvider(f func() (OutputFormatContentProvider, error)) *LazyContentProvider",
+    "funcbody": "func NewLazyContentProvider(f func() (OutputFormatContentProvider, error)) *LazyContentProvider {\n\tlcp := LazyContentProvider{\n\t\tinit:\tlazy.New(),\n\t\tcp:\tNopCPageContentRenderer,\n\t}\n\tlcp.init.Add(func(context.Context) (any, error) {\n\t\tcp, err := f()\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tlcp.cp = cp\n\t\treturn nil, nil\n\t})\n\treturn &lcp\n}",
+    "funcname": "NewLazyContentProvider"
+}

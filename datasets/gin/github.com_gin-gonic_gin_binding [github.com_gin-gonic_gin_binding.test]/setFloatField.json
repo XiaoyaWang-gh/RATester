@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 320,
+    "focalfunc": "func setFloatField(val string, bitSize int, field reflect.Value) error",
+    "funcbody": "func setFloatField(val string, bitSize int, field reflect.Value) error {\n\tif val == \"\" {\n\t\tval = \"0.0\"\n\t}\n\tfloatVal, err := strconv.ParseFloat(val, bitSize)\n\tif err == nil {\n\t\tfield.SetFloat(floatVal)\n\t}\n\treturn err\n}",
+    "funcname": "setFloatField"
+}

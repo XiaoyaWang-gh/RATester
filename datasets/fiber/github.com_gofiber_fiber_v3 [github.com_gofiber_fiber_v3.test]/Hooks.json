@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 863,
+    "focalfunc": "func (app *App) Hooks() *Hooks",
+    "funcbody": "func (app *App) Hooks() *Hooks {\n\treturn app.hooks\n}",
+    "funcname": "Hooks"
+}

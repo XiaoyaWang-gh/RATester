@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/internalhandler.go",
+    "lineno": 28,
+    "focalfunc": "func NewInternalHandlers(next serviceManager, apiHandler, rest, metricsHandler, pingHandler, dashboard, acmeHTTP http.Handler) *InternalHandlers",
+    "funcbody": "func NewInternalHandlers(next serviceManager, apiHandler, rest, metricsHandler, pingHandler, dashboard, acmeHTTP http.Handler) *InternalHandlers {\n\treturn &InternalHandlers{\n\t\tapi:\t\tapiHandler,\n\t\tdashboard:\tdashboard,\n\t\trest:\t\trest,\n\t\tprometheus:\tmetricsHandler,\n\t\tping:\t\tpingHandler,\n\t\tacmeHTTP:\tacmeHTTP,\n\t\tserviceManager:\tnext,\n\t}\n}",
+    "funcname": "NewInternalHandlers"
+}

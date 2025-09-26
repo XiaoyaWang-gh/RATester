@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 133,
+    "focalfunc": "func hexStringToColor(s string) Color",
+    "funcbody": "func hexStringToColor(s string) Color {\n\tc, err := hexStringToColorGo(s)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn ColorGoToColor(c)\n}",
+    "funcname": "hexStringToColor"
+}

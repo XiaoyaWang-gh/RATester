@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin.go",
+    "lineno": 86,
+    "focalfunc": "func (admin *adminApp) Run()",
+    "funcbody": "func (admin *adminApp) Run() {\n\tlogs.Debug(\"now we don't start tasks here, if you use task module,\" +\n\t\t\" please invoke task.StartTask, or task will not be executed\")\n\taddr := BConfig.Listen.AdminAddr\n\tif BConfig.Listen.AdminPort != 0 {\n\t\taddr = net.JoinHostPort(BConfig.Listen.AdminAddr, fmt.Sprintf(\"%d\", BConfig.Listen.AdminPort))\n\t}\n\tlogs.Info(\"Admin server Running on %s\", addr)\n\tadmin.HttpServer.Run(addr)\n}",
+    "funcname": "Run"
+}

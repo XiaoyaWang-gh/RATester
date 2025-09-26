@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 229,
+    "focalfunc": "func (formats Formats) Swap(i, j int)",
+    "funcbody": "func (formats Formats) Swap(i, j int)\t{ formats[i], formats[j] = formats[j], formats[i] }",
+    "funcname": "Swap"
+}

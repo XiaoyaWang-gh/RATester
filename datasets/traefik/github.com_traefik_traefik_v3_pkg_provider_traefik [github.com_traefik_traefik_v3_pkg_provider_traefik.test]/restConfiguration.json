@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 307,
+    "focalfunc": "func (i *Provider) restConfiguration(cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) restConfiguration(cfg *dynamic.Configuration) {\n\tif i.staticCfg.Providers == nil || i.staticCfg.Providers.Rest == nil {\n\t\treturn\n\t}\n\n\tif i.staticCfg.Providers.Rest.Insecure {\n\t\tcfg.HTTP.Routers[\"rest\"] = &dynamic.Router{\n\t\t\tEntryPoints:\t[]string{defaultInternalEntryPointName},\n\t\t\tService:\t\"rest@internal\",\n\t\t\tPriority:\tmath.MaxInt,\n\t\t\tRule:\t\t\"PathPrefix(`/api/providers`)\",\n\t\t\tRuleSyntax:\t\"v3\",\n\t\t}\n\t}\n\n\tcfg.HTTP.Services[\"rest\"] = &dynamic.Service{}\n}",
+    "funcname": "restConfiguration"
+}

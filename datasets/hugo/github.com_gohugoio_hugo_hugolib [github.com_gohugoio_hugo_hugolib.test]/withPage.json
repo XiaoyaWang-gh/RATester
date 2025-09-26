@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 391,
+    "focalfunc": "func (h *HugoSites) withPage(fn func(s string, p *pageState) bool)",
+    "funcbody": "func (h *HugoSites) withPage(fn func(s string, p *pageState) bool) {\n\th.withSite(func(s *Site) error {\n\t\tw := &doctree.NodeShiftTreeWalker[contentNodeI]{\n\t\t\tTree:\t\ts.pageMap.treePages,\n\t\t\tLockType:\tdoctree.LockTypeRead,\n\t\t\tHandle: func(s string, n contentNodeI, match doctree.DimensionFlag) (bool, error) {\n\t\t\t\treturn fn(s, n.(*pageState)), nil\n\t\t\t},\n\t\t}\n\t\treturn w.Walk(context.Background())\n\t})\n}",
+    "funcname": "withPage"
+}

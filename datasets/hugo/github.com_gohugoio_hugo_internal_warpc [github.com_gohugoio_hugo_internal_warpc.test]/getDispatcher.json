@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 66,
+    "focalfunc": "func (p *dispatcherPool[Q, R]) getDispatcher() *dispatcher[Q, R]",
+    "funcbody": "func (p *dispatcherPool[Q, R]) getDispatcher() *dispatcher[Q, R] {\n\ti := int(p.counter.Add(1)) % len(p.dispatchers)\n\treturn p.dispatchers[i]\n}",
+    "funcname": "getDispatcher"
+}

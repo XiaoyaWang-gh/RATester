@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 754,
+    "focalfunc": "func genericParseUint[V GenericType](str string, bitSize int, parser func(uint64) V, defaultValue ...V) V",
+    "funcbody": "func genericParseUint[V GenericType](str string, bitSize int, parser func(uint64) V, defaultValue ...V) V {\n\tresult, err := strconv.ParseUint(str, 10, bitSize)\n\treturn genericParseDefault[V](err, func() V { return parser(result) }, defaultValue...)\n}",
+    "funcname": "genericParseUint"
+}

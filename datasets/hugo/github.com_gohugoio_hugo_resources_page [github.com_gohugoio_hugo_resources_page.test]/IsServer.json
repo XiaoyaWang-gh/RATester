@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 423,
+    "focalfunc": "func (t testSite) IsServer() bool",
+    "funcbody": "func (t testSite) IsServer() bool {\n\treturn false\n}",
+    "funcname": "IsServer"
+}

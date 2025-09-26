@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 59,
+    "focalfunc": "func (r *Response) Cookies() []*fasthttp.Cookie",
+    "funcbody": "func (r *Response) Cookies() []*fasthttp.Cookie {\n\treturn r.cookie\n}",
+    "funcname": "Cookies"
+}

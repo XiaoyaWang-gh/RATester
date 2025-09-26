@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 319,
+    "focalfunc": "func (s *DbUtils) GetInfoByHost(host string, r *http.Request) (h *Host, err error)",
+    "funcbody": "func (s *DbUtils) GetInfoByHost(host string, r *http.Request) (h *Host, err error) {\n\tvar hosts []*Host\n\n\thost = common.GetIpByAddr(host)\n\ts.JsonDb.Hosts.Range(func(key, value interface{}) bool {\n\t\tv := value.(*Host)\n\t\tif v.IsClose {\n\t\t\treturn true\n\t\t}\n\n\t\tif v.Scheme != \"all\" && v.Scheme != r.URL.Scheme {\n\t\t\treturn true\n\t\t}\n\t\ttmpHost := v.Host\n\t\tif strings.Contains(tmpHost, \"*\") {\n\t\t\ttmpHost = strings.Replace(tmpHost, \"*\", \"\", -1)\n\t\t\tif strings.Contains(host, tmpHost) {\n\t\t\t\thosts = append(hosts, v)\n\t\t\t}\n\t\t} else if v.Host == host {\n\t\t\thosts = append(hosts, v)\n\t\t}\n\t\treturn true\n\t})\n\n\tfor _, v := range hosts {\n\n\t\tif v.Location == \"\" {\n\t\t\tv.Location = \"/\"\n\t\t}\n\t\tif strings.Index(r.RequestURI, v.Location) == 0 {\n\t\t\tif h == nil || (len(v.Location) > len(h.Location)) {\n\t\t\t\th = v\n\t\t\t}\n\t\t}\n\t}\n\tif h != nil {\n\t\treturn\n\t}\n\terr = errors.New(\"The host could not be parsed\")\n\treturn\n}",
+    "funcname": "GetInfoByHost"
+}

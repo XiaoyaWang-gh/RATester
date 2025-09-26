@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 219,
+    "focalfunc": "func Reset() error",
+    "funcbody": "func Reset() error {\n\tsm := sortMap(migrationMap)\n\ti := 0\n\tfor j := len(sm) - 1; j >= 0; j-- {\n\t\tv := sm[j]\n\t\tif isRollBack(v.name) {\n\t\t\tlogs.Info(\"skip the\", v.name)\n\t\t\ttime.Sleep(1 * time.Second)\n\t\t\tcontinue\n\t\t}\n\t\tlogs.Info(\"start reset:\", v.name)\n\t\tv.m.Reset()\n\t\tv.m.Down()\n\t\terr := v.m.Exec(v.name, \"down\")\n\t\tif err != nil {\n\t\t\tlogs.Error(\"execute error:\", err)\n\t\t\ttime.Sleep(2 * time.Second)\n\t\t\treturn err\n\t\t}\n\t\ti++\n\t\tlogs.Info(\"end reset:\", v.name)\n\t}\n\tlogs.Info(\"total success reset:\", i, \" migration\")\n\ttime.Sleep(2 * time.Second)\n\treturn nil\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pmux.go",
+    "lineno": 44,
+    "focalfunc": "func NewPortMux(port int, managerHost string) *PortMux",
+    "funcbody": "func NewPortMux(port int, managerHost string) *PortMux {\n\tpMux := &PortMux{\n\t\tmanagerHost:\tmanagerHost,\n\t\tport:\t\tport,\n\t\tclientConn:\tmake(chan *PortConn),\n\t\thttpConn:\tmake(chan *PortConn),\n\t\thttpsConn:\tmake(chan *PortConn),\n\t\tmanagerConn:\tmake(chan *PortConn),\n\t}\n\tpMux.Start()\n\treturn pMux\n}",
+    "funcname": "NewPortMux"
+}

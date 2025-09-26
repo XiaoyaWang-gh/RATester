@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 174,
+    "focalfunc": "func newIPChecker(configs []TrustOption) *ipChecker",
+    "funcbody": "func newIPChecker(configs []TrustOption) *ipChecker {\n\tchecker := &ipChecker{trustLoopback: true, trustLinkLocal: true, trustPrivateNet: true}\n\tfor _, configure := range configs {\n\t\tconfigure(checker)\n\t}\n\treturn checker\n}",
+    "funcname": "newIPChecker"
+}

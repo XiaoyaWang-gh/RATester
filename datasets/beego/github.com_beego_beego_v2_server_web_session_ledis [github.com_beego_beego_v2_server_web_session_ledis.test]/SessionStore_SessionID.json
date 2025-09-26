@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 66,
+    "focalfunc": "func (ls *SessionStore) SessionID(context.Context) string",
+    "funcbody": "func (ls *SessionStore) SessionID(context.Context) string {\n\treturn ls.sid\n}",
+    "funcname": "SessionID"
+}

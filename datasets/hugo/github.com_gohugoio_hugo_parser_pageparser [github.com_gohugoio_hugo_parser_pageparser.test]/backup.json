@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 157,
+    "focalfunc": "func (t *Iterator) Backup()",
+    "funcbody": "func (t *Iterator) Backup() {\n\tif t.lastPos < 0 {\n\t\tpanic(\"need to go forward before going back\")\n\t}\n\tt.lastPos--\n}",
+    "funcname": "Backup"
+}

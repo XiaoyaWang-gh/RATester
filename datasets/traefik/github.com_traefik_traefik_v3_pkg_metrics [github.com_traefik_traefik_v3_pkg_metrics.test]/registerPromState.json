@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 275,
+    "focalfunc": "func registerPromState(ctx context.Context) bool",
+    "funcbody": "func registerPromState(ctx context.Context) bool {\n\terr := promRegistry.Register(promState)\n\tif err == nil {\n\t\treturn true\n\t}\n\n\tlogger := log.Ctx(ctx)\n\n\tvar arErr stdprometheus.AlreadyRegisteredError\n\tif errors.As(err, &arErr) {\n\t\tlogger.Debug().Msg(\"Prometheus collector already registered.\")\n\t\treturn true\n\t}\n\n\tlogger.Error().Err(err).Msg(\"Unable to register Traefik to Prometheus\")\n\treturn false\n}",
+    "funcname": "registerPromState"
+}

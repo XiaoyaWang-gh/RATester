@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 325,
+    "focalfunc": "func (s *Conn) WriteAddFail() error",
+    "funcbody": "func (s *Conn) WriteAddFail() error {\n\tdefer s.Close()\n\treturn binary.Write(s.Conn, binary.LittleEndian, false)\n}",
+    "funcname": "WriteAddFail"
+}

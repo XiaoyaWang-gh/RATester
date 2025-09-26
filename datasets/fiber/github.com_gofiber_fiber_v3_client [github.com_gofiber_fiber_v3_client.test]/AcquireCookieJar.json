@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 22,
+    "focalfunc": "func AcquireCookieJar() *CookieJar",
+    "funcbody": "func AcquireCookieJar() *CookieJar {\n\tjar, ok := cookieJarPool.Get().(*CookieJar)\n\tif !ok {\n\t\tpanic(errors.New(\"failed to type-assert to *CookieJar\"))\n\t}\n\n\treturn jar\n}",
+    "funcname": "AcquireCookieJar"
+}

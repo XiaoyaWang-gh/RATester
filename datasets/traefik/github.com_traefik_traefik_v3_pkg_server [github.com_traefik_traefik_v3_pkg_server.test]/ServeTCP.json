@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 82,
+    "focalfunc": "func (h *httpForwarder) ServeTCP(conn tcp.WriteCloser)",
+    "funcbody": "func (h *httpForwarder) ServeTCP(conn tcp.WriteCloser) {\n\th.connChan <- conn\n}",
+    "funcname": "ServeTCP"
+}

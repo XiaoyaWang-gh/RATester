@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 281,
+    "focalfunc": "func (c *goldmarkConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error)",
+    "funcbody": "func (c *goldmarkConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error) {\n\tparseResult, err := c.Parse(ctx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\trenderResult, err := c.Render(ctx, parseResult.Doc())\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn converterResult{\n\t\tResultRender:\t\t\trenderResult,\n\t\ttableOfContentsProvider:\tparseResult,\n\t}, nil\n}",
+    "funcname": "Convert"
+}

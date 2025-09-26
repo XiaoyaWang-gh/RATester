@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 147,
+    "focalfunc": "func (i *imageResource) Colors() ([]images.Color, error)",
+    "funcbody": "func (i *imageResource) Colors() ([]images.Color, error) {\n\tvar err error\n\ti.dominantColorInit.Do(func() {\n\t\tvar img image.Image\n\t\timg, err = i.DecodeImage()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tcolors := color_extractor.ExtractColors(img)\n\t\tfor _, c := range colors {\n\t\t\ti.dominantColors = append(i.dominantColors, images.ColorGoToColor(c))\n\t\t}\n\t})\n\treturn i.dominantColors, nil\n}",
+    "funcname": "Colors"
+}

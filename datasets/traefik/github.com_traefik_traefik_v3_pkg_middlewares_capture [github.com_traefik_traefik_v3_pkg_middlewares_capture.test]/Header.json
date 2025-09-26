@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 157,
+    "focalfunc": "func (crw *captureResponseWriter) Header() http.Header",
+    "funcbody": "func (crw *captureResponseWriter) Header() http.Header {\n\treturn crw.rw.Header()\n}",
+    "funcname": "Header"
+}

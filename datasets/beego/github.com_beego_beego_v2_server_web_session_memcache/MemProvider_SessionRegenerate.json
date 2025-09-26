@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 184,
+    "focalfunc": "func (rp *MemProvider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error)",
+    "funcbody": "func (rp *MemProvider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error) {\n\tif client == nil {\n\t\tif err := rp.connectInit(); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\tvar contain []byte\n\tif item, err := client.Get(sid); err != nil || len(item.Value) == 0 {\n\n\t\titem.Key = sid\n\t\titem.Value = []byte(\"\")\n\t\titem.Expiration = int32(rp.maxlifetime)\n\t\tclient.Set(item)\n\t} else {\n\t\tclient.Delete(oldsid)\n\t\titem.Key = sid\n\t\titem.Expiration = int32(rp.maxlifetime)\n\t\tclient.Set(item)\n\t\tcontain = item.Value\n\t}\n\n\tvar kv map[interface{}]interface{}\n\tif len(contain) == 0 {\n\t\tkv = make(map[interface{}]interface{})\n\t} else {\n\t\tvar err error\n\t\tkv, err = session.DecodeGob(contain)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\trs := &SessionStore{sid: sid, values: kv, maxlifetime: rp.maxlifetime}\n\treturn rs, nil\n}",
+    "funcname": "SessionRegenerate"
+}

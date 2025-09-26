@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 537,
+    "focalfunc": "func (p *Path) IsLeafBundle() bool",
+    "funcbody": "func (p *Path) IsLeafBundle() bool {\n\treturn p.bundleType == PathTypeLeaf\n}",
+    "funcname": "IsLeafBundle"
+}

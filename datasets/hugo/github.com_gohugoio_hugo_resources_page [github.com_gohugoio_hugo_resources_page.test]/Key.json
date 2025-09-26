@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 177,
+    "focalfunc": "func (s *siteWrapper) Key() string",
+    "funcbody": "func (s *siteWrapper) Key() string {\n\treturn s.s.Language().Lang\n}",
+    "funcname": "Key"
+}

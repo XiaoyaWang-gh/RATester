@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 352,
+    "focalfunc": "func (c *templateContext) collectReturnNode(n *parse.CommandNode) bool",
+    "funcbody": "func (c *templateContext) collectReturnNode(n *parse.CommandNode) bool {\n\tif c.t.typ != templatePartial || c.returnNode != nil {\n\t\treturn true\n\t}\n\n\tif len(n.Args) < 2 {\n\t\treturn true\n\t}\n\n\tident, ok := n.Args[0].(*parse.IdentifierNode)\n\tif !ok || ident.Ident != \"return\" {\n\t\treturn true\n\t}\n\n\tc.returnNode = n\n\n\tc.returnNode.Args = c.returnNode.Args[1:]\n\n\treturn false\n}",
+    "funcname": "collectReturnNode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 89,
+    "focalfunc": "func (t *dbTables) loopDepth(depth int, prefix string, fi *models.FieldInfo, related []string) []string",
+    "funcbody": "func (t *dbTables) loopDepth(depth int, prefix string, fi *models.FieldInfo, related []string) []string {\n\tif depth < 0 || fi.FieldType == RelManyToMany {\n\t\treturn related\n\t}\n\n\tif prefix == \"\" {\n\t\tprefix = fi.Name\n\t} else {\n\t\tprefix = prefix + ExprSep + fi.Name\n\t}\n\trelated = append(related, prefix)\n\n\tdepth--\n\tfor _, fi := range fi.RelModelInfo.Fields.FieldsRel {\n\t\trelated = t.loopDepth(depth, prefix, fi, related)\n\t}\n\n\treturn related\n}",
+    "funcname": "loopDepth"
+}

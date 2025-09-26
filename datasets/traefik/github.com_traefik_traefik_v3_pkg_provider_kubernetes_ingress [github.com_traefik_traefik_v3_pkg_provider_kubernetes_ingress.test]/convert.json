@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/convert.go",
+    "lineno": 51,
+    "focalfunc": "func convert[T any](input marshaler) (*T, error)",
+    "funcbody": "func convert[T any](input marshaler) (*T, error) {\n\tdata, err := input.Marshal()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar output T\n\tum, ok := any(&output).(unmarshaler)\n\tif !ok {\n\t\treturn nil, errors.New(\"the output type doesn't implement unmarshaler interface\")\n\t}\n\n\terr = um.Unmarshal(data)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &output, nil\n}",
+    "funcname": "convert"
+}

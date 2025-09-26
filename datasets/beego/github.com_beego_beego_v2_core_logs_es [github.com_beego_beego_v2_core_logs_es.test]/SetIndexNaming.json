@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/index.go",
+    "lineno": 31,
+    "focalfunc": "func SetIndexNaming(i IndexNaming)",
+    "funcbody": "func SetIndexNaming(i IndexNaming) {\n\tindexNaming = i\n}",
+    "funcname": "SetIndexNaming"
+}

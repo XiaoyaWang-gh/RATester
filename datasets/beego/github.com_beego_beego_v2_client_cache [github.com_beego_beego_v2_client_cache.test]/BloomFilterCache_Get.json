@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/bloom_filter_cache.go",
+    "lineno": 52,
+    "focalfunc": "func (bfc *BloomFilterCache) Get(ctx context.Context, key string) (any, error)",
+    "funcbody": "func (bfc *BloomFilterCache) Get(ctx context.Context, key string) (any, error) {\n\tval, err := bfc.Cache.Get(ctx, key)\n\tif err != nil && !errors.Is(err, ErrKeyNotExist) {\n\t\treturn nil, err\n\t}\n\tif errors.Is(err, ErrKeyNotExist) {\n\t\texist := bfc.blm.Test(key)\n\t\tif exist {\n\t\t\tval, err = bfc.loadFunc(ctx, key)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, berror.Wrap(err, LoadFuncFailed, \"cache unable to load data\")\n\t\t\t}\n\t\t\terr = bfc.Put(ctx, key, val, bfc.expiration)\n\t\t\tif err != nil {\n\t\t\t\treturn val, err\n\t\t\t}\n\t\t}\n\t}\n\treturn val, nil\n}",
+    "funcname": "Get"
+}

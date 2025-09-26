@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 152,
+    "focalfunc": "func (c ConfigLanguage) GetConfigSection(s string) any",
+    "funcbody": "func (c ConfigLanguage) GetConfigSection(s string) any {\n\tswitch s {\n\tcase \"security\":\n\t\treturn c.config.Security\n\tcase \"build\":\n\t\treturn c.config.Build\n\tcase \"frontmatter\":\n\t\treturn c.config.Frontmatter\n\tcase \"caches\":\n\t\treturn c.config.Caches\n\tcase \"markup\":\n\t\treturn c.config.Markup\n\tcase \"mediaTypes\":\n\t\treturn c.config.MediaTypes.Config\n\tcase \"outputFormats\":\n\t\treturn c.config.OutputFormats.Config\n\tcase \"permalinks\":\n\t\treturn c.config.Permalinks\n\tcase \"minify\":\n\t\treturn c.config.Minify\n\tcase \"allModules\":\n\t\treturn c.m.Modules\n\tcase \"deployment\":\n\t\treturn c.config.Deployment\n\tcase \"httpCacheCompiled\":\n\t\treturn c.config.C.HTTPCache\n\tdefault:\n\t\tpanic(\"not implemented: \" + s)\n\t}\n}",
+    "funcname": "GetConfigSection"
+}

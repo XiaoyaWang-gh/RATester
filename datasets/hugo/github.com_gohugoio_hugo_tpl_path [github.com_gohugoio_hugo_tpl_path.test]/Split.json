@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/path/path.go",
+    "lineno": 109,
+    "focalfunc": "func (ns *Namespace) Split(path any) (paths.DirFile, error)",
+    "funcbody": "func (ns *Namespace) Split(path any) (paths.DirFile, error) {\n\tspath, err := cast.ToStringE(path)\n\tif err != nil {\n\t\treturn paths.DirFile{}, err\n\t}\n\tspath = filepath.ToSlash(spath)\n\tdir, file := _path.Split(spath)\n\n\treturn paths.DirFile{Dir: dir, File: file}, nil\n}",
+    "funcname": "Split"
+}

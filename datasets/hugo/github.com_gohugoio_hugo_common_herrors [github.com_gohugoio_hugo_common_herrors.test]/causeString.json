@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 148,
+    "focalfunc": "func (e *fileError) causeString() string",
+    "funcbody": "func (e *fileError) causeString() string {\n\tif e.cause == nil {\n\t\treturn \"\"\n\t}\n\tswitch v := e.cause.(type) {\n\n\tcase godartsass.SassError:\n\t\treturn v.Message\n\tcase godartsassv1.SassError:\n\t\treturn v.Message\n\tcase libsasserrors.Error:\n\t\treturn v.Message\n\tdefault:\n\t\treturn v.Error()\n\t}\n}",
+    "funcname": "causeString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/bean/default_value_filter.go",
+    "lineno": 112,
+    "focalfunc": "func (d *DefaultValueFilterChainBuilder) handleInsertMulti(ctx context.Context, inv *orm.Invocation)",
+    "funcbody": "func (d *DefaultValueFilterChainBuilder) handleInsertMulti(ctx context.Context, inv *orm.Invocation) {\n\tmds := inv.Args[1]\n\n\tif t := reflect.TypeOf(mds).Kind(); t != reflect.Array && t != reflect.Slice {\n\n\t\treturn\n\t}\n\n\tmdsArr := reflect.Indirect(reflect.ValueOf(mds))\n\tfor i := 0; i < mdsArr.Len(); i++ {\n\t\td.setDefaultValue(ctx, mdsArr.Index(i).Interface())\n\t}\n\tlogs.Warn(\"%v\", mdsArr.Index(0).Interface())\n}",
+    "funcname": "handleInsertMulti"
+}

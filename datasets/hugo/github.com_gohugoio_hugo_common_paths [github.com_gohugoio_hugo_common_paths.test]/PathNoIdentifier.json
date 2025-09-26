@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 435,
+    "focalfunc": "func (p *Path) PathNoIdentifier() string",
+    "funcbody": "func (p *Path) PathNoIdentifier() string {\n\treturn p.base(false, false)\n}",
+    "funcname": "PathNoIdentifier"
+}

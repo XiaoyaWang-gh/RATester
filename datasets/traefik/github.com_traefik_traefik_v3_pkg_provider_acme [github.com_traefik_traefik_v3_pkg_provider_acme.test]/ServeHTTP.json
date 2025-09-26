@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_http.go",
+    "lineno": 71,
+    "focalfunc": "func (c *ChallengeHTTP) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (c *ChallengeHTTP) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tlogger := log.Ctx(req.Context()).With().Str(logs.ProviderName, \"acme\").Logger()\n\n\ttoken, err := getPathParam(req.URL)\n\tif err != nil {\n\t\tlogger.Error().Err(err).Msg(\"Unable to get token\")\n\t\trw.WriteHeader(http.StatusNotFound)\n\t\treturn\n\t}\n\n\tif token != \"\" {\n\t\tdomain, _, err := net.SplitHostPort(req.Host)\n\t\tif err != nil {\n\t\t\tlogger.Debug().Err(err).Msg(\"Unable to split host and port. Fallback to request host.\")\n\t\t\tdomain = req.Host\n\t\t}\n\n\t\ttokenValue := c.getTokenValue(logger.WithContext(req.Context()), token, domain)\n\t\tif len(tokenValue) > 0 {\n\t\t\trw.WriteHeader(http.StatusOK)\n\t\t\t_, err = rw.Write(tokenValue)\n\t\t\tif err != nil {\n\t\t\t\tlogger.Error().Err(err).Msg(\"Unable to write token\")\n\t\t\t}\n\t\t\treturn\n\t\t}\n\t}\n\n\trw.WriteHeader(http.StatusNotFound)\n}",
+    "funcname": "ServeHTTP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp_http3.go",
+    "lineno": 84,
+    "focalfunc": "func (e *http3server) getGetConfigForClient(info *tls.ClientHelloInfo) (*tls.Config, error)",
+    "funcbody": "func (e *http3server) getGetConfigForClient(info *tls.ClientHelloInfo) (*tls.Config, error) {\n\te.lock.RLock()\n\tdefer e.lock.RUnlock()\n\n\treturn e.getter(info)\n}",
+    "funcname": "getGetConfigForClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 460,
+    "focalfunc": "func (p *ControllerRegister) CtrlDelete(pattern string, f interface{})",
+    "funcbody": "func (p *ControllerRegister) CtrlDelete(pattern string, f interface{}) {\n\tp.AddRouterMethod(http.MethodDelete, pattern, f)\n}",
+    "funcname": "CtrlDelete"
+}

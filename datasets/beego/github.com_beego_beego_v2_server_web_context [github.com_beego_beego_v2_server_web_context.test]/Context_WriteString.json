@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 207,
+    "focalfunc": "func (ctx *Context) WriteString(content string)",
+    "funcbody": "func (ctx *Context) WriteString(content string) {\n\t_, _ = ctx.ResponseWriter.Write([]byte(content))\n}",
+    "funcname": "WriteString"
+}

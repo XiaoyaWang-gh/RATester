@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 431,
+    "focalfunc": "func (p *pagePathBuilder) Sanitize()",
+    "funcbody": "func (p *pagePathBuilder) Sanitize() {\n\tfor i, el := range p.els {\n\t\tp.els[i] = p.d.PathSpec.MakePathSanitized(el)\n\t}\n}",
+    "funcname": "Sanitize"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 71,
+    "focalfunc": "func parse(aliasTag string, out any, data map[string][]string) error",
+    "funcbody": "func parse(aliasTag string, out any, data map[string][]string) error {\n\tptrVal := reflect.ValueOf(out)\n\n\tif ptrVal.Kind() == reflect.Ptr {\n\t\tptrVal = ptrVal.Elem()\n\t}\n\n\tif ptrVal.Kind() == reflect.Map && ptrVal.Type().Key().Kind() == reflect.String {\n\t\treturn parseToMap(ptrVal.Interface(), data)\n\t}\n\n\treturn parseToStruct(aliasTag, out, data)\n}",
+    "funcname": "parse"
+}

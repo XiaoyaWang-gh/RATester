@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/hashing_fs.go",
+    "lineno": 46,
+    "focalfunc": "func NewHashingFs(delegate afero.Fs, hashReceiver FileHashReceiver) afero.Fs",
+    "funcbody": "func NewHashingFs(delegate afero.Fs, hashReceiver FileHashReceiver) afero.Fs {\n\treturn &hashingFs{Fs: delegate, hashReceiver: hashReceiver}\n}",
+    "funcname": "NewHashingFs"
+}

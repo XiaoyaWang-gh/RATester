@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 69,
+    "focalfunc": "func (c ConfigLanguage) Environment() string",
+    "funcbody": "func (c ConfigLanguage) Environment() string {\n\treturn c.config.Environment\n}",
+    "funcname": "Environment"
+}

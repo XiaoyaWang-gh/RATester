@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 44,
+    "focalfunc": "func (w *filePoller) Add(name string) error",
+    "funcbody": "func (w *filePoller) Add(name string) error {\n\tw.mu.Lock()\n\tdefer w.mu.Unlock()\n\n\tif w.closed {\n\t\treturn errPollerClosed\n\t}\n\n\titem, err := newItemToWatch(name)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif item.left.FileInfo == nil {\n\t\treturn os.ErrNotExist\n\t}\n\n\tif w.watches == nil {\n\t\tw.watches = make(map[string]struct{})\n\t}\n\tif _, exists := w.watches[name]; exists {\n\t\treturn fmt.Errorf(\"watch exists\")\n\t}\n\tw.watches[name] = struct{}{}\n\n\tgo w.watch(item)\n\treturn nil\n}",
+    "funcname": "Add"
+}

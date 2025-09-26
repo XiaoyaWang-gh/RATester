@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 190,
+    "focalfunc": "func (v *Muxer) run()",
+    "funcbody": "func (v *Muxer) run() {\n\tfor {\n\t\tconn, err := v.listener.Accept()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tgo v.handle(conn)\n\t}\n}",
+    "funcname": "run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 556,
+    "focalfunc": "func appendCertMetric(gauge gokitmetrics.Gauge, certificate *x509.Certificate)",
+    "funcbody": "func appendCertMetric(gauge gokitmetrics.Gauge, certificate *x509.Certificate) {\n\tsort.Strings(certificate.DNSNames)\n\n\tlabels := []string{\n\t\t\"cn\", certificate.Subject.CommonName,\n\t\t\"serial\", certificate.SerialNumber.String(),\n\t\t\"sans\", strings.Join(certificate.DNSNames, \",\"),\n\t}\n\n\tnotAfter := float64(certificate.NotAfter.Unix())\n\n\tgauge.With(labels...).Set(notAfter)\n}",
+    "funcname": "appendCertMetric"
+}

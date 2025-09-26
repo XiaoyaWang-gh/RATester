@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/templatefuncsRegistry.go",
+    "lineno": 65,
+    "focalfunc": "func (t *TemplateFuncsNamespace) AddMethodMapping(m any, aliases []string, examples [][2]string)",
+    "funcbody": "func (t *TemplateFuncsNamespace) AddMethodMapping(m any, aliases []string, examples [][2]string) {\n\tif t.MethodMappings == nil {\n\t\tt.MethodMappings = make(map[string]TemplateFuncMethodMapping)\n\t}\n\n\tname := methodToName(m)\n\n\tfor i, e := range examples {\n\t\texamples[i][0] = strings.ReplaceAll(e[0], \"\u00a7\u00a7\", \"`\")\n\t}\n\n\tfor _, e := range examples {\n\t\tif e[0] == \"\" {\n\t\t\tpanic(t.Name + \": Empty example for \" + name)\n\t\t}\n\t}\n\tfor _, a := range aliases {\n\t\tif a == \"\" {\n\t\t\tpanic(t.Name + \": Empty alias for \" + name)\n\t\t}\n\t}\n\n\tt.MethodMappings[name] = TemplateFuncMethodMapping{\n\t\tMethod:\t\tm,\n\t\tAliases:\taliases,\n\t\tExamples:\texamples,\n\t}\n}",
+    "funcname": "AddMethodMapping"
+}

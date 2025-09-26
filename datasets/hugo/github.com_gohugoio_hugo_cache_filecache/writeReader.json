@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 234,
+    "focalfunc": "func (c *Cache) writeReader(id string, r io.Reader) error",
+    "funcbody": "func (c *Cache) writeReader(id string, r io.Reader) error {\n\tdir := filepath.Dir(id)\n\tif dir != \"\" {\n\t\t_ = c.Fs.MkdirAll(dir, 0o777)\n\t}\n\tf, err := c.Fs.Create(id)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\n\t_, _ = io.Copy(f, r)\n\n\treturn nil\n}",
+    "funcname": "writeReader"
+}

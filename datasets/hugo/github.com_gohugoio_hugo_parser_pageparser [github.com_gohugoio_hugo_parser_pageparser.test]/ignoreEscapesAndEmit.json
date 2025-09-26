@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 183,
+    "focalfunc": "func (l *pageLexer) ignoreEscapesAndEmit(t ItemType, isString bool)",
+    "funcbody": "func (l *pageLexer) ignoreEscapesAndEmit(t ItemType, isString bool) {\n\ti := l.start\n\tk := i\n\n\tvar segments []lowHigh\n\n\tfor i < l.pos {\n\t\tr, w := utf8.DecodeRune(l.input[i:l.pos])\n\t\tif r == '\\\\' {\n\t\t\tif i > k {\n\t\t\t\tsegments = append(segments, lowHigh{k, i})\n\t\t\t}\n\n\t\t\tk = i + w\n\t\t}\n\t\ti += w\n\t}\n\n\tif k < l.pos {\n\t\tsegments = append(segments, lowHigh{k, l.pos})\n\t}\n\n\tif len(segments) > 0 {\n\t\tl.append(Item{Type: t, segments: segments})\n\t}\n\n\tl.start = l.pos\n}",
+    "funcname": "ignoreEscapesAndEmit"
+}

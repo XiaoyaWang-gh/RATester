@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 1836,
+    "focalfunc": "func (sa *sitePagesAssembler) removeShouldNotBuild() error",
+    "funcbody": "func (sa *sitePagesAssembler) removeShouldNotBuild() error {\n\ts := sa.Site\n\tvar keys []string\n\tw := &doctree.NodeShiftTreeWalker[contentNodeI]{\n\t\tLockType:\tdoctree.LockTypeRead,\n\t\tTree:\t\tsa.pageMap.treePages,\n\t\tHandle: func(key string, n contentNodeI, match doctree.DimensionFlag) (bool, error) {\n\t\t\tp := n.(*pageState)\n\t\t\tif !s.shouldBuild(p) {\n\t\t\t\tswitch p.Kind() {\n\t\t\t\tcase kinds.KindHome, kinds.KindSection, kinds.KindTaxonomy:\n\n\t\t\t\t\t(&p.m.pageConfig.Build).Disable()\n\t\t\t\tdefault:\n\t\t\t\t\tkeys = append(keys, key)\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn false, nil\n\t\t},\n\t}\n\tif err := w.Walk(sa.ctx); err != nil {\n\t\treturn err\n\t}\n\n\tif len(keys) == 0 {\n\t\treturn nil\n\t}\n\n\tsa.pageMap.DeletePageAndResourcesBelow(keys...)\n\n\treturn nil\n}",
+    "funcname": "removeShouldNotBuild"
+}

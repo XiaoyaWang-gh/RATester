@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 27,
+    "focalfunc": "func ToStringMapE(in any) (map[string]any, error)",
+    "funcbody": "func ToStringMapE(in any) (map[string]any, error) {\n\tswitch vv := in.(type) {\n\tcase Params:\n\t\treturn vv, nil\n\tcase map[string]string:\n\t\tm := map[string]any{}\n\t\tfor k, v := range vv {\n\t\t\tm[k] = v\n\t\t}\n\t\treturn m, nil\n\n\tdefault:\n\t\treturn cast.ToStringMapE(in)\n\t}\n}",
+    "funcname": "ToStringMapE"
+}

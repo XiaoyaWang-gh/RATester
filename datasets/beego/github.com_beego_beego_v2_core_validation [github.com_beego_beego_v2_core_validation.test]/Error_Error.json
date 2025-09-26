@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 76,
+    "focalfunc": "func (e *Error) Error() string",
+    "funcbody": "func (e *Error) Error() string\t{ return e.String() }",
+    "funcname": "Error"
+}

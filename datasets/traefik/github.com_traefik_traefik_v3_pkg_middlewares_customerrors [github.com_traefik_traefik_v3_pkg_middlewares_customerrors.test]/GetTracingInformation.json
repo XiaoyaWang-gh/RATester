@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 65,
+    "focalfunc": "func (c *customErrors) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (c *customErrors) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn c.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

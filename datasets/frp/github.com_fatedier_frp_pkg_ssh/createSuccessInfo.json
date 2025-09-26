@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/terminal.go",
+    "lineno": 22,
+    "focalfunc": "func createSuccessInfo(user string, pc v1.ProxyConfigurer, ps *proxy.WorkingStatus) string",
+    "funcbody": "func createSuccessInfo(user string, pc v1.ProxyConfigurer, ps *proxy.WorkingStatus) string {\n\tbase := pc.GetBaseConfig()\n\tout := \"\\n\"\n\tout += \"frp (via SSH) (Ctrl+C to quit)\\n\\n\"\n\tout += \"User: \" + user + \"\\n\"\n\tout += \"ProxyName: \" + base.Name + \"\\n\"\n\tout += \"Type: \" + base.Type + \"\\n\"\n\tout += \"RemoteAddress: \" + ps.RemoteAddr + \"\\n\"\n\treturn out\n}",
+    "funcname": "createSuccessInfo"
+}

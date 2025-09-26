@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/connect_tls.go",
+    "lineno": 32,
+    "focalfunc": "func (c *connectCert) isReady() bool",
+    "funcbody": "func (c *connectCert) isReady() bool {\n\treturn c != nil && len(c.root) > 0 && c.leaf.cert != \"\" && c.leaf.key != \"\"\n}",
+    "funcname": "isReady"
+}

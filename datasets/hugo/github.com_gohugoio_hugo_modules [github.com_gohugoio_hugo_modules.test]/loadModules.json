@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 585,
+    "focalfunc": "func (c *collector) loadModules() error",
+    "funcbody": "func (c *collector) loadModules() error {\n\tmodules, err := c.listGoMods()\n\tif err != nil {\n\t\treturn err\n\t}\n\tc.gomods = modules\n\treturn nil\n}",
+    "funcname": "loadModules"
+}

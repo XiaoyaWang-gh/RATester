@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/process/process.go",
+    "lineno": 56,
+    "focalfunc": "func (p *Process) ErrorOutput() string",
+    "funcbody": "func (p *Process) ErrorOutput() string {\n\treturn p.errorOutput.String()\n}",
+    "funcname": "ErrorOutput"
+}

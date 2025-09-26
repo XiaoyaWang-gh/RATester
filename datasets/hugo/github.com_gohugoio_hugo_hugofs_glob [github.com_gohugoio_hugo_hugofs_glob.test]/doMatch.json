@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/filename_filter.go",
+    "lineno": 134,
+    "focalfunc": "func (f *FilenameFilter) doMatch(filename string, isDir bool) bool",
+    "funcbody": "func (f *FilenameFilter) doMatch(filename string, isDir bool) bool {\n\tif f == nil {\n\t\treturn true\n\t}\n\n\tif !strings.HasPrefix(filename, filepathSeparator) {\n\t\tfilename = filepathSeparator + filename\n\t}\n\n\tif f.shouldInclude != nil {\n\t\tif f.shouldInclude(filename) {\n\t\t\treturn true\n\t\t}\n\t\tif f.isWindows {\n\n\t\t\twinFilename := filepath.FromSlash(filename)\n\t\t\tif filename != winFilename {\n\t\t\t\tif f.shouldInclude(winFilename) {\n\t\t\t\t\treturn true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t}\n\n\tfor _, inclusion := range f.inclusions {\n\t\tif inclusion.Match(filename) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tif isDir && f.inclusions != nil {\n\t\tfor _, inclusion := range f.dirInclusions {\n\t\t\tif inclusion.Match(filename) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\n\tfor _, exclusion := range f.exclusions {\n\t\tif exclusion.Match(filename) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn f.inclusions == nil && f.shouldInclude == nil\n}",
+    "funcname": "doMatch"
+}

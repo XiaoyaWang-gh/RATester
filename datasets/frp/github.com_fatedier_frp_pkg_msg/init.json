@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/ctl.go",
+    "lineno": 27,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tmsgCtl = jsonMsg.NewMsgCtl()\n\tfor typeByte, msg := range msgTypeMap {\n\t\tmsgCtl.RegisterMsg(typeByte, msg)\n\t}\n}",
+    "funcname": "init"
+}

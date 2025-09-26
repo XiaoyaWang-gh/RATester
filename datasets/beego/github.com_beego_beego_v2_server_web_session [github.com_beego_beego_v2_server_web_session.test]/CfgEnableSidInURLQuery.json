@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 118,
+    "focalfunc": "func CfgEnableSidInURLQuery(enable bool) ManagerConfigOpt",
+    "funcbody": "func CfgEnableSidInURLQuery(enable bool) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.EnableSidInURLQuery = enable\n\t}\n}",
+    "funcname": "CfgEnableSidInURLQuery"
+}

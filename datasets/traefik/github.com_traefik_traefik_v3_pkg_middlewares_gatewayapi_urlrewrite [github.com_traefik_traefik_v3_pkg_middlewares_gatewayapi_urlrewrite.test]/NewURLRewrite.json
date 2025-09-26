@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/urlrewrite/url_rewrite.go",
+    "lineno": 28,
+    "focalfunc": "func NewURLRewrite(ctx context.Context, next http.Handler, conf dynamic.URLRewrite, name string) http.Handler",
+    "funcbody": "func NewURLRewrite(ctx context.Context, next http.Handler, conf dynamic.URLRewrite, name string) http.Handler {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\treturn urlRewrite{\n\t\tname:\t\tname,\n\t\tnext:\t\tnext,\n\t\thostname:\tconf.Hostname,\n\t\tpath:\t\tconf.Path,\n\t\tpathPrefix:\tconf.PathPrefix,\n\t}\n}",
+    "funcname": "NewURLRewrite"
+}

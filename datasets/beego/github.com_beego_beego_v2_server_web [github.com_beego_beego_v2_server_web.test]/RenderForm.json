@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 286,
+    "focalfunc": "func RenderForm(obj interface{}) template.HTML",
+    "funcbody": "func RenderForm(obj interface{}) template.HTML {\n\tobjT := reflect.TypeOf(obj)\n\tobjV := reflect.ValueOf(obj)\n\tif objT.Kind() != reflect.Ptr || objT.Elem().Kind() != reflect.Struct {\n\t\treturn template.HTML(\"\")\n\t}\n\tobjT = objT.Elem()\n\tobjV = objV.Elem()\n\n\tvar raw []string\n\tfor i := 0; i < objT.NumField(); i++ {\n\t\tfieldV := objV.Field(i)\n\t\tif !fieldV.CanSet() || unKind[fieldV.Kind()] {\n\t\t\tcontinue\n\t\t}\n\n\t\tfieldT := objT.Field(i)\n\n\t\tlabel, name, fType, id, class, ignored, required := parseFormTag(fieldT)\n\t\tif ignored {\n\t\t\tcontinue\n\t\t}\n\n\t\traw = append(raw, renderFormField(label, name, fType, fieldV.Interface(), id, class, required))\n\t}\n\treturn template.HTML(strings.Join(raw, \"</br>\"))\n}",
+    "funcname": "RenderForm"
+}

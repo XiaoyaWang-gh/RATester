@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_tcp.go",
+    "lineno": 176,
+    "focalfunc": "func (h Handler) getTCPMiddlewares(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getTCPMiddlewares(rw http.ResponseWriter, request *http.Request) {\n\tresults := make([]tcpMiddlewareRepresentation, 0, len(h.runtimeConfiguration.Middlewares))\n\n\tquery := request.URL.Query()\n\tcriterion := newSearchCriterion(query)\n\n\tfor name, mi := range h.runtimeConfiguration.TCPMiddlewares {\n\t\tif keepTCPMiddleware(name, mi, criterion) {\n\t\t\tresults = append(results, newTCPMiddlewareRepresentation(name, mi))\n\t\t}\n\t}\n\n\tsortMiddlewares(query, results)\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\tpageInfo, err := pagination(request, len(results))\n\tif err != nil {\n\t\twriteError(rw, err.Error(), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\trw.Header().Set(nextPageHeader, strconv.Itoa(pageInfo.nextPage))\n\n\terr = json.NewEncoder(rw).Encode(results[pageInfo.startIndex:pageInfo.endIndex])\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getTCPMiddlewares"
+}

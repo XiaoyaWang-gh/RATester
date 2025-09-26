@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_overview.go",
+    "lineno": 202,
+    "focalfunc": "func getUDPServiceSection(services map[string]*runtime.UDPServiceInfo) *section",
+    "funcbody": "func getUDPServiceSection(services map[string]*runtime.UDPServiceInfo) *section {\n\tvar countErrors int\n\tvar countWarnings int\n\tfor _, svc := range services {\n\t\tswitch svc.Status {\n\t\tcase runtime.StatusDisabled:\n\t\t\tcountErrors++\n\t\tcase runtime.StatusWarning:\n\t\t\tcountWarnings++\n\t\t}\n\t}\n\n\treturn &section{\n\t\tTotal:\t\tlen(services),\n\t\tWarnings:\tcountWarnings,\n\t\tErrors:\t\tcountErrors,\n\t}\n}",
+    "funcname": "getUDPServiceSection"
+}

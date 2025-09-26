@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 467,
+    "focalfunc": "func RESTRouter(rootpath string, c ControllerInterface) *HttpServer",
+    "funcbody": "func RESTRouter(rootpath string, c ControllerInterface) *HttpServer {\n\treturn BeeApp.RESTRouter(rootpath, c)\n}",
+    "funcname": "RESTRouter"
+}

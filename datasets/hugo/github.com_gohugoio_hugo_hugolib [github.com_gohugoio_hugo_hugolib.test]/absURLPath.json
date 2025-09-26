@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 829,
+    "focalfunc": "func (s *Site) absURLPath(targetPath string) string",
+    "funcbody": "func (s *Site) absURLPath(targetPath string) string {\n\tvar path string\n\tif s.conf.RelativeURLs {\n\t\tpath = helpers.GetDottedRelativePath(targetPath)\n\t} else {\n\t\turl := s.PathSpec.Cfg.BaseURL().String()\n\t\tif !strings.HasSuffix(url, \"/\") {\n\t\t\turl += \"/\"\n\t\t}\n\t\tpath = url\n\t}\n\n\treturn path\n}",
+    "funcname": "absURLPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/processing_stats.go",
+    "lineno": 55,
+    "focalfunc": "func NewProcessingStats(name string) *ProcessingStats",
+    "funcbody": "func NewProcessingStats(name string) *ProcessingStats {\n\treturn &ProcessingStats{Name: name}\n}",
+    "funcname": "NewProcessingStats"
+}

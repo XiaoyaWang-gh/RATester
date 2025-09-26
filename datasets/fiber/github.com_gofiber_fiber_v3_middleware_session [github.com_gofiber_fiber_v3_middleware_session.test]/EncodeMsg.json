@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/data_msgp.go",
+    "lineno": 69,
+    "focalfunc": "func (z *data) EncodeMsg(en *msgp.Writer) (err error)",
+    "funcbody": "func (z *data) EncodeMsg(en *msgp.Writer) (err error) {\n\n\terr = en.Append(0x81, 0xa4, 0x44, 0x61, 0x74, 0x61)\n\tif err != nil {\n\t\treturn\n\t}\n\terr = en.WriteMapHeader(uint32(len(z.Data)))\n\tif err != nil {\n\t\terr = msgp.WrapError(err, \"Data\")\n\t\treturn\n\t}\n\tfor za0001, za0002 := range z.Data {\n\t\terr = en.WriteString(za0001)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err, \"Data\")\n\t\t\treturn\n\t\t}\n\t\terr = en.WriteIntf(za0002)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err, \"Data\", za0001)\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "EncodeMsg"
+}

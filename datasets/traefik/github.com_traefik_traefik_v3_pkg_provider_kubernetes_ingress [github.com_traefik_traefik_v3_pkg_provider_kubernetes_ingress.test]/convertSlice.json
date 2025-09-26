@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/convert.go",
+    "lineno": 24,
+    "focalfunc": "func convertSlice[O LoadBalancerIngress, I LoadBalancerIngress](loadBalancerIngresses []I) ([]O, error)",
+    "funcbody": "func convertSlice[O LoadBalancerIngress, I LoadBalancerIngress](loadBalancerIngresses []I) ([]O, error) {\n\tvar results []O\n\n\tfor _, loadBalancerIngress := range loadBalancerIngresses {\n\t\tmar, ok := any(&loadBalancerIngress).(marshaler)\n\t\tif !ok {\n\n\t\t\tcontinue\n\t\t}\n\n\t\tum, err := convert[O](mar)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tv, ok := any(*um).(O)\n\t\tif !ok {\n\t\t\tcontinue\n\t\t}\n\n\t\tresults = append(results, v)\n\t}\n\n\treturn results, nil\n}",
+    "funcname": "convertSlice"
+}

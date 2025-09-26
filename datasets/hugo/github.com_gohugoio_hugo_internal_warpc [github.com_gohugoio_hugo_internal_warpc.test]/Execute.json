@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 121,
+    "focalfunc": "func (p *dispatcherPool[Q, R]) Execute(ctx context.Context, q Message[Q]) (Message[R], error)",
+    "funcbody": "func (p *dispatcherPool[Q, R]) Execute(ctx context.Context, q Message[Q]) (Message[R], error) {\n\td := p.getDispatcher()\n\tif q.GetID() == 0 {\n\t\treturn d.zero, errors.New(\"ID must not be 0 (note that this must be unique within the current request set time window)\")\n\t}\n\n\tcall, err := d.newCall(q)\n\tif err != nil {\n\t\treturn d.zero, err\n\t}\n\n\tif err := d.send(call); err != nil {\n\t\treturn d.zero, err\n\t}\n\n\ttimer := getTimer(30 * time.Second)\n\tdefer putTimer(timer)\n\n\tselect {\n\tcase call = <-call.donec:\n\tcase <-p.donec:\n\t\treturn d.zero, p.Err()\n\tcase <-ctx.Done():\n\t\treturn d.zero, ctx.Err()\n\tcase <-timer.C:\n\t\treturn d.zero, errors.New(\"timeout\")\n\t}\n\n\tif call.err != nil {\n\t\treturn d.zero, call.err\n\t}\n\n\treturn call.response, p.Err()\n}",
+    "funcname": "Execute"
+}

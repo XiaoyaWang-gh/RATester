@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 665,
+    "focalfunc": "func (c Cookie) DelCookies(key ...string)",
+    "funcbody": "func (c Cookie) DelCookies(key ...string) {\n\tfor _, v := range key {\n\t\tc.Del(v)\n\t}\n}",
+    "funcname": "DelCookies"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 166,
+    "focalfunc": "func (input *BeegoInput) IsDelete() bool",
+    "funcbody": "func (input *BeegoInput) IsDelete() bool {\n\treturn input.Is(\"DELETE\")\n}",
+    "funcname": "IsDelete"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/admin.go",
+    "lineno": 87,
+    "focalfunc": "func StatusHandler(clientCfg *v1.ClientCommonConfig) error",
+    "funcbody": "func StatusHandler(clientCfg *v1.ClientCommonConfig) error {\n\tclient := clientsdk.New(clientCfg.WebServer.Addr, clientCfg.WebServer.Port)\n\tclient.SetAuth(clientCfg.WebServer.User, clientCfg.WebServer.Password)\n\tctx, cancel := context.WithTimeout(context.Background(), adminAPITimeout)\n\tdefer cancel()\n\tres, err := client.GetAllProxyStatus(ctx)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tfmt.Printf(\"Proxy Status...\\n\\n\")\n\tfor _, typ := range proxyTypes {\n\t\tarrs := res[string(typ)]\n\t\tif len(arrs) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tfmt.Println(strings.ToUpper(string(typ)))\n\t\ttbl := table.New(\"Name\", \"Status\", \"LocalAddr\", \"Plugin\", \"RemoteAddr\", \"Error\")\n\t\tfor _, ps := range arrs {\n\t\t\ttbl.AddRow(ps.Name, ps.Status, ps.LocalAddr, ps.Plugin, ps.RemoteAddr, ps.Err)\n\t\t}\n\t\ttbl.Print()\n\t\tfmt.Println(\"\")\n\t}\n\treturn nil\n}",
+    "funcname": "StatusHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 233,
+    "focalfunc": "func (o querySet) CountWithCtx(ctx context.Context) (int64, error)",
+    "funcbody": "func (o querySet) CountWithCtx(ctx context.Context) (int64, error) {\n\treturn o.orm.alias.DbBaser.Count(ctx, o.orm.db, o, o.mi, o.cond, o.orm.alias.TZ)\n}",
+    "funcname": "CountWithCtx"
+}

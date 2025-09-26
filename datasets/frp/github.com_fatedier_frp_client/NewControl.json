@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 80,
+    "focalfunc": "func NewControl(ctx context.Context, sessionCtx *SessionContext) (*Control, error)",
+    "funcbody": "func NewControl(ctx context.Context, sessionCtx *SessionContext) (*Control, error) {\n\n\tctl := &Control{\n\t\tctx:\t\tctx,\n\t\txl:\t\txlog.FromContextSafe(ctx),\n\t\tsessionCtx:\tsessionCtx,\n\t\tdoneCh:\t\tmake(chan struct{}),\n\t}\n\tctl.lastPong.Store(time.Now())\n\n\tif sessionCtx.ConnEncrypted {\n\t\tcryptoRW, err := netpkg.NewCryptoReadWriter(sessionCtx.Conn, []byte(sessionCtx.Common.Auth.Token))\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tctl.msgDispatcher = msg.NewDispatcher(cryptoRW)\n\t} else {\n\t\tctl.msgDispatcher = msg.NewDispatcher(sessionCtx.Conn)\n\t}\n\tctl.registerMsgHandlers()\n\tctl.msgTransporter = transport.NewMessageTransporter(ctl.msgDispatcher.SendChannel())\n\n\tctl.pm = proxy.NewManager(ctl.ctx, sessionCtx.Common, ctl.msgTransporter)\n\tctl.vm = visitor.NewManager(ctl.ctx, sessionCtx.RunID, sessionCtx.Common, ctl.connectServer, ctl.msgTransporter)\n\treturn ctl, nil\n}",
+    "funcname": "NewControl"
+}

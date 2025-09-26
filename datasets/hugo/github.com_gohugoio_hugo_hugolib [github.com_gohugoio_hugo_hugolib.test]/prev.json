@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__position.go",
+    "lineno": 62,
+    "focalfunc": "func (p pagePosition) Prev() page.Page",
+    "funcbody": "func (p pagePosition) Prev() page.Page {\n\treturn p.prev()\n}",
+    "funcname": "Prev"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 433,
+    "focalfunc": "func (f noDirFile) Readdir(count int) ([]os.FileInfo, error)",
+    "funcbody": "func (f noDirFile) Readdir(count int) ([]os.FileInfo, error) {\n\treturn nil, nil\n}",
+    "funcname": "Readdir"
+}

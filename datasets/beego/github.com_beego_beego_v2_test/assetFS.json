@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 296,
+    "focalfunc": "func assetFS() *assetfs.AssetFS",
+    "funcbody": "func assetFS() *assetfs.AssetFS {\n\tassetInfo := os.Stat\n\tfor k := range _bintree.Children {\n\t\treturn &assetfs.AssetFS{Asset: Asset, AssetDir: AssetDir, AssetInfo: assetInfo, Prefix: k}\n\t}\n\tpanic(\"unreachable\")\n}",
+    "funcname": "assetFS"
+}

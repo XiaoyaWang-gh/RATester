@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/provider/provider.go",
+    "lineno": 43,
+    "focalfunc": "func MakeQualifiedName(providerName, elementName string) string",
+    "funcbody": "func MakeQualifiedName(providerName, elementName string) string {\n\treturn elementName + \"@\" + providerName\n}",
+    "funcname": "MakeQualifiedName"
+}

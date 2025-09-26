@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 193,
+    "focalfunc": "func parseRoute(pattern string, customConstraints ...CustomConstraint) routeParser",
+    "funcbody": "func parseRoute(pattern string, customConstraints ...CustomConstraint) routeParser {\n\tparser := routeParser{}\n\tpart := \"\"\n\tfor len(pattern) > 0 {\n\t\tnextParamPosition := findNextParamPosition(pattern)\n\n\t\tif nextParamPosition == 0 {\n\t\t\tprocessedPart, seg := parser.analyseParameterPart(pattern, customConstraints...)\n\t\t\tparser.params, parser.segs, part = append(parser.params, seg.ParamName), append(parser.segs, seg), processedPart\n\t\t} else {\n\t\t\tprocessedPart, seg := parser.analyseConstantPart(pattern, nextParamPosition)\n\t\t\tparser.segs, part = append(parser.segs, seg), processedPart\n\t\t}\n\n\t\tif len(part) == len(pattern) {\n\t\t\tbreak\n\t\t}\n\t\tpattern = pattern[len(part):]\n\t}\n\n\tif len(parser.segs) > 0 {\n\t\tparser.segs[len(parser.segs)-1].IsLast = true\n\t}\n\tparser.segs = addParameterMetaInfo(parser.segs)\n\n\treturn parser\n}",
+    "funcname": "parseRoute"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/filename_filter.go",
+    "lineno": 46,
+    "focalfunc": "func NewFilenameFilter(inclusions, exclusions []string) (*FilenameFilter, error)",
+    "funcbody": "func NewFilenameFilter(inclusions, exclusions []string) (*FilenameFilter, error) {\n\tif inclusions == nil && exclusions == nil {\n\t\treturn nil, nil\n\t}\n\tfilter := &FilenameFilter{isWindows: isWindows}\n\n\tfor _, include := range inclusions {\n\t\tinclude = normalizeFilenameGlobPattern(include)\n\t\tg, err := GetGlob(include)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfilter.inclusions = append(filter.inclusions, g)\n\n\t\tdir := path.Dir(include)\n\t\tparts := strings.Split(dir, \"/\")\n\t\tfor i := range parts {\n\t\t\tpattern := \"/\" + filepath.Join(parts[:i+1]...)\n\t\t\tg, err := GetGlob(pattern)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\tfilter.dirInclusions = append(filter.dirInclusions, g)\n\t\t}\n\t}\n\n\tfor _, exclude := range exclusions {\n\t\texclude = normalizeFilenameGlobPattern(exclude)\n\t\tg, err := GetGlob(exclude)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfilter.exclusions = append(filter.exclusions, g)\n\t}\n\n\treturn filter, nil\n}",
+    "funcname": "NewFilenameFilter"
+}

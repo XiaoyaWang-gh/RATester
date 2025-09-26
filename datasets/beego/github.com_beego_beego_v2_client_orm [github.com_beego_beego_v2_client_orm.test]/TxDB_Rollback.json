@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 235,
+    "focalfunc": "func (t *TxDB) Rollback() error",
+    "funcbody": "func (t *TxDB) Rollback() error {\n\treturn t.tx.Rollback()\n}",
+    "funcname": "Rollback"
+}

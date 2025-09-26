@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 633,
+    "focalfunc": "func (s *Site) SitemapAbsURL() string",
+    "funcbody": "func (s *Site) SitemapAbsURL() string {\n\tbase := \"\"\n\tif len(s.conf.Languages) > 1 || s.Conf.DefaultContentLanguageInSubdir() {\n\t\tbase = s.Language().Lang\n\t}\n\tp := s.AbsURL(base, false)\n\tif !strings.HasSuffix(p, \"/\") {\n\t\tp += \"/\"\n\t}\n\tp += s.conf.Sitemap.Filename\n\treturn p\n}",
+    "funcname": "SitemapAbsURL"
+}

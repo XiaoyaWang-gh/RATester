@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/pathspec.go",
+    "lineno": 41,
+    "focalfunc": "func NewPathSpec(fs *hugofs.Fs, cfg config.AllProvider, logger loggers.Logger) (*PathSpec, error)",
+    "funcbody": "func NewPathSpec(fs *hugofs.Fs, cfg config.AllProvider, logger loggers.Logger) (*PathSpec, error) {\n\treturn NewPathSpecWithBaseBaseFsProvided(fs, cfg, logger, nil)\n}",
+    "funcname": "NewPathSpec"
+}

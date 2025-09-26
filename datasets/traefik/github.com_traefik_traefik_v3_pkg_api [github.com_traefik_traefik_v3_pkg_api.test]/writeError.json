@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler.go",
+    "lineno": 21,
+    "focalfunc": "func writeError(rw http.ResponseWriter, msg string, code int)",
+    "funcbody": "func writeError(rw http.ResponseWriter, msg string, code int) {\n\tdata, err := json.Marshal(apiError{Message: msg})\n\tif err != nil {\n\t\thttp.Error(rw, msg, code)\n\t\treturn\n\t}\n\n\thttp.Error(rw, string(data), code)\n}",
+    "funcname": "writeError"
+}

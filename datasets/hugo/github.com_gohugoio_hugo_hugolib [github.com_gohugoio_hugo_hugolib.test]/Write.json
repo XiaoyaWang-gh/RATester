@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 202,
+    "focalfunc": "func (b *lockingBuffer) Write(p []byte) (n int, err error)",
+    "funcbody": "func (b *lockingBuffer) Write(p []byte) (n int, err error) {\n\tb.Lock()\n\tn, err = b.Buffer.Write(p)\n\tb.Unlock()\n\treturn\n}",
+    "funcname": "Write"
+}

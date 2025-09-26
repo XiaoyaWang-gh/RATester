@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 38,
+    "focalfunc": "func (s *IndexController) Socks5()",
+    "funcbody": "func (s *IndexController) Socks5() {\n\ts.SetInfo(\"socks5\")\n\ts.SetType(\"socks5\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "Socks5"
+}

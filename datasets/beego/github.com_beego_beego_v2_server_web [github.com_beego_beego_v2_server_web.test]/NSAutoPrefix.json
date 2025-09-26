@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 486,
+    "focalfunc": "func NSAutoPrefix(prefix string, c ControllerInterface) LinkNamespace",
+    "funcbody": "func NSAutoPrefix(prefix string, c ControllerInterface) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.AutoPrefix(prefix, c)\n\t}\n}",
+    "funcname": "NSAutoPrefix"
+}

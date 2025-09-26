@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 58,
+    "focalfunc": "func decodeCSS(s []byte) []byte",
+    "funcbody": "func decodeCSS(s []byte) []byte {\n\ti := bytes.IndexByte(s, '\\\\')\n\tif i == -1 {\n\t\treturn s\n\t}\n\n\tb := make([]byte, 0, len(s))\n\tfor len(s) != 0 {\n\t\ti := bytes.IndexByte(s, '\\\\')\n\t\tif i == -1 {\n\t\t\ti = len(s)\n\t\t}\n\t\tb, s = append(b, s[:i]...), s[i:]\n\t\tif len(s) < 2 {\n\t\t\tbreak\n\t\t}\n\n\t\tif isHex(s[1]) {\n\n\t\t\tj := 2\n\t\t\tfor j < len(s) && j < 7 && isHex(s[j]) {\n\t\t\t\tj++\n\t\t\t}\n\t\t\tr := hexDecode(s[1:j])\n\t\t\tif r > unicode.MaxRune {\n\t\t\t\tr, j = r/16, j-1\n\t\t\t}\n\t\t\tn := utf8.EncodeRune(b[len(b):cap(b)], r)\n\n\t\t\tb, s = b[:len(b)+n], skipCSSSpace(s[j:])\n\t\t} else {\n\n\t\t\t_, n := utf8.DecodeRune(s[1:])\n\t\t\tb, s = append(b, s[1:1+n]...), s[1+n:]\n\t\t}\n\t}\n\treturn b\n}",
+    "funcname": "decodeCSS"
+}

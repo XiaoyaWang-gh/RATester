@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 68,
+    "focalfunc": "func IsTruthful(in any) bool",
+    "funcbody": "func IsTruthful(in any) bool {\n\tswitch v := in.(type) {\n\tcase reflect.Value:\n\t\treturn IsTruthfulValue(v)\n\tdefault:\n\t\treturn IsTruthfulValue(reflect.ValueOf(in))\n\t}\n}",
+    "funcname": "IsTruthful"
+}

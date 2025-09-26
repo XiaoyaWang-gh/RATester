@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 30,
+    "focalfunc": "func (c *Client) SetAuth(user, pwd string)",
+    "funcbody": "func (c *Client) SetAuth(user, pwd string) {\n\tc.authUser = user\n\tc.authPwd = pwd\n}",
+    "funcname": "SetAuth"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 77,
+    "focalfunc": "func New(cfg config.AllProvider, logger loggers.Logger, localFs afero.Fs) (*Deployer, error)",
+    "funcbody": "func New(cfg config.AllProvider, logger loggers.Logger, localFs afero.Fs) (*Deployer, error) {\n\tdcfg := cfg.GetConfigSection(deployconfig.DeploymentConfigKey).(deployconfig.DeployConfig)\n\ttargetName := dcfg.Target\n\n\tif len(dcfg.Targets) == 0 {\n\t\treturn nil, errors.New(\"no deployment targets found\")\n\t}\n\tmediaTypes := cfg.GetConfigSection(\"mediaTypes\").(media.Types)\n\n\t// Find the target to deploy to.\n\tvar tgt *deployconfig.Target\n\tif targetName == \"\" {\n\n\t\ttgt = dcfg.Targets[0]\n\t} else {\n\t\tfor _, t := range dcfg.Targets {\n\t\t\tif t.Name == targetName {\n\t\t\t\ttgt = t\n\t\t\t}\n\t\t}\n\t\tif tgt == nil {\n\t\t\treturn nil, fmt.Errorf(\"deployment target %q not found\", targetName)\n\t\t}\n\t}\n\n\treturn &Deployer{\n\t\tlocalFs:\tlocalFs,\n\t\ttarget:\t\ttgt,\n\t\tquiet:\t\tcfg.BuildExpired(),\n\t\tmediaTypes:\tmediaTypes,\n\t\tcfg:\t\tdcfg,\n\t}, nil\n}",
+    "funcname": "New"
+}

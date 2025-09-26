@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/run.go",
+    "lineno": 59,
+    "focalfunc": "func GetNpcLogPath() string",
+    "funcbody": "func GetNpcLogPath() string {\n\tvar path string\n\tif IsWindows() {\n\t\tpath = filepath.Join(GetAppPath(), \"npc.log\")\n\t} else {\n\t\tpath = \"/var/log/npc.log\"\n\t}\n\treturn path\n}",
+    "funcname": "GetNpcLogPath"
+}

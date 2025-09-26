@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 250,
+    "focalfunc": "func (p *nopPage) IsMenuCurrent(menuID string, inme *navigation.MenuEntry) bool",
+    "funcbody": "func (p *nopPage) IsMenuCurrent(menuID string, inme *navigation.MenuEntry) bool {\n\treturn false\n}",
+    "funcname": "IsMenuCurrent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 761,
+    "focalfunc": "func renderShortcodeWithPage(ctx context.Context, h tpl.TemplateHandler, tmpl tpl.Template, data *ShortcodeWithPage) (string, error)",
+    "funcbody": "func renderShortcodeWithPage(ctx context.Context, h tpl.TemplateHandler, tmpl tpl.Template, data *ShortcodeWithPage) (string, error) {\n\tbuffer := bp.GetBuffer()\n\tdefer bp.PutBuffer(buffer)\n\n\terr := h.ExecuteWithContext(ctx, tmpl, buffer, data)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to process shortcode: %w\", err)\n\t}\n\treturn buffer.String(), nil\n}",
+    "funcname": "renderShortcodeWithPage"
+}

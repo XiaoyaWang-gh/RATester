@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 385,
+    "focalfunc": "func (output *BeegoOutput) IsForbidden() bool",
+    "funcbody": "func (output *BeegoOutput) IsForbidden() bool {\n\treturn output.Status == 403\n}",
+    "funcname": "IsForbidden"
+}

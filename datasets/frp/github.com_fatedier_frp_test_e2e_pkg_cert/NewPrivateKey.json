@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/cert/selfsigned.go",
+    "lineno": 116,
+    "focalfunc": "func NewPrivateKey() (*rsa.PrivateKey, error)",
+    "funcbody": "func NewPrivateKey() (*rsa.PrivateKey, error) {\n\treturn rsa.GenerateKey(rand.Reader, 2048)\n}",
+    "funcname": "NewPrivateKey"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/kv.go",
+    "lineno": 35,
+    "focalfunc": "func (s *SimpleKV) GetValue() interface{}",
+    "funcbody": "func (s *SimpleKV) GetValue() interface{} {\n\treturn s.Value\n}",
+    "funcname": "GetValue"
+}

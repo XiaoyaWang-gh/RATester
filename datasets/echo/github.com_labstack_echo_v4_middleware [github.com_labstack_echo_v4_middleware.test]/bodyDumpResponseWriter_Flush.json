@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 100,
+    "focalfunc": "func (w *bodyDumpResponseWriter) Flush()",
+    "funcbody": "func (w *bodyDumpResponseWriter) Flush() {\n\terr := http.NewResponseController(w.ResponseWriter).Flush()\n\tif err != nil && errors.Is(err, http.ErrNotSupported) {\n\t\tpanic(errors.New(\"response writer flushing is not supported\"))\n\t}\n}",
+    "funcname": "Flush"
+}

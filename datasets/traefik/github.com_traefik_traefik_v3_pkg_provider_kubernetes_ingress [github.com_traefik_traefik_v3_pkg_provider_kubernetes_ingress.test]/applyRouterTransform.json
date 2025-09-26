@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 68,
+    "focalfunc": "func (p *Provider) applyRouterTransform(ctx context.Context, rt *dynamic.Router, ingress *netv1.Ingress)",
+    "funcbody": "func (p *Provider) applyRouterTransform(ctx context.Context, rt *dynamic.Router, ingress *netv1.Ingress) {\n\tif p.routerTransform == nil {\n\t\treturn\n\t}\n\n\terr := p.routerTransform.Apply(ctx, rt, ingress)\n\tif err != nil {\n\t\tlog.Ctx(ctx).Error().Err(err).Msg(\"Apply router transform\")\n\t}\n}",
+    "funcname": "applyRouterTransform"
+}

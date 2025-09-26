@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 92,
+    "focalfunc": "func envFile() (string, error)",
+    "funcbody": "func envFile() (string, error) {\n\tif file := os.Getenv(\"GOENV\"); file != \"\" {\n\t\tif file == \"off\" {\n\t\t\treturn \"\", fmt.Errorf(\"GOENV=off\")\n\t\t}\n\t\treturn file, nil\n\t}\n\tdir, err := os.UserConfigDir()\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tif dir == \"\" {\n\t\treturn \"\", fmt.Errorf(\"missing user-config dir\")\n\t}\n\treturn filepath.Join(dir, \"go\", \"env\"), nil\n}",
+    "funcname": "envFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 82,
+    "focalfunc": "func sort(sort Sort) Option",
+    "funcbody": "func sort(sort Sort) Option {\n\treturn func(order *Order) {\n\t\torder.sort = sort\n\t}\n}",
+    "funcname": "sort"
+}

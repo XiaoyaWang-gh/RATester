@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/login.go",
+    "lineno": 108,
+    "focalfunc": "func (self *LoginController) Register()",
+    "funcbody": "func (self *LoginController) Register() {\n\tif self.Ctx.Request.Method == \"GET\" {\n\t\tself.Data[\"web_base_url\"] = beego.AppConfig.String(\"web_base_url\")\n\t\tself.TplName = \"login/register.html\"\n\t} else {\n\t\tif b, err := beego.AppConfig.Bool(\"allow_user_register\"); err != nil || !b {\n\t\t\tself.Data[\"json\"] = map[string]interface{}{\"status\": 0, \"msg\": \"register is not allow\"}\n\t\t\tself.ServeJSON()\n\t\t\treturn\n\t\t}\n\t\tif self.GetString(\"username\") == \"\" || self.GetString(\"password\") == \"\" || self.GetString(\"username\") == beego.AppConfig.String(\"web_username\") {\n\t\t\tself.Data[\"json\"] = map[string]interface{}{\"status\": 0, \"msg\": \"please check your input\"}\n\t\t\tself.ServeJSON()\n\t\t\treturn\n\t\t}\n\t\tt := &file.Client{\n\t\t\tId:\t\tint(file.GetDb().JsonDb.GetClientId()),\n\t\t\tStatus:\t\ttrue,\n\t\t\tCnf:\t\t&file.Config{},\n\t\t\tWebUserName:\tself.GetString(\"username\"),\n\t\t\tWebPassword:\tself.GetString(\"password\"),\n\t\t\tFlow:\t\t&file.Flow{},\n\t\t}\n\t\tif err := file.GetDb().NewClient(t); err != nil {\n\t\t\tself.Data[\"json\"] = map[string]interface{}{\"status\": 0, \"msg\": err.Error()}\n\t\t} else {\n\t\t\tself.Data[\"json\"] = map[string]interface{}{\"status\": 1, \"msg\": \"register success\"}\n\t\t}\n\t\tself.ServeJSON()\n\t}\n}",
+    "funcname": "Register"
+}

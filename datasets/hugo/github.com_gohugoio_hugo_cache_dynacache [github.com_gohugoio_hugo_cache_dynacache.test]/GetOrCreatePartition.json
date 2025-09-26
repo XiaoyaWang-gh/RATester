@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 334,
+    "focalfunc": "func GetOrCreatePartition[K comparable, V any](c *Cache, name string, opts OptionsPartition) *Partition[K, V]",
+    "funcbody": "func GetOrCreatePartition[K comparable, V any](c *Cache, name string, opts OptionsPartition) *Partition[K, V] {\n\tif c == nil {\n\t\tpanic(\"nil Cache\")\n\t}\n\tif opts.Weight < 1 || opts.Weight > 100 {\n\t\tpanic(\"invalid Weight, must be between 1 and 100\")\n\t}\n\n\tif partitionNameRe.FindString(name) != name {\n\t\tpanic(fmt.Sprintf(\"invalid partition name %q\", name))\n\t}\n\n\tc.mu.RLock()\n\tp, found := c.partitions[name]\n\tc.mu.RUnlock()\n\tif found {\n\t\treturn p.(*Partition[K, V])\n\t}\n\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\n\tp, found = c.partitions[name]\n\tif found {\n\t\treturn p.(*Partition[K, V])\n\t}\n\n\t// At this point, we don't know the number of partitions or their configuration, but\n\t// this will be re-adjusted later.\n\tconst numberOfPartitionsEstimate = 10\n\tmaxSize := opts.CalculateMaxSize(c.opts.MaxSize / numberOfPartitionsEstimate)\n\n\tonEvict := func(k K, v V) {\n\t\tc.onEvict(k, v)\n\t}\n\n\tpartition := &Partition[K, V]{\n\t\tc:\t\tlazycache.New(lazycache.Options[K, V]{MaxEntries: maxSize, OnEvict: onEvict}),\n\t\tmaxSize:\tmaxSize,\n\t\ttrace:\t\tc.opts.Log.Logger().WithLevel(logg.LevelTrace).WithField(\"partition\", name),\n\t\topts:\t\topts,\n\t}\n\n\tc.partitions[name] = partition\n\n\treturn partition\n}",
+    "funcname": "GetOrCreatePartition"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 337,
+    "focalfunc": "func newOpenTelemetryGaugeCollector() *gaugeCollector",
+    "funcbody": "func newOpenTelemetryGaugeCollector() *gaugeCollector {\n\treturn &gaugeCollector{\n\t\tvalues: make(map[string]map[string]gaugeValue),\n\t}\n}",
+    "funcname": "newOpenTelemetryGaugeCollector"
+}

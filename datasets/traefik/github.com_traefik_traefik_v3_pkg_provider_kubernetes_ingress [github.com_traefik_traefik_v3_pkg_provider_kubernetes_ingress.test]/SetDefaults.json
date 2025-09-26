@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/annotations.go",
+    "lineno": 54,
+    "focalfunc": "func (s *ServiceIng) SetDefaults()",
+    "funcbody": "func (s *ServiceIng) SetDefaults() {\n\ts.PassHostHeader = func(v bool) *bool { return &v }(true)\n}",
+    "funcname": "SetDefaults"
+}

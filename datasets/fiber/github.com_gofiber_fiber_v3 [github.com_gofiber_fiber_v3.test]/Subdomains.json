@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1683,
+    "focalfunc": "func (c *DefaultCtx) Subdomains(offset ...int) []string",
+    "funcbody": "func (c *DefaultCtx) Subdomains(offset ...int) []string {\n\to := 2\n\tif len(offset) > 0 {\n\t\to = offset[0]\n\t}\n\tsubdomains := strings.Split(c.Host(), \".\")\n\tl := len(subdomains) - o\n\n\tif l < 0 {\n\t\tl = len(subdomains)\n\t}\n\tsubdomains = subdomains[:l]\n\treturn subdomains\n}",
+    "funcname": "Subdomains"
+}

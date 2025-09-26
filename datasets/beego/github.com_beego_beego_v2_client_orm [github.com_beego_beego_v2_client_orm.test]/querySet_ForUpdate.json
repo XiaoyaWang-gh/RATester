@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 171,
+    "focalfunc": "func (o querySet) ForUpdate() QuerySeter",
+    "funcbody": "func (o querySet) ForUpdate() QuerySeter {\n\to.forUpdate = true\n\treturn &o\n}",
+    "funcname": "ForUpdate"
+}

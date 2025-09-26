@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/manager.go",
+    "lineno": 32,
+    "focalfunc": "func newManager(storage fiber.Storage) *manager",
+    "funcbody": "func newManager(storage fiber.Storage) *manager {\n\n\tmanager := &manager{\n\t\tpool: sync.Pool{\n\t\t\tNew: func() any {\n\t\t\t\treturn new(item)\n\t\t\t},\n\t\t},\n\t}\n\tif storage != nil {\n\n\t\tmanager.storage = storage\n\t} else {\n\n\t\tmanager.memory = memory.New()\n\t}\n\treturn manager\n}",
+    "funcname": "newManager"
+}

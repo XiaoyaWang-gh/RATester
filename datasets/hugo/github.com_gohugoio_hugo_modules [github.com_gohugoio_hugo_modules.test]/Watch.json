@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 161,
+    "focalfunc": "func (m *moduleAdapter) Watch() bool",
+    "funcbody": "func (m *moduleAdapter) Watch() bool {\n\tif m.Owner() == nil {\n\n\t\treturn true\n\t}\n\n\tif !m.IsGoMod() {\n\n\t\treturn true\n\t}\n\n\tif m.Replace() != nil {\n\n\t\treturn m.Replace().Version() == \"\"\n\t}\n\n\treturn !m.gomod.Indirect\n}",
+    "funcname": "Watch"
+}

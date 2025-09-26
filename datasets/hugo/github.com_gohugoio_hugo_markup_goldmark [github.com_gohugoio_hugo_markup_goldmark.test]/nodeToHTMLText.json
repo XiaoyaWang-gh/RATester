@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 483,
+    "focalfunc": "func nodeToHTMLText(n ast.Node, source []byte) []byte",
+    "funcbody": "func nodeToHTMLText(n ast.Node, source []byte) []byte {\n\tvar buf bytes.Buffer\n\tfor c := n.FirstChild(); c != nil; c = c.NextSibling() {\n\t\tif s, ok := c.(*ast.String); ok && s.IsCode() {\n\t\t\tbuf.Write(s.Text(source))\n\t\t} else if !c.HasChildren() {\n\t\t\tbuf.Write(util.EscapeHTML(c.Text(source)))\n\t\t\tif t, ok := c.(*ast.Text); ok && t.SoftLineBreak() {\n\t\t\t\tbuf.WriteByte('\\n')\n\t\t\t}\n\t\t} else {\n\t\t\tbuf.Write(nodeToHTMLText(c, source))\n\t\t}\n\t}\n\treturn buf.Bytes()\n}",
+    "funcname": "nodeToHTMLText"
+}

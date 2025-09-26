@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 287,
+    "focalfunc": "func (c *Context) MustGet(key string) any",
+    "funcbody": "func (c *Context) MustGet(key string) any {\n\tif value, exists := c.Get(key); exists {\n\t\treturn value\n\t}\n\tpanic(\"Key \\\"\" + key + \"\\\" does not exist\")\n}",
+    "funcname": "MustGet"
+}

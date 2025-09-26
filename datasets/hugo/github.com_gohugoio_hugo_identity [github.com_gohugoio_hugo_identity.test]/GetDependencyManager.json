@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 142,
+    "focalfunc": "func (d DependencyManagerProviderFunc) GetDependencyManager() Manager",
+    "funcbody": "func (d DependencyManagerProviderFunc) GetDependencyManager() Manager {\n\treturn d()\n}",
+    "funcname": "GetDependencyManager"
+}

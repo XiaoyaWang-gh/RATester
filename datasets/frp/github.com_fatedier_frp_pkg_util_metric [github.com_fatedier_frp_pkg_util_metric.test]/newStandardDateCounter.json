@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 46,
+    "focalfunc": "func newStandardDateCounter(reserveDays int64) *StandardDateCounter",
+    "funcbody": "func newStandardDateCounter(reserveDays int64) *StandardDateCounter {\n\tnow := time.Now()\n\tnow = time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())\n\ts := &StandardDateCounter{\n\t\treserveDays:\treserveDays,\n\t\tcounts:\t\tmake([]int64, reserveDays),\n\t\tlastUpdateDate:\tnow,\n\t}\n\treturn s\n}",
+    "funcname": "newStandardDateCounter"
+}

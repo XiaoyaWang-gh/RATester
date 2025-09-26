@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 210,
+    "focalfunc": "func (p *Paginator) TotalPages() int",
+    "funcbody": "func (p *Paginator) TotalPages() int {\n\treturn len(p.paginatedElements)\n}",
+    "funcname": "TotalPages"
+}

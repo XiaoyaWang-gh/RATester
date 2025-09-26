@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 663,
+    "focalfunc": "func (c *Context) BindQuery(obj any) error",
+    "funcbody": "func (c *Context) BindQuery(obj any) error {\n\treturn c.MustBindWith(obj, binding.Query)\n}",
+    "funcname": "BindQuery"
+}

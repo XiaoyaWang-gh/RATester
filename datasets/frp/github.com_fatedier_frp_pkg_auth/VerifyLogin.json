@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/token.go",
+    "lineno": 64,
+    "focalfunc": "func (auth *TokenAuthSetterVerifier) VerifyLogin(m *msg.Login) error",
+    "funcbody": "func (auth *TokenAuthSetterVerifier) VerifyLogin(m *msg.Login) error {\n\tif !util.ConstantTimeEqString(util.GetAuthKey(auth.token, m.Timestamp), m.PrivilegeKey) {\n\t\treturn fmt.Errorf(\"token in login doesn't match token from configuration\")\n\t}\n\treturn nil\n}",
+    "funcname": "VerifyLogin"
+}

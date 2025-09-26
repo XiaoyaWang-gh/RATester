@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/replacepath/replace_path.go",
+    "lineno": 38,
+    "focalfunc": "func (r *replacePath) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (r *replacePath) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn r.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

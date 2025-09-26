@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 386,
+    "focalfunc": "func (c *context) QueryString() string",
+    "funcbody": "func (c *context) QueryString() string {\n\treturn c.request.URL.RawQuery\n}",
+    "funcname": "QueryString"
+}

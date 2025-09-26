@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 212,
+    "focalfunc": "func (s *Bridge) DelClient(id int)",
+    "funcbody": "func (s *Bridge) DelClient(id int) {\n\tif v, ok := s.Client.Load(id); ok {\n\t\tif v.(*Client).signal != nil {\n\t\t\tv.(*Client).signal.Close()\n\t\t}\n\t\ts.Client.Delete(id)\n\t\tif file.GetDb().IsPubClient(id) {\n\t\t\treturn\n\t\t}\n\t\tif c, err := file.GetDb().GetClient(id); err == nil {\n\t\t\ts.CloseClient <- c.Id\n\t\t}\n\t}\n}",
+    "funcname": "DelClient"
+}

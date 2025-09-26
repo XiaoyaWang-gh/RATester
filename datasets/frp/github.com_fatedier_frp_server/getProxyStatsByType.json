@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 239,
+    "focalfunc": "func (svr *Service) getProxyStatsByType(proxyType string) (proxyInfos []*ProxyStatsInfo)",
+    "funcbody": "func (svr *Service) getProxyStatsByType(proxyType string) (proxyInfos []*ProxyStatsInfo) {\n\tproxyStats := mem.StatsCollector.GetProxiesByType(proxyType)\n\tproxyInfos = make([]*ProxyStatsInfo, 0, len(proxyStats))\n\tfor _, ps := range proxyStats {\n\t\tproxyInfo := &ProxyStatsInfo{}\n\t\tif pxy, ok := svr.pxyManager.GetByName(ps.Name); ok {\n\t\t\tcontent, err := json.Marshal(pxy.GetConfigurer())\n\t\t\tif err != nil {\n\t\t\t\tlog.Warnf(\"marshal proxy [%s] conf info error: %v\", ps.Name, err)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tproxyInfo.Conf = getConfByType(ps.Type)\n\t\t\tif err = json.Unmarshal(content, &proxyInfo.Conf); err != nil {\n\t\t\t\tlog.Warnf(\"unmarshal proxy [%s] conf info error: %v\", ps.Name, err)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tproxyInfo.Status = \"online\"\n\t\t\tif pxy.GetLoginMsg() != nil {\n\t\t\t\tproxyInfo.ClientVersion = pxy.GetLoginMsg().Version\n\t\t\t}\n\t\t} else {\n\t\t\tproxyInfo.Status = \"offline\"\n\t\t}\n\t\tproxyInfo.Name = ps.Name\n\t\tproxyInfo.TodayTrafficIn = ps.TodayTrafficIn\n\t\tproxyInfo.TodayTrafficOut = ps.TodayTrafficOut\n\t\tproxyInfo.CurConns = ps.CurConns\n\t\tproxyInfo.LastStartTime = ps.LastStartTime\n\t\tproxyInfo.LastCloseTime = ps.LastCloseTime\n\t\tproxyInfos = append(proxyInfos, proxyInfo)\n\t}\n\treturn\n}",
+    "funcname": "getProxyStatsByType"
+}

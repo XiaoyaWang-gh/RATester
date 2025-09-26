@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 86,
+    "focalfunc": "func (r *Result) Key(key string) *Result",
+    "funcbody": "func (r *Result) Key(key string) *Result {\n\tif r.Error != nil {\n\t\tr.Error.Key = key\n\t}\n\treturn r\n}",
+    "funcname": "Key"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/conv.go",
+    "lineno": 89,
+    "focalfunc": "func GetBool(v interface{}) bool",
+    "funcbody": "func GetBool(v interface{}) bool {\n\tswitch result := v.(type) {\n\tcase bool:\n\t\treturn result\n\tdefault:\n\t\tif d := GetString(v); d != \"\" {\n\t\t\tvalue, _ := strconv.ParseBool(d)\n\t\t\treturn value\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "GetBool"
+}

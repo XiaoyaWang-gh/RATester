@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/store.go",
+    "lineno": 29,
+    "focalfunc": "func New(config ...Config) *Store",
+    "funcbody": "func New(config ...Config) *Store {\n\n\tcfg := configDefault(config...)\n\n\tif cfg.Storage == nil {\n\t\tcfg.Storage = memory.New()\n\t}\n\n\treturn &Store{\n\t\tConfig: cfg,\n\t}\n}",
+    "funcname": "New"
+}

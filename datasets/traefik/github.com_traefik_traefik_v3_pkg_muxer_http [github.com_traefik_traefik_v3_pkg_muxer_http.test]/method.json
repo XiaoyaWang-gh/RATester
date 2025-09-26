@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 61,
+    "focalfunc": "func method(tree *matchersTree, methods ...string) error",
+    "funcbody": "func method(tree *matchersTree, methods ...string) error {\n\tmethod := strings.ToUpper(methods[0])\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn method == req.Method\n\t}\n\n\treturn nil\n}",
+    "funcname": "method"
+}

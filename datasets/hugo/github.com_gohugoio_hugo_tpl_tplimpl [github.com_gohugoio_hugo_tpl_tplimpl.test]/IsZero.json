@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_errors.go",
+    "lineno": 47,
+    "focalfunc": "func (t templateInfo) IsZero() bool",
+    "funcbody": "func (t templateInfo) IsZero() bool {\n\treturn t.name == \"\"\n}",
+    "funcname": "IsZero"
+}

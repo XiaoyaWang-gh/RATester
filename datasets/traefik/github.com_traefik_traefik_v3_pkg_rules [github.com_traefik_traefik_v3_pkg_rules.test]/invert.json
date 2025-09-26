@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 78,
+    "focalfunc": "func invert(t *Tree) *Tree",
+    "funcbody": "func invert(t *Tree) *Tree {\n\tswitch t.Matcher {\n\tcase or:\n\t\tt.Matcher = and\n\t\tt.RuleLeft = invert(t.RuleLeft)\n\t\tt.RuleRight = invert(t.RuleRight)\n\tcase and:\n\t\tt.Matcher = or\n\t\tt.RuleLeft = invert(t.RuleLeft)\n\t\tt.RuleRight = invert(t.RuleRight)\n\tdefault:\n\t\tt.Not = !t.Not\n\t}\n\n\treturn t\n}",
+    "funcname": "invert"
+}

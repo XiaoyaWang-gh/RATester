@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/context.go",
+    "lineno": 45,
+    "focalfunc": "func (c context) eq(d context) bool",
+    "funcbody": "func (c context) eq(d context) bool {\n\treturn c.state == d.state &&\n\t\tc.delim == d.delim &&\n\t\tc.urlPart == d.urlPart &&\n\t\tc.jsCtx == d.jsCtx &&\n\t\tc.attr == d.attr &&\n\t\tc.element == d.element &&\n\t\tc.err == d.err\n}",
+    "funcname": "eq"
+}

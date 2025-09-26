@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb.go",
+    "lineno": 49,
+    "focalfunc": "func NewQueryBuilder(driver string) (qb QueryBuilder, err error)",
+    "funcbody": "func NewQueryBuilder(driver string) (qb QueryBuilder, err error) {\n\tif driver == \"mysql\" {\n\t\tqb = new(MySQLQueryBuilder)\n\t} else if driver == \"tidb\" {\n\t\tqb = new(TiDBQueryBuilder)\n\t} else if driver == \"postgres\" {\n\t\tqb = new(PostgresQueryBuilder)\n\t} else if driver == \"sqlite\" {\n\t\terr = errors.New(\"sqlite query builder is not supported yet\")\n\t} else {\n\t\terr = errors.New(\"unknown driver for query builder\")\n\t}\n\treturn\n}",
+    "funcname": "NewQueryBuilder"
+}

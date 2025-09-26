@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/control.go",
+    "lineno": 287,
+    "focalfunc": "func getRemoteAddressFromServer(rAddr string, localConn *net.UDPConn, md5Password, role string, add int) error",
+    "funcbody": "func getRemoteAddressFromServer(rAddr string, localConn *net.UDPConn, md5Password, role string, add int) error {\n\trAddr, err := getNextAddr(rAddr, add)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\treturn err\n\t}\n\taddr, err := net.ResolveUDPAddr(\"udp\", rAddr)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif _, err := localConn.WriteTo(common.GetWriteStr(md5Password, role), addr); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "getRemoteAddressFromServer"
+}

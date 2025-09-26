@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/providers.go",
+    "lineno": 56,
+    "focalfunc": "func (b Builder) BuildProvider(pName string, config map[string]interface{}) (provider.Provider, error)",
+    "funcbody": "func (b Builder) BuildProvider(pName string, config map[string]interface{}) (provider.Provider, error) {\n\tif b.providerBuilders == nil {\n\t\treturn nil, fmt.Errorf(\"no plugin definition in the static configuration: %s\", pName)\n\t}\n\n\tbuilder, ok := b.providerBuilders[pName]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"unknown plugin type: %s\", pName)\n\t}\n\n\treturn newProvider(builder, config, \"plugin-\"+pName)\n}",
+    "funcname": "BuildProvider"
+}

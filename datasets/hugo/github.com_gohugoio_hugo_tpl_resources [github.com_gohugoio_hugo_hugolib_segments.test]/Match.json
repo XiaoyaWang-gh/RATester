@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 197,
+    "focalfunc": "func (ns *Namespace) Match(pattern any) resource.Resources",
+    "funcbody": "func (ns *Namespace) Match(pattern any) resource.Resources {\n\tpatternStr, err := cast.ToStringE(pattern)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tr, err := ns.createClient.Match(patternStr)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn r\n}",
+    "funcname": "Match"
+}

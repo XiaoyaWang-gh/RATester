@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 1088,
+    "focalfunc": "func (h *HugoSites) dynacacheGCCacheBuster(cachebuster func(s string) bool)",
+    "funcbody": "func (h *HugoSites) dynacacheGCCacheBuster(cachebuster func(s string) bool) {\n\tif cachebuster == nil {\n\t\treturn\n\t}\n\tshouldDelete := func(k, v any) bool {\n\t\tvar b bool\n\t\tif s, ok := k.(string); ok {\n\t\t\tb = cachebuster(s)\n\t\t}\n\n\t\treturn b\n\t}\n\n\th.MemCache.ClearMatching(nil, shouldDelete)\n}",
+    "funcname": "dynacacheGCCacheBuster"
+}

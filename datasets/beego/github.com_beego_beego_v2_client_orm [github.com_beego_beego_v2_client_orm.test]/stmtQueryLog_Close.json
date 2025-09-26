@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 82,
+    "focalfunc": "func (d *stmtQueryLog) Close() error",
+    "funcbody": "func (d *stmtQueryLog) Close() error {\n\ta := time.Now()\n\terr := d.stmt.Close()\n\tdebugLogQueies(d.alias, \"st.Close\", d.query, a, err)\n\treturn err\n}",
+    "funcname": "Close"
+}

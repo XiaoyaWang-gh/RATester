@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/secure.go",
+    "lineno": 91,
+    "focalfunc": "func Secure() echo.MiddlewareFunc",
+    "funcbody": "func Secure() echo.MiddlewareFunc {\n\treturn SecureWithConfig(DefaultSecureConfig)\n}",
+    "funcname": "Secure"
+}

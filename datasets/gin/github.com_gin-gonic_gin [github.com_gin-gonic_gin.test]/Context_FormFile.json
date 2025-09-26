@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 596,
+    "focalfunc": "func (c *Context) FormFile(name string) (*multipart.FileHeader, error)",
+    "funcbody": "func (c *Context) FormFile(name string) (*multipart.FileHeader, error) {\n\tif c.Request.MultipartForm == nil {\n\t\tif err := c.Request.ParseMultipartForm(c.engine.MaxMultipartMemory); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\tf, fh, err := c.Request.FormFile(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tf.Close()\n\treturn fh, err\n}",
+    "funcname": "FormFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 388,
+    "focalfunc": "func (c *writeCloserWrapper) CloseWrite() error",
+    "funcbody": "func (c *writeCloserWrapper) CloseWrite() error {\n\treturn c.writeCloser.CloseWrite()\n}",
+    "funcname": "CloseWrite"
+}

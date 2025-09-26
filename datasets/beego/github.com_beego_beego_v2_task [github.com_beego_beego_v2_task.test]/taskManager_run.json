@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 502,
+    "focalfunc": "func (m *taskManager) run()",
+    "funcbody": "func (m *taskManager) run() {\n\tnow := time.Now().Local()\n\n\tm.setTasksStartTime(now)\n\n\tfor {\n\n\t\tm.taskLock.RLock()\n\t\tsortList := NewMapSorter(m.adminTaskList)\n\t\tm.taskLock.RUnlock()\n\t\tsortList.Sort()\n\t\tvar effective time.Time\n\t\tif len(m.adminTaskList) == 0 || sortList.Vals[0].GetNext(context.Background()).IsZero() {\n\n\t\t\teffective = now.AddDate(10, 0, 0)\n\t\t} else {\n\t\t\teffective = sortList.Vals[0].GetNext(context.Background())\n\t\t}\n\n\t\tselect {\n\t\tcase now = <-time.After(effective.Sub(now)):\n\t\t\tm.runNextTasks(sortList, effective)\n\t\t\tcontinue\n\t\tcase <-m.changed:\n\t\t\tnow = time.Now().Local()\n\t\t\tm.setTasksStartTime(now)\n\t\t\tcontinue\n\t\tcase <-m.stop:\n\t\t\tm.markManagerStop()\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "run"
+}

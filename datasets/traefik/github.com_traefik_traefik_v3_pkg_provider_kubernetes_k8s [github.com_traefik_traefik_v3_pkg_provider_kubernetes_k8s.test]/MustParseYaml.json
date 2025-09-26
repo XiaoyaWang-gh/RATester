@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/parser.go",
+    "lineno": 14,
+    "focalfunc": "func MustParseYaml(content []byte) []runtime.Object",
+    "funcbody": "func MustParseYaml(content []byte) []runtime.Object {\n\tacceptedK8sTypes := regexp.MustCompile(`^(Namespace|Deployment|EndpointSlice|Node|Service|Ingress|IngressRoute|IngressRouteTCP|IngressRouteUDP|Middleware|MiddlewareTCP|Secret|TLSOption|TLSStore|TraefikService|IngressClass|ServersTransport|ServersTransportTCP|GatewayClass|Gateway|HTTPRoute|TCPRoute|TLSRoute|ReferenceGrant)$`)\n\n\tfiles := strings.Split(string(content), \"---\\n\")\n\tretVal := make([]runtime.Object, 0, len(files))\n\tfor _, file := range files {\n\t\tif file == \"\\n\" || file == \"\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tdecode := kscheme.Codecs.UniversalDeserializer().Decode\n\t\tobj, groupVersionKind, err := decode([]byte(file), nil, nil)\n\t\tif err != nil {\n\t\t\tpanic(fmt.Sprintf(\"Error while decoding YAML object. Err was: %s\", err))\n\t\t}\n\n\t\tif !acceptedK8sTypes.MatchString(groupVersionKind.Kind) {\n\t\t\tlog.Debug().Msgf(\"The custom-roles configMap contained K8s object types which are not supported! Skipping object with type: %s\", groupVersionKind.Kind)\n\t\t} else {\n\t\t\tretVal = append(retVal, obj)\n\t\t}\n\t}\n\treturn retVal\n}",
+    "funcname": "MustParseYaml"
+}

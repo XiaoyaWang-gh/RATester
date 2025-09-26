@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/visitor.go",
+    "lineno": 42,
+    "focalfunc": "func validateVisitorBaseConfig(c *v1.VisitorBaseConfig) error",
+    "funcbody": "func validateVisitorBaseConfig(c *v1.VisitorBaseConfig) error {\n\tif c.Name == \"\" {\n\t\treturn errors.New(\"name is required\")\n\t}\n\n\tif c.ServerName == \"\" {\n\t\treturn errors.New(\"server name is required\")\n\t}\n\n\tif c.BindPort == 0 {\n\t\treturn errors.New(\"bind port is required\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateVisitorBaseConfig"
+}

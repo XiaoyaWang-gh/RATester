@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 532,
+    "focalfunc": "func newCounterFrom(opts stdprometheus.CounterOpts, labelNames []string) *counter",
+    "funcbody": "func newCounterFrom(opts stdprometheus.CounterOpts, labelNames []string) *counter {\n\tcv := stdprometheus.NewCounterVec(opts, labelNames)\n\tc := &counter{\n\t\tname:\topts.Name,\n\t\tcv:\tcv,\n\t}\n\tif len(labelNames) == 0 {\n\t\tc.collector = cv.WithLabelValues()\n\t\tc.Add(0)\n\t}\n\treturn c\n}",
+    "funcname": "newCounterFrom"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/fake/fake_traefikservice.go",
+    "lineno": 113,
+    "focalfunc": "func (c *FakeTraefikServices) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error",
+    "funcbody": "func (c *FakeTraefikServices) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {\n\t_, err := c.Fake.\n\t\tInvokes(testing.NewDeleteActionWithOptions(traefikservicesResource, c.ns, name, opts), &v1alpha1.TraefikService{})\n\n\treturn err\n}",
+    "funcname": "Delete"
+}

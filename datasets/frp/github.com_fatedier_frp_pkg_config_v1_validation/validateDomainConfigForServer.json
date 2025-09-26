@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 81,
+    "focalfunc": "func validateDomainConfigForServer(c *v1.DomainConfig, s *v1.ServerConfig) error",
+    "funcbody": "func validateDomainConfigForServer(c *v1.DomainConfig, s *v1.ServerConfig) error {\n\tfor _, domain := range c.CustomDomains {\n\t\tif s.SubDomainHost != \"\" && len(strings.Split(s.SubDomainHost, \".\")) < len(strings.Split(domain, \".\")) {\n\t\t\tif strings.Contains(domain, s.SubDomainHost) {\n\t\t\t\treturn fmt.Errorf(\"custom domain [%s] should not belong to subdomain host [%s]\", domain, s.SubDomainHost)\n\t\t\t}\n\t\t}\n\t}\n\n\tif c.SubDomain != \"\" {\n\t\tif s.SubDomainHost == \"\" {\n\t\t\treturn errors.New(\"subdomain is not supported because this feature is not enabled in server\")\n\t\t}\n\n\t\tif strings.Contains(c.SubDomain, \".\") || strings.Contains(c.SubDomain, \"*\") {\n\t\t\treturn errors.New(\"'.' and '*' are not supported in subdomain\")\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "validateDomainConfigForServer"
+}

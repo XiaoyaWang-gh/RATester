@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/consul/consul.go",
+    "lineno": 31,
+    "focalfunc": "func (p *ProviderBuilder) SetDefaults()",
+    "funcbody": "func (p *ProviderBuilder) SetDefaults() {\n\tp.Provider.SetDefaults()\n\tp.Endpoints = []string{\"127.0.0.1:8500\"}\n}",
+    "funcname": "SetDefaults"
+}

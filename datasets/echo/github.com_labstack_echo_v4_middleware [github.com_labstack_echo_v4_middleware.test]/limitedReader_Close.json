@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_limit.go",
+    "lineno": 99,
+    "focalfunc": "func (r *limitedReader) Close() error",
+    "funcbody": "func (r *limitedReader) Close() error {\n\treturn r.reader.Close()\n}",
+    "funcname": "Close"
+}

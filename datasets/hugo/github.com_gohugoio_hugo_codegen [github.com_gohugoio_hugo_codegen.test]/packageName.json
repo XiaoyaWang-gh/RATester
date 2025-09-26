@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 487,
+    "focalfunc": "func packageName(e ast.Expr) string",
+    "funcbody": "func packageName(e ast.Expr) string {\n\tswitch tp := e.(type) {\n\tcase *ast.Ident:\n\t\treturn tp.Name\n\tcase *ast.SelectorExpr:\n\t\treturn fmt.Sprintf(\"%s.%s\", packageName(tp.X), packageName(tp.Sel))\n\t}\n\treturn \"\"\n}",
+    "funcname": "packageName"
+}

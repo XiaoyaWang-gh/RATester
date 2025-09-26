@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 392,
+    "focalfunc": "func (r *Response) Pusher() (pusher http.Pusher)",
+    "funcbody": "func (r *Response) Pusher() (pusher http.Pusher) {\n\tif pusher, ok := r.ResponseWriter.(http.Pusher); ok {\n\t\treturn pusher\n\t}\n\treturn nil\n}",
+    "funcname": "Pusher"
+}

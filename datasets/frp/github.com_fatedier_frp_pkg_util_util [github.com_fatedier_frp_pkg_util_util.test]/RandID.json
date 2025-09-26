@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/util.go",
+    "lineno": 31,
+    "focalfunc": "func RandID() (id string, err error)",
+    "funcbody": "func RandID() (id string, err error) {\n\treturn RandIDWithLen(16)\n}",
+    "funcname": "RandID"
+}

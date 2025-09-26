@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/dialer.go",
+    "lineno": 53,
+    "focalfunc": "func NewDialerManager(spiffeX509Source SpiffeX509Source) *DialerManager",
+    "funcbody": "func NewDialerManager(spiffeX509Source SpiffeX509Source) *DialerManager {\n\treturn &DialerManager{\n\t\tdialers:\t\tmake(map[string]Dialer),\n\t\tdialersTLS:\t\tmake(map[string]Dialer),\n\t\tspiffeX509Source:\tspiffeX509Source,\n\t}\n}",
+    "funcname": "NewDialerManager"
+}

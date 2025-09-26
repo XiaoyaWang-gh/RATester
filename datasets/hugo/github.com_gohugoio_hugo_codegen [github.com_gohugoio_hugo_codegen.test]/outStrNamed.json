@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 336,
+    "focalfunc": "func (m Method) outStrNamed() string",
+    "funcbody": "func (m Method) outStrNamed() string {\n\tif len(m.Out) == 0 {\n\t\treturn \"\"\n\t}\n\n\touts := make([]string, len(m.Out))\n\tfor i := 0; i < len(outs); i++ {\n\t\touts[i] = fmt.Sprintf(\"o%d %s\", i, m.Out[i])\n\t}\n\n\treturn \"(\" + strings.Join(outs, \", \") + \")\"\n}",
+    "funcname": "outStrNamed"
+}

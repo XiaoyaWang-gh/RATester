@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 428,
+    "focalfunc": "func (cfg IndexConfig) ToKeywords(v any) ([]Keyword, error)",
+    "funcbody": "func (cfg IndexConfig) ToKeywords(v any) ([]Keyword, error) {\n\tvar keywords []Keyword\n\n\tswitch vv := v.(type) {\n\tcase string:\n\t\tkeywords = append(keywords, cfg.stringToKeyword(vv))\n\tcase []string:\n\t\tvvv := make([]Keyword, len(vv))\n\t\tfor i := 0; i < len(vvv); i++ {\n\t\t\tvvv[i] = cfg.stringToKeyword(vv[i])\n\t\t}\n\t\tkeywords = append(keywords, vvv...)\n\tcase []any:\n\t\treturn cfg.ToKeywords(cast.ToStringSlice(vv))\n\tcase time.Time:\n\t\tlayout := \"2006\"\n\t\tif cfg.Pattern != \"\" {\n\t\t\tlayout = cfg.Pattern\n\t\t}\n\t\tkeywords = append(keywords, StringKeyword(vv.Format(layout)))\n\tcase nil:\n\t\treturn keywords, nil\n\tdefault:\n\t\treturn keywords, fmt.Errorf(\"indexing currently not supported for index %q and type %T\", cfg.Name, vv)\n\t}\n\n\treturn keywords, nil\n}",
+    "funcname": "ToKeywords"
+}

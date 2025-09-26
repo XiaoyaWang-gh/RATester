@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 57,
+    "focalfunc": "func ParseOrder(expressions ...string) []*Order",
+    "funcbody": "func ParseOrder(expressions ...string) []*Order {\n\tvar orders []*Order\n\tfor _, expression := range expressions {\n\t\tsort := Ascending\n\t\tcolumn := strings.ReplaceAll(expression, clauses.ExprSep, clauses.ExprDot)\n\t\tif column[0] == '-' {\n\t\t\tsort = Descending\n\t\t\tcolumn = column[1:]\n\t\t}\n\n\t\torders = append(orders, &Order{\n\t\t\tcolumn:\tcolumn,\n\t\t\tsort:\tsort,\n\t\t})\n\t}\n\n\treturn orders\n}",
+    "funcname": "ParseOrder"
+}

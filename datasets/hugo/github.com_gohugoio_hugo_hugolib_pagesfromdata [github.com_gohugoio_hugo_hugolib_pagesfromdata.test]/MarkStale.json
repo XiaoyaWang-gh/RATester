@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 187,
+    "focalfunc": "func (b *PagesFromTemplate) MarkStale()",
+    "funcbody": "func (b *PagesFromTemplate) MarkStale() {\n\tb.buildState.StaleVersion++\n}",
+    "funcname": "MarkStale"
+}

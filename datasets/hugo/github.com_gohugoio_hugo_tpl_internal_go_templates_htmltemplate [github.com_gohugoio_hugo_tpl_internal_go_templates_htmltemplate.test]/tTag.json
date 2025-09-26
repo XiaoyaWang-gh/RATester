@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 89,
+    "focalfunc": "func tTag(c context, s []byte) (context, int)",
+    "funcbody": "func tTag(c context, s []byte) (context, int) {\n\n\ti := eatWhiteSpace(s, 0)\n\tif i == len(s) {\n\t\treturn c, len(s)\n\t}\n\tif s[i] == '>' {\n\t\treturn context{\n\t\t\tstate:\t\telementContentType[c.element],\n\t\t\telement:\tc.element,\n\t\t}, i + 1\n\t}\n\tj, err := eatAttrName(s, i)\n\tif err != nil {\n\t\treturn context{state: stateError, err: err}, len(s)\n\t}\n\tstate, attr := stateTag, attrNone\n\tif i == j {\n\t\treturn context{\n\t\t\tstate:\tstateError,\n\t\t\terr:\terrorf(ErrBadHTML, nil, 0, \"expected space, attr name, or end of tag, but got %q\", s[i:]),\n\t\t}, len(s)\n\t}\n\n\tattrName := strings.ToLower(string(s[i:j]))\n\tif c.element == elementScript && attrName == \"type\" {\n\t\tattr = attrScriptType\n\t} else {\n\t\tswitch attrType(attrName) {\n\t\tcase contentTypeURL:\n\t\t\tattr = attrURL\n\t\tcase contentTypeCSS:\n\t\t\tattr = attrStyle\n\t\tcase contentTypeJS:\n\t\t\tattr = attrScript\n\t\tcase contentTypeSrcset:\n\t\t\tattr = attrSrcset\n\t\t}\n\t}\n\n\tif j == len(s) {\n\t\tstate = stateAttrName\n\t} else {\n\t\tstate = stateAfterName\n\t}\n\treturn context{state: state, element: c.element, attr: attr}, j\n}",
+    "funcname": "tTag"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 390,
+    "focalfunc": "func addTrailingFileSeparator(s string) string",
+    "funcbody": "func addTrailingFileSeparator(s string) string {\n\tif !strings.HasSuffix(s, FilePathSeparator) {\n\t\ts = s + FilePathSeparator\n\t}\n\treturn s\n}",
+    "funcname": "addTrailingFileSeparator"
+}

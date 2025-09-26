@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 904,
+    "focalfunc": "func getX509Certificate(ctx context.Context, cert *Certificate) (*x509.Certificate, error)",
+    "funcbody": "func getX509Certificate(ctx context.Context, cert *Certificate) (*x509.Certificate, error) {\n\tlogger := log.Ctx(ctx)\n\n\ttlsCert, err := tls.X509KeyPair(cert.Certificate, cert.Key)\n\tif err != nil {\n\t\tlogger.Error().Err(err).\n\t\t\tStr(\"domain\", cert.Domain.Main).\n\t\t\tStrs(\"SANs\", cert.Domain.SANs).\n\t\t\tMsg(\"Failed to load TLS key pair from ACME certificate for domain, certificate will be renewed\")\n\t\treturn nil, err\n\t}\n\n\tcrt := tlsCert.Leaf\n\tif crt == nil {\n\t\tcrt, err = x509.ParseCertificate(tlsCert.Certificate[0])\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).\n\t\t\t\tStr(\"domain\", cert.Domain.Main).\n\t\t\t\tStrs(\"SANs\", cert.Domain.SANs).\n\t\t\t\tMsg(\"Failed to parse TLS key pair from ACME certificate for domain, certificate will be renewed\")\n\t\t}\n\t}\n\n\treturn crt, err\n}",
+    "funcname": "getX509Certificate"
+}

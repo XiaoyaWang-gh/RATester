@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_cache.go",
+    "lineno": 112,
+    "focalfunc": "func pagesEqual(p1, p2 Pages) bool",
+    "funcbody": "func pagesEqual(p1, p2 Pages) bool {\n\tif p1 == nil && p2 == nil {\n\t\treturn true\n\t}\n\n\tif p1 == nil || p2 == nil {\n\t\treturn false\n\t}\n\n\tif p1.Len() != p2.Len() {\n\t\treturn false\n\t}\n\n\tif p1.Len() == 0 {\n\t\treturn true\n\t}\n\n\tfor i := 0; i < len(p1); i++ {\n\t\tif p1[i] != p2[i] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "pagesEqual"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 57,
+    "focalfunc": "func StaticDirectoryHandler(fileSystem fs.FS, disablePathUnescaping bool) HandlerFunc",
+    "funcbody": "func StaticDirectoryHandler(fileSystem fs.FS, disablePathUnescaping bool) HandlerFunc {\n\treturn func(c Context) error {\n\t\tp := c.Param(\"*\")\n\t\tif !disablePathUnescaping {\n\t\t\ttmpPath, err := url.PathUnescape(p)\n\t\t\tif err != nil {\n\t\t\t\treturn fmt.Errorf(\"failed to unescape path variable: %w\", err)\n\t\t\t}\n\t\t\tp = tmpPath\n\t\t}\n\n\t\tname := filepath.ToSlash(filepath.Clean(strings.TrimPrefix(p, \"/\")))\n\t\tfi, err := fs.Stat(fileSystem, name)\n\t\tif err != nil {\n\t\t\treturn ErrNotFound\n\t\t}\n\n\t\tp = c.Request().URL.Path\n\t\tif fi.IsDir() && len(p) > 0 && p[len(p)-1] != '/' {\n\n\t\t\treturn c.Redirect(http.StatusMovedPermanently, sanitizeURI(p+\"/\"))\n\t\t}\n\t\treturn fsFile(c, name, fileSystem)\n\t}\n}",
+    "funcname": "StaticDirectoryHandler"
+}

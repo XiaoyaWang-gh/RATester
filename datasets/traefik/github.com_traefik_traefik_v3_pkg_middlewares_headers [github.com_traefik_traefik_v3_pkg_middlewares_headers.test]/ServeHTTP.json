@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/secure.go",
+    "lineno": 48,
+    "focalfunc": "func (s secureHeader) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (s secureHeader) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\ts.secure.HandlerFuncWithNextForRequestOnly(rw, req, func(writer http.ResponseWriter, request *http.Request) {\n\t\ts.next.ServeHTTP(middlewares.NewResponseModifier(writer, request, s.secure.ModifyResponseHeaders), request)\n\t})\n}",
+    "funcname": "ServeHTTP"
+}

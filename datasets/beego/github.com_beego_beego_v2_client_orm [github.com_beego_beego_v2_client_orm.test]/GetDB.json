@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 518,
+    "focalfunc": "func GetDB(aliasNames ...string) (*sql.DB, error)",
+    "funcbody": "func GetDB(aliasNames ...string) (*sql.DB, error) {\n\tvar name string\n\tif len(aliasNames) > 0 {\n\t\tname = aliasNames[0]\n\t} else {\n\t\tname = \"default\"\n\t}\n\tal, ok := dataBaseCache.get(name)\n\tif ok {\n\t\treturn al.DB.DB, nil\n\t}\n\treturn nil, fmt.Errorf(\"DataBase of alias name `%s` not found\", name)\n}",
+    "funcname": "GetDB"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 152,
+    "focalfunc": "func (ctx *Context) BindJSON(obj interface{}) error",
+    "funcbody": "func (ctx *Context) BindJSON(obj interface{}) error {\n\treturn json.Unmarshal(ctx.Input.RequestBody, obj)\n}",
+    "funcname": "BindJSON"
+}

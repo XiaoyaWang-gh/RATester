@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 622,
+    "focalfunc": "func (*testConn) Close() error",
+    "funcbody": "func (*testConn) Close() error\t{ return nil }",
+    "funcname": "Close"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 683,
+    "focalfunc": "func (e *Echo) Start(address string) error",
+    "funcbody": "func (e *Echo) Start(address string) error {\n\te.startupMutex.Lock()\n\te.Server.Addr = address\n\tif err := e.configureServer(e.Server); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn err\n\t}\n\te.startupMutex.Unlock()\n\treturn e.Server.Serve(e.Listener)\n}",
+    "funcname": "Start"
+}

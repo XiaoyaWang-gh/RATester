@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/autoid.go",
+    "lineno": 43,
+    "focalfunc": "func sanitizeAnchorNameWithHook(b []byte, idType string, hook func(buf *bytes.Buffer)) []byte",
+    "funcbody": "func sanitizeAnchorNameWithHook(b []byte, idType string, hook func(buf *bytes.Buffer)) []byte {\n\tbuf := bp.GetBuffer()\n\n\tif idType == goldmark_config.AutoHeadingIDTypeBlackfriday {\n\n\t\tbuf.WriteString(blackfriday.SanitizedAnchorName(string(b)))\n\t} else {\n\t\tasciiOnly := idType == goldmark_config.AutoHeadingIDTypeGitHubAscii\n\n\t\tif asciiOnly {\n\n\t\t\tb = text.RemoveAccents(b)\n\t\t}\n\n\t\tb = bytes.TrimSpace(b)\n\n\t\tfor len(b) > 0 {\n\t\t\tr, size := utf8.DecodeRune(b)\n\t\t\tswitch {\n\t\t\tcase asciiOnly && size != 1:\n\t\t\tcase r == '-' || r == ' ':\n\t\t\t\tbuf.WriteRune('-')\n\t\t\tcase isAlphaNumeric(r):\n\t\t\t\tbuf.WriteRune(unicode.ToLower(r))\n\t\t\tdefault:\n\t\t\t}\n\n\t\t\tb = b[size:]\n\t\t}\n\t}\n\n\tif hook != nil {\n\t\thook(buf)\n\t}\n\n\tresult := make([]byte, buf.Len())\n\tcopy(result, buf.Bytes())\n\n\tbp.PutBuffer(buf)\n\n\treturn result\n}",
+    "funcname": "sanitizeAnchorNameWithHook"
+}

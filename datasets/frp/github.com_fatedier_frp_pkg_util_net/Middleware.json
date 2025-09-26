@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/http.go",
+    "lineno": 45,
+    "focalfunc": "func (authMid *HTTPAuthMiddleware) Middleware(next http.Handler) http.Handler",
+    "funcbody": "func (authMid *HTTPAuthMiddleware) Middleware(next http.Handler) http.Handler {\n\treturn http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\treqUser, reqPasswd, hasAuth := r.BasicAuth()\n\t\tif (authMid.user == \"\" && authMid.passwd == \"\") ||\n\t\t\t(hasAuth && util.ConstantTimeEqString(reqUser, authMid.user) &&\n\t\t\t\tutil.ConstantTimeEqString(reqPasswd, authMid.passwd)) {\n\t\t\tnext.ServeHTTP(w, r)\n\t\t} else {\n\t\t\tif authMid.authFailDelay > 0 {\n\t\t\t\ttime.Sleep(authMid.authFailDelay)\n\t\t\t}\n\t\t\tw.Header().Set(\"WWW-Authenticate\", `Basic realm=\"Restricted\"`)\n\t\t\thttp.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)\n\t\t}\n\t})\n}",
+    "funcname": "Middleware"
+}

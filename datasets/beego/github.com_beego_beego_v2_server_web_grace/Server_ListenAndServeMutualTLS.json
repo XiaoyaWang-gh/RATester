@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 149,
+    "focalfunc": "func (srv *Server) ListenAndServeMutualTLS(certFile, keyFile, trustFile string) (err error)",
+    "funcbody": "func (srv *Server) ListenAndServeMutualTLS(certFile, keyFile, trustFile string) (err error) {\n\tln, err := srv.ListenMutualTLS(certFile, keyFile, trustFile)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn srv.ServeTLS(ln)\n}",
+    "funcname": "ListenAndServeMutualTLS"
+}

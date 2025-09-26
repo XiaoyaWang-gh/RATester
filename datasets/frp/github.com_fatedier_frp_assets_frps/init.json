@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/assets/frps/embed.go",
+    "lineno": 12,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tassets.Register(content)\n}",
+    "funcname": "init"
+}

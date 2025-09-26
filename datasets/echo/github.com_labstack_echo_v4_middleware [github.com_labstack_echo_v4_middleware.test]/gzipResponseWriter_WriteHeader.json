@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 144,
+    "focalfunc": "func (w *gzipResponseWriter) WriteHeader(code int)",
+    "funcbody": "func (w *gzipResponseWriter) WriteHeader(code int) {\n\tw.Header().Del(echo.HeaderContentLength)\n\n\tw.wroteHeader = true\n\n\tw.code = code\n}",
+    "funcname": "WriteHeader"
+}

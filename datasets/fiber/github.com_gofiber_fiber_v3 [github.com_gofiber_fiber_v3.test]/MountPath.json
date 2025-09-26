@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 99,
+    "focalfunc": "func (app *App) MountPath() string",
+    "funcbody": "func (app *App) MountPath() string {\n\treturn app.mountFields.mountPath\n}",
+    "funcname": "MountPath"
+}

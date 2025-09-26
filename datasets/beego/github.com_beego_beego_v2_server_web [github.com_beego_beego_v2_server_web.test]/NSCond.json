@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 332,
+    "focalfunc": "func NSCond(cond namespaceCond) LinkNamespace",
+    "funcbody": "func NSCond(cond namespaceCond) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Cond(cond)\n\t}\n}",
+    "funcname": "NSCond"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/gen/main.go",
+    "lineno": 32,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\tfor _, script := range scripts {\n\t\tfilename := filepath.Join(\"../js\", script)\n\t\terr := buildJSBundle(filename)\n\t\tif err != nil {\n\t\t\tlog.Fatal(err)\n\t\t}\n\t}\n}",
+    "funcname": "main"
+}

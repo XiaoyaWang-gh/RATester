@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/fs.go",
+    "lineno": 34,
+    "focalfunc": "func (n neutralizedReaddirFile) Readdir(_ int) ([]os.FileInfo, error)",
+    "funcbody": "func (n neutralizedReaddirFile) Readdir(_ int) ([]os.FileInfo, error) {\n\n\treturn nil, nil\n}",
+    "funcname": "Readdir"
+}

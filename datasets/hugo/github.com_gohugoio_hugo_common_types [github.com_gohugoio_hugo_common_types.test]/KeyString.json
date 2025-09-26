@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 50,
+    "focalfunc": "func (k KeyValues) KeyString() string",
+    "funcbody": "func (k KeyValues) KeyString() string {\n\treturn cast.ToString(k.Key)\n}",
+    "funcname": "KeyString"
+}

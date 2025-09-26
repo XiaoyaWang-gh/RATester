@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/minifiers/config.go",
+    "lineno": 81,
+    "focalfunc": "func DecodeConfig(v any) (conf MinifyConfig, err error)",
+    "funcbody": "func DecodeConfig(v any) (conf MinifyConfig, err error) {\n\tconf = defaultConfig\n\n\tif v == nil {\n\t\treturn\n\t}\n\n\tm := maps.ToStringMap(v)\n\n\tif td, found := m[\"tdewolff\"]; found {\n\t\ttdm := maps.ToStringMap(td)\n\n\t\tfor _, key := range []string{\"css\", \"svg\"} {\n\t\t\tif v, found := tdm[key]; found {\n\t\t\t\tvm := maps.ToStringMap(v)\n\t\t\t\tko := \"decimal\"\n\t\t\t\tkn := \"precision\"\n\t\t\t\tif vv, found := vm[ko]; found {\n\t\t\t\t\tif _, found = vm[kn]; !found {\n\t\t\t\t\t\tvvi := cast.ToInt(vv)\n\t\t\t\t\t\tif vvi > 0 {\n\t\t\t\t\t\t\tvm[kn] = vvi\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tdelete(vm, ko)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tif v, found := tdm[\"html\"]; found {\n\t\t\tvm := maps.ToStringMap(v)\n\t\t\tko := \"keepconditionalcomments\"\n\t\t\tkn := \"keepspecialcomments\"\n\t\t\tif vv, found := vm[ko]; found {\n\n\t\t\t\tif _, found := vm[kn]; !found {\n\t\t\t\t\tvm[kn] = cast.ToBool(vv)\n\t\t\t\t}\n\n\t\t\t\tdelete(vm, ko)\n\t\t\t}\n\t\t}\n\n\t}\n\n\terr = mapstructure.WeakDecode(m, &conf)\n\n\tif err != nil {\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "DecodeConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/request_decorator.go",
+    "lineno": 26,
+    "focalfunc": "func New(hostResolverConfig *types.HostResolverConfig) *RequestDecorator",
+    "funcbody": "func New(hostResolverConfig *types.HostResolverConfig) *RequestDecorator {\n\trequestDecorator := &RequestDecorator{}\n\tif hostResolverConfig != nil {\n\t\trequestDecorator.hostResolver = &Resolver{\n\t\t\tCnameFlattening:\thostResolverConfig.CnameFlattening,\n\t\t\tResolvConfig:\t\thostResolverConfig.ResolvConfig,\n\t\t\tResolvDepth:\t\thostResolverConfig.ResolvDepth,\n\t\t}\n\t}\n\treturn requestDecorator\n}",
+    "funcname": "New"
+}

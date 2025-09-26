@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 427,
+    "focalfunc": "func (c *LenConn) Write(p []byte) (n int, err error)",
+    "funcbody": "func (c *LenConn) Write(p []byte) (n int, err error) {\n\tn, err = c.conn.Write(p)\n\tc.Len += n\n\treturn\n}",
+    "funcname": "Write"
+}

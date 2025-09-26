@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/hugo/init.go",
+    "lineno": 26,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tif d.Site == nil {\n\t\t\tpanic(\"no site in deps\")\n\t\t}\n\t\th := d.Site.Hugo()\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return h, nil },\n\t\t}\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

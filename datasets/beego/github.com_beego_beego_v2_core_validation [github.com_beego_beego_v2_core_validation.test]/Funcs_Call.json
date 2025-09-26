@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 99,
+    "focalfunc": "func (f Funcs) Call(name string, params ...interface{}) (result []reflect.Value, err error)",
+    "funcbody": "func (f Funcs) Call(name string, params ...interface{}) (result []reflect.Value, err error) {\n\tdefer func() {\n\t\tif r := recover(); r != nil {\n\t\t\terr = fmt.Errorf(\"%v\", r)\n\t\t}\n\t}()\n\tif _, ok := f[name]; !ok {\n\t\terr = fmt.Errorf(\"%s does not exist\", name)\n\t\treturn\n\t}\n\tif len(params) != f[name].Type().NumIn() {\n\t\terr = fmt.Errorf(\"The number of params is not adapted\")\n\t\treturn\n\t}\n\tin := make([]reflect.Value, len(params))\n\tfor k, param := range params {\n\t\tin[k] = reflect.ValueOf(param)\n\t}\n\tresult = f[name].Call(in)\n\treturn\n}",
+    "funcname": "Call"
+}

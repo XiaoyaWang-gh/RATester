@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 135,
+    "focalfunc": "func resolveTemplateType(name string) templateType",
+    "funcbody": "func resolveTemplateType(name string) templateType {\n\tif isShortcode(name) {\n\t\treturn templateShortcode\n\t}\n\n\tif strings.Contains(name, \"partials/\") {\n\t\treturn templatePartial\n\t}\n\n\treturn templateUndefined\n}",
+    "funcname": "resolveTemplateType"
+}

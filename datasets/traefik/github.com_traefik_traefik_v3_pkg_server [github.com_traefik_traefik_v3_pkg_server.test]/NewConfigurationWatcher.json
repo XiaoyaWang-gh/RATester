@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/configurationwatcher.go",
+    "lineno": 35,
+    "focalfunc": "func NewConfigurationWatcher(\n\troutinesPool *safe.Pool,\n\tpvd provider.Provider,\n\tdefaultEntryPoints []string,\n\trequiredProvider string,\n) *ConfigurationWatcher",
+    "funcbody": "func NewConfigurationWatcher(\n\troutinesPool *safe.Pool,\n\tpvd provider.Provider,\n\tdefaultEntryPoints []string,\n\trequiredProvider string,\n) *ConfigurationWatcher {\n\treturn &ConfigurationWatcher{\n\t\tproviderAggregator:\tpvd,\n\t\tallProvidersConfigs:\tmake(chan dynamic.Message, 100),\n\t\tnewConfigs:\t\tmake(chan dynamic.Configurations),\n\t\troutinesPool:\t\troutinesPool,\n\t\tdefaultEntryPoints:\tdefaultEntryPoints,\n\t\trequiredProvider:\trequiredProvider,\n\t}\n}",
+    "funcname": "NewConfigurationWatcher"
+}

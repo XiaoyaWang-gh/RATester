@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 617,
+    "focalfunc": "func (e PositiveBigIntegerField) Value() uint64",
+    "funcbody": "func (e PositiveBigIntegerField) Value() uint64 {\n\treturn uint64(e)\n}",
+    "funcname": "Value"
+}

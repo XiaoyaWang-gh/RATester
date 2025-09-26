@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 416,
+    "focalfunc": "func (c *clientWrapper) isWatchedNamespace(ns string) bool",
+    "funcbody": "func (c *clientWrapper) isWatchedNamespace(ns string) bool {\n\tif c.isNamespaceAll {\n\t\treturn true\n\t}\n\n\treturn slices.Contains(c.watchedNamespaces, ns)\n}",
+    "funcname": "isWatchedNamespace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/informers/externalversions/factory.go",
+    "lineno": 267,
+    "focalfunc": "func (f *sharedInformerFactory) Traefik() traefikio.Interface",
+    "funcbody": "func (f *sharedInformerFactory) Traefik() traefikio.Interface {\n\treturn traefikio.New(f, f.namespace, f.tweakListOptions)\n}",
+    "funcname": "Traefik"
+}

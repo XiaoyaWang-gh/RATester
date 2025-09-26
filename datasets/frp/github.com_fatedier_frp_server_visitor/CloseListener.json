@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/visitor/visitor.go",
+    "lineno": 101,
+    "focalfunc": "func (vm *Manager) CloseListener(name string)",
+    "funcbody": "func (vm *Manager) CloseListener(name string) {\n\tvm.mu.Lock()\n\tdefer vm.mu.Unlock()\n\n\tdelete(vm.listeners, name)\n}",
+    "funcname": "CloseListener"
+}

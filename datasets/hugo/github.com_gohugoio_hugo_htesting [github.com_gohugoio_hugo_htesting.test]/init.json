@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 34,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tfor _, arg := range os.Args {\n\t\tif strings.HasPrefix(arg, \"-test.\") {\n\t\t\tIsTest = true\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resources.go",
+    "lineno": 129,
+    "focalfunc": "func (r Resources) Match(pattern any) Resources",
+    "funcbody": "func (r Resources) Match(pattern any) Resources {\n\tpatternstr, err := cast.ToStringE(pattern)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tg, err := glob.GetGlob(paths.AddLeadingSlash(patternstr))\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tvar matches Resources\n\tfor _, resource := range r {\n\t\tif g.Match(paths.AddLeadingSlash(resource.Name())) {\n\t\t\tmatches = append(matches, resource)\n\t\t}\n\t}\n\tif len(matches) == 0 {\n\n\t\tfor _, resource := range r {\n\t\t\tif nop, ok := resource.(NameNormalizedProvider); ok {\n\t\t\t\tif g.Match(paths.AddLeadingSlash(nop.NameNormalized())) {\n\t\t\t\t\tmatches = append(matches, resource)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn matches\n}",
+    "funcname": "Match"
+}

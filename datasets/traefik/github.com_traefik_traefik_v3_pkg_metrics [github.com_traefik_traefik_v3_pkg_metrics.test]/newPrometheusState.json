@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 324,
+    "focalfunc": "func newPrometheusState() *prometheusState",
+    "funcbody": "func newPrometheusState() *prometheusState {\n\treturn &prometheusState{\n\t\tdynamicConfig:\tnewDynamicConfig(),\n\t\tdeletedURLs:\tmake(map[string][]string),\n\t}\n}",
+    "funcname": "newPrometheusState"
+}

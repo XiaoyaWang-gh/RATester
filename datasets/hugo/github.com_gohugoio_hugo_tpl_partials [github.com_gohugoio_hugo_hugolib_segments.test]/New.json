@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 76,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\n\tlru := lazycache.New(lazycache.Options[string, includeResult]{MaxEntries: 1000})\n\n\tcache := &partialCache{cache: lru}\n\tdeps.BuildStartListeners.Add(\n\t\tfunc() {\n\t\t\tcache.clear()\n\t\t})\n\n\treturn &Namespace{\n\t\tdeps:\t\tdeps,\n\t\tcachedPartials:\tcache,\n\t}\n}",
+    "funcname": "New"
+}

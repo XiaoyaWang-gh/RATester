@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 299,
+    "focalfunc": "func (*Filters) Grayscale() gift.Filter",
+    "funcbody": "func (*Filters) Grayscale() gift.Filter {\n\treturn filter{\n\t\tFilter: gift.Grayscale(),\n\t}\n}",
+    "funcname": "Grayscale"
+}

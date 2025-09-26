@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 41,
+    "focalfunc": "func (a *adminController) ProfIndex()",
+    "funcbody": "func (a *adminController) ProfIndex() {\n\trw, r := a.Ctx.ResponseWriter, a.Ctx.Request\n\tr.ParseForm()\n\tcommand := r.Form.Get(\"command\")\n\tif command == \"\" {\n\t\treturn\n\t}\n\n\tvar (\n\t\tformat\t= r.Form.Get(\"format\")\n\t\tdata\t= make(map[interface{}]interface{})\n\t\tresult\tbytes.Buffer\n\t)\n\tadmin.ProcessInput(command, &result)\n\tdata[\"Content\"] = template.HTMLEscapeString(result.String())\n\n\tif format == \"json\" && command == \"gc summary\" {\n\t\tdataJSON, err := json.Marshal(data)\n\t\tif err != nil {\n\t\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t\t\treturn\n\t\t}\n\t\twriteJSON(rw, dataJSON)\n\t\treturn\n\t}\n\n\tdata[\"Title\"] = template.HTMLEscapeString(command)\n\tdefaultTpl := defaultScriptsTpl\n\tif command == \"gc summary\" {\n\t\tdefaultTpl = gcAjaxTpl\n\t}\n\twriteTemplate(rw, data, profillingTpl, defaultTpl)\n}",
+    "funcname": "ProfIndex"
+}

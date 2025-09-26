@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/prometheus/filter.go",
+    "lineno": 65,
+    "focalfunc": "func (builder *FilterChainBuilder) report(startTime time.Time, endTime time.Time,\n\tctx context.Context, req *httplib.BeegoHTTPRequest, resp *http.Response, err error)",
+    "funcbody": "func (builder *FilterChainBuilder) report(startTime time.Time, endTime time.Time,\n\tctx context.Context, req *httplib.BeegoHTTPRequest, resp *http.Response, err error) {\n\n\tproto := req.GetRequest().Proto\n\n\tscheme := req.GetRequest().URL.Scheme\n\tmethod := req.GetRequest().Method\n\n\thost := req.GetRequest().URL.Host\n\tpath := req.GetRequest().URL.Path\n\n\tstatus := -1\n\tif resp != nil {\n\t\tstatus = resp.StatusCode\n\t}\n\n\tdur := int(endTime.Sub(startTime) / time.Millisecond)\n\n\tsummaryVec.WithLabelValues(proto, scheme, method, host, path,\n\t\tstrconv.Itoa(status), strconv.FormatBool(err != nil)).Observe(float64(dur))\n}",
+    "funcname": "report"
+}

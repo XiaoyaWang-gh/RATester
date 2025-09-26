@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 158,
+    "focalfunc": "func (cfg contentMapConfig) getTaxonomyConfig(s string) (v viewName)",
+    "funcbody": "func (cfg contentMapConfig) getTaxonomyConfig(s string) (v viewName) {\n\tfor _, n := range cfg.taxonomyConfig.views {\n\t\tif strings.HasPrefix(s, n.pluralTreeKey) {\n\t\t\treturn n\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "getTaxonomyConfig"
+}

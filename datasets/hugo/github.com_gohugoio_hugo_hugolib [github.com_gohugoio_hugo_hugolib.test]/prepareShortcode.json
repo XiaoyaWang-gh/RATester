@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 307,
+    "focalfunc": "func prepareShortcode(\n\tctx context.Context,\n\tlevel int,\n\ts *Site,\n\ttplVariants tpl.TemplateVariants,\n\tsc *shortcode,\n\tparent *ShortcodeWithPage,\n\tp *pageState,\n\tisRenderString bool,\n) (shortcodeRenderer, error)",
+    "funcbody": "func prepareShortcode(\n\tctx context.Context,\n\tlevel int,\n\ts *Site,\n\ttplVariants tpl.TemplateVariants,\n\tsc *shortcode,\n\tparent *ShortcodeWithPage,\n\tp *pageState,\n\tisRenderString bool,\n) (shortcodeRenderer, error) {\n\ttoParseErr := func(err error) error {\n\t\tsource := p.m.content.mustSource()\n\t\treturn p.parseError(fmt.Errorf(\"failed to render shortcode %q: %w\", sc.name, err), source, sc.pos)\n\t}\n\n\t// Allow the caller to delay the rendering of the shortcode if needed.\n\tvar fn shortcodeRenderFunc = func(ctx context.Context) ([]byte, bool, error) {\n\t\tif p.m.pageConfig.ContentMediaType.IsMarkdown() && sc.doMarkup {\n\n\t\t\tctx = tpl.Context.IsInGoldmark.Set(ctx, true)\n\t\t}\n\t\tr, err := doRenderShortcode(ctx, level, s, tplVariants, sc, parent, p, isRenderString)\n\t\tif err != nil {\n\t\t\treturn nil, false, toParseErr(err)\n\t\t}\n\n\t\tb, hasVariants, err := r.renderShortcode(ctx)\n\t\tif err != nil {\n\t\t\treturn nil, false, toParseErr(err)\n\t\t}\n\t\treturn b, hasVariants, nil\n\t}\n\n\treturn fn, nil\n}",
+    "funcname": "prepareShortcode"
+}

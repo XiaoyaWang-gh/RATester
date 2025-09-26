@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/port.go",
+    "lineno": 39,
+    "focalfunc": "func (pa *Allocator) GetByName(portName string) int",
+    "funcbody": "func (pa *Allocator) GetByName(portName string) int {\n\tvar builder *nameBuilder\n\tif portName == \"\" {\n\t\tbuilder = &nameBuilder{}\n\t} else {\n\t\tvar err error\n\t\tbuilder, err = unmarshalFromName(portName)\n\t\tif err != nil {\n\t\t\tfmt.Println(err, portName)\n\t\t\treturn 0\n\t\t}\n\t}\n\n\tpa.mu.Lock()\n\tdefer pa.mu.Unlock()\n\n\tfor i := 0; i < 20; i++ {\n\t\tport := pa.getByRange(builder.rangePortFrom, builder.rangePortTo)\n\t\tif port == 0 {\n\t\t\treturn 0\n\t\t}\n\n\t\tl, err := net.Listen(\"tcp\", net.JoinHostPort(\"0.0.0.0\", strconv.Itoa(port)))\n\t\tif err != nil {\n\n\t\t\tpa.used.Insert(port)\n\t\t\tcontinue\n\t\t}\n\t\tl.Close()\n\n\t\tudpAddr, err := net.ResolveUDPAddr(\"udp\", net.JoinHostPort(\"0.0.0.0\", strconv.Itoa(port)))\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\t\tudpConn, err := net.ListenUDP(\"udp\", udpAddr)\n\t\tif err != nil {\n\n\t\t\tpa.used.Insert(port)\n\t\t\tcontinue\n\t\t}\n\t\tudpConn.Close()\n\n\t\tpa.used.Insert(port)\n\t\tpa.reserved.Delete(port)\n\t\treturn port\n\t}\n\treturn 0\n}",
+    "funcname": "GetByName"
+}

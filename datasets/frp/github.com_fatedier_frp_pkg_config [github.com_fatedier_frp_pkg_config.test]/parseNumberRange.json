@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/template.go",
+    "lineno": 50,
+    "focalfunc": "func parseNumberRange(firstRangeStr string) ([]int64, error)",
+    "funcbody": "func parseNumberRange(firstRangeStr string) ([]int64, error) {\n\treturn util.ParseRangeNumbers(firstRangeStr)\n}",
+    "funcname": "parseNumberRange"
+}

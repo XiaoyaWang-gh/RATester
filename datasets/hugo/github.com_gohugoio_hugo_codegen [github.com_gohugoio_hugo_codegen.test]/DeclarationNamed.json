@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 284,
+    "focalfunc": "func (m Method) DeclarationNamed(receiver string) string",
+    "funcbody": "func (m Method) DeclarationNamed(receiver string) string {\n\treturn fmt.Sprintf(\"func (%s %s) %s%s %s\", receiverShort(receiver), receiver, m.Name, m.inStr(), m.outStrNamed())\n}",
+    "funcname": "DeclarationNamed"
+}

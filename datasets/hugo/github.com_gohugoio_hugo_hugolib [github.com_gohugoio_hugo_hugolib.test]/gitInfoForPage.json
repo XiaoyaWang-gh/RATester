@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 232,
+    "focalfunc": "func (h *HugoSites) gitInfoForPage(p page.Page) (source.GitInfo, error)",
+    "funcbody": "func (h *HugoSites) gitInfoForPage(p page.Page) (source.GitInfo, error) {\n\tif _, err := h.init.gitInfo.Do(context.Background()); err != nil {\n\t\treturn source.GitInfo{}, err\n\t}\n\n\tif h.gitInfo == nil {\n\t\treturn source.GitInfo{}, nil\n\t}\n\n\treturn h.gitInfo.forPage(p), nil\n}",
+    "funcname": "gitInfoForPage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/conversion.go",
+    "lineno": 171,
+    "focalfunc": "func transformHeadersFromPluginParams(params map[string]string) v1.HeaderOperations",
+    "funcbody": "func transformHeadersFromPluginParams(params map[string]string) v1.HeaderOperations {\n\tout := v1.HeaderOperations{}\n\tfor k, v := range params {\n\t\tif !strings.HasPrefix(k, \"plugin_header_\") {\n\t\t\tcontinue\n\t\t}\n\t\tif k = strings.TrimPrefix(k, \"plugin_header_\"); k != \"\" {\n\t\t\tif out.Set == nil {\n\t\t\t\tout.Set = make(map[string]string)\n\t\t\t}\n\t\t\tout.Set[k] = v\n\t\t}\n\t}\n\treturn out\n}",
+    "funcname": "transformHeadersFromPluginParams"
+}

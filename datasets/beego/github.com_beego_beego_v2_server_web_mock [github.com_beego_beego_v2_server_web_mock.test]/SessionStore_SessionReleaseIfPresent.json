@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 114,
+    "focalfunc": "func (*SessionStore) SessionReleaseIfPresent(_ context.Context, _ http.ResponseWriter)",
+    "funcbody": "func (*SessionStore) SessionReleaseIfPresent(_ context.Context, _ http.ResponseWriter) {\n\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

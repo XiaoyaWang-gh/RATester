@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 227,
+    "focalfunc": "func (o *ormBase) InsertMultiWithCtx(ctx context.Context, bulk int, mds interface{}) (int64, error)",
+    "funcbody": "func (o *ormBase) InsertMultiWithCtx(ctx context.Context, bulk int, mds interface{}) (int64, error) {\n\tvar cnt int64\n\n\tsind := reflect.Indirect(reflect.ValueOf(mds))\n\n\tswitch sind.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\tif sind.Len() == 0 {\n\t\t\treturn cnt, ErrArgs\n\t\t}\n\tdefault:\n\t\treturn cnt, ErrArgs\n\t}\n\n\tif bulk <= 1 {\n\t\tfor i := 0; i < sind.Len(); i++ {\n\t\t\tind := reflect.Indirect(sind.Index(i))\n\t\t\tmi := o.getMi(ind.Interface())\n\t\t\tid, err := o.alias.DbBaser.Insert(ctx, o.db, mi, ind, o.alias.TZ)\n\t\t\tif err != nil {\n\t\t\t\treturn cnt, err\n\t\t\t}\n\n\t\t\to.setPk(mi, ind, id)\n\n\t\t\tcnt++\n\t\t}\n\t} else {\n\t\tmi := o.getMi(sind.Index(0).Interface())\n\t\treturn o.alias.DbBaser.InsertMulti(ctx, o.db, mi, sind, bulk, o.alias.TZ)\n\t}\n\treturn cnt, nil\n}",
+    "funcname": "InsertMultiWithCtx"
+}

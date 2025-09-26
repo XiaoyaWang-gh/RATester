@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 479,
+    "focalfunc": "func (p *pageState) resolveTemplate(layouts ...string) (tpl.Template, bool, error)",
+    "funcbody": "func (p *pageState) resolveTemplate(layouts ...string) (tpl.Template, bool, error) {\n\tf := p.outputFormat()\n\n\td := p.getLayoutDescriptor()\n\n\tif len(layouts) > 0 {\n\t\td.Layout = layouts[0]\n\t\td.LayoutOverride = true\n\t}\n\n\treturn p.s.Tmpl().LookupLayout(d, f)\n}",
+    "funcname": "resolveTemplate"
+}

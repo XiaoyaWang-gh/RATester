@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 192,
+    "focalfunc": "func tHTMLCmt(c context, s []byte) (context, int)",
+    "funcbody": "func tHTMLCmt(c context, s []byte) (context, int) {\n\tif i := bytes.Index(s, commentEnd); i != -1 {\n\t\treturn context{}, i + 3\n\t}\n\treturn c, len(s)\n}",
+    "funcname": "tHTMLCmt"
+}

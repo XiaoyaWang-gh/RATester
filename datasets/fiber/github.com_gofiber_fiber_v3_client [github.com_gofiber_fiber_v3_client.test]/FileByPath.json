@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 431,
+    "focalfunc": "func (r *Request) FileByPath(path string) *File",
+    "funcbody": "func (r *Request) FileByPath(path string) *File {\n\tfor _, v := range r.files {\n\t\tif v.path == path {\n\t\t\treturn v\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "FileByPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd.go",
+    "lineno": 253,
+    "focalfunc": "func (d *commandSQLAll) Parse(args []string)",
+    "funcbody": "func (d *commandSQLAll) Parse(args []string) {\n\tvar name string\n\n\tflagSet := flag.NewFlagSet(\"orm command: sqlall\", flag.ExitOnError)\n\tflagSet.StringVar(&name, \"db\", \"default\", \"DataBase alias name\")\n\tflagSet.Parse(args)\n\n\td.al = getDbAlias(name)\n}",
+    "funcname": "Parse"
+}

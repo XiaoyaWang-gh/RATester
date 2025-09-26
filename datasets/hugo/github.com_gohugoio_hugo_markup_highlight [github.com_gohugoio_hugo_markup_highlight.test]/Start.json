@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 298,
+    "focalfunc": "func (s startEnd) Start(code bool, styleAttr string) string",
+    "funcbody": "func (s startEnd) Start(code bool, styleAttr string) string {\n\treturn s.start(code, styleAttr)\n}",
+    "funcname": "Start"
+}

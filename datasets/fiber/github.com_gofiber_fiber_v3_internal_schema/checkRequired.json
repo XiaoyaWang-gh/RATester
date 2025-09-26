@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 99,
+    "focalfunc": "func (d *Decoder) checkRequired(t reflect.Type, src map[string][]string) MultiError",
+    "funcbody": "func (d *Decoder) checkRequired(t reflect.Type, src map[string][]string) MultiError {\n\tm, errs := d.findRequiredFields(t, \"\", \"\")\n\tfor key, fields := range m {\n\t\tif isEmptyFields(fields, src) {\n\t\t\terrs[key] = EmptyFieldError{Key: key}\n\t\t}\n\t}\n\treturn errs\n}",
+    "funcname": "checkRequired"
+}

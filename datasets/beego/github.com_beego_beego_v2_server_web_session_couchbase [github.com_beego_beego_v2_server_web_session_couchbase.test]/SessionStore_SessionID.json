@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 102,
+    "focalfunc": "func (cs *SessionStore) SessionID(context.Context) string",
+    "funcbody": "func (cs *SessionStore) SessionID(context.Context) string {\n\treturn cs.sid\n}",
+    "funcname": "SessionID"
+}

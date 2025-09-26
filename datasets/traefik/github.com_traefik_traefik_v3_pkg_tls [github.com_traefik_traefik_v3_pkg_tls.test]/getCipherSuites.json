@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tlsmanager.go",
+    "lineno": 37,
+    "focalfunc": "func getCipherSuites() []string",
+    "funcbody": "func getCipherSuites() []string {\n\tgsc := tls.CipherSuites()\n\tciphers := make([]string, len(gsc))\n\tfor idx, cs := range gsc {\n\t\tciphers[idx] = cs.Name\n\t}\n\treturn ciphers\n}",
+    "funcname": "getCipherSuites"
+}

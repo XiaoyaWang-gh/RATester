@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 45,
+    "focalfunc": "func (srv *Server) internalServe(ln net.Listener) (err error)",
+    "funcbody": "func (srv *Server) internalServe(ln net.Listener) (err error) {\n\tsrv.state = StateRunning\n\tdefer func() { srv.state = StateTerminate }()\n\n\tif err = srv.Server.Serve(ln); err != nil && err != http.ErrServerClosed {\n\t\tlog.Println(syscall.Getpid(), \"Server.Serve() error:\", err)\n\t\treturn err\n\t}\n\n\tlog.Println(syscall.Getpid(), ln.Addr(), \"Listener closed.\")\n\n\tif shutdownErr := <-srv.terminalChan; shutdownErr != nil {\n\t\treturn shutdownErr\n\t}\n\treturn\n}",
+    "funcname": "internalServe"
+}

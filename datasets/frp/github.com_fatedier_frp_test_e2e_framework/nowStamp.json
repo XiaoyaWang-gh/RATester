@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/log.go",
+    "lineno": 10,
+    "focalfunc": "func nowStamp() string",
+    "funcbody": "func nowStamp() string {\n\treturn time.Now().Format(time.StampMilli)\n}",
+    "funcname": "nowStamp"
+}

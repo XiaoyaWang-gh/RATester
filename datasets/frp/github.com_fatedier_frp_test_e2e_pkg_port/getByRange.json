@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/port.go",
+    "lineno": 88,
+    "focalfunc": "func (pa *Allocator) getByRange(from, to int) int",
+    "funcbody": "func (pa *Allocator) getByRange(from, to int) int {\n\tif from <= 0 {\n\t\tport, _ := pa.reserved.PopAny()\n\t\treturn port\n\t}\n\n\tports := pa.reserved.UnsortedList()\n\tfor _, port := range ports {\n\t\tif port >= from && port <= to {\n\t\t\treturn port\n\t\t}\n\t}\n\treturn 0\n}",
+    "funcname": "getByRange"
+}

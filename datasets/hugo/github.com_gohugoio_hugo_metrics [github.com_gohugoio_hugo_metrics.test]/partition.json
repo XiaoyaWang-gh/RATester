@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 290,
+    "focalfunc": "func partition(d, scale int) int",
+    "funcbody": "func partition(d, scale int) int {\n\treturn int(math.Floor((float64(d) / float64(scale)))) * scale\n}",
+    "funcname": "partition"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 274,
+    "focalfunc": "func (ctl *Control) worker()",
+    "funcbody": "func (ctl *Control) worker() {\n\tgo ctl.heartbeatWorker()\n\tgo ctl.msgDispatcher.Run()\n\n\t<-ctl.msgDispatcher.Done()\n\tctl.closeSession()\n\n\tctl.pm.Close()\n\tctl.vm.Close()\n\tclose(ctl.doneCh)\n}",
+    "funcname": "worker"
+}

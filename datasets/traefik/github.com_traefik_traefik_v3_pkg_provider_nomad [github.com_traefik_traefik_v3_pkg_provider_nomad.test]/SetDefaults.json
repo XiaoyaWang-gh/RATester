@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/nomad.go",
+    "lineno": 145,
+    "focalfunc": "func (p *Provider) SetDefaults()",
+    "funcbody": "func (p *Provider) SetDefaults() {\n\tp.Configuration.SetDefaults()\n}",
+    "funcname": "SetDefaults"
+}

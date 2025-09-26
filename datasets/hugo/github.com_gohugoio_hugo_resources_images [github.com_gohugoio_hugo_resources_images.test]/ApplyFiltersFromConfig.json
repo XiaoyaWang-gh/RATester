@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 256,
+    "focalfunc": "func (p *ImageProcessor) ApplyFiltersFromConfig(src image.Image, conf ImageConfig) (image.Image, error)",
+    "funcbody": "func (p *ImageProcessor) ApplyFiltersFromConfig(src image.Image, conf ImageConfig) (image.Image, error) {\n\tfilters, err := p.FiltersFromConfig(src, conf)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif len(filters) == 0 {\n\t\treturn p.resolveSrc(src, conf.TargetFormat), nil\n\t}\n\n\timg, err := p.doFilter(src, conf.TargetFormat, filters...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn img, nil\n}",
+    "funcname": "ApplyFiltersFromConfig"
+}

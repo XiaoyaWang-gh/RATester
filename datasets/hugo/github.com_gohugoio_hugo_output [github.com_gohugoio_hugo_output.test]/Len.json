@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 228,
+    "focalfunc": "func (formats Formats) Len() int",
+    "funcbody": "func (formats Formats) Len() int\t{ return len(formats) }",
+    "funcname": "Len"
+}

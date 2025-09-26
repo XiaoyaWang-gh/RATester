@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_tcp.go",
+    "lineno": 148,
+    "focalfunc": "func (p *Provider) makeMiddlewareTCPKeys(ctx context.Context, ingRouteTCPNamespace string, middlewares []traefikv1alpha1.ObjectReference) ([]string, error)",
+    "funcbody": "func (p *Provider) makeMiddlewareTCPKeys(ctx context.Context, ingRouteTCPNamespace string, middlewares []traefikv1alpha1.ObjectReference) ([]string, error) {\n\tvar mds []string\n\n\tfor _, mi := range middlewares {\n\t\tif strings.Contains(mi.Name, providerNamespaceSeparator) {\n\t\t\tif len(mi.Namespace) > 0 {\n\t\t\t\tlog.Ctx(ctx).Warn().\n\t\t\t\t\tStr(logs.MiddlewareName, mi.Name).\n\t\t\t\t\tMsgf(\"Namespace %q is ignored in cross-provider context\", mi.Namespace)\n\t\t\t}\n\t\t\tmds = append(mds, mi.Name)\n\t\t\tcontinue\n\t\t}\n\n\t\tns := ingRouteTCPNamespace\n\t\tif len(mi.Namespace) > 0 {\n\t\t\tif !isNamespaceAllowed(p.AllowCrossNamespace, ingRouteTCPNamespace, mi.Namespace) {\n\t\t\t\treturn nil, fmt.Errorf(\"middleware %s/%s is not in the IngressRouteTCP namespace %s\", mi.Namespace, mi.Name, ingRouteTCPNamespace)\n\t\t\t}\n\n\t\t\tns = mi.Namespace\n\t\t}\n\n\t\tmds = append(mds, provider.Normalize(makeID(ns, mi.Name)))\n\t}\n\n\treturn mds, nil\n}",
+    "funcname": "makeMiddlewareTCPKeys"
+}

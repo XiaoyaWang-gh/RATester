@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 180,
+    "focalfunc": "func (v *Validation) Alpha(obj interface{}, key string) *Result",
+    "funcbody": "func (v *Validation) Alpha(obj interface{}, key string) *Result {\n\treturn v.apply(Alpha{key}, obj)\n}",
+    "funcname": "Alpha"
+}

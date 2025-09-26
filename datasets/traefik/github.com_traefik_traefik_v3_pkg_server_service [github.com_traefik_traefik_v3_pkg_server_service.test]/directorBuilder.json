@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 34,
+    "focalfunc": "func directorBuilder(target *url.URL, passHostHeader bool) func(req *http.Request)",
+    "funcbody": "func directorBuilder(target *url.URL, passHostHeader bool) func(req *http.Request) {\n\treturn func(outReq *http.Request) {\n\t\toutReq.URL.Scheme = target.Scheme\n\t\toutReq.URL.Host = target.Host\n\n\t\tu := outReq.URL\n\t\tif outReq.RequestURI != \"\" {\n\t\t\tparsedURL, err := url.ParseRequestURI(outReq.RequestURI)\n\t\t\tif err == nil {\n\t\t\t\tu = parsedURL\n\t\t\t}\n\t\t}\n\n\t\toutReq.URL.Path = u.Path\n\t\toutReq.URL.RawPath = u.RawPath\n\n\t\toutReq.URL.RawQuery = strings.ReplaceAll(u.RawQuery, \";\", \"&\")\n\t\toutReq.RequestURI = \"\"\n\n\t\toutReq.Proto = \"HTTP/1.1\"\n\t\toutReq.ProtoMajor = 1\n\t\toutReq.ProtoMinor = 1\n\n\t\tif !passHostHeader {\n\t\t\toutReq.Host = outReq.URL.Host\n\t\t}\n\n\t\tcleanWebSocketHeaders(outReq)\n\t}\n}",
+    "funcname": "directorBuilder"
+}

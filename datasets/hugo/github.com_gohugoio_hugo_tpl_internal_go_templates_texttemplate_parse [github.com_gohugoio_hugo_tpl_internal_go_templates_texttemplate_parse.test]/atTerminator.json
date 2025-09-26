@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 550,
+    "focalfunc": "func (l *lexer) atTerminator() bool",
+    "funcbody": "func (l *lexer) atTerminator() bool {\n\tr := l.peek()\n\tif isSpace(r) {\n\t\treturn true\n\t}\n\tswitch r {\n\tcase eof, '.', ',', '|', ':', ')', '(':\n\t\treturn true\n\t}\n\treturn strings.HasPrefix(l.input[l.pos:], l.rightDelim)\n}",
+    "funcname": "atTerminator"
+}

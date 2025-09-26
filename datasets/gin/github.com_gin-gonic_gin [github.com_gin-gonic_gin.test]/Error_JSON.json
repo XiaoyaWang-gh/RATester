@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 57,
+    "focalfunc": "func (msg *Error) JSON() any",
+    "funcbody": "func (msg *Error) JSON() any {\n\tjsonData := H{}\n\tif msg.Meta != nil {\n\t\tvalue := reflect.ValueOf(msg.Meta)\n\t\tswitch value.Kind() {\n\t\tcase reflect.Struct:\n\t\t\treturn msg.Meta\n\t\tcase reflect.Map:\n\t\t\tfor _, key := range value.MapKeys() {\n\t\t\t\tjsonData[key.String()] = value.MapIndex(key).Interface()\n\t\t\t}\n\t\tdefault:\n\t\t\tjsonData[\"meta\"] = msg.Meta\n\t\t}\n\t}\n\tif _, ok := jsonData[\"error\"]; !ok {\n\t\tjsonData[\"error\"] = msg.Error()\n\t}\n\treturn jsonData\n}",
+    "funcname": "JSON"
+}

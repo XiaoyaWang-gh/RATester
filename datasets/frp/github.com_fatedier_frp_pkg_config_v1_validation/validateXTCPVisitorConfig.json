@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/visitor.go",
+    "lineno": 57,
+    "focalfunc": "func validateXTCPVisitorConfig(c *v1.XTCPVisitorConfig) error",
+    "funcbody": "func validateXTCPVisitorConfig(c *v1.XTCPVisitorConfig) error {\n\tif !slices.Contains([]string{\"kcp\", \"quic\"}, c.Protocol) {\n\t\treturn fmt.Errorf(\"protocol should be kcp or quic\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateXTCPVisitorConfig"
+}

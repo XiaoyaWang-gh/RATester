@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 77,
+    "focalfunc": "func WithSessionKey(f func(ctx *context.Context) string) limiterOption",
+    "funcbody": "func WithSessionKey(f func(ctx *context.Context) string) limiterOption {\n\treturn func(l *limiter) {\n\t\tl.sessionKey = f\n\t}\n}",
+    "funcname": "WithSessionKey"
+}

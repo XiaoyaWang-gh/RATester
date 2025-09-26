@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 268,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tsession.Register(\"couchbase\", couchbpder)\n}",
+    "funcname": "init"
+}

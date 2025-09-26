@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pprof.go",
+    "lineno": 18,
+    "focalfunc": "func InitPProfFromArg(arg string)",
+    "funcbody": "func InitPProfFromArg(arg string) {\n\tif len(arg) > 0 {\n\t\trunPProf(arg)\n\t}\n}",
+    "funcname": "InitPProfFromArg"
+}

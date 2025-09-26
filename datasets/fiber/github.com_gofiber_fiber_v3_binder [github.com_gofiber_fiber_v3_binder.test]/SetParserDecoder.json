@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 38,
+    "focalfunc": "func SetParserDecoder(parserConfig ParserConfig)",
+    "funcbody": "func SetParserDecoder(parserConfig ParserConfig) {\n\tfor _, tag := range tags {\n\t\tdecoderPoolMap[tag] = &sync.Pool{New: func() any {\n\t\t\treturn decoderBuilder(parserConfig)\n\t\t}}\n\t}\n}",
+    "funcname": "SetParserDecoder"
+}

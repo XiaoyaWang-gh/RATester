@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 636,
+    "focalfunc": "func NewOrmWithDB(driverName, aliasName string, db *sql.DB, params ...DBOption) (Ormer, error)",
+    "funcbody": "func NewOrmWithDB(driverName, aliasName string, db *sql.DB, params ...DBOption) (Ormer, error) {\n\tal, err := newAliasWithDb(aliasName, driverName, db, params...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn newDBWithAlias(al), nil\n}",
+    "funcname": "NewOrmWithDB"
+}

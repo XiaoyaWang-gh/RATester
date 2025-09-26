@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/siteidentities/identities.go",
+    "lineno": 28,
+    "focalfunc": "func FromString(name string) (identity.Identity, bool)",
+    "funcbody": "func FromString(name string) (identity.Identity, bool) {\n\tswitch name {\n\tcase \"Data\":\n\t\treturn Data, true\n\t}\n\treturn identity.Anonymous, false\n}",
+    "funcname": "FromString"
+}

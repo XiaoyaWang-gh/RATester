@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 32,
+    "focalfunc": "func NewObservabilityMgr(config static.Configuration, metricsRegistry metrics.Registry, semConvMetricRegistry *metrics.SemConvMetricsRegistry, accessLoggerMiddleware *accesslog.Handler, tracer *tracing.Tracer, tracerCloser io.Closer) *ObservabilityMgr",
+    "funcbody": "func NewObservabilityMgr(config static.Configuration, metricsRegistry metrics.Registry, semConvMetricRegistry *metrics.SemConvMetricsRegistry, accessLoggerMiddleware *accesslog.Handler, tracer *tracing.Tracer, tracerCloser io.Closer) *ObservabilityMgr {\n\treturn &ObservabilityMgr{\n\t\tconfig:\t\t\tconfig,\n\t\tmetricsRegistry:\tmetricsRegistry,\n\t\tsemConvMetricRegistry:\tsemConvMetricRegistry,\n\t\taccessLoggerMiddleware:\taccessLoggerMiddleware,\n\t\ttracer:\t\t\ttracer,\n\t\ttracerCloser:\t\ttracerCloser,\n\t}\n}",
+    "funcname": "NewObservabilityMgr"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/minifiers/minifiers.go",
+    "lineno": 41,
+    "focalfunc": "func (m Client) Transformer(mediatype media.Type) transform.Transformer",
+    "funcbody": "func (m Client) Transformer(mediatype media.Type) transform.Transformer {\n\t_, params, min := m.m.Match(mediatype.Type)\n\tif min == nil {\n\n\t\treturn nil\n\t}\n\n\treturn func(ft transform.FromTo) error {\n\n\t\treturn min.Minify(m.m, ft.To(), ft.From(), params)\n\t}\n}",
+    "funcname": "Transformer"
+}

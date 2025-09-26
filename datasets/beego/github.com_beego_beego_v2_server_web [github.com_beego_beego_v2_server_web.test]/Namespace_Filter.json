@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 89,
+    "focalfunc": "func (n *Namespace) Filter(action string, filter ...FilterFunc) *Namespace",
+    "funcbody": "func (n *Namespace) Filter(action string, filter ...FilterFunc) *Namespace {\n\tvar a int\n\tif action == \"before\" {\n\t\ta = BeforeRouter\n\t} else if action == \"after\" {\n\t\ta = FinishRouter\n\t}\n\tfor _, f := range filter {\n\t\tn.handlers.InsertFilter(\"*\", a, f, WithReturnOnOutput(true))\n\t}\n\treturn n\n}",
+    "funcname": "Filter"
+}

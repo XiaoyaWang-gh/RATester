@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 775,
+    "focalfunc": "func (s *contentNodeShifter) ForEeachInDimension(n contentNodeI, d int, f func(contentNodeI) bool)",
+    "funcbody": "func (s *contentNodeShifter) ForEeachInDimension(n contentNodeI, d int, f func(contentNodeI) bool) {\n\tif d != doctree.DimensionLanguage.Index() {\n\t\tpanic(\"only language dimension supported\")\n\t}\n\n\tswitch vv := n.(type) {\n\tcase contentNodeIs:\n\t\tfor _, v := range vv {\n\t\t\tif v != nil {\n\t\t\t\tif f(v) {\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\tdefault:\n\t\tf(vv)\n\t}\n}",
+    "funcname": "ForEeachInDimension"
+}

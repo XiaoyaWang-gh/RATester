@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 150,
+    "focalfunc": "func (p *Paginator) PageLinkLast() (link string)",
+    "funcbody": "func (p *Paginator) PageLinkLast() (link string) {\n\treturn p.PageLink(p.PageNums())\n}",
+    "funcname": "PageLinkLast"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 50,
+    "focalfunc": "func evalArgs(args ...any) string",
+    "funcbody": "func evalArgs(args ...any) string {\n\n\tif len(args) == 1 {\n\t\tif s, ok := args[0].(string); ok {\n\t\t\treturn s\n\t\t}\n\t}\n\tfor i, arg := range args {\n\t\targs[i] = indirectToStringerOrError(arg)\n\t}\n\treturn fmt.Sprint(args...)\n}",
+    "funcname": "evalArgs"
+}

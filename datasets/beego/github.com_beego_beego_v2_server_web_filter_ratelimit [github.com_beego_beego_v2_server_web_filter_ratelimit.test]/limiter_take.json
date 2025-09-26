@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 116,
+    "focalfunc": "func (l *limiter) take(amount uint, ctx *context.Context) bool",
+    "funcbody": "func (l *limiter) take(amount uint, ctx *context.Context) bool {\n\tbucket := l.getBucket(ctx)\n\tif bucket == nil {\n\t\treturn true\n\t}\n\treturn bucket.take(amount)\n}",
+    "funcname": "take"
+}

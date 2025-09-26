@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 191,
+    "focalfunc": "func Logger() HandlerFunc",
+    "funcbody": "func Logger() HandlerFunc {\n\treturn LoggerWithConfig(LoggerConfig{})\n}",
+    "funcname": "Logger"
+}

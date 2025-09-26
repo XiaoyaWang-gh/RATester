@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 133,
+    "focalfunc": "func NewService(options ServiceOptions) (*Service, error)",
+    "funcbody": "func NewService(options ServiceOptions) (*Service, error) {\n\tsetServiceOptionsDefault(&options)\n\n\tvar webServer *httppkg.Server\n\tif options.Common.WebServer.Port > 0 {\n\t\tws, err := httppkg.NewServer(options.Common.WebServer)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\twebServer = ws\n\t}\n\ts := &Service{\n\t\tctx:\t\t\tcontext.Background(),\n\t\tauthSetter:\t\tauth.NewAuthSetter(options.Common.Auth),\n\t\twebServer:\t\twebServer,\n\t\tcommon:\t\t\toptions.Common,\n\t\tconfigFilePath:\t\toptions.ConfigFilePath,\n\t\tproxyCfgs:\t\toptions.ProxyCfgs,\n\t\tvisitorCfgs:\t\toptions.VisitorCfgs,\n\t\tclientSpec:\t\toptions.ClientSpec,\n\t\tconnectorCreator:\toptions.ConnectorCreator,\n\t\thandleWorkConnCb:\toptions.HandleWorkConnCb,\n\t}\n\tif webServer != nil {\n\t\twebServer.RouteRegister(s.registerRouteHandlers)\n\t}\n\treturn s, nil\n}",
+    "funcname": "NewService"
+}

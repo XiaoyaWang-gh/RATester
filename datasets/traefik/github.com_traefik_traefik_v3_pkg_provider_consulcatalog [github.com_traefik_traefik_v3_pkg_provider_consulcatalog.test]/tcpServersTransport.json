@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/connect_tls.go",
+    "lineno": 74,
+    "focalfunc": "func (c *connectCert) tcpServersTransport(item itemData) *dynamic.TCPServersTransport",
+    "funcbody": "func (c *connectCert) tcpServersTransport(item itemData) *dynamic.TCPServersTransport {\n\tspiffeID := fmt.Sprintf(\"spiffe:///ns/%s/dc/%s/svc/%s\",\n\t\titem.Namespace,\n\t\titem.Datacenter,\n\t\titem.Name,\n\t)\n\n\treturn &dynamic.TCPServersTransport{\n\t\tTLS: &dynamic.TLSClientConfig{\n\n\t\t\tServerName:\tfmt.Sprintf(\"%s-%s-%s\", item.Namespace, item.Datacenter, item.Name),\n\n\t\t\tInsecureSkipVerify:\ttrue,\n\t\t\tRootCAs:\t\tc.getRoot(),\n\t\t\tCertificates: traefiktls.Certificates{\n\t\t\t\tc.getLeaf(),\n\t\t\t},\n\t\t\tPeerCertURI:\tspiffeID,\n\t\t},\n\t}\n}",
+    "funcname": "tcpServersTransport"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 583,
+    "focalfunc": "func (p *Partition[K, V]) Get(ctx context.Context, key K) (V, bool)",
+    "funcbody": "func (p *Partition[K, V]) Get(ctx context.Context, key K) (V, bool) {\n\treturn p.c.Get(key)\n}",
+    "funcname": "Get"
+}

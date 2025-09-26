@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 168,
+    "focalfunc": "func HasGlobChar(s string) bool",
+    "funcbody": "func HasGlobChar(s string) bool {\n\tfor i := 0; i < len(s); i++ {\n\t\tif syntax.Special(s[i]) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "HasGlobChar"
+}

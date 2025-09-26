@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/npm/package_builder.go",
+    "lineno": 203,
+    "focalfunc": "func (b *packageBuilder) addm(source string, m map[string]any)",
+    "funcbody": "func (b *packageBuilder) addm(source string, m map[string]any) {\n\tif source == \"\" {\n\t\tsource = \"project\"\n\t}\n\n\tif devDeps, found := m[devDependenciesKey]; found {\n\t\tmm := maps.ToStringMapString(devDeps)\n\t\tfor k, v := range mm {\n\t\t\tif _, added := b.devDependencies[k]; !added {\n\t\t\t\tb.devDependencies[k] = v\n\t\t\t\tb.devDependenciesComments[k] = source\n\t\t\t}\n\t\t}\n\t}\n\n\tif deps, found := m[dependenciesKey]; found {\n\t\tmm := maps.ToStringMapString(deps)\n\t\tfor k, v := range mm {\n\t\t\tif _, added := b.dependencies[k]; !added {\n\t\t\t\tb.dependencies[k] = v\n\t\t\t\tb.dependenciesComments[k] = source\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "addm"
+}

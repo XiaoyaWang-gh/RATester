@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 107,
+    "focalfunc": "func GoToolPath(t testing.TB) string",
+    "funcbody": "func GoToolPath(t testing.TB) string {\n\tMustHaveGoBuild(t)\n\tpath, err := GoTool()\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\n\tfor _, envVar := range strings.Fields(cfg.KnownEnv) {\n\t\tos.Getenv(envVar)\n\t}\n\treturn path\n}",
+    "funcname": "GoToolPath"
+}

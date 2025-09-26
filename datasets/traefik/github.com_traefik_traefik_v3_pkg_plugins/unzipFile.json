@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 273,
+    "focalfunc": "func unzipFile(f *zipa.File, dest string) error",
+    "funcbody": "func unzipFile(f *zipa.File, dest string) error {\n\trc, err := f.Open()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tdefer func() { _ = rc.Close() }()\n\n\tpathParts := strings.SplitN(f.Name, \"/\", 2)\n\n\tvar pp string\n\tif len(pathParts) < 2 {\n\t\tpp = pathParts[0]\n\t} else {\n\t\tpp = pathParts[1]\n\t}\n\n\tp := filepath.Join(dest, pp)\n\n\tif f.FileInfo().IsDir() {\n\t\terr = os.MkdirAll(p, f.Mode())\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"unable to create archive directory %s: %w\", p, err)\n\t\t}\n\n\t\treturn nil\n\t}\n\n\terr = os.MkdirAll(filepath.Dir(p), 0o750)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to create archive directory %s for file %s: %w\", filepath.Dir(p), p, err)\n\t}\n\n\telt, err := os.OpenFile(p, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tdefer func() { _ = elt.Close() }()\n\n\t_, err = io.Copy(elt, rc)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "unzipFile"
+}

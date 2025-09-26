@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 180,
+    "focalfunc": "func (w *gzipResponseWriter) Flush()",
+    "funcbody": "func (w *gzipResponseWriter) Flush() {\n\tif !w.minLengthExceeded {\n\n\t\tw.minLengthExceeded = true\n\t\tw.Header().Set(echo.HeaderContentEncoding, gzipScheme)\n\t\tif w.wroteHeader {\n\t\t\tw.ResponseWriter.WriteHeader(w.code)\n\t\t}\n\n\t\tw.Writer.Write(w.buffer.Bytes())\n\t}\n\n\tw.Writer.(*gzip.Writer).Flush()\n\t_ = http.NewResponseController(w.ResponseWriter).Flush()\n}",
+    "funcname": "Flush"
+}

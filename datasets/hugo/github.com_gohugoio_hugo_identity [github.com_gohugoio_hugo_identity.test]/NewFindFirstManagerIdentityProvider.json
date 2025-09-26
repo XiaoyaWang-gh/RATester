@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 178,
+    "focalfunc": "func NewFindFirstManagerIdentityProvider(m Manager, id Identity) FindFirstManagerIdentityProvider",
+    "funcbody": "func NewFindFirstManagerIdentityProvider(m Manager, id Identity) FindFirstManagerIdentityProvider {\n\treturn findFirstManagerIdentity{\n\t\tIdentity:\tAnonymous,\n\t\tManagerIdentity: ManagerIdentity{\n\t\t\tManager:\tm, Identity: id,\n\t\t},\n\t}\n}",
+    "funcname": "NewFindFirstManagerIdentityProvider"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 172,
+    "focalfunc": "func (r *PostPublishResource) Params() maps.Params",
+    "funcbody": "func (r *PostPublishResource) Params() maps.Params {\n\tpanic(r.fieldNotSupported(\"Params\"))\n}",
+    "funcname": "Params"
+}

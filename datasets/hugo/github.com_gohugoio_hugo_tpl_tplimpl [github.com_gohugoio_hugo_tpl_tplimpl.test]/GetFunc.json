@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 81,
+    "focalfunc": "func (t *templateExecHelper) GetFunc(ctx context.Context, tmpl texttemplate.Preparer, name string) (fn reflect.Value, firstArg reflect.Value, found bool)",
+    "funcbody": "func (t *templateExecHelper) GetFunc(ctx context.Context, tmpl texttemplate.Preparer, name string) (fn reflect.Value, firstArg reflect.Value, found bool) {\n\tif fn, found := t.funcs[name]; found {\n\t\tif fn.Type().NumIn() > 0 {\n\t\t\tfirst := fn.Type().In(0)\n\t\t\tif hreflect.IsContextType(first) {\n\n\t\t\t\treturn fn, reflect.ValueOf(ctx), true\n\t\t\t}\n\t\t}\n\n\t\treturn fn, zero, true\n\t}\n\treturn zero, zero, false\n}",
+    "funcname": "GetFunc"
+}

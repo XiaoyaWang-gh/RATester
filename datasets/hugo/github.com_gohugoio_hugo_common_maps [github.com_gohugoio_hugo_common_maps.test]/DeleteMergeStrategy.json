@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 135,
+    "focalfunc": "func (p Params) DeleteMergeStrategy() bool",
+    "funcbody": "func (p Params) DeleteMergeStrategy() bool {\n\tif _, found := p[MergeStrategyKey]; found {\n\t\tdelete(p, MergeStrategyKey)\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "DeleteMergeStrategy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 57,
+    "focalfunc": "func WithLoadBalancerServices(opts ...func(service *dynamic.ServersLoadBalancer) string) func(*dynamic.HTTPConfiguration)",
+    "funcbody": "func WithLoadBalancerServices(opts ...func(service *dynamic.ServersLoadBalancer) string) func(*dynamic.HTTPConfiguration) {\n\treturn func(c *dynamic.HTTPConfiguration) {\n\t\tc.Services = make(map[string]*dynamic.Service)\n\t\tfor _, opt := range opts {\n\t\t\tb := &dynamic.ServersLoadBalancer{}\n\t\t\tname := opt(b)\n\t\t\tc.Services[name] = &dynamic.Service{\n\t\t\t\tLoadBalancer: b,\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "WithLoadBalancerServices"
+}

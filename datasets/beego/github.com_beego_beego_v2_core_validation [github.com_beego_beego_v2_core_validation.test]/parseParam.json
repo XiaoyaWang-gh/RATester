@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 257,
+    "focalfunc": "func parseParam(t reflect.Type, s string) (i interface{}, err error)",
+    "funcbody": "func parseParam(t reflect.Type, s string) (i interface{}, err error) {\n\tswitch t.Kind() {\n\tcase reflect.Int:\n\t\ti, err = strconv.Atoi(s)\n\tcase reflect.Int64:\n\t\tif wordsize == 32 {\n\t\t\treturn nil, ErrInt64On32\n\t\t}\n\t\ti, err = strconv.ParseInt(s, 10, 64)\n\tcase reflect.Int32:\n\t\tvar v int64\n\t\tv, err = strconv.ParseInt(s, 10, 32)\n\t\tif err == nil {\n\t\t\ti = int32(v)\n\t\t}\n\tcase reflect.Int16:\n\t\tvar v int64\n\t\tv, err = strconv.ParseInt(s, 10, 16)\n\t\tif err == nil {\n\t\t\ti = int16(v)\n\t\t}\n\tcase reflect.Int8:\n\t\tvar v int64\n\t\tv, err = strconv.ParseInt(s, 10, 8)\n\t\tif err == nil {\n\t\t\ti = int8(v)\n\t\t}\n\tcase reflect.String:\n\t\ti = s\n\tcase reflect.Ptr:\n\t\tif t.Elem().String() != \"regexp.Regexp\" {\n\t\t\terr = fmt.Errorf(\"not support %s\", t.Elem().String())\n\t\t\treturn\n\t\t}\n\t\ti, err = regexp.Compile(s)\n\tdefault:\n\t\terr = fmt.Errorf(\"not support %s\", t.Kind().String())\n\t}\n\treturn\n}",
+    "funcname": "parseParam"
+}

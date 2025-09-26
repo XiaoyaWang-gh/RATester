@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 457,
+    "focalfunc": "func (f *filterOrmDecorator) DoTxWithOpts(opts *sql.TxOptions, task func(ctx context.Context, txOrm TxOrmer) error) error",
+    "funcbody": "func (f *filterOrmDecorator) DoTxWithOpts(opts *sql.TxOptions, task func(ctx context.Context, txOrm TxOrmer) error) error {\n\treturn f.DoTxWithCtxAndOpts(context.Background(), opts, task)\n}",
+    "funcname": "DoTxWithOpts"
+}

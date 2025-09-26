@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 208,
+    "focalfunc": "func _Greeter_StreamExample_Handler(srv interface{}, stream grpc.ServerStream) error",
+    "funcbody": "func _Greeter_StreamExample_Handler(srv interface{}, stream grpc.ServerStream) error {\n\tm := new(StreamExampleRequest)\n\tif err := stream.RecvMsg(m); err != nil {\n\t\treturn err\n\t}\n\treturn srv.(GreeterServer).StreamExample(m, &greeterStreamExampleServer{stream})\n}",
+    "funcname": "_Greeter_StreamExample_Handler"
+}

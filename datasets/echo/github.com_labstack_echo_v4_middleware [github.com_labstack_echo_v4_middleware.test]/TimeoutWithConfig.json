@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/timeout.go",
+    "lineno": 97,
+    "focalfunc": "func TimeoutWithConfig(config TimeoutConfig) echo.MiddlewareFunc",
+    "funcbody": "func TimeoutWithConfig(config TimeoutConfig) echo.MiddlewareFunc {\n\tmw, err := config.ToMiddleware()\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn mw\n}",
+    "funcname": "TimeoutWithConfig"
+}

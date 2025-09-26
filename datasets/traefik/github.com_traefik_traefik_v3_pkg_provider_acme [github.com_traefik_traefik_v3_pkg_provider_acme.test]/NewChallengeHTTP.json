@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_http.go",
+    "lineno": 26,
+    "focalfunc": "func NewChallengeHTTP() *ChallengeHTTP",
+    "funcbody": "func NewChallengeHTTP() *ChallengeHTTP {\n\treturn &ChallengeHTTP{\n\t\thttpChallenges: make(map[string]map[string][]byte),\n\t}\n}",
+    "funcname": "NewChallengeHTTP"
+}

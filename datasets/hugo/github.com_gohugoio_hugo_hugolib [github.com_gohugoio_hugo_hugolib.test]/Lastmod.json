@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 147,
+    "focalfunc": "func (p *pageMeta) Lastmod() time.Time",
+    "funcbody": "func (p *pageMeta) Lastmod() time.Time {\n\treturn p.pageConfig.Dates.Lastmod\n}",
+    "funcname": "Lastmod"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 192,
+    "focalfunc": "func (s *IndexController) Del()",
+    "funcbody": "func (s *IndexController) Del() {\n\tid := s.GetIntNoErr(\"id\")\n\tif err := server.DelTask(id); err != nil {\n\t\ts.AjaxErr(\"delete error\")\n\t}\n\ts.AjaxOk(\"delete success\")\n}",
+    "funcname": "Del"
+}

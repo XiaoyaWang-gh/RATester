@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 272,
+    "focalfunc": "func (t *Task) parse(spec string) *Schedule",
+    "funcbody": "func (t *Task) parse(spec string) *Schedule {\n\tif len(spec) > 0 && spec[0] == '@' {\n\t\treturn t.parseSpec(spec)\n\t}\n\n\tfields := strings.Fields(spec)\n\tif len(fields) != 5 && len(fields) != 6 {\n\t\tlog.Panicf(\"Expected 5 or 6 fields, found %d: %s\", len(fields), spec)\n\t}\n\n\tif len(fields) == 5 {\n\t\tfields = append(fields, \"*\")\n\t}\n\n\tschedule := &Schedule{\n\t\tSecond:\tgetField(fields[0], seconds),\n\t\tMinute:\tgetField(fields[1], minutes),\n\t\tHour:\tgetField(fields[2], hours),\n\t\tDay:\tgetField(fields[3], days),\n\t\tMonth:\tgetField(fields[4], months),\n\t\tWeek:\tgetField(fields[5], weeks),\n\t}\n\n\treturn schedule\n}",
+    "funcname": "parse"
+}

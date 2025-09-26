@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/text/position.go",
+    "lineno": 48,
+    "focalfunc": "func (pos Position) IsValid() bool",
+    "funcbody": "func (pos Position) IsValid() bool {\n\treturn pos.LineNumber > 0\n}",
+    "funcname": "IsValid"
+}

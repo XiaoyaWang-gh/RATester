@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 674,
+    "focalfunc": "func (c *Controller) SaveToFile(fromFile, toFile string) error",
+    "funcbody": "func (c *Controller) SaveToFile(fromFile, toFile string) error {\n\tbuf := copyBufferPool.Get().([]byte)\n\tdefer copyBufferPool.Put(buf)\n\treturn c.SaveToFileWithBuffer(fromFile, toFile, buf)\n}",
+    "funcname": "SaveToFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 325,
+    "focalfunc": "func (m Method) outStr() string",
+    "funcbody": "func (m Method) outStr() string {\n\tif len(m.Out) == 0 {\n\t\treturn \"\"\n\t}\n\tif len(m.Out) == 1 {\n\t\treturn m.Out[0]\n\t}\n\n\treturn \"(\" + strings.Join(m.Out, \", \") + \")\"\n}",
+    "funcname": "outStr"
+}

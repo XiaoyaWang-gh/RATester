@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 446,
+    "focalfunc": "func (qs *QUICTunnelSession) Close()",
+    "funcbody": "func (qs *QUICTunnelSession) Close() {\n\tqs.mu.Lock()\n\tdefer qs.mu.Unlock()\n\tif qs.session != nil {\n\t\t_ = qs.session.CloseWithError(0, \"\")\n\t\tqs.session = nil\n\t}\n\tif qs.listenConn != nil {\n\t\t_ = qs.listenConn.Close()\n\t\tqs.listenConn = nil\n\t}\n}",
+    "funcname": "Close"
+}

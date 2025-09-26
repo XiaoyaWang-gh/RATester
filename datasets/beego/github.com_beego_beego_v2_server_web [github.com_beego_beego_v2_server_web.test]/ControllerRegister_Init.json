@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 202,
+    "focalfunc": "func (p *ControllerRegister) Init()",
+    "funcbody": "func (p *ControllerRegister) Init() {\n\tfor i := len(p.filterChains) - 1; i >= 0; i-- {\n\t\tfc := p.filterChains[i]\n\t\troot := p.chainRoot\n\t\tfilterFunc := fc.chain(func(ctx *beecontext.Context) {\n\t\t\tvar preFilterParams map[string]string\n\t\t\troot.filter(ctx, p.getUrlPath(ctx), preFilterParams)\n\t\t})\n\t\tp.chainRoot = newFilterRouter(fc.pattern, filterFunc, fc.opts...)\n\t\tp.chainRoot.next = root\n\t}\n}",
+    "funcname": "Init"
+}

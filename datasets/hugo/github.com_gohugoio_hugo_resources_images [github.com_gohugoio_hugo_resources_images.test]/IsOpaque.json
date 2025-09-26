@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 454,
+    "focalfunc": "func IsOpaque(img image.Image) bool",
+    "funcbody": "func IsOpaque(img image.Image) bool {\n\tif oim, ok := img.(interface {\n\t\tOpaque() bool\n\t}); ok {\n\t\treturn oim.Opaque()\n\t}\n\n\treturn false\n}",
+    "funcname": "IsOpaque"
+}

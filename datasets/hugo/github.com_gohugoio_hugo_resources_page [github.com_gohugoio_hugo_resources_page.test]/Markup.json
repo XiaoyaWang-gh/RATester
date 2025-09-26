@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 114,
+    "focalfunc": "func (p *nopPage) Markup(...any) Markup",
+    "funcbody": "func (p *nopPage) Markup(...any) Markup {\n\treturn NopMarkup\n}",
+    "funcname": "Markup"
+}

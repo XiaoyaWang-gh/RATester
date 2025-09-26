@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 178,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Subquery(sub string, alias string) string",
+    "funcbody": "func (qb *MySQLQueryBuilder) Subquery(sub string, alias string) string {\n\treturn fmt.Sprintf(\"(%s) AS %s\", sub, alias)\n}",
+    "funcname": "Subquery"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/org/convert.go",
+    "lineno": 47,
+    "focalfunc": "func (c *orgConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error)",
+    "funcbody": "func (c *orgConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error) {\n\tlogger := c.cfg.Logger\n\tconfig := org.New()\n\tconfig.Log = log.Default()\n\tconfig.ReadFile = func(filename string) ([]byte, error) {\n\t\treturn afero.ReadFile(c.cfg.ContentFs, filename)\n\t}\n\twriter := org.NewHTMLWriter()\n\twriter.HighlightCodeBlock = func(source, lang string, inline bool, params map[string]string) string {\n\t\thighlightedSource, err := c.cfg.Highlight(source, lang, \"\")\n\t\tif err != nil {\n\t\t\tlogger.Errorf(\"Could not highlight source as lang %s. Using raw source.\", lang)\n\t\t\treturn source\n\t\t}\n\t\treturn highlightedSource\n\t}\n\n\thtml, err := config.Parse(bytes.NewReader(ctx.Src), c.ctx.DocumentName).Write(writer)\n\tif err != nil {\n\t\tlogger.Errorf(\"Could not render org: %s. Using unrendered content.\", err)\n\t\treturn converter.Bytes(ctx.Src), nil\n\t}\n\treturn converter.Bytes([]byte(html)), nil\n}",
+    "funcname": "Convert"
+}

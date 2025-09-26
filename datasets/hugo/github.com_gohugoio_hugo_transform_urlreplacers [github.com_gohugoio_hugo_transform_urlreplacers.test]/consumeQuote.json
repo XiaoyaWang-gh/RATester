@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 88,
+    "focalfunc": "func (l *absurllexer) consumeQuote() []byte",
+    "funcbody": "func (l *absurllexer) consumeQuote() []byte {\n\tfor _, q := range l.quotes {\n\t\tif bytes.HasPrefix(l.content[l.pos:], q) {\n\t\t\tl.pos += len(q)\n\t\t\tl.emit()\n\t\t\treturn q\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "consumeQuote"
+}

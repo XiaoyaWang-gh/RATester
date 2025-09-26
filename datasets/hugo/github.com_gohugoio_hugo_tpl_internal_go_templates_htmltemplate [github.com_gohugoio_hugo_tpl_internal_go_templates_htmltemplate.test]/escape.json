@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 97,
+    "focalfunc": "func (t *Template) escape() error",
+    "funcbody": "func (t *Template) escape() error {\n\tt.nameSpace.mu.Lock()\n\tdefer t.nameSpace.mu.Unlock()\n\tt.nameSpace.escaped = true\n\tif t.escapeErr == nil {\n\t\tif t.Tree == nil {\n\t\t\treturn fmt.Errorf(\"template: %q is an incomplete or empty template\", t.Name())\n\t\t}\n\t\tif err := escapeTemplate(t, t.text.Root, t.Name()); err != nil {\n\t\t\treturn err\n\t\t}\n\t} else if t.escapeErr != escapeOK {\n\t\treturn t.escapeErr\n\t}\n\treturn nil\n}",
+    "funcname": "escape"
+}

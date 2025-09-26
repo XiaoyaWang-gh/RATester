@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/idempotency/response_msgp.go",
+    "lineno": 149,
+    "focalfunc": "func (z *response) MarshalMsg(b []byte) (o []byte, err error)",
+    "funcbody": "func (z *response) MarshalMsg(b []byte) (o []byte, err error) {\n\to = msgp.Require(b, z.Msgsize())\n\n\to = append(o, 0x83, 0xa2, 0x68, 0x73)\n\to = msgp.AppendMapHeader(o, uint32(len(z.Headers)))\n\tfor za0001, za0002 := range z.Headers {\n\t\to = msgp.AppendString(o, za0001)\n\t\to = msgp.AppendArrayHeader(o, uint32(len(za0002)))\n\t\tfor za0003 := range za0002 {\n\t\t\to = msgp.AppendString(o, za0002[za0003])\n\t\t}\n\t}\n\n\to = append(o, 0xa1, 0x62)\n\to = msgp.AppendBytes(o, z.Body)\n\n\to = append(o, 0xa2, 0x73, 0x63)\n\to = msgp.AppendInt(o, z.StatusCode)\n\treturn\n}",
+    "funcname": "MarshalMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 177,
+    "focalfunc": "func (t *Iterator) Peek() Item",
+    "funcbody": "func (t *Iterator) Peek() Item {\n\treturn t.items[t.lastPos+1]\n}",
+    "funcname": "Peek"
+}

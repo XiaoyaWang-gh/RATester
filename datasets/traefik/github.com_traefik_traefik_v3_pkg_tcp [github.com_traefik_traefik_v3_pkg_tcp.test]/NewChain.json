@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/chain.go",
+    "lineno": 25,
+    "focalfunc": "func NewChain(constructors ...Constructor) Chain",
+    "funcbody": "func NewChain(constructors ...Constructor) Chain {\n\treturn Chain{constructors: constructors}\n}",
+    "funcname": "NewChain"
+}

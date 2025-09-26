@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 626,
+    "focalfunc": "func CleanKey(s string) string",
+    "funcbody": "func CleanKey(s string) string {\n\treturn path.Clean(paths.ToSlashPreserveLeading(s))\n}",
+    "funcname": "CleanKey"
+}

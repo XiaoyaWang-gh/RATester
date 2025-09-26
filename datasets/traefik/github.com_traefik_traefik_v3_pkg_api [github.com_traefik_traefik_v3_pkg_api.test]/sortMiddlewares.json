@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 286,
+    "focalfunc": "func sortMiddlewares[T orderedMiddleware](values url.Values, middlewares []T)",
+    "funcbody": "func sortMiddlewares[T orderedMiddleware](values url.Values, middlewares []T) {\n\tsortBy := values.Get(sortByParam)\n\n\tdirection := values.Get(directionParam)\n\tif direction == \"\" {\n\t\tdirection = ascendantSorting\n\t}\n\n\tswitch sortBy {\n\tcase \"name\":\n\t\tsortByName(direction, middlewares)\n\n\tcase \"type\":\n\t\tsortByFunc(direction, middlewares, func(i int) string { return middlewares[i].resourceType() })\n\n\tcase \"provider\":\n\t\tsortByFunc(direction, middlewares, func(i int) string { return middlewares[i].provider() })\n\n\tcase \"status\":\n\t\tsortByFunc(direction, middlewares, func(i int) string { return middlewares[i].status() })\n\n\tdefault:\n\t\tsortByName(direction, middlewares)\n\t}\n}",
+    "funcname": "sortMiddlewares"
+}

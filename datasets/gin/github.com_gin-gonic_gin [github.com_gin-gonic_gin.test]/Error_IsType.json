@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 89,
+    "focalfunc": "func (msg *Error) IsType(flags ErrorType) bool",
+    "funcbody": "func (msg *Error) IsType(flags ErrorType) bool {\n\treturn (msg.Type & flags) > 0\n}",
+    "funcname": "IsType"
+}

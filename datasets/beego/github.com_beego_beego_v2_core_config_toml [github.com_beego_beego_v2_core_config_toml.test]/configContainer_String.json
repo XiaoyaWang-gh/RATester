@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 69,
+    "focalfunc": "func (c *configContainer) String(key string) (string, error)",
+    "funcbody": "func (c *configContainer) String(key string) (string, error) {\n\tres, err := c.get(key)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif res == nil {\n\t\treturn \"\", config.KeyNotFoundError\n\t}\n\n\tif str, ok := res.(string); ok {\n\t\treturn str, nil\n\t} else {\n\t\treturn \"\", config.InvalidValueTypeError\n\t}\n}",
+    "funcname": "String"
+}

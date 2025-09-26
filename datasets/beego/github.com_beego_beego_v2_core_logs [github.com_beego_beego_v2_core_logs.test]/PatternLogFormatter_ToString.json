@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/formatter.go",
+    "lineno": 66,
+    "focalfunc": "func (p *PatternLogFormatter) ToString(lm *LogMsg) string",
+    "funcbody": "func (p *PatternLogFormatter) ToString(lm *LogMsg) string {\n\ts := []rune(p.Pattern)\n\tmsg := fmt.Sprintf(lm.Msg, lm.Args...)\n\tm := map[rune]string{\n\t\t'w':\tlm.When.Format(p.getWhenFormatter()),\n\t\t'm':\tmsg,\n\t\t'n':\tstrconv.Itoa(lm.LineNumber),\n\t\t'l':\tstrconv.Itoa(lm.Level),\n\t\t't':\tlevelPrefix[lm.Level],\n\t\t'T':\tlevelNames[lm.Level],\n\t\t'F':\tlm.FilePath,\n\t}\n\t_, m['f'] = path.Split(lm.FilePath)\n\tres := \"\"\n\tfor i := 0; i < len(s)-1; i++ {\n\t\tif s[i] == '%' {\n\t\t\tif k, ok := m[s[i+1]]; ok {\n\t\t\t\tres += k\n\t\t\t\ti++\n\t\t\t\tcontinue\n\t\t\t}\n\t\t}\n\t\tres += string(s[i])\n\t}\n\treturn res\n}",
+    "funcname": "ToString"
+}

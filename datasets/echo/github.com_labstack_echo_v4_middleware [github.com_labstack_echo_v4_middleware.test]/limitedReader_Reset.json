@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_limit.go",
+    "lineno": 103,
+    "focalfunc": "func (r *limitedReader) Reset(reader io.ReadCloser)",
+    "funcbody": "func (r *limitedReader) Reset(reader io.ReadCloser) {\n\tr.reader = reader\n\tr.read = 0\n}",
+    "funcname": "Reset"
+}

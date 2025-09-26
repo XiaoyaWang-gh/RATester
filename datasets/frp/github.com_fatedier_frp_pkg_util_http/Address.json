@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/server.go",
+    "lineno": 90,
+    "focalfunc": "func (s *Server) Address() string",
+    "funcbody": "func (s *Server) Address() string {\n\treturn s.addr\n}",
+    "funcname": "Address"
+}

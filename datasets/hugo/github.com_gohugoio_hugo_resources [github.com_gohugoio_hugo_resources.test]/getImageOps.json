@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 368,
+    "focalfunc": "func (r *resourceAdapter) getImageOps() images.ImageResourceOps",
+    "funcbody": "func (r *resourceAdapter) getImageOps() images.ImageResourceOps {\n\timg, ok := r.target.(images.ImageResourceOps)\n\tif !ok {\n\t\tif r.MediaType().SubType == \"svg\" {\n\t\t\tpanic(\"this method is only available for raster images. To determine if an image is SVG, you can do {{ if eq .MediaType.SubType \\\"svg\\\" }}{{ end }}\")\n\t\t}\n\t\tfmt.Println(r.MediaType().SubType)\n\t\tpanic(\"this method is only available for image resources\")\n\t}\n\tr.init(false, false)\n\treturn img\n}",
+    "funcname": "getImageOps"
+}

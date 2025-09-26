@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/access_log.go",
+    "lineno": 65,
+    "focalfunc": "func AccessLog(r *AccessLogRecord, format string)",
+    "funcbody": "func AccessLog(r *AccessLogRecord, format string) {\n\tmsg := r.format(format)\n\tlm := &LogMsg{\n\t\tMsg:\tstrings.TrimSpace(msg),\n\t\tWhen:\ttime.Now(),\n\t\tLevel:\tlevelLoggerImpl,\n\t}\n\tbeeLogger.writeMsg(lm)\n}",
+    "funcname": "AccessLog"
+}

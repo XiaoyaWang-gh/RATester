@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 33,
+    "focalfunc": "func (c *Config) Parse(filename string) (config.Configer, error)",
+    "funcbody": "func (c *Config) Parse(filename string) (config.Configer, error) {\n\tctx, err := os.ReadFile(filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn c.ParseData(ctx)\n}",
+    "funcname": "Parse"
+}

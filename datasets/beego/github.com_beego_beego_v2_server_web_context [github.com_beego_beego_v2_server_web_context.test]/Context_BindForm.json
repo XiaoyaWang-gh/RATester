@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 143,
+    "focalfunc": "func (ctx *Context) BindForm(obj interface{}) error",
+    "funcbody": "func (ctx *Context) BindForm(obj interface{}) error {\n\terr := ctx.Request.ParseForm()\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn ParseForm(ctx.Request.Form, obj)\n}",
+    "funcname": "BindForm"
+}

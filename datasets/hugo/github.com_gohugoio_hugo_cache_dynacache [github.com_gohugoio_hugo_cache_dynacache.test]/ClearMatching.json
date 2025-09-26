@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 453,
+    "focalfunc": "func (p *Partition[K, V]) clearMatching(predicate func(k, v any) bool)",
+    "funcbody": "func (p *Partition[K, V]) clearMatching(predicate func(k, v any) bool) {\n\tp.c.DeleteFunc(func(key K, v V) bool {\n\t\tif predicate(key, v) {\n\t\t\tp.trace.Log(\n\t\t\t\tlogg.StringFunc(\n\t\t\t\t\tfunc() string {\n\t\t\t\t\t\treturn fmt.Sprintf(\"clearing cache key %v\", key)\n\t\t\t\t\t},\n\t\t\t\t),\n\t\t\t)\n\t\t\treturn true\n\t\t}\n\t\treturn false\n\t})\n}",
+    "funcname": "clearMatching"
+}

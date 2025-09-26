@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/yaml.go",
+    "lineno": 21,
+    "focalfunc": "func (yamlBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (yamlBinding) Bind(req *http.Request, obj any) error {\n\treturn decodeYAML(req.Body, obj)\n}",
+    "funcname": "Bind"
+}

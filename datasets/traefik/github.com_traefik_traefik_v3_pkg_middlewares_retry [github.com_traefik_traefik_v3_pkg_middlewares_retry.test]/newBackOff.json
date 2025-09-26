@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/retry/retry.go",
+    "lineno": 149,
+    "focalfunc": "func (r *retry) newBackOff() backoff.BackOff",
+    "funcbody": "func (r *retry) newBackOff() backoff.BackOff {\n\tif r.attempts < 2 || r.initialInterval <= 0 {\n\t\treturn &backoff.ZeroBackOff{}\n\t}\n\n\tb := backoff.NewExponentialBackOff()\n\tb.InitialInterval = r.initialInterval\n\n\tb.Multiplier = math.Pow(2, 1/float64(r.attempts-1))\n\n\tb.Reset()\n\treturn b\n}",
+    "funcname": "newBackOff"
+}

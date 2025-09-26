@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 186,
+    "focalfunc": "func (b *BeegoHTTPRequest) Header(key, value string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) Header(key, value string) *BeegoHTTPRequest {\n\tb.req.Header.Set(key, value)\n\treturn b\n}",
+    "funcname": "Header"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 32,
+    "focalfunc": "func (r AsciidocResult) TableOfContents() *tableofcontents.Fragments",
+    "funcbody": "func (r AsciidocResult) TableOfContents() *tableofcontents.Fragments {\n\treturn r.toc\n}",
+    "funcname": "TableOfContents"
+}

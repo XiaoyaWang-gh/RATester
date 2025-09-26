@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 86,
+    "focalfunc": "func removeIPv6Zone(clientIP string) string",
+    "funcbody": "func removeIPv6Zone(clientIP string) string {\n\tif idx := strings.Index(clientIP, \"%\"); idx != -1 {\n\t\treturn clientIP[:idx]\n\t}\n\treturn clientIP\n}",
+    "funcname": "removeIPv6Zone"
+}

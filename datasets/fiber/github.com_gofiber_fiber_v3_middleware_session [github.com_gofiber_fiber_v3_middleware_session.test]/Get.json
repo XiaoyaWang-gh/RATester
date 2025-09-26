@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/store.go",
+    "lineno": 48,
+    "focalfunc": "func (s *Store) Get(c fiber.Ctx) (*Session, error)",
+    "funcbody": "func (s *Store) Get(c fiber.Ctx) (*Session, error) {\n\tvar rawData []byte\n\tvar err error\n\n\tid, ok := c.Locals(sessionIDContextKey).(string)\n\tif !ok {\n\t\tid = s.getSessionID(c)\n\t}\n\n\tfresh := ok\n\n\tif id != \"\" {\n\t\trawData, err = s.Storage.Get(id)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif rawData == nil {\n\n\t\t\tid = \"\"\n\t\t}\n\t}\n\n\tif id == \"\" {\n\t\tfresh = true\n\t\tid = s.KeyGenerator()\n\t\tc.Locals(sessionIDContextKey, id)\n\t}\n\n\tsess := acquireSession()\n\n\tsess.mu.Lock()\n\tdefer sess.mu.Unlock()\n\n\tsess.ctx = c\n\tsess.config = s\n\tsess.id = id\n\tsess.fresh = fresh\n\n\tif rawData != nil {\n\t\tsess.data.Lock()\n\t\tdefer sess.data.Unlock()\n\t\tif err := sess.decodeSessionData(rawData); err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to decode session data: %w\", err)\n\t\t}\n\t}\n\n\treturn sess, nil\n}",
+    "funcname": "Get"
+}

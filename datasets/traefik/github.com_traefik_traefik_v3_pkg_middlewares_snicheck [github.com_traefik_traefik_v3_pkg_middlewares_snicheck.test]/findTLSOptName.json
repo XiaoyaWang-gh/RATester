@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/snicheck/snicheck.go",
+    "lineno": 85,
+    "focalfunc": "func findTLSOptName(tlsOptionsForHost map[string]string, host string, fqdn bool) string",
+    "funcbody": "func findTLSOptName(tlsOptionsForHost map[string]string, host string, fqdn bool) string {\n\tif tlsOptions, ok := tlsOptionsForHost[host]; ok {\n\t\treturn tlsOptions\n\t}\n\n\tif !fqdn {\n\t\treturn \"\"\n\t}\n\n\tif last := len(host) - 1; last >= 0 && host[last] == '.' {\n\t\tif tlsOptions, ok := tlsOptionsForHost[host[:last]]; ok {\n\t\t\treturn tlsOptions\n\t\t}\n\n\t\treturn \"\"\n\t}\n\n\tif tlsOptions, ok := tlsOptionsForHost[host+\".\"]; ok {\n\t\treturn tlsOptions\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "findTLSOptName"
+}

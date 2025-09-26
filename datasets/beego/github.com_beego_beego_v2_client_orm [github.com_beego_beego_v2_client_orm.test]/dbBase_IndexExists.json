@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2144,
+    "focalfunc": "func (d *dbBase) IndexExists(context.Context, dbQuerier, string, string) bool",
+    "funcbody": "func (d *dbBase) IndexExists(context.Context, dbQuerier, string, string) bool {\n\tpanic(ErrNotImplement)\n}",
+    "funcname": "IndexExists"
+}

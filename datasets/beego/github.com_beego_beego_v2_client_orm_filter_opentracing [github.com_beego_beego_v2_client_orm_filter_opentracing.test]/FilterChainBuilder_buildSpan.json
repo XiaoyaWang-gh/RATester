@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentracing/filter.go",
+    "lineno": 53,
+    "focalfunc": "func (builder *FilterChainBuilder) buildSpan(span opentracing.Span, ctx context.Context, inv *orm.Invocation)",
+    "funcbody": "func (builder *FilterChainBuilder) buildSpan(span opentracing.Span, ctx context.Context, inv *orm.Invocation) {\n\tspan.SetTag(\"orm.method\", inv.Method)\n\tspan.SetTag(\"orm.table\", inv.GetTableName())\n\tspan.SetTag(\"orm.insideTx\", inv.InsideTx)\n\tspan.SetTag(\"orm.txName\", ctx.Value(orm.TxNameKey))\n\tspan.SetTag(\"span.kind\", \"client\")\n\tspan.SetTag(\"component\", \"beego\")\n\n\tif builder.CustomSpanFunc != nil {\n\t\tbuilder.CustomSpanFunc(span, ctx, inv)\n\t}\n}",
+    "funcname": "buildSpan"
+}

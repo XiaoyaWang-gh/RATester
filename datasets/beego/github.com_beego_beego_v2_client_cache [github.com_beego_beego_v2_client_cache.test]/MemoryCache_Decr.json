@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 137,
+    "focalfunc": "func (bc *MemoryCache) Decr(ctx context.Context, key string) error",
+    "funcbody": "func (bc *MemoryCache) Decr(ctx context.Context, key string) error {\n\tbc.Lock()\n\tdefer bc.Unlock()\n\titm, ok := bc.items[key]\n\tif !ok {\n\t\treturn ErrKeyNotExist\n\t}\n\n\tval, err := decr(itm.val)\n\tif err != nil {\n\t\treturn err\n\t}\n\titm.val = val\n\treturn nil\n}",
+    "funcname": "Decr"
+}

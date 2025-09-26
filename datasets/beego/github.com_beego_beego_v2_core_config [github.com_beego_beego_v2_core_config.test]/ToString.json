@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 347,
+    "focalfunc": "func ToString(x interface{}) string",
+    "funcbody": "func ToString(x interface{}) string {\n\tswitch y := x.(type) {\n\n\tcase time.Time:\n\t\treturn y.Format(\"A Monday\")\n\n\tcase string:\n\t\treturn y\n\n\tcase fmt.Stringer:\n\t\treturn y.String()\n\n\tcase error:\n\t\treturn y.Error()\n\n\t}\n\n\tif v := reflect.ValueOf(x); v.Kind() == reflect.String {\n\t\treturn v.String()\n\t}\n\n\treturn fmt.Sprint(x)\n}",
+    "funcname": "ToString"
+}

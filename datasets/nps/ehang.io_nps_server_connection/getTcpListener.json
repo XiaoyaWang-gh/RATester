@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/connection/connection.go",
+    "lineno": 75,
+    "focalfunc": "func getTcpListener(ip, p string) (net.Listener, error)",
+    "funcbody": "func getTcpListener(ip, p string) (net.Listener, error) {\n\tport, err := strconv.Atoi(p)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\tos.Exit(0)\n\t}\n\tif ip == \"\" {\n\t\tip = \"0.0.0.0\"\n\t}\n\treturn net.ListenTCP(\"tcp\", &net.TCPAddr{net.ParseIP(ip), port, \"\"})\n}",
+    "funcname": "getTcpListener"
+}

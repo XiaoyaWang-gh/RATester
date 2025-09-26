@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 130,
+    "focalfunc": "func Routes() gin.RoutesInfo",
+    "funcbody": "func Routes() gin.RoutesInfo {\n\treturn engine().Routes()\n}",
+    "funcname": "Routes"
+}

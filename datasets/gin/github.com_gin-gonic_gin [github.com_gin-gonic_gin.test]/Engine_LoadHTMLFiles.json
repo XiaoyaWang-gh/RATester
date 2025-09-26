@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 278,
+    "focalfunc": "func (engine *Engine) LoadHTMLFiles(files ...string)",
+    "funcbody": "func (engine *Engine) LoadHTMLFiles(files ...string) {\n\tif IsDebugging() {\n\t\tengine.HTMLRender = render.HTMLDebug{Files: files, FuncMap: engine.FuncMap, Delims: engine.delims}\n\t\treturn\n\t}\n\n\ttempl := template.Must(template.New(\"\").Delims(engine.delims.Left, engine.delims.Right).Funcs(engine.FuncMap).ParseFiles(files...))\n\tengine.SetHTMLTemplate(templ)\n}",
+    "funcname": "LoadHTMLFiles"
+}

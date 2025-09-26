@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 92,
+    "focalfunc": "func (c *Capture) Reset(next http.Handler) http.Handler",
+    "funcbody": "func (c *Capture) Reset(next http.Handler) http.Handler {\n\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\tnewRW, newReq := c.renew(rw, req)\n\t\tnext.ServeHTTP(newRW, newReq)\n\t})\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 362,
+    "focalfunc": "func SetTemplateFSFunc(fnt templateFSFunc)",
+    "funcbody": "func SetTemplateFSFunc(fnt templateFSFunc) {\n\tbeeTemplateFS = fnt\n}",
+    "funcname": "SetTemplateFSFunc"
+}

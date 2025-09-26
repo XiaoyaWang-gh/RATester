@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 354,
+    "focalfunc": "func forEachMediaRange(header []byte, functor func([]byte))",
+    "funcbody": "func forEachMediaRange(header []byte, functor func([]byte)) {\n\thasDQuote := bytes.IndexByte(header, '\"') != -1\n\n\tfor len(header) > 0 {\n\t\tn := 0\n\t\theader = utils.TrimLeft(header, ' ')\n\t\tquotes := 0\n\t\tescaping := false\n\n\t\tif hasDQuote {\n\n\t\tloop:\n\t\t\tfor n < len(header) {\n\t\t\t\tswitch header[n] {\n\t\t\t\tcase ',':\n\t\t\t\t\tif quotes%2 == 0 {\n\t\t\t\t\t\tbreak loop\n\t\t\t\t\t}\n\t\t\t\tcase '\"':\n\t\t\t\t\tif !escaping {\n\t\t\t\t\t\tquotes++\n\t\t\t\t\t}\n\t\t\t\tcase '\\\\':\n\t\t\t\t\tif quotes%2 == 1 {\n\t\t\t\t\t\tescaping = !escaping\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tn++\n\t\t\t}\n\t\t} else {\n\n\t\t\tif n = bytes.IndexByte(header, ','); n == -1 {\n\t\t\t\tn = len(header)\n\t\t\t}\n\t\t}\n\n\t\tfunctor(header[:n])\n\n\t\tif n >= len(header) {\n\t\t\treturn\n\t\t}\n\t\theader = header[n+1:]\n\t}\n}",
+    "funcname": "forEachMediaRange"
+}

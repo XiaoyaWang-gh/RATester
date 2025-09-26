@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 555,
+    "focalfunc": "func stripIndexHTML(slashpath string) string",
+    "funcbody": "func stripIndexHTML(slashpath string) string {\n\tconst suffix = \"/index.html\"\n\tif strings.HasSuffix(slashpath, suffix) {\n\t\treturn slashpath[:len(slashpath)-len(suffix)+1]\n\t}\n\treturn slashpath\n}",
+    "funcname": "stripIndexHTML"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 593,
+    "focalfunc": "func (s *state) evalVariableNode(dot reflect.Value, variable *parse.VariableNode, args []parse.Node, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalVariableNode(dot reflect.Value, variable *parse.VariableNode, args []parse.Node, final reflect.Value) reflect.Value {\n\n\ts.at(variable)\n\tvalue := s.varValue(variable.Ident[0])\n\tif len(variable.Ident) == 1 {\n\t\ts.notAFunction(args, final)\n\t\treturn value\n\t}\n\treturn s.evalFieldChain(dot, value, variable, variable.Ident[1:], args, final)\n}",
+    "funcname": "evalVariableNode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 393,
+    "focalfunc": "func (r *Request) SetFormDatas(m map[string]string) *Request",
+    "funcbody": "func (r *Request) SetFormDatas(m map[string]string) *Request {\n\tr.formData.SetDatas(m)\n\tr.resetBody(formBody)\n\treturn r\n}",
+    "funcname": "SetFormDatas"
+}

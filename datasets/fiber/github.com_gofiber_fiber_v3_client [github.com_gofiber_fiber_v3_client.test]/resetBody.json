@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 349,
+    "focalfunc": "func (r *Request) resetBody(t bodyType)",
+    "funcbody": "func (r *Request) resetBody(t bodyType) {\n\tr.body = nil\n\n\tif r.bodyType == filesBody && t == formBody {\n\t\treturn\n\t}\n\tr.bodyType = t\n}",
+    "funcname": "resetBody"
+}

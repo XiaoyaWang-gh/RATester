@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 30,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tfor _, e := range os.Environ() {\n\t\tsplits := strings.Split(e, \"=\")\n\t\tenv.Store(splits[0], os.Getenv(splits[0]))\n\t}\n\tenv.Store(\"GOBIN\", GetGOBIN())\n\tenv.Store(\"GOPATH\", GetGOPATH())\n}",
+    "funcname": "init"
+}

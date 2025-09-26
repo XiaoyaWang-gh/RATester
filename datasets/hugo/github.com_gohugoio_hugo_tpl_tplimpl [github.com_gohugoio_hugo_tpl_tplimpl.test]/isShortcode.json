@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 147,
+    "focalfunc": "func isShortcode(name string) bool",
+    "funcbody": "func isShortcode(name string) bool {\n\treturn strings.Contains(name, shortcodesPathPrefix)\n}",
+    "funcname": "isShortcode"
+}

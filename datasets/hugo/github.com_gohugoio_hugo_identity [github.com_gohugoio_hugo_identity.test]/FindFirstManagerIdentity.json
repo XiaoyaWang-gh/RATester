@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 192,
+    "focalfunc": "func (f findFirstManagerIdentity) FindFirstManagerIdentity() ManagerIdentity",
+    "funcbody": "func (f findFirstManagerIdentity) FindFirstManagerIdentity() ManagerIdentity {\n\treturn f.ManagerIdentity\n}",
+    "funcname": "FindFirstManagerIdentity"
+}

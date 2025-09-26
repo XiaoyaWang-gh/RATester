@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/tool/utils.go",
+    "lineno": 21,
+    "focalfunc": "func StartSystemInfo()",
+    "funcbody": "func StartSystemInfo() {\n\tif b, err := beego.AppConfig.Bool(\"system_info_display\"); err == nil && b {\n\t\tServerStatus = make([]map[string]interface{}, 0, 1500)\n\t\tgo getSeverStatus()\n\t}\n}",
+    "funcname": "StartSystemInfo"
+}

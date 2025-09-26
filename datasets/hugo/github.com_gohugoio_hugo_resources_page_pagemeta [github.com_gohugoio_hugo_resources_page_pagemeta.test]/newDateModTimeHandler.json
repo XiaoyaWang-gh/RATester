@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 770,
+    "focalfunc": "func (f *frontmatterFieldHandlers) newDateModTimeHandler(setter func(d *FrontMatterDescriptor, t time.Time)) frontMatterFieldHandler",
+    "funcbody": "func (f *frontmatterFieldHandlers) newDateModTimeHandler(setter func(d *FrontMatterDescriptor, t time.Time)) frontMatterFieldHandler {\n\treturn func(d *FrontMatterDescriptor) (bool, error) {\n\t\tif d.ModTime.IsZero() {\n\t\t\treturn false, nil\n\t\t}\n\t\tsetter(d, d.ModTime)\n\t\treturn true, nil\n\t}\n}",
+    "funcname": "newDateModTimeHandler"
+}

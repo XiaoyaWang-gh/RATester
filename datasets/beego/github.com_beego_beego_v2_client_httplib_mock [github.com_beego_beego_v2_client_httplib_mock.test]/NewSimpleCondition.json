@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 46,
+    "focalfunc": "func NewSimpleCondition(path string, opts ...simpleConditionOption) *SimpleCondition",
+    "funcbody": "func NewSimpleCondition(path string, opts ...simpleConditionOption) *SimpleCondition {\n\tsc := &SimpleCondition{\n\t\tpath:\tpath,\n\t\tquery:\tmake(map[string]string),\n\t\theader:\tmake(map[string]string),\n\t\tbody:\tmap[string]interface{}{},\n\t}\n\tfor _, o := range opts {\n\t\to(sc)\n\t}\n\treturn sc\n}",
+    "funcname": "NewSimpleCondition"
+}

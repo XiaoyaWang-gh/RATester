@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rate_limiter.go",
+    "lineno": 208,
+    "focalfunc": "func NewRateLimiterMemoryStoreWithConfig(config RateLimiterMemoryStoreConfig) (store *RateLimiterMemoryStore)",
+    "funcbody": "func NewRateLimiterMemoryStoreWithConfig(config RateLimiterMemoryStoreConfig) (store *RateLimiterMemoryStore) {\n\tstore = &RateLimiterMemoryStore{}\n\n\tstore.rate = config.Rate\n\tstore.burst = config.Burst\n\tstore.expiresIn = config.ExpiresIn\n\tif config.ExpiresIn == 0 {\n\t\tstore.expiresIn = DefaultRateLimiterMemoryStoreConfig.ExpiresIn\n\t}\n\tif config.Burst == 0 {\n\t\tstore.burst = int(config.Rate)\n\t}\n\tstore.visitors = make(map[string]*Visitor)\n\tstore.timeNow = time.Now\n\tstore.lastCleanup = store.timeNow()\n\treturn\n}",
+    "funcname": "NewRateLimiterMemoryStoreWithConfig"
+}

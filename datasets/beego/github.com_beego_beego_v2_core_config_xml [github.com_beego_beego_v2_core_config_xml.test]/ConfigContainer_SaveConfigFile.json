@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 248,
+    "focalfunc": "func (c *ConfigContainer) SaveConfigFile(filename string) (err error)",
+    "funcbody": "func (c *ConfigContainer) SaveConfigFile(filename string) (err error) {\n\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\tb, err := xml.MarshalIndent(c.data, \"  \", \"    \")\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = f.Write(b)\n\treturn err\n}",
+    "funcname": "SaveConfigFile"
+}

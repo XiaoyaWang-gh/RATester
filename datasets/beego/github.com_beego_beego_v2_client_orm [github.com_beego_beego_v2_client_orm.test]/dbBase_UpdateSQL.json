@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 735,
+    "focalfunc": "func (d *dbBase) UpdateSQL(setNames []string, pkName string, mi *models.ModelInfo) string",
+    "funcbody": "func (d *dbBase) UpdateSQL(setNames []string, pkName string, mi *models.ModelInfo) string {\n\tbuf := buffers.Get()\n\tdefer buffers.Put(buf)\n\n\tQ := d.ins.TableQuote()\n\n\t_, _ = buf.WriteString(\"UPDATE \")\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(mi.Table)\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(\" SET \")\n\n\tfor i, name := range setNames {\n\t\tif i > 0 {\n\t\t\t_, _ = buf.WriteString(\", \")\n\t\t}\n\t\t_, _ = buf.WriteString(Q)\n\t\t_, _ = buf.WriteString(name)\n\t\t_, _ = buf.WriteString(Q)\n\t\t_, _ = buf.WriteString(\" = ?\")\n\t}\n\n\t_, _ = buf.WriteString(\" WHERE \")\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(pkName)\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(\" = ?\")\n\n\tquery := buf.String()\n\td.ins.ReplaceMarks(&query)\n\n\treturn query\n}",
+    "funcname": "UpdateSQL"
+}

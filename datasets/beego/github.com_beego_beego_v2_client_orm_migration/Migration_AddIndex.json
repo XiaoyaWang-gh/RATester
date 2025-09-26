@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 250,
+    "focalfunc": "func (m *Migration) AddIndex(index *Index) *Migration",
+    "funcbody": "func (m *Migration) AddIndex(index *Index) *Migration {\n\tm.Indexes = append(m.Indexes, index)\n\treturn m\n}",
+    "funcname": "AddIndex"
+}

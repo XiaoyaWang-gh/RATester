@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/udp/router.go",
+    "lineno": 41,
+    "focalfunc": "func (m *Manager) BuildHandlers(rootCtx context.Context, entryPoints []string) map[string]udp.Handler",
+    "funcbody": "func (m *Manager) BuildHandlers(rootCtx context.Context, entryPoints []string) map[string]udp.Handler {\n\tentryPointsRouters := m.getUDPRouters(rootCtx, entryPoints)\n\n\tentryPointHandlers := make(map[string]udp.Handler)\n\tfor _, entryPointName := range entryPoints {\n\t\trouters := entryPointsRouters[entryPointName]\n\n\t\tlogger := log.Ctx(rootCtx).With().Str(logs.EntryPointName, entryPointName).Logger()\n\t\tctx := logger.WithContext(rootCtx)\n\n\t\tif len(routers) > 1 {\n\t\t\tlogger.Warn().Msg(\"Config has more than one udp router for a given entrypoint.\")\n\t\t}\n\n\t\thandlers := m.buildEntryPointHandlers(ctx, routers)\n\n\t\tif len(handlers) > 0 {\n\n\t\t\tentryPointHandlers[entryPointName] = handlers[0]\n\t\t}\n\t}\n\treturn entryPointHandlers\n}",
+    "funcname": "BuildHandlers"
+}

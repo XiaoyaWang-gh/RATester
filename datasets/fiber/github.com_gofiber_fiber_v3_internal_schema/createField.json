@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 154,
+    "focalfunc": "func (c *cache) createField(field reflect.StructField, parentAlias string) *fieldInfo",
+    "funcbody": "func (c *cache) createField(field reflect.StructField, parentAlias string) *fieldInfo {\n\talias, options := fieldAlias(field, c.tag)\n\tif alias == \"-\" {\n\n\t\treturn nil\n\t}\n\tcanonicalAlias := alias\n\tif parentAlias != \"\" {\n\t\tcanonicalAlias = parentAlias + \".\" + alias\n\t}\n\n\tisSlice, isStruct := false, false\n\tft := field.Type\n\tm := isTextUnmarshaler(reflect.Zero(ft))\n\tif ft.Kind() == reflect.Ptr {\n\t\tft = ft.Elem()\n\t}\n\tif isSlice = ft.Kind() == reflect.Slice; isSlice {\n\t\tft = ft.Elem()\n\t\tif ft.Kind() == reflect.Ptr {\n\t\t\tft = ft.Elem()\n\t\t}\n\t}\n\tif ft.Kind() == reflect.Array {\n\t\tft = ft.Elem()\n\t\tif ft.Kind() == reflect.Ptr {\n\t\t\tft = ft.Elem()\n\t\t}\n\t}\n\tif isStruct = ft.Kind() == reflect.Struct; !isStruct {\n\t\tif c.converter(ft) == nil && builtinConverters[ft.Kind()] == nil {\n\n\t\t\treturn nil\n\t\t}\n\t}\n\n\treturn &fieldInfo{\n\t\ttyp:\t\t\tfield.Type,\n\t\tname:\t\t\tfield.Name,\n\t\talias:\t\t\talias,\n\t\tcanonicalAlias:\t\tcanonicalAlias,\n\t\tunmarshalerInfo:\tm,\n\t\tisSliceOfStructs:\tisSlice && isStruct,\n\t\tisAnonymous:\t\tfield.Anonymous,\n\t\tisRequired:\t\toptions.Contains(\"required\"),\n\t}\n}",
+    "funcname": "createField"
+}

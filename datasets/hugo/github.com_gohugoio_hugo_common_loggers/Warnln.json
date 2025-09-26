@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 305,
+    "focalfunc": "func (l *logAdapter) Warnln(v ...any)",
+    "funcbody": "func (l *logAdapter) Warnln(v ...any) {\n\tl.warnl.Logf(l.sprint(v...))\n}",
+    "funcname": "Warnln"
+}

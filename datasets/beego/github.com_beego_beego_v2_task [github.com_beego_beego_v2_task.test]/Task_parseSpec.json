@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 300,
+    "focalfunc": "func (t *Task) parseSpec(spec string) *Schedule",
+    "funcbody": "func (t *Task) parseSpec(spec string) *Schedule {\n\tswitch spec {\n\tcase \"@yearly\", \"@annually\":\n\t\treturn &Schedule{\n\t\t\tSecond:\t1 << seconds.min,\n\t\t\tMinute:\t1 << minutes.min,\n\t\t\tHour:\t1 << hours.min,\n\t\t\tDay:\t1 << days.min,\n\t\t\tMonth:\t1 << months.min,\n\t\t\tWeek:\tall(weeks),\n\t\t}\n\n\tcase \"@monthly\":\n\t\treturn &Schedule{\n\t\t\tSecond:\t1 << seconds.min,\n\t\t\tMinute:\t1 << minutes.min,\n\t\t\tHour:\t1 << hours.min,\n\t\t\tDay:\t1 << days.min,\n\t\t\tMonth:\tall(months),\n\t\t\tWeek:\tall(weeks),\n\t\t}\n\n\tcase \"@weekly\":\n\t\treturn &Schedule{\n\t\t\tSecond:\t1 << seconds.min,\n\t\t\tMinute:\t1 << minutes.min,\n\t\t\tHour:\t1 << hours.min,\n\t\t\tDay:\tall(days),\n\t\t\tMonth:\tall(months),\n\t\t\tWeek:\t1 << weeks.min,\n\t\t}\n\n\tcase \"@daily\", \"@midnight\":\n\t\treturn &Schedule{\n\t\t\tSecond:\t1 << seconds.min,\n\t\t\tMinute:\t1 << minutes.min,\n\t\t\tHour:\t1 << hours.min,\n\t\t\tDay:\tall(days),\n\t\t\tMonth:\tall(months),\n\t\t\tWeek:\tall(weeks),\n\t\t}\n\n\tcase \"@hourly\":\n\t\treturn &Schedule{\n\t\t\tSecond:\t1 << seconds.min,\n\t\t\tMinute:\t1 << minutes.min,\n\t\t\tHour:\tall(hours),\n\t\t\tDay:\tall(days),\n\t\t\tMonth:\tall(months),\n\t\t\tWeek:\tall(weeks),\n\t\t}\n\t}\n\tlog.Panicf(\"Unrecognized descriptor: %s\", spec)\n\treturn nil\n}",
+    "funcname": "parseSpec"
+}

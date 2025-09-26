@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 325,
+    "focalfunc": "func (engine *Engine) With(opts ...OptionFunc) *Engine",
+    "funcbody": "func (engine *Engine) With(opts ...OptionFunc) *Engine {\n\tfor _, opt := range opts {\n\t\topt(engine)\n\t}\n\n\treturn engine\n}",
+    "funcname": "With"
+}

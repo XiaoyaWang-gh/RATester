@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/field_middleware.go",
+    "lineno": 25,
+    "focalfunc": "func NewFieldHandler(next http.Handler, name, value string, applyFn FieldApply) http.Handler",
+    "funcbody": "func NewFieldHandler(next http.Handler, name, value string, applyFn FieldApply) http.Handler {\n\treturn &FieldHandler{next: next, name: name, value: value, applyFn: applyFn}\n}",
+    "funcname": "NewFieldHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 120,
+    "focalfunc": "func NewIntegrationTestBuilder(conf IntegrationTestConfig) *IntegrationTestBuilder",
+    "funcbody": "func NewIntegrationTestBuilder(conf IntegrationTestConfig) *IntegrationTestBuilder {\n\n\tconf.TxtarString = strings.ReplaceAll(conf.TxtarString, \"\u00a7\u00a7\u00a7\", \"```\")\n\n\tconf.TxtarString = strings.ReplaceAll(conf.TxtarString, \"\u00a7\u00a7\", \"`\")\n\n\tdata := txtar.Parse([]byte(conf.TxtarString))\n\n\tif conf.NFDFormOnDarwin {\n\t\tfor i, f := range data.Files {\n\t\t\tdata.Files[i].Name = norm.NFD.String(f.Name)\n\t\t}\n\t}\n\n\tc, ok := conf.T.(*qt.C)\n\tif !ok {\n\t\tc = qt.New(conf.T)\n\t}\n\n\tif conf.NeedsOsFS {\n\t\tif !filepath.IsAbs(conf.WorkingDir) {\n\t\t\ttempDir, clean, err := htesting.CreateTempDir(hugofs.Os, \"hugo-integration-test\")\n\t\t\tc.Assert(err, qt.IsNil)\n\t\t\tconf.WorkingDir = filepath.Join(tempDir, conf.WorkingDir)\n\t\t\tif !conf.PrintAndKeepTempDir {\n\t\t\t\tc.Cleanup(clean)\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"\\nUsing WorkingDir dir:\", conf.WorkingDir)\n\t\t\t}\n\t\t}\n\t} else if conf.WorkingDir == \"\" {\n\t\tconf.WorkingDir = helpers.FilePathSeparator\n\t}\n\n\treturn &IntegrationTestBuilder{\n\t\tCfg:\tconf,\n\t\tC:\tc,\n\t\tdata:\tdata,\n\t}\n}",
+    "funcname": "NewIntegrationTestBuilder"
+}

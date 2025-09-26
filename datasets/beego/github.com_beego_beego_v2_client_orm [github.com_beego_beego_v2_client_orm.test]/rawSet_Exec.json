@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 83,
+    "focalfunc": "func (o *rawSet) Exec() (sql.Result, error)",
+    "funcbody": "func (o *rawSet) Exec() (sql.Result, error) {\n\tquery := o.query\n\to.orm.alias.DbBaser.ReplaceMarks(&query)\n\n\targs := getFlatParams(nil, o.args, o.orm.alias.TZ)\n\treturn o.orm.db.Exec(query, args...)\n}",
+    "funcname": "Exec"
+}

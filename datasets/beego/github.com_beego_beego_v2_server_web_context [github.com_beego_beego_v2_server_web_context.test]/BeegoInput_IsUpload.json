@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 191,
+    "focalfunc": "func (input *BeegoInput) IsUpload() bool",
+    "funcbody": "func (input *BeegoInput) IsUpload() bool {\n\treturn strings.Contains(input.Header(\"Content-Type\"), \"multipart/form-data\")\n}",
+    "funcname": "IsUpload"
+}

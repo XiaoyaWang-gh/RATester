@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 666,
+    "focalfunc": "func (lvs labelNamesValues) ToLabels() stdprometheus.Labels",
+    "funcbody": "func (lvs labelNamesValues) ToLabels() stdprometheus.Labels {\n\tlabels := make(map[string]string, len(lvs)/2)\n\tfor i := 0; i < len(lvs); i += 2 {\n\t\tlabels[lvs[i]] = lvs[i+1]\n\t}\n\treturn labels\n}",
+    "funcname": "ToLabels"
+}

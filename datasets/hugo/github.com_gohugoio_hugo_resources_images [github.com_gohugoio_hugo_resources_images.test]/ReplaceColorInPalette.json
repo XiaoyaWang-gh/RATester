@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 110,
+    "focalfunc": "func ReplaceColorInPalette(c color.Color, p color.Palette)",
+    "funcbody": "func ReplaceColorInPalette(c color.Color, p color.Palette) {\n\tp[p.Index(c)] = c\n}",
+    "funcname": "ReplaceColorInPalette"
+}

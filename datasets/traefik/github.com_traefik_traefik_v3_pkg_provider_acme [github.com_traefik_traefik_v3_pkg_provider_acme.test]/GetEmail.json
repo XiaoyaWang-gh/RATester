@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/account.go",
+    "lineno": 47,
+    "focalfunc": "func (a *Account) GetEmail() string",
+    "funcbody": "func (a *Account) GetEmail() string {\n\treturn a.Email\n}",
+    "funcname": "GetEmail"
+}

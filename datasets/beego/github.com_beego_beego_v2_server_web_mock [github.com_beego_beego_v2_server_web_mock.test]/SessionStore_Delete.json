@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 99,
+    "focalfunc": "func (s *SessionStore) Delete(ctx context.Context, key interface{}) error",
+    "funcbody": "func (s *SessionStore) Delete(ctx context.Context, key interface{}) error {\n\tdelete(s.values, key)\n\treturn nil\n}",
+    "funcname": "Delete"
+}

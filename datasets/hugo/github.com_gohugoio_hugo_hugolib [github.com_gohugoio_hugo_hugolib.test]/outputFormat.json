@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 620,
+    "focalfunc": "func (p *pageState) outputFormat() (f output.Format)",
+    "funcbody": "func (p *pageState) outputFormat() (f output.Format) {\n\tif p.pageOutput == nil {\n\t\tpanic(\"no pageOutput\")\n\t}\n\treturn p.pageOutput.f\n}",
+    "funcname": "outputFormat"
+}

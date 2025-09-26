@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/xml.go",
+    "lineno": 20,
+    "focalfunc": "func (r XML) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r XML) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\treturn xml.NewEncoder(w).Encode(r.Data)\n}",
+    "funcname": "Render"
+}

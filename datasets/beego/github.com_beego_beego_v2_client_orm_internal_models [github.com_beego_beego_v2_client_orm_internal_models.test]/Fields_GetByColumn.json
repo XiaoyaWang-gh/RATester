@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_f.go",
+    "lineno": 76,
+    "focalfunc": "func (f *Fields) GetByColumn(column string) *FieldInfo",
+    "funcbody": "func (f *Fields) GetByColumn(column string) *FieldInfo {\n\treturn f.Columns[column]\n}",
+    "funcname": "GetByColumn"
+}

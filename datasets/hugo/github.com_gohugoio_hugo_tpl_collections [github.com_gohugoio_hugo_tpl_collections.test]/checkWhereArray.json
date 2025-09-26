@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 397,
+    "focalfunc": "func (ns *Namespace) checkWhereArray(ctxv, seqv, kv, mv reflect.Value, path []string, op string) (any, error)",
+    "funcbody": "func (ns *Namespace) checkWhereArray(ctxv, seqv, kv, mv reflect.Value, path []string, op string) (any, error) {\n\trv := reflect.MakeSlice(seqv.Type(), 0, 0)\n\n\tfor i := 0; i < seqv.Len(); i++ {\n\t\tvar vvv reflect.Value\n\t\trvv := seqv.Index(i)\n\n\t\tif kv.Kind() == reflect.String {\n\t\t\tif params, ok := rvv.Interface().(maps.Params); ok {\n\t\t\t\tvvv = reflect.ValueOf(params.GetNested(path...))\n\t\t\t} else {\n\t\t\t\tvvv = rvv\n\t\t\t\tfor i, elemName := range path {\n\t\t\t\t\tvar err error\n\t\t\t\t\tvvv, err = evaluateSubElem(ctxv, vvv, elemName)\n\n\t\t\t\t\tif err != nil {\n\t\t\t\t\t\tcontinue\n\t\t\t\t\t}\n\n\t\t\t\t\tif i < len(path)-1 && vvv.IsValid() {\n\t\t\t\t\t\tif params, ok := vvv.Interface().(maps.Params); ok {\n\n\t\t\t\t\t\t\tvvv = reflect.ValueOf(params.GetNested(path[i+1:]...))\n\t\t\t\t\t\t\tbreak\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t} else {\n\t\t\tvv, _ := indirect(rvv)\n\t\t\tif vv.Kind() == reflect.Map && kv.Type().AssignableTo(vv.Type().Key()) {\n\t\t\t\tvvv = vv.MapIndex(kv)\n\t\t\t}\n\t\t}\n\n\t\tif ok, err := ns.checkCondition(vvv, mv, op); ok {\n\t\t\trv = reflect.Append(rv, rvv)\n\t\t} else if err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn rv.Interface(), nil\n}",
+    "funcname": "checkWhereArray"
+}

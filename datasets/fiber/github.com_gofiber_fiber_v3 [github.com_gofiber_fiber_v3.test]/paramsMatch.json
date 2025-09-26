@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 292,
+    "focalfunc": "func paramsMatch(specParamStr headerParams, offerParams string) bool",
+    "funcbody": "func paramsMatch(specParamStr headerParams, offerParams string) bool {\n\tif len(specParamStr) == 0 {\n\t\treturn true\n\t}\n\n\tallSpecParamsMatch := true\n\tfor specParam, specVal := range specParamStr {\n\t\tfoundParam := false\n\t\tfasthttp.VisitHeaderParams(utils.UnsafeBytes(offerParams), func(key, value []byte) bool {\n\t\t\tif utils.EqualFold(specParam, utils.UnsafeString(key)) {\n\t\t\t\tfoundParam = true\n\t\t\t\tallSpecParamsMatch = utils.EqualFold(specVal, value)\n\t\t\t\treturn false\n\t\t\t}\n\t\t\treturn true\n\t\t})\n\t\tif !foundParam || !allSpecParamsMatch {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn allSpecParamsMatch\n}",
+    "funcname": "paramsMatch"
+}

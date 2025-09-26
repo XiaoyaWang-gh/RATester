@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 107,
+    "focalfunc": "func (qb *PostgresQueryBuilder) And(cond string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) And(cond string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"AND\", cond)\n\treturn qb\n}",
+    "funcname": "And"
+}

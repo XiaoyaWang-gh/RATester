@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 235,
+    "focalfunc": "func (p *pageMeta) RelatedKeywords(cfg related.IndexConfig) ([]related.Keyword, error)",
+    "funcbody": "func (p *pageMeta) RelatedKeywords(cfg related.IndexConfig) ([]related.Keyword, error) {\n\tv, err := p.Param(cfg.Name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn cfg.ToKeywords(v)\n}",
+    "funcname": "RelatedKeywords"
+}

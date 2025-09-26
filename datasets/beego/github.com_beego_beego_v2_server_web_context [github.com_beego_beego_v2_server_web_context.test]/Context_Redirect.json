@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 195,
+    "focalfunc": "func (ctx *Context) Redirect(status int, localurl string)",
+    "funcbody": "func (ctx *Context) Redirect(status int, localurl string) {\n\thttp.Redirect(ctx.ResponseWriter, ctx.Request, localurl, status)\n}",
+    "funcname": "Redirect"
+}

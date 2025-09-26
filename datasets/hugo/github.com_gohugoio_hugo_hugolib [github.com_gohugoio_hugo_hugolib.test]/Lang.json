@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 159,
+    "focalfunc": "func (p *pageMeta) Lang() string",
+    "funcbody": "func (p *pageMeta) Lang() string {\n\treturn p.s.Lang()\n}",
+    "funcname": "Lang"
+}

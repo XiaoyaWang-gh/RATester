@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 29,
+    "focalfunc": "func (f *StrTo) Set(v string)",
+    "funcbody": "func (f *StrTo) Set(v string) {\n\tif v != \"\" {\n\t\t*f = StrTo(v)\n\t} else {\n\t\tf.Clear()\n\t}\n}",
+    "funcname": "Set"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 441,
+    "focalfunc": "func dayMatches(s *Schedule, t time.Time) bool",
+    "funcbody": "func dayMatches(s *Schedule, t time.Time) bool {\n\tvar (\n\t\tdomMatch\t= 1<<uint(t.Day())&s.Day > 0\n\t\tdowMatch\t= 1<<uint(t.Weekday())&s.Week > 0\n\t)\n\n\tif s.Day&starBit > 0 || s.Week&starBit > 0 {\n\t\treturn domMatch && dowMatch\n\t}\n\treturn domMatch || dowMatch\n}",
+    "funcname": "dayMatches"
+}

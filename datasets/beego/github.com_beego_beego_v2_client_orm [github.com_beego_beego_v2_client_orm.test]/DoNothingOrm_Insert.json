@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 86,
+    "focalfunc": "func (d *DoNothingOrm) Insert(md interface{}) (int64, error)",
+    "funcbody": "func (d *DoNothingOrm) Insert(md interface{}) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "Insert"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1240,
+    "focalfunc": "func (c *Context) hasRequestContext() bool",
+    "funcbody": "func (c *Context) hasRequestContext() bool {\n\thasFallback := c.engine != nil && c.engine.ContextWithFallback\n\thasRequestContext := c.Request != nil && c.Request.Context() != nil\n\treturn hasFallback && hasRequestContext\n}",
+    "funcname": "hasRequestContext"
+}

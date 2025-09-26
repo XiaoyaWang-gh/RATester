@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 154,
+    "focalfunc": "func (t *templateExecHelper) OnCalled(ctx context.Context, tmpl texttemplate.Preparer, name string, args []reflect.Value, result reflect.Value)",
+    "funcbody": "func (t *templateExecHelper) OnCalled(ctx context.Context, tmpl texttemplate.Preparer, name string, args []reflect.Value, result reflect.Value) {\n\tif !t.watching {\n\t\treturn\n\t}\n\n\tswitch name {\n\tcase \"Unmarshal\":\n\tdefault:\n\t\treturn\n\t}\n\tidm := tpl.Context.GetDependencyManagerInCurrentScope(ctx)\n\tif idm == nil {\n\t\treturn\n\t}\n\n\tfor _, arg := range args {\n\t\tidentity.WalkIdentitiesShallow(arg.Interface(), func(level int, id identity.Identity) bool {\n\t\t\tidm.AddIdentity(id)\n\t\t\treturn false\n\t\t})\n\t}\n}",
+    "funcname": "OnCalled"
+}

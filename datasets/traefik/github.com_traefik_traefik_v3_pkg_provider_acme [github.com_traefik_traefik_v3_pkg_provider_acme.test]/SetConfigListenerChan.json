@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 123,
+    "focalfunc": "func (p *Provider) SetConfigListenerChan(configFromListenerChan chan dynamic.Configuration)",
+    "funcbody": "func (p *Provider) SetConfigListenerChan(configFromListenerChan chan dynamic.Configuration) {\n\tp.configFromListenerChan = configFromListenerChan\n}",
+    "funcname": "SetConfigListenerChan"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 97,
+    "focalfunc": "func Unmarshaler(prefix string, obj interface{}, opt ...DecodeOption) error",
+    "funcbody": "func Unmarshaler(prefix string, obj interface{}, opt ...DecodeOption) error {\n\treturn globalInstance.Unmarshaler(prefix, obj, opt...)\n}",
+    "funcname": "Unmarshaler"
+}

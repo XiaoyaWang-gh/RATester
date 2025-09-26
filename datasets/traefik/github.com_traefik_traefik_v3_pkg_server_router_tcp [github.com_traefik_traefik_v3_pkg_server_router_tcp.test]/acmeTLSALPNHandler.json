@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 217,
+    "focalfunc": "func (r *Router) acmeTLSALPNHandler() tcp.Handler",
+    "funcbody": "func (r *Router) acmeTLSALPNHandler() tcp.Handler {\n\tif r.httpsTLSConfig == nil {\n\t\treturn &brokenTLSRouter{}\n\t}\n\n\treturn tcp.HandlerFunc(func(conn tcp.WriteCloser) {\n\t\t_ = tls.Server(conn, r.httpsTLSConfig).Handshake()\n\t})\n}",
+    "funcname": "acmeTLSALPNHandler"
+}

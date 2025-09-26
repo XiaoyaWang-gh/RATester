@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 87,
+    "focalfunc": "func processURLOnto(s string, norm bool, b *strings.Builder) bool",
+    "funcbody": "func processURLOnto(s string, norm bool, b *strings.Builder) bool {\n\tb.Grow(len(s) + 16)\n\twritten := 0\n\n\tfor i, n := 0, len(s); i < n; i++ {\n\t\tc := s[i]\n\t\tswitch c {\n\n\t\tcase '!', '#', '$', '&', '*', '+', ',', '/', ':', ';', '=', '?', '@', '[', ']':\n\t\t\tif norm {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\tcase '-', '.', '_', '~':\n\t\t\tcontinue\n\t\tcase '%':\n\n\t\t\tif norm && i+2 < len(s) && isHex(s[i+1]) && isHex(s[i+2]) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\tdefault:\n\n\t\t\tif 'a' <= c && c <= 'z' {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif 'A' <= c && c <= 'Z' {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif '0' <= c && c <= '9' {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t}\n\t\tb.WriteString(s[written:i])\n\t\tfmt.Fprintf(b, \"%%%02x\", c)\n\t\twritten = i + 1\n\t}\n\tb.WriteString(s[written:])\n\treturn written != 0\n}",
+    "funcname": "processURLOnto"
+}

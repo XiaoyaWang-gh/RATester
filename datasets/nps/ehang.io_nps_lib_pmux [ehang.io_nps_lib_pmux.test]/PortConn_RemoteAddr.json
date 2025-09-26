@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pconn.go",
+    "lineno": 57,
+    "focalfunc": "func (pConn *PortConn) RemoteAddr() net.Addr",
+    "funcbody": "func (pConn *PortConn) RemoteAddr() net.Addr {\n\treturn pConn.Conn.RemoteAddr()\n}",
+    "funcname": "RemoteAddr"
+}

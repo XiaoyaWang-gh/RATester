@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 308,
+    "focalfunc": "func FilePutContents(filename string, content []byte) error",
+    "funcbody": "func FilePutContents(filename string, content []byte) error {\n\treturn os.WriteFile(filename, content, os.ModePerm)\n}",
+    "funcname": "FilePutContents"
+}

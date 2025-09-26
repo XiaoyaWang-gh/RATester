@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 91,
+    "focalfunc": "func HasCn(cn string) ResponseCondition",
+    "funcbody": "func HasCn(cn string) ResponseCondition {\n\treturn func(res *http.Response) error {\n\t\tif res.TLS == nil {\n\t\t\treturn errors.New(\"response doesn't have TLS\")\n\t\t}\n\n\t\tif len(res.TLS.PeerCertificates) == 0 {\n\t\t\treturn errors.New(\"response TLS doesn't have peer certificates\")\n\t\t}\n\n\t\tif res.TLS.PeerCertificates[0] == nil {\n\t\t\treturn errors.New(\"first peer certificate is nil\")\n\t\t}\n\n\t\tcommonName := res.TLS.PeerCertificates[0].Subject.CommonName\n\t\tif cn != commonName {\n\t\t\treturn fmt.Errorf(\"common name don't match: %s != %s\", cn, commonName)\n\t\t}\n\n\t\treturn nil\n\t}\n}",
+    "funcname": "HasCn"
+}

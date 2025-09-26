@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 224,
+    "focalfunc": "func (bc *MemoryCache) clearItems(keys []string)",
+    "funcbody": "func (bc *MemoryCache) clearItems(keys []string) {\n\tbc.Lock()\n\tdefer bc.Unlock()\n\tfor _, key := range keys {\n\t\tdelete(bc.items, key)\n\t}\n}",
+    "funcname": "clearItems"
+}

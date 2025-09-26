@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 76,
+    "focalfunc": "func (m *BeeMap) Items() map[interface{}]interface{}",
+    "funcbody": "func (m *BeeMap) Items() map[interface{}]interface{} {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\tr := make(map[interface{}]interface{})\n\tfor k, v := range m.bm {\n\t\tr[k] = v\n\t}\n\treturn r\n}",
+    "funcname": "Items"
+}

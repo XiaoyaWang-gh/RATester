@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 126,
+    "focalfunc": "func (cp *Provider) getBucket() *couchbase.Bucket",
+    "funcbody": "func (cp *Provider) getBucket() *couchbase.Bucket {\n\tc, err := couchbase.Connect(cp.SavePath)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\tpool, err := c.GetPool(cp.Pool)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\tbucket, err := pool.GetBucket(cp.Bucket)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\treturn bucket\n}",
+    "funcname": "getBucket"
+}

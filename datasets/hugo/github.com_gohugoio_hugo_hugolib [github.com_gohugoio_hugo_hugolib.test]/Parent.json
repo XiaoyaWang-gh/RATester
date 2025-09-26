@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 116,
+    "focalfunc": "func (pt pageTree) Parent() page.Page",
+    "funcbody": "func (pt pageTree) Parent() page.Page {\n\tif pt.p.IsHome() {\n\t\treturn nil\n\t}\n\n\tdir := pt.p.m.pathInfo.ContainerDir()\n\n\tif dir == \"\" {\n\t\treturn pt.p.s.home\n\t}\n\n\tfor {\n\t\t_, n := pt.p.s.pageMap.treePages.LongestPrefix(dir, true, nil)\n\t\tif n == nil {\n\t\t\treturn pt.p.s.home\n\t\t}\n\t\tif pt.p.m.bundled || n.isContentNodeBranch() {\n\t\t\treturn n.(page.Page)\n\t\t}\n\t\tdir = paths.Dir(dir)\n\t}\n}",
+    "funcname": "Parent"
+}

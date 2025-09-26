@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 179,
+    "focalfunc": "func StopOpenTelemetry()",
+    "funcbody": "func StopOpenTelemetry() {\n\tif openTelemetryMeterProvider == nil {\n\t\treturn\n\t}\n\n\tctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)\n\tdefer cancel()\n\n\tif err := openTelemetryMeterProvider.Shutdown(ctx); err != nil {\n\t\tlog.Err(err).Msg(\"Unable to shutdown OpenTelemetry meter provider\")\n\t}\n\n\topenTelemetryMeterProvider = nil\n}",
+    "funcname": "StopOpenTelemetry"
+}

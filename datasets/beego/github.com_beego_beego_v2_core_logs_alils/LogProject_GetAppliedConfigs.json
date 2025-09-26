@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_project.go",
+    "lineno": 707,
+    "focalfunc": "func (p *LogProject) GetAppliedConfigs(groupName string) (confNames []string, err error)",
+    "funcbody": "func (p *LogProject) GetAppliedConfigs(groupName string) (confNames []string, err error) {\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\": \"0\",\n\t}\n\n\turi := fmt.Sprintf(\"/machinegroups/%v/configs\", groupName)\n\tr, err := request(p, \"GET\", uri, h, nil)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbuf, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(buf, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to applied configs\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Printf(\"%s\\n\", dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\ttype Cfg struct {\n\t\tCount\tint\t\t`json:\"count\"`\n\t\tConfigs\t[]string\t`json:\"configs\"`\n\t}\n\n\tbody := &Cfg{}\n\terr = json.Unmarshal(buf, body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tconfNames = body.Configs\n\treturn\n}",
+    "funcname": "GetAppliedConfigs"
+}

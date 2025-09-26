@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 424,
+    "focalfunc": "func (e *Echo) DefaultHTTPErrorHandler(err error, c Context)",
+    "funcbody": "func (e *Echo) DefaultHTTPErrorHandler(err error, c Context) {\n\n\tif c.Response().Committed {\n\t\treturn\n\t}\n\n\the, ok := err.(*HTTPError)\n\tif ok {\n\t\tif he.Internal != nil {\n\t\t\tif herr, ok := he.Internal.(*HTTPError); ok {\n\t\t\t\the = herr\n\t\t\t}\n\t\t}\n\t} else {\n\t\the = &HTTPError{\n\t\t\tCode:\t\thttp.StatusInternalServerError,\n\t\t\tMessage:\thttp.StatusText(http.StatusInternalServerError),\n\t\t}\n\t}\n\n\tcode := he.Code\n\tmessage := he.Message\n\n\tswitch m := he.Message.(type) {\n\tcase string:\n\t\tif e.Debug {\n\t\t\tmessage = Map{\"message\": m, \"error\": err.Error()}\n\t\t} else {\n\t\t\tmessage = Map{\"message\": m}\n\t\t}\n\tcase json.Marshaler:\n\n\tcase error:\n\t\tmessage = Map{\"message\": m.Error()}\n\t}\n\n\tif c.Request().Method == http.MethodHead {\n\t\terr = c.NoContent(he.Code)\n\t} else {\n\t\terr = c.JSON(code, message)\n\t}\n\tif err != nil {\n\t\te.Logger.Error(err)\n\t}\n}",
+    "funcname": "DefaultHTTPErrorHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 590,
+    "focalfunc": "func (h *Header) AddHeaders(r map[string][]string)",
+    "funcbody": "func (h *Header) AddHeaders(r map[string][]string) {\n\tfor k, v := range r {\n\t\tfor _, vv := range v {\n\t\t\th.Add(k, vv)\n\t\t}\n\t}\n}",
+    "funcname": "AddHeaders"
+}

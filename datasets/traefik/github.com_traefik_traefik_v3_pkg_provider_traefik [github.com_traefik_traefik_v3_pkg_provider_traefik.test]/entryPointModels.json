@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 196,
+    "focalfunc": "func (i *Provider) entryPointModels(cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) entryPointModels(cfg *dynamic.Configuration) {\n\tdefaultRuleSyntax := \"\"\n\tif i.staticCfg.Core != nil && i.staticCfg.Core.DefaultRuleSyntax != \"\" {\n\t\tdefaultRuleSyntax = i.staticCfg.Core.DefaultRuleSyntax\n\t}\n\n\tfor name, ep := range i.staticCfg.EntryPoints {\n\t\tif len(ep.HTTP.Middlewares) == 0 && ep.HTTP.TLS == nil && defaultRuleSyntax == \"\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tm := &dynamic.Model{\n\t\t\tMiddlewares: ep.HTTP.Middlewares,\n\t\t}\n\n\t\tif ep.HTTP.TLS != nil {\n\t\t\tm.TLS = &dynamic.RouterTLSConfig{\n\t\t\t\tOptions:\tep.HTTP.TLS.Options,\n\t\t\t\tCertResolver:\tep.HTTP.TLS.CertResolver,\n\t\t\t\tDomains:\tep.HTTP.TLS.Domains,\n\t\t\t}\n\t\t}\n\n\t\tm.DefaultRuleSyntax = defaultRuleSyntax\n\n\t\tcfg.HTTP.Models[name] = m\n\n\t\tif cfg.TCP == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tmTCP := &dynamic.TCPModel{\n\t\t\tDefaultRuleSyntax: defaultRuleSyntax,\n\t\t}\n\n\t\tcfg.TCP.Models[name] = mTCP\n\t}\n}",
+    "funcname": "entryPointModels"
+}

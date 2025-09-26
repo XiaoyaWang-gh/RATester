@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 75,
+    "focalfunc": "func (p *Provider) watchDomains(ctx context.Context)",
+    "funcbody": "func (p *Provider) watchDomains(ctx context.Context) {\n\tfor {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\n\t\tcase cfg := <-p.dynConfigs:\n\t\t\tdomains := p.findDomains(ctx, cfg)\n\t\t\tnewDomains := p.findNewDomains(domains)\n\t\t\tpurged := p.purgeUnusedCerts(domains)\n\n\t\t\tif len(newDomains) == 0 && !purged {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tp.fetchCerts(ctx, newDomains)\n\t\t\tp.sendDynamicConfig()\n\t\t}\n\t}\n}",
+    "funcname": "watchDomains"
+}

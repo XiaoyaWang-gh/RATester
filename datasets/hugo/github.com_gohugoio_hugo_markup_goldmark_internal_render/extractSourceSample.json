@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 159,
+    "focalfunc": "func extractSourceSample(n ast.Node, src []byte) []byte",
+    "funcbody": "func extractSourceSample(n ast.Node, src []byte) []byte {\n\tvar sample []byte\n\n\tif nn := n.FirstChild(); nn != nil {\n\t\tvar start, stop int\n\t\tfor i := 0; i < nn.Lines().Len() && i < 2; i++ {\n\t\t\tline := nn.Lines().At(i)\n\t\t\tif i == 0 {\n\t\t\t\tstart = line.Start\n\t\t\t}\n\t\t\tstop = line.Stop\n\t\t}\n\n\t\tsample = src[start:stop]\n\t}\n\treturn sample\n}",
+    "funcname": "extractSourceSample"
+}

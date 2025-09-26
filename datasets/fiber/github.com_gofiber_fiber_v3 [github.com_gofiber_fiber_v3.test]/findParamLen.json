@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 546,
+    "focalfunc": "func findParamLen(s string, segment *routeSegment) int",
+    "funcbody": "func findParamLen(s string, segment *routeSegment) int {\n\tif segment.IsLast {\n\t\treturn findParamLenForLastSegment(s, segment)\n\t}\n\n\tif segment.Length != 0 && len(s) >= segment.Length {\n\t\treturn segment.Length\n\t} else if segment.IsGreedy {\n\n\t\tsearchCount := strings.Count(s, segment.ComparePart)\n\t\tif searchCount > 1 {\n\t\t\treturn findGreedyParamLen(s, searchCount, segment)\n\t\t}\n\t}\n\n\tif len(segment.ComparePart) == 1 {\n\t\tif constPosition := strings.IndexByte(s, segment.ComparePart[0]); constPosition != -1 {\n\t\t\treturn constPosition\n\t\t}\n\t} else if constPosition := strings.Index(s, segment.ComparePart); constPosition != -1 {\n\n\t\tif !segment.IsGreedy && strings.IndexByte(s[:constPosition], slashDelimiter) != -1 {\n\t\t\treturn 0\n\t\t}\n\t\treturn constPosition\n\t}\n\n\treturn len(s)\n}",
+    "funcname": "findParamLen"
+}

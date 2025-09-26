@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 128,
+    "focalfunc": "func WithOnAddIdentity(f func(id Identity)) ManagerOption",
+    "funcbody": "func WithOnAddIdentity(f func(id Identity)) ManagerOption {\n\treturn func(m *identityManager) {\n\t\tm.onAddIdentity = f\n\t}\n}",
+    "funcname": "WithOnAddIdentity"
+}

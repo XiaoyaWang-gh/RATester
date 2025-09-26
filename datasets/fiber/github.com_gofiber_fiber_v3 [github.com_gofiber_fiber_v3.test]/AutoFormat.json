@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 537,
+    "focalfunc": "func (c *DefaultCtx) AutoFormat(body any) error",
+    "funcbody": "func (c *DefaultCtx) AutoFormat(body any) error {\n\n\taccept := c.Accepts(\"html\", \"json\", \"txt\", \"xml\")\n\n\tc.Type(accept)\n\t// Type convert provided body\n\tvar b string\n\tswitch val := body.(type) {\n\tcase string:\n\t\tb = val\n\tcase []byte:\n\t\tb = c.app.getString(val)\n\tdefault:\n\t\tb = fmt.Sprintf(\"%v\", val)\n\t}\n\n\tswitch accept {\n\tcase \"html\":\n\t\treturn c.SendString(\"<p>\" + b + \"</p>\")\n\tcase \"json\":\n\t\treturn c.JSON(body)\n\tcase \"txt\":\n\t\treturn c.SendString(b)\n\tcase \"xml\":\n\t\treturn c.XML(body)\n\t}\n\treturn c.SendString(b)\n}",
+    "funcname": "AutoFormat"
+}

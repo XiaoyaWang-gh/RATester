@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 282,
+    "focalfunc": "func Sanitize(s string) string",
+    "funcbody": "func Sanitize(s string) string {\n\tvar willChange bool\n\tfor i, r := range s {\n\t\twillChange = !isAllowedPathCharacter(s, i, r)\n\t\tif willChange {\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif !willChange {\n\n\t\treturn s\n\t}\n\n\ttarget := make([]rune, 0, len(s))\n\tvar (\n\t\tprependHyphen\tbool\n\t\twasHyphen\tbool\n\t)\n\n\tfor i, r := range s {\n\t\tisAllowed := isAllowedPathCharacter(s, i, r)\n\n\t\tif isAllowed {\n\n\t\t\twasHyphen = r == '-'\n\n\t\t\tif prependHyphen {\n\n\t\t\t\tif !wasHyphen {\n\t\t\t\t\ttarget = append(target, '-')\n\t\t\t\t}\n\t\t\t\tprependHyphen = false\n\t\t\t}\n\t\t\ttarget = append(target, r)\n\t\t} else if len(target) > 0 && !wasHyphen && unicode.IsSpace(r) {\n\t\t\tprependHyphen = true\n\t\t}\n\t}\n\n\treturn string(target)\n}",
+    "funcname": "Sanitize"
+}

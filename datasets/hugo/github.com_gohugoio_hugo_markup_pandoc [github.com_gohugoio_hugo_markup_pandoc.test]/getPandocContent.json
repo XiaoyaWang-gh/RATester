@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/pandoc/convert.go",
+    "lineno": 58,
+    "focalfunc": "func (c *pandocConverter) getPandocContent(src []byte, ctx converter.DocumentContext) ([]byte, error)",
+    "funcbody": "func (c *pandocConverter) getPandocContent(src []byte, ctx converter.DocumentContext) ([]byte, error) {\n\tlogger := c.cfg.Logger\n\tbinaryName := getPandocBinaryName()\n\tif binaryName == \"\" {\n\t\tlogger.Println(\"pandoc not found in $PATH: Please install.\\n\",\n\t\t\t\"                 Leaving pandoc content unrendered.\")\n\t\treturn src, nil\n\t}\n\targs := []string{\"--mathjax\"}\n\treturn internal.ExternallyRenderContent(c.cfg, ctx, src, binaryName, args)\n}",
+    "funcname": "getPandocContent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 110,
+    "focalfunc": "func doublePercent(str string) string",
+    "funcbody": "func doublePercent(str string) string {\n\treturn strings.ReplaceAll(str, \"%\", \"%%\")\n}",
+    "funcname": "doublePercent"
+}

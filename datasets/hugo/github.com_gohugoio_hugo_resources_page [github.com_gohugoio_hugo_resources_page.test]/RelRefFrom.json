@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 150,
+    "focalfunc": "func (p *nopPage) RelRefFrom(argsm map[string]any, source any) (string, error)",
+    "funcbody": "func (p *nopPage) RelRefFrom(argsm map[string]any, source any) (string, error) {\n\treturn \"\", nil\n}",
+    "funcname": "RelRefFrom"
+}

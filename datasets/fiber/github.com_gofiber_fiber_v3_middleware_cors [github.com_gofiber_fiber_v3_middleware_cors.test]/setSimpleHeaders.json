@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cors/cors.go",
+    "lineno": 188,
+    "focalfunc": "func setSimpleHeaders(c fiber.Ctx, allowOrigin, maxAge string, cfg Config)",
+    "funcbody": "func setSimpleHeaders(c fiber.Ctx, allowOrigin, maxAge string, cfg Config) {\n\tif cfg.AllowCredentials {\n\n\t\tif allowOrigin == \"*\" {\n\t\t\tc.Set(fiber.HeaderAccessControlAllowOrigin, allowOrigin)\n\t\t\tlog.Warn(\"[CORS] 'AllowCredentials' is true, but 'AllowOrigins' cannot be set to '*'.\")\n\t\t} else if allowOrigin != \"\" {\n\t\t\tc.Set(fiber.HeaderAccessControlAllowOrigin, allowOrigin)\n\t\t\tc.Set(fiber.HeaderAccessControlAllowCredentials, \"true\")\n\t\t}\n\t} else if allowOrigin != \"\" {\n\n\t\tc.Set(fiber.HeaderAccessControlAllowOrigin, allowOrigin)\n\t}\n\n\tif cfg.MaxAge > 0 {\n\t\tc.Set(fiber.HeaderAccessControlMaxAge, maxAge)\n\t} else if cfg.MaxAge < 0 {\n\t\tc.Set(fiber.HeaderAccessControlMaxAge, \"0\")\n\t}\n\n\tif len(cfg.ExposeHeaders) > 0 {\n\t\tc.Set(fiber.HeaderAccessControlExposeHeaders, strings.Join(cfg.ExposeHeaders, \", \"))\n\t}\n}",
+    "funcname": "setSimpleHeaders"
+}

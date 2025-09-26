@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 60,
+    "focalfunc": "func (s *BaseServer) writeConnFail(c net.Conn)",
+    "funcbody": "func (s *BaseServer) writeConnFail(c net.Conn) {\n\tc.Write([]byte(common.ConnectionFailBytes))\n\tc.Write(s.errorContent)\n}",
+    "funcname": "writeConnFail"
+}

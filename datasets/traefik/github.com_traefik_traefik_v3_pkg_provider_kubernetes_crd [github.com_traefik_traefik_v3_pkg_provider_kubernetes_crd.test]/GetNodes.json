@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 481,
+    "focalfunc": "func (c *clientWrapper) GetNodes() ([]*corev1.Node, bool, error)",
+    "funcbody": "func (c *clientWrapper) GetNodes() ([]*corev1.Node, bool, error) {\n\tnodes, err := c.clusterScopeFactory.Core().V1().Nodes().Lister().List(labels.Everything())\n\texist, err := translateNotFoundError(err)\n\treturn nodes, exist, err\n}",
+    "funcname": "GetNodes"
+}

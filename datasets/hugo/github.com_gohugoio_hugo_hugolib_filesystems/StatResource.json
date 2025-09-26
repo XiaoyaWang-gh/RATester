@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 297,
+    "focalfunc": "func (s SourceFilesystems) StatResource(lang, filename string) (fi os.FileInfo, fs afero.Fs, err error)",
+    "funcbody": "func (s SourceFilesystems) StatResource(lang, filename string) (fi os.FileInfo, fs afero.Fs, err error) {\n\tfor _, fsToCheck := range []afero.Fs{s.StaticFs(lang), s.Assets.Fs, s.Content.Fs} {\n\t\tfs = fsToCheck\n\t\tfi, err = fs.Stat(filename)\n\t\tif err == nil || !herrors.IsNotExist(err) {\n\t\t\treturn\n\t\t}\n\t}\n\n\treturn\n}",
+    "funcname": "StatResource"
+}

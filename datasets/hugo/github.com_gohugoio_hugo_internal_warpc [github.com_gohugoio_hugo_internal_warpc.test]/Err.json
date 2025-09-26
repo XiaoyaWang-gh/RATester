@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 331,
+    "focalfunc": "func (p *dispatcherPool[Q, R]) Err() error",
+    "funcbody": "func (p *dispatcherPool[Q, R]) Err() error {\n\tselect {\n\tcase err := <-p.errc:\n\t\treturn err\n\tdefault:\n\t\treturn nil\n\t}\n}",
+    "funcname": "Err"
+}

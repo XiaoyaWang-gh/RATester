@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 56,
+    "focalfunc": "func NewMemoryCache() Cache",
+    "funcbody": "func NewMemoryCache() Cache {\n\tcache := MemoryCache{items: make(map[string]*MemoryItem)}\n\treturn &cache\n}",
+    "funcname": "NewMemoryCache"
+}

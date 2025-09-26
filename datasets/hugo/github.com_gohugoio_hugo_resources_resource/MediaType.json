@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resourcetypes.go",
+    "lineno": 290,
+    "focalfunc": "func (r resourceTypesHolder) MediaType() media.Type",
+    "funcbody": "func (r resourceTypesHolder) MediaType() media.Type {\n\treturn r.mediaType\n}",
+    "funcname": "MediaType"
+}

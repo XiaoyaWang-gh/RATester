@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 229,
+    "focalfunc": "func (c *Context) AbortWithError(code int, err error) *Error",
+    "funcbody": "func (c *Context) AbortWithError(code int, err error) *Error {\n\tc.AbortWithStatus(code)\n\treturn c.Error(err)\n}",
+    "funcname": "AbortWithError"
+}

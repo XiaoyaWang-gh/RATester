@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv_unix.go",
+    "lineno": 19,
+    "focalfunc": "func syscallIsNotSupported(err error) bool",
+    "funcbody": "func syscallIsNotSupported(err error) bool {\n\tif err == nil {\n\t\treturn false\n\t}\n\n\tvar errno syscall.Errno\n\tif errors.As(err, &errno) {\n\t\tswitch errno {\n\t\tcase syscall.EPERM, syscall.EROFS:\n\n\t\t\treturn true\n\t\tcase syscall.EINVAL:\n\n\t\t\treturn true\n\t\t}\n\t}\n\n\tif errors.Is(err, fs.ErrPermission) || errors.Is(err, errors.ErrUnsupported) {\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "syscallIsNotSupported"
+}

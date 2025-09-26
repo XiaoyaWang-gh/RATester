@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/store.go",
+    "lineno": 126,
+    "focalfunc": "func (s *Store) Reset() error",
+    "funcbody": "func (s *Store) Reset() error {\n\treturn s.Storage.Reset()\n}",
+    "funcname": "Reset"
+}

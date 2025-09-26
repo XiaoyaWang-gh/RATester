@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 234,
+    "focalfunc": "func (p *PageMatcherParamsConfig) init() error",
+    "funcbody": "func (p *PageMatcherParamsConfig) init() error {\n\tmaps.PrepareParams(p.Params)\n\treturn nil\n}",
+    "funcname": "init"
+}

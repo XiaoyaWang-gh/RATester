@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1183,
+    "focalfunc": "func removeLeadingBOM(s string) string",
+    "funcbody": "func removeLeadingBOM(s string) string {\n\tconst bom = '\\ufeff'\n\n\tfor i, r := range s {\n\t\tif i == 0 && r != bom {\n\t\t\treturn s\n\t\t}\n\t\tif i > 0 {\n\t\t\treturn s[i:]\n\t\t}\n\t}\n\n\treturn s\n}",
+    "funcname": "removeLeadingBOM"
+}

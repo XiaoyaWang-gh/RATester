@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 100,
+    "focalfunc": "func checkCandidateBase(l *absurllexer)",
+    "funcbody": "func checkCandidateBase(l *absurllexer) {\n\tl.consumeQuote()\n\n\tif !bytes.HasPrefix(l.content[l.pos:], relURLPrefix) {\n\t\treturn\n\t}\n\n\tposAfter := l.pos + relURLPrefixLen\n\tif posAfter >= len(l.content) {\n\t\treturn\n\t}\n\tr, _ := utf8.DecodeRune(l.content[posAfter:])\n\tif r == '/' {\n\n\t\treturn\n\t}\n\tif l.pos > l.start {\n\t\tl.emit()\n\t}\n\tl.pos += relURLPrefixLen\n\tl.w.Write(l.path)\n\tl.start = l.pos\n}",
+    "funcname": "checkCandidateBase"
+}

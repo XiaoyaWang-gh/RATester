@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 323,
+    "focalfunc": "func lexLeftDelim(l *lexer) stateFn",
+    "funcbody": "func lexLeftDelim(l *lexer) stateFn {\n\tl.pos += Pos(len(l.leftDelim))\n\ttrimSpace := hasLeftTrimMarker(l.input[l.pos:])\n\tafterMarker := Pos(0)\n\tif trimSpace {\n\t\tafterMarker = trimMarkerLen\n\t}\n\tif strings.HasPrefix(l.input[l.pos+afterMarker:], leftComment) {\n\t\tl.pos += afterMarker\n\t\tl.ignore()\n\t\treturn lexComment\n\t}\n\ti := l.thisItem(itemLeftDelim)\n\tl.insideAction = true\n\tl.pos += afterMarker\n\tl.ignore()\n\tl.parenDepth = 0\n\treturn l.emitItem(i)\n}",
+    "funcname": "lexLeftDelim"
+}

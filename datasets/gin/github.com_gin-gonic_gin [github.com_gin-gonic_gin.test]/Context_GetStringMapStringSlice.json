@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 391,
+    "focalfunc": "func (c *Context) GetStringMapStringSlice(key string) (smss map[string][]string)",
+    "funcbody": "func (c *Context) GetStringMapStringSlice(key string) (smss map[string][]string) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\tsmss, _ = val.(map[string][]string)\n\t}\n\treturn\n}",
+    "funcname": "GetStringMapStringSlice"
+}

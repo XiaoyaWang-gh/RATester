@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/hash/hash.go",
+    "lineno": 47,
+    "focalfunc": "func (ns *Namespace) XxHash(v any) (string, error)",
+    "funcbody": "func (ns *Namespace) XxHash(v any) (string, error) {\n\tconv, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn hashing.XxHashFromStringHexEncoded(conv), nil\n}",
+    "funcname": "XxHash"
+}

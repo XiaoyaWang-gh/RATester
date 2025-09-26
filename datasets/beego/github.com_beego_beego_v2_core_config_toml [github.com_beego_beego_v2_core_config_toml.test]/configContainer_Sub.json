@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 292,
+    "focalfunc": "func (c *configContainer) Sub(key string) (config.Configer, error)",
+    "funcbody": "func (c *configContainer) Sub(key string) (config.Configer, error) {\n\tval, err := subTree(c.t, strings.Split(key, keySeparator))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &configContainer{\n\t\tt: val,\n\t}, nil\n}",
+    "funcname": "Sub"
+}

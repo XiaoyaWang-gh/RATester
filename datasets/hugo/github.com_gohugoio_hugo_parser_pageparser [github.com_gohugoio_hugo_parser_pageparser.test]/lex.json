@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 376,
+    "focalfunc": "func (s *sectionHandlers) lex(origin stateFunc) stateFunc",
+    "funcbody": "func (s *sectionHandlers) lex(origin stateFunc) stateFunc {\n\tif s.skipAll {\n\t\treturn nil\n\t}\n\n\tif s.l.pos > s.l.start {\n\t\ts.l.emit(tText)\n\t}\n\n\tfor _, handler := range s.handlers {\n\t\tif handler.skipAll {\n\t\t\tcontinue\n\t\t}\n\n\t\tnext, handled := handler.lexFunc(origin, handler.l)\n\t\tif next == nil || handled {\n\t\t\treturn next\n\t\t}\n\t}\n\n\ts.l.pos++\n\n\treturn origin\n}",
+    "funcname": "lex"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 105,
+    "focalfunc": "func (c *connWriter) connect() error",
+    "funcbody": "func (c *connWriter) connect() error {\n\tif c.innerWriter != nil {\n\t\tc.innerWriter.Close()\n\t\tc.innerWriter = nil\n\t}\n\n\tconn, err := net.Dial(c.Net, c.Addr)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif tcpConn, ok := conn.(*net.TCPConn); ok {\n\t\ttcpConn.SetKeepAlive(true)\n\t}\n\n\tc.innerWriter = conn\n\tc.lg = newLogWriter(conn)\n\treturn nil\n}",
+    "funcname": "connect"
+}

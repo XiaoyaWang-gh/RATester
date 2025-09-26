@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 126,
+    "focalfunc": "func (p *pageState) ForEeachIdentity(f func(identity.Identity) bool) bool",
+    "funcbody": "func (p *pageState) ForEeachIdentity(f func(identity.Identity) bool) bool {\n\treturn f(p)\n}",
+    "funcname": "ForEeachIdentity"
+}

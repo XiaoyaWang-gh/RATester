@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 905,
+    "focalfunc": "func (b *ValueBinder) MustBool(sourceParam string, dest *bool) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustBool(sourceParam string, dest *bool) *ValueBinder {\n\treturn b.boolValue(sourceParam, dest, true)\n}",
+    "funcname": "MustBool"
+}

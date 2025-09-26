@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 613,
+    "focalfunc": "func newHistogramFrom(opts stdprometheus.HistogramOpts, labelNames []string) *histogram",
+    "funcbody": "func newHistogramFrom(opts stdprometheus.HistogramOpts, labelNames []string) *histogram {\n\thv := stdprometheus.NewHistogramVec(opts, labelNames)\n\treturn &histogram{\n\t\tname:\topts.Name,\n\t\thv:\thv,\n\t}\n}",
+    "funcname": "newHistogramFrom"
+}

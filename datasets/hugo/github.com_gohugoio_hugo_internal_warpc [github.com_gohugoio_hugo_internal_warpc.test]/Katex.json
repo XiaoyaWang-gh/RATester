@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 531,
+    "focalfunc": "func (d *Dispatchers) Katex() (Dispatcher[KatexInput, KatexOutput], error)",
+    "funcbody": "func (d *Dispatchers) Katex() (Dispatcher[KatexInput, KatexOutput], error) {\n\treturn d.katex.start()\n}",
+    "funcname": "Katex"
+}

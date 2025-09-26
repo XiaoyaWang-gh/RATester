@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_language_merge.go",
+    "lineno": 54,
+    "focalfunc": "func (p1 Pages) MergeByLanguageInterface(in any) (any, error)",
+    "funcbody": "func (p1 Pages) MergeByLanguageInterface(in any) (any, error) {\n\tif in == nil {\n\t\treturn p1, nil\n\t}\n\tp2, ok := in.(Pages)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"%T cannot be merged by language\", in)\n\t}\n\treturn p1.MergeByLanguage(p2), nil\n}",
+    "funcname": "MergeByLanguageInterface"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 145,
+    "focalfunc": "func (c *greeterClient) StreamExample(ctx context.Context, in *StreamExampleRequest, opts ...grpc.CallOption) (Greeter_StreamExampleClient, error)",
+    "funcbody": "func (c *greeterClient) StreamExample(ctx context.Context, in *StreamExampleRequest, opts ...grpc.CallOption) (Greeter_StreamExampleClient, error) {\n\tstream, err := grpc.NewClientStream(ctx, &_Greeter_serviceDesc.Streams[0], c.cc, \"/helloworld.Greeter/StreamExample\", opts...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tx := &greeterStreamExampleClient{stream}\n\tif err := x.ClientStream.SendMsg(in); err != nil {\n\t\treturn nil, err\n\t}\n\tif err := x.ClientStream.CloseSend(); err != nil {\n\t\treturn nil, err\n\t}\n\treturn x, nil\n}",
+    "funcname": "StreamExample"
+}

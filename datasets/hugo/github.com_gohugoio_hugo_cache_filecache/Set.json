@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 482,
+    "focalfunc": "func (h *httpCache) Set(id string, resp []byte)",
+    "funcbody": "func (h *httpCache) Set(id string, resp []byte) {\n\tif h.c.maxAge == 0 {\n\t\treturn\n\t}\n\n\tid = cleanID(id)\n\n\tif err := h.c.writeReader(id, bytes.NewReader(resp)); err != nil {\n\t\tpanic(err)\n\t}\n}",
+    "funcname": "Set"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 667,
+    "focalfunc": "func (b *BeegoHTTPRequest) ToYAML(v interface{}) error",
+    "funcbody": "func (b *BeegoHTTPRequest) ToYAML(v interface{}) error {\n\tdata, err := b.Bytes()\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn berror.Wrap(yaml.Unmarshal(data, v),\n\t\tUnmarshalYAMLResponseToObjectFailed, \"unmarshal yaml body to object failed.\")\n}",
+    "funcname": "ToYAML"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 172,
+    "focalfunc": "func (b blackHoleResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (b blackHoleResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\treturn nil, nil, errors.New(\"connection on blackHoleResponseWriter cannot be hijacked\")\n}",
+    "funcname": "Hijack"
+}

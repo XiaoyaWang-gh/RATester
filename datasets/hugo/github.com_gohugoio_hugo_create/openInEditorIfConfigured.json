@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/content.go",
+    "lineno": 344,
+    "focalfunc": "func (b *contentBuilder) openInEditorIfConfigured(filename string) error",
+    "funcbody": "func (b *contentBuilder) openInEditorIfConfigured(filename string) error {\n\teditor := b.h.Conf.NewContentEditor()\n\tif editor == \"\" {\n\t\treturn nil\n\t}\n\n\teditorExec := strings.Fields(editor)[0]\n\teditorFlags := strings.Fields(editor)[1:]\n\n\tvar args []any\n\tfor _, editorFlag := range editorFlags {\n\t\targs = append(args, editorFlag)\n\t}\n\targs = append(\n\t\targs,\n\t\tfilename,\n\t\thexec.WithStdin(os.Stdin),\n\t\thexec.WithStderr(os.Stderr),\n\t\thexec.WithStdout(os.Stdout),\n\t)\n\n\tb.h.Log.Printf(\"Editing %q with %q ...\\n\", filename, editorExec)\n\n\tcmd, err := b.h.Deps.ExecHelper.New(editorExec, args...)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn cmd.Run()\n}",
+    "funcname": "openInEditorIfConfigured"
+}

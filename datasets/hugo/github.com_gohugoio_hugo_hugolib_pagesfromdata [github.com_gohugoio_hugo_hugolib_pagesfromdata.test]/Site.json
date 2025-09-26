@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 131,
+    "focalfunc": "func (p *pagesFromDataTemplateContext) Site() page.Site",
+    "funcbody": "func (p *pagesFromDataTemplateContext) Site() page.Site {\n\treturn p.p.Site\n}",
+    "funcname": "Site"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd.go",
+    "lineno": 90,
+    "focalfunc": "func (d *commandSyncDb) Parse(args []string)",
+    "funcbody": "func (d *commandSyncDb) Parse(args []string) {\n\tvar name string\n\n\tflagSet := flag.NewFlagSet(\"orm command: syncdb\", flag.ExitOnError)\n\tflagSet.StringVar(&name, \"db\", \"default\", \"DataBase alias name\")\n\tflagSet.BoolVar(&d.force, \"force\", false, \"drop tables before create\")\n\tflagSet.BoolVar(&d.verbose, \"v\", false, \"verbose info\")\n\tflagSet.Parse(args)\n\n\td.al = getDbAlias(name)\n}",
+    "funcname": "Parse"
+}

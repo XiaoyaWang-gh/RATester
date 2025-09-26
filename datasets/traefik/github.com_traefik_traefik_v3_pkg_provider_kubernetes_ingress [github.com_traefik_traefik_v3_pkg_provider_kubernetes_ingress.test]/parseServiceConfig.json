@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/annotations.go",
+    "lineno": 74,
+    "focalfunc": "func parseServiceConfig(annotations map[string]string) (*ServiceConfig, error)",
+    "funcbody": "func parseServiceConfig(annotations map[string]string) (*ServiceConfig, error) {\n\tlabels := convertAnnotations(annotations)\n\tif len(labels) == 0 {\n\t\treturn nil, nil\n\t}\n\n\tcfg := &ServiceConfig{}\n\n\terr := label.Decode(labels, cfg, \"traefik.service.\")\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn cfg, nil\n}",
+    "funcname": "parseServiceConfig"
+}

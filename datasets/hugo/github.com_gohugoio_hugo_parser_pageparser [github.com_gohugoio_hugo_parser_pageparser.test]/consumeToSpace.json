@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 247,
+    "focalfunc": "func (l *pageLexer) consumeToSpace()",
+    "funcbody": "func (l *pageLexer) consumeToSpace() {\n\tfor {\n\t\tr := l.next()\n\t\tif r == eof || unicode.IsSpace(r) {\n\t\t\tl.backup()\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "consumeToSpace"
+}

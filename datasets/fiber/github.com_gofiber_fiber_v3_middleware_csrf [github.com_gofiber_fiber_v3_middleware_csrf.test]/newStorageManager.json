@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager.go",
+    "lineno": 24,
+    "focalfunc": "func newStorageManager(storage fiber.Storage) *storageManager",
+    "funcbody": "func newStorageManager(storage fiber.Storage) *storageManager {\n\n\tstorageManager := &storageManager{\n\t\tpool: sync.Pool{\n\t\t\tNew: func() any {\n\t\t\t\treturn new(item)\n\t\t\t},\n\t\t},\n\t}\n\tif storage != nil {\n\n\t\tstorageManager.storage = storage\n\t} else {\n\n\t\tstorageManager.memory = memory.New()\n\t}\n\treturn storageManager\n}",
+    "funcname": "newStorageManager"
+}

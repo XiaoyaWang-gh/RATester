@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 740,
+    "focalfunc": "func (c *Controller) SessionRegenerateID() error",
+    "funcbody": "func (c *Controller) SessionRegenerateID() error {\n\tif c.CruSession != nil {\n\t\tc.CruSession.SessionRelease(context2.Background(), c.Ctx.ResponseWriter)\n\t}\n\tvar err error\n\tc.CruSession, err = GlobalSessions.SessionRegenerateID(c.Ctx.ResponseWriter, c.Ctx.Request)\n\tc.Ctx.Input.CruSession = c.CruSession\n\treturn err\n}",
+    "funcname": "SessionRegenerateID"
+}

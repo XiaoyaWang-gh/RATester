@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 216,
+    "focalfunc": "func GetPorts(p string) []int",
+    "funcbody": "func GetPorts(p string) []int {\n\tvar ps []int\n\tarr := strings.Split(p, \",\")\n\tfor _, v := range arr {\n\t\tfw := strings.Split(v, \"-\")\n\t\tif len(fw) == 2 {\n\t\t\tif IsPort(fw[0]) && IsPort(fw[1]) {\n\t\t\t\tstart, _ := strconv.Atoi(fw[0])\n\t\t\t\tend, _ := strconv.Atoi(fw[1])\n\t\t\t\tfor i := start; i <= end; i++ {\n\t\t\t\t\tps = append(ps, i)\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t} else if IsPort(v) {\n\t\t\tp, _ := strconv.Atoi(v)\n\t\t\tps = append(ps, p)\n\t\t}\n\t}\n\treturn ps\n}",
+    "funcname": "GetPorts"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 119,
+    "focalfunc": "func (*ormBase) getPtrMiInd(md interface{}) (mi *models.ModelInfo, ind reflect.Value)",
+    "funcbody": "func (*ormBase) getPtrMiInd(md interface{}) (mi *models.ModelInfo, ind reflect.Value) {\n\tval := reflect.ValueOf(md)\n\tind = reflect.Indirect(val)\n\ttyp := ind.Type()\n\tif val.Kind() != reflect.Ptr {\n\t\tpanic(fmt.Errorf(\"<Ormer> cannot use non-ptr model struct `%s`\", models.GetFullName(typ)))\n\t}\n\tmi = getTypeMi(typ)\n\treturn\n}",
+    "funcname": "getPtrMiInd"
+}

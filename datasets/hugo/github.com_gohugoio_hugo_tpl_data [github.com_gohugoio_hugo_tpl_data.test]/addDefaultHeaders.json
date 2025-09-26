@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 142,
+    "focalfunc": "func addDefaultHeaders(req *http.Request, accepts ...string)",
+    "funcbody": "func addDefaultHeaders(req *http.Request, accepts ...string) {\n\tfor _, accept := range accepts {\n\t\tif !hasHeaderValue(req.Header, \"Accept\", accept) {\n\t\t\treq.Header.Add(\"Accept\", accept)\n\t\t}\n\t}\n\tif !hasHeaderKey(req.Header, \"User-Agent\") {\n\t\treq.Header.Add(\"User-Agent\", \"Hugo Static Site Generator\")\n\t}\n}",
+    "funcname": "addDefaultHeaders"
+}

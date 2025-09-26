@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/daemon/daemon.go",
+    "lineno": 15,
+    "focalfunc": "func InitDaemon(f string, runPath string, pidPath string)",
+    "funcbody": "func InitDaemon(f string, runPath string, pidPath string) {\n\tif len(os.Args) < 2 {\n\t\treturn\n\t}\n\tvar args []string\n\targs = append(args, os.Args[0])\n\tif len(os.Args) >= 2 {\n\t\targs = append(args, os.Args[2:]...)\n\t}\n\targs = append(args, \"-log=file\")\n\tswitch os.Args[1] {\n\tcase \"start\":\n\t\tstart(args, f, pidPath, runPath)\n\t\tos.Exit(0)\n\tcase \"stop\":\n\t\tstop(f, args[0], pidPath)\n\t\tos.Exit(0)\n\tcase \"restart\":\n\t\tstop(f, args[0], pidPath)\n\t\tstart(args, f, pidPath, runPath)\n\t\tos.Exit(0)\n\tcase \"status\":\n\t\tif status(f, pidPath) {\n\t\t\tlog.Printf(\"%s is running\", f)\n\t\t} else {\n\t\t\tlog.Printf(\"%s is not running\", f)\n\t\t}\n\t\tos.Exit(0)\n\tcase \"reload\":\n\t\treload(f, pidPath)\n\t\tos.Exit(0)\n\t}\n}",
+    "funcname": "InitDaemon"
+}

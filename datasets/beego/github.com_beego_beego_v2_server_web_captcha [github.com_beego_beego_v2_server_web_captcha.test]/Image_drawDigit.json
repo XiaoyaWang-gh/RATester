@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 431,
+    "focalfunc": "func (m *Image) drawDigit(digit []byte, x, y int)",
+    "funcbody": "func (m *Image) drawDigit(digit []byte, x, y int) {\n\tskf := randFloat(-maxSkew, maxSkew)\n\txs := float64(x)\n\tr := m.dotSize / 2\n\ty += randInt(-r, r)\n\tfor yo := 0; yo < fontHeight; yo++ {\n\t\tfor xo := 0; xo < fontWidth; xo++ {\n\t\t\tif digit[yo*fontWidth+xo] != blackChar {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tm.drawCircle(x+xo*m.dotSize, y+yo*m.dotSize, r, 1)\n\t\t}\n\t\txs += skf\n\t\tx = int(xs)\n\t}\n}",
+    "funcname": "drawDigit"
+}

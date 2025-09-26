@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 378,
+    "focalfunc": "func (m Type) IsZero() bool",
+    "funcbody": "func (m Type) IsZero() bool {\n\treturn m.SubType == \"\"\n}",
+    "funcname": "IsZero"
+}

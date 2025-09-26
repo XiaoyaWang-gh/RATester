@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 12,
+    "focalfunc": "func SpecifiedHTTPBodyHandler(body []byte) http.HandlerFunc",
+    "funcbody": "func SpecifiedHTTPBodyHandler(body []byte) http.HandlerFunc {\n\treturn func(w http.ResponseWriter, req *http.Request) {\n\t\t_, _ = w.Write(body)\n\t}\n}",
+    "funcname": "SpecifiedHTTPBodyHandler"
+}

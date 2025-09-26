@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/dates.go",
+    "lineno": 39,
+    "focalfunc": "func IsFuture(d Dated) bool",
+    "funcbody": "func IsFuture(d Dated) bool {\n\tif d.PublishDate().IsZero() {\n\t\treturn false\n\t}\n\n\treturn d.PublishDate().After(htime.Now())\n}",
+    "funcname": "IsFuture"
+}

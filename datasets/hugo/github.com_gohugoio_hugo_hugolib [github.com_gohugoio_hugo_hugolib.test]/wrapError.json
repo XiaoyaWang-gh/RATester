@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 573,
+    "focalfunc": "func (p *pageState) wrapError(err error) error",
+    "funcbody": "func (p *pageState) wrapError(err error) error {\n\treturn p.m.wrapError(err, p.s.h.SourceFs)\n}",
+    "funcname": "wrapError"
+}

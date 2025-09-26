@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/server.go",
+    "lineno": 359,
+    "focalfunc": "func (s *TunnelServer) waitProxyStatusReady(name string, timeout time.Duration) (*proxy.WorkingStatus, error)",
+    "funcbody": "func (s *TunnelServer) waitProxyStatusReady(name string, timeout time.Duration) (*proxy.WorkingStatus, error) {\n\tticker := time.NewTicker(100 * time.Millisecond)\n\tdefer ticker.Stop()\n\n\ttimer := time.NewTimer(timeout)\n\tdefer timer.Stop()\n\n\tstatusExporter := s.vc.Service().StatusExporter()\n\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tps, ok := statusExporter.GetProxyStatus(name)\n\t\t\tif !ok {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tswitch ps.Phase {\n\t\t\tcase proxy.ProxyPhaseRunning:\n\t\t\t\treturn ps, nil\n\t\t\tcase proxy.ProxyPhaseStartErr, proxy.ProxyPhaseClosed:\n\t\t\t\treturn ps, errors.New(ps.Err)\n\t\t\t}\n\t\tcase <-timer.C:\n\t\t\treturn nil, fmt.Errorf(\"wait proxy status ready timeout\")\n\t\tcase <-s.doneCh:\n\t\t\treturn nil, fmt.Errorf(\"ssh tunnel server closed\")\n\t\t}\n\t}\n}",
+    "funcname": "waitProxyStatusReady"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/hash/hash.go",
+    "lineno": 58,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx := New()\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.XxHash,\n\t\t\t[]string{\"xxhash\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ hash.XxHash \"The quick brown fox jumps over the lazy dog\" }}`, `0b242d361fda71bc`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.FNV32a,\n\t\t\tnil,\n\t\t\t[][2]string{\n\t\t\t\t{`{{ hash.FNV32a \"Hugo Rocks!!\" }}`, `1515779328`},\n\t\t\t},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

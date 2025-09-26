@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/exec.go",
+    "lineno": 47,
+    "focalfunc": "func tryExec() error",
+    "funcbody": "func tryExec() error {\n\tswitch runtime.GOOS {\n\tcase \"wasip1\", \"js\", \"ios\":\n\tdefault:\n\n\t\treturn nil\n\t}\n\n\tif !testing.Testing() {\n\n\t\treturn errors.New(\"can't probe for exec support with a non-test executable\")\n\t}\n\n\texe, err := os.Executable()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"can't probe for exec support: %w\", err)\n\t}\n\tcmd := exec.Command(exe, \"-test.list=^$\")\n\tcmd.Env = origEnv\n\treturn cmd.Run()\n}",
+    "funcname": "tryExec"
+}

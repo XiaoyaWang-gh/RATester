@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/idempotency/idempotency.go",
+    "lineno": 28,
+    "focalfunc": "func WasPutToCache(c fiber.Ctx) bool",
+    "funcbody": "func WasPutToCache(c fiber.Ctx) bool {\n\treturn c.Locals(localsKeyWasPutToCache) != nil\n}",
+    "funcname": "WasPutToCache"
+}

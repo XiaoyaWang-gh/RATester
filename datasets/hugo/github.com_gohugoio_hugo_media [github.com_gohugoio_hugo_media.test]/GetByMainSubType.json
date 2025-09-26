@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 344,
+    "focalfunc": "func (t Types) GetByMainSubType(mainType, subType string) (tp Type, found bool)",
+    "funcbody": "func (t Types) GetByMainSubType(mainType, subType string) (tp Type, found bool) {\n\tfor _, tt := range t {\n\t\tif strings.EqualFold(mainType, tt.MainType) && strings.EqualFold(subType, tt.SubType) {\n\t\t\tif found {\n\n\t\t\t\tfound = false\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\ttp = tt\n\t\t\tfound = true\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "GetByMainSubType"
+}

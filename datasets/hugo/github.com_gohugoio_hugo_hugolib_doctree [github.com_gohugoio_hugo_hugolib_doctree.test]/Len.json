@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 193,
+    "focalfunc": "func (t *NodeShiftTree[T]) Len() int",
+    "funcbody": "func (t *NodeShiftTree[T]) Len() int {\n\treturn t.tree.Len()\n}",
+    "funcname": "Len"
+}

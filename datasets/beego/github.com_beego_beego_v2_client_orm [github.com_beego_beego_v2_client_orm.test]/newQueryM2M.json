@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_querym2m.go",
+    "lineno": 158,
+    "focalfunc": "func newQueryM2M(md interface{}, o *ormBase, mi *models.ModelInfo, fi *models.FieldInfo, ind reflect.Value) QueryM2Mer",
+    "funcbody": "func newQueryM2M(md interface{}, o *ormBase, mi *models.ModelInfo, fi *models.FieldInfo, ind reflect.Value) QueryM2Mer {\n\tqm2m := new(queryM2M)\n\tqm2m.md = md\n\tqm2m.mi = mi\n\tqm2m.fi = fi\n\tqm2m.ind = ind\n\tqm2m.qs = newQuerySet(o, fi.RelThroughModelInfo).(*querySet)\n\treturn qm2m\n}",
+    "funcname": "newQueryM2M"
+}

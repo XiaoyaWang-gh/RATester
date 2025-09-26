@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/default_validator.go",
+    "lineno": 85,
+    "focalfunc": "func (v *defaultValidator) Engine() any",
+    "funcbody": "func (v *defaultValidator) Engine() any {\n\tv.lazyinit()\n\treturn v.validate\n}",
+    "funcname": "Engine"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1241,
+    "focalfunc": "func getCertificateBlocks(secret *corev1.Secret, namespace, secretName string) (string, string, error)",
+    "funcbody": "func getCertificateBlocks(secret *corev1.Secret, namespace, secretName string) (string, string, error) {\n\tvar missingEntries []string\n\n\ttlsCrtData, tlsCrtExists := secret.Data[\"tls.crt\"]\n\tif !tlsCrtExists {\n\t\tmissingEntries = append(missingEntries, \"tls.crt\")\n\t}\n\n\ttlsKeyData, tlsKeyExists := secret.Data[\"tls.key\"]\n\tif !tlsKeyExists {\n\t\tmissingEntries = append(missingEntries, \"tls.key\")\n\t}\n\n\tif len(missingEntries) > 0 {\n\t\treturn \"\", \"\", fmt.Errorf(\"secret %s/%s is missing the following TLS data entries: %s\",\n\t\t\tnamespace, secretName, strings.Join(missingEntries, \", \"))\n\t}\n\n\tcert := string(tlsCrtData)\n\tif cert == \"\" {\n\t\tmissingEntries = append(missingEntries, \"tls.crt\")\n\t}\n\n\tkey := string(tlsKeyData)\n\tif key == \"\" {\n\t\tmissingEntries = append(missingEntries, \"tls.key\")\n\t}\n\n\tif len(missingEntries) > 0 {\n\t\treturn \"\", \"\", fmt.Errorf(\"secret %s/%s contains the following empty TLS data entries: %s\",\n\t\t\tnamespace, secretName, strings.Join(missingEntries, \", \"))\n\t}\n\n\treturn cert, key, nil\n}",
+    "funcname": "getCertificateBlocks"
+}

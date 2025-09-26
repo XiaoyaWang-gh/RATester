@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_store.go",
+    "lineno": 76,
+    "focalfunc": "func (s *LogStore) PutLogs(lg *LogGroup) (err error)",
+    "funcbody": "func (s *LogStore) PutLogs(lg *LogGroup) (err error) {\n\tbody, err := proto.Marshal(lg)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tout := make([]byte, lz4.CompressBound(body))\n\tn, err := lz4.Compress(body, out)\n\tif err != nil {\n\t\treturn\n\t}\n\n\th := map[string]string{\n\t\t\"x-sls-compresstype\":\t\"lz4\",\n\t\t\"x-sls-bodyrawsize\":\tfmt.Sprintf(\"%v\", len(body)),\n\t\t\"Content-Type\":\t\t\"application/x-protobuf\",\n\t}\n\n\turi := fmt.Sprintf(\"/logstores/%v\", s.Name)\n\tr, err := request(s.project, \"POST\", uri, h, out[:n])\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbuf, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(buf, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to put logs\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Println(dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "PutLogs"
+}

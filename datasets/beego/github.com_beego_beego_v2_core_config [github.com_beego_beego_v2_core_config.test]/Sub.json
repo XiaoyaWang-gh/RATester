@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 101,
+    "focalfunc": "func Sub(key string) (Configer, error)",
+    "funcbody": "func Sub(key string) (Configer, error) {\n\treturn globalInstance.Sub(key)\n}",
+    "funcname": "Sub"
+}

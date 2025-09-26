@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 479,
+    "focalfunc": "func GetAllTasks() []Tasker",
+    "funcbody": "func GetAllTasks() []Tasker {\n\treturn globalTaskManager.GetAllTasks()\n}",
+    "funcname": "GetAllTasks"
+}

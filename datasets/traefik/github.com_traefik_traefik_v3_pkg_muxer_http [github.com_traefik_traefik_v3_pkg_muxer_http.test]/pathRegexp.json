@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 151,
+    "focalfunc": "func pathRegexp(tree *matchersTree, paths ...string) error",
+    "funcbody": "func pathRegexp(tree *matchersTree, paths ...string) error {\n\tpath := paths[0]\n\n\tre, err := regexp.Compile(path)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"compiling PathPrefix matcher: %w\", err)\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn re.MatchString(req.URL.Path)\n\t}\n\n\treturn nil\n}",
+    "funcname": "pathRegexp"
+}

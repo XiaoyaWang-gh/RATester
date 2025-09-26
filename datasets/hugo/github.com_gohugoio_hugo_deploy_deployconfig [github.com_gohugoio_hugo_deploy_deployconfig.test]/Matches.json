@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deployconfig/deployConfig.go",
+    "lineno": 127,
+    "focalfunc": "func (m *Matcher) Matches(path string) bool",
+    "funcbody": "func (m *Matcher) Matches(path string) bool {\n\treturn m.Re.MatchString(path)\n}",
+    "funcname": "Matches"
+}

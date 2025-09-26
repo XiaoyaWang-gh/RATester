@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/hooks.go",
+    "lineno": 23,
+    "focalfunc": "func registerDefaultErrorHandler() error",
+    "funcbody": "func registerDefaultErrorHandler() error {\n\tm := map[string]func(http.ResponseWriter, *http.Request){\n\t\t\"401\":\tunauthorized,\n\t\t\"402\":\tpaymentRequired,\n\t\t\"403\":\tforbidden,\n\t\t\"404\":\tnotFound,\n\t\t\"405\":\tmethodNotAllowed,\n\t\t\"500\":\tinternalServerError,\n\t\t\"501\":\tnotImplemented,\n\t\t\"502\":\tbadGateway,\n\t\t\"503\":\tserviceUnavailable,\n\t\t\"504\":\tgatewayTimeout,\n\t\t\"417\":\tinvalidxsrf,\n\t\t\"422\":\tmissingxsrf,\n\t\t\"413\":\tpayloadTooLarge,\n\t}\n\tfor e, h := range m {\n\t\tif _, ok := ErrorMaps[e]; !ok {\n\t\t\tErrorHandler(e, h)\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "registerDefaultErrorHandler"
+}

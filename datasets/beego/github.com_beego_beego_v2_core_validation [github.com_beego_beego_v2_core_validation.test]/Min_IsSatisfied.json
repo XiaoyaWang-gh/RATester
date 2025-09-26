@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 190,
+    "focalfunc": "func (m Min) IsSatisfied(obj interface{}) bool",
+    "funcbody": "func (m Min) IsSatisfied(obj interface{}) bool {\n\tvar v int\n\tswitch obj.(type) {\n\tcase int64:\n\t\tif wordsize == 32 {\n\t\t\treturn false\n\t\t}\n\t\tv = int(obj.(int64))\n\tcase int:\n\t\tv = obj.(int)\n\tcase int32:\n\t\tv = int(obj.(int32))\n\tcase int16:\n\t\tv = int(obj.(int16))\n\tcase int8:\n\t\tv = int(obj.(int8))\n\tdefault:\n\t\treturn false\n\t}\n\n\treturn v >= m.Min\n}",
+    "funcname": "IsSatisfied"
+}

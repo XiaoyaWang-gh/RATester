@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/once.go",
+    "lineno": 56,
+    "focalfunc": "func (t *onceMore) InProgress() bool",
+    "funcbody": "func (t *onceMore) InProgress() bool {\n\treturn atomic.LoadUint32(&t.lock) == 1\n}",
+    "funcname": "InProgress"
+}

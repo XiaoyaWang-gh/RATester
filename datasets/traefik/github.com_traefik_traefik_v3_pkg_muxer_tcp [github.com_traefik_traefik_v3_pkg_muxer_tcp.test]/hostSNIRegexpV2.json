@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher_v2.go",
+    "lineno": 127,
+    "focalfunc": "func hostSNIRegexpV2(tree *matchersTree, templates ...string) error",
+    "funcbody": "func hostSNIRegexpV2(tree *matchersTree, templates ...string) error {\n\tif len(templates) == 0 {\n\t\treturn errors.New(\"empty value for \\\"HostSNIRegexp\\\" matcher is not allowed\")\n\t}\n\n\tvar regexps []*regexp.Regexp\n\n\tfor _, template := range templates {\n\t\tpreparedPattern, err := preparePattern(template)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"invalid pattern value for \\\"HostSNIRegexp\\\" matcher, %q is not a valid pattern: %w\", template, err)\n\t\t}\n\n\t\tregexp, err := regexp.Compile(preparedPattern)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tregexps = append(regexps, regexp)\n\t}\n\n\ttree.matcher = func(meta ConnData) bool {\n\t\tfor _, regexp := range regexps {\n\t\t\tif regexp.MatchString(meta.serverName) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn nil\n}",
+    "funcname": "hostSNIRegexpV2"
+}

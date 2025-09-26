@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 90,
+    "focalfunc": "func NewWebServer(bridge *bridge.Bridge) *WebServer",
+    "funcbody": "func NewWebServer(bridge *bridge.Bridge) *WebServer {\n\ts := new(WebServer)\n\ts.bridge = bridge\n\treturn s\n}",
+    "funcname": "NewWebServer"
+}

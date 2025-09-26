@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/mux.go",
+    "lineno": 250,
+    "focalfunc": "func (m *matchersTree) match(meta ConnData) bool",
+    "funcbody": "func (m *matchersTree) match(meta ConnData) bool {\n\tif m == nil {\n\n\t\tlog.Warn().Msg(\"Rule matcher is nil\")\n\t\treturn false\n\t}\n\n\tif m.matcher != nil {\n\t\treturn m.matcher(meta)\n\t}\n\n\tswitch m.operator {\n\tcase \"or\":\n\t\treturn m.left.match(meta) || m.right.match(meta)\n\tcase \"and\":\n\t\treturn m.left.match(meta) && m.right.match(meta)\n\tdefault:\n\n\t\tlog.Warn().Str(\"operator\", m.operator).Msg(\"Invalid rule operator\")\n\t\treturn false\n\t}\n}",
+    "funcname": "match"
+}

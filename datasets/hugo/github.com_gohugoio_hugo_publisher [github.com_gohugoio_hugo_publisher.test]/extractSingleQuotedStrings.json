@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 531,
+    "focalfunc": "func extractSingleQuotedStrings(s string) []string",
+    "funcbody": "func extractSingleQuotedStrings(s string) []string {\n\tvar (\n\t\tinQuote\tbool\n\t\tlo\tint\n\t\thi\tint\n\t)\n\n\tvar words []string\n\n\tfor i, r := range s {\n\t\tswitch {\n\t\tcase r == '\\'':\n\t\t\tif !inQuote {\n\t\t\t\tinQuote = true\n\t\t\t\tlo = i + 1\n\t\t\t} else {\n\t\t\t\tinQuote = false\n\t\t\t\thi = i\n\t\t\t\twords = append(words, strings.Fields(s[lo:hi])...)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn words\n}",
+    "funcname": "extractSingleQuotedStrings"
+}

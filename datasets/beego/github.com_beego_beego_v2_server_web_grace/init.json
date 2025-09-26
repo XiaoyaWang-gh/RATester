@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/grace.go",
+    "lineno": 94,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tflag.BoolVar(&isChild, \"graceful\", false, \"listen on open fd (after forking)\")\n\tflag.StringVar(&socketOrder, \"socketorder\", \"\", \"previous initialization order - used when more than one listener was started\")\n\n\tregLock = &sync.Mutex{}\n\trunningServers = make(map[string]*Server)\n\trunningServersOrder = []string{}\n\tsocketPtrOffsetMap = make(map[string]uint)\n\n\thookableSignals = []os.Signal{\n\t\tsyscall.SIGHUP,\n\t\tsyscall.SIGINT,\n\t\tsyscall.SIGTERM,\n\t}\n}",
+    "funcname": "init"
+}

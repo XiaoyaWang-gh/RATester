@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/http/http.go",
+    "lineno": 40,
+    "focalfunc": "func (p *Provider) SetDefaults()",
+    "funcbody": "func (p *Provider) SetDefaults() {\n\tp.PollInterval = ptypes.Duration(5 * time.Second)\n\tp.PollTimeout = ptypes.Duration(5 * time.Second)\n}",
+    "funcname": "SetDefaults"
+}

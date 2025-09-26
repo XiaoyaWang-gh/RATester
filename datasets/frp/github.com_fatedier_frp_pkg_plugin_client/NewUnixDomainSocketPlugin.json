@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/unix_domain_socket.go",
+    "lineno": 38,
+    "focalfunc": "func NewUnixDomainSocketPlugin(options v1.ClientPluginOptions) (p Plugin, err error)",
+    "funcbody": "func NewUnixDomainSocketPlugin(options v1.ClientPluginOptions) (p Plugin, err error) {\n\topts := options.(*v1.UnixDomainSocketPluginOptions)\n\n\tunixAddr, errRet := net.ResolveUnixAddr(\"unix\", opts.UnixPath)\n\tif errRet != nil {\n\t\terr = errRet\n\t\treturn\n\t}\n\n\tp = &UnixDomainSocketPlugin{\n\t\tUnixAddr: unixAddr,\n\t}\n\treturn\n}",
+    "funcname": "NewUnixDomainSocketPlugin"
+}

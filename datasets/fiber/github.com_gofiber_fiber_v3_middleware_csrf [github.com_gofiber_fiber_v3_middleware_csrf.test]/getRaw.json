@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager.go",
+    "lineno": 44,
+    "focalfunc": "func (m *storageManager) getRaw(key string) []byte",
+    "funcbody": "func (m *storageManager) getRaw(key string) []byte {\n\tvar raw []byte\n\tif m.storage != nil {\n\t\traw, _ = m.storage.Get(key)\n\t} else {\n\t\traw, _ = m.memory.Get(key).([]byte)\n\t}\n\treturn raw\n}",
+    "funcname": "getRaw"
+}

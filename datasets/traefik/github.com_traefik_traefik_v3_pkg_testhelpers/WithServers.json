@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 124,
+    "focalfunc": "func WithServers(opts ...func(*dynamic.Server)) func(*dynamic.ServersLoadBalancer)",
+    "funcbody": "func WithServers(opts ...func(*dynamic.Server)) func(*dynamic.ServersLoadBalancer) {\n\treturn func(b *dynamic.ServersLoadBalancer) {\n\t\tfor _, opt := range opts {\n\t\t\tserver := dynamic.Server{}\n\t\t\topt(&server)\n\t\t\tb.Servers = append(b.Servers, server)\n\t\t}\n\t}\n}",
+    "funcname": "WithServers"
+}

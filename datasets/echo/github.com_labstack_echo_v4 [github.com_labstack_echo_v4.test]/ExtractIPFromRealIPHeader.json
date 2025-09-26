@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 228,
+    "focalfunc": "func ExtractIPFromRealIPHeader(options ...TrustOption) IPExtractor",
+    "funcbody": "func ExtractIPFromRealIPHeader(options ...TrustOption) IPExtractor {\n\tchecker := newIPChecker(options)\n\treturn func(req *http.Request) string {\n\t\tdirectIP := extractIP(req)\n\t\trealIP := req.Header.Get(HeaderXRealIP)\n\t\tif realIP == \"\" {\n\t\t\treturn directIP\n\t\t}\n\n\t\tif checker.trust(net.ParseIP(directIP)) {\n\t\t\trealIP = strings.TrimPrefix(realIP, \"[\")\n\t\t\trealIP = strings.TrimSuffix(realIP, \"]\")\n\t\t\tif rIP := net.ParseIP(realIP); rIP != nil {\n\t\t\t\treturn realIP\n\t\t\t}\n\t\t}\n\n\t\treturn directIP\n\t}\n}",
+    "funcname": "ExtractIPFromRealIPHeader"
+}

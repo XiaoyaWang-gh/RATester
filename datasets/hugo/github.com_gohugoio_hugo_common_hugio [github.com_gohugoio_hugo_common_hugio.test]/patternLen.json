@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/hasBytesWriter.go",
+    "lineno": 34,
+    "focalfunc": "func (h *HasBytesWriter) patternLen() int",
+    "funcbody": "func (h *HasBytesWriter) patternLen() int {\n\tl := 0\n\tfor _, p := range h.Patterns {\n\t\tl += len(p.Pattern)\n\t}\n\treturn l\n}",
+    "funcname": "patternLen"
+}

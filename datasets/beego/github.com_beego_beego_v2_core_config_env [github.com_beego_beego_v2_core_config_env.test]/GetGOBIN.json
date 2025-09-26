@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 138,
+    "focalfunc": "func GetGOBIN() string",
+    "funcbody": "func GetGOBIN() string {\n\n\tgobin := strings.TrimSpace(Get(\"GOBIN\", \"\"))\n\tif gobin == \"\" {\n\t\tvar err error\n\n\t\tgobin, err = GetRuntimeEnv(\"GOBIN\")\n\t\tif err != nil {\n\n\t\t\treturn filepath.Join(build.Default.GOPATH, \"bin\")\n\t\t}\n\t\tif gobin == \"\" {\n\t\t\treturn filepath.Join(build.Default.GOPATH, \"bin\")\n\t\t}\n\t\treturn gobin\n\t}\n\treturn gobin\n}",
+    "funcname": "GetGOBIN"
+}

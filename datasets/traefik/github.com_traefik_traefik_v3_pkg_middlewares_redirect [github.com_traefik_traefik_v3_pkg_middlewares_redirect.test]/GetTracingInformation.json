@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/redirect/redirect.go",
+    "lineno": 49,
+    "focalfunc": "func (r *redirect) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (r *redirect) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn r.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

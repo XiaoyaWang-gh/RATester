@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/tcp/ipwhitelist/ip_whitelist.go",
+    "lineno": 48,
+    "focalfunc": "func (wl *ipWhiteLister) ServeTCP(conn tcp.WriteCloser)",
+    "funcbody": "func (wl *ipWhiteLister) ServeTCP(conn tcp.WriteCloser) {\n\tlogger := middlewares.GetLogger(context.Background(), wl.name, typeName)\n\n\taddr := conn.RemoteAddr().String()\n\n\terr := wl.whiteLister.IsAuthorized(addr)\n\tif err != nil {\n\t\tlogger.Error().Err(err).Msgf(\"Connection from %s rejected\", addr)\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tlogger.Debug().Msgf(\"Connection from %s accepted\", addr)\n\n\twl.next.ServeTCP(conn)\n}",
+    "funcname": "ServeTCP"
+}

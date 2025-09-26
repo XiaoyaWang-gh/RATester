@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 136,
+    "focalfunc": "func (p *LogFormatterParams) IsOutputColor() bool",
+    "funcbody": "func (p *LogFormatterParams) IsOutputColor() bool {\n\treturn consoleColorMode == forceColor || (consoleColorMode == autoColor && p.isTerm)\n}",
+    "funcname": "IsOutputColor"
+}

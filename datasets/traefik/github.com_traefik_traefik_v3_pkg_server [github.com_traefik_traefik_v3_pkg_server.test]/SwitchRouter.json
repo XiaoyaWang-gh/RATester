@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 355,
+    "focalfunc": "func (e *TCPEntryPoint) SwitchRouter(rt *tcprouter.Router)",
+    "funcbody": "func (e *TCPEntryPoint) SwitchRouter(rt *tcprouter.Router) {\n\trt.SetHTTPForwarder(e.httpServer.Forwarder)\n\n\thttpHandler := rt.GetHTTPHandler()\n\tif httpHandler == nil {\n\t\thttpHandler = router.BuildDefaultHTTPRouter()\n\t}\n\n\te.httpServer.Switcher.UpdateHandler(httpHandler)\n\n\trt.SetHTTPSForwarder(e.httpsServer.Forwarder)\n\n\thttpsHandler := rt.GetHTTPSHandler()\n\tif httpsHandler == nil {\n\t\thttpsHandler = router.BuildDefaultHTTPRouter()\n\t}\n\n\te.httpsServer.Switcher.UpdateHandler(httpsHandler)\n\n\te.switcher.Switch(rt)\n\n\tif e.http3Server != nil {\n\t\te.http3Server.Switch(rt)\n\t}\n}",
+    "funcname": "SwitchRouter"
+}

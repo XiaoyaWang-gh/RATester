@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 660,
+    "focalfunc": "func (c *DefaultCtx) GetRespHeaders() map[string][]string",
+    "funcbody": "func (c *DefaultCtx) GetRespHeaders() map[string][]string {\n\theaders := make(map[string][]string)\n\tc.Response().Header.VisitAll(func(k, v []byte) {\n\t\tkey := c.app.getString(k)\n\t\theaders[key] = append(headers[key], c.app.getString(v))\n\t})\n\treturn headers\n}",
+    "funcname": "GetRespHeaders"
+}

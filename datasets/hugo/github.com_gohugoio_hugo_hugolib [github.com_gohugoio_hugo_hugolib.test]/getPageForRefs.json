@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 79,
+    "focalfunc": "func (c *pageFinder) getPageForRefs(ref ...string) (page.Page, error)",
+    "funcbody": "func (c *pageFinder) getPageForRefs(ref ...string) (page.Page, error) {\n\tvar refs []string\n\tfor _, r := range ref {\n\n\t\tif r != \"\" && r != \"/\" {\n\t\t\trefs = append(refs, r)\n\t\t}\n\t}\n\n\tvar key string\n\n\tif len(refs) > 2 {\n\n\t\treturn nil, fmt.Errorf(`too many arguments to .Site.GetPage: %v. Use lookups on the form {{ .Site.GetPage \"/posts/mypage-md\" }}`, ref)\n\t}\n\n\tif len(refs) == 0 || refs[0] == kinds.KindHome {\n\t\tkey = \"/\"\n\t} else if len(refs) == 1 {\n\t\tif len(ref) == 2 && refs[0] == kinds.KindSection {\n\n\t\t\tkey = \"/\"\n\t\t} else {\n\t\t\tkey = refs[0]\n\t\t}\n\t} else {\n\t\tkey = refs[1]\n\t}\n\n\treturn c.getPage(nil, key)\n}",
+    "funcname": "getPageForRefs"
+}

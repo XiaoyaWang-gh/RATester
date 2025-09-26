@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 53,
+    "focalfunc": "func (c Condition) Raw(expr string, sql string) *Condition",
+    "funcbody": "func (c Condition) Raw(expr string, sql string) *Condition {\n\tif len(sql) == 0 {\n\t\tpanic(fmt.Errorf(\"<Condition.Raw> sql cannot empty\"))\n\t}\n\tc.params = append(c.params, condValue{exprs: strings.Split(expr, ExprSep), sql: sql, isRaw: true})\n\treturn &c\n}",
+    "funcname": "Raw"
+}

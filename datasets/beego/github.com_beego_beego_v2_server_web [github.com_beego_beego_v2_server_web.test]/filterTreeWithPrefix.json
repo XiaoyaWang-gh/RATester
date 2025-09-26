@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/tree.go",
+    "lineno": 161,
+    "focalfunc": "func filterTreeWithPrefix(t *Tree, wildcards []string, reg string)",
+    "funcbody": "func filterTreeWithPrefix(t *Tree, wildcards []string, reg string) {\n\tfor _, v := range t.fixrouters {\n\t\tfilterTreeWithPrefix(v, wildcards, reg)\n\t}\n\tif t.wildcard != nil {\n\t\tfilterTreeWithPrefix(t.wildcard, wildcards, reg)\n\t}\n\tfor _, l := range t.leaves {\n\t\tif reg != \"\" {\n\t\t\tif l.regexps != nil {\n\t\t\t\tl.wildcards = append(wildcards, l.wildcards...)\n\t\t\t\tl.regexps = regexp.MustCompile(\"^\" + reg + \"/\" + strings.Trim(l.regexps.String(), \"^$\") + \"$\")\n\t\t\t} else {\n\t\t\t\tfor _, v := range l.wildcards {\n\t\t\t\t\tif v == \":splat\" {\n\t\t\t\t\t\treg = reg + \"/(.+)\"\n\t\t\t\t\t} else {\n\t\t\t\t\t\treg = reg + \"/([^/]+)\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tl.regexps = regexp.MustCompile(\"^\" + reg + \"$\")\n\t\t\t\tl.wildcards = append(wildcards, l.wildcards...)\n\t\t\t}\n\t\t} else {\n\t\t\tl.wildcards = append(wildcards, l.wildcards...)\n\t\t\tif l.regexps != nil {\n\t\t\t\tfor _, w := range wildcards {\n\t\t\t\t\tif w == \":splat\" {\n\t\t\t\t\t\treg = \"(.+)/\" + reg\n\t\t\t\t\t} else {\n\t\t\t\t\t\treg = \"([^/]+)/\" + reg\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tl.regexps = regexp.MustCompile(\"^\" + reg + strings.Trim(l.regexps.String(), \"^$\") + \"$\")\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "filterTreeWithPrefix"
+}

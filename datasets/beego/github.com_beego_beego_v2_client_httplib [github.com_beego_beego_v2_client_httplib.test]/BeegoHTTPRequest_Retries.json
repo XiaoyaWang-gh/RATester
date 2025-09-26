@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 161,
+    "focalfunc": "func (b *BeegoHTTPRequest) Retries(times int) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) Retries(times int) *BeegoHTTPRequest {\n\tb.setting.Retries = times\n\treturn b\n}",
+    "funcname": "Retries"
+}

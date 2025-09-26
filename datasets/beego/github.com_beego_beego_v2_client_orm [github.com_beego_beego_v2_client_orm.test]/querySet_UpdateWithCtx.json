@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 252,
+    "focalfunc": "func (o querySet) UpdateWithCtx(ctx context.Context, values Params) (int64, error)",
+    "funcbody": "func (o querySet) UpdateWithCtx(ctx context.Context, values Params) (int64, error) {\n\treturn o.orm.alias.DbBaser.UpdateBatch(ctx, o.orm.db, &o, o.mi, o.cond, values, o.orm.alias.TZ)\n}",
+    "funcname": "UpdateWithCtx"
+}

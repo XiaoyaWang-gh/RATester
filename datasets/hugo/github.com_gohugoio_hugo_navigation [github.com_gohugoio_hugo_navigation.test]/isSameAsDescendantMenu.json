@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/pagemenus.go",
+    "lineno": 195,
+    "focalfunc": "func (pm *pageMenus) isSameAsDescendantMenu(inme *MenuEntry, parent *MenuEntry) bool",
+    "funcbody": "func (pm *pageMenus) isSameAsDescendantMenu(inme *MenuEntry, parent *MenuEntry) bool {\n\tif parent.HasChildren() {\n\t\tfor _, child := range parent.Children {\n\t\t\tif child.isSameResource(inme) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t\tdescendantFound := pm.isSameAsDescendantMenu(inme, child)\n\t\t\tif descendantFound {\n\t\t\t\treturn descendantFound\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "isSameAsDescendantMenu"
+}

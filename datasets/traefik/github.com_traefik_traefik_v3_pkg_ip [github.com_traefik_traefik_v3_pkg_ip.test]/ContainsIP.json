@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ip/checker.go",
+    "lineno": 78,
+    "focalfunc": "func (ip *Checker) ContainsIP(addr net.IP) bool",
+    "funcbody": "func (ip *Checker) ContainsIP(addr net.IP) bool {\n\tfor _, authorizedIP := range ip.authorizedIPs {\n\t\tif authorizedIP.Equal(addr) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tfor _, authorizedNet := range ip.authorizedIPsNet {\n\t\tif authorizedNet.Contains(addr) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "ContainsIP"
+}

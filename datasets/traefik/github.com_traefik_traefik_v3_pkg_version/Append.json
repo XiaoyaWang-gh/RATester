@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/version/version.go",
+    "lineno": 37,
+    "focalfunc": "func (v Handler) Append(router *mux.Router)",
+    "funcbody": "func (v Handler) Append(router *mux.Router) {\n\trouter.Methods(http.MethodGet).Path(\"/api/version\").\n\t\tHandlerFunc(func(response http.ResponseWriter, request *http.Request) {\n\t\t\tv := struct {\n\t\t\t\tVersion\t\t\tstring\n\t\t\t\tCodename\t\tstring\n\t\t\t\tStartDate\t\ttime.Time\t`json:\"startDate\"`\n\t\t\t\tUUID\t\t\tstring\t\t`json:\"uuid,omitempty\"`\n\t\t\t\tDisableDashboardAd\tbool\t\t`json:\"disableDashboardAd,omitempty\"`\n\t\t\t}{\n\t\t\t\tVersion:\t\tVersion,\n\t\t\t\tCodename:\t\tCodename,\n\t\t\t\tStartDate:\t\tStartDate,\n\t\t\t\tDisableDashboardAd:\tDisableDashboardAd,\n\t\t\t}\n\n\t\t\tif err := templatesRenderer.JSON(response, http.StatusOK, v); err != nil {\n\t\t\t\tlog.Error().Err(err).Send()\n\t\t\t}\n\t\t})\n}",
+    "funcname": "Append"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/bean/default_value_filter.go",
+    "lineno": 78,
+    "focalfunc": "func (d *DefaultValueFilterChainBuilder) FilterChain(next orm.Filter) orm.Filter",
+    "funcbody": "func (d *DefaultValueFilterChainBuilder) FilterChain(next orm.Filter) orm.Filter {\n\treturn func(ctx context.Context, inv *orm.Invocation) []interface{} {\n\t\tswitch inv.Method {\n\t\tcase \"Insert\", \"InsertWithCtx\":\n\t\t\td.handleInsert(ctx, inv)\n\t\tcase \"InsertOrUpdate\", \"InsertOrUpdateWithCtx\":\n\t\t\td.handleInsertOrUpdate(ctx, inv)\n\t\tcase \"InsertMulti\", \"InsertMultiWithCtx\":\n\t\t\td.handleInsertMulti(ctx, inv)\n\t\t}\n\t\treturn next(ctx, inv)\n\t}\n}",
+    "funcname": "FilterChain"
+}

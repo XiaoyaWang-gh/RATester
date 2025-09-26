@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 138,
+    "focalfunc": "func (pco *pageContentOutput) Markup(opts ...any) page.Markup",
+    "funcbody": "func (pco *pageContentOutput) Markup(opts ...any) page.Markup {\n\tif len(opts) > 1 {\n\t\tpanic(\"too many arguments, expected 0 or 1\")\n\t}\n\tvar scope string\n\tif len(opts) == 1 {\n\t\tscope = cast.ToString(opts[0])\n\t}\n\treturn pco.po.p.m.content.getOrCreateScope(scope, pco)\n}",
+    "funcname": "Markup"
+}

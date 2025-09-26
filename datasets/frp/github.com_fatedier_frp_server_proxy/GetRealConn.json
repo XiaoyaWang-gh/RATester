@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/http.go",
+    "lineno": 152,
+    "focalfunc": "func (pxy *HTTPProxy) GetRealConn(remoteAddr string) (workConn net.Conn, err error)",
+    "funcbody": "func (pxy *HTTPProxy) GetRealConn(remoteAddr string) (workConn net.Conn, err error) {\n\txl := pxy.xl\n\trAddr, errRet := net.ResolveTCPAddr(\"tcp\", remoteAddr)\n\tif errRet != nil {\n\t\txl.Warnf(\"resolve TCP addr [%s] error: %v\", remoteAddr, errRet)\n\n\t}\n\n\ttmpConn, errRet := pxy.GetWorkConnFromPool(rAddr, nil)\n\tif errRet != nil {\n\t\terr = errRet\n\t\treturn\n\t}\n\n\tvar rwc io.ReadWriteCloser = tmpConn\n\tif pxy.cfg.Transport.UseEncryption {\n\t\trwc, err = libio.WithEncryption(rwc, []byte(pxy.serverCfg.Auth.Token))\n\t\tif err != nil {\n\t\t\txl.Errorf(\"create encryption stream error: %v\", err)\n\t\t\treturn\n\t\t}\n\t}\n\tif pxy.cfg.Transport.UseCompression {\n\t\trwc = libio.WithCompression(rwc)\n\t}\n\n\tif pxy.GetLimiter() != nil {\n\t\trwc = libio.WrapReadWriteCloser(limit.NewReader(rwc, pxy.GetLimiter()), limit.NewWriter(rwc, pxy.GetLimiter()), func() error {\n\t\t\treturn rwc.Close()\n\t\t})\n\t}\n\n\tworkConn = netpkg.WrapReadWriteCloserToConn(rwc, tmpConn)\n\tworkConn = netpkg.WrapStatsConn(workConn, pxy.updateStatsAfterClosedConn)\n\tmetrics.Server.OpenConnection(pxy.GetName(), pxy.GetConfigurer().GetBaseConfig().Type)\n\treturn\n}",
+    "funcname": "GetRealConn"
+}

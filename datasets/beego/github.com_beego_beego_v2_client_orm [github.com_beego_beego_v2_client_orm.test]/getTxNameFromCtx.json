@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 532,
+    "focalfunc": "func getTxNameFromCtx(ctx context.Context) string",
+    "funcbody": "func getTxNameFromCtx(ctx context.Context) string {\n\ttxName := \"\"\n\tif n, ok := ctx.Value(TxNameKey).(string); ok {\n\t\ttxName = n\n\t}\n\treturn txName\n}",
+    "funcname": "getTxNameFromCtx"
+}

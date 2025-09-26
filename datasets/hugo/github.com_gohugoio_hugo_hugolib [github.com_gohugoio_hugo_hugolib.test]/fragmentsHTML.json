@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 1166,
+    "focalfunc": "func (c *cachedContentScope) fragmentsHTML(ctx context.Context) template.HTML",
+    "funcbody": "func (c *cachedContentScope) fragmentsHTML(ctx context.Context) template.HTML {\n\tctx = c.prepareContext(ctx)\n\treturn c.mustContentToC(ctx).tableOfContentsHTML\n}",
+    "funcname": "fragmentsHTML"
+}

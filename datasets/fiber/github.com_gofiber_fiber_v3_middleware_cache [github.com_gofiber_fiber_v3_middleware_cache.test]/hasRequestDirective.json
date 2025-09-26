@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/cache.go",
+    "lineno": 255,
+    "focalfunc": "func hasRequestDirective(c fiber.Ctx, directive string) bool",
+    "funcbody": "func hasRequestDirective(c fiber.Ctx, directive string) bool {\n\treturn strings.Contains(c.Get(fiber.HeaderCacheControl), directive)\n}",
+    "funcname": "hasRequestDirective"
+}

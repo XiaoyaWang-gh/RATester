@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 262,
+    "focalfunc": "func (p Pages) ByDate() Pages",
+    "funcbody": "func (p Pages) ByDate() Pages {\n\tconst key = \"pageSort.ByDate\"\n\n\tpages, _ := spc.get(key, pageBy(lessPageDate).Sort, p)\n\n\treturn pages\n}",
+    "funcname": "ByDate"
+}

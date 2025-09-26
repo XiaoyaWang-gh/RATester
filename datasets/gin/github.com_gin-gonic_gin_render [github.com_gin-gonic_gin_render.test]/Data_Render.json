@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/data.go",
+    "lineno": 16,
+    "focalfunc": "func (r Data) Render(w http.ResponseWriter) (err error)",
+    "funcbody": "func (r Data) Render(w http.ResponseWriter) (err error) {\n\tr.WriteContentType(w)\n\t_, err = w.Write(r.Data)\n\treturn\n}",
+    "funcname": "Render"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/http.go",
+    "lineno": 38,
+    "focalfunc": "func NewHttp(bridge *bridge.Bridge, c *file.Tunnel, httpPort, httpsPort int, useCache bool, cacheLen int, addOrigin bool) *httpServer",
+    "funcbody": "func NewHttp(bridge *bridge.Bridge, c *file.Tunnel, httpPort, httpsPort int, useCache bool, cacheLen int, addOrigin bool) *httpServer {\n\thttpServer := &httpServer{\n\t\tBaseServer: BaseServer{\n\t\t\ttask:\tc,\n\t\t\tbridge:\tbridge,\n\t\t\tMutex:\tsync.Mutex{},\n\t\t},\n\t\thttpPort:\thttpPort,\n\t\thttpsPort:\thttpsPort,\n\t\tuseCache:\tuseCache,\n\t\tcacheLen:\tcacheLen,\n\t\taddOrigin:\taddOrigin,\n\t}\n\tif useCache {\n\t\thttpServer.cache = cache.New(cacheLen)\n\t}\n\treturn httpServer\n}",
+    "funcname": "NewHttp"
+}

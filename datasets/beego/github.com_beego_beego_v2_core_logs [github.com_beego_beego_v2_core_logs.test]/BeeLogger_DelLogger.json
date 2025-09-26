@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 238,
+    "focalfunc": "func (bl *BeeLogger) DelLogger(adapterName string) error",
+    "funcbody": "func (bl *BeeLogger) DelLogger(adapterName string) error {\n\tbl.lock.Lock()\n\tdefer bl.lock.Unlock()\n\toutputs := make([]*nameLogger, 0, len(bl.outputs))\n\tfor _, lg := range bl.outputs {\n\t\tif lg.name == adapterName {\n\t\t\tlg.Destroy()\n\t\t} else {\n\t\t\toutputs = append(outputs, lg)\n\t\t}\n\t}\n\tif len(outputs) == len(bl.outputs) {\n\t\treturn fmt.Errorf(\"logs: unknown adaptername %q (forgotten Register?)\", adapterName)\n\t}\n\tbl.outputs = outputs\n\treturn nil\n}",
+    "funcname": "DelLogger"
+}

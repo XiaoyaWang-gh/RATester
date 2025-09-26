@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 328,
+    "focalfunc": "func (c *templateContext) collectInner(n *parse.CommandNode)",
+    "funcbody": "func (c *templateContext) collectInner(n *parse.CommandNode) {\n\tif c.t.typ != templateShortcode {\n\t\treturn\n\t}\n\tif c.t.parseInfo.IsInner || len(n.Args) == 0 {\n\t\treturn\n\t}\n\n\tfor _, arg := range n.Args {\n\t\tvar idents []string\n\t\tswitch nt := arg.(type) {\n\t\tcase *parse.FieldNode:\n\t\t\tidents = nt.Ident\n\t\tcase *parse.VariableNode:\n\t\t\tidents = nt.Ident\n\t\t}\n\n\t\tif c.hasIdent(idents, \"Inner\") || c.hasIdent(idents, \"InnerDeindent\") {\n\t\t\tc.t.parseInfo.IsInner = true\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "collectInner"
+}

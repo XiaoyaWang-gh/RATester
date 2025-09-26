@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 150,
+    "focalfunc": "func (i Item) IsFrontMatter() bool",
+    "funcbody": "func (i Item) IsFrontMatter() bool {\n\treturn i.Type >= TypeFrontMatterYAML && i.Type <= TypeFrontMatterORG\n}",
+    "funcname": "IsFrontMatter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 642,
+    "focalfunc": "func (t *templateHandler) addTemplateFile(name string, fim hugofs.FileMetaInfo) error",
+    "funcbody": "func (t *templateHandler) addTemplateFile(name string, fim hugofs.FileMetaInfo) error {\n\tgetTemplate := func(fim hugofs.FileMetaInfo) (templateInfo, error) {\n\t\tmeta := fim.Meta()\n\t\tf, err := meta.Open()\n\t\tif err != nil {\n\t\t\treturn templateInfo{meta: meta}, err\n\t\t}\n\t\tdefer f.Close()\n\t\tb, err := io.ReadAll(f)\n\t\tif err != nil {\n\t\t\treturn templateInfo{meta: meta}, err\n\t\t}\n\n\t\ts := removeLeadingBOM(string(b))\n\n\t\tvar isText bool\n\t\tname, isText = t.nameIsText(name)\n\n\t\treturn templateInfo{\n\t\t\tname:\t\tname,\n\t\t\tisText:\t\tisText,\n\t\t\ttemplate:\ts,\n\t\t\tmeta:\t\tmeta,\n\t\t}, nil\n\t}\n\n\ttinfo, err := getTemplate(fim)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif isBaseTemplatePath(name) {\n\n\t\tt.baseof[name] = tinfo\n\t\treturn nil\n\t}\n\n\tneedsBaseof := !t.noBaseNeeded(name) && needsBaseTemplate(tinfo.template)\n\tif needsBaseof {\n\t\tt.needsBaseof[name] = tinfo\n\t\treturn nil\n\t}\n\n\ttempl, err := t.addTemplateTo(tinfo, t.main)\n\tif err != nil {\n\t\treturn tinfo.errWithFileContext(\"parse failed\", err)\n\t}\n\n\tif _, err = t.applyTemplateTransformers(t.main, templ); err != nil {\n\t\treturn tinfo.errWithFileContext(\"transform failed\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "addTemplateFile"
+}

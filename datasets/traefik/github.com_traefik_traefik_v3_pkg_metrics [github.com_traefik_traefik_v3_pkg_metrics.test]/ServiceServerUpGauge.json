@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 296,
+    "focalfunc": "func (r *standardRegistry) ServiceServerUpGauge() metrics.Gauge",
+    "funcbody": "func (r *standardRegistry) ServiceServerUpGauge() metrics.Gauge {\n\treturn r.serviceServerUpGauge\n}",
+    "funcname": "ServiceServerUpGauge"
+}

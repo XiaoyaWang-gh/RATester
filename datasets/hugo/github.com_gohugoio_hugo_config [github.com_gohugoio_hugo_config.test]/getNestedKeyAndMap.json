@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 375,
+    "focalfunc": "func (c *defaultConfigProvider) getNestedKeyAndMap(key string, create bool) (string, maps.Params)",
+    "funcbody": "func (c *defaultConfigProvider) getNestedKeyAndMap(key string, create bool) (string, maps.Params) {\n\tvar parts []string\n\tv, ok := c.keyCache.Load(key)\n\tif ok {\n\t\tparts = v.([]string)\n\t} else {\n\t\tparts = strings.Split(key, \".\")\n\t\tc.keyCache.Store(key, parts)\n\t}\n\tcurrent := c.root\n\tfor i := 0; i < len(parts)-1; i++ {\n\t\tnext, found := current[parts[i]]\n\t\tif !found {\n\t\t\tif create {\n\t\t\t\tnext = make(maps.Params)\n\t\t\t\tcurrent[parts[i]] = next\n\t\t\t} else {\n\t\t\t\treturn \"\", nil\n\t\t\t}\n\t\t}\n\t\tvar ok bool\n\t\tcurrent, ok = next.(maps.Params)\n\t\tif !ok {\n\n\t\t\treturn \"\", nil\n\t\t}\n\t}\n\treturn parts[len(parts)-1], current\n}",
+    "funcname": "getNestedKeyAndMap"
+}

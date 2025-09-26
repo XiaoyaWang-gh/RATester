@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pconn.go",
+    "lineno": 23,
+    "focalfunc": "func (pConn *PortConn) Read(b []byte) (n int, err error)",
+    "funcbody": "func (pConn *PortConn) Read(b []byte) (n int, err error) {\n\tif len(b) < len(pConn.rs)-pConn.start {\n\t\tdefer func() {\n\t\t\tpConn.start = pConn.start + len(b)\n\t\t}()\n\t\treturn copy(b, pConn.rs), nil\n\t}\n\tif pConn.start < len(pConn.rs) {\n\t\tdefer func() {\n\t\t\tpConn.start = len(pConn.rs)\n\t\t}()\n\t\tn = copy(b, pConn.rs[pConn.start:])\n\t\tif !pConn.readMore {\n\t\t\treturn\n\t\t}\n\t}\n\tvar n2 = 0\n\tn2, err = pConn.Conn.Read(b[n:])\n\tn = n + n2\n\treturn\n}",
+    "funcname": "Read"
+}

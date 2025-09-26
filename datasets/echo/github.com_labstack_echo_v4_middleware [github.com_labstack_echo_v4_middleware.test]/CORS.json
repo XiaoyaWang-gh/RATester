@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/cors.go",
+    "lineno": 130,
+    "focalfunc": "func CORS() echo.MiddlewareFunc",
+    "funcbody": "func CORS() echo.MiddlewareFunc {\n\treturn CORSWithConfig(DefaultCORSConfig)\n}",
+    "funcname": "CORS"
+}

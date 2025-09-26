@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 92,
+    "focalfunc": "func (p Params) merge(ps ParamsMergeStrategy, pp Params)",
+    "funcbody": "func (p Params) merge(ps ParamsMergeStrategy, pp Params) {\n\tns, found := p.GetMergeStrategy()\n\n\tms := ns\n\tif !found && ps != \"\" {\n\t\tms = ps\n\t}\n\n\tnoUpdate := ms == ParamsMergeStrategyNone\n\tnoUpdate = noUpdate || (ps != \"\" && ps == ParamsMergeStrategyShallow)\n\n\tfor k, v := range pp {\n\n\t\tif k == MergeStrategyKey {\n\t\t\tcontinue\n\t\t}\n\t\tvv, found := p[k]\n\n\t\tif found {\n\n\t\t\tif vvv, ok := vv.(Params); ok {\n\t\t\t\tif pv, ok := v.(Params); ok {\n\t\t\t\t\tvvv.merge(ms, pv)\n\t\t\t\t}\n\t\t\t}\n\t\t} else if !noUpdate {\n\t\t\tp[k] = v\n\t\t}\n\n\t}\n}",
+    "funcname": "merge"
+}

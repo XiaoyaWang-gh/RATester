@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 401,
+    "focalfunc": "func appendCmd(cmds []*parse.CommandNode, cmd *parse.CommandNode) []*parse.CommandNode",
+    "funcbody": "func appendCmd(cmds []*parse.CommandNode, cmd *parse.CommandNode) []*parse.CommandNode {\n\tif n := len(cmds); n != 0 {\n\t\tlast, okLast := cmds[n-1].Args[0].(*parse.IdentifierNode)\n\t\tnext, okNext := cmd.Args[0].(*parse.IdentifierNode)\n\t\tif okLast && okNext && redundantFuncs[last.Ident][next.Ident] {\n\t\t\treturn cmds\n\t\t}\n\t}\n\treturn append(cmds, cmd)\n}",
+    "funcname": "appendCmd"
+}

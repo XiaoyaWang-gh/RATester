@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/resourcepaths.go",
+    "lineno": 44,
+    "focalfunc": "func (d ResourcePaths) join(p ...string) string",
+    "funcbody": "func (d ResourcePaths) join(p ...string) string {\n\tvar s string\n\tfor i, pp := range p {\n\t\tif pp == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif i > 0 && !strings.HasPrefix(pp, \"/\") {\n\t\t\tpp = \"/\" + pp\n\t\t}\n\t\ts += pp\n\n\t}\n\tif !strings.HasPrefix(s, \"/\") {\n\t\ts = \"/\" + s\n\t}\n\treturn s\n}",
+    "funcname": "join"
+}

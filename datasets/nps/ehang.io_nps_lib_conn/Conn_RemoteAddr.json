@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 334,
+    "focalfunc": "func (s *Conn) RemoteAddr() net.Addr",
+    "funcbody": "func (s *Conn) RemoteAddr() net.Addr {\n\treturn s.Conn.RemoteAddr()\n}",
+    "funcname": "RemoteAddr"
+}

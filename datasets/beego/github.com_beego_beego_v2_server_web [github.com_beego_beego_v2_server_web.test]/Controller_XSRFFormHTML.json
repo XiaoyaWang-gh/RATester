@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 799,
+    "focalfunc": "func (c *Controller) XSRFFormHTML() string",
+    "funcbody": "func (c *Controller) XSRFFormHTML() string {\n\treturn `<input type=\"hidden\" name=\"_xsrf\" value=\"` +\n\t\tc.XSRFToken() + `\" />`\n}",
+    "funcname": "XSRFFormHTML"
+}

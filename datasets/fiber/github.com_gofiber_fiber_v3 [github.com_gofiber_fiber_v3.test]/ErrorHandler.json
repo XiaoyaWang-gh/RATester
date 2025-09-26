@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 994,
+    "focalfunc": "func (app *App) ErrorHandler(ctx Ctx, err error) error",
+    "funcbody": "func (app *App) ErrorHandler(ctx Ctx, err error) error {\n\tvar (\n\t\tmountedErrHandler\tErrorHandler\n\t\tmountedPrefixParts\tint\n\t)\n\n\tfor prefix, subApp := range app.mountFields.appList {\n\t\tif prefix != \"\" && strings.HasPrefix(ctx.Path(), prefix) {\n\t\t\tparts := len(strings.Split(prefix, \"/\"))\n\t\t\tif mountedPrefixParts <= parts {\n\t\t\t\tif subApp.configured.ErrorHandler != nil {\n\t\t\t\t\tmountedErrHandler = subApp.config.ErrorHandler\n\t\t\t\t}\n\n\t\t\t\tmountedPrefixParts = parts\n\t\t\t}\n\t\t}\n\t}\n\n\tif mountedErrHandler != nil {\n\t\treturn mountedErrHandler(ctx, err)\n\t}\n\n\treturn app.config.ErrorHandler(ctx, err)\n}",
+    "funcname": "ErrorHandler"
+}

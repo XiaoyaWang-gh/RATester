@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/rest/rest.go",
+    "lineno": 25,
+    "focalfunc": "func (p *Provider) SetDefaults()",
+    "funcbody": "func (p *Provider) SetDefaults()\t{}",
+    "funcname": "SetDefaults"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 343,
+    "focalfunc": "func (c *context) SetParamNames(names ...string)",
+    "funcbody": "func (c *context) SetParamNames(names ...string) {\n\tc.pnames = names\n\n\tl := len(names)\n\tif len(c.pvalues) < l {\n\n\t\tnewPvalues := make([]string, l)\n\t\tcopy(newPvalues, c.pvalues)\n\t\tc.pvalues = newPvalues\n\t}\n}",
+    "funcname": "SetParamNames"
+}

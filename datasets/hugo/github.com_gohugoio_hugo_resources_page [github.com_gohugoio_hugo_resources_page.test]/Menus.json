@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 306,
+    "focalfunc": "func (p *nopPage) Menus() (m navigation.PageMenus)",
+    "funcbody": "func (p *nopPage) Menus() (m navigation.PageMenus) {\n\treturn\n}",
+    "funcname": "Menus"
+}

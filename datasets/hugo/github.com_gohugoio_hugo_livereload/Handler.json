@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 95,
+    "focalfunc": "func Handler(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func Handler(w http.ResponseWriter, r *http.Request) {\n\tws, err := upgrader.Upgrade(w, r, nil)\n\tif err != nil {\n\t\treturn\n\t}\n\tc := &connection{send: make(chan []byte, 256), ws: ws}\n\twsHub.register <- c\n\tdefer func() { wsHub.unregister <- c }()\n\tgo c.writer()\n\tc.reader()\n}",
+    "funcname": "Handler"
+}

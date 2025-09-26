@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 193,
+    "focalfunc": "func (p *Paginator) Pagers() pagers",
+    "funcbody": "func (p *Paginator) Pagers() pagers {\n\treturn p.pagers\n}",
+    "funcname": "Pagers"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 679,
+    "focalfunc": "func JSEscape(w io.Writer, b []byte)",
+    "funcbody": "func JSEscape(w io.Writer, b []byte) {\n\tlast := 0\n\tfor i := 0; i < len(b); i++ {\n\t\tc := b[i]\n\n\t\tif !jsIsSpecial(rune(c)) {\n\n\t\t\tcontinue\n\t\t}\n\t\tw.Write(b[last:i])\n\n\t\tif c < utf8.RuneSelf {\n\n\t\t\tswitch c {\n\t\t\tcase '\\\\':\n\t\t\t\tw.Write(jsBackslash)\n\t\t\tcase '\\'':\n\t\t\t\tw.Write(jsApos)\n\t\t\tcase '\"':\n\t\t\t\tw.Write(jsQuot)\n\t\t\tcase '<':\n\t\t\t\tw.Write(jsLt)\n\t\t\tcase '>':\n\t\t\t\tw.Write(jsGt)\n\t\t\tcase '&':\n\t\t\t\tw.Write(jsAmp)\n\t\t\tcase '=':\n\t\t\t\tw.Write(jsEq)\n\t\t\tdefault:\n\t\t\t\tw.Write(jsLowUni)\n\t\t\t\tt, b := c>>4, c&0x0f\n\t\t\t\tw.Write(hex[t : t+1])\n\t\t\t\tw.Write(hex[b : b+1])\n\t\t\t}\n\t\t} else {\n\n\t\t\tr, size := utf8.DecodeRune(b[i:])\n\t\t\tif unicode.IsPrint(r) {\n\t\t\t\tw.Write(b[i : i+size])\n\t\t\t} else {\n\t\t\t\tfmt.Fprintf(w, \"\\\\u%04X\", r)\n\t\t\t}\n\t\t\ti += size - 1\n\t\t}\n\t\tlast = i + 1\n\t}\n\tw.Write(b[last:])\n}",
+    "funcname": "JSEscape"
+}

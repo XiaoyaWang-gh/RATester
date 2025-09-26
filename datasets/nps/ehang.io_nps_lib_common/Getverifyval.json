@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 98,
+    "focalfunc": "func Getverifyval(vkey string) string",
+    "funcbody": "func Getverifyval(vkey string) string {\n\treturn crypt.Md5(vkey)\n}",
+    "funcname": "Getverifyval"
+}

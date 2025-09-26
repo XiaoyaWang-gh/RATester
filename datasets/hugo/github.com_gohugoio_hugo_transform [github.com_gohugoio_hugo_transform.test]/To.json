@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/chain.go",
+    "lineno": 71,
+    "focalfunc": "func (ft fromToBuffer) To() io.Writer",
+    "funcbody": "func (ft fromToBuffer) To() io.Writer {\n\treturn ft.to\n}",
+    "funcname": "To"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 85,
+    "focalfunc": "func stripEmptyNav(in []byte) []byte",
+    "funcbody": "func stripEmptyNav(in []byte) []byte {\n\treturn bytes.Replace(in, []byte(\"<nav>\\n</nav>\\n\\n\"), []byte(``), -1)\n}",
+    "funcname": "stripEmptyNav"
+}

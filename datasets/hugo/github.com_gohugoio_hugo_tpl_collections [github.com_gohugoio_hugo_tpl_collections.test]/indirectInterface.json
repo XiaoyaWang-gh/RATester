@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/apply.go",
+    "lineno": 154,
+    "focalfunc": "func indirectInterface(v reflect.Value) (rv reflect.Value, isNil bool)",
+    "funcbody": "func indirectInterface(v reflect.Value) (rv reflect.Value, isNil bool) {\n\tfor ; v.Kind() == reflect.Interface; v = v.Elem() {\n\t\tif v.IsNil() {\n\t\t\treturn v, true\n\t\t}\n\t\tif v.Kind() == reflect.Interface && v.NumMethod() > 0 {\n\t\t\tbreak\n\t\t}\n\t}\n\treturn v, false\n}",
+    "funcname": "indirectInterface"
+}

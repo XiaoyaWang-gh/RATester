@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/minifiers/minifiers.go",
+    "lineno": 69,
+    "focalfunc": "func (m noopMinifier) Minify(_ *minify.M, w io.Writer, r io.Reader, _ map[string]string) error",
+    "funcbody": "func (m noopMinifier) Minify(_ *minify.M, w io.Writer, r io.Reader, _ map[string]string) error {\n\t_, err := io.Copy(w, r)\n\treturn err\n}",
+    "funcname": "Minify"
+}

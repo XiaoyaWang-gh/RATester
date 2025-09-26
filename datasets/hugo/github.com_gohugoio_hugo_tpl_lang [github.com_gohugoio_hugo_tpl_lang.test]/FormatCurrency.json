@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 90,
+    "focalfunc": "func (ns *Namespace) FormatCurrency(precision, currency, number any) (string, error)",
+    "funcbody": "func (ns *Namespace) FormatCurrency(precision, currency, number any) (string, error) {\n\tp, n, err := ns.castPrecisionNumber(precision, number)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tc := translators.GetCurrency(cast.ToString(currency))\n\tif c < 0 {\n\t\treturn \"\", fmt.Errorf(\"unknown currency code: %q\", currency)\n\t}\n\treturn ns.translator.FmtCurrency(n, p, c), nil\n}",
+    "funcname": "FormatCurrency"
+}

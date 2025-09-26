@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/utils.go",
+    "lineno": 61,
+    "focalfunc": "func (s *ChangedAddress) String() string",
+    "funcbody": "func (s *ChangedAddress) String() string {\n\treturn net.JoinHostPort(s.IP.String(), strconv.Itoa(s.Port))\n}",
+    "funcname": "String"
+}

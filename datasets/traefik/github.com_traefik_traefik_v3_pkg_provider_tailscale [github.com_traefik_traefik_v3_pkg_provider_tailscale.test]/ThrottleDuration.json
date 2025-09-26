@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 39,
+    "focalfunc": "func (p *Provider) ThrottleDuration() time.Duration",
+    "funcbody": "func (p *Provider) ThrottleDuration() time.Duration {\n\treturn 0\n}",
+    "funcname": "ThrottleDuration"
+}

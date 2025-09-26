@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 157,
+    "focalfunc": "func (cj *CookieJar) SetKeyValue(host, key, value string)",
+    "funcbody": "func (cj *CookieJar) SetKeyValue(host, key, value string) {\n\tc := fasthttp.AcquireCookie()\n\tc.SetKey(key)\n\tc.SetValue(value)\n\n\tcj.SetByHost(utils.UnsafeBytes(host), c)\n}",
+    "funcname": "SetKeyValue"
+}

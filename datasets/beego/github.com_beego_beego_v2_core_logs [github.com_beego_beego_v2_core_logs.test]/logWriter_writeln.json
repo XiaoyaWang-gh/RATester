@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 33,
+    "focalfunc": "func (lg *logWriter) writeln(msg string) (int, error)",
+    "funcbody": "func (lg *logWriter) writeln(msg string) (int, error) {\n\tlg.Lock()\n\tmsg += \"\\n\"\n\tn, err := lg.writer.Write([]byte(msg))\n\tlg.Unlock()\n\treturn n, err\n}",
+    "funcname": "writeln"
+}

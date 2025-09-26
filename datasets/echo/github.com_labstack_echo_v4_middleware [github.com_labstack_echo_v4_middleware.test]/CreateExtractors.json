@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/extractor.go",
+    "lineno": 50,
+    "focalfunc": "func createExtractors(lookups string, authScheme string) ([]ValuesExtractor, error)",
+    "funcbody": "func createExtractors(lookups string, authScheme string) ([]ValuesExtractor, error) {\n\tif lookups == \"\" {\n\t\treturn nil, nil\n\t}\n\tsources := strings.Split(lookups, \",\")\n\tvar extractors = make([]ValuesExtractor, 0)\n\tfor _, source := range sources {\n\t\tparts := strings.Split(source, \":\")\n\t\tif len(parts) < 2 {\n\t\t\treturn nil, fmt.Errorf(\"extractor source for lookup could not be split into needed parts: %v\", source)\n\t\t}\n\n\t\tswitch parts[0] {\n\t\tcase \"query\":\n\t\t\textractors = append(extractors, valuesFromQuery(parts[1]))\n\t\tcase \"param\":\n\t\t\textractors = append(extractors, valuesFromParam(parts[1]))\n\t\tcase \"cookie\":\n\t\t\textractors = append(extractors, valuesFromCookie(parts[1]))\n\t\tcase \"form\":\n\t\t\textractors = append(extractors, valuesFromForm(parts[1]))\n\t\tcase \"header\":\n\t\t\tprefix := \"\"\n\t\t\tif len(parts) > 2 {\n\t\t\t\tprefix = parts[2]\n\t\t\t} else if authScheme != \"\" && parts[1] == echo.HeaderAuthorization {\n\n\t\t\t\tprefix = authScheme\n\t\t\t\tif !strings.HasSuffix(prefix, \" \") {\n\t\t\t\t\tprefix += \" \"\n\t\t\t\t}\n\t\t\t}\n\t\t\textractors = append(extractors, valuesFromHeader(parts[1], prefix))\n\t\t}\n\t}\n\treturn extractors, nil\n}",
+    "funcname": "createExtractors"
+}

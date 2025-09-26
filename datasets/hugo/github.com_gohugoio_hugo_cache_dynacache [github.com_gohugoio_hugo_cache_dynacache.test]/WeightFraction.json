@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 117,
+    "focalfunc": "func (o OptionsPartition) WeightFraction() float64",
+    "funcbody": "func (o OptionsPartition) WeightFraction() float64 {\n\treturn float64(o.Weight) / 100\n}",
+    "funcname": "WeightFraction"
+}

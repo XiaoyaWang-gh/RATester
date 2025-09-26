@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 29,
+    "focalfunc": "func EnablePrometheus()",
+    "funcbody": "func EnablePrometheus() {\n\tsm.Add(prometheus.ServerMetrics)\n}",
+    "funcname": "EnablePrometheus"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 226,
+    "focalfunc": "func numIn(name string) (num int, err error)",
+    "funcbody": "func numIn(name string) (num int, err error) {\n\tfn, ok := funcs[name]\n\tif !ok {\n\t\terr = fmt.Errorf(\"doesn't exists %s valid function\", name)\n\t\treturn\n\t}\n\n\tnum = fn.Type().NumIn() - 3\n\treturn\n}",
+    "funcname": "numIn"
+}

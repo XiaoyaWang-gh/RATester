@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 143,
+    "focalfunc": "func Asset(name string) ([]byte, error)",
+    "funcbody": "func Asset(name string) ([]byte, error) {\n\tcannonicalName := strings.Replace(name, \"\\\\\", \"/\", -1)\n\tif f, ok := _bindata[cannonicalName]; ok {\n\t\ta, err := f()\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"Asset %s can't read by error: %v\", name, err)\n\t\t}\n\t\treturn a.bytes, nil\n\t}\n\treturn nil, fmt.Errorf(\"Asset %s not found\", name)\n}",
+    "funcname": "Asset"
+}

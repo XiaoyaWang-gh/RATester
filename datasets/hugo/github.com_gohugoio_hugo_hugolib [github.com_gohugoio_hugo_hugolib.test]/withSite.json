@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 382,
+    "focalfunc": "func (h *HugoSites) withSite(fn func(s *Site) error) error",
+    "funcbody": "func (h *HugoSites) withSite(fn func(s *Site) error) error {\n\tfor _, s := range h.Sites {\n\t\tif err := fn(s); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "withSite"
+}

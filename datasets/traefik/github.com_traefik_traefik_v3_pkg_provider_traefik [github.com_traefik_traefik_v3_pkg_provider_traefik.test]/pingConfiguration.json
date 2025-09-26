@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 289,
+    "focalfunc": "func (i *Provider) pingConfiguration(cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) pingConfiguration(cfg *dynamic.Configuration) {\n\tif i.staticCfg.Ping == nil {\n\t\treturn\n\t}\n\n\tif !i.staticCfg.Ping.ManualRouting {\n\t\tcfg.HTTP.Routers[\"ping\"] = &dynamic.Router{\n\t\t\tEntryPoints:\t[]string{i.staticCfg.Ping.EntryPoint},\n\t\t\tService:\t\"ping@internal\",\n\t\t\tPriority:\tmath.MaxInt,\n\t\t\tRule:\t\t\"PathPrefix(`/ping`)\",\n\t\t\tRuleSyntax:\t\"v3\",\n\t\t}\n\t}\n\n\tcfg.HTTP.Services[\"ping\"] = &dynamic.Service{}\n}",
+    "funcname": "pingConfiguration"
+}

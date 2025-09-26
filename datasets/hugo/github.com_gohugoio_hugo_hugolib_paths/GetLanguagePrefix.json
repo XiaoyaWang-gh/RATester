@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/paths/paths.go",
+    "lineno": 114,
+    "focalfunc": "func (p *Paths) GetLanguagePrefix() string",
+    "funcbody": "func (p *Paths) GetLanguagePrefix() string {\n\treturn p.Cfg.LanguagePrefix()\n}",
+    "funcname": "GetLanguagePrefix"
+}

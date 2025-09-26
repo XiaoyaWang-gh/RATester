@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_render.go",
+    "lineno": 225,
+    "focalfunc": "func (s *Site) renderPaginator(p *pageState, templ tpl.Template) error",
+    "funcbody": "func (s *Site) renderPaginator(p *pageState, templ tpl.Template) error {\n\tpaginatePath := s.Conf.Pagination().Path\n\n\td := p.targetPathDescriptor\n\tf := p.outputFormat()\n\td.Type = f\n\n\tif p.paginator.current == nil || p.paginator.current != p.paginator.current.First() {\n\t\tpanic(fmt.Sprintf(\"invalid paginator state for %q\", p.pathOrTitle()))\n\t}\n\n\tif f.IsHTML && !s.Conf.Pagination().DisableAliases {\n\n\t\td.Addends = fmt.Sprintf(\"/%s/%d\", paginatePath, 1)\n\t\ttargetPaths := page.CreateTargetPaths(d)\n\n\t\tif err := s.writeDestAlias(targetPaths.TargetFilename, p.Permalink(), f, p); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t}\n\n\tfor current := p.paginator.current.Next(); current != nil; current = current.Next() {\n\n\t\tp.paginator.current = current\n\t\td.Addends = fmt.Sprintf(\"/%s/%d\", paginatePath, current.PageNumber())\n\t\ttargetPaths := page.CreateTargetPaths(d)\n\n\t\tif err := s.renderAndWritePage(\n\t\t\t&s.PathSpec.ProcessingStats.PaginatorPages,\n\t\t\tp.Title(),\n\t\t\ttargetPaths.TargetFilename, p, p, templ); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t}\n\n\treturn nil\n}",
+    "funcname": "renderPaginator"
+}

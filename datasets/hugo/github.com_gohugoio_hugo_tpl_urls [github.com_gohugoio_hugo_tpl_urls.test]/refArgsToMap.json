@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 121,
+    "focalfunc": "func (ns *Namespace) refArgsToMap(args any) (map[string]any, error)",
+    "funcbody": "func (ns *Namespace) refArgsToMap(args any) (map[string]any, error) {\n\tvar (\n\t\ts\tstring\n\t\tof\tstring\n\t)\n\n\tv := args\n\tif _, ok := v.([]any); ok {\n\t\tv = cast.ToStringSlice(v)\n\t}\n\n\tswitch v := v.(type) {\n\tcase map[string]any:\n\t\treturn v, nil\n\tcase map[string]string:\n\t\tm := make(map[string]any)\n\t\tfor k, v := range v {\n\t\t\tm[k] = v\n\t\t}\n\t\treturn m, nil\n\tcase []string:\n\t\tif len(v) == 0 || len(v) > 2 {\n\t\t\treturn nil, fmt.Errorf(\"invalid number of arguments to ref\")\n\t\t}\n\n\t\ts = v[0]\n\t\tif len(v) == 2 {\n\t\t\tof = v[1]\n\t\t}\n\tdefault:\n\t\tvar err error\n\t\ts, err = cast.ToStringE(args)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t}\n\n\treturn map[string]any{\n\t\t\"path\":\t\ts,\n\t\t\"outputFormat\":\tof,\n\t}, nil\n}",
+    "funcname": "refArgsToMap"
+}

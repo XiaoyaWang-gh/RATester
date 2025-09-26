@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 23,
+    "focalfunc": "func New(options ...Option) *Server",
+    "funcbody": "func New(options ...Option) *Server {\n\ts := &Server{\n\t\tbindAddr: \"127.0.0.1\",\n\t}\n\n\tfor _, option := range options {\n\t\ts = option(s)\n\t}\n\treturn s\n}",
+    "funcname": "New"
+}

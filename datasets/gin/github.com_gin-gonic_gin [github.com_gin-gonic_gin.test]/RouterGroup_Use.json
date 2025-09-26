@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 65,
+    "focalfunc": "func (group *RouterGroup) Use(middleware ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) Use(middleware ...HandlerFunc) IRoutes {\n\tgroup.Handlers = append(group.Handlers, middleware...)\n\treturn group.returnObj()\n}",
+    "funcname": "Use"
+}

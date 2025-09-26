@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 116,
+    "focalfunc": "func (p *Paginator) PageLink(page int) string",
+    "funcbody": "func (p *Paginator) PageLink(page int) string {\n\tlink, _ := url.ParseRequestURI(p.Request.URL.String())\n\tvalues := link.Query()\n\tif page == 1 {\n\t\tvalues.Del(\"p\")\n\t} else {\n\t\tvalues.Set(\"p\", strconv.Itoa(page))\n\t}\n\tlink.RawQuery = values.Encode()\n\treturn link.String()\n}",
+    "funcname": "PageLink"
+}

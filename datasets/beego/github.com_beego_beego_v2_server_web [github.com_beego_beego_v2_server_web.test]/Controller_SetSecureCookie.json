@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 772,
+    "focalfunc": "func (c *Controller) SetSecureCookie(Secret, name, value string, others ...interface{})",
+    "funcbody": "func (c *Controller) SetSecureCookie(Secret, name, value string, others ...interface{}) {\n\tc.Ctx.SetSecureCookie(Secret, name, value, others...)\n}",
+    "funcname": "SetSecureCookie"
+}

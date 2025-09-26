@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/services/servicesConfig.go",
+    "lineno": 78,
+    "focalfunc": "func DecodeConfig(cfg config.Provider) (c Config, err error)",
+    "funcbody": "func DecodeConfig(cfg config.Provider) (c Config, err error) {\n\tm := cfg.GetStringMap(servicesConfigKey)\n\n\terr = mapstructure.WeakDecode(m, &c)\n\n\tif c.GoogleAnalytics.ID == \"\" {\n\n\t\tc.GoogleAnalytics.ID = cfg.GetString(googleAnalyticsKey)\n\t}\n\tif c.Disqus.Shortname == \"\" {\n\t\tc.Disqus.Shortname = cfg.GetString(disqusShortnameKey)\n\t}\n\n\tif c.RSS.Limit == 0 {\n\t\tc.RSS.Limit = cfg.GetInt(rssLimitKey)\n\t}\n\n\treturn\n}",
+    "funcname": "DecodeConfig"
+}

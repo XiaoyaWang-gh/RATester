@@ -1,0 +1,7 @@
+[
+    {
+        "name": "go",
+        "location": "./examples/golang",
+        "binaryLocation": "~/bin/gopls"
+    }
+]

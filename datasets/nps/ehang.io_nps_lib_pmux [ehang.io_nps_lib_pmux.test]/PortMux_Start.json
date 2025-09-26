@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pmux.go",
+    "lineno": 57,
+    "focalfunc": "func (pMux *PortMux) Start() error",
+    "funcbody": "func (pMux *PortMux) Start() error {\n\n\ttcpAddr, err := net.ResolveTCPAddr(\"tcp\", \"0.0.0.0:\"+strconv.Itoa(pMux.port))\n\tif err != nil {\n\t\treturn err\n\t}\n\tpMux.Listener, err = net.ListenTCP(\"tcp\", tcpAddr)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\tos.Exit(0)\n\t}\n\tgo func() {\n\t\tfor {\n\t\t\tconn, err := pMux.Listener.Accept()\n\t\t\tif err != nil {\n\t\t\t\tlogs.Warn(err)\n\n\t\t\t\tpMux.Close()\n\t\t\t}\n\t\t\tgo pMux.process(conn)\n\t\t}\n\t}()\n\treturn nil\n}",
+    "funcname": "Start"
+}

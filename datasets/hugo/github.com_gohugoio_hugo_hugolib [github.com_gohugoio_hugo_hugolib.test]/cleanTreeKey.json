@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 477,
+    "focalfunc": "func cleanTreeKey(elem ...string) string",
+    "funcbody": "func cleanTreeKey(elem ...string) string {\n\tvar s string\n\tif len(elem) > 0 {\n\t\ts = elem[0]\n\t\tif len(elem) > 1 {\n\t\t\ts = path.Join(elem...)\n\t\t}\n\t}\n\ts = strings.TrimFunc(s, trimCutsetDotSlashSpace)\n\ts = filepath.ToSlash(strings.ToLower(paths.Sanitize(s)))\n\tif s == \"\" || s == \"/\" {\n\t\treturn \"\"\n\t}\n\tif s[0] != '/' {\n\t\ts = \"/\" + s\n\t}\n\treturn s\n}",
+    "funcname": "cleanTreeKey"
+}

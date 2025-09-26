@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/htime/time.go",
+    "lineno": 162,
+    "focalfunc": "func Since(t time.Time) time.Duration",
+    "funcbody": "func Since(t time.Time) time.Duration {\n\treturn Clock.Since(t)\n}",
+    "funcname": "Since"
+}

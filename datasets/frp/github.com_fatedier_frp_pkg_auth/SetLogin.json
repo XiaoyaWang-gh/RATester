@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/token.go",
+    "lineno": 39,
+    "focalfunc": "func (auth *TokenAuthSetterVerifier) SetLogin(loginMsg *msg.Login) error",
+    "funcbody": "func (auth *TokenAuthSetterVerifier) SetLogin(loginMsg *msg.Login) error {\n\tloginMsg.PrivilegeKey = util.GetAuthKey(auth.token, loginMsg.Timestamp)\n\treturn nil\n}",
+    "funcname": "SetLogin"
+}

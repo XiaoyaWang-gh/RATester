@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 511,
+    "focalfunc": "func toUint(v reflect.Value) (uint64, error)",
+    "funcbody": "func toUint(v reflect.Value) (uint64, error) {\n\tswitch v.Kind() {\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:\n\t\treturn v.Uint(), nil\n\tcase reflect.Interface:\n\t\treturn toUint(v.Elem())\n\t}\n\treturn 0, errors.New(\"unable to convert value to uint\")\n}",
+    "funcname": "toUint"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/cache.go",
+    "lineno": 72,
+    "focalfunc": "func (c *Cache[K, T]) ForEeach(f func(K, T))",
+    "funcbody": "func (c *Cache[K, T]) ForEeach(f func(K, T)) {\n\tc.RLock()\n\tdefer c.RUnlock()\n\tfor k, v := range c.m {\n\t\tf(k, v)\n\t}\n}",
+    "funcname": "ForEeach"
+}

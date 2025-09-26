@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/calc_utils.go",
+    "lineno": 20,
+    "focalfunc": "func incr(originVal interface{}) (interface{}, error)",
+    "funcbody": "func incr(originVal interface{}) (interface{}, error) {\n\tswitch val := originVal.(type) {\n\tcase int:\n\t\ttmp := val + 1\n\t\tif val > 0 && tmp < 0 {\n\t\t\treturn nil, ErrIncrementOverflow\n\t\t}\n\t\treturn tmp, nil\n\tcase int32:\n\t\tif val == math.MaxInt32 {\n\t\t\treturn nil, ErrIncrementOverflow\n\t\t}\n\t\treturn val + 1, nil\n\tcase int64:\n\t\tif val == math.MaxInt64 {\n\t\t\treturn nil, ErrIncrementOverflow\n\t\t}\n\t\treturn val + 1, nil\n\tcase uint:\n\t\ttmp := val + 1\n\t\tif tmp < val {\n\t\t\treturn nil, ErrIncrementOverflow\n\t\t}\n\t\treturn tmp, nil\n\tcase uint32:\n\t\tif val == math.MaxUint32 {\n\t\t\treturn nil, ErrIncrementOverflow\n\t\t}\n\t\treturn val + 1, nil\n\tcase uint64:\n\t\tif val == math.MaxUint64 {\n\t\t\treturn nil, ErrIncrementOverflow\n\t\t}\n\t\treturn val + 1, nil\n\tdefault:\n\t\treturn nil, ErrNotIntegerType\n\t}\n}",
+    "funcname": "incr"
+}

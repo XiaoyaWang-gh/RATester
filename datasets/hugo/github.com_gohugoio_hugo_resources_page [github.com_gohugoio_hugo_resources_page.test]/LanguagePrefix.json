@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 98,
+    "focalfunc": "func (p *nopPage) LanguagePrefix() string",
+    "funcbody": "func (p *nopPage) LanguagePrefix() string {\n\treturn \"\"\n}",
+    "funcname": "LanguagePrefix"
+}

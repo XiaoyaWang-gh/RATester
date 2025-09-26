@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pconn.go",
+    "lineno": 49,
+    "focalfunc": "func (pConn *PortConn) Close() error",
+    "funcbody": "func (pConn *PortConn) Close() error {\n\treturn pConn.Conn.Close()\n}",
+    "funcname": "Close"
+}

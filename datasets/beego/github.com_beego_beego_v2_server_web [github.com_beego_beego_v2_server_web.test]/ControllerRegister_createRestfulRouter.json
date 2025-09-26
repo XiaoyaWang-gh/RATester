@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 532,
+    "focalfunc": "func (p *ControllerRegister) createRestfulRouter(f HandleFunc, pattern string) *ControllerInfo",
+    "funcbody": "func (p *ControllerRegister) createRestfulRouter(f HandleFunc, pattern string) *ControllerInfo {\n\troute := &ControllerInfo{}\n\troute.pattern = pattern\n\troute.routerType = routerTypeRESTFul\n\troute.sessionOn = p.cfg.WebConfig.Session.SessionOn\n\troute.runFunction = f\n\treturn route\n}",
+    "funcname": "createRestfulRouter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 682,
+    "focalfunc": "func (h *HugoSites) writeBuildStats() error",
+    "funcbody": "func (h *HugoSites) writeBuildStats() error {\n\tif h.ResourceSpec == nil {\n\t\tpanic(\"h.ResourceSpec is nil\")\n\t}\n\tif !h.ResourceSpec.BuildConfig().BuildStats.Enabled() {\n\t\treturn nil\n\t}\n\n\thtmlElements := &publisher.HTMLElements{}\n\tfor _, s := range h.Sites {\n\t\tstats := s.publisher.PublishStats()\n\t\thtmlElements.Merge(stats.HTMLElements)\n\t}\n\n\thtmlElements.Sort()\n\n\tstats := publisher.PublishStats{\n\t\tHTMLElements: *htmlElements,\n\t}\n\n\tvar buf bytes.Buffer\n\tenc := json.NewEncoder(&buf)\n\tenc.SetEscapeHTML(false)\n\tenc.SetIndent(\"\", \"  \")\n\terr := enc.Encode(stats)\n\tif err != nil {\n\t\treturn err\n\t}\n\tjs := buf.Bytes()\n\n\tfilename := filepath.Join(h.Configs.LoadingInfo.BaseConfig.WorkingDir, files.FilenameHugoStatsJSON)\n\n\tif existingContent, err := afero.ReadFile(hugofs.Os, filename); err == nil {\n\n\t\tif bytes.Equal(existingContent, js) {\n\t\t\treturn nil\n\t\t}\n\t}\n\n\tif err := afero.WriteFile(hugofs.Os, filename, js, 0o666); err != nil {\n\t\treturn err\n\t}\n\n\tif !hugofs.IsOsFs(h.Fs.Source) {\n\t\tif err := afero.WriteFile(h.Fs.WorkingDirWritable, filename, js, 0o666); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\th.dynacacheGCFilenameIfNotWatchedAndDrainMatching(filename)\n\n\treturn nil\n}",
+    "funcname": "writeBuildStats"
+}

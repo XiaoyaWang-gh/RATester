@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 224,
+    "focalfunc": "func (ln *TCPMuxGroupListener) Close() (err error)",
+    "funcbody": "func (ln *TCPMuxGroupListener) Close() (err error) {\n\tclose(ln.closeCh)\n\n\tln.group.CloseListener(ln)\n\treturn\n}",
+    "funcname": "Close"
+}

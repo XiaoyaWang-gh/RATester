@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 507,
+    "focalfunc": "func (r *Request) Head(url string) (*Response, error)",
+    "funcbody": "func (r *Request) Head(url string) (*Response, error) {\n\treturn r.SetURL(url).SetMethod(fiber.MethodHead).Send()\n}",
+    "funcname": "Head"
+}

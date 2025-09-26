@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 213,
+    "focalfunc": "func HasStringsPrefix(s, prefix []string) bool",
+    "funcbody": "func HasStringsPrefix(s, prefix []string) bool {\n\treturn len(s) >= len(prefix) && compareStringSlices(s[0:len(prefix)], prefix)\n}",
+    "funcname": "HasStringsPrefix"
+}

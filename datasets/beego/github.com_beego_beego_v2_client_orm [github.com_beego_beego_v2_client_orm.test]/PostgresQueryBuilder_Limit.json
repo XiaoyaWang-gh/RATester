@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 144,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Limit(limit int) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Limit(limit int) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"LIMIT\", strconv.Itoa(limit))\n\treturn qb\n}",
+    "funcname": "Limit"
+}

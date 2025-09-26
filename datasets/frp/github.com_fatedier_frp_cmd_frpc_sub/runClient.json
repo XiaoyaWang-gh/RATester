@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/root.go",
+    "lineno": 113,
+    "focalfunc": "func runClient(cfgFilePath string) error",
+    "funcbody": "func runClient(cfgFilePath string) error {\n\tcfg, proxyCfgs, visitorCfgs, isLegacyFormat, err := config.LoadClientConfig(cfgFilePath, strictConfigMode)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif isLegacyFormat {\n\t\tfmt.Printf(\"WARNING: ini format is deprecated and the support will be removed in the future, \" +\n\t\t\t\"please use yaml/json/toml format instead!\\n\")\n\t}\n\n\twarning, err := validation.ValidateAllClientConfig(cfg, proxyCfgs, visitorCfgs)\n\tif warning != nil {\n\t\tfmt.Printf(\"WARNING: %v\\n\", warning)\n\t}\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn startService(cfg, proxyCfgs, visitorCfgs, cfgFilePath)\n}",
+    "funcname": "runClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 384,
+    "focalfunc": "func (r *Response) CloseNotify() <-chan bool",
+    "funcbody": "func (r *Response) CloseNotify() <-chan bool {\n\tif cn, ok := r.ResponseWriter.(http.CloseNotifier); ok {\n\t\treturn cn.CloseNotify()\n\t}\n\treturn nil\n}",
+    "funcname": "CloseNotify"
+}

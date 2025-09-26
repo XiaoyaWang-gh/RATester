@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 309,
+    "focalfunc": "func (m *pageMap) forEeachPageIncludingBundledPages(include predicate.P[*pageState], fn func(p *pageState) (bool, error)) error",
+    "funcbody": "func (m *pageMap) forEeachPageIncludingBundledPages(include predicate.P[*pageState], fn func(p *pageState) (bool, error)) error {\n\tif include == nil {\n\t\tinclude = func(p *pageState) bool {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tif err := m.forEachPage(include, fn); err != nil {\n\t\treturn err\n\t}\n\n\tw := &doctree.NodeShiftTreeWalker[contentNodeI]{\n\t\tTree:\t\tm.treeResources,\n\t\tLockType:\tdoctree.LockTypeRead,\n\t\tHandle: func(key string, n contentNodeI, match doctree.DimensionFlag) (bool, error) {\n\t\t\tif rs, ok := n.(*resourceSource); ok {\n\t\t\t\tif p, ok := rs.r.(*pageState); ok && include(p) {\n\t\t\t\t\tif terminate, err := fn(p); terminate || err != nil {\n\t\t\t\t\t\treturn terminate, err\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn false, nil\n\t\t},\n\t}\n\n\treturn w.Walk(context.Background())\n}",
+    "funcname": "forEeachPageIncludingBundledPages"
+}

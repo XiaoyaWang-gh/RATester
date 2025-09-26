@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/predicate_identity.go",
+    "lineno": 68,
+    "focalfunc": "func (id *predicateIdentity) IdentifierBase() string",
+    "funcbody": "func (id *predicateIdentity) IdentifierBase() string {\n\treturn id.id\n}",
+    "funcname": "IdentifierBase"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 325,
+    "focalfunc": "func (p *dispatcherPool[Q, R]) SendIfErr(err error)",
+    "funcbody": "func (p *dispatcherPool[Q, R]) SendIfErr(err error) {\n\tif err != nil {\n\t\tp.errc <- err\n\t}\n}",
+    "funcname": "SendIfErr"
+}

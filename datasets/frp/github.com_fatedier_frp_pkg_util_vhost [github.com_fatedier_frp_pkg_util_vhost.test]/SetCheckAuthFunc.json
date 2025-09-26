@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 83,
+    "focalfunc": "func (v *Muxer) SetCheckAuthFunc(f authFunc) *Muxer",
+    "funcbody": "func (v *Muxer) SetCheckAuthFunc(f authFunc) *Muxer {\n\tv.checkAuth = f\n\treturn v\n}",
+    "funcname": "SetCheckAuthFunc"
+}

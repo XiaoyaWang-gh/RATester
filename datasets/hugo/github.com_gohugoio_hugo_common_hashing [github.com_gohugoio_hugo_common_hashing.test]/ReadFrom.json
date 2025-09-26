@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 138,
+    "focalfunc": "func (x *xxhashReadFrom) ReadFrom(r io.Reader) (int64, error)",
+    "funcbody": "func (x *xxhashReadFrom) ReadFrom(r io.Reader) (int64, error) {\n\tfor {\n\t\tn, err := r.Read(x.buff)\n\t\tif n > 0 {\n\t\t\tx.Digest.Write(x.buff[:n])\n\t\t}\n\t\tif err != nil {\n\t\t\tif err == io.EOF {\n\t\t\t\terr = nil\n\t\t\t}\n\t\t\treturn int64(n), err\n\t\t}\n\t}\n}",
+    "funcname": "ReadFrom"
+}

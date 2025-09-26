@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/filename_filter.go",
+    "lineno": 120,
+    "focalfunc": "func (f *FilenameFilter) Append(other *FilenameFilter) *FilenameFilter",
+    "funcbody": "func (f *FilenameFilter) Append(other *FilenameFilter) *FilenameFilter {\n\tif f == nil {\n\t\treturn other\n\t}\n\n\tclone := *f\n\tnested := make([]*FilenameFilter, len(clone.nested)+1)\n\tcopy(nested, clone.nested)\n\tnested[len(nested)-1] = other\n\tclone.nested = nested\n\n\treturn &clone\n}",
+    "funcname": "Append"
+}

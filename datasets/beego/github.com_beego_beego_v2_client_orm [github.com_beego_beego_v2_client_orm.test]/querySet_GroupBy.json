@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 140,
+    "focalfunc": "func (o querySet) GroupBy(exprs ...string) QuerySeter",
+    "funcbody": "func (o querySet) GroupBy(exprs ...string) QuerySeter {\n\to.groups = exprs\n\treturn &o\n}",
+    "funcname": "GroupBy"
+}

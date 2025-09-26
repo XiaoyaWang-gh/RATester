@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 509,
+    "focalfunc": "func (c *IniConfigContainer) Unmarshaler(prefix string, obj interface{}, opt ...DecodeOption) error",
+    "funcbody": "func (c *IniConfigContainer) Unmarshaler(prefix string, obj interface{}, opt ...DecodeOption) error {\n\tif len(prefix) > 0 {\n\t\treturn errors.New(\"unsupported prefix params\")\n\t}\n\treturn mapstructure.Decode(c.data, obj)\n}",
+    "funcname": "Unmarshaler"
+}

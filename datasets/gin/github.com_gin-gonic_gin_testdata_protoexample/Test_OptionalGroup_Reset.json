@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 160,
+    "focalfunc": "func (x *Test_OptionalGroup) Reset()",
+    "funcbody": "func (x *Test_OptionalGroup) Reset() {\n\t*x = Test_OptionalGroup{}\n\tif protoimpl.UnsafeEnabled {\n\t\tmi := &file_test_proto_msgTypes[1]\n\t\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\t\tms.StoreMessageInfo(mi)\n\t}\n}",
+    "funcname": "Reset"
+}

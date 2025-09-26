@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 96,
+    "focalfunc": "func (c *JSONConfigContainer) sub(key string) (map[string]interface{}, error)",
+    "funcbody": "func (c *JSONConfigContainer) sub(key string) (map[string]interface{}, error) {\n\tif key == \"\" {\n\t\treturn c.data, nil\n\t}\n\tvalue, ok := c.data[key]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"key is not found: %s\", key)\n\t}\n\n\tres, ok := value.(map[string]interface{})\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"the type of value is invalid, key: %s\", key)\n\t}\n\treturn res, nil\n}",
+    "funcname": "sub"
+}

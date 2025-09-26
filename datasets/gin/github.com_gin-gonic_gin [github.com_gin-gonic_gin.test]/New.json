@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 193,
+    "focalfunc": "func New(opts ...OptionFunc) *Engine",
+    "funcbody": "func New(opts ...OptionFunc) *Engine {\n\tdebugPrintWARNINGNew()\n\tengine := &Engine{\n\t\tRouterGroup: RouterGroup{\n\t\t\tHandlers:\tnil,\n\t\t\tbasePath:\t\"/\",\n\t\t\troot:\t\ttrue,\n\t\t},\n\t\tFuncMap:\t\ttemplate.FuncMap{},\n\t\tRedirectTrailingSlash:\ttrue,\n\t\tRedirectFixedPath:\tfalse,\n\t\tHandleMethodNotAllowed:\tfalse,\n\t\tForwardedByClientIP:\ttrue,\n\t\tRemoteIPHeaders:\t[]string{\"X-Forwarded-For\", \"X-Real-IP\"},\n\t\tTrustedPlatform:\tdefaultPlatform,\n\t\tUseRawPath:\t\tfalse,\n\t\tRemoveExtraSlash:\tfalse,\n\t\tUnescapePathValues:\ttrue,\n\t\tMaxMultipartMemory:\tdefaultMultipartMemory,\n\t\ttrees:\t\t\tmake(methodTrees, 0, 9),\n\t\tdelims:\t\t\trender.Delims{Left: \"{{\", Right: \"}}\"},\n\t\tsecureJSONPrefix:\t\"while(1);\",\n\t\ttrustedProxies:\t\t[]string{\"0.0.0.0/0\", \"::/0\"},\n\t\ttrustedCIDRs:\t\tdefaultTrustedCIDRs,\n\t}\n\tengine.RouterGroup.engine = engine\n\tengine.pool.New = func() any {\n\t\treturn engine.allocateContext(engine.maxParams)\n\t}\n\treturn engine.With(opts...)\n}",
+    "funcname": "New"
+}

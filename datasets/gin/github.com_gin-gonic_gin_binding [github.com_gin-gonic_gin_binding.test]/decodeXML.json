@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/xml.go",
+    "lineno": 27,
+    "focalfunc": "func decodeXML(r io.Reader, obj any) error",
+    "funcbody": "func decodeXML(r io.Reader, obj any) error {\n\tdecoder := xml.NewDecoder(r)\n\tif err := decoder.Decode(obj); err != nil {\n\t\treturn err\n\t}\n\treturn validate(obj)\n}",
+    "funcname": "decodeXML"
+}

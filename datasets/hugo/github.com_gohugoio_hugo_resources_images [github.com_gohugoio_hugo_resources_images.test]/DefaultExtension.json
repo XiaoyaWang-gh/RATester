@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 388,
+    "focalfunc": "func (f Format) DefaultExtension() string",
+    "funcbody": "func (f Format) DefaultExtension() string {\n\treturn f.MediaType().FirstSuffix.FullSuffix\n}",
+    "funcname": "DefaultExtension"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/local_store_unix.go",
+    "lineno": 12,
+    "focalfunc": "func CheckFile(name string) (bool, error)",
+    "funcbody": "func CheckFile(name string) (bool, error) {\n\tf, err := os.Open(name)\n\tif err != nil && os.IsNotExist(err) {\n\t\tnf, err := os.Create(name)\n\t\tif err != nil {\n\t\t\treturn false, err\n\t\t}\n\t\tdefer nf.Close()\n\t\treturn false, nf.Chmod(0o600)\n\t}\n\tif err != nil {\n\t\treturn false, err\n\t}\n\tdefer f.Close()\n\n\tfi, err := f.Stat()\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tif fi.Mode().Perm()&0o077 != 0 {\n\t\treturn false, fmt.Errorf(\"permissions %o for %s are too open, please use 600\", fi.Mode().Perm(), name)\n\t}\n\n\treturn fi.Size() > 0, nil\n}",
+    "funcname": "CheckFile"
+}

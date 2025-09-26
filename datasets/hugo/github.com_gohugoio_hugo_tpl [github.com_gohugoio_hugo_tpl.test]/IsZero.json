@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/template_info.go",
+    "lineno": 43,
+    "focalfunc": "func (info ParseInfo) IsZero() bool",
+    "funcbody": "func (info ParseInfo) IsZero() bool {\n\treturn info.Config.Version == 0\n}",
+    "funcname": "IsZero"
+}

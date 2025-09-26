@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/envvar/envvar.go",
+    "lineno": 22,
+    "focalfunc": "func (envVar *EnvVar) set(key, val string)",
+    "funcbody": "func (envVar *EnvVar) set(key, val string) {\n\tenvVar.Vars[key] = val\n}",
+    "funcname": "set"
+}

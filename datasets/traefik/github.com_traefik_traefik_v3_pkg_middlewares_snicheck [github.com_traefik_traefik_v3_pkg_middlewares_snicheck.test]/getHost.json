@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/snicheck/snicheck.go",
+    "lineno": 52,
+    "focalfunc": "func getHost(req *http.Request) string",
+    "funcbody": "func getHost(req *http.Request) string {\n\th := requestdecorator.GetCNAMEFlatten(req.Context())\n\tif h != \"\" {\n\t\treturn h\n\t}\n\n\th = requestdecorator.GetCanonizedHost(req.Context())\n\tif h != \"\" {\n\t\treturn h\n\t}\n\n\thost, _, err := net.SplitHostPort(req.Host)\n\tif err != nil {\n\t\thost = req.Host\n\t}\n\n\treturn strings.TrimSpace(host)\n}",
+    "funcname": "getHost"
+}

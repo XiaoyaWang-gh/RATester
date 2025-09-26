@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 516,
+    "focalfunc": "func (s *IntegrationTestBuilder) RenameDir(old, new string) *IntegrationTestBuilder",
+    "funcbody": "func (s *IntegrationTestBuilder) RenameDir(old, new string) *IntegrationTestBuilder {\n\tabsOldFilename := s.absFilename(old)\n\tabsNewFilename := s.absFilename(new)\n\ts.renamedDirs = append(s.renamedDirs, absOldFilename)\n\ts.changedFiles = append(s.changedFiles, absNewFilename)\n\tafero.Walk(s.fs.Source, absOldFilename, func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif info.IsDir() {\n\t\t\treturn nil\n\t\t}\n\t\ts.createdFiles = append(s.createdFiles, strings.Replace(path, absOldFilename, absNewFilename, 1))\n\t\treturn nil\n\t})\n\ts.Assert(s.fs.Source.MkdirAll(filepath.Dir(absNewFilename), 0o777), qt.IsNil)\n\ts.Assert(s.fs.Source.Rename(absOldFilename, absNewFilename), qt.IsNil)\n\treturn s\n}",
+    "funcname": "RenameDir"
+}

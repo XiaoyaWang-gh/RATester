@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 160,
+    "focalfunc": "func (w *fileLogWriter) needRotateDaily(day int) bool",
+    "funcbody": "func (w *fileLogWriter) needRotateDaily(day int) bool {\n\treturn (w.MaxLines > 0 && w.maxLinesCurLines >= w.MaxLines) ||\n\t\t(w.MaxSize > 0 && w.maxSizeCurSize >= w.MaxSize) ||\n\t\t(w.Daily && day != w.dailyOpenDate)\n}",
+    "funcname": "needRotateDaily"
+}

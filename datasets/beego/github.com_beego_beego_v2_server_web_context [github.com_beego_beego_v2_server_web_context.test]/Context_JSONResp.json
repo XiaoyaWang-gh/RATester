@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 121,
+    "focalfunc": "func (ctx *Context) JSONResp(data interface{}) error",
+    "funcbody": "func (ctx *Context) JSONResp(data interface{}) error {\n\treturn ctx.Output.JSON(data, false, false)\n}",
+    "funcname": "JSONResp"
+}

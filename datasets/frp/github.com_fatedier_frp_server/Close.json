@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/service.go",
+    "lineno": 386,
+    "focalfunc": "func (svr *Service) Close() error",
+    "funcbody": "func (svr *Service) Close() error {\n\tif svr.kcpListener != nil {\n\t\tsvr.kcpListener.Close()\n\t\tsvr.kcpListener = nil\n\t}\n\tif svr.quicListener != nil {\n\t\tsvr.quicListener.Close()\n\t\tsvr.quicListener = nil\n\t}\n\tif svr.websocketListener != nil {\n\t\tsvr.websocketListener.Close()\n\t\tsvr.websocketListener = nil\n\t}\n\tif svr.tlsListener != nil {\n\t\tsvr.tlsListener.Close()\n\t\tsvr.tlsConfig = nil\n\t}\n\tif svr.listener != nil {\n\t\tsvr.listener.Close()\n\t\tsvr.listener = nil\n\t}\n\tsvr.ctlManager.Close()\n\tif svr.cancel != nil {\n\t\tsvr.cancel()\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

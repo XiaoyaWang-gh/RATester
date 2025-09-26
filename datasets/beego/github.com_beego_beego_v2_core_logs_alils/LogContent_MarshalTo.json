@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 218,
+    "focalfunc": "func (m *LogContent) MarshalTo(data []byte) (int, error)",
+    "funcbody": "func (m *LogContent) MarshalTo(data []byte) (int, error) {\n\tvar i int\n\t_ = i\n\tvar l int\n\t_ = l\n\tif m.Key == nil {\n\t\treturn 0, github_com_gogo_protobuf_proto.NewRequiredNotSetError(\"Key\")\n\t}\n\tdata[i] = 0xa\n\ti++\n\ti = encodeVarintLog(data, i, uint64(len(*m.Key)))\n\ti += copy(data[i:], *m.Key)\n\n\tif m.Value == nil {\n\t\treturn 0, github_com_gogo_protobuf_proto.NewRequiredNotSetError(\"Value\")\n\t}\n\tdata[i] = 0x12\n\ti++\n\ti = encodeVarintLog(data, i, uint64(len(*m.Value)))\n\ti += copy(data[i:], *m.Value)\n\tif m.XXXUnrecognized != nil {\n\t\ti += copy(data[i:], m.XXXUnrecognized)\n\t}\n\treturn i, nil\n}",
+    "funcname": "MarshalTo"
+}

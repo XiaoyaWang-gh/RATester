@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 315,
+    "focalfunc": "func headerToBytes(w io.Writer, t textproto.MIMEHeader) error",
+    "funcbody": "func headerToBytes(w io.Writer, t textproto.MIMEHeader) error {\n\tfor k, v := range t {\n\n\t\t_, err := fmt.Fprintf(w, \"%s:\", k)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tfor _, c := range v {\n\t\t\t_, err := fmt.Fprintf(w, \" %s\\r\\n\", c)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "headerToBytes"
+}

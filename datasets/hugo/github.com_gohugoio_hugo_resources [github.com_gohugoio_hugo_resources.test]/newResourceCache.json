@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_cache.go",
+    "lineno": 31,
+    "focalfunc": "func newResourceCache(rs *Spec, memCache *dynacache.Cache) *ResourceCache",
+    "funcbody": "func newResourceCache(rs *Spec, memCache *dynacache.Cache) *ResourceCache {\n\treturn &ResourceCache{\n\t\tfileCache:\trs.FileCaches.AssetsCache(),\n\t\tcacheResource: dynacache.GetOrCreatePartition[string, resource.Resource](\n\t\t\tmemCache,\n\t\t\t\"/res1\",\n\t\t\tdynacache.OptionsPartition{ClearWhen: dynacache.ClearOnChange, Weight: 40},\n\t\t),\n\t\tCacheResourceRemote: dynacache.GetOrCreatePartition[string, resource.Resource](\n\t\t\tmemCache,\n\t\t\t\"/resr\",\n\t\t\tdynacache.OptionsPartition{ClearWhen: dynacache.ClearOnChange, Weight: 40},\n\t\t),\n\t\tcacheResources: dynacache.GetOrCreatePartition[string, resource.Resources](\n\t\t\tmemCache,\n\t\t\t\"/ress\",\n\t\t\tdynacache.OptionsPartition{ClearWhen: dynacache.ClearOnRebuild, Weight: 40},\n\t\t),\n\t\tcacheResourceTransformation: dynacache.GetOrCreatePartition[string, *resourceAdapterInner](\n\t\t\tmemCache,\n\t\t\t\"/res1/tra\",\n\t\t\tdynacache.OptionsPartition{ClearWhen: dynacache.ClearOnChange, Weight: 40},\n\t\t),\n\t}\n}",
+    "funcname": "newResourceCache"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 74,
+    "focalfunc": "func Panicf(format string, v ...any)",
+    "funcbody": "func Panicf(format string, v ...any) {\n\tlogger.Panicf(format, v...)\n}",
+    "funcname": "Panicf"
+}

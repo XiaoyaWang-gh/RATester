@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 110,
+    "focalfunc": "func loadConfigFromFile(fs afero.Fs, filename string) (map[string]any, error)",
+    "funcbody": "func loadConfigFromFile(fs afero.Fs, filename string) (map[string]any, error) {\n\tm, err := metadecoders.Default.UnmarshalFileToMap(fs, filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tRenameKeys(m)\n\treturn m, nil\n}",
+    "funcname": "loadConfigFromFile"
+}

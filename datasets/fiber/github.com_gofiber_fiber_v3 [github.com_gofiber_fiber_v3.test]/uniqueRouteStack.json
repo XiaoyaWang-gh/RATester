@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 193,
+    "focalfunc": "func uniqueRouteStack(stack []*Route) []*Route",
+    "funcbody": "func uniqueRouteStack(stack []*Route) []*Route {\n\tvar unique []*Route\n\tm := make(map[*Route]int)\n\tfor _, v := range stack {\n\t\tif _, ok := m[v]; !ok {\n\n\t\t\tm[v] = len(unique)\n\t\t\tunique = append(unique, v)\n\t\t}\n\t}\n\n\treturn unique\n}",
+    "funcname": "uniqueRouteStack"
+}

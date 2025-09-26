@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 422,
+    "focalfunc": "func (bl *BeeLogger) Emergency(format string, v ...interface{})",
+    "funcbody": "func (bl *BeeLogger) Emergency(format string, v ...interface{}) {\n\tif LevelEmergency > bl.level {\n\t\treturn\n\t}\n\n\tlm := &LogMsg{\n\t\tLevel:\tLevelEmergency,\n\t\tMsg:\tformat,\n\t\tWhen:\ttime.Now(),\n\t}\n\tif len(v) > 0 {\n\t\tlm.Msg = fmt.Sprintf(lm.Msg, v...)\n\t}\n\n\tbl.writeMsg(lm)\n}",
+    "funcname": "Emergency"
+}

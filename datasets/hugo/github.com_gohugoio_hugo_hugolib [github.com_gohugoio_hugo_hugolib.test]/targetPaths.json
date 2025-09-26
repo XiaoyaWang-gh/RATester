@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 473,
+    "focalfunc": "func (t targetPathsHolder) targetPaths() page.TargetPaths",
+    "funcbody": "func (t targetPathsHolder) targetPaths() page.TargetPaths {\n\treturn t.paths\n}",
+    "funcname": "targetPaths"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 118,
+    "focalfunc": "func (h *HugoSites) resolveSite(lang string) *Site",
+    "funcbody": "func (h *HugoSites) resolveSite(lang string) *Site {\n\tif lang == \"\" {\n\t\tlang = h.Conf.DefaultContentLanguage()\n\t}\n\n\tfor _, s := range h.Sites {\n\t\tif s.Lang() == lang {\n\t\t\treturn s\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "resolveSite"
+}

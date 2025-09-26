@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 395,
+    "focalfunc": "func NSDelete(rootpath string, f HandleFunc) LinkNamespace",
+    "funcbody": "func NSDelete(rootpath string, f HandleFunc) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Delete(rootpath, f)\n\t}\n}",
+    "funcname": "NSDelete"
+}

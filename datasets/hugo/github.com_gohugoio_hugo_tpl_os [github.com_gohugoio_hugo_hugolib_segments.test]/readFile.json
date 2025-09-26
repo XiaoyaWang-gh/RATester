@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/os/os.go",
+    "lineno": 95,
+    "focalfunc": "func (ns *Namespace) ReadFile(i any) (string, error)",
+    "funcbody": "func (ns *Namespace) ReadFile(i any) (string, error) {\n\ts, err := cast.ToStringE(i)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif ns.deps.PathSpec != nil {\n\t\ts = ns.deps.PathSpec.RelPathify(s)\n\t}\n\n\ts, err = readFile(ns.readFileFs, s)\n\tif err != nil && herrors.IsNotExist(err) {\n\t\treturn \"\", nil\n\t}\n\treturn s, err\n}",
+    "funcname": "ReadFile"
+}

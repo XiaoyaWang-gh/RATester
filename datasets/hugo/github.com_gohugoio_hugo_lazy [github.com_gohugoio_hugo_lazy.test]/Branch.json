@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 68,
+    "focalfunc": "func (ini *Init) Branch(initFn func(context.Context) (any, error)) *Init",
+    "funcbody": "func (ini *Init) Branch(initFn func(context.Context) (any, error)) *Init {\n\tif ini == nil {\n\t\tini = New()\n\t}\n\treturn ini.add(true, initFn)\n}",
+    "funcname": "Branch"
+}

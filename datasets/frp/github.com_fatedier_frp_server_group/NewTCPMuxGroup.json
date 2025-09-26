@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 95,
+    "focalfunc": "func NewTCPMuxGroup(ctl *TCPMuxGroupCtl) *TCPMuxGroup",
+    "funcbody": "func NewTCPMuxGroup(ctl *TCPMuxGroupCtl) *TCPMuxGroup {\n\treturn &TCPMuxGroup{\n\t\tlns:\t\tmake([]*TCPMuxGroupListener, 0),\n\t\tctl:\t\tctl,\n\t\tacceptCh:\tmake(chan net.Conn),\n\t}\n}",
+    "funcname": "NewTCPMuxGroup"
+}

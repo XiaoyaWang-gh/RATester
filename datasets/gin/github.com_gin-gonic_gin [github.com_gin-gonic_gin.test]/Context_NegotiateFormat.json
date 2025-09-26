@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1200,
+    "focalfunc": "func (c *Context) NegotiateFormat(offered ...string) string",
+    "funcbody": "func (c *Context) NegotiateFormat(offered ...string) string {\n\tassert1(len(offered) > 0, \"you must provide at least one offer\")\n\n\tif c.Accepted == nil {\n\t\tc.Accepted = parseAccept(c.requestHeader(\"Accept\"))\n\t}\n\tif len(c.Accepted) == 0 {\n\t\treturn offered[0]\n\t}\n\tfor _, accepted := range c.Accepted {\n\t\tfor _, offer := range offered {\n\n\t\t\ti := 0\n\t\t\tfor ; i < len(accepted) && i < len(offer); i++ {\n\t\t\t\tif accepted[i] == '*' || offer[i] == '*' {\n\t\t\t\t\treturn offer\n\t\t\t\t}\n\t\t\t\tif accepted[i] != offer[i] {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t\tif i == len(accepted) {\n\t\t\t\treturn offer\n\t\t\t}\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "NegotiateFormat"
+}

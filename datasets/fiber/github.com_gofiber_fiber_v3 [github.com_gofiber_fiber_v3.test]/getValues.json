@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1924,
+    "focalfunc": "func (c *DefaultCtx) getValues() *[maxParams]string",
+    "funcbody": "func (c *DefaultCtx) getValues() *[maxParams]string {\n\treturn &c.values\n}",
+    "funcname": "getValues"
+}

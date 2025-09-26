@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/failover/failover.go",
+    "lineno": 82,
+    "focalfunc": "func (f *Failover) SetHandlerStatus(ctx context.Context, up bool)",
+    "funcbody": "func (f *Failover) SetHandlerStatus(ctx context.Context, up bool) {\n\tf.handlerStatusMu.Lock()\n\tdefer f.handlerStatusMu.Unlock()\n\n\tstatus := \"DOWN\"\n\tif up {\n\t\tstatus = \"UP\"\n\t}\n\n\tif up == f.handlerStatus {\n\n\t\tlog.Ctx(ctx).Debug().Msgf(\"Still %s, no need to propagate\", status)\n\t\treturn\n\t}\n\n\tlog.Ctx(ctx).Debug().Msgf(\"Propagating new %s status\", status)\n\tf.handlerStatus = up\n\n\tfor _, fn := range f.updaters {\n\n\t\tfn(f.handlerStatus || f.fallbackStatus)\n\t}\n}",
+    "funcname": "SetHandlerStatus"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 315,
+    "focalfunc": "func (c *clientWrapper) GetIngressRouteUDPs() []*traefikv1alpha1.IngressRouteUDP",
+    "funcbody": "func (c *clientWrapper) GetIngressRouteUDPs() []*traefikv1alpha1.IngressRouteUDP {\n\tvar result []*traefikv1alpha1.IngressRouteUDP\n\n\tfor ns, factory := range c.factoriesCrd {\n\t\tings, err := factory.Traefik().V1alpha1().IngressRouteUDPs().Lister().List(labels.Everything())\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Failed to list udp ingress routes in namespace %s\", ns)\n\t\t}\n\t\tresult = append(result, ings...)\n\t}\n\n\treturn result\n}",
+    "funcname": "GetIngressRouteUDPs"
+}

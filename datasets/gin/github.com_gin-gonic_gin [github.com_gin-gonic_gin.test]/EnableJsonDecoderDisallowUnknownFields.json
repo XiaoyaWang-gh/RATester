@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/mode.go",
+    "lineno": 91,
+    "focalfunc": "func EnableJsonDecoderDisallowUnknownFields()",
+    "funcbody": "func EnableJsonDecoderDisallowUnknownFields() {\n\tbinding.EnableDecoderDisallowUnknownFields = true\n}",
+    "funcname": "EnableJsonDecoderDisallowUnknownFields"
+}

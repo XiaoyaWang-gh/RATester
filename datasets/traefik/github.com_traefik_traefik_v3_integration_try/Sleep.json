@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 23,
+    "focalfunc": "func Sleep(d time.Duration)",
+    "funcbody": "func Sleep(d time.Duration) {\n\td = applyCIMultiplier(d)\n\ttime.Sleep(d)\n}",
+    "funcname": "Sleep"
+}

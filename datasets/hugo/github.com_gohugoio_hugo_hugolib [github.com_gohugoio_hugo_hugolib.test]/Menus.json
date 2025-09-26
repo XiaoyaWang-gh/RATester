@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__menus.go",
+    "lineno": 52,
+    "focalfunc": "func (p *pageMenus) menus() navigation.PageMenus",
+    "funcbody": "func (p *pageMenus) menus() navigation.PageMenus {\n\tp.init()\n\treturn p.pm\n}",
+    "funcname": "menus"
+}

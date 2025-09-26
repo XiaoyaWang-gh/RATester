@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 166,
+    "focalfunc": "func (s *SMTPWriter) Flush()",
+    "funcbody": "func (s *SMTPWriter) Flush() {\n}",
+    "funcname": "Flush"
+}

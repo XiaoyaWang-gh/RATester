@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/templates/execute_as_template.go",
+    "lineno": 53,
+    "focalfunc": "func (t *executeAsTemplateTransform) Key() internal.ResourceTransformationKey",
+    "funcbody": "func (t *executeAsTemplateTransform) Key() internal.ResourceTransformationKey {\n\treturn internal.NewResourceTransformationKey(\"execute-as-template\", t.targetPath)\n}",
+    "funcname": "Key"
+}

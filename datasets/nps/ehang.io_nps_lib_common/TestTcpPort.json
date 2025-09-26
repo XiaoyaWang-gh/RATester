@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 147,
+    "focalfunc": "func TestTcpPort(port int) bool",
+    "funcbody": "func TestTcpPort(port int) bool {\n\tl, err := net.ListenTCP(\"tcp\", &net.TCPAddr{net.ParseIP(\"0.0.0.0\"), port, \"\"})\n\tdefer func() {\n\t\tif l != nil {\n\t\t\tl.Close()\n\t\t}\n\t}()\n\tif err != nil {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "TestTcpPort"
+}

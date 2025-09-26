@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 716,
+    "focalfunc": "func Convert[T any](value string, convertor func(string) (T, error), defaultValue ...T) (T, error)",
+    "funcbody": "func Convert[T any](value string, convertor func(string) (T, error), defaultValue ...T) (T, error) {\n\tconverted, err := convertor(value)\n\tif err != nil {\n\t\tif len(defaultValue) > 0 {\n\t\t\treturn defaultValue[0], nil\n\t\t}\n\n\t\treturn converted, fmt.Errorf(\"failed to convert: %w\", err)\n\t}\n\n\treturn converted, nil\n}",
+    "funcname": "Convert"
+}

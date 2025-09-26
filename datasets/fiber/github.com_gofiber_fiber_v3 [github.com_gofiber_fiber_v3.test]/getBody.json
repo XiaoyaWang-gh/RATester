@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1895,
+    "focalfunc": "func (c *DefaultCtx) getBody() []byte",
+    "funcbody": "func (c *DefaultCtx) getBody() []byte {\n\tif c.app.config.Immutable {\n\t\treturn utils.CopyBytes(c.fasthttp.Request.Body())\n\t}\n\n\treturn c.fasthttp.Request.Body()\n}",
+    "funcname": "getBody"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 180,
+    "focalfunc": "func ReleaseResponse(resp *Response)",
+    "funcbody": "func ReleaseResponse(resp *Response) {\n\tresp.Reset()\n\tresponsePool.Put(resp)\n}",
+    "funcname": "ReleaseResponse"
+}

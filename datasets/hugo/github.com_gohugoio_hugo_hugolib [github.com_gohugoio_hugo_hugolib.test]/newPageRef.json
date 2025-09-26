@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__ref.go",
+    "lineno": 24,
+    "focalfunc": "func newPageRef(p *pageState) pageRef",
+    "funcbody": "func newPageRef(p *pageState) pageRef {\n\treturn pageRef{p: p}\n}",
+    "funcname": "newPageRef"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 54,
+    "focalfunc": "func (r *Response) Header(key string) string",
+    "funcbody": "func (r *Response) Header(key string) string {\n\treturn utils.UnsafeString(r.RawResponse.Header.Peek(key))\n}",
+    "funcname": "Header"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 152,
+    "focalfunc": "func (c *Client) Put(value interface{}, path string, body interface{}, opts ...BeegoHTTPRequestOption) error",
+    "funcbody": "func (c *Client) Put(value interface{}, path string, body interface{}, opts ...BeegoHTTPRequestOption) error {\n\treq := Put(c.Endpoint + path)\n\tc.customReq(req, opts)\n\tif body != nil {\n\t\treq = req.Body(body)\n\t}\n\treturn c.handleResponse(value, req)\n}",
+    "funcname": "Put"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/tls.go",
+    "lineno": 44,
+    "focalfunc": "func NewTlsClientConn(conn net.Conn) net.Conn",
+    "funcbody": "func NewTlsClientConn(conn net.Conn) net.Conn {\n\tconf := &tls.Config{\n\t\tInsecureSkipVerify: true,\n\t}\n\treturn tls.Client(conn, conf)\n}",
+    "funcname": "NewTlsClientConn"
+}

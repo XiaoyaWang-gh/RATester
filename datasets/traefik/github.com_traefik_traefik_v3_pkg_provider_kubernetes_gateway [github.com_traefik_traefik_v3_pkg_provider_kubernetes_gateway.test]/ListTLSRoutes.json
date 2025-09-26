@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 354,
+    "focalfunc": "func (c *clientWrapper) ListTLSRoutes() ([]*gatev1alpha2.TLSRoute, error)",
+    "funcbody": "func (c *clientWrapper) ListTLSRoutes() ([]*gatev1alpha2.TLSRoute, error) {\n\tvar tlsRoutes []*gatev1alpha2.TLSRoute\n\tfor _, namespace := range c.watchedNamespaces {\n\t\troutes, err := c.factoriesGateway[c.lookupNamespace(namespace)].Gateway().V1alpha2().TLSRoutes().Lister().TLSRoutes(namespace).List(labels.Everything())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"listing TLS routes in namespace %s\", namespace)\n\t\t}\n\n\t\ttlsRoutes = append(tlsRoutes, routes...)\n\t}\n\n\treturn tlsRoutes, nil\n}",
+    "funcname": "ListTLSRoutes"
+}

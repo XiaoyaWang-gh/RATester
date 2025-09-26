@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/flash.go",
+    "lineno": 36,
+    "focalfunc": "func (fd *FlashData) Set(key string, msg string, args ...interface{})",
+    "funcbody": "func (fd *FlashData) Set(key string, msg string, args ...interface{}) {\n\tif len(args) == 0 {\n\t\tfd.Data[key] = msg\n\t} else {\n\t\tfd.Data[key] = fmt.Sprintf(msg, args...)\n\t}\n}",
+    "funcname": "Set"
+}

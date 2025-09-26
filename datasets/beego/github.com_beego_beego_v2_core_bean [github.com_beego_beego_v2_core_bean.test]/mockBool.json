@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/mock.go",
+    "lineno": 123,
+    "focalfunc": "func mockBool(tagValue string, pvv reflect.Value) (err error)",
+    "funcbody": "func mockBool(tagValue string, pvv reflect.Value) (err error) {\n\tswitch tagValue {\n\tcase \"true\":\n\t\tpvv.SetBool(true)\n\tcase \"false\":\n\t\tpvv.SetBool(false)\n\tdefault:\n\t\terr = fmt.Errorf(\"the value:%s is invalid\", tagValue)\n\t}\n\treturn\n}",
+    "funcname": "mockBool"
+}

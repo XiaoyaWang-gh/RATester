@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/yaml.go",
+    "lineno": 25,
+    "focalfunc": "func (yamlBinding) BindBody(body []byte, obj any) error",
+    "funcbody": "func (yamlBinding) BindBody(body []byte, obj any) error {\n\treturn decodeYAML(bytes.NewReader(body), obj)\n}",
+    "funcname": "BindBody"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/login.go",
+    "lineno": 145,
+    "focalfunc": "func clearIprecord()",
+    "funcbody": "func clearIprecord() {\n\trand.Seed(time.Now().UnixNano())\n\tx := rand.Intn(100)\n\tif x == 1 {\n\t\tipRecord.Range(func(key, value interface{}) bool {\n\t\t\tv := value.(*record)\n\t\t\tif time.Now().Unix()-v.lastLoginTime.Unix() >= 60 {\n\t\t\t\tipRecord.Delete(key)\n\t\t\t}\n\t\t\treturn true\n\t\t})\n\t}\n}",
+    "funcname": "clearIprecord"
+}

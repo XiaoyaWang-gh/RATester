@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 516,
+    "focalfunc": "func (c *context) JSONPretty(code int, i interface{}, indent string) (err error)",
+    "funcbody": "func (c *context) JSONPretty(code int, i interface{}, indent string) (err error) {\n\treturn c.json(code, i, indent)\n}",
+    "funcname": "JSONPretty"
+}

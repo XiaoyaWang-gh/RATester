@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 763,
+    "focalfunc": "func (c ClientConfig) shouldIgnoreVendor(path string) bool",
+    "funcbody": "func (c ClientConfig) shouldIgnoreVendor(path string) bool {\n\treturn c.IgnoreVendor != nil && c.IgnoreVendor.Match(path)\n}",
+    "funcname": "shouldIgnoreVendor"
+}

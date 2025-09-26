@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/skip/skip.go",
+    "lineno": 9,
+    "focalfunc": "func New(handler fiber.Handler, exclude func(c fiber.Ctx) bool) fiber.Handler",
+    "funcbody": "func New(handler fiber.Handler, exclude func(c fiber.Ctx) bool) fiber.Handler {\n\tif exclude == nil {\n\t\treturn handler\n\t}\n\n\treturn func(c fiber.Ctx) error {\n\t\tif exclude(c) {\n\t\t\treturn c.Next()\n\t\t}\n\n\t\treturn handler(c)\n\t}\n}",
+    "funcname": "New"
+}

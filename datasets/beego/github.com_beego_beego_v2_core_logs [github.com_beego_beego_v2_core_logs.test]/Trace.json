@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 786,
+    "focalfunc": "func Trace(f interface{}, v ...interface{})",
+    "funcbody": "func Trace(f interface{}, v ...interface{}) {\n\tbeeLogger.Trace(formatPattern(f, v...), v...)\n}",
+    "funcname": "Trace"
+}

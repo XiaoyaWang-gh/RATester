@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 97,
+    "focalfunc": "func (ns *Namespace) Delimit(ctx context.Context, l, sep any, last ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) Delimit(ctx context.Context, l, sep any, last ...any) (string, error) {\n\td, err := cast.ToStringE(sep)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tvar dLast *string\n\tif len(last) > 0 {\n\t\tl := last[0]\n\t\tdStr, err := cast.ToStringE(l)\n\t\tif err != nil {\n\t\t\tdLast = nil\n\t\t} else {\n\t\t\tdLast = &dStr\n\t\t}\n\t}\n\n\tlv := reflect.ValueOf(l)\n\tlv, isNil := indirect(lv)\n\tif isNil {\n\t\treturn \"\", errors.New(\"can't iterate over a nil value\")\n\t}\n\n\tvar str string\n\tswitch lv.Kind() {\n\tcase reflect.Map:\n\t\tsortSeq, err := ns.Sort(ctx, l)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t\tlv = reflect.ValueOf(sortSeq)\n\t\tfallthrough\n\tcase reflect.Array, reflect.Slice, reflect.String:\n\t\tfor i := 0; i < lv.Len(); i++ {\n\t\t\tval := lv.Index(i).Interface()\n\t\t\tvalStr, err := cast.ToStringE(val)\n\t\t\tif err != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tswitch {\n\t\t\tcase i == lv.Len()-2 && dLast != nil:\n\t\t\t\tstr += valStr + *dLast\n\t\t\tcase i == lv.Len()-1:\n\t\t\t\tstr += valStr\n\t\t\tdefault:\n\t\t\t\tstr += valStr + d\n\t\t\t}\n\t\t}\n\n\tdefault:\n\t\treturn \"\", fmt.Errorf(\"can't iterate over %T\", l)\n\t}\n\n\treturn str, nil\n}",
+    "funcname": "Delimit"
+}

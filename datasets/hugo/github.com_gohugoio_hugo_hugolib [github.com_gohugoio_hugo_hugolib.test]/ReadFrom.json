@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 195,
+    "focalfunc": "func (b *lockingBuffer) ReadFrom(r io.Reader) (n int64, err error)",
+    "funcbody": "func (b *lockingBuffer) ReadFrom(r io.Reader) (n int64, err error) {\n\tb.Lock()\n\tn, err = b.Buffer.ReadFrom(r)\n\tb.Unlock()\n\treturn\n}",
+    "funcname": "ReadFrom"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 236,
+    "focalfunc": "func (r *standardRegistry) TLSCertsNotAfterTimestampGauge() metrics.Gauge",
+    "funcbody": "func (r *standardRegistry) TLSCertsNotAfterTimestampGauge() metrics.Gauge {\n\treturn r.tlsCertsNotAfterTimestampGauge\n}",
+    "funcname": "TLSCertsNotAfterTimestampGauge"
+}

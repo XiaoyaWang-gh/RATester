@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 802,
+    "focalfunc": "func conditionsEqual(conditionsA, conditionsB []metav1.Condition) bool",
+    "funcbody": "func conditionsEqual(conditionsA, conditionsB []metav1.Condition) bool {\n\treturn slices.EqualFunc(conditionsA, conditionsB, func(cA metav1.Condition, cB metav1.Condition) bool {\n\t\treturn cA.Type == cB.Type &&\n\t\t\tcA.Reason == cB.Reason &&\n\t\t\tcA.Status == cB.Status &&\n\t\t\tcA.Message == cB.Message &&\n\t\t\tcA.ObservedGeneration == cB.ObservedGeneration\n\t})\n}",
+    "funcname": "conditionsEqual"
+}

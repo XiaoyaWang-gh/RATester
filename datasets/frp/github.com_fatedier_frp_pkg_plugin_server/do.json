@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/http.go",
+    "lineno": 89,
+    "focalfunc": "func (p *httpPlugin) do(ctx context.Context, r *Request, res *Response) error",
+    "funcbody": "func (p *httpPlugin) do(ctx context.Context, r *Request, res *Response) error {\n\tbuf, err := json.Marshal(r)\n\tif err != nil {\n\t\treturn err\n\t}\n\tv := url.Values{}\n\tv.Set(\"version\", r.Version)\n\tv.Set(\"op\", r.Op)\n\treq, err := http.NewRequest(\"POST\", p.url+\"?\"+v.Encode(), bytes.NewReader(buf))\n\tif err != nil {\n\t\treturn err\n\t}\n\treq = req.WithContext(ctx)\n\treq.Header.Set(\"X-Frp-Reqid\", GetReqidFromContext(ctx))\n\treq.Header.Set(\"Content-Type\", \"application/json\")\n\tresp, err := p.client.Do(req)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer resp.Body.Close()\n\n\tif resp.StatusCode != http.StatusOK {\n\t\treturn fmt.Errorf(\"do http request error code: %d\", resp.StatusCode)\n\t}\n\tbuf, err = io.ReadAll(resp.Body)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn json.Unmarshal(buf, res)\n}",
+    "funcname": "do"
+}

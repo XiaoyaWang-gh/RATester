@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 102,
+    "focalfunc": "func parseToMap(ptr any, data map[string][]string) error",
+    "funcbody": "func parseToMap(ptr any, data map[string][]string) error {\n\telem := reflect.TypeOf(ptr).Elem()\n\n\tif elem.Kind() == reflect.Slice {\n\t\tnewMap, ok := ptr.(map[string][]string)\n\t\tif !ok {\n\t\t\treturn ErrMapNotConvertable\n\t\t}\n\n\t\tfor k, v := range data {\n\t\t\tnewMap[k] = v\n\t\t}\n\n\t\treturn nil\n\t}\n\n\tnewMap, ok := ptr.(map[string]string)\n\tif !ok {\n\t\treturn ErrMapNotConvertable\n\t}\n\n\tfor k, v := range data {\n\t\tnewMap[k] = v[len(v)-1]\n\t}\n\n\treturn nil\n}",
+    "funcname": "parseToMap"
+}

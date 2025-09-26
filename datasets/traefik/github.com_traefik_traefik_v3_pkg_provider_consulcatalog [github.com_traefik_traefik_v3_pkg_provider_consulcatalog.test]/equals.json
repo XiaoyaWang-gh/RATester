@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/connect_tls.go",
+    "lineno": 36,
+    "focalfunc": "func (c *connectCert) equals(other *connectCert) bool",
+    "funcbody": "func (c *connectCert) equals(other *connectCert) bool {\n\tif c == nil && other == nil {\n\t\treturn true\n\t}\n\tif c == nil || other == nil {\n\t\treturn false\n\t}\n\tif len(c.root) != len(other.root) {\n\t\treturn false\n\t}\n\tfor i, v := range c.root {\n\t\tif v != other.root[i] {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn c.leaf == other.leaf\n}",
+    "funcname": "equals"
+}

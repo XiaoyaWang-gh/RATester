@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 325,
+    "focalfunc": "func (b *BeegoHTTPRequest) YAMLBody(obj interface{}) (*BeegoHTTPRequest, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) YAMLBody(obj interface{}) (*BeegoHTTPRequest, error) {\n\tif b.req.Body == nil && obj != nil {\n\t\tbyts, err := yaml.Marshal(obj)\n\t\tif err != nil {\n\t\t\treturn b, berror.Wrap(err, InvalidYAMLBody, \"obj could not be converted to YAML data\")\n\t\t}\n\t\tb.reqBody(byts)\n\t\tb.req.Header.Set(contentTypeKey, \"application/x+yaml\")\n\t}\n\treturn b, nil\n}",
+    "funcname": "YAMLBody"
+}

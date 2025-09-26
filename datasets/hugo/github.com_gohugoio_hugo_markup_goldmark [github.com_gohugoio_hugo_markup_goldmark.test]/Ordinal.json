@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 94,
+    "focalfunc": "func (ctx imageLinkContext) Ordinal() int",
+    "funcbody": "func (ctx imageLinkContext) Ordinal() int {\n\treturn ctx.ordinal\n}",
+    "funcname": "Ordinal"
+}

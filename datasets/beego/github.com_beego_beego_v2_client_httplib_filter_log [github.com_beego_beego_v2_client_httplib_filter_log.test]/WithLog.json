@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 62,
+    "focalfunc": "func WithLog(f func(f interface{}, v ...interface{})) BuilderOption",
+    "funcbody": "func WithLog(f func(f interface{}, v ...interface{})) BuilderOption {\n\treturn func(h *FilterChainBuilder) {\n\t\th.log = f\n\t}\n}",
+    "funcname": "WithLog"
+}

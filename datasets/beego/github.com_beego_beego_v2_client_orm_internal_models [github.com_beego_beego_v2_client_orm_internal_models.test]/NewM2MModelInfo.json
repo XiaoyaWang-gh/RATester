@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_m.go",
+    "lineno": 104,
+    "focalfunc": "func NewM2MModelInfo(m1, m2 *ModelInfo) (mi *ModelInfo)",
+    "funcbody": "func NewM2MModelInfo(m1, m2 *ModelInfo) (mi *ModelInfo) {\n\tmi = new(ModelInfo)\n\tmi.Fields = NewFields()\n\tmi.Table = m1.Table + \"_\" + m2.Table + \"s\"\n\tmi.Name = CamelString(mi.Table)\n\tmi.FullName = m1.Pkg + \".\" + mi.Name\n\n\tfa := new(FieldInfo)\n\tf1 := new(FieldInfo)\n\tf2 := new(FieldInfo)\n\tfa.FieldType = TypeBigIntegerField\n\tfa.Auto = true\n\tfa.Pk = true\n\tfa.DBcol = true\n\tfa.Name = \"Id\"\n\tfa.Column = \"id\"\n\tfa.FullName = mi.FullName + \".\" + fa.Name\n\n\tf1.DBcol = true\n\tf2.DBcol = true\n\tf1.FieldType = RelForeignKey\n\tf2.FieldType = RelForeignKey\n\tf1.Name = CamelString(m1.Table)\n\tf2.Name = CamelString(m2.Table)\n\tf1.FullName = mi.FullName + \".\" + f1.Name\n\tf2.FullName = mi.FullName + \".\" + f2.Name\n\tf1.Column = m1.Table + \"_id\"\n\tf2.Column = m2.Table + \"_id\"\n\tf1.Rel = true\n\tf2.Rel = true\n\tf1.RelTable = m1.Table\n\tf2.RelTable = m2.Table\n\tf1.RelModelInfo = m1\n\tf2.RelModelInfo = m2\n\tf1.Mi = mi\n\tf2.Mi = mi\n\n\tmi.Fields.Add(fa)\n\tmi.Fields.Add(f1)\n\tmi.Fields.Add(f2)\n\tmi.Fields.Pk = fa\n\n\tmi.Uniques = []string{f1.Column, f2.Column}\n\treturn\n}",
+    "funcname": "NewM2MModelInfo"
+}

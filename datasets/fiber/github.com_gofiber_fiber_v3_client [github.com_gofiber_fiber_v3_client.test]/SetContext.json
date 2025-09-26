@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 120,
+    "focalfunc": "func (r *Request) SetContext(ctx context.Context) *Request",
+    "funcbody": "func (r *Request) SetContext(ctx context.Context) *Request {\n\tr.ctx = ctx\n\treturn r\n}",
+    "funcname": "SetContext"
+}

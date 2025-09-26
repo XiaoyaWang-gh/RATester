@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 58,
+    "focalfunc": "func (cm *ControlManager) Add(runID string, ctl *Control) (old *Control)",
+    "funcbody": "func (cm *ControlManager) Add(runID string, ctl *Control) (old *Control) {\n\tcm.mu.Lock()\n\tdefer cm.mu.Unlock()\n\n\tvar ok bool\n\told, ok = cm.ctlsByRunID[runID]\n\tif ok {\n\t\told.Replaced(ctl)\n\t}\n\tcm.ctlsByRunID[runID] = ctl\n\treturn\n}",
+    "funcname": "Add"
+}

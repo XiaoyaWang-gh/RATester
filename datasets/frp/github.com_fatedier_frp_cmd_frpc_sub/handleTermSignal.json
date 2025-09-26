@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/root.go",
+    "lineno": 106,
+    "focalfunc": "func handleTermSignal(svr *client.Service)",
+    "funcbody": "func handleTermSignal(svr *client.Service) {\n\tch := make(chan os.Signal, 1)\n\tsignal.Notify(ch, syscall.SIGINT, syscall.SIGTERM)\n\t<-ch\n\tsvr.GracefulClose(500 * time.Millisecond)\n}",
+    "funcname": "handleTermSignal"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 716,
+    "focalfunc": "func (u *transformationUpdate) toTransformedResourceMetadata() transformedResourceMetadata",
+    "funcbody": "func (u *transformationUpdate) toTransformedResourceMetadata() transformedResourceMetadata {\n\treturn transformedResourceMetadata{\n\t\tMediaTypeV:\tu.mediaType.Type,\n\t\tTarget:\t\tu.targetPath,\n\t\tMetaData:\tu.data,\n\t}\n}",
+    "funcname": "toTransformedResourceMetadata"
+}

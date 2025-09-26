@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/rest/rest.go",
+    "lineno": 30,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\treturn nil\n}",
+    "funcname": "Init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 391,
+    "focalfunc": "func (ps *prometheusState) Collect(ch chan<- stdprometheus.Metric)",
+    "funcbody": "func (ps *prometheusState) Collect(ch chan<- stdprometheus.Metric) {\n\tfor _, v := range ps.vectors {\n\t\tv.Collect(ch)\n\t}\n\n\tps.mtx.Lock()\n\tdefer ps.mtx.Unlock()\n\n\tfor _, ep := range ps.deletedEP {\n\t\tif !ps.dynamicConfig.hasEntryPoint(ep) {\n\t\t\tps.DeletePartialMatch(map[string]string{\"entrypoint\": ep})\n\t\t}\n\t}\n\n\tfor _, router := range ps.deletedRouters {\n\t\tif !ps.dynamicConfig.hasRouter(router) {\n\t\t\tps.DeletePartialMatch(map[string]string{\"router\": router})\n\t\t}\n\t}\n\n\tfor _, service := range ps.deletedServices {\n\t\tif !ps.dynamicConfig.hasService(service) {\n\t\t\tps.DeletePartialMatch(map[string]string{\"service\": service})\n\t\t}\n\t}\n\n\tfor service, urls := range ps.deletedURLs {\n\t\tfor _, url := range urls {\n\t\t\tif !ps.dynamicConfig.hasServerURL(service, url) {\n\t\t\t\tps.DeletePartialMatch(map[string]string{\"service\": service, \"url\": url})\n\t\t\t}\n\t\t}\n\t}\n\n\tps.deletedEP = nil\n\tps.deletedRouters = nil\n\tps.deletedServices = nil\n\tps.deletedURLs = make(map[string][]string)\n}",
+    "funcname": "Collect"
+}

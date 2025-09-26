@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 510,
+    "focalfunc": "func addDateFieldAliases(values []string) []string",
+    "funcbody": "func addDateFieldAliases(values []string) []string {\n\tvar complete []string\n\n\tfor _, v := range values {\n\t\tcomplete = append(complete, v)\n\t\tif aliases, found := dateFieldAliases[v]; found {\n\t\t\tcomplete = append(complete, aliases...)\n\t\t}\n\t}\n\treturn helpers.UniqueStringsReuse(complete)\n}",
+    "funcname": "addDateFieldAliases"
+}

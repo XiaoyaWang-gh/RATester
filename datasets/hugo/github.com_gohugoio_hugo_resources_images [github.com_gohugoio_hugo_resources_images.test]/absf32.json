@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/resampling.go",
+    "lineno": 202,
+    "focalfunc": "func absf32(x float32) float32",
+    "funcbody": "func absf32(x float32) float32 {\n\tif x < 0 {\n\t\treturn -x\n\t}\n\treturn x\n}",
+    "funcname": "absf32"
+}

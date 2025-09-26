@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 923,
+    "focalfunc": "func (c *DefaultCtx) Links(link ...string)",
+    "funcbody": "func (c *DefaultCtx) Links(link ...string) {\n\tif len(link) == 0 {\n\t\treturn\n\t}\n\tbb := bytebufferpool.Get()\n\tfor i := range link {\n\t\tif i%2 == 0 {\n\t\t\tbb.WriteByte('<')\n\t\t\tbb.WriteString(link[i])\n\t\t\tbb.WriteByte('>')\n\t\t} else {\n\t\t\tbb.WriteString(`; rel=\"` + link[i] + `\",`)\n\t\t}\n\t}\n\tc.setCanonical(HeaderLink, utils.TrimRight(c.app.getString(bb.Bytes()), ','))\n\tbytebufferpool.Put(bb)\n}",
+    "funcname": "Links"
+}

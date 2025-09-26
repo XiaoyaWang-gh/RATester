@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 490,
+    "focalfunc": "func (r *Request) checkClient()",
+    "funcbody": "func (r *Request) checkClient() {\n\tif r.client == nil {\n\t\tr.SetClient(defaultClient)\n\t}\n}",
+    "funcname": "checkClient"
+}

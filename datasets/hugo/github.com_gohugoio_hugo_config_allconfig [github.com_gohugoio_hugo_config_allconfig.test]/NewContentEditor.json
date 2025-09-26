@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 108,
+    "focalfunc": "func (c ConfigLanguage) NewContentEditor() string",
+    "funcbody": "func (c ConfigLanguage) NewContentEditor() string {\n\treturn c.config.NewContentEditor\n}",
+    "funcname": "NewContentEditor"
+}

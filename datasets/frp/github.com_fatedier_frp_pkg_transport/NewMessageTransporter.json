@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/message.go",
+    "lineno": 38,
+    "focalfunc": "func NewMessageTransporter(sendCh chan msg.Message) MessageTransporter",
+    "funcbody": "func NewMessageTransporter(sendCh chan msg.Message) MessageTransporter {\n\treturn &transporterImpl{\n\t\tsendCh:\t\tsendCh,\n\t\tregistry:\tmake(map[string]map[string]chan msg.Message),\n\t}\n}",
+    "funcname": "NewMessageTransporter"
+}

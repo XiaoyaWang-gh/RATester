@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 31,
+    "focalfunc": "func New() goldmark.Extender",
+    "funcbody": "func New() goldmark.Extender {\n\treturn &hugoContextExtension{}\n}",
+    "funcname": "New"
+}

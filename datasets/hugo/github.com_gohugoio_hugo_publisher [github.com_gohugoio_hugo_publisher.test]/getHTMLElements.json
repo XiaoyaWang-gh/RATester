@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 110,
+    "focalfunc": "func (c *htmlElementsCollector) getHTMLElements() HTMLElements",
+    "funcbody": "func (c *htmlElementsCollector) getHTMLElements() HTMLElements {\n\tvar (\n\t\tclasses\t[]string\n\t\tids\t[]string\n\t\ttags\t[]string\n\t)\n\n\tfor _, el := range c.elements {\n\t\tclasses = append(classes, el.Classes...)\n\t\tids = append(ids, el.IDs...)\n\t\tif !c.conf.DisableTags {\n\t\t\ttags = append(tags, el.Tag)\n\t\t}\n\t}\n\n\tclasses = helpers.UniqueStringsSorted(classes)\n\tids = helpers.UniqueStringsSorted(ids)\n\ttags = helpers.UniqueStringsSorted(tags)\n\n\tels := HTMLElements{\n\t\tClasses:\tclasses,\n\t\tIDs:\t\tids,\n\t\tTags:\t\ttags,\n\t}\n\n\treturn els\n}",
+    "funcname": "getHTMLElements"
+}

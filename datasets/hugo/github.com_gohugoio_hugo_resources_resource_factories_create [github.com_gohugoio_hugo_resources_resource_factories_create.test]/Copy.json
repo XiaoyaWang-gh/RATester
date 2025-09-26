@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/create.go",
+    "lineno": 121,
+    "focalfunc": "func (c *Client) Copy(r resource.Resource, targetPath string) (resource.Resource, error)",
+    "funcbody": "func (c *Client) Copy(r resource.Resource, targetPath string) (resource.Resource, error) {\n\tkey := dynacache.CleanKey(targetPath) + \"__copy\"\n\treturn c.rs.ResourceCache.GetOrCreate(key, func() (resource.Resource, error) {\n\t\treturn resources.Copy(r, targetPath), nil\n\t})\n}",
+    "funcname": "Copy"
+}

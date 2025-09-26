@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 68,
+    "focalfunc": "func NewFilterTxOrmDecorator(delegate TxOrmer, root Filter, txName string) TxOrmer",
+    "funcbody": "func NewFilterTxOrmDecorator(delegate TxOrmer, root Filter, txName string) TxOrmer {\n\tres := &filterOrmDecorator{\n\t\tormer:\t\tdelegate,\n\t\tTxCommitter:\tdelegate,\n\t\troot:\t\troot,\n\t\tinsideTx:\ttrue,\n\t\ttxStartTime:\ttime.Now(),\n\t\ttxName:\t\ttxName,\n\t}\n\treturn res\n}",
+    "funcname": "NewFilterTxOrmDecorator"
+}

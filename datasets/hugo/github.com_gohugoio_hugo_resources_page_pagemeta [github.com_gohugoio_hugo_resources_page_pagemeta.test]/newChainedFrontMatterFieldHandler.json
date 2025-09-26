@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 421,
+    "focalfunc": "func (f FrontMatterHandler) newChainedFrontMatterFieldHandler(handlers ...frontMatterFieldHandler) frontMatterFieldHandler",
+    "funcbody": "func (f FrontMatterHandler) newChainedFrontMatterFieldHandler(handlers ...frontMatterFieldHandler) frontMatterFieldHandler {\n\treturn func(d *FrontMatterDescriptor) (bool, error) {\n\t\tfor _, h := range handlers {\n\n\t\t\tsuccess, err := h(d)\n\t\t\tif err != nil {\n\t\t\t\tf.logger.Errorln(err)\n\t\t\t} else if success {\n\t\t\t\treturn true, nil\n\t\t\t}\n\t\t}\n\t\treturn false, nil\n\t}\n}",
+    "funcname": "newChainedFrontMatterFieldHandler"
+}

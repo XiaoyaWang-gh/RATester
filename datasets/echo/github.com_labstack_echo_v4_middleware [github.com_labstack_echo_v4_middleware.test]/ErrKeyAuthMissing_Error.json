@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/key_auth.go",
+    "lineno": 72,
+    "focalfunc": "func (e *ErrKeyAuthMissing) Error() string",
+    "funcbody": "func (e *ErrKeyAuthMissing) Error() string {\n\treturn e.Err.Error()\n}",
+    "funcname": "Error"
+}

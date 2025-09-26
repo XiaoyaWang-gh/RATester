@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 535,
+    "focalfunc": "func (h *HugoSites) postRenderOnce() error",
+    "funcbody": "func (h *HugoSites) postRenderOnce() error {\n\th.postRenderInit.Do(func() {\n\t\tconf := h.Configs.Base\n\t\tif conf.PrintPathWarnings {\n\n\t\t\thugofs.WalkFilesystems(h.Fs.PublishDir, func(fs afero.Fs) bool {\n\t\t\t\tif dfs, ok := fs.(hugofs.DuplicatesReporter); ok {\n\t\t\t\t\tdupes := dfs.ReportDuplicates()\n\t\t\t\t\tif dupes != \"\" {\n\t\t\t\t\t\th.Log.Warnln(\"Duplicate target paths:\", dupes)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn false\n\t\t\t})\n\t\t}\n\n\t\tif conf.PrintUnusedTemplates {\n\t\t\tunusedTemplates := h.Tmpl().(tpl.UnusedTemplatesProvider).UnusedTemplates()\n\t\t\tfor _, unusedTemplate := range unusedTemplates {\n\t\t\t\th.Log.Warnf(\"Template %s is unused, source file %s\", unusedTemplate.Name(), unusedTemplate.Filename())\n\t\t\t}\n\t\t}\n\t})\n\treturn nil\n}",
+    "funcname": "postRenderOnce"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 168,
+    "focalfunc": "func TrustIPRange(ipRange *net.IPNet) TrustOption",
+    "funcbody": "func TrustIPRange(ipRange *net.IPNet) TrustOption {\n\treturn func(c *ipChecker) {\n\t\tc.trustExtraRanges = append(c.trustExtraRanges, ipRange)\n\t}\n}",
+    "funcname": "TrustIPRange"
+}

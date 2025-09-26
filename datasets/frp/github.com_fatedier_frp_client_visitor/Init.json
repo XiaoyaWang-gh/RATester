@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 410,
+    "focalfunc": "func (qs *QUICTunnelSession) Init(listenConn *net.UDPConn, raddr *net.UDPAddr) error",
+    "funcbody": "func (qs *QUICTunnelSession) Init(listenConn *net.UDPConn, raddr *net.UDPAddr) error {\n\ttlsConfig, err := transport.NewClientTLSConfig(\"\", \"\", \"\", raddr.String())\n\tif err != nil {\n\t\treturn fmt.Errorf(\"create tls config error: %v\", err)\n\t}\n\ttlsConfig.NextProtos = []string{\"frp\"}\n\tquicConn, err := quic.Dial(context.Background(), listenConn, raddr, tlsConfig,\n\t\t&quic.Config{\n\t\t\tMaxIdleTimeout:\t\ttime.Duration(qs.clientCfg.Transport.QUIC.MaxIdleTimeout) * time.Second,\n\t\t\tMaxIncomingStreams:\tint64(qs.clientCfg.Transport.QUIC.MaxIncomingStreams),\n\t\t\tKeepAlivePeriod:\ttime.Duration(qs.clientCfg.Transport.QUIC.KeepalivePeriod) * time.Second,\n\t\t})\n\tif err != nil {\n\t\treturn fmt.Errorf(\"dial quic error: %v\", err)\n\t}\n\tqs.mu.Lock()\n\tqs.session = quicConn\n\tqs.listenConn = listenConn\n\tqs.mu.Unlock()\n\treturn nil\n}",
+    "funcname": "Init"
+}

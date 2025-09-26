@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 119,
+    "focalfunc": "func Forward(addr string, clients ...*fasthttp.Client) fiber.Handler",
+    "funcbody": "func Forward(addr string, clients ...*fasthttp.Client) fiber.Handler {\n\treturn func(c fiber.Ctx) error {\n\t\treturn Do(c, addr, clients...)\n\t}\n}",
+    "funcname": "Forward"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/util.go",
+    "lineno": 67,
+    "focalfunc": "func ParseRangeNumbers(rangeStr string) (numbers []int64, err error)",
+    "funcbody": "func ParseRangeNumbers(rangeStr string) (numbers []int64, err error) {\n\trangeStr = strings.TrimSpace(rangeStr)\n\tnumbers = make([]int64, 0)\n\n\tnumRanges := strings.Split(rangeStr, \",\")\n\tfor _, numRangeStr := range numRanges {\n\n\t\tnumArray := strings.Split(numRangeStr, \"-\")\n\n\t\trangeType := len(numArray)\n\t\tswitch rangeType {\n\t\tcase 1:\n\n\t\t\tsingleNum, errRet := strconv.ParseInt(strings.TrimSpace(numArray[0]), 10, 64)\n\t\t\tif errRet != nil {\n\t\t\t\terr = fmt.Errorf(\"range number is invalid, %v\", errRet)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tnumbers = append(numbers, singleNum)\n\t\tcase 2:\n\n\t\t\tmin, errRet := strconv.ParseInt(strings.TrimSpace(numArray[0]), 10, 64)\n\t\t\tif errRet != nil {\n\t\t\t\terr = fmt.Errorf(\"range number is invalid, %v\", errRet)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tmax, errRet := strconv.ParseInt(strings.TrimSpace(numArray[1]), 10, 64)\n\t\t\tif errRet != nil {\n\t\t\t\terr = fmt.Errorf(\"range number is invalid, %v\", errRet)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tif max < min {\n\t\t\t\terr = fmt.Errorf(\"range number is invalid\")\n\t\t\t\treturn\n\t\t\t}\n\t\t\tfor i := min; i <= max; i++ {\n\t\t\t\tnumbers = append(numbers, i)\n\t\t\t}\n\t\tdefault:\n\t\t\terr = fmt.Errorf(\"range number is invalid\")\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "ParseRangeNumbers"
+}

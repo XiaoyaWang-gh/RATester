@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 46,
+    "focalfunc": "func ToParamsAndPrepare(in any) (Params, error)",
+    "funcbody": "func ToParamsAndPrepare(in any) (Params, error) {\n\tif types.IsNil(in) {\n\t\treturn Params{}, nil\n\t}\n\tm, err := ToStringMapE(in)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tPrepareParams(m)\n\treturn m, nil\n}",
+    "funcname": "ToParamsAndPrepare"
+}

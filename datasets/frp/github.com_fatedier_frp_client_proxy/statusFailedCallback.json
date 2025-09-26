@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 242,
+    "focalfunc": "func (pw *Wrapper) statusFailedCallback()",
+    "funcbody": "func (pw *Wrapper) statusFailedCallback() {\n\txl := pw.xl\n\tatomic.StoreUint32(&pw.health, 1)\n\t_ = errors.PanicToError(func() {\n\t\tselect {\n\t\tcase pw.healthNotifyCh <- struct{}{}:\n\t\tdefault:\n\t\t}\n\t})\n\txl.Infof(\"health check failed\")\n}",
+    "funcname": "statusFailedCallback"
+}

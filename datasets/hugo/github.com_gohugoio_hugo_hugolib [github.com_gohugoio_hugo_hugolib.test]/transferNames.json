@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 506,
+    "focalfunc": "func (s *shortcodeHandler) transferNames(in *shortcodeHandler)",
+    "funcbody": "func (s *shortcodeHandler) transferNames(in *shortcodeHandler) {\n\ts.nameSetMu.Lock()\n\tdefer s.nameSetMu.Unlock()\n\tfor k := range in.nameSet {\n\t\ts.nameSet[k] = true\n\t}\n}",
+    "funcname": "transferNames"
+}

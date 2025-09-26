@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 354,
+    "focalfunc": "func (im *identityManager) GetDependencyManagerForScope(int) Manager",
+    "funcbody": "func (im *identityManager) GetDependencyManagerForScope(int) Manager {\n\treturn im\n}",
+    "funcname": "GetDependencyManagerForScope"
+}

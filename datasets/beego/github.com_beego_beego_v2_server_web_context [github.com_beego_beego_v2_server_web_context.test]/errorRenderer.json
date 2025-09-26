@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 187,
+    "focalfunc": "func errorRenderer(err error) Renderer",
+    "funcbody": "func errorRenderer(err error) Renderer {\n\treturn rendererFunc(func(ctx *Context) {\n\t\tctx.Output.SetStatus(500)\n\t\tctx.Output.Body([]byte(err.Error()))\n\t})\n}",
+    "funcname": "errorRenderer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 682,
+    "focalfunc": "func (r *resourceTransformations) hasTransformationPermalinkHash() bool",
+    "funcbody": "func (r *resourceTransformations) hasTransformationPermalinkHash() bool {\n\tfor _, t := range r.transformations {\n\t\tif constants.IsResourceTransformationPermalinkHash(t.Key().Name) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "hasTransformationPermalinkHash"
+}

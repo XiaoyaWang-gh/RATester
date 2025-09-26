@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 91,
+    "focalfunc": "func (https *HttpsServer) Close() error",
+    "funcbody": "func (https *HttpsServer) Close() error {\n\treturn https.listener.Close()\n}",
+    "funcname": "Close"
+}

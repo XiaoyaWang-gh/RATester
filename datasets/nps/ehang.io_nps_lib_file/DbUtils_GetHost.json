@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 177,
+    "focalfunc": "func (s *DbUtils) GetHost(start, length int, id int, search string) ([]*Host, int)",
+    "funcbody": "func (s *DbUtils) GetHost(start, length int, id int, search string) ([]*Host, int) {\n\tlist := make([]*Host, 0)\n\tvar cnt int\n\tkeys := GetMapKeys(s.JsonDb.Hosts, false, \"\", \"\")\n\tfor _, key := range keys {\n\t\tif value, ok := s.JsonDb.Hosts.Load(key); ok {\n\t\t\tv := value.(*Host)\n\t\t\tif search != \"\" && !(v.Id == common.GetIntNoErrByStr(search) || strings.Contains(v.Host, search) || strings.Contains(v.Remark, search)) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif id == 0 || v.Client.Id == id {\n\t\t\t\tcnt++\n\t\t\t\tif start--; start < 0 {\n\t\t\t\t\tif length--; length >= 0 {\n\t\t\t\t\t\tlist = append(list, v)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn list, cnt\n}",
+    "funcname": "GetHost"
+}

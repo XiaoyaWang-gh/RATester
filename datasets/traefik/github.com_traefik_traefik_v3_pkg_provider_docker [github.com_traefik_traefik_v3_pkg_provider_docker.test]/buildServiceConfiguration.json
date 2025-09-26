@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/config.go",
+    "lineno": 154,
+    "focalfunc": "func (p *DynConfBuilder) buildServiceConfiguration(ctx context.Context, container dockerData, configuration *dynamic.HTTPConfiguration) error",
+    "funcbody": "func (p *DynConfBuilder) buildServiceConfiguration(ctx context.Context, container dockerData, configuration *dynamic.HTTPConfiguration) error {\n\tserviceName := getServiceName(container)\n\n\tif len(configuration.Services) == 0 {\n\t\tconfiguration.Services = make(map[string]*dynamic.Service)\n\t\tlb := &dynamic.ServersLoadBalancer{}\n\t\tlb.SetDefaults()\n\t\tconfiguration.Services[serviceName] = &dynamic.Service{\n\t\t\tLoadBalancer: lb,\n\t\t}\n\t}\n\n\tif container.Health != \"\" && container.Health != dockertypes.Healthy {\n\t\treturn nil\n\t}\n\n\tfor name, service := range configuration.Services {\n\t\tctx := log.Ctx(ctx).With().Str(logs.ServiceName, name).Logger().WithContext(ctx)\n\t\tif err := p.addServer(ctx, container, service.LoadBalancer); err != nil {\n\t\t\treturn fmt.Errorf(\"service %q error: %w\", name, err)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildServiceConfiguration"
+}

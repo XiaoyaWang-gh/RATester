@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/protobuf.go",
+    "lineno": 21,
+    "focalfunc": "func (r ProtoBuf) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r ProtoBuf) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\n\tbytes, err := proto.Marshal(r.Data.(proto.Message))\n\tif err != nil {\n\t\treturn err\n\t}\n\n\t_, err = w.Write(bytes)\n\treturn err\n}",
+    "funcname": "Render"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 74,
+    "focalfunc": "func DetectLegacyINIFormatFromFile(path string) bool",
+    "funcbody": "func DetectLegacyINIFormatFromFile(path string) bool {\n\tb, err := os.ReadFile(path)\n\tif err != nil {\n\t\treturn false\n\t}\n\treturn DetectLegacyINIFormat(b)\n}",
+    "funcname": "DetectLegacyINIFormatFromFile"
+}

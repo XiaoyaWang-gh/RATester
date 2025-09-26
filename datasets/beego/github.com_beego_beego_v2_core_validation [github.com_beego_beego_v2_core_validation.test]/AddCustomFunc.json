@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 80,
+    "focalfunc": "func AddCustomFunc(name string, f CustomFunc) error",
+    "funcbody": "func AddCustomFunc(name string, f CustomFunc) error {\n\tif unFuncs[name] {\n\t\treturn fmt.Errorf(\"invalid function name: %s\", name)\n\t}\n\n\tfuncs[name] = reflect.ValueOf(f)\n\treturn nil\n}",
+    "funcname": "AddCustomFunc"
+}

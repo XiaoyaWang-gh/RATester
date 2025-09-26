@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 894,
+    "focalfunc": "func bodyAllowedForStatus(status int) bool",
+    "funcbody": "func bodyAllowedForStatus(status int) bool {\n\tswitch {\n\tcase status >= 100 && status <= 199:\n\t\treturn false\n\tcase status == http.StatusNoContent:\n\t\treturn false\n\tcase status == http.StatusNotModified:\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "bodyAllowedForStatus"
+}

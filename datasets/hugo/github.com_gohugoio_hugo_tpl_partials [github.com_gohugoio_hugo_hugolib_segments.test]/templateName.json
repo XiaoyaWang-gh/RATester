@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 57,
+    "focalfunc": "func (k partialCacheKey) templateName() string",
+    "funcbody": "func (k partialCacheKey) templateName() string {\n\tif !strings.HasPrefix(k.Name, \"partials/\") {\n\t\treturn \"partials/\" + k.Name\n\t}\n\treturn k.Name\n}",
+    "funcname": "templateName"
+}

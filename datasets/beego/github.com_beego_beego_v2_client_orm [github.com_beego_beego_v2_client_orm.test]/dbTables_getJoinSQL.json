@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 171,
+    "focalfunc": "func (t *dbTables) getJoinSQL() (join string)",
+    "funcbody": "func (t *dbTables) getJoinSQL() (join string) {\n\tQ := t.base.TableQuote()\n\n\tfor _, jt := range t.tables {\n\t\tif jt.inner {\n\t\t\tjoin += \"INNER JOIN \"\n\t\t} else {\n\t\t\tjoin += \"LEFT OUTER JOIN \"\n\t\t}\n\t\tvar (\n\t\t\ttable\tstring\n\t\t\tt1, t2\tstring\n\t\t\tc1, c2\tstring\n\t\t)\n\t\tt1 = \"T0\"\n\t\tif jt.jtl != nil {\n\t\t\tt1 = jt.jtl.index\n\t\t}\n\t\tt2 = jt.index\n\t\ttable = jt.mi.Table\n\n\t\tswitch {\n\t\tcase jt.fi.FieldType == RelManyToMany || jt.fi.FieldType == RelReverseMany || jt.fi.Reverse && jt.fi.ReverseFieldInfo.FieldType == RelManyToMany:\n\t\t\tc1 = jt.fi.Mi.Fields.Pk.Column\n\t\t\tfor _, ffi := range jt.mi.Fields.FieldsRel {\n\t\t\t\tif jt.fi.Mi == ffi.RelModelInfo {\n\t\t\t\t\tc2 = ffi.Column\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\tdefault:\n\t\t\tc1 = jt.fi.Column\n\t\t\tc2 = jt.fi.RelModelInfo.Fields.Pk.Column\n\n\t\t\tif jt.fi.Reverse {\n\t\t\t\tc1 = jt.mi.Fields.Pk.Column\n\t\t\t\tc2 = jt.fi.ReverseFieldInfo.Column\n\t\t\t}\n\t\t}\n\n\t\tjoin += fmt.Sprintf(\"%s%s%s %s ON %s.%s%s%s = %s.%s%s%s \", Q, table, Q, t2,\n\t\t\tt2, Q, c2, Q, t1, Q, c1, Q)\n\t}\n\treturn\n}",
+    "funcname": "getJoinSQL"
+}

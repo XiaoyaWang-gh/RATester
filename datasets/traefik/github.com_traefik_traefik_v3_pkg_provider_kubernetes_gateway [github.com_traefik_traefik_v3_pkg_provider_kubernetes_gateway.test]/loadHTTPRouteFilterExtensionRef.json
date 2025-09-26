@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 359,
+    "focalfunc": "func (p *Provider) loadHTTPRouteFilterExtensionRef(namespace string, extensionRef *gatev1.LocalObjectReference) (string, *dynamic.Middleware, error)",
+    "funcbody": "func (p *Provider) loadHTTPRouteFilterExtensionRef(namespace string, extensionRef *gatev1.LocalObjectReference) (string, *dynamic.Middleware, error) {\n\tif extensionRef == nil {\n\t\treturn \"\", nil, errors.New(\"filter extension ref undefined\")\n\t}\n\n\tfilterFunc, ok := p.groupKindFilterFuncs[string(extensionRef.Group)][string(extensionRef.Kind)]\n\tif !ok {\n\t\treturn \"\", nil, fmt.Errorf(\"unsupported filter extension ref %s/%s/%s\", extensionRef.Group, extensionRef.Kind, extensionRef.Name)\n\t}\n\tif filterFunc == nil {\n\t\treturn \"\", nil, fmt.Errorf(\"undefined filterFunc for filter extension ref %s/%s/%s\", extensionRef.Group, extensionRef.Kind, extensionRef.Name)\n\t}\n\n\treturn filterFunc(string(extensionRef.Name), namespace)\n}",
+    "funcname": "loadHTTPRouteFilterExtensionRef"
+}

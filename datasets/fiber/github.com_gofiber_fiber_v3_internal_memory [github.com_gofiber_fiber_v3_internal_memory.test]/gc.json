@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/memory/memory.go",
+    "lineno": 70,
+    "focalfunc": "func (s *Storage) gc(sleep time.Duration)",
+    "funcbody": "func (s *Storage) gc(sleep time.Duration) {\n\tticker := time.NewTicker(sleep)\n\tdefer ticker.Stop()\n\tvar expired []string\n\n\tfor range ticker.C {\n\t\tts := utils.Timestamp()\n\t\texpired = expired[:0]\n\t\ts.RLock()\n\t\tfor key, v := range s.data {\n\t\t\tif v.e != 0 && v.e <= ts {\n\t\t\t\texpired = append(expired, key)\n\t\t\t}\n\t\t}\n\t\ts.RUnlock()\n\t\ts.Lock()\n\n\t\tfor i := range expired {\n\t\t\tv := s.data[expired[i]]\n\t\t\tif v.e != 0 && v.e <= ts {\n\t\t\t\tdelete(s.data, expired[i])\n\t\t\t}\n\t\t}\n\t\ts.Unlock()\n\t}\n}",
+    "funcname": "gc"
+}

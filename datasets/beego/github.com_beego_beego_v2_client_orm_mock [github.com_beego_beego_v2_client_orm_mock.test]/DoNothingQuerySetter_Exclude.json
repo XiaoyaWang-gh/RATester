@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 84,
+    "focalfunc": "func (d *DoNothingQuerySetter) Exclude(s string, i ...interface{}) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) Exclude(s string, i ...interface{}) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "Exclude"
+}

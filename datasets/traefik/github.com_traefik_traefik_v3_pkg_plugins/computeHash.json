@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 419,
+    "focalfunc": "func computeHash(filepath string) (string, error)",
+    "funcbody": "func computeHash(filepath string) (string, error) {\n\tfile, err := os.Open(filepath)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\thash := sha256.New()\n\n\tif _, err := io.Copy(hash, file); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tsum := hash.Sum(nil)\n\n\treturn hex.EncodeToString(sum), nil\n}",
+    "funcname": "computeHash"
+}

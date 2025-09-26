@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/system/system.go",
+    "lineno": 21,
+    "focalfunc": "func EnableCompatibilityMode()",
+    "funcbody": "func EnableCompatibilityMode() {\n}",
+    "funcname": "EnableCompatibilityMode"
+}

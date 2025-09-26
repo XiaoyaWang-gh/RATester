@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 227,
+    "focalfunc": "func (c ConfigLanguage) BuildDrafts() bool",
+    "funcbody": "func (c ConfigLanguage) BuildDrafts() bool {\n\treturn c.config.BuildDrafts\n}",
+    "funcname": "BuildDrafts"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_limit.go",
+    "lineno": 108,
+    "focalfunc": "func limitedReaderPool(c BodyLimitConfig) sync.Pool",
+    "funcbody": "func limitedReaderPool(c BodyLimitConfig) sync.Pool {\n\treturn sync.Pool{\n\t\tNew: func() interface{} {\n\t\t\treturn &limitedReader{BodyLimitConfig: c}\n\t\t},\n\t}\n}",
+    "funcname": "limitedReaderPool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 97,
+    "focalfunc": "func (e *RequestExpect) Explain(explain ...interface{}) *RequestExpect",
+    "funcbody": "func (e *RequestExpect) Explain(explain ...interface{}) *RequestExpect {\n\te.explain = explain\n\treturn e\n}",
+    "funcname": "Explain"
+}

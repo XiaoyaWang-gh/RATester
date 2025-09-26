@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 700,
+    "focalfunc": "func (p *pageMeta) shouldList(global bool) bool",
+    "funcbody": "func (p *pageMeta) shouldList(global bool) bool {\n\tif p.isStandalone() {\n\n\t\treturn false\n\t}\n\n\tswitch p.pageConfig.Build.List {\n\tcase pagemeta.Always:\n\t\treturn true\n\tcase pagemeta.Never:\n\t\treturn false\n\tcase pagemeta.ListLocally:\n\t\treturn !global\n\t}\n\treturn false\n}",
+    "funcname": "shouldList"
+}

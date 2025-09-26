@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 247,
+    "focalfunc": "func (rc *ResourceConfig) Compile(basePath string, pathParser *paths.PathParser, mediaTypes media.Types) error",
+    "funcbody": "func (rc *ResourceConfig) Compile(basePath string, pathParser *paths.PathParser, mediaTypes media.Types) error {\n\tif rc.Params != nil {\n\t\tmaps.PrepareParams(rc.Params)\n\t}\n\n\trc.Path = paths.NormalizePathStringBasic(path.Join(basePath, rc.Path))\n\trc.PathInfo = pathParser.Parse(files.ComponentFolderContent, rc.Path)\n\tif rc.Content.MediaType != \"\" {\n\t\tvar found bool\n\t\trc.ContentMediaType, found = mediaTypes.GetByType(rc.Content.MediaType)\n\t\tif !found {\n\t\t\treturn fmt.Errorf(\"media type %q not found\", rc.Content.MediaType)\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "Compile"
+}

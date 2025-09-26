@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 121,
+    "focalfunc": "func (d Decoder) Unmarshal(data []byte, f Format) (any, error)",
+    "funcbody": "func (d Decoder) Unmarshal(data []byte, f Format) (any, error) {\n\tif len(data) == 0 {\n\t\tswitch f {\n\t\tcase CSV:\n\t\t\treturn make([][]string, 0), nil\n\t\tdefault:\n\t\t\treturn make(map[string]any), nil\n\t\t}\n\t}\n\tvar v any\n\terr := d.UnmarshalTo(data, f, &v)\n\n\treturn v, err\n}",
+    "funcname": "Unmarshal"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 96,
+    "focalfunc": "func templateVariants(name string) []string",
+    "funcbody": "func templateVariants(name string) []string {\n\t_, variants := templateNameAndVariants(name)\n\treturn variants\n}",
+    "funcname": "templateVariants"
+}

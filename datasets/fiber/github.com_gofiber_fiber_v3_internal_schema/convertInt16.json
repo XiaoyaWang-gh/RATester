@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/converter.go",
+    "lineno": 87,
+    "focalfunc": "func convertInt16(value string) reflect.Value",
+    "funcbody": "func convertInt16(value string) reflect.Value {\n\tif v, err := strconv.ParseInt(value, 10, 16); err == nil {\n\t\treturn reflect.ValueOf(int16(v))\n\t}\n\treturn invalidValue\n}",
+    "funcname": "convertInt16"
+}

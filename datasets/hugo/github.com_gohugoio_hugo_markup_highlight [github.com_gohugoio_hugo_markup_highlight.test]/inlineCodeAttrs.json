@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 272,
+    "focalfunc": "func inlineCodeAttrs(lang string) string",
+    "funcbody": "func inlineCodeAttrs(lang string) string {\n\treturn fmt.Sprintf(` class=\"code-inline language-%s\"`, lang)\n}",
+    "funcname": "inlineCodeAttrs"
+}

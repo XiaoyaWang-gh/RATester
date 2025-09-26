@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 39,
+    "focalfunc": "func isCSSNmchar(r rune) bool",
+    "funcbody": "func isCSSNmchar(r rune) bool {\n\n\treturn 'a' <= r && r <= 'z' ||\n\t\t'A' <= r && r <= 'Z' ||\n\t\t'0' <= r && r <= '9' ||\n\t\tr == '-' ||\n\t\tr == '_' ||\n\n\t\t0x80 <= r && r <= 0xd7ff ||\n\t\t0xe000 <= r && r <= 0xfffd ||\n\t\t0x10000 <= r && r <= 0x10ffff\n}",
+    "funcname": "isCSSNmchar"
+}

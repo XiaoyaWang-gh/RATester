@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 127,
+    "focalfunc": "func (ctx *Context) PeekValue(k ast.NodeKind) any",
+    "funcbody": "func (ctx *Context) PeekValue(k ast.NodeKind) any {\n\tif ctx.values == nil {\n\t\treturn nil\n\t}\n\tv := ctx.values[k]\n\tif len(v) == 0 {\n\t\treturn nil\n\t}\n\treturn v[len(v)-1]\n}",
+    "funcname": "PeekValue"
+}

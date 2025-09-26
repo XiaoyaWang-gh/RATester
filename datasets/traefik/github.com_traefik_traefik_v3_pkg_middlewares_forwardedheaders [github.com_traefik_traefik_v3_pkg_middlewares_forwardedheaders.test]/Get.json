@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 203,
+    "focalfunc": "func (h unsafeHeader) Get(key string) string",
+    "funcbody": "func (h unsafeHeader) Get(key string) string {\n\tif len(h[key]) == 0 {\n\t\treturn \"\"\n\t}\n\treturn h[key][0]\n}",
+    "funcname": "Get"
+}

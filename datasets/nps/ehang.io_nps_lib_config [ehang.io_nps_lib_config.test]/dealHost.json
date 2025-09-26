@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 158,
+    "focalfunc": "func dealHost(s string) *file.Host",
+    "funcbody": "func dealHost(s string) *file.Host {\n\th := &file.Host{}\n\th.Target = new(file.Target)\n\th.Scheme = \"all\"\n\tvar headerChange string\n\tfor _, v := range splitStr(s) {\n\t\titem := strings.Split(v, \"=\")\n\t\tif len(item) == 0 {\n\t\t\tcontinue\n\t\t} else if len(item) == 1 {\n\t\t\titem = append(item, \"\")\n\t\t}\n\t\tswitch strings.TrimSpace(item[0]) {\n\t\tcase \"host\":\n\t\t\th.Host = item[1]\n\t\tcase \"target_addr\":\n\t\t\th.Target.TargetStr = strings.Replace(item[1], \",\", \"\\n\", -1)\n\t\tcase \"host_change\":\n\t\t\th.HostChange = item[1]\n\t\tcase \"scheme\":\n\t\t\th.Scheme = item[1]\n\t\tcase \"location\":\n\t\t\th.Location = item[1]\n\t\tdefault:\n\t\t\tif strings.Contains(item[0], \"header\") {\n\t\t\t\theaderChange += strings.Replace(item[0], \"header_\", \"\", -1) + \":\" + item[1] + \"\\n\"\n\t\t\t}\n\t\t\th.HeaderChange = headerChange\n\t\t}\n\t}\n\treturn h\n}",
+    "funcname": "dealHost"
+}

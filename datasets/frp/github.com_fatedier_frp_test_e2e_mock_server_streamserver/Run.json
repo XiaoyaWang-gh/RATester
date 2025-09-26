@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 76,
+    "focalfunc": "func (s *Server) Run() error",
+    "funcbody": "func (s *Server) Run() error {\n\tif err := s.initListener(); err != nil {\n\t\treturn err\n\t}\n\n\tgo func() {\n\t\tfor {\n\t\t\tc, err := s.l.Accept()\n\t\t\tif err != nil {\n\t\t\t\treturn\n\t\t\t}\n\t\t\tgo s.handler(c)\n\t\t}\n\t}()\n\treturn nil\n}",
+    "funcname": "Run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 610,
+    "focalfunc": "func (engine *Engine) RunListener(listener net.Listener) (err error)",
+    "funcbody": "func (engine *Engine) RunListener(listener net.Listener) (err error) {\n\tdebugPrint(\"Listening and serving HTTP on listener what's bind with address@%s\", listener.Addr())\n\tdefer func() { debugPrintError(err) }()\n\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n\n\terr = http.Serve(listener, engine.Handler())\n\treturn\n}",
+    "funcname": "RunListener"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 241,
+    "focalfunc": "func CommonDirPath(path1, path2 string) string",
+    "funcbody": "func CommonDirPath(path1, path2 string) string {\n\tif path1 == \"\" || path2 == \"\" {\n\t\treturn \"\"\n\t}\n\n\thadLeadingSlash := strings.HasPrefix(path1, \"/\") || strings.HasPrefix(path2, \"/\")\n\n\tpath1 = TrimLeading(path1)\n\tpath2 = TrimLeading(path2)\n\n\tp1 := strings.Split(path1, \"/\")\n\tp2 := strings.Split(path2, \"/\")\n\n\tvar common []string\n\n\tfor i := 0; i < len(p1) && i < len(p2); i++ {\n\t\tif p1[i] == p2[i] {\n\t\t\tcommon = append(common, p1[i])\n\t\t} else {\n\t\t\tbreak\n\t\t}\n\t}\n\n\ts := strings.Join(common, \"/\")\n\n\tif hadLeadingSlash && s != \"\" {\n\t\ts = \"/\" + s\n\t}\n\n\treturn s\n}",
+    "funcname": "CommonDirPath"
+}

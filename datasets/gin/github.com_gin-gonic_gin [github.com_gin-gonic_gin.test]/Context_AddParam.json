@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 420,
+    "focalfunc": "func (c *Context) AddParam(key, value string)",
+    "funcbody": "func (c *Context) AddParam(key, value string) {\n\tc.Params = append(c.Params, Param{Key: key, Value: value})\n}",
+    "funcname": "AddParam"
+}

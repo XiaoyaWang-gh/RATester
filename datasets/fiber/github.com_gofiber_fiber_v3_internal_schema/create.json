@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 129,
+    "focalfunc": "func (c *cache) create(t reflect.Type, parentAlias string) *structInfo",
+    "funcbody": "func (c *cache) create(t reflect.Type, parentAlias string) *structInfo {\n\tinfo := &structInfo{}\n\tvar anonymousInfos []*structInfo\n\tfor i := 0; i < t.NumField(); i++ {\n\t\tif f := c.createField(t.Field(i), parentAlias); f != nil {\n\t\t\tinfo.fields = append(info.fields, f)\n\t\t\tif ft := indirectType(f.typ); ft.Kind() == reflect.Struct && f.isAnonymous {\n\t\t\t\tanonymousInfos = append(anonymousInfos, c.create(ft, f.canonicalAlias))\n\t\t\t}\n\t\t}\n\t}\n\tfor i, a := range anonymousInfos {\n\t\tothers := []*structInfo{info}\n\t\tothers = append(others, anonymousInfos[:i]...)\n\t\tothers = append(others, anonymousInfos[i+1:]...)\n\t\tfor _, f := range a.fields {\n\t\t\tif !containsAlias(others, f.alias) {\n\t\t\t\tinfo.fields = append(info.fields, f)\n\t\t\t}\n\t\t}\n\t}\n\treturn info\n}",
+    "funcname": "create"
+}

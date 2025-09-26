@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 46,
+    "focalfunc": "func (s *Storage) Get(key string) ([]byte, error)",
+    "funcbody": "func (s *Storage) Get(key string) ([]byte, error) {\n\tif len(key) == 0 {\n\t\treturn nil, nil\n\t}\n\ts.mux.RLock()\n\tv, ok := s.db[key]\n\ts.mux.RUnlock()\n\tif !ok || v.expiry != 0 && v.expiry <= utils.Timestamp() {\n\t\treturn nil, nil\n\t}\n\n\treturn v.data, nil\n}",
+    "funcname": "Get"
+}

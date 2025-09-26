@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 841,
+    "focalfunc": "func (p *ControllerRegister) URLFor(endpoint string, values ...interface{}) string",
+    "funcbody": "func (p *ControllerRegister) URLFor(endpoint string, values ...interface{}) string {\n\tpaths := strings.Split(endpoint, \".\")\n\tif len(paths) <= 1 {\n\t\tlogs.Warn(\"urlfor endpoint must like path.controller.method\")\n\t\treturn \"\"\n\t}\n\tif len(values)%2 != 0 {\n\t\tlogs.Warn(\"urlfor params must key-value pair\")\n\t\treturn \"\"\n\t}\n\tparams := make(map[string]string)\n\tif len(values) > 0 {\n\t\tkey := \"\"\n\t\tfor k, v := range values {\n\t\t\tif k%2 == 0 {\n\t\t\t\tkey = fmt.Sprint(v)\n\t\t\t} else {\n\t\t\t\tparams[key] = fmt.Sprint(v)\n\t\t\t}\n\t\t}\n\t}\n\tcontrollerName := strings.Join(paths[:len(paths)-1], \"/\")\n\tmethodName := paths[len(paths)-1]\n\tfor m, t := range p.routers {\n\t\tok, url := p.getURL(t, \"/\", controllerName, methodName, params, m)\n\t\tif ok {\n\t\t\treturn url\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "URLFor"
+}

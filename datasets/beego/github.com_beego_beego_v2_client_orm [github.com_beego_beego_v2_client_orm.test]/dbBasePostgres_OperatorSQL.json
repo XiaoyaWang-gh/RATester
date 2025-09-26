@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 76,
+    "focalfunc": "func (d *dbBasePostgres) OperatorSQL(operator string) string",
+    "funcbody": "func (d *dbBasePostgres) OperatorSQL(operator string) string {\n\treturn postgresOperators[operator]\n}",
+    "funcname": "OperatorSQL"
+}

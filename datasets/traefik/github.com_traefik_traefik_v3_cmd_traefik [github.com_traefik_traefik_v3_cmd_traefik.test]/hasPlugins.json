@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/plugins.go",
+    "lineno": 77,
+    "focalfunc": "func hasPlugins(staticCfg *static.Configuration) bool",
+    "funcbody": "func hasPlugins(staticCfg *static.Configuration) bool {\n\treturn staticCfg.Experimental != nil && len(staticCfg.Experimental.Plugins) > 0\n}",
+    "funcname": "hasPlugins"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 144,
+    "focalfunc": "func findFunction(name string, tmpl *Template) (v reflect.Value, isBuiltin, ok bool)",
+    "funcbody": "func findFunction(name string, tmpl *Template) (v reflect.Value, isBuiltin, ok bool) {\n\tif tmpl != nil && tmpl.common != nil {\n\t\ttmpl.muFuncs.RLock()\n\t\tdefer tmpl.muFuncs.RUnlock()\n\t\tif fn := tmpl.execFuncs[name]; fn.IsValid() {\n\t\t\treturn fn, false, true\n\t\t}\n\t}\n\tif fn := builtinFuncs()[name]; fn.IsValid() {\n\t\treturn fn, true, true\n\t}\n\treturn reflect.Value{}, false, false\n}",
+    "funcname": "findFunction"
+}

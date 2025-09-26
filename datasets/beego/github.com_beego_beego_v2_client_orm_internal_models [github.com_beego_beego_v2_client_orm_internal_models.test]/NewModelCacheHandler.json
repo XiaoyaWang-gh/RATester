@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 35,
+    "focalfunc": "func NewModelCacheHandler() *ModelCache",
+    "funcbody": "func NewModelCacheHandler() *ModelCache {\n\treturn &ModelCache{\n\t\tcache:\t\t\tmake(map[string]*ModelInfo),\n\t\tcacheByFullName:\tmake(map[string]*ModelInfo),\n\t}\n}",
+    "funcname": "NewModelCacheHandler"
+}

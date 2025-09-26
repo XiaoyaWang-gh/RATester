@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 259,
+    "focalfunc": "func newCore() *core",
+    "funcbody": "func newCore() *core {\n\tc := &core{}\n\n\treturn c\n}",
+    "funcname": "newCore"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 57,
+    "focalfunc": "func (l *pageLexer) Iterator() *Iterator",
+    "funcbody": "func (l *pageLexer) Iterator() *Iterator {\n\treturn NewIterator(l.items)\n}",
+    "funcname": "Iterator"
+}

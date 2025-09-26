@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 166,
+    "focalfunc": "func WithJsonBodyFields(field string, value interface{}) simpleConditionOption",
+    "funcbody": "func WithJsonBodyFields(field string, value interface{}) simpleConditionOption {\n\treturn func(sc *SimpleCondition) {\n\t\tsc.body[field] = value\n\t}\n}",
+    "funcname": "WithJsonBodyFields"
+}

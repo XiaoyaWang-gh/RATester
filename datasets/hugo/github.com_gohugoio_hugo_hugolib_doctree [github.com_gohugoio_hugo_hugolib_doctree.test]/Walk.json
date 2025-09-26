@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 352,
+    "focalfunc": "func (r *NodeShiftTreeWalker[T]) Walk(ctx context.Context) error",
+    "funcbody": "func (r *NodeShiftTreeWalker[T]) Walk(ctx context.Context) error {\n\tif r.Tree == nil {\n\t\tpanic(\"Tree is required\")\n\t}\n\tr.resetLocalState()\n\n\tif r.LockType > LockTypeNone {\n\t\tcommit1 := r.Tree.Lock(r.LockType == LockTypeWrite)\n\t\tdefer commit1()\n\t}\n\n\tmain := r.Tree\n\n\tvar err error\n\tfnMain := func(s string, v interface{}) bool {\n\t\tif r.ShouldSkip(s) {\n\t\t\treturn false\n\t\t}\n\n\t\tt, ok, exact := r.toT(r.Tree, v)\n\t\tif !ok {\n\t\t\treturn false\n\t\t}\n\n\t\tvar terminate bool\n\t\tterminate, err = r.Handle(s, t, exact)\n\t\tif terminate || err != nil {\n\t\t\treturn true\n\t\t}\n\t\treturn false\n\t}\n\n\tif r.Prefix != \"\" {\n\t\tmain.tree.WalkPrefix(r.Prefix, fnMain)\n\t} else {\n\t\tmain.tree.Walk(fnMain)\n\t}\n\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "Walk"
+}

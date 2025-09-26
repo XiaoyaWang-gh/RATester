@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/fields.go",
+    "lineno": 30,
+    "focalfunc": "func structToMap(s any) map[string]any",
+    "funcbody": "func structToMap(s any) map[string]any {\n\tm := make(map[string]any)\n\tt := reflect.TypeOf(s)\n\n\tfor i := 0; i < t.NumMethod(); i++ {\n\t\tmethod := t.Method(i)\n\t\tif method.PkgPath != \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif method.Type.NumIn() == 1 {\n\t\t\tm[method.Name] = \"\"\n\t\t}\n\t}\n\n\tfor i := 0; i < t.NumField(); i++ {\n\t\tfield := t.Field(i)\n\t\tif field.PkgPath != \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tm[field.Name] = \"\"\n\t}\n\treturn m\n}",
+    "funcname": "structToMap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 130,
+    "focalfunc": "func (d *DoNothingOrm) RawWithCtx(ctx context.Context, query string, args ...interface{}) RawSeter",
+    "funcbody": "func (d *DoNothingOrm) RawWithCtx(ctx context.Context, query string, args ...interface{}) RawSeter {\n\treturn nil\n}",
+    "funcname": "RawWithCtx"
+}

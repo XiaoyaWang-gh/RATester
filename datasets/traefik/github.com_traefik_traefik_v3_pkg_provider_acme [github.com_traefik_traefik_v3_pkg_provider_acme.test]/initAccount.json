@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 343,
+    "focalfunc": "func (p *Provider) initAccount(ctx context.Context) (*Account, error)",
+    "funcbody": "func (p *Provider) initAccount(ctx context.Context) (*Account, error) {\n\tif p.account == nil || len(p.account.Email) == 0 {\n\t\tvar err error\n\t\tp.account, err = NewAccount(ctx, p.Email, p.KeyType)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tif len(p.account.KeyType) == 0 {\n\t\tp.account.KeyType = GetKeyType(ctx, p.KeyType)\n\t}\n\n\treturn p.account, nil\n}",
+    "funcname": "initAccount"
+}

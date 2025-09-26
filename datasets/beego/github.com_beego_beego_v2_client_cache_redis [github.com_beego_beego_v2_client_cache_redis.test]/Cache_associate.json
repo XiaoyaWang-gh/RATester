@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 98,
+    "focalfunc": "func (rc *Cache) associate(originKey interface{}) string",
+    "funcbody": "func (rc *Cache) associate(originKey interface{}) string {\n\tif rc.key == \"\" && rc.skipEmptyPrefix {\n\t\treturn fmt.Sprintf(\"%s\", originKey)\n\t}\n\treturn fmt.Sprintf(\"%s:%s\", rc.key, originKey)\n}",
+    "funcname": "associate"
+}

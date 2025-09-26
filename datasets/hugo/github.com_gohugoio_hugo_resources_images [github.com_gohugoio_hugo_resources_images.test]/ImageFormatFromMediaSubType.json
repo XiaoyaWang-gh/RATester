@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/config.go",
+    "lineno": 121,
+    "focalfunc": "func ImageFormatFromMediaSubType(sub string) (Format, bool)",
+    "funcbody": "func ImageFormatFromMediaSubType(sub string) (Format, bool) {\n\tf, found := imageFormatsBySubType[sub]\n\treturn f, found\n}",
+    "funcname": "ImageFormatFromMediaSubType"
+}

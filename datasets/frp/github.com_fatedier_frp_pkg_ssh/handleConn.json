@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/gateway.go",
+    "lineno": 115,
+    "focalfunc": "func (g *Gateway) handleConn(conn net.Conn)",
+    "funcbody": "func (g *Gateway) handleConn(conn net.Conn) {\n\tdefer conn.Close()\n\n\tts, err := NewTunnelServer(conn, g.sshConfig, g.peerServerListener)\n\tif err != nil {\n\t\treturn\n\t}\n\tif err := ts.Run(); err != nil {\n\t\tlog.Errorf(\"ssh tunnel server run error: %v\", err)\n\t}\n}",
+    "funcname": "handleConn"
+}

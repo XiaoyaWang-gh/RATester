@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 138,
+    "focalfunc": "func (x *Test) GetReps() []int64",
+    "funcbody": "func (x *Test) GetReps() []int64 {\n\tif x != nil {\n\t\treturn x.Reps\n\t}\n\treturn nil\n}",
+    "funcname": "GetReps"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 37,
+    "focalfunc": "func String(key string) (string, error)",
+    "funcbody": "func String(key string) (string, error) {\n\treturn globalInstance.String(key)\n}",
+    "funcname": "String"
+}

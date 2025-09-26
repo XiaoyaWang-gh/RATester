@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/token_bucket.go",
+    "lineno": 25,
+    "focalfunc": "func withCapacity(capacity uint) bucketOption",
+    "funcbody": "func withCapacity(capacity uint) bucketOption {\n\treturn func(b bucket) {\n\t\tbucket := b.(*tokenBucket)\n\t\tbucket.capacity = capacity\n\t\tbucket.remaining = capacity\n\t}\n}",
+    "funcname": "withCapacity"
+}

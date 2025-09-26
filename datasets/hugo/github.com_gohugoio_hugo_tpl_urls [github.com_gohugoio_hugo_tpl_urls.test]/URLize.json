@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 74,
+    "focalfunc": "func (ns *Namespace) URLize(s any) (string, error)",
+    "funcbody": "func (ns *Namespace) URLize(s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn ns.deps.PathSpec.URLize(ss), nil\n}",
+    "funcname": "URLize"
+}

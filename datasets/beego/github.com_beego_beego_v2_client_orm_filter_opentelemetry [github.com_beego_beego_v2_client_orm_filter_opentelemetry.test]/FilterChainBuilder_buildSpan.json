@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentelemetry/filter.go",
+    "lineno": 71,
+    "focalfunc": "func (builder *FilterChainBuilder) buildSpan(ctx context.Context, span otelTrace.Span, inv *orm.Invocation)",
+    "funcbody": "func (builder *FilterChainBuilder) buildSpan(ctx context.Context, span otelTrace.Span, inv *orm.Invocation) {\n\tspan.SetAttributes(attribute.String(\"orm.method\", inv.Method))\n\tspan.SetAttributes(attribute.String(\"orm.table\", inv.GetTableName()))\n\tspan.SetAttributes(attribute.Bool(\"orm.insideTx\", inv.InsideTx))\n\tv, _ := ctx.Value(orm.TxNameKey).(string)\n\tspan.SetAttributes(attribute.String(\"orm.txName\", v))\n\tspan.SetAttributes(attribute.String(\"span.kind\", \"client\"))\n\tspan.SetAttributes(attribute.String(\"component\", \"beego\"))\n\n\tif builder.customSpanFunc != nil {\n\t\tbuilder.customSpanFunc(ctx, span, inv)\n\t}\n}",
+    "funcname": "buildSpan"
+}

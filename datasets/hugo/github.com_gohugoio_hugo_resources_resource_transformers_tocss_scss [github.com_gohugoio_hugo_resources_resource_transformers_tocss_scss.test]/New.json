@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/scss/client.go",
+    "lineno": 35,
+    "focalfunc": "func New(fs *filesystems.SourceFilesystem, rs *resources.Spec) (*Client, error)",
+    "funcbody": "func New(fs *filesystems.SourceFilesystem, rs *resources.Spec) (*Client, error) {\n\treturn &Client{sfs: fs, workFs: rs.BaseFs.Work, rs: rs}, nil\n}",
+    "funcname": "New"
+}

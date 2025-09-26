@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/sort.go",
+    "lineno": 156,
+    "focalfunc": "func (p pairList) Len() int",
+    "funcbody": "func (p pairList) Len() int\t{ return len(p.Pairs) }",
+    "funcname": "Len"
+}

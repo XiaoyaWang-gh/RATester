@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/codeblocks/render.go",
+    "lineno": 141,
+    "focalfunc": "func getLang(node *ast.FencedCodeBlock, src []byte) string",
+    "funcbody": "func getLang(node *ast.FencedCodeBlock, src []byte) string {\n\tlangWithAttributes := string(node.Language(src))\n\tlang, _, _ := strings.Cut(langWithAttributes, \"{\")\n\treturn lang\n}",
+    "funcname": "getLang"
+}

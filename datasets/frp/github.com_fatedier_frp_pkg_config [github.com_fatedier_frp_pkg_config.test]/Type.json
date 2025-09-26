@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 221,
+    "focalfunc": "func (f *BoolFuncFlag) Type() string",
+    "funcbody": "func (f *BoolFuncFlag) Type() string {\n\treturn \"bool\"\n}",
+    "funcname": "Type"
+}

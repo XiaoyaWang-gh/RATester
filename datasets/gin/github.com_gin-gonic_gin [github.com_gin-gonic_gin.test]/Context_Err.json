@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1263,
+    "focalfunc": "func (c *Context) Err() error",
+    "funcbody": "func (c *Context) Err() error {\n\tif !c.hasRequestContext() {\n\t\treturn nil\n\t}\n\treturn c.Request.Context().Err()\n}",
+    "funcname": "Err"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 270,
+    "focalfunc": "func (c *JSONConfigContainer) DIY(key string) (v interface{}, err error)",
+    "funcbody": "func (c *JSONConfigContainer) DIY(key string) (v interface{}, err error) {\n\tval := c.getData(key)\n\tif val != nil {\n\t\treturn val, nil\n\t}\n\treturn nil, errors.New(\"not exist key\")\n}",
+    "funcname": "DIY"
+}

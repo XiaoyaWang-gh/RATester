@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 368,
+    "focalfunc": "func normalizeEscFn(e string) string",
+    "funcbody": "func normalizeEscFn(e string) string {\n\tif norm := equivEscapers[e]; norm != \"\" {\n\t\treturn norm\n\t}\n\treturn e\n}",
+    "funcname": "normalizeEscFn"
+}

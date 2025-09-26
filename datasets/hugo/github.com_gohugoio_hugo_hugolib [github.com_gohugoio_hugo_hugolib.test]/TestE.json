@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 101,
+    "focalfunc": "func TestE(t testing.TB, files string, opts ...TestOpt) (*IntegrationTestBuilder, error)",
+    "funcbody": "func TestE(t testing.TB, files string, opts ...TestOpt) (*IntegrationTestBuilder, error) {\n\tcfg := IntegrationTestConfig{T: t, TxtarString: files}\n\tfor _, o := range opts {\n\t\to(&cfg)\n\t}\n\treturn NewIntegrationTestBuilder(cfg).BuildE()\n}",
+    "funcname": "TestE"
+}

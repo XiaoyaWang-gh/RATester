@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/basic_auth.go",
+    "lineno": 49,
+    "focalfunc": "func BasicAuth(fn BasicAuthValidator) echo.MiddlewareFunc",
+    "funcbody": "func BasicAuth(fn BasicAuthValidator) echo.MiddlewareFunc {\n\tc := DefaultBasicAuthConfig\n\tc.Validator = fn\n\treturn BasicAuthWithConfig(c)\n}",
+    "funcname": "BasicAuth"
+}

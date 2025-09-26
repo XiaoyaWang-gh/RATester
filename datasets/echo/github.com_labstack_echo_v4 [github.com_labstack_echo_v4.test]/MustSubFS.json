@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 147,
+    "focalfunc": "func MustSubFS(currentFs fs.FS, fsRoot string) fs.FS",
+    "funcbody": "func MustSubFS(currentFs fs.FS, fsRoot string) fs.FS {\n\tsubFs, err := subFS(currentFs, fsRoot)\n\tif err != nil {\n\t\tpanic(fmt.Errorf(\"can not create sub FS, invalid root given, err: %w\", err))\n\t}\n\treturn subFs\n}",
+    "funcname": "MustSubFS"
+}

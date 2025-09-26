@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 174,
+    "focalfunc": "func (f *Framework) genPortsFromTemplates(templates []string) (ports map[string]int, err error)",
+    "funcbody": "func (f *Framework) genPortsFromTemplates(templates []string) (ports map[string]int, err error) {\n\tports = make(map[string]int)\n\tfor _, t := range templates {\n\t\tarrs := portRegex.FindAllString(t, -1)\n\t\tfor _, str := range arrs {\n\t\t\tstr = strings.TrimPrefix(str, \"{{ .\")\n\t\t\tstr = strings.TrimSuffix(str, \" }}\")\n\t\t\tstr = strings.TrimSpace(str)\n\t\t\tports[str] = 0\n\t\t}\n\t}\n\tdefer func() {\n\t\tif err != nil {\n\t\t\tfor _, port := range ports {\n\t\t\t\tf.portAllocator.Release(port)\n\t\t\t}\n\t\t}\n\t}()\n\n\tfor name := range ports {\n\t\tport := f.portAllocator.GetByName(name)\n\t\tif port <= 0 {\n\t\t\treturn nil, fmt.Errorf(\"can't allocate port\")\n\t\t}\n\t\tports[name] = port\n\t}\n\treturn\n}",
+    "funcname": "genPortsFromTemplates"
+}

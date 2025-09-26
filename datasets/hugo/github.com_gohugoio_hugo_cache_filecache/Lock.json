@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 70,
+    "focalfunc": "func (l *lockTracker) Lock(id string)",
+    "funcbody": "func (l *lockTracker) Lock(id string) {\n\tl.seenMu.RLock()\n\tif _, seen := l.seen[id]; !seen {\n\t\tl.seenMu.RUnlock()\n\t\tl.seenMu.Lock()\n\t\tl.seen[id] = struct{}{}\n\t\tl.seenMu.Unlock()\n\t} else {\n\t\tl.seenMu.RUnlock()\n\t}\n\n\tl.Locker.Lock(id)\n}",
+    "funcname": "Lock"
+}

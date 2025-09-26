@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 110,
+    "focalfunc": "func (d *dbBaseSqlite) DbTypes() map[string]string",
+    "funcbody": "func (d *dbBaseSqlite) DbTypes() map[string]string {\n\treturn sqliteTypes\n}",
+    "funcname": "DbTypes"
+}

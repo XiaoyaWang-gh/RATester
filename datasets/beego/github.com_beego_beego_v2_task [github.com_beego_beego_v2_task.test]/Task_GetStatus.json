@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 164,
+    "focalfunc": "func (t *Task) GetStatus(context.Context) string",
+    "funcbody": "func (t *Task) GetStatus(context.Context) string {\n\tvar str string\n\tfor _, v := range t.Errlist {\n\t\tif v == nil {\n\t\t\tcontinue\n\t\t}\n\t\tstr += v.t.String() + \":\" + v.errinfo + \"<br>\"\n\t}\n\treturn str\n}",
+    "funcname": "GetStatus"
+}

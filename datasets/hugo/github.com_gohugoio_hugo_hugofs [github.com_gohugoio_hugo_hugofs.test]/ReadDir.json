@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 834,
+    "focalfunc": "func (f *rootMappingDir) Readdir(count int) ([]os.FileInfo, error)",
+    "funcbody": "func (f *rootMappingDir) Readdir(count int) ([]os.FileInfo, error) {\n\tpanic(\"not supported: use ReadDir\")\n}",
+    "funcname": "Readdir"
+}

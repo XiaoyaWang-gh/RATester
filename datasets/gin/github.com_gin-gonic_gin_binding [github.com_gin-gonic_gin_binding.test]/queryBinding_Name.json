@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/query.go",
+    "lineno": 11,
+    "focalfunc": "func (queryBinding) Name() string",
+    "funcbody": "func (queryBinding) Name() string {\n\treturn \"query\"\n}",
+    "funcname": "Name"
+}

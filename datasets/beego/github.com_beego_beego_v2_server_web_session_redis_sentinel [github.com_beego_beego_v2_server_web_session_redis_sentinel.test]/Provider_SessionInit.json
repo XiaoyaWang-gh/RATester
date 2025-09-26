@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_sentinel/sess_redis_sentinel.go",
+    "lineno": 151,
+    "focalfunc": "func (rp *Provider) SessionInit(ctx context.Context, maxlifetime int64, cfgStr string) error",
+    "funcbody": "func (rp *Provider) SessionInit(ctx context.Context, maxlifetime int64, cfgStr string) error {\n\trp.maxlifetime = maxlifetime\n\tcfgStr = strings.TrimSpace(cfgStr)\n\n\tif strings.HasPrefix(cfgStr, \"{\") {\n\t\terr := json.Unmarshal([]byte(cfgStr), rp)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\trp.idleTimeout, err = time.ParseDuration(rp.IdleTimeoutStr)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\trp.idleCheckFrequency, err = time.ParseDuration(rp.IdleCheckFrequencyStr)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t} else {\n\t\trp.initOldStyle(cfgStr)\n\t}\n\n\trp.poollist = redis.NewFailoverClient(&redis.FailoverOptions{\n\t\tSentinelAddrs:\t\tstrings.Split(rp.SavePath, \";\"),\n\t\tPassword:\t\trp.Password,\n\t\tPoolSize:\t\trp.Poolsize,\n\t\tDB:\t\t\trp.DbNum,\n\t\tMasterName:\t\trp.MasterName,\n\t\tConnMaxIdleTime:\trp.idleTimeout,\n\t\tMaxRetries:\t\trp.MaxRetries,\n\t})\n\n\treturn rp.poollist.Ping(ctx).Err()\n}",
+    "funcname": "SessionInit"
+}

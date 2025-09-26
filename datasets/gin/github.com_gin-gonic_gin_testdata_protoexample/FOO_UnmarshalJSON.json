@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 62,
+    "focalfunc": "func (x *FOO) UnmarshalJSON(b []byte) error",
+    "funcbody": "func (x *FOO) UnmarshalJSON(b []byte) error {\n\tnum, err := protoimpl.X.UnmarshalJSONEnum(x.Descriptor(), b)\n\tif err != nil {\n\t\treturn err\n\t}\n\t*x = FOO(num)\n\treturn nil\n}",
+    "funcname": "UnmarshalJSON"
+}

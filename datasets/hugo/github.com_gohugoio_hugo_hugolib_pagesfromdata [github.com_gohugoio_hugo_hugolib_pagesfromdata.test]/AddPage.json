@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 81,
+    "focalfunc": "func (p *pagesFromDataTemplateContext) AddPage(v any) (string, error)",
+    "funcbody": "func (p *pagesFromDataTemplateContext) AddPage(v any) (string, error) {\n\tpath, m, err := p.toPathMap(v)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif !p.p.buildState.checkHasChangedAndSetSourceInfo(path, m) {\n\t\treturn \"\", nil\n\t}\n\n\tpd := pagemeta.DefaultPageConfig\n\tpd.IsFromContentAdapter = true\n\n\tif err := mapstructure.WeakDecode(m, &pd); err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to decode page map: %w\", err)\n\t}\n\n\tp.p.buildState.NumPagesAdded++\n\n\tif err := pd.Validate(true); err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn \"\", p.p.HandlePage(p.p, &pd)\n}",
+    "funcname": "AddPage"
+}

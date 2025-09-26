@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/resourcehelpers/helpers.go",
+    "lineno": 42,
+    "focalfunc": "func ResolveArgs(args []any) (resources.ResourceTransformer, map[string]any, error)",
+    "funcbody": "func ResolveArgs(args []any) (resources.ResourceTransformer, map[string]any, error) {\n\tif len(args) == 0 {\n\t\treturn nil, nil, errors.New(\"no Resource provided in transformation\")\n\t}\n\n\tif len(args) == 1 {\n\t\tr, ok := args[0].(resources.ResourceTransformer)\n\t\tif !ok {\n\t\t\treturn nil, nil, fmt.Errorf(\"type %T not supported in Resource transformations\", args[0])\n\t\t}\n\t\treturn r, nil, nil\n\t}\n\n\tr, ok := args[1].(resources.ResourceTransformer)\n\tif !ok {\n\t\tif _, ok := args[1].(map[string]any); !ok {\n\t\t\treturn nil, nil, fmt.Errorf(\"no Resource provided in transformation\")\n\t\t}\n\t\treturn nil, nil, fmt.Errorf(\"type %T not supported in Resource transformations\", args[0])\n\t}\n\n\tm, err := maps.ToStringMapE(args[0])\n\tif err != nil {\n\t\treturn nil, nil, fmt.Errorf(\"invalid options type: %w\", err)\n\t}\n\n\treturn r, m, nil\n}",
+    "funcname": "ResolveArgs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 117,
+    "focalfunc": "func (g globDecorator) Match(s string) bool",
+    "funcbody": "func (g globDecorator) Match(s string) bool {\n\tif g.isWindows {\n\t\ts = filepath.ToSlash(s)\n\t}\n\ts = strings.ToLower(s)\n\treturn g.g.Match(s)\n}",
+    "funcname": "Match"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/context.go",
+    "lineno": 166,
+    "focalfunc": "func isComment(s state) bool",
+    "funcbody": "func isComment(s state) bool {\n\tswitch s {\n\tcase stateHTMLCmt, stateJSBlockCmt, stateJSLineCmt, stateJSHTMLOpenCmt, stateJSHTMLCloseCmt, stateCSSBlockCmt, stateCSSLineCmt:\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "isComment"
+}

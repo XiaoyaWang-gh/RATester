@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/runtime/runtime_http.go",
+    "lineno": 174,
+    "focalfunc": "func (s *ServiceInfo) UpdateServerStatus(server, status string)",
+    "funcbody": "func (s *ServiceInfo) UpdateServerStatus(server, status string) {\n\ts.serverStatusMu.Lock()\n\tdefer s.serverStatusMu.Unlock()\n\n\tif s.serverStatus == nil {\n\t\ts.serverStatus = make(map[string]string)\n\t}\n\ts.serverStatus[server] = status\n}",
+    "funcname": "UpdateServerStatus"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 224,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tsession.Register(\"ssdb\", ssdbProvider)\n}",
+    "funcname": "init"
+}

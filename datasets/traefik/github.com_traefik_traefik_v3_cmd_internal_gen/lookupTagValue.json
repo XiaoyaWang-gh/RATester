@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/centrifuge.go",
+    "lineno": 201,
+    "focalfunc": "func lookupTagValue(raw, key string) ([]string, bool)",
+    "funcbody": "func lookupTagValue(raw, key string) ([]string, bool) {\n\tvalue, ok := reflect.StructTag(raw).Lookup(key)\n\tif !ok {\n\t\treturn nil, ok\n\t}\n\n\tvalues := strings.Split(value, \",\")\n\n\tif len(values) < 1 {\n\t\treturn nil, true\n\t}\n\n\treturn values, true\n}",
+    "funcname": "lookupTagValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 132,
+    "focalfunc": "func indirectToJSONMarshaler(a any) any",
+    "funcbody": "func indirectToJSONMarshaler(a any) any {\n\n\tif a == nil {\n\t\treturn nil\n\t}\n\n\tv := reflect.ValueOf(a)\n\tfor !v.Type().Implements(jsonMarshalType) && v.Kind() == reflect.Pointer && !v.IsNil() {\n\t\tv = v.Elem()\n\t}\n\treturn v.Interface()\n}",
+    "funcname": "indirectToJSONMarshaler"
+}

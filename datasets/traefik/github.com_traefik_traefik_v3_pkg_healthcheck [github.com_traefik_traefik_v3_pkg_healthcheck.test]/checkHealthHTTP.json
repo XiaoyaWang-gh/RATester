@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/healthcheck/healthcheck.go",
+    "lineno": 160,
+    "focalfunc": "func (shc *ServiceHealthChecker) checkHealthHTTP(ctx context.Context, target *url.URL) error",
+    "funcbody": "func (shc *ServiceHealthChecker) checkHealthHTTP(ctx context.Context, target *url.URL) error {\n\treq, err := shc.newRequest(ctx, target)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"create HTTP request: %w\", err)\n\t}\n\n\tresp, err := shc.client.Do(req)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"HTTP request failed: %w\", err)\n\t}\n\n\tdefer resp.Body.Close()\n\n\tif shc.config.Status == 0 && (resp.StatusCode < http.StatusOK || resp.StatusCode >= http.StatusBadRequest) {\n\t\treturn fmt.Errorf(\"received error status code: %v\", resp.StatusCode)\n\t}\n\n\tif shc.config.Status != 0 && shc.config.Status != resp.StatusCode {\n\t\treturn fmt.Errorf(\"received error status code: %v expected status code: %v\", resp.StatusCode, shc.config.Status)\n\t}\n\n\treturn nil\n}",
+    "funcname": "checkHealthHTTP"
+}

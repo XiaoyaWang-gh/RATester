@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 94,
+    "focalfunc": "func (c *Scratch) Delete(key string) string",
+    "funcbody": "func (c *Scratch) Delete(key string) string {\n\tc.mu.Lock()\n\tdelete(c.values, key)\n\tc.mu.Unlock()\n\treturn \"\"\n}",
+    "funcname": "Delete"
+}

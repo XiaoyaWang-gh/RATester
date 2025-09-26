@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 150,
+    "focalfunc": "func (cp *Provider) SessionInit(ctx context.Context, maxlifetime int64, cfg string) error",
+    "funcbody": "func (cp *Provider) SessionInit(ctx context.Context, maxlifetime int64, cfg string) error {\n\tcp.maxlifetime = maxlifetime\n\tcfg = strings.TrimSpace(cfg)\n\n\tif strings.HasPrefix(cfg, \"{\") {\n\t\treturn json.Unmarshal([]byte(cfg), cp)\n\t} else {\n\t\treturn cp.initOldStyle(cfg)\n\t}\n}",
+    "funcname": "SessionInit"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/process/process.go",
+    "lineno": 38,
+    "focalfunc": "func (p *Process) Start() error",
+    "funcbody": "func (p *Process) Start() error {\n\treturn p.cmd.Start()\n}",
+    "funcname": "Start"
+}

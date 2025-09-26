@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/method_override.go",
+    "lineno": 71,
+    "focalfunc": "func MethodFromHeader(header string) MethodOverrideGetter",
+    "funcbody": "func MethodFromHeader(header string) MethodOverrideGetter {\n\treturn func(c echo.Context) string {\n\t\treturn c.Request().Header.Get(header)\n\t}\n}",
+    "funcname": "MethodFromHeader"
+}

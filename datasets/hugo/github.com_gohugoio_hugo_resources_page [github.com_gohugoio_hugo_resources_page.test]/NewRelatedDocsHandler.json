@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 170,
+    "focalfunc": "func NewRelatedDocsHandler(cfg related.Config) *RelatedDocsHandler",
+    "funcbody": "func NewRelatedDocsHandler(cfg related.Config) *RelatedDocsHandler {\n\treturn &RelatedDocsHandler{cfg: cfg, workers: para.New(config.GetNumWorkerMultiplier())}\n}",
+    "funcname": "NewRelatedDocsHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_project.go",
+    "lineno": 465,
+    "focalfunc": "func (p *LogProject) ListConfig(offset, size int) (cfgNames []string, total int, err error)",
+    "funcbody": "func (p *LogProject) ListConfig(offset, size int) (cfgNames []string, total int, err error) {\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\": \"0\",\n\t}\n\n\tif size <= 0 {\n\t\tsize = 100\n\t}\n\n\turi := fmt.Sprintf(\"/configs?offset=%v&size=%v\", offset, size)\n\tr, err := request(p, \"GET\", uri, h, nil)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbuf, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(buf, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to delete machine group\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Printf(\"%s\\n\", dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\ttype Body struct {\n\t\tTotal\tint\n\t\tConfigs\t[]string\n\t}\n\tbody := &Body{}\n\n\terr = json.Unmarshal(buf, body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tcfgNames = body.Configs\n\ttotal = body.Total\n\treturn\n}",
+    "funcname": "ListConfig"
+}

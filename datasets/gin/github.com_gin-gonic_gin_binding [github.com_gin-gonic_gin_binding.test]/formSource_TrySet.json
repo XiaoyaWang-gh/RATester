@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 73,
+    "focalfunc": "func (form formSource) TrySet(value reflect.Value, field reflect.StructField, tagValue string, opt setOptions) (isSet bool, err error)",
+    "funcbody": "func (form formSource) TrySet(value reflect.Value, field reflect.StructField, tagValue string, opt setOptions) (isSet bool, err error) {\n\treturn setByForm(value, field, form, tagValue, opt)\n}",
+    "funcname": "TrySet"
+}

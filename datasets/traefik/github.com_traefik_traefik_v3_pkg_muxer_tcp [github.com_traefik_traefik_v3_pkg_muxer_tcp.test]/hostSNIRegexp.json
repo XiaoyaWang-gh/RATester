@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher.go",
+    "lineno": 106,
+    "focalfunc": "func hostSNIRegexp(tree *matchersTree, templates ...string) error",
+    "funcbody": "func hostSNIRegexp(tree *matchersTree, templates ...string) error {\n\ttemplate := templates[0]\n\n\tif !isASCII(template) {\n\t\treturn fmt.Errorf(\"invalid value for HostSNIRegexp matcher, %q is not a valid hostname\", template)\n\t}\n\n\tre, err := regexp.Compile(template)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"compiling HostSNIRegexp matcher: %w\", err)\n\t}\n\n\ttree.matcher = func(meta ConnData) bool {\n\t\treturn re.MatchString(meta.serverName)\n\t}\n\n\treturn nil\n}",
+    "funcname": "hostSNIRegexp"
+}

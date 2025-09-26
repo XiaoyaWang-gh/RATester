@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 659,
+    "focalfunc": "func (t *Tree) templateControl() Node",
+    "funcbody": "func (t *Tree) templateControl() Node {\n\tconst context = \"template clause\"\n\ttoken := t.nextNonSpace()\n\tname := t.parseTemplateName(token, context)\n\tvar pipe *PipeNode\n\tif t.nextNonSpace().typ != itemRightDelim {\n\t\tt.backup()\n\n\t\tpipe = t.pipeline(context, itemRightDelim)\n\t}\n\treturn t.newTemplate(token.pos, token.line, name, pipe)\n}",
+    "funcname": "templateControl"
+}

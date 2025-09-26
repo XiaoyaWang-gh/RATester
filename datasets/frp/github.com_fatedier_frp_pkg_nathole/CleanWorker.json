@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 110,
+    "focalfunc": "func (c *Controller) CleanWorker(ctx context.Context)",
+    "funcbody": "func (c *Controller) CleanWorker(ctx context.Context) {\n\tticker := time.NewTicker(time.Hour)\n\tdefer ticker.Stop()\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tstart := time.Now()\n\t\t\tcount, total := c.analyzer.Clean()\n\t\t\tlog.Tracef(\"clean %d/%d nathole analysis data, cost %v\", count, total, time.Since(start))\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "CleanWorker"
+}

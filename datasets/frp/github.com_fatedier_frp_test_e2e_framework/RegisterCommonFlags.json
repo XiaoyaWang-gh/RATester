@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/test_context.go",
+    "lineno": 25,
+    "focalfunc": "func RegisterCommonFlags(flags *flag.FlagSet)",
+    "funcbody": "func RegisterCommonFlags(flags *flag.FlagSet) {\n\tflags.StringVar(&TestContext.FRPClientPath, \"frpc-path\", \"../../bin/frpc\", \"The frp client binary to use.\")\n\tflags.StringVar(&TestContext.FRPServerPath, \"frps-path\", \"../../bin/frps\", \"The frp server binary to use.\")\n\tflags.StringVar(&TestContext.LogLevel, \"log-level\", \"debug\", \"Log level.\")\n\tflags.BoolVar(&TestContext.Debug, \"debug\", false, \"Enable debug mode to print detail info.\")\n}",
+    "funcname": "RegisterCommonFlags"
+}

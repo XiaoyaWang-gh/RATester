@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/images/images.go",
+    "lineno": 72,
+    "focalfunc": "func (ns *Namespace) Config(path any) (image.Config, error)",
+    "funcbody": "func (ns *Namespace) Config(path any) (image.Config, error) {\n\tfilename, err := cast.ToStringE(path)\n\tif err != nil {\n\t\treturn image.Config{}, err\n\t}\n\n\tif filename == \"\" {\n\t\treturn image.Config{}, errors.New(\"config needs a filename\")\n\t}\n\n\tns.cacheMu.RLock()\n\tconfig, ok := ns.cache[filename]\n\tns.cacheMu.RUnlock()\n\n\tif ok {\n\t\treturn config, nil\n\t}\n\n\tf, err := ns.readFileFs.Open(filename)\n\tif err != nil {\n\t\treturn image.Config{}, err\n\t}\n\tdefer f.Close()\n\n\tconfig, _, err = image.DecodeConfig(f)\n\tif err != nil {\n\t\treturn config, err\n\t}\n\n\tns.cacheMu.Lock()\n\tns.cache[filename] = config\n\tns.cacheMu.Unlock()\n\n\treturn config, nil\n}",
+    "funcname": "Config"
+}

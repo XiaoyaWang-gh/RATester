@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 204,
+    "focalfunc": "func validateTCPMuxProxyConfigForServer(c *v1.TCPMuxProxyConfig, s *v1.ServerConfig) error",
+    "funcbody": "func validateTCPMuxProxyConfigForServer(c *v1.TCPMuxProxyConfig, s *v1.ServerConfig) error {\n\tif c.Multiplexer == string(v1.TCPMultiplexerHTTPConnect) &&\n\t\ts.TCPMuxHTTPConnectPort == 0 {\n\t\treturn fmt.Errorf(\"tcpmux with multiplexer httpconnect not supported because this feature is not enabled in server\")\n\t}\n\n\treturn validateDomainConfigForServer(&c.DomainConfig, s)\n}",
+    "funcname": "validateTCPMuxProxyConfigForServer"
+}

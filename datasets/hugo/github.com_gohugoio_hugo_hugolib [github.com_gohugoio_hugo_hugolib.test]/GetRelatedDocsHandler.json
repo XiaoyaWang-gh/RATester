@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 255,
+    "focalfunc": "func (s *Site) GetRelatedDocsHandler() *page.RelatedDocsHandler",
+    "funcbody": "func (s *Site) GetRelatedDocsHandler() *page.RelatedDocsHandler {\n\treturn s.relatedDocsHandler\n}",
+    "funcname": "GetRelatedDocsHandler"
+}

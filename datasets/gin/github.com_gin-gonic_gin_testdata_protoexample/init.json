@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 248,
+    "focalfunc": "func init()",
+    "funcbody": "func init()\t{ file_test_proto_init() }",
+    "funcname": "init"
+}

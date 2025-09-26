@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 54,
+    "focalfunc": "func (s *shortcodeTemplates) fromVariants(variants tpl.TemplateVariants) (shortcodeVariant, bool)",
+    "funcbody": "func (s *shortcodeTemplates) fromVariants(variants tpl.TemplateVariants) (shortcodeVariant, bool) {\n\treturn s.fromVariantsSlice([]string{\n\t\tvariants.Language,\n\t\tstrings.ToLower(variants.OutputFormat.Name),\n\t\tvariants.OutputFormat.MediaType.FirstSuffix.Suffix,\n\t})\n}",
+    "funcname": "fromVariants"
+}

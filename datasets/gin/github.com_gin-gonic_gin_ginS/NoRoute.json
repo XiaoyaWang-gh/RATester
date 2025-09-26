@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 41,
+    "focalfunc": "func NoRoute(handlers ...gin.HandlerFunc)",
+    "funcbody": "func NoRoute(handlers ...gin.HandlerFunc) {\n\tengine().NoRoute(handlers...)\n}",
+    "funcname": "NoRoute"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 89,
+    "focalfunc": "func DIY(key string) (interface{}, error)",
+    "funcbody": "func DIY(key string) (interface{}, error) {\n\treturn globalInstance.DIY(key)\n}",
+    "funcname": "DIY"
+}

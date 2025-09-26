@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 208,
+    "focalfunc": "func (ns *Namespace) Rand() float64",
+    "funcbody": "func (ns *Namespace) Rand() float64 {\n\treturn rand.Float64()\n}",
+    "funcname": "Rand"
+}

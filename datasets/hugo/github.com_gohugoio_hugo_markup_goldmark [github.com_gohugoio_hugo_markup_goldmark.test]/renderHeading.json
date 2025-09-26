@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 405,
+    "focalfunc": "func (r *hookedRenderer) renderHeading(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderHeading(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tn := node.(*ast.Heading)\n\tvar hr hooks.HeadingRenderer\n\n\tctx, ok := w.(*render.Context)\n\tif ok {\n\t\th := ctx.RenderContext().GetRenderer(hooks.HeadingRendererType, nil)\n\t\tok = h != nil\n\t\tif ok {\n\t\t\thr = h.(hooks.HeadingRenderer)\n\t\t}\n\t}\n\n\tif !ok {\n\t\treturn r.renderHeadingDefault(w, source, node, entering)\n\t}\n\n\tif entering {\n\n\t\tctx.PushPos(ctx.Buffer.Len())\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\ttext := ctx.PopRenderedString()\n\n\tanchori, _ := n.AttributeString(\"id\")\n\tanchor := anchori.([]byte)\n\n\tpage, pageInner := render.GetPageAndPageInner(ctx)\n\n\terr := hr.RenderHeading(\n\t\tctx.RenderContext().Ctx,\n\t\tw,\n\t\theadingContext{\n\t\t\tpage:\t\t\tpage,\n\t\t\tpageInner:\t\tpageInner,\n\t\t\tlevel:\t\t\tn.Level,\n\t\t\tanchor:\t\t\tstring(anchor),\n\t\t\ttext:\t\t\thstring.HTML(text),\n\t\t\tplainText:\t\tstring(n.Text(source)),\n\t\t\tAttributesHolder:\tattributes.New(n.Attributes(), attributes.AttributesOwnerGeneral),\n\t\t},\n\t)\n\n\treturn ast.WalkContinue, err\n}",
+    "funcname": "renderHeading"
+}

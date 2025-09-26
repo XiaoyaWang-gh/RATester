@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 73,
+    "focalfunc": "func (d *DoNothingOrm) QueryTable(ptrStructOrTableName interface{}) QuerySeter",
+    "funcbody": "func (d *DoNothingOrm) QueryTable(ptrStructOrTableName interface{}) QuerySeter {\n\treturn nil\n}",
+    "funcname": "QueryTable"
+}

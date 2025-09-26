@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 110,
+    "focalfunc": "func ParseMain(r io.Reader, cfg Config) (Result, error)",
+    "funcbody": "func ParseMain(r io.Reader, cfg Config) (Result, error) {\n\treturn parseSection(r, cfg, lexMainSection)\n}",
+    "funcname": "ParseMain"
+}

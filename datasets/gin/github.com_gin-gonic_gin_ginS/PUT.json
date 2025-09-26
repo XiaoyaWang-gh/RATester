@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 82,
+    "focalfunc": "func PUT(relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes",
+    "funcbody": "func PUT(relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes {\n\treturn engine().PUT(relativePath, handlers...)\n}",
+    "funcname": "PUT"
+}

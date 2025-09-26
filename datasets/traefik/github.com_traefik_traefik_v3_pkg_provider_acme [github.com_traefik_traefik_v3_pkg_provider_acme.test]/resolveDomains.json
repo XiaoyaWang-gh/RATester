@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 376,
+    "focalfunc": "func (p *Provider) resolveDomains(ctx context.Context, domains []string, tlsStore string)",
+    "funcbody": "func (p *Provider) resolveDomains(ctx context.Context, domains []string, tlsStore string) {\n\tlogger := log.Ctx(ctx)\n\n\tif len(domains) == 0 {\n\t\tlogger.Debug().Msg(\"No domain parsed in provider ACME\")\n\t\treturn\n\t}\n\n\tlogger.Debug().Msgf(\"Trying to challenge certificate for domain %v found in HostSNI rule\", domains)\n\n\tvar domain types.Domain\n\tif len(domains) > 0 {\n\t\tdomain = types.Domain{Main: domains[0]}\n\t\tif len(domains) > 1 {\n\t\t\tdomain.SANs = domains[1:]\n\t\t}\n\n\t\tsafe.Go(func() {\n\t\t\tdom, cert, err := p.resolveCertificate(ctx, domain, tlsStore)\n\t\t\tif err != nil {\n\t\t\t\tlogger.Error().Err(err).Strs(\"domains\", domains).Msg(\"Unable to obtain ACME certificate for domains\")\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\terr = p.addCertificateForDomain(dom, cert, tlsStore)\n\t\t\tif err != nil {\n\t\t\t\tlogger.Error().Err(err).Strs(\"domains\", dom.ToStrArray()).Msg(\"Error adding certificate for domains\")\n\t\t\t}\n\t\t})\n\t}\n}",
+    "funcname": "resolveDomains"
+}

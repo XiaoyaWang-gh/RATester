@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 1393,
+    "focalfunc": "func (d *dbBase) countSQL(qs querySet, mi *models.ModelInfo, cond *Condition, tz *time.Location) (string, []interface{})",
+    "funcbody": "func (d *dbBase) countSQL(qs querySet, mi *models.ModelInfo, cond *Condition, tz *time.Location) (string, []interface{}) {\n\ttables := newDbTables(mi, d.ins)\n\ttables.parseRelated(qs.related, qs.relDepth)\n\n\tbuf := buffers.Get()\n\tdefer buffers.Put(buf)\n\n\tif len(qs.groups) > 0 {\n\t\t_, _ = buf.WriteString(\"SELECT COUNT(*) FROM (\")\n\t}\n\n\tqs.aggregate = \"COUNT(*)\"\n\targs := d.readSQL(buf, tables, nil, cond, qs, mi, tz)\n\n\tif len(qs.groups) > 0 {\n\t\t_, _ = buf.WriteString(\") AS T\")\n\t}\n\n\tquery := buf.String()\n\n\td.ins.ReplaceMarks(&query)\n\n\treturn query, args\n}",
+    "funcname": "countSQL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 72,
+    "focalfunc": "func (fi bindataFileInfo) IsDir() bool",
+    "funcbody": "func (fi bindataFileInfo) IsDir() bool {\n\treturn false\n}",
+    "funcname": "IsDir"
+}

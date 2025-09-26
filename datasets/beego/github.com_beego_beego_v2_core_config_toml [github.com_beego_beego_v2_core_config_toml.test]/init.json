@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 348,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tconfig.Register(\"toml\", &Config{})\n}",
+    "funcname": "init"
+}

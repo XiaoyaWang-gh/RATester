@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/templates/templates.go",
+    "lineno": 75,
+    "focalfunc": "func (ns *Namespace) DoDefer(ctx context.Context, id string, optsv any) string",
+    "funcbody": "func (ns *Namespace) DoDefer(ctx context.Context, id string, optsv any) string {\n\tvar opts DeferOpts\n\tif optsv != nil {\n\t\tif err := mapstructure.WeakDecode(optsv, &opts); err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t}\n\n\ttemplateName := id\n\tvar key string\n\tif opts.Key != \"\" {\n\t\tkey = hashing.MD5FromStringHexEncoded(opts.Key)\n\t} else {\n\t\tkey = strconv.FormatUint(defferedIDCounter.Add(1), 10)\n\t}\n\n\tid = fmt.Sprintf(\"%s_%s%s\", id, key, tpl.HugoDeferredTemplateSuffix)\n\n\t_, _ = ns.deps.BuildState.DeferredExecutions.Executions.GetOrCreate(id,\n\t\tfunc() (*tpl.DeferredExecution, error) {\n\t\t\treturn &tpl.DeferredExecution{\n\t\t\t\tTemplateName:\ttemplateName,\n\t\t\t\tCtx:\t\tctx,\n\t\t\t\tData:\t\topts.Data,\n\t\t\t\tExecuted:\tfalse,\n\t\t\t}, nil\n\t\t})\n\n\treturn id\n}",
+    "funcname": "DoDefer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 87,
+    "focalfunc": "func (f *Framework) BeforeEach()",
+    "funcbody": "func (f *Framework) BeforeEach() {\n\tf.beforeEachStarted = true\n\n\tf.cleanupHandle = AddCleanupAction(f.AfterEach)\n\n\tdir, err := os.MkdirTemp(os.TempDir(), \"frp-e2e-test-*\")\n\tExpectNoError(err)\n\tf.TempDirectory = dir\n\n\tf.mockServers = NewMockServers(f.portAllocator)\n\tif err := f.mockServers.Run(); err != nil {\n\t\tFailf(\"%v\", err)\n\t}\n\n\tparams := f.mockServers.GetTemplateParams()\n\tfor k, v := range params {\n\t\tswitch t := v.(type) {\n\t\tcase int:\n\t\t\tf.usedPorts[k] = t\n\t\tdefault:\n\t\t}\n\t}\n}",
+    "funcname": "BeforeEach"
+}

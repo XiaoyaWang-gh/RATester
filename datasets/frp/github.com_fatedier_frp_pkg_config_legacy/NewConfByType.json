@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/proxy.go",
+    "lineno": 61,
+    "focalfunc": "func NewConfByType(proxyType ProxyType) ProxyConf",
+    "funcbody": "func NewConfByType(proxyType ProxyType) ProxyConf {\n\tv, ok := proxyConfTypeMap[proxyType]\n\tif !ok {\n\t\treturn nil\n\t}\n\tcfg := reflect.New(v).Interface().(ProxyConf)\n\treturn cfg\n}",
+    "funcname": "NewConfByType"
+}

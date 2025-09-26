@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 453,
+    "focalfunc": "func (o *ormBase) getRelQs(md interface{}, mi *models.ModelInfo, fi *models.FieldInfo) *querySet",
+    "funcbody": "func (o *ormBase) getRelQs(md interface{}, mi *models.ModelInfo, fi *models.FieldInfo) *querySet {\n\tswitch fi.FieldType {\n\tcase RelOneToOne, RelForeignKey, RelManyToMany:\n\tdefault:\n\t\tpanic(fmt.Errorf(\"<Ormer> name `%s` for model `%s` is not an available rel field\", fi.Name, mi.FullName))\n\t}\n\n\tq := newQuerySet(o, fi.RelModelInfo).(*querySet)\n\tq.cond = NewCondition()\n\n\tif fi.FieldType == RelManyToMany {\n\t\tq.cond = q.cond.And(fi.ReverseFieldInfoM2M.Column+ExprSep+fi.ReverseFieldInfo.Column, md)\n\t} else {\n\t\tq.cond = q.cond.And(fi.ReverseFieldInfo.Column, md)\n\t}\n\n\treturn q\n}",
+    "funcname": "getRelQs"
+}

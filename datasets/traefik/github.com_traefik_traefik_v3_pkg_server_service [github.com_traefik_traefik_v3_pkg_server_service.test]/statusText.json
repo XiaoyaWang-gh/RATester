@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 128,
+    "focalfunc": "func statusText(statusCode int) string",
+    "funcbody": "func statusText(statusCode int) string {\n\tif statusCode == StatusClientClosedRequest {\n\t\treturn StatusClientClosedRequestText\n\t}\n\treturn http.StatusText(statusCode)\n}",
+    "funcname": "statusText"
+}

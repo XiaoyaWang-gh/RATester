@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/proxy.go",
+    "lineno": 49,
+    "focalfunc": "func connCopy(dst io.WriteCloser, src io.Reader, errCh chan error)",
+    "funcbody": "func connCopy(dst io.WriteCloser, src io.Reader, errCh chan error) {\n\n\tbuffer := make([]byte, maxDatagramSize)\n\n\t_, err := io.CopyBuffer(dst, src, buffer)\n\terrCh <- err\n\n\tif err := dst.Close(); err != nil {\n\t\tlog.Debug().Err(err).Msg(\"Error while terminating UDP stream\")\n\t}\n}",
+    "funcname": "connCopy"
+}

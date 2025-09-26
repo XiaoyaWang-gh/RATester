@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 322,
+    "focalfunc": "func (ns *Namespace) Substr(a any, nums ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) Substr(a any, nums ...any) (string, error) {\n\ts, err := cast.ToStringE(a)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tasRunes := []rune(s)\n\trlen := len(asRunes)\n\n\tvar start, length int\n\n\tswitch len(nums) {\n\tcase 0:\n\t\treturn \"\", errors.New(\"too few arguments\")\n\tcase 1:\n\t\tif start, err = cast.ToIntE(nums[0]); err != nil {\n\t\t\treturn \"\", errors.New(\"start argument must be an integer\")\n\t\t}\n\t\tlength = rlen\n\tcase 2:\n\t\tif start, err = cast.ToIntE(nums[0]); err != nil {\n\t\t\treturn \"\", errors.New(\"start argument must be an integer\")\n\t\t}\n\t\tif length, err = cast.ToIntE(nums[1]); err != nil {\n\t\t\treturn \"\", errors.New(\"length argument must be an integer\")\n\t\t}\n\tdefault:\n\t\treturn \"\", errors.New(\"too many arguments\")\n\t}\n\n\tif rlen == 0 {\n\t\treturn \"\", nil\n\t}\n\n\tif start < 0 {\n\t\tstart += rlen\n\t}\n\n\tif start < 0 {\n\t\tstart = 0\n\t}\n\n\tif start > rlen-1 {\n\t\treturn \"\", nil\n\t}\n\n\tend := rlen\n\n\tswitch {\n\tcase length == 0:\n\t\treturn \"\", nil\n\tcase length < 0:\n\t\tend += length\n\tcase length > 0:\n\t\tend = start + length\n\t}\n\n\tif start >= end {\n\t\treturn \"\", nil\n\t}\n\n\tif end < 0 {\n\t\treturn \"\", nil\n\t}\n\n\tif end > rlen {\n\t\tend = rlen\n\t}\n\n\treturn string(asRunes[start:end]), nil\n}",
+    "funcname": "Substr"
+}

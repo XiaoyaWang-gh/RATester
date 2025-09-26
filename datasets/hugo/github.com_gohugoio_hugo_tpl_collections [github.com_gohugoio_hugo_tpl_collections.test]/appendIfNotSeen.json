@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 619,
+    "focalfunc": "func (i *intersector) appendIfNotSeen(v reflect.Value)",
+    "funcbody": "func (i *intersector) appendIfNotSeen(v reflect.Value) {\n\tk := normalize(v)\n\tif !i.seen[k] {\n\t\ti.r = reflect.Append(i.r, v)\n\t\ti.seen[k] = true\n\t}\n}",
+    "funcname": "appendIfNotSeen"
+}

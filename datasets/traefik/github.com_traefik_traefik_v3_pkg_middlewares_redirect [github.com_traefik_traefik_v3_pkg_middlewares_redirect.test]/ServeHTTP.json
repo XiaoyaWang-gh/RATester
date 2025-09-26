@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/redirect/redirect.go",
+    "lineno": 90,
+    "focalfunc": "func (m *moveHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (m *moveHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\trw.Header().Set(\"Location\", m.location.String())\n\n\tstatus := http.StatusFound\n\tif req.Method != http.MethodGet {\n\t\tstatus = http.StatusTemporaryRedirect\n\t}\n\n\tif m.permanent {\n\t\tstatus = http.StatusMovedPermanently\n\t\tif req.Method != http.MethodGet {\n\t\t\tstatus = http.StatusPermanentRedirect\n\t\t}\n\t}\n\trw.WriteHeader(status)\n\t_, err := rw.Write([]byte(http.StatusText(status)))\n\tif err != nil {\n\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "ServeHTTP"
+}

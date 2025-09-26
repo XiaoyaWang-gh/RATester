@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 74,
+    "focalfunc": "func (r *Request) HTTPS() *Request",
+    "funcbody": "func (r *Request) HTTPS() *Request {\n\tr.protocol = \"https\"\n\treturn r\n}",
+    "funcname": "HTTPS"
+}

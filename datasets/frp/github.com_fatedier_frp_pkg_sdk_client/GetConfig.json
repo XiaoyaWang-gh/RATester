@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 100,
+    "focalfunc": "func (c *Client) GetConfig(ctx context.Context) (string, error)",
+    "funcbody": "func (c *Client) GetConfig(ctx context.Context) (string, error) {\n\treq, err := http.NewRequestWithContext(ctx, \"GET\", \"http://\"+c.address+\"/api/config\", nil)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn c.do(req)\n}",
+    "funcname": "GetConfig"
+}

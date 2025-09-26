@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 337,
+    "focalfunc": "func (f *filterOrmDecorator) Update(md interface{}, cols ...string) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) Update(md interface{}, cols ...string) (int64, error) {\n\treturn f.UpdateWithCtx(context.Background(), md, cols...)\n}",
+    "funcname": "Update"
+}

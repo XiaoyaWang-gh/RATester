@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 49,
+    "focalfunc": "func (s *IndexController) File()",
+    "funcbody": "func (s *IndexController) File() {\n\ts.SetInfo(\"file server\")\n\ts.SetType(\"file\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "File"
+}

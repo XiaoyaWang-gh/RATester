@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 204,
+    "focalfunc": "func QuicStreamToNetConn(s quic.Stream, c quic.Connection) net.Conn",
+    "funcbody": "func QuicStreamToNetConn(s quic.Stream, c quic.Connection) net.Conn {\n\treturn &wrapQuicStream{\n\t\tStream:\ts,\n\t\tc:\tc,\n\t}\n}",
+    "funcname": "QuicStreamToNetConn"
+}

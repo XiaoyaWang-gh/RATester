@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 149,
+    "focalfunc": "func defaultSessionKey(ctx *context.Context) string",
+    "funcbody": "func defaultSessionKey(ctx *context.Context) string {\n\treturn \"BEEGO_ALL\"\n}",
+    "funcname": "defaultSessionKey"
+}

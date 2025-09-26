@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 364,
+    "focalfunc": "func payloadTooLarge(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func payloadTooLarge(rw http.ResponseWriter, r *http.Request) {\n\tresponseError(rw, r,\n\t\t413,\n\t\t`<br>The page you have requested is unavailable.\n\t\t <br>Perhaps you are here because:<br><br>\n\t\t <ul>\n\t\t\t<br>The request entity is larger than limits defined by server.\n\t\t\t<br>Please change the request entity and try again.\n\t\t </ul>\n\t\t`,\n\t)\n}",
+    "funcname": "payloadTooLarge"
+}

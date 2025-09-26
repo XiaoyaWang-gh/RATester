@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 122,
+    "focalfunc": "func (ns *Namespace) Floor(n any) (float64, error)",
+    "funcbody": "func (ns *Namespace) Floor(n any) (float64, error) {\n\txf, err := cast.ToFloat64E(n)\n\tif err != nil {\n\t\treturn 0, errors.New(\"Floor operator can't be used with non-float value\")\n\t}\n\n\treturn math.Floor(xf), nil\n}",
+    "funcname": "Floor"
+}

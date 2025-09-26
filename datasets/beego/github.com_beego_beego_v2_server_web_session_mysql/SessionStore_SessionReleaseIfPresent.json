@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/mysql/sess_mysql.go",
+    "lineno": 126,
+    "focalfunc": "func (st *SessionStore) SessionReleaseIfPresent(ctx context.Context, w http.ResponseWriter)",
+    "funcbody": "func (st *SessionStore) SessionReleaseIfPresent(ctx context.Context, w http.ResponseWriter) {\n\tst.SessionRelease(ctx, w)\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

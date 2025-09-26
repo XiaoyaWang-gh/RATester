@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 220,
+    "focalfunc": "func (p *siprng) Uint64() uint64",
+    "funcbody": "func (p *siprng) Uint64() uint64 {\n\tp.mu.Lock()\n\tif p.ctr == 0 || p.ctr > 8*1024*1024 {\n\t\tp.rekey()\n\t}\n\tv := siphash(p.k0, p.k1, p.ctr)\n\tp.ctr++\n\tp.mu.Unlock()\n\treturn v\n}",
+    "funcname": "Uint64"
+}

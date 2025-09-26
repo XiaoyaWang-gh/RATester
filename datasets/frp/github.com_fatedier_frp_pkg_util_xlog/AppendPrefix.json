@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 53,
+    "focalfunc": "func (l *Logger) AppendPrefix(prefix string) *Logger",
+    "funcbody": "func (l *Logger) AppendPrefix(prefix string) *Logger {\n\treturn l.AddPrefix(LogPrefix{\n\t\tName:\t\tprefix,\n\t\tValue:\t\tprefix,\n\t\tPriority:\t10,\n\t})\n}",
+    "funcname": "AppendPrefix"
+}

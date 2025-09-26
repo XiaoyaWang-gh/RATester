@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 128,
+    "focalfunc": "func (pw *Wrapper) SetRunningStatus(remoteAddr string, respErr string) error",
+    "funcbody": "func (pw *Wrapper) SetRunningStatus(remoteAddr string, respErr string) error {\n\tpw.mu.Lock()\n\tdefer pw.mu.Unlock()\n\tif pw.Phase != ProxyPhaseWaitStart {\n\t\treturn fmt.Errorf(\"status not wait start, ignore start message\")\n\t}\n\n\tpw.RemoteAddr = remoteAddr\n\tif respErr != \"\" {\n\t\tpw.Phase = ProxyPhaseStartErr\n\t\tpw.Err = respErr\n\t\tpw.lastStartErr = time.Now()\n\t\treturn fmt.Errorf(pw.Err)\n\t}\n\n\tif err := pw.pxy.Run(); err != nil {\n\t\tpw.close()\n\t\tpw.Phase = ProxyPhaseStartErr\n\t\tpw.Err = err.Error()\n\t\tpw.lastStartErr = time.Now()\n\t\treturn err\n\t}\n\n\tpw.Phase = ProxyPhaseRunning\n\tpw.Err = \"\"\n\treturn nil\n}",
+    "funcname": "SetRunningStatus"
+}

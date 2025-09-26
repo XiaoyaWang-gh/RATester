@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 188,
+    "focalfunc": "func (g *HTTPGroup) createConnByEndpoint(endpoint, remoteAddr string) (net.Conn, error)",
+    "funcbody": "func (g *HTTPGroup) createConnByEndpoint(endpoint, remoteAddr string) (net.Conn, error) {\n\tvar f vhost.CreateConnFunc\n\tg.mu.RLock()\n\tf = g.createFuncs[endpoint]\n\tg.mu.RUnlock()\n\n\tif f == nil {\n\t\treturn nil, fmt.Errorf(\"no CreateConnFunc for endpoint [%s] in group [%s]\", endpoint, g.group)\n\t}\n\treturn f(remoteAddr)\n}",
+    "funcname": "createConnByEndpoint"
+}

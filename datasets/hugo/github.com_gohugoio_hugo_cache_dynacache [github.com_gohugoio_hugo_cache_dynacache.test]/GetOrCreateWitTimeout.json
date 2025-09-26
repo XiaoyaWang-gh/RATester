@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 414,
+    "focalfunc": "func (p *Partition[K, V]) GetOrCreateWitTimeout(key K, duration time.Duration, create func(key K) (V, error)) (V, error)",
+    "funcbody": "func (p *Partition[K, V]) GetOrCreateWitTimeout(key K, duration time.Duration, create func(key K) (V, error)) (V, error) {\n\tv, err := p.doGetOrCreateWitTimeout(key, duration, create)\n\tif err != nil {\n\t\treturn p.zero, err\n\t}\n\tif resource.StaleVersion(v) > 0 {\n\t\tp.c.Delete(key)\n\t\treturn p.doGetOrCreateWitTimeout(key, duration, create)\n\t}\n\treturn v, err\n}",
+    "funcname": "GetOrCreateWitTimeout"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 478,
+    "focalfunc": "func (l *genericResource) NameNormalized() string",
+    "funcbody": "func (l *genericResource) NameNormalized() string {\n\treturn l.sd.NameNormalized\n}",
+    "funcname": "NameNormalized"
+}

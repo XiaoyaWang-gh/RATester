@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 69,
+    "focalfunc": "func (p *partialCache) clear()",
+    "funcbody": "func (p *partialCache) clear() {\n\tp.cache.DeleteFunc(func(s string, r includeResult) bool {\n\t\treturn true\n\t})\n}",
+    "funcname": "clear"
+}

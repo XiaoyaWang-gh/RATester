@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 52,
+    "focalfunc": "func NewControlManager() *ControlManager",
+    "funcbody": "func NewControlManager() *ControlManager {\n\treturn &ControlManager{\n\t\tctlsByRunID: make(map[string]*Control),\n\t}\n}",
+    "funcname": "NewControlManager"
+}

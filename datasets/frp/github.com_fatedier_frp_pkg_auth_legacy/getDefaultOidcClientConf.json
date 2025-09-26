@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/legacy/legacy.go",
+    "lineno": 93,
+    "focalfunc": "func getDefaultOidcClientConf() OidcClientConfig",
+    "funcbody": "func getDefaultOidcClientConf() OidcClientConfig {\n\treturn OidcClientConfig{\n\t\tOidcClientID:\t\t\t\"\",\n\t\tOidcClientSecret:\t\t\"\",\n\t\tOidcAudience:\t\t\t\"\",\n\t\tOidcScope:\t\t\t\"\",\n\t\tOidcTokenEndpointURL:\t\t\"\",\n\t\tOidcAdditionalEndpointParams:\tmake(map[string]string),\n\t}\n}",
+    "funcname": "getDefaultOidcClientConf"
+}

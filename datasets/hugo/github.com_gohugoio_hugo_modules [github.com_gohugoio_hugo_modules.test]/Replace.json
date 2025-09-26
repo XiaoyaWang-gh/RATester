@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 132,
+    "focalfunc": "func (m *moduleAdapter) Replace() Module",
+    "funcbody": "func (m *moduleAdapter) Replace() Module {\n\tif m.IsGoMod() && !m.Vendor() && m.gomod.Replace != nil {\n\t\treturn &moduleAdapter{\n\t\t\tgomod:\tm.gomod.Replace,\n\t\t\towner:\tm.owner,\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "Replace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 153,
+    "focalfunc": "func RemoteIPSessionKey(ctx *context.Context) string",
+    "funcbody": "func RemoteIPSessionKey(ctx *context.Context) string {\n\tr := ctx.Request\n\tIPAddress := r.Header.Get(\"X-Real-Ip\")\n\tif IPAddress == \"\" {\n\t\tIPAddress = r.Header.Get(\"X-Forwarded-For\")\n\t}\n\tif IPAddress == \"\" {\n\t\tIPAddress = r.RemoteAddr\n\t}\n\treturn IPAddress\n}",
+    "funcname": "RemoteIPSessionKey"
+}

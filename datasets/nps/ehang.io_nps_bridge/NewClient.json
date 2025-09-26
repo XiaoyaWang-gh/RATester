@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 34,
+    "focalfunc": "func NewClient(t, f *nps_mux.Mux, s *conn.Conn, vs string) *Client",
+    "funcbody": "func NewClient(t, f *nps_mux.Mux, s *conn.Conn, vs string) *Client {\n\treturn &Client{\n\t\tsignal:\t\ts,\n\t\ttunnel:\t\tt,\n\t\tfile:\t\tf,\n\t\tVersion:\tvs,\n\t}\n}",
+    "funcname": "NewClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 546,
+    "focalfunc": "func createPluginMiddleware(k8sClient Client, ns string, plugins map[string]apiextensionv1.JSON) (map[string]dynamic.PluginConf, error)",
+    "funcbody": "func createPluginMiddleware(k8sClient Client, ns string, plugins map[string]apiextensionv1.JSON) (map[string]dynamic.PluginConf, error) {\n\tif plugins == nil {\n\t\treturn nil, nil\n\t}\n\n\tdata, err := json.Marshal(plugins)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tpcMap := map[string]dynamic.PluginConf{}\n\tif err = json.Unmarshal(data, &pcMap); err != nil {\n\t\treturn nil, err\n\t}\n\n\tfor _, pc := range pcMap {\n\t\tfor key := range pc {\n\t\t\tif pc[key], err = loadSecretKeys(k8sClient, ns, pc[key]); err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t}\n\t}\n\n\treturn pcMap, nil\n}",
+    "funcname": "createPluginMiddleware"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 373,
+    "focalfunc": "func (p *Path) NameNoExt() string",
+    "funcbody": "func (p *Path) NameNoExt() string {\n\tif i := p.identifierIndex(0); i != -1 {\n\t\treturn p.s[p.posContainerHigh : p.identifiers[i].Low-1]\n\t}\n\treturn p.s[p.posContainerHigh:]\n}",
+    "funcname": "NameNoExt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/once.go",
+    "lineno": 60,
+    "focalfunc": "func (t *onceMore) Done() bool",
+    "funcbody": "func (t *onceMore) Done() bool {\n\treturn atomic.LoadUint32(&t.done) == 1\n}",
+    "funcname": "Done"
+}

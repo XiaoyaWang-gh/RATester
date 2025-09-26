@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/parsers.go",
+    "lineno": 127,
+    "focalfunc": "func ptrParser(elemParser paramParser) paramParser",
+    "funcbody": "func ptrParser(elemParser paramParser) paramParser {\n\treturn parserFunc(func(value string, toType reflect.Type) (interface{}, error) {\n\t\tparsedValue, err := elemParser.parse(value, toType.Elem())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tnewValPtr := reflect.New(toType.Elem())\n\t\tnewVal := reflect.Indirect(newValPtr)\n\t\tconvertedVal, err := safeConvert(reflect.ValueOf(parsedValue), toType.Elem())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tnewVal.Set(convertedVal)\n\t\treturn newValPtr.Interface(), nil\n\t})\n}",
+    "funcname": "ptrParser"
+}

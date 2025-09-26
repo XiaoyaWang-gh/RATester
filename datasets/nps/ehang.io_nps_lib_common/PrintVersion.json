@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 467,
+    "focalfunc": "func PrintVersion()",
+    "funcbody": "func PrintVersion() {\n\tfmt.Printf(\"Version: %s\\nCore version: %s\\nSame core version of client and server can connect each other\\n\", version.VERSION, version.GetVersion())\n}",
+    "funcname": "PrintVersion"
+}

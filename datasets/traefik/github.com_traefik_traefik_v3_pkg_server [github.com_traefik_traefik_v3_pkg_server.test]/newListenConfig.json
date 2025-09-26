@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_listenconfig_unix.go",
+    "lineno": 16,
+    "focalfunc": "func newListenConfig(configuration *static.EntryPoint) (lc net.ListenConfig)",
+    "funcbody": "func newListenConfig(configuration *static.EntryPoint) (lc net.ListenConfig) {\n\tif configuration != nil && configuration.ReusePort {\n\t\tlc.Control = controlReusePort\n\t}\n\treturn\n}",
+    "funcname": "newListenConfig"
+}

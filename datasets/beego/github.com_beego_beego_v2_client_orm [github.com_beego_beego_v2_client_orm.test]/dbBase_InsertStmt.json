@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 294,
+    "focalfunc": "func (d *dbBase) InsertStmt(ctx context.Context, stmt stmtQuerier, mi *models.ModelInfo, ind reflect.Value, tz *time.Location) (int64, error)",
+    "funcbody": "func (d *dbBase) InsertStmt(ctx context.Context, stmt stmtQuerier, mi *models.ModelInfo, ind reflect.Value, tz *time.Location) (int64, error) {\n\tvalues, _, err := d.collectValues(mi, ind, mi.Fields.DBcols, true, true, nil, tz)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\n\tif d.ins.HasReturningID(mi, nil) {\n\t\trow := stmt.QueryRow(values...)\n\t\tvar id int64\n\t\terr := row.Scan(&id)\n\t\treturn id, err\n\t}\n\tres, err := stmt.ExecContext(ctx, values...)\n\tif err == nil {\n\t\treturn res.LastInsertId()\n\t}\n\treturn 0, err\n}",
+    "funcname": "InsertStmt"
+}

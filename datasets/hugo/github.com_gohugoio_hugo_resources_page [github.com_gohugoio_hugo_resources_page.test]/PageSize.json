@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 199,
+    "focalfunc": "func (p *Paginator) PageSize() int",
+    "funcbody": "func (p *Paginator) PageSize() int {\n\thugo.Deprecate(\"PageSize\", \"Use PagerSize instead.\", \"v0.128.0\")\n\treturn p.size\n}",
+    "funcname": "PageSize"
+}

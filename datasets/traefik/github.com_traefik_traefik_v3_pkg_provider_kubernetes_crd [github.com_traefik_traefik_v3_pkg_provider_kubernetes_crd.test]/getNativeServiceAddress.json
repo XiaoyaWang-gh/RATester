@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 534,
+    "focalfunc": "func getNativeServiceAddress(service corev1.Service, svcPort corev1.ServicePort) (string, error)",
+    "funcbody": "func getNativeServiceAddress(service corev1.Service, svcPort corev1.ServicePort) (string, error) {\n\tif service.Spec.ClusterIP == \"None\" {\n\t\treturn \"\", fmt.Errorf(\"no clusterIP on headless service: %s/%s\", service.Namespace, service.Name)\n\t}\n\n\tif service.Spec.ClusterIP == \"\" {\n\t\treturn \"\", fmt.Errorf(\"no clusterIP found for service: %s/%s\", service.Namespace, service.Name)\n\t}\n\n\treturn net.JoinHostPort(service.Spec.ClusterIP, strconv.Itoa(int(svcPort.Port))), nil\n}",
+    "funcname": "getNativeServiceAddress"
+}

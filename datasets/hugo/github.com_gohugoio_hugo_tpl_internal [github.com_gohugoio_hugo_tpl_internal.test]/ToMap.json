@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/templatefuncsRegistry.go",
+    "lineno": 153,
+    "focalfunc": "func (namespaces TemplateFuncsNamespaces) ToMap() map[string]any",
+    "funcbody": "func (namespaces TemplateFuncsNamespaces) ToMap() map[string]any {\n\tm := make(map[string]any)\n\tfor _, ns := range namespaces {\n\t\tmm := make(map[string]any)\n\t\tfor name, mapping := range ns.MethodMappings {\n\t\t\tmm[name] = map[string]any{\n\t\t\t\t\"Examples\":\tmapping.Examples,\n\t\t\t\t\"Aliases\":\tmapping.Aliases,\n\t\t\t}\n\t\t}\n\t\tm[ns.Name] = mm\n\t}\n\treturn m\n}",
+    "funcname": "ToMap"
+}

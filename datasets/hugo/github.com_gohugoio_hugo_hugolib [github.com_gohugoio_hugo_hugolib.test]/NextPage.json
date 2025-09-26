@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__position.go",
+    "lineno": 57,
+    "focalfunc": "func (p pagePosition) NextPage() page.Page",
+    "funcbody": "func (p pagePosition) NextPage() page.Page {\n\thugo.Deprecate(\".Page.NextPage\", \"Use .Page.Next instead.\", \"v0.123.0\")\n\treturn p.Next()\n}",
+    "funcname": "NextPage"
+}

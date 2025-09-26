@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 101,
+    "focalfunc": "func (monitor *Monitor) Stop()",
+    "funcbody": "func (monitor *Monitor) Stop() {\n\tmonitor.cancel()\n}",
+    "funcname": "Stop"
+}

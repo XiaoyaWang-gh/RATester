@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 221,
+    "focalfunc": "func (c *Context) AbortWithStatusJSON(code int, jsonObj any)",
+    "funcbody": "func (c *Context) AbortWithStatusJSON(code int, jsonObj any) {\n\tc.Abort()\n\tc.JSON(code, jsonObj)\n}",
+    "funcname": "AbortWithStatusJSON"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 125,
+    "focalfunc": "func (c *defaultConfigProvider) GetString(k string) string",
+    "funcbody": "func (c *defaultConfigProvider) GetString(k string) string {\n\tv := c.Get(k)\n\treturn cast.ToString(v)\n}",
+    "funcname": "GetString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 386,
+    "focalfunc": "func newPaginator(elements []paginatedElement, total, size int, urlFactory paginationURLFactory) (*Paginator, error)",
+    "funcbody": "func newPaginator(elements []paginatedElement, total, size int, urlFactory paginationURLFactory) (*Paginator, error) {\n\tp := &Paginator{total: total, paginatedElements: elements, size: size, paginationURLFactory: urlFactory}\n\n\tvar ps pagers\n\n\tif len(elements) > 0 {\n\t\tps = make(pagers, len(elements))\n\t\tfor i := range p.paginatedElements {\n\t\t\tps[i] = &Pager{number: (i + 1), Paginator: p}\n\t\t}\n\t} else {\n\t\tps = make(pagers, 1)\n\t\tps[0] = &Pager{number: 1, Paginator: p}\n\t}\n\n\tp.pagers = ps\n\n\treturn p, nil\n}",
+    "funcname": "newPaginator"
+}

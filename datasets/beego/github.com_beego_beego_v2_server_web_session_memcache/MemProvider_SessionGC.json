@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 239,
+    "focalfunc": "func (rp *MemProvider) SessionGC(context.Context)",
+    "funcbody": "func (rp *MemProvider) SessionGC(context.Context) {\n}",
+    "funcname": "SessionGC"
+}

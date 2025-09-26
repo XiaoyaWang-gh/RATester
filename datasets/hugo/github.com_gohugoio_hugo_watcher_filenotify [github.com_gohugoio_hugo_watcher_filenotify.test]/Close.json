@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 106,
+    "focalfunc": "func (w *filePoller) Close() error",
+    "funcbody": "func (w *filePoller) Close() error {\n\tw.mu.Lock()\n\tdefer w.mu.Unlock()\n\n\tif w.closed {\n\t\treturn nil\n\t}\n\tw.closed = true\n\tclose(w.done)\n\tfor name := range w.watches {\n\t\tw.remove(name)\n\t}\n\n\treturn nil\n}",
+    "funcname": "Close"
+}

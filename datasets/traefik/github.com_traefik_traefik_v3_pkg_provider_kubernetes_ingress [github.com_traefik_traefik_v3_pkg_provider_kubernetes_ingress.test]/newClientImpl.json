@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 133,
+    "focalfunc": "func newClientImpl(clientset kclientset.Interface) *clientWrapper",
+    "funcbody": "func newClientImpl(clientset kclientset.Interface) *clientWrapper {\n\treturn &clientWrapper{\n\t\tclientset:\t\tclientset,\n\t\tfactoriesSecret:\tmake(map[string]kinformers.SharedInformerFactory),\n\t\tfactoriesIngress:\tmake(map[string]kinformers.SharedInformerFactory),\n\t\tfactoriesKube:\t\tmake(map[string]kinformers.SharedInformerFactory),\n\t}\n}",
+    "funcname": "newClientImpl"
+}

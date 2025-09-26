@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 134,
+    "focalfunc": "func (rc *Cache) Delete(ctx context.Context, key string) error",
+    "funcbody": "func (rc *Cache) Delete(ctx context.Context, key string) error {\n\t_, err := rc.do(\"DEL\", key)\n\treturn err\n}",
+    "funcname": "Delete"
+}

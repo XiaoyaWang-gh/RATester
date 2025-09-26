@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/http.go",
+    "lineno": 255,
+    "focalfunc": "func resetReqMethod(method string) string",
+    "funcbody": "func resetReqMethod(method string) string {\n\tif method == \"ET\" {\n\t\treturn \"GET\"\n\t}\n\tif method == \"OST\" {\n\t\treturn \"POST\"\n\t}\n\treturn method\n}",
+    "funcname": "resetReqMethod"
+}

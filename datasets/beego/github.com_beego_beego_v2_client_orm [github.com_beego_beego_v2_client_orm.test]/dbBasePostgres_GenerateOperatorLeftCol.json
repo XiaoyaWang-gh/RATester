@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 81,
+    "focalfunc": "func (d *dbBasePostgres) GenerateOperatorLeftCol(fi *models.FieldInfo, operator string, leftCol *string)",
+    "funcbody": "func (d *dbBasePostgres) GenerateOperatorLeftCol(fi *models.FieldInfo, operator string, leftCol *string) {\n\tswitch operator {\n\tcase \"contains\", \"startswith\", \"endswith\":\n\t\t*leftCol = fmt.Sprintf(\"%s::text\", *leftCol)\n\tcase \"iexact\", \"icontains\", \"istartswith\", \"iendswith\":\n\t\t*leftCol = fmt.Sprintf(\"UPPER(%s::text)\", *leftCol)\n\t}\n}",
+    "funcname": "GenerateOperatorLeftCol"
+}

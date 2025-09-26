@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 313,
+    "focalfunc": "func (r ranks) Swap(i, j int)",
+    "funcbody": "func (r ranks) Swap(i, j int)\t{ r[i], r[j] = r[j], r[i] }",
+    "funcname": "Swap"
+}

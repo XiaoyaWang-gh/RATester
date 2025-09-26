@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin.go",
+    "lineno": 97,
+    "focalfunc": "func registerAdmin() error",
+    "funcbody": "func registerAdmin() error {\n\tif BConfig.Listen.EnableAdmin {\n\n\t\tc := &adminController{\n\t\t\tservers: make([]*HttpServer, 0, 2),\n\t\t}\n\n\t\tadminCfg := *BConfig\n\t\tadminCfg.Listen.EnableHTTPS = false\n\t\tadminCfg.Listen.EnableMutualHTTPS = false\n\t\tbeeAdminApp = &adminApp{\n\t\t\tHttpServer: NewHttpServerWithCfg(&adminCfg),\n\t\t}\n\n\t\tbeeAdminApp.Router(\"/\", c, \"get:AdminIndex\")\n\t\tbeeAdminApp.Router(\"/qps\", c, \"get:QpsIndex\")\n\t\tbeeAdminApp.Router(\"/prof\", c, \"get:ProfIndex\")\n\t\tbeeAdminApp.Router(\"/healthcheck\", c, \"get:Healthcheck\")\n\t\tbeeAdminApp.Router(\"/task\", c, \"get:TaskStatus\")\n\t\tbeeAdminApp.Router(\"/listconf\", c, \"get:ListConf\")\n\t\tbeeAdminApp.Router(\"/metrics\", c, \"get:PrometheusMetrics\")\n\n\t\tgo beeAdminApp.Run()\n\t}\n\treturn nil\n}",
+    "funcname": "registerAdmin"
+}

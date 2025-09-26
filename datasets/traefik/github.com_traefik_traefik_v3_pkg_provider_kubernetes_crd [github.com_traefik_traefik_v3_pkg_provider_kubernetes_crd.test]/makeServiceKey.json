@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1180,
+    "focalfunc": "func makeServiceKey(rule, ingressName string) (string, error)",
+    "funcbody": "func makeServiceKey(rule, ingressName string) (string, error) {\n\th := sha256.New()\n\tif _, err := h.Write([]byte(rule)); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tkey := fmt.Sprintf(\"%s-%.10x\", ingressName, h.Sum(nil))\n\n\treturn key, nil\n}",
+    "funcname": "makeServiceKey"
+}

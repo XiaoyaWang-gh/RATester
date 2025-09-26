@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 90,
+    "focalfunc": "func (ctx imageLinkContext) IsBlock() bool",
+    "funcbody": "func (ctx imageLinkContext) IsBlock() bool {\n\treturn ctx.isBlock\n}",
+    "funcname": "IsBlock"
+}

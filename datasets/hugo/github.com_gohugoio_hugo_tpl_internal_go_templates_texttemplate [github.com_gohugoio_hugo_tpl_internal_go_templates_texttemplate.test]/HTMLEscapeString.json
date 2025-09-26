@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 647,
+    "focalfunc": "func HTMLEscapeString(s string) string",
+    "funcbody": "func HTMLEscapeString(s string) string {\n\n\tif !strings.ContainsAny(s, \"'\\\"&<>\\000\") {\n\t\treturn s\n\t}\n\tvar b strings.Builder\n\tHTMLEscape(&b, []byte(s))\n\treturn b.String()\n}",
+    "funcname": "HTMLEscapeString"
+}

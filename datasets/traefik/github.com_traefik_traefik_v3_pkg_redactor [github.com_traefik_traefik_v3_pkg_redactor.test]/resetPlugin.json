@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 200,
+    "focalfunc": "func resetPlugin(field reflect.Value)",
+    "funcbody": "func resetPlugin(field reflect.Value) {\n\tfor _, key := range field.MapKeys() {\n\t\tfield.SetMapIndex(key, reflect.ValueOf(struct{}{}))\n\t}\n}",
+    "funcname": "resetPlugin"
+}

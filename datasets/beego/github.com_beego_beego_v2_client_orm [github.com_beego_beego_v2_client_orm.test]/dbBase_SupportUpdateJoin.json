@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2033,
+    "focalfunc": "func (d *dbBase) SupportUpdateJoin() bool",
+    "funcbody": "func (d *dbBase) SupportUpdateJoin() bool {\n\treturn true\n}",
+    "funcname": "SupportUpdateJoin"
+}

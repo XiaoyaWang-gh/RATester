@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/cast/cast.go",
+    "lineno": 48,
+    "focalfunc": "func convertTemplateToString(v any) any",
+    "funcbody": "func convertTemplateToString(v any) any {\n\tswitch vv := v.(type) {\n\tcase template.HTML:\n\t\tv = string(vv)\n\tcase template.CSS:\n\t\tv = string(vv)\n\tcase template.HTMLAttr:\n\t\tv = string(vv)\n\tcase template.JS:\n\t\tv = string(vv)\n\tcase template.JSStr:\n\t\tv = string(vv)\n\t}\n\treturn v\n}",
+    "funcname": "convertTemplateToString"
+}

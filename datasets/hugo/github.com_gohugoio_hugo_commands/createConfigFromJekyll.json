@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 107,
+    "focalfunc": "func (i *importCommand) createConfigFromJekyll(fs afero.Fs, inpath string, kind metadecoders.Format, jekyllConfig map[string]any) (err error)",
+    "funcbody": "func (i *importCommand) createConfigFromJekyll(fs afero.Fs, inpath string, kind metadecoders.Format, jekyllConfig map[string]any) (err error) {\n\ttitle := \"My New Hugo Site\"\n\tbaseURL := \"http://example.org/\"\n\n\tfor key, value := range jekyllConfig {\n\t\tlowerKey := strings.ToLower(key)\n\n\t\tswitch lowerKey {\n\t\tcase \"title\":\n\t\t\tif str, ok := value.(string); ok {\n\t\t\t\ttitle = str\n\t\t\t}\n\n\t\tcase \"url\":\n\t\t\tif str, ok := value.(string); ok {\n\t\t\t\tbaseURL = str\n\t\t\t}\n\t\t}\n\t}\n\n\tin := map[string]any{\n\t\t\"baseURL\":\t\tbaseURL,\n\t\t\"title\":\t\ttitle,\n\t\t\"languageCode\":\t\t\"en-us\",\n\t\t\"disablePathToLower\":\ttrue,\n\t}\n\n\tvar buf bytes.Buffer\n\terr = parser.InterfaceToConfig(in, kind, &buf)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn helpers.WriteToDisk(filepath.Join(inpath, \"hugo.\"+string(kind)), &buf, fs)\n}",
+    "funcname": "createConfigFromJekyll"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 215,
+    "focalfunc": "func newTemplateExecuter(d *deps.Deps) (texttemplate.Executer, map[string]reflect.Value)",
+    "funcbody": "func newTemplateExecuter(d *deps.Deps) (texttemplate.Executer, map[string]reflect.Value) {\n\tfuncs := createFuncMap(d)\n\tfuncsv := make(map[string]reflect.Value)\n\n\tfor k, v := range funcs {\n\t\tvv := reflect.ValueOf(v)\n\t\tfuncsv[k] = vv\n\t}\n\n\tfor k, v := range template.GoFuncs {\n\t\tif _, exists := funcsv[k]; !exists {\n\t\t\tvv, ok := v.(reflect.Value)\n\t\t\tif !ok {\n\t\t\t\tvv = reflect.ValueOf(v)\n\t\t\t}\n\t\t\tfuncsv[k] = vv\n\t\t}\n\t}\n\n\tfor k, v := range texttemplate.GoFuncs {\n\t\tif _, exists := funcsv[k]; !exists {\n\t\t\tfuncsv[k] = v\n\t\t}\n\t}\n\n\texeHelper := &templateExecHelper{\n\t\twatching:\td.Conf.Watching(),\n\t\tfuncs:\t\tfuncsv,\n\t\tsite:\t\treflect.ValueOf(d.Site),\n\t\tsiteParams:\treflect.ValueOf(d.Site.Params()),\n\t}\n\n\treturn texttemplate.NewExecuter(\n\t\texeHelper,\n\t), funcsv\n}",
+    "funcname": "newTemplateExecuter"
+}

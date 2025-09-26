@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 168,
+    "focalfunc": "func ValidateProxyConfigurerForServer(c v1.ProxyConfigurer, s *v1.ServerConfig) error",
+    "funcbody": "func ValidateProxyConfigurerForServer(c v1.ProxyConfigurer, s *v1.ServerConfig) error {\n\tbase := c.GetBaseConfig()\n\tif err := validateProxyBaseConfigForServer(base); err != nil {\n\t\treturn err\n\t}\n\n\tswitch v := c.(type) {\n\tcase *v1.TCPProxyConfig:\n\t\treturn validateTCPProxyConfigForServer(v, s)\n\tcase *v1.UDPProxyConfig:\n\t\treturn validateUDPProxyConfigForServer(v, s)\n\tcase *v1.TCPMuxProxyConfig:\n\t\treturn validateTCPMuxProxyConfigForServer(v, s)\n\tcase *v1.HTTPProxyConfig:\n\t\treturn validateHTTPProxyConfigForServer(v, s)\n\tcase *v1.HTTPSProxyConfig:\n\t\treturn validateHTTPSProxyConfigForServer(v, s)\n\tcase *v1.STCPProxyConfig:\n\t\treturn validateSTCPProxyConfigForServer(v, s)\n\tcase *v1.XTCPProxyConfig:\n\t\treturn validateXTCPProxyConfigForServer(v, s)\n\tcase *v1.SUDPProxyConfig:\n\t\treturn validateSUDPProxyConfigForServer(v, s)\n\tdefault:\n\t\treturn errors.New(\"unknown proxy config type\")\n\t}\n}",
+    "funcname": "ValidateProxyConfigurerForServer"
+}

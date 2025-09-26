@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/json.go",
+    "lineno": 17,
+    "focalfunc": "func (d DefaultJSONSerializer) Serialize(c Context, i interface{}, indent string) error",
+    "funcbody": "func (d DefaultJSONSerializer) Serialize(c Context, i interface{}, indent string) error {\n\tenc := json.NewEncoder(c.Response())\n\tif indent != \"\" {\n\t\tenc.SetIndent(\"\", indent)\n\t}\n\treturn enc.Encode(i)\n}",
+    "funcname": "Serialize"
+}

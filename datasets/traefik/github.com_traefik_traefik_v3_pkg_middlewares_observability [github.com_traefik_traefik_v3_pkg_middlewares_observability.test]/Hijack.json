@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/status_code.go",
+    "lineno": 31,
+    "focalfunc": "func (s *statusCodeRecorder) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (s *statusCodeRecorder) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\treturn s.ResponseWriter.(http.Hijacker).Hijack()\n}",
+    "funcname": "Hijack"
+}

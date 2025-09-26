@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 699,
+    "focalfunc": "func (p PathParam) SetParam(key, val string)",
+    "funcbody": "func (p PathParam) SetParam(key, val string) {\n\tp[key] = val\n}",
+    "funcname": "SetParam"
+}

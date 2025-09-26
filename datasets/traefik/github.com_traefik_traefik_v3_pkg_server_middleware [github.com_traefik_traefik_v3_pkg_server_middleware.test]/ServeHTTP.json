@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/plugins.go",
+    "lineno": 54,
+    "focalfunc": "func (s *traceablePlugin) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (s *traceablePlugin) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\ts.h.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

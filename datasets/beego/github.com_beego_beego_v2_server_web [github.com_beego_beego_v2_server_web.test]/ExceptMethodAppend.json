@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 104,
+    "focalfunc": "func ExceptMethodAppend(action string)",
+    "funcbody": "func ExceptMethodAppend(action string) {\n\texceptMethod = append(exceptMethod, action)\n}",
+    "funcname": "ExceptMethodAppend"
+}

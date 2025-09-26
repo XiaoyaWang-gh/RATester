@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 969,
+    "focalfunc": "func findMatchingHostname(h1, h2 gatev1.Hostname) gatev1.Hostname",
+    "funcbody": "func findMatchingHostname(h1, h2 gatev1.Hostname) gatev1.Hostname {\n\tif h1 == h2 {\n\t\treturn h1\n\t}\n\n\tif !strings.HasPrefix(string(h1), \"*.\") {\n\t\treturn \"\"\n\t}\n\n\ttrimmedH1 := strings.TrimPrefix(string(h1), \"*\")\n\n\tif trimmedH1 == string(h2) {\n\t\treturn \"\"\n\t}\n\n\tif !strings.HasSuffix(string(h2), trimmedH1) {\n\t\treturn \"\"\n\t}\n\n\treturn lessWildcards(h1, h2)\n}",
+    "funcname": "findMatchingHostname"
+}

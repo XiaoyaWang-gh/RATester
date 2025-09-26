@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 76,
+    "focalfunc": "func (s *BaseServer) CheckFlowAndConnNum(client *file.Client) error",
+    "funcbody": "func (s *BaseServer) CheckFlowAndConnNum(client *file.Client) error {\n\tif client.Flow.FlowLimit > 0 && (client.Flow.FlowLimit<<20) < (client.Flow.ExportFlow+client.Flow.InletFlow) {\n\t\treturn errors.New(\"Traffic exceeded\")\n\t}\n\tif !client.GetConn() {\n\t\treturn errors.New(\"Connections exceed the current client limit\")\n\t}\n\treturn nil\n}",
+    "funcname": "CheckFlowAndConnNum"
+}

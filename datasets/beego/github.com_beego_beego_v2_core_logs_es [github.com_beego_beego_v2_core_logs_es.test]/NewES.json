@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 19,
+    "focalfunc": "func NewES() logs.Logger",
+    "funcbody": "func NewES() logs.Logger {\n\tcw := &esLogger{\n\t\tLevel:\t\tlogs.LevelDebug,\n\t\tindexNaming:\tindexNaming,\n\t}\n\treturn cw\n}",
+    "funcname": "NewES"
+}

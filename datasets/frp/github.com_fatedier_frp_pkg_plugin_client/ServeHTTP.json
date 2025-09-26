@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 103,
+    "focalfunc": "func (hp *HTTPProxy) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (hp *HTTPProxy) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tif ok := hp.Auth(req); !ok {\n\t\trw.Header().Set(\"Proxy-Authenticate\", \"Basic\")\n\t\trw.WriteHeader(http.StatusProxyAuthRequired)\n\t\treturn\n\t}\n\n\tif req.Method == http.MethodConnect {\n\n\t\thp.ConnectHandler(rw, req)\n\t} else {\n\t\thp.HTTPHandler(rw, req)\n\t}\n}",
+    "funcname": "ServeHTTP"
+}

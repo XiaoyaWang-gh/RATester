@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 277,
+    "focalfunc": "func (formats Formats) GetByNames(names ...string) (Formats, error)",
+    "funcbody": "func (formats Formats) GetByNames(names ...string) (Formats, error) {\n\tvar types []Format\n\n\tfor _, name := range names {\n\t\ttpe, ok := formats.GetByName(name)\n\t\tif !ok {\n\t\t\treturn types, fmt.Errorf(\"OutputFormat with key %q not found\", name)\n\t\t}\n\t\ttypes = append(types, tpe)\n\t}\n\treturn types, nil\n}",
+    "funcname": "GetByNames"
+}

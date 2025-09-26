@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 161,
+    "focalfunc": "func LoadServerConfig(path string, strict bool) (*v1.ServerConfig, bool, error)",
+    "funcbody": "func LoadServerConfig(path string, strict bool) (*v1.ServerConfig, bool, error) {\n\tvar (\n\t\tsvrCfg\t\t*v1.ServerConfig\n\t\tisLegacyFormat\tbool\n\t)\n\n\tif DetectLegacyINIFormatFromFile(path) {\n\t\tcontent, err := legacy.GetRenderedConfFromFile(path)\n\t\tif err != nil {\n\t\t\treturn nil, true, err\n\t\t}\n\t\tlegacyCfg, err := legacy.UnmarshalServerConfFromIni(content)\n\t\tif err != nil {\n\t\t\treturn nil, true, err\n\t\t}\n\t\tsvrCfg = legacy.Convert_ServerCommonConf_To_v1(&legacyCfg)\n\t\tisLegacyFormat = true\n\t} else {\n\t\tsvrCfg = &v1.ServerConfig{}\n\t\tif err := LoadConfigureFromFile(path, svrCfg, strict); err != nil {\n\t\t\treturn nil, false, err\n\t\t}\n\t}\n\tif svrCfg != nil {\n\t\tsvrCfg.Complete()\n\t}\n\treturn svrCfg, isLegacyFormat, nil\n}",
+    "funcname": "LoadServerConfig"
+}

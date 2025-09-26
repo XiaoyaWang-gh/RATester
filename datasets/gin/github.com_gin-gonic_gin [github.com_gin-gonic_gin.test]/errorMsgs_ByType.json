@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 100,
+    "focalfunc": "func (a errorMsgs) ByType(typ ErrorType) errorMsgs",
+    "funcbody": "func (a errorMsgs) ByType(typ ErrorType) errorMsgs {\n\tif len(a) == 0 {\n\t\treturn nil\n\t}\n\tif typ == ErrorTypeAny {\n\t\treturn a\n\t}\n\tvar result errorMsgs\n\tfor _, msg := range a {\n\t\tif msg.IsType(typ) {\n\t\t\tresult = append(result, msg)\n\t\t}\n\t}\n\treturn result\n}",
+    "funcname": "ByType"
+}

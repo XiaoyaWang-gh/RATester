@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 82,
+    "focalfunc": "func (c *Client) RequestHook() []RequestHook",
+    "funcbody": "func (c *Client) RequestHook() []RequestHook {\n\treturn c.userRequestHooks\n}",
+    "funcname": "RequestHook"
+}

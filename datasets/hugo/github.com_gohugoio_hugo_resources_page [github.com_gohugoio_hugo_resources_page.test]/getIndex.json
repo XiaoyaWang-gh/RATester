@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 179,
+    "focalfunc": "func (s *RelatedDocsHandler) getIndex(p Pages) *related.InvertedIndex",
+    "funcbody": "func (s *RelatedDocsHandler) getIndex(p Pages) *related.InvertedIndex {\n\tfor _, ci := range s.postingLists {\n\t\tif pagesEqual(p, ci.p) {\n\t\t\treturn ci.postingList\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "getIndex"
+}

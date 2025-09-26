@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 177,
+    "focalfunc": "func version(major, minor, patch int, suffix string) string",
+    "funcbody": "func version(major, minor, patch int, suffix string) string {\n\tif patch > 0 || minor > 53 {\n\t\treturn fmt.Sprintf(\"%d.%d.%d%s\", major, minor, patch, suffix)\n\t}\n\treturn fmt.Sprintf(\"%d.%d%s\", major, minor, suffix)\n}",
+    "funcname": "version"
+}

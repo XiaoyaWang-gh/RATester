@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 546,
+    "focalfunc": "func joinRange(c0 context, rc *rangeContext) context",
+    "funcbody": "func joinRange(c0 context, rc *rangeContext) context {\n\n\tfor _, c := range rc.breaks {\n\t\tc0 = join(c0, c, c.n, \"range\")\n\t\tif c0.state == stateError {\n\t\t\tc0.err.Line = c.n.(*parse.BreakNode).Line\n\t\t\tc0.err.Description = \"at range loop break: \" + c0.err.Description\n\t\t\treturn c0\n\t\t}\n\t}\n\tfor _, c := range rc.continues {\n\t\tc0 = join(c0, c, c.n, \"range\")\n\t\tif c0.state == stateError {\n\t\t\tc0.err.Line = c.n.(*parse.ContinueNode).Line\n\t\t\tc0.err.Description = \"at range loop continue: \" + c0.err.Description\n\t\t\treturn c0\n\t\t}\n\t}\n\treturn c0\n}",
+    "funcname": "joinRange"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 236,
+    "focalfunc": "func (i *imageResource) Fill(spec string) (images.ImageResource, error)",
+    "funcbody": "func (i *imageResource) Fill(spec string) (images.ImageResource, error) {\n\treturn i.processActionSpec(images.ActionFill, spec)\n}",
+    "funcname": "Fill"
+}

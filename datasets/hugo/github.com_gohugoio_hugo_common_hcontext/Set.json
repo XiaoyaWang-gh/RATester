@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hcontext/context.go",
+    "lineno": 44,
+    "focalfunc": "func (f keyInContext[T, R]) Set(ctx context.Context, value T) context.Context",
+    "funcbody": "func (f keyInContext[T, R]) Set(ctx context.Context, value T) context.Context {\n\treturn context.WithValue(ctx, f.id, value)\n}",
+    "funcname": "Set"
+}

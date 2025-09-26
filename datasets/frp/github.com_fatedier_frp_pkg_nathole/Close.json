@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/discovery.go",
+    "lineno": 88,
+    "focalfunc": "func (c *discoverConn) Close() error",
+    "funcbody": "func (c *discoverConn) Close() error {\n\tif c.messageChan != nil {\n\t\tclose(c.messageChan)\n\t\tc.messageChan = nil\n\t}\n\treturn c.conn.Close()\n}",
+    "funcname": "Close"
+}

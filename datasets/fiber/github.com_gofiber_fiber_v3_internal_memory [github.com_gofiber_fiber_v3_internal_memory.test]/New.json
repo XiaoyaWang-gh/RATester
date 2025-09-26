@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/memory/memory.go",
+    "lineno": 23,
+    "focalfunc": "func New() *Storage",
+    "funcbody": "func New() *Storage {\n\tstore := &Storage{\n\t\tdata: make(map[string]item),\n\t}\n\tutils.StartTimeStampUpdater()\n\tgo store.gc(1 * time.Second)\n\treturn store\n}",
+    "funcname": "New"
+}

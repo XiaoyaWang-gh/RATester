@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 648,
+    "focalfunc": "func (e *Echo) ReleaseContext(c Context)",
+    "funcbody": "func (e *Echo) ReleaseContext(c Context) {\n\te.pool.Put(c)\n}",
+    "funcname": "ReleaseContext"
+}

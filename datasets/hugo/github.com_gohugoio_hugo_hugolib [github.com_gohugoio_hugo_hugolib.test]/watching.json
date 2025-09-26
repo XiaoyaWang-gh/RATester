@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 373,
+    "focalfunc": "func (s *Site) watching() bool",
+    "funcbody": "func (s *Site) watching() bool {\n\treturn s.h != nil && s.h.Configs.Base.Internal.Watch\n}",
+    "funcname": "watching"
+}

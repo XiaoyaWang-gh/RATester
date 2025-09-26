@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 381,
+    "focalfunc": "func (f *filterOrmDecorator) Raw(query string, args ...interface{}) RawSeter",
+    "funcbody": "func (f *filterOrmDecorator) Raw(query string, args ...interface{}) RawSeter {\n\treturn f.RawWithCtx(context.Background(), query, args...)\n}",
+    "funcname": "Raw"
+}

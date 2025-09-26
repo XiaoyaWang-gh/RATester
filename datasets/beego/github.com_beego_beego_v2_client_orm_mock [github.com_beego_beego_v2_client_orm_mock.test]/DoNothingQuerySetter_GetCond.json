@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 92,
+    "focalfunc": "func (d *DoNothingQuerySetter) GetCond() *orm.Condition",
+    "funcbody": "func (d *DoNothingQuerySetter) GetCond() *orm.Condition {\n\treturn orm.NewCondition()\n}",
+    "funcname": "GetCond"
+}

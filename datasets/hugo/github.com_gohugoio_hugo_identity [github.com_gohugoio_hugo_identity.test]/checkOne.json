@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 186,
+    "focalfunc": "func (f *Finder) checkOne(sid *searchID, v Identity, depth int) (r FinderResult)",
+    "funcbody": "func (f *Finder) checkOne(sid *searchID, v Identity, depth int) (r FinderResult) {\n\tif ff, ok := v.(FindFirstManagerIdentityProvider); ok {\n\t\tf.muSeenFindOnce.RLock()\n\t\tmi := ff.FindFirstManagerIdentity()\n\t\tseen := f.seenFindOnce[mi.Identity]\n\t\tf.muSeenFindOnce.RUnlock()\n\t\tif seen {\n\t\t\treturn FinderFoundOneOfManyRepetition\n\t\t}\n\n\t\tr = f.doCheckOne(sid, mi.Identity, depth)\n\t\tif r == 0 {\n\t\t\tr = f.checkManager(sid, mi.Manager, depth)\n\t\t}\n\n\t\tif r > FinderFoundOneOfManyRepetition {\n\t\t\tf.muSeenFindOnce.Lock()\n\n\t\t\tif f.seenFindOnce[mi.Identity] {\n\t\t\t\tf.muSeenFindOnce.Unlock()\n\t\t\t\treturn FinderFoundOneOfManyRepetition\n\t\t\t}\n\t\t\tf.seenFindOnce[mi.Identity] = true\n\t\t\tf.muSeenFindOnce.Unlock()\n\t\t\tr = FinderFoundOneOfMany\n\t\t}\n\t\treturn r\n\t} else {\n\t\treturn f.doCheckOne(sid, v, depth)\n\t}\n}",
+    "funcname": "checkOne"
+}

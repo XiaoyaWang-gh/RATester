@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/caller.go",
+    "lineno": 23,
+    "focalfunc": "func GetFuncName(i interface{}) string",
+    "funcbody": "func GetFuncName(i interface{}) string {\n\treturn runtime.FuncForPC(reflect.ValueOf(i).Pointer()).Name()\n}",
+    "funcname": "GetFuncName"
+}

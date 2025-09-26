@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 44,
+    "focalfunc": "func (d driver) Type() DriverType",
+    "funcbody": "func (d driver) Type() DriverType {\n\ta, _ := dataBaseCache.get(string(d))\n\treturn a.Driver\n}",
+    "funcname": "Type"
+}

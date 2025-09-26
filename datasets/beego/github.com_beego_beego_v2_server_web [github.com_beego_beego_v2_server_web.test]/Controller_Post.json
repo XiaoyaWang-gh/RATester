@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 183,
+    "focalfunc": "func (c *Controller) Post()",
+    "funcbody": "func (c *Controller) Post() {\n\thttp.Error(c.Ctx.ResponseWriter, \"Method Not Allowed\", http.StatusMethodNotAllowed)\n}",
+    "funcname": "Post"
+}

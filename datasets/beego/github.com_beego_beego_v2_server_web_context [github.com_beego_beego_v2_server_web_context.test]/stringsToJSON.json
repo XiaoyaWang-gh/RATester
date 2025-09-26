@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 407,
+    "focalfunc": "func stringsToJSON(str string) string",
+    "funcbody": "func stringsToJSON(str string) string {\n\tvar jsons bytes.Buffer\n\tfor _, r := range str {\n\t\trint := int(r)\n\t\tif rint < 128 {\n\t\t\tjsons.WriteRune(r)\n\t\t} else {\n\t\t\tjsons.WriteString(\"\\\\u\")\n\t\t\tif rint < 0x100 {\n\t\t\t\tjsons.WriteString(\"00\")\n\t\t\t} else if rint < 0x1000 {\n\t\t\t\tjsons.WriteString(\"0\")\n\t\t\t}\n\t\t\tjsons.WriteString(strconv.FormatInt(int64(rint), 16))\n\t\t}\n\t}\n\treturn jsons.String()\n}",
+    "funcname": "stringsToJSON"
+}

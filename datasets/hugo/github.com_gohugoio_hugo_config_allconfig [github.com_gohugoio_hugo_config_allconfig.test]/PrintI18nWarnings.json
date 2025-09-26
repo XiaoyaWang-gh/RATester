@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 243,
+    "focalfunc": "func (c ConfigLanguage) PrintI18nWarnings() bool",
+    "funcbody": "func (c ConfigLanguage) PrintI18nWarnings() bool {\n\treturn c.config.PrintI18nWarnings\n}",
+    "funcname": "PrintI18nWarnings"
+}

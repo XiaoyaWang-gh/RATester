@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 467,
+    "focalfunc": "func (s testSite) Config() SiteConfig",
+    "funcbody": "func (s testSite) Config() SiteConfig {\n\treturn SiteConfig{}\n}",
+    "funcname": "Config"
+}

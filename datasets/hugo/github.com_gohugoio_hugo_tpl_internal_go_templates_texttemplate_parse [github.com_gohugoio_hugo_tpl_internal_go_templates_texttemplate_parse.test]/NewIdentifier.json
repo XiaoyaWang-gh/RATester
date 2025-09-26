@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 354,
+    "focalfunc": "func NewIdentifier(ident string) *IdentifierNode",
+    "funcbody": "func NewIdentifier(ident string) *IdentifierNode {\n\treturn &IdentifierNode{NodeType: NodeIdentifier, Ident: ident}\n}",
+    "funcname": "NewIdentifier"
+}

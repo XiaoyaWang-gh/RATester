@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 192,
+    "focalfunc": "func (l PermalinkExpander) parse(patterns map[string]string) (map[string]func(Page) (string, error), error)",
+    "funcbody": "func (l PermalinkExpander) parse(patterns map[string]string) (map[string]func(Page) (string, error), error) {\n\texpanders := make(map[string]func(Page) (string, error))\n\n\tfor k, pattern := range patterns {\n\t\tk = strings.Trim(k, sectionCutSet)\n\n\t\texpander, err := l.getOrParsePattern(pattern)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\texpanders[k] = expander\n\t}\n\n\treturn expanders, nil\n}",
+    "funcname": "parse"
+}

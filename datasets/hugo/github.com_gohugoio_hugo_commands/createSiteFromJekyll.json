@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 162,
+    "focalfunc": "func (c *importCommand) createSiteFromJekyll(jekyllRoot, targetDir string, jekyllPostDirs map[string]bool) error",
+    "funcbody": "func (c *importCommand) createSiteFromJekyll(jekyllRoot, targetDir string, jekyllPostDirs map[string]bool) error {\n\tfs := &afero.OsFs{}\n\tif exists, _ := helpers.Exists(targetDir, fs); exists {\n\t\tif isDir, _ := helpers.IsDir(targetDir, fs); !isDir {\n\t\t\treturn errors.New(\"target path \\\"\" + targetDir + \"\\\" exists but is not a directory\")\n\t\t}\n\n\t\tisEmpty, _ := helpers.IsEmpty(targetDir, fs)\n\n\t\tif !isEmpty && !c.force {\n\t\t\treturn errors.New(\"target path \\\"\" + targetDir + \"\\\" exists and is not empty\")\n\t\t}\n\t}\n\n\tjekyllConfig := c.loadJekyllConfig(fs, jekyllRoot)\n\n\tmkdir(targetDir, \"layouts\")\n\tmkdir(targetDir, \"content\")\n\tmkdir(targetDir, \"archetypes\")\n\tmkdir(targetDir, \"static\")\n\tmkdir(targetDir, \"data\")\n\tmkdir(targetDir, \"themes\")\n\n\tc.createConfigFromJekyll(fs, targetDir, \"yaml\", jekyllConfig)\n\n\tc.copyJekyllFilesAndFolders(jekyllRoot, filepath.Join(targetDir, \"static\"), jekyllPostDirs)\n\n\treturn nil\n}",
+    "funcname": "createSiteFromJekyll"
+}

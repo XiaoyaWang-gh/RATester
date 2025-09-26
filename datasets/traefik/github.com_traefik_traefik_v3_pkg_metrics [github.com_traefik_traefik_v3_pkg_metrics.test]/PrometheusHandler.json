@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 77,
+    "focalfunc": "func PrometheusHandler() http.Handler",
+    "funcbody": "func PrometheusHandler() http.Handler {\n\treturn promhttp.HandlerFor(promRegistry, promhttp.HandlerOpts{})\n}",
+    "funcname": "PrometheusHandler"
+}

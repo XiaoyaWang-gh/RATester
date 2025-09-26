@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 325,
+    "focalfunc": "func (ns *Namespace) PostProcess(r resource.Resource) (postpub.PostPublishedResource, error)",
+    "funcbody": "func (ns *Namespace) PostProcess(r resource.Resource) (postpub.PostPublishedResource, error) {\n\treturn ns.deps.ResourceSpec.PostProcess(r)\n}",
+    "funcname": "PostProcess"
+}

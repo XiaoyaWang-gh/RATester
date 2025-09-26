@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/create.go",
+    "lineno": 165,
+    "focalfunc": "func (c *Client) ByType(tp string) resource.Resources",
+    "funcbody": "func (c *Client) ByType(tp string) resource.Resources {\n\tres, err := c.match(path.Join(\"_byType\", tp), \"**\", func(r resource.Resource) bool { return r.ResourceType() == tp }, false)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn res\n}",
+    "funcname": "ByType"
+}

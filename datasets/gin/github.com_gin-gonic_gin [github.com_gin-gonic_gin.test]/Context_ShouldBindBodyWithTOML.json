@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 810,
+    "focalfunc": "func (c *Context) ShouldBindBodyWithTOML(obj any) error",
+    "funcbody": "func (c *Context) ShouldBindBodyWithTOML(obj any) error {\n\treturn c.ShouldBindBodyWith(obj, binding.TOML)\n}",
+    "funcname": "ShouldBindBodyWithTOML"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/process/process.go",
+    "lineno": 19,
+    "focalfunc": "func New(path string, params []string) *Process",
+    "funcbody": "func New(path string, params []string) *Process {\n\treturn NewWithEnvs(path, params, nil)\n}",
+    "funcname": "New"
+}

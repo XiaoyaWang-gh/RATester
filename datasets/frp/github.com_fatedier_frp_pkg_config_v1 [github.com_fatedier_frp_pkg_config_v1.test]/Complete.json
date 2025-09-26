@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/visitor.go",
+    "lineno": 162,
+    "focalfunc": "func (c *XTCPVisitorConfig) Complete(g *ClientCommonConfig)",
+    "funcbody": "func (c *XTCPVisitorConfig) Complete(g *ClientCommonConfig) {\n\tc.VisitorBaseConfig.Complete(g)\n\n\tc.Protocol = util.EmptyOr(c.Protocol, \"quic\")\n\tc.MaxRetriesAnHour = util.EmptyOr(c.MaxRetriesAnHour, 8)\n\tc.MinRetryInterval = util.EmptyOr(c.MinRetryInterval, 90)\n\tc.FallbackTimeoutMs = util.EmptyOr(c.FallbackTimeoutMs, 1000)\n\n\tif c.FallbackTo != \"\" {\n\t\tc.FallbackTo = lo.Ternary(g.User == \"\", \"\", g.User+\".\") + c.FallbackTo\n\t}\n}",
+    "funcname": "Complete"
+}

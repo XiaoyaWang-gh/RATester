@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 127,
+    "focalfunc": "func (m *ModulesConfig) setActiveMods(logger loggers.Logger) error",
+    "funcbody": "func (m *ModulesConfig) setActiveMods(logger loggers.Logger) error {\n\tfor _, mod := range m.AllModules {\n\t\tif !mod.Config().HugoVersion.IsValid() {\n\t\t\tlogger.Warnf(`Module %q is not compatible with this Hugo version: %s; run \"hugo mod graph\" for more information.`, mod.Path(), mod.Config().HugoVersion)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "setActiveMods"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/plugins.go",
+    "lineno": 58,
+    "focalfunc": "func (s *traceablePlugin) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (s *traceablePlugin) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn s.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

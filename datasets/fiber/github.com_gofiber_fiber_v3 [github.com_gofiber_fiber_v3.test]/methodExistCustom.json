@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 149,
+    "focalfunc": "func (app *App) methodExistCustom(c CustomCtx) bool",
+    "funcbody": "func (app *App) methodExistCustom(c CustomCtx) bool {\n\tvar exists bool\n\tmethods := app.config.RequestMethods\n\tfor i := 0; i < len(methods); i++ {\n\n\t\tif c.getMethodINT() == i {\n\t\t\tcontinue\n\t\t}\n\n\t\tc.setIndexRoute(-1)\n\n\t\ttree, ok := c.App().treeStack[i][c.getTreePath()]\n\t\tif !ok {\n\t\t\ttree = c.App().treeStack[i][\"\"]\n\t\t}\n\n\t\tlenr := len(tree) - 1\n\n\t\tfor c.getIndexRoute() < lenr {\n\n\t\t\tc.setIndexRoute(c.getIndexRoute() + 1)\n\n\t\t\troute := tree[c.getIndexRoute()]\n\n\t\t\tif route.use {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tmatch := route.match(c.getDetectionPath(), c.Path(), c.getValues())\n\n\t\t\tif match {\n\n\t\t\t\texists = true\n\n\t\t\t\tc.Append(HeaderAllow, methods[i])\n\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\treturn exists\n}",
+    "funcname": "methodExistCustom"
+}

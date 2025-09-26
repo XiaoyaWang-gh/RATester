@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/babel/babel.go",
+    "lineno": 104,
+    "focalfunc": "func (t *babelTransformation) Key() internal.ResourceTransformationKey",
+    "funcbody": "func (t *babelTransformation) Key() internal.ResourceTransformationKey {\n\treturn internal.NewResourceTransformationKey(\"babel\", t.options)\n}",
+    "funcname": "Key"
+}

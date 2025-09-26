@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 157,
+    "focalfunc": "func (r routes) Less(i, j int) bool",
+    "funcbody": "func (r routes) Less(i, j int) bool\t{ return r[i].priority > r[j].priority }",
+    "funcname": "Less"
+}

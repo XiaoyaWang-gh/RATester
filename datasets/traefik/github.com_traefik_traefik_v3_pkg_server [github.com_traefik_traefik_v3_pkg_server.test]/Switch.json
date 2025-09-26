@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_udp.go",
+    "lineno": 131,
+    "focalfunc": "func (ep *UDPEntryPoint) Switch(handler udp.Handler)",
+    "funcbody": "func (ep *UDPEntryPoint) Switch(handler udp.Handler) {\n\tep.switcher.Switch(handler)\n}",
+    "funcname": "Switch"
+}

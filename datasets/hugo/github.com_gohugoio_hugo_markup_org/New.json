@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/org/convert.go",
+    "lineno": 33,
+    "focalfunc": "func (p provide) New(cfg converter.ProviderConfig) (converter.Provider, error)",
+    "funcbody": "func (p provide) New(cfg converter.ProviderConfig) (converter.Provider, error) {\n\treturn converter.NewProvider(\"org\", func(ctx converter.DocumentContext) (converter.Converter, error) {\n\t\treturn &orgConverter{\n\t\t\tctx:\tctx,\n\t\t\tcfg:\tcfg,\n\t\t}, nil\n\t}), nil\n}",
+    "funcname": "New"
+}

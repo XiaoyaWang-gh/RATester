@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 656,
+    "focalfunc": "func (b *sourceFilesystemsBuilder) isContentMount(mnt modules.Mount) bool",
+    "funcbody": "func (b *sourceFilesystemsBuilder) isContentMount(mnt modules.Mount) bool {\n\treturn strings.HasPrefix(mnt.Target, files.ComponentFolderContent)\n}",
+    "funcname": "isContentMount"
+}

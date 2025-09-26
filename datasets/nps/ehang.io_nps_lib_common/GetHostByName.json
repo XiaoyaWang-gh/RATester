@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 25,
+    "focalfunc": "func GetHostByName(hostname string) string",
+    "funcbody": "func GetHostByName(hostname string) string {\n\tif !DomainCheck(hostname) {\n\t\treturn hostname\n\t}\n\tips, _ := net.LookupIP(hostname)\n\tif ips != nil {\n\t\tfor _, v := range ips {\n\t\t\tif v.To4() != nil {\n\t\t\t\treturn v.String()\n\t\t\t}\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetHostByName"
+}

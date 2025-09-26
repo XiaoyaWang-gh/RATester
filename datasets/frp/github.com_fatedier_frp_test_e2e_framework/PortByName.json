@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 233,
+    "focalfunc": "func (f *Framework) PortByName(name string) int",
+    "funcbody": "func (f *Framework) PortByName(name string) int {\n\treturn f.usedPorts[name]\n}",
+    "funcname": "PortByName"
+}

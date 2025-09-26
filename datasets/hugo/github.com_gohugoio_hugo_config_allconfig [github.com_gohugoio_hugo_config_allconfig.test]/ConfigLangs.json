@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 843,
+    "focalfunc": "func (c Configs) ConfigLangs() []config.AllProvider",
+    "funcbody": "func (c Configs) ConfigLangs() []config.AllProvider {\n\treturn c.configLangs\n}",
+    "funcname": "ConfigLangs"
+}

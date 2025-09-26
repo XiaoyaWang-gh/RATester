@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 36,
+    "focalfunc": "func (d *DoNothingQuerySetter) ExistWithCtx(ctx context.Context) bool",
+    "funcbody": "func (d *DoNothingQuerySetter) ExistWithCtx(ctx context.Context) bool {\n\treturn true\n}",
+    "funcname": "ExistWithCtx"
+}

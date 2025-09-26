@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_f.go",
+    "lineno": 44,
+    "focalfunc": "func (f *Fields) Add(fi *FieldInfo) (added bool)",
+    "funcbody": "func (f *Fields) Add(fi *FieldInfo) (added bool) {\n\tif f.Fields[fi.Name] == nil && f.Columns[fi.Column] == nil {\n\t\tf.Columns[fi.Column] = fi\n\t\tf.Fields[fi.Name] = fi\n\t\tf.FieldsLow[strings.ToLower(fi.Name)] = fi\n\t} else {\n\t\treturn\n\t}\n\tif _, ok := f.FieldsByType[fi.FieldType]; !ok {\n\t\tf.FieldsByType[fi.FieldType] = make([]*FieldInfo, 0)\n\t}\n\tf.FieldsByType[fi.FieldType] = append(f.FieldsByType[fi.FieldType], fi)\n\tf.Orders = append(f.Orders, fi.Column)\n\tif fi.DBcol {\n\t\tf.DBcols = append(f.DBcols, fi.Column)\n\t\tf.FieldsDB = append(f.FieldsDB, fi)\n\t}\n\tif fi.Rel {\n\t\tf.FieldsRel = append(f.FieldsRel, fi)\n\t}\n\tif fi.Reverse {\n\t\tf.FieldsReverse = append(f.FieldsReverse, fi)\n\t}\n\treturn true\n}",
+    "funcname": "Add"
+}

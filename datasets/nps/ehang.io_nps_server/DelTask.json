@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 230,
+    "focalfunc": "func DelTask(id int) error",
+    "funcbody": "func DelTask(id int) error {\n\n\tif _, ok := RunList.Load(id); ok {\n\t\tif err := StopServer(id); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn file.GetDb().DelTask(id)\n}",
+    "funcname": "DelTask"
+}

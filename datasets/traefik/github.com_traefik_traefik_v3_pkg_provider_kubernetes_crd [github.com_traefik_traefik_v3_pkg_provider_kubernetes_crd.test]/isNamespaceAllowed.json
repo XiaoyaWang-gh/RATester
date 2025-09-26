@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1321,
+    "focalfunc": "func isNamespaceAllowed(allowCrossNamespace bool, parentNamespace, namespace string) bool",
+    "funcbody": "func isNamespaceAllowed(allowCrossNamespace bool, parentNamespace, namespace string) bool {\n\n\treturn allowCrossNamespace || parentNamespace == namespace\n}",
+    "funcname": "isNamespaceAllowed"
+}

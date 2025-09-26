@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 372,
+    "focalfunc": "func (o querySet) RowsToStruct(ptrStruct interface{}, keyCol, valueCol string) (int64, error)",
+    "funcbody": "func (o querySet) RowsToStruct(ptrStruct interface{}, keyCol, valueCol string) (int64, error) {\n\tpanic(ErrNotImplement)\n}",
+    "funcname": "RowsToStruct"
+}

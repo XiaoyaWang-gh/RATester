@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 376,
+    "focalfunc": "func (c *Controller) SetData(data interface{})",
+    "funcbody": "func (c *Controller) SetData(data interface{}) {\n\taccept := c.Ctx.Input.Header(\"Accept\")\n\tswitch accept {\n\tcase context.ApplicationYAML:\n\t\tc.Data[\"yaml\"] = data\n\tcase context.ApplicationXML, context.TextXML:\n\t\tc.Data[\"xml\"] = data\n\tdefault:\n\t\tc.Data[\"json\"] = data\n\t}\n}",
+    "funcname": "SetData"
+}

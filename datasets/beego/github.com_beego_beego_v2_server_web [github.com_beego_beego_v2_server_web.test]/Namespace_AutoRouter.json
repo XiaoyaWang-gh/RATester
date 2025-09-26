@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 111,
+    "focalfunc": "func (n *Namespace) AutoRouter(c ControllerInterface) *Namespace",
+    "funcbody": "func (n *Namespace) AutoRouter(c ControllerInterface) *Namespace {\n\tn.handlers.AddAuto(c)\n\treturn n\n}",
+    "funcname": "AutoRouter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/files/classifier.go",
+    "lineno": 91,
+    "focalfunc": "func IsComponentFolder(name string) bool",
+    "funcbody": "func IsComponentFolder(name string) bool {\n\treturn componentFoldersSet[name]\n}",
+    "funcname": "IsComponentFolder"
+}

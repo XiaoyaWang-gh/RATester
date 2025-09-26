@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 129,
+    "focalfunc": "func (lp *Provider) initOldStyle(cfgStr string) error",
+    "funcbody": "func (lp *Provider) initOldStyle(cfgStr string) error {\n\tvar err error\n\tconfigs := strings.Split(cfgStr, \",\")\n\tif len(configs) == 1 {\n\t\tlp.SavePath = configs[0]\n\t} else if len(configs) == 2 {\n\t\tlp.SavePath = configs[0]\n\t\tlp.Db, err = strconv.Atoi(configs[1])\n\t}\n\treturn err\n}",
+    "funcname": "initOldStyle"
+}

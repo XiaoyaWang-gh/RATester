@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 365,
+    "focalfunc": "func setUintField(value string, bitSize int, field reflect.Value) error",
+    "funcbody": "func setUintField(value string, bitSize int, field reflect.Value) error {\n\tif value == \"\" {\n\t\tvalue = \"0\"\n\t}\n\tuintVal, err := strconv.ParseUint(value, 10, bitSize)\n\tif err == nil {\n\t\tfield.SetUint(uintVal)\n\t}\n\treturn err\n}",
+    "funcname": "setUintField"
+}

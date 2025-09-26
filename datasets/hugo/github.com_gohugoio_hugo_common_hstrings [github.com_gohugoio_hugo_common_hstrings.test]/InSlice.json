@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 105,
+    "focalfunc": "func InSlice(arr []string, el string) bool",
+    "funcbody": "func InSlice(arr []string, el string) bool {\n\tfor _, v := range arr {\n\t\tif v == el {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "InSlice"
+}

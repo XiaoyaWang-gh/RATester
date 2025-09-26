@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 74,
+    "focalfunc": "func Warnf(format string, v ...interface{})",
+    "funcbody": "func Warnf(format string, v ...interface{}) {\n\tLogger.Warnf(format, v...)\n}",
+    "funcname": "Warnf"
+}

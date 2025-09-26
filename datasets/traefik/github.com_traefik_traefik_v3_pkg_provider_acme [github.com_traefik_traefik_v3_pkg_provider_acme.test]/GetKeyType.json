@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/account.go",
+    "lineno": 69,
+    "focalfunc": "func GetKeyType(ctx context.Context, value string) certcrypto.KeyType",
+    "funcbody": "func GetKeyType(ctx context.Context, value string) certcrypto.KeyType {\n\tlogger := log.Ctx(ctx)\n\n\tswitch value {\n\tcase \"EC256\":\n\t\treturn certcrypto.EC256\n\tcase \"EC384\":\n\t\treturn certcrypto.EC384\n\tcase \"RSA2048\":\n\t\treturn certcrypto.RSA2048\n\tcase \"RSA4096\":\n\t\treturn certcrypto.RSA4096\n\tcase \"RSA8192\":\n\t\treturn certcrypto.RSA8192\n\tcase \"\":\n\t\tlogger.Info().Msgf(\"The key type is empty. Use default key type %v.\", certcrypto.RSA4096)\n\t\treturn certcrypto.RSA4096\n\tdefault:\n\t\tlogger.Info().Msgf(\"Unable to determine the key type value %q: falling back on %v.\", value, certcrypto.RSA4096)\n\t\treturn certcrypto.RSA4096\n\t}\n}",
+    "funcname": "GetKeyType"
+}

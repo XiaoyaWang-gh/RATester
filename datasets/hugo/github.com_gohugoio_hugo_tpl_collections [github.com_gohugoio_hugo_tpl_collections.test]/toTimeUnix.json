@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 532,
+    "focalfunc": "func (ns *Namespace) toTimeUnix(v reflect.Value) int64",
+    "funcbody": "func (ns *Namespace) toTimeUnix(v reflect.Value) int64 {\n\tt, ok := hreflect.AsTime(v, ns.loc)\n\tif !ok {\n\t\tpanic(\"coding error: argument must be time.Time type reflect Value\")\n\t}\n\treturn t.Unix()\n}",
+    "funcname": "toTimeUnix"
+}

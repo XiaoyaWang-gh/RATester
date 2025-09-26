@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/decompress.go",
+    "lineno": 42,
+    "focalfunc": "func (d *DefaultGzipDecompressPool) gzipDecompressPool() sync.Pool",
+    "funcbody": "func (d *DefaultGzipDecompressPool) gzipDecompressPool() sync.Pool {\n\treturn sync.Pool{New: func() interface{} { return new(gzip.Reader) }}\n}",
+    "funcname": "gzipDecompressPool"
+}

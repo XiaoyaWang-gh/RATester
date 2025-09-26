@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 1112,
+    "focalfunc": "func (c *hugoBuilder) reloadConfig() error",
+    "funcbody": "func (c *hugoBuilder) reloadConfig() error {\n\tc.r.Reset()\n\tc.r.configVersionID.Add(1)\n\n\tif err := c.withConfE(func(conf *commonConfig) error {\n\t\toldConf := conf\n\t\tnewConf, err := c.r.ConfigFromConfig(c.r.configVersionID.Load(), conf)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tsameLen := len(oldConf.configs.Languages) == len(newConf.configs.Languages)\n\t\tif !sameLen {\n\t\t\tif oldConf.configs.IsMultihost || newConf.configs.IsMultihost {\n\t\t\t\treturn errors.New(\"multihost change detected, please restart server\")\n\t\t\t}\n\t\t}\n\t\tc.conf = newConf\n\t\treturn nil\n\t}); err != nil {\n\t\treturn err\n\t}\n\n\tif c.onConfigLoaded != nil {\n\t\tif err := c.onConfigLoaded(true); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "reloadConfig"
+}

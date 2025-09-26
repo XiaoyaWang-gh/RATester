@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 79,
+    "focalfunc": "func (h *indexedHeap) removeInternal(realIdx int) (string, uint)",
+    "funcbody": "func (h *indexedHeap) removeInternal(realIdx int) (string, uint) {\n\tx := heap.Remove(h, realIdx).(heapEntry)\n\treturn x.key, x.bytes\n}",
+    "funcname": "removeInternal"
+}

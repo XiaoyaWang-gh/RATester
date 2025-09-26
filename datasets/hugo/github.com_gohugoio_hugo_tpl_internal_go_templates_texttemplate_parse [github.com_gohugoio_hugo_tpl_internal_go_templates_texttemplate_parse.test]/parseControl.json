@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 524,
+    "focalfunc": "func (t *Tree) parseControl(context string) (pos Pos, line int, pipe *PipeNode, list, elseList *ListNode)",
+    "funcbody": "func (t *Tree) parseControl(context string) (pos Pos, line int, pipe *PipeNode, list, elseList *ListNode) {\n\tdefer t.popVars(len(t.vars))\n\tpipe = t.pipeline(context, itemRightDelim)\n\tif context == \"range\" {\n\t\tt.rangeDepth++\n\t}\n\tvar next Node\n\tlist, next = t.itemList()\n\tif context == \"range\" {\n\t\tt.rangeDepth--\n\t}\n\tswitch next.Type() {\n\tcase nodeEnd:\n\tcase nodeElse:\n\n\t\tif context == \"if\" && t.peek().typ == itemIf {\n\t\t\tt.next()\n\t\t\telseList = t.newList(next.Position())\n\t\t\telseList.append(t.ifControl())\n\t\t} else if context == \"with\" && t.peek().typ == itemWith {\n\t\t\tt.next()\n\t\t\telseList = t.newList(next.Position())\n\t\t\telseList.append(t.withControl())\n\t\t} else {\n\t\t\telseList, next = t.itemList()\n\t\t\tif next.Type() != nodeEnd {\n\t\t\t\tt.errorf(\"expected end; found %s\", next)\n\t\t\t}\n\t\t}\n\t}\n\treturn pipe.Position(), pipe.Line, pipe, list, elseList\n}",
+    "funcname": "parseControl"
+}

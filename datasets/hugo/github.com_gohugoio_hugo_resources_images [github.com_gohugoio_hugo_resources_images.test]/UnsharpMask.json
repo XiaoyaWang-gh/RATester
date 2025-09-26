@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 359,
+    "focalfunc": "func (*Filters) UnsharpMask(sigma, amount, threshold any) gift.Filter",
+    "funcbody": "func (*Filters) UnsharpMask(sigma, amount, threshold any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(sigma, amount, threshold),\n\t\tFilter:\t\tgift.UnsharpMask(cast.ToFloat32(sigma), cast.ToFloat32(amount), cast.ToFloat32(threshold)),\n\t}\n}",
+    "funcname": "UnsharpMask"
+}

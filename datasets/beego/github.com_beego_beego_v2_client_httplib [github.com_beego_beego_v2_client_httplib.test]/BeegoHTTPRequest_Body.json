@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 286,
+    "focalfunc": "func (b *BeegoHTTPRequest) Body(data interface{}) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) Body(data interface{}) *BeegoHTTPRequest {\n\tswitch t := data.(type) {\n\tcase string:\n\t\tb.reqBody([]byte(t))\n\tcase []byte:\n\t\tb.reqBody(t)\n\tdefault:\n\t\tlogs.Error(\"%+v\", berror.Errorf(UnsupportedBodyType, \"unsupported body data type: %s\", t))\n\t}\n\treturn b\n}",
+    "funcname": "Body"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 289,
+    "focalfunc": "func newShortcodeHandler(filename string, s *Site) *shortcodeHandler",
+    "funcbody": "func newShortcodeHandler(filename string, s *Site) *shortcodeHandler {\n\tsh := &shortcodeHandler{\n\t\tfilename:\t\tfilename,\n\t\ts:\t\t\ts,\n\t\tenableInlineShortcodes:\ts.ExecHelper.Sec().EnableInlineShortcodes,\n\t\tshortcodes:\t\tmake([]*shortcode, 0, 4),\n\t\tnameSet:\t\tmake(map[string]bool),\n\t}\n\n\treturn sh\n}",
+    "funcname": "newShortcodeHandler"
+}

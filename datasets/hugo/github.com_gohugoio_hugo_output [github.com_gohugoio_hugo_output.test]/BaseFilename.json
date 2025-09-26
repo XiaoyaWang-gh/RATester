@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 322,
+    "focalfunc": "func (f Format) BaseFilename() string",
+    "funcbody": "func (f Format) BaseFilename() string {\n\treturn f.BaseName + f.MediaType.FirstSuffix.FullSuffix\n}",
+    "funcname": "BaseFilename"
+}

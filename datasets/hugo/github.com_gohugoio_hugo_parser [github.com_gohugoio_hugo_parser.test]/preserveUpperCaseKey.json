@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/lowercase_camel_json.go",
+    "lineno": 51,
+    "focalfunc": "func preserveUpperCaseKey(match []byte) bool",
+    "funcbody": "func preserveUpperCaseKey(match []byte) bool {\n\treturn preserveUpperCaseKeyRe.Match(match)\n}",
+    "funcname": "preserveUpperCaseKey"
+}

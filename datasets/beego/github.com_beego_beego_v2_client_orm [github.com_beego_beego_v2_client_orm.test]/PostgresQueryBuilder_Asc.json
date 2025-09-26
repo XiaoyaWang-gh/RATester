@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 132,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Asc() QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Asc() QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"ASC\")\n\treturn qb\n}",
+    "funcname": "Asc"
+}

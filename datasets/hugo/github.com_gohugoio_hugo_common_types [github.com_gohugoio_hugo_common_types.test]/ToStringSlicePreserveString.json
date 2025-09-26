@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/convert.go",
+    "lineno": 47,
+    "focalfunc": "func ToStringSlicePreserveString(v any) []string",
+    "funcbody": "func ToStringSlicePreserveString(v any) []string {\n\tvv, _ := ToStringSlicePreserveStringE(v)\n\treturn vv\n}",
+    "funcname": "ToStringSlicePreserveString"
+}

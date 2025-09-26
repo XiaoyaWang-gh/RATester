@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/process/process.go",
+    "lineno": 23,
+    "focalfunc": "func NewWithEnvs(path string, params []string, envs []string) *Process",
+    "funcbody": "func NewWithEnvs(path string, params []string, envs []string) *Process {\n\tctx, cancel := context.WithCancel(context.Background())\n\tcmd := exec.CommandContext(ctx, path, params...)\n\tcmd.Env = envs\n\tp := &Process{\n\t\tcmd:\tcmd,\n\t\tcancel:\tcancel,\n\t}\n\tp.errorOutput = bytes.NewBufferString(\"\")\n\tp.stdOutput = bytes.NewBufferString(\"\")\n\tcmd.Stderr = p.errorOutput\n\tcmd.Stdout = p.stdOutput\n\treturn p\n}",
+    "funcname": "NewWithEnvs"
+}

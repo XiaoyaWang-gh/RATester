@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager_msgp.go",
+    "lineno": 135,
+    "focalfunc": "func (z storageManager) MarshalMsg(b []byte) (o []byte, err error)",
+    "funcbody": "func (z storageManager) MarshalMsg(b []byte) (o []byte, err error) {\n\to = msgp.Require(b, z.Msgsize())\n\n\t_ = z\n\to = append(o, 0x80)\n\treturn\n}",
+    "funcname": "MarshalMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 364,
+    "focalfunc": "func (v Tags) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (v Tags) MarshalJSON() ([]byte, error) {\n\treturn tcodec.Marshal(v)\n}",
+    "funcname": "MarshalJSON"
+}

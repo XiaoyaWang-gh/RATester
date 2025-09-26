@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 81,
+    "focalfunc": "func (rc *regexpCache) get(key string) (re *regexp.Regexp, ok bool)",
+    "funcbody": "func (rc *regexpCache) get(key string) (re *regexp.Regexp, ok bool) {\n\trc.mu.RLock()\n\tre, ok = rc.re[key]\n\trc.mu.RUnlock()\n\treturn\n}",
+    "funcname": "get"
+}

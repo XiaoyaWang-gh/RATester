@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 41,
+    "focalfunc": "func (s *Hint) GetKey() interface{}",
+    "funcbody": "func (s *Hint) GetKey() interface{} {\n\treturn s.key\n}",
+    "funcname": "GetKey"
+}

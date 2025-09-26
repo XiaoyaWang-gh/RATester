@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 289,
+    "focalfunc": "func (engine *Engine) SetHTMLTemplate(templ *template.Template)",
+    "funcbody": "func (engine *Engine) SetHTMLTemplate(templ *template.Template) {\n\tif len(engine.trees) > 0 {\n\t\tdebugPrintWARNINGSetHTMLTemplate()\n\t}\n\n\tengine.HTMLRender = render.HTMLProduction{Template: templ.Funcs(engine.FuncMap)}\n}",
+    "funcname": "SetHTMLTemplate"
+}

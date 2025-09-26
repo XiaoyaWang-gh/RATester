@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 802,
+    "focalfunc": "func (f *rootMappingDir) Name() string",
+    "funcbody": "func (f *rootMappingDir) Name() string {\n\treturn f.name\n}",
+    "funcname": "Name"
+}

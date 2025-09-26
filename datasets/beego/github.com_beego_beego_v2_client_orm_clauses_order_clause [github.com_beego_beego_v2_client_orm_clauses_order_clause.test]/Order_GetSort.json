@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 38,
+    "focalfunc": "func (o *Order) GetSort() Sort",
+    "funcbody": "func (o *Order) GetSort() Sort {\n\treturn o.sort\n}",
+    "funcname": "GetSort"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/templates/templates.go",
+    "lineno": 51,
+    "focalfunc": "func (ns *Namespace) Defer(args ...any) (bool, error)",
+    "funcbody": "func (ns *Namespace) Defer(args ...any) (bool, error) {\n\n\tns.deps.Site.CheckReady()\n\n\tif len(args) != 0 {\n\t\treturn false, fmt.Errorf(\"Defer does not take any arguments\")\n\t}\n\treturn true, nil\n}",
+    "funcname": "Defer"
+}

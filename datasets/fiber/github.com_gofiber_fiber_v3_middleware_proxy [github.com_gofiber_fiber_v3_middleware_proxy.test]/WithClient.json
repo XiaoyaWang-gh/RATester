@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 111,
+    "focalfunc": "func WithClient(cli *fasthttp.Client)",
+    "funcbody": "func WithClient(cli *fasthttp.Client) {\n\tlock.Lock()\n\tdefer lock.Unlock()\n\tclient = cli\n}",
+    "funcname": "WithClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 460,
+    "focalfunc": "func (d *dynamicConfig) hasEntryPoint(entrypointName string) bool",
+    "funcbody": "func (d *dynamicConfig) hasEntryPoint(entrypointName string) bool {\n\t_, ok := d.entryPoints[entrypointName]\n\treturn ok\n}",
+    "funcname": "hasEntryPoint"
+}

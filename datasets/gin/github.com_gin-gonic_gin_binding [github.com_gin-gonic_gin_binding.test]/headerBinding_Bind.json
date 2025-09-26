@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/header.go",
+    "lineno": 19,
+    "focalfunc": "func (headerBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (headerBinding) Bind(req *http.Request, obj any) error {\n\n\tif err := mapHeader(obj, req.Header); err != nil {\n\t\treturn err\n\t}\n\n\treturn validate(obj)\n}",
+    "funcname": "Bind"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 414,
+    "focalfunc": "func (e *SmallIntegerField) RawValue() interface{}",
+    "funcbody": "func (e *SmallIntegerField) RawValue() interface{} {\n\treturn e.Value()\n}",
+    "funcname": "RawValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 172,
+    "focalfunc": "func Upgrade(lasttime int64) error",
+    "funcbody": "func Upgrade(lasttime int64) error {\n\tsm := sortMap(migrationMap)\n\ti := 0\n\tmigs, _ := getAllMigrations()\n\tfor _, v := range sm {\n\t\tif _, ok := migs[v.name]; !ok {\n\t\t\tlogs.Info(\"start upgrade\", v.name)\n\t\t\tv.m.Reset()\n\t\t\tv.m.Up()\n\t\t\terr := v.m.Exec(v.name, \"up\")\n\t\t\tif err != nil {\n\t\t\t\tlogs.Error(\"execute error:\", err)\n\t\t\t\ttime.Sleep(2 * time.Second)\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tlogs.Info(\"end upgrade:\", v.name)\n\t\t\ti++\n\t\t}\n\t}\n\tlogs.Info(\"total success upgrade:\", i, \" migration\")\n\ttime.Sleep(2 * time.Second)\n\treturn nil\n}",
+    "funcname": "Upgrade"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 36,
+    "focalfunc": "func (s StringEqualFold) String() string",
+    "funcbody": "func (s StringEqualFold) String() string {\n\treturn string(s)\n}",
+    "funcname": "String"
+}

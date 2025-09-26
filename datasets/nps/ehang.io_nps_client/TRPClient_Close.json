@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 295,
+    "focalfunc": "func (s *TRPClient) Close()",
+    "funcbody": "func (s *TRPClient) Close() {\n\ts.once.Do(s.closing)\n}",
+    "funcname": "Close"
+}

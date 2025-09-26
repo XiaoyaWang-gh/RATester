@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 377,
+    "focalfunc": "func newQuerySet(orm *ormBase, mi *models.ModelInfo) QuerySeter",
+    "funcbody": "func newQuerySet(orm *ormBase, mi *models.ModelInfo) QuerySeter {\n\to := new(querySet)\n\to.mi = mi\n\to.orm = orm\n\treturn o\n}",
+    "funcname": "newQuerySet"
+}

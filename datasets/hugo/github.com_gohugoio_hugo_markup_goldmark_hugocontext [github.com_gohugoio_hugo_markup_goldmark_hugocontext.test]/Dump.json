@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 64,
+    "focalfunc": "func (n *HugoContext) Dump(source []byte, level int)",
+    "funcbody": "func (n *HugoContext) Dump(source []byte, level int) {\n\tm := map[string]string{}\n\tm[\"Pid\"] = fmt.Sprintf(\"%v\", n.Pid)\n\tast.DumpHelper(n, source, level, m, nil)\n}",
+    "funcname": "Dump"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 73,
+    "focalfunc": "func (t *TreeShiftTree[T]) Insert(s string, v T) T",
+    "funcbody": "func (t *TreeShiftTree[T]) Insert(s string, v T) T {\n\treturn t.trees[t.v].Insert(s, v)\n}",
+    "funcname": "Insert"
+}

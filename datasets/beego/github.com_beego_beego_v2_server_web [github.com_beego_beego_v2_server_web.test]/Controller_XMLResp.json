@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 431,
+    "focalfunc": "func (c *Controller) XMLResp(data interface{}) error",
+    "funcbody": "func (c *Controller) XMLResp(data interface{}) error {\n\treturn c.Ctx.XMLResp(data)\n}",
+    "funcname": "XMLResp"
+}

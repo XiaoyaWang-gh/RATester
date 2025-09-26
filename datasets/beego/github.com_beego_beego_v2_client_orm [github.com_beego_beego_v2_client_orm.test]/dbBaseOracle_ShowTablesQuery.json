@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 84,
+    "focalfunc": "func (d *dbBaseOracle) ShowTablesQuery() string",
+    "funcbody": "func (d *dbBaseOracle) ShowTablesQuery() string {\n\treturn \"SELECT TABLE_NAME FROM USER_TABLES\"\n}",
+    "funcname": "ShowTablesQuery"
+}

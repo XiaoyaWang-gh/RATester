@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 937,
+    "focalfunc": "func (hr hookRendererTemplate) ResolvePosition(ctx any) text.Position",
+    "funcbody": "func (hr hookRendererTemplate) ResolvePosition(ctx any) text.Position {\n\treturn hr.resolvePosition(ctx)\n}",
+    "funcname": "ResolvePosition"
+}

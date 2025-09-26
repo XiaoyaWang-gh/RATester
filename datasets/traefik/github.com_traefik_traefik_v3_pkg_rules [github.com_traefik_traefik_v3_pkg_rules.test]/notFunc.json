@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 95,
+    "focalfunc": "func notFunc(elem TreeBuilder) TreeBuilder",
+    "funcbody": "func notFunc(elem TreeBuilder) TreeBuilder {\n\treturn func() *Tree {\n\t\treturn invert(elem())\n\t}\n}",
+    "funcname": "notFunc"
+}

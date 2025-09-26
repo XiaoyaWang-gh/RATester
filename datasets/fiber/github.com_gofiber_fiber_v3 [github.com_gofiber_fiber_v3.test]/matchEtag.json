@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 546,
+    "focalfunc": "func matchEtag(s, etag string) bool",
+    "funcbody": "func matchEtag(s, etag string) bool {\n\tif s == etag || s == \"W/\"+etag || \"W/\"+s == etag {\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "matchEtag"
+}

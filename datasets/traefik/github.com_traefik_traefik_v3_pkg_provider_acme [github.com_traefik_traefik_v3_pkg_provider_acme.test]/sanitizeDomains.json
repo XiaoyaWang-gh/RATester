@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 931,
+    "focalfunc": "func (p *Provider) sanitizeDomains(ctx context.Context, domain types.Domain) ([]string, error)",
+    "funcbody": "func (p *Provider) sanitizeDomains(ctx context.Context, domain types.Domain) ([]string, error) {\n\tdomains := domain.ToStrArray()\n\tif len(domains) == 0 {\n\t\treturn nil, errors.New(\"no domain was given\")\n\t}\n\n\tvar cleanDomains []string\n\tfor _, dom := range domains {\n\t\tif strings.HasPrefix(dom, \"*.*\") {\n\t\t\treturn nil, fmt.Errorf(\"unable to generate a wildcard certificate in ACME provider for domain %q : ACME does not allow '*.*' wildcard domain\", strings.Join(domains, \",\"))\n\t\t}\n\n\t\tcanonicalDomain := types.CanonicalDomain(dom)\n\t\tcleanDomain := dns01.UnFqdn(canonicalDomain)\n\t\tif canonicalDomain != cleanDomain {\n\t\t\tlog.Ctx(ctx).Warn().Msgf(\"FQDN detected, please remove the trailing dot: %s\", canonicalDomain)\n\t\t}\n\n\t\tcleanDomains = append(cleanDomains, cleanDomain)\n\t}\n\n\treturn cleanDomains, nil\n}",
+    "funcname": "sanitizeDomains"
+}

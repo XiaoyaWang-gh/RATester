@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 114,
+    "focalfunc": "func (s *Server) handle(c net.Conn)",
+    "funcbody": "func (s *Server) handle(c net.Conn) {\n\tdefer c.Close()\n\n\tvar reader io.Reader = c\n\tif s.netType == UDP {\n\t\treader = bufio.NewReader(c)\n\t}\n\tfor {\n\t\tbuf, err := rpc.ReadBytes(reader)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\n\t\tif len(s.respContent) > 0 {\n\t\t\tbuf = s.respContent\n\t\t}\n\t\t_, _ = rpc.WriteBytes(c, buf)\n\t}\n}",
+    "funcname": "handle"
+}

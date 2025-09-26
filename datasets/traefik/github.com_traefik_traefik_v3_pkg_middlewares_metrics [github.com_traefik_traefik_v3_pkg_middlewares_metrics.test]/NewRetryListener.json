@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 256,
+    "focalfunc": "func NewRetryListener(retryMetrics retryMetrics, serviceName string) retry.Listener",
+    "funcbody": "func NewRetryListener(retryMetrics retryMetrics, serviceName string) retry.Listener {\n\treturn &RetryListener{retryMetrics: retryMetrics, serviceName: serviceName}\n}",
+    "funcname": "NewRetryListener"
+}

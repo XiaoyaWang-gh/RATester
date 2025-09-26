@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 308,
+    "focalfunc": "func (c *Cache) start() func()",
+    "funcbody": "func (c *Cache) start() func() {\n\tticker := time.NewTicker(c.opts.CheckInterval)\n\tquit := make(chan struct{})\n\n\tgo func() {\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-ticker.C:\n\t\t\t\tc.adjustCurrentMaxSize()\n\n\t\t\t\tticker.Reset(c.opts.CheckInterval)\n\t\t\tcase <-quit:\n\t\t\t\tticker.Stop()\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}()\n\n\treturn func() {\n\t\tclose(quit)\n\t}\n}",
+    "funcname": "start"
+}

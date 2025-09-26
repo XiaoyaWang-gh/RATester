@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 63,
+    "focalfunc": "func BailOut(after time.Duration)",
+    "funcbody": "func BailOut(after time.Duration) {\n\ttime.AfterFunc(after, func() {\n\t\tbuf := make([]byte, 1<<16)\n\t\truntime.Stack(buf, true)\n\t\tpanic(string(buf))\n\t})\n}",
+    "funcname": "BailOut"
+}

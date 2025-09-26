@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/register.go",
+    "lineno": 11,
+    "focalfunc": "func RegisterLocalIp(server string, vKey string, tp string, proxyUrl string, hour int)",
+    "funcbody": "func RegisterLocalIp(server string, vKey string, tp string, proxyUrl string, hour int) {\n\tc, err := NewConn(tp, vKey, server, common.WORK_REGISTER, proxyUrl)\n\tif err != nil {\n\t\tlog.Fatalln(err)\n\t}\n\tif err := binary.Write(c, binary.LittleEndian, int32(hour)); err != nil {\n\t\tlog.Fatalln(err)\n\t}\n\tlog.Printf(\"Successful ip registration for local public network, the validity period is %d hours.\", hour)\n\tos.Exit(0)\n}",
+    "funcname": "RegisterLocalIp"
+}

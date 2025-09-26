@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1318,
+    "focalfunc": "func (c *DefaultCtx) getLocationFromRoute(route Route, params Map) (string, error)",
+    "funcbody": "func (c *DefaultCtx) getLocationFromRoute(route Route, params Map) (string, error) {\n\tbuf := bytebufferpool.Get()\n\tfor _, segment := range route.routeParser.segs {\n\t\tif !segment.IsParam {\n\t\t\t_, err := buf.WriteString(segment.Const)\n\t\t\tif err != nil {\n\t\t\t\treturn \"\", fmt.Errorf(\"failed to write string: %w\", err)\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\n\t\tfor key, val := range params {\n\t\t\tisSame := key == segment.ParamName || (!c.app.config.CaseSensitive && utils.EqualFold(key, segment.ParamName))\n\t\t\tisGreedy := segment.IsGreedy && len(key) == 1 && isInCharset(key[0], greedyParameters)\n\t\t\tif isSame || isGreedy {\n\t\t\t\t_, err := buf.WriteString(utils.ToString(val))\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn \"\", fmt.Errorf(\"failed to write string: %w\", err)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tlocation := buf.String()\n\n\tbytebufferpool.Put(buf)\n\treturn location, nil\n}",
+    "funcname": "getLocationFromRoute"
+}

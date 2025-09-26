@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/listener.go",
+    "lineno": 21,
+    "focalfunc": "func NewKcpListenerAndProcess(addr string, f func(c net.Conn)) error",
+    "funcbody": "func NewKcpListenerAndProcess(addr string, f func(c net.Conn)) error {\n\tkcpListener, err := kcp.ListenWithOptions(addr, nil, 150, 3)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\treturn err\n\t}\n\tfor {\n\t\tc, err := kcpListener.AcceptKCP()\n\t\tSetUdpSession(c)\n\t\tif err != nil {\n\t\t\tlogs.Warn(err)\n\t\t\tcontinue\n\t\t}\n\t\tgo f(c)\n\t}\n\treturn nil\n}",
+    "funcname": "NewKcpListenerAndProcess"
+}

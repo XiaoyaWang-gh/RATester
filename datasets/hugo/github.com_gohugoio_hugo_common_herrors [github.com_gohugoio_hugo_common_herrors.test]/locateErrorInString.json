@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/error_locator.go",
+    "lineno": 114,
+    "focalfunc": "func locateErrorInString(src string, matcher LineMatcherFn) *ErrorContext",
+    "funcbody": "func locateErrorInString(src string, matcher LineMatcherFn) *ErrorContext {\n\treturn locateError(strings.NewReader(src), &fileError{}, matcher)\n}",
+    "funcname": "locateErrorInString"
+}

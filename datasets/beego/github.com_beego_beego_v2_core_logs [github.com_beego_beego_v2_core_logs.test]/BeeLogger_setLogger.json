@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 227,
+    "focalfunc": "func (bl *BeeLogger) SetLogger(adapterName string, configs ...string) error",
+    "funcbody": "func (bl *BeeLogger) SetLogger(adapterName string, configs ...string) error {\n\tbl.lock.Lock()\n\tdefer bl.lock.Unlock()\n\tif !bl.init {\n\t\tbl.outputs = []*nameLogger{}\n\t\tbl.init = true\n\t}\n\treturn bl.setLogger(adapterName, configs...)\n}",
+    "funcname": "SetLogger"
+}

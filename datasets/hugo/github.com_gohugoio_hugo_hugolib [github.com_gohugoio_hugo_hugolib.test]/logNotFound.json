@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 285,
+    "focalfunc": "func (s siteRefLinker) logNotFound(ref, what string, p page.Page, position text.Position)",
+    "funcbody": "func (s siteRefLinker) logNotFound(ref, what string, p page.Page, position text.Position) {\n\tif position.IsValid() {\n\t\ts.errorLogger.Logf(\"[%s] REF_NOT_FOUND: Ref %q: %s: %s\", s.s.Lang(), ref, position.String(), what)\n\t} else if p == nil {\n\t\ts.errorLogger.Logf(\"[%s] REF_NOT_FOUND: Ref %q: %s\", s.s.Lang(), ref, what)\n\t} else {\n\t\ts.errorLogger.Logf(\"[%s] REF_NOT_FOUND: Ref %q from page %q: %s\", s.s.Lang(), ref, p.Path(), what)\n\t}\n}",
+    "funcname": "logNotFound"
+}

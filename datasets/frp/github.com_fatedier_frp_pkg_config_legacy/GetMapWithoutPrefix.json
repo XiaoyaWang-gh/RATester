@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/utils.go",
+    "lineno": 21,
+    "focalfunc": "func GetMapWithoutPrefix(set map[string]string, prefix string) map[string]string",
+    "funcbody": "func GetMapWithoutPrefix(set map[string]string, prefix string) map[string]string {\n\tm := make(map[string]string)\n\n\tfor key, value := range set {\n\t\tif strings.HasPrefix(key, prefix) {\n\t\t\tm[strings.TrimPrefix(key, prefix)] = value\n\t\t}\n\t}\n\n\tif len(m) == 0 {\n\t\treturn nil\n\t}\n\n\treturn m\n}",
+    "funcname": "GetMapWithoutPrefix"
+}

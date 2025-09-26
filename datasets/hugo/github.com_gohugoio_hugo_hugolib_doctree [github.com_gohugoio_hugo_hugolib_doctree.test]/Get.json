@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 54,
+    "focalfunc": "func (t *TreeShiftTree[T]) Get(s string) T",
+    "funcbody": "func (t *TreeShiftTree[T]) Get(s string) T {\n\treturn t.trees[t.v].Get(s)\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 144,
+    "focalfunc": "func (c Config) CheckAllowedHTTPMethod(method string) error",
+    "funcbody": "func (c Config) CheckAllowedHTTPMethod(method string) error {\n\tif !c.HTTP.Methods.Accept(method) {\n\t\treturn &AccessDeniedError{\n\t\t\tname:\t\tmethod,\n\t\t\tpath:\t\t\"security.http.method\",\n\t\t\tpolicies:\tc.ToTOML(),\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "CheckAllowedHTTPMethod"
+}

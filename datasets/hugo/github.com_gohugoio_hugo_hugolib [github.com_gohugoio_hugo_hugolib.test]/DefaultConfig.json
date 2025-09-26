@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/config.go",
+    "lineno": 26,
+    "focalfunc": "func DefaultConfig() *allconfig.Config",
+    "funcbody": "func DefaultConfig() *allconfig.Config {\n\tfs := afero.NewMemMapFs()\n\tall, err := allconfig.LoadConfig(allconfig.ConfigSourceDescriptor{Fs: fs, Environ: []string{\"none\"}})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn all.Base\n}",
+    "funcname": "DefaultConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 279,
+    "focalfunc": "func stringifyMapKeys(in any) (any, bool)",
+    "funcbody": "func stringifyMapKeys(in any) (any, bool) {\n\tswitch in := in.(type) {\n\tcase []any:\n\t\tfor i, v := range in {\n\t\t\tif vv, replaced := stringifyMapKeys(v); replaced {\n\t\t\t\tin[i] = vv\n\t\t\t}\n\t\t}\n\tcase map[string]any:\n\t\tfor k, v := range in {\n\t\t\tif vv, changed := stringifyMapKeys(v); changed {\n\t\t\t\tin[k] = vv\n\t\t\t}\n\t\t}\n\tcase map[any]any:\n\t\tres := make(map[string]any)\n\t\tvar (\n\t\t\tok\tbool\n\t\t\terr\terror\n\t\t)\n\t\tfor k, v := range in {\n\t\t\tvar ks string\n\n\t\t\tif ks, ok = k.(string); !ok {\n\t\t\t\tks, err = cast.ToStringE(k)\n\t\t\t\tif err != nil {\n\t\t\t\t\tks = fmt.Sprintf(\"%v\", k)\n\t\t\t\t}\n\t\t\t}\n\t\t\tif vv, replaced := stringifyMapKeys(v); replaced {\n\t\t\t\tres[ks] = vv\n\t\t\t} else {\n\t\t\t\tres[ks] = v\n\t\t\t}\n\t\t}\n\t\treturn res, true\n\t}\n\n\treturn nil, false\n}",
+    "funcname": "stringifyMapKeys"
+}

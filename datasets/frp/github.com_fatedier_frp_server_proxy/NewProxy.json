@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 284,
+    "focalfunc": "func NewProxy(ctx context.Context, options *Options) (pxy Proxy, err error)",
+    "funcbody": "func NewProxy(ctx context.Context, options *Options) (pxy Proxy, err error) {\n\tconfigurer := options.Configurer\n\txl := xlog.FromContextSafe(ctx).Spawn().AppendPrefix(configurer.GetBaseConfig().Name)\n\n\tvar limiter *rate.Limiter\n\tlimitBytes := configurer.GetBaseConfig().Transport.BandwidthLimit.Bytes()\n\tif limitBytes > 0 && configurer.GetBaseConfig().Transport.BandwidthLimitMode == types.BandwidthLimitModeServer {\n\t\tlimiter = rate.NewLimiter(rate.Limit(float64(limitBytes)), int(limitBytes))\n\t}\n\n\tbasePxy := BaseProxy{\n\t\tname:\t\tconfigurer.GetBaseConfig().Name,\n\t\trc:\t\toptions.ResourceController,\n\t\tlisteners:\tmake([]net.Listener, 0),\n\t\tpoolCount:\toptions.PoolCount,\n\t\tgetWorkConnFn:\toptions.GetWorkConnFn,\n\t\tserverCfg:\toptions.ServerCfg,\n\t\tlimiter:\tlimiter,\n\t\txl:\t\txl,\n\t\tctx:\t\txlog.NewContext(ctx, xl),\n\t\tuserInfo:\toptions.UserInfo,\n\t\tloginMsg:\toptions.LoginMsg,\n\t\tconfigurer:\tconfigurer,\n\t}\n\n\tfactory := proxyFactoryRegistry[reflect.TypeOf(configurer)]\n\tif factory == nil {\n\t\treturn pxy, fmt.Errorf(\"proxy type not support\")\n\t}\n\tpxy = factory(&basePxy)\n\tif pxy == nil {\n\t\treturn nil, fmt.Errorf(\"proxy not created\")\n\t}\n\treturn pxy, nil\n}",
+    "funcname": "NewProxy"
+}

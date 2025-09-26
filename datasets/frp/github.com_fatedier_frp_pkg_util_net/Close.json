@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/websocket.go",
+    "lineno": 62,
+    "focalfunc": "func (p *WebsocketListener) Close() error",
+    "funcbody": "func (p *WebsocketListener) Close() error {\n\treturn p.server.Close()\n}",
+    "funcname": "Close"
+}

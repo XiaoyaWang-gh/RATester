@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 114,
+    "focalfunc": "func forwardedPort(req *http.Request) string",
+    "funcbody": "func forwardedPort(req *http.Request) string {\n\tif req == nil {\n\t\treturn \"\"\n\t}\n\n\tif _, port, err := net.SplitHostPort(req.Host); err == nil && port != \"\" {\n\t\treturn port\n\t}\n\n\tif unsafeHeader(req.Header).Get(xForwardedProto) == \"https\" || unsafeHeader(req.Header).Get(xForwardedProto) == \"wss\" {\n\t\treturn \"443\"\n\t}\n\n\tif req.TLS != nil {\n\t\treturn \"443\"\n\t}\n\n\treturn \"80\"\n}",
+    "funcname": "forwardedPort"
+}

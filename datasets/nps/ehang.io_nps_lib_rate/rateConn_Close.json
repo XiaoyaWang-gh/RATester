@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/conn.go",
+    "lineno": 35,
+    "focalfunc": "func (s *rateConn) Close() error",
+    "funcbody": "func (s *rateConn) Close() error {\n\treturn s.conn.Close()\n}",
+    "funcname": "Close"
+}

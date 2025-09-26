@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 196,
+    "focalfunc": "func (lp *Provider) SessionAll(context.Context) int",
+    "funcbody": "func (lp *Provider) SessionAll(context.Context) int {\n\treturn 0\n}",
+    "funcname": "SessionAll"
+}

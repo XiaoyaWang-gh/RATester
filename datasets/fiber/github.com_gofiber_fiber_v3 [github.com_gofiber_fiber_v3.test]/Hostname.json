@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 706,
+    "focalfunc": "func (c *DefaultCtx) Hostname() string",
+    "funcbody": "func (c *DefaultCtx) Hostname() string {\n\taddr, _ := parseAddr(c.Host())\n\n\treturn addr\n}",
+    "funcname": "Hostname"
+}

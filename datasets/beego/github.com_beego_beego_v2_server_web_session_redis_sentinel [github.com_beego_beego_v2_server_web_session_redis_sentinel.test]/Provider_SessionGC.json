@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_sentinel/sess_redis_sentinel.go",
+    "lineno": 297,
+    "focalfunc": "func (rp *Provider) SessionGC(context.Context)",
+    "funcbody": "func (rp *Provider) SessionGC(context.Context) {\n}",
+    "funcname": "SessionGC"
+}

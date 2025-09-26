@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 73,
+    "focalfunc": "func NewFrom(params maps.Params) Provider",
+    "funcbody": "func NewFrom(params maps.Params) Provider {\n\tmaps.PrepareParams(params)\n\treturn &defaultConfigProvider{\n\t\troot: params,\n\t}\n}",
+    "funcname": "NewFrom"
+}

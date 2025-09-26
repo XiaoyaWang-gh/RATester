@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/invocation.go",
+    "lineno": 49,
+    "focalfunc": "func (inv *Invocation) execute(ctx context.Context) []interface{}",
+    "funcbody": "func (inv *Invocation) execute(ctx context.Context) []interface{} {\n\treturn inv.f(ctx)\n}",
+    "funcname": "execute"
+}

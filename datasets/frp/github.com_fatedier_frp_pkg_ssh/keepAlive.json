@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/server.go",
+    "lineno": 324,
+    "focalfunc": "func (s *TunnelServer) keepAlive(ch ssh.Channel)",
+    "funcbody": "func (s *TunnelServer) keepAlive(ch ssh.Channel) {\n\ttk := time.NewTicker(time.Second * 30)\n\tdefer tk.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-tk.C:\n\t\t\t_, err := ch.SendRequest(\"heartbeat\", false, nil)\n\t\t\tif err != nil {\n\t\t\t\treturn\n\t\t\t}\n\t\tcase <-s.doneCh:\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "keepAlive"
+}

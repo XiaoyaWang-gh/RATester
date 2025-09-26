@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/manager.go",
+    "lineno": 58,
+    "focalfunc": "func (m *Manager) getTCPRouters(ctx context.Context, entryPoints []string) map[string]map[string]*runtime.TCPRouterInfo",
+    "funcbody": "func (m *Manager) getTCPRouters(ctx context.Context, entryPoints []string) map[string]map[string]*runtime.TCPRouterInfo {\n\tif m.conf != nil {\n\t\treturn m.conf.GetTCPRoutersByEntryPoints(ctx, entryPoints)\n\t}\n\n\treturn make(map[string]map[string]*runtime.TCPRouterInfo)\n}",
+    "funcname": "getTCPRouters"
+}

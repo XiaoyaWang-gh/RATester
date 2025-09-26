@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 143,
+    "focalfunc": "func SlicePad(slice []interface{}, size int, val interface{}) []interface{}",
+    "funcbody": "func SlicePad(slice []interface{}, size int, val interface{}) []interface{} {\n\tif size <= len(slice) {\n\t\treturn slice\n\t}\n\tfor i := 0; i < (size - len(slice)); i++ {\n\t\tslice = append(slice, val)\n\t}\n\treturn slice\n}",
+    "funcname": "SlicePad"
+}

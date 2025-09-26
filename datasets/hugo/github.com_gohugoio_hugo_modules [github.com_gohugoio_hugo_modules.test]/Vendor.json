@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 142,
+    "focalfunc": "func (m *moduleAdapter) Vendor() bool",
+    "funcbody": "func (m *moduleAdapter) Vendor() bool {\n\treturn m.vendor\n}",
+    "funcname": "Vendor"
+}

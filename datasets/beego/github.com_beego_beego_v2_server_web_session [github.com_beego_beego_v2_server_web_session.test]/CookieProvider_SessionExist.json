@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 162,
+    "focalfunc": "func (pder *CookieProvider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (pder *CookieProvider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\treturn true, nil\n}",
+    "funcname": "SessionExist"
+}

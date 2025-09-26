@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 128,
+    "focalfunc": "func (qb *MySQLQueryBuilder) GroupBy(fields ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) GroupBy(fields ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"GROUP BY\", strings.Join(fields, CommaSpace))\n\treturn qb\n}",
+    "funcname": "GroupBy"
+}

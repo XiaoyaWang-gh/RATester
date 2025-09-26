@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/compare/compare.go",
+    "lineno": 44,
+    "focalfunc": "func Eq(v1, v2 any) bool",
+    "funcbody": "func Eq(v1, v2 any) bool {\n\tif v1 == nil || v2 == nil {\n\t\treturn v1 == v2\n\t}\n\n\tif eqer, ok := v1.(Eqer); ok {\n\t\treturn eqer.Eq(v2)\n\t}\n\n\treturn v1 == v2\n}",
+    "funcname": "Eq"
+}

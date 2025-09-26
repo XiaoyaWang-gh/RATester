@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 47,
+    "focalfunc": "func (t *Template) Name() string",
+    "funcbody": "func (t *Template) Name() string {\n\treturn t.name\n}",
+    "funcname": "Name"
+}

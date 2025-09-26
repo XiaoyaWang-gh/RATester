@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 810,
+    "focalfunc": "func getBits(min, max, step uint) uint64",
+    "funcbody": "func getBits(min, max, step uint) uint64 {\n\tvar bits uint64\n\n\tif step == 1 {\n\t\treturn ^(math.MaxUint64 << (max + 1)) & (math.MaxUint64 << min)\n\t}\n\n\tfor i := min; i <= max; i += step {\n\t\tbits |= 1 << i\n\t}\n\treturn bits\n}",
+    "funcname": "getBits"
+}

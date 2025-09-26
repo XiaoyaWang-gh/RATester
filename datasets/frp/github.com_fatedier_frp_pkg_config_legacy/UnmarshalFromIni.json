@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/visitor.go",
+    "lineno": 145,
+    "focalfunc": "func (cfg *XTCPVisitorConf) UnmarshalFromIni(prefix string, name string, section *ini.Section) (err error)",
+    "funcbody": "func (cfg *XTCPVisitorConf) UnmarshalFromIni(prefix string, name string, section *ini.Section) (err error) {\n\terr = preVisitorUnmarshalFromIni(cfg, prefix, name, section)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif cfg.Protocol == \"\" {\n\t\tcfg.Protocol = \"quic\"\n\t}\n\tif cfg.MaxRetriesAnHour <= 0 {\n\t\tcfg.MaxRetriesAnHour = 8\n\t}\n\tif cfg.MinRetryInterval <= 0 {\n\t\tcfg.MinRetryInterval = 90\n\t}\n\tif cfg.FallbackTimeoutMs <= 0 {\n\t\tcfg.FallbackTimeoutMs = 1000\n\t}\n\treturn\n}",
+    "funcname": "UnmarshalFromIni"
+}

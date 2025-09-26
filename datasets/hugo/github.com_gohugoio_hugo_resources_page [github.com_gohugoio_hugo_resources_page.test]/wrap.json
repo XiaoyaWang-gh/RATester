@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 82,
+    "focalfunc": "func (s HtmlSummary) wrap(ss string) string",
+    "funcbody": "func (s HtmlSummary) wrap(ss string) string {\n\tif s.WrapperStart.IsZero() {\n\t\treturn ss\n\t}\n\treturn s.source[s.WrapperStart.Low:s.WrapperStart.High] + ss + s.source[s.WrapperEnd.Low:s.WrapperEnd.High]\n}",
+    "funcname": "wrap"
+}

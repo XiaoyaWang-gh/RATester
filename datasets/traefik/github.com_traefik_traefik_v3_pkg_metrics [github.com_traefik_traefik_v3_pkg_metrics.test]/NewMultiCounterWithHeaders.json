@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/headers.go",
+    "lineno": 19,
+    "focalfunc": "func NewMultiCounterWithHeaders(c ...CounterWithHeaders) MultiCounterWithHeaders",
+    "funcbody": "func NewMultiCounterWithHeaders(c ...CounterWithHeaders) MultiCounterWithHeaders {\n\treturn c\n}",
+    "funcname": "NewMultiCounterWithHeaders"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 586,
+    "focalfunc": "func lexNumber(l *lexer) stateFn",
+    "funcbody": "func lexNumber(l *lexer) stateFn {\n\tif !l.scanNumber() {\n\t\treturn l.errorf(\"bad number syntax: %q\", l.input[l.start:l.pos])\n\t}\n\tif sign := l.peek(); sign == '+' || sign == '-' {\n\n\t\tif !l.scanNumber() || l.input[l.pos-1] != 'i' {\n\t\t\treturn l.errorf(\"bad number syntax: %q\", l.input[l.start:l.pos])\n\t\t}\n\t\treturn l.emit(itemComplex)\n\t}\n\treturn l.emit(itemNumber)\n}",
+    "funcname": "lexNumber"
+}

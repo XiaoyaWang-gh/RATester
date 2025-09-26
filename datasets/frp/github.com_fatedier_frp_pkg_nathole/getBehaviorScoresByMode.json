@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 147,
+    "focalfunc": "func getBehaviorScoresByMode(mode int, defaultScore int) []*BehaviorScore",
+    "funcbody": "func getBehaviorScoresByMode(mode int, defaultScore int) []*BehaviorScore {\n\treturn getBehaviorScoresByMode2(mode, defaultScore, defaultScore)\n}",
+    "funcname": "getBehaviorScoresByMode"
+}

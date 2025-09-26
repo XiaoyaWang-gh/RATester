@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/encryptcookie/utils.go",
+    "lineno": 91,
+    "focalfunc": "func GenerateKey(length int) string",
+    "funcbody": "func GenerateKey(length int) string {\n\tif length != 16 && length != 24 && length != 32 {\n\t\tpanic(ErrInvalidKeyLength)\n\t}\n\n\tkey := make([]byte, length)\n\n\tif _, err := rand.Read(key); err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn base64.StdEncoding.EncodeToString(key)\n}",
+    "funcname": "GenerateKey"
+}

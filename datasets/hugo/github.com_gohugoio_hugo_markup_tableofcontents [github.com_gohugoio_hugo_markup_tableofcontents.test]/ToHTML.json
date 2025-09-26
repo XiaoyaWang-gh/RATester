@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 136,
+    "focalfunc": "func (toc *Fragments) ToHTML(startLevel, stopLevel int, ordered bool) template.HTML",
+    "funcbody": "func (toc *Fragments) ToHTML(startLevel, stopLevel int, ordered bool) template.HTML {\n\tif toc == nil {\n\t\treturn \"\"\n\t}\n\tb := &tocBuilder{\n\t\ts:\t\tstrings.Builder{},\n\t\th:\t\ttoc.Headings,\n\t\tstartLevel:\tstartLevel,\n\t\tstopLevel:\tstopLevel,\n\t\tordered:\tordered,\n\t}\n\tb.Build()\n\treturn template.HTML(b.s.String())\n}",
+    "funcname": "ToHTML"
+}

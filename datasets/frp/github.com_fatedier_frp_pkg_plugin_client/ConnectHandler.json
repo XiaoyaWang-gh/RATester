@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 141,
+    "focalfunc": "func (hp *HTTPProxy) ConnectHandler(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (hp *HTTPProxy) ConnectHandler(rw http.ResponseWriter, req *http.Request) {\n\thj, ok := rw.(http.Hijacker)\n\tif !ok {\n\t\trw.WriteHeader(http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tclient, _, err := hj.Hijack()\n\tif err != nil {\n\t\trw.WriteHeader(http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tremote, err := net.Dial(\"tcp\", req.URL.Host)\n\tif err != nil {\n\t\thttp.Error(rw, \"Failed\", http.StatusBadRequest)\n\t\tclient.Close()\n\t\treturn\n\t}\n\t_, _ = client.Write([]byte(\"HTTP/1.1 200 OK\\r\\n\\r\\n\"))\n\n\tgo libio.Join(remote, client)\n}",
+    "funcname": "ConnectHandler"
+}

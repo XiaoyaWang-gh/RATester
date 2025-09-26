@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 142,
+    "focalfunc": "func WrapCloseNotifyConn(c net.Conn, closeFn func()) net.Conn",
+    "funcbody": "func WrapCloseNotifyConn(c net.Conn, closeFn func()) net.Conn {\n\treturn &CloseNotifyConn{\n\t\tConn:\t\tc,\n\t\tcloseFn:\tcloseFn,\n\t}\n}",
+    "funcname": "WrapCloseNotifyConn"
+}

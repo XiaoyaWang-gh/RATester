@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 322,
+    "focalfunc": "func (c *Client) CleanArchives(plugins map[string]Descriptor) error",
+    "funcbody": "func (c *Client) CleanArchives(plugins map[string]Descriptor) error {\n\tif _, err := os.Stat(c.stateFile); os.IsNotExist(err) {\n\t\treturn nil\n\t}\n\n\tstateFile, err := os.Open(c.stateFile)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to open state file %s: %w\", c.stateFile, err)\n\t}\n\n\tprevious := make(map[string]string)\n\terr = json.NewDecoder(stateFile).Decode(&previous)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to decode state file %s: %w\", c.stateFile, err)\n\t}\n\n\tfor pName, pVersion := range previous {\n\t\tfor _, desc := range plugins {\n\t\t\tif desc.ModuleName == pName && desc.Version != pVersion {\n\t\t\t\tarchivePath := c.buildArchivePath(pName, pVersion)\n\t\t\t\tif err = os.RemoveAll(archivePath); err != nil {\n\t\t\t\t\treturn fmt.Errorf(\"failed to remove archive %s: %w\", archivePath, err)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "CleanArchives"
+}

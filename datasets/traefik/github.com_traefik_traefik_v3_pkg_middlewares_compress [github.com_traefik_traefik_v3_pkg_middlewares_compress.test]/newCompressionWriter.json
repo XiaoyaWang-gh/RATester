@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 140,
+    "focalfunc": "func newCompressionWriter(algo string, in io.Writer) (*compressionWriter, error)",
+    "funcbody": "func newCompressionWriter(algo string, in io.Writer) (*compressionWriter, error) {\n\tswitch algo {\n\tcase brotliName:\n\t\treturn &compressionWriter{compression: brotli.NewWriter(in), alg: algo}, nil\n\n\tcase zstdName:\n\t\twriter, err := zstd.NewWriter(in)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"creating zstd writer: %w\", err)\n\t\t}\n\t\treturn &compressionWriter{compression: writer, alg: algo}, nil\n\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"unknown compression algo: %s\", algo)\n\t}\n}",
+    "funcname": "newCompressionWriter"
+}

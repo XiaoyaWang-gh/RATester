@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1049,
+    "focalfunc": "func (c *Context) YAML(code int, obj any)",
+    "funcbody": "func (c *Context) YAML(code int, obj any) {\n\tc.Render(code, render.YAML{Data: obj})\n}",
+    "funcname": "YAML"
+}

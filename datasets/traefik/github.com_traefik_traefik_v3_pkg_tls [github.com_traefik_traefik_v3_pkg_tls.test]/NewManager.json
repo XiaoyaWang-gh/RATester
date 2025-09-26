@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tlsmanager.go",
+    "lineno": 56,
+    "focalfunc": "func NewManager() *Manager",
+    "funcbody": "func NewManager() *Manager {\n\treturn &Manager{\n\t\tstores:\tmap[string]*CertificateStore{},\n\t\tconfigs: map[string]Options{\n\t\t\t\"default\": DefaultTLSOptions,\n\t\t},\n\t}\n}",
+    "funcname": "NewManager"
+}

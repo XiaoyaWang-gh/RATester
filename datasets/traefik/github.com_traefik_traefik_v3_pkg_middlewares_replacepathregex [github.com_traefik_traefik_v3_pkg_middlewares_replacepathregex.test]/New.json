@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/replacepathregex/replace_path_regex.go",
+    "lineno": 29,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.ReplacePathRegex, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.ReplacePathRegex, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeName).Debug().Msg(\"Creating middleware\")\n\n\texp, err := regexp.Compile(strings.TrimSpace(config.Regex))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error compiling regular expression %s: %w\", config.Regex, err)\n\t}\n\n\treturn &replacePathRegex{\n\t\tregexp:\t\texp,\n\t\treplacement:\tstrings.TrimSpace(config.Replacement),\n\t\tnext:\t\tnext,\n\t\tname:\t\tname,\n\t}, nil\n}",
+    "funcname": "New"
+}

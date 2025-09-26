@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 326,
+    "focalfunc": "func (c *clientWrapper) ListGRPCRoutes() ([]*gatev1.GRPCRoute, error)",
+    "funcbody": "func (c *clientWrapper) ListGRPCRoutes() ([]*gatev1.GRPCRoute, error) {\n\tvar grpcRoutes []*gatev1.GRPCRoute\n\tfor _, namespace := range c.watchedNamespaces {\n\t\troutes, err := c.factoriesGateway[c.lookupNamespace(namespace)].Gateway().V1().GRPCRoutes().Lister().GRPCRoutes(namespace).List(labels.Everything())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"listing GRPC routes in namespace %s\", namespace)\n\t\t}\n\n\t\tgrpcRoutes = append(grpcRoutes, routes...)\n\t}\n\n\treturn grpcRoutes, nil\n}",
+    "funcname": "ListGRPCRoutes"
+}

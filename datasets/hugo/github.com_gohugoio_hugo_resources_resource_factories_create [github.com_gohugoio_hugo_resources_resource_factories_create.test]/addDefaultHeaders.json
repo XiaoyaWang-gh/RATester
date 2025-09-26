@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 324,
+    "focalfunc": "func addDefaultHeaders(req *http.Request)",
+    "funcbody": "func addDefaultHeaders(req *http.Request) {\n\tif !hasHeaderKey(req.Header, \"User-Agent\") {\n\t\treq.Header.Add(\"User-Agent\", \"Hugo Static Site Generator\")\n\t}\n}",
+    "funcname": "addDefaultHeaders"
+}

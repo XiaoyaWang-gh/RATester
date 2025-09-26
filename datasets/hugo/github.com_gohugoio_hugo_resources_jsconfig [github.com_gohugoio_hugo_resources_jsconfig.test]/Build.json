@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/jsconfig/jsconfig.go",
+    "lineno": 36,
+    "focalfunc": "func (b *Builder) Build(dir string) *Config",
+    "funcbody": "func (b *Builder) Build(dir string) *Config {\n\tb.sourceRootsMu.RLock()\n\tdefer b.sourceRootsMu.RUnlock()\n\n\tif len(b.sourceRoots) == 0 {\n\t\treturn nil\n\t}\n\tconf := newJSConfig()\n\n\tvar roots []string\n\tfor root := range b.sourceRoots {\n\t\trel, err := filepath.Rel(dir, filepath.Join(root, \"*\"))\n\t\tif err == nil {\n\t\t\troots = append(roots, rel)\n\t\t}\n\t}\n\tsort.Strings(roots)\n\tconf.CompilerOptions.Paths[\"*\"] = roots\n\n\treturn conf\n}",
+    "funcname": "Build"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 79,
+    "focalfunc": "func (d *dbBaseOracle) DbTypes() map[string]string",
+    "funcbody": "func (d *dbBaseOracle) DbTypes() map[string]string {\n\treturn oracleTypes\n}",
+    "funcname": "DbTypes"
+}

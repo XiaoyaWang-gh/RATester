@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/request.go",
+    "lineno": 11,
+    "focalfunc": "func request(project *LogProject, method, uri string, headers map[string]string,\n\tbody []byte) (resp *http.Response, err error)",
+    "funcbody": "func request(project *LogProject, method, uri string, headers map[string]string,\n\tbody []byte) (resp *http.Response, err error) {\n\n\tif _, ok := headers[\"x-sls-bodyrawsize\"]; !ok {\n\t\terr = fmt.Errorf(\"can't find 'x-sls-bodyrawsize' header\")\n\t\treturn\n\t}\n\n\theaders[\"Host\"] = project.Name + \".\" + project.Endpoint\n\theaders[\"Date\"] = nowRFC1123()\n\theaders[\"x-sls-apiversion\"] = version\n\theaders[\"x-sls-signaturemethod\"] = signatureMethod\n\tif body != nil {\n\t\tbodyMD5 := fmt.Sprintf(\"%X\", md5.Sum(body))\n\t\theaders[\"Content-MD5\"] = bodyMD5\n\n\t\tif _, ok := headers[\"Content-Type\"]; !ok {\n\t\t\terr = fmt.Errorf(\"can't find 'Content-Type' header\")\n\t\t\treturn\n\t\t}\n\t}\n\n\tdigest, err := signature(project, method, uri, headers)\n\tif err != nil {\n\t\treturn\n\t}\n\tauth := fmt.Sprintf(\"SLS %v:%v\", project.AccessKeyID, digest)\n\theaders[\"Authorization\"] = auth\n\n\treader := bytes.NewReader(body)\n\turlStr := fmt.Sprintf(\"http://%v.%v%v\", project.Name, project.Endpoint, uri)\n\treq, err := http.NewRequest(method, urlStr, reader)\n\tif err != nil {\n\t\treturn\n\t}\n\tfor k, v := range headers {\n\t\treq.Header.Add(k, v)\n\t}\n\n\tresp, err = http.DefaultClient.Do(req)\n\tif err != nil {\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "request"
+}

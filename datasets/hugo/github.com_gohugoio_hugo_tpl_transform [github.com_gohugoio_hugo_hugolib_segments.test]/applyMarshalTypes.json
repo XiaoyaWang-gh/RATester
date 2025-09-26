@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/remarshal.go",
+    "lineno": 67,
+    "focalfunc": "func applyMarshalTypes(m map[string]any)",
+    "funcbody": "func applyMarshalTypes(m map[string]any) {\n\tfor k, v := range m {\n\t\tswitch t := v.(type) {\n\t\tcase map[string]any:\n\t\t\tapplyMarshalTypes(t)\n\t\tcase float64:\n\t\t\ti := int64(t)\n\t\t\tif t == float64(i) {\n\t\t\t\tm[k] = i\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "applyMarshalTypes"
+}

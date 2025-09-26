@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 188,
+    "focalfunc": "func (m *serverMetrics) GetServer() *ServerStats",
+    "funcbody": "func (m *serverMetrics) GetServer() *ServerStats {\n\tm.mu.Lock()\n\tdefer m.mu.Unlock()\n\ts := &ServerStats{\n\t\tTotalTrafficIn:\t\tm.info.TotalTrafficIn.TodayCount(),\n\t\tTotalTrafficOut:\tm.info.TotalTrafficOut.TodayCount(),\n\t\tCurConns:\t\tint64(m.info.CurConns.Count()),\n\t\tClientCounts:\t\tint64(m.info.ClientCounts.Count()),\n\t\tProxyTypeCounts:\tmake(map[string]int64),\n\t}\n\tfor k, v := range m.info.ProxyTypeCounts {\n\t\ts.ProxyTypeCounts[k] = int64(v.Count())\n\t}\n\treturn s\n}",
+    "funcname": "GetServer"
+}

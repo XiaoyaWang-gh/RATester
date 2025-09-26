@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1172,
+    "focalfunc": "func injectLiveReloadScript(src io.Reader, baseURL *url.URL) string",
+    "funcbody": "func injectLiveReloadScript(src io.Reader, baseURL *url.URL) string {\n\tvar b bytes.Buffer\n\tchain := transform.Chain{livereloadinject.New(baseURL)}\n\tchain.Apply(&b, src)\n\n\treturn b.String()\n}",
+    "funcname": "injectLiveReloadScript"
+}

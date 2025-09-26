@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 392,
+    "focalfunc": "func (p *Path) BaseNameNoIdentifier() string",
+    "funcbody": "func (p *Path) BaseNameNoIdentifier() string {\n\tif p.IsBundle() {\n\t\treturn p.Container()\n\t}\n\treturn p.NameNoIdentifier()\n}",
+    "funcname": "BaseNameNoIdentifier"
+}

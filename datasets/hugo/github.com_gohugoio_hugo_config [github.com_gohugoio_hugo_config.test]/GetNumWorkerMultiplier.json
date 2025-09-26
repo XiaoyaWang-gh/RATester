@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/env.go",
+    "lineno": 33,
+    "focalfunc": "func GetNumWorkerMultiplier() int",
+    "funcbody": "func GetNumWorkerMultiplier() int {\n\tif gmp := os.Getenv(\"HUGO_NUMWORKERMULTIPLIER\"); gmp != \"\" {\n\t\tif p, err := strconv.Atoi(gmp); err == nil && p > 0 {\n\t\t\treturn p\n\t\t}\n\t}\n\treturn runtime.NumCPU()\n}",
+    "funcname": "GetNumWorkerMultiplier"
+}

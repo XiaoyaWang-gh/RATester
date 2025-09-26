@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 52,
+    "focalfunc": "func NewFilterOrmDecorator(delegate Ormer, filterChains ...FilterChain) Ormer",
+    "funcbody": "func NewFilterOrmDecorator(delegate Ormer, filterChains ...FilterChain) Ormer {\n\tres := &filterOrmDecorator{\n\t\tormer:\t\tdelegate,\n\t\tTxBeginner:\tdelegate,\n\t\troot: func(ctx context.Context, inv *Invocation) []interface{} {\n\t\t\treturn inv.execute(ctx)\n\t\t},\n\t}\n\n\tfor i := len(filterChains) - 1; i >= 0; i-- {\n\t\tnode := filterChains[i]\n\t\tres.root = node(res.root)\n\t}\n\treturn res\n}",
+    "funcname": "NewFilterOrmDecorator"
+}

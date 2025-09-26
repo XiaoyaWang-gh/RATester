@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 336,
+    "focalfunc": "func (c *Controller) renderTemplate() (bytes.Buffer, error)",
+    "funcbody": "func (c *Controller) renderTemplate() (bytes.Buffer, error) {\n\tvar buf bytes.Buffer\n\tif c.TplName == \"\" {\n\t\tc.TplName = strings.ToLower(c.controllerName) + \"/\" + strings.ToLower(c.actionName) + \".\" + c.TplExt\n\t}\n\tif c.TplPrefix != \"\" {\n\t\tc.TplName = c.TplPrefix + c.TplName\n\t}\n\tif BConfig.RunMode == DEV {\n\t\tbuildFiles := []string{c.TplName}\n\t\tif c.Layout != \"\" {\n\t\t\tbuildFiles = append(buildFiles, c.Layout)\n\t\t\tif c.LayoutSections != nil {\n\t\t\t\tfor _, sectionTpl := range c.LayoutSections {\n\t\t\t\t\tif sectionTpl == \"\" {\n\t\t\t\t\t\tcontinue\n\t\t\t\t\t}\n\t\t\t\t\tbuildFiles = append(buildFiles, sectionTpl)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tBuildTemplate(c.viewPath(), buildFiles...)\n\t}\n\treturn buf, ExecuteViewPathTemplate(&buf, c.TplName, c.viewPath(), c.Data)\n}",
+    "funcname": "renderTemplate"
+}

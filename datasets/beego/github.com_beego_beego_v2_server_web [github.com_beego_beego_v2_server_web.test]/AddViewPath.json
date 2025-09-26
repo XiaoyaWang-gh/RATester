@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 167,
+    "focalfunc": "func AddViewPath(viewPath string) error",
+    "funcbody": "func AddViewPath(viewPath string) error {\n\tif beeViewPathTemplateLocked {\n\t\tif _, exist := beeViewPathTemplates[viewPath]; exist {\n\t\t\treturn nil\n\t\t}\n\t\tpanic(\"Can not add new view paths after beego.Run()\")\n\t}\n\tbeeViewPathTemplates[viewPath] = make(map[string]*template.Template)\n\treturn BuildTemplate(viewPath)\n}",
+    "funcname": "AddViewPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 98,
+    "focalfunc": "func (qb *MySQLQueryBuilder) OrderBy(fields ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) OrderBy(fields ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"ORDER BY\", strings.Join(fields, CommaSpace))\n\treturn qb\n}",
+    "funcname": "OrderBy"
+}

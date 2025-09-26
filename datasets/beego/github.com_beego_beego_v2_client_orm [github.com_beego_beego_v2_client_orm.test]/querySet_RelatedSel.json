@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 199,
+    "focalfunc": "func (o querySet) RelatedSel(params ...interface{}) QuerySeter",
+    "funcbody": "func (o querySet) RelatedSel(params ...interface{}) QuerySeter {\n\tif len(params) == 0 {\n\t\to.relDepth = DefaultRelsDepth\n\t} else {\n\t\tfor _, p := range params {\n\t\t\tswitch val := p.(type) {\n\t\t\tcase string:\n\t\t\t\to.related = append(o.related, val)\n\t\t\tcase int:\n\t\t\t\to.relDepth = val\n\t\t\tdefault:\n\t\t\t\tpanic(fmt.Errorf(\"<QuerySeter.RelatedSel> wrong param kind: %v\", val))\n\t\t\t}\n\t\t}\n\t}\n\treturn &o\n}",
+    "funcname": "RelatedSel"
+}

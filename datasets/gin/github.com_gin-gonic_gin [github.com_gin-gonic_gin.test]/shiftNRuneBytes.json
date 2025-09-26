@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 702,
+    "focalfunc": "func shiftNRuneBytes(rb [4]byte, n int) [4]byte",
+    "funcbody": "func shiftNRuneBytes(rb [4]byte, n int) [4]byte {\n\tswitch n {\n\tcase 0:\n\t\treturn rb\n\tcase 1:\n\t\treturn [4]byte{rb[1], rb[2], rb[3], 0}\n\tcase 2:\n\t\treturn [4]byte{rb[2], rb[3]}\n\tcase 3:\n\t\treturn [4]byte{rb[3]}\n\tdefault:\n\t\treturn [4]byte{}\n\t}\n}",
+    "funcname": "shiftNRuneBytes"
+}

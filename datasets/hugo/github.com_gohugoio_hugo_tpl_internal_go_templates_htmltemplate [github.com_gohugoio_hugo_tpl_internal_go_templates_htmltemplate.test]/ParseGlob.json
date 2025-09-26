@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 467,
+    "focalfunc": "func parseGlob(t *Template, pattern string) (*Template, error)",
+    "funcbody": "func parseGlob(t *Template, pattern string) (*Template, error) {\n\tif err := t.checkCanParse(); err != nil {\n\t\treturn nil, err\n\t}\n\tfilenames, err := filepath.Glob(pattern)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif len(filenames) == 0 {\n\t\treturn nil, fmt.Errorf(\"html/template: pattern matches no files: %#q\", pattern)\n\t}\n\treturn parseFiles(t, readFileOS, filenames...)\n}",
+    "funcname": "parseGlob"
+}

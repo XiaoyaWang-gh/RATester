@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 345,
+    "focalfunc": "func sortDirEntries(fis []fs.DirEntry)",
+    "funcbody": "func sortDirEntries(fis []fs.DirEntry) {\n\tsort.Slice(fis, func(i, j int) bool {\n\t\tfimi, fimj := fis[i].(FileMetaInfo), fis[j].(FileMetaInfo)\n\t\treturn fimi.Meta().Filename < fimj.Meta().Filename\n\t})\n}",
+    "funcname": "sortDirEntries"
+}

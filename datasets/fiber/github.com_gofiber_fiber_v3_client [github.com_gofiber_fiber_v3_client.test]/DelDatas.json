@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 774,
+    "focalfunc": "func (f *FormData) DelDatas(key ...string)",
+    "funcbody": "func (f *FormData) DelDatas(key ...string) {\n\tfor _, v := range key {\n\t\tf.Del(v)\n\t}\n}",
+    "funcname": "DelDatas"
+}

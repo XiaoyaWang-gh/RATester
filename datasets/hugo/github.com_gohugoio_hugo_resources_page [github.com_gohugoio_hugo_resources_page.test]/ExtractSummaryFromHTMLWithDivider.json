@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 240,
+    "focalfunc": "func ExtractSummaryFromHTMLWithDivider(mt media.Type, input, divider string) (result HtmlSummary)",
+    "funcbody": "func ExtractSummaryFromHTMLWithDivider(mt media.Type, input, divider string) (result HtmlSummary) {\n\tresult.source = input\n\tresult.Divider.Low = strings.Index(input, divider)\n\tresult.Divider.High = result.Divider.Low + len(divider)\n\n\tif result.Divider.Low == -1 {\n\n\t\treturn\n\t}\n\n\tptag := result.resolveParagraphTagAndSetWrapper(mt)\n\n\tif !mt.IsHTML() {\n\t\tresult.Divider, result.SummaryEndTag = expandSummaryDivider(result.source, ptag, result.Divider)\n\t}\n\n\tresult.SummaryLowHigh = types.LowHigh[string]{\n\t\tLow:\tresult.WrapperStart.High,\n\t\tHigh:\tresult.Divider.Low,\n\t}\n\n\treturn\n}",
+    "funcname": "ExtractSummaryFromHTMLWithDivider"
+}

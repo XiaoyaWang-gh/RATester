@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 56,
+    "focalfunc": "func (r JSON) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r JSON) Render(w http.ResponseWriter) error {\n\treturn WriteJSON(w, r.Data)\n}",
+    "funcname": "Render"
+}

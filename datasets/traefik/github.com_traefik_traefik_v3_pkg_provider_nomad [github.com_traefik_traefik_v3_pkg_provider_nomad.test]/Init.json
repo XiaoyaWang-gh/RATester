@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/nomad.go",
+    "lineno": 150,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\tif p.namespace == api.AllNamespacesNamespace {\n\t\treturn errors.New(\"wildcard namespace not supported\")\n\t}\n\n\tdefaultRuleTpl, err := provider.MakeDefaultRuleTemplate(p.DefaultRule, nil)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"error while parsing default rule: %w\", err)\n\t}\n\tp.defaultRuleTpl = defaultRuleTpl\n\n\tif p.name == \"\" {\n\t\tp.name = providerName\n\t}\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

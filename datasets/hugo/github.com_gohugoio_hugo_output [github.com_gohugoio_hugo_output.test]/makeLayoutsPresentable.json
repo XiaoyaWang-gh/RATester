@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/docshelper.go",
+    "lineno": 88,
+    "focalfunc": "func makeLayoutsPresentable(l []string) []string",
+    "funcbody": "func makeLayoutsPresentable(l []string) []string {\n\tvar filtered []string\n\tfor _, ll := range l {\n\t\tif strings.Contains(ll, \"page/\") {\n\n\t\t\tcontinue\n\t\t}\n\t\tll = \"layouts/\" + strings.TrimPrefix(ll, \"_text/\")\n\n\t\tif !strings.Contains(ll, \"indexes\") {\n\t\t\tfiltered = append(filtered, ll)\n\t\t}\n\t}\n\n\treturn filtered\n}",
+    "funcname": "makeLayoutsPresentable"
+}

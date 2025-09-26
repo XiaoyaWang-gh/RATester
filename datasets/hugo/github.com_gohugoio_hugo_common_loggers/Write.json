@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 362,
+    "focalfunc": "func (w logWriter) Write(p []byte) (n int, err error)",
+    "funcbody": "func (w logWriter) Write(p []byte) (n int, err error) {\n\tw.l.Log(logg.String(string(p)))\n\treturn len(p), nil\n}",
+    "funcname": "Write"
+}

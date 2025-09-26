@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 36,
+    "focalfunc": "func SetHTMLTemplate(templ *template.Template)",
+    "funcbody": "func SetHTMLTemplate(templ *template.Template) {\n\tengine().SetHTMLTemplate(templ)\n}",
+    "funcname": "SetHTMLTemplate"
+}

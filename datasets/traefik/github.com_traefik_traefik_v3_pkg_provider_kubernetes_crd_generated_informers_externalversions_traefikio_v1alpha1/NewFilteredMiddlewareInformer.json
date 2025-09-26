@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/informers/externalversions/traefikio/v1alpha1/middleware.go",
+    "lineno": 66,
+    "focalfunc": "func NewFilteredMiddlewareInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer",
+    "funcbody": "func NewFilteredMiddlewareInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers, tweakListOptions internalinterfaces.TweakListOptionsFunc) cache.SharedIndexInformer {\n\treturn cache.NewSharedIndexInformer(\n\t\t&cache.ListWatch{\n\t\t\tListFunc: func(options v1.ListOptions) (runtime.Object, error) {\n\t\t\t\tif tweakListOptions != nil {\n\t\t\t\t\ttweakListOptions(&options)\n\t\t\t\t}\n\t\t\t\treturn client.TraefikV1alpha1().Middlewares(namespace).List(context.TODO(), options)\n\t\t\t},\n\t\t\tWatchFunc: func(options v1.ListOptions) (watch.Interface, error) {\n\t\t\t\tif tweakListOptions != nil {\n\t\t\t\t\ttweakListOptions(&options)\n\t\t\t\t}\n\t\t\t\treturn client.TraefikV1alpha1().Middlewares(namespace).Watch(context.TODO(), options)\n\t\t\t},\n\t\t},\n\t\t&traefikiov1alpha1.Middleware{},\n\t\tresyncPeriod,\n\t\tindexers,\n\t)\n}",
+    "funcname": "NewFilteredMiddlewareInformer"
+}

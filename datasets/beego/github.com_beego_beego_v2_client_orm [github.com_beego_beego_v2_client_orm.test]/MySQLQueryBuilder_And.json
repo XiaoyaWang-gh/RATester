@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 80,
+    "focalfunc": "func (qb *MySQLQueryBuilder) And(cond string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) And(cond string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"AND\", cond)\n\treturn qb\n}",
+    "funcname": "And"
+}

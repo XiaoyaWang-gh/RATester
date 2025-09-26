@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/local_store.go",
+    "lineno": 26,
+    "focalfunc": "func NewLocalStore(filename string) *LocalStore",
+    "funcbody": "func NewLocalStore(filename string) *LocalStore {\n\tstore := &LocalStore{filename: filename, saveDataChan: make(chan map[string]*StoredData)}\n\tstore.listenSaveAction()\n\treturn store\n}",
+    "funcname": "NewLocalStore"
+}

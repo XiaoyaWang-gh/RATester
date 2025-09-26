@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/cmd/nps/nps.go",
+    "lineno": 175,
+    "focalfunc": "func (p *nps) run() error",
+    "funcbody": "func (p *nps) run() error {\n\tdefer func() {\n\t\tif err := recover(); err != nil {\n\t\t\tconst size = 64 << 10\n\t\t\tbuf := make([]byte, size)\n\t\t\tbuf = buf[:runtime.Stack(buf, false)]\n\t\t\tlogs.Warning(\"nps: panic serving %v: %v\\n%s\", err, string(buf))\n\t\t}\n\t}()\n\trun()\n\tselect {\n\tcase <-p.exit:\n\t\tlogs.Warning(\"stop...\")\n\t}\n\treturn nil\n}",
+    "funcname": "run"
+}

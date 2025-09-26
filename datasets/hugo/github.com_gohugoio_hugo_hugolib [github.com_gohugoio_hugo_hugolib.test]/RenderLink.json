@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 913,
+    "focalfunc": "func (hr hookRendererTemplate) RenderLink(cctx context.Context, w io.Writer, ctx hooks.LinkContext) error",
+    "funcbody": "func (hr hookRendererTemplate) RenderLink(cctx context.Context, w io.Writer, ctx hooks.LinkContext) error {\n\treturn hr.templateHandler.ExecuteWithContext(cctx, hr.templ, w, ctx)\n}",
+    "funcname": "RenderLink"
+}

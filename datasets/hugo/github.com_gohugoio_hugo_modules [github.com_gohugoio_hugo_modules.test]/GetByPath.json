@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 789,
+    "focalfunc": "func (modules goModules) GetByPath(p string) *goModule",
+    "funcbody": "func (modules goModules) GetByPath(p string) *goModule {\n\tif modules == nil {\n\t\treturn nil\n\t}\n\n\tfor _, m := range modules {\n\t\tif strings.EqualFold(p, m.Path) {\n\t\t\treturn m\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "GetByPath"
+}

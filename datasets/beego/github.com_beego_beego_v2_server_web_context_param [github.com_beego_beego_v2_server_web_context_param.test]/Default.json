@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/options.go",
+    "lineno": 31,
+    "focalfunc": "func Default(defaultValue interface{}) MethodParamOption",
+    "funcbody": "func Default(defaultValue interface{}) MethodParamOption {\n\treturn func(p *MethodParam) {\n\t\tif defaultValue != nil {\n\t\t\tp.defaultValue = fmt.Sprint(defaultValue)\n\t\t}\n\t}\n}",
+    "funcname": "Default"
+}

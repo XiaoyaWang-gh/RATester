@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group_fs.go",
+    "lineno": 12,
+    "focalfunc": "func (g *Group) Static(pathPrefix, fsRoot string)",
+    "funcbody": "func (g *Group) Static(pathPrefix, fsRoot string) {\n\tsubFs := MustSubFS(g.echo.Filesystem, fsRoot)\n\tg.StaticFS(pathPrefix, subFs)\n}",
+    "funcname": "Static"
+}

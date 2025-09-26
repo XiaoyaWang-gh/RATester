@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/recovery/recovery.go",
+    "lineno": 34,
+    "focalfunc": "func recoverFunc(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func recoverFunc(rw http.ResponseWriter, req *http.Request) {\n\tif err := recover(); err != nil {\n\t\tlogger := middlewares.GetLogger(req.Context(), middlewareName, typeName)\n\t\tif !shouldLogPanic(err) {\n\t\t\tlogger.Debug().Msgf(\"Request has been aborted [%s - %s]: %v\", req.RemoteAddr, req.URL, err)\n\t\t\treturn\n\t\t}\n\n\t\tlogger.Error().Msgf(\"Recovered from panic in HTTP handler [%s - %s]: %+v\", req.RemoteAddr, req.URL, err)\n\t\tconst size = 64 << 10\n\t\tbuf := make([]byte, size)\n\t\tbuf = buf[:runtime.Stack(buf, false)]\n\t\tlogger.Error().Msgf(\"Stack: %s\", buf)\n\n\t\thttp.Error(rw, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "recoverFunc"
+}

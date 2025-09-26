@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 92,
+    "focalfunc": "func (e *RequestExpect) ExpectError(expectErr bool) *RequestExpect",
+    "funcbody": "func (e *RequestExpect) ExpectError(expectErr bool) *RequestExpect {\n\te.expectError = expectErr\n\treturn e\n}",
+    "funcname": "ExpectError"
+}

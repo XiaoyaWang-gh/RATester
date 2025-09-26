@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 177,
+    "focalfunc": "func intLike(typ reflect.Kind) bool",
+    "funcbody": "func intLike(typ reflect.Kind) bool {\n\tswitch typ {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn true\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "intLike"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 556,
+    "focalfunc": "func (c *Client) rewriteGoModRewrite(name string, isGoMod map[string]bool) ([]byte, error)",
+    "funcbody": "func (c *Client) rewriteGoModRewrite(name string, isGoMod map[string]bool) ([]byte, error) {\n\tif name == goModFilename && c.GoModulesFilename == \"\" {\n\n\t\treturn nil, nil\n\t}\n\n\tmodlineSplitter := getModlineSplitter(name == goModFilename)\n\n\tb := &bytes.Buffer{}\n\tf, err := c.fs.Open(filepath.Join(c.ccfg.WorkingDir, name))\n\tif err != nil {\n\t\tif herrors.IsNotExist(err) {\n\n\t\t\treturn nil, nil\n\t\t}\n\t\treturn nil, err\n\t}\n\tdefer f.Close()\n\n\tscanner := bufio.NewScanner(f)\n\tvar dirty bool\n\n\tfor scanner.Scan() {\n\t\tline := scanner.Text()\n\t\tvar doWrite bool\n\n\t\tif parts := modlineSplitter(line); parts != nil {\n\t\t\tmodname, modver := parts[0], parts[1]\n\t\t\tmodver = strings.TrimSuffix(modver, \"/\"+goModFilename)\n\t\t\tmodnameVer := modname + \" \" + modver\n\t\t\tdoWrite = isGoMod[modnameVer]\n\t\t} else {\n\t\t\tdoWrite = true\n\t\t}\n\n\t\tif doWrite {\n\t\t\tfmt.Fprintln(b, line)\n\t\t} else {\n\t\t\tdirty = true\n\t\t}\n\t}\n\n\tif !dirty {\n\n\t\treturn nil, nil\n\t}\n\n\treturn b.Bytes(), nil\n}",
+    "funcname": "rewriteGoModRewrite"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 351,
+    "focalfunc": "func (pm *Manager) Del(name string)",
+    "funcbody": "func (pm *Manager) Del(name string) {\n\tpm.mu.Lock()\n\tdefer pm.mu.Unlock()\n\tdelete(pm.pxys, name)\n}",
+    "funcname": "Del"
+}

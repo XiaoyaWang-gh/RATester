@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 77,
+    "focalfunc": "func (c *Client) Service() *client.Service",
+    "funcbody": "func (c *Client) Service() *client.Service {\n\treturn c.svr\n}",
+    "funcname": "Service"
+}

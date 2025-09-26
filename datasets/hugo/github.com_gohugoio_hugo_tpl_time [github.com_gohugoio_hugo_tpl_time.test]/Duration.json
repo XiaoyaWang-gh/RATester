@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/time/time.go",
+    "lineno": 107,
+    "focalfunc": "func (ns *Namespace) Duration(unit any, number any) (time.Duration, error)",
+    "funcbody": "func (ns *Namespace) Duration(unit any, number any) (time.Duration, error) {\n\tunitStr, err := cast.ToStringE(unit)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tunitDuration, found := durationUnits[unitStr]\n\tif !found {\n\t\treturn 0, fmt.Errorf(\"%q is not a valid duration unit\", unit)\n\t}\n\tn, err := cast.ToInt64E(number)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\treturn time.Duration(n) * unitDuration, nil\n}",
+    "funcname": "Duration"
+}

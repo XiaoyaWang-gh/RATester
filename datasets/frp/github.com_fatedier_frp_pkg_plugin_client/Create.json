@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/plugin.go",
+    "lineno": 43,
+    "focalfunc": "func Create(name string, options v1.ClientPluginOptions) (p Plugin, err error)",
+    "funcbody": "func Create(name string, options v1.ClientPluginOptions) (p Plugin, err error) {\n\tif fn, ok := creators[name]; ok {\n\t\tp, err = fn(options)\n\t} else {\n\t\terr = fmt.Errorf(\"plugin [%s] is not registered\", name)\n\t}\n\treturn\n}",
+    "funcname": "Create"
+}

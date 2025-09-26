@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 61,
+    "focalfunc": "func (fs *FileSessionStore) Delete(ctx context.Context, key interface{}) error",
+    "funcbody": "func (fs *FileSessionStore) Delete(ctx context.Context, key interface{}) error {\n\tfs.lock.Lock()\n\tdefer fs.lock.Unlock()\n\tdelete(fs.values, key)\n\treturn nil\n}",
+    "funcname": "Delete"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 223,
+    "focalfunc": "func (l *pageLexer) ignore()",
+    "funcbody": "func (l *pageLexer) ignore() {\n\tl.start = l.pos\n}",
+    "funcname": "ignore"
+}

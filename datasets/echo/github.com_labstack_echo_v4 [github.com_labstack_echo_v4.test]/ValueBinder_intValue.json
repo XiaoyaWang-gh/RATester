@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 503,
+    "focalfunc": "func (b *ValueBinder) intValue(sourceParam string, dest interface{}, bitSize int, valueMustExist bool) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) intValue(sourceParam string, dest interface{}, bitSize int, valueMustExist bool) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\n\tvalue := b.ValueFunc(sourceParam)\n\tif value == \"\" {\n\t\tif valueMustExist {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{}, \"required field value is empty\", nil))\n\t\t}\n\t\treturn b\n\t}\n\n\treturn b.int(sourceParam, value, dest, bitSize)\n}",
+    "funcname": "intValue"
+}

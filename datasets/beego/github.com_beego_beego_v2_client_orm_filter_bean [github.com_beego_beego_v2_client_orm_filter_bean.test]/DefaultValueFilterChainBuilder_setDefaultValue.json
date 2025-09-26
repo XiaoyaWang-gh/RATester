@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/bean/default_value_filter.go",
+    "lineno": 127,
+    "focalfunc": "func (d *DefaultValueFilterChainBuilder) setDefaultValue(ctx context.Context, ins interface{})",
+    "funcbody": "func (d *DefaultValueFilterChainBuilder) setDefaultValue(ctx context.Context, ins interface{}) {\n\terr := d.factory.AutoWire(ctx, nil, ins)\n\tif err != nil {\n\t\tlogs.Error(\"try to wire the bean for orm.Insert failed. \"+\n\t\t\t\"the default value is not set: %v, \", err)\n\t}\n}",
+    "funcname": "setDefaultValue"
+}

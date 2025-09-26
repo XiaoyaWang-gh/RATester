@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 280,
+    "focalfunc": "func (t *TxDB) QueryRowContext(ctx context.Context, query string, args ...interface{}) *sql.Row",
+    "funcbody": "func (t *TxDB) QueryRowContext(ctx context.Context, query string, args ...interface{}) *sql.Row {\n\treturn t.tx.QueryRowContext(ctx, query, args...)\n}",
+    "funcname": "QueryRowContext"
+}

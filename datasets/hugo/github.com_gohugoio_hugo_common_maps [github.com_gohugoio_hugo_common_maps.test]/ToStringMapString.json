@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 83,
+    "focalfunc": "func ToStringMapString(in any) map[string]string",
+    "funcbody": "func ToStringMapString(in any) map[string]string {\n\tm, _ := ToStringMapStringE(in)\n\treturn m\n}",
+    "funcname": "ToStringMapString"
+}

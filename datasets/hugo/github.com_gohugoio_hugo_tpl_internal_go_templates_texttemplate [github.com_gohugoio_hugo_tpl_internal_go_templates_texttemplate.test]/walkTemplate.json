@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 445,
+    "focalfunc": "func (s *state) walkTemplate(dot reflect.Value, t *parse.TemplateNode)",
+    "funcbody": "func (s *state) walkTemplate(dot reflect.Value, t *parse.TemplateNode) {\n\ts.at(t)\n\ttmpl := s.tmpl.Lookup(t.Name)\n\tif tmpl == nil {\n\t\ts.errorf(\"template %q not defined\", t.Name)\n\t}\n\tif s.depth == maxExecDepth {\n\t\ts.errorf(\"exceeded maximum template depth (%v)\", maxExecDepth)\n\t}\n\n\tdot = s.evalPipeline(dot, t.Pipe)\n\tnewState := *s\n\tnewState.depth++\n\tnewState.tmpl = tmpl\n\n\tnewState.vars = []variable{{\"$\", dot}}\n\tnewState.walk(dot, tmpl.Root)\n}",
+    "funcname": "walkTemplate"
+}

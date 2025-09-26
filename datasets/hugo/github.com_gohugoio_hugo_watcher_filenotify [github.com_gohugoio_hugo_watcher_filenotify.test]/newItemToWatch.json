@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 241,
+    "focalfunc": "func newItemToWatch(filename string) (*itemToWatch, error)",
+    "funcbody": "func newItemToWatch(filename string) (*itemToWatch, error) {\n\tr := &recording{\n\t\tentries: make(map[string]os.FileInfo),\n\t}\n\terr := r.record(filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &itemToWatch{filename: filename, left: r}, nil\n}",
+    "funcname": "newItemToWatch"
+}

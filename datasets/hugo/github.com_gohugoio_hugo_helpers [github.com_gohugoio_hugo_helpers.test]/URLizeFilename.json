@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 36,
+    "focalfunc": "func (p *PathSpec) URLizeFilename(filename string) string",
+    "funcbody": "func (p *PathSpec) URLizeFilename(filename string) string {\n\treturn p.URLEscape(filepath.ToSlash(filename))\n}",
+    "funcname": "URLizeFilename"
+}

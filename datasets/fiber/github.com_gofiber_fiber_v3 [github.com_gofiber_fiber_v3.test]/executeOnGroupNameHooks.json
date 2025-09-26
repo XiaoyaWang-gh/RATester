@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 169,
+    "focalfunc": "func (h *Hooks) executeOnGroupNameHooks(group Group) error",
+    "funcbody": "func (h *Hooks) executeOnGroupNameHooks(group Group) error {\n\n\tif h.app.mountFields.mountPath != \"\" {\n\t\tgroup.Prefix = h.app.mountFields.mountPath + group.Prefix\n\t}\n\n\tfor _, v := range h.onGroupName {\n\t\tif err := v(group); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "executeOnGroupNameHooks"
+}

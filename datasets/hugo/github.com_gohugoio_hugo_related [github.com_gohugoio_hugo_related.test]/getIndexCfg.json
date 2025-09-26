@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 167,
+    "focalfunc": "func (idx *InvertedIndex) getIndexCfg(name string) (IndexConfig, bool)",
+    "funcbody": "func (idx *InvertedIndex) getIndexCfg(name string) (IndexConfig, bool) {\n\tfor _, conf := range idx.cfg.Indices {\n\t\tif conf.Name == name {\n\t\t\treturn conf, true\n\t\t}\n\t}\n\n\treturn IndexConfig{}, false\n}",
+    "funcname": "getIndexCfg"
+}

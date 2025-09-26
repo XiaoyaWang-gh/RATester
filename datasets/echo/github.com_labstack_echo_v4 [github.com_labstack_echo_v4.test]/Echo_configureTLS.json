@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 756,
+    "focalfunc": "func (e *Echo) configureTLS(address string)",
+    "funcbody": "func (e *Echo) configureTLS(address string) {\n\ts := e.TLSServer\n\ts.Addr = address\n\tif !e.DisableHTTP2 {\n\t\ts.TLSConfig.NextProtos = append(s.TLSConfig.NextProtos, \"h2\")\n\t}\n}",
+    "funcname": "configureTLS"
+}

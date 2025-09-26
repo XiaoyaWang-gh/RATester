@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/bufferpool.go",
+    "lineno": 25,
+    "focalfunc": "func (b *bufferPool) Put(bytes []byte)",
+    "funcbody": "func (b *bufferPool) Put(bytes []byte) {\n\tb.pool.Put(bytes)\n}",
+    "funcname": "Put"
+}

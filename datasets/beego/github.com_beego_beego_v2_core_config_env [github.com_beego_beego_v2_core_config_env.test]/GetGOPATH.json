@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 159,
+    "focalfunc": "func GetGOPATH() string",
+    "funcbody": "func GetGOPATH() string {\n\n\tgopath := strings.TrimSpace(Get(\"GOPATH\", \"\"))\n\tif gopath == \"\" {\n\t\tvar err error\n\n\t\tgopath, err = GetRuntimeEnv(\"GOPATH\")\n\t\tif err != nil {\n\n\t\t\treturn build.Default.GOPATH\n\t\t}\n\t\tif gopath == \"\" {\n\t\t\treturn build.Default.GOPATH\n\t\t}\n\t\treturn gopath\n\t}\n\treturn gopath\n}",
+    "funcname": "GetGOPATH"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 171,
+    "focalfunc": "func (l *lexer) thisItem(t itemType) item",
+    "funcbody": "func (l *lexer) thisItem(t itemType) item {\n\ti := item{t, l.start, l.input[l.start:l.pos], l.startLine}\n\tl.start = l.pos\n\tl.startLine = l.line\n\treturn i\n}",
+    "funcname": "thisItem"
+}

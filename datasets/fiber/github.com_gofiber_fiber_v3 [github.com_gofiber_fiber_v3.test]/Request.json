@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 471,
+    "focalfunc": "func (c *DefaultCtx) Request() *fasthttp.Request",
+    "funcbody": "func (c *DefaultCtx) Request() *fasthttp.Request {\n\treturn &c.fasthttp.Request\n}",
+    "funcname": "Request"
+}

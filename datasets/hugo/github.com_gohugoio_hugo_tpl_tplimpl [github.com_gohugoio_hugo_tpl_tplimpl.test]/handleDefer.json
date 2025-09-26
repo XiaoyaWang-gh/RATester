@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 210,
+    "focalfunc": "func (c *templateContext) handleDefer(withNode *parse.WithNode)",
+    "funcbody": "func (c *templateContext) handleDefer(withNode *parse.WithNode) {\n\tif len(withNode.Pipe.Cmds) != 1 {\n\t\treturn\n\t}\n\tcmd := withNode.Pipe.Cmds[0]\n\tif len(cmd.Args) != 1 {\n\t\treturn\n\t}\n\tidArg := cmd.Args[0]\n\n\tp, ok := idArg.(*parse.PipeNode)\n\tif !ok {\n\t\treturn\n\t}\n\n\tif len(p.Cmds) != 1 {\n\t\treturn\n\t}\n\n\tcmd = p.Cmds[0]\n\n\tif len(cmd.Args) != 2 {\n\t\treturn\n\t}\n\n\tidArg = cmd.Args[0]\n\n\tid, ok := idArg.(*parse.ChainNode)\n\tif !ok || len(id.Field) != 1 || id.Field[0] != \"Defer\" {\n\t\treturn\n\t}\n\tif id2, ok := id.Node.(*parse.IdentifierNode); !ok || id2.Ident != \"templates\" {\n\t\treturn\n\t}\n\n\tdeferArg := cmd.Args[1]\n\tcmd.Args = []parse.Node{idArg}\n\n\tl := doDefer.CopyList()\n\tn := l.Nodes[0].(*parse.ActionNode)\n\n\tinner := withNode.List.CopyList()\n\ts := inner.String()\n\tif strings.Contains(s, \"resources.PostProcess\") {\n\t\tc.err = errors.New(\"resources.PostProcess cannot be used in a deferred template\")\n\t\treturn\n\t}\n\tinnerHash := hashing.XxHashFromStringHexEncoded(s)\n\tdeferredID := tpl.HugoDeferredTemplatePrefix + innerHash\n\n\tc.deferNodes[deferredID] = inner\n\twithNode.List = l\n\n\tn.Pipe.Cmds[0].Args[1].(*parse.PipeNode).Cmds[0].Args[0].(*parse.StringNode).Text = deferredID\n\tn.Pipe.Cmds[0].Args[2] = deferArg\n}",
+    "funcname": "handleDefer"
+}

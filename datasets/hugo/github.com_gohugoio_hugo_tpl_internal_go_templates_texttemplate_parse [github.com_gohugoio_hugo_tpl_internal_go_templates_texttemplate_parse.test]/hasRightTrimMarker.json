@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 684,
+    "focalfunc": "func hasRightTrimMarker(s string) bool",
+    "funcbody": "func hasRightTrimMarker(s string) bool {\n\treturn len(s) >= 2 && isSpace(rune(s[0])) && s[1] == trimMarker\n}",
+    "funcname": "hasRightTrimMarker"
+}

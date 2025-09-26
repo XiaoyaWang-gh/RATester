@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 264,
+    "focalfunc": "func (t *TxDB) ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error)",
+    "funcbody": "func (t *TxDB) ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error) {\n\treturn t.tx.ExecContext(ctx, query, args...)\n}",
+    "funcname": "ExecContext"
+}

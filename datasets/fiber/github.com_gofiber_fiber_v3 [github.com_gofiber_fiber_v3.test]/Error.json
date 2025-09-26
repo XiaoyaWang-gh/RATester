@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 777,
+    "focalfunc": "func (e *Error) Error() string",
+    "funcbody": "func (e *Error) Error() string {\n\treturn e.Message\n}",
+    "funcname": "Error"
+}

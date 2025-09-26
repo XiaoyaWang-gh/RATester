@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 416,
+    "focalfunc": "func (e TextSegmentError) Unwrap() error",
+    "funcbody": "func (e TextSegmentError) Unwrap() error {\n\treturn e.Err\n}",
+    "funcname": "Unwrap"
+}

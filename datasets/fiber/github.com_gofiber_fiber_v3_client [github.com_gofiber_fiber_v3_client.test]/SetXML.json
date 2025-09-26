@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 334,
+    "focalfunc": "func (r *Request) SetXML(v any) *Request",
+    "funcbody": "func (r *Request) SetXML(v any) *Request {\n\tr.body = v\n\tr.bodyType = xmlBody\n\treturn r\n}",
+    "funcname": "SetXML"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 194,
+    "focalfunc": "func GetExecEnviron(workDir string, cfg config.AllProvider, fs afero.Fs) []string",
+    "funcbody": "func GetExecEnviron(workDir string, cfg config.AllProvider, fs afero.Fs) []string {\n\tvar env []string\n\tnodepath := filepath.Join(workDir, \"node_modules\")\n\tif np := os.Getenv(\"NODE_PATH\"); np != \"\" {\n\t\tnodepath = workDir + string(os.PathListSeparator) + np\n\t}\n\tconfig.SetEnvVars(&env, \"NODE_PATH\", nodepath)\n\tconfig.SetEnvVars(&env, \"PWD\", workDir)\n\tconfig.SetEnvVars(&env, \"HUGO_ENVIRONMENT\", cfg.Environment())\n\tconfig.SetEnvVars(&env, \"HUGO_ENV\", cfg.Environment())\n\tconfig.SetEnvVars(&env, \"HUGO_PUBLISHDIR\", filepath.Join(workDir, cfg.BaseConfig().PublishDir))\n\n\tif fs != nil {\n\t\tvar fis []iofs.DirEntry\n\t\td, err := fs.Open(files.FolderJSConfig)\n\t\tif err == nil {\n\t\t\tfis, err = d.(iofs.ReadDirFile).ReadDir(-1)\n\t\t}\n\n\t\tif err == nil {\n\t\t\tfor _, fi := range fis {\n\t\t\t\tkey := fmt.Sprintf(\"HUGO_FILE_%s\", strings.ReplaceAll(strings.ToUpper(fi.Name()), \".\", \"_\"))\n\t\t\t\tvalue := fi.(hugofs.FileMetaInfo).Meta().Filename\n\t\t\t\tconfig.SetEnvVars(&env, key, value)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn env\n}",
+    "funcname": "GetExecEnviron"
+}

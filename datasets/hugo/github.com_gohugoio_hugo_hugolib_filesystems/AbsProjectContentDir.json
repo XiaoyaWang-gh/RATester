@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 165,
+    "focalfunc": "func (b *BaseFs) AbsProjectContentDir(filename string) (string, string, error)",
+    "funcbody": "func (b *BaseFs) AbsProjectContentDir(filename string) (string, string, error) {\n\tisAbs := filepath.IsAbs(filename)\n\tfor _, fi := range b.mountsForComponent(files.ComponentFolderContent) {\n\t\tif !fi.IsDir() {\n\t\t\tcontinue\n\t\t}\n\t\tmeta := fi.Meta()\n\t\tif !meta.IsProject {\n\t\t\tcontinue\n\t\t}\n\n\t\tif isAbs {\n\t\t\tif strings.HasPrefix(filename, meta.Filename) {\n\t\t\t\treturn strings.TrimPrefix(filename, meta.Filename+filePathSeparator), filename, nil\n\t\t\t}\n\t\t} else {\n\t\t\tcontentDir := strings.TrimPrefix(strings.TrimPrefix(meta.Filename, meta.BaseDir), filePathSeparator) + filePathSeparator\n\n\t\t\tif strings.HasPrefix(filename, contentDir) {\n\t\t\t\trelFilename := strings.TrimPrefix(filename, contentDir)\n\t\t\t\tabsFilename := filepath.Join(meta.Filename, relFilename)\n\t\t\t\treturn relFilename, absFilename, nil\n\t\t\t}\n\t\t}\n\n\t}\n\n\tif !isAbs {\n\n\t\tfor _, dir := range b.SourceFilesystems.Content.mounts() {\n\t\t\tif !dir.IsDir() {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tmeta := dir.Meta()\n\t\t\tif meta.IsProject {\n\t\t\t\treturn filename, filepath.Join(meta.Filename, filename), nil\n\t\t\t}\n\t\t}\n\t}\n\n\treturn \"\", \"\", fmt.Errorf(\"could not determine content directory for %q\", filename)\n}",
+    "funcname": "AbsProjectContentDir"
+}

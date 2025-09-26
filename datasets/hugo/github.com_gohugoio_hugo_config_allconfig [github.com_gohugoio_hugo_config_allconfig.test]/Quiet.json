@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 132,
+    "focalfunc": "func (c ConfigLanguage) Quiet() bool",
+    "funcbody": "func (c ConfigLanguage) Quiet() bool {\n\treturn c.m.Base.Internal.Quiet\n}",
+    "funcname": "Quiet"
+}

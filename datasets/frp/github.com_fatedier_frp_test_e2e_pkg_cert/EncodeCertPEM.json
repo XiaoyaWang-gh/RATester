@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/cert/selfsigned.go",
+    "lineno": 163,
+    "focalfunc": "func EncodeCertPEM(ct *x509.Certificate) []byte",
+    "funcbody": "func EncodeCertPEM(ct *x509.Certificate) []byte {\n\tblock := pem.Block{\n\t\tType:\tcert.CertificateBlockType,\n\t\tBytes:\tct.Raw,\n\t}\n\treturn pem.EncodeToMemory(&block)\n}",
+    "funcname": "EncodeCertPEM"
+}

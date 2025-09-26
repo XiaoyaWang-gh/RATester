@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/basic_auth.go",
+    "lineno": 32,
+    "focalfunc": "func NewBasic(ctx context.Context, next http.Handler, authConfig dynamic.BasicAuth, name string) (http.Handler, error)",
+    "funcbody": "func NewBasic(ctx context.Context, next http.Handler, authConfig dynamic.BasicAuth, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeNameBasic).Debug().Msg(\"Creating middleware\")\n\n\tusers, err := getUsers(authConfig.UsersFile, authConfig.Users, basicUserParser)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tba := &basicAuth{\n\t\tnext:\t\tnext,\n\t\tusers:\t\tusers,\n\t\theaderField:\tauthConfig.HeaderField,\n\t\tremoveHeader:\tauthConfig.RemoveHeader,\n\t\tname:\t\tname,\n\t}\n\n\trealm := defaultRealm\n\tif len(authConfig.Realm) > 0 {\n\t\trealm = authConfig.Realm\n\t}\n\n\tba.auth = &goauth.BasicAuth{Realm: realm, Secrets: ba.secretBasic}\n\n\treturn ba, nil\n}",
+    "funcname": "NewBasic"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/config.go",
+    "lineno": 93,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Next == nil {\n\t\tcfg.Next = ConfigDefault.Next\n\t}\n\tif int(cfg.Expiration.Seconds()) == 0 {\n\t\tcfg.Expiration = ConfigDefault.Expiration\n\t}\n\tif cfg.CacheHeader == \"\" {\n\t\tcfg.CacheHeader = ConfigDefault.CacheHeader\n\t}\n\tif cfg.KeyGenerator == nil {\n\t\tcfg.KeyGenerator = ConfigDefault.KeyGenerator\n\t}\n\tif len(cfg.Methods) == 0 {\n\t\tcfg.Methods = ConfigDefault.Methods\n\t}\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

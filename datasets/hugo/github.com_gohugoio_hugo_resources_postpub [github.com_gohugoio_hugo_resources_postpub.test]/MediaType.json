@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 155,
+    "focalfunc": "func (r *PostPublishResource) MediaType() map[string]any",
+    "funcbody": "func (r *PostPublishResource) MediaType() map[string]any {\n\tm := structToMapWithPlaceholders(\"MediaType\", media.Type{}, r.field)\n\treturn m\n}",
+    "funcname": "MediaType"
+}

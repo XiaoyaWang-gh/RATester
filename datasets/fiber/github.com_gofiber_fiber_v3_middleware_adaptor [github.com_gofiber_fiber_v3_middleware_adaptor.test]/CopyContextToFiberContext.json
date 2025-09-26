@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/adaptor/adaptor.go",
+    "lineno": 53,
+    "focalfunc": "func CopyContextToFiberContext(context any, requestContext *fasthttp.RequestCtx)",
+    "funcbody": "func CopyContextToFiberContext(context any, requestContext *fasthttp.RequestCtx) {\n\tcontextValues := reflect.ValueOf(context).Elem()\n\tcontextKeys := reflect.TypeOf(context).Elem()\n\n\tif contextKeys.Kind() != reflect.Struct {\n\t\treturn\n\t}\n\n\tvar lastKey any\n\tfor i := 0; i < contextValues.NumField(); i++ {\n\t\treflectValue := contextValues.Field(i)\n\t\treflectField := contextKeys.Field(i)\n\n\t\tif reflectField.Name == \"noCopy\" {\n\t\t\tbreak\n\t\t}\n\n\t\tif reflectValue.CanAddr() {\n\n\t\t\treflectValue = reflect.NewAt(reflectValue.Type(), unsafe.Pointer(reflectValue.UnsafeAddr())).Elem()\n\t\t}\n\n\t\tswitch reflectField.Name {\n\t\tcase \"Context\":\n\t\t\tCopyContextToFiberContext(reflectValue.Interface(), requestContext)\n\t\tcase \"key\":\n\t\t\tlastKey = reflectValue.Interface()\n\t\tcase \"val\":\n\t\t\tif lastKey != nil {\n\t\t\t\trequestContext.SetUserValue(lastKey, reflectValue.Interface())\n\t\t\t\tlastKey = nil\n\t\t\t}\n\t\tdefault:\n\t\t\tcontinue\n\t\t}\n\t}\n}",
+    "funcname": "CopyContextToFiberContext"
+}

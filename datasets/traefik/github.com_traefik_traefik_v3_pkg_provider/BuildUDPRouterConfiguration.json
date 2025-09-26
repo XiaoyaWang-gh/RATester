@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 438,
+    "focalfunc": "func BuildUDPRouterConfiguration(ctx context.Context, configuration *dynamic.UDPConfiguration)",
+    "funcbody": "func BuildUDPRouterConfiguration(ctx context.Context, configuration *dynamic.UDPConfiguration) {\n\tfor routerName, router := range configuration.Routers {\n\t\tloggerRouter := log.Ctx(ctx).With().Str(logs.RouterName, routerName).Logger()\n\n\t\tif router.Service != \"\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tif len(configuration.Services) > 1 {\n\t\t\tdelete(configuration.Routers, routerName)\n\t\t\tloggerRouter.Error().\n\t\t\t\tMsgf(\"Router %s cannot be linked automatically with multiple Services: %q\", routerName, maps.Keys(configuration.Services))\n\t\t\tcontinue\n\t\t}\n\n\t\tfor serviceName := range configuration.Services {\n\t\t\trouter.Service = serviceName\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "BuildUDPRouterConfiguration"
+}

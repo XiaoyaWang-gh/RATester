@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 186,
+    "focalfunc": "func (e *Email) Attach(r io.Reader, filename string, args ...string) (a *Attachment, err error)",
+    "funcbody": "func (e *Email) Attach(r io.Reader, filename string, args ...string) (a *Attachment, err error) {\n\tif len(args) < 1 || len(args) > 2 {\n\t\terr = errors.New(\"Must specify the file type and number of parameters can not exceed at least two\")\n\t\treturn\n\t}\n\tc := args[0]\n\tid := \"\"\n\tif len(args) > 1 {\n\t\tid = args[1]\n\t}\n\tvar buffer bytes.Buffer\n\tif _, err = io.Copy(&buffer, r); err != nil {\n\t\treturn\n\t}\n\tat := &Attachment{\n\t\tFilename:\tfilename,\n\t\tHeader:\t\ttextproto.MIMEHeader{},\n\t\tContent:\tbuffer.Bytes(),\n\t}\n\n\tif c != \"\" {\n\t\tat.Header.Set(\"Content-Type\", c)\n\t} else {\n\n\t\tat.Header.Set(\"Content-Type\", \"application/octet-stream\")\n\t}\n\tif id != \"\" {\n\t\tat.Header.Set(\"Content-Disposition\", fmt.Sprintf(\"inline;\\r\\n filename=\\\"%s\\\"\", filename))\n\t\tat.Header.Set(\"Content-ID\", fmt.Sprintf(\"<%s>\", id))\n\t} else {\n\t\tat.Header.Set(\"Content-Disposition\", fmt.Sprintf(\"attachment;\\r\\n filename=\\\"%s\\\"\", filename))\n\t}\n\tat.Header.Set(\"Content-Transfer-Encoding\", \"base64\")\n\te.Attachments = append(e.Attachments, at)\n\treturn at, nil\n}",
+    "funcname": "Attach"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 579,
+    "focalfunc": "func (b *BeegoHTTPRequest) Bytes() ([]byte, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) Bytes() ([]byte, error) {\n\tif b.body != nil {\n\t\treturn b.body, nil\n\t}\n\tresp, err := b.getResponse()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif resp.Body == nil {\n\t\treturn nil, nil\n\t}\n\tdefer resp.Body.Close()\n\tif b.setting.Gzip && resp.Header.Get(\"Content-Encoding\") == \"gzip\" {\n\t\treader, err := gzip.NewReader(resp.Body)\n\t\tif err != nil {\n\t\t\treturn nil, berror.Wrap(err, ReadGzipBodyFailed, \"building gzip reader failed\")\n\t\t}\n\t\tb.body, err = io.ReadAll(reader)\n\t\treturn b.body, berror.Wrap(err, ReadGzipBodyFailed, \"reading gzip data failed\")\n\t}\n\tb.body, err = io.ReadAll(resp.Body)\n\treturn b.body, err\n}",
+    "funcname": "Bytes"
+}

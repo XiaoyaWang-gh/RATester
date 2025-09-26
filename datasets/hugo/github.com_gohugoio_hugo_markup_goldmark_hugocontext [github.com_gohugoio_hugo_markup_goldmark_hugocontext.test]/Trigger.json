@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 123,
+    "focalfunc": "func (a *hugoContextParser) Trigger() []byte",
+    "funcbody": "func (a *hugoContextParser) Trigger() []byte {\n\treturn []byte{'{'}\n}",
+    "funcname": "Trigger"
+}

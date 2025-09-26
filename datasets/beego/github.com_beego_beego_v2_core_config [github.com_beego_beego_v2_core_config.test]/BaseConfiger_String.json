@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 177,
+    "focalfunc": "func (c *BaseConfiger) String(key string) (string, error)",
+    "funcbody": "func (c *BaseConfiger) String(key string) (string, error) {\n\treturn c.reader(context.TODO(), key)\n}",
+    "funcname": "String"
+}

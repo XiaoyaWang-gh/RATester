@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 68,
+    "focalfunc": "func longestCommonPrefix(a, b string) int",
+    "funcbody": "func longestCommonPrefix(a, b string) int {\n\ti := 0\n\tmax_ := min(len(a), len(b))\n\tfor i < max_ && a[i] == b[i] {\n\t\ti++\n\t}\n\treturn i\n}",
+    "funcname": "longestCommonPrefix"
+}

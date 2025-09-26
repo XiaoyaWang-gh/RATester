@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/response_modifier.go",
+    "lineno": 82,
+    "focalfunc": "func (r *ResponseModifier) Write(b []byte) (int, error)",
+    "funcbody": "func (r *ResponseModifier) Write(b []byte) (int, error) {\n\tr.WriteHeader(r.code)\n\tif r.modifierErr != nil {\n\t\treturn 0, r.modifierErr\n\t}\n\n\treturn r.rw.Write(b)\n}",
+    "funcname": "Write"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 87,
+    "focalfunc": "func HasParallelism() bool",
+    "funcbody": "func HasParallelism() bool {\n\tswitch runtime.GOOS {\n\tcase \"js\", \"wasip1\":\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "HasParallelism"
+}

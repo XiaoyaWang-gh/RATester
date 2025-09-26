@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 208,
+    "focalfunc": "func (c *Controller) Options()",
+    "funcbody": "func (c *Controller) Options() {\n\thttp.Error(c.Ctx.ResponseWriter, \"Method Not Allowed\", http.StatusMethodNotAllowed)\n}",
+    "funcname": "Options"
+}

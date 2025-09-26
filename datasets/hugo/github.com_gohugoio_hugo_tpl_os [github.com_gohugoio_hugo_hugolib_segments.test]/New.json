@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/os/os.go",
+    "lineno": 32,
+    "focalfunc": "func New(d *deps.Deps) *Namespace",
+    "funcbody": "func New(d *deps.Deps) *Namespace {\n\tvar readFileFs, workFs afero.Fs\n\n\tif d.PathSpec != nil {\n\t\treadFileFs = overlayfs.New(overlayfs.Options{\n\t\t\tFss: []afero.Fs{\n\t\t\t\td.PathSpec.BaseFs.Work,\n\t\t\t\td.PathSpec.BaseFs.Content.Fs,\n\t\t\t},\n\t\t})\n\n\t\tworkFs = d.PathSpec.BaseFs.WorkDir\n\t}\n\n\treturn &Namespace{\n\t\treadFileFs:\treadFileFs,\n\t\tworkFs:\t\tworkFs,\n\t\tdeps:\t\td,\n\t}\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 42,
+    "focalfunc": "func (p Pos) Position() Pos",
+    "funcbody": "func (p Pos) Position() Pos {\n\treturn p\n}",
+    "funcname": "Position"
+}

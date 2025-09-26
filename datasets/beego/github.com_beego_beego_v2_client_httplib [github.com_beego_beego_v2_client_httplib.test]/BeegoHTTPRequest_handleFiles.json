@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 388,
+    "focalfunc": "func (b *BeegoHTTPRequest) handleFiles()",
+    "funcbody": "func (b *BeegoHTTPRequest) handleFiles() {\n\tpr, pw := io.Pipe()\n\tbodyWriter := multipart.NewWriter(pw)\n\tgo func() {\n\t\tfor formname, filename := range b.files {\n\t\t\tb.handleFileToBody(bodyWriter, formname, filename)\n\t\t}\n\t\tfor k, v := range b.params {\n\t\t\tfor _, vv := range v {\n\t\t\t\t_ = bodyWriter.WriteField(k, vv)\n\t\t\t}\n\t\t}\n\t\t_ = bodyWriter.Close()\n\t\t_ = pw.Close()\n\t}()\n\tb.Header(contentTypeKey, bodyWriter.FormDataContentType())\n\tb.req.Body = io.NopCloser(pr)\n\tb.Header(\"Transfer-Encoding\", \"chunked\")\n}",
+    "funcname": "handleFiles"
+}

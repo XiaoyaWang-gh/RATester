@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/request_decorator.go",
+    "lineno": 86,
+    "focalfunc": "func WrapHandler(handler *RequestDecorator) alice.Constructor",
+    "funcbody": "func WrapHandler(handler *RequestDecorator) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\t\thandler.ServeHTTP(rw, req, next.ServeHTTP)\n\t\t}), nil\n\t}\n}",
+    "funcname": "WrapHandler"
+}

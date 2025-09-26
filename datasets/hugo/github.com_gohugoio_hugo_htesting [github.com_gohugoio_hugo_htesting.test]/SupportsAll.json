@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 120,
+    "focalfunc": "func SupportsAll() bool",
+    "funcbody": "func SupportsAll() bool {\n\treturn IsGitHubAction() || os.Getenv(\"CI_LOCAL\") != \"\"\n}",
+    "funcname": "SupportsAll"
+}

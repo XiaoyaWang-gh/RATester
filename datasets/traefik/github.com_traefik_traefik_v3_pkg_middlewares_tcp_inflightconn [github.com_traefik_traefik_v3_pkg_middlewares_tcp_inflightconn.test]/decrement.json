@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/tcp/inflightconn/inflight_conn.go",
+    "lineno": 81,
+    "focalfunc": "func (i *inFlightConn) decrement(ip string)",
+    "funcbody": "func (i *inFlightConn) decrement(ip string) {\n\ti.mu.Lock()\n\tdefer i.mu.Unlock()\n\n\tif i.connections[ip] <= 0 {\n\t\treturn\n\t}\n\n\ti.connections[ip]--\n}",
+    "funcname": "decrement"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/process.go",
+    "lineno": 94,
+    "focalfunc": "func (f *Framework) GenerateConfigFile(content string) string",
+    "funcbody": "func (f *Framework) GenerateConfigFile(content string) string {\n\tf.configFileIndex++\n\tpath := filepath.Join(f.TempDirectory, fmt.Sprintf(\"frp-e2e-config-%d\", f.configFileIndex))\n\terr := os.WriteFile(path, []byte(content), 0o600)\n\tExpectNoError(err)\n\treturn path\n}",
+    "funcname": "GenerateConfigFile"
+}

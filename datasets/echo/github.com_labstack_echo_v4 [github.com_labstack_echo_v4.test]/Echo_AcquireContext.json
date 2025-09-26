@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 642,
+    "focalfunc": "func (e *Echo) AcquireContext() Context",
+    "funcbody": "func (e *Echo) AcquireContext() Context {\n\treturn e.pool.Get().(Context)\n}",
+    "funcname": "AcquireContext"
+}

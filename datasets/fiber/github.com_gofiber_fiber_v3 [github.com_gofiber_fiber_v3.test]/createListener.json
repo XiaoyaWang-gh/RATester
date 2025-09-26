@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/listen.go",
+    "lineno": 261,
+    "focalfunc": "func (*App) createListener(addr string, tlsConfig *tls.Config, cfg ListenConfig) (net.Listener, error)",
+    "funcbody": "func (*App) createListener(addr string, tlsConfig *tls.Config, cfg ListenConfig) (net.Listener, error) {\n\tvar listener net.Listener\n\tvar err error\n\n\tif tlsConfig != nil {\n\t\tlistener, err = tls.Listen(cfg.ListenerNetwork, addr, tlsConfig)\n\t} else {\n\t\tlistener, err = net.Listen(cfg.ListenerNetwork, addr)\n\t}\n\n\tif err != nil {\n\n\t\treturn nil, fmt.Errorf(\"failed to listen: %w\", err)\n\t}\n\n\tif cfg.ListenerAddrFunc != nil {\n\t\tcfg.ListenerAddrFunc(listener.Addr())\n\t}\n\n\treturn listener, nil\n}",
+    "funcname": "createListener"
+}

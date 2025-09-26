@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 730,
+    "focalfunc": "func SetLogger(adapter string, config ...string) error",
+    "funcbody": "func SetLogger(adapter string, config ...string) error {\n\treturn beeLogger.SetLogger(adapter, config...)\n}",
+    "funcname": "SetLogger"
+}

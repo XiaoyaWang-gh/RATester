@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/translationProvider.go",
+    "lineno": 129,
+    "focalfunc": "func errWithFileContext(inerr error, r *source.File) error",
+    "funcbody": "func errWithFileContext(inerr error, r *source.File) error {\n\tmeta := r.FileInfo().Meta()\n\trealFilename := meta.Filename\n\tf, err := meta.Open()\n\tif err != nil {\n\t\treturn inerr\n\t}\n\tdefer f.Close()\n\n\treturn herrors.NewFileErrorFromName(inerr, realFilename).UpdateContent(f, nil)\n}",
+    "funcname": "errWithFileContext"
+}

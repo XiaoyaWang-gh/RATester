@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/fileInfo.go",
+    "lineno": 30,
+    "focalfunc": "func (fi *fileInfo) Open() (afero.File, error)",
+    "funcbody": "func (fi *fileInfo) Open() (afero.File, error) {\n\tf, err := fi.FileInfo().Meta().Open()\n\tif err != nil {\n\t\terr = fmt.Errorf(\"fileInfo: %w\", err)\n\t}\n\n\treturn f, err\n}",
+    "funcname": "Open"
+}

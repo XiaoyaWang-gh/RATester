@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 118,
+    "focalfunc": "func (o *ObservabilityMgr) SemConvMetricsRegistry() *metrics.SemConvMetricsRegistry",
+    "funcbody": "func (o *ObservabilityMgr) SemConvMetricsRegistry() *metrics.SemConvMetricsRegistry {\n\tif o == nil {\n\t\treturn nil\n\t}\n\n\treturn o.semConvMetricRegistry\n}",
+    "funcname": "SemConvMetricsRegistry"
+}

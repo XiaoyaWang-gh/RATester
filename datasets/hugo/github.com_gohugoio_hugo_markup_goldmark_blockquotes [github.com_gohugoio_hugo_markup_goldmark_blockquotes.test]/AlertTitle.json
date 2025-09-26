@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/blockquotes/blockquotes.go",
+    "lineno": 150,
+    "focalfunc": "func (c *blockquoteContext) AlertTitle() hstring.HTML",
+    "funcbody": "func (c *blockquoteContext) AlertTitle() hstring.HTML {\n\treturn hstring.HTML(c.alert.title)\n}",
+    "funcname": "AlertTitle"
+}

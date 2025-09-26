@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/encoding/init.go",
+    "lineno": 25,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx := New()\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.Base64Decode,\n\t\t\t[]string{\"base64Decode\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"SGVsbG8gd29ybGQ=\" | base64Decode }}`, `Hello world`},\n\t\t\t\t{`{{ 42 | base64Encode | base64Decode }}`, `42`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.Base64Encode,\n\t\t\t[]string{\"base64Encode\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"Hello world\" | base64Encode }}`, `SGVsbG8gd29ybGQ=`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.Jsonify,\n\t\t\t[]string{\"jsonify\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ (slice \"A\" \"B\" \"C\") | jsonify }}`, `[\"A\",\"B\",\"C\"]`},\n\t\t\t\t{`{{ (slice \"A\" \"B\" \"C\") | jsonify (dict \"indent\" \"  \") }}`, \"[\\n  \\\"A\\\",\\n  \\\"B\\\",\\n  \\\"C\\\"\\n]\"},\n\t\t\t},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

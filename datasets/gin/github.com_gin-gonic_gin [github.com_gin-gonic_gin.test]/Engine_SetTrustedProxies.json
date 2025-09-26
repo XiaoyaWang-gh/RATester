@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 428,
+    "focalfunc": "func (engine *Engine) SetTrustedProxies(trustedProxies []string) error",
+    "funcbody": "func (engine *Engine) SetTrustedProxies(trustedProxies []string) error {\n\tengine.trustedProxies = trustedProxies\n\treturn engine.parseTrustedProxies()\n}",
+    "funcname": "SetTrustedProxies"
+}

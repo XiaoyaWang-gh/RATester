@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/job/job.go",
+    "lineno": 33,
+    "focalfunc": "func (b *BackOff) NextBackOff() time.Duration",
+    "funcbody": "func (b *BackOff) NextBackOff() time.Duration {\n\tif b.GetElapsedTime() >= b.MinJobInterval {\n\t\tb.Reset()\n\t}\n\treturn b.ExponentialBackOff.NextBackOff()\n}",
+    "funcname": "NextBackOff"
+}

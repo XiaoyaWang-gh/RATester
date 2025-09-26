@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefix/strip_prefix.go",
+    "lineno": 48,
+    "focalfunc": "func (s *stripPrefix) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (s *stripPrefix) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn s.name, typeName, trace.SpanKindUnspecified\n}",
+    "funcname": "GetTracingInformation"
+}

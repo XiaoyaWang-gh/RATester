@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 644,
+    "focalfunc": "func GetReqHeader[V GenericType](c Ctx, key string, defaultValue ...V) V",
+    "funcbody": "func GetReqHeader[V GenericType](c Ctx, key string, defaultValue ...V) V {\n\tvar v V\n\treturn genericParseType[V](c.App().getString(c.Request().Header.Peek(key)), v, defaultValue...)\n}",
+    "funcname": "GetReqHeader"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/middlewarewasm.go",
+    "lineno": 27,
+    "focalfunc": "func newWasmMiddlewareBuilder(goPath, moduleName, wasmPath string, settings Settings) (*wasmMiddlewareBuilder, error)",
+    "funcbody": "func newWasmMiddlewareBuilder(goPath, moduleName, wasmPath string, settings Settings) (*wasmMiddlewareBuilder, error) {\n\tctx := context.Background()\n\tpath := filepath.Join(goPath, \"src\", moduleName, wasmPath)\n\tcache := wazero.NewCompilationCache()\n\n\tcode, err := os.ReadFile(path)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"loading Wasm binary: %w\", err)\n\t}\n\n\trt := wazero.NewRuntimeWithConfig(ctx, wazero.NewRuntimeConfig().WithCompilationCache(cache))\n\tif _, err = rt.CompileModule(ctx, code); err != nil {\n\t\treturn nil, fmt.Errorf(\"compiling guest module: %w\", err)\n\t}\n\n\treturn &wasmMiddlewareBuilder{path: path, cache: cache, settings: settings}, nil\n}",
+    "funcname": "newWasmMiddlewareBuilder"
+}

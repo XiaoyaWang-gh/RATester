@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/managerfactory.go",
+    "lineno": 75,
+    "focalfunc": "func (f *ManagerFactory) Build(configuration *runtime.Configuration) *InternalHandlers",
+    "funcbody": "func (f *ManagerFactory) Build(configuration *runtime.Configuration) *InternalHandlers {\n\tsvcManager := NewManager(configuration.Services, f.observabilityMgr, f.routinesPool, f.roundTripperManager)\n\n\tvar apiHandler http.Handler\n\tif f.api != nil {\n\t\tapiHandler = f.api(configuration)\n\t}\n\n\treturn NewInternalHandlers(svcManager, apiHandler, f.restHandler, f.metricsHandler, f.pingHandler, f.dashboardHandler, f.acmeHTTPHandler)\n}",
+    "funcname": "Build"
+}

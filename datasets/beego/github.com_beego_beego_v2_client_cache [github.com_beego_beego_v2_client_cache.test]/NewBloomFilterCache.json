@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/bloom_filter_cache.go",
+    "lineno": 37,
+    "focalfunc": "func NewBloomFilterCache(cache Cache, ln func(ctx context.Context, key string) (any, error), blm BloomFilter,\n\texpiration time.Duration,\n) (*BloomFilterCache, error)",
+    "funcbody": "func NewBloomFilterCache(cache Cache, ln func(ctx context.Context, key string) (any, error), blm BloomFilter,\n\texpiration time.Duration,\n) (*BloomFilterCache, error) {\n\tif cache == nil || ln == nil || blm == nil {\n\t\treturn nil, berror.Error(InvalidInitParameters, \"missing required parameters\")\n\t}\n\n\treturn &BloomFilterCache{\n\t\tCache:\t\tcache,\n\t\tblm:\t\tblm,\n\t\tloadFunc:\tln,\n\t\texpiration:\texpiration,\n\t}, nil\n}",
+    "funcname": "NewBloomFilterCache"
+}

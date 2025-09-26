@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 226,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertLogMatches(expression string)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertLogMatches(expression string) {\n\ts.Helper()\n\tvar negate bool\n\texpression, negate = s.negate(expression)\n\tre := regexp.MustCompile(expression)\n\tchecker := qt.IsTrue\n\tif negate {\n\t\tchecker = qt.IsFalse\n\t}\n\n\ts.Assert(re.MatchString(s.lastBuildLog), checker, qt.Commentf(s.lastBuildLog))\n}",
+    "funcname": "AssertLogMatches"
+}

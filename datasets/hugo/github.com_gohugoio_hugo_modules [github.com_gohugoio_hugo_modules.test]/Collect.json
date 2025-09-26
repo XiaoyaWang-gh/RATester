@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 508,
+    "focalfunc": "func (c *collector) collect()",
+    "funcbody": "func (c *collector) collect() {\n\tdefer c.logger.PrintTimerIfDelayed(time.Now(), \"hugo: collected modules\")\n\td := debounce.New(2 * time.Second)\n\td(func() {\n\t\tc.logger.Println(\"hugo: downloading modules \u2026\")\n\t})\n\tdefer d(func() {})\n\n\tif err := c.initModules(); err != nil {\n\t\tc.err = err\n\t\treturn\n\t}\n\n\tprojectMod := createProjectModule(c.gomods.GetMain(), c.ccfg.WorkingDir, c.moduleConfig)\n\n\tif err := c.addAndRecurse(projectMod); err != nil {\n\t\tc.err = err\n\t\treturn\n\t}\n\n\tc.modules = append(Modules{projectMod}, c.modules...)\n}",
+    "funcname": "collect"
+}

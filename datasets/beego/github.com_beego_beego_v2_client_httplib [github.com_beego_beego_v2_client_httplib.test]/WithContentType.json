@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 133,
+    "focalfunc": "func WithContentType(contentType string) BeegoHTTPRequestOption",
+    "funcbody": "func WithContentType(contentType string) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.Header(contentTypeKey, contentType)\n\t}\n}",
+    "funcname": "WithContentType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 414,
+    "focalfunc": "func (h *HugoSites) renderDeferred(l logg.LevelLogger) error",
+    "funcbody": "func (h *HugoSites) renderDeferred(l logg.LevelLogger) error {\n\tl = l.WithField(\"step\", \"render deferred\")\n\tstart := time.Now()\n\n\tvar deferredCount int\n\n\tfor rc, de := range h.Deps.BuildState.DeferredExecutionsGroupedByRenderingContext {\n\t\tif de.FilenamesWithPostPrefix.Len() == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tdeferredCount += de.FilenamesWithPostPrefix.Len()\n\n\t\ts := rc.Site.(*Site)\n\t\tfor _, s2 := range h.Sites {\n\t\t\tif err := s2.preparePagesForRender(s == s2, rc.SiteOutIdx); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t\tif err := s.executeDeferredTemplates(de); err != nil {\n\t\t\treturn herrors.ImproveRenderErr(err)\n\t\t}\n\t}\n\n\tloggers.TimeTrackf(l, start, logg.Fields{\n\t\tlogg.Field{Name: \"count\", Value: deferredCount},\n\t}, \"\")\n\n\treturn nil\n}",
+    "funcname": "renderDeferred"
+}

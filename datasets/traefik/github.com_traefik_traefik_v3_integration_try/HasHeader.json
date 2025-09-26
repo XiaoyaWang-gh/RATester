@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 128,
+    "focalfunc": "func HasHeader(header string) ResponseCondition",
+    "funcbody": "func HasHeader(header string) ResponseCondition {\n\treturn func(res *http.Response) error {\n\t\tif _, ok := res.Header[header]; !ok {\n\t\t\treturn errors.New(\"response doesn't contain header: \" + header)\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "HasHeader"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/dartsass/transform.go",
+    "lineno": 55,
+    "focalfunc": "func (t *transform) Key() internal.ResourceTransformationKey",
+    "funcbody": "func (t *transform) Key() internal.ResourceTransformationKey {\n\treturn internal.NewResourceTransformationKey(transformationName, t.optsm)\n}",
+    "funcname": "Key"
+}

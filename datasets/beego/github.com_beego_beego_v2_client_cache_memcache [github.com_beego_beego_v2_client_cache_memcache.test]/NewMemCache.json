@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 52,
+    "focalfunc": "func NewMemCache() cache.Cache",
+    "funcbody": "func NewMemCache() cache.Cache {\n\treturn &Cache{}\n}",
+    "funcname": "NewMemCache"
+}

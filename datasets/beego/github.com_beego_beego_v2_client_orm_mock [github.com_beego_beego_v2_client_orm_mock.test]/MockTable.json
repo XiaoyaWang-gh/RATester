@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 39,
+    "focalfunc": "func MockTable(tableName string, resp ...interface{}) *Mock",
+    "funcbody": "func MockTable(tableName string, resp ...interface{}) *Mock {\n\treturn NewMock(NewSimpleCondition(tableName, \"\"), resp, nil)\n}",
+    "funcname": "MockTable"
+}

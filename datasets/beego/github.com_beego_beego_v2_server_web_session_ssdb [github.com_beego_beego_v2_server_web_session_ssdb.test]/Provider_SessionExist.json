@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 89,
+    "focalfunc": "func (p *Provider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (p *Provider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tif p.client == nil {\n\t\tif err := p.connectInit(); err != nil {\n\t\t\treturn false, err\n\t\t}\n\t}\n\tvalue, err := p.client.Get(sid)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tif value == nil || len(value.(string)) == 0 {\n\t\treturn false, nil\n\t}\n\treturn true, nil\n}",
+    "funcname": "SessionExist"
+}

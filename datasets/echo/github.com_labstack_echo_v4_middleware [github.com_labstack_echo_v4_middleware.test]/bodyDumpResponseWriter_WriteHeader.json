@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 92,
+    "focalfunc": "func (w *bodyDumpResponseWriter) WriteHeader(code int)",
+    "funcbody": "func (w *bodyDumpResponseWriter) WriteHeader(code int) {\n\tw.ResponseWriter.WriteHeader(code)\n}",
+    "funcname": "WriteHeader"
+}

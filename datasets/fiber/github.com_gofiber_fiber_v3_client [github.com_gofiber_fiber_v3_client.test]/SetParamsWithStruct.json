@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 711,
+    "focalfunc": "func (p PathParam) SetParamsWithStruct(v any)",
+    "funcbody": "func (p PathParam) SetParamsWithStruct(v any) {\n\tSetValWithStruct(p, \"path\", v)\n}",
+    "funcname": "SetParamsWithStruct"
+}

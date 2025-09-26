@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/resource.go",
+    "lineno": 70,
+    "focalfunc": "func NotFoundResponse() *http.Response",
+    "funcbody": "func NotFoundResponse() *http.Response {\n\theader := make(http.Header)\n\theader.Set(\"server\", \"frp/\"+version.Full())\n\theader.Set(\"Content-Type\", \"text/html\")\n\n\tcontent := getNotFoundPageContent()\n\tres := &http.Response{\n\t\tStatus:\t\t\"Not Found\",\n\t\tStatusCode:\t404,\n\t\tProto:\t\t\"HTTP/1.1\",\n\t\tProtoMajor:\t1,\n\t\tProtoMinor:\t1,\n\t\tHeader:\t\theader,\n\t\tBody:\t\tio.NopCloser(bytes.NewReader(content)),\n\t\tContentLength:\tint64(len(content)),\n\t}\n\treturn res\n}",
+    "funcname": "NotFoundResponse"
+}

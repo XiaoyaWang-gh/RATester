@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 45,
+    "focalfunc": "func CreateTempDir(fs afero.Fs, prefix string) (string, func(), error)",
+    "funcbody": "func CreateTempDir(fs afero.Fs, prefix string) (string, func(), error) {\n\ttempDir, err := afero.TempDir(fs, \"\", prefix)\n\tif err != nil {\n\t\treturn \"\", nil, err\n\t}\n\n\t_, isOsFs := fs.(*afero.OsFs)\n\n\tif isOsFs && runtime.GOOS == \"darwin\" && !strings.HasPrefix(tempDir, \"/private\") {\n\n\t\ttempDir = \"/private\" + tempDir\n\t}\n\treturn tempDir, func() { fs.RemoveAll(tempDir) }, nil\n}",
+    "funcname": "CreateTempDir"
+}

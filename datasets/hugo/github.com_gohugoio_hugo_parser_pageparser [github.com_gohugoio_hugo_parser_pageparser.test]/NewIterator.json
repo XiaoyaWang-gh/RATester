@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 129,
+    "focalfunc": "func NewIterator(items Items) *Iterator",
+    "funcbody": "func NewIterator(items Items) *Iterator {\n\treturn &Iterator{items: items, lastPos: -1}\n}",
+    "funcname": "NewIterator"
+}

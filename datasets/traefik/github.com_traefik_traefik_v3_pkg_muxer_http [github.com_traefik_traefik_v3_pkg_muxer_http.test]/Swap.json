@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 154,
+    "focalfunc": "func (r routes) Swap(i, j int)",
+    "funcbody": "func (r routes) Swap(i, j int)\t{ r[i], r[j] = r[j], r[i] }",
+    "funcname": "Swap"
+}

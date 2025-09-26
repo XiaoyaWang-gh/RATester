@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/headers.go",
+    "lineno": 25,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, cfg dynamic.Headers, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, cfg dynamic.Headers, name string) (http.Handler, error) {\n\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\thasSecureHeaders := cfg.HasSecureHeadersDefined()\n\thasCustomHeaders := cfg.HasCustomHeadersDefined()\n\thasCorsHeaders := cfg.HasCorsHeadersDefined()\n\n\tif !hasSecureHeaders && !hasCustomHeaders && !hasCorsHeaders {\n\t\treturn nil, errors.New(\"headers configuration not valid\")\n\t}\n\n\tvar handler http.Handler\n\tnextHandler := next\n\n\tif hasSecureHeaders {\n\t\tlogger.Debug().Msgf(\"Setting up secureHeaders from %v\", cfg)\n\t\thandler = newSecure(next, cfg, name)\n\t\tnextHandler = handler\n\t}\n\n\tif hasCustomHeaders || hasCorsHeaders {\n\t\tlogger.Debug().Msgf(\"Setting up customHeaders/Cors from %v\", cfg)\n\t\th, err := NewHeader(nextHandler, cfg)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\thandler = connectionheader.Remover(h)\n\t}\n\n\treturn &headers{\n\t\thandler:\thandler,\n\t\tname:\t\tname,\n\t}, nil\n}",
+    "funcname": "New"
+}

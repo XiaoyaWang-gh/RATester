@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/oidc.go",
+    "lineno": 59,
+    "focalfunc": "func (auth *OidcAuthProvider) generateAccessToken() (accessToken string, err error)",
+    "funcbody": "func (auth *OidcAuthProvider) generateAccessToken() (accessToken string, err error) {\n\ttokenObj, err := auth.tokenGenerator.Token(context.Background())\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"couldn't generate OIDC token for login: %v\", err)\n\t}\n\treturn tokenObj.AccessToken, nil\n}",
+    "funcname": "generateAccessToken"
+}

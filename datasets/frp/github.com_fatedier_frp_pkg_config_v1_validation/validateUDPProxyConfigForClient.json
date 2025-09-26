@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 133,
+    "focalfunc": "func validateUDPProxyConfigForClient(c *v1.UDPProxyConfig) error",
+    "funcbody": "func validateUDPProxyConfigForClient(c *v1.UDPProxyConfig) error {\n\treturn nil\n}",
+    "funcname": "validateUDPProxyConfigForClient"
+}

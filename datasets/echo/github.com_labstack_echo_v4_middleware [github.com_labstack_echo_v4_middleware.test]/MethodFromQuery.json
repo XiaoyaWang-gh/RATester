@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/method_override.go",
+    "lineno": 87,
+    "focalfunc": "func MethodFromQuery(param string) MethodOverrideGetter",
+    "funcbody": "func MethodFromQuery(param string) MethodOverrideGetter {\n\treturn func(c echo.Context) string {\n\t\treturn c.QueryParam(param)\n\t}\n}",
+    "funcname": "MethodFromQuery"
+}

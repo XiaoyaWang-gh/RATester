@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 233,
+    "focalfunc": "func calculateMaxSizePerPartition(maxItemsTotal, totalWeightQuantity, numPartitions int) int",
+    "funcbody": "func calculateMaxSizePerPartition(maxItemsTotal, totalWeightQuantity, numPartitions int) int {\n\tif numPartitions == 0 {\n\t\tpanic(\"numPartitions must be > 0\")\n\t}\n\tif totalWeightQuantity == 0 {\n\t\tpanic(\"totalWeightQuantity must be > 0\")\n\t}\n\n\tavgWeight := float64(totalWeightQuantity) / float64(numPartitions)\n\treturn int(math.Floor(float64(maxItemsTotal) / float64(numPartitions) * (100.0 / avgWeight)))\n}",
+    "funcname": "calculateMaxSizePerPartition"
+}

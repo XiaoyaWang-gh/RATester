@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 87,
+    "focalfunc": "func (m *BeeMap) Count() int",
+    "funcbody": "func (m *BeeMap) Count() int {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\treturn len(m.bm)\n}",
+    "funcname": "Count"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 112,
+    "focalfunc": "func goodFunc(name string, typ reflect.Type) error",
+    "funcbody": "func goodFunc(name string, typ reflect.Type) error {\n\n\tswitch numOut := typ.NumOut(); {\n\tcase numOut == 1:\n\t\treturn nil\n\tcase numOut == 2 && typ.Out(1) == errorType:\n\t\treturn nil\n\tcase numOut == 2:\n\t\treturn fmt.Errorf(\"invalid function signature for %s: second return value should be error; is %s\", name, typ.Out(1))\n\tdefault:\n\t\treturn fmt.Errorf(\"function %s has %d return values; should be 1 or 2\", name, typ.NumOut())\n\t}\n}",
+    "funcname": "goodFunc"
+}

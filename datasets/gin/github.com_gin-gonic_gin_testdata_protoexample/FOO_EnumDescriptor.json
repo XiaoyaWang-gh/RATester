@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 72,
+    "focalfunc": "func (FOO) EnumDescriptor() ([]byte, []int)",
+    "funcbody": "func (FOO) EnumDescriptor() ([]byte, []int) {\n\treturn file_test_proto_rawDescGZIP(), []int{0}\n}",
+    "funcname": "EnumDescriptor"
+}

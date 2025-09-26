@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 78,
+    "focalfunc": "func readContent(rf io.ReaderFrom, name string) (int64, error)",
+    "funcbody": "func readContent(rf io.ReaderFrom, name string) (int64, error) {\n\n\tf, err := os.Open(filepath.Clean(name))\n\tif err != nil {\n\t\treturn 0, fmt.Errorf(\"failed to open: %w\", err)\n\t}\n\tdefer func() {\n\t\tif err = f.Close(); err != nil {\n\t\t\tlog.Errorf(\"Error closing file: %s\", err)\n\t\t}\n\t}()\n\tif n, err := rf.ReadFrom(f); err != nil {\n\t\treturn n, fmt.Errorf(\"failed to read: %w\", err)\n\t}\n\treturn 0, nil\n}",
+    "funcname": "readContent"
+}

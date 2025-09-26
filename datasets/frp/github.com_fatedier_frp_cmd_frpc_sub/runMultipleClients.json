@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/root.go",
+    "lineno": 78,
+    "focalfunc": "func runMultipleClients(cfgDir string) error",
+    "funcbody": "func runMultipleClients(cfgDir string) error {\n\tvar wg sync.WaitGroup\n\terr := filepath.WalkDir(cfgDir, func(path string, d fs.DirEntry, err error) error {\n\t\tif err != nil || d.IsDir() {\n\t\t\treturn nil\n\t\t}\n\t\twg.Add(1)\n\t\ttime.Sleep(time.Millisecond)\n\t\tgo func() {\n\t\t\tdefer wg.Done()\n\t\t\terr := runClient(path)\n\t\t\tif err != nil {\n\t\t\t\tfmt.Printf(\"frpc service error for config file [%s]\\n\", path)\n\t\t\t}\n\t\t}()\n\t\treturn nil\n\t})\n\twg.Wait()\n\treturn err\n}",
+    "funcname": "runMultipleClients"
+}

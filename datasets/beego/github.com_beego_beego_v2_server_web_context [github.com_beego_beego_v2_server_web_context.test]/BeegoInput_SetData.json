@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 413,
+    "focalfunc": "func (input *BeegoInput) SetData(key, val interface{})",
+    "funcbody": "func (input *BeegoInput) SetData(key, val interface{}) {\n\tinput.dataLock.Lock()\n\tdefer input.dataLock.Unlock()\n\tif input.data == nil {\n\t\tinput.data = make(map[interface{}]interface{})\n\t}\n\tinput.data[key] = val\n}",
+    "funcname": "SetData"
+}

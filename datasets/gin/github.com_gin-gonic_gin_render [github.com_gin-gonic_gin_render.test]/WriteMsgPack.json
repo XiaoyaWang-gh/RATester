@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/msgpack.go",
+    "lineno": 39,
+    "focalfunc": "func WriteMsgPack(w http.ResponseWriter, obj any) error",
+    "funcbody": "func WriteMsgPack(w http.ResponseWriter, obj any) error {\n\twriteContentType(w, msgpackContentType)\n\tvar mh codec.MsgpackHandle\n\treturn codec.NewEncoder(w, &mh).Encode(obj)\n}",
+    "funcname": "WriteMsgPack"
+}

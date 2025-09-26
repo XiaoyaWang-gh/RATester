@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 82,
+    "focalfunc": "func (f StrTo) Int32() (int32, error)",
+    "funcbody": "func (f StrTo) Int32() (int32, error) {\n\tv, err := strconv.ParseInt(f.String(), 10, 32)\n\treturn int32(v), err\n}",
+    "funcname": "Int32"
+}

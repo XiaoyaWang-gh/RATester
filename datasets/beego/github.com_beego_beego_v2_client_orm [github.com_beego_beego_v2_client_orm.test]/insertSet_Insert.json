@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_object.go",
+    "lineno": 36,
+    "focalfunc": "func (o *insertSet) Insert(md interface{}) (int64, error)",
+    "funcbody": "func (o *insertSet) Insert(md interface{}) (int64, error) {\n\treturn o.InsertWithCtx(context.Background(), md)\n}",
+    "funcname": "Insert"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 127,
+    "focalfunc": "func (pder *CookieProvider) SessionInit(ctx context.Context, maxlifetime int64, config string) error",
+    "funcbody": "func (pder *CookieProvider) SessionInit(ctx context.Context, maxlifetime int64, config string) error {\n\tpder.config = &cookieConfig{}\n\terr := json.Unmarshal([]byte(config), pder.config)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif pder.config.BlockKey == \"\" {\n\t\tpder.config.BlockKey = string(generateRandomKey(16))\n\t}\n\tif pder.config.SecurityName == \"\" {\n\t\tpder.config.SecurityName = string(generateRandomKey(20))\n\t}\n\tpder.block, err = aes.NewCipher([]byte(pder.config.BlockKey))\n\tif err != nil {\n\t\treturn err\n\t}\n\tpder.maxlifetime = maxlifetime\n\treturn nil\n}",
+    "funcname": "SessionInit"
+}

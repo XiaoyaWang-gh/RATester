@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 195,
+    "focalfunc": "func (f *filterOrmDecorator) QueryTable(ptrStructOrTableName interface{}) QuerySeter",
+    "funcbody": "func (f *filterOrmDecorator) QueryTable(ptrStructOrTableName interface{}) QuerySeter {\n\tvar (\n\t\tname\tstring\n\t\tmd\tinterface{}\n\t\tmi\t*models.ModelInfo\n\t)\n\n\tif table, ok := ptrStructOrTableName.(string); ok {\n\t\tname = table\n\t} else {\n\t\tname = models.GetFullName(utils2.IndirectType(reflect.TypeOf(ptrStructOrTableName)))\n\t\tmd = ptrStructOrTableName\n\t}\n\n\tif m, ok := defaultModelCache.GetByFullName(name); ok {\n\t\tmi = m\n\t}\n\n\tinv := &Invocation{\n\t\tMethod:\t\t\"QueryTable\",\n\t\tArgs:\t\t[]interface{}{ptrStructOrTableName},\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres := f.ormer.QueryTable(ptrStructOrTableName)\n\t\t\treturn []interface{}{res}\n\t\t},\n\t}\n\tres := f.root(context.Background(), inv)\n\n\tif res[0] == nil {\n\t\treturn nil\n\t}\n\treturn res[0].(QuerySeter)\n}",
+    "funcname": "QueryTable"
+}

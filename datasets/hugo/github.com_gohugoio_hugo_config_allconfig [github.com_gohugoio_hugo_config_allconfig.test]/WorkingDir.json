@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 128,
+    "focalfunc": "func (c ConfigLanguage) WorkingDir() string",
+    "funcbody": "func (c ConfigLanguage) WorkingDir() string {\n\treturn c.m.Base.WorkingDir\n}",
+    "funcname": "WorkingDir"
+}

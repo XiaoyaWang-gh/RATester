@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/slack.go",
+    "lineno": 77,
+    "focalfunc": "func (s *SLACKWriter) Destroy()",
+    "funcbody": "func (s *SLACKWriter) Destroy() {\n}",
+    "funcname": "Destroy"
+}

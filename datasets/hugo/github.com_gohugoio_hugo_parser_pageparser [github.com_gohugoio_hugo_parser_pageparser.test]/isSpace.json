@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 513,
+    "focalfunc": "func isSpace(r rune) bool",
+    "funcbody": "func isSpace(r rune) bool {\n\treturn r == ' ' || r == '\\t'\n}",
+    "funcname": "isSpace"
+}

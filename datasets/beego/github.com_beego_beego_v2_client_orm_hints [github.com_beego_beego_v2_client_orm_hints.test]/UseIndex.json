@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 58,
+    "focalfunc": "func UseIndex(indexes ...string) *Hint",
+    "funcbody": "func UseIndex(indexes ...string) *Hint {\n\treturn NewHint(KeyUseIndex, indexes)\n}",
+    "funcname": "UseIndex"
+}

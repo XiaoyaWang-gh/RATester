@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/dashboard/dashboard.go",
+    "lineno": 46,
+    "focalfunc": "func (g Handler) ServeHTTP(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (g Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {\n\tassets := g.assets\n\tif assets == nil {\n\t\tassets = webui.FS\n\t}\n\n\tw.Header().Set(\"Content-Security-Policy\", \"frame-src 'self' https://traefik.io https://*.traefik.io;\")\n\n\tw.Header().Del(\"Content-Type\")\n\n\thttp.FileServerFS(assets).ServeHTTP(w, r)\n}",
+    "funcname": "ServeHTTP"
+}

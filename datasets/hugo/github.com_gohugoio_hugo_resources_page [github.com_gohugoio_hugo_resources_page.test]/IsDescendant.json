@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 238,
+    "focalfunc": "func (p *nopPage) IsDescendant(other any) bool",
+    "funcbody": "func (p *nopPage) IsDescendant(other any) bool {\n\treturn false\n}",
+    "funcname": "IsDescendant"
+}

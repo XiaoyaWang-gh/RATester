@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/namespace.go",
+    "lineno": 72,
+    "focalfunc": "func (ns *ConfigNamespace[S, C]) Signature() S",
+    "funcbody": "func (ns *ConfigNamespace[S, C]) Signature() S {\n\tvar s S\n\treturn s\n}",
+    "funcname": "Signature"
+}

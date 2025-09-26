@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 68,
+    "focalfunc": "func HashString(vs ...any) string",
+    "funcbody": "func HashString(vs ...any) string {\n\thash := HashUint64(vs...)\n\treturn strconv.FormatUint(hash, 10)\n}",
+    "funcname": "HashString"
+}

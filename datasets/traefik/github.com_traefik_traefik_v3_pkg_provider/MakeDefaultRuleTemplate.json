@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 400,
+    "focalfunc": "func MakeDefaultRuleTemplate(defaultRule string, funcMap template.FuncMap) (*template.Template, error)",
+    "funcbody": "func MakeDefaultRuleTemplate(defaultRule string, funcMap template.FuncMap) (*template.Template, error) {\n\tdefaultFuncMap := sprig.TxtFuncMap()\n\tdefaultFuncMap[\"normalize\"] = Normalize\n\n\tfor k, fn := range funcMap {\n\t\tdefaultFuncMap[k] = fn\n\t}\n\n\treturn template.New(\"defaultRule\").Funcs(defaultFuncMap).Parse(defaultRule)\n}",
+    "funcname": "MakeDefaultRuleTemplate"
+}

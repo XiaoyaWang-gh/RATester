@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 191,
+    "focalfunc": "func (crw *captureResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (crw *captureResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\tif h, ok := crw.rw.(http.Hijacker); ok {\n\t\treturn h.Hijack()\n\t}\n\n\treturn nil, nil, fmt.Errorf(\"not a hijacker: %T\", crw.rw)\n}",
+    "funcname": "Hijack"
+}

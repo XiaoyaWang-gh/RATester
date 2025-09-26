@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/metainject/hugogenerator.go",
+    "lineno": 32,
+    "focalfunc": "func HugoGenerator(ft transform.FromTo) error",
+    "funcbody": "func HugoGenerator(ft transform.FromTo) error {\n\tb := ft.From().Bytes()\n\tif metaTagsCheck.Match(b) {\n\t\tif _, err := ft.To().Write(b); err != nil {\n\t\t\tloggers.Log().Warnf(\"Failed to inject Hugo generator tag: %s\", err)\n\t\t}\n\t\treturn nil\n\t}\n\n\thead := \"<head>\"\n\treplace := []byte(fmt.Sprintf(\"%s\\n\\t%s\", head, hugoGeneratorTag))\n\tnewcontent := bytes.Replace(b, []byte(head), replace, 1)\n\n\tif len(newcontent) == len(b) {\n\t\thead := \"<HEAD>\"\n\t\treplace := []byte(fmt.Sprintf(\"%s\\n\\t%s\", head, hugoGeneratorTag))\n\t\tnewcontent = bytes.Replace(b, []byte(head), replace, 1)\n\t}\n\n\tif _, err := ft.To().Write(newcontent); err != nil {\n\t\tloggers.Log().Warnf(\"Failed to inject Hugo generator tag: %s\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "HugoGenerator"
+}

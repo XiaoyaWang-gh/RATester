@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 279,
+    "focalfunc": "func (fi *dirNameOnlyFileInfo) Sys() any",
+    "funcbody": "func (fi *dirNameOnlyFileInfo) Sys() any {\n\treturn nil\n}",
+    "funcname": "Sys"
+}

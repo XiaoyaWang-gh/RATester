@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/transport.go",
+    "lineno": 14,
+    "focalfunc": "func HandleTrans(c *conn.Conn, s *TunnelModeServer) error",
+    "funcbody": "func HandleTrans(c *conn.Conn, s *TunnelModeServer) error {\n\tif addr, err := getAddress(c.Conn); err != nil {\n\t\treturn err\n\t} else {\n\t\treturn s.DealClient(c, s.task.Client, addr, nil, common.CONN_TCP, nil, s.task.Flow, s.task.Target.LocalProxy)\n\t}\n}",
+    "funcname": "HandleTrans"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 277,
+    "focalfunc": "func newQueryElement(index string, keywords ...Keyword) queryElement",
+    "funcbody": "func newQueryElement(index string, keywords ...Keyword) queryElement {\n\treturn queryElement{Index: index, Keywords: keywords}\n}",
+    "funcname": "newQueryElement"
+}

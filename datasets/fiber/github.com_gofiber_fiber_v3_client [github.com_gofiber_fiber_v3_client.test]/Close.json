@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 147,
+    "focalfunc": "func (r *Response) Close()",
+    "funcbody": "func (r *Response) Close() {\n\tif r.request != nil {\n\t\ttmp := r.request\n\t\tr.request = nil\n\t\tReleaseRequest(tmp)\n\t}\n\tReleaseResponse(r)\n}",
+    "funcname": "Close"
+}

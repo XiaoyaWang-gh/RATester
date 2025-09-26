@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 966,
+    "focalfunc": "func (c *contentTreeReverseIndex) Get(key any) contentNodeI",
+    "funcbody": "func (c *contentTreeReverseIndex) Get(key any) contentNodeI {\n\tc.init.Do(func() {\n\t\tc.m = make(map[any]contentNodeI)\n\t\tc.initFn(c.contentTreeReverseIndexMap.m)\n\t})\n\treturn c.m[key]\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentracing/filter.go",
+    "lineno": 38,
+    "focalfunc": "func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter",
+    "funcbody": "func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter {\n\treturn func(ctx context.Context, inv *orm.Invocation) []interface{} {\n\t\toperationName := builder.operationName(ctx, inv)\n\t\tif strings.HasPrefix(inv.Method, \"Begin\") || inv.Method == \"Commit\" || inv.Method == \"Rollback\" {\n\t\t\treturn next(ctx, inv)\n\t\t}\n\n\t\tspan, spanCtx := opentracing.StartSpanFromContext(ctx, operationName)\n\t\tdefer span.Finish()\n\t\tres := next(spanCtx, inv)\n\t\tbuilder.buildSpan(span, spanCtx, inv)\n\t\treturn res\n\t}\n}",
+    "funcname": "FilterChain"
+}

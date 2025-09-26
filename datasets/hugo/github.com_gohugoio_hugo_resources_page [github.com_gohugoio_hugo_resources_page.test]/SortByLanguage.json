@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 359,
+    "focalfunc": "func SortByLanguage(pages Pages)",
+    "funcbody": "func SortByLanguage(pages Pages) {\n\tpageBy(lessPageLanguage).Sort(pages)\n}",
+    "funcname": "SortByLanguage"
+}

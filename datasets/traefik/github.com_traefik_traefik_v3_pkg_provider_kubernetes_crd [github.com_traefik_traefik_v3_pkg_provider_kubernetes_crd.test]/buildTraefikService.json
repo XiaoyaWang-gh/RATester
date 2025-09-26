@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 213,
+    "focalfunc": "func (c configBuilder) buildTraefikService(ctx context.Context, tService *traefikv1alpha1.TraefikService, conf map[string]*dynamic.Service) error",
+    "funcbody": "func (c configBuilder) buildTraefikService(ctx context.Context, tService *traefikv1alpha1.TraefikService, conf map[string]*dynamic.Service) error {\n\tid := provider.Normalize(makeID(tService.Namespace, tService.Name))\n\n\tif tService.Spec.Weighted != nil {\n\t\treturn c.buildServicesLB(ctx, tService.Namespace, tService.Spec, id, conf)\n\t} else if tService.Spec.Mirroring != nil {\n\t\treturn c.buildMirroring(ctx, tService, id, conf)\n\t}\n\n\treturn errors.New(\"unspecified service type\")\n}",
+    "funcname": "buildTraefikService"
+}

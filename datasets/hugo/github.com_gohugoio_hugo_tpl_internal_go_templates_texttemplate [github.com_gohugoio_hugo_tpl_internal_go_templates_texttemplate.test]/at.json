@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 104,
+    "focalfunc": "func (s *state) at(node parse.Node)",
+    "funcbody": "func (s *state) at(node parse.Node) {\n\ts.node = node\n}",
+    "funcname": "at"
+}

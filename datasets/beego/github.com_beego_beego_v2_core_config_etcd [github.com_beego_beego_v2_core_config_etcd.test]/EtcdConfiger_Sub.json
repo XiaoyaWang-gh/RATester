@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 116,
+    "focalfunc": "func (e *EtcdConfiger) Sub(key string) (config.Configer, error)",
+    "funcbody": "func (e *EtcdConfiger) Sub(key string) (config.Configer, error) {\n\treturn newEtcdConfiger(e.client, e.prefix+key), nil\n}",
+    "funcname": "Sub"
+}

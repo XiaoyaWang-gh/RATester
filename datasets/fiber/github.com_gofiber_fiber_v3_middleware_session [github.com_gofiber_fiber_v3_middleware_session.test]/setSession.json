@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 239,
+    "focalfunc": "func (s *Session) setSession()",
+    "funcbody": "func (s *Session) setSession() {\n\tif s.config.source == SourceHeader {\n\t\ts.ctx.Request().Header.SetBytesV(s.config.sessionName, []byte(s.id))\n\t\ts.ctx.Response().Header.SetBytesV(s.config.sessionName, []byte(s.id))\n\t} else {\n\t\tfcookie := fasthttp.AcquireCookie()\n\t\tfcookie.SetKey(s.config.sessionName)\n\t\tfcookie.SetValue(s.id)\n\t\tfcookie.SetPath(s.config.CookiePath)\n\t\tfcookie.SetDomain(s.config.CookieDomain)\n\n\t\tif !s.config.CookieSessionOnly {\n\t\t\tfcookie.SetMaxAge(int(s.exp.Seconds()))\n\t\t\tfcookie.SetExpire(time.Now().Add(s.exp))\n\t\t}\n\t\tfcookie.SetSecure(s.config.CookieSecure)\n\t\tfcookie.SetHTTPOnly(s.config.CookieHTTPOnly)\n\n\t\tswitch utils.ToLower(s.config.CookieSameSite) {\n\t\tcase \"strict\":\n\t\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteStrictMode)\n\t\tcase \"none\":\n\t\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteNoneMode)\n\t\tdefault:\n\t\t\tfcookie.SetSameSite(fasthttp.CookieSameSiteLaxMode)\n\t\t}\n\t\ts.ctx.Response().Header.SetCookie(fcookie)\n\t\tfasthttp.ReleaseCookie(fcookie)\n\t}\n}",
+    "funcname": "setSession"
+}

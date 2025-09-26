@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 81,
+    "focalfunc": "func (g *Group) Any(path string, handler HandlerFunc, middleware ...MiddlewareFunc) []*Route",
+    "funcbody": "func (g *Group) Any(path string, handler HandlerFunc, middleware ...MiddlewareFunc) []*Route {\n\troutes := make([]*Route, len(methods))\n\tfor i, m := range methods {\n\t\troutes[i] = g.Add(m, path, handler, middleware...)\n\t}\n\treturn routes\n}",
+    "funcname": "Any"
+}

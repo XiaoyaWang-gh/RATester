@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 150,
+    "focalfunc": "func (s *Sock5ModeServer) handleConnect(c net.Conn)",
+    "funcbody": "func (s *Sock5ModeServer) handleConnect(c net.Conn) {\n\ts.doConnect(c, connectMethod)\n}",
+    "funcname": "handleConnect"
+}

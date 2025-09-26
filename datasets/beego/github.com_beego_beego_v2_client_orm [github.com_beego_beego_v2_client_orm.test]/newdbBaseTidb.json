@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tidb.go",
+    "lineno": 60,
+    "focalfunc": "func newdbBaseTidb() dbBaser",
+    "funcbody": "func newdbBaseTidb() dbBaser {\n\tb := new(dbBaseTidb)\n\tb.ins = b\n\treturn b\n}",
+    "funcname": "newdbBaseTidb"
+}

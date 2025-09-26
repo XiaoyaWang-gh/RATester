@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 233,
+    "focalfunc": "func logf(format string, args ...interface{})",
+    "funcbody": "func logf(format string, args ...interface{}) {\n\tfmt.Fprintf(os.Stderr, format, args...)\n}",
+    "funcname": "logf"
+}

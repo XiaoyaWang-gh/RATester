@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 141,
+    "focalfunc": "func (t *Iterator) Next() Item",
+    "funcbody": "func (t *Iterator) Next() Item {\n\tt.lastPos++\n\treturn t.Current()\n}",
+    "funcname": "Next"
+}

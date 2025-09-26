@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/observability_roundtripper.go",
+    "lineno": 100,
+    "focalfunc": "func newObservabilityRoundTripper(semConvMetricRegistry *metrics.SemConvMetricsRegistry, rt http.RoundTripper) http.RoundTripper",
+    "funcbody": "func newObservabilityRoundTripper(semConvMetricRegistry *metrics.SemConvMetricsRegistry, rt http.RoundTripper) http.RoundTripper {\n\treturn &wrapper{\n\t\tsemConvMetricRegistry:\tsemConvMetricRegistry,\n\t\trt:\t\t\trt,\n\t}\n}",
+    "funcname": "newObservabilityRoundTripper"
+}

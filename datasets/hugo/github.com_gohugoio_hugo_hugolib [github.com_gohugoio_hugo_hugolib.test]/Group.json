@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/collections.go",
+    "lineno": 40,
+    "focalfunc": "func (p *pageState) Group(key any, in any) (any, error)",
+    "funcbody": "func (p *pageState) Group(key any, in any) (any, error) {\n\tpages, err := page.ToPages(in)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn page.PageGroup{Key: key, Pages: pages}, nil\n}",
+    "funcname": "Group"
+}

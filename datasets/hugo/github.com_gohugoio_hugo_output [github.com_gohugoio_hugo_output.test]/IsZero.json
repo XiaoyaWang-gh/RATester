@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 327,
+    "focalfunc": "func (f Format) IsZero() bool",
+    "funcbody": "func (f Format) IsZero() bool {\n\treturn f.Name == \"\"\n}",
+    "funcname": "IsZero"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 256,
+    "focalfunc": "func (m *LogGroup) MarshalTo(data []byte) (int, error)",
+    "funcbody": "func (m *LogGroup) MarshalTo(data []byte) (int, error) {\n\tvar i int\n\t_ = i\n\tvar l int\n\t_ = l\n\tif len(m.Logs) > 0 {\n\t\tfor _, msg := range m.Logs {\n\t\t\tdata[i] = 0xa\n\t\t\ti++\n\t\t\ti = encodeVarintLog(data, i, uint64(msg.Size()))\n\t\t\tn, err := msg.MarshalTo(data[i:])\n\t\t\tif err != nil {\n\t\t\t\treturn 0, err\n\t\t\t}\n\t\t\ti += n\n\t\t}\n\t}\n\tif m.Reserved != nil {\n\t\tdata[i] = 0x12\n\t\ti++\n\t\ti = encodeVarintLog(data, i, uint64(len(*m.Reserved)))\n\t\ti += copy(data[i:], *m.Reserved)\n\t}\n\tif m.Topic != nil {\n\t\tdata[i] = 0x1a\n\t\ti++\n\t\ti = encodeVarintLog(data, i, uint64(len(*m.Topic)))\n\t\ti += copy(data[i:], *m.Topic)\n\t}\n\tif m.Source != nil {\n\t\tdata[i] = 0x22\n\t\ti++\n\t\ti = encodeVarintLog(data, i, uint64(len(*m.Source)))\n\t\ti += copy(data[i:], *m.Source)\n\t}\n\tif m.XXXUnrecognized != nil {\n\t\ti += copy(data[i:], m.XXXUnrecognized)\n\t}\n\treturn i, nil\n}",
+    "funcname": "MarshalTo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 225,
+    "focalfunc": "func (p *pageState) GitInfo() source.GitInfo",
+    "funcbody": "func (p *pageState) GitInfo() source.GitInfo {\n\treturn p.gitInfo\n}",
+    "funcname": "GitInfo"
+}

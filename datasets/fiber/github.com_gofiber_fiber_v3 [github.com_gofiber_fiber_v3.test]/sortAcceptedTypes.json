@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 521,
+    "focalfunc": "func sortAcceptedTypes(acceptedTypes *[]acceptedType)",
+    "funcbody": "func sortAcceptedTypes(acceptedTypes *[]acceptedType) {\n\tif acceptedTypes == nil || len(*acceptedTypes) < 2 {\n\t\treturn\n\t}\n\tat := *acceptedTypes\n\n\tfor i := 1; i < len(at); i++ {\n\t\tlo, hi := 0, i-1\n\t\tfor lo <= hi {\n\t\t\tmid := (lo + hi) / 2\n\t\t\tif at[i].quality < at[mid].quality ||\n\t\t\t\t(at[i].quality == at[mid].quality && at[i].specificity < at[mid].specificity) ||\n\t\t\t\t(at[i].quality == at[mid].quality && at[i].specificity < at[mid].specificity && len(at[i].params) < len(at[mid].params)) ||\n\t\t\t\t(at[i].quality == at[mid].quality && at[i].specificity == at[mid].specificity && len(at[i].params) == len(at[mid].params) && at[i].order > at[mid].order) {\n\t\t\t\tlo = mid + 1\n\t\t\t} else {\n\t\t\t\thi = mid - 1\n\t\t\t}\n\t\t}\n\t\tfor j := i; j > lo; j-- {\n\t\t\tat[j-1], at[j] = at[j], at[j-1]\n\t\t}\n\t}\n}",
+    "funcname": "sortAcceptedTypes"
+}

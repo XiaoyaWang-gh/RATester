@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 507,
+    "focalfunc": "func SetDataBaseTZ(aliasName string, tz *time.Location) error",
+    "funcbody": "func SetDataBaseTZ(aliasName string, tz *time.Location) error {\n\tif al, ok := dataBaseCache.get(aliasName); ok {\n\t\tal.TZ = tz\n\t} else {\n\t\treturn fmt.Errorf(\"DataBase alias name `%s` not registered\", aliasName)\n\t}\n\treturn nil\n}",
+    "funcname": "SetDataBaseTZ"
+}

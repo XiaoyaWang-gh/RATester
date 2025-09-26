@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 221,
+    "focalfunc": "func createOrExtendTokenInStorage(c fiber.Ctx, token string, cfg Config, sessionManager *sessionManager, storageManager *storageManager)",
+    "funcbody": "func createOrExtendTokenInStorage(c fiber.Ctx, token string, cfg Config, sessionManager *sessionManager, storageManager *storageManager) {\n\tif cfg.Session != nil {\n\t\tsessionManager.setRaw(c, token, dummyValue, cfg.Expiration)\n\t} else {\n\t\tstorageManager.setRaw(token, dummyValue, cfg.Expiration)\n\t}\n}",
+    "funcname": "createOrExtendTokenInStorage"
+}

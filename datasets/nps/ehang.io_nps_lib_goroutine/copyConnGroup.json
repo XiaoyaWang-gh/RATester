@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/goroutine/pool.go",
+    "lineno": 28,
+    "focalfunc": "func copyConnGroup(group interface{})",
+    "funcbody": "func copyConnGroup(group interface{}) {\n\tcg, ok := group.(connGroup)\n\tif !ok {\n\t\treturn\n\t}\n\tvar err error\n\t*cg.n, err = common.CopyBuffer(cg.dst, cg.src)\n\tif err != nil {\n\t\tcg.src.Close()\n\t\tcg.dst.Close()\n\n\t}\n\tcg.wg.Done()\n}",
+    "funcname": "copyConnGroup"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/fmt/fmt.go",
+    "lineno": 85,
+    "focalfunc": "func (ns *Namespace) Warnidf(id, format string, args ...any) string",
+    "funcbody": "func (ns *Namespace) Warnidf(id, format string, args ...any) string {\n\tns.logger.Warnidf(id, format, args...)\n\treturn \"\"\n}",
+    "funcname": "Warnidf"
+}

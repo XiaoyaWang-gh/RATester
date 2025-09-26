@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 435,
+    "focalfunc": "func (c *Controller) YamlResp(data interface{}) error",
+    "funcbody": "func (c *Controller) YamlResp(data interface{}) error {\n\treturn c.Ctx.YamlResp(data)\n}",
+    "funcname": "YamlResp"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 365,
+    "focalfunc": "func safeCall(fun reflect.Value, args []reflect.Value) (val reflect.Value, err error)",
+    "funcbody": "func safeCall(fun reflect.Value, args []reflect.Value) (val reflect.Value, err error) {\n\tdefer func() {\n\t\tif r := recover(); r != nil {\n\t\t\tif e, ok := r.(error); ok {\n\t\t\t\terr = e\n\t\t\t} else {\n\t\t\t\terr = fmt.Errorf(\"%v\", r)\n\t\t\t}\n\t\t}\n\t}()\n\tret := fun.Call(args)\n\tif len(ret) == 2 && !ret[1].IsNil() {\n\t\treturn ret[0], ret[1].Interface().(error)\n\t}\n\treturn ret[0], nil\n}",
+    "funcname": "safeCall"
+}

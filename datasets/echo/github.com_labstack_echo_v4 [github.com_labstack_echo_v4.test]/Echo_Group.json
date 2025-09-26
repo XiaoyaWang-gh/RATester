@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 612,
+    "focalfunc": "func (e *Echo) Group(prefix string, m ...MiddlewareFunc) (g *Group)",
+    "funcbody": "func (e *Echo) Group(prefix string, m ...MiddlewareFunc) (g *Group) {\n\tg = &Group{prefix: prefix, echo: e}\n\tg.Use(m...)\n\treturn\n}",
+    "funcname": "Group"
+}

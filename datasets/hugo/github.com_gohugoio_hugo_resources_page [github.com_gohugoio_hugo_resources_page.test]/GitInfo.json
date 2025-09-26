@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 210,
+    "focalfunc": "func (p *nopPage) GitInfo() source.GitInfo",
+    "funcbody": "func (p *nopPage) GitInfo() source.GitInfo {\n\treturn source.GitInfo{}\n}",
+    "funcname": "GitInfo"
+}

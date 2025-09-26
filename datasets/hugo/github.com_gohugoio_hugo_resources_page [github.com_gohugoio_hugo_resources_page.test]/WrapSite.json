@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 170,
+    "focalfunc": "func WrapSite(s Site) Site",
+    "funcbody": "func WrapSite(s Site) Site {\n\tif s == nil {\n\t\tpanic(\"Site is nil\")\n\t}\n\treturn &siteWrapper{s: s}\n}",
+    "funcname": "WrapSite"
+}

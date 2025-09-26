@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 183,
+    "focalfunc": "func (c ConfigLanguage) GetConfig() any",
+    "funcbody": "func (c ConfigLanguage) GetConfig() any {\n\treturn c.config\n}",
+    "funcname": "GetConfig"
+}

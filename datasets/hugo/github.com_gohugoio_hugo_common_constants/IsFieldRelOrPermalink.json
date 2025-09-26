@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/constants/constants.go",
+    "lineno": 33,
+    "focalfunc": "func IsFieldRelOrPermalink(name string) bool",
+    "funcbody": "func IsFieldRelOrPermalink(name string) bool {\n\treturn name == FieldRelPermalink || name == FieldPermalink\n}",
+    "funcname": "IsFieldRelOrPermalink"
+}

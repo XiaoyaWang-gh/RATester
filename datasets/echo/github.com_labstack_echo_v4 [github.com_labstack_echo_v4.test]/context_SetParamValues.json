@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 360,
+    "focalfunc": "func (c *context) SetParamValues(values ...string)",
+    "funcbody": "func (c *context) SetParamValues(values ...string) {\n\n\tlimit := len(values)\n\tif limit > len(c.pvalues) {\n\t\tc.pvalues = make([]string, limit)\n\t}\n\tfor i := 0; i < limit; i++ {\n\t\tc.pvalues[i] = values[i]\n\t}\n}",
+    "funcname": "SetParamValues"
+}

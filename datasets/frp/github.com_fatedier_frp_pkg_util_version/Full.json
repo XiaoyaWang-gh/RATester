@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/version/version.go",
+    "lineno": 19,
+    "focalfunc": "func Full() string",
+    "funcbody": "func Full() string {\n\treturn version\n}",
+    "funcname": "Full"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/cipher.go",
+    "lineno": 75,
+    "focalfunc": "func GetCipherName(connState *tls.ConnectionState) string",
+    "funcbody": "func GetCipherName(connState *tls.ConnectionState) string {\n\tif cipher, ok := CipherSuitesReversed[connState.CipherSuite]; ok {\n\t\treturn cipher\n\t}\n\n\treturn \"unknown\"\n}",
+    "funcname": "GetCipherName"
+}

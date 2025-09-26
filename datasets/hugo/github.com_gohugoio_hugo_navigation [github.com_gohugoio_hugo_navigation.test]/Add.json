@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 166,
+    "focalfunc": "func (m Menu) Add(me *MenuEntry) Menu",
+    "funcbody": "func (m Menu) Add(me *MenuEntry) Menu {\n\tm = append(m, me)\n\n\tm.Sort()\n\treturn m\n}",
+    "funcname": "Add"
+}

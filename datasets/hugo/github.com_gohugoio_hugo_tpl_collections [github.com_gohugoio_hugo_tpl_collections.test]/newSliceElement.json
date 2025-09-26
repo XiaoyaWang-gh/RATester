@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 164,
+    "focalfunc": "func newSliceElement(items any) any",
+    "funcbody": "func newSliceElement(items any) any {\n\ttp := reflect.TypeOf(items)\n\tif tp == nil {\n\t\treturn nil\n\t}\n\tswitch tp.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\ttp = tp.Elem()\n\t\tif tp.Kind() == reflect.Ptr {\n\t\t\ttp = tp.Elem()\n\t\t}\n\n\t\treturn reflect.New(tp).Interface()\n\t}\n\treturn nil\n}",
+    "funcname": "newSliceElement"
+}

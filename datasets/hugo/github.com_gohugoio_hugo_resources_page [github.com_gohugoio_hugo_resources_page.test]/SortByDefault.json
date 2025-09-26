@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 227,
+    "focalfunc": "func SortByDefault(pages Pages)",
+    "funcbody": "func SortByDefault(pages Pages) {\n\tpageBy(DefaultPageSort).Sort(pages)\n}",
+    "funcname": "SortByDefault"
+}

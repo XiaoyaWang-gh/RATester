@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/csrf.go",
+    "lineno": 89,
+    "focalfunc": "func CSRF() echo.MiddlewareFunc",
+    "funcbody": "func CSRF() echo.MiddlewareFunc {\n\tc := DefaultCSRFConfig\n\treturn CSRFWithConfig(c)\n}",
+    "funcname": "CSRF"
+}

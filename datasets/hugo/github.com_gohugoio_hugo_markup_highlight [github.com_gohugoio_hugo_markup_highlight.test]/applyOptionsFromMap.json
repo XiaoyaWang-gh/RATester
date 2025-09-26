@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 146,
+    "focalfunc": "func applyOptionsFromMap(optsm map[string]any, cfg *Config) error",
+    "funcbody": "func applyOptionsFromMap(optsm map[string]any, cfg *Config) error {\n\tnormalizeHighlightOptions(optsm)\n\treturn mapstructure.WeakDecode(optsm, cfg)\n}",
+    "funcname": "applyOptionsFromMap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 79,
+    "focalfunc": "func (r *Response) XML(v any) error",
+    "funcbody": "func (r *Response) XML(v any) error {\n\treturn r.client.xmlUnmarshal(r.Body(), v)\n}",
+    "funcname": "XML"
+}

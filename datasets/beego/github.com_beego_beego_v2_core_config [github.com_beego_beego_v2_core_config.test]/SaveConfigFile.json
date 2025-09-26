@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 109,
+    "focalfunc": "func SaveConfigFile(filename string) error",
+    "funcbody": "func SaveConfigFile(filename string) error {\n\treturn globalInstance.SaveConfigFile(filename)\n}",
+    "funcname": "SaveConfigFile"
+}

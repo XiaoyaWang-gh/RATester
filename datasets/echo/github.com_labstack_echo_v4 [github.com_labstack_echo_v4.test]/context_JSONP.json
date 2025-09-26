@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 524,
+    "focalfunc": "func (c *context) JSONP(code int, callback string, i interface{}) (err error)",
+    "funcbody": "func (c *context) JSONP(code int, callback string, i interface{}) (err error) {\n\treturn c.jsonPBlob(code, callback, i)\n}",
+    "funcname": "JSONP"
+}

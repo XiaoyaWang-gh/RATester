@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_manager.go",
+    "lineno": 113,
+    "focalfunc": "func (pm *Manager) GetAllProxyStatus() []*WorkingStatus",
+    "funcbody": "func (pm *Manager) GetAllProxyStatus() []*WorkingStatus {\n\tps := make([]*WorkingStatus, 0)\n\tpm.mu.RLock()\n\tdefer pm.mu.RUnlock()\n\tfor _, pxy := range pm.proxies {\n\t\tps = append(ps, pxy.GetStatus())\n\t}\n\treturn ps\n}",
+    "funcname": "GetAllProxyStatus"
+}

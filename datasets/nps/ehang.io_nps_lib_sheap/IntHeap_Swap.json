@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/sheap/heap.go",
+    "lineno": 7,
+    "focalfunc": "func (h IntHeap) Swap(i, j int)",
+    "funcbody": "func (h IntHeap) Swap(i, j int)\t{ h[i], h[j] = h[j], h[i] }",
+    "funcname": "Swap"
+}

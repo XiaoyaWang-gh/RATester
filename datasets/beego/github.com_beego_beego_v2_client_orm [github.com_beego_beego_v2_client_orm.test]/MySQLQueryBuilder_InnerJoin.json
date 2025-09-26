@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 50,
+    "focalfunc": "func (qb *MySQLQueryBuilder) InnerJoin(table string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) InnerJoin(table string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"INNER JOIN\", table)\n\treturn qb\n}",
+    "funcname": "InnerJoin"
+}

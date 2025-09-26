@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 169,
+    "focalfunc": "func (crw *captureResponseWriter) Write(b []byte) (int, error)",
+    "funcbody": "func (crw *captureResponseWriter) Write(b []byte) (int, error) {\n\tif crw.status == 0 {\n\t\tcrw.status = http.StatusOK\n\t}\n\n\tsize, err := crw.rw.Write(b)\n\tcrw.size += int64(size)\n\n\treturn size, err\n}",
+    "funcname": "Write"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/generate/generate.go",
+    "lineno": 69,
+    "focalfunc": "func derCert(privKey *rsa.PrivateKey, expiration time.Time, domain string) ([]byte, error)",
+    "funcbody": "func derCert(privKey *rsa.PrivateKey, expiration time.Time, domain string) ([]byte, error) {\n\tserialNumberLimit := new(big.Int).Lsh(big.NewInt(1), 128)\n\tserialNumber, err := rand.Int(rand.Reader, serialNumberLimit)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif expiration.IsZero() {\n\t\texpiration = time.Now().Add(365 * (24 * time.Hour))\n\t}\n\n\ttemplate := x509.Certificate{\n\t\tSerialNumber:\tserialNumber,\n\t\tSubject: pkix.Name{\n\t\t\tCommonName: DefaultDomain,\n\t\t},\n\t\tNotBefore:\ttime.Now(),\n\t\tNotAfter:\texpiration,\n\n\t\tKeyUsage:\t\tx509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature | x509.KeyUsageKeyAgreement | x509.KeyUsageDataEncipherment,\n\t\tExtKeyUsage:\t\t[]x509.ExtKeyUsage{x509.ExtKeyUsageServerAuth},\n\t\tBasicConstraintsValid:\ttrue,\n\t\tDNSNames:\t\t[]string{domain},\n\t}\n\n\treturn x509.CreateCertificate(rand.Reader, &template, &template, &privKey.PublicKey, privKey)\n}",
+    "funcname": "derCert"
+}

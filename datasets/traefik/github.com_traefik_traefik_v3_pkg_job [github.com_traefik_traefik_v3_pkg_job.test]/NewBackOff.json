@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/job/job.go",
+    "lineno": 24,
+    "focalfunc": "func NewBackOff(backOff *backoff.ExponentialBackOff) *BackOff",
+    "funcbody": "func NewBackOff(backOff *backoff.ExponentialBackOff) *BackOff {\n\tbackOff.MaxElapsedTime = 0\n\treturn &BackOff{\n\t\tExponentialBackOff:\tbackOff,\n\t\tMinJobInterval:\t\tdefaultMinJobInterval,\n\t}\n}",
+    "funcname": "NewBackOff"
+}

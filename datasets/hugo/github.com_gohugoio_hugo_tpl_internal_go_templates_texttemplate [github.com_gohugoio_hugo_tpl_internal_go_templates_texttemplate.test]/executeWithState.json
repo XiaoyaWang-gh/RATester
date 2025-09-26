@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/hugo_template.go",
+    "lineno": 98,
+    "focalfunc": "func (t *Template) executeWithState(state *state, value reflect.Value) (err error)",
+    "funcbody": "func (t *Template) executeWithState(state *state, value reflect.Value) (err error) {\n\tdefer errRecover(&err)\n\tif t.Tree == nil || t.Root == nil {\n\t\tstate.errorf(\"%q is an incomplete or empty template\", t.Name())\n\t}\n\tstate.walk(value, t.Root)\n\treturn\n}",
+    "funcname": "executeWithState"
+}

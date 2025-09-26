@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 117,
+    "focalfunc": "func (c *JSONConfigContainer) Bool(key string) (bool, error)",
+    "funcbody": "func (c *JSONConfigContainer) Bool(key string) (bool, error) {\n\tval := c.getData(key)\n\tif val != nil {\n\t\treturn config.ParseBool(val)\n\t}\n\treturn false, fmt.Errorf(\"not exist key: %q\", key)\n}",
+    "funcname": "Bool"
+}

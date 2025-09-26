@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 475,
+    "focalfunc": "func (o *ormBase) QueryTable(ptrStructOrTableName interface{}) (qs QuerySeter)",
+    "funcbody": "func (o *ormBase) QueryTable(ptrStructOrTableName interface{}) (qs QuerySeter) {\n\tvar name string\n\tif table, ok := ptrStructOrTableName.(string); ok {\n\t\tname = models.NameStrategyMap[models.DefaultNameStrategy](table)\n\t\tif mi, ok := defaultModelCache.Get(name); ok {\n\t\t\tqs = newQuerySet(o, mi)\n\t\t}\n\t} else {\n\t\tname = models.GetFullName(iutils.IndirectType(reflect.TypeOf(ptrStructOrTableName)))\n\t\tif mi, ok := defaultModelCache.GetByFullName(name); ok {\n\t\t\tqs = newQuerySet(o, mi)\n\t\t}\n\t}\n\tif qs == nil {\n\t\tpanic(fmt.Errorf(\"<Ormer.QueryTable> table name: `%s` not exists\", name))\n\t}\n\treturn qs\n}",
+    "funcname": "QueryTable"
+}

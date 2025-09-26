@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/label.go",
+    "lineno": 12,
+    "focalfunc": "func (p *Provider) getConfiguration(instance ecsInstance) (configuration, error)",
+    "funcbody": "func (p *Provider) getConfiguration(instance ecsInstance) (configuration, error) {\n\tconf := configuration{\n\t\tEnable: p.ExposedByDefault,\n\t}\n\n\terr := label.Decode(instance.Labels, &conf, \"traefik.ecs.\", \"traefik.enable\")\n\tif err != nil {\n\t\treturn configuration{}, err\n\t}\n\n\treturn conf, nil\n}",
+    "funcname": "getConfiguration"
+}

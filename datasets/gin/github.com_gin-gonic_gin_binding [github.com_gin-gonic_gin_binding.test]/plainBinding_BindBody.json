@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/plain.go",
+    "lineno": 27,
+    "focalfunc": "func (plainBinding) BindBody(body []byte, obj any) error",
+    "funcbody": "func (plainBinding) BindBody(body []byte, obj any) error {\n\treturn decodePlain(body, obj)\n}",
+    "funcname": "BindBody"
+}

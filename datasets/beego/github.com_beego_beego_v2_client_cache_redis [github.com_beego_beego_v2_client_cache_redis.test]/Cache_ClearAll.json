@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 162,
+    "focalfunc": "func (rc *Cache) ClearAll(context.Context) error",
+    "funcbody": "func (rc *Cache) ClearAll(context.Context) error {\n\tcachedKeys, err := rc.Scan(rc.key + \":*\")\n\tif err != nil {\n\t\treturn err\n\t}\n\tc := rc.p.Get()\n\tdefer func() {\n\t\t_ = c.Close()\n\t}()\n\tfor _, str := range cachedKeys {\n\t\tif _, err = c.Do(\"DEL\", str); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn err\n}",
+    "funcname": "ClearAll"
+}

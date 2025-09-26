@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 580,
+    "focalfunc": "func parseAddr(raw string) (string, string)",
+    "funcbody": "func parseAddr(raw string) (string, string) {\n\tif i := strings.LastIndex(raw, \":\"); i != -1 {\n\t\treturn raw[:i], raw[i+1:]\n\t}\n\treturn raw, \"\"\n}",
+    "funcname": "parseAddr"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_lazy_contentprovider.go",
+    "lineno": 74,
+    "focalfunc": "func (lcp *LazyContentProvider) Reset()",
+    "funcbody": "func (lcp *LazyContentProvider) Reset() {\n\tlcp.init.Reset()\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 104,
+    "focalfunc": "func (app *App) hasMountedApps() bool",
+    "funcbody": "func (app *App) hasMountedApps() bool {\n\treturn len(app.mountFields.appList) > 1\n}",
+    "funcname": "hasMountedApps"
+}

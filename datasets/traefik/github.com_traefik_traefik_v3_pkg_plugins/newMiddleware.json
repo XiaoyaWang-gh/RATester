@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/middlewareyaegi.go",
+    "lineno": 46,
+    "focalfunc": "func (b yaegiMiddlewareBuilder) newMiddleware(config map[string]interface{}, middlewareName string) (pluginMiddleware, error)",
+    "funcbody": "func (b yaegiMiddlewareBuilder) newMiddleware(config map[string]interface{}, middlewareName string) (pluginMiddleware, error) {\n\tvConfig, err := b.createConfig(config)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &YaegiMiddleware{\n\t\tmiddlewareName:\tmiddlewareName,\n\t\tconfig:\t\tvConfig,\n\t\tbuilder:\tb,\n\t}, nil\n}",
+    "funcname": "newMiddleware"
+}

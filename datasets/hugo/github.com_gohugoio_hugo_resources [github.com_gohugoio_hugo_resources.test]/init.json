@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 637,
+    "focalfunc": "func (r *resourceHash) init(l hugio.ReadSeekCloserProvider) error",
+    "funcbody": "func (r *resourceHash) init(l hugio.ReadSeekCloserProvider) error {\n\tvar initErr error\n\tr.initOnce.Do(func() {\n\t\tvar hash uint64\n\t\tvar size int64\n\t\tf, err := l.ReadSeekCloser()\n\t\tif err != nil {\n\t\t\tinitErr = fmt.Errorf(\"failed to open source: %w\", err)\n\t\t\treturn\n\t\t}\n\t\tdefer f.Close()\n\t\thash, size, err = hashImage(f)\n\t\tif err != nil {\n\t\t\tinitErr = fmt.Errorf(\"failed to calculate hash: %w\", err)\n\t\t\treturn\n\t\t}\n\t\tr.value = hash\n\t\tr.size = size\n\t})\n\n\treturn initErr\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 810,
+    "focalfunc": "func (f *File) SetReader(r io.ReadCloser)",
+    "funcbody": "func (f *File) SetReader(r io.ReadCloser) {\n\tf.reader = r\n}",
+    "funcname": "SetReader"
+}

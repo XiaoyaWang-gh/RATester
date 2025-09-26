@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/request_decorator.go",
+    "lineno": 38,
+    "focalfunc": "func (r *RequestDecorator) ServeHTTP(rw http.ResponseWriter, req *http.Request, next http.HandlerFunc)",
+    "funcbody": "func (r *RequestDecorator) ServeHTTP(rw http.ResponseWriter, req *http.Request, next http.HandlerFunc) {\n\thost := types.CanonicalDomain(parseHost(req.Host))\n\treqt := req.WithContext(context.WithValue(req.Context(), canonicalKey, host))\n\n\tif r.hostResolver != nil && r.hostResolver.CnameFlattening {\n\t\tflatHost := r.hostResolver.CNAMEFlatten(reqt.Context(), host)\n\t\treqt = reqt.WithContext(context.WithValue(reqt.Context(), flattenKey, flatHost))\n\t}\n\n\tnext(rw, reqt)\n}",
+    "funcname": "ServeHTTP"
+}

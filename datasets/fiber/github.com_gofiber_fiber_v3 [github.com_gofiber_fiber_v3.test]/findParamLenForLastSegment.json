@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 579,
+    "focalfunc": "func findParamLenForLastSegment(s string, seg *routeSegment) int",
+    "funcbody": "func findParamLenForLastSegment(s string, seg *routeSegment) int {\n\tif !seg.IsGreedy {\n\t\tif i := strings.IndexByte(s, slashDelimiter); i != -1 {\n\t\t\treturn i\n\t\t}\n\t}\n\n\treturn len(s)\n}",
+    "funcname": "findParamLenForLastSegment"
+}

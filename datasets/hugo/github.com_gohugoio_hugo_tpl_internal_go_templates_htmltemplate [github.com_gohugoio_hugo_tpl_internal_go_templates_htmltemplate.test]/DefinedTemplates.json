@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 172,
+    "focalfunc": "func (t *Template) DefinedTemplates() string",
+    "funcbody": "func (t *Template) DefinedTemplates() string {\n\treturn t.text.DefinedTemplates()\n}",
+    "funcname": "DefinedTemplates"
+}

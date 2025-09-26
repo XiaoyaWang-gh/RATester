@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 125,
+    "focalfunc": "func (v Version) Prev() Version",
+    "funcbody": "func (v Version) Prev() Version {\n\treturn Version{Major: v.Major, Minor: v.Minor - 1}\n}",
+    "funcname": "Prev"
+}

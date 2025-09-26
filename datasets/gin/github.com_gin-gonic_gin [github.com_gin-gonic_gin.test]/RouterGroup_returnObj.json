@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 254,
+    "focalfunc": "func (group *RouterGroup) returnObj() IRoutes",
+    "funcbody": "func (group *RouterGroup) returnObj() IRoutes {\n\tif group.root {\n\t\treturn group.engine\n\t}\n\treturn group\n}",
+    "funcname": "returnObj"
+}

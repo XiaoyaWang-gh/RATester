@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 321,
+    "focalfunc": "func getSplicedStrList(headerValue string, dst []string) []string",
+    "funcbody": "func getSplicedStrList(headerValue string, dst []string) []string {\n\tif headerValue == \"\" {\n\t\treturn nil\n\t}\n\n\tvar (\n\t\tindex\t\t\tint\n\t\tcharacter\t\trune\n\t\tlastElementEndsAt\tint\n\t\tinsertIndex\t\tint\n\t)\n\tfor index, character = range headerValue + \"$\" {\n\t\tif character == ',' || index == len(headerValue) {\n\t\t\tif insertIndex >= len(dst) {\n\t\t\t\toldSlice := dst\n\t\t\t\tdst = make([]string, len(dst)+(len(dst)>>1)+2)\n\t\t\t\tcopy(dst, oldSlice)\n\t\t\t}\n\t\t\tdst[insertIndex] = utils.TrimLeft(headerValue[lastElementEndsAt:index], ' ')\n\t\t\tlastElementEndsAt = index + 1\n\t\t\tinsertIndex++\n\t\t}\n\t}\n\n\tif len(dst) > insertIndex {\n\t\tdst = dst[:insertIndex]\n\t}\n\treturn dst\n}",
+    "funcname": "getSplicedStrList"
+}

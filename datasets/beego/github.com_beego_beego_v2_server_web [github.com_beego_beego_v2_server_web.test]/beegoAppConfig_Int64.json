@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 799,
+    "focalfunc": "func (b *beegoAppConfig) Int64(key string) (int64, error)",
+    "funcbody": "func (b *beegoAppConfig) Int64(key string) (int64, error) {\n\tif v, err := b.innerConfig.Int64(BConfig.RunMode + \"::\" + key); err == nil {\n\t\treturn v, nil\n\t}\n\treturn b.innerConfig.Int64(key)\n}",
+    "funcname": "Int64"
+}

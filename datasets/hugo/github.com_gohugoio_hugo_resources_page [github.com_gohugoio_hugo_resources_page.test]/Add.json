@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 308,
+    "focalfunc": "func (p *pagePathBuilder) Add(el ...string)",
+    "funcbody": "func (p *pagePathBuilder) Add(el ...string) {\n\n\tn := 0\n\tfor _, e := range el {\n\t\tif e != \"\" && e != slash {\n\t\t\tel[n] = e\n\t\t\tn++\n\t\t}\n\t}\n\tel = el[:n]\n\n\tp.els = append(p.els, el...)\n}",
+    "funcname": "Add"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 104,
+    "focalfunc": "func (c *StandardDateCounter) Clear()",
+    "funcbody": "func (c *StandardDateCounter) Clear() {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tfor i := 0; i < int(c.reserveDays); i++ {\n\t\tc.counts[i] = 0\n\t}\n}",
+    "funcname": "Clear"
+}

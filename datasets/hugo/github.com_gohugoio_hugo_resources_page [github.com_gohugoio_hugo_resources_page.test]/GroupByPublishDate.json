@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 290,
+    "focalfunc": "func (p Pages) GroupByPublishDate(format string, order ...string) (PagesGroup, error)",
+    "funcbody": "func (p Pages) GroupByPublishDate(format string, order ...string) (PagesGroup, error) {\n\tsorter := func(p Pages) Pages {\n\t\treturn p.ByPublishDate()\n\t}\n\tgetDate := func(p Page) time.Time {\n\t\treturn p.PublishDate()\n\t}\n\treturn p.groupByDateField(format, sorter, getDate, order...)\n}",
+    "funcname": "GroupByPublishDate"
+}

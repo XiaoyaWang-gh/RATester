@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 240,
+    "focalfunc": "func (idx *InvertedIndex) Finalize(ctx context.Context) error",
+    "funcbody": "func (idx *InvertedIndex) Finalize(ctx context.Context) error {\n\tif idx.finalized {\n\t\treturn nil\n\t}\n\n\tfor _, config := range idx.cfg.Indices {\n\t\tif config.CardinalityThreshold == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tsetm := idx.index[config.Name]\n\t\tif idx.indexDocCount[config.Name] == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tnumDocs := idx.indexDocCount[config.Name]\n\t\tfor k, v := range setm {\n\t\t\tpercentageWithKeyword := int(math.Ceil(float64(len(v)) / float64(numDocs) * 100))\n\t\t\tif percentageWithKeyword > config.CardinalityThreshold {\n\t\t\t\tdelete(setm, k)\n\t\t\t}\n\t\t}\n\n\t}\n\n\tidx.finalized = true\n\n\treturn nil\n}",
+    "funcname": "Finalize"
+}

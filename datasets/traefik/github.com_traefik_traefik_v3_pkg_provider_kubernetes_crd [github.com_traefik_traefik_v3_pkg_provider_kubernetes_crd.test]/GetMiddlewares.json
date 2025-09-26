@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 329,
+    "focalfunc": "func (c *clientWrapper) GetMiddlewares() []*traefikv1alpha1.Middleware",
+    "funcbody": "func (c *clientWrapper) GetMiddlewares() []*traefikv1alpha1.Middleware {\n\tvar result []*traefikv1alpha1.Middleware\n\n\tfor ns, factory := range c.factoriesCrd {\n\t\tmiddlewares, err := factory.Traefik().V1alpha1().Middlewares().Lister().List(labels.Everything())\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Failed to list middlewares in namespace %s\", ns)\n\t\t}\n\t\tresult = append(result, middlewares...)\n\t}\n\n\treturn result\n}",
+    "funcname": "GetMiddlewares"
+}

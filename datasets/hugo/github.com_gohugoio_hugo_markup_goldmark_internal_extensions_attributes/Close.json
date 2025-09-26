@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 49,
+    "focalfunc": "func (a *attrParser) Close(node ast.Node, reader text.Reader, pc parser.Context)",
+    "funcbody": "func (a *attrParser) Close(node ast.Node, reader text.Reader, pc parser.Context) {\n}",
+    "funcname": "Close"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 219,
+    "focalfunc": "func (fp *FileProvider) SessionGC(context.Context)",
+    "funcbody": "func (fp *FileProvider) SessionGC(context.Context) {\n\tfilepder.lock.Lock()\n\tdefer filepder.lock.Unlock()\n\n\tgcmaxlifetime = fp.maxlifetime\n\tfilepath.Walk(fp.savePath, gcpath)\n}",
+    "funcname": "SessionGC"
+}

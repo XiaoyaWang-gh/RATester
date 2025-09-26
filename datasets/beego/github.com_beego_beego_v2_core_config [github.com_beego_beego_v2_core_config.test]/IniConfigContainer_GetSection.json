@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 337,
+    "focalfunc": "func (c *IniConfigContainer) GetSection(section string) (map[string]string, error)",
+    "funcbody": "func (c *IniConfigContainer) GetSection(section string) (map[string]string, error) {\n\tif v, ok := c.data[section]; ok {\n\t\treturn v, nil\n\t}\n\treturn nil, errors.New(\"not exist section\")\n}",
+    "funcname": "GetSection"
+}

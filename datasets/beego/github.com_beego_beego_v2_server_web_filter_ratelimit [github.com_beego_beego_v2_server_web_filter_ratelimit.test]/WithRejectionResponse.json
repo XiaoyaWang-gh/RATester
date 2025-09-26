@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 110,
+    "focalfunc": "func WithRejectionResponse(resp RejectionResponse) limiterOption",
+    "funcbody": "func WithRejectionResponse(resp RejectionResponse) limiterOption {\n\treturn func(l *limiter) {\n\t\tl.resp = resp\n\t}\n}",
+    "funcname": "WithRejectionResponse"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_manager.go",
+    "lineno": 99,
+    "focalfunc": "func (pm *Manager) HandleEvent(payload interface{}) error",
+    "funcbody": "func (pm *Manager) HandleEvent(payload interface{}) error {\n\tvar m msg.Message\n\tswitch e := payload.(type) {\n\tcase *event.StartProxyPayload:\n\t\tm = e.NewProxyMsg\n\tcase *event.CloseProxyPayload:\n\t\tm = e.CloseProxyMsg\n\tdefault:\n\t\treturn event.ErrPayloadType\n\t}\n\n\treturn pm.msgTransporter.Send(m)\n}",
+    "funcname": "HandleEvent"
+}

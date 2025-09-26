@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 112,
+    "focalfunc": "func (l *ListNode) CopyList() *ListNode",
+    "funcbody": "func (l *ListNode) CopyList() *ListNode {\n\tif l == nil {\n\t\treturn l\n\t}\n\tn := l.tr.newList(l.Pos)\n\tfor _, elem := range l.Nodes {\n\t\tn.append(elem.Copy())\n\t}\n\treturn n\n}",
+    "funcname": "CopyList"
+}

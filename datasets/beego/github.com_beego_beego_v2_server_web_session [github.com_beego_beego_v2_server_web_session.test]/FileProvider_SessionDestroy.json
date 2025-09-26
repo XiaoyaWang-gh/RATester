@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 211,
+    "focalfunc": "func (fp *FileProvider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (fp *FileProvider) SessionDestroy(ctx context.Context, sid string) error {\n\tfilepder.lock.Lock()\n\tdefer filepder.lock.Unlock()\n\tos.Remove(filepath.Join(fp.savePath, string(sid[0]), string(sid[1]), sid))\n\treturn nil\n}",
+    "funcname": "SessionDestroy"
+}

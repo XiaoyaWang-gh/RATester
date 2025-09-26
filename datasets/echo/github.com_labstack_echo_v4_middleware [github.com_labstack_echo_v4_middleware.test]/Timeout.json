@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/timeout.go",
+    "lineno": 92,
+    "focalfunc": "func Timeout() echo.MiddlewareFunc",
+    "funcbody": "func Timeout() echo.MiddlewareFunc {\n\treturn TimeoutWithConfig(DefaultTimeoutConfig)\n}",
+    "funcname": "Timeout"
+}

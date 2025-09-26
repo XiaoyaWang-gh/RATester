@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 345,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tconfig.Register(\"yaml\", &Config{})\n}",
+    "funcname": "init"
+}

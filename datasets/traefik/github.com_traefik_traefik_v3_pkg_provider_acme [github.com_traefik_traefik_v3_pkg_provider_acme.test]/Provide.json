@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 195,
+    "focalfunc": "func (p *Provider) Provide(configurationChan chan<- dynamic.Message, pool *safe.Pool) error",
+    "funcbody": "func (p *Provider) Provide(configurationChan chan<- dynamic.Message, pool *safe.Pool) error {\n\tlogger := log.With().Str(logs.ProviderName, p.ResolverName+resolverSuffix).Str(\"acmeCA\", p.Configuration.CAServer).\n\t\tLogger()\n\tctx := logger.WithContext(context.Background())\n\n\tp.pool = pool\n\n\tp.watchNewDomains(ctx)\n\n\tp.configurationChan = configurationChan\n\n\tp.certificatesMu.RLock()\n\tmsg := p.buildMessage()\n\tp.certificatesMu.RUnlock()\n\n\tp.configurationChan <- msg\n\n\trenewPeriod, renewInterval := getCertificateRenewDurations(p.CertificatesDuration)\n\tlogger.Debug().Msgf(\"Attempt to renew certificates %q before expiry and check every %q\",\n\t\trenewPeriod, renewInterval)\n\n\tp.renewCertificates(ctx, renewPeriod)\n\n\tticker := time.NewTicker(renewInterval)\n\tpool.GoCtx(func(ctxPool context.Context) {\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-ticker.C:\n\t\t\t\tp.renewCertificates(ctx, renewPeriod)\n\t\t\tcase <-ctxPool.Done():\n\t\t\t\tticker.Stop()\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t})\n\n\treturn nil\n}",
+    "funcname": "Provide"
+}

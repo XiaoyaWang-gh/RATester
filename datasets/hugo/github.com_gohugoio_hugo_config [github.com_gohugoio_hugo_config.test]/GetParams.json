@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 130,
+    "focalfunc": "func (c *defaultConfigProvider) GetParams(k string) maps.Params",
+    "funcbody": "func (c *defaultConfigProvider) GetParams(k string) maps.Params {\n\tv := c.Get(k)\n\tif v == nil {\n\t\treturn nil\n\t}\n\treturn v.(maps.Params)\n}",
+    "funcname": "GetParams"
+}

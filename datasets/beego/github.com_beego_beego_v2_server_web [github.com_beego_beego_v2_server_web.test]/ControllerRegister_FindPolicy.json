@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/policy.go",
+    "lineno": 27,
+    "focalfunc": "func (p *ControllerRegister) FindPolicy(cont *context.Context) []PolicyFunc",
+    "funcbody": "func (p *ControllerRegister) FindPolicy(cont *context.Context) []PolicyFunc {\n\turlPath := cont.Input.URL()\n\tif !BConfig.RouterCaseSensitive {\n\t\turlPath = strings.ToLower(urlPath)\n\t}\n\thttpMethod := cont.Input.Method()\n\tisWildcard := false\n\n\tt, ok := p.policies[httpMethod]\n\n\tif !ok {\n\t\tt, ok = p.policies[\"*\"]\n\t\tisWildcard = true\n\t}\n\tif ok {\n\t\trunObjects := t.Match(urlPath, cont)\n\t\tif r, ok := runObjects.([]PolicyFunc); ok {\n\t\t\treturn r\n\t\t} else if !isWildcard {\n\n\t\t\tt, ok = p.policies[\"*\"]\n\t\t\tif ok {\n\t\t\t\trunObjects = t.Match(urlPath, cont)\n\t\t\t\tif r, ok = runObjects.([]PolicyFunc); ok {\n\t\t\t\t\treturn r\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "FindPolicy"
+}

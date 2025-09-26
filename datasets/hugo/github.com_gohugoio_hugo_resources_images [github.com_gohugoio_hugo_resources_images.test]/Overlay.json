@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 48,
+    "focalfunc": "func (*Filters) Overlay(src ImageSource, x, y any) gift.Filter",
+    "funcbody": "func (*Filters) Overlay(src ImageSource, x, y any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(src.Key(), x, y),\n\t\tFilter:\t\toverlayFilter{src: src, x: cast.ToInt(x), y: cast.ToInt(y)},\n\t}\n}",
+    "funcname": "Overlay"
+}

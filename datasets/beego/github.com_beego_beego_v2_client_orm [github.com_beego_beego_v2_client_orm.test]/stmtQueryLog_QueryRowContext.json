@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 115,
+    "focalfunc": "func (d *stmtQueryLog) QueryRowContext(ctx context.Context, args ...interface{}) *sql.Row",
+    "funcbody": "func (d *stmtQueryLog) QueryRowContext(ctx context.Context, args ...interface{}) *sql.Row {\n\ta := time.Now()\n\tres := d.stmt.QueryRow(args...)\n\tdebugLogQueies(d.alias, \"st.QueryRow\", d.query, a, nil, args...)\n\treturn res\n}",
+    "funcname": "QueryRowContext"
+}

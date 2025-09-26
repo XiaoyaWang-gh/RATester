@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/docshelper.go",
+    "lineno": 23,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tdocsProvider := func() docshelper.DocProvider {\n\t\tcfg := config.New()\n\t\tfor configRoot, v := range allDecoderSetups {\n\t\t\tif v.internalOrDeprecated {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tcfg.Set(configRoot, make(maps.Params))\n\t\t}\n\t\tlang := maps.Params{\n\t\t\t\"en\": maps.Params{\n\t\t\t\t\"menus\":\tmaps.Params{},\n\t\t\t\t\"params\":\tmaps.Params{},\n\t\t\t},\n\t\t}\n\t\tcfg.Set(\"languages\", lang)\n\t\tcfg.SetDefaultMergeStrategy()\n\n\t\tconfigHelpers := map[string]any{\n\t\t\t\"mergeStrategy\": cfg.Get(\"\"),\n\t\t}\n\t\treturn docshelper.DocProvider{\"config_helpers\": configHelpers}\n\t}\n\n\tdocshelper.AddDocProviderFunc(docsProvider)\n}",
+    "funcname": "init"
+}

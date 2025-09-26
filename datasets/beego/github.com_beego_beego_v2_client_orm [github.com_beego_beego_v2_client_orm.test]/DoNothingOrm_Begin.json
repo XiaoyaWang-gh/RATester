@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 138,
+    "focalfunc": "func (d *DoNothingOrm) Begin() (TxOrmer, error)",
+    "funcbody": "func (d *DoNothingOrm) Begin() (TxOrmer, error) {\n\treturn nil, nil\n}",
+    "funcname": "Begin"
+}

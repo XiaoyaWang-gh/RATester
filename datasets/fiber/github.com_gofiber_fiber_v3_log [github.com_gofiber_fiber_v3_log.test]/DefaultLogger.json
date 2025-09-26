@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/default.go",
+    "lineno": 214,
+    "focalfunc": "func DefaultLogger() AllLogger",
+    "funcbody": "func DefaultLogger() AllLogger {\n\treturn logger\n}",
+    "funcname": "DefaultLogger"
+}

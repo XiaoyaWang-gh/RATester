@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 129,
+    "focalfunc": "func (c *FakeUDPConn) IsClosed() bool",
+    "funcbody": "func (c *FakeUDPConn) IsClosed() bool {\n\tc.mu.RLock()\n\tdefer c.mu.RUnlock()\n\treturn c.closeFlag\n}",
+    "funcname": "IsClosed"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 103,
+    "focalfunc": "func (f *noOpRegularFileOps) Write(p []byte) (n int, err error)",
+    "funcbody": "func (f *noOpRegularFileOps) Write(p []byte) (n int, err error) {\n\tpanic(errNoOp)\n}",
+    "funcname": "Write"
+}

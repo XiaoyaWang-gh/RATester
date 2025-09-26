@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 33,
+    "focalfunc": "func (h indexedHeap) Less(i, j int) bool",
+    "funcbody": "func (h indexedHeap) Less(i, j int) bool {\n\treturn h.entries[i].exp < h.entries[j].exp\n}",
+    "funcname": "Less"
+}

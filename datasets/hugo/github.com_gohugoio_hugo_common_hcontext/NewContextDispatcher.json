@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hcontext/context.go",
+    "lineno": 25,
+    "focalfunc": "func NewContextDispatcher[T any, R comparable](key R) ContextDispatcher[T]",
+    "funcbody": "func NewContextDispatcher[T any, R comparable](key R) ContextDispatcher[T] {\n\treturn keyInContext[T, R]{\n\t\tid: key,\n\t}\n}",
+    "funcname": "NewContextDispatcher"
+}

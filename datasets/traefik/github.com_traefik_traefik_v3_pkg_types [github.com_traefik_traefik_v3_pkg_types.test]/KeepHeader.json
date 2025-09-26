@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/logs.go",
+    "lineno": 102,
+    "focalfunc": "func (f *AccessLogFields) KeepHeader(header string) string",
+    "funcbody": "func (f *AccessLogFields) KeepHeader(header string) string {\n\tdefaultValue := AccessLogKeep\n\tif f != nil && f.Headers != nil {\n\t\tdefaultValue = checkFieldHeaderValue(f.Headers.DefaultMode, defaultValue)\n\n\t\tif v, ok := f.Headers.Names[header]; ok {\n\t\t\treturn checkFieldHeaderValue(v, defaultValue)\n\t\t}\n\t}\n\treturn defaultValue\n}",
+    "funcname": "KeepHeader"
+}

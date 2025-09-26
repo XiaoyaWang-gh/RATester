@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 697,
+    "focalfunc": "func (t *templateHandler) addTemplateTo(info templateInfo, to *templateNamespace) (*templateState, error)",
+    "funcbody": "func (t *templateHandler) addTemplateTo(info templateInfo, to *templateNamespace) (*templateState, error) {\n\treturn to.parse(info)\n}",
+    "funcname": "addTemplateTo"
+}

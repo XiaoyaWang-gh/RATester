@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/helpers.go",
+    "lineno": 20,
+    "focalfunc": "func MustParseURL(rawURL string) *url.URL",
+    "funcbody": "func MustParseURL(rawURL string) *url.URL {\n\tu, err := url.Parse(rawURL)\n\tif err != nil {\n\t\tpanic(fmt.Sprintf(\"failed to parse URL '%s': %s\", rawURL, err))\n\t}\n\treturn u\n}",
+    "funcname": "MustParseURL"
+}

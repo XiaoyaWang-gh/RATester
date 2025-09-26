@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/config.go",
+    "lineno": 113,
+    "focalfunc": "func (t ContentTypes) IsIndexContentFile(filename string) bool",
+    "funcbody": "func (t ContentTypes) IsIndexContentFile(filename string) bool {\n\tif !t.IsContentFile(filename) {\n\t\treturn false\n\t}\n\n\tbase := filepath.Base(filename)\n\n\treturn strings.HasPrefix(base, \"index.\") || strings.HasPrefix(base, \"_index.\")\n}",
+    "funcname": "IsIndexContentFile"
+}

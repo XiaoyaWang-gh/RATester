@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/tcpmux/httpconnect.go",
+    "lineno": 96,
+    "focalfunc": "func vhostFailed(c net.Conn)",
+    "funcbody": "func vhostFailed(c net.Conn) {\n\tres := vhost.NotFoundResponse()\n\tif res.Body != nil {\n\t\tdefer res.Body.Close()\n\t}\n\t_ = res.Write(c)\n\t_ = c.Close()\n}",
+    "funcname": "vhostFailed"
+}

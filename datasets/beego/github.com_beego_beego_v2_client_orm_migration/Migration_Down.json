@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 93,
+    "focalfunc": "func (m *Migration) Down()",
+    "funcbody": "func (m *Migration) Down() {\n\tswitch m.ModifyType {\n\tcase \"alter\":\n\t\tm.ModifyType = \"reverse\"\n\tcase \"create\":\n\t\tm.ModifyType = \"delete\"\n\t}\n\tm.sqls = append(m.sqls, m.GetSQL())\n}",
+    "funcname": "Down"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 177,
+    "focalfunc": "func BinaryWrite(raw *bytes.Buffer, v ...string)",
+    "funcbody": "func BinaryWrite(raw *bytes.Buffer, v ...string) {\n\tb := GetWriteStr(v...)\n\tbinary.Write(raw, binary.LittleEndian, int32(len(b)))\n\tbinary.Write(raw, binary.LittleEndian, b)\n}",
+    "funcname": "BinaryWrite"
+}

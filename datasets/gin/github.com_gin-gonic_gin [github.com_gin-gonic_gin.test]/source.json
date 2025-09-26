@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/recovery.go",
+    "lineno": 138,
+    "focalfunc": "func source(lines [][]byte, n int) []byte",
+    "funcbody": "func source(lines [][]byte, n int) []byte {\n\tn--\n\tif n < 0 || n >= len(lines) {\n\t\treturn dunno\n\t}\n\treturn bytes.TrimSpace(lines[n])\n}",
+    "funcname": "source"
+}

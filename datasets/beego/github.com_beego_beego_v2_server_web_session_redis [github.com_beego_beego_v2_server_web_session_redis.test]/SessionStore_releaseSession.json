@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis/sess_redis.go",
+    "lineno": 112,
+    "focalfunc": "func (rs *SessionStore) releaseSession(ctx context.Context, _ http.ResponseWriter, requirePresent bool)",
+    "funcbody": "func (rs *SessionStore) releaseSession(ctx context.Context, _ http.ResponseWriter, requirePresent bool) {\n\trs.lock.RLock()\n\tvalues := rs.values\n\trs.lock.RUnlock()\n\tb, err := session.EncodeGob(values)\n\tif err != nil {\n\t\treturn\n\t}\n\tc := rs.p\n\tif requirePresent {\n\t\tc.SetXX(ctx, rs.sid, string(b), time.Duration(rs.maxlifetime)*time.Second)\n\t} else {\n\t\tc.Set(ctx, rs.sid, string(b), time.Duration(rs.maxlifetime)*time.Second)\n\t}\n}",
+    "funcname": "releaseSession"
+}

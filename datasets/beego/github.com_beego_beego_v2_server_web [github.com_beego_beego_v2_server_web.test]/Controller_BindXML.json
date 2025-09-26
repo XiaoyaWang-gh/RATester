@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 273,
+    "focalfunc": "func (c *Controller) BindXML(obj interface{}) error",
+    "funcbody": "func (c *Controller) BindXML(obj interface{}) error {\n\treturn c.Ctx.BindXML(obj)\n}",
+    "funcname": "BindXML"
+}

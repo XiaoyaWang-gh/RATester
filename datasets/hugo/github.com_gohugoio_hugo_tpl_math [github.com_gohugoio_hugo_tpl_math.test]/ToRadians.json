@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 274,
+    "focalfunc": "func (ns *Namespace) ToRadians(n any) (float64, error)",
+    "funcbody": "func (ns *Namespace) ToRadians(n any) (float64, error) {\n\taf, err := cast.ToFloat64E(n)\n\tif err != nil {\n\t\treturn 0, errors.New(\"requires a numeric argument\")\n\t}\n\n\treturn af * math.Pi / 180, nil\n}",
+    "funcname": "ToRadians"
+}

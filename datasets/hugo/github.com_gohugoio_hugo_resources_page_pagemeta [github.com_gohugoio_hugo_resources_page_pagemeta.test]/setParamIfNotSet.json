@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 615,
+    "focalfunc": "func setParamIfNotSet(key string, value any, d *FrontMatterDescriptor)",
+    "funcbody": "func setParamIfNotSet(key string, value any, d *FrontMatterDescriptor) {\n\tif _, found := d.PageConfig.Params[key]; found {\n\t\treturn\n\t}\n\td.PageConfig.Params[key] = value\n}",
+    "funcname": "setParamIfNotSet"
+}

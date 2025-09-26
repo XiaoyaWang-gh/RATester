@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/hooks.go",
+    "lineno": 178,
+    "focalfunc": "func parserRequestBody(c *Client, req *Request) error",
+    "funcbody": "func parserRequestBody(c *Client, req *Request) error {\n\tswitch req.bodyType {\n\tcase jsonBody:\n\t\tbody, err := c.jsonMarshal(req.body)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treq.RawRequest.SetBody(body)\n\tcase xmlBody:\n\t\tbody, err := c.xmlMarshal(req.body)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treq.RawRequest.SetBody(body)\n\tcase formBody:\n\t\treq.RawRequest.SetBody(req.formData.QueryString())\n\tcase filesBody:\n\t\treturn parserRequestBodyFile(req)\n\tcase rawBody:\n\t\tif body, ok := req.body.([]byte); ok {\n\t\t\treq.RawRequest.SetBody(body)\n\t\t} else {\n\t\t\treturn ErrBodyType\n\t\t}\n\tcase noBody:\n\t\treturn nil\n\t}\n\n\treturn nil\n}",
+    "funcname": "parserRequestBody"
+}

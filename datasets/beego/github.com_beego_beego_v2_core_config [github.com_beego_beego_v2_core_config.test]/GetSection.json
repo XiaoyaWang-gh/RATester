@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 93,
+    "focalfunc": "func GetSection(section string) (map[string]string, error)",
+    "funcbody": "func GetSection(section string) (map[string]string, error) {\n\treturn globalInstance.GetSection(section)\n}",
+    "funcname": "GetSection"
+}

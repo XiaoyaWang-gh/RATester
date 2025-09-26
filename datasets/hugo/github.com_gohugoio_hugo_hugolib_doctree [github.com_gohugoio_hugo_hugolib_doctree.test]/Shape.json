@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 43,
+    "focalfunc": "func (t TreeShiftTree[T]) Shape(d, v int) *TreeShiftTree[T]",
+    "funcbody": "func (t TreeShiftTree[T]) Shape(d, v int) *TreeShiftTree[T] {\n\tif d != t.d {\n\t\tpanic(\"dimension mismatch\")\n\t}\n\tif v >= len(t.trees) {\n\t\tpanic(\"value out of range\")\n\t}\n\tt.v = v\n\treturn &t\n}",
+    "funcname": "Shape"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 89,
+    "focalfunc": "func ToStringMapBool(in any) map[string]bool",
+    "funcbody": "func ToStringMapBool(in any) map[string]bool {\n\tm, _ := ToStringMapE(in)\n\treturn cast.ToStringMapBool(m)\n}",
+    "funcname": "ToStringMapBool"
+}

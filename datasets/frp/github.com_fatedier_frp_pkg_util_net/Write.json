@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 98,
+    "focalfunc": "func (c *FakeUDPConn) Write(b []byte) (n int, err error)",
+    "funcbody": "func (c *FakeUDPConn) Write(b []byte) (n int, err error) {\n\tc.mu.RLock()\n\tif c.closeFlag {\n\t\tc.mu.RUnlock()\n\t\treturn 0, io.ErrClosedPipe\n\t}\n\tc.mu.RUnlock()\n\n\tpacket := &UDPPacket{\n\t\tBuf:\t\tb,\n\t\tLocalAddr:\tc.localAddr,\n\t\tRemoteAddr:\tc.remoteAddr,\n\t}\n\t_ = c.l.writeUDPPacket(packet)\n\n\tc.mu.Lock()\n\tc.lastActive = time.Now()\n\tc.mu.Unlock()\n\treturn len(b), nil\n}",
+    "funcname": "Write"
+}

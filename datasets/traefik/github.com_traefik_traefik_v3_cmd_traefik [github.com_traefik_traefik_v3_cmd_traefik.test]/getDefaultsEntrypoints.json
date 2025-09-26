@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 386,
+    "focalfunc": "func getDefaultsEntrypoints(staticConfiguration *static.Configuration) []string",
+    "funcbody": "func getDefaultsEntrypoints(staticConfiguration *static.Configuration) []string {\n\tvar defaultEntryPoints []string\n\n\t// Determines if at least one EntryPoint is configured to be used by default.\n\tvar hasDefinedDefaults bool\n\tfor _, ep := range staticConfiguration.EntryPoints {\n\t\tif ep.AsDefault {\n\t\t\thasDefinedDefaults = true\n\t\t\tbreak\n\t\t}\n\t}\n\n\tfor name, cfg := range staticConfiguration.EntryPoints {\n\n\t\tif hasDefinedDefaults && !cfg.AsDefault {\n\t\t\tcontinue\n\t\t}\n\n\t\tprotocol, err := cfg.GetProtocol()\n\t\tif err != nil {\n\n\t\t\tlog.Error().Err(err).Msg(\"Invalid protocol\")\n\t\t}\n\n\t\tif protocol != \"udp\" && name != static.DefaultInternalEntryPointName {\n\t\t\tdefaultEntryPoints = append(defaultEntryPoints, name)\n\t\t}\n\t}\n\n\tsort.Strings(defaultEntryPoints)\n\treturn defaultEntryPoints\n}",
+    "funcname": "getDefaultsEntrypoints"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 205,
+    "focalfunc": "func (b bySum) Less(i, j int) bool",
+    "funcbody": "func (b bySum) Less(i, j int) bool\t{ return b[i].sum > b[j].sum }",
+    "funcname": "Less"
+}

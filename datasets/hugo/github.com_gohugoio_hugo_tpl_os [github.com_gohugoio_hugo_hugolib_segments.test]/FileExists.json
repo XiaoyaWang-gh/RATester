@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/os/os.go",
+    "lineno": 128,
+    "focalfunc": "func (ns *Namespace) FileExists(i any) (bool, error)",
+    "funcbody": "func (ns *Namespace) FileExists(i any) (bool, error) {\n\tpath, err := cast.ToStringE(i)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tif path == \"\" {\n\t\treturn false, errors.New(\"fileExists needs a path to a file\")\n\t}\n\n\tstatus, err := afero.Exists(ns.readFileFs, path)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\treturn status, nil\n}",
+    "funcname": "FileExists"
+}

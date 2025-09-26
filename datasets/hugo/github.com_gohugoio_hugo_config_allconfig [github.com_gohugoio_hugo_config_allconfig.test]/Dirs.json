@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 120,
+    "focalfunc": "func (c ConfigLanguage) Dirs() config.CommonDirs",
+    "funcbody": "func (c ConfigLanguage) Dirs() config.CommonDirs {\n\treturn c.config.CommonDirs\n}",
+    "funcname": "Dirs"
+}

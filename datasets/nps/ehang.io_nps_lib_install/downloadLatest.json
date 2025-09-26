@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 155,
+    "focalfunc": "func downloadLatest(bin string) string",
+    "funcbody": "func downloadLatest(bin string) string {\n\n\tdata, err := http.Get(\"https://api.github.com/repos/ehang-io/nps/releases/latest\")\n\tif err != nil {\n\t\tlog.Fatal(err.Error())\n\t}\n\tb, err := ioutil.ReadAll(data.Body)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\trl := new(release)\n\tjson.Unmarshal(b, &rl)\n\tversion := rl.TagName\n\tfmt.Println(\"the latest version is\", version)\n\tfilename := runtime.GOOS + \"_\" + runtime.GOARCH + \"_\" + bin + \".tar.gz\"\n\n\tdownloadUrl := fmt.Sprintf(\"https://ehang.io/nps/releases/download/%s/%s\", version, filename)\n\tfmt.Println(\"download package from \", downloadUrl)\n\tresp, err := http.Get(downloadUrl)\n\tif err != nil {\n\t\tlog.Fatal(err.Error())\n\t}\n\tdestPath, err := unpackit.Unpack(resp.Body, \"\")\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\tif bin == \"server\" {\n\t\tdestPath = strings.Replace(destPath, \"/web\", \"\", -1)\n\t\tdestPath = strings.Replace(destPath, `\\web`, \"\", -1)\n\t\tdestPath = strings.Replace(destPath, \"/views\", \"\", -1)\n\t\tdestPath = strings.Replace(destPath, `\\views`, \"\", -1)\n\t} else {\n\t\tdestPath = strings.Replace(destPath, `\\conf`, \"\", -1)\n\t\tdestPath = strings.Replace(destPath, \"/conf\", \"\", -1)\n\t}\n\treturn destPath\n}",
+    "funcname": "downloadLatest"
+}

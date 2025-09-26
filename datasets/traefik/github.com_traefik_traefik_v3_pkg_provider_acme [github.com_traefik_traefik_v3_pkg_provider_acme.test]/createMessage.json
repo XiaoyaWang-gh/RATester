@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_tls.go",
+    "lineno": 140,
+    "focalfunc": "func createMessage(certs map[string]*Certificate) dynamic.Message",
+    "funcbody": "func createMessage(certs map[string]*Certificate) dynamic.Message {\n\tconf := dynamic.Message{\n\t\tProviderName:\tproviderNameALPN,\n\t\tConfiguration: &dynamic.Configuration{\n\t\t\tHTTP: &dynamic.HTTPConfiguration{\n\t\t\t\tRouters:\tmap[string]*dynamic.Router{},\n\t\t\t\tMiddlewares:\tmap[string]*dynamic.Middleware{},\n\t\t\t\tServices:\tmap[string]*dynamic.Service{},\n\t\t\t},\n\t\t\tTLS:\t&dynamic.TLSConfiguration{},\n\t\t},\n\t}\n\n\tfor _, cert := range certs {\n\t\tcertConf := &traefiktls.CertAndStores{\n\t\t\tCertificate: traefiktls.Certificate{\n\t\t\t\tCertFile:\ttypes.FileOrContent(cert.Certificate),\n\t\t\t\tKeyFile:\ttypes.FileOrContent(cert.Key),\n\t\t\t},\n\t\t\tStores:\t[]string{tlsalpn01.ACMETLS1Protocol},\n\t\t}\n\t\tconf.Configuration.TLS.Certificates = append(conf.Configuration.TLS.Certificates, certConf)\n\t}\n\n\treturn conf\n}",
+    "funcname": "createMessage"
+}

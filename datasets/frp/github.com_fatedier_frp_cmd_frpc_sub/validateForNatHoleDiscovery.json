@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/nathole.go",
+    "lineno": 92,
+    "focalfunc": "func validateForNatHoleDiscovery(cfg *v1.ClientCommonConfig) error",
+    "funcbody": "func validateForNatHoleDiscovery(cfg *v1.ClientCommonConfig) error {\n\tif cfg.NatHoleSTUNServer == \"\" {\n\t\treturn fmt.Errorf(\"nat_hole_stun_server can not be empty\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateForNatHoleDiscovery"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/bundler/bundler.go",
+    "lineno": 53,
+    "focalfunc": "func newMultiReadSeekCloser(sources ...hugio.ReadSeekCloser) *multiReadSeekCloser",
+    "funcbody": "func newMultiReadSeekCloser(sources ...hugio.ReadSeekCloser) *multiReadSeekCloser {\n\tmr := io.MultiReader(toReaders(sources)...)\n\treturn &multiReadSeekCloser{mr, sources}\n}",
+    "funcname": "newMultiReadSeekCloser"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 520,
+    "focalfunc": "func (e *Echo) POST(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (e *Echo) POST(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn e.Add(http.MethodPost, path, h, m...)\n}",
+    "funcname": "POST"
+}

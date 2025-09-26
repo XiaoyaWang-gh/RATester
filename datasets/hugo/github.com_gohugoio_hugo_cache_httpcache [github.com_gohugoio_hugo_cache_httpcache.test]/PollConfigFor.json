@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 130,
+    "focalfunc": "func (c *ConfigCompiled) PollConfigFor(s string) PollConfigCompiled",
+    "funcbody": "func (c *ConfigCompiled) PollConfigFor(s string) PollConfigCompiled {\n\tfor _, pc := range c.PollConfigs {\n\t\tif pc.For(s) {\n\t\t\treturn pc\n\t\t}\n\t}\n\treturn PollConfigCompiled{}\n}",
+    "funcname": "PollConfigFor"
+}

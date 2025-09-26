@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/images/images.go",
+    "lineno": 110,
+    "focalfunc": "func (ns *Namespace) Filter(args ...any) (images.ImageResource, error)",
+    "funcbody": "func (ns *Namespace) Filter(args ...any) (images.ImageResource, error) {\n\tif len(args) < 2 {\n\t\treturn nil, errors.New(\"must provide an image and one or more filters\")\n\t}\n\n\timg := args[len(args)-1].(images.ImageResource)\n\tfiltersv := args[:len(args)-1]\n\n\treturn img.Filter(filtersv...)\n}",
+    "funcname": "Filter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rate_limiter.go",
+    "lineno": 260,
+    "focalfunc": "func (store *RateLimiterMemoryStore) cleanupStaleVisitors()",
+    "funcbody": "func (store *RateLimiterMemoryStore) cleanupStaleVisitors() {\n\tfor id, visitor := range store.visitors {\n\t\tif store.timeNow().Sub(visitor.lastSeen) > store.expiresIn {\n\t\t\tdelete(store.visitors, id)\n\t\t}\n\t}\n\tstore.lastCleanup = store.timeNow()\n}",
+    "funcname": "cleanupStaleVisitors"
+}

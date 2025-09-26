@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/dynamic/middlewares.go",
+    "lineno": 361,
+    "focalfunc": "func (h *Headers) HasCorsHeadersDefined() bool",
+    "funcbody": "func (h *Headers) HasCorsHeadersDefined() bool {\n\treturn h != nil && (h.AccessControlAllowCredentials ||\n\t\tlen(h.AccessControlAllowHeaders) != 0 ||\n\t\tlen(h.AccessControlAllowMethods) != 0 ||\n\t\tlen(h.AccessControlAllowOriginList) != 0 ||\n\t\tlen(h.AccessControlAllowOriginListRegex) != 0 ||\n\t\tlen(h.AccessControlExposeHeaders) != 0 ||\n\t\th.AccessControlMaxAge != 0 ||\n\t\th.AddVaryHeader)\n}",
+    "funcname": "HasCorsHeadersDefined"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resources.go",
+    "lineno": 40,
+    "focalfunc": "func (r Resources) ByType(typ any) Resources",
+    "funcbody": "func (r Resources) ByType(typ any) Resources {\n\ttpstr, err := cast.ToStringE(typ)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tvar filtered Resources\n\n\tfor _, resource := range r {\n\t\tif resource.ResourceType() == tpstr {\n\t\t\tfiltered = append(filtered, resource)\n\t\t}\n\t}\n\treturn filtered\n}",
+    "funcname": "ByType"
+}

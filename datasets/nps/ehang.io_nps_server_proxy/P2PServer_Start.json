@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/p2p.go",
+    "lineno": 31,
+    "focalfunc": "func (s *P2PServer) Start() error",
+    "funcbody": "func (s *P2PServer) Start() error {\n\tlogs.Info(\"start p2p server port\", s.p2pPort)\n\tvar err error\n\ts.listener, err = net.ListenUDP(\"udp\", &net.UDPAddr{net.ParseIP(\"0.0.0.0\"), s.p2pPort, \"\"})\n\tif err != nil {\n\t\treturn err\n\t}\n\tfor {\n\t\tbuf := common.BufPoolUdp.Get().([]byte)\n\t\tn, addr, err := s.listener.ReadFromUDP(buf)\n\t\tif err != nil {\n\t\t\tif strings.Contains(err.Error(), \"use of closed network connection\") {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\t\tgo s.handleP2P(addr, string(buf[:n]))\n\t}\n\treturn nil\n}",
+    "funcname": "Start"
+}

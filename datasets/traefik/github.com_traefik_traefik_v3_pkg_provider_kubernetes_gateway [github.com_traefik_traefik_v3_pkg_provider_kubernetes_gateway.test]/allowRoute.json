@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 999,
+    "focalfunc": "func allowRoute(listener gatewayListener, routeNamespace, routeKind string) bool",
+    "funcbody": "func allowRoute(listener gatewayListener, routeNamespace, routeKind string) bool {\n\tif !slices.Contains(listener.AllowedRouteKinds, routeKind) {\n\t\treturn false\n\t}\n\n\treturn slices.ContainsFunc(listener.AllowedNamespaces, func(allowedNamespace string) bool {\n\t\treturn allowedNamespace == corev1.NamespaceAll || allowedNamespace == routeNamespace\n\t})\n}",
+    "funcname": "allowRoute"
+}

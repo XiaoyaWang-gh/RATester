@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 382,
+    "focalfunc": "func (m *LogContent) Size() (n int)",
+    "funcbody": "func (m *LogContent) Size() (n int) {\n\tvar l int\n\t_ = l\n\tif m.Key != nil {\n\t\tl = len(*m.Key)\n\t\tn += 1 + l + sovLog(uint64(l))\n\t}\n\tif m.Value != nil {\n\t\tl = len(*m.Value)\n\t\tn += 1 + l + sovLog(uint64(l))\n\t}\n\tif m.XXXUnrecognized != nil {\n\t\tn += len(m.XXXUnrecognized)\n\t}\n\treturn n\n}",
+    "funcname": "Size"
+}

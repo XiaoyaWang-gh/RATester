@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/http/http.go",
+    "lineno": 170,
+    "focalfunc": "func decodeConfiguration(data []byte) (*dynamic.Configuration, error)",
+    "funcbody": "func decodeConfiguration(data []byte) (*dynamic.Configuration, error) {\n\tconfiguration := &dynamic.Configuration{\n\t\tHTTP: &dynamic.HTTPConfiguration{\n\t\t\tRouters:\t\tmake(map[string]*dynamic.Router),\n\t\t\tMiddlewares:\t\tmake(map[string]*dynamic.Middleware),\n\t\t\tServices:\t\tmake(map[string]*dynamic.Service),\n\t\t\tServersTransports:\tmake(map[string]*dynamic.ServersTransport),\n\t\t},\n\t\tTCP: &dynamic.TCPConfiguration{\n\t\t\tRouters:\t\tmake(map[string]*dynamic.TCPRouter),\n\t\t\tServices:\t\tmake(map[string]*dynamic.TCPService),\n\t\t\tServersTransports:\tmake(map[string]*dynamic.TCPServersTransport),\n\t\t},\n\t\tTLS: &dynamic.TLSConfiguration{\n\t\t\tStores:\t\tmake(map[string]tls.Store),\n\t\t\tOptions:\tmake(map[string]tls.Options),\n\t\t},\n\t\tUDP: &dynamic.UDPConfiguration{\n\t\t\tRouters:\tmake(map[string]*dynamic.UDPRouter),\n\t\t\tServices:\tmake(map[string]*dynamic.UDPService),\n\t\t},\n\t}\n\n\terr := file.DecodeContent(string(data), \".yaml\", configuration)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn configuration, nil\n}",
+    "funcname": "decodeConfiguration"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 944,
+    "focalfunc": "func findMatchingHostnames(listenerHostname *gatev1.Hostname, routeHostnames []gatev1.Hostname) ([]gatev1.Hostname, bool)",
+    "funcbody": "func findMatchingHostnames(listenerHostname *gatev1.Hostname, routeHostnames []gatev1.Hostname) ([]gatev1.Hostname, bool) {\n\tif listenerHostname == nil {\n\t\treturn routeHostnames, true\n\t}\n\n\tif len(routeHostnames) == 0 {\n\t\treturn []gatev1.Hostname{*listenerHostname}, true\n\t}\n\n\tvar matches []gatev1.Hostname\n\tfor _, routeHostname := range routeHostnames {\n\t\tif match := findMatchingHostname(*listenerHostname, routeHostname); match != \"\" {\n\t\t\tmatches = append(matches, match)\n\t\t\tcontinue\n\t\t}\n\n\t\tif match := findMatchingHostname(routeHostname, *listenerHostname); match != \"\" {\n\t\t\tmatches = append(matches, match)\n\t\t\tcontinue\n\t\t}\n\t}\n\n\treturn matches, len(matches) > 0\n}",
+    "funcname": "findMatchingHostnames"
+}

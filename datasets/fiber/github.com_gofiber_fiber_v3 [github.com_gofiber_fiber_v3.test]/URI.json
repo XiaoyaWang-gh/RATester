@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 142,
+    "focalfunc": "func (b *Bind) URI(out any) error",
+    "funcbody": "func (b *Bind) URI(out any) error {\n\tif err := b.returnErr(binder.URIBinder.Bind(b.ctx.Route().Params, b.ctx.Params, out)); err != nil {\n\t\treturn err\n\t}\n\n\treturn b.validateStruct(out)\n}",
+    "funcname": "URI"
+}

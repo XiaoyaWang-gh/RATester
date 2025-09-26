@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 336,
+    "focalfunc": "func (m tcpMiddlewareRepresentation) provider() string",
+    "funcbody": "func (m tcpMiddlewareRepresentation) provider() string {\n\treturn m.Provider\n}",
+    "funcname": "provider"
+}

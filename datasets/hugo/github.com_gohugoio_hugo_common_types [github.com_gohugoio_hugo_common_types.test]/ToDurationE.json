@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/convert.go",
+    "lineno": 34,
+    "focalfunc": "func ToDurationE(v any) (time.Duration, error)",
+    "funcbody": "func ToDurationE(v any) (time.Duration, error) {\n\tif n := cast.ToInt(v); n > 0 {\n\t\treturn time.Duration(n) * time.Millisecond, nil\n\t}\n\td, err := time.ParseDuration(cast.ToString(v))\n\tif err != nil {\n\t\treturn 0, fmt.Errorf(\"cannot convert %v to time.Duration\", v)\n\t}\n\treturn d, nil\n}",
+    "funcname": "ToDurationE"
+}

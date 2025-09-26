@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 141,
+    "focalfunc": "func (e *Exec) new(name string, fullyQualifiedName string, arg ...any) (Runner, error)",
+    "funcbody": "func (e *Exec) new(name string, fullyQualifiedName string, arg ...any) (Runner, error) {\n\tif err := e.sc.CheckAllowedExec(name); err != nil {\n\t\treturn nil, err\n\t}\n\n\tenv := make([]string, len(e.baseEnviron))\n\tcopy(env, e.baseEnviron)\n\n\tcm := &commandeer{\n\t\tname:\t\t\tname,\n\t\tfullyQualifiedName:\tfullyQualifiedName,\n\t\tenv:\t\t\tenv,\n\t}\n\n\treturn cm.command(arg...)\n}",
+    "funcname": "new"
+}

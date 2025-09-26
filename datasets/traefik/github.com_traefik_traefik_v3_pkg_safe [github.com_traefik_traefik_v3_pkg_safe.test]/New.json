@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/safe.go",
+    "lineno": 14,
+    "focalfunc": "func New(value interface{}) *Safe",
+    "funcbody": "func New(value interface{}) *Safe {\n\treturn &Safe{value: value, lock: sync.RWMutex{}}\n}",
+    "funcname": "New"
+}

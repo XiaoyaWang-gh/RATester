@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 162,
+    "focalfunc": "func (p *nopPage) Eq(other any) bool",
+    "funcbody": "func (p *nopPage) Eq(other any) bool {\n\treturn p == other\n}",
+    "funcname": "Eq"
+}

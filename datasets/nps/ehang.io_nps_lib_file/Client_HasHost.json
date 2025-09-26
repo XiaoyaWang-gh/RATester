@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 114,
+    "focalfunc": "func (s *Client) HasHost(h *Host) bool",
+    "funcbody": "func (s *Client) HasHost(h *Host) bool {\n\tvar has bool\n\tGetDb().JsonDb.Hosts.Range(func(key, value interface{}) bool {\n\t\tv := value.(*Host)\n\t\tif v.Client.Id == s.Id && v.Host == h.Host && h.Location == v.Location {\n\t\t\thas = true\n\t\t\treturn false\n\t\t}\n\t\treturn true\n\t})\n\treturn has\n}",
+    "funcname": "HasHost"
+}

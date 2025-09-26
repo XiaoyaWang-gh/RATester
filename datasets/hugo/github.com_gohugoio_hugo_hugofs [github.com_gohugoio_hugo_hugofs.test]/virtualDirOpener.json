@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 771,
+    "focalfunc": "func (fs *RootMappingFs) virtualDirOpener(name string) func() (afero.File, error)",
+    "funcbody": "func (fs *RootMappingFs) virtualDirOpener(name string) func() (afero.File, error) {\n\treturn func() (afero.File, error) { return &rootMappingDir{name: name, fs: fs}, nil }\n}",
+    "funcname": "virtualDirOpener"
+}

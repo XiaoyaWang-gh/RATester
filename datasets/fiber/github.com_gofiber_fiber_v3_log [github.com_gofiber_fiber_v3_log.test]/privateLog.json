@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/default.go",
+    "lineno": 24,
+    "focalfunc": "func (l *defaultLogger) privateLog(lv Level, fmtArgs []any)",
+    "funcbody": "func (l *defaultLogger) privateLog(lv Level, fmtArgs []any) {\n\tif l.level > lv {\n\t\treturn\n\t}\n\tlevel := lv.toString()\n\tbuf := bytebufferpool.Get()\n\tbuf.WriteString(level)\n\tbuf.WriteString(fmt.Sprint(fmtArgs...))\n\n\t_ = l.stdlog.Output(l.depth, buf.String())\n\tif lv == LevelPanic {\n\t\tpanic(buf.String())\n\t}\n\n\tbuf.Reset()\n\tbytebufferpool.Put(buf)\n\tif lv == LevelFatal {\n\t\tos.Exit(1)\n\t}\n}",
+    "funcname": "privateLog"
+}

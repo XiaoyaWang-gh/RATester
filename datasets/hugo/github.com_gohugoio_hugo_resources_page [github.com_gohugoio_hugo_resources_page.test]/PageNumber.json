@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 81,
+    "focalfunc": "func (p *Pager) PageNumber() int",
+    "funcbody": "func (p *Pager) PageNumber() int {\n\treturn p.number\n}",
+    "funcname": "PageNumber"
+}

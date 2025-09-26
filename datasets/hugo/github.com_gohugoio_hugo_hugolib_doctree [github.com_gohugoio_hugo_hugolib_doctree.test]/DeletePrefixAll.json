@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 163,
+    "focalfunc": "func (t MutableTrees) DeletePrefixAll(prefix string) int",
+    "funcbody": "func (t MutableTrees) DeletePrefixAll(prefix string) int {\n\tvar count int\n\tfor _, tree := range t {\n\t\tcount += tree.DeletePrefixAll(prefix)\n\t}\n\treturn count\n}",
+    "funcname": "DeletePrefixAll"
+}

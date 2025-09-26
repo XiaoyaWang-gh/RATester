@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 27,
+    "focalfunc": "func (p *Provider) connectInit() error",
+    "funcbody": "func (p *Provider) connectInit() error {\n\tvar err error\n\tif p.Host == \"\" || p.Port == 0 {\n\t\treturn errors.New(\"SessionInit First\")\n\t}\n\tp.client, err = ssdb.Connect(p.Host, p.Port)\n\treturn err\n}",
+    "funcname": "connectInit"
+}

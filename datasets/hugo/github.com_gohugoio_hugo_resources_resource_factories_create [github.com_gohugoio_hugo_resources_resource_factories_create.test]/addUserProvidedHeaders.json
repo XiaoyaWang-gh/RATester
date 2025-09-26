@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 330,
+    "focalfunc": "func addUserProvidedHeaders(headers map[string]any, req *http.Request)",
+    "funcbody": "func addUserProvidedHeaders(headers map[string]any, req *http.Request) {\n\tif headers == nil {\n\t\treturn\n\t}\n\tfor key, val := range headers {\n\t\tvals := types.ToStringSlicePreserveString(val)\n\t\tfor _, s := range vals {\n\t\t\treq.Header.Add(key, s)\n\t\t}\n\t}\n}",
+    "funcname": "addUserProvidedHeaders"
+}

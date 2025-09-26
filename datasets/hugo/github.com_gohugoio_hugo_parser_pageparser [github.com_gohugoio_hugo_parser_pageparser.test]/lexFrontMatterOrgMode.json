@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_intro.go",
+    "lineno": 87,
+    "focalfunc": "func lexFrontMatterOrgMode(l *pageLexer) stateFunc",
+    "funcbody": "func lexFrontMatterOrgMode(l *pageLexer) stateFunc {\n\n\tl.summaryDivider = summaryDividerOrg\n\n\tl.backup()\n\n\tif !l.hasPrefix(delimOrg) {\n\t\treturn lexMainSection\n\t}\n\nLOOP:\n\tfor {\n\n\t\tr := l.next()\n\n\t\tswitch {\n\t\tcase r == '\\n':\n\t\t\tif !l.hasPrefix(delimOrg) {\n\t\t\t\tbreak LOOP\n\t\t\t}\n\t\tcase r == eof:\n\t\t\tbreak LOOP\n\n\t\t}\n\t}\n\n\tl.emit(TypeFrontMatterORG)\n\n\treturn lexMainSection\n}",
+    "funcname": "lexFrontMatterOrgMode"
+}

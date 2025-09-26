@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 862,
+    "focalfunc": "func (c *Context) RemoteIP() string",
+    "funcbody": "func (c *Context) RemoteIP() string {\n\tip, _, err := net.SplitHostPort(strings.TrimSpace(c.Request.RemoteAddr))\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\treturn ip\n}",
+    "funcname": "RemoteIP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 44,
+    "focalfunc": "func getTLSConfig(ln net.Listener) *tls.Config",
+    "funcbody": "func getTLSConfig(ln net.Listener) *tls.Config {\n\n\tpointer := reflect.ValueOf(ln)\n\n\tif pointer.String() != \"<*tls.listener Value>\" {\n\t\treturn nil\n\t}\n\n\tif val := reflect.Indirect(pointer); val.Type() != nil {\n\n\t\tif field := val.FieldByName(\"config\"); field.Type() != nil {\n\n\t\t\tnewval := reflect.NewAt(field.Type(), unsafe.Pointer(field.UnsafeAddr()))\n\t\t\tif newval.Type() == nil {\n\t\t\t\treturn nil\n\t\t\t}\n\n\t\t\tif elem := newval.Elem(); elem.Type() != nil {\n\n\t\t\t\tc, ok := elem.Interface().(*tls.Config)\n\t\t\t\tif !ok {\n\t\t\t\t\tpanic(errors.New(\"failed to type-assert to *tls.Config\"))\n\t\t\t\t}\n\t\t\t\treturn c\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "getTLSConfig"
+}

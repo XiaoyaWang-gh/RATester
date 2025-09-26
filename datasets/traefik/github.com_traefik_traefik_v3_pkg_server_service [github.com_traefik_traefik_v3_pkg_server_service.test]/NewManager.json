@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/service.go",
+    "lineno": 62,
+    "focalfunc": "func NewManager(configs map[string]*runtime.ServiceInfo, observabilityMgr *middleware.ObservabilityMgr, routinePool *safe.Pool, roundTripperManager RoundTripperGetter) *Manager",
+    "funcbody": "func NewManager(configs map[string]*runtime.ServiceInfo, observabilityMgr *middleware.ObservabilityMgr, routinePool *safe.Pool, roundTripperManager RoundTripperGetter) *Manager {\n\treturn &Manager{\n\t\troutinePool:\t\troutinePool,\n\t\tobservabilityMgr:\tobservabilityMgr,\n\t\tbufferPool:\t\tnewBufferPool(),\n\t\troundTripperManager:\troundTripperManager,\n\t\tservices:\t\tmake(map[string]http.Handler),\n\t\tconfigs:\t\tconfigs,\n\t\thealthCheckers:\t\tmake(map[string]*healthcheck.ServiceHealthChecker),\n\t\trand:\t\t\trand.New(rand.NewSource(time.Now().UnixNano())),\n\t}\n}",
+    "funcname": "NewManager"
+}

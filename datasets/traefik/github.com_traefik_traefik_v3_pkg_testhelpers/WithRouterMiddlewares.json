@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 43,
+    "focalfunc": "func WithRouterMiddlewares(middlewaresName ...string) func(*dynamic.Router)",
+    "funcbody": "func WithRouterMiddlewares(middlewaresName ...string) func(*dynamic.Router) {\n\treturn func(r *dynamic.Router) {\n\t\tr.Middlewares = middlewaresName\n\t}\n}",
+    "funcname": "WithRouterMiddlewares"
+}

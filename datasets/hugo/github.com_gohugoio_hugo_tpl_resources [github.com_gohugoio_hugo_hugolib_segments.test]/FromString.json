@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 238,
+    "focalfunc": "func (ns *Namespace) FromString(targetPathIn, contentIn any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) FromString(targetPathIn, contentIn any) (resource.Resource, error) {\n\ttargetPath, err := cast.ToStringE(targetPathIn)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tcontent, err := cast.ToStringE(contentIn)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn ns.createClient.FromString(targetPath, content)\n}",
+    "funcname": "FromString"
+}

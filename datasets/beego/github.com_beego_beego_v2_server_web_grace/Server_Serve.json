@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 35,
+    "focalfunc": "func (srv *Server) Serve() (err error)",
+    "funcbody": "func (srv *Server) Serve() (err error) {\n\treturn srv.internalServe(srv.ln)\n}",
+    "funcname": "Serve"
+}

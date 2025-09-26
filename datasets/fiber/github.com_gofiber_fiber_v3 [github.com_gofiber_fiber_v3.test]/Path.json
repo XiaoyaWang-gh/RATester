@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1105,
+    "focalfunc": "func (c *DefaultCtx) Path(override ...string) string",
+    "funcbody": "func (c *DefaultCtx) Path(override ...string) string {\n\tif len(override) != 0 && c.path != override[0] {\n\n\t\tc.pathOriginal = override[0]\n\n\t\tc.fasthttp.Request.URI().SetPath(c.pathOriginal)\n\n\t\tc.configDependentPaths()\n\t}\n\treturn c.path\n}",
+    "funcname": "Path"
+}

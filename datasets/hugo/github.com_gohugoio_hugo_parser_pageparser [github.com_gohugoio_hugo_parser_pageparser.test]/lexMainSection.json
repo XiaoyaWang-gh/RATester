@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 430,
+    "focalfunc": "func lexMainSection(l *pageLexer) stateFunc",
+    "funcbody": "func lexMainSection(l *pageLexer) stateFunc {\n\tif l.isEOF() {\n\t\treturn lexDone\n\t}\n\n\tskip := l.sectionHandlers.skip()\n\n\tif skip == -1 {\n\t\tl.pos = len(l.input)\n\t\treturn lexDone\n\t} else if skip > 0 {\n\t\tl.pos += skip\n\t}\n\n\tnext := l.sectionHandlers.lex(lexMainSection)\n\tif next != nil {\n\t\treturn next\n\t}\n\n\tl.pos = len(l.input)\n\treturn lexDone\n}",
+    "funcname": "lexMainSection"
+}

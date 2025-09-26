@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 148,
+    "focalfunc": "func GetMethodIndexByName(tp reflect.Type, name string) int",
+    "funcbody": "func GetMethodIndexByName(tp reflect.Type, name string) int {\n\tk := methodKey{tp, name}\n\tmethodCache.RLock()\n\tindex, found := methodCache.cache[k]\n\tmethodCache.RUnlock()\n\tif found {\n\t\treturn index\n\t}\n\n\tmethodCache.Lock()\n\tdefer methodCache.Unlock()\n\n\tm, ok := tp.MethodByName(name)\n\tindex = m.Index\n\tif !ok {\n\t\tindex = -1\n\t}\n\tmethodCache.cache[k] = index\n\n\tif !ok {\n\t\treturn -1\n\t}\n\n\treturn m.Index\n}",
+    "funcname": "GetMethodIndexByName"
+}

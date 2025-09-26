@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/resource.go",
+    "lineno": 53,
+    "focalfunc": "func getNotFoundPageContent() []byte",
+    "funcbody": "func getNotFoundPageContent() []byte {\n\tvar (\n\t\tbuf\t[]byte\n\t\terr\terror\n\t)\n\tif NotFoundPagePath != \"\" {\n\t\tbuf, err = os.ReadFile(NotFoundPagePath)\n\t\tif err != nil {\n\t\t\tlog.Warnf(\"read custom 404 page error: %v\", err)\n\t\t\tbuf = []byte(NotFound)\n\t\t}\n\t} else {\n\t\tbuf = []byte(NotFound)\n\t}\n\treturn buf\n}",
+    "funcname": "getNotFoundPageContent"
+}

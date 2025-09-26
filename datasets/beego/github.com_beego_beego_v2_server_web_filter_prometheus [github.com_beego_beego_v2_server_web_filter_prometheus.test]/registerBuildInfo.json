@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/prometheus/filter.go",
+    "lineno": 76,
+    "focalfunc": "func registerBuildInfo()",
+    "funcbody": "func registerBuildInfo() {\n\tbuildInfo := prometheus.NewGaugeVec(prometheus.GaugeOpts{\n\t\tName:\t\t\"beego\",\n\t\tSubsystem:\t\"build_info\",\n\t\tHelp:\t\t\"The building information\",\n\t\tConstLabels: map[string]string{\n\t\t\t\"appname\":\t\tweb.BConfig.AppName,\n\t\t\t\"build_version\":\tbeego.BuildVersion,\n\t\t\t\"build_revision\":\tbeego.BuildGitRevision,\n\t\t\t\"build_status\":\t\tbeego.BuildStatus,\n\t\t\t\"build_tag\":\t\tbeego.BuildTag,\n\t\t\t\"build_time\":\t\tstrings.Replace(beego.BuildTime, \"--\", \" \", 1),\n\t\t\t\"go_version\":\t\tbeego.GoVersion,\n\t\t\t\"git_branch\":\t\tbeego.GitBranch,\n\t\t\t\"start_time\":\t\ttime.Now().Format(\"2006-01-02 15:04:05\"),\n\t\t},\n\t}, []string{})\n\n\t_ = prometheus.Register(buildInfo)\n\tbuildInfo.WithLabelValues().Set(1)\n}",
+    "funcname": "registerBuildInfo"
+}

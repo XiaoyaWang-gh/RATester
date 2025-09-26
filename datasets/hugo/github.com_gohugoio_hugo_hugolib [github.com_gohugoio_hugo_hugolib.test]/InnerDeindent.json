@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 79,
+    "focalfunc": "func (scp *ShortcodeWithPage) InnerDeindent() template.HTML",
+    "funcbody": "func (scp *ShortcodeWithPage) InnerDeindent() template.HTML {\n\tif scp.indentation == \"\" {\n\t\treturn scp.Inner\n\t}\n\tscp.innerDeindentInit.Do(func() {\n\t\tb := bp.GetBuffer()\n\t\ttext.VisitLinesAfter(string(scp.Inner), func(s string) {\n\t\t\tif strings.HasPrefix(s, scp.indentation) {\n\t\t\t\tb.WriteString(strings.TrimPrefix(s, scp.indentation))\n\t\t\t} else {\n\t\t\t\tb.WriteString(s)\n\t\t\t}\n\t\t})\n\t\tscp.innerDeindent = template.HTML(b.String())\n\t\tbp.PutBuffer(b)\n\t})\n\n\treturn scp.innerDeindent\n}",
+    "funcname": "InnerDeindent"
+}

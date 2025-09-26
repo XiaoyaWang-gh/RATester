@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 127,
+    "focalfunc": "func (o *ObservabilityMgr) Close()",
+    "funcbody": "func (o *ObservabilityMgr) Close() {\n\tif o == nil {\n\t\treturn\n\t}\n\n\tif o.accessLoggerMiddleware != nil {\n\t\tif err := o.accessLoggerMiddleware.Close(); err != nil {\n\t\t\tlog.Error().Err(err).Msg(\"Could not close the access log file\")\n\t\t}\n\t}\n\n\tif o.tracerCloser != nil {\n\t\tif err := o.tracerCloser.Close(); err != nil {\n\t\t\tlog.Error().Err(err).Msg(\"Could not close the tracer\")\n\t\t}\n\t}\n}",
+    "funcname": "Close"
+}

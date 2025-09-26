@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 77,
+    "focalfunc": "func (st *CookieSessionStore) SessionRelease(_ context.Context, w http.ResponseWriter)",
+    "funcbody": "func (st *CookieSessionStore) SessionRelease(_ context.Context, w http.ResponseWriter) {\n\tst.lock.RLock()\n\tvalues := st.values\n\tst.lock.RUnlock()\n\tencodedCookie, err := encodeCookie(\n\t\tcookiepder.block, cookiepder.config.SecurityKey, cookiepder.config.SecurityName, values)\n\tif err == nil {\n\t\tcookie := &http.Cookie{\n\t\t\tName:\t\tcookiepder.config.CookieName,\n\t\t\tValue:\t\turl.QueryEscape(encodedCookie),\n\t\t\tPath:\t\t\"/\",\n\t\t\tHttpOnly:\ttrue,\n\t\t\tSecure:\t\tcookiepder.config.Secure,\n\t\t\tMaxAge:\t\tcookiepder.config.Maxage,\n\t\t}\n\t\thttp.SetCookie(w, cookie)\n\t}\n}",
+    "funcname": "SessionRelease"
+}

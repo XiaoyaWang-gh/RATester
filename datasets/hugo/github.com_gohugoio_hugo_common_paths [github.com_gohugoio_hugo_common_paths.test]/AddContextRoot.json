@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 89,
+    "focalfunc": "func AddContextRoot(baseURL, relativePath string) string",
+    "funcbody": "func AddContextRoot(baseURL, relativePath string) string {\n\turl, err := url.Parse(baseURL)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tnewPath := path.Join(url.Path, relativePath)\n\n\tif newPath != \"/\" && strings.HasSuffix(relativePath, \"/\") {\n\t\tnewPath += \"/\"\n\t}\n\treturn newPath\n}",
+    "funcname": "AddContextRoot"
+}

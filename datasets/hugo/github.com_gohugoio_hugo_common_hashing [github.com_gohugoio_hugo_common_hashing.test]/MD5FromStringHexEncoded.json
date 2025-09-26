@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 58,
+    "focalfunc": "func MD5FromStringHexEncoded(f string) string",
+    "funcbody": "func MD5FromStringHexEncoded(f string) string {\n\th := md5.New()\n\th.Write([]byte(f))\n\treturn hex.EncodeToString(h.Sum(nil))\n}",
+    "funcname": "MD5FromStringHexEncoded"
+}

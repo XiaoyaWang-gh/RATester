@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 214,
+    "focalfunc": "func (r *hookedRenderer) filterInternalAttributes(attrs []ast.Attribute) []ast.Attribute",
+    "funcbody": "func (r *hookedRenderer) filterInternalAttributes(attrs []ast.Attribute) []ast.Attribute {\n\tn := 0\n\tfor _, x := range attrs {\n\t\tif !bytes.HasPrefix(x.Name, []byte(internalAttrPrefix)) {\n\t\t\tattrs[n] = x\n\t\t\tn++\n\t\t}\n\t}\n\treturn attrs[:n]\n}",
+    "funcname": "filterInternalAttributes"
+}

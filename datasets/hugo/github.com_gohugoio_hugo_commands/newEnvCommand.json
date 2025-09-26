@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/env.go",
+    "lineno": 25,
+    "focalfunc": "func newEnvCommand() simplecobra.Commander",
+    "funcbody": "func newEnvCommand() simplecobra.Commander {\n\treturn &simpleCommand{\n\t\tname:\t\"env\",\n\t\tshort:\t\"Print Hugo version and environment info\",\n\t\tlong:\t\"Print Hugo version and environment info. This is useful in Hugo bug reports\",\n\t\trun: func(ctx context.Context, cd *simplecobra.Commandeer, r *rootCommand, args []string) error {\n\t\t\tr.Printf(\"%s\\n\", hugo.BuildVersionString())\n\t\t\tr.Printf(\"GOOS=%q\\n\", runtime.GOOS)\n\t\t\tr.Printf(\"GOARCH=%q\\n\", runtime.GOARCH)\n\t\t\tr.Printf(\"GOVERSION=%q\\n\", runtime.Version())\n\n\t\t\tif r.isVerbose() {\n\t\t\t\tdeps := hugo.GetDependencyList()\n\t\t\t\tfor _, dep := range deps {\n\t\t\t\t\tr.Printf(\"%s\\n\", dep)\n\t\t\t\t}\n\t\t\t} else {\n\n\t\t\t\tdeps := hugo.GetDependencyListNonGo()\n\t\t\t\tfor _, dep := range deps {\n\t\t\t\t\tr.Printf(\"%s\\n\", dep)\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn nil\n\t\t},\n\t\twithc: func(cmd *cobra.Command, r *rootCommand) {\n\t\t\tcmd.ValidArgsFunction = cobra.NoFileCompletions\n\t\t},\n\t}\n}",
+    "funcname": "newEnvCommand"
+}

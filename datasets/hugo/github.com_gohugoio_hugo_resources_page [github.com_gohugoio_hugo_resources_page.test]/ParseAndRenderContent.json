@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 548,
+    "focalfunc": "func (r *nopContentRenderer) ParseAndRenderContent(ctx context.Context, content []byte, renderTOC bool) (converter.ResultRender, error)",
+    "funcbody": "func (r *nopContentRenderer) ParseAndRenderContent(ctx context.Context, content []byte, renderTOC bool) (converter.ResultRender, error) {\n\tb := &bytes.Buffer{}\n\treturn b, nil\n}",
+    "funcname": "ParseAndRenderContent"
+}

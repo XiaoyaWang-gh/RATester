@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 289,
+    "focalfunc": "func (t Types) GetFirstBySuffix(suffix string) (Type, SuffixInfo, bool)",
+    "funcbody": "func (t Types) GetFirstBySuffix(suffix string) (Type, SuffixInfo, bool) {\n\tsuffix = strings.ToLower(suffix)\n\tfor _, tt := range t {\n\t\tif tt.hasSuffix(suffix) {\n\t\t\treturn tt, SuffixInfo{\n\t\t\t\tFullSuffix:\ttt.Delimiter + suffix,\n\t\t\t\tSuffix:\t\tsuffix,\n\t\t\t}, true\n\t\t}\n\t}\n\treturn Type{}, SuffixInfo{}, false\n}",
+    "funcname": "GetFirstBySuffix"
+}

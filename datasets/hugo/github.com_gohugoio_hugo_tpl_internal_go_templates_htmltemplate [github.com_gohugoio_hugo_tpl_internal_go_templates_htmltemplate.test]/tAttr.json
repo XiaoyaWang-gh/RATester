@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 255,
+    "focalfunc": "func tAttr(c context, s []byte) (context, int)",
+    "funcbody": "func tAttr(c context, s []byte) (context, int) {\n\treturn c, len(s)\n}",
+    "funcname": "tAttr"
+}

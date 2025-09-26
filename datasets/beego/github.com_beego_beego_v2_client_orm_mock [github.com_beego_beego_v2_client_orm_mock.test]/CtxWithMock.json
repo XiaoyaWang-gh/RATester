@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/context.go",
+    "lineno": 27,
+    "focalfunc": "func CtxWithMock(ctx context.Context, mock ...*Mock) context.Context",
+    "funcbody": "func CtxWithMock(ctx context.Context, mock ...*Mock) context.Context {\n\treturn context.WithValue(ctx, mockCtxKey, mock)\n}",
+    "funcname": "CtxWithMock"
+}

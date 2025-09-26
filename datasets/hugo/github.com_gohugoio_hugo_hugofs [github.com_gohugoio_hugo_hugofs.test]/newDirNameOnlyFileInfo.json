@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 283,
+    "focalfunc": "func newDirNameOnlyFileInfo(name string, meta *FileMeta, fileOpener func() (afero.File, error)) FileMetaInfo",
+    "funcbody": "func newDirNameOnlyFileInfo(name string, meta *FileMeta, fileOpener func() (afero.File, error)) FileMetaInfo {\n\tname = normalizeFilename(name)\n\t_, base := filepath.Split(name)\n\n\tm := meta.Copy()\n\tif m.Filename == \"\" {\n\t\tm.Filename = name\n\t}\n\tm.OpenFunc = fileOpener\n\n\treturn NewFileMetaInfo(\n\t\t&dirNameOnlyFileInfo{name: base, modTime: htime.Now()},\n\t\tm,\n\t)\n}",
+    "funcname": "newDirNameOnlyFileInfo"
+}

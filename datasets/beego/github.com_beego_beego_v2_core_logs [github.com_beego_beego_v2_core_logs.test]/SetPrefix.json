@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 709,
+    "focalfunc": "func SetPrefix(s string)",
+    "funcbody": "func SetPrefix(s string) {\n\tbeeLogger.SetPrefix(s)\n}",
+    "funcname": "SetPrefix"
+}

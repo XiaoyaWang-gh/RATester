@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 193,
+    "focalfunc": "func (l *absurllexer) replace()",
+    "funcbody": "func (l *absurllexer) replace() {\n\tcontentLength := len(l.content)\n\n\tprefixes := newPrefixState()\n\n\tfor {\n\t\tif l.pos >= contentLength {\n\t\t\tbreak\n\t\t}\n\n\t\tvar match *prefix\n\n\t\tfor _, p := range prefixes {\n\t\t\tif !p.find(l.content, l.pos) {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tif match == nil || p.nextPos < match.nextPos {\n\t\t\t\tmatch = p\n\t\t\t}\n\t\t}\n\n\t\tif match == nil {\n\n\t\t\tl.pos = contentLength\n\t\t\tbreak\n\t\t} else {\n\t\t\tl.pos = match.nextPos\n\t\t\tmatch.nextPos = -1\n\t\t\tmatch.f(l)\n\t\t}\n\t}\n\n\tif l.pos > l.start {\n\t\tl.emit()\n\t}\n}",
+    "funcname": "replace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 115,
+    "focalfunc": "func (r *Registering) Route(path string) Register",
+    "funcbody": "func (r *Registering) Route(path string) Register {\n\n\troute := &Registering{app: r.app, path: getGroupPath(r.path, path)}\n\n\treturn route\n}",
+    "funcname": "Route"
+}

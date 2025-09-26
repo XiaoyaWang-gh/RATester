@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/builder.go",
+    "lineno": 154,
+    "focalfunc": "func newProviderBuilder(ctx context.Context, manifest *Manifest, goPath string) (providerBuilder, error)",
+    "funcbody": "func newProviderBuilder(ctx context.Context, manifest *Manifest, goPath string) (providerBuilder, error) {\n\tswitch manifest.Runtime {\n\tcase runtimeYaegi, \"\":\n\t\ti, err := newInterpreter(ctx, goPath, manifest.Import)\n\t\tif err != nil {\n\t\t\treturn providerBuilder{}, err\n\t\t}\n\n\t\treturn providerBuilder{\n\t\t\tinterpreter:\ti,\n\t\t\tImport:\t\tmanifest.Import,\n\t\t\tBasePkg:\tmanifest.BasePkg,\n\t\t}, nil\n\n\tdefault:\n\t\treturn providerBuilder{}, fmt.Errorf(\"unknown plugin runtime: %s\", manifest.Runtime)\n\t}\n}",
+    "funcname": "newProviderBuilder"
+}

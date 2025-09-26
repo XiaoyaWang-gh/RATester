@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 208,
+    "focalfunc": "func (p *siprng) rekey()",
+    "funcbody": "func (p *siprng) rekey() {\n\tvar k [16]byte\n\tif _, err := io.ReadFull(rand.Reader, k[:]); err != nil {\n\t\tpanic(err.Error())\n\t}\n\tp.k0 = binary.LittleEndian.Uint64(k[0:8])\n\tp.k1 = binary.LittleEndian.Uint64(k[8:16])\n\tp.ctr = 1\n}",
+    "funcname": "rekey"
+}

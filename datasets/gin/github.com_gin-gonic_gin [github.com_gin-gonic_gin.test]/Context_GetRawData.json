@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 928,
+    "focalfunc": "func (c *Context) GetRawData() ([]byte, error)",
+    "funcbody": "func (c *Context) GetRawData() ([]byte, error) {\n\tif c.Request.Body == nil {\n\t\treturn nil, errors.New(\"cannot read nil body\")\n\t}\n\treturn io.ReadAll(c.Request.Body)\n}",
+    "funcname": "GetRawData"
+}

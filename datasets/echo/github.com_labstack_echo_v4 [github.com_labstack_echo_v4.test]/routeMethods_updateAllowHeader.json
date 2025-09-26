@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 89,
+    "focalfunc": "func (m *routeMethods) updateAllowHeader()",
+    "funcbody": "func (m *routeMethods) updateAllowHeader() {\n\tbuf := new(bytes.Buffer)\n\tbuf.WriteString(http.MethodOptions)\n\n\tif m.connect != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodConnect)\n\t}\n\tif m.delete != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodDelete)\n\t}\n\tif m.get != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodGet)\n\t}\n\tif m.head != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodHead)\n\t}\n\tif m.patch != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodPatch)\n\t}\n\tif m.post != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodPost)\n\t}\n\tif m.propfind != nil {\n\t\tbuf.WriteString(\", PROPFIND\")\n\t}\n\tif m.put != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodPut)\n\t}\n\tif m.trace != nil {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(http.MethodTrace)\n\t}\n\tif m.report != nil {\n\t\tbuf.WriteString(\", REPORT\")\n\t}\n\tfor method := range m.anyOther {\n\t\tbuf.WriteString(\", \")\n\t\tbuf.WriteString(method)\n\t}\n\tm.allowHeader = buf.String()\n}",
+    "funcname": "updateAllowHeader"
+}

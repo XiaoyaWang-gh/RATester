@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 144,
+    "focalfunc": "func (rc *Cache) StartAndGC(config string) error",
+    "funcbody": "func (rc *Cache) StartAndGC(config string) error {\n\tvar cf map[string]string\n\tif err := json.Unmarshal([]byte(config), &cf); err != nil {\n\t\treturn berror.Wrapf(err, cache.InvalidMemCacheCfg,\n\t\t\t\"could not unmarshal this config, it must be valid json stringP: %s\", config)\n\t}\n\n\tif _, ok := cf[\"conn\"]; !ok {\n\t\treturn berror.Errorf(cache.InvalidMemCacheCfg, `config must contains \"conn\" field: %s`, config)\n\t}\n\trc.conninfo = strings.Split(cf[\"conn\"], \";\")\n\trc.conn = memcache.New(rc.conninfo...)\n\treturn nil\n}",
+    "funcname": "StartAndGC"
+}

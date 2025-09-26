@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/connection/connection.go",
+    "lineno": 35,
+    "focalfunc": "func GetBridgeListener(tp string) (net.Listener, error)",
+    "funcbody": "func GetBridgeListener(tp string) (net.Listener, error) {\n\tlogs.Info(\"server start, the bridge type is %s, the bridge port is %s\", tp, bridgePort)\n\tvar p int\n\tvar err error\n\tif p, err = strconv.Atoi(bridgePort); err != nil {\n\t\treturn nil, err\n\t}\n\tif pMux != nil {\n\t\treturn pMux.GetClientListener(), nil\n\t}\n\treturn net.ListenTCP(\"tcp\", &net.TCPAddr{net.ParseIP(beego.AppConfig.String(\"bridge_ip\")), p, \"\"})\n}",
+    "funcname": "GetBridgeListener"
+}

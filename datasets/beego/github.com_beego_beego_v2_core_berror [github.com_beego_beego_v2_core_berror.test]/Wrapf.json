@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/error.go",
+    "lineno": 43,
+    "focalfunc": "func Wrapf(err error, c Code, format string, a ...interface{}) error",
+    "funcbody": "func Wrapf(err error, c Code, format string, a ...interface{}) error {\n\treturn Wrap(err, c, fmt.Sprintf(format, a...))\n}",
+    "funcname": "Wrapf"
+}

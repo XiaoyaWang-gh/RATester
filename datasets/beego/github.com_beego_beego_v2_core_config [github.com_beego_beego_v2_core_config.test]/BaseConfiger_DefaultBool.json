@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 163,
+    "focalfunc": "func (c *BaseConfiger) DefaultBool(key string, defaultVal bool) bool",
+    "funcbody": "func (c *BaseConfiger) DefaultBool(key string, defaultVal bool) bool {\n\tif res, err := c.Bool(key); err == nil {\n\t\treturn res\n\t}\n\treturn defaultVal\n}",
+    "funcname": "DefaultBool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resourcetypes.go",
+    "lineno": 257,
+    "focalfunc": "func StaleVersionSum(oss ...any) uint32",
+    "funcbody": "func StaleVersionSum(oss ...any) uint32 {\n\tvar version uint32\n\tfor _, o := range oss {\n\t\tif s, ok := o.(StaleInfo); ok && s.StaleVersion() > 0 {\n\t\t\tversion += s.StaleVersion()\n\t\t}\n\t}\n\treturn version\n}",
+    "funcname": "StaleVersionSum"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 233,
+    "focalfunc": "func (l configLoader) cleanExternalConfig(cfg config.Provider) error",
+    "funcbody": "func (l configLoader) cleanExternalConfig(cfg config.Provider) error {\n\tif cfg.IsSet(\"internal\") {\n\t\tcfg.Set(\"internal\", nil)\n\t}\n\treturn nil\n}",
+    "funcname": "cleanExternalConfig"
+}

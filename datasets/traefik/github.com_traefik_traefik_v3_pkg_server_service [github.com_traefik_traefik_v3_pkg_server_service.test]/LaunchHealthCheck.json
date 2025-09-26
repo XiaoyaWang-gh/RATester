@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/service.go",
+    "lineno": 412,
+    "focalfunc": "func (m *Manager) LaunchHealthCheck(ctx context.Context)",
+    "funcbody": "func (m *Manager) LaunchHealthCheck(ctx context.Context) {\n\tfor serviceName, hc := range m.healthCheckers {\n\t\tlogger := log.Ctx(ctx).With().Str(logs.ServiceName, serviceName).Logger()\n\t\tgo hc.Launch(logger.WithContext(ctx))\n\t}\n}",
+    "funcname": "LaunchHealthCheck"
+}

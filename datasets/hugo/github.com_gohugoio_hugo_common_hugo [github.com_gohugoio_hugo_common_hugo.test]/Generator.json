@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 85,
+    "focalfunc": "func (i HugoInfo) Generator() template.HTML",
+    "funcbody": "func (i HugoInfo) Generator() template.HTML {\n\treturn template.HTML(fmt.Sprintf(`<meta name=\"generator\" content=\"Hugo %s\">`, CurrentVersion.String()))\n}",
+    "funcname": "Generator"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 122,
+    "focalfunc": "func (t *Tree) peekNonSpace() item",
+    "funcbody": "func (t *Tree) peekNonSpace() item {\n\ttoken := t.nextNonSpace()\n\tt.backup()\n\treturn token\n}",
+    "funcname": "peekNonSpace"
+}

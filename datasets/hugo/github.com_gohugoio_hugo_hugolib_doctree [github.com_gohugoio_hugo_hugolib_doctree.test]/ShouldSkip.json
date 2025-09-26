@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 343,
+    "focalfunc": "func (r *NodeShiftTreeWalker[T]) ShouldSkip(s string) bool",
+    "funcbody": "func (r *NodeShiftTreeWalker[T]) ShouldSkip(s string) bool {\n\tfor _, prefix := range r.skipPrefixes {\n\t\tif strings.HasPrefix(s, prefix) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "ShouldSkip"
+}

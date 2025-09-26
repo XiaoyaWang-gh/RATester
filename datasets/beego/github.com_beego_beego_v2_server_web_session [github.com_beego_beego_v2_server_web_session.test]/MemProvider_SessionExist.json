@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 117,
+    "focalfunc": "func (pder *MemProvider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (pder *MemProvider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tpder.lock.RLock()\n\tdefer pder.lock.RUnlock()\n\tif _, ok := pder.sessions[sid]; ok {\n\t\treturn true, nil\n\t}\n\treturn false, nil\n}",
+    "funcname": "SessionExist"
+}

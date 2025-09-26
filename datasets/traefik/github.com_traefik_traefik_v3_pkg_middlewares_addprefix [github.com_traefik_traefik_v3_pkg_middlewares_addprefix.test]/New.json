@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/addprefix/add_prefix.go",
+    "lineno": 25,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.AddPrefix, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.AddPrefix, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeName).Debug().Msg(\"Creating middleware\")\n\tvar result *addPrefix\n\n\tif len(config.Prefix) > 0 {\n\t\tresult = &addPrefix{\n\t\t\tprefix:\tconfig.Prefix,\n\t\t\tnext:\tnext,\n\t\t\tname:\tname,\n\t\t}\n\t} else {\n\t\treturn nil, errors.New(\"prefix cannot be empty\")\n\t}\n\n\treturn result, nil\n}",
+    "funcname": "New"
+}

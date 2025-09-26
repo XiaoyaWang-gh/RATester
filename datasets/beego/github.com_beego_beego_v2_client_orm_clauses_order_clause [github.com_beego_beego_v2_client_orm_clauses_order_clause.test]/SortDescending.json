@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 92,
+    "focalfunc": "func SortDescending() Option",
+    "funcbody": "func SortDescending() Option {\n\treturn sort(Descending)\n}",
+    "funcname": "SortDescending"
+}

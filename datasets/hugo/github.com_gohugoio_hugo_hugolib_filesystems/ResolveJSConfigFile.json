@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 212,
+    "focalfunc": "func (b *BaseFs) ResolveJSConfigFile(name string) string",
+    "funcbody": "func (b *BaseFs) ResolveJSConfigFile(name string) string {\n\n\tfi, err := b.Assets.Fs.Stat(filepath.Join(files.FolderJSConfig, name))\n\tif err == nil {\n\t\treturn fi.(hugofs.FileMetaInfo).Meta().Filename\n\t}\n\n\tfi, err = b.Work.Stat(name)\n\tif err == nil {\n\t\treturn fi.(hugofs.FileMetaInfo).Meta().Filename\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "ResolveJSConfigFile"
+}

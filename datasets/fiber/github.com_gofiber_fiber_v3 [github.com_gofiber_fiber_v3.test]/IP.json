@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 724,
+    "focalfunc": "func (c *DefaultCtx) IP() string",
+    "funcbody": "func (c *DefaultCtx) IP() string {\n\tif c.IsProxyTrusted() && len(c.app.config.ProxyHeader) > 0 {\n\t\treturn c.extractIPFromHeader(c.app.config.ProxyHeader)\n\t}\n\n\treturn c.fasthttp.RemoteIP().String()\n}",
+    "funcname": "IP"
+}

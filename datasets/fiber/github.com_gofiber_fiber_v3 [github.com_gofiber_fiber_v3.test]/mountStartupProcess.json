@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 109,
+    "focalfunc": "func (app *App) mountStartupProcess()",
+    "funcbody": "func (app *App) mountStartupProcess() {\n\tif app.hasMountedApps() {\n\n\t\tapp.mountFields.subAppsProcessed.Do(func() {\n\t\t\tapp.appendSubAppLists(app.mountFields.appList)\n\t\t\tapp.generateAppListKeys()\n\t\t})\n\n\t\tapp.mountFields.subAppsRoutesAdded.Do(func() {\n\t\t\tapp.processSubAppsRoutes()\n\t\t})\n\t}\n}",
+    "funcname": "mountStartupProcess"
+}

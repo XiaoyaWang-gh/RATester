@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/manager.go",
+    "lineno": 102,
+    "focalfunc": "func (m *Manager) NewProxy(content *NewProxyContent) (*NewProxyContent, error)",
+    "funcbody": "func (m *Manager) NewProxy(content *NewProxyContent) (*NewProxyContent, error) {\n\tif len(m.newProxyPlugins) == 0 {\n\t\treturn content, nil\n\t}\n\n\tvar (\n\t\tres\t= &Response{\n\t\t\tReject:\t\tfalse,\n\t\t\tUnchange:\ttrue,\n\t\t}\n\t\tretContent\tinterface{}\n\t\terr\t\terror\n\t)\n\treqid, _ := util.RandID()\n\txl := xlog.New().AppendPrefix(\"reqid: \" + reqid)\n\tctx := xlog.NewContext(context.Background(), xl)\n\tctx = NewReqidContext(ctx, reqid)\n\n\tfor _, p := range m.newProxyPlugins {\n\t\tres, retContent, err = p.Handle(ctx, OpNewProxy, *content)\n\t\tif err != nil {\n\t\t\txl.Warnf(\"send NewProxy request to plugin [%s] error: %v\", p.Name(), err)\n\t\t\treturn nil, errors.New(\"send NewProxy request to plugin error\")\n\t\t}\n\t\tif res.Reject {\n\t\t\treturn nil, fmt.Errorf(\"%s\", res.RejectReason)\n\t\t}\n\t\tif !res.Unchange {\n\t\t\tcontent = retContent.(*NewProxyContent)\n\t\t}\n\t}\n\treturn content, nil\n}",
+    "funcname": "NewProxy"
+}

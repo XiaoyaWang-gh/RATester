@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/blockquotes/blockquotes.go",
+    "lineno": 164,
+    "focalfunc": "func resolveBlockQuoteAlert(s string) blockQuoteAlert",
+    "funcbody": "func resolveBlockQuoteAlert(s string) blockQuoteAlert {\n\tm := blockQuoteAlertRe.FindStringSubmatch(s)\n\tif len(m) == 4 {\n\t\treturn blockQuoteAlert{\n\t\t\ttyp:\tstrings.ToLower(m[1]),\n\t\t\tsign:\tm[2],\n\t\t\ttitle:\tm[3],\n\t\t}\n\t}\n\n\treturn blockQuoteAlert{}\n}",
+    "funcname": "resolveBlockQuoteAlert"
+}

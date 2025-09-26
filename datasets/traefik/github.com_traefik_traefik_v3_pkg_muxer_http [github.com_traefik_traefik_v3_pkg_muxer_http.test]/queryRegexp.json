@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 237,
+    "focalfunc": "func queryRegexp(tree *matchersTree, queries ...string) error",
+    "funcbody": "func queryRegexp(tree *matchersTree, queries ...string) error {\n\tif len(queries) == 1 {\n\t\treturn query(tree, queries...)\n\t}\n\n\tkey, value := queries[0], queries[1]\n\n\tre, err := regexp.Compile(value)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"compiling QueryRegexp matcher: %w\", err)\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\tvalues, ok := req.URL.Query()[key]\n\t\tif !ok {\n\t\t\treturn false\n\t\t}\n\n\t\tidx := slices.IndexFunc(values, func(value string) bool {\n\t\t\treturn re.MatchString(value)\n\t\t})\n\n\t\treturn idx >= 0\n\t}\n\n\treturn nil\n}",
+    "funcname": "queryRegexp"
+}

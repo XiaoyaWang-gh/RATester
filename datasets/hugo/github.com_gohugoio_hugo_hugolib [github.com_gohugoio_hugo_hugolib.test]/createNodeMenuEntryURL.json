@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 646,
+    "focalfunc": "func (s *Site) createNodeMenuEntryURL(in string) string",
+    "funcbody": "func (s *Site) createNodeMenuEntryURL(in string) string {\n\tif !strings.HasPrefix(in, \"/\") {\n\t\treturn in\n\t}\n\n\tmenuEntryURL := in\n\tmenuEntryURL = s.s.PathSpec.URLize(menuEntryURL)\n\tif !s.conf.CanonifyURLs {\n\t\tmenuEntryURL = paths.AddContextRoot(s.s.PathSpec.Cfg.BaseURL().String(), menuEntryURL)\n\t}\n\treturn menuEntryURL\n}",
+    "funcname": "createNodeMenuEntryURL"
+}

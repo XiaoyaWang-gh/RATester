@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_querym2m.go",
+    "lineno": 117,
+    "focalfunc": "func (o *queryM2M) RemoveWithCtx(ctx context.Context, mds ...interface{}) (int64, error)",
+    "funcbody": "func (o *queryM2M) RemoveWithCtx(ctx context.Context, mds ...interface{}) (int64, error) {\n\tfi := o.fi\n\tqs := o.qs.Filter(fi.ReverseFieldInfo.Name, o.md)\n\n\treturn qs.Filter(fi.ReverseFieldInfoTwo.Name+ExprSep+\"in\", mds).Delete()\n}",
+    "funcname": "RemoveWithCtx"
+}

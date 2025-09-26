@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1075,
+    "focalfunc": "func (b *ValueBinder) MustFloat64s(sourceParam string, dest *[]float64) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustFloat64s(sourceParam string, dest *[]float64) *ValueBinder {\n\treturn b.floatsValue(sourceParam, dest, true)\n}",
+    "funcname": "MustFloat64s"
+}

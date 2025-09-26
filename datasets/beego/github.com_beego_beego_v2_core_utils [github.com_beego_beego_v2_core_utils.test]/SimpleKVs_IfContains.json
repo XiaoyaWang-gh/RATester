@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/kv.go",
+    "lineno": 70,
+    "focalfunc": "func (kvs *SimpleKVs) IfContains(key interface{}, action func(value interface{})) KVs",
+    "funcbody": "func (kvs *SimpleKVs) IfContains(key interface{}, action func(value interface{})) KVs {\n\tv, ok := kvs.kvs[key]\n\tif ok {\n\t\taction(v)\n\t}\n\treturn kvs\n}",
+    "funcname": "IfContains"
+}

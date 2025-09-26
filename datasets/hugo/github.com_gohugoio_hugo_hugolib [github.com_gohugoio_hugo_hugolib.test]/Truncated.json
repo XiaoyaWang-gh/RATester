@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 217,
+    "focalfunc": "func (pco *pageContentOutput) Truncated(ctx context.Context) bool",
+    "funcbody": "func (pco *pageContentOutput) Truncated(ctx context.Context) bool {\n\tsummary, err := pco.mustRender(ctx).Summary(ctx)\n\tif err != nil {\n\t\tpco.fail(err)\n\t}\n\treturn summary.Truncated\n}",
+    "funcname": "Truncated"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 185,
+    "focalfunc": "func NewControllerRegisterWithCfg(cfg *Config) *ControllerRegister",
+    "funcbody": "func NewControllerRegisterWithCfg(cfg *Config) *ControllerRegister {\n\tres := &ControllerRegister{\n\t\trouters:\tmake(map[string]*Tree),\n\t\tpolicies:\tmake(map[string]*Tree),\n\t\tpool: sync.Pool{\n\t\t\tNew: func() interface{} {\n\t\t\t\treturn beecontext.NewContext()\n\t\t\t},\n\t\t},\n\t\tcfg:\t\tcfg,\n\t\tfilterChains:\tmake([]filterChainConfig, 0, 4),\n\t}\n\tres.chainRoot = newFilterRouter(\"/*\", res.serveHttp, WithCaseSensitive(false))\n\treturn res\n}",
+    "funcname": "NewControllerRegisterWithCfg"
+}

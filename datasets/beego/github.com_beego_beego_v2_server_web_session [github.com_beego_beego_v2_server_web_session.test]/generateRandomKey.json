@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 73,
+    "focalfunc": "func generateRandomKey(strength int) []byte",
+    "funcbody": "func generateRandomKey(strength int) []byte {\n\tk := make([]byte, strength)\n\tif n, err := io.ReadFull(rand.Reader, k); n != strength || err != nil {\n\t\treturn utils.RandomCreateBytes(strength)\n\t}\n\treturn k\n}",
+    "funcname": "generateRandomKey"
+}

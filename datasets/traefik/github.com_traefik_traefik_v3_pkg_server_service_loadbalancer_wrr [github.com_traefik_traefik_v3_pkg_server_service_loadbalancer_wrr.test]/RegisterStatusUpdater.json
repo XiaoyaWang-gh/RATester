@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 163,
+    "focalfunc": "func (b *Balancer) RegisterStatusUpdater(fn func(up bool)) error",
+    "funcbody": "func (b *Balancer) RegisterStatusUpdater(fn func(up bool)) error {\n\tif !b.wantsHealthCheck {\n\t\treturn errors.New(\"healthCheck not enabled in config for this weighted service\")\n\t}\n\tb.updaters = append(b.updaters, fn)\n\treturn nil\n}",
+    "funcname": "RegisterStatusUpdater"
+}

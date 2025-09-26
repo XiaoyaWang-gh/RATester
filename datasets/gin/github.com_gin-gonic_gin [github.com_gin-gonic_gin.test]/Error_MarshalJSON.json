@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 79,
+    "focalfunc": "func (msg *Error) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (msg *Error) MarshalJSON() ([]byte, error) {\n\treturn json.Marshal(msg.JSON())\n}",
+    "funcname": "MarshalJSON"
+}

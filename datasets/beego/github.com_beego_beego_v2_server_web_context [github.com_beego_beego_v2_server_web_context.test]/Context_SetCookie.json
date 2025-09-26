@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 219,
+    "focalfunc": "func (ctx *Context) SetCookie(name string, value string, others ...interface{})",
+    "funcbody": "func (ctx *Context) SetCookie(name string, value string, others ...interface{}) {\n\tctx.Output.Cookie(name, value, others...)\n}",
+    "funcname": "SetCookie"
+}

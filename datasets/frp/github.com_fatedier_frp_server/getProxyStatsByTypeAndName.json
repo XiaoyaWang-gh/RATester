@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 311,
+    "focalfunc": "func (svr *Service) getProxyStatsByTypeAndName(proxyType string, proxyName string) (proxyInfo GetProxyStatsResp, code int, msg string)",
+    "funcbody": "func (svr *Service) getProxyStatsByTypeAndName(proxyType string, proxyName string) (proxyInfo GetProxyStatsResp, code int, msg string) {\n\tproxyInfo.Name = proxyName\n\tps := mem.StatsCollector.GetProxiesByTypeAndName(proxyType, proxyName)\n\tif ps == nil {\n\t\tcode = 404\n\t\tmsg = \"no proxy info found\"\n\t} else {\n\t\tif pxy, ok := svr.pxyManager.GetByName(proxyName); ok {\n\t\t\tcontent, err := json.Marshal(pxy.GetConfigurer())\n\t\t\tif err != nil {\n\t\t\t\tlog.Warnf(\"marshal proxy [%s] conf info error: %v\", ps.Name, err)\n\t\t\t\tcode = 400\n\t\t\t\tmsg = \"parse conf error\"\n\t\t\t\treturn\n\t\t\t}\n\t\t\tproxyInfo.Conf = getConfByType(ps.Type)\n\t\t\tif err = json.Unmarshal(content, &proxyInfo.Conf); err != nil {\n\t\t\t\tlog.Warnf(\"unmarshal proxy [%s] conf info error: %v\", ps.Name, err)\n\t\t\t\tcode = 400\n\t\t\t\tmsg = \"parse conf error\"\n\t\t\t\treturn\n\t\t\t}\n\t\t\tproxyInfo.Status = \"online\"\n\t\t} else {\n\t\t\tproxyInfo.Status = \"offline\"\n\t\t}\n\t\tproxyInfo.TodayTrafficIn = ps.TodayTrafficIn\n\t\tproxyInfo.TodayTrafficOut = ps.TodayTrafficOut\n\t\tproxyInfo.CurConns = ps.CurConns\n\t\tproxyInfo.LastStartTime = ps.LastStartTime\n\t\tproxyInfo.LastCloseTime = ps.LastCloseTime\n\t\tcode = 200\n\t}\n\n\treturn\n}",
+    "funcname": "getProxyStatsByTypeAndName"
+}

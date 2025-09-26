@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/grpcroute.go",
+    "lineno": 285,
+    "focalfunc": "func (p *Provider) loadGRPCMiddlewares(conf *dynamic.Configuration, namespace, routerName string, filters []gatev1.GRPCRouteFilter) ([]string, error)",
+    "funcbody": "func (p *Provider) loadGRPCMiddlewares(conf *dynamic.Configuration, namespace, routerName string, filters []gatev1.GRPCRouteFilter) ([]string, error) {\n\tmiddlewares := make(map[string]*dynamic.Middleware)\n\tfor i, filter := range filters {\n\t\tname := fmt.Sprintf(\"%s-%s-%d\", routerName, strings.ToLower(string(filter.Type)), i)\n\t\tswitch filter.Type {\n\t\tcase gatev1.GRPCRouteFilterRequestHeaderModifier:\n\t\t\tmiddlewares[name] = createRequestHeaderModifier(filter.RequestHeaderModifier)\n\n\t\tcase gatev1.GRPCRouteFilterExtensionRef:\n\t\t\tname, middleware, err := p.loadHTTPRouteFilterExtensionRef(namespace, filter.ExtensionRef)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"loading ExtensionRef filter %s: %w\", filter.Type, err)\n\t\t\t}\n\n\t\t\tmiddlewares[name] = middleware\n\n\t\tdefault:\n\n\t\t\treturn nil, fmt.Errorf(\"unsupported filter %s\", filter.Type)\n\t\t}\n\t}\n\n\tvar middlewareNames []string\n\tfor name, middleware := range middlewares {\n\t\tif middleware != nil {\n\t\t\tconf.HTTP.Middlewares[name] = middleware\n\t\t}\n\n\t\tmiddlewareNames = append(middlewareNames, name)\n\t}\n\n\treturn middlewareNames, nil\n}",
+    "funcname": "loadGRPCMiddlewares"
+}

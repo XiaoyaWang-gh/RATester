@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 215,
+    "focalfunc": "func (svr *Service) apiProxyByType(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (svr *Service) apiProxyByType(w http.ResponseWriter, r *http.Request) {\n\tres := GeneralResponse{Code: 200}\n\tparams := mux.Vars(r)\n\tproxyType := params[\"type\"]\n\n\tdefer func() {\n\t\tlog.Infof(\"Http response [%s]: code [%d]\", r.URL.Path, res.Code)\n\t\tw.WriteHeader(res.Code)\n\t\tif len(res.Msg) > 0 {\n\t\t\t_, _ = w.Write([]byte(res.Msg))\n\t\t}\n\t}()\n\tlog.Infof(\"Http request: [%s]\", r.URL.Path)\n\n\tproxyInfoResp := GetProxyInfoResp{}\n\tproxyInfoResp.Proxies = svr.getProxyStatsByType(proxyType)\n\tslices.SortFunc(proxyInfoResp.Proxies, func(a, b *ProxyStatsInfo) int {\n\t\treturn cmp.Compare(a.Name, b.Name)\n\t})\n\n\tbuf, _ := json.Marshal(&proxyInfoResp)\n\tres.Msg = string(buf)\n}",
+    "funcname": "apiProxyByType"
+}

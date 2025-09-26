@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 410,
+    "focalfunc": "func (bl *BeeLogger) setGlobalFormatter(fmtter string) error",
+    "funcbody": "func (bl *BeeLogger) setGlobalFormatter(fmtter string) error {\n\tbl.globalFormatter = fmtter\n\treturn nil\n}",
+    "funcname": "setGlobalFormatter"
+}

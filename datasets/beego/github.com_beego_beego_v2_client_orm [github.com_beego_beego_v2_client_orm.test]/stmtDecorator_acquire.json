@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 545,
+    "focalfunc": "func (s *stmtDecorator) acquire()",
+    "funcbody": "func (s *stmtDecorator) acquire() {\n\ts.wg.Add(1)\n}",
+    "funcname": "acquire"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 128,
+    "focalfunc": "func (e *RequestExpect) Do() (*request.Response, error)",
+    "funcbody": "func (e *RequestExpect) Do() (*request.Response, error) {\n\treturn e.req.Do()\n}",
+    "funcname": "Do"
+}

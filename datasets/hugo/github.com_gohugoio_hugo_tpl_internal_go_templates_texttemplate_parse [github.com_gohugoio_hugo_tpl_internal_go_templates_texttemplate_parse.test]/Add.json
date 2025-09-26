@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 258,
+    "focalfunc": "func (t *Tree) add()",
+    "funcbody": "func (t *Tree) add() {\n\ttree := t.treeSet[t.Name]\n\tif tree == nil || IsEmptyTree(tree.Root) {\n\t\tt.treeSet[t.Name] = t\n\t\treturn\n\t}\n\tif !IsEmptyTree(t.Root) {\n\t\tt.errorf(\"template: multiple definition of template %q\", t.Name)\n\t}\n}",
+    "funcname": "add"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 77,
+    "focalfunc": "func PATCH(relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes",
+    "funcbody": "func PATCH(relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes {\n\treturn engine().PATCH(relativePath, handlers...)\n}",
+    "funcname": "PATCH"
+}

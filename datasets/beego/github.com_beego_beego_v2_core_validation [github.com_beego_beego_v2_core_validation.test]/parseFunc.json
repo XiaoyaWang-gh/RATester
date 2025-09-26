@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 176,
+    "focalfunc": "func parseFunc(vfunc, key string, label string) (v ValidFunc, err error)",
+    "funcbody": "func parseFunc(vfunc, key string, label string) (v ValidFunc, err error) {\n\tdefer func() {\n\t\tif r := recover(); r != nil {\n\t\t\terr = fmt.Errorf(\"%v\", r)\n\t\t}\n\t}()\n\n\tvfunc = strings.TrimSpace(vfunc)\n\tstart := strings.Index(vfunc, \"(\")\n\tvar num int\n\n\tif start == -1 {\n\t\tif num, err = numIn(vfunc); err != nil {\n\t\t\treturn\n\t\t}\n\t\tif num != 0 {\n\t\t\terr = fmt.Errorf(\"%s require %d parameters\", vfunc, num)\n\t\t\treturn\n\t\t}\n\t\tv = ValidFunc{vfunc, []interface{}{key + \".\" + vfunc + \".\" + label}}\n\t\treturn\n\t}\n\n\tend := strings.Index(vfunc, \")\")\n\tif end == -1 {\n\t\terr = fmt.Errorf(\"invalid valid function\")\n\t\treturn\n\t}\n\n\tname := strings.TrimSpace(vfunc[:start])\n\tif num, err = numIn(name); err != nil {\n\t\treturn\n\t}\n\n\tparams := strings.Split(vfunc[start+1:end], \",\")\n\n\tif num != len(params) {\n\t\terr = fmt.Errorf(\"%s require %d parameters\", name, num)\n\t\treturn\n\t}\n\n\ttParams, err := trim(name, key+\".\"+name+\".\"+label, params)\n\tif err != nil {\n\t\treturn\n\t}\n\tv = ValidFunc{name, tParams}\n\treturn\n}",
+    "funcname": "parseFunc"
+}

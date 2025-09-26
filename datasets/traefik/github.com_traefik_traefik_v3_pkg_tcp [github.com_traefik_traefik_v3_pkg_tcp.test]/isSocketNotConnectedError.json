@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/proxy.go",
+    "lineno": 119,
+    "focalfunc": "func isSocketNotConnectedError(err error) bool",
+    "funcbody": "func isSocketNotConnectedError(err error) bool {\n\tvar oerr *net.OpError\n\treturn errors.As(err, &oerr) && errors.Is(err, syscall.ENOTCONN)\n}",
+    "funcname": "isSocketNotConnectedError"
+}

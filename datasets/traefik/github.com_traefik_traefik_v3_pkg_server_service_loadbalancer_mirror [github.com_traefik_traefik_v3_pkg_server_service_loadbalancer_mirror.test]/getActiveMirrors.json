@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 63,
+    "focalfunc": "func (m *Mirroring) getActiveMirrors() []http.Handler",
+    "funcbody": "func (m *Mirroring) getActiveMirrors() []http.Handler {\n\ttotal := m.inc()\n\n\tvar mirrors []http.Handler\n\tfor _, handler := range m.mirrorHandlers {\n\t\thandler.lock.Lock()\n\t\tif handler.count*100 < total*uint64(handler.percent) {\n\t\t\thandler.count++\n\t\t\thandler.lock.Unlock()\n\t\t\tmirrors = append(mirrors, handler)\n\t\t} else {\n\t\t\thandler.lock.Unlock()\n\t\t}\n\t}\n\treturn mirrors\n}",
+    "funcname": "getActiveMirrors"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor.go",
+    "lineno": 93,
+    "focalfunc": "func (v *BaseVisitor) AcceptConn(conn net.Conn) error",
+    "funcbody": "func (v *BaseVisitor) AcceptConn(conn net.Conn) error {\n\treturn v.internalLn.PutConn(conn)\n}",
+    "funcname": "AcceptConn"
+}

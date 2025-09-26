@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 244,
+    "focalfunc": "func indirectInterface(v reflect.Value) reflect.Value",
+    "funcbody": "func indirectInterface(v reflect.Value) reflect.Value {\n\tif v.Kind() != reflect.Interface {\n\t\treturn v\n\t}\n\tif v.IsNil() {\n\t\treturn reflect.Value{}\n\t}\n\treturn v.Elem()\n}",
+    "funcname": "indirectInterface"
+}

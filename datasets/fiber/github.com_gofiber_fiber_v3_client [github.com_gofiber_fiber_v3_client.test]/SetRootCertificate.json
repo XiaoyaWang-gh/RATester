@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 179,
+    "focalfunc": "func (c *Client) SetRootCertificate(path string) *Client",
+    "funcbody": "func (c *Client) SetRootCertificate(path string) *Client {\n\tcleanPath := filepath.Clean(path)\n\tfile, err := os.Open(cleanPath)\n\tif err != nil {\n\t\tc.logger.Panicf(\"client: %v\", err)\n\t}\n\tdefer func() {\n\t\tif err := file.Close(); err != nil {\n\t\t\tc.logger.Panicf(\"client: failed to close file: %v\", err)\n\t\t}\n\t}()\n\n\tpem, err := io.ReadAll(file)\n\tif err != nil {\n\t\tc.logger.Panicf(\"client: %v\", err)\n\t}\n\n\tconfig := c.TLSConfig()\n\tif config.RootCAs == nil {\n\t\tconfig.RootCAs = x509.NewCertPool()\n\t}\n\n\tif !config.RootCAs.AppendCertsFromPEM(pem) {\n\t\tc.logger.Panicf(\"client: %v\", ErrFailedToAppendCert)\n\t}\n\n\treturn c\n}",
+    "funcname": "SetRootCertificate"
+}

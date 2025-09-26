@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/config.go",
+    "lineno": 124,
+    "focalfunc": "func (t ContentTypes) IsHTMLSuffix(suffix string) bool",
+    "funcbody": "func (t ContentTypes) IsHTMLSuffix(suffix string) bool {\n\tfor _, s := range t.HTML.Suffixes() {\n\t\tif s == suffix {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "IsHTMLSuffix"
+}

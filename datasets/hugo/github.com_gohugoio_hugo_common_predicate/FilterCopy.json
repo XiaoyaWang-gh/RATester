@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/predicate/predicate.go",
+    "lineno": 70,
+    "focalfunc": "func (p P[T]) FilterCopy(s []T) []T",
+    "funcbody": "func (p P[T]) FilterCopy(s []T) []T {\n\tvar result []T\n\tfor _, v := range s {\n\t\tif p(v) {\n\t\t\tresult = append(result, v)\n\t\t}\n\t}\n\treturn result\n}",
+    "funcname": "FilterCopy"
+}

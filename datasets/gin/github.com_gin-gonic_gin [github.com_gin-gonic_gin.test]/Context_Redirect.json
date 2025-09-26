@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1069,
+    "focalfunc": "func (c *Context) Redirect(code int, location string)",
+    "funcbody": "func (c *Context) Redirect(code int, location string) {\n\tc.Render(-1, render.Redirect{\n\t\tCode:\t\tcode,\n\t\tLocation:\tlocation,\n\t\tRequest:\tc.Request,\n\t})\n}",
+    "funcname": "Redirect"
+}

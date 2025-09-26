@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 241,
+    "focalfunc": "func (fs *RootMappingFs) Mounts(base string) ([]FileMetaInfo, error)",
+    "funcbody": "func (fs *RootMappingFs) Mounts(base string) ([]FileMetaInfo, error) {\n\tbase = filepathSeparator + fs.cleanName(base)\n\troots := fs.getRootsWithPrefix(base)\n\n\tif roots == nil {\n\t\treturn nil, nil\n\t}\n\n\tfss := make([]FileMetaInfo, len(roots))\n\tfor i, r := range roots {\n\t\tif r.fiSingleFile != nil {\n\n\t\t\tfss[i] = r.fiSingleFile\n\t\t\tcontinue\n\t\t}\n\t\tbfs := NewBasePathFs(fs.Fs, r.To)\n\t\tfs := bfs\n\t\tif r.Meta.InclusionFilter != nil {\n\t\t\tfs = newFilenameFilterFs(fs, r.To, r.Meta.InclusionFilter)\n\t\t}\n\t\tfs = decorateDirs(fs, r.Meta)\n\t\tfi, err := fs.Stat(\"\")\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"RootMappingFs.Dirs: %w\", err)\n\t\t}\n\t\tfss[i] = fi.(FileMetaInfo)\n\t}\n\n\treturn fss, nil\n}",
+    "funcname": "Mounts"
+}

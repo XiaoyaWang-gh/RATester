@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 215,
+    "focalfunc": "func (ms *menuSorter) Swap(i, j int)",
+    "funcbody": "func (ms *menuSorter) Swap(i, j int)\t{ ms.menu[i], ms.menu[j] = ms.menu[j], ms.menu[i] }",
+    "funcname": "Swap"
+}

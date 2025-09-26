@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 61,
+    "focalfunc": "func NewVoidRegistry() Registry",
+    "funcbody": "func NewVoidRegistry() Registry {\n\treturn NewMultiRegistry([]Registry{})\n}",
+    "funcname": "NewVoidRegistry"
+}

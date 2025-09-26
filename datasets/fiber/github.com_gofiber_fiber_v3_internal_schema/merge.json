@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 528,
+    "focalfunc": "func (e MultiError) merge(errors MultiError)",
+    "funcbody": "func (e MultiError) merge(errors MultiError) {\n\tfor key, err := range errors {\n\t\tif e[key] == nil {\n\t\t\te[key] = err\n\t\t}\n\t}\n}",
+    "funcname": "merge"
+}

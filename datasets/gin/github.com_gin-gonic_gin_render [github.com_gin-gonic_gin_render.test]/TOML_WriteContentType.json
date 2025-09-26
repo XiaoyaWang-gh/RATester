@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/toml.go",
+    "lineno": 34,
+    "focalfunc": "func (r TOML) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r TOML) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, TOMLContentType)\n}",
+    "funcname": "WriteContentType"
+}

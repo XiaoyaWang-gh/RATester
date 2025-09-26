@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 204,
+    "focalfunc": "func (app *App) requestHandler(rctx *fasthttp.RequestCtx)",
+    "funcbody": "func (app *App) requestHandler(rctx *fasthttp.RequestCtx) {\n\t// Handler for default ctxs\n\tvar c CustomCtx\n\tvar ok bool\n\tif app.newCtxFunc != nil {\n\t\tc, ok = app.AcquireCtx(rctx).(CustomCtx)\n\t\tif !ok {\n\t\t\tpanic(errors.New(\"requestHandler: failed to type-assert to CustomCtx\"))\n\t\t}\n\t} else {\n\t\tc, ok = app.AcquireCtx(rctx).(*DefaultCtx)\n\t\tif !ok {\n\t\t\tpanic(errors.New(\"requestHandler: failed to type-assert to *DefaultCtx\"))\n\t\t}\n\t}\n\tdefer app.ReleaseCtx(c)\n\n\tif app.methodInt(c.Method()) == -1 {\n\t\t_ = c.SendStatus(StatusNotImplemented)\n\t\treturn\n\t}\n\n\tif strings.Contains(utils.UnsafeString(c.Request().Header.RawHeaders()), FlashCookieName) {\n\t\tc.Redirect().parseAndClearFlashMessages()\n\t}\n\n\t// Find match in stack\n\tvar err error\n\tif app.newCtxFunc != nil {\n\t\t_, err = app.nextCustom(c)\n\t} else {\n\t\t_, err = app.next(c.(*DefaultCtx))\n\t}\n\tif err != nil {\n\t\tif catch := c.App().ErrorHandler(c, err); catch != nil {\n\t\t\t_ = c.SendStatus(StatusInternalServerError)\n\t\t}\n\n\t}\n}",
+    "funcname": "requestHandler"
+}

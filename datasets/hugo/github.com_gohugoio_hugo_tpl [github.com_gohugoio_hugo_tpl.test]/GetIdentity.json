@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/template.go",
+    "lineno": 124,
+    "focalfunc": "func (t templateIdentityProvider) GetIdentity() identity.Identity",
+    "funcbody": "func (t templateIdentityProvider) GetIdentity() identity.Identity {\n\treturn t.id\n}",
+    "funcname": "GetIdentity"
+}

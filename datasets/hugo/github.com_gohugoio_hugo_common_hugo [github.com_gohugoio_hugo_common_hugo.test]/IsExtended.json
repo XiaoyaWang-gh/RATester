@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 105,
+    "focalfunc": "func (i HugoInfo) IsExtended() bool",
+    "funcbody": "func (i HugoInfo) IsExtended() bool {\n\treturn IsExtended\n}",
+    "funcname": "IsExtended"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 374,
+    "focalfunc": "func NSPost(rootpath string, f HandleFunc) LinkNamespace",
+    "funcbody": "func NSPost(rootpath string, f HandleFunc) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Post(rootpath, f)\n\t}\n}",
+    "funcname": "NSPost"
+}

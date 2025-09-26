@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 404,
+    "focalfunc": "func NewQUICTunnelSession(clientCfg *v1.ClientCommonConfig) TunnelSession",
+    "funcbody": "func NewQUICTunnelSession(clientCfg *v1.ClientCommonConfig) TunnelSession {\n\treturn &QUICTunnelSession{\n\t\tclientCfg: clientCfg,\n\t}\n}",
+    "funcname": "NewQUICTunnelSession"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 665,
+    "focalfunc": "func GetLogger(prefixes ...string) *log.Logger",
+    "funcbody": "func GetLogger(prefixes ...string) *log.Logger {\n\tprefix := append(prefixes, \"\")[0]\n\tif prefix != \"\" {\n\t\tprefix = fmt.Sprintf(`[%s] `, strings.ToUpper(prefix))\n\t}\n\tbeeLoggerMap.RLock()\n\tl, ok := beeLoggerMap.logs[prefix]\n\tif ok {\n\t\tbeeLoggerMap.RUnlock()\n\t\treturn l\n\t}\n\tbeeLoggerMap.RUnlock()\n\tbeeLoggerMap.Lock()\n\tdefer beeLoggerMap.Unlock()\n\tl, ok = beeLoggerMap.logs[prefix]\n\tif !ok {\n\t\tl = log.New(beeLogger, prefix, 0)\n\t\tbeeLoggerMap.logs[prefix] = l\n\t}\n\treturn l\n}",
+    "funcname": "GetLogger"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 79,
+    "focalfunc": "func (c *goldmarkConverter) SanitizeAnchorName(s string) string",
+    "funcbody": "func (c *goldmarkConverter) SanitizeAnchorName(s string) string {\n\treturn c.sanitizeAnchorName(s)\n}",
+    "funcname": "SanitizeAnchorName"
+}

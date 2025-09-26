@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 71,
+    "focalfunc": "func WithService(name string, opts ...func(*dynamic.ServersLoadBalancer)) func(*dynamic.ServersLoadBalancer) string",
+    "funcbody": "func WithService(name string, opts ...func(*dynamic.ServersLoadBalancer)) func(*dynamic.ServersLoadBalancer) string {\n\treturn func(r *dynamic.ServersLoadBalancer) string {\n\t\tfor _, opt := range opts {\n\t\t\topt(r)\n\t\t}\n\t\treturn name\n\t}\n}",
+    "funcname": "WithService"
+}

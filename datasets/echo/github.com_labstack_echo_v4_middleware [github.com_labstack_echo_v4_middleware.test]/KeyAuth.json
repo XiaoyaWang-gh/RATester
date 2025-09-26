@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/key_auth.go",
+    "lineno": 86,
+    "focalfunc": "func KeyAuth(fn KeyAuthValidator) echo.MiddlewareFunc",
+    "funcbody": "func KeyAuth(fn KeyAuthValidator) echo.MiddlewareFunc {\n\tc := DefaultKeyAuthConfig\n\tc.Validator = fn\n\treturn KeyAuthWithConfig(c)\n}",
+    "funcname": "KeyAuth"
+}

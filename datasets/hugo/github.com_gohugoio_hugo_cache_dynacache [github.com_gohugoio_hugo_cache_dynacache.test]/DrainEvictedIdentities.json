@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 143,
+    "focalfunc": "func (c *Cache) DrainEvictedIdentities() []KeyIdentity",
+    "funcbody": "func (c *Cache) DrainEvictedIdentities() []KeyIdentity {\n\treturn c.evictedIdentities.Drain()\n}",
+    "funcname": "DrainEvictedIdentities"
+}

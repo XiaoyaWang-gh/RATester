@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 261,
+    "focalfunc": "func ValidateAnnotationsSize(annotations map[string]string) error",
+    "funcbody": "func ValidateAnnotationsSize(annotations map[string]string) error {\n\tvar totalSize int64\n\tfor k, v := range annotations {\n\t\ttotalSize += (int64)(len(k)) + (int64)(len(v))\n\t}\n\tif totalSize > (int64)(TotalAnnotationSizeLimitB) {\n\t\treturn fmt.Errorf(\"annotations size %d is larger than limit %d\", totalSize, TotalAnnotationSizeLimitB)\n\t}\n\treturn nil\n}",
+    "funcname": "ValidateAnnotationsSize"
+}

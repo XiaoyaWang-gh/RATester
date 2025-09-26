@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/templatefuncsRegistry.go",
+    "lineno": 169,
+    "focalfunc": "func (namespaces TemplateFuncsNamespaces) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (namespaces TemplateFuncsNamespaces) MarshalJSON() ([]byte, error) {\n\tvar buf bytes.Buffer\n\n\tbuf.WriteString(\"{\")\n\n\tfor i, ns := range namespaces {\n\n\t\tb, err := ns.toJSON(context.Background())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif b != nil {\n\t\t\tif i != 0 {\n\t\t\t\tbuf.WriteString(\",\")\n\t\t\t}\n\t\t\tbuf.Write(b)\n\t\t}\n\t}\n\n\tbuf.WriteString(\"}\")\n\n\treturn buf.Bytes(), nil\n}",
+    "funcname": "MarshalJSON"
+}

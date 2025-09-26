@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 157,
+    "focalfunc": "func MustAsset(name string) []byte",
+    "funcbody": "func MustAsset(name string) []byte {\n\ta, err := Asset(name)\n\tif err != nil {\n\t\tpanic(\"asset: Asset(\" + name + \"): \" + err.Error())\n\t}\n\n\treturn a\n}",
+    "funcname": "MustAsset"
+}

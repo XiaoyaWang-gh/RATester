@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/manager.go",
+    "lineno": 126,
+    "focalfunc": "func (m *manager) del(key string)",
+    "funcbody": "func (m *manager) del(key string) {\n\tif m.storage != nil {\n\t\t_ = m.storage.Delete(key)\n\t} else {\n\t\tm.memory.Delete(key)\n\t}\n}",
+    "funcname": "del"
+}

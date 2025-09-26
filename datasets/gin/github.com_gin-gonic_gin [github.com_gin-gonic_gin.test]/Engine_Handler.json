@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 233,
+    "focalfunc": "func (engine *Engine) Handler() http.Handler",
+    "funcbody": "func (engine *Engine) Handler() http.Handler {\n\tif !engine.UseH2C {\n\t\treturn engine\n\t}\n\n\th2s := &http2.Server{}\n\treturn h2c.NewHandler(engine, h2s)\n}",
+    "funcname": "Handler"
+}

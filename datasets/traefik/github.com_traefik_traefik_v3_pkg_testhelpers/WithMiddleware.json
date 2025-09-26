@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 93,
+    "focalfunc": "func WithMiddleware(name string, opts ...func(*dynamic.Middleware)) func(*dynamic.Middleware) string",
+    "funcbody": "func WithMiddleware(name string, opts ...func(*dynamic.Middleware)) func(*dynamic.Middleware) string {\n\treturn func(r *dynamic.Middleware) string {\n\t\tfor _, opt := range opts {\n\t\t\topt(r)\n\t\t}\n\t\treturn name\n\t}\n}",
+    "funcname": "WithMiddleware"
+}

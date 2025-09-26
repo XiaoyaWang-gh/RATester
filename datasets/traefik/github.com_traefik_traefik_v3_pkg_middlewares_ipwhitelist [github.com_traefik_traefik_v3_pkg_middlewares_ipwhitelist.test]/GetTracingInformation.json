@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ipwhitelist/ip_whitelist.go",
+    "lineno": 58,
+    "focalfunc": "func (wl *ipWhiteLister) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (wl *ipWhiteLister) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn wl.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

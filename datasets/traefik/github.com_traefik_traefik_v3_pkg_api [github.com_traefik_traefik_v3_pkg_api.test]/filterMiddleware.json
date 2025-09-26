@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 82,
+    "focalfunc": "func (c *searchCriterion) filterMiddleware(mns []string) bool",
+    "funcbody": "func (c *searchCriterion) filterMiddleware(mns []string) bool {\n\tif c.MiddlewareName == \"\" {\n\t\treturn true\n\t}\n\n\tfor _, mn := range mns {\n\t\tif c.MiddlewareName == mn {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "filterMiddleware"
+}

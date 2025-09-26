@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 53,
+    "focalfunc": "func (f StrTo) Float32() (float32, error)",
+    "funcbody": "func (f StrTo) Float32() (float32, error) {\n\tv, err := strconv.ParseFloat(f.String(), 32)\n\treturn float32(v), err\n}",
+    "funcname": "Float32"
+}

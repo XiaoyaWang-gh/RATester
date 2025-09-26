@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 117,
+    "focalfunc": "func (d *Deps) SetTempl(t *tpl.TemplateHandlers)",
+    "funcbody": "func (d *Deps) SetTempl(t *tpl.TemplateHandlers) {\n\td.tmplHandlers = t\n}",
+    "funcname": "SetTempl"
+}

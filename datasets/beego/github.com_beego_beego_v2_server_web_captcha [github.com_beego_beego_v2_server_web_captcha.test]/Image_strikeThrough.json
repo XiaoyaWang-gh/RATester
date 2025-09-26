@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 414,
+    "focalfunc": "func (m *Image) strikeThrough()",
+    "funcbody": "func (m *Image) strikeThrough() {\n\tmaxx := m.Bounds().Max.X\n\tmaxy := m.Bounds().Max.Y\n\ty := randInt(maxy/3, maxy-maxy/3)\n\tamplitude := randFloat(5, 20)\n\tperiod := randFloat(80, 180)\n\tdx := 2.0 * math.Pi / period\n\tfor x := 0; x < maxx; x++ {\n\t\txo := amplitude * math.Cos(float64(y)*dx)\n\t\tyo := amplitude * math.Sin(float64(x)*dx)\n\t\tfor yn := 0; yn < m.dotSize; yn++ {\n\t\t\tr := randInt(0, m.dotSize)\n\t\t\tm.drawCircle(x+int(xo), y+int(yo)+(yn*m.dotSize), r/2, 1)\n\t\t}\n\t}\n}",
+    "funcname": "strikeThrough"
+}

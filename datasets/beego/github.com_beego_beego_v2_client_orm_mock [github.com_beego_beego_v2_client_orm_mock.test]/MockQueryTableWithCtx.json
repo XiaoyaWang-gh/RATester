@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 127,
+    "focalfunc": "func MockQueryTableWithCtx(tableName string, qs orm.QuerySeter) *Mock",
+    "funcbody": "func MockQueryTableWithCtx(tableName string, qs orm.QuerySeter) *Mock {\n\treturn NewMock(NewSimpleCondition(tableName, \"QueryTable\"), []interface{}{qs}, nil)\n}",
+    "funcname": "MockQueryTableWithCtx"
+}

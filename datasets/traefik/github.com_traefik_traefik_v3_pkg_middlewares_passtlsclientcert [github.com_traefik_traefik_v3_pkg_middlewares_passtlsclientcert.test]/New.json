@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 131,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.PassTLSClientCert, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.PassTLSClientCert, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeName).Debug().Msg(\"Creating middleware\")\n\n\treturn &passTLSClientCert{\n\t\tnext:\tnext,\n\t\tname:\tname,\n\t\tpem:\tconfig.PEM,\n\t\tinfo:\tnewTLSClientCertificateInfo(config.Info),\n\t}, nil\n}",
+    "funcname": "New"
+}

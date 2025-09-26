@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 47,
+    "focalfunc": "func SliceRandList(min, max int) []int",
+    "funcbody": "func SliceRandList(min, max int) []int {\n\tif max < min {\n\t\tmin, max = max, min\n\t}\n\tlength := max - min + 1\n\tt0 := time.Now()\n\trand.Seed(int64(t0.Nanosecond()))\n\tlist := rand.Perm(length)\n\tfor index := range list {\n\t\tlist[index] += min\n\t}\n\treturn list\n}",
+    "funcname": "SliceRandList"
+}

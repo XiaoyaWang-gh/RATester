@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 144,
+    "focalfunc": "func NewLogger(channelLens ...int64) *BeeLogger",
+    "funcbody": "func NewLogger(channelLens ...int64) *BeeLogger {\n\tbl := new(BeeLogger)\n\tbl.level = LevelDebug\n\tbl.loggerFuncCallDepth = 3\n\tbl.msgChanLen = append(channelLens, 0)[0]\n\tif bl.msgChanLen <= 0 {\n\t\tbl.msgChanLen = defaultAsyncMsgLen\n\t}\n\tbl.flushChan = make(chan struct{}, 1)\n\tbl.closeChan = make(chan struct{}, 1)\n\tbl.setLogger(AdapterConsole)\n\treturn bl\n}",
+    "funcname": "NewLogger"
+}

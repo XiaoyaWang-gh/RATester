@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 305,
+    "focalfunc": "func (c *CommandNode) append(arg Node)",
+    "funcbody": "func (c *CommandNode) append(arg Node) {\n\tc.Args = append(c.Args, arg)\n}",
+    "funcname": "append"
+}

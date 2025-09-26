@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/form.go",
+    "lineno": 171,
+    "focalfunc": "func formValue(tag string, form url.Values, fieldT reflect.StructField) (string, bool)",
+    "funcbody": "func formValue(tag string, form url.Values, fieldT reflect.StructField) (string, bool) {\n\tformValues := form[tag]\n\tvar value string\n\tif len(formValues) == 0 {\n\t\tdefaultValue := fieldT.Tag.Get(\"default\")\n\t\tif defaultValue != \"\" {\n\t\t\tvalue = defaultValue\n\t\t} else {\n\t\t\treturn \"\", false\n\t\t}\n\t}\n\tif len(formValues) == 1 {\n\t\tvalue = formValues[0]\n\t\tif value == \"\" {\n\t\t\treturn \"\", false\n\t\t}\n\t}\n\treturn value, true\n}",
+    "funcname": "formValue"
+}

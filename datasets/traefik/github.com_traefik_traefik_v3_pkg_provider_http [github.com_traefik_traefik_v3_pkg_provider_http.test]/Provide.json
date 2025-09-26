@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/http/http.go",
+    "lineno": 74,
+    "focalfunc": "func (p *Provider) Provide(configurationChan chan<- dynamic.Message, pool *safe.Pool) error",
+    "funcbody": "func (p *Provider) Provide(configurationChan chan<- dynamic.Message, pool *safe.Pool) error {\n\tpool.GoCtx(func(routineCtx context.Context) {\n\t\tlogger := log.Ctx(routineCtx).With().Str(logs.ProviderName, \"http\").Logger()\n\t\tctxLog := logger.WithContext(routineCtx)\n\n\t\toperation := func() error {\n\t\t\tif err := p.updateConfiguration(configurationChan); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t\tticker := time.NewTicker(time.Duration(p.PollInterval))\n\t\t\tdefer ticker.Stop()\n\n\t\t\tfor {\n\t\t\t\tselect {\n\t\t\t\tcase <-ticker.C:\n\t\t\t\t\tif err := p.updateConfiguration(configurationChan); err != nil {\n\t\t\t\t\t\treturn err\n\t\t\t\t\t}\n\n\t\t\t\tcase <-routineCtx.Done():\n\t\t\t\t\treturn nil\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tnotify := func(err error, time time.Duration) {\n\t\t\tlogger.Error().Err(err).Msgf(\"Provider error, retrying in %s\", time)\n\t\t}\n\t\terr := backoff.RetryNotify(safe.OperationWithRecover(operation), backoff.WithContext(job.NewBackOff(backoff.NewExponentialBackOff()), ctxLog), notify)\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Msg(\"Cannot retrieve data\")\n\t\t}\n\t})\n\n\treturn nil\n}",
+    "funcname": "Provide"
+}

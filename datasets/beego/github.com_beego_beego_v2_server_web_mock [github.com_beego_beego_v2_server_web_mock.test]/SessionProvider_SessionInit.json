@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 49,
+    "focalfunc": "func (s *SessionProvider) SessionInit(ctx context.Context, gclifetime int64, config string) error",
+    "funcbody": "func (s *SessionProvider) SessionInit(ctx context.Context, gclifetime int64, config string) error {\n\treturn nil\n}",
+    "funcname": "SessionInit"
+}

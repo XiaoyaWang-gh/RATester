@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 85,
+    "focalfunc": "func (r *Registering) Connect(handler Handler, middleware ...Handler) Register",
+    "funcbody": "func (r *Registering) Connect(handler Handler, middleware ...Handler) Register {\n\treturn r.Add([]string{MethodConnect}, handler, middleware...)\n}",
+    "funcname": "Connect"
+}

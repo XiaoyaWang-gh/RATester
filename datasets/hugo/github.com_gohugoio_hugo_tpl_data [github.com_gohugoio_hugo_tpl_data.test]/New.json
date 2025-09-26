@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 42,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\treturn &Namespace{\n\t\tdeps:\t\tdeps,\n\t\tcacheGetCSV:\tdeps.ResourceSpec.FileCaches.GetCSVCache(),\n\t\tcacheGetJSON:\tdeps.ResourceSpec.FileCaches.GetJSONCache(),\n\t\tclient:\t\thttp.DefaultClient,\n\t}\n}",
+    "funcname": "New"
+}

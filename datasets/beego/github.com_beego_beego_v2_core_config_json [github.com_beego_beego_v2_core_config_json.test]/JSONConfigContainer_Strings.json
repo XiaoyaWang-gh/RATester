@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 220,
+    "focalfunc": "func (c *JSONConfigContainer) Strings(key string) ([]string, error)",
+    "funcbody": "func (c *JSONConfigContainer) Strings(key string) ([]string, error) {\n\tstringVal, err := c.String(key)\n\tif stringVal == \"\" || err != nil {\n\t\treturn nil, err\n\t}\n\treturn strings.Split(stringVal, \";\"), nil\n}",
+    "funcname": "Strings"
+}

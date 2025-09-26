@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 510,
+    "focalfunc": "func (c *Controller) GetStrings(key string, def ...[]string) []string",
+    "funcbody": "func (c *Controller) GetStrings(key string, def ...[]string) []string {\n\tvar defv []string\n\tif len(def) > 0 {\n\t\tdefv = def[0]\n\t}\n\n\tif f, err := c.Input(); f == nil || err != nil {\n\t\treturn defv\n\t} else if vs := f[key]; len(vs) > 0 {\n\t\treturn vs\n\t}\n\n\treturn defv\n}",
+    "funcname": "GetStrings"
+}

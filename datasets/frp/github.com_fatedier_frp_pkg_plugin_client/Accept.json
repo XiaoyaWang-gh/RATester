@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/plugin.go",
+    "lineno": 77,
+    "focalfunc": "func (l *Listener) Accept() (net.Conn, error)",
+    "funcbody": "func (l *Listener) Accept() (net.Conn, error) {\n\tconn, ok := <-l.conns\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"listener closed\")\n\t}\n\treturn conn, nil\n}",
+    "funcname": "Accept"
+}

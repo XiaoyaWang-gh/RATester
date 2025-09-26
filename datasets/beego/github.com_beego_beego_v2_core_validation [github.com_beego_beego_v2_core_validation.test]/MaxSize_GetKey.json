@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 359,
+    "focalfunc": "func (m MaxSize) GetKey() string",
+    "funcbody": "func (m MaxSize) GetKey() string {\n\treturn m.Key\n}",
+    "funcname": "GetKey"
+}

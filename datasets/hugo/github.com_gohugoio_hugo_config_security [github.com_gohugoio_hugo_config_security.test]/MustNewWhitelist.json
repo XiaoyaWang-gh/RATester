@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/whitelist.go",
+    "lineno": 92,
+    "focalfunc": "func MustNewWhitelist(patterns ...string) Whitelist",
+    "funcbody": "func MustNewWhitelist(patterns ...string) Whitelist {\n\tw, err := NewWhitelist(patterns...)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn w\n}",
+    "funcname": "MustNewWhitelist"
+}

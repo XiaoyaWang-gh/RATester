@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 220,
+    "focalfunc": "func (c *Conn) readLoop()",
+    "funcbody": "func (c *Conn) readLoop() {\n\tticker := time.NewTicker(c.timeout / 10)\n\tdefer ticker.Stop()\n\n\tfor {\n\t\tif len(c.msgs) == 0 {\n\t\t\tselect {\n\t\t\tcase msg := <-c.receiveCh:\n\t\t\t\tc.msgs = append(c.msgs, msg)\n\t\t\tcase <-ticker.C:\n\t\t\t\tc.muActivity.RLock()\n\t\t\t\tdeadline := c.lastActivity.Add(c.timeout)\n\t\t\t\tc.muActivity.RUnlock()\n\t\t\t\tif time.Now().After(deadline) {\n\t\t\t\t\tc.Close()\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tcontinue\n\t\t\t}\n\t\t}\n\n\t\tselect {\n\t\tcase cBuf := <-c.readCh:\n\t\t\tmsg := c.msgs[0]\n\t\t\tc.msgs = c.msgs[1:]\n\t\t\tn := copy(cBuf, msg)\n\t\t\tc.sizeCh <- n\n\t\tcase msg := <-c.receiveCh:\n\t\t\tc.msgs = append(c.msgs, msg)\n\t\tcase <-ticker.C:\n\t\t\tc.muActivity.RLock()\n\t\t\tdeadline := c.lastActivity.Add(c.timeout)\n\t\t\tc.muActivity.RUnlock()\n\t\t\tif time.Now().After(deadline) {\n\t\t\t\tc.Close()\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "readLoop"
+}

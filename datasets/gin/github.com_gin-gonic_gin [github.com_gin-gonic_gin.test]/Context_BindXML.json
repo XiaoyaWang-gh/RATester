@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 658,
+    "focalfunc": "func (c *Context) BindXML(obj any) error",
+    "funcbody": "func (c *Context) BindXML(obj any) error {\n\treturn c.MustBindWith(obj, binding.XML)\n}",
+    "funcname": "BindXML"
+}

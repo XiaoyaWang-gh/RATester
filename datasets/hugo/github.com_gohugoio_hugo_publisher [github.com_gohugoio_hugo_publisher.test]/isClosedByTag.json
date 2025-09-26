@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 472,
+    "focalfunc": "func isClosedByTag(b, tagName []byte) bool",
+    "funcbody": "func isClosedByTag(b, tagName []byte) bool {\n\tif len(b) == 0 {\n\t\treturn false\n\t}\n\n\tif b[len(b)-1] != '>' {\n\t\treturn false\n\t}\n\n\tvar (\n\t\tlo\tint\n\t\thi\tint\n\n\t\tstate\tint\n\t\tinWord\tbool\n\t)\n\nLOOP:\n\tfor i := len(b) - 2; i >= 0; i-- {\n\t\tswitch {\n\t\tcase b[i] == '<':\n\t\t\tif state != 1 {\n\t\t\t\treturn false\n\t\t\t}\n\t\t\tstate = 2\n\t\t\tbreak LOOP\n\t\tcase b[i] == '/':\n\t\t\tif state != 0 {\n\t\t\t\treturn false\n\t\t\t}\n\t\t\tstate++\n\t\t\tif inWord {\n\t\t\t\tlo = i + 1\n\t\t\t\tinWord = false\n\t\t\t}\n\t\tcase isSpace(b[i]):\n\t\t\tif inWord {\n\t\t\t\tlo = i + 1\n\t\t\t\tinWord = false\n\t\t\t}\n\t\tdefault:\n\t\t\tif !inWord {\n\t\t\t\thi = i + 1\n\t\t\t\tinWord = true\n\t\t\t}\n\t\t}\n\t}\n\n\tif state != 2 || lo >= hi {\n\t\treturn false\n\t}\n\n\treturn bytes.EqualFold(tagName, b[lo:hi])\n}",
+    "funcname": "isClosedByTag"
+}

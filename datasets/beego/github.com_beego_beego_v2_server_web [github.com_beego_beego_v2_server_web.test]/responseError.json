@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 377,
+    "focalfunc": "func responseError(rw http.ResponseWriter, r *http.Request, errCode int, errContent string)",
+    "funcbody": "func responseError(rw http.ResponseWriter, r *http.Request, errCode int, errContent string) {\n\tt, _ := template.New(\"beegoerrortemp\").Parse(errtpl)\n\tdata := M{\n\t\t\"Title\":\thttp.StatusText(errCode),\n\t\t\"BeegoVersion\":\tbeego.VERSION,\n\t\t\"Content\":\ttemplate.HTML(errContent),\n\t}\n\tt.Execute(rw, data)\n}",
+    "funcname": "responseError"
+}

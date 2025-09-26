@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1305,
+    "focalfunc": "func (b *ValueBinder) unixTime(sourceParam string, dest *time.Time, valueMustExist bool, precision time.Duration) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) unixTime(sourceParam string, dest *time.Time, valueMustExist bool, precision time.Duration) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\n\tvalue := b.ValueFunc(sourceParam)\n\tif value == \"\" {\n\t\tif valueMustExist {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{value}, \"required field value is empty\", nil))\n\t\t}\n\t\treturn b\n\t}\n\n\tn, err := strconv.ParseInt(value, 10, 64)\n\tif err != nil {\n\t\tb.setError(b.ErrorFunc(sourceParam, []string{value}, \"failed to bind field value to Time\", err))\n\t\treturn b\n\t}\n\n\tswitch precision {\n\tcase time.Second:\n\t\t*dest = time.Unix(n, 0)\n\tcase time.Millisecond:\n\t\t*dest = time.UnixMilli(n)\n\tcase time.Nanosecond:\n\t\t*dest = time.Unix(0, n)\n\t}\n\treturn b\n}",
+    "funcname": "unixTime"
+}

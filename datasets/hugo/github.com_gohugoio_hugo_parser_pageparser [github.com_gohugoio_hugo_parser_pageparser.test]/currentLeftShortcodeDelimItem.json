@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 343,
+    "focalfunc": "func (l *pageLexer) currentLeftShortcodeDelimItem() ItemType",
+    "funcbody": "func (l *pageLexer) currentLeftShortcodeDelimItem() ItemType {\n\treturn l.currLeftDelimItem\n}",
+    "funcname": "currentLeftShortcodeDelimItem"
+}

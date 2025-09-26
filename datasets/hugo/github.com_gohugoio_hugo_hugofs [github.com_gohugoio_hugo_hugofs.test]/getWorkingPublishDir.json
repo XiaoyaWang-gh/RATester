@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 88,
+    "focalfunc": "func getWorkingPublishDir(cfg config.Provider) (string, string)",
+    "funcbody": "func getWorkingPublishDir(cfg config.Provider) (string, string) {\n\tworkingDir := cfg.GetString(\"workingDir\")\n\tpublishDir := cfg.GetString(\"publishDirDynamic\")\n\tif publishDir == \"\" {\n\t\tpublishDir = cfg.GetString(\"publishDir\")\n\t}\n\treturn workingDir, publishDir\n}",
+    "funcname": "getWorkingPublishDir"
+}

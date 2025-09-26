@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/store.go",
+    "lineno": 131,
+    "focalfunc": "func (s *Store) Delete(id string) error",
+    "funcbody": "func (s *Store) Delete(id string) error {\n\tif id == \"\" {\n\t\treturn ErrEmptySessionID\n\t}\n\treturn s.Storage.Delete(id)\n}",
+    "funcname": "Delete"
+}

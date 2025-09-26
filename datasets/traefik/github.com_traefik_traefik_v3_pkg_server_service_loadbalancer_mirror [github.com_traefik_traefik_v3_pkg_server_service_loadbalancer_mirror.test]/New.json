@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 37,
+    "focalfunc": "func New(handler http.Handler, pool *safe.Pool, mirrorBody bool, maxBodySize int64, hc *dynamic.HealthCheck) *Mirroring",
+    "funcbody": "func New(handler http.Handler, pool *safe.Pool, mirrorBody bool, maxBodySize int64, hc *dynamic.HealthCheck) *Mirroring {\n\treturn &Mirroring{\n\t\troutinePool:\t\tpool,\n\t\thandler:\t\thandler,\n\t\trw:\t\t\tblackHoleResponseWriter{},\n\t\tmirrorBody:\t\tmirrorBody,\n\t\tmaxBodySize:\t\tmaxBodySize,\n\t\twantsHealthCheck:\thc != nil,\n\t}\n}",
+    "funcname": "New"
+}

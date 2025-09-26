@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 87,
+    "focalfunc": "func (d *dbBaseSqlite) OperatorSQL(operator string) string",
+    "funcbody": "func (d *dbBaseSqlite) OperatorSQL(operator string) string {\n\treturn sqliteOperators[operator]\n}",
+    "funcname": "OperatorSQL"
+}

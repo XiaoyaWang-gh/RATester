@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 39,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\tlanguage := deps.Conf.Language()\n\tif language == nil {\n\t\tpanic(\"language must be set\")\n\t}\n\tloc := langs.GetLocation(language)\n\n\treturn &Namespace{\n\t\tloc:\t\tloc,\n\t\tsortComp:\tcompare.New(loc, true),\n\t\tdeps:\t\tdeps,\n\t}\n}",
+    "funcname": "New"
+}

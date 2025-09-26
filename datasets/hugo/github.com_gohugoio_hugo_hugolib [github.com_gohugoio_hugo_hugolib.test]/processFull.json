@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 1117,
+    "focalfunc": "func (h *HugoSites) processFull(ctx context.Context, l logg.LevelLogger, config *BuildCfg) (err error)",
+    "funcbody": "func (h *HugoSites) processFull(ctx context.Context, l logg.LevelLogger, config *BuildCfg) (err error) {\n\tif err = h.processFiles(ctx, l, config); err != nil {\n\t\terr = fmt.Errorf(\"readAndProcessContent: %w\", err)\n\t\treturn\n\t}\n\treturn err\n}",
+    "funcname": "processFull"
+}

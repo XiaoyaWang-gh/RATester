@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resourcetypes.go",
+    "lineno": 58,
+    "focalfunc": "func (e *resourceError) Data() any",
+    "funcbody": "func (e *resourceError) Data() any {\n\treturn e.data\n}",
+    "funcname": "Data"
+}

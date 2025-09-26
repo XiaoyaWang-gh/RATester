@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 243,
+    "focalfunc": "func (p *siprng) Intn(n int) int",
+    "funcbody": "func (p *siprng) Intn(n int) int {\n\tif n <= 0 {\n\t\tpanic(\"invalid argument to Intn\")\n\t}\n\tif n <= 1<<31-1 {\n\t\treturn int(p.Int31n(int32(n)))\n\t}\n\treturn int(p.Int63n(int64(n)))\n}",
+    "funcname": "Intn"
+}

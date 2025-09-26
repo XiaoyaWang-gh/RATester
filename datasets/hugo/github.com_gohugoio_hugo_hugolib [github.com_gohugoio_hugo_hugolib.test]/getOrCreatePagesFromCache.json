@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 338,
+    "focalfunc": "func (m *pageMap) getOrCreatePagesFromCache(\n\tcache *dynacache.Partition[string, page.Pages],\n\tkey string, create func(string) (page.Pages, error),\n) (page.Pages, error)",
+    "funcbody": "func (m *pageMap) getOrCreatePagesFromCache(\n\tcache *dynacache.Partition[string, page.Pages],\n\tkey string, create func(string) (page.Pages, error),\n) (page.Pages, error) {\n\tif cache == nil {\n\t\tcache = m.cachePages1\n\t}\n\treturn cache.GetOrCreate(key, create)\n}",
+    "funcname": "getOrCreatePagesFromCache"
+}

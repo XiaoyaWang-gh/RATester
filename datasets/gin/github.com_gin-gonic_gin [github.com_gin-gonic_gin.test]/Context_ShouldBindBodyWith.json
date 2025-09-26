@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 777,
+    "focalfunc": "func (c *Context) ShouldBindBodyWith(obj any, bb binding.BindingBody) (err error)",
+    "funcbody": "func (c *Context) ShouldBindBodyWith(obj any, bb binding.BindingBody) (err error) {\n\tvar body []byte\n\tif cb, ok := c.Get(BodyBytesKey); ok {\n\t\tif cbb, ok := cb.([]byte); ok {\n\t\t\tbody = cbb\n\t\t}\n\t}\n\tif body == nil {\n\t\tbody, err = io.ReadAll(c.Request.Body)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tc.Set(BodyBytesKey, body)\n\t}\n\treturn bb.BindBody(body, obj)\n}",
+    "funcname": "ShouldBindBodyWith"
+}

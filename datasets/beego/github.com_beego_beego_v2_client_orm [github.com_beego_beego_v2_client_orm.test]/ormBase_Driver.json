@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 510,
+    "focalfunc": "func (o *ormBase) Driver() Driver",
+    "funcbody": "func (o *ormBase) Driver() Driver {\n\treturn driver(o.alias.Name)\n}",
+    "funcname": "Driver"
+}

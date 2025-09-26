@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 54,
+    "focalfunc": "func (b BaseURL) WithProtocol(protocol string) (BaseURL, error)",
+    "funcbody": "func (b BaseURL) WithProtocol(protocol string) (BaseURL, error) {\n\tu := b.URL()\n\n\tscheme := protocol\n\tisFullProtocol := strings.HasSuffix(scheme, \"://\")\n\tisOpaqueProtocol := strings.HasSuffix(scheme, \":\")\n\n\tif isFullProtocol {\n\t\tscheme = strings.TrimSuffix(scheme, \"://\")\n\t} else if isOpaqueProtocol {\n\t\tscheme = strings.TrimSuffix(scheme, \":\")\n\t}\n\n\tu.Scheme = scheme\n\n\tif isFullProtocol && u.Opaque != \"\" {\n\t\tu.Opaque = \"//\" + u.Opaque\n\t} else if isOpaqueProtocol && u.Opaque == \"\" {\n\t\treturn BaseURL{}, fmt.Errorf(\"cannot determine BaseURL for protocol %q\", protocol)\n\t}\n\n\treturn newBaseURLFromURL(u)\n}",
+    "funcname": "WithProtocol"
+}

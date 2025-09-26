@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 107,
+    "focalfunc": "func newTLSClientCertificateInfo(info *dynamic.TLSClientCertificateInfo) *tlsClientCertificateInfo",
+    "funcbody": "func newTLSClientCertificateInfo(info *dynamic.TLSClientCertificateInfo) *tlsClientCertificateInfo {\n\tif info == nil {\n\t\treturn nil\n\t}\n\n\treturn &tlsClientCertificateInfo{\n\t\tissuer:\t\tnewIssuerDistinguishedNameOptions(info.Issuer),\n\t\tnotAfter:\tinfo.NotAfter,\n\t\tnotBefore:\tinfo.NotBefore,\n\t\tsubject:\tnewSubjectDistinguishedNameOptions(info.Subject),\n\t\tserialNumber:\tinfo.SerialNumber,\n\t\tsans:\t\tinfo.Sans,\n\t}\n}",
+    "funcname": "newTLSClientCertificateInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/apply.go",
+    "lineno": 68,
+    "focalfunc": "func applyFnToThis(ctx context.Context, fn, this reflect.Value, args ...any) (reflect.Value, error)",
+    "funcbody": "func applyFnToThis(ctx context.Context, fn, this reflect.Value, args ...any) (reflect.Value, error) {\n\tnum := fn.Type().NumIn()\n\tif num > 0 && hreflect.IsContextType(fn.Type().In(0)) {\n\t\targs = append([]any{ctx}, args...)\n\t}\n\n\tn := make([]reflect.Value, len(args))\n\tfor i, arg := range args {\n\t\tif arg == \".\" {\n\t\t\tn[i] = this\n\t\t} else {\n\t\t\tn[i] = reflect.ValueOf(arg)\n\t\t}\n\t}\n\n\tif fn.Type().IsVariadic() {\n\t\tnum--\n\t}\n\n\tfor i := 0; i < num; i++ {\n\n\t\tif xt, targ := n[i].Type(), fn.Type().In(i); !xt.AssignableTo(targ) {\n\t\t\treturn reflect.ValueOf(nil), errors.New(\"called apply using \" + xt.String() + \" as type \" + targ.String())\n\t\t}\n\t}\n\n\tres := fn.Call(n)\n\n\tif len(res) == 1 || res[1].IsNil() {\n\t\treturn res[0], nil\n\t}\n\treturn reflect.ValueOf(nil), res[1].Interface().(error)\n}",
+    "funcname": "applyFnToThis"
+}

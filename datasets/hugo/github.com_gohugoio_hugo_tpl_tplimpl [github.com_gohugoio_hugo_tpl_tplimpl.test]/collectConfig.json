@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 287,
+    "focalfunc": "func (c *templateContext) collectConfig(n *parse.PipeNode)",
+    "funcbody": "func (c *templateContext) collectConfig(n *parse.PipeNode) {\n\tif c.t.typ != templateShortcode {\n\t\treturn\n\t}\n\tif c.configChecked {\n\t\treturn\n\t}\n\tc.configChecked = true\n\n\tif len(n.Decl) != 1 || len(n.Cmds) != 1 {\n\n\t\treturn\n\t}\n\n\tv := n.Decl[0]\n\n\tif len(v.Ident) == 0 || v.Ident[0] != \"$_hugo_config\" {\n\t\treturn\n\t}\n\n\tcmd := n.Cmds[0]\n\n\tif len(cmd.Args) == 0 {\n\t\treturn\n\t}\n\n\tif s, ok := cmd.Args[0].(*parse.StringNode); ok {\n\t\terrMsg := \"failed to decode $_hugo_config in template: %w\"\n\t\tm, err := maps.ToStringMapE(s.Text)\n\t\tif err != nil {\n\t\t\tc.err = fmt.Errorf(errMsg, err)\n\t\t\treturn\n\t\t}\n\t\tif err := mapstructure.WeakDecode(m, &c.t.parseInfo.Config); err != nil {\n\t\t\tc.err = fmt.Errorf(errMsg, err)\n\t\t}\n\t}\n}",
+    "funcname": "collectConfig"
+}

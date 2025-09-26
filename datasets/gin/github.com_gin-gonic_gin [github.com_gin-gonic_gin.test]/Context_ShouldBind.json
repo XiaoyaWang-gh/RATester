@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 717,
+    "focalfunc": "func (c *Context) ShouldBind(obj any) error",
+    "funcbody": "func (c *Context) ShouldBind(obj any) error {\n\tb := binding.Default(c.Request.Method, c.ContentType())\n\treturn c.ShouldBindWith(obj, b)\n}",
+    "funcname": "ShouldBind"
+}

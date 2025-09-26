@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/flash.go",
+    "lineno": 29,
+    "focalfunc": "func NewFlash() *FlashData",
+    "funcbody": "func NewFlash() *FlashData {\n\treturn &FlashData{\n\t\tData: make(map[string]string),\n\t}\n}",
+    "funcname": "NewFlash"
+}

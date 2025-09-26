@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 327,
+    "focalfunc": "func NewManager() *Manager",
+    "funcbody": "func NewManager() *Manager {\n\treturn &Manager{\n\t\tpxys: make(map[string]Proxy),\n\t}\n}",
+    "funcname": "NewManager"
+}

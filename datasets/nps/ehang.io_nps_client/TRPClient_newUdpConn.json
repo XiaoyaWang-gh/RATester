@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 121,
+    "focalfunc": "func (s *TRPClient) newUdpConn(localAddr, rAddr string, md5Password string)",
+    "funcbody": "func (s *TRPClient) newUdpConn(localAddr, rAddr string, md5Password string) {\n\tvar localConn net.PacketConn\n\tvar err error\n\tvar remoteAddress string\n\tif remoteAddress, localConn, err = handleP2PUdp(localAddr, rAddr, md5Password, common.WORK_P2P_PROVIDER); err != nil {\n\t\tlogs.Error(err)\n\t\treturn\n\t}\n\tl, err := kcp.ServeConn(nil, 150, 3, localConn)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\treturn\n\t}\n\tlogs.Trace(\"start local p2p udp listen, local address\", localConn.LocalAddr().String())\n\tfor {\n\t\tudpTunnel, err := l.AcceptKCP()\n\t\tif err != nil {\n\t\t\tlogs.Error(err)\n\t\t\tl.Close()\n\t\t\treturn\n\t\t}\n\t\tif udpTunnel.RemoteAddr().String() == string(remoteAddress) {\n\t\t\tconn.SetUdpSession(udpTunnel)\n\t\t\tlogs.Trace(\"successful connection with client ,address %s\", udpTunnel.RemoteAddr().String())\n\n\t\t\tconn.Accept(nps_mux.NewMux(udpTunnel, s.bridgeConnType, s.disconnectTime), func(c net.Conn) {\n\t\t\t\tgo s.handleChan(c)\n\t\t\t})\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "newUdpConn"
+}

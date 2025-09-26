@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page_unwrap.go",
+    "lineno": 29,
+    "focalfunc": "func unwrapPage(in any) (page.Page, error)",
+    "funcbody": "func unwrapPage(in any) (page.Page, error) {\n\tswitch v := in.(type) {\n\tcase *pageState:\n\t\treturn v, nil\n\tcase pageWrapper:\n\t\treturn v.page(), nil\n\tcase types.Unwrapper:\n\t\treturn unwrapPage(v.Unwrapv())\n\tcase page.Page:\n\t\treturn v, nil\n\tcase nil:\n\t\treturn nil, nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"unwrapPage: %T not supported\", in)\n\t}\n}",
+    "funcname": "unwrapPage"
+}

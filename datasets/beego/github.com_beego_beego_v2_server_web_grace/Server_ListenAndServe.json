@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 68,
+    "focalfunc": "func (srv *Server) ListenAndServe() (err error)",
+    "funcbody": "func (srv *Server) ListenAndServe() (err error) {\n\taddr := srv.Addr\n\tif addr == \"\" {\n\t\taddr = \":http\"\n\t}\n\n\tgo srv.handleSignals()\n\n\tsrv.ln, err = srv.getListener(addr)\n\tif err != nil {\n\t\tlog.Println(err)\n\t\treturn err\n\t}\n\n\tif srv.isChild {\n\t\tprocess, err := os.FindProcess(os.Getppid())\n\t\tif err != nil {\n\t\t\tlog.Println(err)\n\t\t\treturn err\n\t\t}\n\t\terr = process.Signal(syscall.SIGTERM)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tlog.Println(os.Getpid(), srv.Addr)\n\treturn srv.Serve()\n}",
+    "funcname": "ListenAndServe"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 140,
+    "focalfunc": "func WithParam(key, value string) BeegoHTTPRequestOption",
+    "funcbody": "func WithParam(key, value string) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.Param(key, value)\n\t}\n}",
+    "funcname": "WithParam"
+}

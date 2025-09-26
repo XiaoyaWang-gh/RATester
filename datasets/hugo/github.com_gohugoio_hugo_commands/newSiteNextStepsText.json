@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/new.go",
+    "lineno": 203,
+    "focalfunc": "func (c *newCommand) newSiteNextStepsText(path string, format string) string",
+    "funcbody": "func (c *newCommand) newSiteNextStepsText(path string, format string) string {\n\tformat = strings.ToLower(format)\n\tvar nextStepsText bytes.Buffer\n\n\tnextStepsText.WriteString(`Just a few more steps...\n\n1. Change the current directory to ` + path + `.\n2. Create or install a theme:\n   - Create a new theme with the command \"hugo new theme <THEMENAME>\"\n   - Or, install a theme from https://themes.gohugo.io/\n3. Edit hugo.` + format + `, setting the \"theme\" property to the theme name.\n4. Create new content with the command \"hugo new content `)\n\n\tnextStepsText.WriteString(filepath.Join(\"<SECTIONNAME>\", \"<FILENAME>.<FORMAT>\"))\n\n\tnextStepsText.WriteString(`\".\n5. Start the embedded web server with the command \"hugo server --buildDrafts\".\n\nSee documentation at https://gohugo.io/.`)\n\n\treturn nextStepsText.String()\n}",
+    "funcname": "newSiteNextStepsText"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 125,
+    "focalfunc": "func ColorGoToColor(c color.Color) Color",
+    "funcbody": "func ColorGoToColor(c color.Color) Color {\n\tcc := Color{color: c}\n\tif err := cc.init(); err != nil {\n\t\tpanic(err)\n\t}\n\treturn cc\n}",
+    "funcname": "ColorGoToColor"
+}

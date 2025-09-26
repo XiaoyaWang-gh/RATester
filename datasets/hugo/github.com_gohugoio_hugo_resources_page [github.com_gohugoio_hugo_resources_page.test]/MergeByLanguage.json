@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_language_merge.go",
+    "lineno": 30,
+    "focalfunc": "func (p1 Pages) MergeByLanguage(p2 Pages) Pages",
+    "funcbody": "func (p1 Pages) MergeByLanguage(p2 Pages) Pages {\n\tmerge := func(pages *Pages) {\n\t\tm := make(map[string]bool)\n\t\tfor _, p := range *pages {\n\t\t\tm[p.TranslationKey()] = true\n\t\t}\n\n\t\tfor _, p := range p2 {\n\t\t\tif _, found := m[p.TranslationKey()]; !found {\n\t\t\t\t*pages = append(*pages, p)\n\t\t\t}\n\t\t}\n\n\t\tSortByDefault(*pages)\n\t}\n\n\tout, _ := spc.getP(\"pages.MergeByLanguage\", merge, p1, p2)\n\n\treturn out\n}",
+    "funcname": "MergeByLanguage"
+}

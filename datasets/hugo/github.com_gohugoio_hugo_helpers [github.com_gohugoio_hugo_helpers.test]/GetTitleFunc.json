@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 194,
+    "focalfunc": "func GetTitleFunc(style string) func(s string) string",
+    "funcbody": "func GetTitleFunc(style string) func(s string) string {\n\tswitch strings.ToLower(style) {\n\tcase \"go\":\n\n\t\treturn strings.Title\n\tcase \"chicago\":\n\t\ttc := transform.NewTitleConverter(transform.ChicagoStyle)\n\t\treturn tc.Title\n\tcase \"none\":\n\t\treturn func(s string) string { return s }\n\tcase \"firstupper\":\n\t\treturn FirstUpper\n\tdefault:\n\t\ttc := transform.NewTitleConverter(transform.APStyle)\n\t\treturn tc.Title\n\t}\n}",
+    "funcname": "GetTitleFunc"
+}

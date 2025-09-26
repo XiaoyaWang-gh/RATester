@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 70,
+    "focalfunc": "func MockReadOrCreateWithCtx(tableName string,\n\tcb func(data interface{}),\n\tinsert bool, id int64, err error) *Mock",
+    "funcbody": "func MockReadOrCreateWithCtx(tableName string,\n\tcb func(data interface{}),\n\tinsert bool, id int64, err error) *Mock {\n\treturn NewMock(NewSimpleCondition(tableName, \"ReadOrCreateWithCtx\"),\n\t\t[]interface{}{insert, id, err},\n\t\tfunc(inv *orm.Invocation) {\n\t\t\tcb(inv.Args[0])\n\t\t})\n}",
+    "funcname": "MockReadOrCreateWithCtx"
+}

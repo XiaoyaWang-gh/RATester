@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 32,
+    "focalfunc": "func New(maxEntries int) *Cache",
+    "funcbody": "func New(maxEntries int) *Cache {\n\treturn &Cache{\n\t\tMaxEntries:\tmaxEntries,\n\t\tll:\t\tlist.New(),\n\t}\n}",
+    "funcname": "New"
+}

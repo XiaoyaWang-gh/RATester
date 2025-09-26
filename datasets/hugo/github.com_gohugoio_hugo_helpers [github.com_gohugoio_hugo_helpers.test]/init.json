@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/docshelper.go",
+    "lineno": 11,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tdocsProvider := func() docshelper.DocProvider {\n\t\tvar chromaLexers []any\n\n\t\tsort.Sort(lexers.GlobalLexerRegistry.Lexers)\n\n\t\tfor _, l := range lexers.GlobalLexerRegistry.Lexers {\n\n\t\t\tconfig := l.Config()\n\n\t\t\tlexerEntry := struct {\n\t\t\t\tName\tstring\n\t\t\t\tAliases\t[]string\n\t\t\t}{\n\t\t\t\tconfig.Name,\n\t\t\t\tconfig.Aliases,\n\t\t\t}\n\n\t\t\tchromaLexers = append(chromaLexers, lexerEntry)\n\n\t\t}\n\n\t\treturn docshelper.DocProvider{\"chroma\": map[string]any{\"lexers\": chromaLexers}}\n\t}\n\n\tdocshelper.AddDocProviderFunc(docsProvider)\n}",
+    "funcname": "init"
+}

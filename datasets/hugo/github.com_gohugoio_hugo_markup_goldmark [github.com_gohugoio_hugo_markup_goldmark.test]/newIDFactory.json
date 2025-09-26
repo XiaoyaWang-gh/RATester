@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/autoid.go",
+    "lineno": 97,
+    "focalfunc": "func newIDFactory(idType string) *idFactory",
+    "funcbody": "func newIDFactory(idType string) *idFactory {\n\treturn &idFactory{\n\t\tvals:\tmake(map[string]struct{}),\n\t\tidType:\tidType,\n\t}\n}",
+    "funcname": "newIDFactory"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/postcss.go",
+    "lineno": 45,
+    "focalfunc": "func decodePostCSSOptions(m map[string]any) (opts PostCSSOptions, err error)",
+    "funcbody": "func decodePostCSSOptions(m map[string]any) (opts PostCSSOptions, err error) {\n\tif m == nil {\n\t\treturn\n\t}\n\terr = mapstructure.WeakDecode(m, &opts)\n\n\tif !opts.NoMap {\n\n\t\topts.NoMap = cast.ToBool(m[\"no-map\"])\n\t}\n\n\treturn\n}",
+    "funcname": "decodePostCSSOptions"
+}

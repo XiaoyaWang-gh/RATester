@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 120,
+    "focalfunc": "func newExternalClusterClientFromFile(file string) (*clientWrapper, error)",
+    "funcbody": "func newExternalClusterClientFromFile(file string) (*clientWrapper, error) {\n\tconfigFromFlags, err := clientcmd.BuildConfigFromFlags(\"\", file)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn createClientFromConfig(configFromFlags)\n}",
+    "funcname": "newExternalClusterClientFromFile"
+}

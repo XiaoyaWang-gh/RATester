@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2067,
+    "focalfunc": "func (d *dbBase) TimeToDB(t *time.Time, tz *time.Location)",
+    "funcbody": "func (d *dbBase) TimeToDB(t *time.Time, tz *time.Location) {\n\t*t = t.In(tz)\n}",
+    "funcname": "TimeToDB"
+}

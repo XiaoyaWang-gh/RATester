@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 217,
+    "focalfunc": "func query(tree *matchersTree, queries ...string) error",
+    "funcbody": "func query(tree *matchersTree, queries ...string) error {\n\tkey := queries[0]\n\n\tvar value string\n\tif len(queries) == 2 {\n\t\tvalue = queries[1]\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\tvalues, ok := req.URL.Query()[key]\n\t\tif !ok {\n\t\t\treturn false\n\t\t}\n\n\t\treturn slices.Contains(values, value)\n\t}\n\n\treturn nil\n}",
+    "funcname": "query"
+}

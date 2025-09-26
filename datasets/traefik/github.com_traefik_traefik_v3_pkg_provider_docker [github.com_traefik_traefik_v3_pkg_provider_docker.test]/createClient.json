@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/shared.go",
+    "lineno": 112,
+    "focalfunc": "func createClient(ctx context.Context, cfg ClientConfig) (*client.Client, error)",
+    "funcbody": "func createClient(ctx context.Context, cfg ClientConfig) (*client.Client, error) {\n\topts, err := getClientOpts(ctx, cfg)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\thttpHeaders := map[string]string{\n\t\t\"User-Agent\": \"Traefik \" + version.Version,\n\t}\n\tif cfg.Username != \"\" && cfg.Password != \"\" {\n\t\thttpHeaders[\"Authorization\"] = \"Basic \" + base64.StdEncoding.EncodeToString([]byte(cfg.Username+\":\"+cfg.Password))\n\t}\n\n\topts = append(opts,\n\t\tclient.WithHTTPHeaders(httpHeaders),\n\t\tclient.WithVersion(cfg.apiVersion))\n\n\treturn client.NewClientWithOpts(opts...)\n}",
+    "funcname": "createClient"
+}

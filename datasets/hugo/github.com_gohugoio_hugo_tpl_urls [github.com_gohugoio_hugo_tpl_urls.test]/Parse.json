@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 53,
+    "focalfunc": "func (ns *Namespace) Parse(rawurl any) (*url.URL, error)",
+    "funcbody": "func (ns *Namespace) Parse(rawurl any) (*url.URL, error) {\n\ts, err := cast.ToStringE(rawurl)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error in Parse: %w\", err)\n\t}\n\n\treturn url.Parse(s)\n}",
+    "funcname": "Parse"
+}

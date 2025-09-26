@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 100,
+    "focalfunc": "func (d *dbBasePostgres) TableQuote() string",
+    "funcbody": "func (d *dbBasePostgres) TableQuote() string {\n\treturn `\"`\n}",
+    "funcname": "TableQuote"
+}

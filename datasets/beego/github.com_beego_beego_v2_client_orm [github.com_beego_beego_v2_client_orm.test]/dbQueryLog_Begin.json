@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 189,
+    "focalfunc": "func (d *dbQueryLog) Begin() (*sql.Tx, error)",
+    "funcbody": "func (d *dbQueryLog) Begin() (*sql.Tx, error) {\n\treturn d.BeginTx(context.Background(), nil)\n}",
+    "funcname": "Begin"
+}

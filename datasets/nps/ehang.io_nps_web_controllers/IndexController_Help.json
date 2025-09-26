@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 21,
+    "focalfunc": "func (s *IndexController) Help()",
+    "funcbody": "func (s *IndexController) Help() {\n\ts.SetInfo(\"about\")\n\ts.display(\"index/help\")\n}",
+    "funcname": "Help"
+}

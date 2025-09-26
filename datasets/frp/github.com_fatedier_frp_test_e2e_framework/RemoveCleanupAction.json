@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/cleanup.go",
+    "lineno": 35,
+    "focalfunc": "func RemoveCleanupAction(p CleanupActionHandle)",
+    "funcbody": "func RemoveCleanupAction(p CleanupActionHandle) {\n\tcleanupActionsLock.Lock()\n\tdefer cleanupActionsLock.Unlock()\n\tfor i, item := range cleanupHookList {\n\t\tif item.actionHandle == p {\n\t\t\tcleanupHookList = append(cleanupHookList[:i], cleanupHookList[i+1:]...)\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "RemoveCleanupAction"
+}

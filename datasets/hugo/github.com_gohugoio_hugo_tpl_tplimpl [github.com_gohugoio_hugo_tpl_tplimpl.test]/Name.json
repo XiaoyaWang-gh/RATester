@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_errors.go",
+    "lineno": 39,
+    "focalfunc": "func (t templateInfo) Name() string",
+    "funcbody": "func (t templateInfo) Name() string {\n\treturn t.name\n}",
+    "funcname": "Name"
+}

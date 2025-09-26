@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 206,
+    "focalfunc": "func (input *BeegoInput) AcceptsJSON() bool",
+    "funcbody": "func (input *BeegoInput) AcceptsJSON() bool {\n\treturn acceptsJSONRegex.MatchString(input.Header(\"Accept\"))\n}",
+    "funcname": "AcceptsJSON"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/para/para.go",
+    "lineno": 66,
+    "focalfunc": "func (w *Workers) Start(ctx context.Context) (Runner, context.Context)",
+    "funcbody": "func (w *Workers) Start(ctx context.Context) (Runner, context.Context) {\n\tg, ctx := errgroup.WithContext(ctx)\n\treturn &errGroupRunner{\n\t\tGroup:\tg,\n\t\tctx:\tctx,\n\t\tw:\tw,\n\t}, ctx\n}",
+    "funcname": "Start"
+}

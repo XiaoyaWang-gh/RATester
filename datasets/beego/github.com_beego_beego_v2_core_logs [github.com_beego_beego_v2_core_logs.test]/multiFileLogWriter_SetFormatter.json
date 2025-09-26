@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/multifile.go",
+    "lineno": 90,
+    "focalfunc": "func (f *multiFileLogWriter) SetFormatter(fmt LogFormatter)",
+    "funcbody": "func (f *multiFileLogWriter) SetFormatter(fmt LogFormatter) {\n\tf.fullLogWriter.SetFormatter(fmt)\n}",
+    "funcname": "SetFormatter"
+}

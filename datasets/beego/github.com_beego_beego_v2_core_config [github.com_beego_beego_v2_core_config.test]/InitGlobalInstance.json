@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 25,
+    "focalfunc": "func InitGlobalInstance(name string, cfg string) error",
+    "funcbody": "func InitGlobalInstance(name string, cfg string) error {\n\tvar err error\n\tglobalInstance, err = NewConfig(name, cfg)\n\treturn err\n}",
+    "funcname": "InitGlobalInstance"
+}

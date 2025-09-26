@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 577,
+    "focalfunc": "func (h *Header) PeekMultiple(key string) []string",
+    "funcbody": "func (h *Header) PeekMultiple(key string) []string {\n\tvar res []string\n\tbyteKey := []byte(key)\n\th.RequestHeader.VisitAll(func(key, value []byte) {\n\t\tif bytes.EqualFold(key, byteKey) {\n\t\t\tres = append(res, utils.UnsafeString(value))\n\t\t}\n\t})\n\n\treturn res\n}",
+    "funcname": "PeekMultiple"
+}

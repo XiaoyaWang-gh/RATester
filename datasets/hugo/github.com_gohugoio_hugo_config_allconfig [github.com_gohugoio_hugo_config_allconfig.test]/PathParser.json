@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 46,
+    "focalfunc": "func (c ConfigLanguage) PathParser() *paths.PathParser",
+    "funcbody": "func (c ConfigLanguage) PathParser() *paths.PathParser {\n\treturn c.m.ContentPathParser\n}",
+    "funcname": "PathParser"
+}

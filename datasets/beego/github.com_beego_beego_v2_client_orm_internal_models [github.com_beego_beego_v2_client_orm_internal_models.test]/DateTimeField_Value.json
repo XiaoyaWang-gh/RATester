@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 279,
+    "focalfunc": "func (e DateTimeField) Value() time.Time",
+    "funcbody": "func (e DateTimeField) Value() time.Time {\n\treturn time.Time(e)\n}",
+    "funcname": "Value"
+}

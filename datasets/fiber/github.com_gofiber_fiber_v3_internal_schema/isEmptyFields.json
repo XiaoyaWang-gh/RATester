@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 152,
+    "focalfunc": "func isEmptyFields(fields []fieldWithPrefix, src map[string][]string) bool",
+    "funcbody": "func isEmptyFields(fields []fieldWithPrefix, src map[string][]string) bool {\n\tfor _, f := range fields {\n\t\tfor _, path := range f.paths(f.prefix) {\n\t\t\tv, ok := src[path]\n\t\t\tif ok && !isEmpty(f.typ, v) {\n\t\t\t\treturn false\n\t\t\t}\n\t\t\tfor key := range src {\n\n\t\t\t\tnested := strings.IndexByte(key, '.') != -1\n\n\t\t\t\tc1 := strings.HasSuffix(f.prefix, \".\") && key == path\n\n\t\t\t\tc2 := f.prefix == \"\" && nested && strings.HasPrefix(key, path)\n\n\t\t\t\tc3 := f.prefix == \"\" && !nested && key == path\n\t\t\t\tif !isEmpty(f.typ, src[key]) && (c1 || c2 || c3) {\n\t\t\t\t\treturn false\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "isEmptyFields"
+}

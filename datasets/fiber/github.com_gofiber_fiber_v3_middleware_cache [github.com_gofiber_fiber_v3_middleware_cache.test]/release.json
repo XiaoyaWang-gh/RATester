@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/manager.go",
+    "lineno": 57,
+    "focalfunc": "func (m *manager) release(e *item)",
+    "funcbody": "func (m *manager) release(e *item) {\n\n\tif m.storage != nil {\n\t\treturn\n\t}\n\te.body = nil\n\te.ctype = nil\n\te.status = 0\n\te.exp = 0\n\te.headers = nil\n\tm.pool.Put(e)\n}",
+    "funcname": "release"
+}

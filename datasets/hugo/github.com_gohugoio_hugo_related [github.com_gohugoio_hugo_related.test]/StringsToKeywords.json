@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 620,
+    "focalfunc": "func (cfg IndexConfig) StringsToKeywords(s ...string) []Keyword",
+    "funcbody": "func (cfg IndexConfig) StringsToKeywords(s ...string) []Keyword {\n\tkw := make([]Keyword, len(s))\n\n\tfor i := 0; i < len(s); i++ {\n\t\tkw[i] = cfg.stringToKeyword(s[i])\n\t}\n\n\treturn kw\n}",
+    "funcname": "StringsToKeywords"
+}

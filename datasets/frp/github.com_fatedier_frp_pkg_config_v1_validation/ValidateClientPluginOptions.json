@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/plugin.go",
+    "lineno": 23,
+    "focalfunc": "func ValidateClientPluginOptions(c v1.ClientPluginOptions) error",
+    "funcbody": "func ValidateClientPluginOptions(c v1.ClientPluginOptions) error {\n\tswitch v := c.(type) {\n\tcase *v1.HTTP2HTTPSPluginOptions:\n\t\treturn validateHTTP2HTTPSPluginOptions(v)\n\tcase *v1.HTTPS2HTTPPluginOptions:\n\t\treturn validateHTTPS2HTTPPluginOptions(v)\n\tcase *v1.HTTPS2HTTPSPluginOptions:\n\t\treturn validateHTTPS2HTTPSPluginOptions(v)\n\tcase *v1.StaticFilePluginOptions:\n\t\treturn validateStaticFilePluginOptions(v)\n\tcase *v1.UnixDomainSocketPluginOptions:\n\t\treturn validateUnixDomainSocketPluginOptions(v)\n\tcase *v1.TLS2RawPluginOptions:\n\t\treturn validateTLS2RawPluginOptions(v)\n\t}\n\treturn nil\n}",
+    "funcname": "ValidateClientPluginOptions"
+}

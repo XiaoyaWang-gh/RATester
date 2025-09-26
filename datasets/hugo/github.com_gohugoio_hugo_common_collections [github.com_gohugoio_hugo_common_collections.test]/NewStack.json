@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 25,
+    "focalfunc": "func NewStack[T any]() *Stack[T]",
+    "funcbody": "func NewStack[T any]() *Stack[T] {\n\treturn &Stack[T]{}\n}",
+    "funcname": "NewStack"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/client.go",
+    "lineno": 351,
+    "focalfunc": "func GetDefaultClientConf() ClientCommonConf",
+    "funcbody": "func GetDefaultClientConf() ClientCommonConf {\n\treturn ClientCommonConf{\n\t\tClientConfig:\t\t\tlegacyauth.GetDefaultClientConf(),\n\t\tTCPMux:\t\t\t\ttrue,\n\t\tLoginFailExit:\t\t\ttrue,\n\t\tProtocol:\t\t\t\"tcp\",\n\t\tStart:\t\t\t\tmake([]string, 0),\n\t\tTLSEnable:\t\t\ttrue,\n\t\tDisableCustomTLSFirstByte:\ttrue,\n\t\tMetas:\t\t\t\tmake(map[string]string),\n\t\tIncludeConfigFiles:\t\tmake([]string, 0),\n\t}\n}",
+    "funcname": "GetDefaultClientConf"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/inline_imports.go",
+    "lineno": 71,
+    "focalfunc": "func (imp *importResolver) contentHash(filename string) ([]byte, string)",
+    "funcbody": "func (imp *importResolver) contentHash(filename string) ([]byte, string) {\n\tb, err := afero.ReadFile(imp.fs, filename)\n\tif err != nil {\n\t\treturn nil, \"\"\n\t}\n\th := sha256.New()\n\th.Write(b)\n\treturn b, hex.EncodeToString(h.Sum(nil))\n}",
+    "funcname": "contentHash"
+}

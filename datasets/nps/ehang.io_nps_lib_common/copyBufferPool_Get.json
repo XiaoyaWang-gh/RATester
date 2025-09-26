@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 73,
+    "focalfunc": "func (Self *copyBufferPool) Get() []byte",
+    "funcbody": "func (Self *copyBufferPool) Get() []byte {\n\tbuf := Self.pool.Get().([]byte)\n\treturn buf[:PoolSizeCopy]\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 535,
+    "focalfunc": "func (c *Controller) GetInt8(key string, def ...int8) (int8, error)",
+    "funcbody": "func (c *Controller) GetInt8(key string, def ...int8) (int8, error) {\n\tstrv := c.Ctx.Input.Query(key)\n\tif len(strv) == 0 && len(def) > 0 {\n\t\treturn def[0], nil\n\t}\n\ti64, err := strconv.ParseInt(strv, 10, 8)\n\treturn int8(i64), err\n}",
+    "funcname": "GetInt8"
+}

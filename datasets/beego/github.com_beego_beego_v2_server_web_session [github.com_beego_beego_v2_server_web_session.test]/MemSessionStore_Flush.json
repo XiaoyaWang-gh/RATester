@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 63,
+    "focalfunc": "func (st *MemSessionStore) Flush(context.Context) error",
+    "funcbody": "func (st *MemSessionStore) Flush(context.Context) error {\n\tst.lock.Lock()\n\tdefer st.lock.Unlock()\n\tst.value = make(map[interface{}]interface{})\n\treturn nil\n}",
+    "funcname": "Flush"
+}

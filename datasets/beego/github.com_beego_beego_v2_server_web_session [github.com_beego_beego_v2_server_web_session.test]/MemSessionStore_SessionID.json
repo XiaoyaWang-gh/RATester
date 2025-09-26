@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 71,
+    "focalfunc": "func (st *MemSessionStore) SessionID(context.Context) string",
+    "funcbody": "func (st *MemSessionStore) SessionID(context.Context) string {\n\treturn st.sid\n}",
+    "funcname": "SessionID"
+}

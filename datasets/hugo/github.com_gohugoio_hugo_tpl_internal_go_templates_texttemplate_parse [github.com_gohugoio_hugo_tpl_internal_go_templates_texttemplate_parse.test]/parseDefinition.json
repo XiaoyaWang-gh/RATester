@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 327,
+    "focalfunc": "func (t *Tree) parseDefinition()",
+    "funcbody": "func (t *Tree) parseDefinition() {\n\tconst context = \"define clause\"\n\tname := t.expectOneOf(itemString, itemRawString, context)\n\tvar err error\n\tt.Name, err = strconv.Unquote(name.val)\n\tif err != nil {\n\t\tt.error(err)\n\t}\n\tt.expect(itemRightDelim, context)\n\tvar end Node\n\tt.Root, end = t.itemList()\n\tif end.Type() != nodeEnd {\n\t\tt.errorf(\"unexpected %s in %s\", end, context)\n\t}\n\tt.add()\n\tt.stopParse()\n}",
+    "funcname": "parseDefinition"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 423,
+    "focalfunc": "func (c *Config) IsKindEnabled(kind string) bool",
+    "funcbody": "func (c *Config) IsKindEnabled(kind string) bool {\n\treturn !c.C.DisabledKinds[kind]\n}",
+    "funcname": "IsKindEnabled"
+}

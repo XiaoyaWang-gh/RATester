@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/random_expired_cache.go",
+    "lineno": 42,
+    "focalfunc": "func (rec *RandomExpireCache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error",
+    "funcbody": "func (rec *RandomExpireCache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error {\n\ttimeout += rec.offset()\n\treturn rec.Cache.Put(ctx, key, val, timeout)\n}",
+    "funcname": "Put"
+}

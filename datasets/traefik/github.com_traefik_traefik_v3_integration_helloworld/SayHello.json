@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 136,
+    "focalfunc": "func (c *greeterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error)",
+    "funcbody": "func (c *greeterClient) SayHello(ctx context.Context, in *HelloRequest, opts ...grpc.CallOption) (*HelloReply, error) {\n\tout := new(HelloReply)\n\terr := grpc.Invoke(ctx, \"/helloworld.Greeter/SayHello\", in, out, c.cc, opts...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn out, nil\n}",
+    "funcname": "SayHello"
+}

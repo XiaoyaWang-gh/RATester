@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 52,
+    "focalfunc": "func (d *Decoder) shouldInclude(s string) bool",
+    "funcbody": "func (d *Decoder) shouldInclude(s string) bool {\n\treturn (d.includeFieldsRe == nil || d.includeFieldsRe.MatchString(s))\n}",
+    "funcname": "shouldInclude"
+}

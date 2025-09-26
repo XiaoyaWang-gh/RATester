@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 281,
+    "focalfunc": "func (o querySet) All(container interface{}, cols ...string) (int64, error)",
+    "funcbody": "func (o querySet) All(container interface{}, cols ...string) (int64, error) {\n\treturn o.AllWithCtx(context.Background(), container, cols...)\n}",
+    "funcname": "All"
+}

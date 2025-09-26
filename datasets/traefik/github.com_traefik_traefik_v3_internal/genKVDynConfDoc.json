@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 309,
+    "focalfunc": "func genKVDynConfDoc(outputFile string)",
+    "funcbody": "func genKVDynConfDoc(outputFile string) {\n\tdynConfPath := \"./docs/content/reference/dynamic-configuration/file.toml\"\n\tconf := map[string]interface{}{}\n\t_, err := toml.DecodeFile(dynConfPath, &conf)\n\tif err != nil {\n\t\tlog.Fatal().Err(err).Send()\n\t}\n\n\tfile, err := os.Create(outputFile)\n\tif err != nil {\n\t\tlog.Fatal().Err(err).Send()\n\t}\n\n\tstore := storeWriter{data: map[string]string{}}\n\n\tc := client{store: store}\n\terr = c.load(\"traefik\", conf)\n\tif err != nil {\n\t\tlog.Fatal().Err(err).Send()\n\t}\n\n\tvar keys []string\n\tfor k := range store.data {\n\t\tkeys = append(keys, k)\n\t}\n\n\tsort.Strings(keys)\n\n\t_, _ = fmt.Fprintf(file, `<!--\nCODE GENERATED AUTOMATICALLY\nTHIS FILE MUST NOT BE EDITED BY HAND\n-->\n`)\n\n\tfor _, k := range keys {\n\t\t_, _ = fmt.Fprintf(file, \"| `%s` | `%s` |\\n\", k, store.data[k])\n\t}\n}",
+    "funcname": "genKVDynConfDoc"
+}

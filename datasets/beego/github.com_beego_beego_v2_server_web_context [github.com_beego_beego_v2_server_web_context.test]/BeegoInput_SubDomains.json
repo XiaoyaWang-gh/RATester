@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 253,
+    "focalfunc": "func (input *BeegoInput) SubDomains() string",
+    "funcbody": "func (input *BeegoInput) SubDomains() string {\n\tparts := strings.Split(input.Host(), \".\")\n\tif len(parts) >= 3 {\n\t\treturn strings.Join(parts[:len(parts)-2], \".\")\n\t}\n\treturn \"\"\n}",
+    "funcname": "SubDomains"
+}

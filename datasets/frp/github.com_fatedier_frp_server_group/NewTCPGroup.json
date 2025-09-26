@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcp.go",
+    "lineno": 83,
+    "focalfunc": "func NewTCPGroup(ctl *TCPGroupCtl) *TCPGroup",
+    "funcbody": "func NewTCPGroup(ctl *TCPGroupCtl) *TCPGroup {\n\treturn &TCPGroup{\n\t\tlns:\t\tmake([]*TCPGroupListener, 0),\n\t\tctl:\t\tctl,\n\t\tacceptCh:\tmake(chan net.Conn),\n\t}\n}",
+    "funcname": "NewTCPGroup"
+}

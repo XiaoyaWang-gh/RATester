@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 112,
+    "focalfunc": "func (r *Request) HTTPHeaders(headers map[string]string) *Request",
+    "funcbody": "func (r *Request) HTTPHeaders(headers map[string]string) *Request {\n\tr.headers = headers\n\treturn r\n}",
+    "funcname": "HTTPHeaders"
+}

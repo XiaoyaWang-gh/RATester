@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 575,
+    "focalfunc": "func (c *nopMarkup) RenderString(ctx context.Context, args ...any) (template.HTML, error)",
+    "funcbody": "func (c *nopMarkup) RenderString(ctx context.Context, args ...any) (template.HTML, error) {\n\treturn \"\", nil\n}",
+    "funcname": "RenderString"
+}

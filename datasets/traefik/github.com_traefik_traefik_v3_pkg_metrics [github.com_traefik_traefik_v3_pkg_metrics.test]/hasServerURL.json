@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 475,
+    "focalfunc": "func (d *dynamicConfig) hasServerURL(serviceName, serverURL string) bool",
+    "funcbody": "func (d *dynamicConfig) hasServerURL(serviceName, serverURL string) bool {\n\tif service, hasService := d.services[serviceName]; hasService {\n\t\t_, ok := service[serverURL]\n\t\treturn ok\n\t}\n\treturn false\n}",
+    "funcname": "hasServerURL"
+}

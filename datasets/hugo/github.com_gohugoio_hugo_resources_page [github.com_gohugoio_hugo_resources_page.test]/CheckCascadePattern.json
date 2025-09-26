@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 101,
+    "focalfunc": "func CheckCascadePattern(logger loggers.Logger, m PageMatcher)",
+    "funcbody": "func CheckCascadePattern(logger loggers.Logger, m PageMatcher) {\n\tif logger != nil && isGlobWithExtension(m.Path) {\n\t\tlogger.Erroridf(\"cascade-pattern-with-extension\", \"cascade target path %q looks like a path with an extension; since Hugo v0.123.0 this will not match anything, see  https://gohugo.io/methods/page/path/\", m.Path)\n\t}\n}",
+    "funcname": "CheckCascadePattern"
+}

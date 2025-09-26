@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 165,
+    "focalfunc": "func GetLogData(req *http.Request) *LogData",
+    "funcbody": "func GetLogData(req *http.Request) *LogData {\n\tif ld, ok := req.Context().Value(DataTableKey).(*LogData); ok {\n\t\treturn ld\n\t}\n\treturn nil\n}",
+    "funcname": "GetLogData"
+}

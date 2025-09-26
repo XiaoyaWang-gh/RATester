@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 274,
+    "focalfunc": "func (p *pageMeta) Weight() int",
+    "funcbody": "func (p *pageMeta) Weight() int {\n\treturn p.pageConfig.Weight\n}",
+    "funcname": "Weight"
+}

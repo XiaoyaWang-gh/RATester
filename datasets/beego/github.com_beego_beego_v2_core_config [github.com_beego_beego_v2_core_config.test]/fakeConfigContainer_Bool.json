@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 62,
+    "focalfunc": "func (c *fakeConfigContainer) Bool(key string) (bool, error)",
+    "funcbody": "func (c *fakeConfigContainer) Bool(key string) (bool, error) {\n\treturn ParseBool(c.getData(key))\n}",
+    "funcname": "Bool"
+}

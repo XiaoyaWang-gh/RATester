@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 390,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertRenderCountPage(count int)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertRenderCountPage(count int) {\n\ts.Helper()\n\ts.Assert(s.counters.pageRenderCounter.Load(), qt.Equals, uint64(count))\n}",
+    "funcname": "AssertRenderCountPage"
+}

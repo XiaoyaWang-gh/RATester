@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 122,
+    "focalfunc": "func (s *Conn) GetLen() (int, error)",
+    "funcbody": "func (s *Conn) GetLen() (int, error) {\n\tvar l int32\n\terr := binary.Read(s, binary.LittleEndian, &l)\n\treturn int(l), err\n}",
+    "funcname": "GetLen"
+}

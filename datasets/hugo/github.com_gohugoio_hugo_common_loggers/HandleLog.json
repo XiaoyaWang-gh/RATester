@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlerterminal.go",
+    "lineno": 48,
+    "focalfunc": "func (h *noColoursHandler) HandleLog(e *logg.Entry) error",
+    "funcbody": "func (h *noColoursHandler) HandleLog(e *logg.Entry) error {\n\tif !h.predicate(e) {\n\t\treturn nil\n\t}\n\th.mu.Lock()\n\tdefer h.mu.Unlock()\n\n\tvar w io.Writer\n\tif e.Level > logg.LevelInfo {\n\t\tw = h.errWriter\n\t} else {\n\t\tw = h.outWriter\n\t}\n\n\tvar prefix string\n\tfor _, field := range e.Fields {\n\t\tif field.Name == FieldNameCmd {\n\t\t\tprefix = fmt.Sprint(field.Value)\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif prefix != \"\" {\n\t\tprefix = prefix + \": \"\n\t}\n\n\tif h.noLevelPrefix {\n\t\tfmt.Fprintf(w, \"%s%s\", prefix, e.Message)\n\t} else {\n\t\tfmt.Fprintf(w, \"%s %s%s\", levelString[e.Level], prefix, e.Message)\n\t}\n\n\tfor _, field := range e.Fields {\n\t\tif strings.HasPrefix(field.Name, reservedFieldNamePrefix) {\n\t\t\tcontinue\n\t\t}\n\t\tfmt.Fprintf(w, \" %s %v\", field.Name, field.Value)\n\n\t}\n\tfmt.Fprintln(w)\n\n\treturn nil\n}",
+    "funcname": "HandleLog"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 26,
+    "focalfunc": "func createFilesystem() filesystem",
+    "funcbody": "func createFilesystem() filesystem {\n\treturn filesystem{\n\t\tFilesystem: newDefaultFS(),\n\t}\n}",
+    "funcname": "createFilesystem"
+}

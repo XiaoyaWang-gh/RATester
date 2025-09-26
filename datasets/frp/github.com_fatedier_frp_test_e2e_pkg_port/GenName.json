@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/util.go",
+    "lineno": 62,
+    "focalfunc": "func GenName(name string, options ...NameOption) string",
+    "funcbody": "func GenName(name string, options ...NameOption) string {\n\tname = strings.ReplaceAll(name, \"-\", \"\")\n\tname = strings.ReplaceAll(name, \"_\", \"\")\n\tbuilder := &nameBuilder{name: name}\n\tfor _, option := range options {\n\t\tbuilder = option(builder)\n\t}\n\treturn builder.String()\n}",
+    "funcname": "GenName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 204,
+    "focalfunc": "func LoggerWithWriter(out io.Writer, notlogged ...string) HandlerFunc",
+    "funcbody": "func LoggerWithWriter(out io.Writer, notlogged ...string) HandlerFunc {\n\treturn LoggerWithConfig(LoggerConfig{\n\t\tOutput:\t\tout,\n\t\tSkipPaths:\tnotlogged,\n\t})\n}",
+    "funcname": "LoggerWithWriter"
+}

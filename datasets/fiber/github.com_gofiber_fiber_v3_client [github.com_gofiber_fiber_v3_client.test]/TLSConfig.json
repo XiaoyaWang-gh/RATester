@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 155,
+    "focalfunc": "func (c *Client) TLSConfig() *tls.Config",
+    "funcbody": "func (c *Client) TLSConfig() *tls.Config {\n\tif c.fasthttp.TLSConfig == nil {\n\t\tc.fasthttp.TLSConfig = &tls.Config{\n\t\t\tMinVersion: tls.VersionTLS12,\n\t\t}\n\t}\n\n\treturn c.fasthttp.TLSConfig\n}",
+    "funcname": "TLSConfig"
+}

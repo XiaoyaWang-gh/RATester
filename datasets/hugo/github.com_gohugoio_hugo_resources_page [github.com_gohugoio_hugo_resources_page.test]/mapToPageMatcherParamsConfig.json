@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 165,
+    "focalfunc": "func mapToPageMatcherParamsConfig(m map[string]any) (PageMatcherParamsConfig, error)",
+    "funcbody": "func mapToPageMatcherParamsConfig(m map[string]any) (PageMatcherParamsConfig, error) {\n\tvar pcfg PageMatcherParamsConfig\n\tfor k, v := range m {\n\t\tswitch strings.ToLower(k) {\n\t\tcase \"params\":\n\n\t\t\tparams := maps.ToStringMap(v)\n\t\t\tif pcfg.Params == nil {\n\t\t\t\tpcfg.Params = params\n\t\t\t} else {\n\t\t\t\tfor k, v := range params {\n\t\t\t\t\tif _, found := pcfg.Params[k]; !found {\n\t\t\t\t\t\tpcfg.Params[k] = v\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"_target\", \"target\":\n\t\t\tvar target PageMatcher\n\t\t\tif err := decodePageMatcher(v, &target); err != nil {\n\t\t\t\treturn pcfg, err\n\t\t\t}\n\t\t\tpcfg.Target = target\n\t\tdefault:\n\n\t\t\tif pcfg.Params == nil {\n\t\t\t\tpcfg.Params = make(maps.Params)\n\t\t\t}\n\t\t\tpcfg.Params[k] = v\n\t\t}\n\t}\n\treturn pcfg, pcfg.init()\n}",
+    "funcname": "mapToPageMatcherParamsConfig"
+}

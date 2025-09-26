@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 72,
+    "focalfunc": "func (n newConverter) Name() string",
+    "funcbody": "func (n newConverter) Name() string {\n\treturn n.name\n}",
+    "funcname": "Name"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 125,
+    "focalfunc": "func (c *connWriter) needToConnectOnMsg() bool",
+    "funcbody": "func (c *connWriter) needToConnectOnMsg() bool {\n\tif c.Reconnect {\n\t\treturn true\n\t}\n\n\tif c.innerWriter == nil {\n\t\treturn true\n\t}\n\n\treturn c.ReconnectOnMsg\n}",
+    "funcname": "needToConnectOnMsg"
+}

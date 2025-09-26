@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 129,
+    "focalfunc": "func (b BuildConfig) clone() BuildConfig",
+    "funcbody": "func (b BuildConfig) clone() BuildConfig {\n\tb.CacheBusters = append([]CacheBuster{}, b.CacheBusters...)\n\treturn b\n}",
+    "funcname": "clone"
+}

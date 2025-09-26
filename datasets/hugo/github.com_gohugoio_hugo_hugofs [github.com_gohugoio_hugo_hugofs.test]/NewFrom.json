@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 72,
+    "focalfunc": "func NewFrom(fs afero.Fs, conf config.BaseConfig) *Fs",
+    "funcbody": "func NewFrom(fs afero.Fs, conf config.BaseConfig) *Fs {\n\treturn newFs(fs, fs, conf.WorkingDir, conf.PublishDir)\n}",
+    "funcname": "NewFrom"
+}

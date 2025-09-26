@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/plugins.go",
+    "lineno": 21,
+    "focalfunc": "func initPlugins(staticCfg *static.Configuration) (*plugins.Client, map[string]plugins.Descriptor, map[string]plugins.LocalDescriptor, error)",
+    "funcbody": "func initPlugins(staticCfg *static.Configuration) (*plugins.Client, map[string]plugins.Descriptor, map[string]plugins.LocalDescriptor, error) {\n\terr := checkUniquePluginNames(staticCfg.Experimental)\n\tif err != nil {\n\t\treturn nil, nil, nil, err\n\t}\n\n\tvar client *plugins.Client\n\tplgs := map[string]plugins.Descriptor{}\n\n\tif hasPlugins(staticCfg) {\n\t\topts := plugins.ClientOptions{\n\t\t\tOutput: outputDir,\n\t\t}\n\n\t\tvar err error\n\t\tclient, err = plugins.NewClient(opts)\n\t\tif err != nil {\n\t\t\treturn nil, nil, nil, fmt.Errorf(\"unable to create plugins client: %w\", err)\n\t\t}\n\n\t\terr = plugins.SetupRemotePlugins(client, staticCfg.Experimental.Plugins)\n\t\tif err != nil {\n\t\t\treturn nil, nil, nil, fmt.Errorf(\"unable to set up plugins environment: %w\", err)\n\t\t}\n\n\t\tplgs = staticCfg.Experimental.Plugins\n\t}\n\n\tlocalPlgs := map[string]plugins.LocalDescriptor{}\n\n\tif hasLocalPlugins(staticCfg) {\n\t\terr := plugins.SetupLocalPlugins(staticCfg.Experimental.LocalPlugins)\n\t\tif err != nil {\n\t\t\treturn nil, nil, nil, err\n\t\t}\n\n\t\tlocalPlgs = staticCfg.Experimental.LocalPlugins\n\t}\n\n\treturn client, plgs, localPlgs, nil\n}",
+    "funcname": "initPlugins"
+}

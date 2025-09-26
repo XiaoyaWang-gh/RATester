@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 181,
+    "focalfunc": "func (input *BeegoInput) IsSecure() bool",
+    "funcbody": "func (input *BeegoInput) IsSecure() bool {\n\treturn input.Scheme() == \"https\"\n}",
+    "funcname": "IsSecure"
+}

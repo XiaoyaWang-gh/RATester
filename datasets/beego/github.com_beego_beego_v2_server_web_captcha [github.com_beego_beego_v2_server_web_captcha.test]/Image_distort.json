@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 448,
+    "focalfunc": "func (m *Image) distort(amplude float64, period float64)",
+    "funcbody": "func (m *Image) distort(amplude float64, period float64) {\n\tw := m.Bounds().Max.X\n\th := m.Bounds().Max.Y\n\n\toldm := m.Paletted\n\tnewm := image.NewPaletted(image.Rect(0, 0, w, h), oldm.Palette)\n\n\tdx := 2.0 * math.Pi / period\n\tfor x := 0; x < w; x++ {\n\t\tfor y := 0; y < h; y++ {\n\t\t\txo := amplude * math.Sin(float64(y)*dx)\n\t\t\tyo := amplude * math.Cos(float64(x)*dx)\n\t\t\tnewm.SetColorIndex(x, y, oldm.ColorIndexAt(x+int(xo), y+int(yo)))\n\t\t}\n\t}\n\tm.Paletted = newm\n}",
+    "funcname": "distort"
+}

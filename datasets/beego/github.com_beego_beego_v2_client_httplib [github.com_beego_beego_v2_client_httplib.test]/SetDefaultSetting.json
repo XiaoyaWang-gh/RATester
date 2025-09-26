@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/setting.go",
+    "lineno": 53,
+    "focalfunc": "func SetDefaultSetting(setting BeegoHTTPSettings)",
+    "funcbody": "func SetDefaultSetting(setting BeegoHTTPSettings) {\n\tsettingMutex.Lock()\n\tdefer settingMutex.Unlock()\n\tdefaultSetting = setting\n}",
+    "funcname": "SetDefaultSetting"
+}

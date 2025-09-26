@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 96,
+    "focalfunc": "func (pco *pageContentOutput) trackDependency(idp identity.IdentityProvider)",
+    "funcbody": "func (pco *pageContentOutput) trackDependency(idp identity.IdentityProvider) {\n\tpco.po.p.dependencyManagerOutput.AddIdentity(idp.GetIdentity())\n}",
+    "funcname": "trackDependency"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 118,
+    "focalfunc": "func (i Item) IsShortcodeName() bool",
+    "funcbody": "func (i Item) IsShortcodeName() bool {\n\treturn i.Type == tScName\n}",
+    "funcname": "IsShortcodeName"
+}

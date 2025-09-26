@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 52,
+    "focalfunc": "func (m *Muxer) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (m *Muxer) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tfor _, route := range m.routes {\n\t\tif route.matchers.match(req) {\n\t\t\troute.handler.ServeHTTP(rw, req)\n\t\t\treturn\n\t\t}\n\t}\n\n\tm.defaultHandler.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

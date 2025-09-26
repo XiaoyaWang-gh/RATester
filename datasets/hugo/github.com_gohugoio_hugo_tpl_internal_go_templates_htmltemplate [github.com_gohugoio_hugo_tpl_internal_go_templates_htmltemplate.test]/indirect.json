@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/hugo_template.go",
+    "lineno": 44,
+    "focalfunc": "func indirect(a any) any",
+    "funcbody": "func indirect(a any) any {\n\tin := doIndirect(a)\n\n\tif pp, ok := in.(types.PrintableValueProvider); ok {\n\t\treturn pp.PrintableValue()\n\t}\n\n\treturn in\n}",
+    "funcname": "indirect"
+}

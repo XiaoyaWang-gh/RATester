@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 734,
+    "focalfunc": "func (c *DefaultCtx) extractIPsFromHeader(header string) []string",
+    "funcbody": "func (c *DefaultCtx) extractIPsFromHeader(header string) []string {\n\n\theaderValue := c.Get(header)\n\n\t// We can't know how many IPs we will return, but we will try to guess with this constant division.\n\t// Counting ',' makes function slower for about 50ns in general case.\n\tconst maxEstimatedCount = 8\n\testimatedCount := len(headerValue) / maxEstimatedCount\n\tif estimatedCount > maxEstimatedCount {\n\t\testimatedCount = maxEstimatedCount\n\t}\n\n\tipsFound := make([]string, 0, estimatedCount)\n\n\ti := 0\n\tj := -1\n\niploop:\n\tfor {\n\t\tvar v4, v6 bool\n\n\t\ti, j = j+1, j+2\n\n\t\tif j > len(headerValue) {\n\t\t\tbreak\n\t\t}\n\n\t\tfor j < len(headerValue) && headerValue[j] != ',' {\n\t\t\tif headerValue[j] == ':' {\n\t\t\t\tv6 = true\n\t\t\t} else if headerValue[j] == '.' {\n\t\t\t\tv4 = true\n\t\t\t}\n\t\t\tj++\n\t\t}\n\n\t\tfor i < j && (headerValue[i] == ' ' || headerValue[i] == ',') {\n\t\t\ti++\n\t\t}\n\n\t\ts := utils.TrimRight(headerValue[i:j], ' ')\n\n\t\tif c.app.config.EnableIPValidation {\n\n\t\t\tif (!v6 && !v4) || (v6 && !utils.IsIPv6(s)) || (v4 && !utils.IsIPv4(s)) {\n\t\t\t\tcontinue iploop\n\t\t\t}\n\t\t}\n\n\t\tipsFound = append(ipsFound, s)\n\t}\n\n\treturn ipsFound\n}",
+    "funcname": "extractIPsFromHeader"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/chromalexers/chromalexers.go",
+    "lineno": 34,
+    "focalfunc": "func Get(name string) chroma.Lexer",
+    "funcbody": "func Get(name string) chroma.Lexer {\n\tlexerCache.mu.RLock()\n\tlexer, found := lexerCache.lexers[name]\n\tlexerCache.mu.RUnlock()\n\n\tif found {\n\t\treturn lexer\n\t}\n\n\tlexer = lexers.Get(name)\n\n\tlexerCache.mu.Lock()\n\tlexerCache.lexers[name] = lexer\n\tlexerCache.mu.Unlock()\n\n\treturn lexer\n}",
+    "funcname": "Get"
+}

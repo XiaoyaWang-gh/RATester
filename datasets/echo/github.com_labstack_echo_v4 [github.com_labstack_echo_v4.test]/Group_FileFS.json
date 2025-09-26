@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group_fs.go",
+    "lineno": 31,
+    "focalfunc": "func (g *Group) FileFS(path, file string, filesystem fs.FS, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) FileFS(path, file string, filesystem fs.FS, m ...MiddlewareFunc) *Route {\n\treturn g.GET(path, StaticFileHandler(file, filesystem), m...)\n}",
+    "funcname": "FileFS"
+}

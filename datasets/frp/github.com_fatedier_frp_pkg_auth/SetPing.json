@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/token.go",
+    "lineno": 44,
+    "focalfunc": "func (auth *TokenAuthSetterVerifier) SetPing(pingMsg *msg.Ping) error",
+    "funcbody": "func (auth *TokenAuthSetterVerifier) SetPing(pingMsg *msg.Ping) error {\n\tif !slices.Contains(auth.additionalAuthScopes, v1.AuthScopeHeartBeats) {\n\t\treturn nil\n\t}\n\n\tpingMsg.Timestamp = time.Now().Unix()\n\tpingMsg.PrivilegeKey = util.GetAuthKey(auth.token, pingMsg.Timestamp)\n\treturn nil\n}",
+    "funcname": "SetPing"
+}

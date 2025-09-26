@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 108,
+    "focalfunc": "func (m *LogGroup) GetLogs() []*Log",
+    "funcbody": "func (m *LogGroup) GetLogs() []*Log {\n\tif m != nil {\n\t\treturn m.Logs\n\t}\n\treturn nil\n}",
+    "funcname": "GetLogs"
+}

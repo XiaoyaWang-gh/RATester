@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/gitinfo.go",
+    "lineno": 43,
+    "focalfunc": "func newGitInfo(d *deps.Deps) (*gitInfo, error)",
+    "funcbody": "func newGitInfo(d *deps.Deps) (*gitInfo, error) {\n\topts := gitmap.Options{\n\t\tRepository:\td.Conf.BaseConfig().WorkingDir,\n\t\tGetGitCommandFunc: func(stdout, stderr io.Writer, args ...string) (gitmap.Runner, error) {\n\t\t\tvar argsv []any\n\t\t\tfor _, arg := range args {\n\t\t\t\targsv = append(argsv, arg)\n\t\t\t}\n\t\t\targsv = append(\n\t\t\t\targsv,\n\t\t\t\thexec.WithStdout(stdout),\n\t\t\t\thexec.WithStderr(stderr),\n\t\t\t)\n\t\t\treturn d.ExecHelper.New(\"git\", argsv...)\n\t\t},\n\t}\n\n\tgitRepo, err := gitmap.Map(opts)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &gitInfo{contentDir: gitRepo.TopLevelAbsPath, repo: gitRepo}, nil\n}",
+    "funcname": "newGitInfo"
+}

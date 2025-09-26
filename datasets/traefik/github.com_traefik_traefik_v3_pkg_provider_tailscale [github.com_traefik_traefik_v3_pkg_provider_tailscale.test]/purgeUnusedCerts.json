@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 224,
+    "focalfunc": "func (p *Provider) purgeUnusedCerts(domains []string) bool",
+    "funcbody": "func (p *Provider) purgeUnusedCerts(domains []string) bool {\n\tp.certByDomainMu.Lock()\n\tdefer p.certByDomainMu.Unlock()\n\n\tnewCertByDomain := make(map[string]traefiktls.Certificate)\n\tfor _, domain := range domains {\n\t\tif cert, ok := p.certByDomain[domain]; ok {\n\t\t\tnewCertByDomain[domain] = cert\n\t\t}\n\t}\n\n\tpurged := len(p.certByDomain) > len(newCertByDomain)\n\n\tp.certByDomain = newCertByDomain\n\n\treturn purged\n}",
+    "funcname": "purgeUnusedCerts"
+}

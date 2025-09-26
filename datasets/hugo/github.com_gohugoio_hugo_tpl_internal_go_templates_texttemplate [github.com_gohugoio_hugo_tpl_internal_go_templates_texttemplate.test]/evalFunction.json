@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/hugo_template.go",
+    "lineno": 123,
+    "focalfunc": "func (s *state) evalFunction(dot reflect.Value, node *parse.IdentifierNode, cmd parse.Node, args []parse.Node, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalFunction(dot reflect.Value, node *parse.IdentifierNode, cmd parse.Node, args []parse.Node, final reflect.Value) reflect.Value {\n\ts.at(node)\n\tname := node.Ident\n\n\tvar function reflect.Value\n\t// Added for Hugo.\n\tvar first reflect.Value\n\tvar ok bool\n\tvar isBuiltin bool\n\tif s.helper != nil {\n\t\tisBuiltin = name == \"and\" || name == \"or\"\n\t\tfunction, first, ok = s.helper.GetFunc(s.ctx, s.prep, name)\n\t}\n\n\tif !ok {\n\t\tfunction, isBuiltin, ok = findFunction(name, s.tmpl)\n\t}\n\n\tif !ok {\n\t\ts.errorf(\"%q is not a defined function\", name)\n\t}\n\tif first != zero {\n\t\treturn s.evalCall(dot, function, isBuiltin, cmd, name, args, final, first)\n\t}\n\treturn s.evalCall(dot, function, isBuiltin, cmd, name, args, final)\n}",
+    "funcname": "evalFunction"
+}

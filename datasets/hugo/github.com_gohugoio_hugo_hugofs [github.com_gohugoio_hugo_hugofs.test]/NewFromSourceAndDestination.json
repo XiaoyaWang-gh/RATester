@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 83,
+    "focalfunc": "func NewFromSourceAndDestination(source, destination afero.Fs, cfg config.Provider) *Fs",
+    "funcbody": "func NewFromSourceAndDestination(source, destination afero.Fs, cfg config.Provider) *Fs {\n\tworkingDir, publishDir := getWorkingPublishDir(cfg)\n\treturn newFs(source, destination, workingDir, publishDir)\n}",
+    "funcname": "NewFromSourceAndDestination"
+}

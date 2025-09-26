@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/slice.go",
+    "lineno": 87,
+    "focalfunc": "func (ss SortedStringSlice) Count(s string) int",
+    "funcbody": "func (ss SortedStringSlice) Count(s string) int {\n\tvar count int\n\ti := sort.SearchStrings(ss, s)\n\tfor i < len(ss) && ss[i] == s {\n\t\tcount++\n\t\ti++\n\t}\n\treturn count\n}",
+    "funcname": "Count"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/wrr_load_balancer.go",
+    "lineno": 89,
+    "focalfunc": "func gcd(a, b int) int",
+    "funcbody": "func gcd(a, b int) int {\n\tfor b != 0 {\n\t\ta, b = b, a%b\n\t}\n\treturn a\n}",
+    "funcname": "gcd"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 142,
+    "focalfunc": "func doRequest(action timedAction, timeout time.Duration, request *http.Request, transport http.RoundTripper, conditions ...ResponseCondition) (*http.Response, error)",
+    "funcbody": "func doRequest(action timedAction, timeout time.Duration, request *http.Request, transport http.RoundTripper, conditions ...ResponseCondition) (*http.Response, error) {\n\tvar resp *http.Response\n\treturn resp, action(timeout, func() error {\n\t\tvar err error\n\t\tclient := http.DefaultClient\n\t\tif transport != nil {\n\t\t\tclient.Transport = transport\n\t\t}\n\n\t\tresp, err = client.Do(request)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tfor _, condition := range conditions {\n\t\t\tif err := condition(resp); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\n\t\treturn nil\n\t})\n}",
+    "funcname": "doRequest"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/manager.go",
+    "lineno": 36,
+    "focalfunc": "func NewManager() *Manager",
+    "funcbody": "func NewManager() *Manager {\n\treturn &Manager{\n\t\tloginPlugins:\t\tmake([]Plugin, 0),\n\t\tnewProxyPlugins:\tmake([]Plugin, 0),\n\t\tcloseProxyPlugins:\tmake([]Plugin, 0),\n\t\tpingPlugins:\t\tmake([]Plugin, 0),\n\t\tnewWorkConnPlugins:\tmake([]Plugin, 0),\n\t\tnewUserConnPlugins:\tmake([]Plugin, 0),\n\t}\n}",
+    "funcname": "NewManager"
+}

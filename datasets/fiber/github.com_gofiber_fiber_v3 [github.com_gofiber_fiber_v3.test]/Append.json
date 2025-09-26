@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 230,
+    "focalfunc": "func (c *DefaultCtx) Append(field string, values ...string)",
+    "funcbody": "func (c *DefaultCtx) Append(field string, values ...string) {\n\tif len(values) == 0 {\n\t\treturn\n\t}\n\th := c.app.getString(c.fasthttp.Response.Header.Peek(field))\n\toriginalH := h\n\tfor _, value := range values {\n\t\tif len(h) == 0 {\n\t\t\th = value\n\t\t} else if h != value && !strings.HasPrefix(h, value+\",\") && !strings.HasSuffix(h, \" \"+value) &&\n\t\t\t!strings.Contains(h, \" \"+value+\",\") {\n\t\t\th += \", \" + value\n\t\t}\n\t}\n\tif originalH != h {\n\t\tc.Set(field, h)\n\t}\n}",
+    "funcname": "Append"
+}

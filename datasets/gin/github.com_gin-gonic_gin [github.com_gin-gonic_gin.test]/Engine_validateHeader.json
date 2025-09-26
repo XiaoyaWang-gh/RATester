@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 459,
+    "focalfunc": "func (engine *Engine) validateHeader(header string) (clientIP string, valid bool)",
+    "funcbody": "func (engine *Engine) validateHeader(header string) (clientIP string, valid bool) {\n\tif header == \"\" {\n\t\treturn \"\", false\n\t}\n\titems := strings.Split(header, \",\")\n\tfor i := len(items) - 1; i >= 0; i-- {\n\t\tipStr := strings.TrimSpace(items[i])\n\t\tip := net.ParseIP(ipStr)\n\t\tif ip == nil {\n\t\t\tbreak\n\t\t}\n\n\t\tif (i == 0) || (!engine.isTrustedProxy(ip)) {\n\t\t\treturn ipStr, true\n\t\t}\n\t}\n\treturn \"\", false\n}",
+    "funcname": "validateHeader"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_tcp.go",
+    "lineno": 252,
+    "focalfunc": "func keepTCPMiddleware(name string, item *runtime.TCPMiddlewareInfo, criterion *searchCriterion) bool",
+    "funcbody": "func keepTCPMiddleware(name string, item *runtime.TCPMiddlewareInfo, criterion *searchCriterion) bool {\n\tif criterion == nil {\n\t\treturn true\n\t}\n\n\treturn criterion.withStatus(item.Status) && criterion.searchIn(name)\n}",
+    "funcname": "keepTCPMiddleware"
+}

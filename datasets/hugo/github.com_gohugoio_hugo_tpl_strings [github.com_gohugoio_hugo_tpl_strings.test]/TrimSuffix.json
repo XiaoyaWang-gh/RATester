@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 503,
+    "focalfunc": "func (ns *Namespace) TrimSuffix(suffix, s any) (string, error)",
+    "funcbody": "func (ns *Namespace) TrimSuffix(suffix, s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tsx, err := cast.ToStringE(suffix)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn strings.TrimSuffix(ss, sx), nil\n}",
+    "funcname": "TrimSuffix"
+}

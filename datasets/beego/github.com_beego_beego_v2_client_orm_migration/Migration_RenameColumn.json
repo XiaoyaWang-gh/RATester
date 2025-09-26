@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 256,
+    "focalfunc": "func (m *Migration) RenameColumn(from, to string) *RenameColumn",
+    "funcbody": "func (m *Migration) RenameColumn(from, to string) *RenameColumn {\n\trename := &RenameColumn{OldName: from, NewName: to}\n\tm.Renames = append(m.Renames, rename)\n\treturn rename\n}",
+    "funcname": "RenameColumn"
+}

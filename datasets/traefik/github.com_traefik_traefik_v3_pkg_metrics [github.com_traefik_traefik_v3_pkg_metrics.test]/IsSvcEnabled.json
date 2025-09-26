@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 220,
+    "focalfunc": "func (r *standardRegistry) IsSvcEnabled() bool",
+    "funcbody": "func (r *standardRegistry) IsSvcEnabled() bool {\n\treturn r.svcEnabled\n}",
+    "funcname": "IsSvcEnabled"
+}

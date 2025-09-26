@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 59,
+    "focalfunc": "func (fs noOpFs) RemoveAll(path string) error",
+    "funcbody": "func (fs noOpFs) RemoveAll(path string) error {\n\treturn nil\n}",
+    "funcname": "RemoveAll"
+}

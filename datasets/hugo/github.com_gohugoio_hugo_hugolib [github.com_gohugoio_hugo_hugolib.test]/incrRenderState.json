@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__output.go",
+    "lineno": 114,
+    "focalfunc": "func (po *pageOutput) incrRenderState()",
+    "funcbody": "func (po *pageOutput) incrRenderState() {\n\tpo.renderState++\n\tpo.renderOnce = true\n}",
+    "funcname": "incrRenderState"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 258,
+    "focalfunc": "func (c *Controller) BindForm(obj interface{}) error",
+    "funcbody": "func (c *Controller) BindForm(obj interface{}) error {\n\treturn c.Ctx.BindForm(obj)\n}",
+    "funcname": "BindForm"
+}

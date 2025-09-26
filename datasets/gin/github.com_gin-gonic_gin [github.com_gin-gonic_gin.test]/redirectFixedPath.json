@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 749,
+    "focalfunc": "func redirectFixedPath(c *Context, root *node, trailingSlash bool) bool",
+    "funcbody": "func redirectFixedPath(c *Context, root *node, trailingSlash bool) bool {\n\treq := c.Request\n\trPath := req.URL.Path\n\n\tif fixedPath, ok := root.findCaseInsensitivePath(cleanPath(rPath), trailingSlash); ok {\n\t\treq.URL.Path = bytesconv.BytesToString(fixedPath)\n\t\tredirectRequest(c)\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "redirectFixedPath"
+}

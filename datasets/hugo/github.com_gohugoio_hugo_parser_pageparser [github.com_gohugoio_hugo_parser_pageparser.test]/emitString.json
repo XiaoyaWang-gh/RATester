@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 173,
+    "focalfunc": "func (l *pageLexer) emitString(t ItemType)",
+    "funcbody": "func (l *pageLexer) emitString(t ItemType) {\n\tl.append(Item{Type: t, low: l.start, high: l.pos, isString: true})\n\tl.start = l.pos\n}",
+    "funcname": "emitString"
+}

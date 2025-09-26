@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 167,
+    "focalfunc": "func (d *dbQueryLog) Query(query string, args ...interface{}) (*sql.Rows, error)",
+    "funcbody": "func (d *dbQueryLog) Query(query string, args ...interface{}) (*sql.Rows, error) {\n\treturn d.QueryContext(context.Background(), query, args...)\n}",
+    "funcname": "Query"
+}

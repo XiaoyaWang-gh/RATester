@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 182,
+    "focalfunc": "func (t *Tree) expectOneOf(expected1, expected2 itemType, context string) item",
+    "funcbody": "func (t *Tree) expectOneOf(expected1, expected2 itemType, context string) item {\n\ttoken := t.nextNonSpace()\n\tif token.typ != expected1 && token.typ != expected2 {\n\t\tt.unexpected(token, context)\n\t}\n\treturn token\n}",
+    "funcname": "expectOneOf"
+}

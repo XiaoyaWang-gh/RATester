@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 377,
+    "focalfunc": "func (r *Response) Flush()",
+    "funcbody": "func (r *Response) Flush() {\n\tif f, ok := r.ResponseWriter.(http.Flusher); ok {\n\t\tf.Flush()\n\t}\n}",
+    "funcname": "Flush"
+}

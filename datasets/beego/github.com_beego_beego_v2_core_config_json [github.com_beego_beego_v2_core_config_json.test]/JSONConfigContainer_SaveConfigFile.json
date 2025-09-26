@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 246,
+    "focalfunc": "func (c *JSONConfigContainer) SaveConfigFile(filename string) (err error)",
+    "funcbody": "func (c *JSONConfigContainer) SaveConfigFile(filename string) (err error) {\n\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\tb, err := json.MarshalIndent(c.data, \"\", \"  \")\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = f.Write(b)\n\treturn err\n}",
+    "funcname": "SaveConfigFile"
+}

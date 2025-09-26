@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 413,
+    "focalfunc": "func newIdentCmd(identifier string, pos parse.Pos) *parse.CommandNode",
+    "funcbody": "func newIdentCmd(identifier string, pos parse.Pos) *parse.CommandNode {\n\treturn &parse.CommandNode{\n\t\tNodeType:\tparse.NodeCommand,\n\t\tArgs:\t\t[]parse.Node{parse.NewIdentifier(identifier).SetTree(nil).SetPos(pos)},\n\t}\n}",
+    "funcname": "newIdentCmd"
+}

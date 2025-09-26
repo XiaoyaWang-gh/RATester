@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 74,
+    "focalfunc": "func DateFormat(t time.Time, layout string) (datestring string)",
+    "funcbody": "func DateFormat(t time.Time, layout string) (datestring string) {\n\tdatestring = t.Format(layout)\n\treturn\n}",
+    "funcname": "DateFormat"
+}

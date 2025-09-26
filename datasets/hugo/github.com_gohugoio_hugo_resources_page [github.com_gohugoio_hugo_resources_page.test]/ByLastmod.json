@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 305,
+    "focalfunc": "func (p Pages) ByLastmod() Pages",
+    "funcbody": "func (p Pages) ByLastmod() Pages {\n\tconst key = \"pageSort.ByLastmod\"\n\n\tdate := func(p1, p2 Page) bool {\n\t\treturn p1.Lastmod().Unix() < p2.Lastmod().Unix()\n\t}\n\n\tpages, _ := spc.get(key, pageBy(date).Sort, p)\n\n\treturn pages\n}",
+    "funcname": "ByLastmod"
+}

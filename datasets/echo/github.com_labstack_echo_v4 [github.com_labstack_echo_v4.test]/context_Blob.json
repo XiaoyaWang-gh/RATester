@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 576,
+    "focalfunc": "func (c *context) Blob(code int, contentType string, b []byte) (err error)",
+    "funcbody": "func (c *context) Blob(code int, contentType string, b []byte) (err error) {\n\tc.writeContentType(contentType)\n\tc.response.WriteHeader(code)\n\t_, err = c.response.Write(b)\n\treturn\n}",
+    "funcname": "Blob"
+}

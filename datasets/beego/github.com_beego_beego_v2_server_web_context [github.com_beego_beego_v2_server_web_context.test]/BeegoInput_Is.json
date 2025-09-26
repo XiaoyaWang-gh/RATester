@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 136,
+    "focalfunc": "func (input *BeegoInput) Is(method string) bool",
+    "funcbody": "func (input *BeegoInput) Is(method string) bool {\n\treturn input.Method() == method\n}",
+    "funcname": "Is"
+}

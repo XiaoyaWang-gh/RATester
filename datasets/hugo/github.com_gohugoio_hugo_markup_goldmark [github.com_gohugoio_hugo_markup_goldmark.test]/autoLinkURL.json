@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 394,
+    "focalfunc": "func (r *hookedRenderer) autoLinkURL(n *ast.AutoLink, source []byte) []byte",
+    "funcbody": "func (r *hookedRenderer) autoLinkURL(n *ast.AutoLink, source []byte) []byte {\n\turl := n.URL(source)\n\tif len(n.Protocol) > 0 && !bytes.Equal(n.Protocol, r.linkifyProtocol) {\n\n\t\turl = append(r.linkifyProtocol, url[len(n.Protocol):]...)\n\t}\n\treturn url\n}",
+    "funcname": "autoLinkURL"
+}

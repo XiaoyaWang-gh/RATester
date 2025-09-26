@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 450,
+    "focalfunc": "func (fs *RootMappingFs) getRootsWithPrefix(prefix string) []RootMapping",
+    "funcbody": "func (fs *RootMappingFs) getRootsWithPrefix(prefix string) []RootMapping {\n\tvar roots []RootMapping\n\tfs.rootMapToReal.WalkPrefix(prefix, func(b string, v any) bool {\n\t\troots = append(roots, v.([]RootMapping)...)\n\t\treturn false\n\t})\n\n\treturn roots\n}",
+    "funcname": "getRootsWithPrefix"
+}

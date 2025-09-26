@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 242,
+    "focalfunc": "func (c *IniConfigContainer) Bool(key string) (bool, error)",
+    "funcbody": "func (c *IniConfigContainer) Bool(key string) (bool, error) {\n\treturn ParseBool(c.getdata(key))\n}",
+    "funcname": "Bool"
+}

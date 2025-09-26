@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 126,
+    "focalfunc": "func (f StrTo) Uint64() (uint64, error)",
+    "funcbody": "func (f StrTo) Uint64() (uint64, error) {\n\tv, err := strconv.ParseUint(f.String(), 10, 64)\n\tif err != nil {\n\t\ti := new(big.Int)\n\t\tni, ok := i.SetString(f.String(), 10)\n\t\tif !ok {\n\t\t\treturn v, err\n\t\t}\n\t\treturn ni.Uint64(), nil\n\t}\n\treturn v, err\n}",
+    "funcname": "Uint64"
+}

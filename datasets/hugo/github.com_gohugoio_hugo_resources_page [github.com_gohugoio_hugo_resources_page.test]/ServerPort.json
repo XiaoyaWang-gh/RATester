@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 364,
+    "focalfunc": "func (t testSite) ServerPort() int",
+    "funcbody": "func (t testSite) ServerPort() int {\n\treturn 1313\n}",
+    "funcname": "ServerPort"
+}

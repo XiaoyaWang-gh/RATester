@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 428,
+    "focalfunc": "func basicKind(v reflect.Value) (kind, error)",
+    "funcbody": "func basicKind(v reflect.Value) (kind, error) {\n\tswitch v.Kind() {\n\tcase reflect.Bool:\n\t\treturn boolKind, nil\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn intKind, nil\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:\n\t\treturn uintKind, nil\n\tcase reflect.Float32, reflect.Float64:\n\t\treturn floatKind, nil\n\tcase reflect.Complex64, reflect.Complex128:\n\t\treturn complexKind, nil\n\tcase reflect.String:\n\t\treturn stringKind, nil\n\t}\n\treturn invalidKind, errBadComparisonType\n}",
+    "funcname": "basicKind"
+}

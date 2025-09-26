@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 121,
+    "focalfunc": "func SliceChunk(slice []interface{}, size int) (chunkslice [][]interface{})",
+    "funcbody": "func SliceChunk(slice []interface{}, size int) (chunkslice [][]interface{}) {\n\tif size >= len(slice) {\n\t\tchunkslice = append(chunkslice, slice)\n\t\treturn\n\t}\n\tend := size\n\tfor i := 0; i <= (len(slice) - size); i += size {\n\t\tchunkslice = append(chunkslice, slice[i:end])\n\t\tend += size\n\t}\n\treturn\n}",
+    "funcname": "SliceChunk"
+}

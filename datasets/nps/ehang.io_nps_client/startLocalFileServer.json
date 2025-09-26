@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/local.go",
+    "lineno": 65,
+    "focalfunc": "func startLocalFileServer(config *config.CommonConfig, t *file.Tunnel, vkey string)",
+    "funcbody": "func startLocalFileServer(config *config.CommonConfig, t *file.Tunnel, vkey string) {\n\tremoteConn, err := NewConn(config.Tp, vkey, config.Server, common.WORK_FILE, config.ProxyUrl)\n\tif err != nil {\n\t\tlogs.Error(\"Local connection server failed \", err.Error())\n\t\treturn\n\t}\n\tsrv := &http.Server{\n\t\tHandler: http.StripPrefix(t.StripPre, http.FileServer(http.Dir(t.LocalPath))),\n\t}\n\tlogs.Info(\"start local file system, local path %s, strip prefix %s ,remote port %s \", t.LocalPath, t.StripPre, t.Ports)\n\tfileServer = append(fileServer, srv)\n\tlistener := nps_mux.NewMux(remoteConn.Conn, common.CONN_TCP, config.DisconnectTime)\n\tlogs.Error(srv.Serve(listener))\n}",
+    "funcname": "startLocalFileServer"
+}

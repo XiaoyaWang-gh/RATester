@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 513,
+    "focalfunc": "func (p *ControllerRegister) addBeegoTypeRouter(ct reflect.Type, ctMethod, httpMethod, pattern string)",
+    "funcbody": "func (p *ControllerRegister) addBeegoTypeRouter(ct reflect.Type, ctMethod, httpMethod, pattern string) {\n\troute := p.createBeegoRouter(ct, pattern)\n\tmethods := p.getHttpMethodMapMethod(httpMethod, ctMethod)\n\troute.methods = methods\n\n\tp.addRouterForMethod(route)\n}",
+    "funcname": "addBeegoTypeRouter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 332,
+    "focalfunc": "func (m tcpMiddlewareRepresentation) resourceType() string",
+    "funcbody": "func (m tcpMiddlewareRepresentation) resourceType() string {\n\treturn m.Type\n}",
+    "funcname": "resourceType"
+}

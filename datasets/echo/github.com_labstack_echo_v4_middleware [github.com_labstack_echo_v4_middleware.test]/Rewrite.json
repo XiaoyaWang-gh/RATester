@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rewrite.go",
+    "lineno": 43,
+    "focalfunc": "func Rewrite(rules map[string]string) echo.MiddlewareFunc",
+    "funcbody": "func Rewrite(rules map[string]string) echo.MiddlewareFunc {\n\tc := DefaultRewriteConfig\n\tc.Rules = rules\n\treturn RewriteWithConfig(c)\n}",
+    "funcname": "Rewrite"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/plugin/plugin.go",
+    "lineno": 18,
+    "focalfunc": "func NewHTTPPluginServer(port int, newFunc NewPluginRequest, handler Handler, tlsConfig *tls.Config) *httpserver.Server",
+    "funcbody": "func NewHTTPPluginServer(port int, newFunc NewPluginRequest, handler Handler, tlsConfig *tls.Config) *httpserver.Server {\n\treturn httpserver.New(\n\t\thttpserver.WithBindPort(port),\n\t\thttpserver.WithTLSConfig(tlsConfig),\n\t\thttpserver.WithHandler(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {\n\t\t\tr := newFunc()\n\t\t\tbuf, err := io.ReadAll(req.Body)\n\t\t\tif err != nil {\n\t\t\t\tw.WriteHeader(500)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tlog.Tracef(\"plugin request: %s\", string(buf))\n\t\t\terr = json.Unmarshal(buf, &r)\n\t\t\tif err != nil {\n\t\t\t\tw.WriteHeader(500)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tresp := handler(r)\n\t\t\tbuf, _ = json.Marshal(resp)\n\t\t\tlog.Tracef(\"plugin response: %s\", string(buf))\n\t\t\t_, _ = w.Write(buf)\n\t\t})),\n\t)\n}",
+    "funcname": "NewHTTPPluginServer"
+}

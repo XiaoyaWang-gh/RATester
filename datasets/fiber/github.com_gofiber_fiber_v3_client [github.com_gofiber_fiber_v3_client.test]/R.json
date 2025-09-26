@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 77,
+    "focalfunc": "func (c *Client) R() *Request",
+    "funcbody": "func (c *Client) R() *Request {\n\treturn AcquireRequest().SetClient(c)\n}",
+    "funcname": "R"
+}

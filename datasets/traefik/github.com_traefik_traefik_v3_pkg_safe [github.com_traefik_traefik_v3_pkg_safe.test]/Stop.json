@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 41,
+    "focalfunc": "func (p *Pool) Stop()",
+    "funcbody": "func (p *Pool) Stop() {\n\tp.cancel()\n\tp.waitGroup.Wait()\n}",
+    "funcname": "Stop"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 830,
+    "focalfunc": "func (p *ControllerRegister) insertFilterRouter(pos int, mr *FilterRouter) (err error)",
+    "funcbody": "func (p *ControllerRegister) insertFilterRouter(pos int, mr *FilterRouter) (err error) {\n\tif pos < BeforeStatic || pos > FinishRouter {\n\t\treturn errors.New(\"can not find your filter position\")\n\t}\n\tp.enableFilter = true\n\tp.filters[pos] = append(p.filters[pos], mr)\n\treturn nil\n}",
+    "funcname": "insertFilterRouter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 481,
+    "focalfunc": "func minIndex(indices ...int) int",
+    "funcbody": "func minIndex(indices ...int) int {\n\tmin := -1\n\n\tfor _, j := range indices {\n\t\tif j < 0 {\n\t\t\tcontinue\n\t\t}\n\t\tif min == -1 {\n\t\t\tmin = j\n\t\t} else if j < min {\n\t\t\tmin = j\n\t\t}\n\t}\n\treturn min\n}",
+    "funcname": "minIndex"
+}

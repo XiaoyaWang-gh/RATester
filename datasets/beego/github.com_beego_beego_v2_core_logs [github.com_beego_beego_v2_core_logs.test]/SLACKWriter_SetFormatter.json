@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/slack.go",
+    "lineno": 30,
+    "focalfunc": "func (s *SLACKWriter) SetFormatter(f LogFormatter)",
+    "funcbody": "func (s *SLACKWriter) SetFormatter(f LogFormatter) {\n\ts.formatter = f\n}",
+    "funcname": "SetFormatter"
+}

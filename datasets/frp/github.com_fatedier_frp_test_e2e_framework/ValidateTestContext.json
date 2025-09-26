@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/test_context.go",
+    "lineno": 32,
+    "focalfunc": "func ValidateTestContext(t *TestContextType) error",
+    "funcbody": "func ValidateTestContext(t *TestContextType) error {\n\tif t.FRPClientPath == \"\" || t.FRPServerPath == \"\" {\n\t\treturn fmt.Errorf(\"frpc and frps binary path can't be empty\")\n\t}\n\tif _, err := os.Stat(t.FRPClientPath); err != nil {\n\t\treturn fmt.Errorf(\"load frpc-path error: %v\", err)\n\t}\n\tif _, err := os.Stat(t.FRPServerPath); err != nil {\n\t\treturn fmt.Errorf(\"load frps-path error: %v\", err)\n\t}\n\treturn nil\n}",
+    "funcname": "ValidateTestContext"
+}

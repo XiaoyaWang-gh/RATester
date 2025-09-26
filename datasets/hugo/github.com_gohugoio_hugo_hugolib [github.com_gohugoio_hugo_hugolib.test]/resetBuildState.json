@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 149,
+    "focalfunc": "func (p *pageState) resetBuildState()",
+    "funcbody": "func (p *pageState) resetBuildState() {\n\tp.Scratcher = maps.NewScratcher()\n}",
+    "funcname": "resetBuildState"
+}

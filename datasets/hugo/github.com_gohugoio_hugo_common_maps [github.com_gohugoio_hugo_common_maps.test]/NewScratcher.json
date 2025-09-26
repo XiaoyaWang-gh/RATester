@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 46,
+    "focalfunc": "func NewScratcher() Scratcher",
+    "funcbody": "func NewScratcher() Scratcher {\n\treturn scratcher{s: NewScratch()}\n}",
+    "funcname": "NewScratcher"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/healthcheck/healthcheck.go",
+    "lineno": 25,
+    "focalfunc": "func runCmd(traefikConfiguration *static.Configuration) func(_ []string) error",
+    "funcbody": "func runCmd(traefikConfiguration *static.Configuration) func(_ []string) error {\n\treturn func(_ []string) error {\n\t\ttraefikConfiguration.SetEffectiveConfiguration()\n\n\t\tresp, errPing := Do(*traefikConfiguration)\n\t\tif resp != nil {\n\t\t\tresp.Body.Close()\n\t\t}\n\t\tif errPing != nil {\n\t\t\tfmt.Printf(\"Error calling healthcheck: %s\\n\", errPing)\n\t\t\tos.Exit(1)\n\t\t}\n\n\t\tif resp.StatusCode != http.StatusOK {\n\t\t\tfmt.Printf(\"Bad healthcheck status: %s\\n\", resp.Status)\n\t\t\tos.Exit(1)\n\t\t}\n\t\tfmt.Printf(\"OK: %s\\n\", resp.Request.URL)\n\t\tos.Exit(0)\n\t\treturn nil\n\t}\n}",
+    "funcname": "runCmd"
+}

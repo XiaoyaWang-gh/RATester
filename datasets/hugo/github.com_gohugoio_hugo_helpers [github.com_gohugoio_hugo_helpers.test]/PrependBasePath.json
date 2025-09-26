@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 177,
+    "focalfunc": "func (p *PathSpec) PrependBasePath(rel string, isAbs bool) string",
+    "funcbody": "func (p *PathSpec) PrependBasePath(rel string, isAbs bool) string {\n\tbasePath := p.GetBasePath(!isAbs)\n\tif basePath != \"\" {\n\t\trel = filepath.ToSlash(rel)\n\n\t\thadSlash := strings.HasSuffix(rel, \"/\")\n\t\trel = path.Join(basePath, rel)\n\t\tif hadSlash {\n\t\t\trel += \"/\"\n\t\t}\n\t}\n\treturn rel\n}",
+    "funcname": "PrependBasePath"
+}

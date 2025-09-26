@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/tasks/tasks.go",
+    "lineno": 53,
+    "focalfunc": "func (r *RunEvery) Start() error",
+    "funcbody": "func (r *RunEvery) Start() error {\n\tif r.started {\n\t\treturn nil\n\t}\n\n\tr.started = true\n\tr.quit = make(chan struct{})\n\n\tgo func() {\n\t\tif r.RunImmediately {\n\t\t\tr.run()\n\t\t}\n\t\tticker := time.NewTicker(500 * time.Millisecond)\n\t\tdefer ticker.Stop()\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-r.quit:\n\t\t\t\treturn\n\t\t\tcase <-ticker.C:\n\t\t\t\tr.run()\n\t\t\t}\n\t\t}\n\t}()\n\n\treturn nil\n}",
+    "funcname": "Start"
+}

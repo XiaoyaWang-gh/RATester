@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 116,
+    "focalfunc": "func (w *responseWriter) CloseNotify() <-chan bool",
+    "funcbody": "func (w *responseWriter) CloseNotify() <-chan bool {\n\treturn w.ResponseWriter.(http.CloseNotifier).CloseNotify()\n}",
+    "funcname": "CloseNotify"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentelemetry/filter.go",
+    "lineno": 48,
+    "focalfunc": "func WithCustomSpanFunc(customSpanFunc CustomSpanFunc) FilterChainOption",
+    "funcbody": "func WithCustomSpanFunc(customSpanFunc CustomSpanFunc) FilterChainOption {\n\treturn func(fcv *FilterChainBuilder) {\n\t\tfcv.customSpanFunc = customSpanFunc\n\t}\n}",
+    "funcname": "WithCustomSpanFunc"
+}

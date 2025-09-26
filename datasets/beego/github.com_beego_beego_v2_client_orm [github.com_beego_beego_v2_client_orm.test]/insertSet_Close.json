@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_object.go",
+    "lineno": 71,
+    "focalfunc": "func (o *insertSet) Close() error",
+    "funcbody": "func (o *insertSet) Close() error {\n\tif o.closed {\n\t\treturn ErrStmtClosed\n\t}\n\to.closed = true\n\treturn o.stmt.Close()\n}",
+    "funcname": "Close"
+}

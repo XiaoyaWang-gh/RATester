@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/slash.go",
+    "lineno": 37,
+    "focalfunc": "func AddTrailingSlashWithConfig(config TrailingSlashConfig) echo.MiddlewareFunc",
+    "funcbody": "func AddTrailingSlashWithConfig(config TrailingSlashConfig) echo.MiddlewareFunc {\n\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultTrailingSlashConfig.Skipper\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\treq := c.Request()\n\t\t\turl := req.URL\n\t\t\tpath := url.Path\n\t\t\tqs := c.QueryString()\n\t\t\tif !strings.HasSuffix(path, \"/\") {\n\t\t\t\tpath += \"/\"\n\t\t\t\turi := path\n\t\t\t\tif qs != \"\" {\n\t\t\t\t\turi += \"?\" + qs\n\t\t\t\t}\n\n\t\t\t\tif config.RedirectCode != 0 {\n\t\t\t\t\treturn c.Redirect(config.RedirectCode, sanitizeURI(uri))\n\t\t\t\t}\n\n\t\t\t\treq.RequestURI = uri\n\t\t\t\turl.Path = path\n\t\t\t}\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "AddTrailingSlashWithConfig"
+}

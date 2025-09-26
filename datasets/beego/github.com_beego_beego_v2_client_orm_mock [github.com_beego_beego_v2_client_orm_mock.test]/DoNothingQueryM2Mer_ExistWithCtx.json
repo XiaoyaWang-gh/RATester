@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_queryM2Mer.go",
+    "lineno": 35,
+    "focalfunc": "func (d *DoNothingQueryM2Mer) ExistWithCtx(ctx context.Context, i interface{}) bool",
+    "funcbody": "func (d *DoNothingQueryM2Mer) ExistWithCtx(ctx context.Context, i interface{}) bool {\n\treturn true\n}",
+    "funcname": "ExistWithCtx"
+}

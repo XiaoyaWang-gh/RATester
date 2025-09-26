@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 470,
+    "focalfunc": "func (l *genericResource) setMediaType(mediaType media.Type)",
+    "funcbody": "func (l *genericResource) setMediaType(mediaType media.Type) {\n\tl.sd.MediaType = mediaType\n}",
+    "funcname": "setMediaType"
+}

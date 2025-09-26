@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1004,
+    "focalfunc": "func (t *templateNamespace) createPrototypes() error",
+    "funcbody": "func (t *templateNamespace) createPrototypes() error {\n\tt.prototypeTextClone = texttemplate.Must(t.prototypeText.Clone())\n\tt.prototypeHTMLClone = htmltemplate.Must(t.prototypeHTML.Clone())\n\n\treturn nil\n}",
+    "funcname": "createPrototypes"
+}

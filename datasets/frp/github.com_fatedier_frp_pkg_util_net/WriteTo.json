@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 266,
+    "focalfunc": "func (c *ConnectedUDPConn) WriteTo(b []byte, _ net.Addr) (int, error)",
+    "funcbody": "func (c *ConnectedUDPConn) WriteTo(b []byte, _ net.Addr) (int, error)\t{ return c.Write(b) }",
+    "funcname": "WriteTo"
+}

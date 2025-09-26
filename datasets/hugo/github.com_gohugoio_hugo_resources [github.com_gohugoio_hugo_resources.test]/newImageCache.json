@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image_cache.go",
+    "lineno": 115,
+    "focalfunc": "func newImageCache(fileCache *filecache.Cache, memCache *dynacache.Cache, ps *helpers.PathSpec) *ImageCache",
+    "funcbody": "func newImageCache(fileCache *filecache.Cache, memCache *dynacache.Cache, ps *helpers.PathSpec) *ImageCache {\n\treturn &ImageCache{\n\t\tfcache:\tfileCache,\n\t\tmcache: dynacache.GetOrCreatePartition[string, *resourceAdapter](\n\t\t\tmemCache,\n\t\t\t\"/imgs\",\n\t\t\tdynacache.OptionsPartition{ClearWhen: dynacache.ClearOnChange, Weight: 70},\n\t\t),\n\t\tpathSpec:\tps,\n\t}\n}",
+    "funcname": "newImageCache"
+}

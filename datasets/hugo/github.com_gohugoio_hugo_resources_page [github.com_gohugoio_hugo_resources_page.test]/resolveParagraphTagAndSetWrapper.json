@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 145,
+    "focalfunc": "func (s *HtmlSummary) resolveParagraphTagAndSetWrapper(mt media.Type) tagReStartEnd",
+    "funcbody": "func (s *HtmlSummary) resolveParagraphTagAndSetWrapper(mt media.Type) tagReStartEnd {\n\tptag := startEndP\n\n\tswitch mt.SubType {\n\tcase media.DefaultContentTypes.AsciiDoc.SubType:\n\t\tptag = startEndDiv\n\tcase media.DefaultContentTypes.ReStructuredText.SubType:\n\t\tconst markerStart = \"<div class=\\\"document\\\">\"\n\t\tconst markerEnd = \"</div>\"\n\t\ti1 := strings.Index(s.source, markerStart)\n\t\ti2 := strings.LastIndex(s.source, markerEnd)\n\t\tif i1 > -1 && i2 > -1 {\n\t\t\ts.WrapperStart = types.LowHigh[string]{Low: 0, High: i1 + len(markerStart)}\n\t\t\ts.WrapperEnd = types.LowHigh[string]{Low: i2, High: len(s.source)}\n\t\t}\n\t}\n\treturn ptag\n}",
+    "funcname": "resolveParagraphTagAndSetWrapper"
+}

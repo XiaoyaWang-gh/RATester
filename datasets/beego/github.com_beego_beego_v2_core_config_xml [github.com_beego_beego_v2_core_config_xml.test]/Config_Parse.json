@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 54,
+    "focalfunc": "func (xc *Config) Parse(filename string) (config.Configer, error)",
+    "funcbody": "func (xc *Config) Parse(filename string) (config.Configer, error) {\n\tcontext, err := os.ReadFile(filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn xc.ParseData(context)\n}",
+    "funcname": "Parse"
+}

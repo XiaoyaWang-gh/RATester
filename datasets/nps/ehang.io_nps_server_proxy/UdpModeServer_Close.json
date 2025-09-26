@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/udp.go",
+    "lineno": 97,
+    "focalfunc": "func (s *UdpModeServer) Close() error",
+    "funcbody": "func (s *UdpModeServer) Close() error {\n\treturn s.listener.Close()\n}",
+    "funcname": "Close"
+}

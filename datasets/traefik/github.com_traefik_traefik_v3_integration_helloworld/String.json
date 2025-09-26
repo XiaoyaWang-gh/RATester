@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 91,
+    "focalfunc": "func (m *StreamExampleReply) String() string",
+    "funcbody": "func (m *StreamExampleReply) String() string\t{ return proto.CompactTextString(m) }",
+    "funcname": "String"
+}

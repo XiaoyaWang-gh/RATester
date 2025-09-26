@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 225,
+    "focalfunc": "func newDbQueryLog(alias *alias, db dbQuerier) dbQuerier",
+    "funcbody": "func newDbQueryLog(alias *alias, db dbQuerier) dbQuerier {\n\td := new(dbQueryLog)\n\td.alias = alias\n\td.db = db\n\treturn d\n}",
+    "funcname": "newDbQueryLog"
+}

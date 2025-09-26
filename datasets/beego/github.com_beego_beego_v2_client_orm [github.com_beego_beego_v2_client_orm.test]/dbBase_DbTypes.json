@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2072,
+    "focalfunc": "func (d *dbBase) DbTypes() map[string]string",
+    "funcbody": "func (d *dbBase) DbTypes() map[string]string {\n\treturn nil\n}",
+    "funcname": "DbTypes"
+}

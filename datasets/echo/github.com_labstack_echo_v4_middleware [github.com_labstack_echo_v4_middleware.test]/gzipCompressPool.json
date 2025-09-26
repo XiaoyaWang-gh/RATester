@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 211,
+    "focalfunc": "func gzipCompressPool(config GzipConfig) sync.Pool",
+    "funcbody": "func gzipCompressPool(config GzipConfig) sync.Pool {\n\treturn sync.Pool{\n\t\tNew: func() interface{} {\n\t\t\tw, err := gzip.NewWriterLevel(io.Discard, config.Level)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\treturn w\n\t\t},\n\t}\n}",
+    "funcname": "gzipCompressPool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 295,
+    "focalfunc": "func (w *fileLogWriter) lines() (int, error)",
+    "funcbody": "func (w *fileLogWriter) lines() (int, error) {\n\tfd, err := os.Open(w.Filename)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tdefer fd.Close()\n\n\tbuf := make([]byte, 32768)\n\tcount := 0\n\tlineSep := []byte{'\\n'}\n\n\tfor {\n\t\tc, err := fd.Read(buf)\n\t\tif err != nil && err != io.EOF {\n\t\t\treturn count, err\n\t\t}\n\n\t\tcount += bytes.Count(buf[:c], lineSep)\n\n\t\tif err == io.EOF {\n\t\t\tbreak\n\t\t}\n\t}\n\n\treturn count, nil\n}",
+    "funcname": "lines"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 116,
+    "focalfunc": "func (p Pages) search(ctx context.Context, opts related.SearchOpts) (Pages, error)",
+    "funcbody": "func (p Pages) search(ctx context.Context, opts related.SearchOpts) (Pages, error) {\n\treturn p.withInvertedIndex(ctx, func(idx *related.InvertedIndex) ([]related.Document, error) {\n\t\treturn idx.Search(ctx, opts)\n\t})\n}",
+    "funcname": "search"
+}

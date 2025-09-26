@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 131,
+    "focalfunc": "func (fp *FileProvider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error",
+    "funcbody": "func (fp *FileProvider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error {\n\tfp.maxlifetime = maxlifetime\n\tfp.savePath = savePath\n\treturn nil\n}",
+    "funcname": "SessionInit"
+}

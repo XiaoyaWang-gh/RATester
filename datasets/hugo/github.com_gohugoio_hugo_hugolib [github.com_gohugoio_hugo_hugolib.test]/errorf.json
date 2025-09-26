@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 606,
+    "focalfunc": "func (p *pageState) errorf(err error, format string, a ...any) error",
+    "funcbody": "func (p *pageState) errorf(err error, format string, a ...any) error {\n\tif herrors.UnwrapFileError(err) != nil {\n\n\t\treturn err\n\t}\n\targs := append([]any{p.Language().Lang, p.pathOrTitle()}, a...)\n\targs = append(args, err)\n\tformat = \"[%s] page %q: \" + format + \": %w\"\n\tif err == nil {\n\t\treturn fmt.Errorf(format, args...)\n\t}\n\treturn fmt.Errorf(format, args...)\n}",
+    "funcname": "errorf"
+}

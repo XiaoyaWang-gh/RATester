@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/server.go",
+    "lineno": 112,
+    "focalfunc": "func (s *Server) RouteRegister(register func(helper *RouterRegisterHelper))",
+    "funcbody": "func (s *Server) RouteRegister(register func(helper *RouterRegisterHelper)) {\n\tregister(&RouterRegisterHelper{\n\t\tRouter:\t\ts.router,\n\t\tAssetsFS:\tassets.FileSystem,\n\t\tAuthMiddleware:\ts.authMiddleware,\n\t})\n}",
+    "funcname": "RouteRegister"
+}

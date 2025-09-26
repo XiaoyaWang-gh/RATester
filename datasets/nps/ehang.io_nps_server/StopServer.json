@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 160,
+    "focalfunc": "func StopServer(id int) error",
+    "funcbody": "func StopServer(id int) error {\n\n\tif v, ok := RunList.Load(id); ok {\n\t\tif svr, ok := v.(proxy.Service); ok {\n\t\t\tif err := svr.Close(); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tlogs.Info(\"stop server id %d\", id)\n\t\t} else {\n\t\t\tlogs.Warn(\"stop server id %d error\", id)\n\t\t}\n\t\tif t, err := file.GetDb().GetTask(id); err != nil {\n\t\t\treturn err\n\t\t} else {\n\t\t\tt.Status = false\n\t\t\tfile.GetDb().UpdateTask(t)\n\t\t}\n\n\t\tRunList.Delete(id)\n\t\treturn nil\n\t}\n\treturn errors.New(\"task is not running\")\n}",
+    "funcname": "StopServer"
+}

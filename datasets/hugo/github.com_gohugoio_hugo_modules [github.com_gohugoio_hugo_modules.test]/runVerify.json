@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 447,
+    "focalfunc": "func (c *Client) runVerify() error",
+    "funcbody": "func (c *Client) runVerify() error {\n\treturn c.runGo(context.Background(), io.Discard, \"mod\", \"verify\")\n}",
+    "funcname": "runVerify"
+}

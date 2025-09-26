@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/logger/config.go",
+    "lineno": 116,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Next == nil {\n\t\tcfg.Next = ConfigDefault.Next\n\t}\n\tif cfg.Done == nil {\n\t\tcfg.Done = ConfigDefault.Done\n\t}\n\tif cfg.Format == \"\" {\n\t\tcfg.Format = ConfigDefault.Format\n\t}\n\tif cfg.TimeZone == \"\" {\n\t\tcfg.TimeZone = ConfigDefault.TimeZone\n\t}\n\tif cfg.TimeFormat == \"\" {\n\t\tcfg.TimeFormat = ConfigDefault.TimeFormat\n\t}\n\tif int(cfg.TimeInterval) <= 0 {\n\t\tcfg.TimeInterval = ConfigDefault.TimeInterval\n\t}\n\tif cfg.Output == nil {\n\t\tcfg.Output = ConfigDefault.Output\n\t}\n\n\tif cfg.BeforeHandlerFunc == nil {\n\t\tcfg.BeforeHandlerFunc = ConfigDefault.BeforeHandlerFunc\n\t}\n\n\tif cfg.LoggerFunc == nil {\n\t\tcfg.LoggerFunc = ConfigDefault.LoggerFunc\n\t}\n\n\tif !cfg.DisableColors && cfg.Output == ConfigDefault.Output {\n\t\tcfg.enableColors = true\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

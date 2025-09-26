@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 435,
+    "focalfunc": "func buildHostRule(host string) string",
+    "funcbody": "func buildHostRule(host string) string {\n\tif strings.HasPrefix(host, \"*.\") {\n\t\thost = strings.Replace(regexp.QuoteMeta(host), `\\*\\.`, `[a-zA-Z0-9-]+\\.`, 1)\n\t\treturn fmt.Sprintf(\"HostRegexp(`^%s$`)\", host)\n\t}\n\n\treturn fmt.Sprintf(\"Host(`%s`)\", host)\n}",
+    "funcname": "buildHostRule"
+}

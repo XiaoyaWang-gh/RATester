@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 286,
+    "focalfunc": "func expandSummaryDivider(s string, re tagReStartEnd, divider types.LowHigh[string]) (types.LowHigh[string], types.LowHigh[string])",
+    "funcbody": "func expandSummaryDivider(s string, re tagReStartEnd, divider types.LowHigh[string]) (types.LowHigh[string], types.LowHigh[string]) {\n\tvar endMarkup types.LowHigh[string]\n\n\tif divider.IsZero() {\n\t\treturn divider, endMarkup\n\t}\n\n\tlo, hi := divider.Low, divider.High\n\n\tvar preserveEndMarkup bool\n\n\tfor i := lo - 1; i >= 0; i-- {\n\t\tif s[i] == '>' {\n\t\t\tif match := re.startEndOfString.FindString(s[:i+1]); match != \"\" {\n\t\t\t\tlo = i - len(match) + 1\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tif match := pOrDiv.FindString(s[:i+1]); match != \"\" {\n\t\t\t\ti -= len(match) - 1\n\t\t\t\tcontinue\n\t\t\t}\n\t\t}\n\n\t\tr, _ := utf8.DecodeRuneInString(s[i:])\n\t\tif !unicode.IsSpace(r) {\n\t\t\tpreserveEndMarkup = true\n\t\t\tbreak\n\t\t}\n\t}\n\n\tdivider.Low = lo\n\n\tfor ; hi < len(s); hi++ {\n\t\tif s[hi] != '>' {\n\t\t\tcontinue\n\t\t}\n\t\tif match := re.endEndOfString.FindString(s[:hi+1]); match != \"\" {\n\t\t\thi++\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif preserveEndMarkup {\n\t\tendMarkup.Low = divider.High\n\t\tendMarkup.High = hi\n\t} else {\n\t\tdivider.High = hi\n\t}\n\n\tif divider.High < len(s) && s[divider.High] == '\\n' {\n\t\tdivider.High++\n\t}\n\n\treturn divider, endMarkup\n}",
+    "funcname": "expandSummaryDivider"
+}

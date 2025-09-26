@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/routers/router.go",
+    "lineno": 8,
+    "focalfunc": "func Init()",
+    "funcbody": "func Init() {\n\tweb_base_url := beego.AppConfig.String(\"web_base_url\")\n\tif len(web_base_url) > 0 {\n\t\tns := beego.NewNamespace(web_base_url,\n\t\t\tbeego.NSRouter(\"/\", &controllers.IndexController{}, \"*:Index\"),\n\t\t\tbeego.NSAutoRouter(&controllers.IndexController{}),\n\t\t\tbeego.NSAutoRouter(&controllers.LoginController{}),\n\t\t\tbeego.NSAutoRouter(&controllers.ClientController{}),\n\t\t\tbeego.NSAutoRouter(&controllers.AuthController{}),\n\t\t)\n\t\tbeego.AddNamespace(ns)\n\t} else {\n\t\tbeego.Router(\"/\", &controllers.IndexController{}, \"*:Index\")\n\t\tbeego.AutoRouter(&controllers.IndexController{})\n\t\tbeego.AutoRouter(&controllers.LoginController{})\n\t\tbeego.AutoRouter(&controllers.ClientController{})\n\t\tbeego.AutoRouter(&controllers.AuthController{})\n\t}\n}",
+    "funcname": "Init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 47,
+    "focalfunc": "func IsUint(kind reflect.Kind) bool",
+    "funcbody": "func IsUint(kind reflect.Kind) bool {\n\tswitch kind {\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "IsUint"
+}

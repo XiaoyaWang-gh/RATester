@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager_msgp.go",
+    "lineno": 93,
+    "focalfunc": "func (z item) MarshalMsg(b []byte) (o []byte, err error)",
+    "funcbody": "func (z item) MarshalMsg(b []byte) (o []byte, err error) {\n\to = msgp.Require(b, z.Msgsize())\n\n\to = append(o, 0x83, 0xa8, 0x63, 0x75, 0x72, 0x72, 0x48, 0x69, 0x74, 0x73)\n\to = msgp.AppendInt(o, z.currHits)\n\n\to = append(o, 0xa8, 0x70, 0x72, 0x65, 0x76, 0x48, 0x69, 0x74, 0x73)\n\to = msgp.AppendInt(o, z.prevHits)\n\n\to = append(o, 0xa3, 0x65, 0x78, 0x70)\n\to = msgp.AppendUint64(o, z.exp)\n\treturn\n}",
+    "funcname": "MarshalMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 146,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Set(kv ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Set(kv ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"SET\", strings.Join(kv, CommaSpace))\n\treturn qb\n}",
+    "funcname": "Set"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 152,
+    "focalfunc": "func (r udpRouterRepresentation) entryPointsCount() int",
+    "funcbody": "func (r udpRouterRepresentation) entryPointsCount() int {\n\treturn len(r.EntryPoints)\n}",
+    "funcname": "entryPointsCount"
+}

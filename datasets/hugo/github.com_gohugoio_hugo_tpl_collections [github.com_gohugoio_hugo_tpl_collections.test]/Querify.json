@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 436,
+    "focalfunc": "func (ns *Namespace) Querify(params ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) Querify(params ...any) (string, error) {\n\tqs := url.Values{}\n\n\tif len(params) == 1 {\n\t\tswitch v := params[0].(type) {\n\t\tcase []string:\n\t\t\tif len(v)%2 != 0 {\n\t\t\t\treturn \"\", errors.New(\"invalid query\")\n\t\t\t}\n\n\t\t\tfor i := 0; i < len(v); i += 2 {\n\t\t\t\tqs.Add(v[i], v[i+1])\n\t\t\t}\n\n\t\t\treturn qs.Encode(), nil\n\n\t\tcase []any:\n\t\t\tparams = v\n\n\t\tdefault:\n\t\t\treturn \"\", errors.New(\"query keys must be strings\")\n\t\t}\n\t}\n\n\tif len(params)%2 != 0 {\n\t\treturn \"\", errors.New(\"invalid query\")\n\t}\n\n\tfor i := 0; i < len(params); i += 2 {\n\t\tswitch v := params[i].(type) {\n\t\tcase string:\n\t\t\tqs.Add(v, fmt.Sprintf(\"%v\", params[i+1]))\n\t\tdefault:\n\t\t\treturn \"\", errors.New(\"query keys must be strings\")\n\t\t}\n\t}\n\n\treturn qs.Encode(), nil\n}",
+    "funcname": "Querify"
+}

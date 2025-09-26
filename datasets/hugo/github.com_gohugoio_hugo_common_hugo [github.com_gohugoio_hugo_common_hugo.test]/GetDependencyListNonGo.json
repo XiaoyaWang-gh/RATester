@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 298,
+    "focalfunc": "func GetDependencyListNonGo() []string",
+    "funcbody": "func GetDependencyListNonGo() []string {\n\tvar deps []string\n\n\tif IsExtended {\n\t\tdeps = append(\n\t\t\tdeps,\n\t\t\tformatDep(\"github.com/sass/libsass\", \"3.6.6\"),\n\t\t\tformatDep(\"github.com/webmproject/libwebp\", \"v1.3.2\"),\n\t\t)\n\t}\n\n\tif dartSass := dartSassVersion(); dartSass.ProtocolVersion != \"\" {\n\t\tdartSassPath := \"github.com/sass/dart-sass-embedded\"\n\t\tif IsDartSassV2() {\n\t\t\tdartSassPath = \"github.com/sass/dart-sass\"\n\t\t}\n\t\tdeps = append(deps,\n\t\t\tformatDep(dartSassPath+\"/protocol\", dartSass.ProtocolVersion),\n\t\t\tformatDep(dartSassPath+\"/compiler\", dartSass.CompilerVersion),\n\t\t\tformatDep(dartSassPath+\"/implementation\", dartSass.ImplementationVersion),\n\t\t)\n\t}\n\treturn deps\n}",
+    "funcname": "GetDependencyListNonGo"
+}

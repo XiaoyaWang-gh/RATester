@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 192,
+    "focalfunc": "func (c *aliLSWriter) flush(lg *LogGroup)",
+    "funcbody": "func (c *aliLSWriter) flush(lg *LogGroup) {\n\tc.lock.Lock()\n\tdefer c.lock.Unlock()\n\terr := c.store.PutLogs(lg)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tlg.Logs = make([]*Log, 0, c.FlushWhen)\n}",
+    "funcname": "flush"
+}

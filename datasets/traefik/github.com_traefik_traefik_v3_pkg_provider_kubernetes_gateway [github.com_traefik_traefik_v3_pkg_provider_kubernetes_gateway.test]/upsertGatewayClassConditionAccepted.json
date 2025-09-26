@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1246,
+    "focalfunc": "func upsertGatewayClassConditionAccepted(conditions []metav1.Condition, condition metav1.Condition) []metav1.Condition",
+    "funcbody": "func upsertGatewayClassConditionAccepted(conditions []metav1.Condition, condition metav1.Condition) []metav1.Condition {\n\tvar conds []metav1.Condition\n\tfor _, c := range conditions {\n\t\tif c.Type == string(gatev1.GatewayClassConditionStatusAccepted) {\n\t\t\tcontinue\n\t\t}\n\t\tconds = append(conds, c)\n\t}\n\treturn append(conds, condition)\n}",
+    "funcname": "upsertGatewayClassConditionAccepted"
+}

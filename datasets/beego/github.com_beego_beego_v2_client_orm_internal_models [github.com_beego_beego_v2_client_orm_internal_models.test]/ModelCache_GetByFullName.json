@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 70,
+    "focalfunc": "func (mc *ModelCache) GetByFullName(name string) (mi *ModelInfo, ok bool)",
+    "funcbody": "func (mc *ModelCache) GetByFullName(name string) (mi *ModelInfo, ok bool) {\n\tmi, ok = mc.cacheByFullName[name]\n\treturn\n}",
+    "funcname": "GetByFullName"
+}

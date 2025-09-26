@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 177,
+    "focalfunc": "func (f *fileChangeDetector) PrepareNew()",
+    "funcbody": "func (f *fileChangeDetector) PrepareNew() {\n\tif f == nil {\n\t\treturn\n\t}\n\n\tf.Lock()\n\tdefer f.Unlock()\n\n\tif f.current == nil {\n\t\tf.current = make(map[string]uint64)\n\t\tf.prev = make(map[string]uint64)\n\t\treturn\n\t}\n\n\tf.prev = make(map[string]uint64)\n\tfor k, v := range f.current {\n\t\tf.prev[k] = v\n\t}\n\tf.current = make(map[string]uint64)\n}",
+    "funcname": "PrepareNew"
+}

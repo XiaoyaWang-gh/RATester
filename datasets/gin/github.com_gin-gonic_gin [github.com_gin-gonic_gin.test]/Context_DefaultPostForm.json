@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 517,
+    "focalfunc": "func (c *Context) DefaultPostForm(key, defaultValue string) string",
+    "funcbody": "func (c *Context) DefaultPostForm(key, defaultValue string) string {\n\tif value, ok := c.GetPostForm(key); ok {\n\t\treturn value\n\t}\n\treturn defaultValue\n}",
+    "funcname": "DefaultPostForm"
+}

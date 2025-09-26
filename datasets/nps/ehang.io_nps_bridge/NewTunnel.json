@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 57,
+    "focalfunc": "func NewTunnel(tunnelPort int, tunnelType string, ipVerify bool, runList sync.Map, disconnectTime int) *Bridge",
+    "funcbody": "func NewTunnel(tunnelPort int, tunnelType string, ipVerify bool, runList sync.Map, disconnectTime int) *Bridge {\n\treturn &Bridge{\n\t\tTunnelPort:\ttunnelPort,\n\t\ttunnelType:\ttunnelType,\n\t\tOpenTask:\tmake(chan *file.Tunnel),\n\t\tCloseTask:\tmake(chan *file.Tunnel),\n\t\tCloseClient:\tmake(chan int),\n\t\tSecretChan:\tmake(chan *conn.Secret),\n\t\tipVerify:\tipVerify,\n\t\trunList:\trunList,\n\t\tdisconnectTime:\tdisconnectTime,\n\t}\n}",
+    "funcname": "NewTunnel"
+}

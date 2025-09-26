@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 32,
+    "focalfunc": "func newSearchCriterion(query url.Values) *searchCriterion",
+    "funcbody": "func newSearchCriterion(query url.Values) *searchCriterion {\n\tif len(query) == 0 {\n\t\treturn nil\n\t}\n\n\tsearch := query.Get(\"search\")\n\tstatus := query.Get(\"status\")\n\tserviceName := query.Get(\"serviceName\")\n\tmiddlewareName := query.Get(\"middlewareName\")\n\n\tif status == \"\" && search == \"\" && serviceName == \"\" && middlewareName == \"\" {\n\t\treturn nil\n\t}\n\n\treturn &searchCriterion{\n\t\tSearch:\t\tsearch,\n\t\tStatus:\t\tstatus,\n\t\tServiceName:\tserviceName,\n\t\tMiddlewareName:\tmiddlewareName,\n\t}\n}",
+    "funcname": "newSearchCriterion"
+}

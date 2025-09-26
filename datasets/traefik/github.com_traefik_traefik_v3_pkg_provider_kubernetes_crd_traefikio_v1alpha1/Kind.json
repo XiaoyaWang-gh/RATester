@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/traefikio/v1alpha1/register.go",
+    "lineno": 24,
+    "focalfunc": "func Kind(kind string) kschema.GroupKind",
+    "funcbody": "func Kind(kind string) kschema.GroupKind {\n\treturn SchemeGroupVersion.WithKind(kind).GroupKind()\n}",
+    "funcname": "Kind"
+}

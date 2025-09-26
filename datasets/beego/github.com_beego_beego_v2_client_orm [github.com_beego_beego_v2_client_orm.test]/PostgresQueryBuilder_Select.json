@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 23,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Select(fields ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Select(fields ...string) QueryBuilder {\n\tvar str string\n\tn := len(fields)\n\n\tif fields[0] == \"*\" {\n\t\tstr = \"*\"\n\t} else {\n\t\tfor i := 0; i < n; i++ {\n\t\t\tsli := strings.Split(fields[i], \".\")\n\t\t\ts := strings.Join(sli, `\".\"`)\n\t\t\ts = fmt.Sprintf(\"%s%s%s\", quote, s, quote)\n\t\t\tif n == 1 || i == n-1 {\n\t\t\t\tstr += s\n\t\t\t} else {\n\t\t\t\tstr += s + \",\"\n\t\t\t}\n\t\t}\n\t}\n\n\tqb.tokens = append(qb.tokens, \"SELECT\", str)\n\treturn qb\n}",
+    "funcname": "Select"
+}

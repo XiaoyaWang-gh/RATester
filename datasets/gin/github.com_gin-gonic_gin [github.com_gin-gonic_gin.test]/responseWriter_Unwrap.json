@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 54,
+    "focalfunc": "func (w *responseWriter) Unwrap() http.ResponseWriter",
+    "funcbody": "func (w *responseWriter) Unwrap() http.ResponseWriter {\n\treturn w.ResponseWriter\n}",
+    "funcname": "Unwrap"
+}

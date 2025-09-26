@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 65,
+    "focalfunc": "func NewRouterMiddleware(ctx context.Context, next http.Handler, registry metrics.Registry, routerName string, serviceName string) http.Handler",
+    "funcbody": "func NewRouterMiddleware(ctx context.Context, next http.Handler, registry metrics.Registry, routerName string, serviceName string) http.Handler {\n\tmiddlewares.GetLogger(ctx, nameRouter, typeName).Debug().Msg(\"Creating middleware\")\n\n\treturn &metricsMiddleware{\n\t\tnext:\t\t\tnext,\n\t\treqsCounter:\t\tregistry.RouterReqsCounter(),\n\t\treqsTLSCounter:\t\tregistry.RouterReqsTLSCounter(),\n\t\treqDurationHistogram:\tregistry.RouterReqDurationHistogram(),\n\t\treqsBytesCounter:\tregistry.RouterReqsBytesCounter(),\n\t\trespsBytesCounter:\tregistry.RouterRespsBytesCounter(),\n\t\tbaseLabels:\t\t[]string{\"router\", routerName, \"service\", serviceName},\n\t\tname:\t\t\tnameRouter,\n\t}\n}",
+    "funcname": "NewRouterMiddleware"
+}

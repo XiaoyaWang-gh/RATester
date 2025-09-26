@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/constants/constants.go",
+    "lineno": 43,
+    "focalfunc": "func IsResourceTransformationPermalinkHash(name string) bool",
+    "funcbody": "func IsResourceTransformationPermalinkHash(name string) bool {\n\treturn name == ResourceTransformationFingerprint\n}",
+    "funcname": "IsResourceTransformationPermalinkHash"
+}

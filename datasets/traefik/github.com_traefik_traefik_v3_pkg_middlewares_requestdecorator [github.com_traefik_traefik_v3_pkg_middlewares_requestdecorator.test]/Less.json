@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/hostresolver.go",
+    "lineno": 26,
+    "focalfunc": "func (a byTTL) Less(i, j int) bool",
+    "funcbody": "func (a byTTL) Less(i, j int) bool\t{ return a[i].TTL > a[j].TTL }",
+    "funcname": "Less"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 295,
+    "focalfunc": "func (o *ormBase) DeleteWithCtx(ctx context.Context, md interface{}, cols ...string) (int64, error)",
+    "funcbody": "func (o *ormBase) DeleteWithCtx(ctx context.Context, md interface{}, cols ...string) (int64, error) {\n\tmi, ind := o.getPtrMiInd(md)\n\tnum, err := o.alias.DbBaser.Delete(ctx, o.db, mi, ind, o.alias.TZ, cols)\n\treturn num, err\n}",
+    "funcname": "DeleteWithCtx"
+}

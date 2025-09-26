@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/response_modifier.go",
+    "lineno": 101,
+    "focalfunc": "func (r *ResponseModifier) Flush()",
+    "funcbody": "func (r *ResponseModifier) Flush() {\n\tif flusher, ok := r.rw.(http.Flusher); ok {\n\t\tflusher.Flush()\n\t}\n}",
+    "funcname": "Flush"
+}

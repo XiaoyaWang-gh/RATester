@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 495,
+    "focalfunc": "func (n *node) findMethod(method string) *routeMethod",
+    "funcbody": "func (n *node) findMethod(method string) *routeMethod {\n\tswitch method {\n\tcase http.MethodConnect:\n\t\treturn n.methods.connect\n\tcase http.MethodDelete:\n\t\treturn n.methods.delete\n\tcase http.MethodGet:\n\t\treturn n.methods.get\n\tcase http.MethodHead:\n\t\treturn n.methods.head\n\tcase http.MethodOptions:\n\t\treturn n.methods.options\n\tcase http.MethodPatch:\n\t\treturn n.methods.patch\n\tcase http.MethodPost:\n\t\treturn n.methods.post\n\tcase PROPFIND:\n\t\treturn n.methods.propfind\n\tcase http.MethodPut:\n\t\treturn n.methods.put\n\tcase http.MethodTrace:\n\t\treturn n.methods.trace\n\tcase REPORT:\n\t\treturn n.methods.report\n\tdefault:\n\t\treturn n.methods.anyOther[method]\n\t}\n}",
+    "funcname": "findMethod"
+}

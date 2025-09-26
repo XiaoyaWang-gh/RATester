@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 162,
+    "focalfunc": "func (ctx *Context) BindXML(obj interface{}) error",
+    "funcbody": "func (ctx *Context) BindXML(obj interface{}) error {\n\treturn xml.Unmarshal(ctx.Input.RequestBody, obj)\n}",
+    "funcname": "BindXML"
+}

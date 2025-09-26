@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 277,
+    "focalfunc": "func (c *contentParseInfo) parseFrontMatter(it pageparser.Item, iter *pageparser.Iterator, source []byte) error",
+    "funcbody": "func (c *contentParseInfo) parseFrontMatter(it pageparser.Item, iter *pageparser.Iterator, source []byte) error {\n\tif c.frontMatter != nil {\n\t\treturn nil\n\t}\n\n\tf := pageparser.FormatFromFrontMatterType(it.Type)\n\tvar err error\n\tc.frontMatter, err = metadecoders.Default.UnmarshalToMap(it.Val(source), f)\n\tif err != nil {\n\t\tif fe, ok := err.(herrors.FileError); ok {\n\t\t\tpos := fe.Position()\n\n\t\t\toffset := iter.LineNumber(source) - 1\n\t\t\tif f == metadecoders.YAML {\n\t\t\t\toffset -= 1\n\t\t\t}\n\t\t\tpos.LineNumber += offset\n\n\t\t\tfe.UpdatePosition(pos)\n\t\t\tfe.SetFilename(\"\")\n\n\t\t\treturn fe\n\t\t} else {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "parseFrontMatter"
+}

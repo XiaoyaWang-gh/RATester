@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 119,
+    "focalfunc": "func (f *noOpRegularFileOps) Sync() error",
+    "funcbody": "func (f *noOpRegularFileOps) Sync() error {\n\tpanic(errNoOp)\n}",
+    "funcname": "Sync"
+}

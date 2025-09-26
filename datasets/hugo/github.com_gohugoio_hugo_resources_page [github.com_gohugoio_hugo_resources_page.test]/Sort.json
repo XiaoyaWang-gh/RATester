@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/weighted.go",
+    "lineno": 128,
+    "focalfunc": "func (wp WeightedPages) Sort()",
+    "funcbody": "func (wp WeightedPages) Sort()\t{ sort.Stable(wp) }",
+    "funcname": "Sort"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 139,
+    "focalfunc": "func loadSyncMapFromFile(filePath string, f func(value string))",
+    "funcbody": "func loadSyncMapFromFile(filePath string, f func(value string)) {\n\tb, err := common.ReadAllFromFile(filePath)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tfor _, v := range strings.Split(string(b), \"\\n\"+common.CONN_DATA_SEQ) {\n\t\tf(v)\n\t}\n}",
+    "funcname": "loadSyncMapFromFile"
+}

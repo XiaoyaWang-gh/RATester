@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 98,
+    "focalfunc": "func (r *Response) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (r *Response) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\treturn http.NewResponseController(r.Writer).Hijack()\n}",
+    "funcname": "Hijack"
+}

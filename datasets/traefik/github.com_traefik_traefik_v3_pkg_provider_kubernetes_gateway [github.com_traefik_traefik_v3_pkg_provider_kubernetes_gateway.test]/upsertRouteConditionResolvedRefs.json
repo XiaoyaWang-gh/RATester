@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1228,
+    "focalfunc": "func upsertRouteConditionResolvedRefs(conditions []metav1.Condition, condition metav1.Condition) []metav1.Condition",
+    "funcbody": "func upsertRouteConditionResolvedRefs(conditions []metav1.Condition, condition metav1.Condition) []metav1.Condition {\n\tvar (\n\t\tcurr\t*metav1.Condition\n\t\tconds\t[]metav1.Condition\n\t)\n\tfor _, c := range conditions {\n\t\tif c.Type == string(gatev1.RouteConditionResolvedRefs) {\n\t\t\tcurr = &c\n\t\t\tcontinue\n\t\t}\n\t\tconds = append(conds, c)\n\t}\n\tif curr != nil && curr.Status == metav1.ConditionFalse && condition.Status == metav1.ConditionTrue {\n\t\treturn append(conds, *curr)\n\t}\n\treturn append(conds, condition)\n}",
+    "funcname": "upsertRouteConditionResolvedRefs"
+}

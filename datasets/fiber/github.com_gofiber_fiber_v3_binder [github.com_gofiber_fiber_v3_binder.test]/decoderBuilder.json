@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 46,
+    "focalfunc": "func decoderBuilder(parserConfig ParserConfig) any",
+    "funcbody": "func decoderBuilder(parserConfig ParserConfig) any {\n\tdecoder := schema.NewDecoder()\n\tdecoder.IgnoreUnknownKeys(parserConfig.IgnoreUnknownKeys)\n\tif parserConfig.SetAliasTag != \"\" {\n\t\tdecoder.SetAliasTag(parserConfig.SetAliasTag)\n\t}\n\tfor _, v := range parserConfig.ParserType {\n\t\tdecoder.RegisterConverter(reflect.ValueOf(v.Customtype).Interface(), v.Converter)\n\t}\n\tdecoder.ZeroEmpty(parserConfig.ZeroEmpty)\n\treturn decoder\n}",
+    "funcname": "decoderBuilder"
+}

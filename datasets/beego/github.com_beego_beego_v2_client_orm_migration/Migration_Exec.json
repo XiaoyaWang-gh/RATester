@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 120,
+    "focalfunc": "func (m *Migration) Exec(name, status string) error",
+    "funcbody": "func (m *Migration) Exec(name, status string) error {\n\to := orm.NewOrm()\n\tfor _, s := range m.sqls {\n\t\tlogs.Info(\"exec sql:\", s)\n\t\tr := o.Raw(s)\n\t\t_, err := r.Exec()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn m.addOrUpdateRecord(name, status)\n}",
+    "funcname": "Exec"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 432,
+    "focalfunc": "func (o *ormBase) getReverseQs(md interface{}, mi *models.ModelInfo, fi *models.FieldInfo) *querySet",
+    "funcbody": "func (o *ormBase) getReverseQs(md interface{}, mi *models.ModelInfo, fi *models.FieldInfo) *querySet {\n\tswitch fi.FieldType {\n\tcase RelReverseOne, RelReverseMany:\n\tdefault:\n\t\tpanic(fmt.Errorf(\"<Ormer> name `%s` for model `%s` is not an available reverse field\", fi.Name, mi.FullName))\n\t}\n\n\tvar q *querySet\n\n\tif fi.FieldType == RelReverseMany && fi.ReverseFieldInfo.Mi.IsThrough {\n\t\tq = newQuerySet(o, fi.RelModelInfo).(*querySet)\n\t\tq.cond = NewCondition().And(fi.ReverseFieldInfoM2M.Column+ExprSep+fi.ReverseFieldInfo.Column, md)\n\t} else {\n\t\tq = newQuerySet(o, fi.ReverseFieldInfo.Mi).(*querySet)\n\t\tq.cond = NewCondition().And(fi.ReverseFieldInfo.Column, md)\n\t}\n\n\treturn q\n}",
+    "funcname": "getReverseQs"
+}

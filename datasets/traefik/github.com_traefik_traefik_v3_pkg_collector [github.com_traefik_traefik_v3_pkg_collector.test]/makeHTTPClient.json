@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/collector.go",
+    "lineno": 76,
+    "focalfunc": "func makeHTTPClient() *http.Client",
+    "funcbody": "func makeHTTPClient() *http.Client {\n\tdialer := &net.Dialer{\n\t\tTimeout:\t30 * time.Second,\n\t\tKeepAlive:\t30 * time.Second,\n\t\tDualStack:\ttrue,\n\t}\n\n\ttransport := &http.Transport{\n\t\tProxy:\t\t\thttp.ProxyFromEnvironment,\n\t\tDialContext:\t\tdialer.DialContext,\n\t\tIdleConnTimeout:\t90 * time.Second,\n\t\tTLSHandshakeTimeout:\t10 * time.Second,\n\t\tExpectContinueTimeout:\t1 * time.Second,\n\t}\n\n\treturn &http.Client{Transport: transport}\n}",
+    "funcname": "makeHTTPClient"
+}

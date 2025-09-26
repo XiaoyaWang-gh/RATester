@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 208,
+    "focalfunc": "func (d *DB) QueryRowContext(ctx context.Context, query string, args ...interface{}) *sql.Row",
+    "funcbody": "func (d *DB) QueryRowContext(ctx context.Context, query string, args ...interface{}) *sql.Row {\n\tif d.stmtDecorators == nil {\n\t\treturn d.DB.QueryRowContext(ctx, query, args...)\n\t}\n\n\tsd, err := d.getStmtDecorator(query)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tstmt := sd.getStmt()\n\tdefer sd.release()\n\treturn stmt.QueryRowContext(ctx, args...)\n}",
+    "funcname": "QueryRowContext"
+}

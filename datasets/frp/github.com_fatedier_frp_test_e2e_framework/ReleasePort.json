@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 244,
+    "focalfunc": "func (f *Framework) ReleasePort(port int)",
+    "funcbody": "func (f *Framework) ReleasePort(port int) {\n\tf.portAllocator.Release(port)\n}",
+    "funcname": "ReleasePort"
+}

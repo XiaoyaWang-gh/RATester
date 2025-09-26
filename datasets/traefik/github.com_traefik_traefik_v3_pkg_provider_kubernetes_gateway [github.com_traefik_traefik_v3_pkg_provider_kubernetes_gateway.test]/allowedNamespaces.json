@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 833,
+    "focalfunc": "func (p *Provider) allowedNamespaces(gatewayNamespace string, routeNamespaces *gatev1.RouteNamespaces) ([]string, error)",
+    "funcbody": "func (p *Provider) allowedNamespaces(gatewayNamespace string, routeNamespaces *gatev1.RouteNamespaces) ([]string, error) {\n\tif routeNamespaces == nil || routeNamespaces.From == nil {\n\t\treturn []string{gatewayNamespace}, nil\n\t}\n\n\tswitch *routeNamespaces.From {\n\tcase gatev1.NamespacesFromAll:\n\t\treturn []string{metav1.NamespaceAll}, nil\n\n\tcase gatev1.NamespacesFromSame:\n\t\treturn []string{gatewayNamespace}, nil\n\n\tcase gatev1.NamespacesFromSelector:\n\t\tselector, err := metav1.LabelSelectorAsSelector(routeNamespaces.Selector)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"malformed selector: %w\", err)\n\t\t}\n\n\t\treturn p.client.ListNamespaces(selector)\n\t}\n\n\treturn nil, fmt.Errorf(\"unsupported RouteSelectType: %q\", *routeNamespaces.From)\n}",
+    "funcname": "allowedNamespaces"
+}

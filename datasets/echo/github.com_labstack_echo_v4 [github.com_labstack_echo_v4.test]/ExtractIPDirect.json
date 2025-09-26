@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 217,
+    "focalfunc": "func ExtractIPDirect() IPExtractor",
+    "funcbody": "func ExtractIPDirect() IPExtractor {\n\treturn extractIP\n}",
+    "funcname": "ExtractIPDirect"
+}

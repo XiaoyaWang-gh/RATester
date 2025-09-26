@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/hqt/checkers.go",
+    "lineno": 114,
+    "focalfunc": "func structTypes(v reflect.Value, m map[reflect.Type]struct{})",
+    "funcbody": "func structTypes(v reflect.Value, m map[reflect.Type]struct{}) {\n\tif !v.IsValid() {\n\t\treturn\n\t}\n\tswitch v.Kind() {\n\tcase reflect.Ptr:\n\t\tif !v.IsNil() {\n\t\t\tstructTypes(v.Elem(), m)\n\t\t}\n\tcase reflect.Interface:\n\t\tif !v.IsNil() {\n\t\t\tstructTypes(v.Elem(), m)\n\t\t}\n\tcase reflect.Slice, reflect.Array:\n\t\tfor i := 0; i < v.Len(); i++ {\n\t\t\tstructTypes(v.Index(i), m)\n\t\t}\n\tcase reflect.Map:\n\t\tfor _, k := range v.MapKeys() {\n\t\t\tstructTypes(v.MapIndex(k), m)\n\t\t}\n\tcase reflect.Struct:\n\t\tm[v.Type()] = struct{}{}\n\t\tfor i := 0; i < v.NumField(); i++ {\n\t\t\tstructTypes(v.Field(i), m)\n\t\t}\n\t}\n}",
+    "funcname": "structTypes"
+}

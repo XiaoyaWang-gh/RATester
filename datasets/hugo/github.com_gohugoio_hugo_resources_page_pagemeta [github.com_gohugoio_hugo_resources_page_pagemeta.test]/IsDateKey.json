@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 393,
+    "focalfunc": "func (f FrontMatterHandler) IsDateKey(key string) bool",
+    "funcbody": "func (f FrontMatterHandler) IsDateKey(key string) bool {\n\treturn f.allDateKeys[key]\n}",
+    "funcname": "IsDateKey"
+}

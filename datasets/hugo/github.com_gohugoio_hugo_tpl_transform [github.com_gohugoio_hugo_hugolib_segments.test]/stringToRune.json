@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/unmarshal.go",
+    "lineno": 180,
+    "focalfunc": "func stringToRune(v any) (rune, error)",
+    "funcbody": "func stringToRune(v any) (rune, error) {\n\ts, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\n\tif len(s) == 0 {\n\t\treturn 0, nil\n\t}\n\n\tvar r rune\n\n\tfor i, rr := range s {\n\t\tif i == 0 {\n\t\t\tr = rr\n\t\t} else {\n\t\t\treturn 0, fmt.Errorf(\"invalid character: %q\", v)\n\t\t}\n\t}\n\n\treturn r, nil\n}",
+    "funcname": "stringToRune"
+}

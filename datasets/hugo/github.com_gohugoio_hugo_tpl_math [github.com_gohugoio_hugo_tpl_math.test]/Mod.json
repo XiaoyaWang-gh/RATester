@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 152,
+    "focalfunc": "func (ns *Namespace) Mod(n1, n2 any) (int64, error)",
+    "funcbody": "func (ns *Namespace) Mod(n1, n2 any) (int64, error) {\n\tai, erra := cast.ToInt64E(n1)\n\tbi, errb := cast.ToInt64E(n2)\n\n\tif erra != nil || errb != nil {\n\t\treturn 0, errors.New(\"modulo operator can't be used with non integer value\")\n\t}\n\n\tif bi == 0 {\n\t\treturn 0, errors.New(\"the number can't be divided by zero at modulo operation\")\n\t}\n\n\treturn ai % bi, nil\n}",
+    "funcname": "Mod"
+}

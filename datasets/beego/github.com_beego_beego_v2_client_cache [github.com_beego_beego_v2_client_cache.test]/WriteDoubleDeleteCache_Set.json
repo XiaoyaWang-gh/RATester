@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/write_delete.go",
+    "lineno": 80,
+    "focalfunc": "func (c *WriteDoubleDeleteCache) Set(\n\tctx context.Context, key string, val any) error",
+    "funcbody": "func (c *WriteDoubleDeleteCache) Set(\n\tctx context.Context, key string, val any) error {\n\terr := c.storeFunc(ctx, key, val)\n\tif err != nil && !errors.Is(err, context.DeadlineExceeded) {\n\t\treturn berror.Wrap(err, PersistCacheFailed, fmt.Sprintf(\"key: %s, val: %v\", key, val))\n\t}\n\ttime.AfterFunc(c.interval, func() {\n\t\trCtx, cancel := context.WithTimeout(context.Background(), c.timeout)\n\t\t_ = c.Cache.Delete(rCtx, key)\n\t\tcancel()\n\t})\n\terr = c.Cache.Delete(ctx, key)\n\tif err != nil {\n\t\treturn berror.Wrap(err, DeleteFailed, fmt.Sprintf(\"write double delete pattern failed to delete the key: %s\", key))\n\t}\n\treturn nil\n}",
+    "funcname": "Set"
+}

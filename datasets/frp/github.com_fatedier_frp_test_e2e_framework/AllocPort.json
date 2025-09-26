@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 237,
+    "focalfunc": "func (f *Framework) AllocPort() int",
+    "funcbody": "func (f *Framework) AllocPort() int {\n\tport := f.portAllocator.Get()\n\tExpectTrue(port > 0, \"alloc port failed\")\n\tf.allocatedPorts = append(f.allocatedPorts, port)\n\treturn port\n}",
+    "funcname": "AllocPort"
+}

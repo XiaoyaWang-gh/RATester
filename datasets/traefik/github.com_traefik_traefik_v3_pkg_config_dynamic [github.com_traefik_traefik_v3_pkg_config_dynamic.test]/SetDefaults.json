@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/dynamic/udp_config.go",
+    "lineno": 39,
+    "focalfunc": "func (w *UDPWRRService) SetDefaults()",
+    "funcbody": "func (w *UDPWRRService) SetDefaults() {\n\tdefaultWeight := 1\n\tw.Weight = &defaultWeight\n}",
+    "funcname": "SetDefaults"
+}

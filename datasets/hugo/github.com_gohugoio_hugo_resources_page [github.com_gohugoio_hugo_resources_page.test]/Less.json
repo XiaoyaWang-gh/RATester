@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/weighted.go",
+    "lineno": 133,
+    "focalfunc": "func (wp WeightedPages) Less(i, j int) bool",
+    "funcbody": "func (wp WeightedPages) Less(i, j int) bool {\n\tif wp[i].Weight == wp[j].Weight {\n\t\treturn DefaultPageSort(wp[i].Page, wp[j].Page)\n\t}\n\treturn wp[i].Weight < wp[j].Weight\n}",
+    "funcname": "Less"
+}

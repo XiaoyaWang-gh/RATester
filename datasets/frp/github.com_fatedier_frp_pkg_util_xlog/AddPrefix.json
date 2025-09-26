@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 61,
+    "focalfunc": "func (l *Logger) AddPrefix(prefix LogPrefix) *Logger",
+    "funcbody": "func (l *Logger) AddPrefix(prefix LogPrefix) *Logger {\n\tfound := false\n\tif prefix.Priority <= 0 {\n\t\tprefix.Priority = 10\n\t}\n\tfor _, p := range l.prefixes {\n\t\tif p.Name == prefix.Name {\n\t\t\tfound = true\n\t\t\tp.Value = prefix.Value\n\t\t\tp.Priority = prefix.Priority\n\t\t}\n\t}\n\tif !found {\n\t\tl.prefixes = append(l.prefixes, prefix)\n\t}\n\tl.renderPrefixString()\n\treturn l\n}",
+    "funcname": "AddPrefix"
+}

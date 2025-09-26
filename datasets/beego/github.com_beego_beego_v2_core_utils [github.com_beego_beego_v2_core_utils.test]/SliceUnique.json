@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 154,
+    "focalfunc": "func SliceUnique(slice []interface{}) (uniqueslice []interface{})",
+    "funcbody": "func SliceUnique(slice []interface{}) (uniqueslice []interface{}) {\n\tfor _, v := range slice {\n\t\tif !InSliceIface(v, uniqueslice) {\n\t\t\tuniqueslice = append(uniqueslice, v)\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "SliceUnique"
+}

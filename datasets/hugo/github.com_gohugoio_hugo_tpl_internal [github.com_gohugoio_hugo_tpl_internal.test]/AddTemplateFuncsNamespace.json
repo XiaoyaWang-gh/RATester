@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/templatefuncsRegistry.go",
+    "lineno": 42,
+    "focalfunc": "func AddTemplateFuncsNamespace(ns func(d *deps.Deps) *TemplateFuncsNamespace)",
+    "funcbody": "func AddTemplateFuncsNamespace(ns func(d *deps.Deps) *TemplateFuncsNamespace) {\n\tTemplateFuncsNamespaceRegistry = append(TemplateFuncsNamespaceRegistry, ns)\n}",
+    "funcname": "AddTemplateFuncsNamespace"
+}

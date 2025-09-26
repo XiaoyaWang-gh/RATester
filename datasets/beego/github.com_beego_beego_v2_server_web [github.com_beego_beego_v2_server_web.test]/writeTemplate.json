@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 265,
+    "focalfunc": "func writeTemplate(rw http.ResponseWriter, data map[interface{}]interface{}, tpls ...string)",
+    "funcbody": "func writeTemplate(rw http.ResponseWriter, data map[interface{}]interface{}, tpls ...string) {\n\ttmpl := template.Must(template.New(\"dashboard\").Parse(dashboardTpl))\n\tfor _, tpl := range tpls {\n\t\ttmpl = template.Must(tmpl.Parse(tpl))\n\t}\n\ttmpl.Execute(rw, data)\n}",
+    "funcname": "writeTemplate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/minifiers/minifiers.go",
+    "lineno": 77,
+    "focalfunc": "func New(mediaTypes media.Types, outputFormats output.Formats, cfg config.AllProvider) (Client, error)",
+    "funcbody": "func New(mediaTypes media.Types, outputFormats output.Formats, cfg config.AllProvider) (Client, error) {\n\tconf := cfg.GetConfigSection(\"minify\").(MinifyConfig)\n\tm := minify.New()\n\n\taddMinifier(m, mediaTypes, \"css\", getMinifier(conf, \"css\"))\n\n\taddMinifier(m, mediaTypes, \"js\", getMinifier(conf, \"js\"))\n\tm.AddRegexp(regexp.MustCompile(\"^(application|text)/(x-)?(java|ecma)script$\"), getMinifier(conf, \"js\"))\n\n\taddMinifier(m, mediaTypes, \"json\", getMinifier(conf, \"json\"))\n\tm.AddRegexp(regexp.MustCompile(`^(application|text)/(x-|(ld|manifest)\\+)?json$`), getMinifier(conf, \"json\"))\n\n\taddMinifier(m, mediaTypes, \"svg\", getMinifier(conf, \"svg\"))\n\n\taddMinifier(m, mediaTypes, \"xml\", getMinifier(conf, \"xml\"))\n\n\taddMinifier(m, mediaTypes, \"html\", getMinifier(conf, \"html\"))\n\tfor _, of := range outputFormats {\n\t\tif of.IsHTML {\n\t\t\tm.Add(of.MediaType.Type, getMinifier(conf, \"html\"))\n\t\t}\n\t}\n\n\treturn Client{m: m, MinifyOutput: conf.MinifyOutput}, nil\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 326,
+    "focalfunc": "func isAllowedPathCharacter(s string, i int, r rune) bool",
+    "funcbody": "func isAllowedPathCharacter(s string, i int, r rune) bool {\n\tif r == ' ' {\n\t\treturn false\n\t}\n\n\tisAllowed := unicode.IsLetter(r) || unicode.IsDigit(r)\n\tisAllowed = isAllowed || r == '.' || r == '/' || r == '\\\\' || r == '_' || r == '#' || r == '+' || r == '~' || r == '-' || r == '@'\n\tisAllowed = isAllowed || unicode.IsMark(r)\n\tisAllowed = isAllowed || (r == '%' && i+2 < len(s) && ishex(s[i+1]) && ishex(s[i+2]))\n\treturn isAllowed\n}",
+    "funcname": "isAllowedPathCharacter"
+}

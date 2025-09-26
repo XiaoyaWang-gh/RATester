@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 198,
+    "focalfunc": "func (c *Captcha) VerifyReq(req *http.Request) bool",
+    "funcbody": "func (c *Captcha) VerifyReq(req *http.Request) bool {\n\treq.ParseForm()\n\treturn c.Verify(req.Form.Get(c.FieldIDName), req.Form.Get(c.FieldCaptchaName))\n}",
+    "funcname": "VerifyReq"
+}

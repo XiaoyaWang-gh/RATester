@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 116,
+    "focalfunc": "func (l LowHigh[S]) IsZero() bool",
+    "funcbody": "func (l LowHigh[S]) IsZero() bool {\n\treturn l.Low < 0 || (l.Low == 0 && l.High == 0)\n}",
+    "funcname": "IsZero"
+}

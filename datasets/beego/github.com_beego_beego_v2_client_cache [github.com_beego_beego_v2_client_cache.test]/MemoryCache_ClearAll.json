@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 164,
+    "focalfunc": "func (bc *MemoryCache) ClearAll(context.Context) error",
+    "funcbody": "func (bc *MemoryCache) ClearAll(context.Context) error {\n\tbc.Lock()\n\tdefer bc.Unlock()\n\tbc.items = make(map[string]*MemoryItem)\n\treturn nil\n}",
+    "funcname": "ClearAll"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 822,
+    "focalfunc": "func InsertFilter(pattern string, pos int, filter FilterFunc, opts ...FilterOpt) *HttpServer",
+    "funcbody": "func InsertFilter(pattern string, pos int, filter FilterFunc, opts ...FilterOpt) *HttpServer {\n\treturn BeeApp.InsertFilter(pattern, pos, filter, opts...)\n}",
+    "funcname": "InsertFilter"
+}

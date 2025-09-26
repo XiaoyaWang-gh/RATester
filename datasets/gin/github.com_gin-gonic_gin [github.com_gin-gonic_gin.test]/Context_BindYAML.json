@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 668,
+    "focalfunc": "func (c *Context) BindYAML(obj any) error",
+    "funcbody": "func (c *Context) BindYAML(obj any) error {\n\treturn c.MustBindWith(obj, binding.YAML)\n}",
+    "funcname": "BindYAML"
+}

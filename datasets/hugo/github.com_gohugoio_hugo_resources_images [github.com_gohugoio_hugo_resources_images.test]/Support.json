@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/resampling.go",
+    "lineno": 181,
+    "focalfunc": "func (r resamp) Support() float32",
+    "funcbody": "func (r resamp) Support() float32 {\n\treturn r.support\n}",
+    "funcname": "Support"
+}

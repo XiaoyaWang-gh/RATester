@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 56,
+    "focalfunc": "func TracerFromContext(ctx context.Context) *Tracer",
+    "funcbody": "func TracerFromContext(ctx context.Context) *Tracer {\n\n\tif !trace.SpanContextFromContext(ctx).IsValid() {\n\t\treturn nil\n\t}\n\n\tspan := trace.SpanFromContext(ctx)\n\tif span != nil && span.TracerProvider() != nil {\n\t\ttracer := span.TracerProvider().Tracer(\"github.com/traefik/traefik\")\n\t\tif tracer, ok := tracer.(*Tracer); ok {\n\t\t\treturn tracer\n\t\t}\n\n\t\treturn nil\n\t}\n\n\treturn nil\n}",
+    "funcname": "TracerFromContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 423,
+    "focalfunc": "func ToSlashPreserveLeading(s string) string",
+    "funcbody": "func ToSlashPreserveLeading(s string) string {\n\treturn \"/\" + strings.Trim(filepath.ToSlash(s), \"/\")\n}",
+    "funcname": "ToSlashPreserveLeading"
+}

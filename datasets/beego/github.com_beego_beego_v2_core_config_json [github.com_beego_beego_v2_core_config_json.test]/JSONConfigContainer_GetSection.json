@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 238,
+    "focalfunc": "func (c *JSONConfigContainer) GetSection(section string) (map[string]string, error)",
+    "funcbody": "func (c *JSONConfigContainer) GetSection(section string) (map[string]string, error) {\n\tif v, ok := c.data[section]; ok {\n\t\treturn v.(map[string]string), nil\n\t}\n\treturn nil, errors.New(\"nonexist section \" + section)\n}",
+    "funcname": "GetSection"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/basicauth/basicauth.go",
+    "lineno": 74,
+    "focalfunc": "func UsernameFromContext(c fiber.Ctx) string",
+    "funcbody": "func UsernameFromContext(c fiber.Ctx) string {\n\tusername, ok := c.Locals(usernameKey).(string)\n\tif !ok {\n\t\treturn \"\"\n\t}\n\treturn username\n}",
+    "funcname": "UsernameFromContext"
+}

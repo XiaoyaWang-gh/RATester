@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/tls.go",
+    "lineno": 35,
+    "focalfunc": "func newRandomTLSKeyPair() *tls.Certificate",
+    "funcbody": "func newRandomTLSKeyPair() *tls.Certificate {\n\tkey, err := rsa.GenerateKey(rand.Reader, 2048)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\ttemplate := x509.Certificate{SerialNumber: big.NewInt(1)}\n\tcertDER, err := x509.CreateCertificate(\n\t\trand.Reader,\n\t\t&template,\n\t\t&template,\n\t\t&key.PublicKey,\n\t\tkey)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tkeyPEM := pem.EncodeToMemory(&pem.Block{Type: \"RSA PRIVATE KEY\", Bytes: x509.MarshalPKCS1PrivateKey(key)})\n\tcertPEM := pem.EncodeToMemory(&pem.Block{Type: \"CERTIFICATE\", Bytes: certDER})\n\n\ttlsCert, err := tls.X509KeyPair(certPEM, keyPEM)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn &tlsCert\n}",
+    "funcname": "newRandomTLSKeyPair"
+}

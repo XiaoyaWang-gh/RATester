@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 191,
+    "focalfunc": "func (o querySet) IgnoreIndex(indexes ...string) QuerySeter",
+    "funcbody": "func (o querySet) IgnoreIndex(indexes ...string) QuerySeter {\n\to.useIndex = hints.KeyIgnoreIndex\n\to.indexes = indexes\n\treturn &o\n}",
+    "funcname": "IgnoreIndex"
+}

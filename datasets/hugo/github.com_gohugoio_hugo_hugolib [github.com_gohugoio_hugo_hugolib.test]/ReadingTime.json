@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 197,
+    "focalfunc": "func (pco *pageContentOutput) ReadingTime(ctx context.Context) int",
+    "funcbody": "func (pco *pageContentOutput) ReadingTime(ctx context.Context) int {\n\treturn pco.mustRender(ctx).ReadingTime(ctx)\n}",
+    "funcname": "ReadingTime"
+}

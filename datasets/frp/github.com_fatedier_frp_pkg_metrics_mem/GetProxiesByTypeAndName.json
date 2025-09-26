@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 232,
+    "focalfunc": "func (m *serverMetrics) GetProxiesByTypeAndName(proxyType string, proxyName string) (res *ProxyStats)",
+    "funcbody": "func (m *serverMetrics) GetProxiesByTypeAndName(proxyType string, proxyName string) (res *ProxyStats) {\n\tm.mu.Lock()\n\tdefer m.mu.Unlock()\n\n\tfor name, proxyStats := range m.info.ProxyStatistics {\n\t\tif proxyStats.ProxyType != proxyType {\n\t\t\tcontinue\n\t\t}\n\n\t\tif name != proxyName {\n\t\t\tcontinue\n\t\t}\n\n\t\tres = &ProxyStats{\n\t\t\tName:\t\t\tname,\n\t\t\tType:\t\t\tproxyStats.ProxyType,\n\t\t\tTodayTrafficIn:\t\tproxyStats.TrafficIn.TodayCount(),\n\t\t\tTodayTrafficOut:\tproxyStats.TrafficOut.TodayCount(),\n\t\t\tCurConns:\t\tint64(proxyStats.CurConns.Count()),\n\t\t}\n\t\tif !proxyStats.LastStartTime.IsZero() {\n\t\t\tres.LastStartTime = proxyStats.LastStartTime.Format(\"01-02 15:04:05\")\n\t\t}\n\t\tif !proxyStats.LastCloseTime.IsZero() {\n\t\t\tres.LastCloseTime = proxyStats.LastCloseTime.Format(\"01-02 15:04:05\")\n\t\t}\n\t\tbreak\n\t}\n\treturn\n}",
+    "funcname": "GetProxiesByTypeAndName"
+}

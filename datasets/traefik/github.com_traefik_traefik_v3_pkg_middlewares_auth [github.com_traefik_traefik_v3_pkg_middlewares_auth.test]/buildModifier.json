@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/forward.go",
+    "lineno": 255,
+    "focalfunc": "func (fa *forwardAuth) buildModifier(authCookies []*http.Cookie) func(res *http.Response) error",
+    "funcbody": "func (fa *forwardAuth) buildModifier(authCookies []*http.Cookie) func(res *http.Response) error {\n\treturn func(res *http.Response) error {\n\t\tcookies := res.Cookies()\n\t\tres.Header.Del(\"Set-Cookie\")\n\n\t\tfor _, cookie := range cookies {\n\t\t\tif _, found := fa.addAuthCookiesToResponse[cookie.Name]; !found {\n\t\t\t\tres.Header.Add(\"Set-Cookie\", cookie.String())\n\t\t\t}\n\t\t}\n\n\t\tfor _, cookie := range authCookies {\n\t\t\tif _, found := fa.addAuthCookiesToResponse[cookie.Name]; found {\n\t\t\t\tres.Header.Add(\"Set-Cookie\", cookie.String())\n\t\t\t}\n\t\t}\n\n\t\treturn nil\n\t}\n}",
+    "funcname": "buildModifier"
+}

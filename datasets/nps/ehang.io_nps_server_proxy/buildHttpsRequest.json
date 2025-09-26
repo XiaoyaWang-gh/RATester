@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 178,
+    "focalfunc": "func buildHttpsRequest(hostName string) *http.Request",
+    "funcbody": "func buildHttpsRequest(hostName string) *http.Request {\n\tr := new(http.Request)\n\tr.RequestURI = \"/\"\n\tr.URL = new(url.URL)\n\tr.URL.Scheme = \"https\"\n\tr.Host = hostName\n\treturn r\n}",
+    "funcname": "buildHttpsRequest"
+}

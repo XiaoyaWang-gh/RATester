@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 382,
+    "focalfunc": "func (l *genericResource) IdentifierBase() string",
+    "funcbody": "func (l *genericResource) IdentifierBase() string {\n\treturn l.sd.Path.IdentifierBase()\n}",
+    "funcname": "IdentifierBase"
+}

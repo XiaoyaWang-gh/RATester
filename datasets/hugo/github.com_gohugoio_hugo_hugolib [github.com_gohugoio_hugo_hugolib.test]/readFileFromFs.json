@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 796,
+    "focalfunc": "func (s *IntegrationTestBuilder) readFileFromFs(t testing.TB, fs afero.Fs, filename string) string",
+    "funcbody": "func (s *IntegrationTestBuilder) readFileFromFs(t testing.TB, fs afero.Fs, filename string) string {\n\tt.Helper()\n\tfilename = filepath.Clean(filename)\n\tb, err := afero.ReadFile(fs, filename)\n\tif err != nil {\n\n\t\thadSlash := strings.HasPrefix(filename, helpers.FilePathSeparator)\n\t\tstart := 0\n\t\tif hadSlash {\n\t\t\tstart = 1\n\t\t}\n\t\tend := start + 1\n\n\t\tparts := strings.Split(filename, helpers.FilePathSeparator)\n\t\tif parts[start] == \"work\" {\n\t\t\tend++\n\t\t}\n\n\t\ts.Assert(err, qt.IsNil)\n\n\t}\n\treturn string(b)\n}",
+    "funcname": "readFileFromFs"
+}

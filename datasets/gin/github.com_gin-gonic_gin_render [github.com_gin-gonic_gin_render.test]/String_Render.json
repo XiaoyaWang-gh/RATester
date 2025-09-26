@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/text.go",
+    "lineno": 23,
+    "focalfunc": "func (r String) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r String) Render(w http.ResponseWriter) error {\n\treturn WriteString(w, r.Format, r.Data)\n}",
+    "funcname": "Render"
+}

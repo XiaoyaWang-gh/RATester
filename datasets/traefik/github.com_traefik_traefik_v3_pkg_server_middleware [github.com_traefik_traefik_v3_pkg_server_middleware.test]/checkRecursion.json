@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/middlewares.go",
+    "lineno": 101,
+    "focalfunc": "func checkRecursion(ctx context.Context, middlewareName string) (context.Context, error)",
+    "funcbody": "func checkRecursion(ctx context.Context, middlewareName string) (context.Context, error) {\n\tcurrentStack, ok := ctx.Value(middlewareStackKey).([]string)\n\tif !ok {\n\t\tcurrentStack = []string{}\n\t}\n\tif slices.Contains(currentStack, middlewareName) {\n\t\treturn ctx, fmt.Errorf(\"could not instantiate middleware %s: recursion detected in %s\", middlewareName, strings.Join(append(currentStack, middlewareName), \"->\"))\n\t}\n\treturn context.WithValue(ctx, middlewareStackKey, append(currentStack, middlewareName)), nil\n}",
+    "funcname": "checkRecursion"
+}

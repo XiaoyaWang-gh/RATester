@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 112,
+    "focalfunc": "func GetTableUnique(val reflect.Value) [][]string",
+    "funcbody": "func GetTableUnique(val reflect.Value) [][]string {\n\tfun := val.MethodByName(\"TableUnique\")\n\tif fun.IsValid() {\n\t\tvals := fun.Call([]reflect.Value{})\n\t\tif len(vals) > 0 && vals[0].CanInterface() {\n\t\t\tif d, ok := vals[0].Interface().([][]string); ok {\n\t\t\t\treturn d\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "GetTableUnique"
+}

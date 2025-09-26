@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 72,
+    "focalfunc": "func newResourceAdapter(spec *Spec, lazyPublish bool, target transformableResource) *resourceAdapter",
+    "funcbody": "func newResourceAdapter(spec *Spec, lazyPublish bool, target transformableResource) *resourceAdapter {\n\tvar po *publishOnce\n\tif lazyPublish {\n\t\tpo = &publishOnce{}\n\t}\n\treturn &resourceAdapter{\n\t\tresourceTransformations:\t&resourceTransformations{},\n\t\tmetaProvider:\t\t\ttarget,\n\t\tresourceAdapterInner: &resourceAdapterInner{\n\t\t\tctx:\t\tcontext.Background(),\n\t\t\tspec:\t\tspec,\n\t\t\tpublishOnce:\tpo,\n\t\t\ttarget:\t\ttarget,\n\t\t\tStaler:\t\t&AtomicStaler{},\n\t\t},\n\t}\n}",
+    "funcname": "newResourceAdapter"
+}

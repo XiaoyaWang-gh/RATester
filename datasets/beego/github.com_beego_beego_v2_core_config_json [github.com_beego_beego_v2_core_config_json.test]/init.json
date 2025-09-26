@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 308,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tconfig.Register(\"json\", &JSONConfig{})\n}",
+    "funcname": "init"
+}

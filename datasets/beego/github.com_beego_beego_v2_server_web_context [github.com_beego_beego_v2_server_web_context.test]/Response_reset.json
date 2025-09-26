@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 341,
+    "focalfunc": "func (r *Response) reset(rw http.ResponseWriter)",
+    "funcbody": "func (r *Response) reset(rw http.ResponseWriter) {\n\tr.ResponseWriter = rw\n\tr.Status = 0\n\tr.Started = false\n}",
+    "funcname": "reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 94,
+    "focalfunc": "func (c *StandardDateCounter) Snapshot() DateCounter",
+    "funcbody": "func (c *StandardDateCounter) Snapshot() DateCounter {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\ttmp := newStandardDateCounter(c.reserveDays)\n\tfor i := 0; i < int(c.reserveDays); i++ {\n\t\ttmp.counts[i] = c.counts[i]\n\t}\n\treturn tmp\n}",
+    "funcname": "Snapshot"
+}

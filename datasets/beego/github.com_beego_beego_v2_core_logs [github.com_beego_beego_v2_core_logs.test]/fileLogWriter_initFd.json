@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 239,
+    "focalfunc": "func (w *fileLogWriter) initFd() error",
+    "funcbody": "func (w *fileLogWriter) initFd() error {\n\tfd := w.fileWriter\n\tfInfo, err := fd.Stat()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"get stat err: %s\", err)\n\t}\n\tw.maxSizeCurSize = int(fInfo.Size())\n\tw.dailyOpenTime = time.Now()\n\tw.dailyOpenDate = w.dailyOpenTime.Day()\n\tw.hourlyOpenTime = time.Now()\n\tw.hourlyOpenDate = w.hourlyOpenTime.Hour()\n\tw.maxLinesCurLines = 0\n\tif w.Hourly {\n\t\tgo w.hourlyRotate(w.hourlyOpenTime)\n\t} else if w.Daily {\n\t\tgo w.dailyRotate(w.dailyOpenTime)\n\t}\n\tif fInfo.Size() > 0 && w.MaxLines > 0 {\n\t\tcount, err := w.lines()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tw.maxLinesCurLines = count\n\t}\n\treturn nil\n}",
+    "funcname": "initFd"
+}

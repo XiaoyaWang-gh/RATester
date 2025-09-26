@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 146,
+    "focalfunc": "func (f *filterOrmDecorator) LoadRelated(md interface{}, name string, args ...utils.KV) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) LoadRelated(md interface{}, name string, args ...utils.KV) (int64, error) {\n\treturn f.LoadRelatedWithCtx(context.Background(), md, name, args...)\n}",
+    "funcname": "LoadRelated"
+}

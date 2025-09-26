@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 348,
+    "focalfunc": "func sortByName[T orderedByName](direction string, results []T)",
+    "funcbody": "func sortByName[T orderedByName](direction string, results []T) {\n\n\tif direction == ascendantSorting {\n\t\tsort.Slice(results, func(i, j int) bool {\n\t\t\treturn results[i].name() < results[j].name()\n\t\t})\n\n\t\treturn\n\t}\n\n\tsort.Slice(results, func(i, j int) bool {\n\t\treturn results[i].name() > results[j].name()\n\t})\n}",
+    "funcname": "sortByName"
+}

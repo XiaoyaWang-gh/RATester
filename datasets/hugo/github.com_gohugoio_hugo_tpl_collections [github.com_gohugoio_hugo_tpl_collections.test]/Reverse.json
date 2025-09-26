@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 477,
+    "focalfunc": "func (ns *Namespace) Reverse(l any) (any, error)",
+    "funcbody": "func (ns *Namespace) Reverse(l any) (any, error) {\n\tif l == nil {\n\t\treturn nil, nil\n\t}\n\tv := reflect.ValueOf(l)\n\n\tswitch v.Kind() {\n\tcase reflect.Slice:\n\tdefault:\n\t\treturn nil, errors.New(\"argument must be a slice\")\n\t}\n\n\tsliceCopy := reflect.MakeSlice(v.Type(), v.Len(), v.Len())\n\n\tfor i := v.Len() - 1; i >= 0; i-- {\n\t\telement := sliceCopy.Index(i)\n\t\telement.Set(v.Index(v.Len() - 1 - i))\n\t}\n\n\treturn sliceCopy.Interface(), nil\n}",
+    "funcname": "Reverse"
+}

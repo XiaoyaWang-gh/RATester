@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 765,
+    "focalfunc": "func (t *Tree) term() Node",
+    "funcbody": "func (t *Tree) term() Node {\n\tswitch token := t.nextNonSpace(); token.typ {\n\tcase itemIdentifier:\n\t\tcheckFunc := t.Mode&SkipFuncCheck == 0\n\t\tif checkFunc && !t.hasFunction(token.val) {\n\t\t\tt.errorf(\"function %q not defined\", token.val)\n\t\t}\n\t\treturn NewIdentifier(token.val).SetTree(t).SetPos(token.pos)\n\tcase itemDot:\n\t\treturn t.newDot(token.pos)\n\tcase itemNil:\n\t\treturn t.newNil(token.pos)\n\tcase itemVariable:\n\t\treturn t.useVar(token.pos, token.val)\n\tcase itemField:\n\t\treturn t.newField(token.pos, token.val)\n\tcase itemBool:\n\t\treturn t.newBool(token.pos, token.val == \"true\")\n\tcase itemCharConstant, itemComplex, itemNumber:\n\t\tnumber, err := t.newNumber(token.pos, token.val, token.typ)\n\t\tif err != nil {\n\t\t\tt.error(err)\n\t\t}\n\t\treturn number\n\tcase itemLeftParen:\n\t\treturn t.pipeline(\"parenthesized pipeline\", itemRightParen)\n\tcase itemString, itemRawString:\n\t\ts, err := strconv.Unquote(token.val)\n\t\tif err != nil {\n\t\t\tt.error(err)\n\t\t}\n\t\treturn t.newString(token.pos, token.val, s)\n\t}\n\tt.backup()\n\treturn nil\n}",
+    "funcname": "term"
+}

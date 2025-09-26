@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/log.go",
+    "lineno": 95,
+    "focalfunc": "func (lv Level) toString() string",
+    "funcbody": "func (lv Level) toString() string {\n\tif lv >= LevelTrace && lv <= LevelPanic {\n\t\treturn strs[lv]\n\t}\n\treturn fmt.Sprintf(\"[?%d] \", lv)\n}",
+    "funcname": "toString"
+}

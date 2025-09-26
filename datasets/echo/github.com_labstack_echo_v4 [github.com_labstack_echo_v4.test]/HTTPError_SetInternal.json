@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 910,
+    "focalfunc": "func (he *HTTPError) SetInternal(err error) *HTTPError",
+    "funcbody": "func (he *HTTPError) SetInternal(err error) *HTTPError {\n\the.Internal = err\n\treturn he\n}",
+    "funcname": "SetInternal"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 790,
+    "focalfunc": "func Any(rootpath string, f HandleFunc) *HttpServer",
+    "funcbody": "func Any(rootpath string, f HandleFunc) *HttpServer {\n\treturn BeeApp.Any(rootpath, f)\n}",
+    "funcname": "Any"
+}

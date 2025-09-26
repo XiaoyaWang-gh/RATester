@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 336,
+    "focalfunc": "func (m Type) hasSuffix(suffix string) bool",
+    "funcbody": "func (m Type) hasSuffix(suffix string) bool {\n\treturn strings.Contains(\",\"+m.SuffixesCSV+\",\", \",\"+suffix+\",\")\n}",
+    "funcname": "hasSuffix"
+}

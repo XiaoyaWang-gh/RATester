@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 285,
+    "focalfunc": "func (p *Provider) loadHTTPBackendRef(namespace string, backendRef gatev1.HTTPBackendRef) (string, *dynamic.Service, error)",
+    "funcbody": "func (p *Provider) loadHTTPBackendRef(namespace string, backendRef gatev1.HTTPBackendRef) (string, *dynamic.Service, error) {\n\n\tif *backendRef.Kind == \"TraefikService\" && strings.Contains(string(backendRef.Name), \"@\") {\n\t\treturn string(backendRef.Name), nil, nil\n\t}\n\n\tbackendFunc, ok := p.groupKindBackendFuncs[string(*backendRef.Group)][string(*backendRef.Kind)]\n\tif !ok {\n\t\treturn \"\", nil, fmt.Errorf(\"unsupported HTTPBackendRef %s/%s/%s\", *backendRef.Group, *backendRef.Kind, backendRef.Name)\n\t}\n\tif backendFunc == nil {\n\t\treturn \"\", nil, fmt.Errorf(\"undefined backendFunc for HTTPBackendRef %s/%s/%s\", *backendRef.Group, *backendRef.Kind, backendRef.Name)\n\t}\n\n\treturn backendFunc(string(backendRef.Name), namespace)\n}",
+    "funcname": "loadHTTPBackendRef"
+}

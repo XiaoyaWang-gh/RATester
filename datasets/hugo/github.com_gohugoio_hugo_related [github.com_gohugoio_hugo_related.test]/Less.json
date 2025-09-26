@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 314,
+    "focalfunc": "func (r ranks) Less(i, j int) bool",
+    "funcbody": "func (r ranks) Less(i, j int) bool {\n\tif r[i].Weight == r[j].Weight {\n\t\tif r[i].Doc.PublishDate() == r[j].Doc.PublishDate() {\n\t\t\treturn r[i].Doc.Name() < r[j].Doc.Name()\n\t\t}\n\t\treturn r[i].Doc.PublishDate().After(r[j].Doc.PublishDate())\n\t}\n\treturn r[i].Weight > r[j].Weight\n}",
+    "funcname": "Less"
+}

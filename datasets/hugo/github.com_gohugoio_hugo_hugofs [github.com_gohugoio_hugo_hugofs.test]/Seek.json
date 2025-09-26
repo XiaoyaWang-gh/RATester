@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 99,
+    "focalfunc": "func (f *noOpRegularFileOps) Seek(offset int64, whence int) (int64, error)",
+    "funcbody": "func (f *noOpRegularFileOps) Seek(offset int64, whence int) (int64, error) {\n\tpanic(errNoOp)\n}",
+    "funcname": "Seek"
+}

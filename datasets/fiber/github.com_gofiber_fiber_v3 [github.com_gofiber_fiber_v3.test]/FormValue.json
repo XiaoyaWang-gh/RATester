@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 578,
+    "focalfunc": "func (c *DefaultCtx) FormValue(key string, defaultValue ...string) string",
+    "funcbody": "func (c *DefaultCtx) FormValue(key string, defaultValue ...string) string {\n\treturn defaultString(c.app.getString(c.fasthttp.FormValue(key)), defaultValue)\n}",
+    "funcname": "FormValue"
+}

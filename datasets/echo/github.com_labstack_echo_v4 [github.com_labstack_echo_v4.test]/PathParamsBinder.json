@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 125,
+    "focalfunc": "func PathParamsBinder(c Context) *ValueBinder",
+    "funcbody": "func PathParamsBinder(c Context) *ValueBinder {\n\treturn &ValueBinder{\n\t\tfailFast:\ttrue,\n\t\tValueFunc:\tc.Param,\n\t\tValuesFunc: func(sourceParam string) []string {\n\n\t\t\tvalue := c.Param(sourceParam)\n\t\t\tif value == \"\" {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn []string{value}\n\t\t},\n\t\tErrorFunc:\tNewBindingError,\n\t}\n}",
+    "funcname": "PathParamsBinder"
+}

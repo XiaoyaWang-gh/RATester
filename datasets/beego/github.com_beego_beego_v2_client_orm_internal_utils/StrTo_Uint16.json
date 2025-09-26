@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 114,
+    "focalfunc": "func (f StrTo) Uint16() (uint16, error)",
+    "funcbody": "func (f StrTo) Uint16() (uint16, error) {\n\tv, err := strconv.ParseUint(f.String(), 10, 16)\n\treturn uint16(v), err\n}",
+    "funcname": "Uint16"
+}

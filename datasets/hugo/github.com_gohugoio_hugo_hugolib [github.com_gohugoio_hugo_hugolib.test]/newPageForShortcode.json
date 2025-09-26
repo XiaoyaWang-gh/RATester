@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode_page.go",
+    "lineno": 80,
+    "focalfunc": "func newPageForShortcode(p *pageState) page.Page",
+    "funcbody": "func newPageForShortcode(p *pageState) page.Page {\n\treturn &pageForShortcode{\n\t\tPageWithoutContent:\t\tp,\n\t\tTableOfContentsProvider:\tp,\n\t\tMarkupProvider:\t\t\tpage.NopPage,\n\t\tContentProvider:\t\tpage.NopPage,\n\t\ttoc:\t\t\t\ttemplate.HTML(tocShortcodePlaceholder),\n\t\tp:\t\t\t\tp,\n\t}\n}",
+    "funcname": "newPageForShortcode"
+}

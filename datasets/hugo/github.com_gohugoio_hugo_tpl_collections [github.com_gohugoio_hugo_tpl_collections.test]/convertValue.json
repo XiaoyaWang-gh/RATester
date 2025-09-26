@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 89,
+    "focalfunc": "func convertValue(v reflect.Value, to reflect.Type) (reflect.Value, error)",
+    "funcbody": "func convertValue(v reflect.Value, to reflect.Type) (reflect.Value, error) {\n\tif v.Type().AssignableTo(to) {\n\t\treturn v, nil\n\t}\n\tswitch kind := to.Kind(); {\n\tcase kind == reflect.String:\n\t\ts, err := toString(v)\n\t\treturn reflect.ValueOf(s), err\n\tcase isNumber(kind):\n\t\treturn convertNumber(v, kind)\n\tdefault:\n\t\treturn reflect.Value{}, fmt.Errorf(\"%s is not assignable to %s\", v.Type(), to)\n\t}\n}",
+    "funcname": "convertValue"
+}

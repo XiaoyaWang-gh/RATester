@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/hostresolver.go",
+    "lineno": 114,
+    "focalfunc": "func getRecord(client *dns.Client, msg *dns.Msg, server, port string) (*cnameResolv, error)",
+    "funcbody": "func getRecord(client *dns.Client, msg *dns.Msg, server, port string) (*cnameResolv, error) {\n\tresp, _, err := client.Exchange(msg, net.JoinHostPort(server, port))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"exchange error for server %s: %w\", server, err)\n\t}\n\n\tif resp == nil || len(resp.Answer) == 0 {\n\t\treturn nil, fmt.Errorf(\"%w: %s\", errNoCNAMERecord, server)\n\t}\n\n\trr, ok := resp.Answer[0].(*dns.CNAME)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"invalid response type for server %s\", server)\n\t}\n\n\treturn &cnameResolv{\n\t\tTTL:\ttime.Duration(rr.Hdr.Ttl) * time.Second,\n\t\tRecord:\tstrings.TrimSuffix(rr.Target, \".\"),\n\t}, nil\n}",
+    "funcname": "getRecord"
+}

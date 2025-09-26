@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 377,
+    "focalfunc": "func parseWhereArgs(args ...any) (mv reflect.Value, op string, err error)",
+    "funcbody": "func parseWhereArgs(args ...any) (mv reflect.Value, op string, err error) {\n\tswitch len(args) {\n\tcase 1:\n\t\tmv = reflect.ValueOf(args[0])\n\tcase 2:\n\t\tvar ok bool\n\t\tif op, ok = args[0].(string); !ok {\n\t\t\terr = errors.New(\"operator argument must be string type\")\n\t\t\treturn\n\t\t}\n\t\top = strings.TrimSpace(strings.ToLower(op))\n\t\tmv = reflect.ValueOf(args[1])\n\tdefault:\n\t\terr = errors.New(\"can't evaluate the array by no match argument or more than or equal to two arguments\")\n\t}\n\treturn\n}",
+    "funcname": "parseWhereArgs"
+}

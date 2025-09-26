@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/tables/tables.go",
+    "lineno": 173,
+    "focalfunc": "func (c *tableContext) TBody() []hooks.TableRow",
+    "funcbody": "func (c *tableContext) TBody() []hooks.TableRow {\n\treturn c.tBody\n}",
+    "funcname": "TBody"
+}

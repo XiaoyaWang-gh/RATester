@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/consul_catalog.go",
+    "lineno": 355,
+    "focalfunc": "func (p *Provider) fetchService(ctx context.Context, name string, connectEnabled bool) ([]*api.ServiceEntry, map[string]string, error)",
+    "funcbody": "func (p *Provider) fetchService(ctx context.Context, name string, connectEnabled bool) ([]*api.ServiceEntry, map[string]string, error) {\n\tvar tagFilter string\n\tif !p.ExposedByDefault {\n\t\ttagFilter = p.Prefix + \".enable=true\"\n\t}\n\n\topts := &api.QueryOptions{AllowStale: p.Stale, RequireConsistent: p.RequireConsistent, UseCache: p.Cache}\n\topts = opts.WithContext(ctx)\n\n\thealthFunc := p.client.Health().Service\n\tif connectEnabled {\n\t\thealthFunc = p.client.Health().Connect\n\t}\n\n\tconsulServices, _, err := healthFunc(name, tagFilter, false, opts)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\n\tstatuses := make(map[string]string)\n\tfor _, health := range consulServices {\n\t\tif health.Service == nil || health.Node == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tstatuses[health.Node.ID+health.Service.ID] = health.Checks.AggregatedStatus()\n\t}\n\n\treturn consulServices, statuses, err\n}",
+    "funcname": "fetchService"
+}

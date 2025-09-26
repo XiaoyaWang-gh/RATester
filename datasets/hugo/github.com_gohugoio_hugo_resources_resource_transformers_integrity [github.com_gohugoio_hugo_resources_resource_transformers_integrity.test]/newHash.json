@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/integrity/integrity.go",
+    "lineno": 83,
+    "focalfunc": "func newHash(algo string) (hash.Hash, error)",
+    "funcbody": "func newHash(algo string) (hash.Hash, error) {\n\tswitch algo {\n\tcase \"md5\":\n\t\treturn md5.New(), nil\n\tcase \"sha256\":\n\t\treturn sha256.New(), nil\n\tcase \"sha384\":\n\t\treturn sha512.New384(), nil\n\tcase \"sha512\":\n\t\treturn sha512.New(), nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"unsupported hash algorithm: %q, use either md5, sha256, sha384 or sha512\", algo)\n\t}\n}",
+    "funcname": "newHash"
+}

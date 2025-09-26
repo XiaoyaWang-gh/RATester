@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/contenttype/content_type.go",
+    "lineno": 22,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.ContentType, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.ContentType, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\tif config.AutoDetect != nil {\n\t\tlogger.Warn().Msg(\"AutoDetect option is deprecated, Content-Type middleware is only meant to be used to enable the content-type detection, please remove any usage of this option.\")\n\n\t\tif !*config.AutoDetect {\n\t\t\treturn next, nil\n\t\t}\n\t}\n\n\treturn &contentType{next: next, name: name}, nil\n}",
+    "funcname": "New"
+}

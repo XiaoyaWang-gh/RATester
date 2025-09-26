@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 37,
+    "focalfunc": "func (p *Provider) SessionInit(ctx context.Context, maxLifetime int64, cfg string) error",
+    "funcbody": "func (p *Provider) SessionInit(ctx context.Context, maxLifetime int64, cfg string) error {\n\tp.maxLifetime = maxLifetime\n\n\tcfg = strings.TrimSpace(cfg)\n\tvar err error\n\n\tif strings.HasPrefix(cfg, \"{\") {\n\t\terr = json.Unmarshal([]byte(cfg), p)\n\t} else {\n\t\terr = p.initOldStyle(cfg)\n\t}\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn p.connectInit()\n}",
+    "funcname": "SessionInit"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/visitor.go",
+    "lineno": 168,
+    "focalfunc": "func NewVisitorConfFromIni(prefix string, name string, section *ini.Section) (VisitorConf, error)",
+    "funcbody": "func NewVisitorConfFromIni(prefix string, name string, section *ini.Section) (VisitorConf, error) {\n\n\tvisitorType := VisitorType(section.Key(\"type\").String())\n\n\tif visitorType == \"\" {\n\t\treturn nil, fmt.Errorf(\"type shouldn't be empty\")\n\t}\n\n\tconf := DefaultVisitorConf(visitorType)\n\tif conf == nil {\n\t\treturn nil, fmt.Errorf(\"type [%s] error\", visitorType)\n\t}\n\n\tif err := conf.UnmarshalFromIni(prefix, name, section); err != nil {\n\t\treturn nil, fmt.Errorf(\"type [%s] error\", visitorType)\n\t}\n\treturn conf, nil\n}",
+    "funcname": "NewVisitorConfFromIni"
+}

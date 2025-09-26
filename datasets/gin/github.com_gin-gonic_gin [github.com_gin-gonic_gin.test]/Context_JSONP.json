@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1015,
+    "focalfunc": "func (c *Context) JSONP(code int, obj any)",
+    "funcbody": "func (c *Context) JSONP(code int, obj any) {\n\tcallback := c.DefaultQuery(\"callback\", \"\")\n\tif callback == \"\" {\n\t\tc.Render(code, render.JSON{Data: obj})\n\t\treturn\n\t}\n\tc.Render(code, render.JsonpJSON{Callback: callback, Data: obj})\n}",
+    "funcname": "JSONP"
+}

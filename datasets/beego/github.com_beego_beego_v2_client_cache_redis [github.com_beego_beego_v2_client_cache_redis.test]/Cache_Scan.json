@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 180,
+    "focalfunc": "func (rc *Cache) Scan(pattern string) (keys []string, err error)",
+    "funcbody": "func (rc *Cache) Scan(pattern string) (keys []string, err error) {\n\tc := rc.p.Get()\n\tdefer func() {\n\t\t_ = c.Close()\n\t}()\n\tvar (\n\t\tcursor\tuint64\t= 0\t// start\n\t\tresult\t[]interface{}\n\t\tlist\t[]string\n\t)\n\tfor {\n\t\tresult, err = redis.Values(c.Do(\"SCAN\", cursor, \"MATCH\", pattern, \"COUNT\", 1024))\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tlist, err = redis.Strings(result[1], nil)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tkeys = append(keys, list...)\n\t\tcursor, err = redis.Uint64(result[0], nil)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tif cursor == 0 {\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "Scan"
+}

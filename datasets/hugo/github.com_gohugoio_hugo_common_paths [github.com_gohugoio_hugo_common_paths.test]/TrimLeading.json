@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 402,
+    "focalfunc": "func TrimLeading(s string) string",
+    "funcbody": "func TrimLeading(s string) string {\n\treturn strings.TrimPrefix(s, \"/\")\n}",
+    "funcname": "TrimLeading"
+}

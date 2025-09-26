@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 157,
+    "focalfunc": "func (c *compressionWriter) ContentEncoding() string",
+    "funcbody": "func (c *compressionWriter) ContentEncoding() string {\n\treturn c.alg\n}",
+    "funcname": "ContentEncoding"
+}

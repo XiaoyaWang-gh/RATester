@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 434,
+    "focalfunc": "func (ctl *Control) handleNatHoleVisitor(m msg.Message)",
+    "funcbody": "func (ctl *Control) handleNatHoleVisitor(m msg.Message) {\n\tinMsg := m.(*msg.NatHoleVisitor)\n\tctl.rc.NatHoleController.HandleVisitor(inMsg, ctl.msgTransporter, ctl.loginMsg.User)\n}",
+    "funcname": "handleNatHoleVisitor"
+}

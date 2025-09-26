@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 144,
+    "focalfunc": "func (d *DoNothingQuerySetter) Update(values orm.Params) (int64, error)",
+    "funcbody": "func (d *DoNothingQuerySetter) Update(values orm.Params) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "Update"
+}

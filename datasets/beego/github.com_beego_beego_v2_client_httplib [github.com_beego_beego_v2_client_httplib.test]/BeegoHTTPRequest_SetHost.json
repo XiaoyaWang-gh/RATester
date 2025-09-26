@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 192,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetHost(host string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetHost(host string) *BeegoHTTPRequest {\n\tb.req.Host = host\n\treturn b\n}",
+    "funcname": "SetHost"
+}

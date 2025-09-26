@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/page/init.go",
+    "lineno": 30,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\tname,\n\t\t\tContext: func(ctx context.Context, args ...interface{}) (interface{}, error) {\n\t\t\t\tv := tpl.Context.Page.Get(ctx)\n\t\t\t\tif v == nil {\n\n\t\t\t\t\treturn nil, nil\n\t\t\t\t}\n\n\t\t\t\treturn v.(page.Page), nil\n\t\t\t},\n\t\t}\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

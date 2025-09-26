@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 191,
+    "focalfunc": "func (t *Tree) unexpected(token item, context string)",
+    "funcbody": "func (t *Tree) unexpected(token item, context string) {\n\tif token.typ == itemError {\n\t\textra := \"\"\n\t\tif t.actionLine != 0 && t.actionLine != token.line {\n\t\t\textra = fmt.Sprintf(\" in action started at %s:%d\", t.ParseName, t.actionLine)\n\t\t\tif strings.HasSuffix(token.val, \" action\") {\n\t\t\t\textra = extra[len(\" in action\"):]\n\t\t\t}\n\t\t}\n\t\tt.errorf(\"%s%s\", token, extra)\n\t}\n\tt.errorf(\"unexpected %s in %s\", token, context)\n}",
+    "funcname": "unexpected"
+}

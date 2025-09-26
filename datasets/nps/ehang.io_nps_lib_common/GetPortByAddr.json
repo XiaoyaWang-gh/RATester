@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 266,
+    "focalfunc": "func GetPortByAddr(addr string) int",
+    "funcbody": "func GetPortByAddr(addr string) int {\n\tarr := strings.Split(addr, \":\")\n\tif len(arr) < 2 {\n\t\treturn 0\n\t}\n\tp, err := strconv.Atoi(arr[1])\n\tif err != nil {\n\t\treturn 0\n\t}\n\treturn p\n}",
+    "funcname": "GetPortByAddr"
+}

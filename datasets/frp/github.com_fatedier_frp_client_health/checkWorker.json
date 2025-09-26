@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 105,
+    "focalfunc": "func (monitor *Monitor) checkWorker()",
+    "funcbody": "func (monitor *Monitor) checkWorker() {\n\txl := xlog.FromContextSafe(monitor.ctx)\n\tfor {\n\t\tdoCtx, cancel := context.WithDeadline(monitor.ctx, time.Now().Add(monitor.timeout))\n\t\terr := monitor.doCheck(doCtx)\n\n\t\tselect {\n\t\tcase <-monitor.ctx.Done():\n\t\t\tcancel()\n\t\t\treturn\n\t\tdefault:\n\t\t\tcancel()\n\t\t}\n\n\t\tif err == nil {\n\t\t\txl.Tracef(\"do one health check success\")\n\t\t\tif !monitor.statusOK && monitor.statusNormalFn != nil {\n\t\t\t\txl.Infof(\"health check status change to success\")\n\t\t\t\tmonitor.statusOK = true\n\t\t\t\tmonitor.statusNormalFn()\n\t\t\t}\n\t\t} else {\n\t\t\txl.Warnf(\"do one health check failed: %v\", err)\n\t\t\tmonitor.failedTimes++\n\t\t\tif monitor.statusOK && int(monitor.failedTimes) >= monitor.maxFailedTimes && monitor.statusFailedFn != nil {\n\t\t\t\txl.Warnf(\"health check status change to failed\")\n\t\t\t\tmonitor.statusOK = false\n\t\t\t\tmonitor.statusFailedFn()\n\t\t\t}\n\t\t}\n\n\t\ttime.Sleep(monitor.interval)\n\t}\n}",
+    "funcname": "checkWorker"
+}

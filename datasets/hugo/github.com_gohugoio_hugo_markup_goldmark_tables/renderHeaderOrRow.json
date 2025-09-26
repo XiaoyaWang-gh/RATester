@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/tables/tables.go",
+    "lineno": 146,
+    "focalfunc": "func (r *htmlRenderer) renderHeaderOrRow(w util.BufWriter, source []byte, n ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *htmlRenderer) renderHeaderOrRow(w util.BufWriter, source []byte, n ast.Node, entering bool) (ast.WalkStatus, error) {\n\tctx := w.(*render.Context)\n\ttable := r.peekTable(ctx)\n\tif entering {\n\t\tif n.Kind() == gast.KindTableHeader {\n\t\t\ttable.THead = append(table.THead, hooks.TableRow{})\n\t\t} else {\n\t\t\ttable.TBody = append(table.TBody, hooks.TableRow{})\n\t\t}\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\treturn ast.WalkContinue, nil\n}",
+    "funcname": "renderHeaderOrRow"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 443,
+    "focalfunc": "func getPagePathBuilder(d TargetPathDescriptor) *pagePathBuilder",
+    "funcbody": "func getPagePathBuilder(d TargetPathDescriptor) *pagePathBuilder {\n\tb := pagePathBuilderPool.Get().(*pagePathBuilder)\n\tb.d = d\n\treturn b\n}",
+    "funcname": "getPagePathBuilder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_manager.go",
+    "lineno": 60,
+    "focalfunc": "func (pm *Manager) StartProxy(name string, remoteAddr string, serverRespErr string) error",
+    "funcbody": "func (pm *Manager) StartProxy(name string, remoteAddr string, serverRespErr string) error {\n\tpm.mu.RLock()\n\tpxy, ok := pm.proxies[name]\n\tpm.mu.RUnlock()\n\tif !ok {\n\t\treturn fmt.Errorf(\"proxy [%s] not found\", name)\n\t}\n\n\terr := pxy.SetRunningStatus(remoteAddr, serverRespErr)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "StartProxy"
+}

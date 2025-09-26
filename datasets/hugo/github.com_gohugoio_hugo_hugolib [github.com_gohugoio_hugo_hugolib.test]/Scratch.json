@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 129,
+    "focalfunc": "func (scp *ShortcodeWithPage) Scratch() *maps.Scratch",
+    "funcbody": "func (scp *ShortcodeWithPage) Scratch() *maps.Scratch {\n\tif scp.scratch == nil {\n\t\tscp.scratch = maps.NewScratch()\n\t}\n\treturn scp.scratch\n}",
+    "funcname": "Scratch"
+}

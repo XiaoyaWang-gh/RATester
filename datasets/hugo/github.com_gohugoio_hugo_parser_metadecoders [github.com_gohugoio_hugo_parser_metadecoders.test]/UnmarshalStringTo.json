@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 94,
+    "focalfunc": "func (d Decoder) UnmarshalStringTo(data string, typ any) (any, error)",
+    "funcbody": "func (d Decoder) UnmarshalStringTo(data string, typ any) (any, error) {\n\tdata = strings.TrimSpace(data)\n\n\tswitch typ.(type) {\n\tcase string:\n\t\treturn data, nil\n\tcase map[string]any, maps.Params:\n\t\tformat := d.FormatFromContentString(data)\n\t\treturn d.UnmarshalToMap([]byte(data), format)\n\tcase []any:\n\n\t\treturn d.Unmarshal([]byte(data), YAML)\n\tcase bool:\n\t\treturn cast.ToBoolE(data)\n\tcase int:\n\t\treturn cast.ToIntE(data)\n\tcase int64:\n\t\treturn cast.ToInt64E(data)\n\tcase float64:\n\t\treturn cast.ToFloat64E(data)\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"unmarshal: %T not supported\", typ)\n\t}\n}",
+    "funcname": "UnmarshalStringTo"
+}

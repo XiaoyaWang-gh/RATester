@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/e2e.go",
+    "lineno": 55,
+    "focalfunc": "func setupSuite()",
+    "funcbody": "func setupSuite() {\n\n}",
+    "funcname": "setupSuite"
+}

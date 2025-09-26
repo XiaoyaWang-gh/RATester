@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/forward.go",
+    "lineno": 336,
+    "focalfunc": "func filterForwardRequestHeaders(forwardRequestHeaders http.Header, allowedHeaders []string) http.Header",
+    "funcbody": "func filterForwardRequestHeaders(forwardRequestHeaders http.Header, allowedHeaders []string) http.Header {\n\tif len(allowedHeaders) == 0 {\n\t\treturn forwardRequestHeaders\n\t}\n\n\tfilteredHeaders := http.Header{}\n\tfor _, headerName := range allowedHeaders {\n\t\tvalues := forwardRequestHeaders.Values(headerName)\n\t\tif len(values) > 0 {\n\t\t\tfilteredHeaders[http.CanonicalHeaderKey(headerName)] = append([]string(nil), values...)\n\t\t}\n\t}\n\n\treturn filteredHeaders\n}",
+    "funcname": "filterForwardRequestHeaders"
+}

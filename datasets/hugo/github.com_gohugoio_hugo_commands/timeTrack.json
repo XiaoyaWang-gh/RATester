@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 587,
+    "focalfunc": "func (r *rootCommand) timeTrack(start time.Time, name string)",
+    "funcbody": "func (r *rootCommand) timeTrack(start time.Time, name string) {\n\telapsed := time.Since(start)\n\tr.Printf(\"%s in %v ms\\n\", name, int(1000*elapsed.Seconds()))\n}",
+    "funcname": "timeTrack"
+}

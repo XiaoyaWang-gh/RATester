@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 337,
+    "focalfunc": "func (e *FloatField) String() string",
+    "funcbody": "func (e *FloatField) String() string {\n\treturn utils.ToStr(e.Value(), -1, 32)\n}",
+    "funcname": "String"
+}

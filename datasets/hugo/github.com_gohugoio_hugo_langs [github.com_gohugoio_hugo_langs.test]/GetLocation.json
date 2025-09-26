@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 166,
+    "focalfunc": "func GetLocation(l *Language) *time.Location",
+    "funcbody": "func GetLocation(l *Language) *time.Location {\n\treturn l.location\n}",
+    "funcname": "GetLocation"
+}

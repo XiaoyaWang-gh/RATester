@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 106,
+    "focalfunc": "func (i Item) IsText() bool",
+    "funcbody": "func (i Item) IsText() bool {\n\treturn i.Type == tText || i.Type == tIndentation\n}",
+    "funcname": "IsText"
+}

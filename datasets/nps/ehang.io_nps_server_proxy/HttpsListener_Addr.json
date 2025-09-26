@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 156,
+    "focalfunc": "func (httpsListener *HttpsListener) Addr() net.Addr",
+    "funcbody": "func (httpsListener *HttpsListener) Addr() net.Addr {\n\treturn httpsListener.parentListener.Addr()\n}",
+    "funcname": "Addr"
+}

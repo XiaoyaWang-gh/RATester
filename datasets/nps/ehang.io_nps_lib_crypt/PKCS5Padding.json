@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/crypt.go",
+    "lineno": 43,
+    "focalfunc": "func PKCS5Padding(ciphertext []byte, blockSize int) []byte",
+    "funcbody": "func PKCS5Padding(ciphertext []byte, blockSize int) []byte {\n\tpadding := blockSize - len(ciphertext)%blockSize\n\tpadtext := bytes.Repeat([]byte{byte(padding)}, padding)\n\treturn append(ciphertext, padtext...)\n}",
+    "funcname": "PKCS5Padding"
+}

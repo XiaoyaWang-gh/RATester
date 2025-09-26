@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 132,
+    "focalfunc": "func SetOutput(w io.Writer)",
+    "funcbody": "func SetOutput(w io.Writer) {\n\tlogger.SetOutput(w)\n}",
+    "funcname": "SetOutput"
+}

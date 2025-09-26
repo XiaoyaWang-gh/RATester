@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 533,
+    "focalfunc": "func (n NoMatch) IsSatisfied(obj interface{}) bool",
+    "funcbody": "func (n NoMatch) IsSatisfied(obj interface{}) bool {\n\treturn !n.Match.IsSatisfied(obj)\n}",
+    "funcname": "IsSatisfied"
+}

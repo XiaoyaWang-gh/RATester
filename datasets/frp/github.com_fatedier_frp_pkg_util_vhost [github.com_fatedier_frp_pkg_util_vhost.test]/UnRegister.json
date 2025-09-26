@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 156,
+    "focalfunc": "func (rp *HTTPReverseProxy) UnRegister(routeCfg RouteConfig)",
+    "funcbody": "func (rp *HTTPReverseProxy) UnRegister(routeCfg RouteConfig) {\n\trp.vhostRouter.Del(routeCfg.Domain, routeCfg.Location, routeCfg.RouteByHTTPUser)\n}",
+    "funcname": "UnRegister"
+}

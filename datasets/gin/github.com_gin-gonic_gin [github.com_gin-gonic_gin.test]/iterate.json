@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 374,
+    "focalfunc": "func iterate(path, method string, routes RoutesInfo, root *node) RoutesInfo",
+    "funcbody": "func iterate(path, method string, routes RoutesInfo, root *node) RoutesInfo {\n\tpath += root.path\n\tif len(root.handlers) > 0 {\n\t\thandlerFunc := root.handlers.Last()\n\t\troutes = append(routes, RouteInfo{\n\t\t\tMethod:\t\tmethod,\n\t\t\tPath:\t\tpath,\n\t\t\tHandler:\tnameOfFunction(handlerFunc),\n\t\t\tHandlerFunc:\thandlerFunc,\n\t\t})\n\t}\n\tfor _, child := range root.children {\n\t\troutes = iterate(path, method, routes, child)\n\t}\n\treturn routes\n}",
+    "funcname": "iterate"
+}

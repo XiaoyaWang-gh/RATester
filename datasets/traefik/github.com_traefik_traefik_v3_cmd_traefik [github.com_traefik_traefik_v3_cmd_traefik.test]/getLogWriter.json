@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/logger.go",
+    "lineno": 48,
+    "focalfunc": "func getLogWriter(staticConfiguration *static.Configuration) io.Writer",
+    "funcbody": "func getLogWriter(staticConfiguration *static.Configuration) io.Writer {\n\tvar w io.Writer = os.Stdout\n\n\tif staticConfiguration.Log != nil && len(staticConfiguration.Log.FilePath) > 0 {\n\t\t_, _ = os.OpenFile(staticConfiguration.Log.FilePath, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0o666)\n\t\tw = &lumberjack.Logger{\n\t\t\tFilename:\tstaticConfiguration.Log.FilePath,\n\t\t\tMaxSize:\tstaticConfiguration.Log.MaxSize,\n\t\t\tMaxBackups:\tstaticConfiguration.Log.MaxBackups,\n\t\t\tMaxAge:\t\tstaticConfiguration.Log.MaxAge,\n\t\t\tCompress:\ttrue,\n\t\t}\n\t}\n\n\tif staticConfiguration.Log == nil || staticConfiguration.Log.Format != \"json\" {\n\t\tw = zerolog.ConsoleWriter{\n\t\t\tOut:\t\tw,\n\t\t\tTimeFormat:\ttime.RFC3339,\n\t\t\tNoColor:\tstaticConfiguration.Log != nil && (staticConfiguration.Log.NoColor || len(staticConfiguration.Log.FilePath) > 0),\n\t\t}\n\t}\n\n\treturn w\n}",
+    "funcname": "getLogWriter"
+}

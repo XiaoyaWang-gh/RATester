@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock.go",
+    "lineno": 51,
+    "focalfunc": "func mockFromCtx(ctx context.Context) []*Mock",
+    "funcbody": "func mockFromCtx(ctx context.Context) []*Mock {\n\tms := ctx.Value(mockCtxKey)\n\tif ms != nil {\n\t\tif res, ok := ms.([]*Mock); ok {\n\t\t\treturn res\n\t\t}\n\t\tlogs.Error(\"mockCtxKey found in context, but value is not type []*Mock\")\n\t}\n\treturn nil\n}",
+    "funcname": "mockFromCtx"
+}

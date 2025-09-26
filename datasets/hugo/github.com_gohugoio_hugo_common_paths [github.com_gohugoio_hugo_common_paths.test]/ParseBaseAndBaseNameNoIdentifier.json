@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 59,
+    "focalfunc": "func (pp *PathParser) ParseBaseAndBaseNameNoIdentifier(c, s string) (string, string)",
+    "funcbody": "func (pp *PathParser) ParseBaseAndBaseNameNoIdentifier(c, s string) (string, string) {\n\tp := pp.parsePooled(c, s)\n\tdefer putPath(p)\n\treturn p.Base(), p.BaseNameNoIdentifier()\n}",
+    "funcname": "ParseBaseAndBaseNameNoIdentifier"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 53,
+    "focalfunc": "func (h *indexedHeap) pushInternal(entry heapEntry)",
+    "funcbody": "func (h *indexedHeap) pushInternal(entry heapEntry) {\n\th.indices[entry.idx] = len(h.entries)\n\th.entries = append(h.entries, entry)\n}",
+    "funcname": "pushInternal"
+}

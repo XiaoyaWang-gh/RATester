@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 223,
+    "focalfunc": "func bufferPool() sync.Pool",
+    "funcbody": "func bufferPool() sync.Pool {\n\treturn sync.Pool{\n\t\tNew: func() interface{} {\n\t\t\tb := &bytes.Buffer{}\n\t\t\treturn b\n\t\t},\n\t}\n}",
+    "funcname": "bufferPool"
+}

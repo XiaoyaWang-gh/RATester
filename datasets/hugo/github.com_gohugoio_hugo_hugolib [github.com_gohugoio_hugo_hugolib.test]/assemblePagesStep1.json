@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 1797,
+    "focalfunc": "func (sa *sitePagesAssembler) assemblePagesStep1(ctx context.Context) error",
+    "funcbody": "func (sa *sitePagesAssembler) assemblePagesStep1(ctx context.Context) error {\n\tif err := sa.addMissingTaxonomies(); err != nil {\n\t\treturn err\n\t}\n\tif err := sa.addMissingRootSections(); err != nil {\n\t\treturn err\n\t}\n\tif err := sa.addStandalonePages(); err != nil {\n\t\treturn err\n\t}\n\tif err := sa.applyAggregates(); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "assemblePagesStep1"
+}

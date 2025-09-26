@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 307,
+    "focalfunc": "func MustInternalLink(t testing.TB, withCgo bool)",
+    "funcbody": "func MustInternalLink(t testing.TB, withCgo bool) {\n\tif !CanInternalLink(withCgo) {\n\t\tif withCgo && CanInternalLink(false) {\n\t\t\tt.Skipf(\"skipping test: internal linking on %s/%s is not supported with cgo\", runtime.GOOS, runtime.GOARCH)\n\t\t}\n\t\tt.Skipf(\"skipping test: internal linking on %s/%s is not supported\", runtime.GOOS, runtime.GOARCH)\n\t}\n}",
+    "funcname": "MustInternalLink"
+}

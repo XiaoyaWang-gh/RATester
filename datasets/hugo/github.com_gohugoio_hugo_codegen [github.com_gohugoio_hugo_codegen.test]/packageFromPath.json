@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 245,
+    "focalfunc": "func (c *Inspector) packageFromPath(p string) string",
+    "funcbody": "func (c *Inspector) packageFromPath(p string) string {\n\tp = filepath.ToSlash(p)\n\tbase := path.Base(p)\n\tif !strings.Contains(base, \".\") {\n\t\treturn base\n\t}\n\treturn path.Base(strings.TrimSuffix(p, base))\n}",
+    "funcname": "packageFromPath"
+}

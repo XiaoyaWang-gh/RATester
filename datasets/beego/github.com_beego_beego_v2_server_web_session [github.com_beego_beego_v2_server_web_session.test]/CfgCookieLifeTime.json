@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 83,
+    "focalfunc": "func CfgCookieLifeTime(lifeTime int) ManagerConfigOpt",
+    "funcbody": "func CfgCookieLifeTime(lifeTime int) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.CookieLifeTime = lifeTime\n\t}\n}",
+    "funcname": "CfgCookieLifeTime"
+}

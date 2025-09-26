@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 248,
+    "focalfunc": "func (p *pageMeta) Section() string",
+    "funcbody": "func (p *pageMeta) Section() string {\n\treturn p.pathInfo.Section()\n}",
+    "funcname": "Section"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 632,
+    "focalfunc": "func (p *pageState) pathOrTitle() string",
+    "funcbody": "func (p *pageState) pathOrTitle() string {\n\tif p.File() != nil {\n\t\treturn p.File().Filename()\n\t}\n\n\tif p.Path() != \"\" {\n\t\treturn p.Path()\n\t}\n\n\treturn p.Title()\n}",
+    "funcname": "pathOrTitle"
+}

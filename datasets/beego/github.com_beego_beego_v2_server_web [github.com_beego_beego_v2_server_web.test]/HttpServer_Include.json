@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 461,
+    "focalfunc": "func (app *HttpServer) Include(cList ...ControllerInterface) *HttpServer",
+    "funcbody": "func (app *HttpServer) Include(cList ...ControllerInterface) *HttpServer {\n\tapp.Handlers.Include(cList...)\n\treturn app\n}",
+    "funcname": "Include"
+}

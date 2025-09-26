@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 72,
+    "focalfunc": "func newPageLexer(input []byte, stateStart stateFunc, cfg Config) *pageLexer",
+    "funcbody": "func newPageLexer(input []byte, stateStart stateFunc, cfg Config) *pageLexer {\n\tlexer := &pageLexer{\n\t\tinput:\t\tinput,\n\t\tstateStart:\tstateStart,\n\t\tsummaryDivider:\tsummaryDivider,\n\t\tcfg:\t\tcfg,\n\t\tlexerShortcodeState: lexerShortcodeState{\n\t\t\tcurrLeftDelimItem:\ttLeftDelimScNoMarkup,\n\t\t\tcurrRightDelimItem:\ttRightDelimScNoMarkup,\n\t\t\topenShortcodes:\t\tmake(map[string]bool),\n\t\t},\n\t\titems:\tmake([]Item, 0, 5),\n\t}\n\n\tlexer.sectionHandlers = createSectionHandlers(lexer)\n\n\treturn lexer\n}",
+    "funcname": "newPageLexer"
+}

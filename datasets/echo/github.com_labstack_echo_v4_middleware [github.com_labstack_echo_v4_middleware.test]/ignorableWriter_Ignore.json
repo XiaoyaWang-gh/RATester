@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/timeout.go",
+    "lineno": 199,
+    "focalfunc": "func (w *ignorableWriter) Ignore(ignore bool)",
+    "funcbody": "func (w *ignorableWriter) Ignore(ignore bool) {\n\tw.lock.Lock()\n\tw.ignoreWrites = ignore\n\tw.lock.Unlock()\n}",
+    "funcname": "Ignore"
+}

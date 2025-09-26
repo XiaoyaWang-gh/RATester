@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 199,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tcache.Register(\"ssdb\", NewSsdbCache)\n}",
+    "funcname": "init"
+}

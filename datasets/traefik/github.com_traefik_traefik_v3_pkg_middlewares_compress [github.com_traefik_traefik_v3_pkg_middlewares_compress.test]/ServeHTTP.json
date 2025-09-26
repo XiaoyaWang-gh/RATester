@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 92,
+    "focalfunc": "func (c *CompressionHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (c *CompressionHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {\n\trw.Header().Add(vary, acceptEncoding)\n\n\tcompressionWriter, err := newCompressionWriter(c.cfg.Algorithm, rw)\n\tif err != nil {\n\t\tlogger := middlewares.GetLogger(r.Context(), c.cfg.MiddlewareName, typeName)\n\t\tlogger.Debug().Msgf(\"Create compression handler: %v\", err)\n\t\tobservability.SetStatusErrorf(r.Context(), \"Create compression handler: %v\", err)\n\t\trw.WriteHeader(http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tresponseWriter := &responseWriter{\n\t\trw:\t\t\trw,\n\t\tcompressionWriter:\tcompressionWriter,\n\t\tminSize:\t\tc.cfg.MinSize,\n\t\tstatusCode:\t\thttp.StatusOK,\n\t\texcludedContentTypes:\tc.excludedContentTypes,\n\t\tincludedContentTypes:\tc.includedContentTypes,\n\t}\n\tdefer responseWriter.close()\n\n\tc.next.ServeHTTP(responseWriter, r)\n}",
+    "funcname": "ServeHTTP"
+}

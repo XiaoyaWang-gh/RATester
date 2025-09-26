@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 315,
+    "focalfunc": "func (r *Request) DelPathParams(key ...string) *Request",
+    "funcbody": "func (r *Request) DelPathParams(key ...string) *Request {\n\tr.path.DelParams(key...)\n\treturn r\n}",
+    "funcname": "DelPathParams"
+}

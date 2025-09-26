@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 925,
+    "focalfunc": "func (hr hookRendererTemplate) RenderPassthrough(cctx context.Context, w io.Writer, ctx hooks.PassthroughContext) error",
+    "funcbody": "func (hr hookRendererTemplate) RenderPassthrough(cctx context.Context, w io.Writer, ctx hooks.PassthroughContext) error {\n\treturn hr.templateHandler.ExecuteWithContext(cctx, hr.templ, w, ctx)\n}",
+    "funcname": "RenderPassthrough"
+}

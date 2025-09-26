@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 397,
+    "focalfunc": "func (m *nopManager) forEeachIdentity(func(id Identity) bool) bool",
+    "funcbody": "func (m *nopManager) forEeachIdentity(func(id Identity) bool) bool {\n\treturn false\n}",
+    "funcname": "forEeachIdentity"
+}

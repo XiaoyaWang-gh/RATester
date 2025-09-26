@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 73,
+    "focalfunc": "func NewClient(cfg ClientConfig) *Client",
+    "funcbody": "func NewClient(cfg ClientConfig) *Client {\n\tfs := cfg.Fs\n\tn := filepath.Join(cfg.WorkingDir, goModFilename)\n\tgoModEnabled, _ := afero.Exists(fs, n)\n\tvar goModFilename string\n\tif goModEnabled {\n\t\tgoModFilename = n\n\t}\n\n\tvar env []string\n\tmcfg := cfg.ModuleConfig\n\n\tconfig.SetEnvVars(&env,\n\t\t\"PWD\", cfg.WorkingDir,\n\t\t\"GO111MODULE\", \"on\",\n\t\t\"GOPROXY\", mcfg.Proxy,\n\t\t\"GOPRIVATE\", mcfg.Private,\n\t\t\"GONOPROXY\", mcfg.NoProxy,\n\t\t\"GOPATH\", cfg.CacheDir,\n\t\t\"GOWORK\", mcfg.Workspace,\n\n\t\t\"GOCACHE\", filepath.Join(cfg.CacheDir, \"pkg\", \"mod\"),\n\t)\n\n\tlogger := cfg.Logger\n\tif logger == nil {\n\t\tlogger = loggers.NewDefault()\n\t}\n\n\tvar noVendor glob.Glob\n\tif cfg.ModuleConfig.NoVendor != \"\" {\n\t\tnoVendor, _ = hglob.GetGlob(hglob.NormalizePath(cfg.ModuleConfig.NoVendor))\n\t}\n\n\treturn &Client{\n\t\tfs:\t\t\tfs,\n\t\tccfg:\t\t\tcfg,\n\t\tlogger:\t\t\tlogger,\n\t\tnoVendor:\t\tnoVendor,\n\t\tmoduleConfig:\t\tmcfg,\n\t\tenviron:\t\tenv,\n\t\tGoModulesFilename:\tgoModFilename,\n\t}\n}",
+    "funcname": "NewClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd_utils.go",
+    "lineno": 135,
+    "focalfunc": "func getColumnDefault(fi *models.FieldInfo) string",
+    "funcbody": "func getColumnDefault(fi *models.FieldInfo) string {\n\tvar v, t, d string\n\n\tif fi.Rel || fi.Reverse {\n\t\treturn v\n\t}\n\n\tt = \" DEFAULT '%s' \"\n\n\tswitch fi.FieldType {\n\tcase TypeTimeField, TypeDateField, TypeDateTimeField, TypeTextField:\n\t\treturn v\n\n\tcase TypeBitField, TypeSmallIntegerField, TypeIntegerField,\n\t\tTypeBigIntegerField, TypePositiveBitField, TypePositiveSmallIntegerField,\n\t\tTypePositiveIntegerField, TypePositiveBigIntegerField, TypeFloatField,\n\t\tTypeDecimalField:\n\t\tt = \" DEFAULT %s \"\n\t\td = \"0\"\n\tcase TypeBooleanField:\n\t\tt = \" DEFAULT %s \"\n\t\td = \"FALSE\"\n\tcase TypeJSONField, TypeJsonbField:\n\t\td = \"{}\"\n\t}\n\n\tif fi.ColDefault {\n\t\tif !fi.Initial.Exist() {\n\t\t\tv = fmt.Sprintf(t, \"\")\n\t\t} else {\n\t\t\tv = fmt.Sprintf(t, fi.Initial.String())\n\t\t}\n\t} else {\n\t\tif !fi.Null {\n\t\t\tv = fmt.Sprintf(t, d)\n\t\t}\n\t}\n\n\treturn v\n}",
+    "funcname": "getColumnDefault"
+}

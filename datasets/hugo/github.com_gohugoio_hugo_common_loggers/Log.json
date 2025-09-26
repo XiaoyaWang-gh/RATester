@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/loggerglobal.go",
+    "lineno": 43,
+    "focalfunc": "func Log() Logger",
+    "funcbody": "func Log() Logger {\n\tlogMu.Lock()\n\tdefer logMu.Unlock()\n\treturn log\n}",
+    "funcname": "Log"
+}

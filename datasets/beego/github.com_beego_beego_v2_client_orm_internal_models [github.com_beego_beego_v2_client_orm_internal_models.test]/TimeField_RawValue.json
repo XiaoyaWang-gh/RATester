@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 207,
+    "focalfunc": "func (e *TimeField) RawValue() interface{}",
+    "funcbody": "func (e *TimeField) RawValue() interface{} {\n\treturn e.Value()\n}",
+    "funcname": "RawValue"
+}

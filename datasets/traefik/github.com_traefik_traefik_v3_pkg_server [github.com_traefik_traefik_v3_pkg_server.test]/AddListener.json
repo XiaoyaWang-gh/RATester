@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/configurationwatcher.go",
+    "lineno": 65,
+    "focalfunc": "func (c *ConfigurationWatcher) AddListener(listener func(dynamic.Configuration))",
+    "funcbody": "func (c *ConfigurationWatcher) AddListener(listener func(dynamic.Configuration)) {\n\tif c.configurationListeners == nil {\n\t\tc.configurationListeners = make([]func(dynamic.Configuration), 0)\n\t}\n\tc.configurationListeners = append(c.configurationListeners, listener)\n}",
+    "funcname": "AddListener"
+}

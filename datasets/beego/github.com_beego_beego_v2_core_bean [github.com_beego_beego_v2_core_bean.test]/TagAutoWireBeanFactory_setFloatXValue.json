@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/tag_auto_wire_bean_factory.go",
+    "lineno": 180,
+    "focalfunc": "func (t *TagAutoWireBeanFactory) setFloatXValue(dftValue string, bitSize int, fn string, fv reflect.Value) error",
+    "funcbody": "func (t *TagAutoWireBeanFactory) setFloatXValue(dftValue string, bitSize int, fn string, fv reflect.Value) error {\n\tif v, err := strconv.ParseFloat(dftValue, bitSize); err != nil {\n\t\treturn fmt.Errorf(\"can not convert the field[%s]'s default value[%s] to float%d value: %w\",\n\t\t\tfn, dftValue, bitSize, err)\n\t} else {\n\t\tfv.SetFloat(v)\n\t\treturn nil\n\t}\n}",
+    "funcname": "setFloatXValue"
+}

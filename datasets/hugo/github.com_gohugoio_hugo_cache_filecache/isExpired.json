@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 390,
+    "focalfunc": "func (c *Cache) isExpired(modTime time.Time) bool",
+    "funcbody": "func (c *Cache) isExpired(modTime time.Time) bool {\n\tif c.maxAge < 0 {\n\t\treturn false\n\t}\n\n\treturn c.maxAge == 0 || time.Since(modTime) > c.maxAge\n}",
+    "funcname": "isExpired"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2077,
+    "focalfunc": "func (d *dbBase) GetTables(db dbQuerier) (map[string]bool, error)",
+    "funcbody": "func (d *dbBase) GetTables(db dbQuerier) (map[string]bool, error) {\n\ttables := make(map[string]bool)\n\tquery := d.ins.ShowTablesQuery()\n\trows, err := db.Query(query)\n\tif err != nil {\n\t\treturn tables, err\n\t}\n\n\tdefer rows.Close()\n\n\tfor rows.Next() {\n\t\tvar table string\n\t\terr := rows.Scan(&table)\n\t\tif err != nil {\n\t\t\treturn tables, err\n\t\t}\n\t\tif table != \"\" {\n\t\t\ttables[table] = true\n\t\t}\n\t}\n\n\treturn tables, rows.Err()\n}",
+    "funcname": "GetTables"
+}

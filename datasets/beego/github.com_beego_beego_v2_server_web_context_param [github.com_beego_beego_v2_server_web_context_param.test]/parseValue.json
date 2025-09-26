@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/conv.go",
+    "lineno": 53,
+    "focalfunc": "func parseValue(param *MethodParam, paramValue string, paramType reflect.Type) (result reflect.Value, err error)",
+    "funcbody": "func parseValue(param *MethodParam, paramValue string, paramType reflect.Type) (result reflect.Value, err error) {\n\tif paramValue == \"\" {\n\t\treturn reflect.Zero(paramType), nil\n\t}\n\tparser := getParser(param, paramType)\n\tvalue, err := parser.parse(paramValue, paramType)\n\tif err != nil {\n\t\treturn result, err\n\t}\n\n\treturn safeConvert(reflect.ValueOf(value), paramType)\n}",
+    "funcname": "parseValue"
+}

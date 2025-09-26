@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/util.go",
+    "lineno": 21,
+    "focalfunc": "func matchSubdomain(domain, pattern string) bool",
+    "funcbody": "func matchSubdomain(domain, pattern string) bool {\n\tif !matchScheme(domain, pattern) {\n\t\treturn false\n\t}\n\tdidx := strings.Index(domain, \"://\")\n\tpidx := strings.Index(pattern, \"://\")\n\tif didx == -1 || pidx == -1 {\n\t\treturn false\n\t}\n\tdomAuth := domain[didx+3:]\n\n\tif len(domAuth) > 253 {\n\t\treturn false\n\t}\n\tpatAuth := pattern[pidx+3:]\n\n\tdomComp := strings.Split(domAuth, \".\")\n\tpatComp := strings.Split(patAuth, \".\")\n\tfor i := len(domComp)/2 - 1; i >= 0; i-- {\n\t\topp := len(domComp) - 1 - i\n\t\tdomComp[i], domComp[opp] = domComp[opp], domComp[i]\n\t}\n\tfor i := len(patComp)/2 - 1; i >= 0; i-- {\n\t\topp := len(patComp) - 1 - i\n\t\tpatComp[i], patComp[opp] = patComp[opp], patComp[i]\n\t}\n\n\tfor i, v := range domComp {\n\t\tif len(patComp) <= i {\n\t\t\treturn false\n\t\t}\n\t\tp := patComp[i]\n\t\tif p == \"*\" {\n\t\t\treturn true\n\t\t}\n\t\tif p != v {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "matchSubdomain"
+}

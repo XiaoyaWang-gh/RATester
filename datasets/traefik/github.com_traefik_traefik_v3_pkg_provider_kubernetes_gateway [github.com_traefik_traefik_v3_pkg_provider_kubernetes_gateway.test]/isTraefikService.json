@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1126,
+    "focalfunc": "func isTraefikService(ref gatev1.BackendRef) bool",
+    "funcbody": "func isTraefikService(ref gatev1.BackendRef) bool {\n\tif ref.Kind == nil || ref.Group == nil {\n\t\treturn false\n\t}\n\n\treturn *ref.Group == traefikv1alpha1.GroupName && *ref.Kind == kindTraefikService\n}",
+    "funcname": "isTraefikService"
+}

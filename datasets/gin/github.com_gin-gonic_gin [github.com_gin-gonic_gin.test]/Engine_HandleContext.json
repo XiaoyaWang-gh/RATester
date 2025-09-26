@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 638,
+    "focalfunc": "func (engine *Engine) HandleContext(c *Context)",
+    "funcbody": "func (engine *Engine) HandleContext(c *Context) {\n\toldIndexValue := c.index\n\tc.reset()\n\tengine.handleHTTPRequest(c)\n\n\tc.index = oldIndexValue\n}",
+    "funcname": "HandleContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 50,
+    "focalfunc": "func (c Color) ColorGo() color.Color",
+    "funcbody": "func (c Color) ColorGo() color.Color {\n\treturn c.color\n}",
+    "funcname": "ColorGo"
+}

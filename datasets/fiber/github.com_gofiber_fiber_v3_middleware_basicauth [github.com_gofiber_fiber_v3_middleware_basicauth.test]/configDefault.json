@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/basicauth/config.go",
+    "lineno": 55,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Next == nil {\n\t\tcfg.Next = ConfigDefault.Next\n\t}\n\tif cfg.Users == nil {\n\t\tcfg.Users = ConfigDefault.Users\n\t}\n\tif cfg.Realm == \"\" {\n\t\tcfg.Realm = ConfigDefault.Realm\n\t}\n\tif cfg.Authorizer == nil {\n\t\tcfg.Authorizer = func(user, pass string) bool {\n\t\t\tuserPwd, exist := cfg.Users[user]\n\t\t\treturn exist && subtle.ConstantTimeCompare(utils.UnsafeBytes(userPwd), utils.UnsafeBytes(pass)) == 1\n\t\t}\n\t}\n\tif cfg.Unauthorized == nil {\n\t\tcfg.Unauthorized = func(c fiber.Ctx) error {\n\t\t\tc.Set(fiber.HeaderWWWAuthenticate, \"basic realm=\"+cfg.Realm)\n\t\t\treturn c.SendStatus(fiber.StatusUnauthorized)\n\t\t}\n\t}\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 346,
+    "focalfunc": "func (input *BeegoInput) Header(key string) string",
+    "funcbody": "func (input *BeegoInput) Header(key string) string {\n\treturn input.Context.Request.Header.Get(key)\n}",
+    "funcname": "Header"
+}

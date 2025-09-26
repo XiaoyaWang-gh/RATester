@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/beego.go",
+    "lineno": 50,
+    "focalfunc": "func Run(params ...string)",
+    "funcbody": "func Run(params ...string) {\n\tif len(params) > 0 && params[0] != \"\" {\n\t\tBeeApp.Run(params[0])\n\t} else {\n\t\tBeeApp.Run(\"\")\n\t}\n}",
+    "funcname": "Run"
+}

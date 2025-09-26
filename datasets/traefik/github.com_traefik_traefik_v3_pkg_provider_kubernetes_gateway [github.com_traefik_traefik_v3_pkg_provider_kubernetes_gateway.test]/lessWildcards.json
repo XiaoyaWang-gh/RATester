@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 991,
+    "focalfunc": "func lessWildcards(h1, h2 gatev1.Hostname) gatev1.Hostname",
+    "funcbody": "func lessWildcards(h1, h2 gatev1.Hostname) gatev1.Hostname {\n\tif strings.Count(string(h1), \"*\") > strings.Count(string(h2), \"*\") {\n\t\treturn h2\n\t}\n\n\treturn h1\n}",
+    "funcname": "lessWildcards"
+}

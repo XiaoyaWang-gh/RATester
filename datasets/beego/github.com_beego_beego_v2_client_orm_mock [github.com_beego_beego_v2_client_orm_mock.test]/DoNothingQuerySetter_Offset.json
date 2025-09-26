@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 100,
+    "focalfunc": "func (d *DoNothingQuerySetter) Offset(offset interface{}) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) Offset(offset interface{}) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "Offset"
+}

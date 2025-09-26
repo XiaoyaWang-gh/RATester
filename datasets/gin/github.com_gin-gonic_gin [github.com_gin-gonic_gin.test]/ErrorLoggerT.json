@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 179,
+    "focalfunc": "func ErrorLoggerT(typ ErrorType) HandlerFunc",
+    "funcbody": "func ErrorLoggerT(typ ErrorType) HandlerFunc {\n\treturn func(c *Context) {\n\t\tc.Next()\n\t\terrors := c.Errors.ByType(typ)\n\t\tif len(errors) > 0 {\n\t\t\tc.JSON(-1, errors)\n\t\t}\n\t}\n}",
+    "funcname": "ErrorLoggerT"
+}

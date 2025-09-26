@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 782,
+    "focalfunc": "func NewError(code int, message ...string) *Error",
+    "funcbody": "func NewError(code int, message ...string) *Error {\n\terr := &Error{\n\t\tCode:\t\tcode,\n\t\tMessage:\tutils.StatusMessage(code),\n\t}\n\tif len(message) > 0 {\n\t\terr.Message = message[0]\n\t}\n\treturn err\n}",
+    "funcname": "NewError"
+}

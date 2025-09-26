@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 151,
+    "focalfunc": "func (c *FakeUDPConn) SetWriteDeadline(_ time.Time) error",
+    "funcbody": "func (c *FakeUDPConn) SetWriteDeadline(_ time.Time) error {\n\treturn nil\n}",
+    "funcname": "SetWriteDeadline"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1010,
+    "focalfunc": "func (b *ValueBinder) float(sourceParam string, value string, dest interface{}, bitSize int) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) float(sourceParam string, value string, dest interface{}, bitSize int) *ValueBinder {\n\tn, err := strconv.ParseFloat(value, bitSize)\n\tif err != nil {\n\t\tb.setError(b.ErrorFunc(sourceParam, []string{value}, fmt.Sprintf(\"failed to bind field value to float%v\", bitSize), err))\n\t\treturn b\n\t}\n\n\tswitch d := dest.(type) {\n\tcase *float64:\n\t\t*d = n\n\tcase *float32:\n\t\t*d = float32(n)\n\t}\n\treturn b\n}",
+    "funcname": "float"
+}

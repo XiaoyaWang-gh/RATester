@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/smart_roundtripper.go",
+    "lineno": 62,
+    "focalfunc": "func (m *smartRoundTripper) RoundTrip(req *http.Request) (*http.Response, error)",
+    "funcbody": "func (m *smartRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) {\n\n\tif httpguts.HeaderValuesContainsToken(req.Header[\"Connection\"], \"Upgrade\") {\n\t\treturn m.http.RoundTrip(req)\n\t}\n\n\treturn m.http2.RoundTrip(req)\n}",
+    "funcname": "RoundTrip"
+}

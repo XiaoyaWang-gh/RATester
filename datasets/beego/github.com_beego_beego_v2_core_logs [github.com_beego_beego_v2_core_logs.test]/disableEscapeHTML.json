@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/access_log.go",
+    "lineno": 56,
+    "focalfunc": "func disableEscapeHTML(i interface{})",
+    "funcbody": "func disableEscapeHTML(i interface{}) {\n\tif e, ok := i.(interface {\n\t\tSetEscapeHTML(bool)\n\t}); ok {\n\t\te.SetEscapeHTML(false)\n\t}\n}",
+    "funcname": "disableEscapeHTML"
+}

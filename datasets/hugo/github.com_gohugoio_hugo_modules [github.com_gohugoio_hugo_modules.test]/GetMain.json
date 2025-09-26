@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 803,
+    "focalfunc": "func (modules goModules) GetMain() *goModule",
+    "funcbody": "func (modules goModules) GetMain() *goModule {\n\tfor _, m := range modules {\n\t\tif m.Main {\n\t\t\treturn m\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "GetMain"
+}

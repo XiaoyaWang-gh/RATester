@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 606,
+    "focalfunc": "func getTLSHTTP(ctx context.Context, ingressRoute *traefikv1alpha1.IngressRoute, k8sClient Client, tlsConfigs map[string]*tls.CertAndStores) error",
+    "funcbody": "func getTLSHTTP(ctx context.Context, ingressRoute *traefikv1alpha1.IngressRoute, k8sClient Client, tlsConfigs map[string]*tls.CertAndStores) error {\n\tif ingressRoute.Spec.TLS == nil {\n\t\treturn nil\n\t}\n\tif ingressRoute.Spec.TLS.SecretName == \"\" {\n\t\tlog.Ctx(ctx).Debug().Msg(\"No secret name provided\")\n\t\treturn nil\n\t}\n\n\tconfigKey := ingressRoute.Namespace + \"/\" + ingressRoute.Spec.TLS.SecretName\n\tif _, tlsExists := tlsConfigs[configKey]; !tlsExists {\n\t\ttlsConf, err := getTLS(k8sClient, ingressRoute.Spec.TLS.SecretName, ingressRoute.Namespace)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\ttlsConfigs[configKey] = tlsConf\n\t}\n\n\treturn nil\n}",
+    "funcname": "getTLSHTTP"
+}

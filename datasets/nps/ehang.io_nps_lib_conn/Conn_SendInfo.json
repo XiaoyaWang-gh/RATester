@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 231,
+    "focalfunc": "func (s *Conn) SendInfo(t interface{}, flag string) (int, error)",
+    "funcbody": "func (s *Conn) SendInfo(t interface{}, flag string) (int, error) {\n\n\traw := bytes.NewBuffer([]byte{})\n\tif flag != \"\" {\n\t\tbinary.Write(raw, binary.LittleEndian, []byte(flag))\n\t}\n\tb, err := json.Marshal(t)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tlenBytes, err := GetLenBytes(b)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tbinary.Write(raw, binary.LittleEndian, lenBytes)\n\treturn s.Write(raw.Bytes())\n}",
+    "funcname": "SendInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 488,
+    "focalfunc": "func (c *Context) GetQueryArray(key string) (values []string, ok bool)",
+    "funcbody": "func (c *Context) GetQueryArray(key string) (values []string, ok bool) {\n\tc.initQueryCache()\n\tvalues, ok = c.queryCache[key]\n\treturn\n}",
+    "funcname": "GetQueryArray"
+}

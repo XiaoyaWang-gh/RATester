@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 318,
+    "focalfunc": "func ParseStr(str string) (string, error)",
+    "funcbody": "func ParseStr(str string) (string, error) {\n\ttmp := template.New(\"npc\")\n\tvar err error\n\tw := new(bytes.Buffer)\n\tif tmp, err = tmp.Parse(str); err != nil {\n\t\treturn \"\", err\n\t}\n\tif err = tmp.Execute(w, GetEnvMap()); err != nil {\n\t\treturn \"\", err\n\t}\n\treturn w.String(), nil\n}",
+    "funcname": "ParseStr"
+}

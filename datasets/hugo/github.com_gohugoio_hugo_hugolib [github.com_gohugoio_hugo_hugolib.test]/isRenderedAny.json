@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 170,
+    "focalfunc": "func (po *pageState) isRenderedAny() bool",
+    "funcbody": "func (po *pageState) isRenderedAny() bool {\n\tfor _, o := range po.pageOutputs {\n\t\tif o.isRendered() {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "isRenderedAny"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 320,
+    "focalfunc": "func probablyEqualPageLists(a1 any, a2 any) bool",
+    "funcbody": "func probablyEqualPageLists(a1 any, a2 any) bool {\n\tif a1 == nil || a2 == nil {\n\t\treturn a1 == a2\n\t}\n\n\tt1 := reflect.TypeOf(a1)\n\tt2 := reflect.TypeOf(a2)\n\n\tif t1 != t2 {\n\t\treturn false\n\t}\n\n\tif g1, ok := a1.(PagesGroup); ok {\n\t\tg2 := a2.(PagesGroup)\n\t\tif len(g1) != len(g2) {\n\t\t\treturn false\n\t\t}\n\t\tif len(g1) == 0 {\n\t\t\treturn true\n\t\t}\n\t\tif g1.Len() != g2.Len() {\n\t\t\treturn false\n\t\t}\n\n\t\treturn g1[0].Pages[0] == g2[0].Pages[0]\n\t}\n\n\tp1, err1 := ToPages(a1)\n\tp2, err2 := ToPages(a2)\n\n\tif err1 != nil && err2 != nil {\n\t\treturn true\n\t}\n\n\tif len(p1) != len(p2) {\n\t\treturn false\n\t}\n\n\tif len(p1) == 0 {\n\t\treturn true\n\t}\n\n\treturn p1[0] == p2[0]\n}",
+    "funcname": "probablyEqualPageLists"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 67,
+    "focalfunc": "func (c *ContextConn) WithContext(ctx context.Context)",
+    "funcbody": "func (c *ContextConn) WithContext(ctx context.Context) {\n\tc.ctx = ctx\n}",
+    "funcname": "WithContext"
+}

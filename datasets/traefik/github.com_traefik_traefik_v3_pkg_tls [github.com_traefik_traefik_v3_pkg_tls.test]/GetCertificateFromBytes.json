@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 160,
+    "focalfunc": "func (c *Certificate) GetCertificateFromBytes() (tls.Certificate, error)",
+    "funcbody": "func (c *Certificate) GetCertificateFromBytes() (tls.Certificate, error) {\n\tcert, err := tls.X509KeyPair([]byte(c.CertFile), []byte(c.KeyFile))\n\tif err != nil {\n\t\treturn tls.Certificate{}, fmt.Errorf(\"unable to parse TLS certificate: %w\", err)\n\t}\n\n\treturn cert, nil\n}",
+    "funcname": "GetCertificateFromBytes"
+}

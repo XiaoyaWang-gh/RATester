@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 171,
+    "focalfunc": "func (f *fileChangeDetector) OnFileClose(name string, checksum uint64)",
+    "funcbody": "func (f *fileChangeDetector) OnFileClose(name string, checksum uint64) {\n\tf.Lock()\n\tdefer f.Unlock()\n\tf.current[name] = checksum\n}",
+    "funcname": "OnFileClose"
+}

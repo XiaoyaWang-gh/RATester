@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 172,
+    "focalfunc": "func IsOsFs(fs afero.Fs) bool",
+    "funcbody": "func IsOsFs(fs afero.Fs) bool {\n\tvar isOsFs bool\n\tWalkFilesystems(fs, func(fs afero.Fs) bool {\n\t\tswitch fs.(type) {\n\t\tcase *afero.MemMapFs:\n\t\t\tisOsFs = false\n\t\tcase *afero.OsFs:\n\t\t\tisOsFs = true\n\t\t}\n\t\treturn isOsFs\n\t})\n\treturn isOsFs\n}",
+    "funcname": "IsOsFs"
+}

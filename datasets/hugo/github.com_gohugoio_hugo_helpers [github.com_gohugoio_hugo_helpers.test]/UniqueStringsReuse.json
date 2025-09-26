@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 81,
+    "focalfunc": "func UniqueStringsReuse(s []string) []string",
+    "funcbody": "func UniqueStringsReuse(s []string) []string {\n\tresult := s[:0]\n\tfor i, val := range s {\n\t\tvar seen bool\n\n\t\tfor j := 0; j < i; j++ {\n\t\t\tif s[j] == val {\n\t\t\t\tseen = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif !seen {\n\t\t\tresult = append(result, val)\n\t\t}\n\t}\n\treturn result\n}",
+    "funcname": "UniqueStringsReuse"
+}

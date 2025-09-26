@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 181,
+    "focalfunc": "func (l *htmlElementsCollectorWriter) backup()",
+    "funcbody": "func (l *htmlElementsCollectorWriter) backup() {\n\tl.pos -= l.width\n\tl.r, _ = utf8.DecodeRune(l.input[l.pos:])\n}",
+    "funcname": "backup"
+}

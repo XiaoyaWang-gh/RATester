@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 203,
+    "focalfunc": "func (c *Controller) Patch()",
+    "funcbody": "func (c *Controller) Patch() {\n\thttp.Error(c.Ctx.ResponseWriter, \"Method Not Allowed\", http.StatusMethodNotAllowed)\n}",
+    "funcname": "Patch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 139,
+    "focalfunc": "func CfgSameSite(sameSite http.SameSite) ManagerConfigOpt",
+    "funcbody": "func CfgSameSite(sameSite http.SameSite) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.CookieSameSite = sameSite\n\t}\n}",
+    "funcname": "CfgSameSite"
+}

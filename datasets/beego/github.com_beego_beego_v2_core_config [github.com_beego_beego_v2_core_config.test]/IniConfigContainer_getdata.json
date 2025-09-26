@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 483,
+    "focalfunc": "func (c *IniConfigContainer) getdata(key string) string",
+    "funcbody": "func (c *IniConfigContainer) getdata(key string) string {\n\tif len(key) == 0 {\n\t\treturn \"\"\n\t}\n\tc.RLock()\n\tdefer c.RUnlock()\n\n\tvar (\n\t\tsection, k\tstring\n\t\tsectionKey\t= strings.Split(strings.ToLower(key), \"::\")\n\t)\n\tif len(sectionKey) >= 2 {\n\t\tsection = sectionKey[0]\n\t\tk = sectionKey[1]\n\t} else {\n\t\tsection = defaultSection\n\t\tk = sectionKey[0]\n\t}\n\tif v, ok := c.data[section]; ok {\n\t\tif vv, ok := v[k]; ok {\n\t\t\treturn vv\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "getdata"
+}

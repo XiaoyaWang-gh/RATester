@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/collections.go",
+    "lineno": 31,
+    "focalfunc": "func (p *pageState) Slice(items any) (any, error)",
+    "funcbody": "func (p *pageState) Slice(items any) (any, error) {\n\treturn page.ToPages(items)\n}",
+    "funcname": "Slice"
+}

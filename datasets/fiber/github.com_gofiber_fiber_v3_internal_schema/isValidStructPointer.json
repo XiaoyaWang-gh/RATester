@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 44,
+    "focalfunc": "func isValidStructPointer(v reflect.Value) bool",
+    "funcbody": "func isValidStructPointer(v reflect.Value) bool {\n\treturn v.Type().Kind() == reflect.Ptr && v.Elem().IsValid() && v.Elem().Type().Kind() == reflect.Struct\n}",
+    "funcname": "isValidStructPointer"
+}

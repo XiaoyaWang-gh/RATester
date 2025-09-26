@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 67,
+    "focalfunc": "func (r resourceSource) clone() *resourceSource",
+    "funcbody": "func (r resourceSource) clone() *resourceSource {\n\tr.r = nil\n\treturn &r\n}",
+    "funcname": "clone"
+}

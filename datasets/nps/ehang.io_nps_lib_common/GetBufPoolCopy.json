@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 51,
+    "focalfunc": "func GetBufPoolCopy() []byte",
+    "funcbody": "func GetBufPoolCopy() []byte {\n\treturn (BufPoolCopy.Get().([]byte))[:PoolSizeCopy]\n}",
+    "funcname": "GetBufPoolCopy"
+}

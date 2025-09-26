@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/errorResource.go",
+    "lineno": 143,
+    "focalfunc": "func (e *errorResource) TransformWithContext(context.Context, ...ResourceTransformation) (ResourceTransformer, error)",
+    "funcbody": "func (e *errorResource) TransformWithContext(context.Context, ...ResourceTransformation) (ResourceTransformer, error) {\n\tpanic(e.ResourceError)\n}",
+    "funcname": "TransformWithContext"
+}

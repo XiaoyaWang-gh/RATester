@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 521,
+    "focalfunc": "func (e PositiveSmallIntegerField) Value() uint16",
+    "funcbody": "func (e PositiveSmallIntegerField) Value() uint16 {\n\treturn uint16(e)\n}",
+    "funcname": "Value"
+}

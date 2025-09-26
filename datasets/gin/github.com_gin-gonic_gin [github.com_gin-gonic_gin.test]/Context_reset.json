@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 98,
+    "focalfunc": "func (c *Context) reset()",
+    "funcbody": "func (c *Context) reset() {\n\tc.Writer = &c.writermem\n\tc.Params = c.Params[:0]\n\tc.handlers = nil\n\tc.index = -1\n\n\tc.fullPath = \"\"\n\tc.Keys = nil\n\tc.Errors = c.Errors[:0]\n\tc.Accepted = nil\n\tc.queryCache = nil\n\tc.formCache = nil\n\tc.sameSite = 0\n\t*c.params = (*c.params)[:0]\n\t*c.skippedNodes = (*c.skippedNodes)[:0]\n}",
+    "funcname": "reset"
+}

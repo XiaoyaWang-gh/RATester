@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/postcss.go",
+    "lineno": 41,
+    "focalfunc": "func NewPostCSSClient(rs *resources.Spec) *PostCSSClient",
+    "funcbody": "func NewPostCSSClient(rs *resources.Spec) *PostCSSClient {\n\treturn &PostCSSClient{rs: rs}\n}",
+    "funcname": "NewPostCSSClient"
+}

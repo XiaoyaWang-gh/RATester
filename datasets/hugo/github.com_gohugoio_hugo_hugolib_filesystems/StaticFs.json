@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 279,
+    "focalfunc": "func (s SourceFilesystems) StaticFs(lang string) afero.Fs",
+    "funcbody": "func (s SourceFilesystems) StaticFs(lang string) afero.Fs {\n\tvar staticFs afero.Fs = hugofs.NoOpFs\n\n\tif fs, ok := s.Static[lang]; ok {\n\t\tstaticFs = fs.Fs\n\t} else if fs, ok := s.Static[\"\"]; ok {\n\t\tstaticFs = fs.Fs\n\t}\n\n\treturn staticFs\n}",
+    "funcname": "StaticFs"
+}

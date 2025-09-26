@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 16,
+    "focalfunc": "func processingStr(str []string) string",
+    "funcbody": "func processingStr(str []string) string {\n\ts := strings.Join(str, `\",\"`)\n\ts = fmt.Sprintf(\"%s%s%s\", quote, s, quote)\n\treturn s\n}",
+    "funcname": "processingStr"
+}

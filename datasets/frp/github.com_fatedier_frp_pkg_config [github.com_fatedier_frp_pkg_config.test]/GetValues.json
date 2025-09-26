@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 57,
+    "focalfunc": "func GetValues() *Values",
+    "funcbody": "func GetValues() *Values {\n\treturn &Values{\n\t\tEnvs: glbEnvs,\n\t}\n}",
+    "funcname": "GetValues"
+}

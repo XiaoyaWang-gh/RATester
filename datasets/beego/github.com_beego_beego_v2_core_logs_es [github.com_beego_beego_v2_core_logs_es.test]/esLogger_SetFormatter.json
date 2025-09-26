@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 56,
+    "focalfunc": "func (el *esLogger) SetFormatter(f logs.LogFormatter)",
+    "funcbody": "func (el *esLogger) SetFormatter(f logs.LogFormatter) {\n\tel.formatter = f\n}",
+    "funcname": "SetFormatter"
+}

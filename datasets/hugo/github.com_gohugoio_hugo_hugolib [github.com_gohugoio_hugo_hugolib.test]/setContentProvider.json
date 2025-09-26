@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__output.go",
+    "lineno": 138,
+    "focalfunc": "func (p *pageOutput) setContentProvider(cp *pageContentOutput)",
+    "funcbody": "func (p *pageOutput) setContentProvider(cp *pageContentOutput) {\n\tif cp == nil {\n\t\treturn\n\t}\n\tp.contentRenderer = cp\n\tp.ContentProvider = cp\n\tp.MarkupProvider = cp\n\tp.PageRenderProvider = cp\n\tp.TableOfContentsProvider = cp\n\tp.RenderShortcodesProvider = cp\n\tp.pco = cp\n}",
+    "funcname": "setContentProvider"
+}

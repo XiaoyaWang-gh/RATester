@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/utils.go",
+    "lineno": 78,
+    "focalfunc": "func defaultGOPATH() string",
+    "funcbody": "func defaultGOPATH() string {\n\tenv := \"HOME\"\n\tif runtime.GOOS == \"windows\" {\n\t\tenv = \"USERPROFILE\"\n\t} else if runtime.GOOS == \"plan9\" {\n\t\tenv = \"home\"\n\t}\n\tif home := os.Getenv(env); home != \"\" {\n\t\treturn filepath.Join(home, \"go\")\n\t}\n\treturn \"\"\n}",
+    "funcname": "defaultGOPATH"
+}

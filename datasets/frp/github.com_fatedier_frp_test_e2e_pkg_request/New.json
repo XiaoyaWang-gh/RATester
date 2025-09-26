@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 43,
+    "focalfunc": "func New() *Request",
+    "funcbody": "func New() *Request {\n\treturn &Request{\n\t\tprotocol:\t\"tcp\",\n\t\taddr:\t\t\"127.0.0.1\",\n\n\t\tmethod:\t\t\"GET\",\n\t\tpath:\t\t\"/\",\n\t\theaders:\tmap[string]string{},\n\t}\n}",
+    "funcname": "New"
+}

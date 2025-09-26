@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 113,
+    "focalfunc": "func (b *Balancer) Pop() interface{}",
+    "funcbody": "func (b *Balancer) Pop() interface{} {\n\th := b.handlers[len(b.handlers)-1]\n\tb.handlers = b.handlers[0 : len(b.handlers)-1]\n\treturn h\n}",
+    "funcname": "Pop"
+}

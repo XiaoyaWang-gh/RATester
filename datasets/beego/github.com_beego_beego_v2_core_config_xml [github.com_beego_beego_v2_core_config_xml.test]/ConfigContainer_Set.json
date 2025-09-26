@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 264,
+    "focalfunc": "func (c *ConfigContainer) Set(key, val string) error",
+    "funcbody": "func (c *ConfigContainer) Set(key, val string) error {\n\tc.Lock()\n\tdefer c.Unlock()\n\tc.data[key] = val\n\treturn nil\n}",
+    "funcname": "Set"
+}

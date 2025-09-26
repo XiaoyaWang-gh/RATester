@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 266,
+    "focalfunc": "func (p *nopPage) IsTranslated() bool",
+    "funcbody": "func (p *nopPage) IsTranslated() bool {\n\treturn false\n}",
+    "funcname": "IsTranslated"
+}

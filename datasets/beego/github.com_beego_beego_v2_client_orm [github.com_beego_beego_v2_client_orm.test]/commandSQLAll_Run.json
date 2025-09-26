@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd.go",
+    "lineno": 264,
+    "focalfunc": "func (d *commandSQLAll) Run() error",
+    "funcbody": "func (d *commandSQLAll) Run() error {\n\tcreateQueries, indexes, err := getDbCreateSQL(defaultModelCache, d.al)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvar all []string\n\tfor i, mi := range defaultModelCache.AllOrdered() {\n\t\tqueries := []string{createQueries[i]}\n\t\tfor _, idx := range indexes[mi.Table] {\n\t\t\tqueries = append(queries, idx.SQL)\n\t\t}\n\t\tsql := strings.Join(queries, \"\\n\")\n\t\tall = append(all, sql)\n\t}\n\tfmt.Println(strings.Join(all, \"\\n\\n\"))\n\n\treturn nil\n}",
+    "funcname": "Run"
+}

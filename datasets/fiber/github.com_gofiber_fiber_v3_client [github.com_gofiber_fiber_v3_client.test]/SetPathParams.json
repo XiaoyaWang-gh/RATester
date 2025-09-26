@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 302,
+    "focalfunc": "func (r *Request) SetPathParams(m map[string]string) *Request",
+    "funcbody": "func (r *Request) SetPathParams(m map[string]string) *Request {\n\tr.path.SetParams(m)\n\treturn r\n}",
+    "funcname": "SetPathParams"
+}

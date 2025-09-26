@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 106,
+    "focalfunc": "func (s *Store) TrackValue(key string, value any, cached bool)",
+    "funcbody": "func (s *Store) TrackValue(key string, value any, cached bool) {\n\tif !s.calculateHints {\n\t\treturn\n\t}\n\n\ts.diffmu.Lock()\n\td, found := s.diffs[key]\n\n\tif !found {\n\t\td = &diff{}\n\t\ts.diffs[key] = d\n\t}\n\n\td.add(value)\n\ts.diffmu.Unlock()\n\n\tif cached {\n\t\ts.cachedmu.Lock()\n\t\ts.cached[key] = s.cached[key] + 1\n\t\ts.cachedmu.Unlock()\n\t}\n}",
+    "funcname": "TrackValue"
+}

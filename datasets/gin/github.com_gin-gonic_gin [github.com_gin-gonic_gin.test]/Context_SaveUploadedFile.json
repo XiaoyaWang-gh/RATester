@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 617,
+    "focalfunc": "func (c *Context) SaveUploadedFile(file *multipart.FileHeader, dst string) error",
+    "funcbody": "func (c *Context) SaveUploadedFile(file *multipart.FileHeader, dst string) error {\n\tsrc, err := file.Open()\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer src.Close()\n\n\tif err = os.MkdirAll(filepath.Dir(dst), 0o750); err != nil {\n\t\treturn err\n\t}\n\n\tout, err := os.Create(dst)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer out.Close()\n\n\t_, err = io.Copy(out, src)\n\treturn err\n}",
+    "funcname": "SaveUploadedFile"
+}

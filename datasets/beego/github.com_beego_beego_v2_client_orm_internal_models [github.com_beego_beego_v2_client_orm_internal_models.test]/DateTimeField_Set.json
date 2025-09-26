@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 284,
+    "focalfunc": "func (e *DateTimeField) Set(d time.Time)",
+    "funcbody": "func (e *DateTimeField) Set(d time.Time) {\n\t*e = DateTimeField(d)\n}",
+    "funcname": "Set"
+}

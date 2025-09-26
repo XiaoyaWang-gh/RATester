@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_mysql.go",
+    "lineno": 88,
+    "focalfunc": "func (d *dbBaseMysql) ShowTablesQuery() string",
+    "funcbody": "func (d *dbBaseMysql) ShowTablesQuery() string {\n\treturn \"SELECT table_name FROM information_schema.tables WHERE table_type = 'BASE TABLE' AND table_schema = DATABASE()\"\n}",
+    "funcname": "ShowTablesQuery"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 225,
+    "focalfunc": "func (v *Validation) Mobile(obj interface{}, key string) *Result",
+    "funcbody": "func (v *Validation) Mobile(obj interface{}, key string) *Result {\n\treturn v.apply(Mobile{Match{Regexp: mobilePattern}, key}, obj)\n}",
+    "funcname": "Mobile"
+}

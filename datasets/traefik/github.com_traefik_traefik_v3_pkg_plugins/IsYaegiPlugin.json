@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/types.go",
+    "lineno": 53,
+    "focalfunc": "func (m *Manifest) IsYaegiPlugin() bool",
+    "funcbody": "func (m *Manifest) IsYaegiPlugin() bool {\n\n\treturn m.Runtime == runtimeYaegi || m.Runtime == \"\"\n}",
+    "funcname": "IsYaegiPlugin"
+}

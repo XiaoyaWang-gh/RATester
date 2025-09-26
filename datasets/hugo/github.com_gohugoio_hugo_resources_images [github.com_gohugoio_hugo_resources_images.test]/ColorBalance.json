@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 253,
+    "focalfunc": "func (*Filters) ColorBalance(percentageRed, percentageGreen, percentageBlue any) gift.Filter",
+    "funcbody": "func (*Filters) ColorBalance(percentageRed, percentageGreen, percentageBlue any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(percentageRed, percentageGreen, percentageBlue),\n\t\tFilter:\t\tgift.ColorBalance(cast.ToFloat32(percentageRed), cast.ToFloat32(percentageGreen), cast.ToFloat32(percentageBlue)),\n\t}\n}",
+    "funcname": "ColorBalance"
+}

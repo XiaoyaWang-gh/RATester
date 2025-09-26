@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 144,
+    "focalfunc": "func (g *HTTPGroup) createConn(remoteAddr string) (net.Conn, error)",
+    "funcbody": "func (g *HTTPGroup) createConn(remoteAddr string) (net.Conn, error) {\n\tvar f vhost.CreateConnFunc\n\tnewIndex := atomic.AddUint64(&g.index, 1)\n\n\tg.mu.RLock()\n\tgroup := g.group\n\tdomain := g.domain\n\tlocation := g.location\n\trouteByHTTPUser := g.routeByHTTPUser\n\tif len(g.pxyNames) > 0 {\n\t\tname := g.pxyNames[int(newIndex)%len(g.pxyNames)]\n\t\tf = g.createFuncs[name]\n\t}\n\tg.mu.RUnlock()\n\n\tif f == nil {\n\t\treturn nil, fmt.Errorf(\"no CreateConnFunc for http group [%s], domain [%s], location [%s], routeByHTTPUser [%s]\",\n\t\t\tgroup, domain, location, routeByHTTPUser)\n\t}\n\n\treturn f(remoteAddr)\n}",
+    "funcname": "createConn"
+}

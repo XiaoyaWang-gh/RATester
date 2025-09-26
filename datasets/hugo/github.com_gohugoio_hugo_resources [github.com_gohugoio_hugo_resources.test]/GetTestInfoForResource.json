@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 347,
+    "focalfunc": "func GetTestInfoForResource(r resource.Resource) GenericResourceTestInfo",
+    "funcbody": "func GetTestInfoForResource(r resource.Resource) GenericResourceTestInfo {\n\tvar gr *genericResource\n\tswitch v := r.(type) {\n\tcase *genericResource:\n\t\tgr = v\n\tcase *resourceAdapter:\n\t\tgr = v.target.(*genericResource)\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"unknown resource type: %T\", r))\n\t}\n\treturn GenericResourceTestInfo{\n\t\tPaths: gr.paths,\n\t}\n}",
+    "funcname": "GetTestInfoForResource"
+}

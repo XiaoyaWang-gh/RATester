@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 295,
+    "focalfunc": "func toMergeStrategy(v any) ParamsMergeStrategy",
+    "funcbody": "func toMergeStrategy(v any) ParamsMergeStrategy {\n\ts := ParamsMergeStrategy(cast.ToString(v))\n\tswitch s {\n\tcase ParamsMergeStrategyDeep, ParamsMergeStrategyNone, ParamsMergeStrategyShallow:\n\t\treturn s\n\tdefault:\n\t\treturn ParamsMergeStrategyDeep\n\t}\n}",
+    "funcname": "toMergeStrategy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 237,
+    "focalfunc": "func (rc *ResourceConfig) Validate() error",
+    "funcbody": "func (rc *ResourceConfig) Validate() error {\n\tif rc.Path == \"\" {\n\t\treturn errors.New(\"path must be set\")\n\t}\n\tif rc.Content.Markup != \"\" {\n\t\treturn errors.New(\"markup must not be set, use mediaType\")\n\t}\n\treturn nil\n}",
+    "funcname": "Validate"
+}

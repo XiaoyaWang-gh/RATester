@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 295,
+    "focalfunc": "func (h *HugoSites) LanguageSet() map[string]int",
+    "funcbody": "func (h *HugoSites) LanguageSet() map[string]int {\n\tset := make(map[string]int)\n\tfor i, s := range h.Sites {\n\t\tset[s.language.Lang] = i\n\t}\n\treturn set\n}",
+    "funcname": "LanguageSet"
+}

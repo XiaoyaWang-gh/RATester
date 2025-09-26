@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 607,
+    "focalfunc": "func (s *state) evalFieldChain(dot, receiver reflect.Value, node parse.Node, ident []string, args []parse.Node, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalFieldChain(dot, receiver reflect.Value, node parse.Node, ident []string, args []parse.Node, final reflect.Value) reflect.Value {\n\tn := len(ident)\n\tfor i := 0; i < n-1; i++ {\n\t\treceiver = s.evalField(dot, ident[i], node, nil, missingVal, receiver)\n\t}\n\n\treturn s.evalField(dot, ident[n-1], node, args, final, receiver)\n}",
+    "funcname": "evalFieldChain"
+}

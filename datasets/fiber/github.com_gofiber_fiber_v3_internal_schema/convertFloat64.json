@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/converter.go",
+    "lineno": 66,
+    "focalfunc": "func convertFloat64(value string) reflect.Value",
+    "funcbody": "func convertFloat64(value string) reflect.Value {\n\tif v, err := strconv.ParseFloat(value, 64); err == nil {\n\t\treturn reflect.ValueOf(v)\n\t}\n\treturn invalidValue\n}",
+    "funcname": "convertFloat64"
+}

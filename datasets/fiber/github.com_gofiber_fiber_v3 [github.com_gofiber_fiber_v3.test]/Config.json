@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 794,
+    "focalfunc": "func (app *App) Config() Config",
+    "funcbody": "func (app *App) Config() Config {\n\treturn app.config\n}",
+    "funcname": "Config"
+}

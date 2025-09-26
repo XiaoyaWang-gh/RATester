@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 322,
+    "focalfunc": "func (r *hookedRenderer) renderAutoLink(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderAutoLink(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tif !entering {\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\tn := node.(*ast.AutoLink)\n\tvar lr hooks.LinkRenderer\n\n\tctx, ok := w.(*render.Context)\n\tif ok {\n\t\th := ctx.RenderContext().GetRenderer(hooks.LinkRendererType, nil)\n\t\tok = h != nil\n\t\tif ok {\n\t\t\tlr = h.(hooks.LinkRenderer)\n\t\t}\n\t}\n\n\tif !ok {\n\t\treturn r.renderAutoLinkDefault(w, source, node, entering)\n\t}\n\n\turl := string(r.autoLinkURL(n, source))\n\tlabel := string(n.Label(source))\n\tif n.AutoLinkType == ast.AutoLinkEmail && !strings.HasPrefix(strings.ToLower(url), \"mailto:\") {\n\t\turl = \"mailto:\" + url\n\t}\n\n\tpage, pageInner := render.GetPageAndPageInner(ctx)\n\n\terr := lr.RenderLink(\n\t\tctx.RenderContext().Ctx,\n\t\tw,\n\t\tlinkContext{\n\t\t\tpage:\t\t\tpage,\n\t\t\tpageInner:\t\tpageInner,\n\t\t\tdestination:\t\turl,\n\t\t\ttext:\t\t\thstring.HTML(label),\n\t\t\tplainText:\t\tlabel,\n\t\t\tAttributesHolder:\tattributes.Empty,\n\t\t},\n\t)\n\n\treturn ast.WalkContinue, err\n}",
+    "funcname": "renderAutoLink"
+}

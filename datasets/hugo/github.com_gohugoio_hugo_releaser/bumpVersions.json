@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 138,
+    "focalfunc": "func (r *ReleaseHandler) bumpVersions(ver hugo.Version) error",
+    "funcbody": "func (r *ReleaseHandler) bumpVersions(ver hugo.Version) error {\n\ttoDev := \"\"\n\n\tif ver.Suffix != \"\" {\n\t\ttoDev = ver.Suffix\n\t}\n\n\tif err := r.replaceInFile(\"common/hugo/version_current.go\",\n\t\t`Minor:(\\s*)(\\d*),`, fmt.Sprintf(`Minor:${1}%d,`, ver.Minor),\n\t\t`PatchLevel:(\\s*)(\\d*),`, fmt.Sprintf(`PatchLevel:${1}%d,`, ver.PatchLevel),\n\t\t`Suffix:(\\s*)\".*\",`, fmt.Sprintf(`Suffix:${1}\"%s\",`, toDev)); err != nil {\n\t\treturn err\n\t}\n\n\tvar minVersion string\n\tif ver.Suffix != \"\" {\n\n\t\tminVersion = ver.Prev().String()\n\t} else {\n\t\tminVersion = ver.String()\n\t}\n\n\tif err := r.replaceInFile(\"commands/new.go\",\n\t\t`min_version = \"(.*)\"`, fmt.Sprintf(`min_version = \"%s\"`, minVersion)); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "bumpVersions"
+}

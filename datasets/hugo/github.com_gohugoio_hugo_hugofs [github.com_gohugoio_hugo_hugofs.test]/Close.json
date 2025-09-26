@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 795,
+    "focalfunc": "func (f *rootMappingDir) Close() error",
+    "funcbody": "func (f *rootMappingDir) Close() error {\n\tif f.DirOnlyOps == nil {\n\t\treturn nil\n\t}\n\treturn f.DirOnlyOps.Close()\n}",
+    "funcname": "Close"
+}

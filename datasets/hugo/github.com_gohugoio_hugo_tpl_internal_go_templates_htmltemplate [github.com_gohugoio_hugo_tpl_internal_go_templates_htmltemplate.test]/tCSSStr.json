@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 571,
+    "focalfunc": "func tCSSStr(c context, s []byte) (context, int)",
+    "funcbody": "func tCSSStr(c context, s []byte) (context, int) {\n\tvar endAndEsc string\n\tswitch c.state {\n\tcase stateCSSDqStr, stateCSSDqURL:\n\t\tendAndEsc = `\\\"`\n\tcase stateCSSSqStr, stateCSSSqURL:\n\t\tendAndEsc = `\\'`\n\tcase stateCSSURL:\n\n\t\tendAndEsc = \"\\\\\\t\\n\\f\\r )\"\n\tdefault:\n\t\tpanic(c.state.String())\n\t}\n\n\tk := 0\n\tfor {\n\t\ti := k + bytes.IndexAny(s[k:], endAndEsc)\n\t\tif i < k {\n\t\t\tc, nread := tURL(c, decodeCSS(s[k:]))\n\t\t\treturn c, k + nread\n\t\t}\n\t\tif s[i] == '\\\\' {\n\t\t\ti++\n\t\t\tif i == len(s) {\n\t\t\t\treturn context{\n\t\t\t\t\tstate:\tstateError,\n\t\t\t\t\terr:\terrorf(ErrPartialEscape, nil, 0, \"unfinished escape sequence in CSS string: %q\", s),\n\t\t\t\t}, len(s)\n\t\t\t}\n\t\t} else {\n\t\t\tc.state = stateCSS\n\t\t\treturn c, i + 1\n\t\t}\n\t\tc, _ = tURL(c, decodeCSS(s[:i+1]))\n\t\tk = i + 1\n\t}\n}",
+    "funcname": "tCSSStr"
+}

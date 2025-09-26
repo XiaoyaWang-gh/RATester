@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 587,
+    "focalfunc": "func getReflectTypeAndMethod(f interface{}) (controllerType reflect.Type, method string)",
+    "funcbody": "func getReflectTypeAndMethod(f interface{}) (controllerType reflect.Type, method string) {\n\n\tfuncType := reflect.TypeOf(f)\n\tif funcType.Kind() != reflect.Func {\n\t\tpanic(\"not a method\")\n\t}\n\n\tfuncObj := runtime.FuncForPC(reflect.ValueOf(f).Pointer())\n\tif funcObj == nil {\n\t\tpanic(\"cannot find the method\")\n\t}\n\tfuncNameSli := strings.Split(funcObj.Name(), \".\")\n\tlFuncSli := len(funcNameSli)\n\tif lFuncSli == 0 {\n\t\tpanic(\"invalid method full name: \" + funcObj.Name())\n\t}\n\n\tmethod = funcNameSli[lFuncSli-1]\n\tif len(method) == 0 {\n\t\tpanic(\"method name is empty\")\n\t} else if method[0] > 96 || method[0] < 65 {\n\t\tpanic(fmt.Sprintf(\"%s is not a public method\", method))\n\t}\n\n\tif numIn := funcType.NumIn(); numIn != 1 {\n\t\tpanic(\"invalid number of param in\")\n\t}\n\n\tcontrollerType = funcType.In(0)\n\n\t_, exists := controllerType.MethodByName(method)\n\tif !exists {\n\t\tpanic(controllerType.String() + \" has no method \" + method)\n\t}\n\n\tif controllerType.Kind() == reflect.Ptr {\n\t\tcontrollerType = controllerType.Elem()\n\t}\n\tcontroller := reflect.New(controllerType)\n\t_, ok := controller.Interface().(ControllerInterface)\n\tif !ok {\n\t\tpanic(controllerType.String() + \" is not implemented ControllerInterface\")\n\t}\n\n\treturn\n}",
+    "funcname": "getReflectTypeAndMethod"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 483,
+    "focalfunc": "func firstToUpper(name string) string",
+    "funcbody": "func firstToUpper(name string) string {\n\treturn strings.ToUpper(name[:1]) + name[1:]\n}",
+    "funcname": "firstToUpper"
+}

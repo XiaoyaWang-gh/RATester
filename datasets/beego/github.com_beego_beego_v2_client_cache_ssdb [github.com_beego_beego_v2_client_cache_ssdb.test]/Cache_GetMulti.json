@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 38,
+    "focalfunc": "func (rc *Cache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error)",
+    "funcbody": "func (rc *Cache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error) {\n\tsize := len(keys)\n\tvalues := make([]interface{}, size)\n\n\tres, err := rc.conn.Do(\"multi_get\", keys)\n\tif err != nil {\n\t\treturn values, berror.Wrapf(err, cache.SsdbCacheCurdFailed, \"multi_get failed, key: %v\", keys)\n\t}\n\n\tresSize := len(res)\n\tkeyIdx := make(map[string]int)\n\tfor i := 1; i < resSize; i += 2 {\n\t\tkeyIdx[res[i]] = i\n\t}\n\n\tkeysErr := make([]string, 0)\n\tfor i, ki := range keys {\n\t\tif _, ok := keyIdx[ki]; !ok {\n\t\t\tkeysErr = append(keysErr, fmt.Sprintf(\"key [%s] error: %s\", ki, \"key not exist\"))\n\t\t\tcontinue\n\t\t}\n\t\tvalues[i] = res[keyIdx[ki]+1]\n\t}\n\n\tif len(keysErr) != 0 {\n\t\treturn values, berror.Error(cache.MultiGetFailed, strings.Join(keysErr, \"; \"))\n\t}\n\n\treturn values, nil\n}",
+    "funcname": "GetMulti"
+}

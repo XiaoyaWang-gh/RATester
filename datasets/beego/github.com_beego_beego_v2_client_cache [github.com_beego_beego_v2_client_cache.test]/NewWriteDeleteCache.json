@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/write_delete.go",
+    "lineno": 33,
+    "focalfunc": "func NewWriteDeleteCache(cache Cache, fn func(ctx context.Context, key string, val any) error) (*WriteDeleteCache, error)",
+    "funcbody": "func NewWriteDeleteCache(cache Cache, fn func(ctx context.Context, key string, val any) error) (*WriteDeleteCache, error) {\n\tif fn == nil || cache == nil {\n\t\treturn nil, berror.Error(InvalidInitParameters, \"cache or storeFunc can not be nil\")\n\t}\n\n\tw := &WriteDeleteCache{\n\t\tCache:\t\tcache,\n\t\tstoreFunc:\tfn,\n\t}\n\treturn w, nil\n}",
+    "funcname": "NewWriteDeleteCache"
+}

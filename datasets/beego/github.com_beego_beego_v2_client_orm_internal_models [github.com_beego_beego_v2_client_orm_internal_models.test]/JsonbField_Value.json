@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 749,
+    "focalfunc": "func (j JsonbField) Value() string",
+    "funcbody": "func (j JsonbField) Value() string {\n\treturn string(j)\n}",
+    "funcname": "Value"
+}

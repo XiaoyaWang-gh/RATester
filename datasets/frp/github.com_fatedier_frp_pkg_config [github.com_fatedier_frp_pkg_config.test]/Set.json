@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 205,
+    "focalfunc": "func (f *BoolFuncFlag) Set(s string) error",
+    "funcbody": "func (f *BoolFuncFlag) Set(s string) error {\n\tf.v = strconv.FormatBool(f.v) == \"true\"\n\n\tif !f.v {\n\t\tif f.FalseFunc != nil {\n\t\t\tf.FalseFunc()\n\t\t}\n\t\treturn nil\n\t}\n\n\tif f.TrueFunc != nil {\n\t\tf.TrueFunc()\n\t}\n\treturn nil\n}",
+    "funcname": "Set"
+}

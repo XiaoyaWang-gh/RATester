@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 47,
+    "focalfunc": "func (ps Params) ByName(name string) (va string)",
+    "funcbody": "func (ps Params) ByName(name string) (va string) {\n\tva, _ = ps.Get(name)\n\treturn\n}",
+    "funcname": "ByName"
+}

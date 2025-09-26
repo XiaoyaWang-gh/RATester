@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 34,
+    "focalfunc": "func (pathBridge) Dir(in string) string",
+    "funcbody": "func (pathBridge) Dir(in string) string {\n\treturn path.Dir(in)\n}",
+    "funcname": "Dir"
+}

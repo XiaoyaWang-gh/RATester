@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/beego.go",
+    "lineno": 41,
+    "focalfunc": "func AddAPPStartHook(hf ...hookfunc)",
+    "funcbody": "func AddAPPStartHook(hf ...hookfunc) {\n\thooks = append(hooks, hf...)\n}",
+    "funcname": "AddAPPStartHook"
+}

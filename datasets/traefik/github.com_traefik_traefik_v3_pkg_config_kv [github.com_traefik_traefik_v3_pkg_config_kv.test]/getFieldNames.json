@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/kv/kv.go",
+    "lineno": 47,
+    "focalfunc": "func getFieldNames(rootName string, rootType reflect.Type) []string",
+    "funcbody": "func getFieldNames(rootName string, rootType reflect.Type) []string {\n\tvar names []string\n\n\tif rootType.Kind() == reflect.Ptr {\n\t\trootType = rootType.Elem()\n\t}\n\n\tif rootType.Kind() != reflect.Struct {\n\t\treturn nil\n\t}\n\n\tfor i := range rootType.NumField() {\n\t\tfield := rootType.Field(i)\n\n\t\tif !parser.IsExported(field) {\n\t\t\tcontinue\n\t\t}\n\n\t\tif field.Anonymous &&\n\t\t\t(field.Type.Kind() == reflect.Ptr && field.Type.Elem().Kind() == reflect.Struct || field.Type.Kind() == reflect.Struct) {\n\t\t\tnames = append(names, getFieldNames(rootName, field.Type)...)\n\t\t\tcontinue\n\t\t}\n\n\t\tnames = append(names, path.Join(rootName, field.Name))\n\t}\n\n\treturn names\n}",
+    "funcname": "getFieldNames"
+}

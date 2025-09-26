@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 103,
+    "focalfunc": "func (ac *_dbCache) getDefault() (al *alias)",
+    "funcbody": "func (ac *_dbCache) getDefault() (al *alias) {\n\tal, _ = ac.get(\"default\")\n\treturn\n}",
+    "funcname": "getDefault"
+}

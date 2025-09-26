@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 385,
+    "focalfunc": "func (t testSite) Copyright() string",
+    "funcbody": "func (t testSite) Copyright() string {\n\treturn \"\"\n}",
+    "funcname": "Copyright"
+}

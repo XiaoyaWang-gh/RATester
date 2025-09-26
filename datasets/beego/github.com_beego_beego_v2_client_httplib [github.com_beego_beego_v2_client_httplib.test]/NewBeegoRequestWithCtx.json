@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 71,
+    "focalfunc": "func NewBeegoRequestWithCtx(ctx context.Context, rawurl, method string) *BeegoHTTPRequest",
+    "funcbody": "func NewBeegoRequestWithCtx(ctx context.Context, rawurl, method string) *BeegoHTTPRequest {\n\treq, err := http.NewRequestWithContext(ctx, method, rawurl, nil)\n\tif err != nil {\n\t\tlogs.Error(\"%+v\", berror.Wrapf(err, InvalidURLOrMethod, \"invalid raw url or method: %s %s\", rawurl, method))\n\t}\n\treturn &BeegoHTTPRequest{\n\t\turl:\t\trawurl,\n\t\treq:\t\treq,\n\t\tparams:\t\tmap[string][]string{},\n\t\tfiles:\t\tmap[string]string{},\n\t\tsetting:\tdefaultSetting,\n\t\tresp:\t\t&http.Response{},\n\t\tcopyBody: func() io.ReadCloser {\n\t\t\treturn nil\n\t\t},\n\t}\n}",
+    "funcname": "NewBeegoRequestWithCtx"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 133,
+    "focalfunc": "func (m *MenuEntry) isSameResource(inme *MenuEntry) bool",
+    "funcbody": "func (m *MenuEntry) isSameResource(inme *MenuEntry) bool {\n\tif m.isSamePage(inme.Page) {\n\t\treturn m.Page == inme.Page\n\t}\n\tmurl, inmeurl := m.URL(), inme.URL()\n\treturn murl != \"\" && inmeurl != \"\" && murl == inmeurl\n}",
+    "funcname": "isSameResource"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 183,
+    "focalfunc": "func (s *Conn) GetHealthInfo() (info string, status bool, err error)",
+    "funcbody": "func (s *Conn) GetHealthInfo() (info string, status bool, err error) {\n\tvar l int\n\tbuf := common.BufPoolMax.Get().([]byte)\n\tdefer common.PutBufPoolMax(buf)\n\tif l, err = s.GetLen(); err != nil {\n\t\treturn\n\t} else if _, err = s.ReadLen(l, buf); err != nil {\n\t\treturn\n\t} else {\n\t\tarr := strings.Split(string(buf[:l]), common.CONN_DATA_SEQ)\n\t\tif len(arr) >= 2 {\n\t\t\treturn arr[0], common.GetBoolByStr(arr[1]), nil\n\t\t}\n\t}\n\treturn \"\", false, errors.New(\"receive health info error\")\n}",
+    "funcname": "GetHealthInfo"
+}

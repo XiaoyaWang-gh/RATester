@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 76,
+    "focalfunc": "func (st *MemSessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter)",
+    "funcbody": "func (st *MemSessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter) {\n}",
+    "funcname": "SessionRelease"
+}

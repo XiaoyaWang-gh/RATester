@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 721,
+    "focalfunc": "func (n *NumberNode) simplifyComplex()",
+    "funcbody": "func (n *NumberNode) simplifyComplex() {\n\tn.IsFloat = imag(n.Complex128) == 0\n\tif n.IsFloat {\n\t\tn.Float64 = real(n.Complex128)\n\t\tn.IsInt = float64(int64(n.Float64)) == n.Float64\n\t\tif n.IsInt {\n\t\t\tn.Int64 = int64(n.Float64)\n\t\t}\n\t\tn.IsUint = float64(uint64(n.Float64)) == n.Float64\n\t\tif n.IsUint {\n\t\t\tn.Uint64 = uint64(n.Float64)\n\t\t}\n\t}\n}",
+    "funcname": "simplifyComplex"
+}

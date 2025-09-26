@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 360,
+    "focalfunc": "func (p *pageState) String() string",
+    "funcbody": "func (p *pageState) String() string {\n\treturn fmt.Sprintf(\"Page(%s)\", p.Path())\n}",
+    "funcname": "String"
+}

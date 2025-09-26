@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/extractors.go",
+    "lineno": 40,
+    "focalfunc": "func FromCookie(param string) func(c fiber.Ctx) (string, error)",
+    "funcbody": "func FromCookie(param string) func(c fiber.Ctx) (string, error) {\n\treturn func(c fiber.Ctx) (string, error) {\n\t\ttoken := c.Cookies(param)\n\t\tif token == \"\" {\n\t\t\treturn \"\", ErrMissingCookie\n\t\t}\n\t\treturn token, nil\n\t}\n}",
+    "funcname": "FromCookie"
+}

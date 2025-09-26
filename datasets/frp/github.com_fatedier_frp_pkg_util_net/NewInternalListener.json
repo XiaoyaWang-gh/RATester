@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/listener.go",
+    "lineno": 33,
+    "focalfunc": "func NewInternalListener() *InternalListener",
+    "funcbody": "func NewInternalListener() *InternalListener {\n\treturn &InternalListener{\n\t\tacceptCh: make(chan net.Conn, 128),\n\t}\n}",
+    "funcname": "NewInternalListener"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 67,
+    "focalfunc": "func (m *Migration) CreateTable(tablename, engine, charset string, p ...func())",
+    "funcbody": "func (m *Migration) CreateTable(tablename, engine, charset string, p ...func()) {\n\tm.TableName = tablename\n\tm.Engine = engine\n\tm.Charset = charset\n\tm.ModifyType = \"create\"\n}",
+    "funcname": "CreateTable"
+}

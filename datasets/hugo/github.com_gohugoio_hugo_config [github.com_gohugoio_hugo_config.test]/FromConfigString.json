@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 69,
+    "focalfunc": "func FromConfigString(config, configType string) (Provider, error)",
+    "funcbody": "func FromConfigString(config, configType string) (Provider, error) {\n\tm, err := readConfig(metadecoders.FormatFromString(configType), []byte(config))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn NewFrom(m), nil\n}",
+    "funcname": "FromConfigString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/token.go",
+    "lineno": 54,
+    "focalfunc": "func (auth *TokenAuthSetterVerifier) SetNewWorkConn(newWorkConnMsg *msg.NewWorkConn) error",
+    "funcbody": "func (auth *TokenAuthSetterVerifier) SetNewWorkConn(newWorkConnMsg *msg.NewWorkConn) error {\n\tif !slices.Contains(auth.additionalAuthScopes, v1.AuthScopeNewWorkConns) {\n\t\treturn nil\n\t}\n\n\tnewWorkConnMsg.Timestamp = time.Now().Unix()\n\tnewWorkConnMsg.PrivilegeKey = util.GetAuthKey(auth.token, newWorkConnMsg.Timestamp)\n\treturn nil\n}",
+    "funcname": "SetNewWorkConn"
+}

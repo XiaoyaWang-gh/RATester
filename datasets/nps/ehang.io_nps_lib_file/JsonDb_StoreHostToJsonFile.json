@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 105,
+    "focalfunc": "func (s *JsonDb) StoreHostToJsonFile()",
+    "funcbody": "func (s *JsonDb) StoreHostToJsonFile() {\n\thostLock.Lock()\n\tstoreSyncMapToFile(s.Hosts, s.HostFilePath)\n\thostLock.Unlock()\n}",
+    "funcname": "StoreHostToJsonFile"
+}

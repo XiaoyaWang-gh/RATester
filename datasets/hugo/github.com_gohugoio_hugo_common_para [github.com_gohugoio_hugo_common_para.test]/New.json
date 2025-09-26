@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/para/para.go",
+    "lineno": 59,
+    "focalfunc": "func New(numWorkers int) *Workers",
+    "funcbody": "func New(numWorkers int) *Workers {\n\treturn &Workers{\n\t\tsem: make(chan struct{}, numWorkers),\n\t}\n}",
+    "funcname": "New"
+}

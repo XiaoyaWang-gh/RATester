@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/metrics/metrics.go",
+    "lineno": 22,
+    "focalfunc": "func Register(m ServerMetrics)",
+    "funcbody": "func Register(m ServerMetrics) {\n\tregisterMetrics.Do(func() {\n\t\tServer = m\n\t})\n}",
+    "funcname": "Register"
+}

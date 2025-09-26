@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 297,
+    "focalfunc": "func (input *BeegoInput) Params() map[string]string",
+    "funcbody": "func (input *BeegoInput) Params() map[string]string {\n\tm := make(map[string]string)\n\tfor i, v := range input.pnames {\n\t\tif i <= len(input.pvalues) {\n\t\t\tm[v] = input.pvalues[i]\n\t\t}\n\t}\n\treturn m\n}",
+    "funcname": "Params"
+}

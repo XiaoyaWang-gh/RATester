@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 157,
+    "focalfunc": "func improveIfNilPointerMsg(inErr error) string",
+    "funcbody": "func improveIfNilPointerMsg(inErr error) string {\n\tm := nilPointerErrRe.FindStringSubmatch(inErr.Error())\n\tif len(m) == 0 {\n\t\treturn \"\"\n\t}\n\tcall := m[1]\n\tfield := m[2]\n\tparts := strings.Split(call, \".\")\n\tif len(parts) < 2 {\n\t\treturn \"\"\n\t}\n\treceiverName := parts[len(parts)-2]\n\treceiver := strings.Join(parts[:len(parts)-1], \".\")\n\ts := fmt.Sprintf(\"\u2013 %s is nil; wrap it in if or with: {{ with %s }}{{ .%s }}{{ end }}\", receiverName, receiver, field)\n\treturn nilPointerErrRe.ReplaceAllString(inErr.Error(), s)\n}",
+    "funcname": "improveIfNilPointerMsg"
+}

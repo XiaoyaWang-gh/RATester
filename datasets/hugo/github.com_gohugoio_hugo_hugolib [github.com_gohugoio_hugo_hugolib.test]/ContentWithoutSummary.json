@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 161,
+    "focalfunc": "func (pco *pageContentOutput) ContentWithoutSummary(ctx context.Context) (template.HTML, error)",
+    "funcbody": "func (pco *pageContentOutput) ContentWithoutSummary(ctx context.Context) (template.HTML, error) {\n\tr, err := pco.c().Render(ctx)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn r.ContentWithoutSummary(ctx)\n}",
+    "funcname": "ContentWithoutSummary"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 61,
+    "focalfunc": "func (el *esLogger) Init(config string) error",
+    "funcbody": "func (el *esLogger) Init(config string) error {\n\terr := json.Unmarshal([]byte(config), el)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif el.DSN == \"\" {\n\t\treturn errors.New(\"empty dsn\")\n\t} else if u, err := url.Parse(el.DSN); err != nil {\n\t\treturn err\n\t} else if u.Path == \"\" {\n\t\treturn errors.New(\"missing prefix\")\n\t} else {\n\t\tconn, err := elasticsearch.NewClient(elasticsearch.Config{\n\t\t\tAddresses: []string{el.DSN},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tel.Client = conn\n\t}\n\tif len(el.Formatter) > 0 {\n\t\tfmtr, ok := logs.GetFormatter(el.Formatter)\n\t\tif !ok {\n\t\t\treturn fmt.Errorf(\"the formatter with name: %s not found\", el.Formatter)\n\t\t}\n\t\tel.formatter = fmtr\n\t}\n\treturn nil\n}",
+    "funcname": "Init"
+}

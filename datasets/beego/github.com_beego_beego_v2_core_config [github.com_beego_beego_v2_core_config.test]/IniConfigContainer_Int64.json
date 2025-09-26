@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 272,
+    "focalfunc": "func (c *IniConfigContainer) Int64(key string) (int64, error)",
+    "funcbody": "func (c *IniConfigContainer) Int64(key string) (int64, error) {\n\treturn strconv.ParseInt(c.getdata(key), 10, 64)\n}",
+    "funcname": "Int64"
+}

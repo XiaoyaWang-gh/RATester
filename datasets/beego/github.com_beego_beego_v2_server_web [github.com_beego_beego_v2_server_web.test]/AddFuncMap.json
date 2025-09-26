@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 109,
+    "focalfunc": "func AddFuncMap(key string, fn interface{}) error",
+    "funcbody": "func AddFuncMap(key string, fn interface{}) error {\n\tbeegoTplFuncMap[key] = fn\n\treturn nil\n}",
+    "funcname": "AddFuncMap"
+}

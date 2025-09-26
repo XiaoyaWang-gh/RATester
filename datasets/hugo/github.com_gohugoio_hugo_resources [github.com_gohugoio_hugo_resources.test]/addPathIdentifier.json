@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 163,
+    "focalfunc": "func (ctx *ResourceTransformationCtx) addPathIdentifier(inPath, identifier string) string",
+    "funcbody": "func (ctx *ResourceTransformationCtx) addPathIdentifier(inPath, identifier string) string {\n\tdir, file := path.Split(inPath)\n\tbase, ext := paths.PathAndExt(file)\n\treturn path.Join(dir, (base + identifier + ext))\n}",
+    "funcname": "addPathIdentifier"
+}

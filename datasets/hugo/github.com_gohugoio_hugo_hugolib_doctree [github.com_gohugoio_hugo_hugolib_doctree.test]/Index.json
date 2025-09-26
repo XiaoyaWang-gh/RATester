@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/dimensions.go",
+    "lineno": 38,
+    "focalfunc": "func (d DimensionFlag) Index() int",
+    "funcbody": "func (d DimensionFlag) Index() int {\n\tif d == 0 {\n\t\tpanic(\"dimension flag not set\")\n\t}\n\treturn int(d - 1)\n}",
+    "funcname": "Index"
+}

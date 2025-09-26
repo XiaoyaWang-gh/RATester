@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 774,
+    "focalfunc": "func Patch(rootpath string, f HandleFunc) *HttpServer",
+    "funcbody": "func Patch(rootpath string, f HandleFunc) *HttpServer {\n\treturn BeeApp.Patch(rootpath, f)\n}",
+    "funcname": "Patch"
+}

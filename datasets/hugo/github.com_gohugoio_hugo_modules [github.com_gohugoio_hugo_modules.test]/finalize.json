@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 137,
+    "focalfunc": "func (m *ModulesConfig) finalize(logger loggers.Logger) error",
+    "funcbody": "func (m *ModulesConfig) finalize(logger loggers.Logger) error {\n\tfor _, mod := range m.AllModules {\n\t\tm := mod.(*moduleAdapter)\n\t\tm.mounts = filterUnwantedMounts(m.mounts)\n\t}\n\treturn nil\n}",
+    "funcname": "finalize"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 161,
+    "focalfunc": "func (pder *MemProvider) SessionGC(context.Context)",
+    "funcbody": "func (pder *MemProvider) SessionGC(context.Context) {\n\tpder.lock.RLock()\n\tfor {\n\t\telement := pder.list.Back()\n\t\tif element == nil {\n\t\t\tbreak\n\t\t}\n\t\tif (element.Value.(*MemSessionStore).timeAccessed.Unix() + pder.maxlifetime) < time.Now().Unix() {\n\t\t\tpder.lock.RUnlock()\n\t\t\tpder.lock.Lock()\n\t\t\tpder.list.Remove(element)\n\t\t\tdelete(pder.sessions, element.Value.(*MemSessionStore).sid)\n\t\t\tpder.lock.Unlock()\n\t\t\tpder.lock.RLock()\n\t\t} else {\n\t\t\tbreak\n\t\t}\n\t}\n\tpder.lock.RUnlock()\n}",
+    "funcname": "SessionGC"
+}

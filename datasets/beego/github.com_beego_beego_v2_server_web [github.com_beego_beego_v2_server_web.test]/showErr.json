@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 86,
+    "focalfunc": "func showErr(err interface{}, ctx *context.Context, stack string)",
+    "funcbody": "func showErr(err interface{}, ctx *context.Context, stack string) {\n\tt, _ := template.New(\"beegoerrortemp\").Parse(tpl)\n\tdata := map[string]string{\n\t\t\"AppError\":\t\tfmt.Sprintf(\"%s:%v\", BConfig.AppName, err),\n\t\t\"RequestMethod\":\tctx.Input.Method(),\n\t\t\"RequestURL\":\t\tctx.Input.URI(),\n\t\t\"RemoteAddr\":\t\tctx.Input.IP(),\n\t\t\"Stack\":\t\tstack,\n\t\t\"BeegoVersion\":\t\tbeego.VERSION,\n\t\t\"GoVersion\":\t\truntime.Version(),\n\t}\n\tt.Execute(ctx.ResponseWriter, data)\n}",
+    "funcname": "showErr"
+}

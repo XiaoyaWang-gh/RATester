@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 593,
+    "focalfunc": "func CtrlPatch(rootpath string, f interface{})",
+    "funcbody": "func CtrlPatch(rootpath string, f interface{}) {\n\tBeeApp.CtrlPatch(rootpath, f)\n}",
+    "funcname": "CtrlPatch"
+}

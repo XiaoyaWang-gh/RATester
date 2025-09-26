@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1655,
+    "focalfunc": "func (c *DefaultCtx) SendString(body string) error",
+    "funcbody": "func (c *DefaultCtx) SendString(body string) error {\n\tc.fasthttp.Response.SetBodyString(body)\n\n\treturn nil\n}",
+    "funcname": "SendString"
+}

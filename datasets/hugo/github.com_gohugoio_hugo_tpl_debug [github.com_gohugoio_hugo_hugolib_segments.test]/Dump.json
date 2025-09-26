@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/debug/debug.go",
+    "lineno": 107,
+    "focalfunc": "func (ns *Namespace) Dump(val any) string",
+    "funcbody": "func (ns *Namespace) Dump(val any) string {\n\tb, err := json.MarshalIndent(val, \"\", \"  \")\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\treturn string(b)\n}",
+    "funcname": "Dump"
+}

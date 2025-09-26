@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 399,
+    "focalfunc": "func (t *Tree) newVariable(pos Pos, ident string) *VariableNode",
+    "funcbody": "func (t *Tree) newVariable(pos Pos, ident string) *VariableNode {\n\treturn &VariableNode{tr: t, NodeType: NodeVariable, Pos: pos, Ident: strings.Split(ident, \".\")}\n}",
+    "funcname": "newVariable"
+}

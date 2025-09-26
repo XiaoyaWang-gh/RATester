@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/whitelist.go",
+    "lineno": 37,
+    "focalfunc": "func (w Whitelist) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (w Whitelist) MarshalJSON() ([]byte, error) {\n\tif w.acceptNone {\n\t\treturn json.Marshal(acceptNoneKeyword)\n\t}\n\n\treturn json.Marshal(w.patternsStrings)\n}",
+    "funcname": "MarshalJSON"
+}

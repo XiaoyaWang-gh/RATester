@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 132,
+    "focalfunc": "func lower(slice []string) []string",
+    "funcbody": "func lower(slice []string) []string {\n\tvar lowerStrings []string\n\tfor _, value := range slice {\n\t\tlowerStrings = append(lowerStrings, strings.ToLower(value))\n\t}\n\n\treturn lowerStrings\n}",
+    "funcname": "lower"
+}

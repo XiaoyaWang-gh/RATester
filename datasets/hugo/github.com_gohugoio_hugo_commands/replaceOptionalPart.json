@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 594,
+    "focalfunc": "func (c *importCommand) replaceOptionalPart(buffer *bytes.Buffer, partName string, part string)",
+    "funcbody": "func (c *importCommand) replaceOptionalPart(buffer *bytes.Buffer, partName string, part string) {\n\tif len(part) > 0 {\n\t\tbuffer.WriteString(partName + \"=\\\"\" + part + \"\\\" \")\n\t}\n}",
+    "funcname": "replaceOptionalPart"
+}

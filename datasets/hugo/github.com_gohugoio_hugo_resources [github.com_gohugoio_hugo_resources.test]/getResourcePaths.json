@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 554,
+    "focalfunc": "func (l *genericResource) getResourcePaths() internal.ResourcePaths",
+    "funcbody": "func (l *genericResource) getResourcePaths() internal.ResourcePaths {\n\treturn l.paths\n}",
+    "funcname": "getResourcePaths"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 8,
+    "focalfunc": "func BuildConfiguration(dynamicConfigBuilders ...func(*dynamic.HTTPConfiguration)) *dynamic.HTTPConfiguration",
+    "funcbody": "func BuildConfiguration(dynamicConfigBuilders ...func(*dynamic.HTTPConfiguration)) *dynamic.HTTPConfiguration {\n\tconf := &dynamic.HTTPConfiguration{\n\t\tModels:\t\t\tmap[string]*dynamic.Model{},\n\t\tServersTransports:\tmap[string]*dynamic.ServersTransport{},\n\t}\n\n\tfor _, build := range dynamicConfigBuilders {\n\t\tbuild(conf)\n\t}\n\treturn conf\n}",
+    "funcname": "BuildConfiguration"
+}

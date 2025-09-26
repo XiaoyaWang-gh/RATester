@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 60,
+    "focalfunc": "func FromTOMLConfigString(config string) Provider",
+    "funcbody": "func FromTOMLConfigString(config string) Provider {\n\tcfg, err := FromConfigString(config, \"toml\")\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn cfg\n}",
+    "funcname": "FromTOMLConfigString"
+}

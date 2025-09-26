@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 171,
+    "focalfunc": "func (c *JSONConfigContainer) DefaultInt64(key string, defaultVal int64) int64",
+    "funcbody": "func (c *JSONConfigContainer) DefaultInt64(key string, defaultVal int64) int64 {\n\tif v, err := c.Int64(key); err == nil {\n\t\treturn v\n\t}\n\treturn defaultVal\n}",
+    "funcname": "DefaultInt64"
+}

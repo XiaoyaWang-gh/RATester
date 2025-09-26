@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 717,
+    "focalfunc": "func (p *ControllerRegister) Any(pattern string, f HandleFunc)",
+    "funcbody": "func (p *ControllerRegister) Any(pattern string, f HandleFunc) {\n\tp.AddMethod(\"*\", pattern, f)\n}",
+    "funcname": "Any"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 222,
+    "focalfunc": "func (ctl *Control) connectServer() (net.Conn, error)",
+    "funcbody": "func (ctl *Control) connectServer() (net.Conn, error) {\n\treturn ctl.sessionCtx.Connector.Connect()\n}",
+    "funcname": "connectServer"
+}

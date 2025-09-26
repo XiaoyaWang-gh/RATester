@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 186,
+    "focalfunc": "func RegisterGreeterServer(s *grpc.Server, srv GreeterServer)",
+    "funcbody": "func RegisterGreeterServer(s *grpc.Server, srv GreeterServer) {\n\ts.RegisterService(&_Greeter_serviceDesc, srv)\n}",
+    "funcname": "RegisterGreeterServer"
+}

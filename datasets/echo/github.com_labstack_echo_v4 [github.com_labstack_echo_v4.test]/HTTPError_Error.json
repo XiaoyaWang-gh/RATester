@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 902,
+    "focalfunc": "func (he *HTTPError) Error() string",
+    "funcbody": "func (he *HTTPError) Error() string {\n\tif he.Internal == nil {\n\t\treturn fmt.Sprintf(\"code=%d, message=%v\", he.Code, he.Message)\n\t}\n\treturn fmt.Sprintf(\"code=%d, message=%v, internal=%v\", he.Code, he.Message, he.Internal)\n}",
+    "funcname": "Error"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/kv.go",
+    "lineno": 32,
+    "focalfunc": "func (p *Provider) SetDefaults()",
+    "funcbody": "func (p *Provider) SetDefaults() {\n\tp.RootKey = \"traefik\"\n}",
+    "funcname": "SetDefaults"
+}

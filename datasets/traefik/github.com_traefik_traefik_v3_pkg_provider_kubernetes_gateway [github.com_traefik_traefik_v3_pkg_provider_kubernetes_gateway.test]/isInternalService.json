@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1134,
+    "focalfunc": "func isInternalService(ref gatev1.BackendRef) bool",
+    "funcbody": "func isInternalService(ref gatev1.BackendRef) bool {\n\treturn isTraefikService(ref) && strings.HasSuffix(string(ref.Name), \"@internal\")\n}",
+    "funcname": "isInternalService"
+}

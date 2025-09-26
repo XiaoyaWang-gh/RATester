@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 333,
+    "focalfunc": "func (f Format) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (f Format) MarshalJSON() ([]byte, error) {\n\ttype Alias Format\n\treturn json.Marshal(&struct {\n\t\tMediaType\tstring\t`json:\"mediaType\"`\n\t\tAlias\n\t}{\n\t\tMediaType:\tf.MediaType.String(),\n\t\tAlias:\t\t(Alias)(f),\n\t})\n}",
+    "funcname": "MarshalJSON"
+}

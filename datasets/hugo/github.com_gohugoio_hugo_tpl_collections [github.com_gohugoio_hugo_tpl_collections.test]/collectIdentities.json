@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 64,
+    "focalfunc": "func collectIdentities(seqs ...any) (map[any]bool, error)",
+    "funcbody": "func collectIdentities(seqs ...any) (map[any]bool, error) {\n\tseen := make(map[any]bool)\n\tfor _, seq := range seqs {\n\t\tv := reflect.ValueOf(seq)\n\t\tswitch v.Kind() {\n\t\tcase reflect.Array, reflect.Slice:\n\t\t\tfor i := 0; i < v.Len(); i++ {\n\t\t\t\tev, _ := indirectInterface(v.Index(i))\n\n\t\t\t\tif !ev.Type().Comparable() {\n\t\t\t\t\treturn nil, errors.New(\"elements must be comparable\")\n\t\t\t\t}\n\n\t\t\t\tseen[normalize(ev)] = true\n\t\t\t}\n\t\tdefault:\n\t\t\treturn nil, fmt.Errorf(\"arguments must be slices or arrays\")\n\t\t}\n\t}\n\n\treturn seen, nil\n}",
+    "funcname": "collectIdentities"
+}

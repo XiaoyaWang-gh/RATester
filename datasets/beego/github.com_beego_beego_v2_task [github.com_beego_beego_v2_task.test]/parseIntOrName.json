@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 787,
+    "focalfunc": "func parseIntOrName(expr string, names map[string]uint) uint",
+    "funcbody": "func parseIntOrName(expr string, names map[string]uint) uint {\n\tif names != nil {\n\t\tif namedInt, ok := names[strings.ToLower(expr)]; ok {\n\t\t\treturn namedInt\n\t\t}\n\t}\n\treturn mustParseInt(expr)\n}",
+    "funcname": "parseIntOrName"
+}

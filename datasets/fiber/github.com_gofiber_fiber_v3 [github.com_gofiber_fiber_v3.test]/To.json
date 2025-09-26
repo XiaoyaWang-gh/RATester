@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 236,
+    "focalfunc": "func (r *Redirect) To(location string) error",
+    "funcbody": "func (r *Redirect) To(location string) error {\n\tr.c.setCanonical(HeaderLocation, location)\n\tr.c.Status(r.status)\n\n\tr.processFlashMessages()\n\n\treturn nil\n}",
+    "funcname": "To"
+}

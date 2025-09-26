@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 531,
+    "focalfunc": "func (t *templateHandler) newTemplateInfo(name, tpl string) templateInfo",
+    "funcbody": "func (t *templateHandler) newTemplateInfo(name, tpl string) templateInfo {\n\tvar isText bool\n\tvar isEmbedded bool\n\n\tif strings.HasPrefix(name, embeddedPathPrefix) {\n\t\tisEmbedded = true\n\t\tname = strings.TrimPrefix(name, embeddedPathPrefix)\n\t}\n\n\tname, isText = t.nameIsText(name)\n\treturn templateInfo{\n\t\tname:\t\tname,\n\t\tisText:\t\tisText,\n\t\tisEmbedded:\tisEmbedded,\n\t\ttemplate:\ttpl,\n\t}\n}",
+    "funcname": "newTemplateInfo"
+}

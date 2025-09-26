@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 61,
+    "focalfunc": "func (g *Group) PATCH(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) PATCH(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn g.Add(http.MethodPatch, path, h, m...)\n}",
+    "funcname": "PATCH"
+}

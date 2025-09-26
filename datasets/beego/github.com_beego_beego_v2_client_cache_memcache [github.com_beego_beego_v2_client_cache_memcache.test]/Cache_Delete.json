@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 110,
+    "focalfunc": "func (rc *Cache) Delete(ctx context.Context, key string) error",
+    "funcbody": "func (rc *Cache) Delete(ctx context.Context, key string) error {\n\treturn berror.Wrapf(rc.conn.Delete(key), cache.MemCacheCurdFailed,\n\t\t\"could not delete key-value from memcache, key: %s\", key)\n}",
+    "funcname": "Delete"
+}

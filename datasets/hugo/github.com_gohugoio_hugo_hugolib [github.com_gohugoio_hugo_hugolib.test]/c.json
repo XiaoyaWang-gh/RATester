@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 149,
+    "focalfunc": "func (pco *pageContentOutput) c() page.Markup",
+    "funcbody": "func (pco *pageContentOutput) c() page.Markup {\n\treturn pco.po.p.m.content.getOrCreateScope(\"\", pco)\n}",
+    "funcname": "c"
+}

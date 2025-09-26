@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 256,
+    "focalfunc": "func (r *hookedRenderer) renderLink(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderLink(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tn := node.(*ast.Link)\n\tvar lr hooks.LinkRenderer\n\n\tctx, ok := w.(*render.Context)\n\tif ok {\n\t\th := ctx.RenderContext().GetRenderer(hooks.LinkRendererType, nil)\n\t\tok = h != nil\n\t\tif ok {\n\t\t\tlr = h.(hooks.LinkRenderer)\n\t\t}\n\t}\n\n\tif !ok {\n\t\treturn r.renderLinkDefault(w, source, node, entering)\n\t}\n\n\tif entering {\n\n\t\tctx.PushPos(ctx.Buffer.Len())\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\ttext := ctx.PopRenderedString()\n\n\tpage, pageInner := render.GetPageAndPageInner(ctx)\n\n\terr := lr.RenderLink(\n\t\tctx.RenderContext().Ctx,\n\t\tw,\n\t\tlinkContext{\n\t\t\tpage:\t\t\tpage,\n\t\t\tpageInner:\t\tpageInner,\n\t\t\tdestination:\t\tstring(n.Destination),\n\t\t\ttitle:\t\t\tstring(n.Title),\n\t\t\ttext:\t\t\thstring.HTML(text),\n\t\t\tplainText:\t\tstring(n.Text(source)),\n\t\t\tAttributesHolder:\tattributes.Empty,\n\t\t},\n\t)\n\n\treturn ast.WalkContinue, err\n}",
+    "funcname": "renderLink"
+}

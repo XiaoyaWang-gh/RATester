@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/plain.go",
+    "lineno": 31,
+    "focalfunc": "func decodePlain(data []byte, obj any) error",
+    "funcbody": "func decodePlain(data []byte, obj any) error {\n\tif obj == nil {\n\t\treturn nil\n\t}\n\n\tv := reflect.ValueOf(obj)\n\n\tfor v.Kind() == reflect.Ptr {\n\t\tif v.IsNil() {\n\t\t\treturn nil\n\t\t}\n\t\tv = v.Elem()\n\t}\n\n\tif v.Kind() == reflect.String {\n\t\tv.SetString(bytesconv.BytesToString(data))\n\t\treturn nil\n\t}\n\n\tif _, ok := v.Interface().([]byte); ok {\n\t\tv.SetBytes(data)\n\t\treturn nil\n\t}\n\n\treturn fmt.Errorf(\"type (%T) unknown type\", v)\n}",
+    "funcname": "decodePlain"
+}

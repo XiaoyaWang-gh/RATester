@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 68,
+    "focalfunc": "func (r *PostPublishResource) Permalink() string",
+    "funcbody": "func (r *PostPublishResource) Permalink() string {\n\treturn r.field(\"Permalink\")\n}",
+    "funcname": "Permalink"
+}

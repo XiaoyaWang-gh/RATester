@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 138,
+    "focalfunc": "func tAttrName(c context, s []byte) (context, int)",
+    "funcbody": "func tAttrName(c context, s []byte) (context, int) {\n\ti, err := eatAttrName(s, 0)\n\tif err != nil {\n\t\treturn context{state: stateError, err: err}, len(s)\n\t} else if i != len(s) {\n\t\tc.state = stateAfterName\n\t}\n\treturn c, i\n}",
+    "funcname": "tAttrName"
+}

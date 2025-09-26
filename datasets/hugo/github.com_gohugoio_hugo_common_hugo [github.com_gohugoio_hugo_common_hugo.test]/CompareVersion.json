@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 188,
+    "focalfunc": "func CompareVersion(version any) int",
+    "funcbody": "func CompareVersion(version any) int {\n\treturn compareVersions(CurrentVersion, version)\n}",
+    "funcname": "CompareVersion"
+}

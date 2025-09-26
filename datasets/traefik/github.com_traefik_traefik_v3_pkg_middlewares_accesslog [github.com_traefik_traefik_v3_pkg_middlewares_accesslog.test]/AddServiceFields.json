@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/field_middleware.go",
+    "lineno": 46,
+    "focalfunc": "func AddServiceFields(rw http.ResponseWriter, req *http.Request, next http.Handler, data *LogData)",
+    "funcbody": "func AddServiceFields(rw http.ResponseWriter, req *http.Request, next http.Handler, data *LogData) {\n\tstart := time.Now().UTC()\n\n\tnext.ServeHTTP(rw, req)\n\n\tdata.Core[OriginDuration] = time.Now().UTC().Sub(start)\n\n\tdata.OriginResponse = make(http.Header)\n\tutils.CopyHeaders(data.OriginResponse, rw.Header())\n\n\tctx := req.Context()\n\tcapt, err := capture.FromContext(ctx)\n\tif err != nil {\n\t\tlog.Ctx(ctx).Error().Err(err).Str(logs.MiddlewareType, \"AccessLogs\").Msg(\"Could not get Capture\")\n\t\treturn\n\t}\n\n\tdata.Core[OriginStatus] = capt.StatusCode()\n\tdata.Core[OriginContentSize] = capt.ResponseSize()\n}",
+    "funcname": "AddServiceFields"
+}

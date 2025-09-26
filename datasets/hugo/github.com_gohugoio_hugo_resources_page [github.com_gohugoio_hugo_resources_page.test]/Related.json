@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 55,
+    "focalfunc": "func (p Pages) Related(ctx context.Context, optsv any) (Pages, error)",
+    "funcbody": "func (p Pages) Related(ctx context.Context, optsv any) (Pages, error) {\n\tif len(p) == 0 {\n\t\treturn nil, nil\n\t}\n\n\tvar opts related.SearchOpts\n\tswitch v := optsv.(type) {\n\tcase related.Document:\n\t\topts.Document = v\n\tcase map[string]any:\n\t\tif err := mapstructure.WeakDecode(v, &opts); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"invalid argument type %T\", optsv)\n\t}\n\n\tresult, err := p.search(ctx, opts)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn result, nil\n}",
+    "funcname": "Related"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/openfiles_fs.go",
+    "lineno": 62,
+    "focalfunc": "func (fs *OpenFilesFs) trackAndWrapFile(f afero.File) afero.File",
+    "funcbody": "func (fs *OpenFilesFs) trackAndWrapFile(f afero.File) afero.File {\n\tfs.mu.Lock()\n\tdefer fs.mu.Unlock()\n\n\tif fs.openFiles == nil {\n\t\tfs.openFiles = make(map[string]int)\n\t}\n\n\tfs.openFiles[f.Name()]++\n\n\treturn &openFilesFsFile{fs: fs, File: f}\n}",
+    "funcname": "trackAndWrapFile"
+}

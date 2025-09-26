@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/local_store.go",
+    "lineno": 153,
+    "focalfunc": "func (s *LocalStore) GetCertificates(resolverName string) ([]*CertAndStore, error)",
+    "funcbody": "func (s *LocalStore) GetCertificates(resolverName string) ([]*CertAndStore, error) {\n\tstoredData, err := s.get(resolverName)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn storedData.Certificates, nil\n}",
+    "funcname": "GetCertificates"
+}

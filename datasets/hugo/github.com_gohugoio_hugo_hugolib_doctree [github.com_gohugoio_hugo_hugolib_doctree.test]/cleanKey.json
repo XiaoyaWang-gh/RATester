@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 204,
+    "focalfunc": "func cleanKey(key string) string",
+    "funcbody": "func cleanKey(key string) string {\n\tif key == \"/\" {\n\n\t\treturn \"\"\n\t}\n\treturn key\n}",
+    "funcname": "cleanKey"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/mux.go",
+    "lineno": 24,
+    "focalfunc": "func NewConnData(serverName string, conn tcp.WriteCloser, alpnProtos []string) (ConnData, error)",
+    "funcbody": "func NewConnData(serverName string, conn tcp.WriteCloser, alpnProtos []string) (ConnData, error) {\n\tremoteIP, _, err := net.SplitHostPort(conn.RemoteAddr().String())\n\tif err != nil {\n\t\treturn ConnData{}, fmt.Errorf(\"error while parsing remote address %q: %w\", conn.RemoteAddr().String(), err)\n\t}\n\n\tserverName = types.CanonicalDomain(serverName)\n\n\treturn ConnData{\n\t\tserverName:\ttypes.CanonicalDomain(serverName),\n\t\tremoteIP:\tremoteIP,\n\t\talpnProtos:\talpnProtos,\n\t}, nil\n}",
+    "funcname": "NewConnData"
+}

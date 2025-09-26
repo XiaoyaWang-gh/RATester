@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 55,
+    "focalfunc": "func (mc *ModelCache) AllOrdered() []*ModelInfo",
+    "funcbody": "func (mc *ModelCache) AllOrdered() []*ModelInfo {\n\tm := make([]*ModelInfo, 0, len(mc.orders))\n\tfor _, table := range mc.orders {\n\t\tm = append(m, mc.cache[table])\n\t}\n\treturn m\n}",
+    "funcname": "AllOrdered"
+}

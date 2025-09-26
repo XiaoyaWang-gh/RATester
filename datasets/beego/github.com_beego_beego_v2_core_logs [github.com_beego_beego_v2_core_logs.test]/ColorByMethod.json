@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 167,
+    "focalfunc": "func ColorByMethod(method string) string",
+    "funcbody": "func ColorByMethod(method string) string {\n\tonce.Do(initColor)\n\tif c := colorMap[method]; c != \"\" {\n\t\treturn c\n\t}\n\treturn reset\n}",
+    "funcname": "ColorByMethod"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_limit.go",
+    "lineno": 90,
+    "focalfunc": "func (r *limitedReader) Read(b []byte) (n int, err error)",
+    "funcbody": "func (r *limitedReader) Read(b []byte) (n int, err error) {\n\tn, err = r.reader.Read(b)\n\tr.read += int64(n)\n\tif r.read > r.limit {\n\t\treturn n, echo.ErrStatusRequestEntityTooLarge\n\t}\n\treturn\n}",
+    "funcname": "Read"
+}

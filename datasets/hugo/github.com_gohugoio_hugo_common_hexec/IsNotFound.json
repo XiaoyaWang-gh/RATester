@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 106,
+    "focalfunc": "func IsNotFound(err error) bool",
+    "funcbody": "func IsNotFound(err error) bool {\n\tvar notFoundErr *NotFoundError\n\treturn errors.As(err, &notFoundErr)\n}",
+    "funcname": "IsNotFound"
+}

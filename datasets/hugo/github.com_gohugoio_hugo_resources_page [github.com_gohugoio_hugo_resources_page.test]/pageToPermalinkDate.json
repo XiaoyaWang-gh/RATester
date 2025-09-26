@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 260,
+    "focalfunc": "func (l PermalinkExpander) pageToPermalinkDate(p Page, dateField string) (string, error)",
+    "funcbody": "func (l PermalinkExpander) pageToPermalinkDate(p Page, dateField string) (string, error) {\n\n\tswitch dateField {\n\tcase \"year\":\n\t\treturn strconv.Itoa(p.Date().Year()), nil\n\tcase \"month\":\n\t\treturn fmt.Sprintf(\"%02d\", int(p.Date().Month())), nil\n\tcase \"monthname\":\n\t\treturn p.Date().Month().String(), nil\n\tcase \"day\":\n\t\treturn fmt.Sprintf(\"%02d\", p.Date().Day()), nil\n\tcase \"weekday\":\n\t\treturn strconv.Itoa(int(p.Date().Weekday())), nil\n\tcase \"weekdayname\":\n\t\treturn p.Date().Weekday().String(), nil\n\tcase \"yearday\":\n\t\treturn strconv.Itoa(p.Date().YearDay()), nil\n\t}\n\n\treturn p.Date().Format(dateField), nil\n}",
+    "funcname": "pageToPermalinkDate"
+}

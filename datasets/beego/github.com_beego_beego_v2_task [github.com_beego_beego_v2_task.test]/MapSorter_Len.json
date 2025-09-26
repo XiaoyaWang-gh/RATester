@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 704,
+    "focalfunc": "func (ms *MapSorter) Len() int",
+    "funcbody": "func (ms *MapSorter) Len() int\t{ return len(ms.Keys) }",
+    "funcname": "Len"
+}

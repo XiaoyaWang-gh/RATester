@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 184,
+    "focalfunc": "func GetWriteStr(v ...string) []byte",
+    "funcbody": "func GetWriteStr(v ...string) []byte {\n\tbuffer := new(bytes.Buffer)\n\tvar l int32\n\tfor _, v := range v {\n\t\tl += int32(len([]byte(v))) + int32(len([]byte(CONN_DATA_SEQ)))\n\t\tbinary.Write(buffer, binary.LittleEndian, []byte(v))\n\t\tbinary.Write(buffer, binary.LittleEndian, []byte(CONN_DATA_SEQ))\n\t}\n\treturn buffer.Bytes()\n}",
+    "funcname": "GetWriteStr"
+}

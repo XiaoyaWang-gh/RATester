@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/bean/default_value_filter.go",
+    "lineno": 92,
+    "focalfunc": "func (d *DefaultValueFilterChainBuilder) handleInsert(ctx context.Context, inv *orm.Invocation)",
+    "funcbody": "func (d *DefaultValueFilterChainBuilder) handleInsert(ctx context.Context, inv *orm.Invocation) {\n\td.setDefaultValue(ctx, inv.Args[0])\n}",
+    "funcname": "handleInsert"
+}

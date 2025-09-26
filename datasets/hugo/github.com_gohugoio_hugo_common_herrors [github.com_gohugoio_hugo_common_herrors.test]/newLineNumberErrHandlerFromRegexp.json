@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/line_number_extractors.go",
+    "lineno": 35,
+    "focalfunc": "func newLineNumberErrHandlerFromRegexp(expression string) lineNumberExtractor",
+    "funcbody": "func newLineNumberErrHandlerFromRegexp(expression string) lineNumberExtractor {\n\tre := regexp.MustCompile(expression)\n\treturn extractLineNo(re)\n}",
+    "funcname": "newLineNumberErrHandlerFromRegexp"
+}

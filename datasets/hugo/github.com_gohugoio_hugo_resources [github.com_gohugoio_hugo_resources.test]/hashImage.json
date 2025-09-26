@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 660,
+    "focalfunc": "func hashImage(r io.ReadSeeker) (uint64, int64, error)",
+    "funcbody": "func hashImage(r io.ReadSeeker) (uint64, int64, error) {\n\treturn hashing.XXHashFromReader(r)\n}",
+    "funcname": "hashImage"
+}

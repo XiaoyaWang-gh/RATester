@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 153,
+    "focalfunc": "func (a *hugoContextExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (a *hugoContextExtension) Extend(m goldmark.Markdown) {\n\tm.Parser().AddOptions(\n\t\tparser.WithInlineParsers(\n\t\t\tutil.Prioritized(&hugoContextParser{}, 50),\n\t\t),\n\t)\n\n\tm.Renderer().AddOptions(\n\t\trenderer.WithNodeRenderers(\n\t\t\tutil.Prioritized(&hugoContextRenderer{}, 50),\n\t\t),\n\t)\n}",
+    "funcname": "Extend"
+}

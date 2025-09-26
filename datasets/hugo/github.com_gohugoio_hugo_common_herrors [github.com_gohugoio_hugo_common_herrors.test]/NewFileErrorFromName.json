@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 180,
+    "focalfunc": "func NewFileErrorFromName(err error, name string) FileError",
+    "funcbody": "func NewFileErrorFromName(err error, name string) FileError {\n\n\tfileType, pos := extractFileTypePos(err)\n\tpos.Filename = name\n\tif fileType == \"\" {\n\t\t_, fileType = paths.FileAndExtNoDelimiter(filepath.Clean(name))\n\t}\n\n\treturn &fileError{cause: err, fileType: fileType, position: pos}\n}",
+    "funcname": "NewFileErrorFromName"
+}

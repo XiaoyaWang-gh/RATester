@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/header.go",
+    "lineno": 15,
+    "focalfunc": "func (headerBinding) Name() string",
+    "funcbody": "func (headerBinding) Name() string {\n\treturn \"header\"\n}",
+    "funcname": "Name"
+}

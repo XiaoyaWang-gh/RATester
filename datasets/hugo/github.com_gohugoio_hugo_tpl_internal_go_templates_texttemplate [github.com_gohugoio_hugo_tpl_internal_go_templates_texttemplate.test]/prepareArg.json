@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 160,
+    "focalfunc": "func prepareArg(value reflect.Value, argType reflect.Type) (reflect.Value, error)",
+    "funcbody": "func prepareArg(value reflect.Value, argType reflect.Type) (reflect.Value, error) {\n\tif !value.IsValid() {\n\t\tif !canBeNil(argType) {\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"value is nil; should be of type %s\", argType)\n\t\t}\n\t\tvalue = reflect.Zero(argType)\n\t}\n\tif value.Type().AssignableTo(argType) {\n\t\treturn value, nil\n\t}\n\tif intLike(value.Kind()) && intLike(argType.Kind()) && value.Type().ConvertibleTo(argType) {\n\t\tvalue = value.Convert(argType)\n\t\treturn value, nil\n\t}\n\treturn reflect.Value{}, fmt.Errorf(\"value has type %s; should be %s\", value.Type(), argType)\n}",
+    "funcname": "prepareArg"
+}

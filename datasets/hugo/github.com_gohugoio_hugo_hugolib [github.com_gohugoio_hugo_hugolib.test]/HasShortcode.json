@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 348,
+    "focalfunc": "func (p *pageState) HasShortcode(name string) bool",
+    "funcbody": "func (p *pageState) HasShortcode(name string) bool {\n\tif p.m.content.shortcodeState == nil {\n\t\treturn false\n\t}\n\n\treturn p.m.content.shortcodeState.hasName(name)\n}",
+    "funcname": "HasShortcode"
+}

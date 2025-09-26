@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 108,
+    "focalfunc": "func (ctx headingContext) Page() any",
+    "funcbody": "func (ctx headingContext) Page() any {\n\treturn ctx.page\n}",
+    "funcname": "Page"
+}

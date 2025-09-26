@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 627,
+    "focalfunc": "func (i *intersector) handleValuePair(l1vv, l2vv reflect.Value)",
+    "funcbody": "func (i *intersector) handleValuePair(l1vv, l2vv reflect.Value) {\n\tswitch kind := l1vv.Kind(); {\n\tcase kind == reflect.String:\n\t\tl2t, err := toString(l2vv)\n\t\tif err == nil && l1vv.String() == l2t {\n\t\t\ti.appendIfNotSeen(l1vv)\n\t\t}\n\tcase isNumber(kind):\n\t\tf1, err1 := numberToFloat(l1vv)\n\t\tf2, err2 := numberToFloat(l2vv)\n\t\tif err1 == nil && err2 == nil && f1 == f2 {\n\t\t\ti.appendIfNotSeen(l1vv)\n\t\t}\n\tcase kind == reflect.Ptr, kind == reflect.Struct:\n\t\tif types.Unwrapv(l1vv.Interface()) == types.Unwrapv(l2vv.Interface()) {\n\t\t\ti.appendIfNotSeen(l1vv)\n\t\t}\n\tcase kind == reflect.Interface:\n\t\ti.handleValuePair(reflect.ValueOf(l1vv.Interface()), l2vv)\n\t}\n}",
+    "funcname": "handleValuePair"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/kv.go",
+    "lineno": 64,
+    "focalfunc": "func (kvs *SimpleKVs) Contains(key interface{}) bool",
+    "funcbody": "func (kvs *SimpleKVs) Contains(key interface{}) bool {\n\t_, ok := kvs.kvs[key]\n\treturn ok\n}",
+    "funcname": "Contains"
+}

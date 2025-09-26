@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 266,
+    "focalfunc": "func (c *configContainer) GetSection(section string) (map[string]string, error)",
+    "funcbody": "func (c *configContainer) GetSection(section string) (map[string]string, error) {\n\tval, err := subTree(c.t, strings.Split(section, keySeparator))\n\tif err != nil {\n\t\treturn map[string]string{}, err\n\t}\n\tm := val.ToMap()\n\tres := make(map[string]string, len(m))\n\tfor k, v := range m {\n\t\tres[k] = config.ToString(v)\n\t}\n\treturn res, nil\n}",
+    "funcname": "GetSection"
+}

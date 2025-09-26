@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 49,
+    "focalfunc": "func (s *DbUtils) GetClientList(start, length int, search, sort, order string, clientId int) ([]*Client, int)",
+    "funcbody": "func (s *DbUtils) GetClientList(start, length int, search, sort, order string, clientId int) ([]*Client, int) {\n\tlist := make([]*Client, 0)\n\tvar cnt int\n\tkeys := GetMapKeys(s.JsonDb.Clients, true, sort, order)\n\tfor _, key := range keys {\n\t\tif value, ok := s.JsonDb.Clients.Load(key); ok {\n\t\t\tv := value.(*Client)\n\t\t\tif v.NoDisplay {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif clientId != 0 && clientId != v.Id {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif search != \"\" && !(v.Id == common.GetIntNoErrByStr(search) || strings.Contains(v.VerifyKey, search) || strings.Contains(v.Remark, search)) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tcnt++\n\t\t\tif start--; start < 0 {\n\t\t\t\tif length--; length >= 0 {\n\t\t\t\t\tlist = append(list, v)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn list, cnt\n}",
+    "funcname": "GetClientList"
+}

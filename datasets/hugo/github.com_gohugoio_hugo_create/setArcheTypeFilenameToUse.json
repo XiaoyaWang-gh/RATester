@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/content.go",
+    "lineno": 251,
+    "focalfunc": "func (b *contentBuilder) setArcheTypeFilenameToUse(ext string)",
+    "funcbody": "func (b *contentBuilder) setArcheTypeFilenameToUse(ext string) {\n\tvar pathsToCheck []string\n\n\tif b.kind != \"\" {\n\t\tpathsToCheck = append(pathsToCheck, b.kind+ext)\n\t}\n\n\tpathsToCheck = append(pathsToCheck, \"default\"+ext)\n\n\tfor _, p := range pathsToCheck {\n\t\tfi, err := b.archeTypeFs.Stat(p)\n\t\tif err == nil {\n\t\t\tb.archetypeFi = fi.(hugofs.FileMetaInfo)\n\t\t\tb.isDir = fi.IsDir()\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "setArcheTypeFilenameToUse"
+}

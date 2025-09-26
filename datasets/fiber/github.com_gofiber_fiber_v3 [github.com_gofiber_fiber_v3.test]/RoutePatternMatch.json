@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 133,
+    "focalfunc": "func RoutePatternMatch(path, pattern string, cfg ...Config) bool",
+    "funcbody": "func RoutePatternMatch(path, pattern string, cfg ...Config) bool {\n\t// See logic in (*Route).match and (*App).register\n\tvar ctxParams [maxParams]string\n\n\tconfig := Config{}\n\tif len(cfg) > 0 {\n\t\tconfig = cfg[0]\n\t}\n\n\tif path == \"\" {\n\t\tpath = \"/\"\n\t}\n\n\tif pattern == \"\" {\n\t\tpattern = \"/\"\n\t}\n\n\tif pattern[0] != '/' {\n\t\tpattern = \"/\" + pattern\n\t}\n\n\tpatternPretty := pattern\n\n\tif !config.CaseSensitive {\n\t\tpatternPretty = utils.ToLower(patternPretty)\n\t\tpath = utils.ToLower(path)\n\t}\n\n\tif !config.StrictRouting && len(patternPretty) > 1 {\n\t\tpatternPretty = utils.TrimRight(patternPretty, '/')\n\t}\n\n\tparser := parseRoute(patternPretty)\n\n\tif patternPretty == \"/\" && path == \"/\" {\n\t\treturn true\n\n\t} else if patternPretty == \"/*\" {\n\t\treturn true\n\t}\n\n\tif len(parser.params) > 0 {\n\t\tif match := parser.getMatch(path, path, &ctxParams, false); match {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tpatternPretty = RemoveEscapeChar(patternPretty)\n\tif len(patternPretty) == len(path) && patternPretty == path {\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "RoutePatternMatch"
+}

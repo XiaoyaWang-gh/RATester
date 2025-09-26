@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 187,
+    "focalfunc": "func (c *Cache) NamedLock(id string) func()",
+    "funcbody": "func (c *Cache) NamedLock(id string) func() {\n\tid = cleanID(id)\n\tc.nlocker.Lock(id)\n\treturn func() {\n\t\tc.nlocker.Unlock(id)\n\t}\n}",
+    "funcname": "NamedLock"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 117,
+    "focalfunc": "func MockQueryM2MWithCtx(tableName string, name string, res orm.QueryM2Mer) *Mock",
+    "funcbody": "func MockQueryM2MWithCtx(tableName string, name string, res orm.QueryM2Mer) *Mock {\n\treturn NewMock(NewQueryM2MerCondition(tableName, name), []interface{}{res}, nil)\n}",
+    "funcname": "MockQueryM2MWithCtx"
+}

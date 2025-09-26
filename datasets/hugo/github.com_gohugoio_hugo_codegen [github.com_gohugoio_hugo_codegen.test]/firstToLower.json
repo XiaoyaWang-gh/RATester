@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 479,
+    "focalfunc": "func firstToLower(name string) string",
+    "funcbody": "func firstToLower(name string) string {\n\treturn strings.ToLower(name[:1]) + name[1:]\n}",
+    "funcname": "firstToLower"
+}

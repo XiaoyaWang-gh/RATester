@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/logs.go",
+    "lineno": 89,
+    "focalfunc": "func (f *AccessLogFields) Keep(field string) bool",
+    "funcbody": "func (f *AccessLogFields) Keep(field string) bool {\n\tdefaultKeep := true\n\tif f != nil {\n\t\tdefaultKeep = checkFieldValue(f.DefaultMode, defaultKeep)\n\n\t\tif v, ok := f.Names[field]; ok {\n\t\t\treturn checkFieldValue(v, defaultKeep)\n\t\t}\n\t}\n\treturn defaultKeep\n}",
+    "funcname": "Keep"
+}

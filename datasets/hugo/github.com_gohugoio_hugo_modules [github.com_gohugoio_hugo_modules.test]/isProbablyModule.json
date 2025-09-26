@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 451,
+    "focalfunc": "func isProbablyModule(path string) bool",
+    "funcbody": "func isProbablyModule(path string) bool {\n\treturn module.CheckPath(path) == nil\n}",
+    "funcname": "isProbablyModule"
+}

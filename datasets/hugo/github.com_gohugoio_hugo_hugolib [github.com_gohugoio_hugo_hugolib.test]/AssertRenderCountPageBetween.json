@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 395,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertRenderCountPageBetween(from, to int)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertRenderCountPageBetween(from, to int) {\n\ts.Helper()\n\ti := int(s.counters.pageRenderCounter.Load())\n\ts.Assert(i >= from && i <= to, qt.IsTrue)\n}",
+    "funcname": "AssertRenderCountPageBetween"
+}

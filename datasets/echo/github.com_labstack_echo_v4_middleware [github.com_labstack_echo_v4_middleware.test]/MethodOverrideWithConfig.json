@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/method_override.go",
+    "lineno": 42,
+    "focalfunc": "func MethodOverrideWithConfig(config MethodOverrideConfig) echo.MiddlewareFunc",
+    "funcbody": "func MethodOverrideWithConfig(config MethodOverrideConfig) echo.MiddlewareFunc {\n\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultMethodOverrideConfig.Skipper\n\t}\n\tif config.Getter == nil {\n\t\tconfig.Getter = DefaultMethodOverrideConfig.Getter\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\treq := c.Request()\n\t\t\tif req.Method == http.MethodPost {\n\t\t\t\tm := config.Getter(c)\n\t\t\t\tif m != \"\" {\n\t\t\t\t\treq.Method = m\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "MethodOverrideWithConfig"
+}

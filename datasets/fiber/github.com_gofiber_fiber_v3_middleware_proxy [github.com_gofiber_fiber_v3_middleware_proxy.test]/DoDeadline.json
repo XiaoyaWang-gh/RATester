@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 144,
+    "focalfunc": "func DoDeadline(c fiber.Ctx, addr string, deadline time.Time, clients ...*fasthttp.Client) error",
+    "funcbody": "func DoDeadline(c fiber.Ctx, addr string, deadline time.Time, clients ...*fasthttp.Client) error {\n\treturn doAction(c, addr, func(cli *fasthttp.Client, req *fasthttp.Request, resp *fasthttp.Response) error {\n\t\treturn cli.DoDeadline(req, resp, deadline)\n\t}, clients...)\n}",
+    "funcname": "DoDeadline"
+}

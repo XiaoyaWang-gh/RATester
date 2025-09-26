@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 189,
+    "focalfunc": "func (d *dbBasePostgres) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string",
+    "funcbody": "func (d *dbBasePostgres) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string {\n\tDebugLog.Println(\"[WARN] Not support any specifying index action, so that action is ignored\")\n\treturn ``\n}",
+    "funcname": "GenerateSpecifyIndex"
+}

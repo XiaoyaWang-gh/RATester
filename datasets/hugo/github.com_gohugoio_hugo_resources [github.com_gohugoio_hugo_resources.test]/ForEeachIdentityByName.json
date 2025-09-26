@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 204,
+    "focalfunc": "func (r *resourceAdapter) ForEeachIdentityByName(name string, f func(identity.Identity) bool)",
+    "funcbody": "func (r *resourceAdapter) ForEeachIdentityByName(name string, f func(identity.Identity) bool) {\n\tif constants.IsFieldRelOrPermalink(name) && !r.resourceTransformations.hasTransformationPermalinkHash() {\n\n\t\tf(identity.NewFindFirstManagerIdentityProvider(r.target.GetDependencyManager(), r.target.GetIdentityGroup()))\n\t\treturn\n\t}\n\tf(r.target.GetIdentityGroup())\n\tf(r.target.GetDependencyManager())\n}",
+    "funcname": "ForEeachIdentityByName"
+}

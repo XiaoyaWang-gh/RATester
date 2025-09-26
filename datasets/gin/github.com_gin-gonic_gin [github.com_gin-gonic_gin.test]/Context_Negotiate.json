@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1172,
+    "focalfunc": "func (c *Context) Negotiate(code int, config Negotiate)",
+    "funcbody": "func (c *Context) Negotiate(code int, config Negotiate) {\n\tswitch c.NegotiateFormat(config.Offered...) {\n\tcase binding.MIMEJSON:\n\t\tdata := chooseData(config.JSONData, config.Data)\n\t\tc.JSON(code, data)\n\n\tcase binding.MIMEHTML:\n\t\tdata := chooseData(config.HTMLData, config.Data)\n\t\tc.HTML(code, config.HTMLName, data)\n\n\tcase binding.MIMEXML:\n\t\tdata := chooseData(config.XMLData, config.Data)\n\t\tc.XML(code, data)\n\n\tcase binding.MIMEYAML, binding.MIMEYAML2:\n\t\tdata := chooseData(config.YAMLData, config.Data)\n\t\tc.YAML(code, data)\n\n\tcase binding.MIMETOML:\n\t\tdata := chooseData(config.TOMLData, config.Data)\n\t\tc.TOML(code, data)\n\n\tdefault:\n\t\tc.AbortWithError(http.StatusNotAcceptable, errors.New(\"the accepted formats are not offered by the server\"))\n\t}\n}",
+    "funcname": "Negotiate"
+}

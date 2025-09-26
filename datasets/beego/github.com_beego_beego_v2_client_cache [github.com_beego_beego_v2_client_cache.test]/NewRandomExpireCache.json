@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/random_expired_cache.go",
+    "lineno": 48,
+    "focalfunc": "func NewRandomExpireCache(adapter Cache, opts ...RandomExpireCacheOption) Cache",
+    "funcbody": "func NewRandomExpireCache(adapter Cache, opts ...RandomExpireCacheOption) Cache {\n\trec := RandomExpireCache{\n\t\tCache:\tadapter,\n\t\toffset:\tdefaultExpiredFunc(),\n\t}\n\tfor _, fn := range opts {\n\t\tfn(&rec)\n\t}\n\treturn &rec\n}",
+    "funcname": "NewRandomExpireCache"
+}

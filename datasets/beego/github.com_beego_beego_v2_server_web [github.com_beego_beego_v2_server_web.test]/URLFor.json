@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 246,
+    "focalfunc": "func URLFor(endpoint string, values ...interface{}) string",
+    "funcbody": "func URLFor(endpoint string, values ...interface{}) string {\n\treturn BeeApp.Handlers.URLFor(endpoint, values...)\n}",
+    "funcname": "URLFor"
+}

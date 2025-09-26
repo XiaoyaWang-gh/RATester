@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 22,
+    "focalfunc": "func AsyncHandler(f func(Message)) func(Message)",
+    "funcbody": "func AsyncHandler(f func(Message)) func(Message) {\n\treturn func(m Message) {\n\t\tgo f(m)\n\t}\n}",
+    "funcname": "AsyncHandler"
+}

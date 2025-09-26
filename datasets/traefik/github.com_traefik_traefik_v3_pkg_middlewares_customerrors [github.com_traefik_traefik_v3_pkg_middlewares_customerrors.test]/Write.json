@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 285,
+    "focalfunc": "func (r *codeModifier) Write(buf []byte) (int, error)",
+    "funcbody": "func (r *codeModifier) Write(buf []byte) (int, error) {\n\tr.WriteHeader(r.code)\n\treturn r.responseWriter.Write(buf)\n}",
+    "funcname": "Write"
+}

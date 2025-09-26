@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/predicate/predicate.go",
+    "lineno": 58,
+    "focalfunc": "func (p P[T]) Filter(s []T) []T",
+    "funcbody": "func (p P[T]) Filter(s []T) []T {\n\tvar n int\n\tfor _, v := range s {\n\t\tif p(v) {\n\t\t\ts[n] = v\n\t\t\tn++\n\t\t}\n\t}\n\treturn s[:n]\n}",
+    "funcname": "Filter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/redirect.go",
+    "lineno": 46,
+    "focalfunc": "func HTTPSRedirectWithConfig(config RedirectConfig) echo.MiddlewareFunc",
+    "funcbody": "func HTTPSRedirectWithConfig(config RedirectConfig) echo.MiddlewareFunc {\n\treturn redirect(config, func(scheme, host, uri string) (bool, string) {\n\t\tif scheme != \"https\" {\n\t\t\treturn true, \"https://\" + host + uri\n\t\t}\n\t\treturn false, \"\"\n\t})\n}",
+    "funcname": "HTTPSRedirectWithConfig"
+}

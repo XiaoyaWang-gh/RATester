@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 105,
+    "focalfunc": "func OnChange(key string, fn func(value string))",
+    "funcbody": "func OnChange(key string, fn func(value string)) {\n\tglobalInstance.OnChange(key, fn)\n}",
+    "funcname": "OnChange"
+}

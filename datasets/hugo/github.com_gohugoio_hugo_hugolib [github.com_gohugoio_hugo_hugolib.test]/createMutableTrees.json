@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 241,
+    "focalfunc": "func (t *pageTrees) createMutableTrees()",
+    "funcbody": "func (t *pageTrees) createMutableTrees() {\n\tt.treePagesResources = doctree.WalkableTrees[contentNodeI]{\n\t\tt.treePages,\n\t\tt.treeResources,\n\t}\n\n\tt.resourceTrees = doctree.MutableTrees{\n\t\tt.treeResources,\n\t}\n}",
+    "funcname": "createMutableTrees"
+}

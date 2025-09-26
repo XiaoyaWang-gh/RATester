@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 176,
+    "focalfunc": "func (p *Provider) loadWRRService(conf *dynamic.Configuration, routeKey string, routeRule gatev1.HTTPRouteRule, route *gatev1.HTTPRoute) (string, *metav1.Condition)",
+    "funcbody": "func (p *Provider) loadWRRService(conf *dynamic.Configuration, routeKey string, routeRule gatev1.HTTPRouteRule, route *gatev1.HTTPRoute) (string, *metav1.Condition) {\n\tname := routeKey + \"-wrr\"\n\tif _, ok := conf.HTTP.Services[name]; ok {\n\t\treturn name, nil\n\t}\n\n\tvar wrr dynamic.WeightedRoundRobin\n\tvar condition *metav1.Condition\n\tfor _, backendRef := range routeRule.BackendRefs {\n\t\tsvcName, svc, errCondition := p.loadService(route, backendRef)\n\t\tweight := ptr.To(int(ptr.Deref(backendRef.Weight, 1)))\n\t\tif errCondition != nil {\n\t\t\tcondition = errCondition\n\t\t\twrr.Services = append(wrr.Services, dynamic.WRRService{\n\t\t\t\tName:\tsvcName,\n\t\t\t\tStatus:\tptr.To(500),\n\t\t\t\tWeight:\tweight,\n\t\t\t})\n\t\t\tcontinue\n\t\t}\n\n\t\tif svc != nil {\n\t\t\tconf.HTTP.Services[svcName] = svc\n\t\t}\n\n\t\twrr.Services = append(wrr.Services, dynamic.WRRService{\n\t\t\tName:\tsvcName,\n\t\t\tWeight:\tweight,\n\t\t})\n\t}\n\n\tconf.HTTP.Services[name] = &dynamic.Service{Weighted: &wrr}\n\treturn name, condition\n}",
+    "funcname": "loadWRRService"
+}

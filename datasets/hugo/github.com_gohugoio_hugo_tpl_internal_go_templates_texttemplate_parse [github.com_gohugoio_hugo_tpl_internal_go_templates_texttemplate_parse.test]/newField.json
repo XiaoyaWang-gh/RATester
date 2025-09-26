@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 504,
+    "focalfunc": "func (t *Tree) newField(pos Pos, ident string) *FieldNode",
+    "funcbody": "func (t *Tree) newField(pos Pos, ident string) *FieldNode {\n\treturn &FieldNode{tr: t, NodeType: NodeField, Pos: pos, Ident: strings.Split(ident[1:], \".\")}\n}",
+    "funcname": "newField"
+}

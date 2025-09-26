@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/webp/webp_notavailable.go",
+    "lineno": 29,
+    "focalfunc": "func Encode(w io.Writer, m image.Image, o webpoptions.EncodingOptions) error",
+    "funcbody": "func Encode(w io.Writer, m image.Image, o webpoptions.EncodingOptions) error {\n\treturn herrors.ErrFeatureNotAvailable\n}",
+    "funcname": "Encode"
+}

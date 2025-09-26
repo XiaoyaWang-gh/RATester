@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/token_bucket.go",
+    "lineno": 40,
+    "focalfunc": "func (b *tokenBucket) getRemaining() uint",
+    "funcbody": "func (b *tokenBucket) getRemaining() uint {\n\tb.RLock()\n\tdefer b.RUnlock()\n\treturn b.remaining\n}",
+    "funcname": "getRemaining"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 328,
+    "focalfunc": "func (r *codeModifier) Flush()",
+    "funcbody": "func (r *codeModifier) Flush() {\n\tr.WriteHeader(r.code)\n\n\tif flusher, ok := r.responseWriter.(http.Flusher); ok {\n\t\tflusher.Flush()\n\t}\n}",
+    "funcname": "Flush"
+}

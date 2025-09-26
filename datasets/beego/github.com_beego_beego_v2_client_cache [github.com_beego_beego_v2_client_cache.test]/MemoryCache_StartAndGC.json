@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 172,
+    "focalfunc": "func (bc *MemoryCache) StartAndGC(config string) error",
+    "funcbody": "func (bc *MemoryCache) StartAndGC(config string) error {\n\tvar cf map[string]int\n\tif err := json.Unmarshal([]byte(config), &cf); err != nil {\n\t\treturn berror.Wrapf(err, InvalidMemoryCacheCfg, \"invalid config, please check your input: %s\", config)\n\t}\n\tif _, ok := cf[\"interval\"]; !ok {\n\t\tcf = make(map[string]int)\n\t\tcf[\"interval\"] = DefaultEvery\n\t}\n\tdur := time.Duration(cf[\"interval\"]) * time.Second\n\tbc.Every = cf[\"interval\"]\n\tbc.dur = dur\n\tgo bc.vacuum()\n\treturn nil\n}",
+    "funcname": "StartAndGC"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 371,
+    "focalfunc": "func (m *Image) drawHorizLine(fromX, toX, y int, colorIdx uint8)",
+    "funcbody": "func (m *Image) drawHorizLine(fromX, toX, y int, colorIdx uint8) {\n\tfor x := fromX; x <= toX; x++ {\n\t\tm.SetColorIndex(x, y, colorIdx)\n\t}\n}",
+    "funcname": "drawHorizLine"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/css/css.go",
+    "lineno": 48,
+    "focalfunc": "func (ns *Namespace) Unquoted(v any) css.UnquotedString",
+    "funcbody": "func (ns *Namespace) Unquoted(v any) css.UnquotedString {\n\ts := cast.ToString(v)\n\treturn css.UnquotedString(s)\n}",
+    "funcname": "Unquoted"
+}

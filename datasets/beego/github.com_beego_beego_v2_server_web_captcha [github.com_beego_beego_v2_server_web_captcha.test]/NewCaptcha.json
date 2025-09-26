@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 238,
+    "focalfunc": "func NewCaptcha(urlPrefix string, store Storage) *Captcha",
+    "funcbody": "func NewCaptcha(urlPrefix string, store Storage) *Captcha {\n\tcpt := &Captcha{}\n\tcpt.store = store\n\tcpt.FieldIDName = fieldIDName\n\tcpt.FieldCaptchaName = fieldCaptchaName\n\tcpt.ChallengeNums = challengeNums\n\tcpt.Expiration = expiration\n\tcpt.CachePrefix = cachePrefix\n\tcpt.StdWidth = stdWidth\n\tcpt.StdHeight = stdHeight\n\n\tif urlPrefix == \"\" {\n\t\turlPrefix = defaultURLPrefix\n\t}\n\n\tif urlPrefix[len(urlPrefix)-1] != '/' {\n\t\turlPrefix += \"/\"\n\t}\n\n\tcpt.URLPrefix = urlPrefix\n\n\treturn cpt\n}",
+    "funcname": "NewCaptcha"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pages_capture.go",
+    "lineno": 38,
+    "focalfunc": "func newPagesCollector(\n\tctx context.Context,\n\th *HugoSites,\n\tsp *source.SourceSpec,\n\tlogger loggers.Logger,\n\tinfoLogger logg.LevelLogger,\n\tm *pageMap,\n\tbuildConfig *BuildCfg,\n\tids []pathChange,\n) *pagesCollector",
+    "funcbody": "func newPagesCollector(\n\tctx context.Context,\n\th *HugoSites,\n\tsp *source.SourceSpec,\n\tlogger loggers.Logger,\n\tinfoLogger logg.LevelLogger,\n\tm *pageMap,\n\tbuildConfig *BuildCfg,\n\tids []pathChange,\n) *pagesCollector {\n\treturn &pagesCollector{\n\t\tctx:\t\tctx,\n\t\th:\t\th,\n\t\tfs:\t\tsp.BaseFs.Content.Fs,\n\t\tm:\t\tm,\n\t\tsp:\t\tsp,\n\t\tlogger:\t\tlogger,\n\t\tinfoLogger:\tinfoLogger,\n\t\tbuildConfig:\tbuildConfig,\n\t\tids:\t\tids,\n\t\tseenDirs:\tmake(map[string]bool),\n\t}\n}",
+    "funcname": "newPagesCollector"
+}

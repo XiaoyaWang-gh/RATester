@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 473,
+    "focalfunc": "func (e *Echo) Pre(middleware ...MiddlewareFunc)",
+    "funcbody": "func (e *Echo) Pre(middleware ...MiddlewareFunc) {\n\te.premiddleware = append(e.premiddleware, middleware...)\n}",
+    "funcname": "Pre"
+}

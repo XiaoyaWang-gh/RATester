@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 56,
+    "focalfunc": "func (i *Provider) createConfiguration(ctx context.Context) *dynamic.Configuration",
+    "funcbody": "func (i *Provider) createConfiguration(ctx context.Context) *dynamic.Configuration {\n\tcfg := &dynamic.Configuration{\n\t\tHTTP: &dynamic.HTTPConfiguration{\n\t\t\tRouters:\t\tmake(map[string]*dynamic.Router),\n\t\t\tMiddlewares:\t\tmake(map[string]*dynamic.Middleware),\n\t\t\tServices:\t\tmake(map[string]*dynamic.Service),\n\t\t\tModels:\t\t\tmake(map[string]*dynamic.Model),\n\t\t\tServersTransports:\tmake(map[string]*dynamic.ServersTransport),\n\t\t},\n\t\tTCP: &dynamic.TCPConfiguration{\n\t\t\tRouters:\t\tmake(map[string]*dynamic.TCPRouter),\n\t\t\tServices:\t\tmake(map[string]*dynamic.TCPService),\n\t\t\tModels:\t\t\tmake(map[string]*dynamic.TCPModel),\n\t\t\tServersTransports:\tmake(map[string]*dynamic.TCPServersTransport),\n\t\t},\n\t\tTLS: &dynamic.TLSConfiguration{\n\t\t\tStores:\t\tmake(map[string]tls.Store),\n\t\t\tOptions:\tmake(map[string]tls.Options),\n\t\t},\n\t}\n\n\ti.apiConfiguration(cfg)\n\ti.pingConfiguration(cfg)\n\ti.restConfiguration(cfg)\n\ti.prometheusConfiguration(cfg)\n\ti.entryPointModels(cfg)\n\ti.redirection(ctx, cfg)\n\ti.serverTransport(cfg)\n\ti.serverTransportTCP(cfg)\n\n\ti.acme(cfg)\n\n\tcfg.HTTP.Services[\"noop\"] = &dynamic.Service{}\n\n\treturn cfg\n}",
+    "funcname": "createConfiguration"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/form.go",
+    "lineno": 119,
+    "focalfunc": "func parseFormTime(value string) (time.Time, error)",
+    "funcbody": "func parseFormTime(value string) (time.Time, error) {\n\tvar pattern string\n\tif len(value) >= 25 {\n\t\tvalue = value[:25]\n\t\tpattern = time.RFC3339\n\t} else if strings.HasSuffix(strings.ToUpper(value), \"Z\") {\n\t\tpattern = time.RFC3339\n\t} else if len(value) >= 19 {\n\t\tif strings.Contains(value, \"T\") {\n\t\t\tpattern = formatDateTimeT\n\t\t} else {\n\t\t\tpattern = formatDateTime\n\t\t}\n\t\tvalue = value[:19]\n\t} else if len(value) >= 10 {\n\t\tif len(value) > 10 {\n\t\t\tvalue = value[:10]\n\t\t}\n\t\tpattern = formatDate\n\t} else if len(value) >= 8 {\n\t\tif len(value) > 8 {\n\t\t\tvalue = value[:8]\n\t\t}\n\t\tpattern = formatTime\n\t}\n\treturn time.ParseInLocation(pattern, value, time.Local)\n}",
+    "funcname": "parseFormTime"
+}

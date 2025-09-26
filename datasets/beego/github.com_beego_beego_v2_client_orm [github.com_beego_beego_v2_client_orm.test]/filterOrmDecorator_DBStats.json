@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 239,
+    "focalfunc": "func (f *filterOrmDecorator) DBStats() *sql.DBStats",
+    "funcbody": "func (f *filterOrmDecorator) DBStats() *sql.DBStats {\n\tinv := &Invocation{\n\t\tMethod:\t\t\"DBStats\",\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres := f.ormer.DBStats()\n\t\t\treturn []interface{}{res}\n\t\t},\n\t}\n\tres := f.root(context.Background(), inv)\n\n\tif res[0] == nil {\n\t\treturn nil\n\t}\n\n\treturn res[0].(*sql.DBStats)\n}",
+    "funcname": "DBStats"
+}

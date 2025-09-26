@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 154,
+    "focalfunc": "func SetParams(l *Language, params maps.Params)",
+    "funcbody": "func SetParams(l *Language, params maps.Params) {\n\tl.params = params\n}",
+    "funcname": "SetParams"
+}

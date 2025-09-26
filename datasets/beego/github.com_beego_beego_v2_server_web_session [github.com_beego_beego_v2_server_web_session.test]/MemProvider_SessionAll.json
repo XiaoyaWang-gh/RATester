@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 183,
+    "focalfunc": "func (pder *MemProvider) SessionAll(context.Context) int",
+    "funcbody": "func (pder *MemProvider) SessionAll(context.Context) int {\n\treturn pder.list.Len()\n}",
+    "funcname": "SessionAll"
+}

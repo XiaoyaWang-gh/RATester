@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 46,
+    "focalfunc": "func newLinks(cfg goldmark_config.Config) goldmark.Extender",
+    "funcbody": "func newLinks(cfg goldmark_config.Config) goldmark.Extender {\n\treturn &links{cfg: cfg}\n}",
+    "funcname": "newLinks"
+}

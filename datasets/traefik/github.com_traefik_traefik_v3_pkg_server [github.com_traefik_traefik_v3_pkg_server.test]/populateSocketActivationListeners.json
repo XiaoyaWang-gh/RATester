@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/socket_activation_unix.go",
+    "lineno": 12,
+    "focalfunc": "func populateSocketActivationListeners()",
+    "funcbody": "func populateSocketActivationListeners() {\n\tlistenersWithName, _ := activation.ListenersWithNames()\n\n\tsocketActivationListeners = make(map[string]net.Listener)\n\tfor name, lns := range listenersWithName {\n\t\tif len(lns) != 1 {\n\t\t\tlog.Error().Str(\"listenersName\", name).Msg(\"Socket activation listeners must have one and only one listener per name\")\n\t\t\tcontinue\n\t\t}\n\n\t\tsocketActivationListeners[name] = lns[0]\n\t}\n}",
+    "funcname": "populateSocketActivationListeners"
+}

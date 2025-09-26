@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 49,
+    "focalfunc": "func (tmgc *TCPMuxGroupCtl) Listen(\n\tctx context.Context,\n\tmultiplexer, group, groupKey string,\n\trouteConfig vhost.RouteConfig,\n) (l net.Listener, err error)",
+    "funcbody": "func (tmgc *TCPMuxGroupCtl) Listen(\n\tctx context.Context,\n\tmultiplexer, group, groupKey string,\n\trouteConfig vhost.RouteConfig,\n) (l net.Listener, err error) {\n\ttmgc.mu.Lock()\n\ttcpMuxGroup, ok := tmgc.groups[group]\n\tif !ok {\n\t\ttcpMuxGroup = NewTCPMuxGroup(tmgc)\n\t\ttmgc.groups[group] = tcpMuxGroup\n\t}\n\ttmgc.mu.Unlock()\n\n\tswitch v1.TCPMultiplexerType(multiplexer) {\n\tcase v1.TCPMultiplexerHTTPConnect:\n\t\treturn tcpMuxGroup.HTTPConnectListen(ctx, group, groupKey, routeConfig)\n\tdefault:\n\t\terr = fmt.Errorf(\"unknown multiplexer [%s]\", multiplexer)\n\t\treturn\n\t}\n}",
+    "funcname": "Listen"
+}

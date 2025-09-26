@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 42,
+    "focalfunc": "func (pathBridge) Join(elem ...string) string",
+    "funcbody": "func (pathBridge) Join(elem ...string) string {\n\treturn path.Join(elem...)\n}",
+    "funcname": "Join"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 228,
+    "focalfunc": "func removeProxyHeaders(req *http.Request)",
+    "funcbody": "func removeProxyHeaders(req *http.Request) {\n\treq.RequestURI = \"\"\n\treq.Header.Del(\"Proxy-Connection\")\n\treq.Header.Del(\"Connection\")\n\treq.Header.Del(\"Proxy-Authenticate\")\n\treq.Header.Del(\"Proxy-Authorization\")\n\treq.Header.Del(\"TE\")\n\treq.Header.Del(\"Trailers\")\n\treq.Header.Del(\"Transfer-Encoding\")\n\treq.Header.Del(\"Upgrade\")\n}",
+    "funcname": "removeProxyHeaders"
+}

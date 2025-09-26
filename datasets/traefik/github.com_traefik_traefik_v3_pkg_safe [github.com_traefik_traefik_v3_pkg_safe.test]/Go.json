@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 47,
+    "focalfunc": "func Go(goroutine func())",
+    "funcbody": "func Go(goroutine func()) {\n\tGoWithRecover(goroutine, defaultRecoverGoroutine)\n}",
+    "funcname": "Go"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 284,
+    "focalfunc": "func (c *Controller) GenNatHoleResponse(transactionID string, session *Session, errInfo string) *msg.NatHoleResp",
+    "funcbody": "func (c *Controller) GenNatHoleResponse(transactionID string, session *Session, errInfo string) *msg.NatHoleResp {\n\tvar sid string\n\tif session != nil {\n\t\tsid = session.sid\n\t}\n\treturn &msg.NatHoleResp{\n\t\tTransactionID:\ttransactionID,\n\t\tSid:\t\tsid,\n\t\tError:\t\terrInfo,\n\t}\n}",
+    "funcname": "GenNatHoleResponse"
+}

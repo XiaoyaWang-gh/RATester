@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/field_middleware.go",
+    "lineno": 70,
+    "focalfunc": "func InitServiceFields(rw http.ResponseWriter, req *http.Request, next http.Handler, data *LogData)",
+    "funcbody": "func InitServiceFields(rw http.ResponseWriter, req *http.Request, next http.Handler, data *LogData) {\n\n\tdata.Core[OriginDuration] = time.Duration(0)\n\tdata.Core[OriginStatus] = 0\n\tdata.Core[OriginContentSize] = int64(0)\n\n\tnext.ServeHTTP(rw, req)\n}",
+    "funcname": "InitServiceFields"
+}

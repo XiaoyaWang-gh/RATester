@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 115,
+    "focalfunc": "func Must(err error)",
+    "funcbody": "func Must(err error) {\n\tif err != nil {\n\t\tpanic(err)\n\t}\n}",
+    "funcname": "Must"
+}

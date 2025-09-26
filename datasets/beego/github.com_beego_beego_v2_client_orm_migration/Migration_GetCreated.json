@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 154,
+    "focalfunc": "func (m *Migration) GetCreated() int64",
+    "funcbody": "func (m *Migration) GetCreated() int64 {\n\tt, err := time.Parse(DateFormat, m.Created)\n\tif err != nil {\n\t\treturn 0\n\t}\n\treturn t.Unix()\n}",
+    "funcname": "GetCreated"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 121,
+    "focalfunc": "func (m *moduleAdapter) Owner() Module",
+    "funcbody": "func (m *moduleAdapter) Owner() Module {\n\treturn m.owner\n}",
+    "funcname": "Owner"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/tls.go",
+    "lineno": 33,
+    "focalfunc": "func NewTlsServerConn(conn net.Conn) net.Conn",
+    "funcbody": "func NewTlsServerConn(conn net.Conn) net.Conn {\n\tvar err error\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\tos.Exit(0)\n\t\treturn nil\n\t}\n\tconfig := &tls.Config{Certificates: []tls.Certificate{cert}}\n\treturn tls.Server(conn, config)\n}",
+    "funcname": "NewTlsServerConn"
+}

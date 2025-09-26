@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/manager.go",
+    "lineno": 117,
+    "focalfunc": "func (m *manager) setRaw(key string, raw []byte, exp time.Duration)",
+    "funcbody": "func (m *manager) setRaw(key string, raw []byte, exp time.Duration) {\n\tif m.storage != nil {\n\t\t_ = m.storage.Set(key, raw, exp)\n\t} else {\n\t\tm.memory.Set(key, raw, exp)\n\t}\n}",
+    "funcname": "setRaw"
+}

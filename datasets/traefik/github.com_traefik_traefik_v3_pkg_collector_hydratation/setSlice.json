@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/hydratation/hydration.go",
+    "lineno": 143,
+    "focalfunc": "func setSlice(field reflect.Value) error",
+    "funcbody": "func setSlice(field reflect.Value) error {\n\tfield.Set(reflect.MakeSlice(field.Type(), sliceItemNumber, sliceItemNumber))\n\tfor j := range field.Len() {\n\t\tif err := fill(field.Index(j)); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "setSlice"
+}

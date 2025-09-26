@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/denyrouterrecursion/deny_router_recursion.go",
+    "lineno": 59,
+    "focalfunc": "func makeHash(routerName string) string",
+    "funcbody": "func makeHash(routerName string) string {\n\thasher := fnv.New64()\n\n\t_, _ = hasher.Write([]byte(routerName))\n\treturn strconv.FormatUint(hasher.Sum64(), 16)\n}",
+    "funcname": "makeHash"
+}

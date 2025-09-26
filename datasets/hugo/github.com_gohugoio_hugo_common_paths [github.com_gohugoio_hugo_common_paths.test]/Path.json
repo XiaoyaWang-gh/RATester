@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 420,
+    "focalfunc": "func (p *Path) Path() (d string)",
+    "funcbody": "func (p *Path) Path() (d string) {\n\treturn p.norm(p.s)\n}",
+    "funcname": "Path"
+}

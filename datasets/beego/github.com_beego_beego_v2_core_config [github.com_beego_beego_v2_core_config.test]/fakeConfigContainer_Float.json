@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 74,
+    "focalfunc": "func (c *fakeConfigContainer) Float(key string) (float64, error)",
+    "funcbody": "func (c *fakeConfigContainer) Float(key string) (float64, error) {\n\treturn strconv.ParseFloat(c.getData(key), 64)\n}",
+    "funcname": "Float"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 186,
+    "focalfunc": "func (lp *Provider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (lp *Provider) SessionDestroy(ctx context.Context, sid string) error {\n\tc.Del([]byte(sid))\n\treturn nil\n}",
+    "funcname": "SessionDestroy"
+}

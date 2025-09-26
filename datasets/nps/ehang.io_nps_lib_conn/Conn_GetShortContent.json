@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 106,
+    "focalfunc": "func (s *Conn) GetShortContent(l int) (b []byte, err error)",
+    "funcbody": "func (s *Conn) GetShortContent(l int) (b []byte, err error) {\n\tbuf := make([]byte, l)\n\treturn buf, binary.Read(s, binary.LittleEndian, &buf)\n}",
+    "funcname": "GetShortContent"
+}

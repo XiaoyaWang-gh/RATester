@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 123,
+    "focalfunc": "func (c *Cache) WriteCloser(id string) (ItemInfo, io.WriteCloser, error)",
+    "funcbody": "func (c *Cache) WriteCloser(id string) (ItemInfo, io.WriteCloser, error) {\n\tif err := c.init(); err != nil {\n\t\treturn ItemInfo{}, nil, err\n\t}\n\n\tid = cleanID(id)\n\tc.nlocker.Lock(id)\n\n\tinfo := ItemInfo{Name: id}\n\n\tf, err := helpers.OpenFileForWriting(c.Fs, id)\n\tif err != nil {\n\t\tc.nlocker.Unlock(id)\n\t\treturn info, nil, err\n\t}\n\n\treturn info, &lockedFile{\n\t\tFile:\tf,\n\t\tunlock:\tfunc() { c.nlocker.Unlock(id) },\n\t}, nil\n}",
+    "funcname": "WriteCloser"
+}

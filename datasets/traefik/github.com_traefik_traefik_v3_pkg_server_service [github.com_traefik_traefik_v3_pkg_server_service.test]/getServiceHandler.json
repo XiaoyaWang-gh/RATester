@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/service.go",
+    "lineno": 266,
+    "focalfunc": "func (m *Manager) getServiceHandler(ctx context.Context, service dynamic.WRRService) (http.Handler, error)",
+    "funcbody": "func (m *Manager) getServiceHandler(ctx context.Context, service dynamic.WRRService) (http.Handler, error) {\n\tswitch {\n\tcase service.Status != nil:\n\t\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\t\trw.WriteHeader(*service.Status)\n\t\t}), nil\n\n\tcase service.GRPCStatus != nil:\n\t\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\t\tst := status.New(service.GRPCStatus.Code, service.GRPCStatus.Msg)\n\n\t\t\tbody, err := json.Marshal(st.Proto())\n\t\t\tif err != nil {\n\t\t\t\thttp.Error(rw, \"Failed to marshal status to JSON\", http.StatusInternalServerError)\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\trw.Header().Set(\"Content-Type\", \"application/json\")\n\t\t\trw.WriteHeader(http.StatusOK)\n\n\t\t\t_, _ = rw.Write(body)\n\t\t}), nil\n\n\tdefault:\n\t\treturn m.BuildHTTP(ctx, service.Name)\n\t}\n}",
+    "funcname": "getServiceHandler"
+}

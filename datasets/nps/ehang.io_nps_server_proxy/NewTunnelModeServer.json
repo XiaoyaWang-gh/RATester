@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 26,
+    "focalfunc": "func NewTunnelModeServer(process process, bridge NetBridge, task *file.Tunnel) *TunnelModeServer",
+    "funcbody": "func NewTunnelModeServer(process process, bridge NetBridge, task *file.Tunnel) *TunnelModeServer {\n\ts := new(TunnelModeServer)\n\ts.bridge = bridge\n\ts.process = process\n\ts.task = task\n\treturn s\n}",
+    "funcname": "NewTunnelModeServer"
+}

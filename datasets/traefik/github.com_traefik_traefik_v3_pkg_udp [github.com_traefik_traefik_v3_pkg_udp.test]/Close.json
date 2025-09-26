@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 296,
+    "focalfunc": "func (c *Conn) Close() error",
+    "funcbody": "func (c *Conn) Close() error {\n\tc.close()\n\n\tc.listener.mu.Lock()\n\tdefer c.listener.mu.Unlock()\n\tdelete(c.listener.conns, c.rAddr.String())\n\treturn nil\n}",
+    "funcname": "Close"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 49,
+    "focalfunc": "func (s *JLWriter) SetFormatter(f LogFormatter)",
+    "funcbody": "func (s *JLWriter) SetFormatter(f LogFormatter) {\n\ts.formatter = f\n}",
+    "funcname": "SetFormatter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 215,
+    "focalfunc": "func (c ConfigLanguage) SummaryLength() int",
+    "funcbody": "func (c ConfigLanguage) SummaryLength() int {\n\treturn c.config.SummaryLength\n}",
+    "funcname": "SummaryLength"
+}

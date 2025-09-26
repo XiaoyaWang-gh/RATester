@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 912,
+    "focalfunc": "func (o *rawSet) Prepare() (RawPreparer, error)",
+    "funcbody": "func (o *rawSet) Prepare() (RawPreparer, error) {\n\treturn newRawPreparer(o)\n}",
+    "funcname": "Prepare"
+}

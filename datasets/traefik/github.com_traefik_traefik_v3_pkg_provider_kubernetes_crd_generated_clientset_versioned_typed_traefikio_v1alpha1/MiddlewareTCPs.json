@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/traefikio_client.go",
+    "lineno": 72,
+    "focalfunc": "func (c *TraefikV1alpha1Client) MiddlewareTCPs(namespace string) MiddlewareTCPInterface",
+    "funcbody": "func (c *TraefikV1alpha1Client) MiddlewareTCPs(namespace string) MiddlewareTCPInterface {\n\treturn newMiddlewareTCPs(c, namespace)\n}",
+    "funcname": "MiddlewareTCPs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 114,
+    "focalfunc": "func parseSection(r io.Reader, cfg Config, start stateFunc) (Result, error)",
+    "funcbody": "func parseSection(r io.Reader, cfg Config, start stateFunc) (Result, error) {\n\tb, err := io.ReadAll(r)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to read page content: %w\", err)\n\t}\n\treturn parseBytes(b, cfg, start)\n}",
+    "funcname": "parseSection"
+}

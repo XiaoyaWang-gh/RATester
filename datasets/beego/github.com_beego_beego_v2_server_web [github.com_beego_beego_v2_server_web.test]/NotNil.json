@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 150,
+    "focalfunc": "func NotNil(a interface{}) (isNil bool)",
+    "funcbody": "func NotNil(a interface{}) (isNil bool) {\n\treturn CompareNot(a, nil)\n}",
+    "funcname": "NotNil"
+}

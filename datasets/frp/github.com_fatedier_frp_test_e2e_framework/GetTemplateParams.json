@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/mockservers.go",
+    "lineno": 70,
+    "focalfunc": "func (m *MockServers) GetTemplateParams() map[string]interface{}",
+    "funcbody": "func (m *MockServers) GetTemplateParams() map[string]interface{} {\n\tret := make(map[string]interface{})\n\tret[TCPEchoServerPort] = m.tcpEchoServer.BindPort()\n\tret[UDPEchoServerPort] = m.udpEchoServer.BindPort()\n\tret[UDSEchoServerAddr] = m.udsEchoServer.BindAddr()\n\tret[HTTPSimpleServerPort] = m.httpSimpleServer.BindPort()\n\treturn ret\n}",
+    "funcname": "GetTemplateParams"
+}

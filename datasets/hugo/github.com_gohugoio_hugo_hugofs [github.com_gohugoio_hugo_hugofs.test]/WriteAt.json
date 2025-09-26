@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 107,
+    "focalfunc": "func (f *noOpRegularFileOps) WriteAt(p []byte, off int64) (n int, err error)",
+    "funcbody": "func (f *noOpRegularFileOps) WriteAt(p []byte, off int64) (n int, err error) {\n\tpanic(errNoOp)\n}",
+    "funcname": "WriteAt"
+}

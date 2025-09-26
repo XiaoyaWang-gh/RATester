@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 724,
+    "focalfunc": "func (f *frontmatterFieldHandlers) newDateFieldHandler(key string, setter func(d *FrontMatterDescriptor, t time.Time)) frontMatterFieldHandler",
+    "funcbody": "func (f *frontmatterFieldHandlers) newDateFieldHandler(key string, setter func(d *FrontMatterDescriptor, t time.Time)) frontMatterFieldHandler {\n\treturn func(d *FrontMatterDescriptor) (bool, error) {\n\t\tv, found := d.PageConfig.Params[key]\n\n\t\tif !found {\n\t\t\treturn false, nil\n\t\t}\n\n\t\tvar date time.Time\n\t\tif vt, ok := v.(time.Time); ok && vt.Location() == d.Location {\n\t\t\tdate = vt\n\t\t} else {\n\t\t\tvar err error\n\t\t\tdate, err = htime.ToTimeInDefaultLocationE(v, d.Location)\n\t\t\tif err != nil {\n\t\t\t\treturn false, nil\n\t\t\t}\n\t\t\td.PageConfig.Params[key] = date\n\t\t}\n\n\t\tsetter(d, date)\n\n\t\treturn true, nil\n\t}\n}",
+    "funcname": "newDateFieldHandler"
+}

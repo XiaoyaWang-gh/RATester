@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1138,
+    "focalfunc": "func (c *Context) Stream(step func(w io.Writer) bool) bool",
+    "funcbody": "func (c *Context) Stream(step func(w io.Writer) bool) bool {\n\tw := c.Writer\n\tclientGone := w.CloseNotify()\n\tfor {\n\t\tselect {\n\t\tcase <-clientGone:\n\t\t\treturn true\n\t\tdefault:\n\t\t\tkeepOpen := step(w)\n\t\t\tw.Flush()\n\t\t\tif !keepOpen {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "Stream"
+}

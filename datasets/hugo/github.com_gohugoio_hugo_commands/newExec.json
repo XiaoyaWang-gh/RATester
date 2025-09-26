@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commands.go",
+    "lineno": 21,
+    "focalfunc": "func newExec() (*simplecobra.Exec, error)",
+    "funcbody": "func newExec() (*simplecobra.Exec, error) {\n\trootCmd := &rootCommand{\n\t\tcommands: []simplecobra.Commander{\n\t\t\tnewVersionCmd(),\n\t\t\tnewEnvCommand(),\n\t\t\tnewServerCommand(),\n\t\t\tnewDeployCommand(),\n\t\t\tnewConfigCommand(),\n\t\t\tnewNewCommand(),\n\t\t\tnewConvertCommand(),\n\t\t\tnewImportCommand(),\n\t\t\tnewListCommand(),\n\t\t\tnewModCommands(),\n\t\t\tnewGenCommand(),\n\t\t\tnewReleaseCommand(),\n\t\t},\n\t}\n\n\treturn simplecobra.New(rootCmd)\n}",
+    "funcname": "newExec"
+}

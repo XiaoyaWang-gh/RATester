@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 67,
+    "focalfunc": "func SetPageValues(m *MenuEntry, p Page)",
+    "funcbody": "func SetPageValues(m *MenuEntry, p Page) {\n\tm.Page = p\n\tif m.MenuConfig.Name == \"\" {\n\t\tm.MenuConfig.Name = p.LinkTitle()\n\t}\n\tif m.MenuConfig.Title == \"\" {\n\t\tm.MenuConfig.Title = p.Title()\n\t}\n\tif m.MenuConfig.Weight == 0 {\n\t\tm.MenuConfig.Weight = p.Weight()\n\t}\n}",
+    "funcname": "SetPageValues"
+}

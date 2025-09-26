@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/dartsass/transform.go",
+    "lineno": 43,
+    "focalfunc": "func Supports() bool",
+    "funcbody": "func Supports() bool {\n\tif htesting.SupportsAll() {\n\t\treturn true\n\t}\n\treturn hugo.DartSassBinaryName != \"\"\n}",
+    "funcname": "Supports"
+}

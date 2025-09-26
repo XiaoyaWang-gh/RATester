@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 63,
+    "focalfunc": "func (bc *MemoryCache) Get(ctx context.Context, key string) (interface{}, error)",
+    "funcbody": "func (bc *MemoryCache) Get(ctx context.Context, key string) (interface{}, error) {\n\tbc.RLock()\n\tdefer bc.RUnlock()\n\tif itm, ok := bc.items[key]; ok {\n\t\tif itm.isExpire() {\n\t\t\treturn nil, ErrKeyExpired\n\t\t}\n\t\treturn itm.val, nil\n\t}\n\treturn nil, ErrKeyNotExist\n}",
+    "funcname": "Get"
+}

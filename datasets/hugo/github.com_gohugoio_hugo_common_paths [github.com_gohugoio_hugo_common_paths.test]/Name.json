@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 365,
+    "focalfunc": "func (p *Path) Name() string",
+    "funcbody": "func (p *Path) Name() string {\n\tif p.posContainerHigh > 0 {\n\t\treturn p.s[p.posContainerHigh:]\n\t}\n\treturn p.s\n}",
+    "funcname": "Name"
+}

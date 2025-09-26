@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 42,
+    "focalfunc": "func newHooks(app *App) *Hooks",
+    "funcbody": "func newHooks(app *App) *Hooks {\n\treturn &Hooks{\n\t\tapp:\t\tapp,\n\t\tonRoute:\tmake([]OnRouteHandler, 0),\n\t\tonGroup:\tmake([]OnGroupHandler, 0),\n\t\tonGroupName:\tmake([]OnGroupNameHandler, 0),\n\t\tonName:\t\tmake([]OnNameHandler, 0),\n\t\tonListen:\tmake([]OnListenHandler, 0),\n\t\tonShutdown:\tmake([]OnShutdownHandler, 0),\n\t\tonFork:\t\tmake([]OnForkHandler, 0),\n\t\tonMount:\tmake([]OnMountHandler, 0),\n\t}\n}",
+    "funcname": "newHooks"
+}

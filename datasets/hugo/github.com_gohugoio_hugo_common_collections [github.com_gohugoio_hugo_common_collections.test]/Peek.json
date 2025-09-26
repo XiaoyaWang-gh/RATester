@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 46,
+    "focalfunc": "func (s *Stack[T]) Peek() (T, bool)",
+    "funcbody": "func (s *Stack[T]) Peek() (T, bool) {\n\ts.mu.RLock()\n\tdefer s.mu.RUnlock()\n\tif len(s.items) == 0 {\n\t\treturn s.zero, false\n\t}\n\treturn s.items[len(s.items)-1], true\n}",
+    "funcname": "Peek"
+}

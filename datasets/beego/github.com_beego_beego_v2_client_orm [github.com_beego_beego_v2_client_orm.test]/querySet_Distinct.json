@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 165,
+    "focalfunc": "func (o querySet) Distinct() QuerySeter",
+    "funcbody": "func (o querySet) Distinct() QuerySeter {\n\to.distinct = true\n\treturn &o\n}",
+    "funcname": "Distinct"
+}

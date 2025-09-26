@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 168,
+    "focalfunc": "func (f *fatalErrorHandler) getErr() error",
+    "funcbody": "func (f *fatalErrorHandler) getErr() error {\n\tf.mu.Lock()\n\tdefer f.mu.Unlock()\n\treturn f.err\n}",
+    "funcname": "getErr"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 502,
+    "focalfunc": "func parseIP(ip string) net.IP",
+    "funcbody": "func parseIP(ip string) net.IP {\n\tparsedIP := net.ParseIP(ip)\n\n\tif ipv4 := parsedIP.To4(); ipv4 != nil {\n\n\t\treturn ipv4\n\t}\n\n\treturn parsedIP\n}",
+    "funcname": "parseIP"
+}

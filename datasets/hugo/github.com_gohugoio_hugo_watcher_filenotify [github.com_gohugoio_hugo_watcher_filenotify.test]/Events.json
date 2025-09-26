@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 94,
+    "focalfunc": "func (w *filePoller) Events() <-chan fsnotify.Event",
+    "funcbody": "func (w *filePoller) Events() <-chan fsnotify.Event {\n\treturn w.events\n}",
+    "funcname": "Events"
+}

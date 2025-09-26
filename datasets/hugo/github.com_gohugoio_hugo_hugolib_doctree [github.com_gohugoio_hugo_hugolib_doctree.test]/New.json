@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 74,
+    "focalfunc": "func New[T any](cfg Config[T]) *NodeShiftTree[T]",
+    "funcbody": "func New[T any](cfg Config[T]) *NodeShiftTree[T] {\n\tif cfg.Shifter == nil {\n\t\tpanic(\"Shifter is required\")\n\t}\n\n\treturn &NodeShiftTree[T]{\n\t\tmu:\t\t&sync.RWMutex{},\n\t\tshifter:\tcfg.Shifter,\n\t\ttree:\t\tradix.New(),\n\t}\n}",
+    "funcname": "New"
+}

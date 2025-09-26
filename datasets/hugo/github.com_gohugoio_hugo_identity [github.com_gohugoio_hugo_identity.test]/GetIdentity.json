@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 390,
+    "focalfunc": "func (m *nopManager) GetIdentity() Identity",
+    "funcbody": "func (m *nopManager) GetIdentity() Identity {\n\treturn Anonymous\n}",
+    "funcname": "GetIdentity"
+}

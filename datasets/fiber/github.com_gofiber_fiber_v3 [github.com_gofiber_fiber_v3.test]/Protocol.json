@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1157,
+    "focalfunc": "func (c *DefaultCtx) Protocol() string",
+    "funcbody": "func (c *DefaultCtx) Protocol() string {\n\treturn utils.UnsafeString(c.fasthttp.Request.Header.Protocol())\n}",
+    "funcname": "Protocol"
+}

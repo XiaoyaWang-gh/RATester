@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 263,
+    "focalfunc": "func IsContextType(tp reflect.Type) bool",
+    "funcbody": "func IsContextType(tp reflect.Type) bool {\n\tif tp == contextTypeValue {\n\t\treturn true\n\t}\n\tif tp == contextInterface {\n\t\treturn true\n\t}\n\n\tisContext, _ := isContextCache.GetOrCreate(tp, func() (bool, error) {\n\t\treturn tp.Implements(contextInterface), nil\n\t})\n\treturn isContext\n}",
+    "funcname": "IsContextType"
+}

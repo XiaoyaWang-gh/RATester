@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 87,
+    "focalfunc": "func addValueFuncs(out map[string]reflect.Value, in FuncMap)",
+    "funcbody": "func addValueFuncs(out map[string]reflect.Value, in FuncMap) {\n\tfor name, fn := range in {\n\t\tif !goodName(name) {\n\t\t\tpanic(fmt.Errorf(\"function name %q is not a valid identifier\", name))\n\t\t}\n\t\tv := reflect.ValueOf(fn)\n\t\tif v.Kind() != reflect.Func {\n\t\t\tpanic(\"value for \" + name + \" not a function\")\n\t\t}\n\t\tif err := goodFunc(name, v.Type()); err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t\tout[name] = v\n\t}\n}",
+    "funcname": "addValueFuncs"
+}

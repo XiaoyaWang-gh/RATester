@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 577,
+    "focalfunc": "func fullServiceName(ctx context.Context, namespace string, service traefikv1alpha1.LoadBalancerSpec, port intstr.IntOrString) string",
+    "funcbody": "func fullServiceName(ctx context.Context, namespace string, service traefikv1alpha1.LoadBalancerSpec, port intstr.IntOrString) string {\n\tif (port.Type == intstr.Int && port.IntVal != 0) || (port.Type == intstr.String && port.StrVal != \"\") {\n\t\treturn provider.Normalize(fmt.Sprintf(\"%s-%s-%s\", namespace, service.Name, &port))\n\t}\n\n\tif !strings.Contains(service.Name, providerNamespaceSeparator) {\n\t\treturn provider.Normalize(fmt.Sprintf(\"%s-%s\", namespace, service.Name))\n\t}\n\n\tname, pName := splitSvcNameProvider(service.Name)\n\tif pName == providerName {\n\t\treturn provider.Normalize(fmt.Sprintf(\"%s-%s\", namespace, name))\n\t}\n\n\tif service.Namespace != \"\" {\n\t\tlog.Ctx(ctx).Warn().Msgf(\"namespace %q is ignored in cross-provider context\", service.Namespace)\n\t}\n\n\treturn provider.Normalize(name) + providerNamespaceSeparator + pName\n}",
+    "funcname": "fullServiceName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 610,
+    "focalfunc": "func (t *txOrm) Commit() error",
+    "funcbody": "func (t *txOrm) Commit() error {\n\treturn t.db.(txEnder).Commit()\n}",
+    "funcname": "Commit"
+}

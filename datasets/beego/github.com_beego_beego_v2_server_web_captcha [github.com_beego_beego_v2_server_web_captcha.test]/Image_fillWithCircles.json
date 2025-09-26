@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 404,
+    "focalfunc": "func (m *Image) fillWithCircles(n, maxradius int)",
+    "funcbody": "func (m *Image) fillWithCircles(n, maxradius int) {\n\tmaxx := m.Bounds().Max.X\n\tmaxy := m.Bounds().Max.Y\n\tfor i := 0; i < n; i++ {\n\t\tcolorIdx := uint8(randInt(1, circleCount-1))\n\t\tr := randInt(1, maxradius)\n\t\tm.drawCircle(randInt(r, maxx-r), randInt(r, maxy-r), r, colorIdx)\n\t}\n}",
+    "funcname": "fillWithCircles"
+}

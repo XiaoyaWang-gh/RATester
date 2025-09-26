@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 81,
+    "focalfunc": "func (m *FileMeta) Copy() *FileMeta",
+    "funcbody": "func (m *FileMeta) Copy() *FileMeta {\n\tif m == nil {\n\t\treturn NewFileMeta()\n\t}\n\tc := *m\n\treturn &c\n}",
+    "funcname": "Copy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ipwhitelist/ip_whitelist.go",
+    "lineno": 30,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.IPWhiteList, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.IPWhiteList, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\tif len(config.SourceRange) == 0 {\n\t\treturn nil, errors.New(\"sourceRange is empty, IPWhiteLister not created\")\n\t}\n\n\tchecker, err := ip.NewChecker(config.SourceRange)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"cannot parse CIDR whitelist %s: %w\", config.SourceRange, err)\n\t}\n\n\tstrategy, err := config.IPStrategy.Get()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tlogger.Debug().Msgf(\"Setting up IPWhiteLister with sourceRange: %s\", config.SourceRange)\n\n\treturn &ipWhiteLister{\n\t\tstrategy:\tstrategy,\n\t\twhiteLister:\tchecker,\n\t\tnext:\t\tnext,\n\t\tname:\t\tname,\n\t}, nil\n}",
+    "funcname": "New"
+}

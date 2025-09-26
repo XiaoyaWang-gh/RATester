@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 107,
+    "focalfunc": "func (w *bodyDumpResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (w *bodyDumpResponseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\treturn http.NewResponseController(w.ResponseWriter).Hijack()\n}",
+    "funcname": "Hijack"
+}

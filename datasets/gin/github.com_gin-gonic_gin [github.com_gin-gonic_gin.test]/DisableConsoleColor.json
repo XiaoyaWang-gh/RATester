@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 164,
+    "focalfunc": "func DisableConsoleColor()",
+    "funcbody": "func DisableConsoleColor() {\n\tconsoleColorMode = disableColor\n}",
+    "funcname": "DisableConsoleColor"
+}

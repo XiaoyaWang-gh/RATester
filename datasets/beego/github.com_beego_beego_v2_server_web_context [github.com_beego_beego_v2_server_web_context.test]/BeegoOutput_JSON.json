@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 196,
+    "focalfunc": "func (output *BeegoOutput) JSON(data interface{}, hasIndent bool, encoding bool) error",
+    "funcbody": "func (output *BeegoOutput) JSON(data interface{}, hasIndent bool, encoding bool) error {\n\toutput.Header(\"Content-Type\", \"application/json; charset=utf-8\")\n\tvar content []byte\n\tvar err error\n\tif hasIndent {\n\t\tcontent, err = json.MarshalIndent(data, \"\", \"  \")\n\t} else {\n\t\tcontent, err = json.Marshal(data)\n\t}\n\tif err != nil {\n\t\thttp.Error(output.Context.ResponseWriter, err.Error(), http.StatusInternalServerError)\n\t\treturn err\n\t}\n\tif encoding {\n\t\tcontent = []byte(stringsToJSON(string(content)))\n\t}\n\treturn output.Body(content)\n}",
+    "funcname": "JSON"
+}

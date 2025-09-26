@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1863,
+    "focalfunc": "func (c *DefaultCtx) Reset(fctx *fasthttp.RequestCtx)",
+    "funcbody": "func (c *DefaultCtx) Reset(fctx *fasthttp.RequestCtx) {\n\n\tc.indexRoute = -1\n\tc.indexHandler = 0\n\n\tc.matched = false\n\n\tc.pathOriginal = c.app.getString(fctx.URI().PathOriginal())\n\n\tc.method = c.app.getString(fctx.Request.Header.Method())\n\tc.methodINT = c.app.methodInt(c.method)\n\n\tc.fasthttp = fctx\n\n\tc.baseURI = \"\"\n\n\tc.configDependentPaths()\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 78,
+    "focalfunc": "func (c *Cache) removeElement(e *list.Element)",
+    "funcbody": "func (c *Cache) removeElement(e *list.Element) {\n\tc.ll.Remove(e)\n\tkv := e.Value.(*entry)\n\tc.cache.Delete(kv.key)\n\tif c.OnEvicted != nil {\n\t\tc.OnEvicted(kv.key, kv.value)\n\t}\n}",
+    "funcname": "removeElement"
+}

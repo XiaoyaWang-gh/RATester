@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 357,
+    "focalfunc": "func (o querySet) RowsToMap(result *Params, keyCol, valueCol string) (int64, error)",
+    "funcbody": "func (o querySet) RowsToMap(result *Params, keyCol, valueCol string) (int64, error) {\n\tpanic(ErrNotImplement)\n}",
+    "funcname": "RowsToMap"
+}

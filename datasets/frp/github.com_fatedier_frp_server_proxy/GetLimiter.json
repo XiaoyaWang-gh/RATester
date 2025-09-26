@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 105,
+    "focalfunc": "func (pxy *BaseProxy) GetLimiter() *rate.Limiter",
+    "funcbody": "func (pxy *BaseProxy) GetLimiter() *rate.Limiter {\n\treturn pxy.limiter\n}",
+    "funcname": "GetLimiter"
+}

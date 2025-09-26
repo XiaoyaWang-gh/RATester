@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 478,
+    "focalfunc": "func (e *Echo) Use(middleware ...MiddlewareFunc)",
+    "funcbody": "func (e *Echo) Use(middleware ...MiddlewareFunc) {\n\te.middleware = append(e.middleware, middleware...)\n}",
+    "funcname": "Use"
+}

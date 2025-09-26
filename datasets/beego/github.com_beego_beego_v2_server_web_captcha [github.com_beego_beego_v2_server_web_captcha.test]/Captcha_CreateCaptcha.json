@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 182,
+    "focalfunc": "func (c *Captcha) CreateCaptcha() (string, error)",
+    "funcbody": "func (c *Captcha) CreateCaptcha() (string, error) {\n\n\tid := string(utils.RandomCreateBytes(15))\n\n\tchars := c.genRandChars()\n\n\tif err := c.store.Put(context2.Background(), c.key(id), chars, c.Expiration); err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn id, nil\n}",
+    "funcname": "CreateCaptcha"
+}

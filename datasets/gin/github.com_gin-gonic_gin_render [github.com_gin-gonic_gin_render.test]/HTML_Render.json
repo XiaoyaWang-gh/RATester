@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/html.go",
+    "lineno": 80,
+    "focalfunc": "func (r HTML) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r HTML) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\n\tif r.Name == \"\" {\n\t\treturn r.Template.Execute(w, r.Data)\n\t}\n\treturn r.Template.ExecuteTemplate(w, r.Name, r.Data)\n}",
+    "funcname": "Render"
+}

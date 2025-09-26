@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/tasks/tasks.go",
+    "lineno": 81,
+    "focalfunc": "func (r *RunEvery) Close() error",
+    "funcbody": "func (r *RunEvery) Close() error {\n\tif r.closed {\n\t\treturn nil\n\t}\n\tr.closed = true\n\tif r.quit != nil {\n\t\tclose(r.quit)\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

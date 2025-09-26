@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 847,
+    "focalfunc": "func (c *DefaultCtx) IPs() []string",
+    "funcbody": "func (c *DefaultCtx) IPs() []string {\n\treturn c.extractIPsFromHeader(HeaderXForwardedFor)\n}",
+    "funcname": "IPs"
+}

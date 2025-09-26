@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 170,
+    "focalfunc": "func (c *cachedContent) getOrCreateScope(scope string, pco *pageContentOutput) *cachedContentScope",
+    "funcbody": "func (c *cachedContent) getOrCreateScope(scope string, pco *pageContentOutput) *cachedContentScope {\n\tkey := scope + pco.po.f.Name\n\tcs, _ := c.scopes.GetOrCreate(key, func() (*cachedContentScope, error) {\n\t\treturn &cachedContentScope{\n\t\t\tcachedContent:\tc,\n\t\t\tpco:\t\tpco,\n\t\t\tscope:\t\tscope,\n\t\t}, nil\n\t})\n\treturn cs\n}",
+    "funcname": "getOrCreateScope"
+}

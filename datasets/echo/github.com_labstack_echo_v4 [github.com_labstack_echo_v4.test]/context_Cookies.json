@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 429,
+    "focalfunc": "func (c *context) Cookies() []*http.Cookie",
+    "funcbody": "func (c *context) Cookies() []*http.Cookie {\n\treturn c.request.Cookies()\n}",
+    "funcname": "Cookies"
+}

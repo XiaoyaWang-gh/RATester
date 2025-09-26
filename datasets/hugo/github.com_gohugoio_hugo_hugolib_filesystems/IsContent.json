@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 321,
+    "focalfunc": "func (s SourceFilesystems) IsContent(filename string) bool",
+    "funcbody": "func (s SourceFilesystems) IsContent(filename string) bool {\n\treturn s.Content.Contains(filename)\n}",
+    "funcname": "IsContent"
+}

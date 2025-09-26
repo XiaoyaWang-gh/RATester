@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/service.go",
+    "lineno": 343,
+    "focalfunc": "func (svr *Service) Run(ctx context.Context)",
+    "funcbody": "func (svr *Service) Run(ctx context.Context) {\n\tctx, cancel := context.WithCancel(ctx)\n\tsvr.ctx = ctx\n\tsvr.cancel = cancel\n\n\tif svr.webServer != nil {\n\t\tgo func() {\n\t\t\tlog.Infof(\"dashboard listen on %s\", svr.webServer.Address())\n\t\t\tif err := svr.webServer.Run(); err != nil {\n\t\t\t\tlog.Warnf(\"dashboard server exit with error: %v\", err)\n\t\t\t}\n\t\t}()\n\t}\n\n\tgo svr.HandleListener(svr.sshTunnelListener, true)\n\n\tif svr.kcpListener != nil {\n\t\tgo svr.HandleListener(svr.kcpListener, false)\n\t}\n\tif svr.quicListener != nil {\n\t\tgo svr.HandleQUICListener(svr.quicListener)\n\t}\n\tgo svr.HandleListener(svr.websocketListener, false)\n\tgo svr.HandleListener(svr.tlsListener, false)\n\n\tif svr.rc.NatHoleController != nil {\n\t\tgo svr.rc.NatHoleController.CleanWorker(svr.ctx)\n\t}\n\n\tif svr.sshTunnelGateway != nil {\n\t\tgo svr.sshTunnelGateway.Run()\n\t}\n\n\tsvr.HandleListener(svr.listener, false)\n\n\t<-svr.ctx.Done()\n\n\tif svr.listener != nil {\n\t\tsvr.Close()\n\t}\n}",
+    "funcname": "Run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 381,
+    "focalfunc": "func (p *Path) NameNoLang() string",
+    "funcbody": "func (p *Path) NameNoLang() string {\n\ti := p.identifierIndex(p.posIdentifierLanguage)\n\tif i == -1 {\n\t\treturn p.Name()\n\t}\n\n\treturn p.s[p.posContainerHigh:p.identifiers[i].Low-1] + p.s[p.identifiers[i].High:]\n}",
+    "funcname": "NameNoLang"
+}

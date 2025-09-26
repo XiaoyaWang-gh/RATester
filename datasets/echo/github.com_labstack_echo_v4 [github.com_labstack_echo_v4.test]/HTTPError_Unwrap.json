@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 925,
+    "focalfunc": "func (he *HTTPError) Unwrap() error",
+    "funcbody": "func (he *HTTPError) Unwrap() error {\n\treturn he.Internal\n}",
+    "funcname": "Unwrap"
+}

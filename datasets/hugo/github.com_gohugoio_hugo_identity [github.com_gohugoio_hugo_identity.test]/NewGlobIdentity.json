@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/predicate_identity.go",
+    "lineno": 27,
+    "focalfunc": "func NewGlobIdentity(pattern string) Identity",
+    "funcbody": "func NewGlobIdentity(pattern string) Identity {\n\tglob, err := hglob.GetGlob(pattern)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tpredicate := func(other Identity) bool {\n\t\treturn glob.Match(other.IdentifierBase())\n\t}\n\n\treturn NewPredicateIdentity(predicate, nil)\n}",
+    "funcname": "NewGlobIdentity"
+}

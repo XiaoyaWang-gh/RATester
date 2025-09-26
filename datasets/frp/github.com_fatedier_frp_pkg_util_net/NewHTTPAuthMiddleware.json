@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/http.go",
+    "lineno": 33,
+    "focalfunc": "func NewHTTPAuthMiddleware(user, passwd string) *HTTPAuthMiddleware",
+    "funcbody": "func NewHTTPAuthMiddleware(user, passwd string) *HTTPAuthMiddleware {\n\treturn &HTTPAuthMiddleware{\n\t\tuser:\tuser,\n\t\tpasswd:\tpasswd,\n\t}\n}",
+    "funcname": "NewHTTPAuthMiddleware"
+}

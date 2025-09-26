@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 443,
+    "focalfunc": "func newOTLPHistogramFrom(meter metric.Meter, name, desc string, unit string) *otelHistogram",
+    "funcbody": "func newOTLPHistogramFrom(meter metric.Meter, name, desc string, unit string) *otelHistogram {\n\tc, _ := meter.Float64Histogram(name,\n\t\tmetric.WithDescription(desc),\n\t\tmetric.WithUnit(unit),\n\t)\n\n\treturn &otelHistogram{\n\t\tip: c,\n\t}\n}",
+    "funcname": "newOTLPHistogramFrom"
+}

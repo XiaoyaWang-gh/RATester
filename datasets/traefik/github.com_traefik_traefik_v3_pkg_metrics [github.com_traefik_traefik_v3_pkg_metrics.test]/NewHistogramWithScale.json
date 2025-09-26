@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 347,
+    "focalfunc": "func NewHistogramWithScale(histogram metrics.Histogram, unit time.Duration) (ScalableHistogram, error)",
+    "funcbody": "func NewHistogramWithScale(histogram metrics.Histogram, unit time.Duration) (ScalableHistogram, error) {\n\tif unit <= 0 {\n\t\treturn nil, errors.New(\"invalid time unit\")\n\t}\n\treturn &HistogramWithScale{\n\t\thistogram:\thistogram,\n\t\tunit:\t\tunit,\n\t}, nil\n}",
+    "funcname": "NewHistogramWithScale"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 36,
+    "focalfunc": "func InitFromCsv()",
+    "funcbody": "func InitFromCsv() {\n\n\tif vkey := beego.AppConfig.String(\"public_vkey\"); vkey != \"\" {\n\t\tc := file.NewClient(vkey, true, true)\n\t\tfile.GetDb().NewClient(c)\n\t\tRunList.Store(c.Id, nil)\n\n\t}\n\n\tfile.GetDb().JsonDb.Tasks.Range(func(key, value interface{}) bool {\n\t\tif value.(*file.Tunnel).Status {\n\t\t\tAddTask(value.(*file.Tunnel))\n\t\t}\n\t\treturn true\n\t})\n}",
+    "funcname": "InitFromCsv"
+}

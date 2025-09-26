@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 81,
+    "focalfunc": "func FirstIdentity(v any) Identity",
+    "funcbody": "func FirstIdentity(v any) Identity {\n\tvar result Identity = Anonymous\n\tWalkIdentitiesShallow(v, func(level int, id Identity) bool {\n\t\tresult = id\n\t\treturn true\n\t})\n\n\treturn result\n}",
+    "funcname": "FirstIdentity"
+}

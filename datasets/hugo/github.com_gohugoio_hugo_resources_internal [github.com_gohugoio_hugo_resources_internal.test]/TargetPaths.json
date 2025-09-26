@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/resourcepaths.go",
+    "lineno": 74,
+    "focalfunc": "func (d ResourcePaths) TargetPaths() []string",
+    "funcbody": "func (d ResourcePaths) TargetPaths() []string {\n\tif len(d.TargetBasePaths) == 0 {\n\t\treturn []string{d.TargetPath()}\n\t}\n\n\tvar paths []string\n\tfor _, p := range d.TargetBasePaths {\n\t\tpaths = append(paths, p+d.TargetPath())\n\t}\n\treturn paths\n}",
+    "funcname": "TargetPaths"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 151,
+    "focalfunc": "func (p *pageMeta) ExpiryDate() time.Time",
+    "funcbody": "func (p *pageMeta) ExpiryDate() time.Time {\n\treturn p.pageConfig.Dates.ExpiryDate\n}",
+    "funcname": "ExpiryDate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/tree.go",
+    "lineno": 463,
+    "focalfunc": "func splitPath(key string) []string",
+    "funcbody": "func splitPath(key string) []string {\n\tkey = strings.Trim(key, \"/ \")\n\tif key == \"\" {\n\t\treturn []string{}\n\t}\n\treturn strings.Split(key, \"/\")\n}",
+    "funcname": "splitPath"
+}

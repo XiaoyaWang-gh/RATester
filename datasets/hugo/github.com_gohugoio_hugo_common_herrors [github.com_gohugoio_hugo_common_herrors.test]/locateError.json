@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/error_locator.go",
+    "lineno": 118,
+    "focalfunc": "func locateError(r io.Reader, le FileError, matches LineMatcherFn) *ErrorContext",
+    "funcbody": "func locateError(r io.Reader, le FileError, matches LineMatcherFn) *ErrorContext {\n\tif le == nil {\n\t\tpanic(\"must provide an error\")\n\t}\n\n\tectx := &ErrorContext{LinesPos: -1, Position: text.Position{Offset: -1}}\n\n\tb, err := io.ReadAll(r)\n\tif err != nil {\n\t\treturn ectx\n\t}\n\n\tlines := strings.Split(string(b), \"\\n\")\n\n\tlineNo := 0\n\tposBytes := 0\n\n\tfor li, line := range lines {\n\t\tlineNo = li + 1\n\t\tm := LineMatcher{\n\t\t\tPosition:\tle.Position(),\n\t\t\tError:\t\tle,\n\t\t\tLineNumber:\tlineNo,\n\t\t\tOffset:\t\tposBytes,\n\t\t\tLine:\t\tline,\n\t\t}\n\t\tv := matches(m)\n\t\tif ectx.LinesPos == -1 && v != -1 {\n\t\t\tectx.Position.LineNumber = lineNo\n\t\t\tectx.Position.ColumnNumber = v\n\t\t\tbreak\n\t\t}\n\n\t\tposBytes += len(line)\n\t}\n\n\tif ectx.Position.LineNumber > 0 {\n\t\tlow := ectx.Position.LineNumber - 3\n\t\tif low < 0 {\n\t\t\tlow = 0\n\t\t}\n\n\t\tif ectx.Position.LineNumber > 2 {\n\t\t\tectx.LinesPos = 2\n\t\t} else {\n\t\t\tectx.LinesPos = ectx.Position.LineNumber - 1\n\t\t}\n\n\t\thigh := ectx.Position.LineNumber + 2\n\t\tif high > len(lines) {\n\t\t\thigh = len(lines)\n\t\t}\n\n\t\tectx.Lines = lines[low:high]\n\n\t}\n\n\treturn ectx\n}",
+    "funcname": "locateError"
+}

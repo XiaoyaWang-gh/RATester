@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/config.go",
+    "lineno": 325,
+    "focalfunc": "func getServiceName(instance ecsInstance) string",
+    "funcbody": "func getServiceName(instance ecsInstance) string {\n\treturn provider.Normalize(instance.Name)\n}",
+    "funcname": "getServiceName"
+}

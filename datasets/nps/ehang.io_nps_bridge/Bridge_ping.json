@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 361,
+    "focalfunc": "func (s *Bridge) ping()",
+    "funcbody": "func (s *Bridge) ping() {\n\tticker := time.NewTicker(time.Second * 5)\n\tdefer ticker.Stop()\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tarr := make([]int, 0)\n\t\t\ts.Client.Range(func(key, value interface{}) bool {\n\t\t\t\tv := value.(*Client)\n\t\t\t\tif v.tunnel == nil || v.signal == nil {\n\t\t\t\t\tv.retryTime += 1\n\t\t\t\t\tif v.retryTime >= 3 {\n\t\t\t\t\t\tarr = append(arr, key.(int))\n\t\t\t\t\t}\n\t\t\t\t\treturn true\n\t\t\t\t}\n\t\t\t\tif v.tunnel.IsClose {\n\t\t\t\t\tarr = append(arr, key.(int))\n\t\t\t\t}\n\t\t\t\treturn true\n\t\t\t})\n\t\t\tfor _, v := range arr {\n\t\t\t\tlogs.Info(\"the client %d closed\", v)\n\t\t\t\ts.DelClient(v)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "ping"
+}

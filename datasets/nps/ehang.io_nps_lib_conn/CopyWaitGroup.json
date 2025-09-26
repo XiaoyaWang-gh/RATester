@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 376,
+    "focalfunc": "func CopyWaitGroup(conn1, conn2 net.Conn, crypt bool, snappy bool, rate *rate.Rate, flow *file.Flow, isServer bool, rb []byte)",
+    "funcbody": "func CopyWaitGroup(conn1, conn2 net.Conn, crypt bool, snappy bool, rate *rate.Rate, flow *file.Flow, isServer bool, rb []byte) {\n\n\tconnHandle := GetConn(conn1, crypt, snappy, rate, isServer)\n\tif rb != nil {\n\t\tconnHandle.Write(rb)\n\t}\n\n\twg := new(sync.WaitGroup)\n\twg.Add(1)\n\terr := goroutine.CopyConnsPool.Invoke(goroutine.NewConns(connHandle, conn2, flow, wg))\n\twg.Wait()\n\tif err != nil {\n\t\tlogs.Error(err)\n\t}\n}",
+    "funcname": "CopyWaitGroup"
+}

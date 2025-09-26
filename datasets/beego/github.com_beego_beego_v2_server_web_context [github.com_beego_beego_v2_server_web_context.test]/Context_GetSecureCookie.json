@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 224,
+    "focalfunc": "func (ctx *Context) GetSecureCookie(Secret, key string) (string, bool)",
+    "funcbody": "func (ctx *Context) GetSecureCookie(Secret, key string) (string, bool) {\n\tval := ctx.Input.Cookie(key)\n\tif val == \"\" {\n\t\treturn \"\", false\n\t}\n\n\tparts := strings.SplitN(val, \"|\", 3)\n\n\tif len(parts) != 3 {\n\t\treturn \"\", false\n\t}\n\n\tvs := parts[0]\n\ttimestamp := parts[1]\n\tsig := parts[2]\n\n\th := hmac.New(sha256.New, []byte(Secret))\n\t_, err := fmt.Fprintf(h, \"%s%s\", vs, timestamp)\n\tif err != nil {\n\t\treturn \"\", false\n\t}\n\n\tif fmt.Sprintf(\"%02x\", h.Sum(nil)) != sig {\n\t\treturn \"\", false\n\t}\n\tres, _ := base64.URLEncoding.DecodeString(vs)\n\treturn string(res), true\n}",
+    "funcname": "GetSecureCookie"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 706,
+    "focalfunc": "func assignSingleConfig(p interface{}, ac config.Configer)",
+    "funcbody": "func assignSingleConfig(p interface{}, ac config.Configer) {\n\tpt := reflect.TypeOf(p)\n\tif pt.Kind() != reflect.Ptr {\n\t\treturn\n\t}\n\tpt = pt.Elem()\n\tif pt.Kind() != reflect.Struct {\n\t\treturn\n\t}\n\tpv := reflect.ValueOf(p).Elem()\n\n\tfor i := 0; i < pt.NumField(); i++ {\n\t\tpf := pv.Field(i)\n\t\tif !pf.CanSet() {\n\t\t\tcontinue\n\t\t}\n\t\tname := pt.Field(i).Name\n\t\tswitch pf.Kind() {\n\t\tcase reflect.String:\n\t\t\tpf.SetString(ac.DefaultString(name, pf.String()))\n\t\tcase reflect.Int, reflect.Int64:\n\t\t\tpf.SetInt(ac.DefaultInt64(name, pf.Int()))\n\t\tcase reflect.Bool:\n\t\t\tpf.SetBool(ac.DefaultBool(name, pf.Bool()))\n\t\tcase reflect.Struct:\n\t\tdefault:\n\n\t\t}\n\t}\n}",
+    "funcname": "assignSingleConfig"
+}

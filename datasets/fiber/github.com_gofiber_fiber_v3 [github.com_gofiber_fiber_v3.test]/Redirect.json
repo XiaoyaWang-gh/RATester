@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1298,
+    "focalfunc": "func (c *DefaultCtx) Redirect() *Redirect",
+    "funcbody": "func (c *DefaultCtx) Redirect() *Redirect {\n\tif c.redirect == nil {\n\t\tc.redirect = AcquireRedirect()\n\t\tc.redirect.c = c\n\t}\n\n\treturn c.redirect\n}",
+    "funcname": "Redirect"
+}

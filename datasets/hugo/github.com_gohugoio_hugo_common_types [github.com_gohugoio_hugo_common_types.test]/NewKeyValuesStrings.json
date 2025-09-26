@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 60,
+    "focalfunc": "func NewKeyValuesStrings(key string, values ...string) KeyValues",
+    "funcbody": "func NewKeyValuesStrings(key string, values ...string) KeyValues {\n\tiv := make([]any, len(values))\n\tfor i := 0; i < len(values); i++ {\n\t\tiv[i] = values[i]\n\t}\n\treturn KeyValues{Key: key, Values: iv}\n}",
+    "funcname": "NewKeyValuesStrings"
+}

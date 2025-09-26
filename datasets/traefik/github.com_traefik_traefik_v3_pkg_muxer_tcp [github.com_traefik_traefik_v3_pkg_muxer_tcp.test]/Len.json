@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/mux.go",
+    "lineno": 214,
+    "focalfunc": "func (r routes) Len() int",
+    "funcbody": "func (r routes) Len() int\t{ return len(r) }",
+    "funcname": "Len"
+}

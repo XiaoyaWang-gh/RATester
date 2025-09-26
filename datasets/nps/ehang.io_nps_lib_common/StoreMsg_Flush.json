@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/logs.go",
+    "lineno": 46,
+    "focalfunc": "func (lg *StoreMsg) Flush()",
+    "funcbody": "func (lg *StoreMsg) Flush() {\n\treturn\n}",
+    "funcname": "Flush"
+}

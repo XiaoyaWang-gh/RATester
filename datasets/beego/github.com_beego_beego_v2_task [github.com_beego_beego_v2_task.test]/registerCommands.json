@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/govenor_command.go",
+    "lineno": 85,
+    "focalfunc": "func registerCommands()",
+    "funcbody": "func registerCommands() {\n\tadmin.RegisterCommand(\"task\", \"list\", &listTaskCommand{})\n\tadmin.RegisterCommand(\"task\", \"run\", &runTaskCommand{})\n}",
+    "funcname": "registerCommands"
+}

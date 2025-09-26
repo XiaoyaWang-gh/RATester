@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 317,
+    "focalfunc": "func leftTrimLength(s string) Pos",
+    "funcbody": "func leftTrimLength(s string) Pos {\n\treturn Pos(len(s) - len(strings.TrimLeft(s, spaceChars)))\n}",
+    "funcname": "leftTrimLength"
+}

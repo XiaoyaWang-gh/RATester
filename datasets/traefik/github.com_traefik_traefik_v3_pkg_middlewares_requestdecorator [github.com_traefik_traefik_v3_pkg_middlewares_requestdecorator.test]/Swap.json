@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/hostresolver.go",
+    "lineno": 25,
+    "focalfunc": "func (a byTTL) Swap(i, j int)",
+    "funcbody": "func (a byTTL) Swap(i, j int)\t{ a[i], a[j] = a[j], a[i] }",
+    "funcname": "Swap"
+}

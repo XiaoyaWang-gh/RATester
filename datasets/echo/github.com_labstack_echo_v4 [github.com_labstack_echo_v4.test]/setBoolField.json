@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 376,
+    "focalfunc": "func setBoolField(value string, field reflect.Value) error",
+    "funcbody": "func setBoolField(value string, field reflect.Value) error {\n\tif value == \"\" {\n\t\tvalue = \"false\"\n\t}\n\tboolVal, err := strconv.ParseBool(value)\n\tif err == nil {\n\t\tfield.SetBool(boolVal)\n\t}\n\treturn err\n}",
+    "funcname": "setBoolField"
+}

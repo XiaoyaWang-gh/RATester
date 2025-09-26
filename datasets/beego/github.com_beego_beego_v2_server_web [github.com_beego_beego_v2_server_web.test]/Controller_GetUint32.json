@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 585,
+    "focalfunc": "func (c *Controller) GetUint32(key string, def ...uint32) (uint32, error)",
+    "funcbody": "func (c *Controller) GetUint32(key string, def ...uint32) (uint32, error) {\n\tstrv := c.Ctx.Input.Query(key)\n\tif len(strv) == 0 && len(def) > 0 {\n\t\treturn def[0], nil\n\t}\n\tu64, err := strconv.ParseUint(strv, 10, 32)\n\treturn uint32(u64), err\n}",
+    "funcname": "GetUint32"
+}

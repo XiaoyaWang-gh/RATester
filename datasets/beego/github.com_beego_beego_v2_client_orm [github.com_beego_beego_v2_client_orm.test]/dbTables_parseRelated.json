@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 110,
+    "focalfunc": "func (t *dbTables) parseRelated(rels []string, depth int)",
+    "funcbody": "func (t *dbTables) parseRelated(rels []string, depth int) {\n\trelsNum := len(rels)\n\trelated := make([]string, relsNum)\n\tcopy(related, rels)\n\n\trelDepth := depth\n\n\tif relsNum != 0 {\n\t\trelDepth = 0\n\t}\n\n\trelDepth--\n\tfor _, fi := range t.mi.Fields.FieldsRel {\n\t\trelated = t.loopDepth(relDepth, \"\", fi, related)\n\t}\n\n\tfor i, s := range related {\n\t\tvar (\n\t\t\texs\t= strings.Split(s, ExprSep)\n\t\t\tnames\t= make([]string, 0, len(exs))\n\t\t\tmmi\t= t.mi\n\t\t\tcancel\t= true\n\t\t\tjtl\t*dbTable\n\t\t)\n\n\t\tinner := true\n\n\t\tfor _, ex := range exs {\n\t\t\tif fi, ok := mmi.Fields.GetByAny(ex); ok && fi.Rel && fi.FieldType != RelManyToMany {\n\t\t\t\tnames = append(names, fi.Name)\n\t\t\t\tmmi = fi.RelModelInfo\n\n\t\t\t\tif fi.Null || t.skipEnd {\n\t\t\t\t\tinner = false\n\t\t\t\t}\n\n\t\t\t\tjt := t.set(names, mmi, fi, inner)\n\t\t\t\tjt.jtl = jtl\n\n\t\t\t\tif fi.Reverse {\n\t\t\t\t\tcancel = false\n\t\t\t\t}\n\n\t\t\t\tif cancel {\n\t\t\t\t\tjt.sel = depth > 0\n\n\t\t\t\t\tif i < relsNum {\n\t\t\t\t\t\tjt.sel = true\n\t\t\t\t\t}\n\t\t\t\t}\n\n\t\t\t\tjtl = jt\n\n\t\t\t} else {\n\t\t\t\tpanic(fmt.Errorf(\"unknown model/table name `%s`\", ex))\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "parseRelated"
+}

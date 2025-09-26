@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 262,
+    "focalfunc": "func (engine *Engine) LoadHTMLGlob(pattern string)",
+    "funcbody": "func (engine *Engine) LoadHTMLGlob(pattern string) {\n\tleft := engine.delims.Left\n\tright := engine.delims.Right\n\ttempl := template.Must(template.New(\"\").Delims(left, right).Funcs(engine.FuncMap).ParseGlob(pattern))\n\n\tif IsDebugging() {\n\t\tdebugPrintLoadTemplate(templ)\n\t\tengine.HTMLRender = render.HTMLDebug{Glob: pattern, FuncMap: engine.FuncMap, Delims: engine.delims}\n\t\treturn\n\t}\n\n\tengine.SetHTMLTemplate(templ)\n}",
+    "funcname": "LoadHTMLGlob"
+}

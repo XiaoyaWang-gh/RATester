@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 290,
+    "focalfunc": "func (c *Cache) GetBytes(id string) (ItemInfo, []byte, error)",
+    "funcbody": "func (c *Cache) GetBytes(id string) (ItemInfo, []byte, error) {\n\tif err := c.init(); err != nil {\n\t\treturn ItemInfo{}, nil, err\n\t}\n\tid = cleanID(id)\n\n\tc.nlocker.Lock(id)\n\tdefer c.nlocker.Unlock(id)\n\n\tinfo := ItemInfo{Name: id}\n\n\tif r := c.getOrRemove(id); r != nil {\n\t\tdefer r.Close()\n\t\tb, err := io.ReadAll(r)\n\t\treturn info, b, err\n\t}\n\n\treturn info, nil, nil\n}",
+    "funcname": "GetBytes"
+}

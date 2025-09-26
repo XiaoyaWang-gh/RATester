@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 714,
+    "focalfunc": "func mergeHTTPConfiguration(from, to *dynamic.Configuration)",
+    "funcbody": "func mergeHTTPConfiguration(from, to *dynamic.Configuration) {\n\tif from == nil || from.HTTP == nil || to == nil {\n\t\treturn\n\t}\n\n\tif to.HTTP == nil {\n\t\tto.HTTP = from.HTTP\n\t\treturn\n\t}\n\n\tif to.HTTP.Routers == nil {\n\t\tto.HTTP.Routers = map[string]*dynamic.Router{}\n\t}\n\tfor routerName, router := range from.HTTP.Routers {\n\t\tto.HTTP.Routers[routerName] = router\n\t}\n\n\tif to.HTTP.Middlewares == nil {\n\t\tto.HTTP.Middlewares = map[string]*dynamic.Middleware{}\n\t}\n\tfor middlewareName, middleware := range from.HTTP.Middlewares {\n\t\tto.HTTP.Middlewares[middlewareName] = middleware\n\t}\n\n\tif to.HTTP.Services == nil {\n\t\tto.HTTP.Services = map[string]*dynamic.Service{}\n\t}\n\tfor serviceName, service := range from.HTTP.Services {\n\t\tto.HTTP.Services[serviceName] = service\n\t}\n}",
+    "funcname": "mergeHTTPConfiguration"
+}

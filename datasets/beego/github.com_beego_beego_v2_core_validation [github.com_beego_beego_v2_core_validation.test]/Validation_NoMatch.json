@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 200,
+    "focalfunc": "func (v *Validation) NoMatch(obj interface{}, regex *regexp.Regexp, key string) *Result",
+    "funcbody": "func (v *Validation) NoMatch(obj interface{}, regex *regexp.Regexp, key string) *Result {\n\treturn v.apply(NoMatch{Match{Regexp: regex}, key}, obj)\n}",
+    "funcname": "NoMatch"
+}

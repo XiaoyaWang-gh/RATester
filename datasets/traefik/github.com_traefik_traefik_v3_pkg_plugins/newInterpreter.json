@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/middlewareyaegi.go",
+    "lineno": 122,
+    "focalfunc": "func newInterpreter(ctx context.Context, goPath string, manifestImport string) (*interp.Interpreter, error)",
+    "funcbody": "func newInterpreter(ctx context.Context, goPath string, manifestImport string) (*interp.Interpreter, error) {\n\ti := interp.New(interp.Options{\n\t\tGoPath:\tgoPath,\n\t\tEnv:\tos.Environ(),\n\t\tStdout:\tlogs.NoLevel(*log.Ctx(ctx), zerolog.DebugLevel),\n\t\tStderr:\tlogs.NoLevel(*log.Ctx(ctx), zerolog.ErrorLevel),\n\t})\n\n\terr := i.Use(stdlib.Symbols)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to load symbols: %w\", err)\n\t}\n\n\terr = i.Use(ppSymbols())\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to load provider symbols: %w\", err)\n\t}\n\n\t_, err = i.Eval(fmt.Sprintf(`import \"%s\"`, manifestImport))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to import plugin code %q: %w\", manifestImport, err)\n\t}\n\n\treturn i, nil\n}",
+    "funcname": "newInterpreter"
+}

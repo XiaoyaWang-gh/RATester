@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 95,
+    "focalfunc": "func (d *dbBasePostgres) MaxLimit() uint64",
+    "funcbody": "func (d *dbBasePostgres) MaxLimit() uint64 {\n\treturn 0\n}",
+    "funcname": "MaxLimit"
+}

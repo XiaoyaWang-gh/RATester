@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/config.go",
+    "lineno": 425,
+    "focalfunc": "func (i *ImagingConfigInternal) Compile(externalCfg *ImagingConfig) error",
+    "funcbody": "func (i *ImagingConfigInternal) Compile(externalCfg *ImagingConfig) error {\n\tvar err error\n\ti.BgColor, err = hexStringToColorGo(externalCfg.BgColor)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif externalCfg.Anchor != \"\" && externalCfg.Anchor != smartCropIdentifier {\n\t\tanchor, found := anchorPositions[externalCfg.Anchor]\n\t\tif !found {\n\t\t\treturn fmt.Errorf(\"invalid anchor value %q in imaging config\", i.Anchor)\n\t\t}\n\t\ti.Anchor = anchor\n\t}\n\n\tfilter, found := imageFilters[externalCfg.ResampleFilter]\n\tif !found {\n\t\treturn fmt.Errorf(\"%q is not a valid resample filter\", filter)\n\t}\n\ti.ResampleFilter = filter\n\n\treturn nil\n}",
+    "funcname": "Compile"
+}

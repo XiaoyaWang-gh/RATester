@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 235,
+    "focalfunc": "func getMethod(r *http.Request) string",
+    "funcbody": "func getMethod(r *http.Request) string {\n\tif !utf8.ValidString(r.Method) {\n\t\tlog.Warn().Msgf(\"Invalid HTTP method encoding: %s\", r.Method)\n\t\treturn \"NON_UTF8_HTTP_METHOD\"\n\t}\n\n\tswitch r.Method {\n\tcase \"HEAD\", \"GET\", \"POST\", \"PUT\", \"DELETE\", \"CONNECT\", \"OPTIONS\", \"TRACE\",\n\t\t\"PATCH\",\n\t\t\"PRI\":\n\t\treturn r.Method\n\tdefault:\n\t\treturn \"EXTENSION_METHOD\"\n\t}\n}",
+    "funcname": "getMethod"
+}

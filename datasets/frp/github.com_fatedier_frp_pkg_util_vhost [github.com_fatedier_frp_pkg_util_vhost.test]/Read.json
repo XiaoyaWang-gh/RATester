@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 83,
+    "focalfunc": "func (conn readOnlyConn) Read(p []byte) (int, error)",
+    "funcbody": "func (conn readOnlyConn) Read(p []byte) (int, error)\t{ return conn.reader.Read(p) }",
+    "funcname": "Read"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 120,
+    "focalfunc": "func registerProxyDomainConfigFlags(cmd *cobra.Command, c *v1.DomainConfig)",
+    "funcbody": "func registerProxyDomainConfigFlags(cmd *cobra.Command, c *v1.DomainConfig) {\n\tif c == nil {\n\t\treturn\n\t}\n\tcmd.Flags().StringSliceVarP(&c.CustomDomains, \"custom_domain\", \"d\", []string{}, \"custom domains\")\n\tcmd.Flags().StringVarP(&c.SubDomain, \"sd\", \"\", \"\", \"sub domain\")\n}",
+    "funcname": "registerProxyDomainConfigFlags"
+}

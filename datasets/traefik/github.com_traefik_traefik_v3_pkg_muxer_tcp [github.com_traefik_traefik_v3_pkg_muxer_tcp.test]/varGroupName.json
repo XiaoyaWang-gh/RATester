@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher_v2.go",
+    "lineno": 212,
+    "focalfunc": "func varGroupName(idx int) string",
+    "funcbody": "func varGroupName(idx int) string {\n\treturn \"v\" + strconv.Itoa(idx)\n}",
+    "funcname": "varGroupName"
+}

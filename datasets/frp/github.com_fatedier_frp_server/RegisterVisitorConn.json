@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/service.go",
+    "lineno": 645,
+    "focalfunc": "func (svr *Service) RegisterVisitorConn(visitorConn net.Conn, newMsg *msg.NewVisitorConn) error",
+    "funcbody": "func (svr *Service) RegisterVisitorConn(visitorConn net.Conn, newMsg *msg.NewVisitorConn) error {\n\tvisitorUser := \"\"\n\n\tif newMsg.RunID != \"\" {\n\t\tctl, exist := svr.ctlManager.GetByID(newMsg.RunID)\n\t\tif !exist {\n\t\t\treturn fmt.Errorf(\"no client control found for run id [%s]\", newMsg.RunID)\n\t\t}\n\t\tvisitorUser = ctl.loginMsg.User\n\t}\n\treturn svr.rc.VisitorManager.NewConn(newMsg.ProxyName, visitorConn, newMsg.Timestamp, newMsg.SignKey,\n\t\tnewMsg.UseEncryption, newMsg.UseCompression, visitorUser)\n}",
+    "funcname": "RegisterVisitorConn"
+}

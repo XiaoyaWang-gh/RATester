@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 167,
+    "focalfunc": "func (p *pageMeta) File() *source.File",
+    "funcbody": "func (p *pageMeta) File() *source.File {\n\treturn p.f\n}",
+    "funcname": "File"
+}

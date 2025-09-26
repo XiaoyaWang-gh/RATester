@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 132,
+    "focalfunc": "func (c *Client) XMLMarshal() utils.XMLMarshal",
+    "funcbody": "func (c *Client) XMLMarshal() utils.XMLMarshal {\n\treturn c.xmlMarshal\n}",
+    "funcname": "XMLMarshal"
+}

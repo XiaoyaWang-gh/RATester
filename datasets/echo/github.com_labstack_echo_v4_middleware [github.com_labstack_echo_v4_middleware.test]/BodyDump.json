@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 44,
+    "focalfunc": "func BodyDump(handler BodyDumpHandler) echo.MiddlewareFunc",
+    "funcbody": "func BodyDump(handler BodyDumpHandler) echo.MiddlewareFunc {\n\tc := DefaultBodyDumpConfig\n\tc.Handler = handler\n\treturn BodyDumpWithConfig(c)\n}",
+    "funcname": "BodyDump"
+}

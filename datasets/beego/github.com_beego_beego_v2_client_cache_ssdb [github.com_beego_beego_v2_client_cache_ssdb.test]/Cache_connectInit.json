@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 181,
+    "focalfunc": "func (rc *Cache) connectInit() error",
+    "funcbody": "func (rc *Cache) connectInit() error {\n\tconninfoArray := strings.Split(rc.conninfo[0], \":\")\n\tif len(conninfoArray) < 2 {\n\t\treturn berror.Errorf(cache.InvalidSsdbCacheCfg, \"The value of conn should be host:port: %s\", rc.conninfo[0])\n\t}\n\thost := conninfoArray[0]\n\tport, e := strconv.Atoi(conninfoArray[1])\n\tif e != nil {\n\t\treturn berror.Errorf(cache.InvalidSsdbCacheCfg, \"Port is invalid. It must be integer, %s\", rc.conninfo[0])\n\t}\n\tvar err error\n\tif rc.conn, err = ssdb.Connect(host, port); err != nil {\n\t\treturn berror.Wrapf(err, cache.InvalidConnection,\n\t\t\t\"could not connect to SSDB, please check your connection info, network and firewall: %s\", rc.conninfo[0])\n\t}\n\treturn nil\n}",
+    "funcname": "connectInit"
+}

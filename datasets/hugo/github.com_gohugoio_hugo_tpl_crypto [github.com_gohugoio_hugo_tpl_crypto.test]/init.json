@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/crypto/init.go",
+    "lineno": 25,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx := New()\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.MD5,\n\t\t\t[]string{\"md5\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ md5 \"Hello world, gophers!\" }}`, `b3029f756f98f79e7f1b7f1d1f0dd53b`},\n\t\t\t\t{`{{ crypto.MD5 \"Hello world, gophers!\" }}`, `b3029f756f98f79e7f1b7f1d1f0dd53b`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.SHA1,\n\t\t\t[]string{\"sha1\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ sha1 \"Hello world, gophers!\" }}`, `c8b5b0e33d408246e30f53e32b8f7627a7a649d4`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.SHA256,\n\t\t\t[]string{\"sha256\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ sha256 \"Hello world, gophers!\" }}`, `6ec43b78da9669f50e4e422575c54bf87536954ccd58280219c393f2ce352b46`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.HMAC,\n\t\t\t[]string{\"hmac\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ hmac \"sha256\" \"Secret key\" \"Hello world, gophers!\" }}`, `b6d11b6c53830b9d87036272ca9fe9d19306b8f9d8aa07b15da27d89e6e34f40`},\n\t\t\t},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

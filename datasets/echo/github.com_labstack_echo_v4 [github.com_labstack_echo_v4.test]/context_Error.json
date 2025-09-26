@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 619,
+    "focalfunc": "func (c *context) Error(err error)",
+    "funcbody": "func (c *context) Error(err error) {\n\tc.echo.HTTPErrorHandler(err, c)\n}",
+    "funcname": "Error"
+}

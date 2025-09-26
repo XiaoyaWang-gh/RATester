@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 40,
+    "focalfunc": "func (svr *Service) registerRouteHandlers(helper *httppkg.RouterRegisterHelper)",
+    "funcbody": "func (svr *Service) registerRouteHandlers(helper *httppkg.RouterRegisterHelper) {\n\thelper.Router.HandleFunc(\"/healthz\", svr.healthz)\n\tsubRouter := helper.Router.NewRoute().Subrouter()\n\n\tsubRouter.Use(helper.AuthMiddleware.Middleware)\n\n\tif svr.cfg.EnablePrometheus {\n\t\tsubRouter.Handle(\"/metrics\", promhttp.Handler())\n\t}\n\n\tsubRouter.HandleFunc(\"/api/serverinfo\", svr.apiServerInfo).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/proxy/{type}\", svr.apiProxyByType).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/proxy/{type}/{name}\", svr.apiProxyByTypeAndName).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/traffic/{name}\", svr.apiProxyTraffic).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/proxies\", svr.deleteProxies).Methods(\"DELETE\")\n\n\tsubRouter.Handle(\"/favicon.ico\", http.FileServer(helper.AssetsFS)).Methods(\"GET\")\n\tsubRouter.PathPrefix(\"/static/\").Handler(\n\t\tnetpkg.MakeHTTPGzipHandler(http.StripPrefix(\"/static/\", http.FileServer(helper.AssetsFS))),\n\t).Methods(\"GET\")\n\n\tsubRouter.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {\n\t\thttp.Redirect(w, r, \"/static/\", http.StatusMovedPermanently)\n\t})\n}",
+    "funcname": "registerRouteHandlers"
+}

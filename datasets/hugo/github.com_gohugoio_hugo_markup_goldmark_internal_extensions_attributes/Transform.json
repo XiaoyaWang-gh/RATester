@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 97,
+    "focalfunc": "func (a *transformer) Transform(node *ast.Document, reader text.Reader, pc parser.Context)",
+    "funcbody": "func (a *transformer) Transform(node *ast.Document, reader text.Reader, pc parser.Context) {\n\tattributes := make([]ast.Node, 0, 500)\n\tast.Walk(node, func(node ast.Node, entering bool) (ast.WalkStatus, error) {\n\t\tif entering && node.Kind() == kindAttributesBlock {\n\n\t\t\tif node.PreviousSibling() != nil && node.PreviousSibling().Kind() != ast.KindFencedCodeBlock && !node.HasBlankPreviousLines() {\n\t\t\t\tattributes = append(attributes, node)\n\t\t\t\treturn ast.WalkSkipChildren, nil\n\t\t\t}\n\t\t}\n\n\t\treturn ast.WalkContinue, nil\n\t})\n\n\tfor _, attr := range attributes {\n\t\tif prev := attr.PreviousSibling(); prev != nil &&\n\t\t\tprev.Type() == ast.TypeBlock {\n\t\t\tfor _, attr := range attr.Attributes() {\n\t\t\t\tif _, found := prev.Attribute(attr.Name); !found {\n\t\t\t\t\tprev.SetAttribute(attr.Name, attr.Value)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tattr.Parent().RemoveChild(attr.Parent(), attr)\n\t}\n}",
+    "funcname": "Transform"
+}

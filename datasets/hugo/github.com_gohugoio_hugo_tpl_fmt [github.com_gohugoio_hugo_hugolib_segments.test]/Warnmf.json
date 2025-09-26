@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/fmt/fmt.go",
+    "lineno": 91,
+    "focalfunc": "func (ns *Namespace) Warnmf(m any, format string, args ...any) string",
+    "funcbody": "func (ns *Namespace) Warnmf(m any, format string, args ...any) string {\n\treturn ns.logmf(ns.logger.Warn(), m, format, args...)\n}",
+    "funcname": "Warnmf"
+}

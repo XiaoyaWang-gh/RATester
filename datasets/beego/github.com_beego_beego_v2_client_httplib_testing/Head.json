@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/testing/client.go",
+    "lineno": 64,
+    "focalfunc": "func Head(path string) *TestHTTPRequest",
+    "funcbody": "func Head(path string) *TestHTTPRequest {\n\treturn &TestHTTPRequest{*httplib.Head(baseURL + getPort() + path)}\n}",
+    "funcname": "Head"
+}

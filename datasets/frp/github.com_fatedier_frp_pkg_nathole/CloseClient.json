@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 141,
+    "focalfunc": "func (c *Controller) CloseClient(name string)",
+    "funcbody": "func (c *Controller) CloseClient(name string) {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tdelete(c.clientCfgs, name)\n}",
+    "funcname": "CloseClient"
+}

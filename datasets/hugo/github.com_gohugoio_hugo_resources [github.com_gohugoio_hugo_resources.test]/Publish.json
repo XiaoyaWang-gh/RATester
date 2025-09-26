@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 486,
+    "focalfunc": "func (l *genericResource) Publish() error",
+    "funcbody": "func (l *genericResource) Publish() error {\n\tvar err error\n\tl.publishInit.Do(func() {\n\t\ttargetFilenames := l.getResourcePaths().TargetFilenames()\n\n\t\tif l.sourceFilenameIsHash {\n\t\t\t// This is a processed image. We want to avoid copying it if it hasn't changed.\n\t\t\tvar changedFilenames []string\n\t\t\tfor _, targetFilename := range targetFilenames {\n\t\t\t\tif _, err := l.getSpec().BaseFs.PublishFs.Stat(targetFilename); err == nil {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\tchangedFilenames = append(changedFilenames, targetFilename)\n\t\t\t}\n\t\t\tif len(changedFilenames) == 0 {\n\t\t\t\treturn\n\t\t\t}\n\t\t\ttargetFilenames = changedFilenames\n\t\t}\n\t\tvar fr hugio.ReadSeekCloser\n\t\tfr, err = l.ReadSeekCloser()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tdefer fr.Close()\n\n\t\tvar fw io.WriteCloser\n\t\tfw, err = helpers.OpenFilesForWriting(l.spec.BaseFs.PublishFs, targetFilenames...)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tdefer fw.Close()\n\n\t\t_, err = io.Copy(fw, fr)\n\t})\n\n\treturn err\n}",
+    "funcname": "Publish"
+}

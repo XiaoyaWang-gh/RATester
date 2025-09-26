@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 331,
+    "focalfunc": "func (ns *Namespace) Babel(args ...any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Babel(args ...any) (resource.Resource, error) {\n\thugo.Deprecate(\"resources.Babel\", \"Use js.Babel.\", \"v0.128.0\")\n\treturn ns.jsNs.Babel(args...)\n}",
+    "funcname": "Babel"
+}

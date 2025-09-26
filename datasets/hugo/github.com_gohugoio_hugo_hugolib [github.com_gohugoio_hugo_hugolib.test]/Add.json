@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 384,
+    "focalfunc": "func (w *WhatChanged) Add(ids ...identity.Identity)",
+    "funcbody": "func (w *WhatChanged) Add(ids ...identity.Identity) {\n\tw.mu.Lock()\n\tdefer w.mu.Unlock()\n\n\tif w.identitySet == nil {\n\t\tw.identitySet = make(identity.Identities)\n\t}\n\n\tfor _, id := range ids {\n\t\tw.identitySet[id] = true\n\t}\n}",
+    "funcname": "Add"
+}

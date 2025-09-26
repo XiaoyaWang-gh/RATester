@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/grpcroute.go",
+    "lineno": 391,
+    "focalfunc": "func buildGRPCMatchRule(hostnames []gatev1.Hostname, match gatev1.GRPCRouteMatch) (string, int)",
+    "funcbody": "func buildGRPCMatchRule(hostnames []gatev1.Hostname, match gatev1.GRPCRouteMatch) (string, int) {\n\tvar matchRules []string\n\n\tmethodRule := buildGRPCMethodRule(match.Method)\n\tmatchRules = append(matchRules, methodRule)\n\n\theaderRules := buildGRPCHeaderRules(match.Headers)\n\tmatchRules = append(matchRules, headerRules...)\n\n\tmatchRulesStr := strings.Join(matchRules, \" && \")\n\n\thostRule, priority := buildHostRule(hostnames)\n\tif hostRule == \"\" {\n\t\treturn matchRulesStr, len(matchRulesStr)\n\t}\n\treturn hostRule + \" && \" + matchRulesStr, priority + len(matchRulesStr)\n}",
+    "funcname": "buildGRPCMatchRule"
+}

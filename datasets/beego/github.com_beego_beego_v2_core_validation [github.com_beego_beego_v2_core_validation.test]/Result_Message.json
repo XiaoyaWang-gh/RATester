@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 94,
+    "focalfunc": "func (r *Result) Message(message string, args ...interface{}) *Result",
+    "funcbody": "func (r *Result) Message(message string, args ...interface{}) *Result {\n\tif r.Error != nil {\n\t\tif len(args) == 0 {\n\t\t\tr.Error.Message = message\n\t\t} else {\n\t\t\tr.Error.Message = fmt.Sprintf(message, args...)\n\t\t}\n\t}\n\treturn r\n}",
+    "funcname": "Message"
+}

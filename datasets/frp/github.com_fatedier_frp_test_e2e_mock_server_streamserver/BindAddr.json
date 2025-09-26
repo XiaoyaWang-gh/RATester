@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 134,
+    "focalfunc": "func (s *Server) BindAddr() string",
+    "funcbody": "func (s *Server) BindAddr() string {\n\treturn s.bindAddr\n}",
+    "funcname": "BindAddr"
+}

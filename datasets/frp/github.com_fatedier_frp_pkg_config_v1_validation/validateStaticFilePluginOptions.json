@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/plugin.go",
+    "lineno": 62,
+    "focalfunc": "func validateStaticFilePluginOptions(c *v1.StaticFilePluginOptions) error",
+    "funcbody": "func validateStaticFilePluginOptions(c *v1.StaticFilePluginOptions) error {\n\tif c.LocalPath == \"\" {\n\t\treturn errors.New(\"localPath is required\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateStaticFilePluginOptions"
+}

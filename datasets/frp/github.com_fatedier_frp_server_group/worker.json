@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 151,
+    "focalfunc": "func (tmg *TCPMuxGroup) worker()",
+    "funcbody": "func (tmg *TCPMuxGroup) worker() {\n\tfor {\n\t\tc, err := tmg.tcpMuxLn.Accept()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\terr = gerr.PanicToError(func() {\n\t\t\ttmg.acceptCh <- c\n\t\t})\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "worker"
+}

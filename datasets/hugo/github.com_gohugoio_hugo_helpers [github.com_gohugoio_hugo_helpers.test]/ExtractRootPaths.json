@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 224,
+    "focalfunc": "func ExtractRootPaths(paths []string) []string",
+    "funcbody": "func ExtractRootPaths(paths []string) []string {\n\tr := make([]string, len(paths))\n\tfor i, p := range paths {\n\t\troot := filepath.ToSlash(p)\n\t\tsections := strings.Split(root, \"/\")\n\t\tfor _, section := range sections {\n\t\t\tif section != \"\" {\n\t\t\t\troot = section\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tr[i] = root\n\t}\n\treturn r\n}",
+    "funcname": "ExtractRootPaths"
+}

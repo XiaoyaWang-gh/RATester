@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 495,
+    "focalfunc": "func AutoPrefix(prefix string, c ControllerInterface) *HttpServer",
+    "funcbody": "func AutoPrefix(prefix string, c ControllerInterface) *HttpServer {\n\treturn BeeApp.AutoPrefix(prefix, c)\n}",
+    "funcname": "AutoPrefix"
+}

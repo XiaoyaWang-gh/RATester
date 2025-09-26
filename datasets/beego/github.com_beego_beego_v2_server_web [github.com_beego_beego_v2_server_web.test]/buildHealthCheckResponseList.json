@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 273,
+    "focalfunc": "func buildHealthCheckResponseList(healthCheckResults *[][]string) []map[string]interface{}",
+    "funcbody": "func buildHealthCheckResponseList(healthCheckResults *[][]string) []map[string]interface{} {\n\tresponse := make([]map[string]interface{}, len(*healthCheckResults))\n\n\tfor i, healthCheckResult := range *healthCheckResults {\n\t\tcurrentResultMap := make(map[string]interface{})\n\n\t\tcurrentResultMap[\"name\"] = healthCheckResult[0]\n\t\tcurrentResultMap[\"message\"] = healthCheckResult[1]\n\t\tcurrentResultMap[\"status\"] = healthCheckResult[2]\n\n\t\tresponse[i] = currentResultMap\n\t}\n\n\treturn response\n}",
+    "funcname": "buildHealthCheckResponseList"
+}

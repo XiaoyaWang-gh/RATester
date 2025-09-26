@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 269,
+    "focalfunc": "func findNextParamPosition(pattern string) int",
+    "funcbody": "func findNextParamPosition(pattern string) int {\n\tnextParamPosition := findNextNonEscapedCharsetPosition(pattern, parameterStartChars)\n\tif nextParamPosition != -1 && len(pattern) > nextParamPosition && pattern[nextParamPosition] != wildcardParam {\n\n\t\tfor found := findNextNonEscapedCharsetPosition(pattern[nextParamPosition+1:], parameterStartChars); found == 0; {\n\t\t\tnextParamPosition++\n\t\t\tif len(pattern) > nextParamPosition {\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nextParamPosition\n}",
+    "funcname": "findNextParamPosition"
+}

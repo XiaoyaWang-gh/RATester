@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/terminal/colors.go",
+    "lineno": 53,
+    "focalfunc": "func Notice(s string) string",
+    "funcbody": "func Notice(s string) string {\n\treturn colorize(s, noticeColor)\n}",
+    "funcname": "Notice"
+}

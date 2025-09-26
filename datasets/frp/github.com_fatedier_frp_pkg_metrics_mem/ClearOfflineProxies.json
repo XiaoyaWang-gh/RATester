@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 89,
+    "focalfunc": "func (m *serverMetrics) ClearOfflineProxies() (int, int)",
+    "funcbody": "func (m *serverMetrics) ClearOfflineProxies() (int, int) {\n\treturn m.clearUselessInfo(0)\n}",
+    "funcname": "ClearOfflineProxies"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 823,
+    "focalfunc": "func (e *elseNode) Type() NodeType",
+    "funcbody": "func (e *elseNode) Type() NodeType {\n\treturn nodeElse\n}",
+    "funcname": "Type"
+}

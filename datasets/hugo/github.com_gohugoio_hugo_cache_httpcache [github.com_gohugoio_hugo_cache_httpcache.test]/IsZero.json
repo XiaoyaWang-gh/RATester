@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 153,
+    "focalfunc": "func (p PollConfigCompiled) IsZero() bool",
+    "funcbody": "func (p PollConfigCompiled) IsZero() bool {\n\treturn p.For == nil\n}",
+    "funcname": "IsZero"
+}

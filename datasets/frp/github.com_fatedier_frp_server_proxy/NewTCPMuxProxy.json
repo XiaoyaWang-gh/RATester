@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/tcpmux.go",
+    "lineno": 37,
+    "focalfunc": "func NewTCPMuxProxy(baseProxy *BaseProxy) Proxy",
+    "funcbody": "func NewTCPMuxProxy(baseProxy *BaseProxy) Proxy {\n\tunwrapped, ok := baseProxy.GetConfigurer().(*v1.TCPMuxProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn &TCPMuxProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t}\n}",
+    "funcname": "NewTCPMuxProxy"
+}

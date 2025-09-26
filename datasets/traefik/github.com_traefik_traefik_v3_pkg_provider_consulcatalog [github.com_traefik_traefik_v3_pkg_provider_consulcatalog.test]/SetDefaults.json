@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/consul_catalog.go",
+    "lineno": 96,
+    "focalfunc": "func (c *Configuration) SetDefaults()",
+    "funcbody": "func (c *Configuration) SetDefaults() {\n\tc.Endpoint = &EndpointConfig{}\n\tc.RefreshInterval = ptypes.Duration(15 * time.Second)\n\tc.Prefix = \"traefik\"\n\tc.ExposedByDefault = true\n\tc.DefaultRule = defaultTemplateRule\n\tc.ServiceName = \"traefik\"\n\tc.StrictChecks = defaultStrictChecks()\n}",
+    "funcname": "SetDefaults"
+}

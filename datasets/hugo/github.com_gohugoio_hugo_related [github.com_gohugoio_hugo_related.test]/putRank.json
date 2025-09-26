@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 308,
+    "focalfunc": "func putRank(r *rank)",
+    "funcbody": "func putRank(r *rank) {\n\trankPool.Put(r)\n}",
+    "funcname": "putRank"
+}

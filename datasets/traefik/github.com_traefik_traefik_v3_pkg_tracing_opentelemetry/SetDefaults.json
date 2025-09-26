@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/opentelemetry/opentelemetry.go",
+    "lineno": 34,
+    "focalfunc": "func (c *Config) SetDefaults()",
+    "funcbody": "func (c *Config) SetDefaults() {\n\tc.HTTP = &types.OtelHTTP{}\n\tc.HTTP.SetDefaults()\n}",
+    "funcname": "SetDefaults"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/port.go",
+    "lineno": 21,
+    "focalfunc": "func NewAllocator(from int, to int, mod int, index int) *Allocator",
+    "funcbody": "func NewAllocator(from int, to int, mod int, index int) *Allocator {\n\tpa := &Allocator{\n\t\treserved:\tsets.New[int](),\n\t\tused:\t\tsets.New[int](),\n\t}\n\n\tfor i := from; i <= to; i++ {\n\t\tif i%mod == index {\n\t\t\tpa.reserved.Insert(i)\n\t\t}\n\t}\n\treturn pa\n}",
+    "funcname": "NewAllocator"
+}

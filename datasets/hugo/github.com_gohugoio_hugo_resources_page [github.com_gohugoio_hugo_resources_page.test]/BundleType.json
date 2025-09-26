@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 110,
+    "focalfunc": "func (p *nopPage) BundleType() string",
+    "funcbody": "func (p *nopPage) BundleType() string {\n\treturn \"\"\n}",
+    "funcname": "BundleType"
+}

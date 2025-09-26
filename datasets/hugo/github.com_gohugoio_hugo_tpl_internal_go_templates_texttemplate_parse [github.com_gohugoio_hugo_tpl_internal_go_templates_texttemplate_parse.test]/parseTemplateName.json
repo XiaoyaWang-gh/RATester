@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 672,
+    "focalfunc": "func (t *Tree) parseTemplateName(token item, context string) (name string)",
+    "funcbody": "func (t *Tree) parseTemplateName(token item, context string) (name string) {\n\tswitch token.typ {\n\tcase itemString, itemRawString:\n\t\ts, err := strconv.Unquote(token.val)\n\t\tif err != nil {\n\t\t\tt.error(err)\n\t\t}\n\t\tname = s\n\tdefault:\n\t\tt.unexpected(token, context)\n\t}\n\treturn\n}",
+    "funcname": "parseTemplateName"
+}

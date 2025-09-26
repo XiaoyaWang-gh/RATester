@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 357,
+    "focalfunc": "func getSANs(cert *x509.Certificate) []string",
+    "funcbody": "func getSANs(cert *x509.Certificate) []string {\n\tif cert == nil {\n\t\treturn nil\n\t}\n\n\tvar sans []string\n\tsans = append(sans, cert.DNSNames...)\n\tsans = append(sans, cert.EmailAddresses...)\n\n\tfor _, ip := range cert.IPAddresses {\n\t\tsans = append(sans, ip.String())\n\t}\n\n\tfor _, uri := range cert.URIs {\n\t\tsans = append(sans, uri.String())\n\t}\n\n\treturn sans\n}",
+    "funcname": "getSANs"
+}

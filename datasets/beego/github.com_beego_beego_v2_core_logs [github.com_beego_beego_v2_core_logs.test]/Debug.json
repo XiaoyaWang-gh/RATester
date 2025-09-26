@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 780,
+    "focalfunc": "func Debug(f interface{}, v ...interface{})",
+    "funcbody": "func Debug(f interface{}, v ...interface{}) {\n\tbeeLogger.Debug(formatPattern(f, v...), v...)\n}",
+    "funcname": "Debug"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 176,
+    "focalfunc": "func (b *tocBuilder) writeHeadings(level, indent int, h Headings)",
+    "funcbody": "func (b *tocBuilder) writeHeadings(level, indent int, h Headings) {\n\tif level < b.startLevel {\n\t\tfor _, h := range h {\n\t\t\tb.writeHeadings(level+1, indent, h.Headings)\n\t\t}\n\t\treturn\n\t}\n\n\tif b.stopLevel != -1 && level > b.stopLevel {\n\t\treturn\n\t}\n\n\thasChildren := len(h) > 0\n\n\tif hasChildren {\n\t\tb.s.WriteString(\"\\n\")\n\t\tb.indent(indent + 1)\n\t\tif b.ordered {\n\t\t\tb.s.WriteString(\"<ol>\\n\")\n\t\t} else {\n\t\t\tb.s.WriteString(\"<ul>\\n\")\n\t\t}\n\t}\n\n\tfor _, h := range h {\n\t\tb.writeHeading(level+1, indent+2, h)\n\t}\n\n\tif hasChildren {\n\t\tb.indent(indent + 1)\n\t\tif b.ordered {\n\t\t\tb.s.WriteString(\"</ol>\")\n\t\t} else {\n\t\t\tb.s.WriteString(\"</ul>\")\n\t\t}\n\t\tb.s.WriteString(\"\\n\")\n\t\tb.indent(indent)\n\t}\n}",
+    "funcname": "writeHeadings"
+}

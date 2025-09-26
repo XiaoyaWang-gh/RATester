@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/sort.go",
+    "lineno": 155,
+    "focalfunc": "func (p pairList) Swap(i, j int)",
+    "funcbody": "func (p pairList) Swap(i, j int)\t{ p.Pairs[i], p.Pairs[j] = p.Pairs[j], p.Pairs[i] }",
+    "funcname": "Swap"
+}

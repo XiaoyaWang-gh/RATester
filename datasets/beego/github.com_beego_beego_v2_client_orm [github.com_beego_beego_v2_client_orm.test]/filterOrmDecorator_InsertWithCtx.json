@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 262,
+    "focalfunc": "func (f *filterOrmDecorator) InsertWithCtx(ctx context.Context, md interface{}) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) InsertWithCtx(ctx context.Context, md interface{}) (int64, error) {\n\tmi, _ := defaultModelCache.GetByMd(md)\n\tinv := &Invocation{\n\t\tMethod:\t\t\"InsertWithCtx\",\n\t\tArgs:\t\t[]interface{}{md},\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres, err := f.ormer.InsertWithCtx(c, md)\n\t\t\treturn []interface{}{res, err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn res[0].(int64), f.convertError(res[1])\n}",
+    "funcname": "InsertWithCtx"
+}

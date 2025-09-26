@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_rawSetter.go",
+    "lineno": 37,
+    "focalfunc": "func (d *DoNothingRawSetter) SetArgs(i ...interface{}) orm.RawSeter",
+    "funcbody": "func (d *DoNothingRawSetter) SetArgs(i ...interface{}) orm.RawSeter {\n\treturn d\n}",
+    "funcname": "SetArgs"
+}

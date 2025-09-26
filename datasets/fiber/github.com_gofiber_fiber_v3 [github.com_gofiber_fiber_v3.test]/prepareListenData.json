@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/listen.go",
+    "lineno": 297,
+    "focalfunc": "func (*App) prepareListenData(addr string, isTLS bool, cfg ListenConfig) ListenData",
+    "funcbody": "func (*App) prepareListenData(addr string, isTLS bool, cfg ListenConfig) ListenData {\n\thost, port := parseAddr(addr)\n\tif host == \"\" {\n\t\tif cfg.ListenerNetwork == NetworkTCP6 {\n\t\t\thost = \"[::1]\"\n\t\t} else {\n\t\t\thost = globalIpv4Addr\n\t\t}\n\t}\n\n\treturn ListenData{\n\t\tHost:\thost,\n\t\tPort:\tport,\n\t\tTLS:\tisTLS,\n\t}\n}",
+    "funcname": "prepareListenData"
+}

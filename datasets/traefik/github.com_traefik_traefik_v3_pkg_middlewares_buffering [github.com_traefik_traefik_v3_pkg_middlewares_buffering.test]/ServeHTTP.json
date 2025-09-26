@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/buffering/buffering.go",
+    "lineno": 55,
+    "focalfunc": "func (b *buffer) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (b *buffer) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tb.buffer.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

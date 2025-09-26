@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/tls.go",
+    "lineno": 28,
+    "focalfunc": "func CheckAndEnableTLSServerConnWithTimeout(\n\tc net.Conn, tlsConfig *tls.Config, tlsOnly bool, timeout time.Duration,\n) (out net.Conn, isTLS bool, custom bool, err error)",
+    "funcbody": "func CheckAndEnableTLSServerConnWithTimeout(\n\tc net.Conn, tlsConfig *tls.Config, tlsOnly bool, timeout time.Duration,\n) (out net.Conn, isTLS bool, custom bool, err error) {\n\tsc, r := libnet.NewSharedConnSize(c, 2)\n\tbuf := make([]byte, 1)\n\tvar n int\n\t_ = c.SetReadDeadline(time.Now().Add(timeout))\n\tn, err = r.Read(buf)\n\t_ = c.SetReadDeadline(time.Time{})\n\tif err != nil {\n\t\treturn\n\t}\n\n\tswitch {\n\tcase n == 1 && int(buf[0]) == FRPTLSHeadByte:\n\t\tout = tls.Server(c, tlsConfig)\n\t\tisTLS = true\n\t\tcustom = true\n\tcase n == 1 && int(buf[0]) == 0x16:\n\t\tout = tls.Server(sc, tlsConfig)\n\t\tisTLS = true\n\tdefault:\n\t\tif tlsOnly {\n\t\t\terr = fmt.Errorf(\"non-TLS connection received on a TlsOnly server\")\n\t\t\treturn\n\t\t}\n\t\tout = sc\n\t}\n\treturn\n}",
+    "funcname": "CheckAndEnableTLSServerConnWithTimeout"
+}

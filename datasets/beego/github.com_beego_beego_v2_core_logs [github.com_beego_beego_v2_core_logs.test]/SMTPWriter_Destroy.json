@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 170,
+    "focalfunc": "func (s *SMTPWriter) Destroy()",
+    "funcbody": "func (s *SMTPWriter) Destroy() {\n}",
+    "funcname": "Destroy"
+}

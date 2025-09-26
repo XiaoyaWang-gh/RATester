@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefix/strip_prefix.go",
+    "lineno": 72,
+    "focalfunc": "func (s *stripPrefix) getPrefixStripped(urlPath, prefix string) string",
+    "funcbody": "func (s *stripPrefix) getPrefixStripped(urlPath, prefix string) string {\n\tif s.forceSlash {\n\n\t\treturn \"/\" + strings.TrimPrefix(strings.TrimPrefix(urlPath, prefix), \"/\")\n\t}\n\n\treturn ensureLeadingSlash(strings.TrimPrefix(urlPath, prefix))\n}",
+    "funcname": "getPrefixStripped"
+}

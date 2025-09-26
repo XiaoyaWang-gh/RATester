@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/tracer.go",
+    "lineno": 27,
+    "focalfunc": "func NewReqidContext(ctx context.Context, reqid string) context.Context",
+    "funcbody": "func NewReqidContext(ctx context.Context, reqid string) context.Context {\n\treturn context.WithValue(ctx, reqidKey, reqid)\n}",
+    "funcname": "NewReqidContext"
+}

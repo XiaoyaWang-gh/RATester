@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 833,
+    "focalfunc": "func (s *state) validateType(value reflect.Value, typ reflect.Type) reflect.Value",
+    "funcbody": "func (s *state) validateType(value reflect.Value, typ reflect.Type) reflect.Value {\n\tif !value.IsValid() {\n\t\tif typ == nil {\n\n\t\t\treturn reflect.ValueOf(nil)\n\t\t}\n\t\tif canBeNil(typ) {\n\n\t\t\treturn reflect.Zero(typ)\n\t\t}\n\t\ts.errorf(\"invalid value; expected %s\", typ)\n\t}\n\tif typ == reflectValueType && value.Type() != typ {\n\t\treturn reflect.ValueOf(value)\n\t}\n\tif typ != nil && !value.Type().AssignableTo(typ) {\n\t\tif value.Kind() == reflect.Interface && !value.IsNil() {\n\t\t\tvalue = value.Elem()\n\t\t\tif value.Type().AssignableTo(typ) {\n\t\t\t\treturn value\n\t\t\t}\n\n\t\t}\n\n\t\tswitch {\n\t\tcase value.Kind() == reflect.Pointer && value.Type().Elem().AssignableTo(typ):\n\t\t\tvalue = value.Elem()\n\t\t\tif !value.IsValid() {\n\t\t\t\ts.errorf(\"dereference of nil pointer of type %s\", typ)\n\t\t\t}\n\t\tcase reflect.PointerTo(value.Type()).AssignableTo(typ) && value.CanAddr():\n\t\t\tvalue = value.Addr()\n\t\tdefault:\n\t\t\ts.errorf(\"wrong type for value; expected %s; got %s\", typ, value.Type())\n\t\t}\n\t}\n\treturn value\n}",
+    "funcname": "validateType"
+}

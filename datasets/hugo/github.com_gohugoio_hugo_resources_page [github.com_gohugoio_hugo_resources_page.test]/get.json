@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_outputformat.go",
+    "lineno": 88,
+    "focalfunc": "func (o OutputFormats) Get(name string) *OutputFormat",
+    "funcbody": "func (o OutputFormats) Get(name string) *OutputFormat {\n\tfor _, f := range o {\n\t\tif strings.EqualFold(f.Format.Name, name) {\n\t\t\treturn &f\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "Get"
+}

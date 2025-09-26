@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 598,
+    "focalfunc": "func namespaceOrFallback(lb traefikv1alpha1.LoadBalancerSpec, fallback string) string",
+    "funcbody": "func namespaceOrFallback(lb traefikv1alpha1.LoadBalancerSpec, fallback string) string {\n\tif lb.Namespace != \"\" {\n\t\treturn lb.Namespace\n\t}\n\treturn fallback\n}",
+    "funcname": "namespaceOrFallback"
+}

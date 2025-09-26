@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_manager.go",
+    "lineno": 88,
+    "focalfunc": "func (pm *Manager) HandleWorkConn(name string, workConn net.Conn, m *msg.StartWorkConn)",
+    "funcbody": "func (pm *Manager) HandleWorkConn(name string, workConn net.Conn, m *msg.StartWorkConn) {\n\tpm.mu.RLock()\n\tpw, ok := pm.proxies[name]\n\tpm.mu.RUnlock()\n\tif ok {\n\t\tpw.InWorkConn(workConn, m)\n\t} else {\n\t\tworkConn.Close()\n\t}\n}",
+    "funcname": "HandleWorkConn"
+}

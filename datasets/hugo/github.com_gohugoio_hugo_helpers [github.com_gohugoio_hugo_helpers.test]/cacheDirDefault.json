@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 367,
+    "focalfunc": "func cacheDirDefault(cacheDir string) string",
+    "funcbody": "func cacheDirDefault(cacheDir string) string {\n\n\tif len(cacheDir) > 1 {\n\t\treturn addTrailingFileSeparator(cacheDir)\n\t}\n\n\tif os.Getenv(\"NETLIFY\") == \"true\" && os.Getenv(\"PULL_REQUEST\") != \"\" && os.Getenv(\"DEPLOY_PRIME_URL\") != \"\" {\n\n\t\treturn \"/opt/build/cache/hugo_cache/\"\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "cacheDirDefault"
+}

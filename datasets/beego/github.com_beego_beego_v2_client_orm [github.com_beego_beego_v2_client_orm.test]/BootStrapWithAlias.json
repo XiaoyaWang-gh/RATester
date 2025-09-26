@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/models_boot.go",
+    "lineno": 52,
+    "focalfunc": "func BootStrapWithAlias(alias string)",
+    "funcbody": "func BootStrapWithAlias(alias string) {\n\tif _, ok := dataBaseCache.get(alias); !ok {\n\t\tfmt.Printf(\"must have one Register DataBase alias named %q\\n\", alias)\n\t\tdebug.PrintStack()\n\t\treturn\n\t}\n\tdefaultModelCache.Bootstrap()\n}",
+    "funcname": "BootStrapWithAlias"
+}

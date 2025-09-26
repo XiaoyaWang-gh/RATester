@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 203,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Values(vals ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Values(vals ...string) QueryBuilder {\n\tvalsStr := strings.Join(vals, CommaSpace)\n\tqb.tokens = append(qb.tokens, \"VALUES\", \"(\", valsStr, \")\")\n\treturn qb\n}",
+    "funcname": "Values"
+}

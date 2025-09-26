@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 653,
+    "focalfunc": "func (p *Provider) removeResolvingDomains(resolvingDomains []string)",
+    "funcbody": "func (p *Provider) removeResolvingDomains(resolvingDomains []string) {\n\tp.resolvingDomainsMutex.Lock()\n\tdefer p.resolvingDomainsMutex.Unlock()\n\n\tfor _, domain := range resolvingDomains {\n\t\tdelete(p.resolvingDomains, domain)\n\t}\n}",
+    "funcname": "removeResolvingDomains"
+}

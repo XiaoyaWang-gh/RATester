@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 101,
+    "focalfunc": "func SliceDiff(slice1, slice2 []interface{}) (diffslice []interface{})",
+    "funcbody": "func SliceDiff(slice1, slice2 []interface{}) (diffslice []interface{}) {\n\tfor _, v := range slice1 {\n\t\tif !InSliceIface(v, slice2) {\n\t\t\tdiffslice = append(diffslice, v)\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "SliceDiff"
+}

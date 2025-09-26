@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 321,
+    "focalfunc": "func (l *logAdapter) Errors() string",
+    "funcbody": "func (l *logAdapter) Errors() string {\n\treturn l.errors.String()\n}",
+    "funcname": "Errors"
+}

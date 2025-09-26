@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 527,
+    "focalfunc": "func isSpace(b byte) bool",
+    "funcbody": "func isSpace(b byte) bool {\n\treturn b == ' ' || b == '\\t' || b == '\\n'\n}",
+    "funcname": "isSpace"
+}

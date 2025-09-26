@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 215,
+    "focalfunc": "func (ctx *WalkContext[T]) HandleEvents() error",
+    "funcbody": "func (ctx *WalkContext[T]) HandleEvents() error {\n\tfor len(ctx.events) > 0 {\n\t\tevent := ctx.events[0]\n\t\tctx.events = ctx.events[1:]\n\n\t\tfor i := len(ctx.eventHandlers[event.Name]) - 1; i >= 0; i-- {\n\t\t\tctx.eventHandlers[event.Name][i](event)\n\t\t\tif event.stopPropagation {\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "HandleEvents"
+}

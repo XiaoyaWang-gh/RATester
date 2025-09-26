@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/http.go",
+    "lineno": 57,
+    "focalfunc": "func (s *httpServer) Start() error",
+    "funcbody": "func (s *httpServer) Start() error {\n\tvar err error\n\tif s.errorContent, err = common.ReadAllFromFile(filepath.Join(common.GetRunPath(), \"web\", \"static\", \"page\", \"error.html\")); err != nil {\n\t\ts.errorContent = []byte(\"nps 404\")\n\t}\n\tif s.httpPort > 0 {\n\t\ts.httpServer = s.NewServer(s.httpPort, \"http\")\n\t\tgo func() {\n\t\t\tl, err := connection.GetHttpListener()\n\t\t\tif err != nil {\n\t\t\t\tlogs.Error(err)\n\t\t\t\tos.Exit(0)\n\t\t\t}\n\t\t\terr = s.httpServer.Serve(l)\n\t\t\tif err != nil {\n\t\t\t\tlogs.Error(err)\n\t\t\t\tos.Exit(0)\n\t\t\t}\n\t\t}()\n\t}\n\tif s.httpsPort > 0 {\n\t\ts.httpsServer = s.NewServer(s.httpsPort, \"https\")\n\t\tgo func() {\n\t\t\ts.httpsListener, err = connection.GetHttpsListener()\n\t\t\tif err != nil {\n\t\t\t\tlogs.Error(err)\n\t\t\t\tos.Exit(0)\n\t\t\t}\n\t\t\tlogs.Error(NewHttpsServer(s.httpsListener, s.bridge, s.useCache, s.cacheLen).Start())\n\t\t}()\n\t}\n\treturn nil\n}",
+    "funcname": "Start"
+}

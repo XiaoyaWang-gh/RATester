@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 369,
+    "focalfunc": "func (c *Client) ResetAll() error",
+    "funcbody": "func (c *Client) ResetAll() error {\n\tif c.goPath == \"\" {\n\t\treturn errors.New(\"goPath is empty\")\n\t}\n\n\terr := resetDirectory(filepath.Join(c.goPath, \"..\"))\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to reset plugins GoPath directory %s: %w\", c.goPath, err)\n\t}\n\n\terr = resetDirectory(c.archives)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to reset plugins archives directory: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "ResetAll"
+}

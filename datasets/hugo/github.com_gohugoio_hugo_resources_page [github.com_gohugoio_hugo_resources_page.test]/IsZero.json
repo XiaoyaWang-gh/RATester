@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 63,
+    "focalfunc": "func (s Summary) IsZero() bool",
+    "funcbody": "func (s Summary) IsZero() bool {\n\treturn s.Text == \"\"\n}",
+    "funcname": "IsZero"
+}

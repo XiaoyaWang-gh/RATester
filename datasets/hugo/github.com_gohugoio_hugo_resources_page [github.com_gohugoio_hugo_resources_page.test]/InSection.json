@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 230,
+    "focalfunc": "func (p *nopPage) InSection(other any) bool",
+    "funcbody": "func (p *nopPage) InSection(other any) bool {\n\treturn false\n}",
+    "funcname": "InSection"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 268,
+    "focalfunc": "func (c *Controller) BindProtobuf(obj proto.Message) error",
+    "funcbody": "func (c *Controller) BindProtobuf(obj proto.Message) error {\n\treturn c.Ctx.BindProtobuf(obj)\n}",
+    "funcname": "BindProtobuf"
+}

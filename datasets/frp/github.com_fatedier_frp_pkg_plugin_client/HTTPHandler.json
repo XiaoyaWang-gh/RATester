@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 119,
+    "focalfunc": "func (hp *HTTPProxy) HTTPHandler(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (hp *HTTPProxy) HTTPHandler(rw http.ResponseWriter, req *http.Request) {\n\tremoveProxyHeaders(req)\n\n\tresp, err := http.DefaultTransport.RoundTrip(req)\n\tif err != nil {\n\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t\treturn\n\t}\n\tdefer resp.Body.Close()\n\n\tcopyHeaders(rw.Header(), resp.Header)\n\trw.WriteHeader(resp.StatusCode)\n\n\t_, err = io.Copy(rw, resp.Body)\n\tif err != nil && err != io.EOF {\n\t\treturn\n\t}\n}",
+    "funcname": "HTTPHandler"
+}

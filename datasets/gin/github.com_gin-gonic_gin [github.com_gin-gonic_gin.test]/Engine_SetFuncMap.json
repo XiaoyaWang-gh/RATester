@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 298,
+    "focalfunc": "func (engine *Engine) SetFuncMap(funcMap template.FuncMap)",
+    "funcbody": "func (engine *Engine) SetFuncMap(funcMap template.FuncMap) {\n\tengine.FuncMap = funcMap\n}",
+    "funcname": "SetFuncMap"
+}

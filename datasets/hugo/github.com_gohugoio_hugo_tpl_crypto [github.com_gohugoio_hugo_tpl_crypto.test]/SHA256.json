@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/crypto/crypto.go",
+    "lineno": 63,
+    "focalfunc": "func (ns *Namespace) SHA256(v any) (string, error)",
+    "funcbody": "func (ns *Namespace) SHA256(v any) (string, error) {\n\tconv, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\thash := sha256.Sum256([]byte(conv))\n\treturn hex.EncodeToString(hash[:]), nil\n}",
+    "funcname": "SHA256"
+}

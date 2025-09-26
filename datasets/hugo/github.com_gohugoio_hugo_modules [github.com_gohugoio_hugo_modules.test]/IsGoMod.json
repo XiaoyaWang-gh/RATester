@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 113,
+    "focalfunc": "func (m *moduleAdapter) IsGoMod() bool",
+    "funcbody": "func (m *moduleAdapter) IsGoMod() bool {\n\treturn m.gomod != nil\n}",
+    "funcname": "IsGoMod"
+}

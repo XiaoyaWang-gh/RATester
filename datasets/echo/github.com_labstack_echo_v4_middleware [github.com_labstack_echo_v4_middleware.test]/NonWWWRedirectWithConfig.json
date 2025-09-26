@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/redirect.go",
+    "lineno": 123,
+    "focalfunc": "func NonWWWRedirectWithConfig(config RedirectConfig) echo.MiddlewareFunc",
+    "funcbody": "func NonWWWRedirectWithConfig(config RedirectConfig) echo.MiddlewareFunc {\n\treturn redirect(config, func(scheme, host, uri string) (bool, string) {\n\t\tif strings.HasPrefix(host, www) {\n\t\t\treturn true, scheme + \"://\" + host[4:] + uri\n\t\t}\n\t\treturn false, \"\"\n\t})\n}",
+    "funcname": "NonWWWRedirectWithConfig"
+}

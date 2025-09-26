@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 147,
+    "focalfunc": "func lexShortCodeParamRawStringVal(l *pageLexer, typ ItemType) stateFunc",
+    "funcbody": "func lexShortCodeParamRawStringVal(l *pageLexer, typ ItemType) stateFunc {\n\topenBacktickFound := false\n\nLoop:\n\tfor {\n\t\tswitch r := l.next(); {\n\t\tcase r == '`':\n\t\t\tif openBacktickFound {\n\t\t\t\tl.backup()\n\t\t\t\tbreak Loop\n\t\t\t} else {\n\t\t\t\topenBacktickFound = true\n\t\t\t\tl.ignore()\n\t\t\t}\n\t\tcase r == eof:\n\t\t\treturn l.errorf(\"unterminated raw string in shortcode parameter-argument: '%s'\", l.current())\n\t\t}\n\t}\n\n\tl.emitString(typ)\n\tl.next()\n\tl.ignore()\n\n\treturn lexInsideShortcode\n}",
+    "funcname": "lexShortCodeParamRawStringVal"
+}

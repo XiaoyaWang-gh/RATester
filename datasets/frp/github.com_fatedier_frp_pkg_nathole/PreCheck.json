@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/nathole.go",
+    "lineno": 81,
+    "focalfunc": "func PreCheck(\n\tctx context.Context, transporter transport.MessageTransporter,\n\tproxyName string, timeout time.Duration,\n) error",
+    "funcbody": "func PreCheck(\n\tctx context.Context, transporter transport.MessageTransporter,\n\tproxyName string, timeout time.Duration,\n) error {\n\ttimeoutCtx, cancel := context.WithTimeout(ctx, timeout)\n\tdefer cancel()\n\n\tvar natHoleRespMsg *msg.NatHoleResp\n\ttransactionID := NewTransactionID()\n\tm, err := transporter.Do(timeoutCtx, &msg.NatHoleVisitor{\n\t\tTransactionID:\ttransactionID,\n\t\tProxyName:\tproxyName,\n\t\tPreCheck:\ttrue,\n\t}, transactionID, msg.TypeNameNatHoleResp)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"get natHoleRespMsg error: %v\", err)\n\t}\n\tmm, ok := m.(*msg.NatHoleResp)\n\tif !ok {\n\t\treturn fmt.Errorf(\"get natHoleRespMsg error: invalid message type\")\n\t}\n\tnatHoleRespMsg = mm\n\n\tif natHoleRespMsg.Error != \"\" {\n\t\treturn fmt.Errorf(\"%s\", natHoleRespMsg.Error)\n\t}\n\treturn nil\n}",
+    "funcname": "PreCheck"
+}

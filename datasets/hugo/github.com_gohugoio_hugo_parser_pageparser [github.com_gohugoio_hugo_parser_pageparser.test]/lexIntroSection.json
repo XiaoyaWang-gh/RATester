@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_intro.go",
+    "lineno": 16,
+    "focalfunc": "func lexIntroSection(l *pageLexer) stateFunc",
+    "funcbody": "func lexIntroSection(l *pageLexer) stateFunc {\nLOOP:\n\tfor {\n\t\tr := l.next()\n\t\tif r == eof {\n\t\t\tbreak\n\t\t}\n\n\t\tswitch {\n\t\tcase r == '+':\n\t\t\treturn l.lexFrontMatterSection(TypeFrontMatterTOML, r, \"TOML\", delimTOML)\n\t\tcase r == '-':\n\t\t\treturn l.lexFrontMatterSection(TypeFrontMatterYAML, r, \"YAML\", delimYAML)\n\t\tcase r == '{':\n\t\t\treturn lexFrontMatterJSON\n\t\tcase r == '#':\n\t\t\treturn lexFrontMatterOrgMode\n\t\tcase r == byteOrderMark:\n\t\t\tl.emit(TypeIgnore)\n\t\tcase !isSpace(r) && !isEndOfLine(r):\n\t\t\tbreak LOOP\n\t\t}\n\t}\n\n\treturn lexMainSection\n}",
+    "funcname": "lexIntroSection"
+}

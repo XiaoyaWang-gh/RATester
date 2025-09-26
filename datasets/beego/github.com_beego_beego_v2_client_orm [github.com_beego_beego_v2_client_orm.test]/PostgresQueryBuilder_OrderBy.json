@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 125,
+    "focalfunc": "func (qb *PostgresQueryBuilder) OrderBy(fields ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) OrderBy(fields ...string) QueryBuilder {\n\tstr := processingStr(fields)\n\tqb.tokens = append(qb.tokens, \"ORDER BY\", str)\n\treturn qb\n}",
+    "funcname": "OrderBy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ip/checker.go",
+    "lineno": 94,
+    "focalfunc": "func parseIP(addr string) (net.IP, error)",
+    "funcbody": "func parseIP(addr string) (net.IP, error) {\n\tparsedAddr, err := netip.ParseAddr(addr)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"can't parse IP from address %s\", addr)\n\t}\n\n\tip := parsedAddr.As16()\n\treturn ip[:], nil\n}",
+    "funcname": "parseIP"
+}

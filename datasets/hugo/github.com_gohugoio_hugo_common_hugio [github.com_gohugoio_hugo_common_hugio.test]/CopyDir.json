@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/copy.go",
+    "lineno": 54,
+    "focalfunc": "func CopyDir(fs afero.Fs, from, to string, shouldCopy func(filename string) bool) error",
+    "funcbody": "func CopyDir(fs afero.Fs, from, to string, shouldCopy func(filename string) bool) error {\n\tfi, err := fs.Stat(from)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif !fi.IsDir() {\n\t\treturn fmt.Errorf(\"%q is not a directory\", from)\n\t}\n\n\terr = fs.MkdirAll(to, 0o777)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\td, err := fs.Open(from)\n\tif err != nil {\n\t\treturn err\n\t}\n\tentries, _ := d.(iofs.ReadDirFile).ReadDir(-1)\n\tfor _, entry := range entries {\n\t\tfromFilename := filepath.Join(from, entry.Name())\n\t\ttoFilename := filepath.Join(to, entry.Name())\n\t\tif entry.IsDir() {\n\t\t\tif shouldCopy != nil && !shouldCopy(fromFilename) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif err := CopyDir(fs, fromFilename, toFilename, shouldCopy); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t} else {\n\t\t\tif err := CopyFile(fs, fromFilename, toFilename); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\n\t}\n\n\treturn nil\n}",
+    "funcname": "CopyDir"
+}

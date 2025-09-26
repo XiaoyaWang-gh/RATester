@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 83,
+    "focalfunc": "func GetProvider(name string) (Provider, error)",
+    "funcbody": "func GetProvider(name string) (Provider, error) {\n\tprovider, ok := provides[name]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"session: unknown provide %q (forgotten import?)\", name)\n\t}\n\treturn provider, nil\n}",
+    "funcname": "GetProvider"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deployconfig/deployConfig.go",
+    "lineno": 138,
+    "focalfunc": "func DecodeConfig(cfg config.Provider) (DeployConfig, error)",
+    "funcbody": "func DecodeConfig(cfg config.Provider) (DeployConfig, error) {\n\tdcfg := DefaultConfig\n\n\tif !cfg.IsSet(DeploymentConfigKey) {\n\t\treturn dcfg, nil\n\t}\n\tif err := mapstructure.WeakDecode(cfg.GetStringMap(DeploymentConfigKey), &dcfg); err != nil {\n\t\treturn dcfg, err\n\t}\n\n\tif dcfg.Workers <= 0 {\n\t\tdcfg.Workers = 10\n\t}\n\n\tfor _, tgt := range dcfg.Targets {\n\t\tif *tgt == (Target{}) {\n\t\t\treturn dcfg, errors.New(\"empty deployment target\")\n\t\t}\n\t\tif err := tgt.ParseIncludeExclude(); err != nil {\n\t\t\treturn dcfg, err\n\t\t}\n\t}\n\tvar err error\n\tfor _, m := range dcfg.Matchers {\n\t\tif *m == (Matcher{}) {\n\t\t\treturn dcfg, errors.New(\"empty deployment matcher\")\n\t\t}\n\t\tm.Re, err = regexp.Compile(m.Pattern)\n\t\tif err != nil {\n\t\t\treturn dcfg, fmt.Errorf(\"invalid deployment.matchers.pattern: %v\", err)\n\t\t}\n\t}\n\tfor _, o := range dcfg.Order {\n\t\tre, err := regexp.Compile(o)\n\t\tif err != nil {\n\t\t\treturn dcfg, fmt.Errorf(\"invalid deployment.orderings.pattern: %v\", err)\n\t\t}\n\t\tdcfg.Ordering = append(dcfg.Ordering, re)\n\t}\n\n\treturn dcfg, nil\n}",
+    "funcname": "DecodeConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 123,
+    "focalfunc": "func (c *BaseConfiger) Float(key string) (float64, error)",
+    "funcbody": "func (c *BaseConfiger) Float(key string) (float64, error) {\n\tres, err := c.reader(context.TODO(), key)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\treturn strconv.ParseFloat(res, 64)\n}",
+    "funcname": "Float"
+}

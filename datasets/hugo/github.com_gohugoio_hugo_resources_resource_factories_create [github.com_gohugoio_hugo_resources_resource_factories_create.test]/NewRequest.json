@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 360,
+    "focalfunc": "func (o fromRemoteOptions) NewRequest(url string) (*http.Request, error)",
+    "funcbody": "func (o fromRemoteOptions) NewRequest(url string) (*http.Request, error) {\n\treq, err := http.NewRequest(o.Method, url, o.BodyReader())\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif o.Headers != nil {\n\t\taddUserProvidedHeaders(o.Headers, req)\n\t}\n\n\taddDefaultHeaders(req)\n\n\treturn req, nil\n}",
+    "funcname": "NewRequest"
+}

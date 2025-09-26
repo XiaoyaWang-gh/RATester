@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ip/strategy.go",
+    "lineno": 55,
+    "focalfunc": "func (s *PoolStrategy) GetIP(req *http.Request) string",
+    "funcbody": "func (s *PoolStrategy) GetIP(req *http.Request) string {\n\tif s.Checker == nil {\n\t\treturn \"\"\n\t}\n\n\txff := req.Header.Get(xForwardedFor)\n\txffs := strings.Split(xff, \",\")\n\n\tfor i := len(xffs) - 1; i >= 0; i-- {\n\t\txffTrimmed := strings.TrimSpace(xffs[i])\n\t\tif len(xffTrimmed) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tif contain, _ := s.Checker.Contains(xffTrimmed); !contain {\n\t\t\treturn xffTrimmed\n\t\t}\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "GetIP"
+}

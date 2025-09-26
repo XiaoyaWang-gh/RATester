@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/stacktracer_fs.go",
+    "lineno": 63,
+    "focalfunc": "func (fs *stacktracerFs) Create(name string) (afero.File, error)",
+    "funcbody": "func (fs *stacktracerFs) Create(name string) (afero.File, error) {\n\tf, err := fs.Fs.Create(name)\n\tif err == nil {\n\t\tfs.onCreate(name)\n\t}\n\treturn f, err\n}",
+    "funcname": "Create"
+}

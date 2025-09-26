@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 61,
+    "focalfunc": "func (s *Session) Fresh() bool",
+    "funcbody": "func (s *Session) Fresh() bool {\n\ts.mu.RLock()\n\tdefer s.mu.RUnlock()\n\treturn s.fresh\n}",
+    "funcname": "Fresh"
+}

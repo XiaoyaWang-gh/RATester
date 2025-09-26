@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/kv.go",
+    "lineno": 79,
+    "focalfunc": "func NewKVs(kvs ...KV) KVs",
+    "funcbody": "func NewKVs(kvs ...KV) KVs {\n\tres := &SimpleKVs{\n\t\tkvs: make(map[interface{}]interface{}, len(kvs)),\n\t}\n\tfor _, kv := range kvs {\n\t\tres.kvs[kv.GetKey()] = kv.GetValue()\n\t}\n\treturn res\n}",
+    "funcname": "NewKVs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/cors/cors.go",
+    "lineno": 181,
+    "focalfunc": "func (o *Options) IsOriginAllowed(origin string) (allowed bool)",
+    "funcbody": "func (o *Options) IsOriginAllowed(origin string) (allowed bool) {\n\tfor _, pattern := range allowOriginPatterns {\n\t\tallowed, _ = regexp.MatchString(pattern, origin)\n\t\tif allowed {\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "IsOriginAllowed"
+}

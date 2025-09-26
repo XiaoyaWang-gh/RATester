@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 54,
+    "focalfunc": "func responseToData(res *http.Response, readBody bool) map[string]any",
+    "funcbody": "func responseToData(res *http.Response, readBody bool) map[string]any {\n\tvar body []byte\n\tif readBody {\n\t\tbody, _ = io.ReadAll(res.Body)\n\t}\n\n\tm := map[string]any{\n\t\t\"StatusCode\":\t\tres.StatusCode,\n\t\t\"Status\":\t\tres.Status,\n\t\t\"TransferEncoding\":\tres.TransferEncoding,\n\t\t\"ContentLength\":\tres.ContentLength,\n\t\t\"ContentType\":\t\tres.Header.Get(\"Content-Type\"),\n\t}\n\n\tif readBody {\n\t\tm[\"Body\"] = string(body)\n\t}\n\n\treturn m\n}",
+    "funcname": "responseToData"
+}

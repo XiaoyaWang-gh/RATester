@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/dialer.go",
+    "lineno": 180,
+    "focalfunc": "func buildSpiffeAuthorizer(cfg *dynamic.Spiffe) (tlsconfig.Authorizer, error)",
+    "funcbody": "func buildSpiffeAuthorizer(cfg *dynamic.Spiffe) (tlsconfig.Authorizer, error) {\n\tswitch {\n\tcase len(cfg.IDs) > 0:\n\t\tspiffeIDs := make([]spiffeid.ID, 0, len(cfg.IDs))\n\t\tfor _, rawID := range cfg.IDs {\n\t\t\tid, err := spiffeid.FromString(rawID)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"invalid SPIFFE ID: %w\", err)\n\t\t\t}\n\n\t\t\tspiffeIDs = append(spiffeIDs, id)\n\t\t}\n\n\t\treturn tlsconfig.AuthorizeOneOf(spiffeIDs...), nil\n\n\tcase cfg.TrustDomain != \"\":\n\t\ttrustDomain, err := spiffeid.TrustDomainFromString(cfg.TrustDomain)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"invalid SPIFFE trust domain: %w\", err)\n\t\t}\n\n\t\treturn tlsconfig.AuthorizeMemberOf(trustDomain), nil\n\n\tdefault:\n\t\treturn tlsconfig.AuthorizeAny(), nil\n\t}\n}",
+    "funcname": "buildSpiffeAuthorizer"
+}

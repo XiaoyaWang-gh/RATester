@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 66,
+    "focalfunc": "func (b *Bind) Custom(name string, dest any) error",
+    "funcbody": "func (b *Bind) Custom(name string, dest any) error {\n\tbinders := b.ctx.App().customBinders\n\tfor _, customBinder := range binders {\n\t\tif customBinder.Name() == name {\n\t\t\treturn b.returnErr(customBinder.Parse(b.ctx, dest))\n\t\t}\n\t}\n\n\treturn ErrCustomBinderNotFound\n}",
+    "funcname": "Custom"
+}

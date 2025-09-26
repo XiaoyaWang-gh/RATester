@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resources.go",
+    "lineno": 186,
+    "focalfunc": "func (r Resources) MergeByLanguageInterface(in any) (any, error)",
+    "funcbody": "func (r Resources) MergeByLanguageInterface(in any) (any, error) {\n\tr2, ok := in.(Resources)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"%T cannot be merged by language\", in)\n\t}\n\treturn r.MergeByLanguage(r2), nil\n}",
+    "funcname": "MergeByLanguageInterface"
+}

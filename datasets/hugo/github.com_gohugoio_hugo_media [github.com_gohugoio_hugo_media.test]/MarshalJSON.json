@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 384,
+    "focalfunc": "func (m Type) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (m Type) MarshalJSON() ([]byte, error) {\n\ttype Alias Type\n\treturn json.Marshal(&struct {\n\t\tAlias\n\t\tType\t\tstring\t\t`json:\"type\"`\n\t\tString\t\tstring\t\t`json:\"string\"`\n\t\tSuffixes\t[]string\t`json:\"suffixes\"`\n\t}{\n\t\tAlias:\t\t(Alias)(m),\n\t\tType:\t\tm.Type,\n\t\tString:\t\tm.String(),\n\t\tSuffixes:\tstrings.Split(m.SuffixesCSV, \",\"),\n\t})\n}",
+    "funcname": "MarshalJSON"
+}

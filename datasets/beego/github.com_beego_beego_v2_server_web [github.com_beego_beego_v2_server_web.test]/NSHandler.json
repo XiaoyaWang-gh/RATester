@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 501,
+    "focalfunc": "func NSHandler(rootpath string, h http.Handler) LinkNamespace",
+    "funcbody": "func NSHandler(rootpath string, h http.Handler) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Handler(rootpath, h)\n\t}\n}",
+    "funcname": "NSHandler"
+}

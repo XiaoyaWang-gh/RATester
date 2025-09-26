@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/minifier/minify.go",
+    "lineno": 45,
+    "focalfunc": "func (t *minifyTransformation) Key() internal.ResourceTransformationKey",
+    "funcbody": "func (t *minifyTransformation) Key() internal.ResourceTransformationKey {\n\treturn internal.NewResourceTransformationKey(\"minify\")\n}",
+    "funcname": "Key"
+}

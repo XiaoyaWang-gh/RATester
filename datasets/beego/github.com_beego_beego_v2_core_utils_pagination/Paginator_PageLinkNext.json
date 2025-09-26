@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 137,
+    "focalfunc": "func (p *Paginator) PageLinkNext() (link string)",
+    "funcbody": "func (p *Paginator) PageLinkNext() (link string) {\n\tif p.HasNext() {\n\t\tlink = p.PageLink(p.Page() + 1)\n\t}\n\treturn\n}",
+    "funcname": "PageLinkNext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 18,
+    "focalfunc": "func ExpectResponseCode(code int) EnsureFunc",
+    "funcbody": "func ExpectResponseCode(code int) EnsureFunc {\n\treturn func(resp *request.Response) bool {\n\t\tif resp.Code == code {\n\t\t\treturn true\n\t\t}\n\t\tflog.Warnf(\"Expect code %d, but got %d\", code, resp.Code)\n\t\treturn false\n\t}\n}",
+    "funcname": "ExpectResponseCode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 101,
+    "focalfunc": "func (d *Dispatcher) Done() chan struct{}",
+    "funcbody": "func (d *Dispatcher) Done() chan struct{} {\n\treturn d.doneCh\n}",
+    "funcname": "Done"
+}

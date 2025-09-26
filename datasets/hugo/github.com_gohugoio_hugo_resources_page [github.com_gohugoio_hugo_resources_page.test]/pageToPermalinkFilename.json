@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 288,
+    "focalfunc": "func (l PermalinkExpander) pageToPermalinkFilename(p Page, _ string) (string, error)",
+    "funcbody": "func (l PermalinkExpander) pageToPermalinkFilename(p Page, _ string) (string, error) {\n\tname := l.translationBaseName(p)\n\tif name == \"index\" {\n\n\t\tdir := strings.TrimSuffix(p.File().Dir(), helpers.FilePathSeparator)\n\t\t_, name = filepath.Split(dir)\n\t} else if name == \"_index\" {\n\t\treturn \"\", nil\n\t}\n\n\treturn l.urlize(name), nil\n}",
+    "funcname": "pageToPermalinkFilename"
+}

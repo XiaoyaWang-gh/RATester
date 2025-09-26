@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 61,
+    "focalfunc": "func (m *BeeMap) Check(k interface{}) bool",
+    "funcbody": "func (m *BeeMap) Check(k interface{}) bool {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\t_, ok := m.bm[k]\n\treturn ok\n}",
+    "funcname": "Check"
+}

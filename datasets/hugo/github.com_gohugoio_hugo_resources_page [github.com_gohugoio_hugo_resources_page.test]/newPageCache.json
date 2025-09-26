@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_cache.go",
+    "lineno": 43,
+    "focalfunc": "func newPageCache() *pageCache",
+    "funcbody": "func newPageCache() *pageCache {\n\treturn &pageCache{m: make(map[string][]pageCacheEntry)}\n}",
+    "funcname": "newPageCache"
+}

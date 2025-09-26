@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1277,
+    "focalfunc": "func getCABlocks(secret *corev1.Secret, namespace, secretName string) (string, error)",
+    "funcbody": "func getCABlocks(secret *corev1.Secret, namespace, secretName string) (string, error) {\n\ttlsCrtData, tlsCrtExists := secret.Data[\"tls.ca\"]\n\tif tlsCrtExists {\n\t\treturn string(tlsCrtData), nil\n\t}\n\n\ttlsCrtData, tlsCrtExists = secret.Data[\"ca.crt\"]\n\tif tlsCrtExists {\n\t\treturn string(tlsCrtData), nil\n\t}\n\n\treturn \"\", fmt.Errorf(\"secret %s/%s contains neither tls.ca nor ca.crt\", namespace, secretName)\n}",
+    "funcname": "getCABlocks"
+}

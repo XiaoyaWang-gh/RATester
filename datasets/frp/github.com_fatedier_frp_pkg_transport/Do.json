@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/message.go",
+    "lineno": 61,
+    "focalfunc": "func (impl *transporterImpl) Do(ctx context.Context, req msg.Message, laneKey, recvMsgType string) (msg.Message, error)",
+    "funcbody": "func (impl *transporterImpl) Do(ctx context.Context, req msg.Message, laneKey, recvMsgType string) (msg.Message, error) {\n\tch := make(chan msg.Message, 1)\n\tdefer close(ch)\n\tunregisterFn := impl.registerMsgChan(ch, laneKey, recvMsgType)\n\tdefer unregisterFn()\n\n\tif err := impl.Send(req); err != nil {\n\t\treturn nil, err\n\t}\n\n\tselect {\n\tcase <-ctx.Done():\n\t\treturn nil, ctx.Err()\n\tcase resp := <-ch:\n\t\treturn resp, nil\n\t}\n}",
+    "funcname": "Do"
+}

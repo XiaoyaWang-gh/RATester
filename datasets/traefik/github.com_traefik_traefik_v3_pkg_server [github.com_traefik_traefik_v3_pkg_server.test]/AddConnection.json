@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 516,
+    "focalfunc": "func (c *connectionTracker) AddConnection(conn net.Conn)",
+    "funcbody": "func (c *connectionTracker) AddConnection(conn net.Conn) {\n\tdefer c.syncOpenConnectionGauge()\n\n\tc.connsMu.Lock()\n\tc.conns[conn] = struct{}{}\n\tc.connsMu.Unlock()\n}",
+    "funcname": "AddConnection"
+}

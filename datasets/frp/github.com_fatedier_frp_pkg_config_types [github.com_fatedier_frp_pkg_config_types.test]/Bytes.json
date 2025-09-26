@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 115,
+    "focalfunc": "func (q *BandwidthQuantity) Bytes() int64",
+    "funcbody": "func (q *BandwidthQuantity) Bytes() int64 {\n\treturn q.i\n}",
+    "funcname": "Bytes"
+}

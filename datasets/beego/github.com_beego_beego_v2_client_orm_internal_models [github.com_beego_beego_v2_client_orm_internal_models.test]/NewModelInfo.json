@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_m.go",
+    "lineno": 38,
+    "focalfunc": "func NewModelInfo(val reflect.Value) (mi *ModelInfo)",
+    "funcbody": "func NewModelInfo(val reflect.Value) (mi *ModelInfo) {\n\tmi = &ModelInfo{}\n\tmi.Fields = NewFields()\n\tind := reflect.Indirect(val)\n\tmi.AddrField = val\n\tmi.Name = ind.Type().Name()\n\tmi.FullName = GetFullName(ind.Type())\n\tAddModelFields(mi, ind, \"\", []int{})\n\treturn\n}",
+    "funcname": "NewModelInfo"
+}

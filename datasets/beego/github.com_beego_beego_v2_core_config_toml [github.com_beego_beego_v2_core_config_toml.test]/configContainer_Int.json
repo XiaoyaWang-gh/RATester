@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 113,
+    "focalfunc": "func (c *configContainer) Int(key string) (int, error)",
+    "funcbody": "func (c *configContainer) Int(key string) (int, error) {\n\tval, err := c.Int64(key)\n\treturn int(val), err\n}",
+    "funcname": "Int"
+}

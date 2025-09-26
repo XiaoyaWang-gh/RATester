@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__output.go",
+    "lineno": 130,
+    "focalfunc": "func (po *pageOutput) IdentifierBase() string",
+    "funcbody": "func (po *pageOutput) IdentifierBase() string {\n\treturn po.p.f.Name\n}",
+    "funcname": "IdentifierBase"
+}

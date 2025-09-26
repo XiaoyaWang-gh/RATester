@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 671,
+    "focalfunc": "func (e *escaper) computeOutCtx(c context, t *template.Template) context",
+    "funcbody": "func (e *escaper) computeOutCtx(c context, t *template.Template) context {\n\n\tc1, ok := e.escapeTemplateBody(c, t)\n\tif !ok {\n\n\t\tif c2, ok2 := e.escapeTemplateBody(c1, t); ok2 {\n\t\t\tc1, ok = c2, true\n\t\t}\n\n\t}\n\tif !ok && c1.state != stateError {\n\t\treturn context{\n\t\t\tstate:\tstateError,\n\t\t\terr:\terrorf(ErrOutputContext, t.Tree.Root, 0, \"cannot compute output context for template %s\", t.Name()),\n\t\t}\n\t}\n\treturn c1\n}",
+    "funcname": "computeOutCtx"
+}

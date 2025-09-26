@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/local_store.go",
+    "lineno": 103,
+    "focalfunc": "func (s *LocalStore) listenSaveAction()",
+    "funcbody": "func (s *LocalStore) listenSaveAction() {\n\tsafe.Go(func() {\n\t\tlogger := log.With().Str(logs.ProviderName, \"acme\").Logger()\n\t\tfor object := range s.saveDataChan {\n\t\t\tdata, err := json.MarshalIndent(object, \"\", \"  \")\n\t\t\tif err != nil {\n\t\t\t\tlogger.Error().Err(err).Send()\n\t\t\t}\n\n\t\t\terr = os.WriteFile(s.filename, data, 0o600)\n\t\t\tif err != nil {\n\t\t\t\tlogger.Error().Err(err).Send()\n\t\t\t}\n\t\t}\n\t})\n}",
+    "funcname": "listenSaveAction"
+}

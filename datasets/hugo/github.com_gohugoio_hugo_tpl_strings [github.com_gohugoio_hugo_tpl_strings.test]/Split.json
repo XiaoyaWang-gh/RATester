@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 301,
+    "focalfunc": "func (ns *Namespace) Split(a any, delimiter string) ([]string, error)",
+    "funcbody": "func (ns *Namespace) Split(a any, delimiter string) ([]string, error) {\n\taStr, err := cast.ToStringE(a)\n\tif err != nil {\n\t\treturn []string{}, err\n\t}\n\n\treturn strings.Split(aStr, delimiter), nil\n}",
+    "funcname": "Split"
+}

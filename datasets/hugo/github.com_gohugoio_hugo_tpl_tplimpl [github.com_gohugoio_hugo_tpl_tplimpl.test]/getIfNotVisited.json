@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 58,
+    "focalfunc": "func (c templateContext) getIfNotVisited(name string) *templateState",
+    "funcbody": "func (c templateContext) getIfNotVisited(name string) *templateState {\n\tif c.visited[name] {\n\t\treturn nil\n\t}\n\tc.visited[name] = true\n\ttempl := c.lookupFn(name)\n\tif templ == nil {\n\n\t\tc.templateNotFound[name] = true\n\t}\n\n\treturn templ\n}",
+    "funcname": "getIfNotVisited"
+}

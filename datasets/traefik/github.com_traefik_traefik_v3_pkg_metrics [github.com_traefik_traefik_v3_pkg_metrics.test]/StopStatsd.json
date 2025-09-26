@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/statsd.go",
+    "lineno": 116,
+    "focalfunc": "func StopStatsd()",
+    "funcbody": "func StopStatsd() {\n\tif statsdTicker != nil {\n\t\tstatsdTicker.Stop()\n\t}\n\tstatsdTicker = nil\n}",
+    "funcname": "StopStatsd"
+}

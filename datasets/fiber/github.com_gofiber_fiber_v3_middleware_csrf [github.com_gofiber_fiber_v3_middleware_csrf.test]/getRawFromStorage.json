@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 213,
+    "focalfunc": "func getRawFromStorage(c fiber.Ctx, token string, cfg Config, sessionManager *sessionManager, storageManager *storageManager) []byte",
+    "funcbody": "func getRawFromStorage(c fiber.Ctx, token string, cfg Config, sessionManager *sessionManager, storageManager *storageManager) []byte {\n\tif cfg.Session != nil {\n\t\treturn sessionManager.getRaw(c, token, dummyValue)\n\t}\n\treturn storageManager.getRaw(token)\n}",
+    "funcname": "getRawFromStorage"
+}

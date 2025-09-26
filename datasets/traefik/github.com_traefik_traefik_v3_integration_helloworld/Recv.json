@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 169,
+    "focalfunc": "func (x *greeterStreamExampleClient) Recv() (*StreamExampleReply, error)",
+    "funcbody": "func (x *greeterStreamExampleClient) Recv() (*StreamExampleReply, error) {\n\tm := new(StreamExampleReply)\n\tif err := x.ClientStream.RecvMsg(m); err != nil {\n\t\treturn nil, err\n\t}\n\treturn m, nil\n}",
+    "funcname": "Recv"
+}

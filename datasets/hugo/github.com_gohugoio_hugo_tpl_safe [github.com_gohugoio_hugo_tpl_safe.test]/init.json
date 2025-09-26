@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/init.go",
+    "lineno": 25,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx := New()\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.CSS,\n\t\t\t[]string{\"safeCSS\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"Bat&Man\" | safeCSS | safeCSS }}`, `Bat&amp;Man`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.HTML,\n\t\t\t[]string{\"safeHTML\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"Bat&Man\" | safeHTML | safeHTML }}`, `Bat&Man`},\n\t\t\t\t{`{{ \"Bat&Man\" | safeHTML }}`, `Bat&Man`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.HTMLAttr,\n\t\t\t[]string{\"safeHTMLAttr\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.JS,\n\t\t\t[]string{\"safeJS\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"(1*2)\" | safeJS | safeJS }}`, `(1*2)`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.JSStr,\n\t\t\t[]string{\"safeJSStr\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.URL,\n\t\t\t[]string{\"safeURL\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"http://gohugo.io\" | safeURL | safeURL }}`, `http://gohugo.io`},\n\t\t\t},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

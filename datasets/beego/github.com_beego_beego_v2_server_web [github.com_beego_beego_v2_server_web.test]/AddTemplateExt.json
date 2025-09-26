@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 155,
+    "focalfunc": "func AddTemplateExt(ext string)",
+    "funcbody": "func AddTemplateExt(ext string) {\n\tfor _, v := range beeTemplateExt {\n\t\tif v == ext {\n\t\t\treturn\n\t\t}\n\t}\n\tbeeTemplateExt = append(beeTemplateExt, ext)\n}",
+    "funcname": "AddTemplateExt"
+}

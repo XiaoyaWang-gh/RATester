@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 54,
+    "focalfunc": "func IsTimeoutError(err error) bool",
+    "funcbody": "func IsTimeoutError(err error) bool {\n\treturn errors.Is(err, &TimeoutError{})\n}",
+    "funcname": "IsTimeoutError"
+}

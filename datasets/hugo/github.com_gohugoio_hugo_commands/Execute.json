@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 60,
+    "focalfunc": "func Execute(args []string) error",
+    "funcbody": "func Execute(args []string) error {\n\n\tmaxprocs.Set()\n\tx, err := newExec()\n\tif err != nil {\n\t\treturn err\n\t}\n\targs = mapLegacyArgs(args)\n\tcd, err := x.Execute(context.Background(), args)\n\tif err != nil {\n\t\tif err == errHelp {\n\t\t\tcd.CobraCommand.Help()\n\t\t\tfmt.Println()\n\t\t\treturn nil\n\t\t}\n\t\tif simplecobra.IsCommandError(err) {\n\n\t\t\tcd.CobraCommand.Help()\n\t\t\tfmt.Println()\n\t\t}\n\t}\n\treturn err\n}",
+    "funcname": "Execute"
+}

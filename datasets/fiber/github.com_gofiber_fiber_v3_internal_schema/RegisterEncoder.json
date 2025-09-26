@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 33,
+    "focalfunc": "func (e *Encoder) RegisterEncoder(value any, encoder func(reflect.Value) string)",
+    "funcbody": "func (e *Encoder) RegisterEncoder(value any, encoder func(reflect.Value) string) {\n\te.regenc[reflect.TypeOf(value)] = encoder\n}",
+    "funcname": "RegisterEncoder"
+}

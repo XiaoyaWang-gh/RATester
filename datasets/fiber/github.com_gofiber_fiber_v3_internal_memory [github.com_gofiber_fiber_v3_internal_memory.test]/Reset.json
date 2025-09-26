@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/memory/memory.go",
+    "lineno": 63,
+    "focalfunc": "func (s *Storage) Reset()",
+    "funcbody": "func (s *Storage) Reset() {\n\tnd := make(map[string]item)\n\ts.Lock()\n\ts.data = nd\n\ts.Unlock()\n}",
+    "funcname": "Reset"
+}

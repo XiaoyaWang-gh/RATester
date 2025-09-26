@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 244,
+    "focalfunc": "func (v *Validation) ZipCode(obj interface{}, key string) *Result",
+    "funcbody": "func (v *Validation) ZipCode(obj interface{}, key string) *Result {\n\treturn v.apply(ZipCode{Match{Regexp: zipCodePattern}, key}, obj)\n}",
+    "funcname": "ZipCode"
+}

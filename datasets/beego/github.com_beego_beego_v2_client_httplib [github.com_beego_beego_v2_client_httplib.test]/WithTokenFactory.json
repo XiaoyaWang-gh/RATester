@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 109,
+    "focalfunc": "func WithTokenFactory(tokenFactory func() string) BeegoHTTPRequestOption",
+    "funcbody": "func WithTokenFactory(tokenFactory func() string) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\tt := tokenFactory()\n\n\t\trequest.Header(\"Authorization\", t)\n\t}\n}",
+    "funcname": "WithTokenFactory"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 140,
+    "focalfunc": "func (rc *Cache) IsExist(ctx context.Context, key string) (bool, error)",
+    "funcbody": "func (rc *Cache) IsExist(ctx context.Context, key string) (bool, error) {\n\tv, err := redis.Bool(rc.do(\"EXISTS\", key))\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn v, nil\n}",
+    "funcname": "IsExist"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 272,
+    "focalfunc": "func (input *BeegoInput) UserAgent() string",
+    "funcbody": "func (input *BeegoInput) UserAgent() string {\n\treturn input.Header(\"User-Agent\")\n}",
+    "funcname": "UserAgent"
+}

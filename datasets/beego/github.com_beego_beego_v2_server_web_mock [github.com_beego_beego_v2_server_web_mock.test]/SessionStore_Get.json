@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 95,
+    "focalfunc": "func (s *SessionStore) Get(ctx context.Context, key interface{}) interface{}",
+    "funcbody": "func (s *SessionStore) Get(ctx context.Context, key interface{}) interface{} {\n\treturn s.values[key]\n}",
+    "funcname": "Get"
+}

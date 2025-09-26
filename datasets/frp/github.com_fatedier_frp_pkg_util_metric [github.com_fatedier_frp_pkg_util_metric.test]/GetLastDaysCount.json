@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 65,
+    "focalfunc": "func (c *StandardDateCounter) GetLastDaysCount(lastdays int64) []int64",
+    "funcbody": "func (c *StandardDateCounter) GetLastDaysCount(lastdays int64) []int64 {\n\tif lastdays > c.reserveDays {\n\t\tlastdays = c.reserveDays\n\t}\n\tcounts := make([]int64, lastdays)\n\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tc.rotate(time.Now())\n\tfor i := 0; i < int(lastdays); i++ {\n\t\tcounts[i] = c.counts[i]\n\t}\n\treturn counts\n}",
+    "funcname": "GetLastDaysCount"
+}

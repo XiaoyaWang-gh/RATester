@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/attr.go",
+    "lineno": 140,
+    "focalfunc": "func attrType(name string) contentType",
+    "funcbody": "func attrType(name string) contentType {\n\tif strings.HasPrefix(name, \"data-\") {\n\n\t\tname = name[5:]\n\t} else if prefix, short, ok := strings.Cut(name, \":\"); ok {\n\t\tif prefix == \"xmlns\" {\n\t\t\treturn contentTypeURL\n\t\t}\n\n\t\tname = short\n\t}\n\tif t, ok := attrTypeMap[name]; ok {\n\t\treturn t\n\t}\n\n\tif strings.HasPrefix(name, \"on\") {\n\t\treturn contentTypeJS\n\t}\n\n\tif strings.Contains(name, \"src\") ||\n\t\tstrings.Contains(name, \"uri\") ||\n\t\tstrings.Contains(name, \"url\") {\n\t\treturn contentTypeURL\n\t}\n\treturn contentTypePlain\n}",
+    "funcname": "attrType"
+}

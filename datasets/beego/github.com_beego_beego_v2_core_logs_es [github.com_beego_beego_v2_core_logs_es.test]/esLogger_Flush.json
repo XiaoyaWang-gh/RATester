@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 113,
+    "focalfunc": "func (el *esLogger) Flush()",
+    "funcbody": "func (el *esLogger) Flush() {\n}",
+    "funcname": "Flush"
+}

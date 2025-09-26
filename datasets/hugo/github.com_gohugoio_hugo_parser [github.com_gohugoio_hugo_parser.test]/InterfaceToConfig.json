@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/frontmatter.go",
+    "lineno": 35,
+    "focalfunc": "func InterfaceToConfig(in any, format metadecoders.Format, w io.Writer) error",
+    "funcbody": "func InterfaceToConfig(in any, format metadecoders.Format, w io.Writer) error {\n\tif in == nil {\n\t\treturn errors.New(\"input was nil\")\n\t}\n\n\tswitch format {\n\tcase metadecoders.YAML:\n\t\tb, err := yaml.Marshal(in)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t_, err = w.Write(b)\n\t\treturn err\n\n\tcase metadecoders.TOML:\n\t\tenc := toml.NewEncoder(w)\n\t\tenc.SetIndentTables(true)\n\t\treturn enc.Encode(in)\n\tcase metadecoders.JSON:\n\t\tb, err := json.MarshalIndent(in, \"\", \"   \")\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t_, err = w.Write(b)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t_, err = w.Write([]byte{'\\n'})\n\t\treturn err\n\tcase metadecoders.XML:\n\t\tb, err := xml.AnyXmlIndent(in, \"\", \"\\t\", \"root\")\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t_, err = w.Write(b)\n\t\treturn err\n\tdefault:\n\t\treturn errors.New(\"unsupported Format provided\")\n\t}\n}",
+    "funcname": "InterfaceToConfig"
+}

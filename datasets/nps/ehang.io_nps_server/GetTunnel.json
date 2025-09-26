@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 241,
+    "focalfunc": "func GetTunnel(start, length int, typeVal string, clientId int, search string) ([]*file.Tunnel, int)",
+    "funcbody": "func GetTunnel(start, length int, typeVal string, clientId int, search string) ([]*file.Tunnel, int) {\n\tlist := make([]*file.Tunnel, 0)\n\tvar cnt int\n\tkeys := file.GetMapKeys(file.GetDb().JsonDb.Tasks, false, \"\", \"\")\n\tfor _, key := range keys {\n\t\tif value, ok := file.GetDb().JsonDb.Tasks.Load(key); ok {\n\t\t\tv := value.(*file.Tunnel)\n\t\t\tif (typeVal != \"\" && v.Mode != typeVal || (clientId != 0 && v.Client.Id != clientId)) || (typeVal == \"\" && clientId != v.Client.Id) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif search != \"\" && !(v.Id == common.GetIntNoErrByStr(search) || v.Port == common.GetIntNoErrByStr(search) || strings.Contains(v.Password, search) || strings.Contains(v.Remark, search)) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tcnt++\n\t\t\tif _, ok := Bridge.Client.Load(v.Client.Id); ok {\n\t\t\t\tv.Client.IsConnect = true\n\t\t\t} else {\n\t\t\t\tv.Client.IsConnect = false\n\t\t\t}\n\t\t\tif start--; start < 0 {\n\t\t\t\tif length--; length >= 0 {\n\n\t\t\t\t\tif _, ok := RunList.Load(v.Id); ok {\n\t\t\t\t\t\tv.RunStatus = true\n\t\t\t\t\t} else {\n\t\t\t\t\t\tv.RunStatus = false\n\t\t\t\t\t}\n\t\t\t\t\tlist = append(list, v)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn list, cnt\n}",
+    "funcname": "GetTunnel"
+}

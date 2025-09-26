@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/sort.go",
+    "lineno": 22,
+    "focalfunc": "func (p PairList) Less(i, j int) bool",
+    "funcbody": "func (p PairList) Less(i, j int) bool {\n\tif p[i].order == \"desc\" {\n\t\treturn reflect.ValueOf(*p[i].clientFlow).FieldByName(p[i].key).Int() < reflect.ValueOf(*p[j].clientFlow).FieldByName(p[j].key).Int()\n\t}\n\treturn reflect.ValueOf(*p[i].clientFlow).FieldByName(p[i].key).Int() > reflect.ValueOf(*p[j].clientFlow).FieldByName(p[j].key).Int()\n}",
+    "funcname": "Less"
+}

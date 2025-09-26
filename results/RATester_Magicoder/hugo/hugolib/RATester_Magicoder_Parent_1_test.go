@@ -1,0 +1,39 @@
+package hugolib
+
+import (
+	"fmt"
+	"reflect"
+	"testing"
+
+	"github.com/gohugoio/hugo/resources/page"
+)
+
+func TestParent_1(t *testing.T) {
+	type fields struct {
+		p *pageState
+	}
+	tests := []struct {
+		name   string
+		fields fields
+		want   page.Page
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			pt := pageTree{
+				p: tt.fields.p,
+			}
+			if got := pt.Parent(); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("Parent() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

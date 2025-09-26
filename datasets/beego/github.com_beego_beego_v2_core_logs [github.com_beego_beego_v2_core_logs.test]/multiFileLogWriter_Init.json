@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/multifile.go",
+    "lineno": 47,
+    "focalfunc": "func (f *multiFileLogWriter) Init(config string) error",
+    "funcbody": "func (f *multiFileLogWriter) Init(config string) error {\n\twriter := newFileWriter().(*fileLogWriter)\n\terr := writer.Init(config)\n\tif err != nil {\n\t\treturn err\n\t}\n\tf.fullLogWriter = writer\n\tf.writers[LevelDebug+1] = writer\n\n\terr = json.Unmarshal([]byte(config), f)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tjsonMap := map[string]interface{}{}\n\terr = json.Unmarshal([]byte(config), &jsonMap)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tfor i := LevelEmergency; i < LevelDebug+1; i++ {\n\t\tfor _, v := range f.Separate {\n\t\t\tif v == levelNames[i] {\n\t\t\t\tjsonMap[\"filename\"] = f.fullLogWriter.fileNameOnly + \".\" + levelNames[i] + f.fullLogWriter.suffix\n\t\t\t\tjsonMap[\"level\"] = i\n\t\t\t\tbs, _ := json.Marshal(jsonMap)\n\t\t\t\twriter = newFileWriter().(*fileLogWriter)\n\t\t\t\terr := writer.Init(string(bs))\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t\tf.writers[i] = writer\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "Init"
+}

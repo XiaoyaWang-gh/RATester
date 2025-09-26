@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 701,
+    "focalfunc": "func getConnKey(conn net.Conn) string",
+    "funcbody": "func getConnKey(conn net.Conn) string {\n\treturn fmt.Sprintf(\"%s => %s\", conn.RemoteAddr(), conn.LocalAddr())\n}",
+    "funcname": "getConnKey"
+}

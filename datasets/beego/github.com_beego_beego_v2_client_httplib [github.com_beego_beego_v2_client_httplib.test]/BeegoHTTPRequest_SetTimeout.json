@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 173,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetTimeout(connectTimeout, readWriteTimeout time.Duration) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetTimeout(connectTimeout, readWriteTimeout time.Duration) *BeegoHTTPRequest {\n\tb.setting.ConnectTimeout = connectTimeout\n\tb.setting.ReadWriteTimeout = readWriteTimeout\n\treturn b\n}",
+    "funcname": "SetTimeout"
+}

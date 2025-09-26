@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/rate.go",
+    "lineno": 25,
+    "focalfunc": "func (s *Rate) Start()",
+    "funcbody": "func (s *Rate) Start() {\n\tgo s.session()\n}",
+    "funcname": "Start"
+}

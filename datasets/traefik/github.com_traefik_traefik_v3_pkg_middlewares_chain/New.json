@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/chain/chain.go",
+    "lineno": 21,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.Chain, builder chainBuilder, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.Chain, builder chainBuilder, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeName).Debug().Msg(\"Creating middleware\")\n\n\tmiddlewareChain := builder.BuildChain(ctx, config.Middlewares)\n\treturn middlewareChain.Then(next)\n}",
+    "funcname": "New"
+}

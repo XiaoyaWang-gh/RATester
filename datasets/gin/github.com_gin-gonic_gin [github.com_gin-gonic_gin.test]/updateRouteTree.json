@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 481,
+    "focalfunc": "func updateRouteTree(n *node)",
+    "funcbody": "func updateRouteTree(n *node) {\n\tn.path = strings.ReplaceAll(n.path, escapedColon, colon)\n\tn.fullPath = strings.ReplaceAll(n.fullPath, escapedColon, colon)\n\tn.indices = strings.ReplaceAll(n.indices, backslash, colon)\n\tif n.children == nil {\n\t\treturn\n\t}\n\tfor _, child := range n.children {\n\t\tupdateRouteTree(child)\n\t}\n}",
+    "funcname": "updateRouteTree"
+}

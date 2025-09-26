@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 210,
+    "focalfunc": "func (h unsafeHeader) Values(key string) []string",
+    "funcbody": "func (h unsafeHeader) Values(key string) []string {\n\treturn h[key]\n}",
+    "funcname": "Values"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 92,
+    "focalfunc": "func Infow(msg string, keysAndValues ...any)",
+    "funcbody": "func Infow(msg string, keysAndValues ...any) {\n\tlogger.Infow(msg, keysAndValues...)\n}",
+    "funcname": "Infow"
+}

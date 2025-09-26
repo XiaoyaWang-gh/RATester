@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 218,
+    "focalfunc": "func (unique *Unique) AddColumnsToUnique(columns ...*Column) *Unique",
+    "funcbody": "func (unique *Unique) AddColumnsToUnique(columns ...*Column) *Unique {\n\tunique.Columns = append(unique.Columns, columns...)\n\n\treturn unique\n}",
+    "funcname": "AddColumnsToUnique"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 87,
+    "focalfunc": "func (e *RequestExpect) ExpectResp(resp []byte) *RequestExpect",
+    "funcbody": "func (e *RequestExpect) ExpectResp(resp []byte) *RequestExpect {\n\te.expectResp = resp\n\treturn e\n}",
+    "funcname": "ExpectResp"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 135,
+    "focalfunc": "func (m *Mirroring) AddMirror(handler http.Handler, percent int) error",
+    "funcbody": "func (m *Mirroring) AddMirror(handler http.Handler, percent int) error {\n\tif percent < 0 || percent > 100 {\n\t\treturn errors.New(\"percent must be between 0 and 100\")\n\t}\n\tm.mirrorHandlers = append(m.mirrorHandlers, &mirrorHandler{Handler: handler, percent: percent})\n\treturn nil\n}",
+    "funcname": "AddMirror"
+}

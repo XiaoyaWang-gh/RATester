@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 459,
+    "focalfunc": "func GetServerIpByClientIp(clientIp net.IP) string",
+    "funcbody": "func GetServerIpByClientIp(clientIp net.IP) string {\n\tif IsPublicIP(clientIp) {\n\t\treturn GetExternalIp()\n\t}\n\t_, ip := GetIntranetIp()\n\treturn ip\n}",
+    "funcname": "GetServerIpByClientIp"
+}

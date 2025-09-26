@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 182,
+    "focalfunc": "func newdbBaseSqlite() dbBaser",
+    "funcbody": "func newdbBaseSqlite() dbBaser {\n\tb := new(dbBaseSqlite)\n\tb.ins = b\n\treturn b\n}",
+    "funcname": "newdbBaseSqlite"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/gateway.go",
+    "lineno": 127,
+    "focalfunc": "func loadAuthorizedKeysFromFile(path string) (map[string]string, error)",
+    "funcbody": "func loadAuthorizedKeysFromFile(path string) (map[string]string, error) {\n\tauthorizedKeysMap := make(map[string]string)\n\tauthorizedKeysBytes, err := os.ReadFile(path)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tfor len(authorizedKeysBytes) > 0 {\n\t\tpubKey, comment, _, rest, err := ssh.ParseAuthorizedKey(authorizedKeysBytes)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tauthorizedKeysMap[string(pubKey.Marshal())] = strings.TrimSpace(comment)\n\t\tauthorizedKeysBytes = rest\n\t}\n\treturn authorizedKeysMap, nil\n}",
+    "funcname": "loadAuthorizedKeysFromFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 986,
+    "focalfunc": "func (c *hugoBuilder) postBuild(what string, start time.Time)",
+    "funcbody": "func (c *hugoBuilder) postBuild(what string, start time.Time) {\n\tif h, err := c.hugo(); err == nil && h.Conf.Running() {\n\t\th.LogServerAddresses()\n\t}\n\tc.r.timeTrack(start, what)\n}",
+    "funcname": "postBuild"
+}

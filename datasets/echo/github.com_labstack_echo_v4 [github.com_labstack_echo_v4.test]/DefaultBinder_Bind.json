@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 118,
+    "focalfunc": "func (b *DefaultBinder) Bind(i interface{}, c Context) (err error)",
+    "funcbody": "func (b *DefaultBinder) Bind(i interface{}, c Context) (err error) {\n\tif err := b.BindPathParams(c, i); err != nil {\n\t\treturn err\n\t}\n\n\tmethod := c.Request().Method\n\tif method == http.MethodGet || method == http.MethodDelete || method == http.MethodHead {\n\t\tif err = b.BindQueryParams(c, i); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn b.BindBody(c, i)\n}",
+    "funcname": "Bind"
+}

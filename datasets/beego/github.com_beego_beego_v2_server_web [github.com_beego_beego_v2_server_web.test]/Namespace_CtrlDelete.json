@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 206,
+    "focalfunc": "func (n *Namespace) CtrlDelete(rootpath string, f interface{}) *Namespace",
+    "funcbody": "func (n *Namespace) CtrlDelete(rootpath string, f interface{}) *Namespace {\n\tn.handlers.CtrlDelete(rootpath, f)\n\treturn n\n}",
+    "funcname": "CtrlDelete"
+}

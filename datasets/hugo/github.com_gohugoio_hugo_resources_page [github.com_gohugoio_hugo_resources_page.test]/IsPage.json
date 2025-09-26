@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 258,
+    "focalfunc": "func (p *nopPage) IsPage() bool",
+    "funcbody": "func (p *nopPage) IsPage() bool {\n\treturn false\n}",
+    "funcname": "IsPage"
+}

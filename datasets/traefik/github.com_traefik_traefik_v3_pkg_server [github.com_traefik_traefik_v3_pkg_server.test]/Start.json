@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_udp.go",
+    "lineno": 99,
+    "focalfunc": "func (ep *UDPEntryPoint) Start(ctx context.Context)",
+    "funcbody": "func (ep *UDPEntryPoint) Start(ctx context.Context) {\n\tlog.Ctx(ctx).Debug().Msg(\"Start UDP Server\")\n\tfor {\n\t\tconn, err := ep.listener.Accept()\n\t\tif err != nil {\n\n\t\t\treturn\n\t\t}\n\n\t\tgo ep.switcher.ServeUDP(conn)\n\t}\n}",
+    "funcname": "Start"
+}

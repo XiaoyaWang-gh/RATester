@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/method_override.go",
+    "lineno": 79,
+    "focalfunc": "func MethodFromForm(param string) MethodOverrideGetter",
+    "funcbody": "func MethodFromForm(param string) MethodOverrideGetter {\n\treturn func(c echo.Context) string {\n\t\treturn c.FormValue(param)\n\t}\n}",
+    "funcname": "MethodFromForm"
+}

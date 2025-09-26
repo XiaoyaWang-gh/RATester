@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlersmisc.go",
+    "lineno": 135,
+    "focalfunc": "func whiteSpaceTrimmer() logg.Handler",
+    "funcbody": "func whiteSpaceTrimmer() logg.Handler {\n\treturn logg.HandlerFunc(func(e *logg.Entry) error {\n\t\te.Message = strings.TrimSpace(e.Message)\n\t\tfor i, field := range e.Fields {\n\t\t\tif s, ok := field.Value.(string); ok {\n\t\t\t\te.Fields[i].Value = strings.TrimSpace(s)\n\t\t\t}\n\t\t}\n\t\treturn nil\n\t})\n}",
+    "funcname": "whiteSpaceTrimmer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 315,
+    "focalfunc": "func (t *templateExec) MarkReady() error",
+    "funcbody": "func (t *templateExec) MarkReady() error {\n\tvar err error\n\tt.readyInit.Do(func() {\n\n\t\tif len(t.needsBaseof) > 0 {\n\t\t\terr = t.main.createPrototypes()\n\t\t\tif err != nil {\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t})\n\n\treturn err\n}",
+    "funcname": "MarkReady"
+}

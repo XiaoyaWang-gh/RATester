@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 62,
+    "focalfunc": "func UniqueStrings(s []string) []string",
+    "funcbody": "func UniqueStrings(s []string) []string {\n\tunique := make([]string, 0, len(s))\n\tfor i, val := range s {\n\t\tvar seen bool\n\t\tfor j := 0; j < i; j++ {\n\t\t\tif s[j] == val {\n\t\t\t\tseen = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !seen {\n\t\t\tunique = append(unique, val)\n\t\t}\n\t}\n\treturn unique\n}",
+    "funcname": "UniqueStrings"
+}

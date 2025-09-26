@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 75,
+    "focalfunc": "func Register(name string, provide Provider)",
+    "funcbody": "func Register(name string, provide Provider) {\n\tif provide == nil {\n\t\tpanic(\"session: Register provide is nil\")\n\t}\n\tprovides[name] = provide\n}",
+    "funcname": "Register"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 113,
+    "focalfunc": "func ForceRefresh()",
+    "funcbody": "func ForceRefresh() {\n\tRefreshPath(\"/x.js\")\n}",
+    "funcname": "ForceRefresh"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 296,
+    "focalfunc": "func (b *ValueBinder) BindUnmarshaler(sourceParam string, dest BindUnmarshaler) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) BindUnmarshaler(sourceParam string, dest BindUnmarshaler) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\n\ttmp := b.ValueFunc(sourceParam)\n\tif tmp == \"\" {\n\t\treturn b\n\t}\n\n\tif err := dest.UnmarshalParam(tmp); err != nil {\n\t\tb.setError(b.ErrorFunc(sourceParam, []string{tmp}, \"failed to bind field value to BindUnmarshaler interface\", err))\n\t}\n\treturn b\n}",
+    "funcname": "BindUnmarshaler"
+}

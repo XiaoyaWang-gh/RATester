@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 64,
+    "focalfunc": "func (h Headings) FilterBy(fn func(*Heading) bool) Headings",
+    "funcbody": "func (h Headings) FilterBy(fn func(*Heading) bool) Headings {\n\tvar out Headings\n\n\tfor _, h := range h {\n\t\th.walk(func(h *Heading) {\n\t\t\tif fn(h) {\n\t\t\t\tout = append(out, h)\n\t\t\t}\n\t\t})\n\t}\n\treturn out\n}",
+    "funcname": "FilterBy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 67,
+    "focalfunc": "func (s Summary) PrintableValue() any",
+    "funcbody": "func (s Summary) PrintableValue() any {\n\treturn s.Text\n}",
+    "funcname": "PrintableValue"
+}

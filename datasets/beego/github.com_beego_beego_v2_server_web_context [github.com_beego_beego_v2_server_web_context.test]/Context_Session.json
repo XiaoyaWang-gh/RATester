@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 317,
+    "focalfunc": "func (ctx *Context) Session() (store session.Store, err error)",
+    "funcbody": "func (ctx *Context) Session() (store session.Store, err error) {\n\tif ctx.Input != nil {\n\t\tif ctx.Input.CruSession != nil {\n\t\t\tstore = ctx.Input.CruSession\n\t\t\treturn\n\t\t} else {\n\t\t\terr = errors.New(`no valid session store(please initialize session)`)\n\t\t\treturn\n\t\t}\n\t} else {\n\t\terr = errors.New(`no valid input`)\n\t\treturn\n\t}\n}",
+    "funcname": "Session"
+}

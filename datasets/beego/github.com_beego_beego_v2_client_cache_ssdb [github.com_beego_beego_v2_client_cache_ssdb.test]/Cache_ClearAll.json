@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 131,
+    "focalfunc": "func (rc *Cache) ClearAll(context.Context) error",
+    "funcbody": "func (rc *Cache) ClearAll(context.Context) error {\n\tkeyStart, keyEnd, limit := \"\", \"\", 50\n\tresp, err := rc.Scan(keyStart, keyEnd, limit)\n\tfor err == nil {\n\t\tsize := len(resp)\n\t\tif size == 1 {\n\t\t\treturn nil\n\t\t}\n\t\tkeys := []string{}\n\t\tfor i := 1; i < size; i += 2 {\n\t\t\tkeys = append(keys, resp[i])\n\t\t}\n\t\t_, e := rc.conn.Do(\"multi_del\", keys)\n\t\tif e != nil {\n\t\t\treturn berror.Wrapf(e, cache.SsdbCacheCurdFailed, \"multi_del failed: %v\", keys)\n\t\t}\n\t\tkeyStart = resp[size-2]\n\t\tresp, err = rc.Scan(keyStart, keyEnd, limit)\n\t}\n\treturn berror.Wrap(err, cache.SsdbCacheCurdFailed, \"scan failed\")\n}",
+    "funcname": "ClearAll"
+}

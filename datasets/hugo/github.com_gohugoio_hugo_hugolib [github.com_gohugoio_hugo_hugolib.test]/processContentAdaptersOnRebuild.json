@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 1143,
+    "focalfunc": "func (h *HugoSites) processContentAdaptersOnRebuild(ctx context.Context, buildConfig *BuildCfg) error",
+    "funcbody": "func (h *HugoSites) processContentAdaptersOnRebuild(ctx context.Context, buildConfig *BuildCfg) error {\n\n\tif _, err := h.init.layouts.Do(context.Background()); err != nil {\n\t\treturn err\n\t}\n\tg := rungroup.Run[*pagesfromdata.PagesFromTemplate](ctx, rungroup.Config[*pagesfromdata.PagesFromTemplate]{\n\t\tNumWorkers:\th.numWorkers,\n\t\tHandle: func(ctx context.Context, p *pagesfromdata.PagesFromTemplate) error {\n\t\t\tbi, err := p.Execute(ctx)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\ts := p.Site.(*Site)\n\t\t\ts.handleContentAdapterChanges(bi, buildConfig)\n\t\t\treturn nil\n\t\t},\n\t})\n\n\th.pageTrees.treePagesFromTemplateAdapters.WalkPrefixRaw(doctree.LockTypeRead, \"\", func(key string, p *pagesfromdata.PagesFromTemplate) (bool, error) {\n\t\tif p.StaleVersion() > 0 {\n\t\t\tg.Enqueue(p)\n\t\t}\n\t\treturn false, nil\n\t})\n\n\treturn g.Wait()\n}",
+    "funcname": "processContentAdaptersOnRebuild"
+}

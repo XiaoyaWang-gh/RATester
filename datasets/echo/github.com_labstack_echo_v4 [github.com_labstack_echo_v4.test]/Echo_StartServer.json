@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 765,
+    "focalfunc": "func (e *Echo) StartServer(s *http.Server) (err error)",
+    "funcbody": "func (e *Echo) StartServer(s *http.Server) (err error) {\n\te.startupMutex.Lock()\n\tif err := e.configureServer(s); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn err\n\t}\n\tif s.TLSConfig != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn s.Serve(e.TLSListener)\n\t}\n\te.startupMutex.Unlock()\n\treturn s.Serve(e.Listener)\n}",
+    "funcname": "StartServer"
+}

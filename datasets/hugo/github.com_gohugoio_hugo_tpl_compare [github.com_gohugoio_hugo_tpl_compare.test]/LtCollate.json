@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 208,
+    "focalfunc": "func (n *Namespace) LtCollate(collator *langs.Collator, first any, others ...any) bool",
+    "funcbody": "func (n *Namespace) LtCollate(collator *langs.Collator, first any, others ...any) bool {\n\tn.checkComparisonArgCount(1, others...)\n\tfor _, other := range others {\n\t\tleft, right := n.compareGetWithCollator(collator, first, other)\n\t\tif !(left < right) {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "LtCollate"
+}

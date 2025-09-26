@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 341,
+    "focalfunc": "func NewKCPTunnelSession() TunnelSession",
+    "funcbody": "func NewKCPTunnelSession() TunnelSession {\n\treturn &KCPTunnelSession{}\n}",
+    "funcname": "NewKCPTunnelSession"
+}

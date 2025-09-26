@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/http.go",
+    "lineno": 62,
+    "focalfunc": "func (p *httpPlugin) Name() string",
+    "funcbody": "func (p *httpPlugin) Name() string {\n\treturn p.options.Name\n}",
+    "funcname": "Name"
+}

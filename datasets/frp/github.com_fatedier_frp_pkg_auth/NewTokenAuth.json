@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/token.go",
+    "lineno": 32,
+    "focalfunc": "func NewTokenAuth(additionalAuthScopes []v1.AuthScope, token string) *TokenAuthSetterVerifier",
+    "funcbody": "func NewTokenAuth(additionalAuthScopes []v1.AuthScope, token string) *TokenAuthSetterVerifier {\n\treturn &TokenAuthSetterVerifier{\n\t\tadditionalAuthScopes:\tadditionalAuthScopes,\n\t\ttoken:\t\t\ttoken,\n\t}\n}",
+    "funcname": "NewTokenAuth"
+}

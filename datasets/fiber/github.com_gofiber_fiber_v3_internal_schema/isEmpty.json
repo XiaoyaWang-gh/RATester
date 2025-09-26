@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 183,
+    "focalfunc": "func isEmpty(t reflect.Type, value []string) bool",
+    "funcbody": "func isEmpty(t reflect.Type, value []string) bool {\n\tif len(value) == 0 {\n\t\treturn true\n\t}\n\tswitch t.Kind() {\n\tcase boolType, float32Type, float64Type, intType, int8Type, int32Type, int64Type, stringType, uint8Type, uint16Type, uint32Type, uint64Type:\n\t\treturn len(value[0]) == 0\n\t}\n\treturn false\n}",
+    "funcname": "isEmpty"
+}

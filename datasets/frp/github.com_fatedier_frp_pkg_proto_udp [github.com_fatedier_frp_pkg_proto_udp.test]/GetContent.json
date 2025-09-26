@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/proto/udp/udp.go",
+    "lineno": 37,
+    "focalfunc": "func GetContent(m *msg.UDPPacket) (buf []byte, err error)",
+    "funcbody": "func GetContent(m *msg.UDPPacket) (buf []byte, err error) {\n\tbuf, err = base64.StdEncoding.DecodeString(m.Content)\n\treturn\n}",
+    "funcname": "GetContent"
+}

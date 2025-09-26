@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 272,
+    "focalfunc": "func formatDep(path, version string) string",
+    "funcbody": "func formatDep(path, version string) string {\n\treturn fmt.Sprintf(\"%s=%q\", path, version)\n}",
+    "funcname": "formatDep"
+}

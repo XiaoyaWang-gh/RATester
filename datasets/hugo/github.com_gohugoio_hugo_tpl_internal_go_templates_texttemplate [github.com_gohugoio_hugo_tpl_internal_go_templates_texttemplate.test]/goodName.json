@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 127,
+    "focalfunc": "func goodName(name string) bool",
+    "funcbody": "func goodName(name string) bool {\n\tif name == \"\" {\n\t\treturn false\n\t}\n\tfor i, r := range name {\n\t\tswitch {\n\t\tcase r == '_':\n\t\tcase i == 0 && !unicode.IsLetter(r):\n\t\t\treturn false\n\t\tcase !unicode.IsLetter(r) && !unicode.IsDigit(r):\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "goodName"
+}

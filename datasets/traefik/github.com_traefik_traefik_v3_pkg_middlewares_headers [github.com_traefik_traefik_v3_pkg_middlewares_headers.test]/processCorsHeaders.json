@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/header.go",
+    "lineno": 139,
+    "focalfunc": "func (s *Header) processCorsHeaders(rw http.ResponseWriter, req *http.Request) bool",
+    "funcbody": "func (s *Header) processCorsHeaders(rw http.ResponseWriter, req *http.Request) bool {\n\tif !s.hasCorsHeaders {\n\t\treturn false\n\t}\n\n\treqAcMethod := req.Header.Get(\"Access-Control-Request-Method\")\n\toriginHeader := req.Header.Get(\"Origin\")\n\n\tif reqAcMethod != \"\" && originHeader != \"\" && req.Method == http.MethodOptions {\n\n\t\tif s.headers.AccessControlAllowCredentials {\n\t\t\trw.Header().Set(\"Access-Control-Allow-Credentials\", \"true\")\n\t\t}\n\n\t\tallowHeaders := strings.Join(s.headers.AccessControlAllowHeaders, \",\")\n\t\tif allowHeaders != \"\" {\n\t\t\trw.Header().Set(\"Access-Control-Allow-Headers\", allowHeaders)\n\t\t}\n\n\t\tallowMethods := strings.Join(s.headers.AccessControlAllowMethods, \",\")\n\t\tif allowMethods != \"\" {\n\t\t\trw.Header().Set(\"Access-Control-Allow-Methods\", allowMethods)\n\t\t}\n\n\t\tallowed, match := s.isOriginAllowed(originHeader)\n\t\tif allowed {\n\t\t\trw.Header().Set(\"Access-Control-Allow-Origin\", match)\n\t\t}\n\n\t\trw.Header().Set(\"Access-Control-Max-Age\", strconv.Itoa(int(s.headers.AccessControlMaxAge)))\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "processCorsHeaders"
+}

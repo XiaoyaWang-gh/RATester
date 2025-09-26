@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 415,
+    "focalfunc": "func (b *ValueBinder) bindWithDelimiter(sourceParam string, dest interface{}, delimiter string, valueMustExist bool) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) bindWithDelimiter(sourceParam string, dest interface{}, delimiter string, valueMustExist bool) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\tvalues := b.ValuesFunc(sourceParam)\n\tif len(values) == 0 {\n\t\tif valueMustExist {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{}, \"required field value is empty\", nil))\n\t\t}\n\t\treturn b\n\t}\n\ttmpValues := make([]string, 0, len(values))\n\tfor _, v := range values {\n\t\ttmpValues = append(tmpValues, strings.Split(v, delimiter)...)\n\t}\n\n\tswitch d := dest.(type) {\n\tcase *[]string:\n\t\t*d = tmpValues\n\t\treturn b\n\tcase *[]bool:\n\t\treturn b.bools(sourceParam, tmpValues, d)\n\tcase *[]int64, *[]int32, *[]int16, *[]int8, *[]int:\n\t\treturn b.ints(sourceParam, tmpValues, d)\n\tcase *[]uint64, *[]uint32, *[]uint16, *[]uint8, *[]uint:\n\t\treturn b.uints(sourceParam, tmpValues, d)\n\tcase *[]float64, *[]float32:\n\t\treturn b.floats(sourceParam, tmpValues, d)\n\tcase *[]time.Duration:\n\t\treturn b.durations(sourceParam, tmpValues, d)\n\tdefault:\n\n\t\tb.setError(b.ErrorFunc(sourceParam, []string{}, \"unsupported bind type\", nil))\n\t\treturn b\n\t}\n}",
+    "funcname": "bindWithDelimiter"
+}

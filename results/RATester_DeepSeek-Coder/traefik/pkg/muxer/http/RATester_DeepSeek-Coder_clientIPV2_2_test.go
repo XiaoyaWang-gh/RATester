@@ -1,0 +1,34 @@
+package http
+
+import (
+	"fmt"
+	"testing"
+)
+
+func TestClientIPV2_2(t *testing.T) {
+	type args struct {
+		tree      *matchersTree
+		clientIPs []string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			if err := clientIPV2(tt.args.tree, tt.args.clientIPs...); (err != nil) != tt.wantErr {
+				t.Errorf("clientIPV2() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}

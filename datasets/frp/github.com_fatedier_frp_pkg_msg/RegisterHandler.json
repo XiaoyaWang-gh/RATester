@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 93,
+    "focalfunc": "func (d *Dispatcher) RegisterHandler(msg Message, handler func(Message))",
+    "funcbody": "func (d *Dispatcher) RegisterHandler(msg Message, handler func(Message)) {\n\td.msgHandlers[reflect.TypeOf(msg)] = handler\n}",
+    "funcname": "RegisterHandler"
+}

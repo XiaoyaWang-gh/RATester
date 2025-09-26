@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 128,
+    "focalfunc": "func (rc *Cache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error",
+    "funcbody": "func (rc *Cache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error {\n\t_, err := rc.do(\"SETEX\", key, int64(timeout/time.Second), val)\n\treturn err\n}",
+    "funcname": "Put"
+}

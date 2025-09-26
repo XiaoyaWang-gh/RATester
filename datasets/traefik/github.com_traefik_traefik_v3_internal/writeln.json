@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 301,
+    "focalfunc": "func (ew *errWriter) writeln(a ...interface{})",
+    "funcbody": "func (ew *errWriter) writeln(a ...interface{}) {\n\tif ew.err != nil {\n\t\treturn\n\t}\n\n\t_, ew.err = fmt.Fprintln(ew.w, a...)\n}",
+    "funcname": "writeln"
+}

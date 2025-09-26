@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/router.go",
+    "lineno": 68,
+    "focalfunc": "func (m *Manager) BuildHandlers(rootCtx context.Context, entryPoints []string, tls bool) map[string]http.Handler",
+    "funcbody": "func (m *Manager) BuildHandlers(rootCtx context.Context, entryPoints []string, tls bool) map[string]http.Handler {\n\tentryPointHandlers := make(map[string]http.Handler)\n\n\tfor entryPointName, routers := range m.getHTTPRouters(rootCtx, entryPoints, tls) {\n\t\tlogger := log.Ctx(rootCtx).With().Str(logs.EntryPointName, entryPointName).Logger()\n\t\tctx := logger.WithContext(rootCtx)\n\n\t\thandler, err := m.buildEntryPointHandler(ctx, entryPointName, routers)\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\n\t\tentryPointHandlers[entryPointName] = handler\n\t}\n\n\tfor _, entryPointName := range entryPoints {\n\t\tlogger := log.Ctx(rootCtx).With().Str(logs.EntryPointName, entryPointName).Logger()\n\t\tctx := logger.WithContext(rootCtx)\n\n\t\thandler, ok := entryPointHandlers[entryPointName]\n\t\tif ok || handler != nil {\n\t\t\tcontinue\n\t\t}\n\n\t\thandler, err := m.observabilityMgr.BuildEPChain(ctx, entryPointName, \"\").Then(BuildDefaultHTTPRouter())\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\t\tentryPointHandlers[entryPointName] = handler\n\t}\n\n\treturn entryPointHandlers\n}",
+    "funcname": "BuildHandlers"
+}

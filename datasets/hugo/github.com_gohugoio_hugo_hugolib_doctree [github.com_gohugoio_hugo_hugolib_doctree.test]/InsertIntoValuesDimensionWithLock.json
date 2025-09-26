@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 187,
+    "focalfunc": "func (r *NodeShiftTree[T]) InsertIntoValuesDimensionWithLock(s string, v T) (T, T, bool)",
+    "funcbody": "func (r *NodeShiftTree[T]) InsertIntoValuesDimensionWithLock(s string, v T) (T, T, bool) {\n\tr.mu.Lock()\n\tdefer r.mu.Unlock()\n\treturn r.InsertIntoValuesDimension(s, v)\n}",
+    "funcname": "InsertIntoValuesDimensionWithLock"
+}

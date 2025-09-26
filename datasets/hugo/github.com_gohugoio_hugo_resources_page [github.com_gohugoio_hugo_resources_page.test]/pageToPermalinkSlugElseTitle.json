@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 302,
+    "focalfunc": "func (l PermalinkExpander) pageToPermalinkSlugElseTitle(p Page, a string) (string, error)",
+    "funcbody": "func (l PermalinkExpander) pageToPermalinkSlugElseTitle(p Page, a string) (string, error) {\n\tif p.Slug() != \"\" {\n\t\treturn l.urlize(p.Slug()), nil\n\t}\n\treturn l.pageToPermalinkTitle(p, a)\n}",
+    "funcname": "pageToPermalinkSlugElseTitle"
+}

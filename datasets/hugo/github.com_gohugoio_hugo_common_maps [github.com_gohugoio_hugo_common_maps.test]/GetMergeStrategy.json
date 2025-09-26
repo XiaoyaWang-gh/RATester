@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 125,
+    "focalfunc": "func (p Params) GetMergeStrategy() (ParamsMergeStrategy, bool)",
+    "funcbody": "func (p Params) GetMergeStrategy() (ParamsMergeStrategy, bool) {\n\tif v, found := p[MergeStrategyKey]; found {\n\t\tif s, ok := v.(ParamsMergeStrategy); ok {\n\t\t\treturn s, true\n\t\t}\n\t}\n\treturn ParamsMergeStrategyShallow, false\n}",
+    "funcname": "GetMergeStrategy"
+}

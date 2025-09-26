@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 94,
+    "focalfunc": "func (msg *Error) Unwrap() error",
+    "funcbody": "func (msg *Error) Unwrap() error {\n\treturn msg.Err\n}",
+    "funcname": "Unwrap"
+}

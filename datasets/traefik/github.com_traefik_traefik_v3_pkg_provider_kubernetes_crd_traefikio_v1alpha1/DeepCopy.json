@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/traefikio/v1alpha1/zz_generated.deepcopy.go",
+    "lineno": 1902,
+    "focalfunc": "func (in *WeightedRoundRobin) DeepCopy() *WeightedRoundRobin",
+    "funcbody": "func (in *WeightedRoundRobin) DeepCopy() *WeightedRoundRobin {\n\tif in == nil {\n\t\treturn nil\n\t}\n\tout := new(WeightedRoundRobin)\n\tin.DeepCopyInto(out)\n\treturn out\n}",
+    "funcname": "DeepCopy"
+}

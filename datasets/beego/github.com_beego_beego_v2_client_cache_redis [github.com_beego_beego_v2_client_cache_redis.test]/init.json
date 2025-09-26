@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 348,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tcache.Register(\"redis\", NewRedisCache)\n}",
+    "funcname": "init"
+}

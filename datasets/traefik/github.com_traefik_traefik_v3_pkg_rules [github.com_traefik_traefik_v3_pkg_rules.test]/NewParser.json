@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 30,
+    "focalfunc": "func NewParser(matchers []string) (predicate.Parser, error)",
+    "funcbody": "func NewParser(matchers []string) (predicate.Parser, error) {\n\tparserFuncs := make(map[string]interface{})\n\n\tfor _, matcherName := range matchers {\n\t\tfn := func(value ...string) TreeBuilder {\n\t\t\treturn func() *Tree {\n\t\t\t\treturn &Tree{\n\t\t\t\t\tMatcher:\tmatcherName,\n\t\t\t\t\tValue:\t\tvalue,\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tparserFuncs[matcherName] = fn\n\t\tparserFuncs[strings.ToLower(matcherName)] = fn\n\t\tparserFuncs[strings.ToUpper(matcherName)] = fn\n\t\tparserFuncs[cases.Title(language.Und).String(strings.ToLower(matcherName))] = fn\n\t}\n\n\treturn predicate.NewParser(predicate.Def{\n\t\tOperators: predicate.Operators{\n\t\t\tAND:\tandFunc,\n\t\t\tOR:\torFunc,\n\t\t\tNOT:\tnotFunc,\n\t\t},\n\t\tFunctions:\tparserFuncs,\n\t})\n}",
+    "funcname": "NewParser"
+}

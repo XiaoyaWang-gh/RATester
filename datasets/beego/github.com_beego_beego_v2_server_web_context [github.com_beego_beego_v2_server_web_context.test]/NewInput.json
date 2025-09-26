@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 59,
+    "focalfunc": "func NewInput() *BeegoInput",
+    "funcbody": "func NewInput() *BeegoInput {\n\treturn &BeegoInput{\n\t\tpnames:\t\tmake([]string, 0, maxParam),\n\t\tpvalues:\tmake([]string, 0, maxParam),\n\t\tdata:\t\tmake(map[interface{}]interface{}),\n\t}\n}",
+    "funcname": "NewInput"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 66,
+    "focalfunc": "func (svr *Service) healthz(w http.ResponseWriter, _ *http.Request)",
+    "funcbody": "func (svr *Service) healthz(w http.ResponseWriter, _ *http.Request) {\n\tw.WriteHeader(200)\n}",
+    "funcname": "healthz"
+}

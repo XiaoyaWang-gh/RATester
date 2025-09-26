@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 71,
+    "focalfunc": "func (fi *File) Lang() string",
+    "funcbody": "func (fi *File) Lang() string {\n\thugo.Deprecate(\".Page.File.Lang\", \"Use .Page.Language.Lang instead.\", \"v0.123.0\")\n\treturn fi.fim.Meta().Lang\n}",
+    "funcname": "Lang"
+}

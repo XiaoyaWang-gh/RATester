@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 85,
+    "focalfunc": "func (s *WebServer) Close() error",
+    "funcbody": "func (s *WebServer) Close() error {\n\treturn nil\n}",
+    "funcname": "Close"
+}

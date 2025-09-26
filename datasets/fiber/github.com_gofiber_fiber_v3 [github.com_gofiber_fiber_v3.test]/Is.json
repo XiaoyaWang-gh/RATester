@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 853,
+    "focalfunc": "func (c *DefaultCtx) Is(extension string) bool",
+    "funcbody": "func (c *DefaultCtx) Is(extension string) bool {\n\textensionHeader := utils.GetMIME(extension)\n\tif extensionHeader == \"\" {\n\t\treturn false\n\t}\n\n\treturn strings.HasPrefix(\n\t\tutils.TrimLeft(utils.UnsafeString(c.fasthttp.Request.Header.ContentType()), ' '),\n\t\textensionHeader,\n\t)\n}",
+    "funcname": "Is"
+}

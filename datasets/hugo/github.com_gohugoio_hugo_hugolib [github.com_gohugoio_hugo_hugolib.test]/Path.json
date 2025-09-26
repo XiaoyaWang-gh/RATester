@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 226,
+    "focalfunc": "func (p *pageMeta) Path() string",
+    "funcbody": "func (p *pageMeta) Path() string {\n\treturn p.pathInfo.Base()\n}",
+    "funcname": "Path"
+}

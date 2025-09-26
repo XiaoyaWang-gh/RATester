@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/data.go",
+    "lineno": 23,
+    "focalfunc": "func acquireData() *data",
+    "funcbody": "func acquireData() *data {\n\treturn dataPool.Get().(*data)\n}",
+    "funcname": "acquireData"
+}

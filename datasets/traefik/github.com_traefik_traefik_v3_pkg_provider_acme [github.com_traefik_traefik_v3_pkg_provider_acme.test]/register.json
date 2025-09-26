@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 360,
+    "focalfunc": "func (p *Provider) register(ctx context.Context, client *lego.Client) (*registration.Resource, error)",
+    "funcbody": "func (p *Provider) register(ctx context.Context, client *lego.Client) (*registration.Resource, error) {\n\tlogger := log.Ctx(ctx)\n\n\tif p.EAB != nil {\n\t\tlogger.Info().Msg(\"Register with external account binding...\")\n\n\t\teabOptions := registration.RegisterEABOptions{TermsOfServiceAgreed: true, Kid: p.EAB.Kid, HmacEncoded: p.EAB.HmacEncoded}\n\n\t\treturn client.Registration.RegisterWithExternalAccountBinding(eabOptions)\n\t}\n\n\tlogger.Info().Msg(\"Register...\")\n\n\treturn client.Registration.Register(registration.RegisterOptions{TermsOfServiceAgreed: true})\n}",
+    "funcname": "register"
+}

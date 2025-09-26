@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_project.go",
+    "lineno": 213,
+    "focalfunc": "func (p *LogProject) UpdateLogStore(name string, ttl, shardCnt int) (err error)",
+    "funcbody": "func (p *LogProject) UpdateLogStore(name string, ttl, shardCnt int) (err error) {\n\ttype Body struct {\n\t\tName\t\tstring\t`json:\"logstoreName\"`\n\t\tTTL\t\tint\t`json:\"ttl\"`\n\t\tShardCount\tint\t`json:\"shardCount\"`\n\t}\n\n\tstore := &Body{\n\t\tName:\t\tname,\n\t\tTTL:\t\tttl,\n\t\tShardCount:\tshardCnt,\n\t}\n\n\tbody, err := json.Marshal(store)\n\tif err != nil {\n\t\treturn\n\t}\n\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\":\tfmt.Sprintf(\"%v\", len(body)),\n\t\t\"Content-Type\":\t\t\"application/json\",\n\t\t\"Accept-Encoding\":\t\"deflate\",\n\t}\n\n\tr, err := request(p, \"PUT\", \"/logstores\", h, body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbody, err = io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(body, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to update logstore\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Printf(\"%s\\n\", dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "UpdateLogStore"
+}

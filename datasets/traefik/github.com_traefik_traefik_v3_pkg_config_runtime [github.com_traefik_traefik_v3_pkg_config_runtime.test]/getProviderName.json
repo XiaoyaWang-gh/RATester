@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/runtime/runtime.go",
+    "lineno": 231,
+    "focalfunc": "func getProviderName(elementName string) string",
+    "funcbody": "func getProviderName(elementName string) string {\n\tparts := strings.Split(elementName, \"@\")\n\tif len(parts) > 1 {\n\t\treturn parts[1]\n\t}\n\treturn \"\"\n}",
+    "funcname": "getProviderName"
+}

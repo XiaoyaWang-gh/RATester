@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 145,
+    "focalfunc": "func (c *Scratch) GetSortedMapValues(key string) any",
+    "funcbody": "func (c *Scratch) GetSortedMapValues(key string) any {\n\tc.mu.RLock()\n\n\tif c.values[key] == nil {\n\t\tc.mu.RUnlock()\n\t\treturn nil\n\t}\n\n\tunsortedMap := c.values[key].(map[string]any)\n\tc.mu.RUnlock()\n\tvar keys []string\n\tfor mapKey := range unsortedMap {\n\t\tkeys = append(keys, mapKey)\n\t}\n\n\tsort.Strings(keys)\n\n\tsortedArray := make([]any, len(unsortedMap))\n\tfor i, mapKey := range keys {\n\t\tsortedArray[i] = unsortedMap[mapKey]\n\t}\n\n\treturn sortedArray\n}",
+    "funcname": "GetSortedMapValues"
+}

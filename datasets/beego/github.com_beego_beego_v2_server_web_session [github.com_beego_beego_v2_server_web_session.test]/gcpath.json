@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 301,
+    "focalfunc": "func gcpath(path string, info os.FileInfo, err error) error",
+    "funcbody": "func gcpath(path string, info os.FileInfo, err error) error {\n\tif err != nil {\n\t\treturn err\n\t}\n\tif info.IsDir() {\n\t\treturn nil\n\t}\n\tif (info.ModTime().Unix() + gcmaxlifetime) < time.Now().Unix() {\n\t\tos.Remove(path)\n\t}\n\treturn nil\n}",
+    "funcname": "gcpath"
+}

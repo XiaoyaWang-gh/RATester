@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 199,
+    "focalfunc": "func (m Type) IsMarkdown() bool",
+    "funcbody": "func (m Type) IsMarkdown() bool {\n\treturn m.SubType == Builtin.MarkdownType.SubType\n}",
+    "funcname": "IsMarkdown"
+}

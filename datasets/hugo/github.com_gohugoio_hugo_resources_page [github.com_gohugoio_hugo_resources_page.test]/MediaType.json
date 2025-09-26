@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_outputformat.go",
+    "lineno": 54,
+    "focalfunc": "func (o OutputFormat) MediaType() media.Type",
+    "funcbody": "func (o OutputFormat) MediaType() media.Type {\n\treturn o.Format.MediaType\n}",
+    "funcname": "MediaType"
+}

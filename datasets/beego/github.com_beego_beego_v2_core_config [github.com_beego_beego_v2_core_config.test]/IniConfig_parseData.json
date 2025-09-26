@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 217,
+    "focalfunc": "func (ini *IniConfig) ParseData(data []byte) (Configer, error)",
+    "funcbody": "func (ini *IniConfig) ParseData(data []byte) (Configer, error) {\n\tdir := \"beego\"\n\tcurrentUser, err := user.Current()\n\tif err == nil {\n\t\tdir = \"beego-\" + currentUser.Username\n\t}\n\tdir = filepath.Join(os.TempDir(), dir)\n\tif err = os.MkdirAll(dir, os.ModePerm); err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn ini.parseData(dir, data)\n}",
+    "funcname": "ParseData"
+}

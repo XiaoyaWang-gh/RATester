@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 176,
+    "focalfunc": "func getConfByType(proxyType string) any",
+    "funcbody": "func getConfByType(proxyType string) any {\n\tswitch v1.ProxyType(proxyType) {\n\tcase v1.ProxyTypeTCP:\n\t\treturn &TCPOutConf{}\n\tcase v1.ProxyTypeTCPMUX:\n\t\treturn &TCPMuxOutConf{}\n\tcase v1.ProxyTypeUDP:\n\t\treturn &UDPOutConf{}\n\tcase v1.ProxyTypeHTTP:\n\t\treturn &HTTPOutConf{}\n\tcase v1.ProxyTypeHTTPS:\n\t\treturn &HTTPSOutConf{}\n\tcase v1.ProxyTypeSTCP:\n\t\treturn &STCPOutConf{}\n\tcase v1.ProxyTypeXTCP:\n\t\treturn &XTCPOutConf{}\n\tdefault:\n\t\treturn nil\n\t}\n}",
+    "funcname": "getConfByType"
+}

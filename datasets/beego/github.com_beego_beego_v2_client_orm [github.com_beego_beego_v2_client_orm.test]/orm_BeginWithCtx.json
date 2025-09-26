@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 533,
+    "focalfunc": "func (o *orm) BeginWithCtx(ctx context.Context) (TxOrmer, error)",
+    "funcbody": "func (o *orm) BeginWithCtx(ctx context.Context) (TxOrmer, error) {\n\treturn o.BeginWithCtxAndOpts(ctx, nil)\n}",
+    "funcname": "BeginWithCtx"
+}

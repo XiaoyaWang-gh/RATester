@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 400,
+    "focalfunc": "func (o *ormBase) queryRelated(md interface{}, name string) (*models.ModelInfo, *models.FieldInfo, reflect.Value, *querySet)",
+    "funcbody": "func (o *ormBase) queryRelated(md interface{}, name string) (*models.ModelInfo, *models.FieldInfo, reflect.Value, *querySet) {\n\tmi, ind := o.getPtrMiInd(md)\n\tfi := o.getFieldInfo(mi, name)\n\n\t_, _, exist := getExistPk(mi, ind)\n\tif !exist {\n\t\tpanic(ErrMissPK)\n\t}\n\n\tvar qs *querySet\n\n\tswitch fi.FieldType {\n\tcase RelOneToOne, RelForeignKey, RelManyToMany:\n\t\tif !fi.InModel {\n\t\t\tbreak\n\t\t}\n\t\tqs = o.getRelQs(md, mi, fi)\n\tcase RelReverseOne, RelReverseMany:\n\t\tif !fi.InModel {\n\t\t\tbreak\n\t\t}\n\t\tqs = o.getReverseQs(md, mi, fi)\n\t}\n\n\tif qs == nil {\n\t\tpanic(fmt.Errorf(\"<Ormer> name `%s` for model `%s` is not an available rel/reverse field\", md, name))\n\t}\n\n\treturn mi, fi, ind, qs\n}",
+    "funcname": "queryRelated"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 372,
+    "focalfunc": "func (c *Cache) removeIfExpired(id string) (bool, error)",
+    "funcbody": "func (c *Cache) removeIfExpired(id string) (bool, error) {\n\tif c.maxAge <= 0 {\n\t\treturn false, nil\n\t}\n\n\tfi, err := c.Fs.Stat(id)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tif c.isExpired(fi.ModTime()) {\n\t\tc.Fs.Remove(id)\n\t\treturn true, nil\n\t}\n\n\treturn false, nil\n}",
+    "funcname": "removeIfExpired"
+}

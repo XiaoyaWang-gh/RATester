@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 118,
+    "focalfunc": "func (p *Pager) element() paginatedElement",
+    "funcbody": "func (p *Pager) element() paginatedElement {\n\tif len(p.paginatedElements) == 0 {\n\t\treturn paginatorEmptyPages\n\t}\n\treturn p.paginatedElements[p.PageNumber()-1]\n}",
+    "funcname": "element"
+}

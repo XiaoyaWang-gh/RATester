@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/weighted.go",
+    "lineno": 68,
+    "focalfunc": "func (p WeightedPage) Slice(in any) (any, error)",
+    "funcbody": "func (p WeightedPage) Slice(in any) (any, error) {\n\tswitch items := in.(type) {\n\tcase WeightedPages:\n\t\treturn items, nil\n\tcase []any:\n\t\tweighted := make(WeightedPages, len(items))\n\t\tfor i, v := range items {\n\t\t\tg, ok := v.(WeightedPage)\n\t\t\tif !ok {\n\t\t\t\treturn nil, fmt.Errorf(\"type %T is not a WeightedPage\", v)\n\t\t\t}\n\t\t\tweighted[i] = g\n\t\t}\n\t\treturn weighted, nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"invalid slice type %T\", items)\n\t}\n}",
+    "funcname": "Slice"
+}

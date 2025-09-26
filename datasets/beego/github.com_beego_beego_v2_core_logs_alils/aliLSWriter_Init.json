@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 56,
+    "focalfunc": "func (c *aliLSWriter) Init(config string) error",
+    "funcbody": "func (c *aliLSWriter) Init(config string) error {\n\terr := json.Unmarshal([]byte(config), c)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif c.FlushWhen > CacheSize {\n\t\tc.FlushWhen = CacheSize\n\t}\n\n\tprj := &LogProject{\n\t\tName:\t\t\tc.Project,\n\t\tEndpoint:\t\tc.Endpoint,\n\t\tAccessKeyID:\t\tc.KeyID,\n\t\tAccessKeySecret:\tc.KeySecret,\n\t}\n\n\tstore, err := prj.GetLogStore(c.LogStore)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tc.store = store\n\n\tc.group = append(c.group, &LogGroup{\n\t\tTopic:\tproto.String(\"\"),\n\t\tSource:\tproto.String(c.Source),\n\t\tLogs:\tmake([]*Log, 0, c.FlushWhen),\n\t})\n\n\tc.groupMap = make(map[string]*LogGroup)\n\tfor _, topic := range c.Topics {\n\n\t\tlg := &LogGroup{\n\t\t\tTopic:\tproto.String(topic),\n\t\t\tSource:\tproto.String(c.Source),\n\t\t\tLogs:\tmake([]*Log, 0, c.FlushWhen),\n\t\t}\n\n\t\tc.group = append(c.group, lg)\n\t\tc.groupMap[topic] = lg\n\t}\n\n\tif len(c.group) == 1 {\n\t\tc.withMap = false\n\t} else {\n\t\tc.withMap = true\n\t}\n\n\tc.lock = &sync.Mutex{}\n\n\tif len(c.Formatter) > 0 {\n\t\tfmtr, ok := logs.GetFormatter(c.Formatter)\n\t\tif !ok {\n\t\t\treturn fmt.Errorf(\"the formatter with name: %s not found\", c.Formatter)\n\t\t}\n\t\tc.formatter = fmtr\n\t}\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 485,
+    "focalfunc": "func (s *IntegrationTestBuilder) AddFiles(filenameContent ...string) *IntegrationTestBuilder",
+    "funcbody": "func (s *IntegrationTestBuilder) AddFiles(filenameContent ...string) *IntegrationTestBuilder {\n\tfor i := 0; i < len(filenameContent); i += 2 {\n\t\tfilename, content := filepath.FromSlash(filenameContent[i]), filenameContent[i+1]\n\t\tabsFilename := s.absFilename(filename)\n\t\ts.createdFiles = append(s.createdFiles, absFilename)\n\t\ts.writeSource(absFilename, content)\n\t}\n\treturn s\n}",
+    "funcname": "AddFiles"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 559,
+    "focalfunc": "func (input *BeegoInput) bindFloat(val string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindFloat(val string, typ reflect.Type) reflect.Value {\n\tfloatValue, err := strconv.ParseFloat(val, 64)\n\tif err != nil {\n\t\treturn reflect.Zero(typ)\n\t}\n\tpValue := reflect.New(typ)\n\tpValue.Elem().SetFloat(floatValue)\n\treturn pValue.Elem()\n}",
+    "funcname": "bindFloat"
+}

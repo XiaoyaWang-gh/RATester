@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 175,
+    "focalfunc": "func (d *DoNothingTxOrm) Commit() error",
+    "funcbody": "func (d *DoNothingTxOrm) Commit() error {\n\treturn nil\n}",
+    "funcname": "Commit"
+}

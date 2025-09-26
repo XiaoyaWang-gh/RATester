@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 130,
+    "focalfunc": "func MergeShallow(dst, src map[string]any)",
+    "funcbody": "func MergeShallow(dst, src map[string]any) {\n\tfor k, v := range src {\n\t\tfound := false\n\t\tfor dk := range dst {\n\t\t\tif strings.EqualFold(dk, k) {\n\t\t\t\tfound = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !found {\n\t\t\tdst[k] = v\n\t\t}\n\t}\n}",
+    "funcname": "MergeShallow"
+}

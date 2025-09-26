@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 244,
+    "focalfunc": "func (ns *Namespace) NumFmt(precision, number any, options ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) NumFmt(precision, number any, options ...any) (string, error) {\n\thugo.Deprecate(\"lang.NumFmt\", \"Use lang.FormatNumberCustom instead.\", \"v0.120.0\")\n\treturn ns.FormatNumberCustom(precision, number, options...)\n}",
+    "funcname": "NumFmt"
+}

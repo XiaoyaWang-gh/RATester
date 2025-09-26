@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 451,
+    "focalfunc": "func (r *Request) AddFileWithReader(name string, reader io.ReadCloser) *Request",
+    "funcbody": "func (r *Request) AddFileWithReader(name string, reader io.ReadCloser) *Request {\n\tr.files = append(r.files, AcquireFile(SetFileName(name), SetFileReader(reader)))\n\tr.resetBody(filesBody)\n\treturn r\n}",
+    "funcname": "AddFileWithReader"
+}

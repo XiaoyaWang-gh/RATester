@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 370,
+    "focalfunc": "func (svr *Service) GracefulClose(d time.Duration)",
+    "funcbody": "func (svr *Service) GracefulClose(d time.Duration) {\n\tsvr.gracefulShutdownDuration = d\n\tsvr.cancel(nil)\n}",
+    "funcname": "GracefulClose"
+}

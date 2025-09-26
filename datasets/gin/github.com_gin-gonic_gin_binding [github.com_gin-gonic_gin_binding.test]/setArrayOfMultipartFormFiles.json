@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/multipart_form_mapping.go",
+    "lineno": 63,
+    "focalfunc": "func setArrayOfMultipartFormFiles(value reflect.Value, field reflect.StructField, files []*multipart.FileHeader) (isSet bool, err error)",
+    "funcbody": "func setArrayOfMultipartFormFiles(value reflect.Value, field reflect.StructField, files []*multipart.FileHeader) (isSet bool, err error) {\n\tif value.Len() != len(files) {\n\t\treturn false, ErrMultiFileHeaderLenInvalid\n\t}\n\tfor i := range files {\n\t\tset, err := setByMultipartFormFile(value.Index(i), field, files[i:i+1])\n\t\tif err != nil || !set {\n\t\t\treturn set, err\n\t\t}\n\t}\n\treturn true, nil\n}",
+    "funcname": "setArrayOfMultipartFormFiles"
+}

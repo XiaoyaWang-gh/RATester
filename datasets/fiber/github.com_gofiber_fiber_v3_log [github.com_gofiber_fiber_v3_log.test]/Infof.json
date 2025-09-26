@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 59,
+    "focalfunc": "func Infof(format string, v ...any)",
+    "funcbody": "func Infof(format string, v ...any) {\n\tlogger.Infof(format, v...)\n}",
+    "funcname": "Infof"
+}

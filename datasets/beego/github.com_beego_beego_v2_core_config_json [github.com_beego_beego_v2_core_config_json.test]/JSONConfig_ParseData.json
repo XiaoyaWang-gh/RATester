@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 52,
+    "focalfunc": "func (js *JSONConfig) ParseData(data []byte) (config.Configer, error)",
+    "funcbody": "func (js *JSONConfig) ParseData(data []byte) (config.Configer, error) {\n\tx := &JSONConfigContainer{\n\t\tdata: make(map[string]interface{}),\n\t}\n\terr := json.Unmarshal(data, &x.data)\n\tif err != nil {\n\t\tvar wrappingArray []interface{}\n\t\terr2 := json.Unmarshal(data, &wrappingArray)\n\t\tif err2 != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tx.data[\"rootArray\"] = wrappingArray\n\t}\n\n\tx.data = config.ExpandValueEnvForMap(x.data)\n\n\treturn x, nil\n}",
+    "funcname": "ParseData"
+}

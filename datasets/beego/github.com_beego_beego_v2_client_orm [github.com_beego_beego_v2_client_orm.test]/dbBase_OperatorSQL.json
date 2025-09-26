@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2129,
+    "focalfunc": "func (d *dbBase) OperatorSQL(operator string) string",
+    "funcbody": "func (d *dbBase) OperatorSQL(operator string) string {\n\tpanic(ErrNotImplement)\n}",
+    "funcname": "OperatorSQL"
+}

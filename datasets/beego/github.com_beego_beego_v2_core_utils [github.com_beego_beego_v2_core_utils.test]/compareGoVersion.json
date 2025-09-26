@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/utils.go",
+    "lineno": 21,
+    "focalfunc": "func compareGoVersion(a, b string) int",
+    "funcbody": "func compareGoVersion(a, b string) int {\n\treg := regexp.MustCompile(\"^\\\\d*\")\n\n\ta = strings.TrimPrefix(a, \"go\")\n\tb = strings.TrimPrefix(b, \"go\")\n\n\tversionsA := strings.Split(a, \".\")\n\tversionsB := strings.Split(b, \".\")\n\n\tfor i := 0; i < len(versionsA) && i < len(versionsB); i++ {\n\t\tversionA := versionsA[i]\n\t\tversionB := versionsB[i]\n\n\t\tvA, err := strconv.Atoi(versionA)\n\t\tif err != nil {\n\t\t\tstr := reg.FindString(versionA)\n\t\t\tif str != \"\" {\n\t\t\t\tvA, _ = strconv.Atoi(str)\n\t\t\t} else {\n\t\t\t\tvA = -1\n\t\t\t}\n\t\t}\n\n\t\tvB, err := strconv.Atoi(versionB)\n\t\tif err != nil {\n\t\t\tstr := reg.FindString(versionB)\n\t\t\tif str != \"\" {\n\t\t\t\tvB, _ = strconv.Atoi(str)\n\t\t\t} else {\n\t\t\t\tvB = -1\n\t\t\t}\n\t\t}\n\n\t\tif vA > vB {\n\n\t\t\treturn 1\n\t\t} else if vA < vB {\n\n\t\t\treturn -1\n\t\t} else if vA == -1 {\n\n\t\t\treturn strings.Compare(versionA, versionB)\n\t\t}\n\n\t\tcontinue\n\t}\n\n\tif len(versionsA) > len(versionsB) {\n\t\treturn 1\n\t} else if len(versionsA) == len(versionsB) {\n\t\treturn 0\n\t}\n\n\treturn -1\n}",
+    "funcname": "compareGoVersion"
+}

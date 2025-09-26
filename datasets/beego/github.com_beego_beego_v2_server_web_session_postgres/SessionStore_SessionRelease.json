@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/postgres/sess_postgresql.go",
+    "lineno": 115,
+    "focalfunc": "func (st *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter)",
+    "funcbody": "func (st *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter) {\n\tdefer st.c.Close()\n\tst.lock.RLock()\n\tvalues := st.values\n\tst.lock.RUnlock()\n\tb, err := session.EncodeGob(values)\n\tif err != nil {\n\t\treturn\n\t}\n\tst.c.Exec(\"UPDATE session set session_data=$1, session_expiry=$2 where session_key=$3\",\n\t\tb, time.Now().Format(time.RFC3339), st.sid)\n}",
+    "funcname": "SessionRelease"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 109,
+    "focalfunc": "func (el *esLogger) Destroy()",
+    "funcbody": "func (el *esLogger) Destroy() {\n}",
+    "funcname": "Destroy"
+}

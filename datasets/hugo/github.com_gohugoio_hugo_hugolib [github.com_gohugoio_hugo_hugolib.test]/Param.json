@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 218,
+    "focalfunc": "func (p *pageMeta) Param(key any) (any, error)",
+    "funcbody": "func (p *pageMeta) Param(key any) (any, error) {\n\treturn resource.Param(p, p.s.Params(), key)\n}",
+    "funcname": "Param"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 253,
+    "focalfunc": "func (item *itemToWatch) checkForChanges() ([]fsnotify.Event, error)",
+    "funcbody": "func (item *itemToWatch) checkForChanges() ([]fsnotify.Event, error) {\n\tif item.right == nil {\n\t\titem.right = &recording{\n\t\t\tentries: make(map[string]os.FileInfo),\n\t\t}\n\t}\n\n\terr := item.right.record(item.filename)\n\tif err != nil && !herrors.IsNotExist(err) {\n\t\treturn nil, err\n\t}\n\n\tdirOp := checkChange(item.left.FileInfo, item.right.FileInfo)\n\n\tif dirOp != 0 {\n\t\tevs := []fsnotify.Event{{Op: dirOp, Name: item.filename}}\n\t\treturn evs, nil\n\t}\n\n\tif item.left.FileInfo == nil || !item.left.IsDir() {\n\n\t\treturn nil, nil\n\t}\n\n\tleftIsIn := false\n\tleft, right := item.left.entries, item.right.entries\n\tif len(right) > len(left) {\n\t\tleft, right = right, left\n\t\tleftIsIn = true\n\t}\n\n\tvar evs []fsnotify.Event\n\n\tfor name, fi1 := range left {\n\t\tfi2 := right[name]\n\t\tfil, fir := fi1, fi2\n\t\tif leftIsIn {\n\t\t\tfil, fir = fir, fil\n\t\t}\n\t\top := checkChange(fil, fir)\n\t\tif op != 0 {\n\t\t\tevs = append(evs, fsnotify.Event{Op: op, Name: filepath.Join(item.filename, name)})\n\t\t}\n\n\t}\n\n\treturn evs, nil\n}",
+    "funcname": "checkForChanges"
+}

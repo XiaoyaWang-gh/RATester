@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 289,
+    "focalfunc": "func NewImage(digits []byte, width, height int) *Image",
+    "funcbody": "func NewImage(digits []byte, width, height int) *Image {\n\tm := new(Image)\n\tm.Paletted = image.NewPaletted(image.Rect(0, 0, width, height), randomPalette())\n\tm.calculateSizes(width, height, len(digits))\n\n\tmaxx := width - (m.numWidth+m.dotSize)*len(digits) - m.dotSize\n\tmaxy := height - m.numHeight - m.dotSize*2\n\tvar border int\n\tif width > height {\n\t\tborder = height / 5\n\t} else {\n\t\tborder = width / 5\n\t}\n\tx := randInt(border, maxx-border)\n\ty := randInt(border, maxy-border)\n\n\tfor _, n := range digits {\n\t\tm.drawDigit(font[n], x, y)\n\t\tx += m.numWidth + m.dotSize\n\t}\n\n\tm.strikeThrough()\n\n\tm.distort(randFloat(5, 10), randFloat(100, 200))\n\n\tm.fillWithCircles(circleCount, m.dotSize)\n\treturn m\n}",
+    "funcname": "NewImage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx_interface.go",
+    "lineno": 33,
+    "focalfunc": "func NewDefaultCtx(app *App) *DefaultCtx",
+    "funcbody": "func NewDefaultCtx(app *App) *DefaultCtx {\n\n\treturn &DefaultCtx{\n\n\t\tapp: app,\n\t}\n}",
+    "funcname": "NewDefaultCtx"
+}

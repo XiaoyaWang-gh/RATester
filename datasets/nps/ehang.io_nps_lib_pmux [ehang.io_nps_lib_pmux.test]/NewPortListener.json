@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/plistener.go",
+    "lineno": 15,
+    "focalfunc": "func NewPortListener(connCh chan *PortConn, addr net.Addr) *PortListener",
+    "funcbody": "func NewPortListener(connCh chan *PortConn, addr net.Addr) *PortListener {\n\treturn &PortListener{\n\t\tconnCh:\tconnCh,\n\t\taddr:\taddr,\n\t}\n}",
+    "funcname": "NewPortListener"
+}

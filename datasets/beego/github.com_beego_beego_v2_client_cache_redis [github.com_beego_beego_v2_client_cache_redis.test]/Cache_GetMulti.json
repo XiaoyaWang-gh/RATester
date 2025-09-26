@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 115,
+    "focalfunc": "func (rc *Cache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error)",
+    "funcbody": "func (rc *Cache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error) {\n\tc := rc.p.Get()\n\tdefer func() {\n\t\t_ = c.Close()\n\t}()\n\tvar args []interface{}\n\tfor _, key := range keys {\n\t\targs = append(args, rc.associate(key))\n\t}\n\treturn redis.Values(c.Do(\"MGET\", args...))\n}",
+    "funcname": "GetMulti"
+}

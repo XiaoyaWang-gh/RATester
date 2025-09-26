@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/integrity/integrity.go",
+    "lineno": 42,
+    "focalfunc": "func New(rs *resources.Spec) *Client",
+    "funcbody": "func New(rs *resources.Spec) *Client {\n\treturn &Client{rs: rs}\n}",
+    "funcname": "New"
+}

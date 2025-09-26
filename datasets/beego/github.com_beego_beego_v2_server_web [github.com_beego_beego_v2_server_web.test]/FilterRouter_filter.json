@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter.go",
+    "lineno": 75,
+    "focalfunc": "func (f *FilterRouter) filter(ctx *context.Context, urlPath string, preFilterParams map[string]string) (bool, bool)",
+    "funcbody": "func (f *FilterRouter) filter(ctx *context.Context, urlPath string, preFilterParams map[string]string) (bool, bool) {\n\tif f.returnOnOutput && ctx.ResponseWriter.Started {\n\t\treturn true, true\n\t}\n\tif f.resetParams {\n\t\tpreFilterParams = ctx.Input.Params()\n\t}\n\tif ok := f.ValidRouter(urlPath, ctx); ok {\n\t\tf.filterFunc(ctx)\n\t\tif f.resetParams {\n\t\t\tctx.Input.ResetParams()\n\t\t\tfor k, v := range preFilterParams {\n\t\t\t\tctx.Input.SetParam(k, v)\n\t\t\t}\n\t\t}\n\t} else if f.next != nil {\n\t\treturn f.next.filter(ctx, urlPath, preFilterParams)\n\t}\n\tif f.returnOnOutput && ctx.ResponseWriter.Started {\n\t\treturn true, true\n\t}\n\treturn false, false\n}",
+    "funcname": "filter"
+}

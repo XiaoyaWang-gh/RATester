@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/templateProvider.go",
+    "lineno": 39,
+    "focalfunc": "func (*TemplateProvider) CloneResource(dst, src *deps.Deps) error",
+    "funcbody": "func (*TemplateProvider) CloneResource(dst, src *deps.Deps) error {\n\tt := src.Tmpl().(*templateExec)\n\tc := t.Clone(dst)\n\tfuncMap := make(map[string]any)\n\tfor k, v := range c.funcs {\n\t\tfuncMap[k] = v.Interface()\n\t}\n\tdst.SetTempl(&tpl.TemplateHandlers{\n\t\tTmpl:\t\tc,\n\t\tTxtTmpl:\tnewStandaloneTextTemplate(funcMap),\n\t})\n\treturn nil\n}",
+    "funcname": "CloneResource"
+}

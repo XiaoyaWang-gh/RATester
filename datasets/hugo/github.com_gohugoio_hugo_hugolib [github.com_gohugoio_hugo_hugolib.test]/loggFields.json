@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 138,
+    "focalfunc": "func (c *buildCounters) loggFields() logg.Fields",
+    "funcbody": "func (c *buildCounters) loggFields() logg.Fields {\n\treturn logg.Fields{\n\t\t{Name: \"pages\", Value: c.pageRenderCounter.Load()},\n\t\t{Name: \"content\", Value: c.contentRenderCounter.Load()},\n\t}\n}",
+    "funcname": "loggFields"
+}

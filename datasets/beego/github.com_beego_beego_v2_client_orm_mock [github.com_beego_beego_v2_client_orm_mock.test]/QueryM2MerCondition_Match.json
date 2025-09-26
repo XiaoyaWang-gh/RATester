@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_queryM2Mer.go",
+    "lineno": 79,
+    "focalfunc": "func (q *QueryM2MerCondition) Match(ctx context.Context, inv *orm.Invocation) bool",
+    "funcbody": "func (q *QueryM2MerCondition) Match(ctx context.Context, inv *orm.Invocation) bool {\n\tres := true\n\tif len(q.tableName) > 0 {\n\t\tres = res && (q.tableName == inv.GetTableName())\n\t}\n\tif len(q.name) > 0 {\n\t\tres = res && (len(inv.Args) > 1) && (q.name == inv.Args[1].(string))\n\t}\n\treturn res\n}",
+    "funcname": "Match"
+}

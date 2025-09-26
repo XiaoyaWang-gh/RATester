@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 87,
+    "focalfunc": "func (s *BaseServer) DealClient(c *conn.Conn, client *file.Client, addr string, rb []byte, tp string, f func(), flow *file.Flow, localProxy bool) error",
+    "funcbody": "func (s *BaseServer) DealClient(c *conn.Conn, client *file.Client, addr string, rb []byte, tp string, f func(), flow *file.Flow, localProxy bool) error {\n\tlink := conn.NewLink(tp, addr, client.Cnf.Crypt, client.Cnf.Compress, c.Conn.RemoteAddr().String(), localProxy)\n\tif target, err := s.bridge.SendLinkInfo(client.Id, link, s.task); err != nil {\n\t\tlogs.Warn(\"get connection from client id %d  error %s\", client.Id, err.Error())\n\t\tc.Close()\n\t\treturn err\n\t} else {\n\t\tif f != nil {\n\t\t\tf()\n\t\t}\n\t\tconn.CopyWaitGroup(target, c.Conn, link.Crypt, link.Compress, client.Rate, flow, true, rb)\n\t}\n\treturn nil\n}",
+    "funcname": "DealClient"
+}

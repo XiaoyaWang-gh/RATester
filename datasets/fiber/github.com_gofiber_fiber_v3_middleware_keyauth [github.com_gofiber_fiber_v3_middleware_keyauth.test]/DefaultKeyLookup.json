@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/keyauth/keyauth.go",
+    "lineno": 105,
+    "focalfunc": "func DefaultKeyLookup(keyLookup, authScheme string) (KeyLookupFunc, error)",
+    "funcbody": "func DefaultKeyLookup(keyLookup, authScheme string) (KeyLookupFunc, error) {\n\tparts := strings.Split(keyLookup, \":\")\n\tif len(parts) <= 1 {\n\t\treturn nil, fmt.Errorf(\"invalid keyLookup: %q, expected format 'source:name'\", keyLookup)\n\t}\n\textractor := KeyFromHeader(parts[1], authScheme)\n\tswitch parts[0] {\n\tcase query:\n\t\textractor = KeyFromQuery(parts[1])\n\tcase form:\n\t\textractor = KeyFromForm(parts[1])\n\tcase param:\n\t\textractor = KeyFromParam(parts[1])\n\tcase cookie:\n\t\textractor = KeyFromCookie(parts[1])\n\t}\n\treturn extractor, nil\n}",
+    "funcname": "DefaultKeyLookup"
+}

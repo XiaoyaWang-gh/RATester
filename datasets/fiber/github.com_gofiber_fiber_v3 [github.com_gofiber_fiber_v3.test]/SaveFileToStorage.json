@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1468,
+    "focalfunc": "func (*DefaultCtx) SaveFileToStorage(fileheader *multipart.FileHeader, path string, storage Storage) error",
+    "funcbody": "func (*DefaultCtx) SaveFileToStorage(fileheader *multipart.FileHeader, path string, storage Storage) error {\n\tfile, err := fileheader.Open()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to open: %w\", err)\n\t}\n\n\tcontent, err := io.ReadAll(file)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to read: %w\", err)\n\t}\n\n\tif err := storage.Set(path, content, 0); err != nil {\n\t\treturn fmt.Errorf(\"failed to store: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "SaveFileToStorage"
+}

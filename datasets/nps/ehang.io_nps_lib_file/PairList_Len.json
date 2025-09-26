@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/sort.go",
+    "lineno": 21,
+    "focalfunc": "func (p PairList) Len() int",
+    "funcbody": "func (p PairList) Len() int\t{ return len(p) }",
+    "funcname": "Len"
+}

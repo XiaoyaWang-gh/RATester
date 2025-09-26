@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/oxy.go",
+    "lineno": 9,
+    "focalfunc": "func NewOxyWrapper(logger zerolog.Logger) *OxyWrapper",
+    "funcbody": "func NewOxyWrapper(logger zerolog.Logger) *OxyWrapper {\n\treturn &OxyWrapper{logger: logger}\n}",
+    "funcname": "NewOxyWrapper"
+}

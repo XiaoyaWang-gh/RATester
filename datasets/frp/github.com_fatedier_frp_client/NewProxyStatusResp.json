@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 139,
+    "focalfunc": "func NewProxyStatusResp(status *proxy.WorkingStatus, serverAddr string) ProxyStatusResp",
+    "funcbody": "func NewProxyStatusResp(status *proxy.WorkingStatus, serverAddr string) ProxyStatusResp {\n\tpsr := ProxyStatusResp{\n\t\tName:\tstatus.Name,\n\t\tType:\tstatus.Type,\n\t\tStatus:\tstatus.Phase,\n\t\tErr:\tstatus.Err,\n\t}\n\tbaseCfg := status.Cfg.GetBaseConfig()\n\tif baseCfg.LocalPort != 0 {\n\t\tpsr.LocalAddr = net.JoinHostPort(baseCfg.LocalIP, strconv.Itoa(baseCfg.LocalPort))\n\t}\n\tpsr.Plugin = baseCfg.Plugin.Type\n\n\tif status.Err == \"\" {\n\t\tpsr.RemoteAddr = status.RemoteAddr\n\t\tif slices.Contains([]string{\"tcp\", \"udp\"}, status.Type) {\n\t\t\tpsr.RemoteAddr = serverAddr + psr.RemoteAddr\n\t\t}\n\t}\n\treturn psr\n}",
+    "funcname": "NewProxyStatusResp"
+}

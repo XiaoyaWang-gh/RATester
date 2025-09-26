@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 115,
+    "focalfunc": "func makeEscaper(n *nameSpace) escaper",
+    "funcbody": "func makeEscaper(n *nameSpace) escaper {\n\treturn escaper{\n\t\tn,\n\t\tmap[string]context{},\n\t\tmap[string]*template.Template{},\n\t\tmap[string]bool{},\n\t\tmap[*parse.ActionNode][]string{},\n\t\tmap[*parse.TemplateNode]string{},\n\t\tmap[*parse.TextNode][]byte{},\n\t\tnil,\n\t}\n}",
+    "funcname": "makeEscaper"
+}

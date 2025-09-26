@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 170,
+    "focalfunc": "func equalFieldType(out any, kind reflect.Kind, key string) bool",
+    "funcbody": "func equalFieldType(out any, kind reflect.Kind, key string) bool {\n\n\toutTyp := reflect.TypeOf(out).Elem()\n\tkey = utils.ToLower(key)\n\n\tif outTyp.Kind() == reflect.Map && outTyp.Key().Kind() == reflect.String {\n\t\treturn true\n\t}\n\n\tif outTyp.Kind() != reflect.Struct {\n\t\treturn false\n\t}\n\n\toutVal := reflect.ValueOf(out).Elem()\n\n\tfor i := 0; i < outTyp.NumField(); i++ {\n\n\t\tstructField := outVal.Field(i)\n\n\t\tif !structField.CanSet() {\n\t\t\tcontinue\n\t\t}\n\n\t\ttypeField := outTyp.Field(i)\n\n\t\tstructFieldKind := structField.Kind()\n\n\t\tif structFieldKind != kind {\n\n\t\t\tif structFieldKind == reflect.Struct {\n\n\t\t\t\tfor j := 0; j < structField.NumField(); j++ {\n\t\t\t\t\tstructFieldField := structField.Field(j)\n\n\t\t\t\t\tif !structFieldField.CanSet() {\n\t\t\t\t\t\tcontinue\n\t\t\t\t\t}\n\n\t\t\t\t\tif structFieldField.Kind() == kind {\n\t\t\t\t\t\treturn true\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tcontinue\n\t\t}\n\n\t\tinputFieldName := typeField.Tag.Get(QueryBinder.Name())\n\t\tif inputFieldName == \"\" {\n\t\t\tinputFieldName = typeField.Name\n\t\t} else {\n\t\t\tinputFieldName = strings.Split(inputFieldName, \",\")[0]\n\t\t}\n\n\t\tif utils.ToLower(inputFieldName) == key {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "equalFieldType"
+}

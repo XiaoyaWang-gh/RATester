@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 35,
+    "focalfunc": "func (o *rawPrepare) Exec(args ...interface{}) (sql.Result, error)",
+    "funcbody": "func (o *rawPrepare) Exec(args ...interface{}) (sql.Result, error) {\n\tif o.closed {\n\t\treturn nil, ErrStmtClosed\n\t}\n\tflatParams := getFlatParams(nil, args, o.rs.orm.alias.TZ)\n\treturn o.stmt.Exec(flatParams...)\n}",
+    "funcname": "Exec"
+}

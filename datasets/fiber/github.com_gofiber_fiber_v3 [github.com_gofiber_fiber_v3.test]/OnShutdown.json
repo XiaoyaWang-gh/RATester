@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 100,
+    "focalfunc": "func (h *Hooks) OnShutdown(handler ...OnShutdownHandler)",
+    "funcbody": "func (h *Hooks) OnShutdown(handler ...OnShutdownHandler) {\n\th.app.mutex.Lock()\n\th.onShutdown = append(h.onShutdown, handler...)\n\th.app.mutex.Unlock()\n}",
+    "funcname": "OnShutdown"
+}

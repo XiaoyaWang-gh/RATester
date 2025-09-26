@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 44,
+    "focalfunc": "func Wrap(next http.Handler) (http.Handler, error)",
+    "funcbody": "func Wrap(next http.Handler) (http.Handler, error) {\n\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\tcapt, err := FromContext(req.Context())\n\t\tif err != nil {\n\t\t\tc := &Capture{}\n\t\t\tnewRW, newReq := c.renew(rw, req)\n\t\t\tnext.ServeHTTP(newRW, newReq)\n\t\t\treturn\n\t\t}\n\n\t\tif capt.NeedsReset(rw) {\n\t\t\tnewRW, newReq := capt.renew(rw, req)\n\t\t\tnext.ServeHTTP(newRW, newReq)\n\t\t\treturn\n\t\t}\n\n\t\tnext.ServeHTTP(rw, req)\n\t}), nil\n}",
+    "funcname": "Wrap"
+}

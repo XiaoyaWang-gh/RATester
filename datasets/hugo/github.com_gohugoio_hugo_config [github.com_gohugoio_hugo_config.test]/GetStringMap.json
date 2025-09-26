@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 138,
+    "focalfunc": "func (c *defaultConfigProvider) GetStringMap(k string) map[string]any",
+    "funcbody": "func (c *defaultConfigProvider) GetStringMap(k string) map[string]any {\n\tv := c.Get(k)\n\treturn maps.ToStringMap(v)\n}",
+    "funcname": "GetStringMap"
+}

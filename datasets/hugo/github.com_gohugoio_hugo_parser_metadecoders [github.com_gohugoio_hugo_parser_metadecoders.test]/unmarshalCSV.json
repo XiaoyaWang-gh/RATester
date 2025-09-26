@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 210,
+    "focalfunc": "func (d Decoder) unmarshalCSV(data []byte, v any) error",
+    "funcbody": "func (d Decoder) unmarshalCSV(data []byte, v any) error {\n\tr := csv.NewReader(bytes.NewReader(data))\n\tr.Comma = d.Delimiter\n\tr.Comment = d.Comment\n\tr.LazyQuotes = d.LazyQuotes\n\n\trecords, err := r.ReadAll()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tswitch vv := v.(type) {\n\tcase *any:\n\t\t*vv = records\n\tdefault:\n\t\treturn fmt.Errorf(\"CSV cannot be unmarshaled into %T\", v)\n\n\t}\n\n\treturn nil\n}",
+    "funcname": "unmarshalCSV"
+}

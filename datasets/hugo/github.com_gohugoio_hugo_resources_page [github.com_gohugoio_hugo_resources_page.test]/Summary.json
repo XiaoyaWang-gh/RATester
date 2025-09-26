@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 623,
+    "focalfunc": "func (c *nopContent) Summary(context.Context) (Summary, error)",
+    "funcbody": "func (c *nopContent) Summary(context.Context) (Summary, error) {\n\treturn Summary{}, nil\n}",
+    "funcname": "Summary"
+}

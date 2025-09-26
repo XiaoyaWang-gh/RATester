@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 225,
+    "focalfunc": "func (m *Migration) AddColumns(columns ...*Column) *Migration",
+    "funcbody": "func (m *Migration) AddColumns(columns ...*Column) *Migration {\n\tm.Columns = append(m.Columns, columns...)\n\n\treturn m\n}",
+    "funcname": "AddColumns"
+}

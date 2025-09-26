@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/adaptor/adaptor.go",
+    "lineno": 34,
+    "focalfunc": "func HTTPHandler(h http.Handler) fiber.Handler",
+    "funcbody": "func HTTPHandler(h http.Handler) fiber.Handler {\n\treturn func(c fiber.Ctx) error {\n\t\thandler := fasthttpadaptor.NewFastHTTPHandler(h)\n\t\thandler(c.Context())\n\t\treturn nil\n\t}\n}",
+    "funcname": "HTTPHandler"
+}

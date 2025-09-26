@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/routerfactory.go",
+    "lineno": 40,
+    "focalfunc": "func NewRouterFactory(staticConfiguration static.Configuration, managerFactory *service.ManagerFactory, tlsManager *tls.Manager,\n\tobservabilityMgr *middleware.ObservabilityMgr, pluginBuilder middleware.PluginsBuilder, dialerManager *tcp.DialerManager,\n) *RouterFactory",
+    "funcbody": "func NewRouterFactory(staticConfiguration static.Configuration, managerFactory *service.ManagerFactory, tlsManager *tls.Manager,\n\tobservabilityMgr *middleware.ObservabilityMgr, pluginBuilder middleware.PluginsBuilder, dialerManager *tcp.DialerManager,\n) *RouterFactory {\n\tvar entryPointsTCP, entryPointsUDP []string\n\tfor name, cfg := range staticConfiguration.EntryPoints {\n\t\tprotocol, err := cfg.GetProtocol()\n\t\tif err != nil {\n\n\t\t\tlog.Error().Err(err).Msg(\"Invalid protocol\")\n\t\t}\n\n\t\tif protocol == \"udp\" {\n\t\t\tentryPointsUDP = append(entryPointsUDP, name)\n\t\t} else {\n\t\t\tentryPointsTCP = append(entryPointsTCP, name)\n\t\t}\n\t}\n\n\treturn &RouterFactory{\n\t\tentryPointsTCP:\t\tentryPointsTCP,\n\t\tentryPointsUDP:\t\tentryPointsUDP,\n\t\tmanagerFactory:\t\tmanagerFactory,\n\t\tobservabilityMgr:\tobservabilityMgr,\n\t\ttlsManager:\t\ttlsManager,\n\t\tpluginBuilder:\t\tpluginBuilder,\n\t\tdialerManager:\t\tdialerManager,\n\t}\n}",
+    "funcname": "NewRouterFactory"
+}

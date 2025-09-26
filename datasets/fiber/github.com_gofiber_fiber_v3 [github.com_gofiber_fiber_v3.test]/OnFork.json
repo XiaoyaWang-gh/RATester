@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 107,
+    "focalfunc": "func (h *Hooks) OnFork(handler ...OnForkHandler)",
+    "funcbody": "func (h *Hooks) OnFork(handler ...OnForkHandler) {\n\th.app.mutex.Lock()\n\th.onFork = append(h.onFork, handler...)\n\th.app.mutex.Unlock()\n}",
+    "funcname": "OnFork"
+}

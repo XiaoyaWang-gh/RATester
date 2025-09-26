@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 610,
+    "focalfunc": "func (c *context) Redirect(code int, url string) error",
+    "funcbody": "func (c *context) Redirect(code int, url string) error {\n\tif code < 300 || code > 308 {\n\t\treturn ErrInvalidRedirectCode\n\t}\n\tc.response.Header().Set(HeaderLocation, url)\n\tc.response.WriteHeader(code)\n\treturn nil\n}",
+    "funcname": "Redirect"
+}

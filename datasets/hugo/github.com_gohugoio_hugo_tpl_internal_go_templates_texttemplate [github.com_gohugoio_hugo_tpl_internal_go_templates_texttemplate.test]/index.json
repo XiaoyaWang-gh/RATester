@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 211,
+    "focalfunc": "func index(item reflect.Value, indexes ...reflect.Value) (reflect.Value, error)",
+    "funcbody": "func index(item reflect.Value, indexes ...reflect.Value) (reflect.Value, error) {\n\titem = indirectInterface(item)\n\tif !item.IsValid() {\n\t\treturn reflect.Value{}, fmt.Errorf(\"index of untyped nil\")\n\t}\n\tfor _, index := range indexes {\n\t\tindex = indirectInterface(index)\n\t\tvar isNil bool\n\t\tif item, isNil = indirect(item); isNil {\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"index of nil pointer\")\n\t\t}\n\t\tswitch item.Kind() {\n\t\tcase reflect.Array, reflect.Slice, reflect.String:\n\t\t\tx, err := indexArg(index, item.Len())\n\t\t\tif err != nil {\n\t\t\t\treturn reflect.Value{}, err\n\t\t\t}\n\t\t\titem = item.Index(x)\n\t\tcase reflect.Map:\n\t\t\tindex, err := prepareArg(index, item.Type().Key())\n\t\t\tif err != nil {\n\t\t\t\treturn reflect.Value{}, err\n\t\t\t}\n\t\t\tif x := item.MapIndex(index); x.IsValid() {\n\t\t\t\titem = x\n\t\t\t} else {\n\t\t\t\titem = reflect.Zero(item.Type().Elem())\n\t\t\t}\n\t\tcase reflect.Invalid:\n\n\t\t\tpanic(\"unreachable\")\n\t\tdefault:\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"can't index item of type %s\", item.Type())\n\t\t}\n\t}\n\treturn item, nil\n}",
+    "funcname": "index"
+}

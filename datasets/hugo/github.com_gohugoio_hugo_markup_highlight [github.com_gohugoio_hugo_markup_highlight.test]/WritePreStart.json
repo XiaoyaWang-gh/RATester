@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 276,
+    "focalfunc": "func WritePreStart(w io.Writer, language, styleAttr string)",
+    "funcbody": "func WritePreStart(w io.Writer, language, styleAttr string) {\n\tfmt.Fprintf(w, `<pre tabindex=\"0\"%s>`, styleAttr)\n\tfmt.Fprint(w, \"<code\")\n\tif language != \"\" {\n\t\tfmt.Fprint(w, ` class=\"language-`+language+`\"`)\n\t\tfmt.Fprint(w, ` data-lang=\"`+language+`\"`)\n\t}\n\tfmt.Fprint(w, \">\")\n}",
+    "funcname": "WritePreStart"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1196,
+    "focalfunc": "func groupToString(p *gatev1.Group) string",
+    "funcbody": "func groupToString(p *gatev1.Group) string {\n\tif p == nil {\n\t\treturn \"<nil>\"\n\t}\n\treturn string(*p)\n}",
+    "funcname": "groupToString"
+}

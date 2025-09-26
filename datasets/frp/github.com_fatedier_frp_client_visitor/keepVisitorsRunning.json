@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 73,
+    "focalfunc": "func (vm *Manager) keepVisitorsRunning()",
+    "funcbody": "func (vm *Manager) keepVisitorsRunning() {\n\txl := xlog.FromContextSafe(vm.ctx)\n\n\tticker := time.NewTicker(vm.checkInterval)\n\tdefer ticker.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-vm.stopCh:\n\t\t\txl.Tracef(\"gracefully shutdown visitor manager\")\n\t\t\treturn\n\t\tcase <-ticker.C:\n\t\t\tvm.mu.Lock()\n\t\t\tfor _, cfg := range vm.cfgs {\n\t\t\t\tname := cfg.GetBaseConfig().Name\n\t\t\t\tif _, exist := vm.visitors[name]; !exist {\n\t\t\t\t\txl.Infof(\"try to start visitor [%s]\", name)\n\t\t\t\t\t_ = vm.startVisitor(cfg)\n\t\t\t\t}\n\t\t\t}\n\t\t\tvm.mu.Unlock()\n\t\t}\n\t}\n}",
+    "funcname": "keepVisitorsRunning"
+}

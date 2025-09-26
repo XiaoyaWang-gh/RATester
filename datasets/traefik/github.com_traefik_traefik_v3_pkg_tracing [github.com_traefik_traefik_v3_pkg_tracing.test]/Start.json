@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 147,
+    "focalfunc": "func (t *Tracer) Start(ctx context.Context, spanName string, opts ...trace.SpanStartOption) (context.Context, trace.Span)",
+    "funcbody": "func (t *Tracer) Start(ctx context.Context, spanName string, opts ...trace.SpanStartOption) (context.Context, trace.Span) {\n\tif t == nil {\n\t\treturn ctx, nil\n\t}\n\n\tspanCtx, span := t.Tracer.Start(ctx, spanName, opts...)\n\n\twrappedSpan := &Span{Span: span, tracerProvider: &TracerProvider{tracer: t}}\n\n\treturn trace.ContextWithSpan(spanCtx, wrappedSpan), wrappedSpan\n}",
+    "funcname": "Start"
+}

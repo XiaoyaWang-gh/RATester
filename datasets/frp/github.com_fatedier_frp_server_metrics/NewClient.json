@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/metrics/metrics.go",
+    "lineno": 30,
+    "focalfunc": "func (noopServerMetrics) NewClient()",
+    "funcbody": "func (noopServerMetrics) NewClient()\t{}",
+    "funcname": "NewClient"
+}

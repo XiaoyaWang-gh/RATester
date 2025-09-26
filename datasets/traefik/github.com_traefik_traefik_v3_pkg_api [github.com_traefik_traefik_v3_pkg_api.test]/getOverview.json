@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_overview.go",
+    "lineno": 40,
+    "focalfunc": "func (h Handler) getOverview(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getOverview(rw http.ResponseWriter, request *http.Request) {\n\tresult := overview{\n\t\tHTTP: schemeOverview{\n\t\t\tRouters:\tgetHTTPRouterSection(h.runtimeConfiguration.Routers),\n\t\t\tServices:\tgetHTTPServiceSection(h.runtimeConfiguration.Services),\n\t\t\tMiddlewares:\tgetHTTPMiddlewareSection(h.runtimeConfiguration.Middlewares),\n\t\t},\n\t\tTCP: schemeOverview{\n\t\t\tRouters:\tgetTCPRouterSection(h.runtimeConfiguration.TCPRouters),\n\t\t\tServices:\tgetTCPServiceSection(h.runtimeConfiguration.TCPServices),\n\t\t\tMiddlewares:\tgetTCPMiddlewareSection(h.runtimeConfiguration.TCPMiddlewares),\n\t\t},\n\t\tUDP: schemeOverview{\n\t\t\tRouters:\tgetUDPRouterSection(h.runtimeConfiguration.UDPRouters),\n\t\t\tServices:\tgetUDPServiceSection(h.runtimeConfiguration.UDPServices),\n\t\t},\n\t\tFeatures:\tgetFeatures(h.staticConfig),\n\t\tProviders:\tgetProviders(h.staticConfig),\n\t}\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\terr := json.NewEncoder(rw).Encode(result)\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getOverview"
+}

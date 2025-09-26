@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 26,
+    "focalfunc": "func LoadHTMLGlob(pattern string)",
+    "funcbody": "func LoadHTMLGlob(pattern string) {\n\tengine().LoadHTMLGlob(pattern)\n}",
+    "funcname": "LoadHTMLGlob"
+}

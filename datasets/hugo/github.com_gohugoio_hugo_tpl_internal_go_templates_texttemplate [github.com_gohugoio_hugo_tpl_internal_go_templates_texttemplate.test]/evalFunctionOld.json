@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 616,
+    "focalfunc": "func (s *state) evalFunctionOld(dot reflect.Value, node *parse.IdentifierNode, cmd parse.Node, args []parse.Node, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalFunctionOld(dot reflect.Value, node *parse.IdentifierNode, cmd parse.Node, args []parse.Node, final reflect.Value) reflect.Value {\n\ts.at(node)\n\tname := node.Ident\n\tfunction, isBuiltin, ok := findFunction(name, s.tmpl)\n\tif !ok {\n\t\ts.errorf(\"%q is not a defined function\", name)\n\t}\n\treturn s.evalCall(dot, function, isBuiltin, cmd, name, args, final)\n}",
+    "funcname": "evalFunctionOld"
+}

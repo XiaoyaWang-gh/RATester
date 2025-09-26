@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 76,
+    "focalfunc": "func (s *state) setTopVar(n int, value reflect.Value)",
+    "funcbody": "func (s *state) setTopVar(n int, value reflect.Value) {\n\ts.vars[len(s.vars)-n].value = value\n}",
+    "funcname": "setTopVar"
+}

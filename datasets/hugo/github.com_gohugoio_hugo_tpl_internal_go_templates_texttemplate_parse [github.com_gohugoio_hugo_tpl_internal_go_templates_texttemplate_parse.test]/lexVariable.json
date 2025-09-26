@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 516,
+    "focalfunc": "func lexVariable(l *lexer) stateFn",
+    "funcbody": "func lexVariable(l *lexer) stateFn {\n\tif l.atTerminator() {\n\t\treturn l.emit(itemVariable)\n\t}\n\treturn lexFieldOrVariable(l, itemVariable)\n}",
+    "funcname": "lexVariable"
+}

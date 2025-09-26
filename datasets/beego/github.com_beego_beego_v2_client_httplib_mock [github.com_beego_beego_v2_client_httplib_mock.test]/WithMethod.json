@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 172,
+    "focalfunc": "func WithMethod(method string) simpleConditionOption",
+    "funcbody": "func WithMethod(method string) simpleConditionOption {\n\treturn func(sc *SimpleCondition) {\n\t\tsc.method = method\n\t}\n}",
+    "funcname": "WithMethod"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 55,
+    "focalfunc": "func (st *MemSessionStore) Delete(ctx context.Context, key interface{}) error",
+    "funcbody": "func (st *MemSessionStore) Delete(ctx context.Context, key interface{}) error {\n\tst.lock.Lock()\n\tdefer st.lock.Unlock()\n\tdelete(st.value, key)\n\treturn nil\n}",
+    "funcname": "Delete"
+}

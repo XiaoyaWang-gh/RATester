@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 625,
+    "focalfunc": "func (e *Echo) URL(h HandlerFunc, params ...interface{}) string",
+    "funcbody": "func (e *Echo) URL(h HandlerFunc, params ...interface{}) string {\n\treturn e.URI(h, params...)\n}",
+    "funcname": "URL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 34,
+    "focalfunc": "func Trace(v ...any)",
+    "funcbody": "func Trace(v ...any) {\n\tlogger.Trace(v...)\n}",
+    "funcname": "Trace"
+}

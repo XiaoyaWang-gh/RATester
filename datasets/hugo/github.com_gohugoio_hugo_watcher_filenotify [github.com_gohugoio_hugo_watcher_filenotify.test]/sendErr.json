@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 133,
+    "focalfunc": "func (w *filePoller) sendErr(e error) error",
+    "funcbody": "func (w *filePoller) sendErr(e error) error {\n\tselect {\n\tcase w.errors <- e:\n\tcase <-w.done:\n\t\treturn fmt.Errorf(\"closed\")\n\t}\n\treturn nil\n}",
+    "funcname": "sendErr"
+}

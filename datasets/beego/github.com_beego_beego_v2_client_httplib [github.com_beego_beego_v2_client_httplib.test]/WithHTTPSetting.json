@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 72,
+    "focalfunc": "func WithHTTPSetting(setting BeegoHTTPSettings) ClientOption",
+    "funcbody": "func WithHTTPSetting(setting BeegoHTTPSettings) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting = setting\n\t}\n}",
+    "funcname": "WithHTTPSetting"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/rate.go",
+    "lineno": 38,
+    "focalfunc": "func (s *Rate) ReturnBucket(size int64)",
+    "funcbody": "func (s *Rate) ReturnBucket(size int64) {\n\ts.add(size)\n}",
+    "funcname": "ReturnBucket"
+}

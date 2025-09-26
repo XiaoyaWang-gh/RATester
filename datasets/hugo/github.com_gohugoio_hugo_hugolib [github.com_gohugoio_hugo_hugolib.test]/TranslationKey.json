@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 371,
+    "focalfunc": "func (p *pageState) TranslationKey() string",
+    "funcbody": "func (p *pageState) TranslationKey() string {\n\tif p.m.pageConfig.TranslationKey != \"\" {\n\t\treturn p.m.pageConfig.TranslationKey\n\t}\n\treturn p.Path()\n}",
+    "funcname": "TranslationKey"
+}

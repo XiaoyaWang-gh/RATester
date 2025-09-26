@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 35,
+    "focalfunc": "func sortRouters[T orderedRouter](values url.Values, routers []T)",
+    "funcbody": "func sortRouters[T orderedRouter](values url.Values, routers []T) {\n\tsortBy := values.Get(sortByParam)\n\n\tdirection := values.Get(directionParam)\n\tif direction == \"\" {\n\t\tdirection = ascendantSorting\n\t}\n\n\tswitch sortBy {\n\tcase \"name\":\n\t\tsortByName(direction, routers)\n\n\tcase \"provider\":\n\t\tsortByFunc(direction, routers, func(i int) string { return routers[i].provider() })\n\n\tcase \"priority\":\n\t\tsortByFunc(direction, routers, func(i int) int { return routers[i].priority() })\n\n\tcase \"status\":\n\t\tsortByFunc(direction, routers, func(i int) string { return routers[i].status() })\n\n\tcase \"rule\":\n\t\tsortByFunc(direction, routers, func(i int) string { return routers[i].rule() })\n\n\tcase \"service\":\n\t\tsortByFunc(direction, routers, func(i int) string { return routers[i].service() })\n\n\tcase \"entryPoints\":\n\t\tsortByFunc(direction, routers, func(i int) int { return routers[i].entryPointsCount() })\n\n\tdefault:\n\t\tsortByName(direction, routers)\n\t}\n}",
+    "funcname": "sortRouters"
+}

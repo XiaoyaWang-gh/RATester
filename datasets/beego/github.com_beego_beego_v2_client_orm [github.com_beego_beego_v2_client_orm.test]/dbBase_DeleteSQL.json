@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 811,
+    "focalfunc": "func (d *dbBase) DeleteSQL(whereCols []string, mi *models.ModelInfo) string",
+    "funcbody": "func (d *dbBase) DeleteSQL(whereCols []string, mi *models.ModelInfo) string {\n\tbuf := buffers.Get()\n\tdefer buffers.Put(buf)\n\n\tQ := d.ins.TableQuote()\n\n\t_, _ = buf.WriteString(\"DELETE FROM \")\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(mi.Table)\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(\" WHERE \")\n\n\tfor i, col := range whereCols {\n\t\tif i > 0 {\n\t\t\t_, _ = buf.WriteString(\" AND \")\n\t\t}\n\t\t_, _ = buf.WriteString(Q)\n\t\t_, _ = buf.WriteString(col)\n\t\t_, _ = buf.WriteString(Q)\n\t\t_, _ = buf.WriteString(\" = ?\")\n\t}\n\n\tquery := buf.String()\n\n\td.ins.ReplaceMarks(&query)\n\n\treturn query\n}",
+    "funcname": "DeleteSQL"
+}

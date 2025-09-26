@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 162,
+    "focalfunc": "func (s *Bridge) verifySuccess(c *conn.Conn)",
+    "funcbody": "func (s *Bridge) verifySuccess(c *conn.Conn) {\n\tc.Write([]byte(common.VERIFY_SUCCESS))\n}",
+    "funcname": "verifySuccess"
+}

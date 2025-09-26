@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/service.go",
+    "lineno": 198,
+    "focalfunc": "func (m *Manager) getMirrorServiceHandler(ctx context.Context, config *dynamic.Mirroring) (http.Handler, error)",
+    "funcbody": "func (m *Manager) getMirrorServiceHandler(ctx context.Context, config *dynamic.Mirroring) (http.Handler, error) {\n\tserviceHandler, err := m.BuildHTTP(ctx, config.Service)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tmirrorBody := defaultMirrorBody\n\tif config.MirrorBody != nil {\n\t\tmirrorBody = *config.MirrorBody\n\t}\n\n\tmaxBodySize := defaultMaxBodySize\n\tif config.MaxBodySize != nil {\n\t\tmaxBodySize = *config.MaxBodySize\n\t}\n\thandler := mirror.New(serviceHandler, m.routinePool, mirrorBody, maxBodySize, config.HealthCheck)\n\tfor _, mirrorConfig := range config.Mirrors {\n\t\tmirrorHandler, err := m.BuildHTTP(ctx, mirrorConfig.Name)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\terr = handler.AddMirror(mirrorHandler, mirrorConfig.Percent)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn handler, nil\n}",
+    "funcname": "getMirrorServiceHandler"
+}

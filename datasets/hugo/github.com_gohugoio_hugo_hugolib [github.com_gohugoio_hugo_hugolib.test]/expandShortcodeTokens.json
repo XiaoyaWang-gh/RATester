@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 714,
+    "focalfunc": "func expandShortcodeTokens(\n\tctx context.Context,\n\tsource []byte,\n\ttokenHandler func(ctx context.Context, token string) ([]byte, error),\n) ([]byte, error)",
+    "funcbody": "func expandShortcodeTokens(\n\tctx context.Context,\n\tsource []byte,\n\ttokenHandler func(ctx context.Context, token string) ([]byte, error),\n) ([]byte, error) {\n\tstart := 0\n\n\tpre := []byte(shortcodePlaceholderPrefix)\n\tpost := []byte(\"HBHB\")\n\tpStart := []byte(\"<p>\")\n\tpEnd := []byte(\"</p>\")\n\n\tk := bytes.Index(source[start:], pre)\n\n\tfor k != -1 {\n\t\tj := start + k\n\t\tpostIdx := bytes.Index(source[j:], post)\n\t\tif postIdx < 0 {\n\n\t\t\treturn nil, errors.New(\"illegal state in content; shortcode token missing end delim\")\n\t\t}\n\n\t\tend := j + postIdx + 4\n\t\tkey := string(source[j:end])\n\t\tnewVal, err := tokenHandler(ctx, key)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tif j >= 3 && bytes.Equal(source[j-3:j], pStart) {\n\t\t\tif (k+4) < len(source) && bytes.Equal(source[end:end+4], pEnd) {\n\t\t\t\tj -= 3\n\t\t\t\tend += 4\n\t\t\t}\n\t\t}\n\n\t\tsource = append(source[:j], append(newVal, source[end:]...)...)\n\t\tstart = j\n\t\tk = bytes.Index(source[start:], pre)\n\n\t}\n\n\treturn source, nil\n}",
+    "funcname": "expandShortcodeTokens"
+}

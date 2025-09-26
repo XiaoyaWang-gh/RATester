@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 806,
+    "focalfunc": "func (b *beegoAppConfig) Bool(key string) (bool, error)",
+    "funcbody": "func (b *beegoAppConfig) Bool(key string) (bool, error) {\n\tif v, err := b.innerConfig.Bool(BConfig.RunMode + \"::\" + key); err == nil {\n\t\treturn v, nil\n\t}\n\treturn b.innerConfig.Bool(key)\n}",
+    "funcname": "Bool"
+}

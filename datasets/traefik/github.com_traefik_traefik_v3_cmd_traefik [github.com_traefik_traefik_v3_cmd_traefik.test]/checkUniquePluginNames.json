@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/plugins.go",
+    "lineno": 63,
+    "focalfunc": "func checkUniquePluginNames(e *static.Experimental) error",
+    "funcbody": "func checkUniquePluginNames(e *static.Experimental) error {\n\tif e == nil {\n\t\treturn nil\n\t}\n\n\tfor s := range e.LocalPlugins {\n\t\tif _, ok := e.Plugins[s]; ok {\n\t\t\treturn fmt.Errorf(\"the plugin's name %q must be unique\", s)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "checkUniquePluginNames"
+}

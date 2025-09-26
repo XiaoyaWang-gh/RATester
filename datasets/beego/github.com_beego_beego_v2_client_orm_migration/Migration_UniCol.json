@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 96,
+    "focalfunc": "func (m *Migration) UniCol(uni, name string) *Column",
+    "funcbody": "func (m *Migration) UniCol(uni, name string) *Column {\n\tcol := &Column{Name: name}\n\tm.AddColumns(col)\n\n\tuniqueOriginal := &Unique{}\n\n\tfor _, unique := range m.Uniques {\n\t\tif unique.Definition == uni {\n\t\t\tunique.AddColumnsToUnique(col)\n\t\t\tuniqueOriginal = unique\n\t\t}\n\t}\n\tif uniqueOriginal.Definition == \"\" {\n\t\tunique := &Unique{Definition: uni}\n\t\tunique.AddColumnsToUnique(col)\n\t\tm.AddUnique(unique)\n\t}\n\n\treturn col\n}",
+    "funcname": "UniCol"
+}

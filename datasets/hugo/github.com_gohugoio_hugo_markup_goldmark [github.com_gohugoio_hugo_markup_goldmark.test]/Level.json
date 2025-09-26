@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 116,
+    "focalfunc": "func (ctx headingContext) Level() int",
+    "funcbody": "func (ctx headingContext) Level() int {\n\treturn ctx.level\n}",
+    "funcname": "Level"
+}

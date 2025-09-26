@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 56,
+    "focalfunc": "func (d Dates) IsDateOrLastModAfter(in Dates) bool",
+    "funcbody": "func (d Dates) IsDateOrLastModAfter(in Dates) bool {\n\treturn d.Date.After(in.Date) || d.Lastmod.After(in.Lastmod)\n}",
+    "funcname": "IsDateOrLastModAfter"
+}

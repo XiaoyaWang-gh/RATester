@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/smartcrop.go",
+    "lineno": 44,
+    "focalfunc": "func (r imagingResizer) Resize(img image.Image, width, height uint) image.Image",
+    "funcbody": "func (r imagingResizer) Resize(img image.Image, width, height uint) image.Image {\n\n\tscaleX, scaleY := calcFactorsNfnt(width, height, float64(img.Bounds().Dx()), float64(img.Bounds().Dy()))\n\tif width == 0 {\n\t\twidth = uint(math.Ceil(float64(img.Bounds().Dx()) / scaleX))\n\t}\n\tif height == 0 {\n\t\theight = uint(math.Ceil(float64(img.Bounds().Dy()) / scaleY))\n\t}\n\tresult, _ := r.p.Filter(img, gift.Resize(int(width), int(height), r.filter))\n\treturn result\n}",
+    "funcname": "Resize"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 230,
+    "focalfunc": "func (l *pageLexer) errorf(format string, args ...any) stateFunc",
+    "funcbody": "func (l *pageLexer) errorf(format string, args ...any) stateFunc {\n\tl.append(Item{Type: tError, Err: fmt.Errorf(format, args...), low: l.start, high: l.pos})\n\treturn nil\n}",
+    "funcname": "errorf"
+}

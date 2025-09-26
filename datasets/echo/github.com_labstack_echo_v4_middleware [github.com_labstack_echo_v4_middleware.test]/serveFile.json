@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/static.go",
+    "lineno": 243,
+    "focalfunc": "func serveFile(c echo.Context, file http.File, info os.FileInfo) error",
+    "funcbody": "func serveFile(c echo.Context, file http.File, info os.FileInfo) error {\n\thttp.ServeContent(c.Response(), c.Request(), info.Name(), info.ModTime(), file)\n\treturn nil\n}",
+    "funcname": "serveFile"
+}

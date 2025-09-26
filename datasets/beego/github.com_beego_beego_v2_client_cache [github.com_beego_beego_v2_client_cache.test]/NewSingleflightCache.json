@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/singleflight.go",
+    "lineno": 36,
+    "focalfunc": "func NewSingleflightCache(c Cache, expiration time.Duration,\n\tloadFunc func(ctx context.Context, key string) (any, error),\n) (Cache, error)",
+    "funcbody": "func NewSingleflightCache(c Cache, expiration time.Duration,\n\tloadFunc func(ctx context.Context, key string) (any, error),\n) (Cache, error) {\n\tif loadFunc == nil {\n\t\treturn nil, berror.Error(InvalidLoadFunc, \"loadFunc cannot be nil\")\n\t}\n\treturn &SingleflightCache{\n\t\tCache:\t\tc,\n\t\tgroup:\t\t&singleflight.Group{},\n\t\texpiration:\texpiration,\n\t\tloadFunc:\tloadFunc,\n\t}, nil\n}",
+    "funcname": "NewSingleflightCache"
+}

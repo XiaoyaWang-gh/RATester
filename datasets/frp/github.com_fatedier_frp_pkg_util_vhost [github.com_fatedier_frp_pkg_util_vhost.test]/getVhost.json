@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 201,
+    "focalfunc": "func (rp *HTTPReverseProxy) getVhost(domain, location, routeByHTTPUser string) (*Router, bool)",
+    "funcbody": "func (rp *HTTPReverseProxy) getVhost(domain, location, routeByHTTPUser string) (*Router, bool) {\n\tfindRouter := func(inDomain, inLocation, inRouteByHTTPUser string) (*Router, bool) {\n\t\tvr, ok := rp.vhostRouter.Get(inDomain, inLocation, inRouteByHTTPUser)\n\t\tif ok {\n\t\t\treturn vr, ok\n\t\t}\n\n\t\tvr, ok = rp.vhostRouter.Get(inDomain, inLocation, \"\")\n\t\tif ok {\n\t\t\treturn vr, ok\n\t\t}\n\t\treturn nil, false\n\t}\n\n\tvr, ok := findRouter(domain, location, routeByHTTPUser)\n\tif ok {\n\t\treturn vr, ok\n\t}\n\n\tdomainSplit := strings.Split(domain, \".\")\n\tfor {\n\t\tif len(domainSplit) < 3 {\n\t\t\tbreak\n\t\t}\n\n\t\tdomainSplit[0] = \"*\"\n\t\tdomain = strings.Join(domainSplit, \".\")\n\t\tvr, ok = findRouter(domain, location, routeByHTTPUser)\n\t\tif ok {\n\t\t\treturn vr, true\n\t\t}\n\t\tdomainSplit = domainSplit[1:]\n\t}\n\n\tvr, ok = findRouter(\"*\", location, routeByHTTPUser)\n\tif ok {\n\t\treturn vr, true\n\t}\n\treturn nil, false\n}",
+    "funcname": "getVhost"
+}

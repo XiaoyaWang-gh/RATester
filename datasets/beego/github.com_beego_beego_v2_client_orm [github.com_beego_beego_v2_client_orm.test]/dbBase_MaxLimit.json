@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2037,
+    "focalfunc": "func (d *dbBase) MaxLimit() uint64",
+    "funcbody": "func (d *dbBase) MaxLimit() uint64 {\n\treturn 18446744073709551615\n}",
+    "funcname": "MaxLimit"
+}

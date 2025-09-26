@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 43,
+    "focalfunc": "func (b *Bind) returnErr(err error) error",
+    "funcbody": "func (b *Bind) returnErr(err error) error {\n\tif !b.should {\n\t\tb.ctx.Status(StatusBadRequest)\n\t\treturn NewError(StatusBadRequest, \"Bad request: \"+err.Error())\n\t}\n\n\treturn err\n}",
+    "funcname": "returnErr"
+}

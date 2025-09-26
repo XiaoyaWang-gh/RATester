@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/generate/generate.go",
+    "lineno": 21,
+    "focalfunc": "func DefaultCertificate() (*tls.Certificate, error)",
+    "funcbody": "func DefaultCertificate() (*tls.Certificate, error) {\n\trandomBytes := make([]byte, 100)\n\t_, err := rand.Read(randomBytes)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tzBytes := sha256.Sum256(randomBytes)\n\tz := hex.EncodeToString(zBytes[:sha256.Size])\n\tdomain := fmt.Sprintf(\"%s.%s.traefik.default\", z[:32], z[32:])\n\n\tcertPEM, keyPEM, err := KeyPair(domain, time.Time{})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tcertificate, err := tls.X509KeyPair(certPEM, keyPEM)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &certificate, nil\n}",
+    "funcname": "DefaultCertificate"
+}

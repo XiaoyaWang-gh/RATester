@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 434,
+    "focalfunc": "func (engine *Engine) isUnsafeTrustedProxies() bool",
+    "funcbody": "func (engine *Engine) isUnsafeTrustedProxies() bool {\n\treturn engine.isTrustedProxy(net.ParseIP(\"0.0.0.0\")) || engine.isTrustedProxy(net.ParseIP(\"::\"))\n}",
+    "funcname": "isUnsafeTrustedProxies"
+}

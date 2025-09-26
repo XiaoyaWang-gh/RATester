@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/cert/selfsigned.go",
+    "lineno": 154,
+    "focalfunc": "func EncodePrivateKeyPEM(key *rsa.PrivateKey) []byte",
+    "funcbody": "func EncodePrivateKeyPEM(key *rsa.PrivateKey) []byte {\n\tblock := pem.Block{\n\t\tType:\tkeyutil.RSAPrivateKeyBlockType,\n\t\tBytes:\tx509.MarshalPKCS1PrivateKey(key),\n\t}\n\treturn pem.EncodeToMemory(&block)\n}",
+    "funcname": "EncodePrivateKeyPEM"
+}

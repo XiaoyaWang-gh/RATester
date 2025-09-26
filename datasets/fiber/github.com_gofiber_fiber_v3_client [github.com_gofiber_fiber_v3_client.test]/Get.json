@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 497,
+    "focalfunc": "func (r *Request) Get(url string) (*Response, error)",
+    "funcbody": "func (r *Request) Get(url string) (*Response, error) {\n\treturn r.SetURL(url).SetMethod(fiber.MethodGet).Send()\n}",
+    "funcname": "Get"
+}

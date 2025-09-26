@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/token.go",
+    "lineno": 71,
+    "focalfunc": "func (auth *TokenAuthSetterVerifier) VerifyPing(m *msg.Ping) error",
+    "funcbody": "func (auth *TokenAuthSetterVerifier) VerifyPing(m *msg.Ping) error {\n\tif !slices.Contains(auth.additionalAuthScopes, v1.AuthScopeHeartBeats) {\n\t\treturn nil\n\t}\n\n\tif !util.ConstantTimeEqString(util.GetAuthKey(auth.token, m.Timestamp), m.PrivilegeKey) {\n\t\treturn fmt.Errorf(\"token in heartbeat doesn't match token from configuration\")\n\t}\n\treturn nil\n}",
+    "funcname": "VerifyPing"
+}

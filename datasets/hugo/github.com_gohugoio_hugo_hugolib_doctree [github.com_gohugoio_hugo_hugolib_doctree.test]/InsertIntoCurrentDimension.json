@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 151,
+    "focalfunc": "func (r *NodeShiftTree[T]) InsertIntoCurrentDimension(s string, v T) (T, T, bool)",
+    "funcbody": "func (r *NodeShiftTree[T]) InsertIntoCurrentDimension(s string, v T) (T, T, bool) {\n\ts = mustValidateKey(cleanKey(s))\n\tvar (\n\t\tupdated\t\tbool\n\t\texisting\tT\n\t)\n\tif vv, ok := r.tree.Get(s); ok {\n\t\tv, existing, updated = r.shifter.InsertInto(vv.(T), v, r.dims)\n\t}\n\tr.tree.Insert(s, v)\n\treturn v, existing, updated\n}",
+    "funcname": "InsertIntoCurrentDimension"
+}

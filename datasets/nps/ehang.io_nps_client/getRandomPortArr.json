@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/control.go",
+    "lineno": 509,
+    "focalfunc": "func getRandomPortArr(min, max int) []int",
+    "funcbody": "func getRandomPortArr(min, max int) []int {\n\tif min > max {\n\t\tmin, max = max, min\n\t}\n\taddrAddr := make([]int, max-min+1)\n\tfor i := min; i <= max; i++ {\n\t\taddrAddr[max-i] = i\n\t}\n\trand.Seed(time.Now().UnixNano())\n\tvar r, temp int\n\tfor i := max - min; i > 0; i-- {\n\t\tr = rand.Int() % i\n\t\ttemp = addrAddr[i]\n\t\taddrAddr[i] = addrAddr[r]\n\t\taddrAddr[r] = temp\n\t}\n\treturn addrAddr\n}",
+    "funcname": "getRandomPortArr"
+}

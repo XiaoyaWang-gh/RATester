@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 622,
+    "focalfunc": "func RemoveEscapeChar(word string) string",
+    "funcbody": "func RemoveEscapeChar(word string) string {\n\tif strings.IndexByte(word, escapeChar) != -1 {\n\t\treturn strings.ReplaceAll(word, string(escapeChar), \"\")\n\t}\n\treturn word\n}",
+    "funcname": "RemoveEscapeChar"
+}

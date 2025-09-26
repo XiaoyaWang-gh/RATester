@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 91,
+    "focalfunc": "func (o *ObservabilityMgr) ShouldAddMetrics(resourceName string) bool",
+    "funcbody": "func (o *ObservabilityMgr) ShouldAddMetrics(resourceName string) bool {\n\tif o == nil {\n\t\treturn false\n\t}\n\n\treturn o.config.Metrics != nil && (o.config.Metrics.AddInternals || !strings.HasSuffix(resourceName, \"@internal\"))\n}",
+    "funcname": "ShouldAddMetrics"
+}

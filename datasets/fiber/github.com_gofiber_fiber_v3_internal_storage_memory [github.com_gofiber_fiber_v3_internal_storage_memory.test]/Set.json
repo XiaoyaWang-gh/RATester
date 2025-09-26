@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 61,
+    "focalfunc": "func (s *Storage) Set(key string, val []byte, exp time.Duration) error",
+    "funcbody": "func (s *Storage) Set(key string, val []byte, exp time.Duration) error {\n\n\tif len(key) == 0 || len(val) == 0 {\n\t\treturn nil\n\t}\n\n\tvar expire uint32\n\tif exp != 0 {\n\t\texpire = uint32(exp.Seconds()) + utils.Timestamp()\n\t}\n\n\te := entry{data: val, expiry: expire}\n\ts.mux.Lock()\n\ts.db[key] = e\n\ts.mux.Unlock()\n\treturn nil\n}",
+    "funcname": "Set"
+}

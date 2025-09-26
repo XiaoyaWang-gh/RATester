@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/mock.go",
+    "lineno": 80,
+    "focalfunc": "func mockSlice(tagValue string, pvv reflect.Value) (err error)",
+    "funcbody": "func mockSlice(tagValue string, pvv reflect.Value) (err error) {\n\tif tagValue == \"\" {\n\t\treturn\n\t}\n\tsliceMetas := strings.Split(tagValue, \":\")\n\tif len(sliceMetas) != 2 || sliceMetas[0] != \"length\" {\n\t\terr = fmt.Errorf(\"the value:%s is invalid\", tagValue)\n\t\treturn\n\t}\n\tlength, e := strconv.Atoi(sliceMetas[1])\n\tif e != nil {\n\t\treturn e\n\t}\n\n\tsliceType := reflect.SliceOf(pvv.Type().Elem())\n\titemType := sliceType.Elem()\n\tvalue := reflect.MakeSlice(sliceType, 0, length)\n\tnewSliceValue := make([]reflect.Value, 0, length)\n\tfor k := 0; k < length; k++ {\n\t\titemValue := reflect.New(itemType).Elem()\n\n\t\tswitch itemType.Kind() {\n\t\tcase reflect.Struct:\n\t\t\terr = mock(itemValue.Addr())\n\t\tcase reflect.Ptr:\n\t\t\tif itemValue.IsNil() {\n\t\t\t\titemValue.Set(reflect.New(itemType.Elem()))\n\t\t\t\tif e := mock(itemValue); e != nil {\n\t\t\t\t\treturn e\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tnewSliceValue = append(newSliceValue, itemValue)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t}\n\tvalue = reflect.Append(value, newSliceValue...)\n\tpvv.Set(value)\n\treturn\n}",
+    "funcname": "mockSlice"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 246,
+    "focalfunc": "func (rr reusableRequest) clone(ctx context.Context) *http.Request",
+    "funcbody": "func (rr reusableRequest) clone(ctx context.Context) *http.Request {\n\treq := rr.req.Clone(ctx)\n\n\tif rr.body != nil {\n\t\treq.Body = io.NopCloser(bytes.NewReader(rr.body))\n\t}\n\n\treturn req\n}",
+    "funcname": "clone"
+}

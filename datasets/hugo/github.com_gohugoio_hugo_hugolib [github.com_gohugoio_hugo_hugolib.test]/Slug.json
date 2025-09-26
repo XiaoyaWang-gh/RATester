@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 854,
+    "focalfunc": "func (p *pageMeta) Slug() string",
+    "funcbody": "func (p *pageMeta) Slug() string {\n\treturn p.pageConfig.Slug\n}",
+    "funcname": "Slug"
+}

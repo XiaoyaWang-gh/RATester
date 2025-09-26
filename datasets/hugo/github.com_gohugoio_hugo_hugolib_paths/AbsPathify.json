@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/paths/paths.go",
+    "lineno": 120,
+    "focalfunc": "func (p *Paths) AbsPathify(inPath string) string",
+    "funcbody": "func (p *Paths) AbsPathify(inPath string) string {\n\treturn hpaths.AbsPathify(p.Cfg.BaseConfig().WorkingDir, inPath)\n}",
+    "funcname": "AbsPathify"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/informers/externalversions/factory.go",
+    "lineno": 132,
+    "focalfunc": "func (f *sharedInformerFactory) Start(stopCh <-chan struct{})",
+    "funcbody": "func (f *sharedInformerFactory) Start(stopCh <-chan struct{}) {\n\tf.lock.Lock()\n\tdefer f.lock.Unlock()\n\n\tif f.shuttingDown {\n\t\treturn\n\t}\n\n\tfor informerType, informer := range f.informers {\n\t\tif !f.startedInformers[informerType] {\n\t\t\tf.wg.Add(1)\n\n\t\t\tinformer := informer\n\t\t\tgo func() {\n\t\t\t\tdefer f.wg.Done()\n\t\t\t\tinformer.Run(stopCh)\n\t\t\t}()\n\t\t\tf.startedInformers[informerType] = true\n\t\t}\n\t}\n}",
+    "funcname": "Start"
+}

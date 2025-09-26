@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 44,
+    "focalfunc": "func newImportCommand() *importCommand",
+    "funcbody": "func newImportCommand() *importCommand {\n\tvar c *importCommand\n\tc = &importCommand{\n\t\tcommands: []simplecobra.Commander{\n\t\t\t&simpleCommand{\n\t\t\t\tname:\t\"jekyll\",\n\t\t\t\tshort:\t\"hugo import from Jekyll\",\n\t\t\t\tlong: `hugo import from Jekyll.\n\t\t\nImport from Jekyll requires two paths, e.g. ` + \"`hugo import jekyll jekyll_root_path target_path`.\",\n\t\t\t\trun: func(ctx context.Context, cd *simplecobra.Commandeer, r *rootCommand, args []string) error {\n\t\t\t\t\tif len(args) < 2 {\n\t\t\t\t\t\treturn newUserError(`import from jekyll requires two paths, e.g. ` + \"`hugo import jekyll jekyll_root_path target_path`.\")\n\t\t\t\t\t}\n\t\t\t\t\treturn c.importFromJekyll(args)\n\t\t\t\t},\n\t\t\t\twithc: func(cmd *cobra.Command, r *rootCommand) {\n\t\t\t\t\tcmd.ValidArgsFunction = cobra.NoFileCompletions\n\t\t\t\t\tcmd.Flags().BoolVar(&c.force, \"force\", false, \"allow import into non-empty target directory\")\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\n\treturn c\n}",
+    "funcname": "newImportCommand"
+}

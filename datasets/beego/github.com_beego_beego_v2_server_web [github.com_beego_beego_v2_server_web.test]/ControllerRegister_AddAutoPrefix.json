@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 764,
+    "focalfunc": "func (p *ControllerRegister) AddAutoPrefix(prefix string, c ControllerInterface)",
+    "funcbody": "func (p *ControllerRegister) AddAutoPrefix(prefix string, c ControllerInterface) {\n\treflectVal := reflect.ValueOf(c)\n\trt := reflectVal.Type()\n\tct := reflect.Indirect(reflectVal).Type()\n\tcontrollerName := strings.TrimSuffix(ct.Name(), \"Controller\")\n\tfor i := 0; i < rt.NumMethod(); i++ {\n\t\tmethodName := rt.Method(i).Name\n\t\tif !utils.InSlice(methodName, exceptMethod) {\n\t\t\tp.addAutoPrefixMethod(prefix, controllerName, methodName, ct)\n\t\t}\n\t}\n}",
+    "funcname": "AddAutoPrefix"
+}

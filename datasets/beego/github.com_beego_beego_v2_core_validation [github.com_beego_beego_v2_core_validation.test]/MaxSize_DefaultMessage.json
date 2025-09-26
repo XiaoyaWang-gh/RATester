@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 354,
+    "focalfunc": "func (m MaxSize) DefaultMessage() string",
+    "funcbody": "func (m MaxSize) DefaultMessage() string {\n\treturn fmt.Sprintf(MessageTmpls[\"MaxSize\"], m.Max)\n}",
+    "funcname": "DefaultMessage"
+}

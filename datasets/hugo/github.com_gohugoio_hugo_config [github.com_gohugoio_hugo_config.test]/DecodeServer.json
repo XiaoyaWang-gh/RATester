@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 380,
+    "focalfunc": "func DecodeServer(cfg Provider) (Server, error)",
+    "funcbody": "func DecodeServer(cfg Provider) (Server, error) {\n\ts := &Server{}\n\n\t_ = mapstructure.WeakDecode(cfg.GetStringMap(\"server\"), s)\n\n\tfor i, redir := range s.Redirects {\n\n\t\tif redir.Status != 404 {\n\t\t\tredir.To = strings.TrimSuffix(redir.To, \"index.html\")\n\t\t\tif !strings.HasPrefix(redir.To, \"https\") && !strings.HasSuffix(redir.To, \"/\") {\n\n\t\t\t\treturn Server{}, fmt.Errorf(\"unsupported redirect to value %q in server config; currently this must be either a remote destination or a local folder, e.g. \\\"/blog/\\\" or \\\"/blog/index.html\\\"\", redir.To)\n\t\t\t}\n\t\t}\n\t\ts.Redirects[i] = redir\n\t}\n\n\tif len(s.Redirects) == 0 {\n\n\t\ts.Redirects = []Redirect{\n\t\t\t{\n\t\t\t\tFrom:\t\"**\",\n\t\t\t\tTo:\t\"/404.html\",\n\t\t\t\tStatus:\t404,\n\t\t\t},\n\t\t}\n\t}\n\n\treturn *s, nil\n}",
+    "funcname": "DecodeServer"
+}

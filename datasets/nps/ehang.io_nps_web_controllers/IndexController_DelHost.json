@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 236,
+    "focalfunc": "func (s *IndexController) DelHost()",
+    "funcbody": "func (s *IndexController) DelHost() {\n\tid := s.GetIntNoErr(\"id\")\n\tif err := file.GetDb().DelHost(id); err != nil {\n\t\ts.AjaxErr(\"delete error\")\n\t}\n\ts.AjaxOk(\"delete success\")\n}",
+    "funcname": "DelHost"
+}

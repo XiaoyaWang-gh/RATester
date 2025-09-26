@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 94,
+    "focalfunc": "func (r *Redirect) release()",
+    "funcbody": "func (r *Redirect) release() {\n\tr.status = 302\n\tr.messages = r.messages[:0]\n\tr.c = nil\n}",
+    "funcname": "release"
+}

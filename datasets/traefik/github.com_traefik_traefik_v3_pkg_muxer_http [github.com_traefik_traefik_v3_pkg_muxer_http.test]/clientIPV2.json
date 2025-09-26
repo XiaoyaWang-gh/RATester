@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher_v2.go",
+    "lineno": 137,
+    "focalfunc": "func clientIPV2(tree *matchersTree, clientIPs ...string) error",
+    "funcbody": "func clientIPV2(tree *matchersTree, clientIPs ...string) error {\n\tchecker, err := ip.NewChecker(clientIPs)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"could not initialize IP Checker for \\\"ClientIP\\\" matcher: %w\", err)\n\t}\n\n\tstrategy := ip.RemoteAddrStrategy{}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\tok, err := checker.Contains(strategy.GetIP(req))\n\t\tif err != nil {\n\t\t\tlog.Ctx(req.Context()).Warn().Err(err).Msg(\"\\\"ClientIP\\\" matcher: could not match remote address\")\n\t\t\treturn false\n\t\t}\n\n\t\treturn ok\n\t}\n\n\treturn nil\n}",
+    "funcname": "clientIPV2"
+}

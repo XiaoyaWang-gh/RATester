@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 411,
+    "focalfunc": "func (b *ValueBinder) MustBindWithDelimiter(sourceParam string, dest interface{}, delimiter string) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustBindWithDelimiter(sourceParam string, dest interface{}, delimiter string) *ValueBinder {\n\treturn b.bindWithDelimiter(sourceParam, dest, delimiter, true)\n}",
+    "funcname": "MustBindWithDelimiter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/htime/time.go",
+    "lineno": 172,
+    "focalfunc": "func StopWatch(name string) func()",
+    "funcbody": "func StopWatch(name string) func() {\n\tstart := time.Now()\n\treturn func() {\n\t\tlog.Printf(\"StopWatch %q took %s\", name, time.Since(start))\n\t}\n}",
+    "funcname": "StopWatch"
+}

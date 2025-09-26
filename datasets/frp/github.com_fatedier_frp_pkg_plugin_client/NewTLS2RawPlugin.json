@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/tls2raw.go",
+    "lineno": 43,
+    "focalfunc": "func NewTLS2RawPlugin(options v1.ClientPluginOptions) (Plugin, error)",
+    "funcbody": "func NewTLS2RawPlugin(options v1.ClientPluginOptions) (Plugin, error) {\n\topts := options.(*v1.TLS2RawPluginOptions)\n\n\tp := &TLS2RawPlugin{\n\t\topts: opts,\n\t}\n\n\ttlsConfig, err := transport.NewServerTLSConfig(p.opts.CrtPath, p.opts.KeyPath, \"\")\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tp.tlsConfig = tlsConfig\n\treturn p, nil\n}",
+    "funcname": "NewTLS2RawPlugin"
+}

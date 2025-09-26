@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 313,
+    "focalfunc": "func (m Method) inStr() string",
+    "funcbody": "func (m Method) inStr() string {\n\tif len(m.In) == 0 {\n\t\treturn \"()\"\n\t}\n\n\targs := make([]string, len(m.In))\n\tfor i := 0; i < len(args); i++ {\n\t\targs[i] = fmt.Sprintf(\"arg%d %s\", i, m.In[i])\n\t}\n\treturn \"(\" + strings.Join(args, \", \") + \")\"\n}",
+    "funcname": "inStr"
+}

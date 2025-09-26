@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 104,
+    "focalfunc": "func (s *SessionStore) SessionID(ctx context.Context) string",
+    "funcbody": "func (s *SessionStore) SessionID(ctx context.Context) string {\n\treturn s.sid\n}",
+    "funcname": "SessionID"
+}

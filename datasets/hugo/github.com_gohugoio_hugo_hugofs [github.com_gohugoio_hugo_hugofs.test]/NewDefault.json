@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 63,
+    "focalfunc": "func NewDefault(cfg config.Provider) *Fs",
+    "funcbody": "func NewDefault(cfg config.Provider) *Fs {\n\tworkingDir, publishDir := getWorkingPublishDir(cfg)\n\tfs := Os\n\treturn newFs(fs, fs, workingDir, publishDir)\n}",
+    "funcname": "NewDefault"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 42,
+    "focalfunc": "func (svr *Service) registerRouteHandlers(helper *httppkg.RouterRegisterHelper)",
+    "funcbody": "func (svr *Service) registerRouteHandlers(helper *httppkg.RouterRegisterHelper) {\n\thelper.Router.HandleFunc(\"/healthz\", svr.healthz)\n\tsubRouter := helper.Router.NewRoute().Subrouter()\n\n\tsubRouter.Use(helper.AuthMiddleware.Middleware)\n\n\tsubRouter.HandleFunc(\"/api/reload\", svr.apiReload).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/stop\", svr.apiStop).Methods(\"POST\")\n\tsubRouter.HandleFunc(\"/api/status\", svr.apiStatus).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/config\", svr.apiGetConfig).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/api/config\", svr.apiPutConfig).Methods(\"PUT\")\n\n\tsubRouter.Handle(\"/favicon.ico\", http.FileServer(helper.AssetsFS)).Methods(\"GET\")\n\tsubRouter.PathPrefix(\"/static/\").Handler(\n\t\tnetpkg.MakeHTTPGzipHandler(http.StripPrefix(\"/static/\", http.FileServer(helper.AssetsFS))),\n\t).Methods(\"GET\")\n\tsubRouter.HandleFunc(\"/\", func(w http.ResponseWriter, r *http.Request) {\n\t\thttp.Redirect(w, r, \"/static/\", http.StatusMovedPermanently)\n\t})\n}",
+    "funcname": "registerRouteHandlers"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 74,
+    "focalfunc": "func (qb *PostgresQueryBuilder) RightJoin(table string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) RightJoin(table string) QueryBuilder {\n\tstr := fmt.Sprintf(\"%s%s%s\", quote, table, quote)\n\tqb.tokens = append(qb.tokens, \"RIGHT JOIN\", str)\n\treturn qb\n}",
+    "funcname": "RightJoin"
+}

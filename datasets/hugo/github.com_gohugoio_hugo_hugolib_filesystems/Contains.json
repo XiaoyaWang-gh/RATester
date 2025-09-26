@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 426,
+    "focalfunc": "func (d *SourceFilesystem) Contains(filename string) bool",
+    "funcbody": "func (d *SourceFilesystem) Contains(filename string) bool {\n\tfor _, dir := range d.mounts() {\n\t\tif !dir.IsDir() {\n\t\t\tcontinue\n\t\t}\n\t\tif strings.HasPrefix(filename, dir.Meta().Filename) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "Contains"
+}

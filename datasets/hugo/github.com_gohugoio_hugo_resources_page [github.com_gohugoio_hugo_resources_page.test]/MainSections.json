@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 418,
+    "focalfunc": "func (t testSite) MainSections() []string",
+    "funcbody": "func (t testSite) MainSections() []string {\n\treturn nil\n}",
+    "funcname": "MainSections"
+}

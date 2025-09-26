@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager_msgp.go",
+    "lineno": 124,
+    "focalfunc": "func (z storageManager) EncodeMsg(en *msgp.Writer) (err error)",
+    "funcbody": "func (z storageManager) EncodeMsg(en *msgp.Writer) (err error) {\n\n\t_ = z\n\terr = en.Append(0x80)\n\tif err != nil {\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "EncodeMsg"
+}

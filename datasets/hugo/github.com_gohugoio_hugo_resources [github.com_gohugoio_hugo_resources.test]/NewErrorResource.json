@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/errorResource.go",
+    "lineno": 43,
+    "focalfunc": "func NewErrorResource(err resource.ResourceError) resource.Resource",
+    "funcbody": "func NewErrorResource(err resource.ResourceError) resource.Resource {\n\treturn &errorResource{ResourceError: err}\n}",
+    "funcname": "NewErrorResource"
+}

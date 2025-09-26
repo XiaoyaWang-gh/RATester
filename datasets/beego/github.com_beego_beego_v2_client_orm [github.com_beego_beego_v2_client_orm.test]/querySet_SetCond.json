@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 218,
+    "focalfunc": "func (o querySet) SetCond(cond *Condition) QuerySeter",
+    "funcbody": "func (o querySet) SetCond(cond *Condition) QuerySeter {\n\to.cond = cond\n\treturn &o\n}",
+    "funcname": "SetCond"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 242,
+    "focalfunc": "func (r *Request) SetReferer(referer string) *Request",
+    "funcbody": "func (r *Request) SetReferer(referer string) *Request {\n\tr.referer = referer\n\treturn r\n}",
+    "funcname": "SetReferer"
+}

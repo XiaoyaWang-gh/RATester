@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 311,
+    "focalfunc": "func (i *imageResource) resolveActionOptions(spec string) (string, []string)",
+    "funcbody": "func (i *imageResource) resolveActionOptions(spec string) (string, []string) {\n\tvar action string\n\toptions := strings.Fields(spec)\n\tfor i, p := range options {\n\t\tif hstrings.InSlicEqualFold(imageActions, p) {\n\t\t\taction = p\n\t\t\toptions = append(options[:i], options[i+1:]...)\n\t\t\tbreak\n\t\t}\n\t}\n\treturn action, options\n}",
+    "funcname": "resolveActionOptions"
+}

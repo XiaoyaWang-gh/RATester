@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/content.go",
+    "lineno": 55,
+    "focalfunc": "func indirectToStringerOrError(a any) any",
+    "funcbody": "func indirectToStringerOrError(a any) any {\n\tif a == nil {\n\t\treturn nil\n\t}\n\tv := reflect.ValueOf(a)\n\tfor !v.Type().Implements(fmtStringerType) && !v.Type().Implements(errorType) && v.Kind() == reflect.Pointer && !v.IsNil() {\n\t\tv = v.Elem()\n\t}\n\treturn v.Interface()\n}",
+    "funcname": "indirectToStringerOrError"
+}

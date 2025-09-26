@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 45,
+    "focalfunc": "func (n noopCloser) Write(p []byte) (int, error)",
+    "funcbody": "func (n noopCloser) Write(p []byte) (int, error) {\n\treturn n.File.Write(p)\n}",
+    "funcname": "Write"
+}

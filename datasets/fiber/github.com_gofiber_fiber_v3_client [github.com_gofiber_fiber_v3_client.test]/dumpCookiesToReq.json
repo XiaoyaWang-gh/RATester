@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 178,
+    "focalfunc": "func (cj *CookieJar) dumpCookiesToReq(req *fasthttp.Request)",
+    "funcbody": "func (cj *CookieJar) dumpCookiesToReq(req *fasthttp.Request) {\n\turi := req.URI()\n\n\tcookies := cj.getByHostAndPath(uri.Host(), uri.Path())\n\tfor _, cookie := range cookies {\n\t\treq.Header.SetCookieBytesKV(cookie.Key(), cookie.Value())\n\t}\n}",
+    "funcname": "dumpCookiesToReq"
+}

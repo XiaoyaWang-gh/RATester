@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 140,
+    "focalfunc": "func (c ConfigLanguage) NewIdentityManager(name string) identity.Manager",
+    "funcbody": "func (c ConfigLanguage) NewIdentityManager(name string) identity.Manager {\n\tif !c.Watching() {\n\t\treturn identity.NopManager\n\t}\n\treturn identity.NewManager(name)\n}",
+    "funcname": "NewIdentityManager"
+}

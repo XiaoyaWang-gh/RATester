@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 30,
+    "focalfunc": "func XXHashFromReader(r io.Reader) (uint64, int64, error)",
+    "funcbody": "func XXHashFromReader(r io.Reader) (uint64, int64, error) {\n\th := getXxHashReadFrom()\n\tdefer putXxHashReadFrom(h)\n\n\tsize, err := io.Copy(h, r)\n\tif err != nil {\n\t\treturn 0, 0, err\n\t}\n\treturn h.Sum64(), size, nil\n}",
+    "funcname": "XXHashFromReader"
+}

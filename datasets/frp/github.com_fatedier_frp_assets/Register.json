@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/assets/assets.go",
+    "lineno": 43,
+    "focalfunc": "func Register(fileSystem fs.FS)",
+    "funcbody": "func Register(fileSystem fs.FS) {\n\tsubFs, err := fs.Sub(fileSystem, \"static\")\n\tif err == nil {\n\t\tcontent = subFs\n\t}\n}",
+    "funcname": "Register"
+}

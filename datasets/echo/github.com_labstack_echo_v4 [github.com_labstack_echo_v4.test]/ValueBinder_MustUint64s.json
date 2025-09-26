@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 855,
+    "focalfunc": "func (b *ValueBinder) MustUint64s(sourceParam string, dest *[]uint64) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustUint64s(sourceParam string, dest *[]uint64) *ValueBinder {\n\treturn b.uintsValue(sourceParam, dest, true)\n}",
+    "funcname": "MustUint64s"
+}

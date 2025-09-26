@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 426,
+    "focalfunc": "func Exists(path string, fs afero.Fs) (bool, error)",
+    "funcbody": "func Exists(path string, fs afero.Fs) (bool, error) {\n\treturn afero.Exists(fs, path)\n}",
+    "funcname": "Exists"
+}

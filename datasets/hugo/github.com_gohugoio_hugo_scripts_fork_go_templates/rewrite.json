@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 210,
+    "focalfunc": "func rewrite(filename, rule string)",
+    "funcbody": "func rewrite(filename, rule string) {\n\tcmf, _ := hexec.SafeCommand(\"gofmt\", \"-w\", \"-r\", rule, filename)\n\tout, err := cmf.CombinedOutput()\n\tif err != nil {\n\t\tlog.Fatal(\"gofmt failed:\", string(out))\n\t}\n}",
+    "funcname": "rewrite"
+}

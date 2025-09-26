@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 198,
+    "focalfunc": "func (c *Context) IsAborted() bool",
+    "funcbody": "func (c *Context) IsAborted() bool {\n\treturn c.index >= abortIndex\n}",
+    "funcname": "IsAborted"
+}

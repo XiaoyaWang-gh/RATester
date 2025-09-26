@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/plain.go",
+    "lineno": 18,
+    "focalfunc": "func (plainBinding) Bind(req *http.Request, obj interface{}) error",
+    "funcbody": "func (plainBinding) Bind(req *http.Request, obj interface{}) error {\n\tall, err := io.ReadAll(req.Body)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn decodePlain(all, obj)\n}",
+    "funcname": "Bind"
+}

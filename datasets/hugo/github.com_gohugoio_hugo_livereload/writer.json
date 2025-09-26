@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/connection.go",
+    "lineno": 58,
+    "focalfunc": "func (c *connection) writer()",
+    "funcbody": "func (c *connection) writer() {\n\tfor message := range c.send {\n\t\terr := c.ws.WriteMessage(websocket.TextMessage, message)\n\t\tif err != nil {\n\t\t\tbreak\n\t\t}\n\t}\n\tc.ws.Close()\n}",
+    "funcname": "writer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 90,
+    "focalfunc": "func (l *logFilter) Filter(ctx *beecontext.Context) bool",
+    "funcbody": "func (l *logFilter) Filter(ctx *beecontext.Context) bool {\n\trequestPath := path.Clean(ctx.Request.URL.Path)\n\tif requestPath == \"/favicon.ico\" || requestPath == \"/robots.txt\" {\n\t\treturn true\n\t}\n\tfor prefix := range BConfig.WebConfig.StaticDir {\n\t\tif strings.HasPrefix(requestPath, prefix) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "Filter"
+}

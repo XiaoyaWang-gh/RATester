@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 48,
+    "focalfunc": "func normalize(v reflect.Value) any",
+    "funcbody": "func normalize(v reflect.Value) any {\n\tk := v.Kind()\n\tswitch {\n\tcase !v.Type().Comparable():\n\t\treturn hashing.HashUint64(v.Interface())\n\tcase isNumber(k):\n\t\tf, err := numberToFloat(v)\n\t\tif err == nil {\n\t\t\treturn f\n\t\t}\n\t}\n\treturn types.Unwrapv(v.Interface())\n}",
+    "funcname": "normalize"
+}

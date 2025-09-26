@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/codeblocks/render.go",
+    "lineno": 137,
+    "focalfunc": "func (c *codeBlockContext) Inner() string",
+    "funcbody": "func (c *codeBlockContext) Inner() string {\n\treturn c.code\n}",
+    "funcname": "Inner"
+}

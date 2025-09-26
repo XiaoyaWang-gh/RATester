@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/util.go",
+    "lineno": 120,
+    "focalfunc": "func RandomSleep(duration time.Duration, minRatio, maxRatio float64) time.Duration",
+    "funcbody": "func RandomSleep(duration time.Duration, minRatio, maxRatio float64) time.Duration {\n\tmin := int64(minRatio * 1000.0)\n\tmax := int64(maxRatio * 1000.0)\n\tvar n int64\n\tif max <= min {\n\t\tn = min\n\t} else {\n\t\tn = mathrand.Int64N(max-min) + min\n\t}\n\td := duration * time.Duration(n) / time.Duration(1000)\n\ttime.Sleep(d)\n\treturn d\n}",
+    "funcname": "RandomSleep"
+}

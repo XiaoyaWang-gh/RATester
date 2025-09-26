@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 107,
+    "focalfunc": "func (ns *Namespace) GetJSON(args ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) GetJSON(args ...any) (any, error) {\n\thugo.Deprecate(\"data.GetJSON\", \"use resources.Get or resources.GetRemote with transform.Unmarshal.\", \"v0.123.0\")\n\n\tvar v any\n\turl, headers := toURLAndHeaders(args)\n\tcache := ns.cacheGetJSON\n\n\treq, err := http.NewRequest(\"GET\", url, nil)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create request for getJSON resource %s: %w\", url, err)\n\t}\n\n\tunmarshal := func(b []byte) (bool, error) {\n\t\terr := json.Unmarshal(b, &v)\n\t\tif err != nil {\n\t\t\treturn true, err\n\t\t}\n\t\treturn false, nil\n\t}\n\n\taddUserProvidedHeaders(headers, req)\n\taddDefaultHeaders(req, \"application/json\")\n\n\terr = ns.getResource(cache, unmarshal, req)\n\tif err != nil {\n\t\tif security.IsAccessDenied(err) {\n\t\t\treturn nil, err\n\t\t}\n\t\tns.deps.Log.Erroridf(constants.ErrRemoteGetJSON, \"Failed to get JSON resource %q: %s\", url, err)\n\t\treturn nil, nil\n\t}\n\n\treturn v, nil\n}",
+    "funcname": "GetJSON"
+}

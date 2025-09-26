@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/batcher.go",
+    "lineno": 60,
+    "focalfunc": "func (b *Batcher) run()",
+    "funcbody": "func (b *Batcher) run() {\n\tevs := make([]fsnotify.Event, 0)\nOuterLoop:\n\tfor {\n\t\tselect {\n\t\tcase ev := <-b.FileWatcher.Events():\n\t\t\tevs = append(evs, ev)\n\t\tcase <-b.ticker.C:\n\t\t\tif len(evs) == 0 {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tb.Events <- evs\n\t\t\tevs = make([]fsnotify.Event, 0)\n\t\tcase <-b.done:\n\t\t\tbreak OuterLoop\n\t\t}\n\t}\n\tclose(b.done)\n}",
+    "funcname": "run"
+}

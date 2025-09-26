@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 199,
+    "focalfunc": "func parseEncoding(r *http.Request) string",
+    "funcbody": "func parseEncoding(r *http.Request) string {\n\tacceptEncoding := r.Header.Get(\"Accept-Encoding\")\n\tif acceptEncoding == \"\" {\n\t\treturn \"\"\n\t}\n\tvar lastQ q\n\tfor _, v := range strings.Split(acceptEncoding, \",\") {\n\t\tv = strings.TrimSpace(v)\n\t\tif v == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tvs := strings.Split(v, \";\")\n\t\tvar cf acceptEncoder\n\t\tvar ok bool\n\t\tif cf, ok = encoderMap[vs[0]]; !ok {\n\t\t\tcontinue\n\t\t}\n\t\tif len(vs) == 1 {\n\t\t\treturn cf.name\n\t\t}\n\t\tif len(vs) == 2 {\n\t\t\tf, _ := strconv.ParseFloat(strings.Replace(vs[1], \"q=\", \"\", -1), 64)\n\t\t\tif f == 0 {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif f > lastQ.value {\n\t\t\t\tlastQ = q{cf.name, f}\n\t\t\t}\n\t\t}\n\t}\n\treturn lastQ.name\n}",
+    "funcname": "parseEncoding"
+}

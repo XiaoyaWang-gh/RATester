@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 87,
+    "focalfunc": "func (h Heading) IsZero() bool",
+    "funcbody": "func (h Heading) IsZero() bool {\n\treturn h.ID == \"\" && h.Title == \"\"\n}",
+    "funcname": "IsZero"
+}

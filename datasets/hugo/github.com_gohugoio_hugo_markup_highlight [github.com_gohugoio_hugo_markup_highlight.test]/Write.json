@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 333,
+    "focalfunc": "func (w *byteCountFlexiWriter) Write(p []byte) (int, error)",
+    "funcbody": "func (w *byteCountFlexiWriter) Write(p []byte) (int, error) {\n\tn, err := w.delegate.Write(p)\n\tw.counter += n\n\treturn n, err\n}",
+    "funcname": "Write"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 160,
+    "focalfunc": "func (p *Paginator) HasNext() bool",
+    "funcbody": "func (p *Paginator) HasNext() bool {\n\treturn p.Page() < p.PageNums()\n}",
+    "funcname": "HasNext"
+}

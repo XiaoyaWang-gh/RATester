@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 234,
+    "focalfunc": "func (input *BeegoInput) Proxy() []string",
+    "funcbody": "func (input *BeegoInput) Proxy() []string {\n\tif ips := input.Header(\"X-Forwarded-For\"); ips != \"\" {\n\t\treturn strings.Split(ips, \",\")\n\t}\n\treturn []string{}\n}",
+    "funcname": "Proxy"
+}

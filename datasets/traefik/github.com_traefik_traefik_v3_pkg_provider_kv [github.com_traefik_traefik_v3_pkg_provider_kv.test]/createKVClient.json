@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/kv.go",
+    "lineno": 159,
+    "focalfunc": "func (p *Provider) createKVClient(ctx context.Context, storeType string, config valkeyrie.Config) (store.Store, error)",
+    "funcbody": "func (p *Provider) createKVClient(ctx context.Context, storeType string, config valkeyrie.Config) (store.Store, error) {\n\tkvStore, err := valkeyrie.NewStore(ctx, storeType, p.Endpoints, config)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &storeWrapper{Store: kvStore}, nil\n}",
+    "funcname": "createKVClient"
+}

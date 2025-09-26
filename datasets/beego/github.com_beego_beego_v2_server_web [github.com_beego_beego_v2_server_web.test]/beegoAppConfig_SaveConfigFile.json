@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 870,
+    "focalfunc": "func (b *beegoAppConfig) SaveConfigFile(filename string) error",
+    "funcbody": "func (b *beegoAppConfig) SaveConfigFile(filename string) error {\n\treturn b.innerConfig.SaveConfigFile(filename)\n}",
+    "funcname": "SaveConfigFile"
+}

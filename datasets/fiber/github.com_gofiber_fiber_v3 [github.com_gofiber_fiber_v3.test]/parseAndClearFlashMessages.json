@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 299,
+    "focalfunc": "func (r *Redirect) parseAndClearFlashMessages()",
+    "funcbody": "func (r *Redirect) parseAndClearFlashMessages() {\n\n\tcookieValue := r.c.Cookies(FlashCookieName)\n\n\t_, err := r.c.flashMessages.UnmarshalMsg(r.c.app.getBytes(cookieValue))\n\tif err != nil {\n\t\treturn\n\t}\n}",
+    "funcname": "parseAndClearFlashMessages"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 246,
+    "focalfunc": "func (s *Server) MatchHeaders(pattern string) []types.KeyValueStr",
+    "funcbody": "func (s *Server) MatchHeaders(pattern string) []types.KeyValueStr {\n\tif s.compiledHeaders == nil {\n\t\treturn nil\n\t}\n\n\tvar matches []types.KeyValueStr\n\n\tfor i, g := range s.compiledHeaders {\n\t\tif g.Match(pattern) {\n\t\t\th := s.Headers[i]\n\t\t\tfor k, v := range h.Values {\n\t\t\t\tmatches = append(matches, types.KeyValueStr{Key: k, Value: cast.ToString(v)})\n\t\t\t}\n\t\t}\n\t}\n\n\tsort.Slice(matches, func(i, j int) bool {\n\t\treturn matches[i].Key < matches[j].Key\n\t})\n\n\treturn matches\n}",
+    "funcname": "MatchHeaders"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 59,
+    "focalfunc": "func (h *indexedHeap) put(key string, exp uint64, bytes uint) int",
+    "funcbody": "func (h *indexedHeap) put(key string, exp uint64, bytes uint) int {\n\tidx := 0\n\tif len(h.entries) < h.maxidx {\n\n\t\tn := len(h.entries)\n\t\tidx = h.entries[:n+1][n].idx\n\t} else {\n\t\tidx = h.maxidx\n\t\th.maxidx++\n\t\th.indices = append(h.indices, idx)\n\t}\n\n\th.pushInternal(heapEntry{\n\t\tkey:\tkey, exp: exp, idx: idx, bytes: bytes,\n\t})\n\theap.Fix(h, h.Len()-1)\n\treturn idx\n}",
+    "funcname": "put"
+}

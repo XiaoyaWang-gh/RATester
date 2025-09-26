@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 337,
+    "focalfunc": "func (output *BeegoOutput) ContentType(ext string)",
+    "funcbody": "func (output *BeegoOutput) ContentType(ext string) {\n\tif !strings.HasPrefix(ext, \".\") {\n\t\text = \".\" + ext\n\t}\n\tctype := mime.TypeByExtension(ext)\n\tif ctype != \"\" {\n\t\toutput.Header(\"Content-Type\", ctype)\n\t}\n}",
+    "funcname": "ContentType"
+}

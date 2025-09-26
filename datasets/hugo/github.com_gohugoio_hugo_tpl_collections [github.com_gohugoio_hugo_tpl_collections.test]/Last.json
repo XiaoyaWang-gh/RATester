@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 401,
+    "focalfunc": "func (ns *Namespace) Last(limit any, l any) (any, error)",
+    "funcbody": "func (ns *Namespace) Last(limit any, l any) (any, error) {\n\tif limit == nil || l == nil {\n\t\treturn nil, errors.New(\"both limit and seq must be provided\")\n\t}\n\n\tlimitv, err := cast.ToIntE(limit)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif limitv < 0 {\n\t\treturn nil, errors.New(\"sequence length must be non-negative\")\n\t}\n\n\tseqv := reflect.ValueOf(l)\n\tseqv, isNil := indirect(seqv)\n\tif isNil {\n\t\treturn nil, errors.New(\"can't iterate over a nil value\")\n\t}\n\n\tswitch seqv.Kind() {\n\tcase reflect.Array, reflect.Slice, reflect.String:\n\n\tdefault:\n\t\treturn nil, errors.New(\"can't iterate over \" + reflect.ValueOf(l).Type().String())\n\t}\n\n\tif limitv > seqv.Len() {\n\t\tlimitv = seqv.Len()\n\t}\n\n\treturn seqv.Slice(seqv.Len()-limitv, seqv.Len()).Interface(), nil\n}",
+    "funcname": "Last"
+}

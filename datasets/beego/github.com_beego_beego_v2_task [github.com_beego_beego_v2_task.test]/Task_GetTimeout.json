@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 207,
+    "focalfunc": "func (t *Task) GetTimeout(context.Context) time.Duration",
+    "funcbody": "func (t *Task) GetTimeout(context.Context) time.Duration {\n\treturn t.Timeout\n}",
+    "funcname": "GetTimeout"
+}

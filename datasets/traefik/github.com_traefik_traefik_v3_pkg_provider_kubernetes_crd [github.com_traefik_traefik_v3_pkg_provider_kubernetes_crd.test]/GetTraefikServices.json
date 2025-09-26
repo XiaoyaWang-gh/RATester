@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 369,
+    "focalfunc": "func (c *clientWrapper) GetTraefikServices() []*traefikv1alpha1.TraefikService",
+    "funcbody": "func (c *clientWrapper) GetTraefikServices() []*traefikv1alpha1.TraefikService {\n\tvar result []*traefikv1alpha1.TraefikService\n\n\tfor ns, factory := range c.factoriesCrd {\n\t\ttraefikServices, err := factory.Traefik().V1alpha1().TraefikServices().Lister().List(labels.Everything())\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Failed to list Traefik services in namespace %s\", ns)\n\t\t}\n\t\tresult = append(result, traefikServices...)\n\t}\n\n\treturn result\n}",
+    "funcname": "GetTraefikServices"
+}

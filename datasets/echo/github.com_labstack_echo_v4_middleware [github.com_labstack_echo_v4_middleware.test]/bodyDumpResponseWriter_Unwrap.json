@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 111,
+    "focalfunc": "func (w *bodyDumpResponseWriter) Unwrap() http.ResponseWriter",
+    "funcbody": "func (w *bodyDumpResponseWriter) Unwrap() http.ResponseWriter {\n\treturn w.ResponseWriter\n}",
+    "funcname": "Unwrap"
+}

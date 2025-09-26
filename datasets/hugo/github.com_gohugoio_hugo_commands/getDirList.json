@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 144,
+    "focalfunc": "func (c *hugoBuilder) getDirList() ([]string, error)",
+    "funcbody": "func (c *hugoBuilder) getDirList() ([]string, error) {\n\th, err := c.hugo()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn helpers.UniqueStringsSorted(h.PathSpec.BaseFs.WatchFilenames()), nil\n}",
+    "funcname": "getDirList"
+}

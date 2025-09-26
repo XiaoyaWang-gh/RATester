@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 569,
+    "focalfunc": "func (input *BeegoInput) bindString(val string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindString(val string, typ reflect.Type) reflect.Value {\n\treturn reflect.ValueOf(val)\n}",
+    "funcname": "bindString"
+}

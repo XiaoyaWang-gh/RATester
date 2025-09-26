@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 129,
+    "focalfunc": "func (a *adminController) Healthcheck()",
+    "funcbody": "func (a *adminController) Healthcheck() {\n\theathCheck(a.Ctx.ResponseWriter, a.Ctx.Request)\n}",
+    "funcname": "Healthcheck"
+}

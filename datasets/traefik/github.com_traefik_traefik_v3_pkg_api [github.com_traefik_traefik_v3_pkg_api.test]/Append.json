@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/debug.go",
+    "lineno": 26,
+    "focalfunc": "func (g DebugHandler) Append(router *mux.Router)",
+    "funcbody": "func (g DebugHandler) Append(router *mux.Router) {\n\trouter.Methods(http.MethodGet).Path(\"/debug/vars\").\n\t\tHandlerFunc(func(w http.ResponseWriter, _ *http.Request) {\n\t\t\tw.Header().Set(\"Content-Type\", \"application/json; charset=utf-8\")\n\t\t\tfmt.Fprint(w, \"{\\n\")\n\t\t\tfirst := true\n\t\t\texpvar.Do(func(kv expvar.KeyValue) {\n\t\t\t\tif !first {\n\t\t\t\t\tfmt.Fprint(w, \",\\n\")\n\t\t\t\t}\n\t\t\t\tfirst = false\n\t\t\t\tfmt.Fprintf(w, \"%q: %s\", kv.Key, kv.Value)\n\t\t\t})\n\t\t\tfmt.Fprint(w, \"\\n}\\n\")\n\t\t})\n\n\truntime.SetBlockProfileRate(1)\n\truntime.SetMutexProfileFraction(5)\n\trouter.Methods(http.MethodGet).PathPrefix(\"/debug/pprof/cmdline\").HandlerFunc(pprof.Cmdline)\n\trouter.Methods(http.MethodGet).PathPrefix(\"/debug/pprof/profile\").HandlerFunc(pprof.Profile)\n\trouter.Methods(http.MethodGet).PathPrefix(\"/debug/pprof/symbol\").HandlerFunc(pprof.Symbol)\n\trouter.Methods(http.MethodGet).PathPrefix(\"/debug/pprof/trace\").HandlerFunc(pprof.Trace)\n\trouter.Methods(http.MethodGet).PathPrefix(\"/debug/pprof/\").HandlerFunc(pprof.Index)\n}",
+    "funcname": "Append"
+}

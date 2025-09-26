@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 218,
+    "focalfunc": "func (cp *Provider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error)",
+    "funcbody": "func (cp *Provider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error) {\n\tcp.b = cp.getBucket()\n\n\tvar doc []byte\n\tif err := cp.b.Get(oldsid, &doc); err != nil || doc == nil {\n\t\tcp.b.Set(sid, int(cp.maxlifetime), \"\")\n\t} else {\n\t\terr := cp.b.Delete(oldsid)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\t_, _ = cp.b.Add(sid, int(cp.maxlifetime), doc)\n\t}\n\n\terr := cp.b.Get(sid, &doc)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tvar kv map[interface{}]interface{}\n\tif doc == nil {\n\t\tkv = make(map[interface{}]interface{})\n\t} else {\n\t\tkv, err = session.DecodeGob(doc)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tcs := &SessionStore{b: cp.b, sid: sid, values: kv, maxlifetime: cp.maxlifetime}\n\treturn cs, nil\n}",
+    "funcname": "SessionRegenerate"
+}

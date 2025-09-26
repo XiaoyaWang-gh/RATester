@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/tcpmux/httpconnect.go",
+    "lineno": 70,
+    "focalfunc": "func (muxer *HTTPConnectTCPMuxer) sendConnectResponse(c net.Conn, _ map[string]string) error",
+    "funcbody": "func (muxer *HTTPConnectTCPMuxer) sendConnectResponse(c net.Conn, _ map[string]string) error {\n\tif muxer.passthrough {\n\t\treturn nil\n\t}\n\tres := httppkg.OkResponse()\n\tif res.Body != nil {\n\t\tdefer res.Body.Close()\n\t}\n\treturn res.Write(c)\n}",
+    "funcname": "sendConnectResponse"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 123,
+    "focalfunc": "func newSessionStore() *SessionStore",
+    "funcbody": "func newSessionStore() *SessionStore {\n\treturn &SessionStore{\n\t\tsid:\tuuid.New().String(),\n\t\tvalues:\tmake(map[interface{}]interface{}, 4),\n\t}\n}",
+    "funcname": "newSessionStore"
+}

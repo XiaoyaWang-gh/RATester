@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 120,
+    "focalfunc": "func (ctx headingContext) Anchor() string",
+    "funcbody": "func (ctx headingContext) Anchor() string {\n\treturn ctx.anchor\n}",
+    "funcname": "Anchor"
+}

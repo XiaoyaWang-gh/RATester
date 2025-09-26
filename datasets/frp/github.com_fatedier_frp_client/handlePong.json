@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 183,
+    "focalfunc": "func (ctl *Control) handlePong(m msg.Message)",
+    "funcbody": "func (ctl *Control) handlePong(m msg.Message) {\n\txl := ctl.xl\n\tinMsg := m.(*msg.Pong)\n\n\tif inMsg.Error != \"\" {\n\t\txl.Errorf(\"Pong message contains error: %s\", inMsg.Error)\n\t\tctl.closeSession()\n\t\treturn\n\t}\n\tctl.lastPong.Store(time.Now())\n\txl.Debugf(\"receive heartbeat from server\")\n}",
+    "funcname": "handlePong"
+}

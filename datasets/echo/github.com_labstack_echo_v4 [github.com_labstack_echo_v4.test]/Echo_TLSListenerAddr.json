@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 829,
+    "focalfunc": "func (e *Echo) TLSListenerAddr() net.Addr",
+    "funcbody": "func (e *Echo) TLSListenerAddr() net.Addr {\n\te.startupMutex.RLock()\n\tdefer e.startupMutex.RUnlock()\n\tif e.TLSListener == nil {\n\t\treturn nil\n\t}\n\treturn e.TLSListener.Addr()\n}",
+    "funcname": "TLSListenerAddr"
+}

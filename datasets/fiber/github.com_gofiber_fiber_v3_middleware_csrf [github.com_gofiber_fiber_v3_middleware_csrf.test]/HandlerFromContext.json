@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 203,
+    "focalfunc": "func HandlerFromContext(c fiber.Ctx) *Handler",
+    "funcbody": "func HandlerFromContext(c fiber.Ctx) *Handler {\n\thandler, ok := c.Locals(handlerKey).(*Handler)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn handler\n}",
+    "funcname": "HandlerFromContext"
+}

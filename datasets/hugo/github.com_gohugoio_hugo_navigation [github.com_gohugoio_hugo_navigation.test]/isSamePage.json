@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 141,
+    "focalfunc": "func (m *MenuEntry) isSamePage(p Page) bool",
+    "funcbody": "func (m *MenuEntry) isSamePage(p Page) bool {\n\tif !types.IsNil(m.Page) && !types.IsNil(p) {\n\t\treturn m.Page == p\n\t}\n\treturn false\n}",
+    "funcname": "isSamePage"
+}

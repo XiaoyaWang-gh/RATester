@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 509,
+    "focalfunc": "func uniqueNonEmptyStrings(s []string) []string",
+    "funcbody": "func uniqueNonEmptyStrings(s []string) []string {\n\tvar unique []string\n\tset := map[string]any{}\n\tfor _, val := range s {\n\t\tif val == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tif _, ok := set[val]; !ok {\n\t\t\tunique = append(unique, val)\n\t\t\tset[val] = val\n\t\t}\n\t}\n\treturn unique\n}",
+    "funcname": "uniqueNonEmptyStrings"
+}

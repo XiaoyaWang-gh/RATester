@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/fmt/fmt.go",
+    "lineno": 100,
+    "focalfunc": "func (ns *Namespace) logmf(l logg.LevelLogger, m any, format string, args ...any) string",
+    "funcbody": "func (ns *Namespace) logmf(l logg.LevelLogger, m any, format string, args ...any) string {\n\tmm := cast.ToStringMap(m)\n\tfields := make(logg.Fields, len(mm))\n\ti := 0\n\tfor k, v := range mm {\n\t\tfields[i] = logg.Field{Name: k, Value: v}\n\t\ti++\n\t}\n\n\tsort.Slice(fields, func(i, j int) bool {\n\t\treturn fields[i].Name < fields[j].Name\n\t})\n\n\tl.WithFields(fields).Logf(format, args...)\n\n\treturn \"\"\n}",
+    "funcname": "logmf"
+}

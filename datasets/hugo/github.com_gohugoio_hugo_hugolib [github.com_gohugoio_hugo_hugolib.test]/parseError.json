@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 627,
+    "focalfunc": "func (p *pageState) parseError(err error, input []byte, offset int) error",
+    "funcbody": "func (p *pageState) parseError(err error, input []byte, offset int) error {\n\tpos := posFromInput(\"\", input, offset)\n\treturn herrors.NewFileErrorFromName(err, p.File().Filename()).UpdatePosition(pos)\n}",
+    "funcname": "parseError"
+}

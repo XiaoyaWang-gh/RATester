@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 69,
+    "focalfunc": "func New(sticky *dynamic.Sticky, wantHealthCheck bool) *Balancer",
+    "funcbody": "func New(sticky *dynamic.Sticky, wantHealthCheck bool) *Balancer {\n\tbalancer := &Balancer{\n\t\tstatus:\t\t\tmake(map[string]struct{}),\n\t\thandlerMap:\t\tmake(map[string]*namedHandler),\n\t\twantsHealthCheck:\twantHealthCheck,\n\t}\n\tif sticky != nil && sticky.Cookie != nil {\n\t\tbalancer.stickyCookie = &stickyCookie{\n\t\t\tname:\t\tsticky.Cookie.Name,\n\t\t\tsecure:\t\tsticky.Cookie.Secure,\n\t\t\thttpOnly:\tsticky.Cookie.HTTPOnly,\n\t\t\tsameSite:\tsticky.Cookie.SameSite,\n\t\t\tmaxAge:\t\tsticky.Cookie.MaxAge,\n\t\t}\n\t}\n\n\treturn balancer\n}",
+    "funcname": "New"
+}

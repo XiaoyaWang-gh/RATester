@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/goldmark_config/config.go",
+    "lineno": 124,
+    "focalfunc": "func (h LinkRenderHook) IsEnableDefault() bool",
+    "funcbody": "func (h LinkRenderHook) IsEnableDefault() bool {\n\treturn h.EnableDefault != nil && *h.EnableDefault\n}",
+    "funcname": "IsEnableDefault"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 346,
+    "focalfunc": "func (s *Conn) SetReadDeadline(t time.Time) error",
+    "funcbody": "func (s *Conn) SetReadDeadline(t time.Time) error {\n\treturn s.Conn.SetReadDeadline(t)\n}",
+    "funcname": "SetReadDeadline"
+}

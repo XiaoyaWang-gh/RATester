@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 83,
+    "focalfunc": "func (p Pages) RelatedIndices(ctx context.Context, doc related.Document, indices ...any) (Pages, error)",
+    "funcbody": "func (p Pages) RelatedIndices(ctx context.Context, doc related.Document, indices ...any) (Pages, error) {\n\tindicesStr, err := cast.ToStringSliceE(indices)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\topts := related.SearchOpts{\n\t\tDocument:\tdoc,\n\t\tIndices:\tindicesStr,\n\t}\n\n\tresult, err := p.search(ctx, opts)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn result, nil\n}",
+    "funcname": "RelatedIndices"
+}

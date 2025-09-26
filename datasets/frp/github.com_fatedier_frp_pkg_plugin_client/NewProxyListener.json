@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/plugin.go",
+    "lineno": 71,
+    "focalfunc": "func NewProxyListener() *Listener",
+    "funcbody": "func NewProxyListener() *Listener {\n\treturn &Listener{\n\t\tconns: make(chan net.Conn, 64),\n\t}\n}",
+    "funcname": "NewProxyListener"
+}

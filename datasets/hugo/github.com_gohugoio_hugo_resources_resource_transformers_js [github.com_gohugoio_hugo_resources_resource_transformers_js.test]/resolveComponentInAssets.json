@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/js/options.go",
+    "lineno": 154,
+    "focalfunc": "func resolveComponentInAssets(fs afero.Fs, impPath string) *hugofs.FileMeta",
+    "funcbody": "func resolveComponentInAssets(fs afero.Fs, impPath string) *hugofs.FileMeta {\n\tfindFirst := func(base string) *hugofs.FileMeta {\n\n\t\tfor _, ext := range []string{\".js\", \".ts\", \".tsx\", \".jsx\"} {\n\t\t\tif strings.HasSuffix(impPath, ext) {\n\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif fi, err := fs.Stat(base + ext); err == nil {\n\t\t\t\treturn fi.(hugofs.FileMetaInfo).Meta()\n\t\t\t}\n\t\t}\n\n\t\treturn nil\n\t}\n\n\tvar m *hugofs.FileMeta\n\n\tm = findFirst(impPath)\n\tif m != nil {\n\t\treturn m\n\t}\n\n\tbase := filepath.Base(impPath)\n\tif base == \"index\" {\n\n\t\tm = findFirst(impPath + \".esm\")\n\t\tif m != nil {\n\t\t\treturn m\n\t\t}\n\t}\n\n\tfi, err := fs.Stat(impPath)\n\n\tif err == nil {\n\t\tif fi.IsDir() {\n\t\t\tm = findFirst(filepath.Join(impPath, \"index\"))\n\t\t\tif m == nil {\n\t\t\t\tm = findFirst(filepath.Join(impPath, \"index.esm\"))\n\t\t\t}\n\t\t} else {\n\t\t\tm = fi.(hugofs.FileMetaInfo).Meta()\n\t\t}\n\t} else if strings.HasSuffix(base, \".js\") {\n\t\tm = findFirst(strings.TrimSuffix(impPath, \".js\"))\n\t}\n\n\treturn m\n}",
+    "funcname": "resolveComponentInAssets"
+}

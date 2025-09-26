@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/token_bucket.go",
+    "lineno": 17,
+    "focalfunc": "func newTokenBucket(opts ...bucketOption) bucket",
+    "funcbody": "func newTokenBucket(opts ...bucketOption) bucket {\n\tb := &tokenBucket{lastCheckAt: time.Now()}\n\tfor _, o := range opts {\n\t\to(b)\n\t}\n\treturn b\n}",
+    "funcname": "newTokenBucket"
+}

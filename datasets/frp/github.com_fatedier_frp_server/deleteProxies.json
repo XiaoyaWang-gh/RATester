@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 386,
+    "focalfunc": "func (svr *Service) deleteProxies(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (svr *Service) deleteProxies(w http.ResponseWriter, r *http.Request) {\n\tres := GeneralResponse{Code: 200}\n\n\tlog.Infof(\"Http request: [%s]\", r.URL.Path)\n\tdefer func() {\n\t\tlog.Infof(\"Http response [%s]: code [%d]\", r.URL.Path, res.Code)\n\t\tw.WriteHeader(res.Code)\n\t\tif len(res.Msg) > 0 {\n\t\t\t_, _ = w.Write([]byte(res.Msg))\n\t\t}\n\t}()\n\n\tstatus := r.URL.Query().Get(\"status\")\n\tif status != \"offline\" {\n\t\tres.Code = 400\n\t\tres.Msg = \"status only support offline\"\n\t\treturn\n\t}\n\tcleared, total := mem.StatsCollector.ClearOfflineProxies()\n\tlog.Infof(\"cleared [%d] offline proxies, total [%d] proxies\", cleared, total)\n}",
+    "funcname": "deleteProxies"
+}

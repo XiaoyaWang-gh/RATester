@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 355,
+    "focalfunc": "func (bl *BeeLogger) GetLevel() int",
+    "funcbody": "func (bl *BeeLogger) GetLevel() int {\n\treturn bl.level\n}",
+    "funcname": "GetLevel"
+}

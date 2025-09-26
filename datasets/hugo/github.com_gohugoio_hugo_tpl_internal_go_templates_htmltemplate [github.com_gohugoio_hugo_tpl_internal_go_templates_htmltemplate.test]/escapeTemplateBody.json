@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 693,
+    "focalfunc": "func (e *escaper) escapeTemplateBody(c context, t *template.Template) (context, bool)",
+    "funcbody": "func (e *escaper) escapeTemplateBody(c context, t *template.Template) (context, bool) {\n\tfilter := func(e1 *escaper, c1 context) bool {\n\t\tif c1.state == stateError {\n\n\t\t\treturn false\n\t\t}\n\t\tif !e1.called[t.Name()] {\n\n\t\t\treturn true\n\t\t}\n\n\t\treturn c.eq(c1)\n\t}\n\n\te.output[t.Name()] = c\n\treturn e.escapeListConditionally(c, t.Tree.Root, filter)\n}",
+    "funcname": "escapeTemplateBody"
+}

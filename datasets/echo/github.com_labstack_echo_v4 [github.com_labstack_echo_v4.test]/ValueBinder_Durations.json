@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1217,
+    "focalfunc": "func (b *ValueBinder) durations(sourceParam string, values []string, dest *[]time.Duration) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) durations(sourceParam string, values []string, dest *[]time.Duration) *ValueBinder {\n\ttmp := make([]time.Duration, len(values))\n\tfor i, v := range values {\n\t\tt, err := time.ParseDuration(v)\n\t\tif err != nil {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{v}, \"failed to bind field value to Duration\", err))\n\t\t\tif b.failFast {\n\t\t\t\treturn b\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\t\ttmp[i] = t\n\t}\n\tif b.errors == nil {\n\t\t*dest = tmp\n\t}\n\treturn b\n}",
+    "funcname": "durations"
+}

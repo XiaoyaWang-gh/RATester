@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 146,
+    "focalfunc": "func (m *Mirroring) RegisterStatusUpdater(fn func(up bool)) error",
+    "funcbody": "func (m *Mirroring) RegisterStatusUpdater(fn func(up bool)) error {\n\n\tif !m.wantsHealthCheck {\n\t\treturn errors.New(\"healthCheck not enabled in config for this mirroring service\")\n\t}\n\n\tupdater, ok := m.handler.(healthcheck.StatusUpdater)\n\tif !ok {\n\t\treturn fmt.Errorf(\"service of mirroring %T not a healthcheck.StatusUpdater\", m.handler)\n\t}\n\n\tif err := updater.RegisterStatusUpdater(fn); err != nil {\n\t\treturn fmt.Errorf(\"cannot register service of mirroring as updater: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "RegisterStatusUpdater"
+}

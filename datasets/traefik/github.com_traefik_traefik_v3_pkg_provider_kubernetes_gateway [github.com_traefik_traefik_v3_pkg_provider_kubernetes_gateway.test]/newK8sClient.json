@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 165,
+    "focalfunc": "func (p *Provider) newK8sClient(ctx context.Context) (*clientWrapper, error)",
+    "funcbody": "func (p *Provider) newK8sClient(ctx context.Context) (*clientWrapper, error) {\n\n\t_, err := labels.Parse(p.LabelSelector)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"invalid label selector: %q\", p.LabelSelector)\n\t}\n\n\tlogger := log.Ctx(ctx)\n\tlogger.Info().Msgf(\"Label selector is: %q\", p.LabelSelector)\n\n\tvar client *clientWrapper\n\tswitch {\n\tcase os.Getenv(\"KUBERNETES_SERVICE_HOST\") != \"\" && os.Getenv(\"KUBERNETES_SERVICE_PORT\") != \"\":\n\t\tlogger.Info().Str(\"endpoint\", p.Endpoint).Msg(\"Creating in-cluster Provider client\")\n\t\tclient, err = newInClusterClient(p.Endpoint)\n\tcase os.Getenv(\"KUBECONFIG\") != \"\":\n\t\tlogger.Info().Msgf(\"Creating cluster-external Provider client from KUBECONFIG %s\", os.Getenv(\"KUBECONFIG\"))\n\t\tclient, err = newExternalClusterClientFromFile(os.Getenv(\"KUBECONFIG\"))\n\tdefault:\n\t\tlogger.Info().Str(\"endpoint\", p.Endpoint).Msg(\"Creating cluster-external Provider client\")\n\t\tclient, err = newExternalClusterClient(p.Endpoint, p.CertAuthFilePath, p.Token)\n\t}\n\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tclient.labelSelector = p.LabelSelector\n\tclient.experimentalChannel = p.ExperimentalChannel\n\n\treturn client, nil\n}",
+    "funcname": "newK8sClient"
+}

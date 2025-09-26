@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_tcp.go",
+    "lineno": 22,
+    "focalfunc": "func newTCPRouterRepresentation(name string, rt *runtime.TCPRouterInfo) tcpRouterRepresentation",
+    "funcbody": "func newTCPRouterRepresentation(name string, rt *runtime.TCPRouterInfo) tcpRouterRepresentation {\n\treturn tcpRouterRepresentation{\n\t\tTCPRouterInfo:\trt,\n\t\tName:\t\tname,\n\t\tProvider:\tgetProviderName(name),\n\t}\n}",
+    "funcname": "newTCPRouterRepresentation"
+}

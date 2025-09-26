@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/proxy.go",
+    "lineno": 73,
+    "focalfunc": "func DefaultProxyConf(proxyType ProxyType) ProxyConf",
+    "funcbody": "func DefaultProxyConf(proxyType ProxyType) ProxyConf {\n\treturn NewConfByType(proxyType)\n}",
+    "funcname": "DefaultProxyConf"
+}

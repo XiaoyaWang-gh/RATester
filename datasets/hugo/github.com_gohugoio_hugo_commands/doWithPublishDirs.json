@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 484,
+    "focalfunc": "func (c *hugoBuilder) doWithPublishDirs(f func(sourceFs *filesystems.SourceFilesystem) (uint64, error)) (map[string]uint64, error)",
+    "funcbody": "func (c *hugoBuilder) doWithPublishDirs(f func(sourceFs *filesystems.SourceFilesystem) (uint64, error)) (map[string]uint64, error) {\n\tlangCount := make(map[string]uint64)\n\n\th, err := c.hugo()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tstaticFilesystems := h.BaseFs.SourceFilesystems.Static\n\n\tif len(staticFilesystems) == 0 {\n\t\tc.r.logger.Infoln(\"No static directories found to sync\")\n\t\treturn langCount, nil\n\t}\n\n\tfor lang, fs := range staticFilesystems {\n\t\tcnt, err := f(fs)\n\t\tif err != nil {\n\t\t\treturn langCount, err\n\t\t}\n\t\tif lang == \"\" {\n\n\t\t\tc.withConf(func(conf *commonConfig) {\n\t\t\t\tfor _, l := range conf.configs.Languages {\n\t\t\t\t\tlangCount[l.Lang] = cnt\n\t\t\t\t}\n\t\t\t})\n\t\t} else {\n\t\t\tlangCount[lang] = cnt\n\t\t}\n\t}\n\n\treturn langCount, nil\n}",
+    "funcname": "doWithPublishDirs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 604,
+    "focalfunc": "func (bl *BeeLogger) Close()",
+    "funcbody": "func (bl *BeeLogger) Close() {\n\tif bl.asynchronous {\n\t\tbl.closeChan <- struct{}{}\n\t\tbl.wg.Wait()\n\t\tclose(bl.msgChan)\n\t} else {\n\t\tbl.flush()\n\t\tfor _, l := range bl.outputs {\n\t\t\tl.Destroy()\n\t\t}\n\t\tbl.outputs = nil\n\t}\n\tclose(bl.flushChan)\n\tclose(bl.closeChan)\n}",
+    "funcname": "Close"
+}

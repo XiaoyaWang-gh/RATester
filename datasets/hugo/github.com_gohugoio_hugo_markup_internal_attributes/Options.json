@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/attributes/attributes.go",
+    "lineno": 158,
+    "focalfunc": "func (a *AttributesHolder) Options() map[string]any",
+    "funcbody": "func (a *AttributesHolder) Options() map[string]any {\n\ta.optionsMapInit.Do(func() {\n\t\ta.optionsMap = make(map[string]any)\n\t\tfor _, v := range a.options {\n\t\t\ta.optionsMap[v.Name] = v.Value\n\t\t}\n\t})\n\treturn a.optionsMap\n}",
+    "funcname": "Options"
+}

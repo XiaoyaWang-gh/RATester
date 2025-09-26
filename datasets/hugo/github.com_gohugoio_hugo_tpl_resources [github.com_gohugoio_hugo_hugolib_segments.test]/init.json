@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/init.go",
+    "lineno": 27,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx, err := New(d)\n\t\tif err != nil {\n\n\t\t\tpanic(err)\n\t\t}\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t\tOnCreated: func(m map[string]any) {\n\t\t\t\tfor _, v := range m {\n\t\t\t\t\tswitch v := v.(type) {\n\t\t\t\t\tcase *css.Namespace:\n\t\t\t\t\t\tctx.cssNs = v\n\t\t\t\t\tcase *js.Namespace:\n\t\t\t\t\t\tctx.jsNs = v\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tif ctx.cssNs == nil {\n\t\t\t\t\tpanic(\"css namespace not found\")\n\t\t\t\t}\n\t\t\t\tif ctx.jsNs == nil {\n\t\t\t\t\tpanic(\"js namespace not found\")\n\t\t\t\t}\n\t\t\t},\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.Get,\n\t\t\tnil,\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.GetRemote,\n\t\t\tnil,\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.Fingerprint,\n\t\t\t[]string{\"fingerprint\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.Minify,\n\t\t\t[]string{\"minify\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 63,
+    "focalfunc": "func NewContext() *Context",
+    "funcbody": "func NewContext() *Context {\n\treturn &Context{\n\t\tInput:\tNewInput(),\n\t\tOutput:\tNewOutput(),\n\t}\n}",
+    "funcname": "NewContext"
+}

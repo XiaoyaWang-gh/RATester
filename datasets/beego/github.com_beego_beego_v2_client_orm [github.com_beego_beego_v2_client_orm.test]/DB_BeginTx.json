@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 124,
+    "focalfunc": "func (d *DB) BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error)",
+    "funcbody": "func (d *DB) BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error) {\n\treturn d.DB.BeginTx(ctx, opts)\n}",
+    "funcname": "BeginTx"
+}

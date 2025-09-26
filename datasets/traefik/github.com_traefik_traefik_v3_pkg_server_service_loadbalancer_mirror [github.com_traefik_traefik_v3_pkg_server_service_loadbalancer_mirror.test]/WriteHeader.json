@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 184,
+    "focalfunc": "func (b blackHoleResponseWriter) WriteHeader(_ int)",
+    "funcbody": "func (b blackHoleResponseWriter) WriteHeader(_ int)\t{}",
+    "funcname": "WriteHeader"
+}

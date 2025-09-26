@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 122,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Offset(offset int) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Offset(offset int) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"OFFSET\", strconv.Itoa(offset))\n\treturn qb\n}",
+    "funcname": "Offset"
+}

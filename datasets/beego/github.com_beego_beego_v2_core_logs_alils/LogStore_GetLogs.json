@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_store.go",
+    "lineno": 256,
+    "focalfunc": "func (s *LogStore) GetLogs(shardID int, cursor string,\n\tlogGroupMaxCount int) (gl *LogGroupList, nextCursor string, err error)",
+    "funcbody": "func (s *LogStore) GetLogs(shardID int, cursor string,\n\tlogGroupMaxCount int) (gl *LogGroupList, nextCursor string, err error) {\n\n\tout, nextCursor, err := s.GetLogsBytes(shardID, cursor, logGroupMaxCount)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tgl, err = LogsBytesDecode(out)\n\tif err != nil {\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "GetLogs"
+}

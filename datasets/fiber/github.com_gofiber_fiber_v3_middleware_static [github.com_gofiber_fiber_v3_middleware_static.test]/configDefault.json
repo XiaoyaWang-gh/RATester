@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/static/config.go",
+    "lineno": 79,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif len(cfg.IndexNames) == 0 {\n\t\tcfg.IndexNames = ConfigDefault.IndexNames\n\t}\n\n\tif cfg.CacheDuration == 0 {\n\t\tcfg.CacheDuration = ConfigDefault.CacheDuration\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

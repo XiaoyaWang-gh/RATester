@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 255,
+    "focalfunc": "func (engine *Engine) SecureJsonPrefix(prefix string) *Engine",
+    "funcbody": "func (engine *Engine) SecureJsonPrefix(prefix string) *Engine {\n\tengine.secureJSONPrefix = prefix\n\treturn engine\n}",
+    "funcname": "SecureJsonPrefix"
+}

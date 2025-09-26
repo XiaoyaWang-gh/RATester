@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/kinds/kinds.go",
+    "lineno": 99,
+    "focalfunc": "func IsBranch(kind string) bool",
+    "funcbody": "func IsBranch(kind string) bool {\n\tswitch kind {\n\tcase KindHome, KindSection, KindTaxonomy, KindTerm:\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "IsBranch"
+}

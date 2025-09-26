@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 386,
+    "focalfunc": "func extractPosition(e error) (pos text.Position)",
+    "funcbody": "func extractPosition(e error) (pos text.Position) {\n\tswitch v := e.(type) {\n\tcase godartsass.SassError:\n\t\tspan := v.Span\n\t\tstart := span.Start\n\t\tfilename, _ := paths.UrlToFilename(span.Url)\n\t\tpos.Filename = filename\n\t\tpos.Offset = start.Offset\n\t\tpos.ColumnNumber = start.Column\n\tcase godartsassv1.SassError:\n\t\tspan := v.Span\n\t\tstart := span.Start\n\t\tfilename, _ := paths.UrlToFilename(span.Url)\n\t\tpos.Filename = filename\n\t\tpos.Offset = start.Offset\n\t\tpos.ColumnNumber = start.Column\n\tcase libsasserrors.Error:\n\t\tpos.Filename = v.File\n\t\tpos.LineNumber = v.Line\n\t\tpos.ColumnNumber = v.Column\n\t}\n\treturn\n}",
+    "funcname": "extractPosition"
+}

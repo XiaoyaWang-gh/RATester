@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 148,
+    "focalfunc": "func toH(bytes uint64) string",
+    "funcbody": "func toH(bytes uint64) string {\n\tswitch {\n\tcase bytes < 1024:\n\t\treturn fmt.Sprintf(\"%dB\", bytes)\n\tcase bytes < 1024*1024:\n\t\treturn fmt.Sprintf(\"%.2fK\", float64(bytes)/1024)\n\tcase bytes < 1024*1024*1024:\n\t\treturn fmt.Sprintf(\"%.2fM\", float64(bytes)/1024/1024)\n\tdefault:\n\t\treturn fmt.Sprintf(\"%.2fG\", float64(bytes)/1024/1024/1024)\n\t}\n}",
+    "funcname": "toH"
+}

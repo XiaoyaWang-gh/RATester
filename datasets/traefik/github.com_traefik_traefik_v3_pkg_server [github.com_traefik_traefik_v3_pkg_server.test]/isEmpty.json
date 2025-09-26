@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 544,
+    "focalfunc": "func (c *connectionTracker) isEmpty() bool",
+    "funcbody": "func (c *connectionTracker) isEmpty() bool {\n\tc.connsMu.RLock()\n\tdefer c.connsMu.RUnlock()\n\treturn len(c.conns) == 0\n}",
+    "funcname": "isEmpty"
+}

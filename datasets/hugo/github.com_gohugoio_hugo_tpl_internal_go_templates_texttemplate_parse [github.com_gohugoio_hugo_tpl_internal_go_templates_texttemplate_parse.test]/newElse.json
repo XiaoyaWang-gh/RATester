@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 819,
+    "focalfunc": "func (t *Tree) newElse(pos Pos, line int) *elseNode",
+    "funcbody": "func (t *Tree) newElse(pos Pos, line int) *elseNode {\n\treturn &elseNode{tr: t, NodeType: nodeElse, Pos: pos, Line: line}\n}",
+    "funcname": "newElse"
+}

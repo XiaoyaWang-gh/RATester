@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 327,
+    "focalfunc": "func (c *Context) GetUint(key string) (ui uint)",
+    "funcbody": "func (c *Context) GetUint(key string) (ui uint) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\tui, _ = val.(uint)\n\t}\n\treturn\n}",
+    "funcname": "GetUint"
+}

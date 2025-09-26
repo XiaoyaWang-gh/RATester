@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 114,
+    "focalfunc": "func (c *defaultConfigProvider) IsSet(k string) bool",
+    "funcbody": "func (c *defaultConfigProvider) IsSet(k string) bool {\n\tvar found bool\n\tc.mu.RLock()\n\tkey, m := c.getNestedKeyAndMap(strings.ToLower(k), false)\n\tif m != nil {\n\t\t_, found = m[key]\n\t}\n\tc.mu.RUnlock()\n\treturn found\n}",
+    "funcname": "IsSet"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 172,
+    "focalfunc": "func LevelLoggerToWriter(l logg.LevelLogger) io.Writer",
+    "funcbody": "func LevelLoggerToWriter(l logg.LevelLogger) io.Writer {\n\treturn logWriter{l: l}\n}",
+    "funcname": "LevelLoggerToWriter"
+}

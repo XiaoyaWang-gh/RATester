@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 181,
+    "focalfunc": "func IsTime(tp reflect.Type) bool",
+    "funcbody": "func IsTime(tp reflect.Type) bool {\n\tif tp == timeType {\n\t\treturn true\n\t}\n\n\tif tp.Implements(asTimeProviderType) {\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "IsTime"
+}

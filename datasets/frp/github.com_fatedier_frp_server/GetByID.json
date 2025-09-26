@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 80,
+    "focalfunc": "func (cm *ControlManager) GetByID(runID string) (ctl *Control, ok bool)",
+    "funcbody": "func (cm *ControlManager) GetByID(runID string) (ctl *Control, ok bool) {\n\tcm.mu.RLock()\n\tdefer cm.mu.RUnlock()\n\tctl, ok = cm.ctlsByRunID[runID]\n\treturn\n}",
+    "funcname": "GetByID"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 257,
+    "focalfunc": "func (srv *Server) handleSignals()",
+    "funcbody": "func (srv *Server) handleSignals() {\n\tvar sig os.Signal\n\n\tsignal.Notify(\n\t\tsrv.sigChan,\n\t\thookableSignals...,\n\t)\n\n\tpid := syscall.Getpid()\n\tfor {\n\t\tsig = <-srv.sigChan\n\t\tsrv.signalHooks(PreSignal, sig)\n\t\tswitch sig {\n\t\tcase syscall.SIGHUP:\n\t\t\tlog.Println(pid, \"Received SIGHUP. forking.\")\n\t\t\terr := srv.fork()\n\t\t\tif err != nil {\n\t\t\t\tlog.Println(\"Fork err:\", err)\n\t\t\t}\n\t\tcase syscall.SIGINT:\n\t\t\tlog.Println(pid, \"Received SIGINT.\")\n\t\t\tsrv.shutdown()\n\t\tcase syscall.SIGTERM:\n\t\t\tlog.Println(pid, \"Received SIGTERM.\")\n\t\t\tsrv.shutdown()\n\t\tdefault:\n\t\t\tlog.Printf(\"Received %v: nothing i care about...\\n\", sig)\n\t\t}\n\t\tsrv.signalHooks(PostSignal, sig)\n\t}\n}",
+    "funcname": "handleSignals"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 421,
+    "focalfunc": "func (fs filesOnlyFs) Open(name string) (http.File, error)",
+    "funcbody": "func (fs filesOnlyFs) Open(name string) (http.File, error) {\n\tf, err := fs.fs.Open(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn noDirFile{f}, nil\n}",
+    "funcname": "Open"
+}

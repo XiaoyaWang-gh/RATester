@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 82,
+    "focalfunc": "func (group *RouterGroup) BasePath() string",
+    "funcbody": "func (group *RouterGroup) BasePath() string {\n\treturn group.basePath\n}",
+    "funcname": "BasePath"
+}

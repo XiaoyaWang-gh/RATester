@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1096,
+    "focalfunc": "func (c *Context) File(filepath string)",
+    "funcbody": "func (c *Context) File(filepath string) {\n\thttp.ServeFile(c.Writer, c.Request, filepath)\n}",
+    "funcname": "File"
+}

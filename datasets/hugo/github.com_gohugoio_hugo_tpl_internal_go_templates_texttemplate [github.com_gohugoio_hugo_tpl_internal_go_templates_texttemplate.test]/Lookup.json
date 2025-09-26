@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 188,
+    "focalfunc": "func (t *Template) Lookup(name string) *Template",
+    "funcbody": "func (t *Template) Lookup(name string) *Template {\n\tif t.common == nil {\n\t\treturn nil\n\t}\n\tt.muTmpl.RLock()\n\tdefer t.muTmpl.RUnlock()\n\treturn t.tmpl[name]\n}",
+    "funcname": "Lookup"
+}

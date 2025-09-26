@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 75,
+    "focalfunc": "func (mc *ModelCache) GetByMd(md interface{}) (*ModelInfo, bool)",
+    "funcbody": "func (mc *ModelCache) GetByMd(md interface{}) (*ModelInfo, bool) {\n\tval := reflect.ValueOf(md)\n\tind := reflect.Indirect(val)\n\ttyp := ind.Type()\n\tname := GetFullName(typ)\n\treturn mc.GetByFullName(name)\n}",
+    "funcname": "GetByMd"
+}

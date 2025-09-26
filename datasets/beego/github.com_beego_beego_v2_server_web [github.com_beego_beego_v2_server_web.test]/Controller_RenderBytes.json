@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 309,
+    "focalfunc": "func (c *Controller) RenderBytes() ([]byte, error)",
+    "funcbody": "func (c *Controller) RenderBytes() ([]byte, error) {\n\tbuf, err := c.renderTemplate()\n\n\tif err == nil && c.Layout != \"\" {\n\t\tc.Data[\"LayoutContent\"] = template.HTML(buf.String())\n\n\t\tif c.LayoutSections != nil {\n\t\t\tfor sectionName, sectionTpl := range c.LayoutSections {\n\t\t\t\tif sectionTpl == \"\" {\n\t\t\t\t\tc.Data[sectionName] = \"\"\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\tbuf.Reset()\n\t\t\t\terr = ExecuteViewPathTemplate(&buf, sectionTpl, c.viewPath(), c.Data)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn nil, err\n\t\t\t\t}\n\t\t\t\tc.Data[sectionName] = template.HTML(buf.String())\n\t\t\t}\n\t\t}\n\n\t\tbuf.Reset()\n\t\terr = ExecuteViewPathTemplate(&buf, c.Layout, c.viewPath(), c.Data)\n\t}\n\treturn buf.Bytes(), err\n}",
+    "funcname": "RenderBytes"
+}

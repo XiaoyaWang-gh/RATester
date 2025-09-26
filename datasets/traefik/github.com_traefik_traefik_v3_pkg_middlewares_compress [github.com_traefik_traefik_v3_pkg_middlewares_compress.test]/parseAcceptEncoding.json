@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/acceptencoding.go",
+    "lineno": 73,
+    "focalfunc": "func parseAcceptEncoding(acceptEncoding, supportedEncodings []string) ([]Encoding, bool)",
+    "funcbody": "func parseAcceptEncoding(acceptEncoding, supportedEncodings []string) ([]Encoding, bool) {\n\tvar encodings []Encoding\n\tvar hasWeight bool\n\n\tfor _, line := range acceptEncoding {\n\t\tfor _, item := range strings.Split(strings.ReplaceAll(line, \" \", \"\"), \",\") {\n\t\t\tparsed := strings.SplitN(item, \";\", 2)\n\t\t\tif len(parsed) == 0 {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tif !slices.Contains(supportedEncodings, parsed[0]) &&\n\t\t\t\tparsed[0] != identityName &&\n\t\t\t\tparsed[0] != wildcardName {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tvar weight *float64\n\t\t\tif len(parsed) > 1 && strings.HasPrefix(parsed[1], \"q=\") {\n\t\t\t\tw, _ := strconv.ParseFloat(strings.TrimPrefix(parsed[1], \"q=\"), 64)\n\n\t\t\t\tweight = &w\n\t\t\t\thasWeight = true\n\t\t\t}\n\n\t\t\tencodings = append(encodings, Encoding{\n\t\t\t\tType:\tparsed[0],\n\t\t\t\tWeight:\tweight,\n\t\t\t})\n\t\t}\n\t}\n\n\tslices.SortFunc(encodings, compareEncoding)\n\n\treturn encodings, hasWeight\n}",
+    "funcname": "parseAcceptEncoding"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/authz/authz.go",
+    "lineno": 77,
+    "focalfunc": "func (a *BasicAuthorizer) CheckPermission(r *http.Request) bool",
+    "funcbody": "func (a *BasicAuthorizer) CheckPermission(r *http.Request) bool {\n\tuser := a.GetUserName(r)\n\tmethod := r.Method\n\tpath := r.URL.Path\n\treturn a.enforcer.Enforce(user, path, method)\n}",
+    "funcname": "CheckPermission"
+}

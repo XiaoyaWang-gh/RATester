@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 508,
+    "focalfunc": "func (c *context) JSON(code int, i interface{}) (err error)",
+    "funcbody": "func (c *context) JSON(code int, i interface{}) (err error) {\n\tindent := \"\"\n\tif _, pretty := c.QueryParams()[\"pretty\"]; c.echo.Debug || pretty {\n\t\tindent = defaultIndent\n\t}\n\treturn c.json(code, i, indent)\n}",
+    "funcname": "JSON"
+}

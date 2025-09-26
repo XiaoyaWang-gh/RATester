@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 49,
+    "focalfunc": "func NewEntryPointMiddleware(ctx context.Context, next http.Handler, registry metrics.Registry, entryPointName string) http.Handler",
+    "funcbody": "func NewEntryPointMiddleware(ctx context.Context, next http.Handler, registry metrics.Registry, entryPointName string) http.Handler {\n\tmiddlewares.GetLogger(ctx, nameEntrypoint, typeName).Debug().Msg(\"Creating middleware\")\n\n\treturn &metricsMiddleware{\n\t\tnext:\t\t\tnext,\n\t\treqsCounter:\t\tregistry.EntryPointReqsCounter(),\n\t\treqsTLSCounter:\t\tregistry.EntryPointReqsTLSCounter(),\n\t\treqDurationHistogram:\tregistry.EntryPointReqDurationHistogram(),\n\t\treqsBytesCounter:\tregistry.EntryPointReqsBytesCounter(),\n\t\trespsBytesCounter:\tregistry.EntryPointRespsBytesCounter(),\n\t\tbaseLabels:\t\t[]string{\"entrypoint\", entryPointName},\n\t\tname:\t\t\tnameEntrypoint,\n\t}\n}",
+    "funcname": "NewEntryPointMiddleware"
+}

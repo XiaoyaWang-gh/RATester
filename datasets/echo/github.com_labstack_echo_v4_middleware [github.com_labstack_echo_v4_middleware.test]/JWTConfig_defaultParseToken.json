@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/jwt.go",
+    "lineno": 267,
+    "focalfunc": "func (config *JWTConfig) defaultParseToken(auth string, c echo.Context) (interface{}, error)",
+    "funcbody": "func (config *JWTConfig) defaultParseToken(auth string, c echo.Context) (interface{}, error) {\n\tvar token *jwt.Token\n\tvar err error\n\n\tif _, ok := config.Claims.(jwt.MapClaims); ok {\n\t\ttoken, err = jwt.Parse(auth, config.KeyFunc)\n\t} else {\n\t\tt := reflect.ValueOf(config.Claims).Type().Elem()\n\t\tclaims := reflect.New(t).Interface().(jwt.Claims)\n\t\ttoken, err = jwt.ParseWithClaims(auth, claims, config.KeyFunc)\n\t}\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif !token.Valid {\n\t\treturn nil, errors.New(\"invalid token\")\n\t}\n\treturn token, nil\n}",
+    "funcname": "defaultParseToken"
+}

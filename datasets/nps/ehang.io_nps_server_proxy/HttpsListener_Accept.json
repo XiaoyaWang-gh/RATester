@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 142,
+    "focalfunc": "func (httpsListener *HttpsListener) Accept() (net.Conn, error)",
+    "funcbody": "func (httpsListener *HttpsListener) Accept() (net.Conn, error) {\n\thttpsConn := <-httpsListener.acceptConn\n\tif httpsConn == nil {\n\t\treturn nil, errors.New(\"get connection error\")\n\t}\n\treturn httpsConn, nil\n}",
+    "funcname": "Accept"
+}

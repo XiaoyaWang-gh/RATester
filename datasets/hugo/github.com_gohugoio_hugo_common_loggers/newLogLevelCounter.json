@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlersmisc.go",
+    "lineno": 35,
+    "focalfunc": "func newLogLevelCounter() *logLevelCounter",
+    "funcbody": "func newLogLevelCounter() *logLevelCounter {\n\treturn &logLevelCounter{\n\t\tcounters: make(map[logg.Level]int),\n\t}\n}",
+    "funcname": "newLogLevelCounter"
+}

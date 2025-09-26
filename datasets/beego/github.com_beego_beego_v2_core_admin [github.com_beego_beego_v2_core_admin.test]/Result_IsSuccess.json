@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/command.go",
+    "lineno": 38,
+    "focalfunc": "func (r *Result) IsSuccess() bool",
+    "funcbody": "func (r *Result) IsSuccess() bool {\n\treturn r.Status >= 200 && r.Status < 300\n}",
+    "funcname": "IsSuccess"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/setting.go",
+    "lineno": 44,
+    "focalfunc": "func createDefaultCookie()",
+    "funcbody": "func createDefaultCookie() {\n\tsettingMutex.Lock()\n\tdefer settingMutex.Unlock()\n\tdefaultCookieJar, _ = cookiejar.New(nil)\n}",
+    "funcname": "createDefaultCookie"
+}

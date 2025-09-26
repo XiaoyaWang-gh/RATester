@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 327,
+    "focalfunc": "func MustHaveBuildMode(t testing.TB, buildmode string)",
+    "funcbody": "func MustHaveBuildMode(t testing.TB, buildmode string) {\n}",
+    "funcname": "MustHaveBuildMode"
+}

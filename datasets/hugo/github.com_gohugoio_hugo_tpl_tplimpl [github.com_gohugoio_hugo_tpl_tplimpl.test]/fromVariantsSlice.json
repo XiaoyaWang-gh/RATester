@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 62,
+    "focalfunc": "func (s *shortcodeTemplates) fromVariantsSlice(variants []string) (shortcodeVariant, bool)",
+    "funcbody": "func (s *shortcodeTemplates) fromVariantsSlice(variants []string) (shortcodeVariant, bool) {\n\tvar (\n\t\tbestMatch\tshortcodeVariant\n\t\tbestMatchWeight\tint\n\t)\n\n\tfor _, variant := range s.variants {\n\t\tw := s.compareVariants(variants, variant.variants)\n\t\tif bestMatchWeight == 0 || w > bestMatchWeight {\n\t\t\tbestMatch = variant\n\t\t\tbestMatchWeight = w\n\t\t}\n\t}\n\n\treturn bestMatch, true\n}",
+    "funcname": "fromVariantsSlice"
+}

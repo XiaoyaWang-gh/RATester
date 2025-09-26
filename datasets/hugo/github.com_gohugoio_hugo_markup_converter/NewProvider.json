@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 56,
+    "focalfunc": "func NewProvider(name string, create func(ctx DocumentContext) (Converter, error)) Provider",
+    "funcbody": "func NewProvider(name string, create func(ctx DocumentContext) (Converter, error)) Provider {\n\treturn newConverter{\n\t\tname:\tname,\n\t\tcreate:\tcreate,\n\t}\n}",
+    "funcname": "NewProvider"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 100,
+    "focalfunc": "func (pco *pageContentOutput) Reset()",
+    "funcbody": "func (pco *pageContentOutput) Reset() {\n\tif pco == nil {\n\t\treturn\n\t}\n\tpco.contentRenderedVersion++\n\tpco.contentRendered.Store(false)\n\tpco.renderHooks = &renderHooks{}\n}",
+    "funcname": "Reset"
+}

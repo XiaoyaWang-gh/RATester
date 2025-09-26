@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 67,
+    "focalfunc": "func urlNormalizer(args ...any) string",
+    "funcbody": "func urlNormalizer(args ...any) string {\n\treturn urlProcessor(true, args...)\n}",
+    "funcname": "urlNormalizer"
+}

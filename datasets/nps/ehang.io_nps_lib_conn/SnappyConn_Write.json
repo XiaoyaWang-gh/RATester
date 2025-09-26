@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/snappy.go",
+    "lineno": 25,
+    "focalfunc": "func (s *SnappyConn) Write(b []byte) (n int, err error)",
+    "funcbody": "func (s *SnappyConn) Write(b []byte) (n int, err error) {\n\tif n, err = s.w.Write(b); err != nil {\n\t\treturn\n\t}\n\tif err = s.w.Flush(); err != nil {\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "Write"
+}

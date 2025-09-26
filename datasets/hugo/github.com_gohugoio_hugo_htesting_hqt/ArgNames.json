@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/hqt/checkers.go",
+    "lineno": 49,
+    "focalfunc": "func (a argNames) ArgNames() []string",
+    "funcbody": "func (a argNames) ArgNames() []string {\n\treturn a\n}",
+    "funcname": "ArgNames"
+}

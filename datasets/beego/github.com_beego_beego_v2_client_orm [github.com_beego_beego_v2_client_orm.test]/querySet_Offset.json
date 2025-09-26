@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 134,
+    "focalfunc": "func (o querySet) Offset(offset interface{}) QuerySeter",
+    "funcbody": "func (o querySet) Offset(offset interface{}) QuerySeter {\n\to.setOffset(offset)\n\treturn &o\n}",
+    "funcname": "Offset"
+}

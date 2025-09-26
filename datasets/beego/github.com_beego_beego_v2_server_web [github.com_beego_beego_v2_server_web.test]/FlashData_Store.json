@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/flash.go",
+    "lineno": 82,
+    "focalfunc": "func (fd *FlashData) Store(c *Controller)",
+    "funcbody": "func (fd *FlashData) Store(c *Controller) {\n\tc.Data[\"flash\"] = fd.Data\n\tvar flashValue string\n\tfor key, value := range fd.Data {\n\t\tflashValue += \"\\x00\" + key + \"\\x23\" + BConfig.WebConfig.FlashSeparator + \"\\x23\" + value + \"\\x00\"\n\t}\n\tc.Ctx.SetCookie(BConfig.WebConfig.FlashName, url.QueryEscape(flashValue), 0, \"/\")\n}",
+    "funcname": "Store"
+}

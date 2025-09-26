@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/rand.go",
+    "lineno": 26,
+    "focalfunc": "func RandomCreateBytes(n int, alphabets ...byte) []byte",
+    "funcbody": "func RandomCreateBytes(n int, alphabets ...byte) []byte {\n\tif len(alphabets) == 0 {\n\t\talphabets = alphaNum\n\t}\n\tbytes := make([]byte, n)\n\tvar randBy bool\n\tif num, err := rand.Read(bytes); num != n || err != nil {\n\t\tr.Seed(time.Now().UnixNano())\n\t\trandBy = true\n\t}\n\tfor i, b := range bytes {\n\t\tif randBy {\n\t\t\tbytes[i] = alphabets[r.Intn(len(alphabets))]\n\t\t} else {\n\t\t\tbytes[i] = alphabets[b%byte(len(alphabets))]\n\t\t}\n\t}\n\treturn bytes\n}",
+    "funcname": "RandomCreateBytes"
+}

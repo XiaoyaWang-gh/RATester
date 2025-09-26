@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock.go",
+    "lineno": 42,
+    "focalfunc": "func newOrmStub() *OrmStub",
+    "funcbody": "func newOrmStub() *OrmStub {\n\treturn &OrmStub{\n\t\tms: make([]*Mock, 0, 4),\n\t}\n}",
+    "funcname": "newOrmStub"
+}

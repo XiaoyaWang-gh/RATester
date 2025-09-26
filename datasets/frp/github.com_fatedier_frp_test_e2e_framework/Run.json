@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/mockservers.go",
+    "lineno": 49,
+    "focalfunc": "func (m *MockServers) Run() error",
+    "funcbody": "func (m *MockServers) Run() error {\n\tif err := m.tcpEchoServer.Run(); err != nil {\n\t\treturn err\n\t}\n\tif err := m.udpEchoServer.Run(); err != nil {\n\t\treturn err\n\t}\n\tif err := m.udsEchoServer.Run(); err != nil {\n\t\treturn err\n\t}\n\treturn m.httpSimpleServer.Run()\n}",
+    "funcname": "Run"
+}

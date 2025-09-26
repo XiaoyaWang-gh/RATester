@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 470,
+    "focalfunc": "func (c *Client) SetCookieJar(cookieJar *CookieJar) *Client",
+    "funcbody": "func (c *Client) SetCookieJar(cookieJar *CookieJar) *Client {\n\tc.cookieJar = cookieJar\n\treturn c\n}",
+    "funcname": "SetCookieJar"
+}

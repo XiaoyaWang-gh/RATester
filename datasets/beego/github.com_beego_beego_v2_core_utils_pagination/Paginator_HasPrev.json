@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 155,
+    "focalfunc": "func (p *Paginator) HasPrev() bool",
+    "funcbody": "func (p *Paginator) HasPrev() bool {\n\treturn p.Page() > 1\n}",
+    "funcname": "HasPrev"
+}

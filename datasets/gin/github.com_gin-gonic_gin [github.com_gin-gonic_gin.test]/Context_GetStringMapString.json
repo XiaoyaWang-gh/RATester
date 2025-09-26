@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 383,
+    "focalfunc": "func (c *Context) GetStringMapString(key string) (sms map[string]string)",
+    "funcbody": "func (c *Context) GetStringMapString(key string) (sms map[string]string) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\tsms, _ = val.(map[string]string)\n\t}\n\treturn\n}",
+    "funcname": "GetStringMapString"
+}

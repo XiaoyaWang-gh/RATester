@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 409,
+    "focalfunc": "func isInCharset(searchChar byte, charset []byte) bool",
+    "funcbody": "func isInCharset(searchChar byte, charset []byte) bool {\n\tfor _, char := range charset {\n\t\tif char == searchChar {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "isInCharset"
+}

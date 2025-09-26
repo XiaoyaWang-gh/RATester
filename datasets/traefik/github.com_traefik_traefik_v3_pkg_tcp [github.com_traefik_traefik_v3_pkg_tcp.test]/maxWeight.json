@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/wrr_load_balancer.go",
+    "lineno": 67,
+    "focalfunc": "func (b *WRRLoadBalancer) maxWeight() int",
+    "funcbody": "func (b *WRRLoadBalancer) maxWeight() int {\n\tmaximum := -1\n\tfor _, s := range b.servers {\n\t\tif s.weight > maximum {\n\t\t\tmaximum = s.weight\n\t\t}\n\t}\n\treturn maximum\n}",
+    "funcname": "maxWeight"
+}

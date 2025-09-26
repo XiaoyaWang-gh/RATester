@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 130,
+    "focalfunc": "func (i Item) IsRightShortcodeDelim() bool",
+    "funcbody": "func (i Item) IsRightShortcodeDelim() bool {\n\treturn i.Type == tRightDelimScWithMarkup || i.Type == tRightDelimScNoMarkup\n}",
+    "funcname": "IsRightShortcodeDelim"
+}

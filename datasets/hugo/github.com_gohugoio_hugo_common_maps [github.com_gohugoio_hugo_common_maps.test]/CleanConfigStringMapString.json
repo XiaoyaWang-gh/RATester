@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 249,
+    "focalfunc": "func CleanConfigStringMapString(m map[string]string) map[string]string",
+    "funcbody": "func CleanConfigStringMapString(m map[string]string) map[string]string {\n\tif len(m) == 0 {\n\t\treturn m\n\t}\n\tif _, found := m[MergeStrategyKey]; !found {\n\t\treturn m\n\t}\n\n\tm2 := make(map[string]string, len(m)-1)\n\tfor k, v := range m {\n\t\tif k != MergeStrategyKey {\n\t\t\tm2[k] = v\n\t\t}\n\t}\n\treturn m2\n}",
+    "funcname": "CleanConfigStringMapString"
+}

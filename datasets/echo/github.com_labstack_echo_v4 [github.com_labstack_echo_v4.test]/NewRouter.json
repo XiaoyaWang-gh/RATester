@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 139,
+    "focalfunc": "func NewRouter(e *Echo) *Router",
+    "funcbody": "func NewRouter(e *Echo) *Router {\n\treturn &Router{\n\t\ttree: &node{\n\t\t\tmethods: new(routeMethods),\n\t\t},\n\t\troutes:\tmap[string]*Route{},\n\t\techo:\te,\n\t}\n}",
+    "funcname": "NewRouter"
+}

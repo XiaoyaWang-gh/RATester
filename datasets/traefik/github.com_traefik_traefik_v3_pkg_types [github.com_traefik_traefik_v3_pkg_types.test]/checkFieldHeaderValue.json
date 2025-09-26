@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/logs.go",
+    "lineno": 125,
+    "focalfunc": "func checkFieldHeaderValue(value, defaultValue string) string",
+    "funcbody": "func checkFieldHeaderValue(value, defaultValue string) string {\n\tif value == AccessLogKeep || value == AccessLogDrop || value == AccessLogRedact {\n\t\treturn value\n\t}\n\treturn defaultValue\n}",
+    "funcname": "checkFieldHeaderValue"
+}

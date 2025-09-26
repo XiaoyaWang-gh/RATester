@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/listers/traefikio/v1alpha1/ingressroutetcp.go",
+    "lineno": 66,
+    "focalfunc": "func (s *ingressRouteTCPLister) IngressRouteTCPs(namespace string) IngressRouteTCPNamespaceLister",
+    "funcbody": "func (s *ingressRouteTCPLister) IngressRouteTCPs(namespace string) IngressRouteTCPNamespaceLister {\n\treturn ingressRouteTCPNamespaceLister{indexer: s.indexer, namespace: namespace}\n}",
+    "funcname": "IngressRouteTCPs"
+}

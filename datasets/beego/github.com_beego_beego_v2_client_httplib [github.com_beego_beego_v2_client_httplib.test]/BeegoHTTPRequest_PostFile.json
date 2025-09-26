@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 278,
+    "focalfunc": "func (b *BeegoHTTPRequest) PostFile(formname, filename string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) PostFile(formname, filename string) *BeegoHTTPRequest {\n\tb.files[formname] = filename\n\treturn b\n}",
+    "funcname": "PostFile"
+}

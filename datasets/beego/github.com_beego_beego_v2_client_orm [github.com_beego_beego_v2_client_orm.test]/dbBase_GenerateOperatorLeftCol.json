@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 1479,
+    "focalfunc": "func (d *dbBase) GenerateOperatorLeftCol(*models.FieldInfo, string, *string)",
+    "funcbody": "func (d *dbBase) GenerateOperatorLeftCol(*models.FieldInfo, string, *string) {\n\n}",
+    "funcname": "GenerateOperatorLeftCol"
+}

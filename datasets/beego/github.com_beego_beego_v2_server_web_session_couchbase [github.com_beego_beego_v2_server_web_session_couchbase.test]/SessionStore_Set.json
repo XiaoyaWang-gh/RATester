@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 68,
+    "focalfunc": "func (cs *SessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (cs *SessionStore) Set(ctx context.Context, key, value interface{}) error {\n\tcs.lock.Lock()\n\tdefer cs.lock.Unlock()\n\tcs.values[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

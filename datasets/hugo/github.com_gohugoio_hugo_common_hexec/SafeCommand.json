@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 114,
+    "focalfunc": "func SafeCommand(name string, arg ...string) (*exec.Cmd, error)",
+    "funcbody": "func SafeCommand(name string, arg ...string) (*exec.Cmd, error) {\n\tbin, err := safeexec.LookPath(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn exec.Command(bin, arg...), nil\n}",
+    "funcname": "SafeCommand"
+}

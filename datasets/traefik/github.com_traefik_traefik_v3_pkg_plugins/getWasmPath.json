@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/builder.go",
+    "lineno": 173,
+    "focalfunc": "func getWasmPath(manifest *Manifest) (string, error)",
+    "funcbody": "func getWasmPath(manifest *Manifest) (string, error) {\n\twasmPath := manifest.WasmPath\n\tif wasmPath == \"\" {\n\t\twasmPath = \"plugin.wasm\"\n\t}\n\n\tif !filepath.IsLocal(wasmPath) {\n\t\treturn \"\", errors.New(\"wasmPath must be a local path\")\n\t}\n\n\treturn wasmPath, nil\n}",
+    "funcname": "getWasmPath"
+}

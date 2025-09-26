@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 155,
+    "focalfunc": "func sanitizeURI(uri string) string",
+    "funcbody": "func sanitizeURI(uri string) string {\n\n\tif len(uri) > 1 && (uri[0] == '\\\\' || uri[0] == '/') && (uri[1] == '\\\\' || uri[1] == '/') {\n\t\turi = \"/\" + strings.TrimLeft(uri, `/\\`)\n\t}\n\treturn uri\n}",
+    "funcname": "sanitizeURI"
+}

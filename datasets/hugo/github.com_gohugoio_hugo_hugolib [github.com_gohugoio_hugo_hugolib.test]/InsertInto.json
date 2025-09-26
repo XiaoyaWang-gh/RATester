@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 794,
+    "focalfunc": "func (s *contentNodeShifter) InsertInto(old, new contentNodeI, dimension doctree.Dimension) (contentNodeI, contentNodeI, bool)",
+    "funcbody": "func (s *contentNodeShifter) InsertInto(old, new contentNodeI, dimension doctree.Dimension) (contentNodeI, contentNodeI, bool) {\n\tlangi := dimension[doctree.DimensionLanguage.Index()]\n\tswitch vv := old.(type) {\n\tcase *pageState:\n\t\tnewp, ok := new.(*pageState)\n\t\tif !ok {\n\t\t\tpanic(fmt.Sprintf(\"unknown type %T\", new))\n\t\t}\n\t\tif vv.s.languagei == newp.s.languagei && newp.s.languagei == langi {\n\t\t\treturn new, vv, true\n\t\t}\n\t\tis := make(contentNodeIs, s.numLanguages)\n\t\tis[vv.s.languagei] = old\n\t\tis[langi] = new\n\t\treturn is, old, false\n\tcase contentNodeIs:\n\t\toldv := vv[langi]\n\t\tvv[langi] = new\n\t\treturn vv, oldv, oldv != nil\n\tcase resourceSources:\n\t\toldv := vv[langi]\n\t\tvv[langi] = new.(*resourceSource)\n\t\treturn vv, oldv, oldv != nil\n\tcase *resourceSource:\n\t\tnewp, ok := new.(*resourceSource)\n\t\tif !ok {\n\t\t\tpanic(fmt.Sprintf(\"unknown type %T\", new))\n\t\t}\n\t\tif vv.LangIndex() == newp.LangIndex() && newp.LangIndex() == langi {\n\t\t\treturn new, vv, true\n\t\t}\n\t\trs := make(resourceSources, s.numLanguages)\n\t\trs[vv.LangIndex()] = vv\n\t\trs[langi] = newp\n\t\treturn rs, vv, false\n\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"unknown type %T\", old))\n\t}\n}",
+    "funcname": "InsertInto"
+}

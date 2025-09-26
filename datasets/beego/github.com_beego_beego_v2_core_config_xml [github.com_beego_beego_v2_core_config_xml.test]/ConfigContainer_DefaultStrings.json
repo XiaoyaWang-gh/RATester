@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 227,
+    "focalfunc": "func (c *ConfigContainer) DefaultStrings(key string, defaultVal []string) []string",
+    "funcbody": "func (c *ConfigContainer) DefaultStrings(key string, defaultVal []string) []string {\n\tv, err := c.Strings(key)\n\tif v == nil || err != nil {\n\t\treturn defaultVal\n\t}\n\treturn v\n}",
+    "funcname": "DefaultStrings"
+}

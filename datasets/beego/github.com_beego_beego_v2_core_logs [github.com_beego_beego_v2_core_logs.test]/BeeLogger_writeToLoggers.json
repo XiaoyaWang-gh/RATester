@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 256,
+    "focalfunc": "func (bl *BeeLogger) writeToLoggers(lm *LogMsg)",
+    "funcbody": "func (bl *BeeLogger) writeToLoggers(lm *LogMsg) {\n\tfor _, l := range bl.outputs {\n\t\terr := l.WriteMsg(lm)\n\t\tif err != nil {\n\t\t\tfmt.Fprintf(os.Stderr, \"unable to WriteMsg to adapter:%v,error:%v\\n\", l.name, err)\n\t\t}\n\t}\n}",
+    "funcname": "writeToLoggers"
+}

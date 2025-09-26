@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 151,
+    "focalfunc": "func (httpsListener *HttpsListener) Close() error",
+    "funcbody": "func (httpsListener *HttpsListener) Close() error {\n\treturn nil\n}",
+    "funcname": "Close"
+}

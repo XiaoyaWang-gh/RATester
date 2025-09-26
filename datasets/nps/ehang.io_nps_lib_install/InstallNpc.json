@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 229,
+    "focalfunc": "func InstallNpc()",
+    "funcbody": "func InstallNpc() {\n\tpath := common.GetInstallPath()\n\tif !common.FileExists(path) {\n\t\terr := os.Mkdir(path, 0755)\n\t\tif err != nil {\n\t\t\tlog.Fatal(err)\n\t\t}\n\t}\n\tcopyStaticFile(common.GetAppPath(), \"npc\")\n}",
+    "funcname": "InstallNpc"
+}

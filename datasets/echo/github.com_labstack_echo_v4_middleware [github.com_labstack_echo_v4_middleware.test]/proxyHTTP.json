@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 396,
+    "focalfunc": "func proxyHTTP(tgt *ProxyTarget, c echo.Context, config ProxyConfig) http.Handler",
+    "funcbody": "func proxyHTTP(tgt *ProxyTarget, c echo.Context, config ProxyConfig) http.Handler {\n\tproxy := httputil.NewSingleHostReverseProxy(tgt.URL)\n\tproxy.ErrorHandler = func(resp http.ResponseWriter, req *http.Request, err error) {\n\t\tdesc := tgt.URL.String()\n\t\tif tgt.Name != \"\" {\n\t\t\tdesc = fmt.Sprintf(\"%s(%s)\", tgt.Name, tgt.URL.String())\n\t\t}\n\n\t\tif err == context.Canceled || strings.Contains(err.Error(), \"operation was canceled\") {\n\t\t\thttpError := echo.NewHTTPError(StatusCodeContextCanceled, fmt.Sprintf(\"client closed connection: %v\", err))\n\t\t\thttpError.Internal = err\n\t\t\tc.Set(\"_error\", httpError)\n\t\t} else {\n\t\t\thttpError := echo.NewHTTPError(http.StatusBadGateway, fmt.Sprintf(\"remote %s unreachable, could not forward: %v\", desc, err))\n\t\t\thttpError.Internal = err\n\t\t\tc.Set(\"_error\", httpError)\n\t\t}\n\t}\n\tproxy.Transport = config.Transport\n\tproxy.ModifyResponse = config.ModifyResponse\n\treturn proxy\n}",
+    "funcname": "proxyHTTP"
+}

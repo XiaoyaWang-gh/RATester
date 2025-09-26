@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 176,
+    "focalfunc": "func (b *ValueBinder) FailFast(value bool) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) FailFast(value bool) *ValueBinder {\n\tb.failFast = value\n\treturn b\n}",
+    "funcname": "FailFast"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 52,
+    "focalfunc": "func (s *BaseServer) FlowAddHost(host *file.Host, in, out int64)",
+    "funcbody": "func (s *BaseServer) FlowAddHost(host *file.Host, in, out int64) {\n\ts.Lock()\n\tdefer s.Unlock()\n\thost.Flow.ExportFlow += out\n\thost.Flow.InletFlow += in\n}",
+    "funcname": "FlowAddHost"
+}

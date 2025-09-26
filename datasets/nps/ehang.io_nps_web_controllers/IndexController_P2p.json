@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 60,
+    "focalfunc": "func (s *IndexController) P2p()",
+    "funcbody": "func (s *IndexController) P2p() {\n\ts.SetInfo(\"p2p\")\n\ts.SetType(\"p2p\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "P2p"
+}

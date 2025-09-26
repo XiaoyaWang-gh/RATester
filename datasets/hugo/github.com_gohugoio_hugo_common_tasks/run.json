@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/tasks/tasks.go",
+    "lineno": 131,
+    "focalfunc": "func (r *RunEvery) run()",
+    "funcbody": "func (r *RunEvery) run() {\n\tr.mu.Lock()\n\tdefer r.mu.Unlock()\n\tfor name, f := range r.funcs {\n\t\tif time.Now().Before(f.last.Add(f.interval)) {\n\t\t\tcontinue\n\t\t}\n\t\tf.last = time.Now()\n\t\tinterval, err := f.F(f.interval)\n\t\tif err != nil && r.HandleError != nil {\n\t\t\tr.HandleError(name, err)\n\t\t}\n\n\t\tif interval < f.IntervalLow {\n\t\t\tinterval = f.IntervalLow\n\t\t}\n\n\t\tif interval > f.IntervalHigh {\n\t\t\tinterval = f.IntervalHigh\n\t\t}\n\t\tf.interval = interval\n\t}\n}",
+    "funcname": "run"
+}

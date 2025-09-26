@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/auth/basic.go",
+    "lineno": 103,
+    "focalfunc": "func (a *BasicAuth) RequireAuth(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (a *BasicAuth) RequireAuth(w http.ResponseWriter, r *http.Request) {\n\tw.Header().Set(\"WWW-Authenticate\", `Basic realm=\"`+a.Realm+`\"`)\n\tw.WriteHeader(401)\n\tw.Write([]byte(\"401 Unauthorized\\n\"))\n}",
+    "funcname": "RequireAuth"
+}

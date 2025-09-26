@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 179,
+    "focalfunc": "func (p *pageState) isContentNodeBranch() bool",
+    "funcbody": "func (p *pageState) isContentNodeBranch() bool {\n\treturn p.IsNode()\n}",
+    "funcname": "isContentNodeBranch"
+}

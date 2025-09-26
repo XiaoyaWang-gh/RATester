@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 203,
+    "focalfunc": "func InitMediaType(m *Type)",
+    "funcbody": "func InitMediaType(m *Type) {\n\tm.init()\n}",
+    "funcname": "InitMediaType"
+}

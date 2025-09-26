@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 355,
+    "focalfunc": "func (m Methods) Imports() []string",
+    "funcbody": "func (m Methods) Imports() []string {\n\tvar pkgImports []string\n\tfor _, method := range m {\n\t\tpkgImports = append(pkgImports, method.Imports...)\n\t}\n\tif len(pkgImports) > 0 {\n\t\tpkgImports = uniqueNonEmptyStrings(pkgImports)\n\t\tsort.Strings(pkgImports)\n\t}\n\treturn pkgImports\n}",
+    "funcname": "Imports"
+}

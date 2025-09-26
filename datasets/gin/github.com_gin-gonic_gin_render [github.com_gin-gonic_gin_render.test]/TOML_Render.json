@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/toml.go",
+    "lineno": 21,
+    "focalfunc": "func (r TOML) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r TOML) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\n\tbytes, err := toml.Marshal(r.Data)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\t_, err = w.Write(bytes)\n\treturn err\n}",
+    "funcname": "Render"
+}

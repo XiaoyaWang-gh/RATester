@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 359,
+    "focalfunc": "func chMod(name string, mode os.FileMode)",
+    "funcbody": "func chMod(name string, mode os.FileMode) {\n\tif !common.IsWindows() {\n\t\tos.Chmod(name, mode)\n\t}\n}",
+    "funcname": "chMod"
+}

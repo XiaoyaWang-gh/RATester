@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1129,
+    "focalfunc": "func (c *Context) SSEvent(name string, message any)",
+    "funcbody": "func (c *Context) SSEvent(name string, message any) {\n\tc.Render(-1, sse.Event{\n\t\tEvent:\tname,\n\t\tData:\tmessage,\n\t})\n}",
+    "funcname": "SSEvent"
+}

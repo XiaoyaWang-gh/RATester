@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 47,
+    "focalfunc": "func New(opts Options) *Cache",
+    "funcbody": "func New(opts Options) *Cache {\n\tif opts.CheckInterval == 0 {\n\t\topts.CheckInterval = time.Second * 2\n\t}\n\n\tif opts.MaxSize == 0 {\n\t\topts.MaxSize = 100000\n\t}\n\tif opts.Log == nil {\n\t\tpanic(\"nil Log\")\n\t}\n\n\tif opts.MinMaxSize == 0 {\n\t\topts.MinMaxSize = 30\n\t}\n\n\tstats := &stats{\n\t\topts:\t\t\topts,\n\t\tadjustmentFactor:\t1.0,\n\t\tcurrentMaxSize:\t\topts.MaxSize,\n\t\tavailableMemory:\tconfig.GetMemoryLimit(),\n\t}\n\n\tinfol := opts.Log.InfoCommand(\"dynacache\")\n\n\tevictedIdentities := collections.NewStack[KeyIdentity]()\n\n\tonEvict := func(k, v any) {\n\t\tif !opts.Watching {\n\t\t\treturn\n\t\t}\n\t\tidentity.WalkIdentitiesShallow(v, func(level int, id identity.Identity) bool {\n\t\t\tevictedIdentities.Push(KeyIdentity{Key: k, Identity: id})\n\t\t\treturn false\n\t\t})\n\t\tresource.MarkStale(v)\n\t}\n\n\tc := &Cache{\n\t\tpartitions:\t\tmake(map[string]PartitionManager),\n\t\tonEvict:\t\tonEvict,\n\t\tevictedIdentities:\tevictedIdentities,\n\t\topts:\t\t\topts,\n\t\tstats:\t\t\tstats,\n\t\tinfol:\t\t\tinfol,\n\t}\n\n\tc.stop = c.start()\n\n\treturn c\n}",
+    "funcname": "New"
+}

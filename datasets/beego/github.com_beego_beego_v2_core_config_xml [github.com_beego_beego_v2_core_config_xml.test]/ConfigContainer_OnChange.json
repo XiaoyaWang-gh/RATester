@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 131,
+    "focalfunc": "func (c *ConfigContainer) OnChange(key string, fn func(value string))",
+    "funcbody": "func (c *ConfigContainer) OnChange(key string, fn func(value string)) {\n\tlogs.Warn(\"Unsupported operation\")\n}",
+    "funcname": "OnChange"
+}

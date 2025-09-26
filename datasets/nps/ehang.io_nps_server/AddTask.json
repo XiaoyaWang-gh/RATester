@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 185,
+    "focalfunc": "func AddTask(t *file.Tunnel) error",
+    "funcbody": "func AddTask(t *file.Tunnel) error {\n\tif t.Mode == \"secret\" || t.Mode == \"p2p\" {\n\t\tlogs.Info(\"secret task %s start \", t.Remark)\n\n\t\tRunList.Store(t.Id, nil)\n\t\treturn nil\n\t}\n\tif b := tool.TestServerPort(t.Port, t.Mode); !b && t.Mode != \"httpHostServer\" {\n\t\tlogs.Error(\"taskId %d start error port %d open failed\", t.Id, t.Port)\n\t\treturn errors.New(\"the port open error\")\n\t}\n\tif minute, err := beego.AppConfig.Int(\"flow_store_interval\"); err == nil && minute > 0 {\n\t\tgo flowSession(time.Minute * time.Duration(minute))\n\t}\n\tif svr := NewMode(Bridge, t); svr != nil {\n\t\tlogs.Info(\"tunnel task %s start mode\uff1a%s port %d\", t.Remark, t.Mode, t.Port)\n\n\t\tRunList.Store(t.Id, svr)\n\t\tgo func() {\n\t\t\tif err := svr.Start(); err != nil {\n\t\t\t\tlogs.Error(\"clientId %d taskId %d start error %s\", t.Client.Id, t.Id, err)\n\n\t\t\t\tRunList.Delete(t.Id)\n\t\t\t\treturn\n\t\t\t}\n\t\t}()\n\t} else {\n\t\treturn errors.New(\"the mode is not correct\")\n\t}\n\treturn nil\n}",
+    "funcname": "AddTask"
+}

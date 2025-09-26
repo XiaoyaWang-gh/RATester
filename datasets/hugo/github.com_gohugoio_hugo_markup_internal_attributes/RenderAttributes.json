@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/attributes/attributes.go",
+    "lineno": 205,
+    "focalfunc": "func RenderAttributes(w hugio.FlexiWriter, skipClass bool, attributes ...Attribute)",
+    "funcbody": "func RenderAttributes(w hugio.FlexiWriter, skipClass bool, attributes ...Attribute) {\n\tfor _, attr := range attributes {\n\t\ta := strings.ToLower(string(attr.Name))\n\t\tif skipClass && a == \"class\" {\n\t\t\tcontinue\n\t\t}\n\t\t_, _ = w.WriteString(\" \")\n\t\t_, _ = w.WriteString(attr.Name)\n\t\t_, _ = w.WriteString(`=\"`)\n\n\t\tswitch v := attr.Value.(type) {\n\t\tcase []byte:\n\t\t\t_, _ = w.Write(util.EscapeHTML(v))\n\t\tdefault:\n\t\t\tw.WriteString(cast.ToString(v))\n\t\t}\n\n\t\t_ = w.WriteByte('\"')\n\t}\n}",
+    "funcname": "RenderAttributes"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 176,
+    "focalfunc": "func (s *Conn) SendHealthInfo(info, status string) (int, error)",
+    "funcbody": "func (s *Conn) SendHealthInfo(info, status string) (int, error) {\n\traw := bytes.NewBuffer([]byte{})\n\tcommon.BinaryWrite(raw, info, status)\n\treturn s.Write(raw.Bytes())\n}",
+    "funcname": "SendHealthInfo"
+}

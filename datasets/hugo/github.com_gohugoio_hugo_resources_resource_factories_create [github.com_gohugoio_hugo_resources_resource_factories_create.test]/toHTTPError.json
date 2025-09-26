@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 75,
+    "focalfunc": "func toHTTPError(err error, res *http.Response, readBody bool) *HTTPError",
+    "funcbody": "func toHTTPError(err error, res *http.Response, readBody bool) *HTTPError {\n\tif err == nil {\n\t\tpanic(\"err is nil\")\n\t}\n\tif res == nil {\n\t\treturn &HTTPError{\n\t\t\terror:\terr,\n\t\t\tData:\tmap[string]any{},\n\t\t}\n\t}\n\n\treturn &HTTPError{\n\t\terror:\terr,\n\t\tData:\tresponseToData(res, readBody),\n\t}\n}",
+    "funcname": "toHTTPError"
+}

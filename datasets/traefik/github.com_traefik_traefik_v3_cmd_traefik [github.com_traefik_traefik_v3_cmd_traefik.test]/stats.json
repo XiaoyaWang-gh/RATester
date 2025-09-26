@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 607,
+    "focalfunc": "func stats(staticConfiguration *static.Configuration)",
+    "funcbody": "func stats(staticConfiguration *static.Configuration) {\n\tlogger := log.With().Logger()\n\n\tif staticConfiguration.Global.SendAnonymousUsage {\n\t\tlogger.Info().Msg(`Stats collection is enabled.`)\n\t\tlogger.Info().Msg(`Many thanks for contributing to Traefik's improvement by allowing us to receive anonymous information from your configuration.`)\n\t\tlogger.Info().Msg(`Help us improve Traefik by leaving this feature on :)`)\n\t\tlogger.Info().Msg(`More details on: https://doc.traefik.io/traefik/contributing/data-collection/`)\n\t\tcollect(staticConfiguration)\n\t} else {\n\t\tlogger.Info().Msg(`\nStats collection is disabled.\nHelp us improve Traefik by turning this feature on :)\nMore details on: https://doc.traefik.io/traefik/contributing/data-collection/\n`)\n\t}\n}",
+    "funcname": "stats"
+}

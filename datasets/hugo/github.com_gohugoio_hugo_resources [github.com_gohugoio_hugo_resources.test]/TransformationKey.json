@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 395,
+    "focalfunc": "func (r *resourceAdapter) TransformationKey() string",
+    "funcbody": "func (r *resourceAdapter) TransformationKey() string {\n\tvar key string\n\tfor _, tr := range r.transformations {\n\t\tkey = key + \"_\" + tr.Key().Value()\n\t}\n\treturn r.spec.ResourceCache.cleanKey(r.target.Key()) + \"_\" + hashing.MD5FromStringHexEncoded(key)\n}",
+    "funcname": "TransformationKey"
+}

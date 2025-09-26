@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/proxy.go",
+    "lineno": 17,
+    "focalfunc": "func NewProxy(address string) (*Proxy, error)",
+    "funcbody": "func NewProxy(address string) (*Proxy, error) {\n\treturn &Proxy{target: address}, nil\n}",
+    "funcname": "NewProxy"
+}

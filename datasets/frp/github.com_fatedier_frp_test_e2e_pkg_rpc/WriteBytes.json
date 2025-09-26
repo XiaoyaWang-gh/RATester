@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/rpc/rpc.go",
+    "lineno": 11,
+    "focalfunc": "func WriteBytes(w io.Writer, buf []byte) (int, error)",
+    "funcbody": "func WriteBytes(w io.Writer, buf []byte) (int, error) {\n\tout := bytes.NewBuffer(nil)\n\tif err := binary.Write(out, binary.BigEndian, int64(len(buf))); err != nil {\n\t\treturn 0, err\n\t}\n\n\tout.Write(buf)\n\treturn w.Write(out.Bytes())\n}",
+    "funcname": "WriteBytes"
+}

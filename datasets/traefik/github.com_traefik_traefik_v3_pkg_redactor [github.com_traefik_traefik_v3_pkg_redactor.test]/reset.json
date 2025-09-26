@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 151,
+    "focalfunc": "func reset(field reflect.Value, name string) error",
+    "funcbody": "func reset(field reflect.Value, name string) error {\n\tif !field.CanSet() {\n\t\treturn fmt.Errorf(\"cannot reset field %s\", name)\n\t}\n\n\tswitch field.Kind() {\n\tcase reflect.Ptr:\n\t\tif !field.IsNil() {\n\t\t\tfield.Set(reflect.Zero(field.Type()))\n\t\t}\n\tcase reflect.Struct:\n\t\tif field.IsValid() {\n\t\t\tfield.Set(reflect.Zero(field.Type()))\n\t\t}\n\tcase reflect.String:\n\t\tif field.String() != \"\" {\n\t\t\tif field.Type().AssignableTo(reflect.TypeOf(types.FileOrContent(\"\"))) {\n\t\t\t\tfield.Set(reflect.ValueOf(types.FileOrContent(maskShort)))\n\t\t\t} else {\n\t\t\t\tfield.Set(reflect.ValueOf(maskShort))\n\t\t\t}\n\t\t}\n\tcase reflect.Map:\n\t\tif field.Len() > 0 {\n\t\t\tfield.Set(reflect.MakeMap(field.Type()))\n\t\t}\n\tcase reflect.Slice:\n\t\tif field.Len() > 0 {\n\t\t\tswitch field.Type().Elem().Kind() {\n\t\t\tcase reflect.String:\n\t\t\t\tslice := reflect.MakeSlice(field.Type(), field.Len(), field.Len())\n\t\t\t\tfor j := range field.Len() {\n\t\t\t\t\tslice.Index(j).SetString(maskShort)\n\t\t\t\t}\n\t\t\t\tfield.Set(slice)\n\t\t\tdefault:\n\t\t\t\tfield.Set(reflect.MakeSlice(field.Type(), 0, 0))\n\t\t\t}\n\t\t}\n\tcase reflect.Interface:\n\t\treturn fmt.Errorf(\"reset not supported for interface type (for %s field)\", name)\n\tdefault:\n\n\t\tfield.Set(reflect.Zero(field.Type()))\n\t}\n\treturn nil\n}",
+    "funcname": "reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 391,
+    "focalfunc": "func setSlice(vals []string, value reflect.Value, field reflect.StructField) error",
+    "funcbody": "func setSlice(vals []string, value reflect.Value, field reflect.StructField) error {\n\tslice := reflect.MakeSlice(value.Type(), len(vals), len(vals))\n\terr := setArray(vals, slice, field)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvalue.Set(slice)\n\treturn nil\n}",
+    "funcname": "setSlice"
+}

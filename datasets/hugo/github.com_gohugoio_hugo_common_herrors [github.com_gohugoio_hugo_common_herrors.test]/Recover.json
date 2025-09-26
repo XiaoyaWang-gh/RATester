@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 45,
+    "focalfunc": "func Recover(args ...any)",
+    "funcbody": "func Recover(args ...any) {\n\tif r := recover(); r != nil {\n\t\tfmt.Println(\"ERR:\", r)\n\t\targs = append(args, \"stacktrace from panic: \\n\"+string(debug.Stack()), \"\\n\")\n\t\tfmt.Println(args...)\n\t}\n}",
+    "funcname": "Recover"
+}

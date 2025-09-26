@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 87,
+    "focalfunc": "func (fs *FileSessionStore) SessionReleaseIfPresent(ctx context.Context, w http.ResponseWriter)",
+    "funcbody": "func (fs *FileSessionStore) SessionReleaseIfPresent(ctx context.Context, w http.ResponseWriter) {\n\tfs.releaseSession(ctx, w, false)\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

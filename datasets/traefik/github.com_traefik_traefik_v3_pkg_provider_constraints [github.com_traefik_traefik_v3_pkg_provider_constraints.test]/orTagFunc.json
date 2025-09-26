@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/constraints/constraints_tags.go",
+    "lineno": 74,
+    "focalfunc": "func orTagFunc(a, b constraintTagFunc) constraintTagFunc",
+    "funcbody": "func orTagFunc(a, b constraintTagFunc) constraintTagFunc {\n\treturn func(tags []string) bool {\n\t\treturn a(tags) || b(tags)\n\t}\n}",
+    "funcname": "orTagFunc"
+}

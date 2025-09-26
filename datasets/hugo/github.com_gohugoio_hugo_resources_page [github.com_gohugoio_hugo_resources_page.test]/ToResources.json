@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages.go",
+    "lineno": 44,
+    "focalfunc": "func (pages Pages) ToResources() resource.Resources",
+    "funcbody": "func (pages Pages) ToResources() resource.Resources {\n\tr := make(resource.Resources, len(pages))\n\tfor i, p := range pages {\n\t\tr[i] = p\n\t}\n\treturn r\n}",
+    "funcname": "ToResources"
+}

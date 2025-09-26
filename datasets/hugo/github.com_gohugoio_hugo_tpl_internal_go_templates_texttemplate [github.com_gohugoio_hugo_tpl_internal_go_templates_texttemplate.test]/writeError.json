@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 157,
+    "focalfunc": "func (s *state) writeError(err error)",
+    "funcbody": "func (s *state) writeError(err error) {\n\tpanic(writeError{\n\t\tErr: err,\n\t})\n}",
+    "funcname": "writeError"
+}

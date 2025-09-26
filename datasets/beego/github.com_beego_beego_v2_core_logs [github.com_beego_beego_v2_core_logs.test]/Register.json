@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 99,
+    "focalfunc": "func Register(name string, log newLoggerFunc)",
+    "funcbody": "func Register(name string, log newLoggerFunc) {\n\tif log == nil {\n\t\tpanic(\"logs: Register provide is nil\")\n\t}\n\tif _, dup := adapters[name]; dup {\n\t\tpanic(\"logs: Register called twice for provider \" + name)\n\t}\n\tadapters[name] = log\n}",
+    "funcname": "Register"
+}

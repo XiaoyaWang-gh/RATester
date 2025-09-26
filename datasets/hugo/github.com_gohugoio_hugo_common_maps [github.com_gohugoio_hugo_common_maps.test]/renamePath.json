@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 194,
+    "focalfunc": "func (r KeyRenamer) renamePath(parentKeyPath string, m map[string]any)",
+    "funcbody": "func (r KeyRenamer) renamePath(parentKeyPath string, m map[string]any) {\n\tfor k, v := range m {\n\t\tkeyPath := r.keyPath(parentKeyPath, k)\n\t\tswitch vv := v.(type) {\n\t\tcase map[any]any:\n\t\t\tr.renamePath(keyPath, cast.ToStringMap(vv))\n\t\tcase map[string]any:\n\t\t\tr.renamePath(keyPath, vv)\n\t\t}\n\n\t\tnewKey := r.getNewKey(keyPath)\n\n\t\tif newKey != \"\" {\n\t\t\tdelete(m, k)\n\t\t\tm[newKey] = v\n\t\t}\n\t}\n}",
+    "funcname": "renamePath"
+}

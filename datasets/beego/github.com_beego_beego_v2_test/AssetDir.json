@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 212,
+    "focalfunc": "func AssetDir(name string) ([]string, error)",
+    "funcbody": "func AssetDir(name string) ([]string, error) {\n\tnode := _bintree\n\tif len(name) != 0 {\n\t\tcannonicalName := strings.Replace(name, \"\\\\\", \"/\", -1)\n\t\tpathList := strings.Split(cannonicalName, \"/\")\n\t\tfor _, p := range pathList {\n\t\t\tnode = node.Children[p]\n\t\t\tif node == nil {\n\t\t\t\treturn nil, fmt.Errorf(\"Asset %s not found\", name)\n\t\t\t}\n\t\t}\n\t}\n\tif node.Func != nil {\n\t\treturn nil, fmt.Errorf(\"Asset %s not found\", name)\n\t}\n\trv := make([]string, 0, len(node.Children))\n\tfor childName := range node.Children {\n\t\trv = append(rv, childName)\n\t}\n\treturn rv, nil\n}",
+    "funcname": "AssetDir"
+}

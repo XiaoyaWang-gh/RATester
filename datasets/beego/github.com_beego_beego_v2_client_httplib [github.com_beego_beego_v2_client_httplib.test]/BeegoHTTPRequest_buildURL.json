@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 361,
+    "focalfunc": "func (b *BeegoHTTPRequest) buildURL(paramBody string)",
+    "funcbody": "func (b *BeegoHTTPRequest) buildURL(paramBody string) {\n\n\tif b.req.Method == \"GET\" && len(paramBody) > 0 {\n\t\tif strings.Contains(b.url, \"?\") {\n\t\t\tb.url += \"&\" + paramBody\n\t\t} else {\n\t\t\tb.url = b.url + \"?\" + paramBody\n\t\t}\n\t\treturn\n\t}\n\n\tif (b.req.Method == \"POST\" || b.req.Method == \"PUT\" || b.req.Method == \"PATCH\" || b.req.Method == \"DELETE\") && b.req.Body == nil {\n\n\t\tif len(b.files) > 0 {\n\t\t\tb.handleFiles()\n\t\t\treturn\n\t\t}\n\n\t\tif len(paramBody) > 0 {\n\t\t\tb.Header(contentTypeKey, \"application/x-www-form-urlencoded\")\n\t\t\tb.Body(paramBody)\n\t\t}\n\t}\n}",
+    "funcname": "buildURL"
+}

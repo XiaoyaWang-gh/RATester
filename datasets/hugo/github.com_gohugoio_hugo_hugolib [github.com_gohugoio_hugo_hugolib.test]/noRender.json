@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 733,
+    "focalfunc": "func (p *pageMeta) noRender() bool",
+    "funcbody": "func (p *pageMeta) noRender() bool {\n\treturn p.pageConfig.Build.Render != pagemeta.Always\n}",
+    "funcname": "noRender"
+}

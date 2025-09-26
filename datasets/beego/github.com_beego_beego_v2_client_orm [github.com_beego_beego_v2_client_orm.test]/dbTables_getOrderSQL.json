@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 428,
+    "focalfunc": "func (t *dbTables) getOrderSQL(orders []*order_clause.Order) (orderSQL string)",
+    "funcbody": "func (t *dbTables) getOrderSQL(orders []*order_clause.Order) (orderSQL string) {\n\tif len(orders) == 0 {\n\t\treturn\n\t}\n\n\tQ := t.base.TableQuote()\n\n\torderSqls := make([]string, 0, len(orders))\n\tfor _, order := range orders {\n\t\tcolumn := order.GetColumn()\n\t\tclause := strings.Split(column, clauses.ExprDot)\n\n\t\tif order.IsRaw() {\n\t\t\tif len(clause) == 2 {\n\t\t\t\torderSqls = append(orderSqls, fmt.Sprintf(\"%s.%s %s\", clause[0], clause[1], order.SortString()))\n\t\t\t} else if len(clause) == 1 {\n\t\t\t\torderSqls = append(orderSqls, fmt.Sprintf(\"%s %s\", clause[0], order.SortString()))\n\t\t\t} else {\n\t\t\t\tpanic(fmt.Errorf(\"unknown field/column name `%s`\", strings.Join(clause, ExprSep)))\n\t\t\t}\n\t\t} else {\n\t\t\tindex, _, fi, suc := t.parseExprs(t.mi, clause)\n\t\t\tif !suc {\n\t\t\t\tpanic(fmt.Errorf(\"unknown field/column name `%s`\", strings.Join(clause, ExprSep)))\n\t\t\t}\n\n\t\t\torderSqls = append(orderSqls, fmt.Sprintf(\"%s.%s%s%s %s\", index, Q, fi.Column, Q, order.SortString()))\n\t\t}\n\t}\n\n\torderSQL = fmt.Sprintf(\"ORDER BY %s \", strings.Join(orderSqls, \", \"))\n\treturn\n}",
+    "funcname": "getOrderSQL"
+}

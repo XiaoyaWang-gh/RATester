@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 58,
+    "focalfunc": "func (p *Provider) Provide(dynMessages chan<- dynamic.Message, pool *safe.Pool) error",
+    "funcbody": "func (p *Provider) Provide(dynMessages chan<- dynamic.Message, pool *safe.Pool) error {\n\tp.dynMessages = dynMessages\n\n\tlogger := log.With().Str(logs.ProviderName, p.ResolverName+\".tailscale\").Logger()\n\n\tpool.GoCtx(func(ctx context.Context) {\n\t\tp.watchDomains(logger.WithContext(ctx))\n\t})\n\n\tpool.GoCtx(func(ctx context.Context) {\n\t\tp.renewCertificates(logger.WithContext(ctx))\n\t})\n\n\treturn nil\n}",
+    "funcname": "Provide"
+}

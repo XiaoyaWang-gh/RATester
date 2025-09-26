@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/convert.go",
+    "lineno": 30,
+    "focalfunc": "func (p provider) New(cfg converter.ProviderConfig) (converter.Provider, error)",
+    "funcbody": "func (p provider) New(cfg converter.ProviderConfig) (converter.Provider, error) {\n\treturn converter.NewProvider(\"asciidocext\", func(ctx converter.DocumentContext) (converter.Converter, error) {\n\t\treturn &internal.AsciidocConverter{\n\t\t\tCtx:\tctx,\n\t\t\tCfg:\tcfg,\n\t\t}, nil\n\t}), nil\n}",
+    "funcname": "New"
+}

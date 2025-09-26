@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/recover/recover.go",
+    "lineno": 11,
+    "focalfunc": "func defaultStackTraceHandler(_ fiber.Ctx, e any)",
+    "funcbody": "func defaultStackTraceHandler(_ fiber.Ctx, e any) {\n\t_, _ = os.Stderr.WriteString(fmt.Sprintf(\"panic: %v\\n%s\\n\", e, debug.Stack()))\n}",
+    "funcname": "defaultStackTraceHandler"
+}

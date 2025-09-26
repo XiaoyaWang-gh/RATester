@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/cmd/npc/npc.go",
+    "lineno": 181,
+    "focalfunc": "func (p *npc) Stop(s service.Service) error",
+    "funcbody": "func (p *npc) Stop(s service.Service) error {\n\tclose(p.exit)\n\tif service.Interactive() {\n\t\tos.Exit(0)\n\t}\n\treturn nil\n}",
+    "funcname": "Stop"
+}

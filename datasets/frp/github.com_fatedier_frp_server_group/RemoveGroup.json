@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 72,
+    "focalfunc": "func (tmgc *TCPMuxGroupCtl) RemoveGroup(group string)",
+    "funcbody": "func (tmgc *TCPMuxGroupCtl) RemoveGroup(group string) {\n\ttmgc.mu.Lock()\n\tdefer tmgc.mu.Unlock()\n\tdelete(tmgc.groups, group)\n}",
+    "funcname": "RemoveGroup"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2139,
+    "focalfunc": "func (d *dbBase) ShowColumnsQuery(table string) string",
+    "funcbody": "func (d *dbBase) ShowColumnsQuery(table string) string {\n\tpanic(ErrNotImplement)\n}",
+    "funcname": "ShowColumnsQuery"
+}

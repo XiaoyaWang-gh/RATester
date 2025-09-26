@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/metrics/metrics.go",
+    "lineno": 33,
+    "focalfunc": "func (noopServerMetrics) CloseProxy(string, string)",
+    "funcbody": "func (noopServerMetrics) CloseProxy(string, string)\t{}",
+    "funcname": "CloseProxy"
+}

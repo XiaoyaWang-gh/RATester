@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_cluster/redis_cluster.go",
+    "lineno": 103,
+    "focalfunc": "func (rs *SessionStore) SessionRelease(ctx context.Context, w http.ResponseWriter)",
+    "funcbody": "func (rs *SessionStore) SessionRelease(ctx context.Context, w http.ResponseWriter) {\n\trs.releaseSession(ctx, w, false)\n}",
+    "funcname": "SessionRelease"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 220,
+    "focalfunc": "func (c *Controller) Trace()",
+    "funcbody": "func (c *Controller) Trace() {\n\tts := func(h http.Header) (hs string) {\n\t\tfor k, v := range h {\n\t\t\ths += fmt.Sprintf(\"\\r\\n%s: %s\", k, v)\n\t\t}\n\t\treturn\n\t}\n\ths := fmt.Sprintf(\"\\r\\nTRACE %s %s%s\\r\\n\", c.Ctx.Request.RequestURI, c.Ctx.Request.Proto, ts(c.Ctx.Request.Header))\n\tc.Ctx.Output.Header(\"Content-Type\", \"message/http\")\n\tc.Ctx.Output.Header(\"Content-Length\", fmt.Sprint(len(hs)))\n\tc.Ctx.Output.Header(\"Cache-Control\", \"no-cache, no-store, must-revalidate\")\n\tc.Ctx.WriteString(hs)\n}",
+    "funcname": "Trace"
+}

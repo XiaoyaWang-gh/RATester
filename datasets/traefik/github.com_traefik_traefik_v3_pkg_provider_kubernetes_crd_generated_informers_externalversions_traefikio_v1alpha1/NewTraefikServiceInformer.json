@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/informers/externalversions/traefikio/v1alpha1/traefikservice.go",
+    "lineno": 59,
+    "focalfunc": "func NewTraefikServiceInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer",
+    "funcbody": "func NewTraefikServiceInformer(client versioned.Interface, namespace string, resyncPeriod time.Duration, indexers cache.Indexers) cache.SharedIndexInformer {\n\treturn NewFilteredTraefikServiceInformer(client, namespace, resyncPeriod, indexers, nil)\n}",
+    "funcname": "NewTraefikServiceInformer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/util.go",
+    "lineno": 134,
+    "focalfunc": "func ConstantTimeEqString(a, b string) bool",
+    "funcbody": "func ConstantTimeEqString(a, b string) bool {\n\treturn subtle.ConstantTimeCompare([]byte(a), []byte(b)) == 1\n}",
+    "funcname": "ConstantTimeEqString"
+}

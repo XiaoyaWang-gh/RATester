@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 85,
+    "focalfunc": "func Or(globs ...glob.Glob) glob.Glob",
+    "funcbody": "func Or(globs ...glob.Glob) glob.Glob {\n\treturn globSlice{globs: globs}\n}",
+    "funcname": "Or"
+}

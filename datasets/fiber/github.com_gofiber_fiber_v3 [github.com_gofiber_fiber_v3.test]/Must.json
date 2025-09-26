@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 36,
+    "focalfunc": "func (b *Bind) Must() *Bind",
+    "funcbody": "func (b *Bind) Must() *Bind {\n\tb.should = false\n\n\treturn b\n}",
+    "funcname": "Must"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/tcp/inflightconn/inflight_conn.go",
+    "lineno": 40,
+    "focalfunc": "func (i *inFlightConn) ServeTCP(conn tcp.WriteCloser)",
+    "funcbody": "func (i *inFlightConn) ServeTCP(conn tcp.WriteCloser) {\n\tlogger := middlewares.GetLogger(context.Background(), i.name, typeName)\n\n\tip, _, err := net.SplitHostPort(conn.RemoteAddr().String())\n\tif err != nil {\n\t\tlogger.Error().Err(err).Msg(\"Cannot parse IP from remote addr\")\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tif err = i.increment(ip); err != nil {\n\t\tlogger.Error().Err(err).Msg(\"Connection rejected\")\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tdefer i.decrement(ip)\n\n\ti.next.ServeTCP(conn)\n}",
+    "funcname": "ServeTCP"
+}

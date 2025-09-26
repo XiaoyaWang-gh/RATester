@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 167,
+    "focalfunc": "func ParseForm(form url.Values, obj interface{}) error",
+    "funcbody": "func ParseForm(form url.Values, obj interface{}) error {\n\tobjT := reflect.TypeOf(obj)\n\tobjV := reflect.ValueOf(obj)\n\tif !isStructPtr(objT) {\n\t\treturn fmt.Errorf(\"%v must be  a struct pointer\", obj)\n\t}\n\tobjT = objT.Elem()\n\tobjV = objV.Elem()\n\treturn parseFormToStruct(form, objT, objV)\n}",
+    "funcname": "ParseForm"
+}

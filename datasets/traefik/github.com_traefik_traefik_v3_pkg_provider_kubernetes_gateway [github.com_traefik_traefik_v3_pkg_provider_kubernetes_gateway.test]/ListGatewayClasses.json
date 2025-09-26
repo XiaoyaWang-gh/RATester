@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 398,
+    "focalfunc": "func (c *clientWrapper) ListGatewayClasses() ([]*gatev1.GatewayClass, error)",
+    "funcbody": "func (c *clientWrapper) ListGatewayClasses() ([]*gatev1.GatewayClass, error) {\n\treturn c.factoryGatewayClass.Gateway().V1().GatewayClasses().Lister().List(labels.Everything())\n}",
+    "funcname": "ListGatewayClasses"
+}

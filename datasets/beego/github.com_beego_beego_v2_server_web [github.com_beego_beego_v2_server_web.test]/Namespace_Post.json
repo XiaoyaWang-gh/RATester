@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 132,
+    "focalfunc": "func (n *Namespace) Post(rootpath string, f HandleFunc) *Namespace",
+    "funcbody": "func (n *Namespace) Post(rootpath string, f HandleFunc) *Namespace {\n\tn.handlers.Post(rootpath, f)\n\treturn n\n}",
+    "funcname": "Post"
+}

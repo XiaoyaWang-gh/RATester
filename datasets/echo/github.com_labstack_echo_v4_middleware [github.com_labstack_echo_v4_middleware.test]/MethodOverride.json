@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/method_override.go",
+    "lineno": 36,
+    "focalfunc": "func MethodOverride() echo.MiddlewareFunc",
+    "funcbody": "func MethodOverride() echo.MiddlewareFunc {\n\treturn MethodOverrideWithConfig(DefaultMethodOverrideConfig)\n}",
+    "funcname": "MethodOverride"
+}

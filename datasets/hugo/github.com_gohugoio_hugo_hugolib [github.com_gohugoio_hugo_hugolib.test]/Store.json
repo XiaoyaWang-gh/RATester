@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__common.go",
+    "lineno": 113,
+    "focalfunc": "func (p *pageCommon) Store() *maps.Scratch",
+    "funcbody": "func (p *pageCommon) Store() *maps.Scratch {\n\treturn p.store\n}",
+    "funcname": "Store"
+}

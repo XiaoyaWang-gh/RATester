@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/time/time.go",
+    "lineno": 27,
+    "focalfunc": "func New(timeFormatter htime.TimeFormatter, location *time.Location) *Namespace",
+    "funcbody": "func New(timeFormatter htime.TimeFormatter, location *time.Location) *Namespace {\n\treturn &Namespace{\n\t\ttimeFormatter:\ttimeFormatter,\n\t\tlocation:\tlocation,\n\t}\n}",
+    "funcname": "New"
+}

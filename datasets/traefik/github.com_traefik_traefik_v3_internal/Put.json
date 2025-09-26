@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 352,
+    "focalfunc": "func (f storeWriter) Put(key string, value []byte, _ []string) error",
+    "funcbody": "func (f storeWriter) Put(key string, value []byte, _ []string) error {\n\tf.data[key] = string(value)\n\treturn nil\n}",
+    "funcname": "Put"
+}

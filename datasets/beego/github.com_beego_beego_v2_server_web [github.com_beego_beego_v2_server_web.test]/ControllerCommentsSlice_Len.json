@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 99,
+    "focalfunc": "func (p ControllerCommentsSlice) Len() int",
+    "funcbody": "func (p ControllerCommentsSlice) Len() int\t{ return len(p) }",
+    "funcname": "Len"
+}

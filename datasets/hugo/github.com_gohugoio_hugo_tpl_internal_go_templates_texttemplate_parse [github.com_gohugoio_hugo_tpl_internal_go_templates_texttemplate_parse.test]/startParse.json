@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 220,
+    "focalfunc": "func (t *Tree) startParse(funcs []map[string]any, lex *lexer, treeSet map[string]*Tree)",
+    "funcbody": "func (t *Tree) startParse(funcs []map[string]any, lex *lexer, treeSet map[string]*Tree) {\n\tt.Root = nil\n\tt.lex = lex\n\tt.vars = []string{\"$\"}\n\tt.funcs = funcs\n\tt.treeSet = treeSet\n\tlex.options = lexOptions{\n\t\temitComment:\tt.Mode&ParseComments != 0,\n\t\tbreakOK:\t!t.hasFunction(\"break\"),\n\t\tcontinueOK:\t!t.hasFunction(\"continue\"),\n\t}\n}",
+    "funcname": "startParse"
+}

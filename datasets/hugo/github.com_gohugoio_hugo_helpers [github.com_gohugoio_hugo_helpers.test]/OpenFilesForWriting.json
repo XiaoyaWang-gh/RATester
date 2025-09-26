@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 290,
+    "focalfunc": "func OpenFilesForWriting(fs afero.Fs, filenames ...string) (io.WriteCloser, error)",
+    "funcbody": "func OpenFilesForWriting(fs afero.Fs, filenames ...string) (io.WriteCloser, error) {\n\tvar writeClosers []io.WriteCloser\n\tfor _, filename := range filenames {\n\t\tf, err := OpenFileForWriting(fs, filename)\n\t\tif err != nil {\n\t\t\tfor _, wc := range writeClosers {\n\t\t\t\twc.Close()\n\t\t\t}\n\t\t\treturn nil, err\n\t\t}\n\t\twriteClosers = append(writeClosers, f)\n\t}\n\n\treturn hugio.NewMultiWriteCloser(writeClosers...), nil\n}",
+    "funcname": "OpenFilesForWriting"
+}

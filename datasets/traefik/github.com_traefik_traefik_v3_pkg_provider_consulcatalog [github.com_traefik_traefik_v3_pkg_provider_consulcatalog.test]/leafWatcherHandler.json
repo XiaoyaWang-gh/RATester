@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/consul_catalog.go",
+    "lineno": 480,
+    "focalfunc": "func leafWatcherHandler(ctx context.Context, dest chan<- keyPair) func(watch.BlockingParamVal, interface{})",
+    "funcbody": "func leafWatcherHandler(ctx context.Context, dest chan<- keyPair) func(watch.BlockingParamVal, interface{}) {\n\treturn func(_ watch.BlockingParamVal, raw interface{}) {\n\t\tif raw == nil {\n\t\t\tlog.Ctx(ctx).Error().Msg(\"Leaf certificate watcher called with nil\")\n\t\t\treturn\n\t\t}\n\n\t\tv, ok := raw.(*api.LeafCert)\n\t\tif !ok || v == nil {\n\t\t\tlog.Ctx(ctx).Error().Msg(\"Invalid result for leaf certificate watcher\")\n\t\t\treturn\n\t\t}\n\n\t\tkp := keyPair{\n\t\t\tcert:\tv.CertPEM,\n\t\t\tkey:\tv.PrivateKeyPEM,\n\t\t}\n\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\tcase dest <- kp:\n\t\t}\n\t}\n}",
+    "funcname": "leafWatcherHandler"
+}

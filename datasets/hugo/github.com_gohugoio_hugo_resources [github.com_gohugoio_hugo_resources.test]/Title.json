@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 546,
+    "focalfunc": "func (l *genericResource) Title() string",
+    "funcbody": "func (l *genericResource) Title() string {\n\treturn l.title\n}",
+    "funcname": "Title"
+}

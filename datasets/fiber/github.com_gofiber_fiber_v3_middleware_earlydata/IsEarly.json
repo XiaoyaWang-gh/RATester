@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/earlydata/earlydata.go",
+    "lineno": 16,
+    "focalfunc": "func IsEarly(c fiber.Ctx) bool",
+    "funcbody": "func IsEarly(c fiber.Ctx) bool {\n\treturn c.Locals(localsKeyAllowed) != nil\n}",
+    "funcname": "IsEarly"
+}

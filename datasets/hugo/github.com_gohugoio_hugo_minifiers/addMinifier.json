@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/minifiers/minifiers.go",
+    "lineno": 126,
+    "focalfunc": "func addMinifier(m *minify.M, mt media.Types, suffix string, min minify.Minifier)",
+    "funcbody": "func addMinifier(m *minify.M, mt media.Types, suffix string, min minify.Minifier) {\n\ttypes := mt.BySuffix(suffix)\n\tfor _, t := range types {\n\t\tm.Add(t.Type, min)\n\t}\n}",
+    "funcname": "addMinifier"
+}

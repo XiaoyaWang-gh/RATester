@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 446,
+    "focalfunc": "func (l *genericResource) Data() any",
+    "funcbody": "func (l *genericResource) Data() any {\n\treturn l.sd.Data\n}",
+    "funcname": "Data"
+}

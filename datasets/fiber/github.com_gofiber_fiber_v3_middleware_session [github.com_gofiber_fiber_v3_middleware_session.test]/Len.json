@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/data.go",
+    "lineno": 62,
+    "focalfunc": "func (d *data) Len() int",
+    "funcbody": "func (d *data) Len() int {\n\treturn len(d.Data)\n}",
+    "funcname": "Len"
+}

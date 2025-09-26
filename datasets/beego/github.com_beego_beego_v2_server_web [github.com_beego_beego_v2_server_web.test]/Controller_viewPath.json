@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 362,
+    "focalfunc": "func (c *Controller) viewPath() string",
+    "funcbody": "func (c *Controller) viewPath() string {\n\tif c.ViewPath == \"\" {\n\t\treturn BConfig.WebConfig.ViewsPath\n\t}\n\treturn c.ViewPath\n}",
+    "funcname": "viewPath"
+}

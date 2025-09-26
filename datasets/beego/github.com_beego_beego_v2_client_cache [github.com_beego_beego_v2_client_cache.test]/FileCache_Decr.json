@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 254,
+    "focalfunc": "func (fc *FileCache) Decr(ctx context.Context, key string) error",
+    "funcbody": "func (fc *FileCache) Decr(ctx context.Context, key string) error {\n\tdata, err := fc.Get(context.Background(), key)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tval, err := decr(data)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn fc.Put(context.Background(), key, val, time.Duration(fc.EmbedExpiry))\n}",
+    "funcname": "Decr"
+}

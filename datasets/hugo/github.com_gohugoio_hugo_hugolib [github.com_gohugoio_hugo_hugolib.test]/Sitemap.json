@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 252,
+    "focalfunc": "func (p *pageMeta) Sitemap() config.SitemapConfig",
+    "funcbody": "func (p *pageMeta) Sitemap() config.SitemapConfig {\n\treturn p.pageConfig.Sitemap\n}",
+    "funcname": "Sitemap"
+}

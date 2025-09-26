@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 80,
+    "focalfunc": "func newSubjectDistinguishedNameOptions(info *dynamic.TLSClientCertificateSubjectDNInfo) *SubjectDistinguishedNameOptions",
+    "funcbody": "func newSubjectDistinguishedNameOptions(info *dynamic.TLSClientCertificateSubjectDNInfo) *SubjectDistinguishedNameOptions {\n\tif info == nil {\n\t\treturn nil\n\t}\n\n\treturn &SubjectDistinguishedNameOptions{\n\t\tCommonName:\t\tinfo.CommonName,\n\t\tCountryName:\t\tinfo.Country,\n\t\tDomainComponent:\tinfo.DomainComponent,\n\t\tLocalityName:\t\tinfo.Locality,\n\t\tOrganizationName:\tinfo.Organization,\n\t\tOrganizationalUnitName:\tinfo.OrganizationalUnit,\n\t\tSerialNumber:\t\tinfo.SerialNumber,\n\t\tStateOrProvinceName:\tinfo.Province,\n\t}\n}",
+    "funcname": "newSubjectDistinguishedNameOptions"
+}

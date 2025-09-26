@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 249,
+    "focalfunc": "func (e *DateField) SetRaw(value interface{}) error",
+    "funcbody": "func (e *DateField) SetRaw(value interface{}) error {\n\tswitch d := value.(type) {\n\tcase time.Time:\n\t\te.Set(d)\n\tcase string:\n\t\tv, err := utils.TimeParse(d, utils.FormatDate)\n\t\tif err == nil {\n\t\t\te.Set(v)\n\t\t}\n\t\treturn err\n\tdefault:\n\t\treturn fmt.Errorf(\"<DateField.SetRaw> unknown value `%s`\", value)\n\t}\n\treturn nil\n}",
+    "funcname": "SetRaw"
+}

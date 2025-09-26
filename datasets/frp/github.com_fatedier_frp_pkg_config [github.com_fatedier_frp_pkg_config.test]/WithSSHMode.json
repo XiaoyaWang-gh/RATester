@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 44,
+    "focalfunc": "func WithSSHMode() RegisterFlagOption",
+    "funcbody": "func WithSSHMode() RegisterFlagOption {\n\treturn func(o *registerFlagOptions) {\n\t\to.sshMode = true\n\t}\n}",
+    "funcname": "WithSSHMode"
+}

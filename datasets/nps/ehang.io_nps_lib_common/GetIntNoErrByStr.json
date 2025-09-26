@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 92,
+    "focalfunc": "func GetIntNoErrByStr(str string) int",
+    "funcbody": "func GetIntNoErrByStr(str string) int {\n\ti, _ := strconv.Atoi(strings.TrimSpace(str))\n\treturn i\n}",
+    "funcname": "GetIntNoErrByStr"
+}

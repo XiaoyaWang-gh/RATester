@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 43,
+    "focalfunc": "func (*Config) Parse(filename string) (y config.Configer, err error)",
+    "funcbody": "func (*Config) Parse(filename string) (y config.Configer, err error) {\n\tcnf, err := ReadYmlReader(filename)\n\tif err != nil {\n\t\treturn\n\t}\n\ty = &ConfigContainer{\n\t\tdata: cnf,\n\t}\n\treturn\n}",
+    "funcname": "Parse"
+}

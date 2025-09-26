@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock.go",
+    "lineno": 56,
+    "focalfunc": "func (o *OrmStub) FilterChain(next orm.Filter) orm.Filter",
+    "funcbody": "func (o *OrmStub) FilterChain(next orm.Filter) orm.Filter {\n\treturn func(ctx context.Context, inv *orm.Invocation) []interface{} {\n\t\tms := mockFromCtx(ctx)\n\t\tms = append(ms, o.ms...)\n\n\t\tfor _, mock := range ms {\n\t\t\tif mock.cond.Match(ctx, inv) {\n\t\t\t\tif mock.cb != nil {\n\t\t\t\t\tmock.cb(inv)\n\t\t\t\t}\n\t\t\t\treturn mock.resp\n\t\t\t}\n\t\t}\n\t\treturn next(ctx, inv)\n\t}\n}",
+    "funcname": "FilterChain"
+}

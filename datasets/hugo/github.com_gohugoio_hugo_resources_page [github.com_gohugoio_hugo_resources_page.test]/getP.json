@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_cache.go",
+    "lineno": 70,
+    "focalfunc": "func (c *pageCache) getP(key string, apply func(p *Pages), pageLists ...Pages) (Pages, bool)",
+    "funcbody": "func (c *pageCache) getP(key string, apply func(p *Pages), pageLists ...Pages) (Pages, bool) {\n\tc.RLock()\n\tif cached, ok := c.m[key]; ok {\n\t\tfor _, entry := range cached {\n\t\t\tif entry.matches(pageLists) {\n\t\t\t\tc.RUnlock()\n\t\t\t\treturn entry.out, true\n\t\t\t}\n\t\t}\n\t}\n\tc.RUnlock()\n\n\tc.Lock()\n\tdefer c.Unlock()\n\n\tif cached, ok := c.m[key]; ok {\n\t\tfor _, entry := range cached {\n\t\t\tif entry.matches(pageLists) {\n\t\t\t\treturn entry.out, true\n\t\t\t}\n\t\t}\n\t}\n\n\tp := pageLists[0]\n\tpagesCopy := append(Pages(nil), p...)\n\n\tif apply != nil {\n\t\tapply(&pagesCopy)\n\t}\n\n\tentry := pageCacheEntry{in: pageLists, out: pagesCopy}\n\tif v, ok := c.m[key]; ok {\n\t\tc.m[key] = append(v, entry)\n\t} else {\n\t\tc.m[key] = []pageCacheEntry{entry}\n\t}\n\n\treturn pagesCopy, false\n}",
+    "funcname": "getP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 196,
+    "focalfunc": "func getScheme(uri []byte) []byte",
+    "funcbody": "func getScheme(uri []byte) []byte {\n\ti := bytes.IndexByte(uri, '/')\n\tif i < 1 || uri[i-1] != ':' || i == len(uri)-1 || uri[i+1] != '/' {\n\t\treturn nil\n\t}\n\treturn uri[:i-1]\n}",
+    "funcname": "getScheme"
+}

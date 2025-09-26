@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 157,
+    "focalfunc": "func (c *configContainer) Float(key string) (float64, error)",
+    "funcbody": "func (c *configContainer) Float(key string) (float64, error) {\n\tres, err := c.get(key)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\n\tif res == nil {\n\t\treturn 0, config.KeyNotFoundError\n\t}\n\n\tif f, ok := res.(float64); ok {\n\t\treturn f, nil\n\t} else {\n\t\treturn 0, config.InvalidValueTypeError\n\t}\n}",
+    "funcname": "Float"
+}

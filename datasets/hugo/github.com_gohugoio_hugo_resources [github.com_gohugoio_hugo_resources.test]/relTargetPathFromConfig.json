@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 488,
+    "focalfunc": "func (i *imageResource) relTargetPathFromConfig(conf images.ImageConfig) internal.ResourcePaths",
+    "funcbody": "func (i *imageResource) relTargetPathFromConfig(conf images.ImageConfig) internal.ResourcePaths {\n\tp1, p2 := paths.FileAndExt(i.getResourcePaths().File)\n\tif conf.TargetFormat != i.Format {\n\t\tp2 = conf.TargetFormat.DefaultExtension()\n\t}\n\tconst prefix = \"_hu\"\n\thuIdx := strings.LastIndex(p1, prefix)\n\tincomingID := \"i\"\n\tif huIdx > -1 {\n\t\tincomingID = p1[huIdx+len(prefix):]\n\t\tp1 = p1[:huIdx]\n\t}\n\thash := hashing.HashUint64(incomingID, i.hash(), conf.GetKey(i.Format))\n\trp := i.getResourcePaths()\n\trp.File = fmt.Sprintf(\"%s%s%d%s\", p1, prefix, hash, p2)\n\n\treturn rp\n}",
+    "funcname": "relTargetPathFromConfig"
+}

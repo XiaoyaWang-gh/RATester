@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/wrr_load_balancer.go",
+    "lineno": 31,
+    "focalfunc": "func (b *WRRLoadBalancer) ServeUDP(conn *Conn)",
+    "funcbody": "func (b *WRRLoadBalancer) ServeUDP(conn *Conn) {\n\tb.lock.Lock()\n\tnext, err := b.next()\n\tb.lock.Unlock()\n\n\tif err != nil {\n\t\tlog.Error().Err(err).Msg(\"Error during load balancing\")\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tnext.ServeUDP(conn)\n}",
+    "funcname": "ServeUDP"
+}

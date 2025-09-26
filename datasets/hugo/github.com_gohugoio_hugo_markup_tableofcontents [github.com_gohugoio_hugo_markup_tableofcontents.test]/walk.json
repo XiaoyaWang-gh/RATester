@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 151,
+    "focalfunc": "func (toc Fragments) walk(fn func(*Heading))",
+    "funcbody": "func (toc Fragments) walk(fn func(*Heading)) {\n\tfor _, h := range toc.Headings {\n\t\th.walk(fn)\n\t}\n}",
+    "funcname": "walk"
+}

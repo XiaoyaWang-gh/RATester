@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1171,
+    "focalfunc": "func isBackupFile(path string) bool",
+    "funcbody": "func isBackupFile(path string) bool {\n\treturn path[len(path)-1] == '~'\n}",
+    "funcname": "isBackupFile"
+}

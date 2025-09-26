@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 82,
+    "focalfunc": "func (t *dbTables) get(name string) (*dbTable, bool)",
+    "funcbody": "func (t *dbTables) get(name string) (*dbTable, bool) {\n\tj, ok := t.tablesM[name]\n\treturn j, ok\n}",
+    "funcname": "get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 236,
+    "focalfunc": "func FilterFlags(content string) string",
+    "funcbody": "func FilterFlags(content string) string {\n\tfor i, char := range content {\n\t\tif char == ' ' || char == ';' {\n\t\t\treturn content[:i]\n\t\t}\n\t}\n\treturn content\n}",
+    "funcname": "FilterFlags"
+}

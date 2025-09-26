@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 56,
+    "focalfunc": "func (a *attrParser) Open(parent ast.Node, reader text.Reader, pc parser.Context) (ast.Node, parser.State)",
+    "funcbody": "func (a *attrParser) Open(parent ast.Node, reader text.Reader, pc parser.Context) (ast.Node, parser.State) {\n\tif attrs, ok := parser.ParseAttributes(reader); ok {\n\n\t\tnode := &attributesBlock{\n\t\t\tBaseBlock: ast.BaseBlock{},\n\t\t}\n\t\tfor _, attr := range attrs {\n\t\t\tnode.SetAttribute(attr.Name, attr.Value)\n\t\t}\n\t\treturn node, parser.NoChildren\n\t}\n\treturn nil, parser.RequireParagraph\n}",
+    "funcname": "Open"
+}

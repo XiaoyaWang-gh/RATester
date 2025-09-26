@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__menus.go",
+    "lineno": 38,
+    "focalfunc": "func (p *pageMenus) IsMenuCurrent(menuID string, inme *navigation.MenuEntry) bool",
+    "funcbody": "func (p *pageMenus) IsMenuCurrent(menuID string, inme *navigation.MenuEntry) bool {\n\tp.p.s.init.menus.Do(context.Background())\n\tp.init()\n\treturn p.q.IsMenuCurrent(menuID, inme)\n}",
+    "funcname": "IsMenuCurrent"
+}

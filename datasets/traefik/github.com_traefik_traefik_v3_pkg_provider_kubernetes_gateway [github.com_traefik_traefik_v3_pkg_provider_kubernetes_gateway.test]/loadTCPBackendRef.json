@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/tcproute.go",
+    "lineno": 339,
+    "focalfunc": "func (p *Provider) loadTCPBackendRef(backendRef gatev1.BackendRef) (string, error)",
+    "funcbody": "func (p *Provider) loadTCPBackendRef(backendRef gatev1.BackendRef) (string, error) {\n\n\tif *backendRef.Kind == \"TraefikService\" && strings.Contains(string(backendRef.Name), \"@\") {\n\t\treturn string(backendRef.Name), nil\n\t}\n\n\treturn \"\", fmt.Errorf(\"unsupported BackendRef %s/%s/%s\", *backendRef.Group, *backendRef.Kind, backendRef.Name)\n}",
+    "funcname": "loadTCPBackendRef"
+}

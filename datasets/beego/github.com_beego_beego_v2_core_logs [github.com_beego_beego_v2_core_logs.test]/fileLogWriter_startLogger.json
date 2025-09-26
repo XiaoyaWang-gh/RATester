@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 148,
+    "focalfunc": "func (w *fileLogWriter) startLogger() error",
+    "funcbody": "func (w *fileLogWriter) startLogger() error {\n\tfile, err := w.createLogFile()\n\tif err != nil {\n\t\treturn err\n\t}\n\tif w.fileWriter != nil {\n\t\tw.fileWriter.Close()\n\t}\n\tw.fileWriter = file\n\treturn w.initFd()\n}",
+    "funcname": "startLogger"
+}

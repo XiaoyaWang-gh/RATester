@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 124,
+    "focalfunc": "func (c *aliLSWriter) SetFormatter(f logs.LogFormatter)",
+    "funcbody": "func (c *aliLSWriter) SetFormatter(f logs.LogFormatter) {\n\tc.formatter = f\n}",
+    "funcname": "SetFormatter"
+}

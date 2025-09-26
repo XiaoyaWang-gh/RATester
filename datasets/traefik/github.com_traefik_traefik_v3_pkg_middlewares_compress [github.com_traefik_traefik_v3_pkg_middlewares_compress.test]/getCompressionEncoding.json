@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/acceptencoding.go",
+    "lineno": 25,
+    "focalfunc": "func getCompressionEncoding(acceptEncoding []string, defaultEncoding string, supportedEncodings []string) string",
+    "funcbody": "func getCompressionEncoding(acceptEncoding []string, defaultEncoding string, supportedEncodings []string) string {\n\tif defaultEncoding == \"\" {\n\t\tif slices.Contains(supportedEncodings, brotliName) {\n\n\t\t\tdefaultEncoding = brotliName\n\t\t} else if len(supportedEncodings) > 0 {\n\n\t\t\tdefaultEncoding = supportedEncodings[0]\n\t\t}\n\t}\n\n\tencodings, hasWeight := parseAcceptEncoding(acceptEncoding, supportedEncodings)\n\n\tif hasWeight {\n\t\tif len(encodings) == 0 {\n\t\t\treturn identityName\n\t\t}\n\n\t\tencoding := encodings[0]\n\n\t\tif encoding.Type == identityName && encoding.Weight != nil && *encoding.Weight == 0 {\n\t\t\treturn notAcceptable\n\t\t}\n\n\t\tif encoding.Type == wildcardName && encoding.Weight != nil && *encoding.Weight == 0 {\n\t\t\treturn notAcceptable\n\t\t}\n\n\t\tif encoding.Type == wildcardName {\n\t\t\treturn defaultEncoding\n\t\t}\n\n\t\treturn encoding.Type\n\t}\n\n\tfor _, dt := range supportedEncodings {\n\t\tif slices.ContainsFunc(encodings, func(e Encoding) bool { return e.Type == dt }) {\n\t\t\treturn dt\n\t\t}\n\t}\n\n\tif slices.ContainsFunc(encodings, func(e Encoding) bool { return e.Type == wildcardName }) {\n\t\treturn defaultEncoding\n\t}\n\n\treturn identityName\n}",
+    "funcname": "getCompressionEncoding"
+}

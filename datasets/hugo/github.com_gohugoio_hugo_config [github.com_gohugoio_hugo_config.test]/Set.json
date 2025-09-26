@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 153,
+    "focalfunc": "func (c *defaultConfigProvider) Set(k string, v any)",
+    "funcbody": "func (c *defaultConfigProvider) Set(k string, v any) {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\n\tk = strings.ToLower(k)\n\n\tif k == \"\" {\n\t\tif p, err := maps.ToParamsAndPrepare(v); err == nil {\n\n\t\t\tmaps.SetParams(c.root, p)\n\t\t} else {\n\t\t\tc.root[k] = v\n\t\t}\n\n\t\treturn\n\t}\n\n\tswitch vv := v.(type) {\n\tcase map[string]any, map[any]any, map[string]string:\n\t\tp := maps.MustToParamsAndPrepare(vv)\n\t\tv = p\n\t}\n\n\tkey, m := c.getNestedKeyAndMap(k, true)\n\tif m == nil {\n\t\treturn\n\t}\n\n\tif existing, found := m[key]; found {\n\t\tif p1, ok := existing.(maps.Params); ok {\n\t\t\tif p2, ok := v.(maps.Params); ok {\n\t\t\t\tmaps.SetParams(p1, p2)\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n\n\tm[key] = v\n}",
+    "funcname": "Set"
+}

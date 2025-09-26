@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 139,
+    "focalfunc": "func NewTask(tname string, spec string, f TaskFunc, opts ...Option) *Task",
+    "funcbody": "func NewTask(tname string, spec string, f TaskFunc, opts ...Option) *Task {\n\ttask := &Task{\n\t\tTaskname:\ttname,\n\t\tDoFunc:\t\tf,\n\n\t\tErrLimit:\t100,\n\t\tSpecStr:\tspec,\n\n\t\tErrlist:\tmake([]*taskerr, 100, 100),\n\t}\n\n\tfor _, opt := range opts {\n\t\topt.apply(task)\n\t}\n\n\ttask.SetCron(spec)\n\treturn task\n}",
+    "funcname": "NewTask"
+}

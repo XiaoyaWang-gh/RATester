@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 382,
+    "focalfunc": "func (f Format) SupportsTransparency() bool",
+    "funcbody": "func (f Format) SupportsTransparency() bool {\n\treturn f != JPEG\n}",
+    "funcname": "SupportsTransparency"
+}

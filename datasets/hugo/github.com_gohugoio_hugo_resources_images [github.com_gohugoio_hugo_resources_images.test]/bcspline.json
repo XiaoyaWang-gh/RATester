@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/resampling.go",
+    "lineno": 189,
+    "focalfunc": "func bcspline(x, b, c float32) float32",
+    "funcbody": "func bcspline(x, b, c float32) float32 {\n\tif x < 0 {\n\t\tx = -x\n\t}\n\tif x < 1 {\n\t\treturn ((12-9*b-6*c)*x*x*x + (-18+12*b+6*c)*x*x + (6 - 2*b)) / 6\n\t}\n\tif x < 2 {\n\t\treturn ((-b-6*c)*x*x*x + (6*b+30*c)*x*x + (-12*b-48*c)*x + (8*b + 24*c)) / 6\n\t}\n\treturn 0\n}",
+    "funcname": "bcspline"
+}

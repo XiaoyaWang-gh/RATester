@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_sentinel/sess_redis_sentinel.go",
+    "lineno": 246,
+    "focalfunc": "func (rp *Provider) SessionRead(ctx context.Context, sid string) (session.Store, error)",
+    "funcbody": "func (rp *Provider) SessionRead(ctx context.Context, sid string) (session.Store, error) {\n\tvar kv map[interface{}]interface{}\n\tkvs, err := rp.poollist.Get(ctx, sid).Result()\n\tif err != nil && err != redis.Nil {\n\t\treturn nil, err\n\t}\n\tif len(kvs) == 0 {\n\t\tkv = make(map[interface{}]interface{})\n\t} else {\n\t\tif kv, err = session.DecodeGob([]byte(kvs)); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\trs := &SessionStore{p: rp.poollist, sid: sid, values: kv, maxlifetime: rp.maxlifetime}\n\treturn rs, nil\n}",
+    "funcname": "SessionRead"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/safe.go",
+    "lineno": 19,
+    "focalfunc": "func (s *Safe) Get() interface{}",
+    "funcbody": "func (s *Safe) Get() interface{} {\n\ts.lock.RLock()\n\tdefer s.lock.RUnlock()\n\treturn s.value\n}",
+    "funcname": "Get"
+}

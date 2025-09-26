@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 711,
+    "focalfunc": "func (b *BeegoHTTPRequest) Response() (*http.Response, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) Response() (*http.Response, error) {\n\treturn b.getResponse()\n}",
+    "funcname": "Response"
+}

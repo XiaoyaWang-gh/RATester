@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 157,
+    "focalfunc": "func (p *Pager) HasPrev() bool",
+    "funcbody": "func (p *Pager) HasPrev() bool {\n\treturn p.PageNumber() > 1\n}",
+    "funcname": "HasPrev"
+}

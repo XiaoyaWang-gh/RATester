@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 123,
+    "focalfunc": "func (v *Validation) HasErrors() bool",
+    "funcbody": "func (v *Validation) HasErrors() bool {\n\treturn len(v.Errors) > 0\n}",
+    "funcname": "HasErrors"
+}

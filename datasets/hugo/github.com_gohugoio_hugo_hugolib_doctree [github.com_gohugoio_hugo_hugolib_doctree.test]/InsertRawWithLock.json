@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 180,
+    "focalfunc": "func (r *NodeShiftTree[T]) InsertRawWithLock(s string, v any) (any, bool)",
+    "funcbody": "func (r *NodeShiftTree[T]) InsertRawWithLock(s string, v any) (any, bool) {\n\tr.mu.Lock()\n\tdefer r.mu.Unlock()\n\treturn r.tree.Insert(s, v)\n}",
+    "funcname": "InsertRawWithLock"
+}

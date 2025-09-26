@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 260,
+    "focalfunc": "func (n *Namespace) Namespace(ns ...*Namespace) *Namespace",
+    "funcbody": "func (n *Namespace) Namespace(ns ...*Namespace) *Namespace {\n\tfor _, ni := range ns {\n\t\tfor k, v := range ni.handlers.routers {\n\t\t\tif _, ok := n.handlers.routers[k]; ok {\n\t\t\t\taddPrefix(v, ni.prefix)\n\t\t\t\tn.handlers.routers[k].AddTree(ni.prefix, v)\n\t\t\t} else {\n\t\t\t\tt := NewTree()\n\t\t\t\tt.AddTree(ni.prefix, v)\n\t\t\t\taddPrefix(t, ni.prefix)\n\t\t\t\tn.handlers.routers[k] = t\n\t\t\t}\n\t\t}\n\t\tif ni.handlers.enableFilter {\n\t\t\tfor pos, filterList := range ni.handlers.filters {\n\t\t\t\tfor _, mr := range filterList {\n\t\t\t\t\tt := NewTree()\n\t\t\t\t\tt.AddTree(ni.prefix, mr.tree)\n\t\t\t\t\tmr.tree = t\n\t\t\t\t\tn.handlers.insertFilterRouter(pos, mr)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn n\n}",
+    "funcname": "Namespace"
+}

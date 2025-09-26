@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 102,
+    "focalfunc": "func NewController(analysisDataReserveDuration time.Duration) (*Controller, error)",
+    "funcbody": "func NewController(analysisDataReserveDuration time.Duration) (*Controller, error) {\n\treturn &Controller{\n\t\tclientCfgs:\tmake(map[string]*ClientCfg),\n\t\tsessions:\tmake(map[string]*Session),\n\t\tanalyzer:\tNewAnalyzer(analysisDataReserveDuration),\n\t}, nil\n}",
+    "funcname": "NewController"
+}

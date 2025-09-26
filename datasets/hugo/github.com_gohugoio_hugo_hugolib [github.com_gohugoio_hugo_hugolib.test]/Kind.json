@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 179,
+    "focalfunc": "func (p *pageMeta) Kind() string",
+    "funcbody": "func (p *pageMeta) Kind() string {\n\treturn p.pageConfig.Kind\n}",
+    "funcname": "Kind"
+}

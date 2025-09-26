@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/attributes/attributes.go",
+    "lineno": 172,
+    "focalfunc": "func (a *AttributesHolder) OptionsSlice() []Attribute",
+    "funcbody": "func (a *AttributesHolder) OptionsSlice() []Attribute {\n\treturn a.options\n}",
+    "funcname": "OptionsSlice"
+}

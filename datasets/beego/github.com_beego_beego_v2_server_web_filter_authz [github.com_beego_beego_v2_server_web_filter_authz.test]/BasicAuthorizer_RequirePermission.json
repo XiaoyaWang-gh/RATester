@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/authz/authz.go",
+    "lineno": 85,
+    "focalfunc": "func (a *BasicAuthorizer) RequirePermission(w http.ResponseWriter)",
+    "funcbody": "func (a *BasicAuthorizer) RequirePermission(w http.ResponseWriter) {\n\tw.WriteHeader(403)\n\tw.Write([]byte(\"403 Forbidden\\n\"))\n}",
+    "funcname": "RequirePermission"
+}

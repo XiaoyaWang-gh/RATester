@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/xtcp.go",
+    "lineno": 89,
+    "focalfunc": "func (pxy *XTCPProxy) Close()",
+    "funcbody": "func (pxy *XTCPProxy) Close() {\n\tpxy.BaseProxy.Close()\n\tpxy.rc.NatHoleController.CloseClient(pxy.GetName())\n\t_ = errors.PanicToError(func() {\n\t\tclose(pxy.closeCh)\n\t})\n}",
+    "funcname": "Close"
+}

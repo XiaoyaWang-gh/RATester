@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 266,
+    "focalfunc": "func (o *ormBase) InsertOrUpdateWithCtx(ctx context.Context, md interface{}, colConflitAndArgs ...string) (int64, error)",
+    "funcbody": "func (o *ormBase) InsertOrUpdateWithCtx(ctx context.Context, md interface{}, colConflitAndArgs ...string) (int64, error) {\n\tmi, ind := o.getPtrMiInd(md)\n\tid, err := o.alias.DbBaser.InsertOrUpdate(ctx, o.db, mi, ind, o.alias, colConflitAndArgs...)\n\tif err != nil {\n\t\treturn id, err\n\t}\n\n\to.setPk(mi, ind, id)\n\n\treturn id, nil\n}",
+    "funcname": "InsertOrUpdateWithCtx"
+}

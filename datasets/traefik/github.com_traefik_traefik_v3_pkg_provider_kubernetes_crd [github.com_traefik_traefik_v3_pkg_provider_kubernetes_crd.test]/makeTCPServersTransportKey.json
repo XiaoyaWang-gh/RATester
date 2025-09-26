@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_tcp.go",
+    "lineno": 334,
+    "focalfunc": "func (p *Provider) makeTCPServersTransportKey(parentNamespace string, serversTransportName string) (string, error)",
+    "funcbody": "func (p *Provider) makeTCPServersTransportKey(parentNamespace string, serversTransportName string) (string, error) {\n\tif serversTransportName == \"\" {\n\t\treturn \"\", nil\n\t}\n\n\tif !p.AllowCrossNamespace && strings.HasSuffix(serversTransportName, providerNamespaceSeparator+providerName) {\n\n\t\treturn \"\", fmt.Errorf(\"invalid reference to serversTransport %s: namespace-name@kubernetescrd format is not allowed when crossnamespace is disallowed\", serversTransportName)\n\t}\n\n\tif strings.Contains(serversTransportName, providerNamespaceSeparator) {\n\t\treturn serversTransportName, nil\n\t}\n\n\treturn provider.Normalize(makeID(parentNamespace, serversTransportName)), nil\n}",
+    "funcname": "makeTCPServersTransportKey"
+}

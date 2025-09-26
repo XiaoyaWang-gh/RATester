@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 227,
+    "focalfunc": "func (c configBuilder) buildServicesLB(ctx context.Context, namespace string, tService traefikv1alpha1.TraefikServiceSpec, id string, conf map[string]*dynamic.Service) error",
+    "funcbody": "func (c configBuilder) buildServicesLB(ctx context.Context, namespace string, tService traefikv1alpha1.TraefikServiceSpec, id string, conf map[string]*dynamic.Service) error {\n\tvar wrrServices []dynamic.WRRService\n\n\tfor _, service := range tService.Weighted.Services {\n\t\tfullName, k8sService, err := c.nameAndService(ctx, namespace, service.LoadBalancerSpec)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tif k8sService != nil {\n\t\t\tconf[fullName] = k8sService\n\t\t}\n\n\t\tweight := service.Weight\n\t\tif weight == nil {\n\t\t\tweight = func(i int) *int { return &i }(1)\n\t\t}\n\n\t\twrrServices = append(wrrServices, dynamic.WRRService{\n\t\t\tName:\tfullName,\n\t\t\tWeight:\tweight,\n\t\t})\n\t}\n\n\tconf[id] = &dynamic.Service{\n\t\tWeighted: &dynamic.WeightedRoundRobin{\n\t\t\tServices:\twrrServices,\n\t\t\tSticky:\t\ttService.Weighted.Sticky,\n\t\t},\n\t}\n\treturn nil\n}",
+    "funcname": "buildServicesLB"
+}

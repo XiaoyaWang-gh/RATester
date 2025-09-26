@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 639,
+    "focalfunc": "func (app *App) methodInt(s string) int",
+    "funcbody": "func (app *App) methodInt(s string) int {\n\n\tif len(app.configured.RequestMethods) == 0 {\n\n\t\tswitch s {\n\t\tcase MethodGet:\n\t\t\treturn 0\n\t\tcase MethodHead:\n\t\t\treturn 1\n\t\tcase MethodPost:\n\t\t\treturn 2\n\t\tcase MethodPut:\n\t\t\treturn 3\n\t\tcase MethodDelete:\n\t\t\treturn 4\n\t\tcase MethodConnect:\n\t\t\treturn 5\n\t\tcase MethodOptions:\n\t\t\treturn 6\n\t\tcase MethodTrace:\n\t\t\treturn 7\n\t\tcase MethodPatch:\n\t\t\treturn 8\n\t\tdefault:\n\t\t\treturn -1\n\t\t}\n\t}\n\n\tfor i, v := range app.config.RequestMethods {\n\t\tif s == v {\n\t\t\treturn i\n\t\t}\n\t}\n\n\treturn -1\n}",
+    "funcname": "methodInt"
+}

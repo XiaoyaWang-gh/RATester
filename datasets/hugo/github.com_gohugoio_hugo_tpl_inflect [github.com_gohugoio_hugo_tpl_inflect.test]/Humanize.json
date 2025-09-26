@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/inflect/inflect.go",
+    "lineno": 37,
+    "focalfunc": "func (ns *Namespace) Humanize(v any) (string, error)",
+    "funcbody": "func (ns *Namespace) Humanize(v any) (string, error) {\n\tword, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif word == \"\" {\n\t\treturn \"\", nil\n\t}\n\n\t_, ok := v.(int)\n\t_, err = strconv.Atoi(word)\n\tif ok || err == nil {\n\t\treturn _inflect.Ordinalize(word), nil\n\t}\n\n\tstr := _inflect.Humanize(word)\n\treturn _inflect.Humanize(strings.ToLower(str)), nil\n}",
+    "funcname": "Humanize"
+}

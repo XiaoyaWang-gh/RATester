@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 78,
+    "focalfunc": "func (l *absurllexer) emit()",
+    "funcbody": "func (l *absurllexer) emit() {\n\tl.w.Write(l.content[l.start:l.pos])\n\tl.start = l.pos\n}",
+    "funcname": "emit"
+}

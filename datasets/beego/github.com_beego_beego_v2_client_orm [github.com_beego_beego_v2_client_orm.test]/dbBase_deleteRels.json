@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 987,
+    "focalfunc": "func (d *dbBase) deleteRels(ctx context.Context, q dbQuerier, mi *models.ModelInfo, args []interface{}, tz *time.Location) error",
+    "funcbody": "func (d *dbBase) deleteRels(ctx context.Context, q dbQuerier, mi *models.ModelInfo, args []interface{}, tz *time.Location) error {\n\tfor _, fi := range mi.Fields.FieldsReverse {\n\t\tfi = fi.ReverseFieldInfo\n\t\tswitch fi.OnDelete {\n\t\tcase models.OdCascade:\n\t\t\tcond := NewCondition().And(fmt.Sprintf(\"%s__in\", fi.Name), args...)\n\t\t\t_, err := d.DeleteBatch(ctx, q, nil, fi.Mi, cond, tz)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\tcase models.OdSetDefault, models.OdSetNULL:\n\t\t\tcond := NewCondition().And(fmt.Sprintf(\"%s__in\", fi.Name), args...)\n\t\t\tparams := Params{fi.Column: nil}\n\t\t\tif fi.OnDelete == models.OdSetDefault {\n\t\t\t\tparams[fi.Column] = fi.Initial.String()\n\t\t\t}\n\t\t\t_, err := d.UpdateBatch(ctx, q, nil, fi.Mi, cond, params, tz)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\tcase models.OdDoNothing:\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "deleteRels"
+}

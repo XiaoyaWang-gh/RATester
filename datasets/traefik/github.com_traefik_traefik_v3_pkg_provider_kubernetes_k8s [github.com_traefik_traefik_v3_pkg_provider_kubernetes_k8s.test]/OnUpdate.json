@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/event_handler.go",
+    "lineno": 20,
+    "focalfunc": "func (reh *ResourceEventHandler) OnUpdate(oldObj, newObj interface{})",
+    "funcbody": "func (reh *ResourceEventHandler) OnUpdate(oldObj, newObj interface{}) {\n\tif objChanged(oldObj, newObj) {\n\t\teventHandlerFunc(reh.Ev, newObj)\n\t}\n}",
+    "funcname": "OnUpdate"
+}

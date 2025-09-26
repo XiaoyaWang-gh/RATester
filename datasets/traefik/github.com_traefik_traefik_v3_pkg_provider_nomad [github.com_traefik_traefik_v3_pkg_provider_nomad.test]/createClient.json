@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/nomad.go",
+    "lineno": 436,
+    "focalfunc": "func createClient(namespace string, endpoint *EndpointConfig) (*api.Client, error)",
+    "funcbody": "func createClient(namespace string, endpoint *EndpointConfig) (*api.Client, error) {\n\tconfig := api.Config{\n\t\tAddress:\tendpoint.Address,\n\t\tNamespace:\tnamespace,\n\t\tRegion:\t\tendpoint.Region,\n\t\tSecretID:\tendpoint.Token,\n\t\tWaitTime:\ttime.Duration(endpoint.EndpointWaitTime),\n\t}\n\n\tif endpoint.TLS != nil {\n\t\tconfig.TLSConfig = &api.TLSConfig{\n\t\t\tCACert:\t\tendpoint.TLS.CA,\n\t\t\tClientCert:\tendpoint.TLS.Cert,\n\t\t\tClientKey:\tendpoint.TLS.Key,\n\t\t\tInsecure:\tendpoint.TLS.InsecureSkipVerify,\n\t\t}\n\t}\n\n\treturn api.NewClient(&config)\n}",
+    "funcname": "createClient"
+}

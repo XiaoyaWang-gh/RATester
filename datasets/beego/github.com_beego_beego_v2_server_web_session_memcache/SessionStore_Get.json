@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 68,
+    "focalfunc": "func (rs *SessionStore) Get(ctx context.Context, key interface{}) interface{}",
+    "funcbody": "func (rs *SessionStore) Get(ctx context.Context, key interface{}) interface{} {\n\trs.lock.RLock()\n\tdefer rs.lock.RUnlock()\n\tif v, ok := rs.values[key]; ok {\n\t\treturn v\n\t}\n\treturn nil\n}",
+    "funcname": "Get"
+}

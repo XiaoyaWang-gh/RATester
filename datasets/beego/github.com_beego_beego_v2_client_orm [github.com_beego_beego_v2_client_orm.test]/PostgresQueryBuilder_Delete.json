@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 182,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Delete(tables ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Delete(tables ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"DELETE\")\n\tif len(tables) != 0 {\n\t\tstr := processingStr(tables)\n\t\tqb.tokens = append(qb.tokens, str)\n\t}\n\treturn qb\n}",
+    "funcname": "Delete"
+}

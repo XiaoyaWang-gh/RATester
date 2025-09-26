@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/prune_resources.go",
+    "lineno": 17,
+    "focalfunc": "func (h *HugoSites) GC() (int, error)",
+    "funcbody": "func (h *HugoSites) GC() (int, error) {\n\treturn h.Deps.ResourceSpec.FileCaches.Prune()\n}",
+    "funcname": "GC"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 221,
+    "focalfunc": "func extractIP(req *http.Request) string",
+    "funcbody": "func extractIP(req *http.Request) string {\n\tra, _, _ := net.SplitHostPort(req.RemoteAddr)\n\treturn ra\n}",
+    "funcname": "extractIP"
+}

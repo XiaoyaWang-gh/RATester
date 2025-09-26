@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/roundtripper.go",
+    "lineno": 219,
+    "focalfunc": "func AddTransportOnContext(ctx context.Context) context.Context",
+    "funcbody": "func AddTransportOnContext(ctx context.Context) context.Context {\n\treturn context.WithValue(ctx, transportKey, &stickyRoundTripper{})\n}",
+    "funcname": "AddTransportOnContext"
+}

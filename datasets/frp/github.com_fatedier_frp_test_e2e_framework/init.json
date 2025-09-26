@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/util.go",
+    "lineno": 11,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tRunID = uuid.NewString()\n}",
+    "funcname": "init"
+}

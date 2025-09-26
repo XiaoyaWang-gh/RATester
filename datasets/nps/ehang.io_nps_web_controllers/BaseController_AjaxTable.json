@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 144,
+    "focalfunc": "func (s *BaseController) AjaxTable(list interface{}, cnt int, recordsTotal int, kwargs map[string]interface{})",
+    "funcbody": "func (s *BaseController) AjaxTable(list interface{}, cnt int, recordsTotal int, kwargs map[string]interface{}) {\n\tjson := make(map[string]interface{})\n\tjson[\"rows\"] = list\n\tjson[\"total\"] = recordsTotal\n\tif kwargs != nil {\n\t\tfor k, v := range kwargs {\n\t\t\tif v != nil {\n\t\t\t\tjson[k] = v\n\t\t\t}\n\t\t}\n\t}\n\ts.Data[\"json\"] = json\n\ts.ServeJSON()\n\ts.StopRun()\n}",
+    "funcname": "AjaxTable"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/grace.go",
+    "lineno": 113,
+    "focalfunc": "func WithShutdownCallback(shutdownCallback func()) ServerOption",
+    "funcbody": "func WithShutdownCallback(shutdownCallback func()) ServerOption {\n\treturn func(srv *Server) {\n\t\tsrv.shutdownCallbacks = append(srv.shutdownCallbacks, shutdownCallback)\n\t}\n}",
+    "funcname": "WithShutdownCallback"
+}

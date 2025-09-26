@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 137,
+    "focalfunc": "func checkCandidateSrcset(l *absurllexer)",
+    "funcbody": "func checkCandidateSrcset(l *absurllexer) {\n\tq := l.consumeQuote()\n\tif q == nil {\n\n\t\treturn\n\t}\n\n\tif !bytes.HasPrefix(l.content[l.pos:], relURLPrefix) {\n\t\treturn\n\t}\n\n\tposAfter := l.pos + relURLPrefixLen\n\tif posAfter >= len(l.content) {\n\t\treturn\n\t}\n\tr, _ := utf8.DecodeRune(l.content[posAfter:])\n\tif r == '/' {\n\n\t\treturn\n\t}\n\n\tposEnd := l.posAfterURL(q)\n\n\tif posEnd < 0 || posEnd > 2000 {\n\t\treturn\n\t}\n\n\tif l.pos > l.start {\n\t\tl.emit()\n\t}\n\n\tsection := l.content[l.pos : l.pos+posEnd+1]\n\n\tfields := bytes.Fields(section)\n\tfor i, f := range fields {\n\t\tif f[0] == '/' {\n\t\t\tl.w.Write(l.path)\n\t\t\tl.w.Write(f[1:])\n\n\t\t} else {\n\t\t\tl.w.Write(f)\n\t\t}\n\n\t\tif i < len(fields)-1 {\n\t\t\tl.w.Write([]byte(\" \"))\n\t\t}\n\t}\n\n\tl.pos += len(section)\n\tl.start = l.pos\n}",
+    "funcname": "checkCandidateSrcset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/time_type_adapter.go",
+    "lineno": 30,
+    "focalfunc": "func (t *TimeTypeAdapter) DefaultValue(ctx context.Context, dftValue string) (interface{}, error)",
+    "funcbody": "func (t *TimeTypeAdapter) DefaultValue(ctx context.Context, dftValue string) (interface{}, error) {\n\tif dftValue == \"now\" {\n\t\treturn time.Now(), nil\n\t}\n\treturn time.Parse(t.Layout, dftValue)\n}",
+    "funcname": "DefaultValue"
+}

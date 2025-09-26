@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/mysql/sess_mysql.go",
+    "lineno": 154,
+    "focalfunc": "func (mp *Provider) SessionRead(ctx context.Context, sid string) (session.Store, error)",
+    "funcbody": "func (mp *Provider) SessionRead(ctx context.Context, sid string) (session.Store, error) {\n\tc := mp.connectInit()\n\trow := c.QueryRow(\"select session_data from \"+TableName+\" where session_key=?\", sid)\n\tvar sessiondata []byte\n\terr := row.Scan(&sessiondata)\n\tif err == sql.ErrNoRows {\n\t\tc.Exec(\"insert into \"+TableName+\"(`session_key`,`session_data`,`session_expiry`) values(?,?,?)\",\n\t\t\tsid, \"\", time.Now().Unix())\n\t} else if err != nil {\n\t\treturn nil, err\n\t}\n\tvar kv map[interface{}]interface{}\n\tif len(sessiondata) == 0 {\n\t\tkv = make(map[interface{}]interface{})\n\t} else {\n\t\tkv, err = session.DecodeGob(sessiondata)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\trs := &SessionStore{c: c, sid: sid, values: kv}\n\treturn rs, nil\n}",
+    "funcname": "SessionRead"
+}

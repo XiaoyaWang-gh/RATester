@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup_config/config.go",
+    "lineno": 67,
+    "focalfunc": "func normalizeConfig(m map[string]any)",
+    "funcbody": "func normalizeConfig(m map[string]any) {\n\tv, err := maps.GetNestedParam(\"goldmark.parser\", \".\", m)\n\tif err == nil {\n\t\tvm := maps.ToStringMap(v)\n\n\t\tif vv, found := vm[\"attribute\"]; found {\n\t\t\tif vvb, ok := vv.(bool); ok {\n\t\t\t\tvm[\"attribute\"] = goldmark_config.ParserAttribute{\n\t\t\t\t\tTitle: vvb,\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tv, err = maps.GetNestedParam(\"goldmark.extensions\", \".\", m)\n\tif err == nil {\n\t\tvm := maps.ToStringMap(v)\n\t\tconst typographerKey = \"typographer\"\n\t\tif vv, found := vm[typographerKey]; found {\n\t\t\tif vvb, ok := vv.(bool); ok {\n\t\t\t\tif !vvb {\n\t\t\t\t\tvm[typographerKey] = goldmark_config.Typographer{\n\t\t\t\t\t\tDisable: true,\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\tdelete(vm, typographerKey)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "normalizeConfig"
+}

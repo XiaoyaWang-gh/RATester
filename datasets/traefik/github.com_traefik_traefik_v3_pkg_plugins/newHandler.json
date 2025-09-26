@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/middlewareyaegi.go",
+    "lineno": 118,
+    "focalfunc": "func (m *YaegiMiddleware) NewHandler(ctx context.Context, next http.Handler) (http.Handler, error)",
+    "funcbody": "func (m *YaegiMiddleware) NewHandler(ctx context.Context, next http.Handler) (http.Handler, error) {\n\treturn m.builder.newHandler(ctx, next, m.config, m.middlewareName)\n}",
+    "funcname": "NewHandler"
+}

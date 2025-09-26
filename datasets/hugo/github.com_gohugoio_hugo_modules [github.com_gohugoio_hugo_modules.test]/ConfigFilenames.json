@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 101,
+    "focalfunc": "func (m *moduleAdapter) ConfigFilenames() []string",
+    "funcbody": "func (m *moduleAdapter) ConfigFilenames() []string {\n\treturn m.configFilenames\n}",
+    "funcname": "ConfigFilenames"
+}

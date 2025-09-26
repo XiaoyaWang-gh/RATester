@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 853,
+    "focalfunc": "func ReleaseRequest(req *Request)",
+    "funcbody": "func ReleaseRequest(req *Request) {\n\treq.Reset()\n\trequestPool.Put(req)\n}",
+    "funcname": "ReleaseRequest"
+}

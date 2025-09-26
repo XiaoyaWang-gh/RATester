@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_cluster/redis_cluster.go",
+    "lineno": 275,
+    "focalfunc": "func (rp *Provider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (rp *Provider) SessionDestroy(ctx context.Context, sid string) error {\n\tc := rp.poollist\n\tc.Del(ctx, sid)\n\treturn nil\n}",
+    "funcname": "SessionDestroy"
+}

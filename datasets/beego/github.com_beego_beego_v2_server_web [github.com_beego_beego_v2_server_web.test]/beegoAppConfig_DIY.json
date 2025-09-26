@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 862,
+    "focalfunc": "func (b *beegoAppConfig) DIY(key string) (interface{}, error)",
+    "funcbody": "func (b *beegoAppConfig) DIY(key string) (interface{}, error) {\n\treturn b.innerConfig.DIY(key)\n}",
+    "funcname": "DIY"
+}

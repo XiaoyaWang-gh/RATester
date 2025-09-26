@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 264,
+    "focalfunc": "func randFloat(from, to float64) float64",
+    "funcbody": "func randFloat(from, to float64) float64 {\n\treturn (to-from)*prng.Float64() + from\n}",
+    "funcname": "randFloat"
+}

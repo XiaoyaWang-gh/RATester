@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 185,
+    "focalfunc": "func (crw *captureResponseWriter) Flush()",
+    "funcbody": "func (crw *captureResponseWriter) Flush() {\n\tif f, ok := crw.rw.(http.Flusher); ok {\n\t\tf.Flush()\n\t}\n}",
+    "funcname": "Flush"
+}

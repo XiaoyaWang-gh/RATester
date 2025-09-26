@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 160,
+    "focalfunc": "func (rp *HTTPReverseProxy) GetRouteConfig(domain, location, routeByHTTPUser string) *RouteConfig",
+    "funcbody": "func (rp *HTTPReverseProxy) GetRouteConfig(domain, location, routeByHTTPUser string) *RouteConfig {\n\tvr, ok := rp.getVhost(domain, location, routeByHTTPUser)\n\tif ok {\n\t\tlog.Debugf(\"get new HTTP request host [%s] path [%s] httpuser [%s]\", domain, location, routeByHTTPUser)\n\t\treturn vr.payload.(*RouteConfig)\n\t}\n\treturn nil\n}",
+    "funcname": "GetRouteConfig"
+}

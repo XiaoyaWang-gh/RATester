@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 917,
+    "focalfunc": "func (hr hookRendererTemplate) RenderHeading(cctx context.Context, w io.Writer, ctx hooks.HeadingContext) error",
+    "funcbody": "func (hr hookRendererTemplate) RenderHeading(cctx context.Context, w io.Writer, ctx hooks.HeadingContext) error {\n\treturn hr.templateHandler.ExecuteWithContext(cctx, hr.templ, w, ctx)\n}",
+    "funcname": "RenderHeading"
+}

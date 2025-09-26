@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 73,
+    "focalfunc": "func createClientFromConfig(c *rest.Config) (*clientWrapper, error)",
+    "funcbody": "func createClientFromConfig(c *rest.Config) (*clientWrapper, error) {\n\tc.UserAgent = fmt.Sprintf(\n\t\t\"%s/%s (%s/%s) kubernetes/crd\",\n\t\tfilepath.Base(os.Args[0]),\n\t\tversion.Version,\n\t\truntime.GOOS,\n\t\truntime.GOARCH,\n\t)\n\n\tcsCrd, err := traefikclientset.NewForConfig(c)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tcsKube, err := kclientset.NewForConfig(c)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn newClientImpl(csKube, csCrd), nil\n}",
+    "funcname": "createClientFromConfig"
+}

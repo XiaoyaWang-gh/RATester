@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/snappy.go",
+    "lineno": 40,
+    "focalfunc": "func (s *SnappyConn) Close() error",
+    "funcbody": "func (s *SnappyConn) Close() error {\n\terr := s.w.Close()\n\terr2 := s.c.Close()\n\tif err != nil && err2 == nil {\n\t\treturn err\n\t}\n\tif err == nil && err2 != nil {\n\t\treturn err2\n\t}\n\tif err != nil && err2 != nil {\n\t\treturn errors.New(err.Error() + err2.Error())\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

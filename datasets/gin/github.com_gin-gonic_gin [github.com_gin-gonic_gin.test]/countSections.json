@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 95,
+    "focalfunc": "func countSections(path string) uint16",
+    "funcbody": "func countSections(path string) uint16 {\n\ts := bytesconv.StringToBytes(path)\n\treturn uint16(bytes.Count(s, strSlash))\n}",
+    "funcname": "countSections"
+}

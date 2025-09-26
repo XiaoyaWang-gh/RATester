@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 707,
+    "focalfunc": "func (c *Controller) StartSession() session.Store",
+    "funcbody": "func (c *Controller) StartSession() session.Store {\n\tif c.CruSession == nil {\n\t\tc.CruSession = c.Ctx.Input.CruSession\n\t}\n\treturn c.CruSession\n}",
+    "funcname": "StartSession"
+}

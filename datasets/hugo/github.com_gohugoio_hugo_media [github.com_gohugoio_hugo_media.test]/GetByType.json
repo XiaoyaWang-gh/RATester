@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 258,
+    "focalfunc": "func (t Types) GetByType(tp string) (Type, bool)",
+    "funcbody": "func (t Types) GetByType(tp string) (Type, bool) {\n\tfor _, tt := range t {\n\t\tif strings.EqualFold(tt.Type, tp) {\n\t\t\treturn tt, true\n\t\t}\n\t}\n\n\tif !strings.Contains(tp, \"+\") {\n\n\t\tparts := strings.Split(tp, \"/\")\n\t\tif len(parts) == 2 {\n\t\t\treturn t.GetByMainSubType(parts[0], parts[1])\n\t\t}\n\t}\n\n\treturn Type{}, false\n}",
+    "funcname": "GetByType"
+}

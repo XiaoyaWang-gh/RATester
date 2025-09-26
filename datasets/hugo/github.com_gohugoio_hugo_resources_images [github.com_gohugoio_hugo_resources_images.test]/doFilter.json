@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 288,
+    "focalfunc": "func (p *ImageProcessor) doFilter(src image.Image, targetFormat Format, filters ...gift.Filter) (image.Image, error)",
+    "funcbody": "func (p *ImageProcessor) doFilter(src image.Image, targetFormat Format, filters ...gift.Filter) (image.Image, error) {\n\tfilter := gift.New(filters...)\n\n\tif giph, ok := src.(Giphy); ok {\n\t\tg := giph.GIF()\n\t\tif len(g.Image) < 2 || (targetFormat == 0 || targetFormat != GIF) {\n\t\t\tsrc = g.Image[0]\n\t\t} else {\n\t\t\tvar bounds image.Rectangle\n\t\t\tfirstFrame := g.Image[0]\n\t\t\ttmp := image.NewNRGBA(firstFrame.Bounds())\n\t\t\tfor i := range g.Image {\n\t\t\t\tgift.New().DrawAt(tmp, g.Image[i], g.Image[i].Bounds().Min, gift.OverOperator)\n\t\t\t\tbounds = filter.Bounds(tmp.Bounds())\n\t\t\t\tdst := image.NewPaletted(bounds, g.Image[i].Palette)\n\t\t\t\tfilter.Draw(dst, tmp)\n\t\t\t\tg.Image[i] = dst\n\t\t\t}\n\t\t\tg.Config.Width = bounds.Dx()\n\t\t\tg.Config.Height = bounds.Dy()\n\n\t\t\treturn giph, nil\n\t\t}\n\n\t}\n\n\tbounds := filter.Bounds(src.Bounds())\n\n\tvar dst draw.Image\n\tswitch src.(type) {\n\tcase *image.RGBA:\n\t\tdst = image.NewRGBA(bounds)\n\tcase *image.NRGBA:\n\t\tdst = image.NewNRGBA(bounds)\n\tcase *image.Gray:\n\t\tdst = image.NewGray(bounds)\n\tdefault:\n\t\tdst = image.NewNRGBA(bounds)\n\t}\n\tfilter.Draw(dst, src)\n\n\treturn dst, nil\n}",
+    "funcname": "doFilter"
+}

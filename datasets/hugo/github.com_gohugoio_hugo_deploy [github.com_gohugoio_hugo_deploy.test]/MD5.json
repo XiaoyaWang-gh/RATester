@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 456,
+    "focalfunc": "func (lf *localFile) MD5() []byte",
+    "funcbody": "func (lf *localFile) MD5() []byte {\n\tif len(lf.md5) > 0 {\n\t\treturn lf.md5\n\t}\n\th := md5.New()\n\tr, err := lf.Reader()\n\tif err != nil {\n\t\treturn nil\n\t}\n\tdefer r.Close()\n\tif _, err := io.Copy(h, r); err != nil {\n\t\treturn nil\n\t}\n\tlf.md5 = h.Sum(nil)\n\treturn lf.md5\n}",
+    "funcname": "MD5"
+}

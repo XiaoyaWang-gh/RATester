@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 52,
+    "focalfunc": "func (p *PathSpec) MakePathsSanitized(paths []string)",
+    "funcbody": "func (p *PathSpec) MakePathsSanitized(paths []string) {\n\tfor i, path := range paths {\n\t\tpaths[i] = p.MakePathSanitized(path)\n\t}\n}",
+    "funcname": "MakePathsSanitized"
+}

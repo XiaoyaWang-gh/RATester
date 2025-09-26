@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 95,
+    "focalfunc": "func (rc *Cache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error",
+    "funcbody": "func (rc *Cache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error {\n\titem := memcache.Item{Key: key, Expiration: int32(timeout / time.Second)}\n\tif v, ok := val.([]byte); ok {\n\t\titem.Value = v\n\t} else if str, ok := val.(string); ok {\n\t\titem.Value = []byte(str)\n\t} else {\n\t\treturn berror.Errorf(cache.InvalidMemCacheValue,\n\t\t\t\"the value must be string or byte[]. key: %s, value:%v\", key, val)\n\t}\n\treturn berror.Wrapf(rc.conn.Set(&item), cache.MemCacheCurdFailed,\n\t\t\"could not put key-value to memcache, key: %s\", key)\n}",
+    "funcname": "Put"
+}

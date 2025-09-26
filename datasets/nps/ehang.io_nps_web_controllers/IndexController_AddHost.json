@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 244,
+    "focalfunc": "func (s *IndexController) AddHost()",
+    "funcbody": "func (s *IndexController) AddHost() {\n\tif s.Ctx.Request.Method == \"GET\" {\n\t\ts.Data[\"client_id\"] = s.getEscapeString(\"client_id\")\n\t\ts.Data[\"menu\"] = \"host\"\n\t\ts.SetInfo(\"add host\")\n\t\ts.display(\"index/hadd\")\n\t} else {\n\t\th := &file.Host{\n\t\t\tId:\t\tint(file.GetDb().JsonDb.GetHostId()),\n\t\t\tHost:\t\ts.getEscapeString(\"host\"),\n\t\t\tTarget:\t\t&file.Target{TargetStr: s.getEscapeString(\"target\"), LocalProxy: s.GetBoolNoErr(\"local_proxy\")},\n\t\t\tHeaderChange:\ts.getEscapeString(\"header\"),\n\t\t\tHostChange:\ts.getEscapeString(\"hostchange\"),\n\t\t\tRemark:\t\ts.getEscapeString(\"remark\"),\n\t\t\tLocation:\ts.getEscapeString(\"location\"),\n\t\t\tFlow:\t\t&file.Flow{},\n\t\t\tScheme:\t\ts.getEscapeString(\"scheme\"),\n\t\t\tKeyFilePath:\ts.getEscapeString(\"key_file_path\"),\n\t\t\tCertFilePath:\ts.getEscapeString(\"cert_file_path\"),\n\t\t}\n\t\tvar err error\n\t\tif h.Client, err = file.GetDb().GetClient(s.GetIntNoErr(\"client_id\")); err != nil {\n\t\t\ts.AjaxErr(\"add error the client can not be found\")\n\t\t}\n\t\tif err := file.GetDb().NewHost(h); err != nil {\n\t\t\ts.AjaxErr(\"add fail\" + err.Error())\n\t\t}\n\t\ts.AjaxOk(\"add success\")\n\t}\n}",
+    "funcname": "AddHost"
+}

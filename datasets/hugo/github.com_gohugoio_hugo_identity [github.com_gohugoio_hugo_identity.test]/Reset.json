@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 394,
+    "focalfunc": "func (m *nopManager) Reset()",
+    "funcbody": "func (m *nopManager) Reset() {\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 162,
+    "focalfunc": "func NewTrace() Logger",
+    "funcbody": "func NewTrace() Logger {\n\topts := Options{\n\t\tDistinctLevel:\tlogg.LevelWarn,\n\t\tLevel:\t\tlogg.LevelTrace,\n\t\tStdout:\t\tos.Stdout,\n\t\tStderr:\t\tos.Stdout,\n\t}\n\treturn New(opts)\n}",
+    "funcname": "NewTrace"
+}

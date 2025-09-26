@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/alias.go",
+    "lineno": 81,
+    "focalfunc": "func (s *Site) publishDestAlias(allowRoot bool, path, permalink string, outputFormat output.Format, p page.Page) (err error)",
+    "funcbody": "func (s *Site) publishDestAlias(allowRoot bool, path, permalink string, outputFormat output.Format, p page.Page) (err error) {\n\thandler := newAliasHandler(s.Tmpl(), s.Log, allowRoot)\n\n\ttargetPath, err := handler.targetPathAlias(path)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\taliasContent, err := handler.renderAlias(permalink, p)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tpd := publisher.Descriptor{\n\t\tSrc:\t\taliasContent,\n\t\tTargetPath:\ttargetPath,\n\t\tStatCounter:\t&s.PathSpec.ProcessingStats.Aliases,\n\t\tOutputFormat:\toutputFormat,\n\t}\n\n\tif s.conf.RelativeURLs || s.conf.CanonifyURLs {\n\t\tpd.AbsURLPath = s.absURLPath(targetPath)\n\t}\n\n\treturn s.publisher.Publish(pd)\n}",
+    "funcname": "publishDestAlias"
+}

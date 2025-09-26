@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frps/main.go",
+    "lineno": 23,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\tsystem.EnableCompatibilityMode()\n\tExecute()\n}",
+    "funcname": "main"
+}

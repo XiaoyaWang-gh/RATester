@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 104,
+    "focalfunc": "func (s *Server) initListener() (err error)",
+    "funcbody": "func (s *Server) initListener() (err error) {\n\ts.l, err = net.Listen(\"tcp\", net.JoinHostPort(s.bindAddr, strconv.Itoa(s.bindPort)))\n\treturn\n}",
+    "funcname": "initListener"
+}

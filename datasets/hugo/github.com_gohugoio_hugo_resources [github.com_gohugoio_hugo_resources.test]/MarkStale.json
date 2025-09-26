@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 333,
+    "focalfunc": "func (s *AtomicStaler) MarkStale()",
+    "funcbody": "func (s *AtomicStaler) MarkStale() {\n\tatomic.AddUint32(&s.stale, 1)\n}",
+    "funcname": "MarkStale"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 57,
+    "focalfunc": "func NewClient(vKey string, noStore bool, noDisplay bool) *Client",
+    "funcbody": "func NewClient(vKey string, noStore bool, noDisplay bool) *Client {\n\treturn &Client{\n\t\tCnf:\t\tnew(Config),\n\t\tId:\t\t0,\n\t\tVerifyKey:\tvKey,\n\t\tAddr:\t\t\"\",\n\t\tRemark:\t\t\"\",\n\t\tStatus:\t\ttrue,\n\t\tIsConnect:\tfalse,\n\t\tRateLimit:\t0,\n\t\tFlow:\t\tnew(Flow),\n\t\tRate:\t\tnil,\n\t\tNoStore:\tnoStore,\n\t\tRWMutex:\tsync.RWMutex{},\n\t\tNoDisplay:\tnoDisplay,\n\t}\n}",
+    "funcname": "NewClient"
+}

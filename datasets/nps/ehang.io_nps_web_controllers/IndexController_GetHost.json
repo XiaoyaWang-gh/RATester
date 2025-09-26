@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 222,
+    "focalfunc": "func (s *IndexController) GetHost()",
+    "funcbody": "func (s *IndexController) GetHost() {\n\tif s.Ctx.Request.Method == \"POST\" {\n\t\tdata := make(map[string]interface{})\n\t\tif h, err := file.GetDb().GetHostById(s.GetIntNoErr(\"id\")); err != nil {\n\t\t\tdata[\"code\"] = 0\n\t\t} else {\n\t\t\tdata[\"data\"] = h\n\t\t\tdata[\"code\"] = 1\n\t\t}\n\t\ts.Data[\"json\"] = data\n\t\ts.ServeJSON()\n\t}\n}",
+    "funcname": "GetHost"
+}

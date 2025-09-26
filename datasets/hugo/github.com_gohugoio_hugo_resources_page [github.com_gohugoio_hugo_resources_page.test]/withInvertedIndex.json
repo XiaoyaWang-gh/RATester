@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 122,
+    "focalfunc": "func (p Pages) withInvertedIndex(ctx context.Context, search func(idx *related.InvertedIndex) ([]related.Document, error)) (Pages, error)",
+    "funcbody": "func (p Pages) withInvertedIndex(ctx context.Context, search func(idx *related.InvertedIndex) ([]related.Document, error)) (Pages, error) {\n\tif len(p) == 0 {\n\t\treturn nil, nil\n\t}\n\n\td, ok := p[0].(InternalDependencies)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"invalid type %T in related search\", p[0])\n\t}\n\n\tcache := d.GetRelatedDocsHandler()\n\n\tsearchIndex, err := cache.getOrCreateIndex(ctx, p)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tresult, err := search(searchIndex)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif len(result) > 0 {\n\t\tmp := make(Pages, len(result))\n\t\tfor i, match := range result {\n\t\t\tmp[i] = match.(Page)\n\t\t}\n\t\treturn mp, nil\n\t}\n\n\treturn nil, nil\n}",
+    "funcname": "withInvertedIndex"
+}

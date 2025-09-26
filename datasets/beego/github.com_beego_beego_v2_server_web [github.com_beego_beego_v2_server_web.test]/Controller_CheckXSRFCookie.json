@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 791,
+    "focalfunc": "func (c *Controller) CheckXSRFCookie() bool",
+    "funcbody": "func (c *Controller) CheckXSRFCookie() bool {\n\tif !c.EnableXSRF {\n\t\treturn true\n\t}\n\treturn c.Ctx.CheckXSRFCookie()\n}",
+    "funcname": "CheckXSRFCookie"
+}

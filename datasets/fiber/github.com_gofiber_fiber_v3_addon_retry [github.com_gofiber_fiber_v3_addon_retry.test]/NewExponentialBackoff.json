@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/addon/retry/exponential_backoff.go",
+    "lineno": 29,
+    "focalfunc": "func NewExponentialBackoff(config ...Config) *ExponentialBackoff",
+    "funcbody": "func NewExponentialBackoff(config ...Config) *ExponentialBackoff {\n\tcfg := configDefault(config...)\n\treturn &ExponentialBackoff{\n\t\tInitialInterval:\tcfg.InitialInterval,\n\t\tMaxBackoffTime:\t\tcfg.MaxBackoffTime,\n\t\tMultiplier:\t\tcfg.Multiplier,\n\t\tMaxRetryCount:\t\tcfg.MaxRetryCount,\n\t\tcurrentInterval:\tcfg.currentInterval,\n\t}\n}",
+    "funcname": "NewExponentialBackoff"
+}

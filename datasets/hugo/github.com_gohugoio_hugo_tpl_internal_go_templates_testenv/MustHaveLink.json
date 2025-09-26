@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 355,
+    "focalfunc": "func MustHaveLink(t testing.TB)",
+    "funcbody": "func MustHaveLink(t testing.TB) {\n\tif !HasLink() {\n\t\tt.Skipf(\"skipping test: hardlinks are not supported on %s/%s\", runtime.GOOS, runtime.GOARCH)\n\t}\n}",
+    "funcname": "MustHaveLink"
+}

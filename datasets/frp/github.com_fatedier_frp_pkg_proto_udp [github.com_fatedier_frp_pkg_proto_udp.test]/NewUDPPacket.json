@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/proto/udp/udp.go",
+    "lineno": 29,
+    "focalfunc": "func NewUDPPacket(buf []byte, laddr, raddr *net.UDPAddr) *msg.UDPPacket",
+    "funcbody": "func NewUDPPacket(buf []byte, laddr, raddr *net.UDPAddr) *msg.UDPPacket {\n\treturn &msg.UDPPacket{\n\t\tContent:\tbase64.StdEncoding.EncodeToString(buf),\n\t\tLocalAddr:\tladdr,\n\t\tRemoteAddr:\traddr,\n\t}\n}",
+    "funcname": "NewUDPPacket"
+}

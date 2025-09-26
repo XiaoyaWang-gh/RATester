@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 183,
+    "focalfunc": "func (r *ReleaseHandler) gitPull()",
+    "funcbody": "func (r *ReleaseHandler) gitPull() {\n\tif _, err := r.git(\"pull\", \"origin\", \"HEAD\"); err != nil {\n\t\tlog.Fatal(\"pull failed:\", err)\n\t}\n}",
+    "funcname": "gitPull"
+}

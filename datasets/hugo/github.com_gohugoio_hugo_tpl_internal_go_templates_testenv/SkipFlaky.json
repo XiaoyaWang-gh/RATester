@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 363,
+    "focalfunc": "func SkipFlaky(t testing.TB, issue int)",
+    "funcbody": "func SkipFlaky(t testing.TB, issue int) {\n\tt.Helper()\n\tif !*flaky {\n\t\tt.Skipf(\"skipping known flaky test without the -flaky flag; see golang.org/issue/%d\", issue)\n\t}\n}",
+    "funcname": "SkipFlaky"
+}

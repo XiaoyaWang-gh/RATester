@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/e2e.go",
+    "lineno": 32,
+    "focalfunc": "func RunE2ETests(t *testing.T)",
+    "funcbody": "func RunE2ETests(t *testing.T) {\n\tgomega.RegisterFailHandler(framework.Fail)\n\n\tsuiteConfig, reporterConfig := ginkgo.GinkgoConfiguration()\n\n\tsuiteConfig.EmitSpecProgress = true\n\n\tsuiteConfig.RandomizeAllSpecs = true\n\n\tlog.Infof(\"Starting e2e run %q on Ginkgo node %d of total %d\",\n\t\tframework.RunID, suiteConfig.ParallelProcess, suiteConfig.ParallelTotal)\n\tginkgo.RunSpecs(t, \"frp e2e suite\", suiteConfig, reporterConfig)\n}",
+    "funcname": "RunE2ETests"
+}

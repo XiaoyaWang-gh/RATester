@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 427,
+    "focalfunc": "func NewCaches(p *helpers.PathSpec) (Caches, error)",
+    "funcbody": "func NewCaches(p *helpers.PathSpec) (Caches, error) {\n\tdcfg := p.Cfg.GetConfigSection(\"caches\").(Configs)\n\tfs := p.Fs.Source\n\n\tm := make(Caches)\n\tfor k, v := range dcfg {\n\t\tvar cfs afero.Fs\n\n\t\tif v.IsResourceDir {\n\t\t\tcfs = p.BaseFs.ResourcesCache\n\t\t} else {\n\t\t\tcfs = fs\n\t\t}\n\n\t\tif cfs == nil {\n\t\t\tpanic(\"nil fs\")\n\t\t}\n\n\t\tbaseDir := v.DirCompiled\n\n\t\tbfs := hugofs.NewBasePathFs(cfs, baseDir)\n\n\t\tvar pruneAllRootDir string\n\t\tif k == CacheKeyModules {\n\t\t\tpruneAllRootDir = \"pkg\"\n\t\t}\n\n\t\tm[k] = NewCache(bfs, v.MaxAge, pruneAllRootDir)\n\t}\n\n\treturn m, nil\n}",
+    "funcname": "NewCaches"
+}

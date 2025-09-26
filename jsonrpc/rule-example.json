@@ -1,0 +1,37 @@
+[
+    {
+        "message":  "apiextensions/v1beta1/customresourcedefinitions is deprecated, apiextensions/v1/customresourcedefinitions should be used instead",
+        "when": {
+            "or": [
+                {
+                    "go.referenced": "*CustomerResourceDefinition*"
+                }
+
+            ]
+        }
+    },
+    {
+        "message": "testing one condition",
+        "when": {
+              "go.referenced": "*CustomerResourceDefinition*"
+        }
+    },
+    {
+        "message": "testing nested conditions",
+        "when": {
+            "or": [
+                {
+                    "and": [
+                        {
+                            "go.referenced": "*CustomerResourceDefinition*"
+                        }
+                    ]
+                },
+                {
+                    "go.referenced": "*CustomerResourceDefinition*"
+                }
+            ]
+        }
+    }
+
+]

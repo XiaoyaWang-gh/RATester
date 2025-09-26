@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 76,
+    "focalfunc": "func (fi bindataFileInfo) Sys() interface{}",
+    "funcbody": "func (fi bindataFileInfo) Sys() interface{} {\n\treturn nil\n}",
+    "funcname": "Sys"
+}

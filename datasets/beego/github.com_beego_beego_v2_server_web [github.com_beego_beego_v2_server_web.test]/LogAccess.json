@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1390,
+    "focalfunc": "func LogAccess(ctx *beecontext.Context, startTime *time.Time, statusCode int)",
+    "funcbody": "func LogAccess(ctx *beecontext.Context, startTime *time.Time, statusCode int) {\n\tBeeApp.LogAccess(ctx, startTime, statusCode)\n}",
+    "funcname": "LogAccess"
+}

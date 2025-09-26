@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 55,
+    "focalfunc": "func CfgSessionIdPrefix(prefix string) ManagerConfigOpt",
+    "funcbody": "func CfgSessionIdPrefix(prefix string) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.SessionIDPrefix = prefix\n\t}\n}",
+    "funcname": "CfgSessionIdPrefix"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 232,
+    "focalfunc": "func (p Pages) groupByDateField(format string, sorter func(p Pages) Pages, getDate func(p Page) time.Time, order ...string) (PagesGroup, error)",
+    "funcbody": "func (p Pages) groupByDateField(format string, sorter func(p Pages) Pages, getDate func(p Page) time.Time, order ...string) (PagesGroup, error) {\n\tif len(p) < 1 {\n\t\treturn nil, nil\n\t}\n\n\tsp := sorter(p)\n\n\tif !(len(order) > 0 && (strings.ToLower(order[0]) == \"asc\" || strings.ToLower(order[0]) == \"rev\" || strings.ToLower(order[0]) == \"reverse\")) {\n\t\tsp = sp.Reverse()\n\t}\n\n\tif sp == nil {\n\t\treturn nil, nil\n\t}\n\n\tfirstPage := sp[0]\n\tdate := getDate(firstPage)\n\n\tcurrentSite := firstPage.Site().Current()\n\tformatter := langs.GetTimeFormatter(currentSite.Language())\n\tformatted := formatter.Format(date, format)\n\tvar r []PageGroup\n\tr = append(r, PageGroup{Key: formatted, Pages: make(Pages, 0)})\n\tr[0].Pages = append(r[0].Pages, sp[0])\n\n\ti := 0\n\tfor _, e := range sp[1:] {\n\t\tdate = getDate(e)\n\t\tformatted := formatter.Format(date, format)\n\t\tif r[i].Key.(string) != formatted {\n\t\t\tr = append(r, PageGroup{Key: formatted})\n\t\t\ti++\n\t\t}\n\t\tr[i].Pages = append(r[i].Pages, e)\n\t}\n\treturn r, nil\n}",
+    "funcname": "groupByDateField"
+}

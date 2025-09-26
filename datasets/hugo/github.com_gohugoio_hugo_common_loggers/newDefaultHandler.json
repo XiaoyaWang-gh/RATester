@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlerdefault.go",
+    "lineno": 49,
+    "focalfunc": "func newDefaultHandler(outWriter, errWriter io.Writer) logg.Handler",
+    "funcbody": "func newDefaultHandler(outWriter, errWriter io.Writer) logg.Handler {\n\treturn &defaultHandler{\n\t\toutWriter:\toutWriter,\n\t\terrWriter:\terrWriter,\n\t\tPadding:\t0,\n\t}\n}",
+    "funcname": "newDefaultHandler"
+}

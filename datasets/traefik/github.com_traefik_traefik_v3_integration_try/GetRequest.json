@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 50,
+    "focalfunc": "func GetRequest(url string, timeout time.Duration, conditions ...ResponseCondition) error",
+    "funcbody": "func GetRequest(url string, timeout time.Duration, conditions ...ResponseCondition) error {\n\tresp, err := doTryGet(url, timeout, nil, conditions...)\n\n\tif resp != nil && resp.Body != nil {\n\t\tdefer resp.Body.Close()\n\t}\n\n\treturn err\n}",
+    "funcname": "GetRequest"
+}

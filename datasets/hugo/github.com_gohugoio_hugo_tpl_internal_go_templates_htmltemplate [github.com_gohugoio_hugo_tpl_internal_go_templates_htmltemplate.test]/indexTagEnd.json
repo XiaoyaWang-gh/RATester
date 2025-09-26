@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 230,
+    "focalfunc": "func indexTagEnd(s []byte, tag []byte) int",
+    "funcbody": "func indexTagEnd(s []byte, tag []byte) int {\n\tres := 0\n\tplen := len(specialTagEndPrefix)\n\tfor len(s) > 0 {\n\n\t\ti := bytes.Index(s, specialTagEndPrefix)\n\t\tif i == -1 {\n\t\t\treturn i\n\t\t}\n\t\ts = s[i+plen:]\n\n\t\tif len(tag) <= len(s) && bytes.EqualFold(tag, s[:len(tag)]) {\n\t\t\ts = s[len(tag):]\n\n\t\t\tif len(s) > 0 && bytes.IndexByte(tagEndSeparators, s[0]) != -1 {\n\t\t\t\treturn res + i\n\t\t\t}\n\t\t\tres += len(tag)\n\t\t}\n\t\tres += i + plen\n\t}\n\treturn -1\n}",
+    "funcname": "indexTagEnd"
+}

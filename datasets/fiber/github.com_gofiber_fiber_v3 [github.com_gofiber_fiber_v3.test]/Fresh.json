@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 588,
+    "focalfunc": "func (c *DefaultCtx) Fresh() bool",
+    "funcbody": "func (c *DefaultCtx) Fresh() bool {\n\n\tmodifiedSince := c.Get(HeaderIfModifiedSince)\n\tnoneMatch := c.Get(HeaderIfNoneMatch)\n\n\tif modifiedSince == \"\" && noneMatch == \"\" {\n\t\treturn false\n\t}\n\n\tcacheControl := c.Get(HeaderCacheControl)\n\tif cacheControl != \"\" && isNoCache(cacheControl) {\n\t\treturn false\n\t}\n\n\tif noneMatch != \"\" && noneMatch != \"*\" {\n\t\tetag := c.app.getString(c.fasthttp.Response.Header.Peek(HeaderETag))\n\t\tif etag == \"\" {\n\t\t\treturn false\n\t\t}\n\t\tif c.app.isEtagStale(etag, c.app.getBytes(noneMatch)) {\n\t\t\treturn false\n\t\t}\n\n\t\tif modifiedSince != \"\" {\n\t\t\tlastModified := c.app.getString(c.fasthttp.Response.Header.Peek(HeaderLastModified))\n\t\t\tif lastModified != \"\" {\n\t\t\t\tlastModifiedTime, err := http.ParseTime(lastModified)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn false\n\t\t\t\t}\n\t\t\t\tmodifiedSinceTime, err := http.ParseTime(modifiedSince)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn false\n\t\t\t\t}\n\t\t\t\treturn lastModifiedTime.Compare(modifiedSinceTime) != 1\n\t\t\t}\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "Fresh"
+}

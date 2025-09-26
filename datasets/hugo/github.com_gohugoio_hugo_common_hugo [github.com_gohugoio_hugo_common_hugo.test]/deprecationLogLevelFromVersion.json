@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 428,
+    "focalfunc": "func deprecationLogLevelFromVersion(ver string) logg.Level",
+    "funcbody": "func deprecationLogLevelFromVersion(ver string) logg.Level {\n\tfrom := MustParseVersion(ver)\n\tto := CurrentVersion\n\tminorDiff := to.Minor - from.Minor\n\tswitch {\n\tcase minorDiff >= 12:\n\n\t\treturn logg.LevelError\n\tcase minorDiff >= 6:\n\n\t\treturn logg.LevelWarn\n\tdefault:\n\t\treturn logg.LevelInfo\n\t}\n}",
+    "funcname": "deprecationLogLevelFromVersion"
+}

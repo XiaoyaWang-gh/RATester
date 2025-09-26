@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 527,
+    "focalfunc": "func buildPathRule(pathMatch gatev1.HTTPPathMatch) (string, int)",
+    "funcbody": "func buildPathRule(pathMatch gatev1.HTTPPathMatch) (string, int) {\n\tpathType := ptr.Deref(pathMatch.Type, gatev1.PathMatchPathPrefix)\n\tpathValue := ptr.Deref(pathMatch.Value, \"/\")\n\n\tswitch pathType {\n\tcase gatev1.PathMatchExact:\n\t\treturn fmt.Sprintf(\"Path(`%s`)\", pathValue), 100000\n\n\tcase gatev1.PathMatchPathPrefix:\n\n\t\tif pathValue == \"/\" {\n\t\t\treturn \"PathPrefix(`/`)\", 1\n\t\t}\n\n\t\tpv := strings.TrimSuffix(pathValue, \"/\")\n\t\treturn fmt.Sprintf(\"(Path(`%[1]s`) || PathPrefix(`%[1]s/`))\", pv), 10000 + len(pathValue)*100\n\n\tcase gatev1.PathMatchRegularExpression:\n\t\treturn fmt.Sprintf(\"PathRegexp(`%s`)\", pathValue), 10000 + len(pathValue)*100\n\n\tdefault:\n\t\treturn \"PathPrefix(`/`)\", 1\n\t}\n}",
+    "funcname": "buildPathRule"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 196,
+    "focalfunc": "func (input *BeegoInput) AcceptsHTML() bool",
+    "funcbody": "func (input *BeegoInput) AcceptsHTML() bool {\n\treturn acceptsHTMLRegex.MatchString(input.Header(\"Accept\"))\n}",
+    "funcname": "AcceptsHTML"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/hqt/checkers.go",
+    "lineno": 102,
+    "focalfunc": "func DeepAllowUnexported(vs ...any) cmp.Option",
+    "funcbody": "func DeepAllowUnexported(vs ...any) cmp.Option {\n\tm := make(map[reflect.Type]struct{})\n\tfor _, v := range vs {\n\t\tstructTypes(reflect.ValueOf(v), m)\n\t}\n\tvar typs []any\n\tfor t := range m {\n\t\ttyps = append(typs, reflect.New(t).Elem().Interface())\n\t}\n\treturn cmp.AllowUnexported(typs...)\n}",
+    "funcname": "DeepAllowUnexported"
+}

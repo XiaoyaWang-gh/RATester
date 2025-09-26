@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 238,
+    "focalfunc": "func (p *PipeNode) CopyPipe() *PipeNode",
+    "funcbody": "func (p *PipeNode) CopyPipe() *PipeNode {\n\tif p == nil {\n\t\treturn p\n\t}\n\tvars := make([]*VariableNode, len(p.Decl))\n\tfor i, d := range p.Decl {\n\t\tvars[i] = d.Copy().(*VariableNode)\n\t}\n\tn := p.tr.newPipeline(p.Pos, p.Line, vars)\n\tn.IsAssign = p.IsAssign\n\tfor _, c := range p.Cmds {\n\t\tn.append(c.Copy().(*CommandNode))\n\t}\n\treturn n\n}",
+    "funcname": "CopyPipe"
+}

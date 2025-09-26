@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter.go",
+    "lineno": 132,
+    "focalfunc": "func WithCaseSensitive(sensitive bool) FilterOpt",
+    "funcbody": "func WithCaseSensitive(sensitive bool) FilterOpt {\n\treturn func(opts *filterOpts) {\n\t\topts.routerCaseSensitive = sensitive\n\t}\n}",
+    "funcname": "WithCaseSensitive"
+}

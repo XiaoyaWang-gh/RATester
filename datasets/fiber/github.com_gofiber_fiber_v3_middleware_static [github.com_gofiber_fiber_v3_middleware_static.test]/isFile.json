@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/static/static.go",
+    "lineno": 155,
+    "focalfunc": "func isFile(root string, filesystem fs.FS) (bool, error)",
+    "funcbody": "func isFile(root string, filesystem fs.FS) (bool, error) {\n\tvar file fs.File\n\tvar err error\n\n\tif filesystem != nil {\n\t\tfile, err = filesystem.Open(root)\n\t\tif err != nil {\n\t\t\treturn false, fmt.Errorf(\"static: %w\", err)\n\t\t}\n\t} else {\n\t\tfile, err = os.Open(filepath.Clean(root))\n\t\tif err != nil {\n\t\t\treturn false, fmt.Errorf(\"static: %w\", err)\n\t\t}\n\t}\n\n\tstat, err := file.Stat()\n\tif err != nil {\n\t\treturn false, fmt.Errorf(\"static: %w\", err)\n\t}\n\n\treturn stat.Mode().IsRegular(), nil\n}",
+    "funcname": "isFile"
+}

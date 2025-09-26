@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 68,
+    "focalfunc": "func ForUpdate() *Hint",
+    "funcbody": "func ForUpdate() *Hint {\n\treturn NewHint(KeyForUpdate, true)\n}",
+    "funcname": "ForUpdate"
+}

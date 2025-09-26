@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 797,
+    "focalfunc": "func (p *pageMeta) newContentConverter(ps *pageState, markup string) (converter.Converter, error)",
+    "funcbody": "func (p *pageMeta) newContentConverter(ps *pageState, markup string) (converter.Converter, error) {\n\tif ps == nil {\n\t\tpanic(\"no Page provided\")\n\t}\n\tcp := p.s.ContentSpec.Converters.Get(markup)\n\tif cp == nil {\n\t\treturn converter.NopConverter, fmt.Errorf(\"no content renderer found for markup %q, page: %s\", markup, ps.getPageInfoForError())\n\t}\n\n\tvar id string\n\tvar filename string\n\tvar path string\n\tif p.f != nil {\n\t\tid = p.f.UniqueID()\n\t\tfilename = p.f.Filename()\n\t\tpath = p.f.Path()\n\t} else {\n\t\tpath = p.Path()\n\t}\n\n\tdoc := newPageForRenderHook(ps)\n\n\tdocumentLookup := func(id uint64) any {\n\t\tif id == ps.pid {\n\n\t\t\treturn doc\n\t\t}\n\t\tif v, ok := ps.pageOutput.pco.otherOutputs.Get(id); ok {\n\t\t\treturn v.po.p\n\t\t}\n\t\treturn nil\n\t}\n\n\tcpp, err := cp.New(\n\t\tconverter.DocumentContext{\n\t\t\tDocument:\tdoc,\n\t\t\tDocumentLookup:\tdocumentLookup,\n\t\t\tDocumentID:\tid,\n\t\t\tDocumentName:\tpath,\n\t\t\tFilename:\tfilename,\n\t\t},\n\t)\n\tif err != nil {\n\t\treturn converter.NopConverter, err\n\t}\n\n\treturn cpp, nil\n}",
+    "funcname": "newContentConverter"
+}

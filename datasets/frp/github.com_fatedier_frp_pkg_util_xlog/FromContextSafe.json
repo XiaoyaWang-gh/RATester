@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/ctx.go",
+    "lineno": 36,
+    "focalfunc": "func FromContextSafe(ctx context.Context) *Logger",
+    "funcbody": "func FromContextSafe(ctx context.Context) *Logger {\n\txl, ok := ctx.Value(xlogKey).(*Logger)\n\tif !ok {\n\t\txl = New()\n\t}\n\treturn xl\n}",
+    "funcname": "FromContextSafe"
+}

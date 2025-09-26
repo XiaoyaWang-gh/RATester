@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/files/classifier.go",
+    "lineno": 72,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tsort.Strings(ComponentFolders)\n\tfor _, f := range ComponentFolders {\n\t\tcomponentFoldersSet[f] = true\n\t}\n}",
+    "funcname": "init"
+}

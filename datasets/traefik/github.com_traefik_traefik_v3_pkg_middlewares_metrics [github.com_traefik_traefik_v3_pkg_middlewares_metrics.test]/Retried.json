@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 268,
+    "focalfunc": "func (m *RetryListener) Retried(_ *http.Request, _ int)",
+    "funcbody": "func (m *RetryListener) Retried(_ *http.Request, _ int) {\n\tm.retryMetrics.ServiceRetriesCounter().With(\"service\", m.serviceName).Add(1)\n}",
+    "funcname": "Retried"
+}

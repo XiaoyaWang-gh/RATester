@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 71,
+    "focalfunc": "func TestOptWarn() TestOpt",
+    "funcbody": "func TestOptWarn() TestOpt {\n\treturn func(c *IntegrationTestConfig) {\n\t\tc.LogLevel = logg.LevelWarn\n\t}\n}",
+    "funcname": "TestOptWarn"
+}

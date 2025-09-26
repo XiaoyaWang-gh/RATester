@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 30,
+    "focalfunc": "func numberToFloat(v reflect.Value) (float64, error)",
+    "funcbody": "func numberToFloat(v reflect.Value) (float64, error) {\n\tswitch kind := v.Kind(); {\n\tcase isFloat(kind):\n\t\treturn v.Float(), nil\n\tcase isInt(kind):\n\t\treturn float64(v.Int()), nil\n\tcase isUint(kind):\n\t\treturn float64(v.Uint()), nil\n\tcase kind == reflect.Interface:\n\t\treturn numberToFloat(v.Elem())\n\tdefault:\n\t\treturn 0, fmt.Errorf(\"invalid kind %s in numberToFloat\", kind)\n\t}\n}",
+    "funcname": "numberToFloat"
+}

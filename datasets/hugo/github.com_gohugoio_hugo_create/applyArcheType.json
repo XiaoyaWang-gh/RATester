@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/content.go",
+    "lineno": 270,
+    "focalfunc": "func (b *contentBuilder) applyArcheType(contentFilename string, archetypeFi hugofs.FileMetaInfo) error",
+    "funcbody": "func (b *contentBuilder) applyArcheType(contentFilename string, archetypeFi hugofs.FileMetaInfo) error {\n\tp := b.h.GetContentPage(contentFilename)\n\tif p == nil {\n\t\tpanic(fmt.Sprintf(\"[BUG] no Page found for %q\", contentFilename))\n\t}\n\n\tf, err := b.sourceFs.Create(contentFilename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\n\tif archetypeFi == nil {\n\t\treturn b.cf.ApplyArchetypeTemplate(f, p, b.kind, DefaultArchetypeTemplateTemplate)\n\t}\n\n\treturn b.cf.ApplyArchetypeFi(f, p, b.kind, archetypeFi)\n}",
+    "funcname": "applyArcheType"
+}

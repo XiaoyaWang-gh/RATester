@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler.go",
+    "lineno": 117,
+    "focalfunc": "func (h Handler) getRuntimeConfiguration(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getRuntimeConfiguration(rw http.ResponseWriter, request *http.Request) {\n\tsiRepr := make(map[string]*serviceInfoRepresentation, len(h.runtimeConfiguration.Services))\n\tfor k, v := range h.runtimeConfiguration.Services {\n\t\tsiRepr[k] = &serviceInfoRepresentation{\n\t\t\tServiceInfo:\tv,\n\t\t\tServerStatus:\tv.GetAllStatus(),\n\t\t}\n\t}\n\n\tresult := RunTimeRepresentation{\n\t\tRouters:\th.runtimeConfiguration.Routers,\n\t\tMiddlewares:\th.runtimeConfiguration.Middlewares,\n\t\tServices:\tsiRepr,\n\t\tTCPRouters:\th.runtimeConfiguration.TCPRouters,\n\t\tTCPMiddlewares:\th.runtimeConfiguration.TCPMiddlewares,\n\t\tTCPServices:\th.runtimeConfiguration.TCPServices,\n\t\tUDPRouters:\th.runtimeConfiguration.UDPRouters,\n\t\tUDPServices:\th.runtimeConfiguration.UDPServices,\n\t}\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\terr := json.NewEncoder(rw).Encode(result)\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getRuntimeConfiguration"
+}

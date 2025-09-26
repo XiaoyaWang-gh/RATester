@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/segments/segments.go",
+    "lineno": 72,
+    "focalfunc": "func (f segmentFilter) ShouldExcludeFine(fields SegmentMatcherFields) bool",
+    "funcbody": "func (f segmentFilter) ShouldExcludeFine(fields SegmentMatcherFields) bool {\n\treturn f.fine(fields)\n}",
+    "funcname": "ShouldExcludeFine"
+}

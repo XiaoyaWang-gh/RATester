@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 74,
+    "focalfunc": "func RandBool() bool",
+    "funcbody": "func RandBool() bool {\n\treturn Rnd.Intn(2) != 0\n}",
+    "funcname": "RandBool"
+}

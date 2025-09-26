@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 133,
+    "focalfunc": "func (c Config) CheckAllowedHTTPURL(url string) error",
+    "funcbody": "func (c Config) CheckAllowedHTTPURL(url string) error {\n\tif !c.HTTP.URLs.Accept(url) {\n\t\treturn &AccessDeniedError{\n\t\t\tname:\t\turl,\n\t\t\tpath:\t\t\"security.http.urls\",\n\t\t\tpolicies:\tc.ToTOML(),\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "CheckAllowedHTTPURL"
+}

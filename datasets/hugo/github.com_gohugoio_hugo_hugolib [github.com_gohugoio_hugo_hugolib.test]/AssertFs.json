@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 314,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertFs(fs afero.Fs, matches ...string)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertFs(fs afero.Fs, matches ...string) {\n\ts.Helper()\n\tvar buff bytes.Buffer\n\ts.Assert(s.printAndCheckFs(fs, \"\", &buff), qt.IsNil)\n\tprintFsLines := strings.Split(buff.String(), \"\\n\")\n\tsort.Strings(printFsLines)\n\tcontent := strings.TrimSpace((strings.Join(printFsLines, \"\\n\")))\n\tfor _, m := range matches {\n\t\tcm := qt.Commentf(\"Match: %q\\nIn:\\n%s\", m, content)\n\t\tlines := strings.Split(m, \"\\n\")\n\t\tfor _, match := range lines {\n\t\t\tmatch = strings.TrimSpace(match)\n\t\t\tvar negate bool\n\t\t\tif strings.HasPrefix(match, \"! \") {\n\t\t\t\tnegate = true\n\t\t\t\tmatch = strings.TrimPrefix(match, \"! \")\n\t\t\t}\n\t\t\tif negate {\n\t\t\t\ts.Assert(content, qt.Not(qt.Contains), match, cm)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\ts.Assert(content, qt.Contains, match, cm)\n\t\t}\n\t}\n}",
+    "funcname": "AssertFs"
+}

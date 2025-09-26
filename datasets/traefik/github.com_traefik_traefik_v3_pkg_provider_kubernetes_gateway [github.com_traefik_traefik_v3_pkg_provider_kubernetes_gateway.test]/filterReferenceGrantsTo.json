@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1172,
+    "focalfunc": "func filterReferenceGrantsTo(referenceGrants []*gatev1beta1.ReferenceGrant, group, kind, name string) []*gatev1beta1.ReferenceGrant",
+    "funcbody": "func filterReferenceGrantsTo(referenceGrants []*gatev1beta1.ReferenceGrant, group, kind, name string) []*gatev1beta1.ReferenceGrant {\n\tvar matchingReferenceGrants []*gatev1beta1.ReferenceGrant\n\tfor _, referenceGrant := range referenceGrants {\n\t\tif referenceGrantMatchesTo(referenceGrant, group, kind, name) {\n\t\t\tmatchingReferenceGrants = append(matchingReferenceGrants, referenceGrant)\n\t\t}\n\t}\n\treturn matchingReferenceGrants\n}",
+    "funcname": "filterReferenceGrantsTo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/translationProvider.go",
+    "lineno": 124,
+    "focalfunc": "func (tp *TranslationProvider) CloneResource(dst, src *deps.Deps) error",
+    "funcbody": "func (tp *TranslationProvider) CloneResource(dst, src *deps.Deps) error {\n\tdst.Translate = tp.t.Func(dst.Conf.Language().Lang)\n\treturn nil\n}",
+    "funcname": "CloneResource"
+}

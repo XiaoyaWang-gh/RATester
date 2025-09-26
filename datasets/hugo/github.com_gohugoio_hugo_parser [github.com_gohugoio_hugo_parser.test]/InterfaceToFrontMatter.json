@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/frontmatter.go",
+    "lineno": 80,
+    "focalfunc": "func InterfaceToFrontMatter(in any, format metadecoders.Format, w io.Writer) error",
+    "funcbody": "func InterfaceToFrontMatter(in any, format metadecoders.Format, w io.Writer) error {\n\tif in == nil {\n\t\treturn errors.New(\"input was nil\")\n\t}\n\n\tswitch format {\n\tcase metadecoders.YAML:\n\t\t_, err := w.Write([]byte(yamlDelimLf))\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\terr = InterfaceToConfig(in, format, w)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t_, err = w.Write([]byte(yamlDelimLf))\n\t\treturn err\n\n\tcase metadecoders.TOML:\n\t\t_, err := w.Write([]byte(tomlDelimLf))\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\terr = InterfaceToConfig(in, format, w)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\t_, err = w.Write([]byte(tomlDelimLf))\n\t\treturn err\n\n\tdefault:\n\t\treturn InterfaceToConfig(in, format, w)\n\t}\n}",
+    "funcname": "InterfaceToFrontMatter"
+}

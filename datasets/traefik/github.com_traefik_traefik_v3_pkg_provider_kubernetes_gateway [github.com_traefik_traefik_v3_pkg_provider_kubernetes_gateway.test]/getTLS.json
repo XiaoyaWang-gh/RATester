@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 811,
+    "focalfunc": "func (p *Provider) getTLS(secretName gatev1.ObjectName, namespace string) (*tls.CertAndStores, error)",
+    "funcbody": "func (p *Provider) getTLS(secretName gatev1.ObjectName, namespace string) (*tls.CertAndStores, error) {\n\tsecret, exists, err := p.client.GetSecret(namespace, string(secretName))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to fetch secret %s/%s: %w\", namespace, secretName, err)\n\t}\n\tif !exists {\n\t\treturn nil, fmt.Errorf(\"secret %s/%s does not exist\", namespace, secretName)\n\t}\n\n\tcert, key, err := getCertificateBlocks(secret, namespace, string(secretName))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &tls.CertAndStores{\n\t\tCertificate: tls.Certificate{\n\t\t\tCertFile:\ttypes.FileOrContent(cert),\n\t\t\tKeyFile:\ttypes.FileOrContent(key),\n\t\t},\n\t}, nil\n}",
+    "funcname": "getTLS"
+}

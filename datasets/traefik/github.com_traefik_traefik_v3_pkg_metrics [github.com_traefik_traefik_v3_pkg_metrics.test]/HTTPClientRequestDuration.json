@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 93,
+    "focalfunc": "func (s *SemConvMetricsRegistry) HTTPClientRequestDuration() metric.Float64Histogram",
+    "funcbody": "func (s *SemConvMetricsRegistry) HTTPClientRequestDuration() metric.Float64Histogram {\n\tif s == nil {\n\t\treturn nil\n\t}\n\n\treturn s.httpClientRequestDuration\n}",
+    "funcname": "HTTPClientRequestDuration"
+}

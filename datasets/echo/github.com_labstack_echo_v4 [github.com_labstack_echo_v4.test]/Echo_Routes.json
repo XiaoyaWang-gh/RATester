@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 636,
+    "focalfunc": "func (e *Echo) Routes() []*Route",
+    "funcbody": "func (e *Echo) Routes() []*Route {\n\treturn e.router.Routes()\n}",
+    "funcname": "Routes"
+}

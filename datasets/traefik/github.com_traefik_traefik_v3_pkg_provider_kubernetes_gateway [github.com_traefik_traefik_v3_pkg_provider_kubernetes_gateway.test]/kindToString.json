@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1203,
+    "focalfunc": "func kindToString(p *gatev1.Kind) string",
+    "funcbody": "func kindToString(p *gatev1.Kind) string {\n\tif p == nil {\n\t\treturn \"<nil>\"\n\t}\n\treturn string(*p)\n}",
+    "funcname": "kindToString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 381,
+    "focalfunc": "func (t testSite) LanguageCode() string",
+    "funcbody": "func (t testSite) LanguageCode() string {\n\treturn t.l.Lang\n}",
+    "funcname": "LanguageCode"
+}

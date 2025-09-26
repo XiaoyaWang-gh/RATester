@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 733,
+    "focalfunc": "func (c *Context) ShouldBindQuery(obj any) error",
+    "funcbody": "func (c *Context) ShouldBindQuery(obj any) error {\n\treturn c.ShouldBindWith(obj, binding.Query)\n}",
+    "funcname": "ShouldBindQuery"
+}

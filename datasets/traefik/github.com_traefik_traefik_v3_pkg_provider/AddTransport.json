@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 370,
+    "focalfunc": "func AddTransport(configuration *dynamic.HTTPConfiguration, transportName string, transport *dynamic.ServersTransport) bool",
+    "funcbody": "func AddTransport(configuration *dynamic.HTTPConfiguration, transportName string, transport *dynamic.ServersTransport) bool {\n\tif _, ok := configuration.ServersTransports[transportName]; !ok {\n\t\tconfiguration.ServersTransports[transportName] = transport\n\t\treturn true\n\t}\n\n\treturn reflect.DeepEqual(configuration.ServersTransports[transportName], transport)\n}",
+    "funcname": "AddTransport"
+}

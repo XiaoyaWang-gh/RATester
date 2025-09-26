@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 134,
+    "focalfunc": "func (b BuildConfig) UseResourceCache(err error) bool",
+    "funcbody": "func (b BuildConfig) UseResourceCache(err error) bool {\n\tif b.UseResourceCacheWhen == \"never\" {\n\t\treturn false\n\t}\n\n\tif b.UseResourceCacheWhen == \"fallback\" {\n\t\treturn herrors.IsFeatureNotAvailableError(err)\n\t}\n\n\treturn true\n}",
+    "funcname": "UseResourceCache"
+}

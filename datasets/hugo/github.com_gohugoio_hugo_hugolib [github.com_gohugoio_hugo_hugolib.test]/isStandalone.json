@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 721,
+    "focalfunc": "func (p *pageMeta) isStandalone() bool",
+    "funcbody": "func (p *pageMeta) isStandalone() bool {\n\treturn !p.standaloneOutputFormat.IsZero()\n}",
+    "funcname": "isStandalone"
+}

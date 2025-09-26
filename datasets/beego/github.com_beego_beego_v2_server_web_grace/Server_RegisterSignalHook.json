@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 365,
+    "focalfunc": "func (srv *Server) RegisterSignalHook(ppFlag int, sig os.Signal, f func()) (err error)",
+    "funcbody": "func (srv *Server) RegisterSignalHook(ppFlag int, sig os.Signal, f func()) (err error) {\n\tif ppFlag != PreSignal && ppFlag != PostSignal {\n\t\terr = fmt.Errorf(\"Invalid ppFlag argument. Must be either grace.PreSignal or grace.PostSignal\")\n\t\treturn\n\t}\n\tfor _, s := range hookableSignals {\n\t\tif s == sig {\n\t\t\tsrv.SignalHooks[ppFlag][sig] = append(srv.SignalHooks[ppFlag][sig], f)\n\t\t\treturn\n\t\t}\n\t}\n\terr = fmt.Errorf(\"Signal '%v' is not supported\", sig)\n\treturn\n}",
+    "funcname": "RegisterSignalHook"
+}

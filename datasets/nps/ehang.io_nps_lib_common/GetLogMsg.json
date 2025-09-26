@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/logs.go",
+    "lineno": 18,
+    "focalfunc": "func GetLogMsg() string",
+    "funcbody": "func GetLogMsg() string {\n\treturn logMsgs\n}",
+    "funcname": "GetLogMsg"
+}

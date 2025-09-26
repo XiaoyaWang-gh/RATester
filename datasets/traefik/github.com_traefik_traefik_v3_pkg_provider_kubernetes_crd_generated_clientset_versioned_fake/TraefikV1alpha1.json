@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/fake/clientset_generated.go",
+    "lineno": 91,
+    "focalfunc": "func (c *Clientset) TraefikV1alpha1() traefikv1alpha1.TraefikV1alpha1Interface",
+    "funcbody": "func (c *Clientset) TraefikV1alpha1() traefikv1alpha1.TraefikV1alpha1Interface {\n\treturn &faketraefikv1alpha1.FakeTraefikV1alpha1{Fake: &c.Fake}\n}",
+    "funcname": "TraefikV1alpha1"
+}

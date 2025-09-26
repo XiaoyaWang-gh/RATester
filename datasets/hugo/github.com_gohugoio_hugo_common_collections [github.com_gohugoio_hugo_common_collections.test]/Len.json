@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 55,
+    "focalfunc": "func (s *Stack[T]) Len() int",
+    "funcbody": "func (s *Stack[T]) Len() int {\n\ts.mu.RLock()\n\tdefer s.mu.RUnlock()\n\treturn len(s.items)\n}",
+    "funcname": "Len"
+}

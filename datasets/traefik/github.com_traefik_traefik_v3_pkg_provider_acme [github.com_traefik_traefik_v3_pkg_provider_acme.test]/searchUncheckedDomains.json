@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 887,
+    "focalfunc": "func searchUncheckedDomains(ctx context.Context, domainsToCheck, existentDomains []string) []string",
+    "funcbody": "func searchUncheckedDomains(ctx context.Context, domainsToCheck, existentDomains []string) []string {\n\tvar uncheckedDomains []string\n\tfor _, domainToCheck := range domainsToCheck {\n\t\tif !isDomainAlreadyChecked(domainToCheck, existentDomains) {\n\t\t\tuncheckedDomains = append(uncheckedDomains, domainToCheck)\n\t\t}\n\t}\n\n\tlogger := log.Ctx(ctx)\n\tif len(uncheckedDomains) == 0 {\n\t\tlogger.Debug().Strs(\"domains\", domainsToCheck).Msg(\"No ACME certificate generation required for domains\")\n\t} else {\n\t\tlogger.Debug().Strs(\"domains\", domainsToCheck).Msgf(\"Domains need ACME certificates generation for domains %q.\", strings.Join(uncheckedDomains, \",\"))\n\t}\n\treturn uncheckedDomains\n}",
+    "funcname": "searchUncheckedDomains"
+}

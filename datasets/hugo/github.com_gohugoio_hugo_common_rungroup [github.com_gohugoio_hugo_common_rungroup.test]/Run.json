@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/rungroup/rungroup.go",
+    "lineno": 42,
+    "focalfunc": "func Run[T any](ctx context.Context, cfg Config[T]) Group[T]",
+    "funcbody": "func Run[T any](ctx context.Context, cfg Config[T]) Group[T] {\n\tif cfg.NumWorkers <= 0 {\n\t\tcfg.NumWorkers = 1\n\t}\n\tif cfg.Handle == nil {\n\t\tpanic(\"Handle must be set\")\n\t}\n\n\tg, ctx := errgroup.WithContext(ctx)\n\n\tch := make(chan T, cfg.NumWorkers)\n\n\tfor i := 0; i < cfg.NumWorkers; i++ {\n\t\tg.Go(func() error {\n\t\t\tfor {\n\t\t\t\tselect {\n\t\t\t\tcase <-ctx.Done():\n\t\t\t\t\treturn nil\n\t\t\t\tcase v, ok := <-ch:\n\t\t\t\t\tif !ok {\n\t\t\t\t\t\treturn nil\n\t\t\t\t\t}\n\t\t\t\t\tif err := cfg.Handle(ctx, v); err != nil {\n\t\t\t\t\t\treturn err\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t})\n\t}\n\n\treturn &runGroup[T]{\n\t\tctx:\tctx,\n\t\tg:\tg,\n\t\tch:\tch,\n\t}\n}",
+    "funcname": "Run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 170,
+    "focalfunc": "func (b *tocBuilder) writeNav(h Headings)",
+    "funcbody": "func (b *tocBuilder) writeNav(h Headings) {\n\tb.s.WriteString(\"<nav id=\\\"TableOfContents\\\">\")\n\tb.writeHeadings(1, 0, b.h)\n\tb.s.WriteString(\"</nav>\")\n}",
+    "funcname": "writeNav"
+}

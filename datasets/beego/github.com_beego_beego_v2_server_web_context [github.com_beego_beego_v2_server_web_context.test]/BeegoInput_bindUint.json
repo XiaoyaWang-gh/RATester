@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 549,
+    "focalfunc": "func (input *BeegoInput) bindUint(val string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindUint(val string, typ reflect.Type) reflect.Value {\n\tuintValue, err := strconv.ParseUint(val, 10, 64)\n\tif err != nil {\n\t\treturn reflect.Zero(typ)\n\t}\n\tpValue := reflect.New(typ)\n\tpValue.Elem().SetUint(uintValue)\n\treturn pValue.Elem()\n}",
+    "funcname": "bindUint"
+}

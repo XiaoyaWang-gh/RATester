@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 466,
+    "focalfunc": "func (p *Path) BaseNoLeadingSlash() string",
+    "funcbody": "func (p *Path) BaseNoLeadingSlash() string {\n\treturn p.Base()[1:]\n}",
+    "funcname": "BaseNoLeadingSlash"
+}

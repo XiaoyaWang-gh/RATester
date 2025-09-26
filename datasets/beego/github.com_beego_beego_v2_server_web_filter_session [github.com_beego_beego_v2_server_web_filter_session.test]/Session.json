@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/session/filter.go",
+    "lineno": 15,
+    "focalfunc": "func Session(providerType session.ProviderType, options ...session.ManagerConfigOpt) web.FilterChain",
+    "funcbody": "func Session(providerType session.ProviderType, options ...session.ManagerConfigOpt) web.FilterChain {\n\tsessionConfig := session.NewManagerConfig(options...)\n\tsessionManager, _ := session.NewManager(string(providerType), sessionConfig)\n\tgo sessionManager.GC()\n\n\treturn func(next web.FilterFunc) web.FilterFunc {\n\t\treturn func(ctx *webContext.Context) {\n\t\t\tif ctx.Input.CruSession != nil {\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\tif sess, err := sessionManager.SessionStart(ctx.ResponseWriter, ctx.Request); err != nil {\n\t\t\t\tlogs.Error(`init session error:%s`, err.Error())\n\t\t\t} else {\n\n\t\t\t\tdefer sess.SessionRelease(context.Background(), ctx.ResponseWriter)\n\t\t\t\tctx.Input.CruSession = sess\n\t\t\t}\n\n\t\t\tnext(ctx)\n\t\t}\n\t}\n}",
+    "funcname": "Session"
+}

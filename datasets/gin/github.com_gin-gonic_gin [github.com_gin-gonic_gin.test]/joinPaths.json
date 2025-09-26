@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 128,
+    "focalfunc": "func joinPaths(absolutePath, relativePath string) string",
+    "funcbody": "func joinPaths(absolutePath, relativePath string) string {\n\tif relativePath == \"\" {\n\t\treturn absolutePath\n\t}\n\n\tfinalPath := path.Join(absolutePath, relativePath)\n\tif lastChar(relativePath) == '/' && lastChar(finalPath) != '/' {\n\t\treturn finalPath + \"/\"\n\t}\n\treturn finalPath\n}",
+    "funcname": "joinPaths"
+}

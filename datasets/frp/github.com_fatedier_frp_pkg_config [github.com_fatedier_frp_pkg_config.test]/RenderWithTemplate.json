@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 82,
+    "focalfunc": "func RenderWithTemplate(in []byte, values *Values) ([]byte, error)",
+    "funcbody": "func RenderWithTemplate(in []byte, values *Values) ([]byte, error) {\n\ttmpl, err := template.New(\"frp\").Funcs(template.FuncMap{\n\t\t\"parseNumberRange\":\tparseNumberRange,\n\t\t\"parseNumberRangePair\":\tparseNumberRangePair,\n\t}).Parse(string(in))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tbuffer := bytes.NewBufferString(\"\")\n\tif err := tmpl.Execute(buffer, values); err != nil {\n\t\treturn nil, err\n\t}\n\treturn buffer.Bytes(), nil\n}",
+    "funcname": "RenderWithTemplate"
+}

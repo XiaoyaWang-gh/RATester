@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 63,
+    "focalfunc": "func NewLayoutHandler() *LayoutHandler",
+    "funcbody": "func NewLayoutHandler() *LayoutHandler {\n\treturn &LayoutHandler{cache: make(map[LayoutDescriptor][]string)}\n}",
+    "funcname": "NewLayoutHandler"
+}

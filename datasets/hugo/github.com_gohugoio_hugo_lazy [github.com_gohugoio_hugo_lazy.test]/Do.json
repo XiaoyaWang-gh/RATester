@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/once.go",
+    "lineno": 33,
+    "focalfunc": "func (t *onceMore) Do(f func())",
+    "funcbody": "func (t *onceMore) Do(f func()) {\n\tif atomic.LoadUint32(&t.done) == 1 {\n\t\treturn\n\t}\n\n\tlocked := atomic.CompareAndSwapUint32(&t.lock, 0, 1)\n\tif !locked {\n\t\treturn\n\t}\n\tdefer atomic.StoreUint32(&t.lock, 0)\n\n\tt.mu.Lock()\n\tdefer t.mu.Unlock()\n\n\tif t.done == 1 {\n\t\treturn\n\t}\n\tdefer atomic.StoreUint32(&t.done, 1)\n\tf()\n}",
+    "funcname": "Do"
+}

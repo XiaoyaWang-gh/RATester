@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 114,
+    "focalfunc": "func dealClientFlow()",
+    "funcbody": "func dealClientFlow() {\n\tticker := time.NewTicker(time.Minute)\n\tdefer ticker.Stop()\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tdealClientData()\n\t\t}\n\t}\n}",
+    "funcname": "dealClientFlow"
+}

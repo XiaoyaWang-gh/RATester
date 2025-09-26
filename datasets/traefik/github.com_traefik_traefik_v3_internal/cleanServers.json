@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 137,
+    "focalfunc": "func cleanServers(element *dynamic.Configuration)",
+    "funcbody": "func cleanServers(element *dynamic.Configuration) {\n\tfor _, svc := range element.HTTP.Services {\n\t\tif svc.LoadBalancer != nil {\n\t\t\tserver := svc.LoadBalancer.Servers[0]\n\t\t\tsvc.LoadBalancer.Servers = nil\n\t\t\tsvc.LoadBalancer.Servers = append(svc.LoadBalancer.Servers, server)\n\t\t}\n\t}\n\n\tfor _, svc := range element.TCP.Services {\n\t\tif svc.LoadBalancer != nil {\n\t\t\tserver := svc.LoadBalancer.Servers[0]\n\t\t\tsvc.LoadBalancer.Servers = nil\n\t\t\tsvc.LoadBalancer.Servers = append(svc.LoadBalancer.Servers, server)\n\t\t}\n\t}\n\n\tfor _, svc := range element.UDP.Services {\n\t\tif svc.LoadBalancer != nil {\n\t\t\tserver := svc.LoadBalancer.Servers[0]\n\t\t\tsvc.LoadBalancer.Servers = nil\n\t\t\tsvc.LoadBalancer.Servers = append(svc.LoadBalancer.Servers, server)\n\t\t}\n\t}\n}",
+    "funcname": "cleanServers"
+}

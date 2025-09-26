@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 29,
+    "focalfunc": "func (a *attrExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (a *attrExtension) Extend(m goldmark.Markdown) {\n\tm.Parser().AddOptions(\n\t\tparser.WithBlockParsers(\n\t\t\tutil.Prioritized(defaultParser, 100)),\n\t\tparser.WithASTTransformers(\n\t\t\tutil.Prioritized(defaultTransformer, 100),\n\t\t),\n\t)\n}",
+    "funcname": "Extend"
+}

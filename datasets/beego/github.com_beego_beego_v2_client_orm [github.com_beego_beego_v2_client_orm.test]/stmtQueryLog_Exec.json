@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 89,
+    "focalfunc": "func (d *stmtQueryLog) Exec(args ...interface{}) (sql.Result, error)",
+    "funcbody": "func (d *stmtQueryLog) Exec(args ...interface{}) (sql.Result, error) {\n\treturn d.ExecContext(context.Background(), args...)\n}",
+    "funcname": "Exec"
+}

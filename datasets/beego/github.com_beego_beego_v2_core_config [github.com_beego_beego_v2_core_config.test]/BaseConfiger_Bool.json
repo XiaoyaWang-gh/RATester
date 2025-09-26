@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 115,
+    "focalfunc": "func (c *BaseConfiger) Bool(key string) (bool, error)",
+    "funcbody": "func (c *BaseConfiger) Bool(key string) (bool, error) {\n\tres, err := c.reader(context.TODO(), key)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn ParseBool(res)\n}",
+    "funcname": "Bool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 156,
+    "focalfunc": "func (h HighlightResult) Wrapped() template.HTML",
+    "funcbody": "func (h HighlightResult) Wrapped() template.HTML {\n\treturn h.highlighted\n}",
+    "funcname": "Wrapped"
+}

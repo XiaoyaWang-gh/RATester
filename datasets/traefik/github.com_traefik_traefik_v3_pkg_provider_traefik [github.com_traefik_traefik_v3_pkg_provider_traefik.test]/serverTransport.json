@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 343,
+    "focalfunc": "func (i *Provider) serverTransport(cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) serverTransport(cfg *dynamic.Configuration) {\n\tif i.staticCfg.ServersTransport == nil {\n\t\treturn\n\t}\n\n\tst := &dynamic.ServersTransport{\n\t\tInsecureSkipVerify:\ti.staticCfg.ServersTransport.InsecureSkipVerify,\n\t\tRootCAs:\t\ti.staticCfg.ServersTransport.RootCAs,\n\t\tMaxIdleConnsPerHost:\ti.staticCfg.ServersTransport.MaxIdleConnsPerHost,\n\t}\n\n\tif i.staticCfg.ServersTransport.Spiffe != nil {\n\t\tst.Spiffe = &dynamic.Spiffe{\n\t\t\tIDs:\t\ti.staticCfg.ServersTransport.Spiffe.IDs,\n\t\t\tTrustDomain:\ti.staticCfg.ServersTransport.Spiffe.TrustDomain,\n\t\t}\n\t}\n\n\tif i.staticCfg.ServersTransport.ForwardingTimeouts != nil {\n\t\tst.ForwardingTimeouts = &dynamic.ForwardingTimeouts{\n\t\t\tDialTimeout:\t\ti.staticCfg.ServersTransport.ForwardingTimeouts.DialTimeout,\n\t\t\tResponseHeaderTimeout:\ti.staticCfg.ServersTransport.ForwardingTimeouts.ResponseHeaderTimeout,\n\t\t\tIdleConnTimeout:\ti.staticCfg.ServersTransport.ForwardingTimeouts.IdleConnTimeout,\n\t\t}\n\t}\n\n\tcfg.HTTP.ServersTransports[\"default\"] = st\n}",
+    "funcname": "serverTransport"
+}

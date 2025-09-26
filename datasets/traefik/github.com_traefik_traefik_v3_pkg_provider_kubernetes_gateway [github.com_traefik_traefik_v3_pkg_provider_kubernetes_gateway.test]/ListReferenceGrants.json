@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 368,
+    "focalfunc": "func (c *clientWrapper) ListReferenceGrants(namespace string) ([]*gatev1beta1.ReferenceGrant, error)",
+    "funcbody": "func (c *clientWrapper) ListReferenceGrants(namespace string) ([]*gatev1beta1.ReferenceGrant, error) {\n\tif !c.isWatchedNamespace(namespace) {\n\t\tlog.Warn().Msgf(\"Failed to get ReferenceGrants: %q is not within watched namespaces\", namespace)\n\n\t\treturn nil, fmt.Errorf(\"failed to get ReferenceGrants: namespace %s is not within watched namespaces\", namespace)\n\t}\n\n\treferenceGrants, err := c.factoriesGateway[c.lookupNamespace(namespace)].Gateway().V1beta1().ReferenceGrants().Lister().ReferenceGrants(namespace).List(labels.Everything())\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn referenceGrants, nil\n}",
+    "funcname": "ListReferenceGrants"
+}

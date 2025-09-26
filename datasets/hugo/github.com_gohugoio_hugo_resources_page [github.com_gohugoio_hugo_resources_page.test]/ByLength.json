@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 322,
+    "focalfunc": "func (p Pages) ByLength(ctx context.Context) Pages",
+    "funcbody": "func (p Pages) ByLength(ctx context.Context) Pages {\n\tconst key = \"pageSort.ByLength\"\n\n\tlength := func(p1, p2 Page) bool {\n\t\tp1l, ok1 := p1.(resource.LengthProvider)\n\t\tp2l, ok2 := p2.(resource.LengthProvider)\n\n\t\tif !ok1 {\n\t\t\treturn true\n\t\t}\n\n\t\tif !ok2 {\n\t\t\treturn false\n\t\t}\n\n\t\treturn p1l.Len(ctx) < p2l.Len(ctx)\n\t}\n\n\tpages, _ := spc.get(key, pageBy(length).Sort, p)\n\n\treturn pages\n}",
+    "funcname": "ByLength"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate_store.go",
+    "lineno": 34,
+    "focalfunc": "func (c CertificateStore) getDefaultCertificateDomains() []string",
+    "funcbody": "func (c CertificateStore) getDefaultCertificateDomains() []string {\n\tvar allCerts []string\n\n\tif c.DefaultCertificate == nil {\n\t\treturn allCerts\n\t}\n\n\tx509Cert, err := x509.ParseCertificate(c.DefaultCertificate.Certificate[0])\n\tif err != nil {\n\t\tlog.Error().Err(err).Msg(\"Could not parse default certificate\")\n\t\treturn allCerts\n\t}\n\n\tif len(x509Cert.Subject.CommonName) > 0 {\n\t\tallCerts = append(allCerts, x509Cert.Subject.CommonName)\n\t}\n\n\tallCerts = append(allCerts, x509Cert.DNSNames...)\n\n\tfor _, ipSan := range x509Cert.IPAddresses {\n\t\tallCerts = append(allCerts, ipSan.String())\n\t}\n\n\treturn allCerts\n}",
+    "funcname": "getDefaultCertificateDomains"
+}

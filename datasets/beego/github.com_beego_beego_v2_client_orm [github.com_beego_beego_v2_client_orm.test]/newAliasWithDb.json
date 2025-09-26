@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 374,
+    "focalfunc": "func newAliasWithDb(aliasName, driverName string, db *sql.DB, params ...DBOption) (*alias, error)",
+    "funcbody": "func newAliasWithDb(aliasName, driverName string, db *sql.DB, params ...DBOption) (*alias, error) {\n\tal := &alias{}\n\tal.DB = &DB{\n\t\tRWMutex:\tnew(sync.RWMutex),\n\t\tDB:\t\tdb,\n\t}\n\n\tfor _, p := range params {\n\t\tp(al)\n\t}\n\n\tvar stmtCache *lru.Cache\n\tvar stmtCacheSize int\n\n\tif al.StmtCacheSize > 0 {\n\t\t_stmtCache, errC := newStmtDecoratorLruWithEvict(al.StmtCacheSize)\n\t\tif errC != nil {\n\t\t\treturn nil, errC\n\t\t} else {\n\t\t\tstmtCache = _stmtCache\n\t\t\tstmtCacheSize = al.StmtCacheSize\n\t\t}\n\t}\n\n\tal.Name = aliasName\n\tal.DriverName = driverName\n\tal.DB.stmtDecorators = stmtCache\n\tal.DB.stmtDecoratorsLimit = stmtCacheSize\n\n\tif dr, ok := drivers[driverName]; ok {\n\t\tal.DbBaser = dbBasers[dr]\n\t\tal.Driver = dr\n\t} else {\n\t\treturn nil, fmt.Errorf(\"driver name `%s` have not registered\", driverName)\n\t}\n\n\terr := db.Ping()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"Register db Ping `%s`, %s\", aliasName, err.Error())\n\t}\n\n\tdetectTZ(al)\n\n\treturn al, nil\n}",
+    "funcname": "newAliasWithDb"
+}

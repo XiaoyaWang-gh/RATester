@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/traefikio/v1alpha1/zz_generated.deepcopy.go",
+    "lineno": 1850,
+    "focalfunc": "func (in *TraefikServiceList) DeepCopyObject() runtime.Object",
+    "funcbody": "func (in *TraefikServiceList) DeepCopyObject() runtime.Object {\n\tif c := in.DeepCopy(); c != nil {\n\t\treturn c\n\t}\n\treturn nil\n}",
+    "funcname": "DeepCopyObject"
+}

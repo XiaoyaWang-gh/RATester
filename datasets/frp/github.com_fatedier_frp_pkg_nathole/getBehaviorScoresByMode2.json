@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 151,
+    "focalfunc": "func getBehaviorScoresByMode2(mode int, senderScore, receiverScore int) []*BehaviorScore",
+    "funcbody": "func getBehaviorScoresByMode2(mode int, senderScore, receiverScore int) []*BehaviorScore {\n\tbehaviors := getBehaviorByMode(mode)\n\tscores := make([]*BehaviorScore, 0, len(behaviors))\n\tfor i := 0; i < len(behaviors); i++ {\n\t\tscore := receiverScore\n\t\tif behaviors[i].A.Role == DetectRoleSender {\n\t\t\tscore = senderScore\n\t\t}\n\t\tscores = append(scores, &BehaviorScore{Mode: mode, Index: i, Score: score})\n\t}\n\treturn scores\n}",
+    "funcname": "getBehaviorScoresByMode2"
+}

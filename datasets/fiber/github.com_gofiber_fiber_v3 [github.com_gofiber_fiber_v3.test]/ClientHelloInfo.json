@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1009,
+    "focalfunc": "func (c *DefaultCtx) ClientHelloInfo() *tls.ClientHelloInfo",
+    "funcbody": "func (c *DefaultCtx) ClientHelloInfo() *tls.ClientHelloInfo {\n\tif c.app.tlsHandler != nil {\n\t\treturn c.app.tlsHandler.clientHelloInfo\n\t}\n\n\treturn nil\n}",
+    "funcname": "ClientHelloInfo"
+}

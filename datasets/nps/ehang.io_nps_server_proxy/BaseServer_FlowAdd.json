@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 44,
+    "focalfunc": "func (s *BaseServer) FlowAdd(in, out int64)",
+    "funcbody": "func (s *BaseServer) FlowAdd(in, out int64) {\n\ts.Lock()\n\tdefer s.Unlock()\n\ts.task.Flow.ExportFlow += out\n\ts.task.Flow.InletFlow += in\n}",
+    "funcname": "FlowAdd"
+}

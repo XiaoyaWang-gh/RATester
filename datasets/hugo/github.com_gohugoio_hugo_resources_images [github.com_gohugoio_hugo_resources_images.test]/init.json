@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/config.go",
+    "lineno": 473,
+    "focalfunc": "func (cfg *ImagingConfig) init() error",
+    "funcbody": "func (cfg *ImagingConfig) init() error {\n\tif cfg.Quality < 0 || cfg.Quality > 100 {\n\t\treturn errors.New(\"image quality must be a number between 1 and 100\")\n\t}\n\n\tcfg.BgColor = strings.ToLower(strings.TrimPrefix(cfg.BgColor, \"#\"))\n\tcfg.Anchor = strings.ToLower(cfg.Anchor)\n\tcfg.ResampleFilter = strings.ToLower(cfg.ResampleFilter)\n\tcfg.Hint = strings.ToLower(cfg.Hint)\n\n\tif cfg.Anchor == \"\" {\n\t\tcfg.Anchor = smartCropIdentifier\n\t}\n\n\tif strings.TrimSpace(cfg.Exif.IncludeFields) == \"\" && strings.TrimSpace(cfg.Exif.ExcludeFields) == \"\" {\n\n\t\tcfg.Exif.ExcludeFields = \"GPS|Exif|Exposure[M|P|B]|Contrast|Resolution|Sharp|JPEG|Metering|Sensing|Saturation|ColorSpace|Flash|WhiteBalance\"\n\t}\n\n\treturn nil\n}",
+    "funcname": "init"
+}

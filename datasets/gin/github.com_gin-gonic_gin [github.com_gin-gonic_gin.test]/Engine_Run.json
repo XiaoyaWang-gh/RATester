@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 517,
+    "focalfunc": "func (engine *Engine) Run(addr ...string) (err error)",
+    "funcbody": "func (engine *Engine) Run(addr ...string) (err error) {\n\tdefer func() { debugPrintError(err) }()\n\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n\tengine.updateRouteTrees()\n\taddress := resolveAddress(addr)\n\tdebugPrint(\"Listening and serving HTTP on %s\\n\", address)\n\terr = http.ListenAndServe(address, engine.Handler())\n\treturn\n}",
+    "funcname": "Run"
+}

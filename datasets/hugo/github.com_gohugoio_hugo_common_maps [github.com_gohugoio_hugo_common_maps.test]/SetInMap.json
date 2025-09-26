@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 121,
+    "focalfunc": "func (c *Scratch) SetInMap(key string, mapKey string, value any) string",
+    "funcbody": "func (c *Scratch) SetInMap(key string, mapKey string, value any) string {\n\tc.mu.Lock()\n\t_, found := c.values[key]\n\tif !found {\n\t\tc.values[key] = make(map[string]any)\n\t}\n\n\tc.values[key].(map[string]any)[mapKey] = value\n\tc.mu.Unlock()\n\treturn \"\"\n}",
+    "funcname": "SetInMap"
+}

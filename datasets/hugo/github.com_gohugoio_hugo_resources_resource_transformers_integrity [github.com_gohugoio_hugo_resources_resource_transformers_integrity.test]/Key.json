@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/integrity/integrity.go",
+    "lineno": 50,
+    "focalfunc": "func (t *fingerprintTransformation) Key() internal.ResourceTransformationKey",
+    "funcbody": "func (t *fingerprintTransformation) Key() internal.ResourceTransformationKey {\n\treturn internal.NewResourceTransformationKey(constants.ResourceTransformationFingerprint, t.algo)\n}",
+    "funcname": "Key"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 390,
+    "focalfunc": "func AddStore(configuration *dynamic.TLSConfiguration, storeName string, store tls.Store) bool",
+    "funcbody": "func AddStore(configuration *dynamic.TLSConfiguration, storeName string, store tls.Store) bool {\n\tif _, ok := configuration.Stores[storeName]; !ok {\n\t\tconfiguration.Stores[storeName] = store\n\t\treturn true\n\t}\n\n\treturn reflect.DeepEqual(configuration.Stores[storeName], store)\n}",
+    "funcname": "AddStore"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_rawSetter.go",
+    "lineno": 25,
+    "focalfunc": "func (d *DoNothingRawSetter) Exec() (sql.Result, error)",
+    "funcbody": "func (d *DoNothingRawSetter) Exec() (sql.Result, error) {\n\treturn nil, nil\n}",
+    "funcname": "Exec"
+}

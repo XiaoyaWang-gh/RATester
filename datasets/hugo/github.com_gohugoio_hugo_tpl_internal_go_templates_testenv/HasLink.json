@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 346,
+    "focalfunc": "func HasLink() bool",
+    "funcbody": "func HasLink() bool {\n\n\treturn runtime.GOOS != \"plan9\" && runtime.GOOS != \"android\"\n}",
+    "funcname": "HasLink"
+}

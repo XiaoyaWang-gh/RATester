@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 206,
+    "focalfunc": "func (p *Provider) findNewDomains(domains []string) []string",
+    "funcbody": "func (p *Provider) findNewDomains(domains []string) []string {\n\tp.certByDomainMu.RLock()\n\tdefer p.certByDomainMu.RUnlock()\n\n\tvar newDomains []string\n\tfor _, domain := range domains {\n\t\tif _, ok := p.certByDomain[domain]; ok {\n\t\t\tcontinue\n\t\t}\n\n\t\tnewDomains = append(newDomains, domain)\n\t}\n\n\treturn newDomains\n}",
+    "funcname": "findNewDomains"
+}

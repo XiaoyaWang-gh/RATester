@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 409,
+    "focalfunc": "func (t testSite) Languages() langs.Languages",
+    "funcbody": "func (t testSite) Languages() langs.Languages {\n\treturn nil\n}",
+    "funcname": "Languages"
+}

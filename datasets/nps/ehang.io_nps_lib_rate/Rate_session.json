@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/rate.go",
+    "lineno": 65,
+    "focalfunc": "func (s *Rate) session()",
+    "funcbody": "func (s *Rate) session() {\n\tticker := time.NewTicker(time.Second * 1)\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tif rs := s.bucketAddSize - s.bucketSurplusSize; rs > 0 {\n\t\t\t\ts.NowRate = rs\n\t\t\t} else {\n\t\t\t\ts.NowRate = s.bucketSize - s.bucketSurplusSize\n\t\t\t}\n\t\t\ts.add(s.bucketAddSize)\n\t\tcase <-s.stopChan:\n\t\t\tticker.Stop()\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "session"
+}

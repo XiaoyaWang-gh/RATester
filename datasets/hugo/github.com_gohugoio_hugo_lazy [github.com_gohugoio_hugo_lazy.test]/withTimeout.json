@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 181,
+    "focalfunc": "func (ini *Init) withTimeout(ctx context.Context, timeout time.Duration, f func(ctx context.Context) (any, error)) (any, error)",
+    "funcbody": "func (ini *Init) withTimeout(ctx context.Context, timeout time.Duration, f func(ctx context.Context) (any, error)) (any, error) {\n\n\twaitCtx, cancel := context.WithTimeout(context.Background(), timeout)\n\tdefer cancel()\n\tc := make(chan verr, 1)\n\n\tgo func() {\n\t\tv, err := f(ctx)\n\t\tselect {\n\t\tcase <-waitCtx.Done():\n\t\t\treturn\n\t\tdefault:\n\t\t\tc <- verr{v: v, err: err}\n\t\t}\n\t}()\n\n\tselect {\n\tcase <-waitCtx.Done():\n\n\t\treturn nil, errors.New(\"timed out initializing value. You may have a circular loop in a shortcode, or your site may have resources that take longer to build than the `timeout` limit in your Hugo config file.\")\n\tcase ve := <-c:\n\t\treturn ve.v, ve.err\n\t}\n}",
+    "funcname": "withTimeout"
+}

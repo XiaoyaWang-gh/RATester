@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/codeowners.go",
+    "lineno": 54,
+    "focalfunc": "func newCodeOwners(workingDir string) (*codeownerInfo, error)",
+    "funcbody": "func newCodeOwners(workingDir string) (*codeownerInfo, error) {\n\tr, err := findCodeOwnersFile(workingDir)\n\tif err != nil || r == nil {\n\t\treturn nil, err\n\t}\n\n\towners, err := codeowners.FromReader(r, workingDir)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &codeownerInfo{owners: owners}, nil\n}",
+    "funcname": "newCodeOwners"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/static/static_config.go",
+    "lineno": 307,
+    "focalfunc": "func (c *Configuration) initACMEProvider()",
+    "funcbody": "func (c *Configuration) initACMEProvider() {\n\tfor _, resolver := range c.CertificatesResolvers {\n\t\tif resolver.ACME != nil {\n\t\t\tresolver.ACME.CAServer = getSafeACMECAServer(resolver.ACME.CAServer)\n\t\t}\n\t}\n\n\tlogger := logs.NoLevel(log.Logger, zerolog.DebugLevel).With().Str(\"lib\", \"lego\").Logger()\n\tlegolog.Logger = logs.NewLogrusWrapper(logger)\n}",
+    "funcname": "initACMEProvider"
+}

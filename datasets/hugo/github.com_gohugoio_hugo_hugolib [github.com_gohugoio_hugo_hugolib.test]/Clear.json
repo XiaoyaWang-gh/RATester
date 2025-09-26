@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 403,
+    "focalfunc": "func (w *WhatChanged) clear()",
+    "funcbody": "func (w *WhatChanged) clear() {\n\tw.identitySet = identity.Identities{}\n}",
+    "funcname": "clear"
+}

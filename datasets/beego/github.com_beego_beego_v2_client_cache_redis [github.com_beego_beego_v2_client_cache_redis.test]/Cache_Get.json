@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 106,
+    "focalfunc": "func (rc *Cache) Get(ctx context.Context, key string) (interface{}, error)",
+    "funcbody": "func (rc *Cache) Get(ctx context.Context, key string) (interface{}, error) {\n\tif v, err := rc.do(\"GET\", key); err == nil {\n\t\treturn v, nil\n\t} else {\n\t\treturn nil, err\n\t}\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 78,
+    "focalfunc": "func MustHaveGoRun(t testing.TB)",
+    "funcbody": "func MustHaveGoRun(t testing.TB) {\n\tif !HasGoRun() {\n\t\tt.Skipf(\"skipping test: 'go run' not available on %s/%s\", runtime.GOOS, runtime.GOARCH)\n\t}\n}",
+    "funcname": "MustHaveGoRun"
+}

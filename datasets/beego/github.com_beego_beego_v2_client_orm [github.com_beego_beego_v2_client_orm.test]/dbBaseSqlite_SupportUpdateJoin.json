@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 100,
+    "focalfunc": "func (d *dbBaseSqlite) SupportUpdateJoin() bool",
+    "funcbody": "func (d *dbBaseSqlite) SupportUpdateJoin() bool {\n\treturn false\n}",
+    "funcname": "SupportUpdateJoin"
+}

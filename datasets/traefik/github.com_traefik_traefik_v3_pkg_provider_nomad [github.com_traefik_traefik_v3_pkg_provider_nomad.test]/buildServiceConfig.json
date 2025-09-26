@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/config.go",
+    "lineno": 132,
+    "focalfunc": "func (p *Provider) buildServiceConfig(i item, configuration *dynamic.HTTPConfiguration) error",
+    "funcbody": "func (p *Provider) buildServiceConfig(i item, configuration *dynamic.HTTPConfiguration) error {\n\tif len(configuration.Services) == 0 {\n\t\tconfiguration.Services = make(map[string]*dynamic.Service)\n\n\t\tlb := new(dynamic.ServersLoadBalancer)\n\t\tlb.SetDefaults()\n\n\t\tconfiguration.Services[getName(i)] = &dynamic.Service{\n\t\t\tLoadBalancer: lb,\n\t\t}\n\t}\n\n\tfor _, service := range configuration.Services {\n\n\t\tif !(i.Address == \"\" && p.AllowEmptyServices) {\n\t\t\tif err := p.addServer(i, service.LoadBalancer); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildServiceConfig"
+}

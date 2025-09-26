@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 348,
+    "focalfunc": "func pathExists(path string) (bool, error)",
+    "funcbody": "func pathExists(path string) (bool, error) {\n\t_, err := os.Stat(path)\n\tif err == nil {\n\t\treturn true, nil\n\t}\n\tif os.IsNotExist(err) {\n\t\treturn false, nil\n\t}\n\treturn false, err\n}",
+    "funcname": "pathExists"
+}

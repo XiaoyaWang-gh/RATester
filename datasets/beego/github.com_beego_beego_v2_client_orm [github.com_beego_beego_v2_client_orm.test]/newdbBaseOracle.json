@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 67,
+    "focalfunc": "func newdbBaseOracle() dbBaser",
+    "funcbody": "func newdbBaseOracle() dbBaser {\n\tb := new(dbBaseOracle)\n\tb.ins = b\n\treturn b\n}",
+    "funcname": "newdbBaseOracle"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 54,
+    "focalfunc": "func (ini *IniConfig) parseFile(name string) (*IniConfigContainer, error)",
+    "funcbody": "func (ini *IniConfig) parseFile(name string) (*IniConfigContainer, error) {\n\tdata, err := os.ReadFile(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn ini.parseData(filepath.Dir(name), data)\n}",
+    "funcname": "parseFile"
+}

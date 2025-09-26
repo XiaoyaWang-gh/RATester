@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 242,
+    "focalfunc": "func (call *call[Q, R]) done()",
+    "funcbody": "func (call *call[Q, R]) done() {\n\tselect {\n\tcase call.donec <- call:\n\tdefault:\n\t}\n}",
+    "funcname": "done"
+}

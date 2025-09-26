@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 201,
+    "focalfunc": "func (f *BoolFuncFlag) String() string",
+    "funcbody": "func (f *BoolFuncFlag) String() string {\n\treturn strconv.FormatBool(f.v)\n}",
+    "funcname": "String"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/proxy.go",
+    "lineno": 450,
+    "focalfunc": "func (c *SUDPProxyConfig) MarshalToMsg(m *msg.NewProxy)",
+    "funcbody": "func (c *SUDPProxyConfig) MarshalToMsg(m *msg.NewProxy) {\n\tc.ProxyBaseConfig.MarshalToMsg(m)\n\n\tm.Sk = c.Secretkey\n\tm.AllowUsers = c.AllowUsers\n}",
+    "funcname": "MarshalToMsg"
+}

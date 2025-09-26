@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/conv.go",
+    "lineno": 21,
+    "focalfunc": "func convertParam(param *MethodParam, paramType reflect.Type, ctx *beecontext.Context) (result reflect.Value)",
+    "funcbody": "func convertParam(param *MethodParam, paramType reflect.Type, ctx *beecontext.Context) (result reflect.Value) {\n\tparamValue := getParamValue(param, ctx)\n\tif paramValue == \"\" {\n\t\tif param.required {\n\t\t\tctx.Abort(400, fmt.Sprintf(\"Missing parameter %s\", param.name))\n\t\t} else {\n\t\t\tparamValue = param.defaultValue\n\t\t}\n\t}\n\n\treflectValue, err := parseValue(param, paramValue, paramType)\n\tif err != nil {\n\t\tlogs.Debug(fmt.Sprintf(\"Error converting param %s to type %s. Value: %v, Error: %s\", param.name, paramType, paramValue, err))\n\t\tctx.Abort(400, fmt.Sprintf(\"Invalid parameter %s. Can not convert %v to type %s\", param.name, paramValue, paramType))\n\t}\n\n\treturn reflectValue\n}",
+    "funcname": "convertParam"
+}

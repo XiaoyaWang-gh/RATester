@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/xml.go",
+    "lineno": 10,
+    "focalfunc": "func (*xmlBinding) Name() string",
+    "funcbody": "func (*xmlBinding) Name() string {\n\treturn \"xml\"\n}",
+    "funcname": "Name"
+}

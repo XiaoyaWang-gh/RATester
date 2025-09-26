@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 514,
+    "focalfunc": "func (s *shortcodeHandler) hasName(name string) bool",
+    "funcbody": "func (s *shortcodeHandler) hasName(name string) bool {\n\ts.nameSetMu.RLock()\n\tdefer s.nameSetMu.RUnlock()\n\t_, ok := s.nameSet[name]\n\treturn ok\n}",
+    "funcname": "hasName"
+}

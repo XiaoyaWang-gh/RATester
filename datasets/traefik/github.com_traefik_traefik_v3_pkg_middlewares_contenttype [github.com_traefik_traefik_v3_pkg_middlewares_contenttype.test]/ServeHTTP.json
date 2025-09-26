@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/contenttype/content_type.go",
+    "lineno": 38,
+    "focalfunc": "func (c *contentType) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (c *contentType) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\n\tif ct, ok := rw.Header()[\"Content-Type\"]; ok && ct == nil {\n\t\tmiddlewares.GetLogger(req.Context(), c.name, typeName).\n\t\t\tDebug().Msg(\"Enable Content-Type auto-detection.\")\n\t\tdelete(rw.Header(), \"Content-Type\")\n\t}\n\n\tc.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

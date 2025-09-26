@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 509,
+    "focalfunc": "func Normalize(name string) string",
+    "funcbody": "func Normalize(name string) string {\n\tfargs := func(c rune) bool {\n\t\treturn !unicode.IsLetter(c) && !unicode.IsNumber(c)\n\t}\n\n\treturn strings.Join(strings.FieldsFunc(name, fargs), \"-\")\n}",
+    "funcname": "Normalize"
+}

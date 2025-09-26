@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 135,
+    "focalfunc": "func (app *App) appendSubAppLists(appList map[string]*App, parent ...string)",
+    "funcbody": "func (app *App) appendSubAppLists(appList map[string]*App, parent ...string) {\n\n\tparentPrefix := \"\"\n\tif len(parent) > 0 {\n\t\tparentPrefix = parent[0]\n\t}\n\n\tfor prefix, subApp := range appList {\n\n\t\tif prefix == \"\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tif parentPrefix != \"\" {\n\t\t\tprefix = getGroupPath(parentPrefix, prefix)\n\t\t}\n\n\t\tif _, ok := app.mountFields.appList[prefix]; !ok {\n\t\t\tapp.mountFields.appList[prefix] = subApp\n\t\t}\n\n\t\tif len(subApp.mountFields.appList) > 1 {\n\t\t\tapp.appendSubAppLists(subApp.mountFields.appList, prefix)\n\t\t}\n\t}\n}",
+    "funcname": "appendSubAppLists"
+}

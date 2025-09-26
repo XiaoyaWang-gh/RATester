@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 94,
+    "focalfunc": "func (cs *SessionStore) Flush(context.Context) error",
+    "funcbody": "func (cs *SessionStore) Flush(context.Context) error {\n\tcs.lock.Lock()\n\tdefer cs.lock.Unlock()\n\tcs.values = make(map[interface{}]interface{})\n\treturn nil\n}",
+    "funcname": "Flush"
+}

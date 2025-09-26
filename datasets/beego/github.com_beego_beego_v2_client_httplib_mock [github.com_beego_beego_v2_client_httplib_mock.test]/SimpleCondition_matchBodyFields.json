@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 108,
+    "focalfunc": "func (sc *SimpleCondition) matchBodyFields(ctx context.Context, req *httplib.BeegoHTTPRequest) bool",
+    "funcbody": "func (sc *SimpleCondition) matchBodyFields(ctx context.Context, req *httplib.BeegoHTTPRequest) bool {\n\tif len(sc.body) == 0 {\n\t\treturn true\n\t}\n\tgetBody := req.GetRequest().GetBody\n\tbody, err := getBody()\n\tif err != nil {\n\t\treturn false\n\t}\n\tbytes := make([]byte, req.GetRequest().ContentLength)\n\t_, err = body.Read(bytes)\n\tif err != nil {\n\t\treturn false\n\t}\n\n\tm := make(map[string]interface{})\n\n\terr = json.Unmarshal(bytes, &m)\n\n\tif err != nil {\n\t\treturn false\n\t}\n\n\tfor k, v := range sc.body {\n\t\tif uv, ok := m[k]; !ok || uv != v {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "matchBodyFields"
+}

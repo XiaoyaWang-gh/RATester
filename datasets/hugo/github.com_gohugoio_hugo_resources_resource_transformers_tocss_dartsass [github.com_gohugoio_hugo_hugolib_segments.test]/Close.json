@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/dartsass/client.go",
+    "lineno": 123,
+    "focalfunc": "func (c *Client) Close() error",
+    "funcbody": "func (c *Client) Close() error {\n\tif c.transpilerV1 != nil {\n\t\treturn c.transpilerV1.Close()\n\t}\n\tif c.transpiler != nil {\n\t\treturn c.transpiler.Close()\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

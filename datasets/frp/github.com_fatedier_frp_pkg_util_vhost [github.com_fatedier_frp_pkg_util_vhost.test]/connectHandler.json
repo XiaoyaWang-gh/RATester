@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 248,
+    "focalfunc": "func (rp *HTTPReverseProxy) connectHandler(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (rp *HTTPReverseProxy) connectHandler(rw http.ResponseWriter, req *http.Request) {\n\thj, ok := rw.(http.Hijacker)\n\tif !ok {\n\t\trw.WriteHeader(http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tclient, _, err := hj.Hijack()\n\tif err != nil {\n\t\trw.WriteHeader(http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tremote, err := rp.CreateConnection(req.Context().Value(RouteInfoKey).(*RequestRouteInfo), false)\n\tif err != nil {\n\t\t_ = NotFoundResponse().Write(client)\n\t\tclient.Close()\n\t\treturn\n\t}\n\t_ = req.Write(remote)\n\tgo libio.Join(remote, client)\n}",
+    "funcname": "connectHandler"
+}

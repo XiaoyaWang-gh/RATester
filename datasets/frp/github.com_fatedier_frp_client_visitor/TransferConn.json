@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 198,
+    "focalfunc": "func (v *visitorHelperImpl) TransferConn(name string, conn net.Conn) error",
+    "funcbody": "func (v *visitorHelperImpl) TransferConn(name string, conn net.Conn) error {\n\treturn v.transferConnFn(name, conn)\n}",
+    "funcname": "TransferConn"
+}

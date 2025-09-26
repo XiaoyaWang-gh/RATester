@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/json.go",
+    "lineno": 26,
+    "focalfunc": "func (d DefaultJSONSerializer) Deserialize(c Context, i interface{}) error",
+    "funcbody": "func (d DefaultJSONSerializer) Deserialize(c Context, i interface{}) error {\n\terr := json.NewDecoder(c.Request().Body).Decode(i)\n\tif ute, ok := err.(*json.UnmarshalTypeError); ok {\n\t\treturn NewHTTPError(http.StatusBadRequest, fmt.Sprintf(\"Unmarshal type error: expected=%v, got=%v, field=%v, offset=%v\", ute.Type, ute.Value, ute.Field, ute.Offset)).SetInternal(err)\n\t} else if se, ok := err.(*json.SyntaxError); ok {\n\t\treturn NewHTTPError(http.StatusBadRequest, fmt.Sprintf(\"Syntax error: offset=%v, error=%v\", se.Offset, se.Error())).SetInternal(err)\n\t}\n\treturn err\n}",
+    "funcname": "Deserialize"
+}

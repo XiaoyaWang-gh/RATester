@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 234,
+    "focalfunc": "func (t *Tree) stopParse()",
+    "funcbody": "func (t *Tree) stopParse() {\n\tt.lex = nil\n\tt.vars = nil\n\tt.funcs = nil\n\tt.treeSet = nil\n}",
+    "funcname": "stopParse"
+}

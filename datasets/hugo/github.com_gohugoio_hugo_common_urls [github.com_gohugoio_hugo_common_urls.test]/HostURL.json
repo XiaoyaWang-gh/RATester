@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 48,
+    "focalfunc": "func (b BaseURL) HostURL() string",
+    "funcbody": "func (b BaseURL) HostURL() string {\n\treturn strings.TrimSuffix(b.String(), b.Path())\n}",
+    "funcname": "HostURL"
+}

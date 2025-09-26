@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 985,
+    "focalfunc": "func (t *Tree) newTemplate(pos Pos, line int, name string, pipe *PipeNode) *TemplateNode",
+    "funcbody": "func (t *Tree) newTemplate(pos Pos, line int, name string, pipe *PipeNode) *TemplateNode {\n\treturn &TemplateNode{tr: t, NodeType: NodeTemplate, Pos: pos, Line: line, Name: name, Pipe: pipe}\n}",
+    "funcname": "newTemplate"
+}

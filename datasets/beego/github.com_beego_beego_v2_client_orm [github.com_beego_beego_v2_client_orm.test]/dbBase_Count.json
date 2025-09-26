@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 1384,
+    "focalfunc": "func (d *dbBase) Count(ctx context.Context, q dbQuerier, qs querySet, mi *models.ModelInfo, cond *Condition, tz *time.Location) (cnt int64, err error)",
+    "funcbody": "func (d *dbBase) Count(ctx context.Context, q dbQuerier, qs querySet, mi *models.ModelInfo, cond *Condition, tz *time.Location) (cnt int64, err error) {\n\n\tquery, args := d.countSQL(qs, mi, cond, tz)\n\n\trow := q.QueryRowContext(ctx, query, args...)\n\terr = row.Scan(&cnt)\n\treturn\n}",
+    "funcname": "Count"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 238,
+    "focalfunc": "func (s shortcode) innerString() string",
+    "funcbody": "func (s shortcode) innerString() string {\n\tvar sb strings.Builder\n\n\tfor _, inner := range s.inner {\n\t\tsb.WriteString(inner.(string))\n\t}\n\n\treturn sb.String()\n}",
+    "funcname": "innerString"
+}

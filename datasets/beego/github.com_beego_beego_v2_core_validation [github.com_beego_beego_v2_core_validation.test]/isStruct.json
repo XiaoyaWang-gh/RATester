@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 121,
+    "focalfunc": "func isStruct(t reflect.Type) bool",
+    "funcbody": "func isStruct(t reflect.Type) bool {\n\treturn t.Kind() == reflect.Struct\n}",
+    "funcname": "isStruct"
+}

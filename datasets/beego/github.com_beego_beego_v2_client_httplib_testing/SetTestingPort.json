@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/testing/client.go",
+    "lineno": 31,
+    "focalfunc": "func SetTestingPort(p string)",
+    "funcbody": "func SetTestingPort(p string) {\n\tport = p\n}",
+    "funcname": "SetTestingPort"
+}

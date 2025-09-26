@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 101,
+    "focalfunc": "func (s *hugoContextParser) Parse(parent ast.Node, block text.Reader, pc parser.Context) ast.Node",
+    "funcbody": "func (s *hugoContextParser) Parse(parent ast.Node, block text.Reader, pc parser.Context) ast.Node {\n\tline, _ := block.PeekLine()\n\tif !bytes.HasPrefix(line, prefix) {\n\t\treturn nil\n\t}\n\tend := bytes.Index(line, endDelim)\n\tif end == -1 {\n\t\treturn nil\n\t}\n\n\tblock.Advance(end + len(endDelim) + 1)\n\n\tif line[end-1] == '/' {\n\t\treturn &HugoContext{Closing: true}\n\t}\n\n\tattrBytes := line[len(prefix)+1 : end]\n\th := &HugoContext{}\n\th.parseAttrs(attrBytes)\n\treturn h\n}",
+    "funcname": "Parse"
+}

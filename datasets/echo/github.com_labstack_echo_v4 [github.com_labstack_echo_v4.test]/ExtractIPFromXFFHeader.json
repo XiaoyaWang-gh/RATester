@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 252,
+    "focalfunc": "func ExtractIPFromXFFHeader(options ...TrustOption) IPExtractor",
+    "funcbody": "func ExtractIPFromXFFHeader(options ...TrustOption) IPExtractor {\n\tchecker := newIPChecker(options)\n\treturn func(req *http.Request) string {\n\t\tdirectIP := extractIP(req)\n\t\txffs := req.Header[HeaderXForwardedFor]\n\t\tif len(xffs) == 0 {\n\t\t\treturn directIP\n\t\t}\n\t\tips := append(strings.Split(strings.Join(xffs, \",\"), \",\"), directIP)\n\t\tfor i := len(ips) - 1; i >= 0; i-- {\n\t\t\tips[i] = strings.TrimSpace(ips[i])\n\t\t\tips[i] = strings.TrimPrefix(ips[i], \"[\")\n\t\t\tips[i] = strings.TrimSuffix(ips[i], \"]\")\n\t\t\tip := net.ParseIP(ips[i])\n\t\t\tif ip == nil {\n\n\t\t\t\treturn directIP\n\t\t\t}\n\t\t\tif !checker.trust(ip) {\n\t\t\t\treturn ip.String()\n\t\t\t}\n\t\t}\n\n\t\treturn strings.TrimSpace(ips[0])\n\t}\n}",
+    "funcname": "ExtractIPFromXFFHeader"
+}

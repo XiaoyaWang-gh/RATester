@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 47,
+    "focalfunc": "func EncodeGob(obj map[interface{}]interface{}) ([]byte, error)",
+    "funcbody": "func EncodeGob(obj map[interface{}]interface{}) ([]byte, error) {\n\tfor _, v := range obj {\n\t\tgob.Register(v)\n\t}\n\tbuf := bytes.NewBuffer(nil)\n\tenc := gob.NewEncoder(buf)\n\terr := enc.Encode(obj)\n\tif err != nil {\n\t\treturn []byte(\"\"), err\n\t}\n\treturn buf.Bytes(), nil\n}",
+    "funcname": "EncodeGob"
+}

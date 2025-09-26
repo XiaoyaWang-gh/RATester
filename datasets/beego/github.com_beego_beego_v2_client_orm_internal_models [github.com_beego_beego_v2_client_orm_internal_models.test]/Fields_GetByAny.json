@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_f.go",
+    "lineno": 81,
+    "focalfunc": "func (f *Fields) GetByAny(name string) (*FieldInfo, bool)",
+    "funcbody": "func (f *Fields) GetByAny(name string) (*FieldInfo, bool) {\n\tif fi, ok := f.Fields[name]; ok {\n\t\treturn fi, ok\n\t}\n\tif fi, ok := f.FieldsLow[strings.ToLower(name)]; ok {\n\t\treturn fi, ok\n\t}\n\tif fi, ok := f.Columns[name]; ok {\n\t\treturn fi, ok\n\t}\n\treturn nil, false\n}",
+    "funcname": "GetByAny"
+}

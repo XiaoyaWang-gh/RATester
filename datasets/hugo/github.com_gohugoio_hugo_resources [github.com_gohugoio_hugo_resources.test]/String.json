@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 537,
+    "focalfunc": "func (l *genericResource) String() string",
+    "funcbody": "func (l *genericResource) String() string {\n\treturn fmt.Sprintf(\"Resource(%s: %s)\", l.ResourceType(), l.name)\n}",
+    "funcname": "String"
+}

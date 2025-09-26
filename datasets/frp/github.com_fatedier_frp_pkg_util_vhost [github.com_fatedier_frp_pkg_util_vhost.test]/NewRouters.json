@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/router.go",
+    "lineno": 30,
+    "focalfunc": "func NewRouters() *Routers",
+    "funcbody": "func NewRouters() *Routers {\n\treturn &Routers{\n\t\tindexByDomain: make(map[string]routerByHTTPUser),\n\t}\n}",
+    "funcname": "NewRouters"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form.go",
+    "lineno": 18,
+    "focalfunc": "func (formBinding) Name() string",
+    "funcbody": "func (formBinding) Name() string {\n\treturn \"form\"\n}",
+    "funcname": "Name"
+}

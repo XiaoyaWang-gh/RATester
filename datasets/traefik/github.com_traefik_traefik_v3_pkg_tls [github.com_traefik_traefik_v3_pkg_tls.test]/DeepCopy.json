@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/zz_generated.deepcopy.go",
+    "lineno": 154,
+    "focalfunc": "func (in *Store) DeepCopy() *Store",
+    "funcbody": "func (in *Store) DeepCopy() *Store {\n\tif in == nil {\n\t\treturn nil\n\t}\n\tout := new(Store)\n\tin.DeepCopyInto(out)\n\treturn out\n}",
+    "funcname": "DeepCopy"
+}

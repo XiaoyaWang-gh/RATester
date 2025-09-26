@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 70,
+    "focalfunc": "func (n *HugoContext) parseAttrs(attrBytes []byte)",
+    "funcbody": "func (n *HugoContext) parseAttrs(attrBytes []byte) {\n\tkeyPairs := bytes.Split(attrBytes, []byte(\" \"))\n\tfor _, keyPair := range keyPairs {\n\t\tkv := bytes.Split(keyPair, []byte(\"=\"))\n\t\tif len(kv) != 2 {\n\t\t\tcontinue\n\t\t}\n\t\tkey := string(kv[0])\n\t\tval := string(kv[1])\n\t\tswitch key {\n\t\tcase \"pid\":\n\t\t\tpid, _ := strconv.ParseUint(val, 10, 64)\n\t\t\tn.Pid = pid\n\t\t}\n\t}\n}",
+    "funcname": "parseAttrs"
+}

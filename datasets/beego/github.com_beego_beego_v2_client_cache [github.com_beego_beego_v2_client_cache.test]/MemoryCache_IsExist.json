@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 154,
+    "focalfunc": "func (bc *MemoryCache) IsExist(ctx context.Context, key string) (bool, error)",
+    "funcbody": "func (bc *MemoryCache) IsExist(ctx context.Context, key string) (bool, error) {\n\tbc.RLock()\n\tdefer bc.RUnlock()\n\tif v, ok := bc.items[key]; ok {\n\t\treturn !v.isExpire(), nil\n\t}\n\treturn false, nil\n}",
+    "funcname": "IsExist"
+}

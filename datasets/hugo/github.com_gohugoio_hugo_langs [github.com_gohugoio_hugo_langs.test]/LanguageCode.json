@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 108,
+    "focalfunc": "func (l *Language) LanguageCode() string",
+    "funcbody": "func (l *Language) LanguageCode() string {\n\tif l.LanguageConfig.LanguageCode != \"\" {\n\t\treturn l.LanguageConfig.LanguageCode\n\t}\n\treturn l.Lang\n}",
+    "funcname": "LanguageCode"
+}

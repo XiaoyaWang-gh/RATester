@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 308,
+    "focalfunc": "func (c *configContainer) SaveConfigFile(filename string) error",
+    "funcbody": "func (c *configContainer) SaveConfigFile(filename string) error {\n\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\n\t_, err = c.t.WriteTo(f)\n\treturn err\n}",
+    "funcname": "SaveConfigFile"
+}

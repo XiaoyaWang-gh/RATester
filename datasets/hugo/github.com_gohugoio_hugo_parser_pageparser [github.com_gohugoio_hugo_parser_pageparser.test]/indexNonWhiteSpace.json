@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 497,
+    "focalfunc": "func indexNonWhiteSpace(s []byte, in rune) int",
+    "funcbody": "func indexNonWhiteSpace(s []byte, in rune) int {\n\tidx := bytes.IndexFunc(s, func(r rune) bool {\n\t\treturn !unicode.IsSpace(r)\n\t})\n\n\tif idx == -1 {\n\t\treturn -1\n\t}\n\n\tr, _ := utf8.DecodeRune(s[idx:])\n\tif r == in {\n\t\treturn idx\n\t}\n\treturn -1\n}",
+    "funcname": "indexNonWhiteSpace"
+}

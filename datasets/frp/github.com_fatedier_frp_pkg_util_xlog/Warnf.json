@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 101,
+    "focalfunc": "func (l *Logger) Warnf(format string, v ...interface{})",
+    "funcbody": "func (l *Logger) Warnf(format string, v ...interface{}) {\n\tlog.Logger.Warnf(l.prefixString+format, v...)\n}",
+    "funcname": "Warnf"
+}

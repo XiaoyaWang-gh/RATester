@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 653,
+    "focalfunc": "func (e *Echo) ServeHTTP(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (e *Echo) ServeHTTP(w http.ResponseWriter, r *http.Request) {\n\n\tc := e.pool.Get().(*context)\n\tc.Reset(r, w)\n\tvar h HandlerFunc\n\n\tif e.premiddleware == nil {\n\t\te.findRouter(r.Host).Find(r.Method, GetPath(r), c)\n\t\th = c.Handler()\n\t\th = applyMiddleware(h, e.middleware...)\n\t} else {\n\t\th = func(c Context) error {\n\t\t\te.findRouter(r.Host).Find(r.Method, GetPath(r), c)\n\t\t\th := c.Handler()\n\t\t\th = applyMiddleware(h, e.middleware...)\n\t\t\treturn h(c)\n\t\t}\n\t\th = applyMiddleware(h, e.premiddleware...)\n\t}\n\n\tif err := h(c); err != nil {\n\t\te.HTTPErrorHandler(err, c)\n\t}\n\n\te.pool.Put(c)\n}",
+    "funcname": "ServeHTTP"
+}

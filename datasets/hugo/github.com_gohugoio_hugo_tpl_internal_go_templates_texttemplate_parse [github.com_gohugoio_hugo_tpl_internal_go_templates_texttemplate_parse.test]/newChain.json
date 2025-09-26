@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 540,
+    "focalfunc": "func (t *Tree) newChain(pos Pos, node Node) *ChainNode",
+    "funcbody": "func (t *Tree) newChain(pos Pos, node Node) *ChainNode {\n\treturn &ChainNode{tr: t, NodeType: NodeChain, Pos: pos, Node: node}\n}",
+    "funcname": "newChain"
+}

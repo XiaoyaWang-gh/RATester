@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 158,
+    "focalfunc": "func RunFd(fd int) (err error)",
+    "funcbody": "func RunFd(fd int) (err error) {\n\treturn engine().RunFd(fd)\n}",
+    "funcname": "RunFd"
+}

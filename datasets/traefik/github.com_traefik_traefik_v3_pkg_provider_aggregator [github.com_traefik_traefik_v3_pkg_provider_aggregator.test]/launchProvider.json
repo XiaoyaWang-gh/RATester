@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/aggregator.go",
+    "lineno": 196,
+    "focalfunc": "func (p ProviderAggregator) launchProvider(configurationChan chan<- dynamic.Message, pool *safe.Pool, prd provider.Provider)",
+    "funcbody": "func (p ProviderAggregator) launchProvider(configurationChan chan<- dynamic.Message, pool *safe.Pool, prd provider.Provider) {\n\tjsonConf, err := redactor.RemoveCredentials(prd)\n\tif err != nil {\n\t\tlog.Debug().Err(err).Msgf(\"Cannot marshal the provider configuration %T\", prd)\n\t}\n\n\tlog.Info().Msgf(\"Starting provider %T\", prd)\n\tlog.Debug().RawJSON(\"config\", []byte(jsonConf)).Msgf(\"%T provider configuration\", prd)\n\n\tif err := maybeThrottledProvide(prd, p.providersThrottleDuration)(configurationChan, pool); err != nil {\n\t\tlog.Error().Err(err).Msgf(\"Cannot start the provider %T\", prd)\n\t\treturn\n\t}\n}",
+    "funcname": "launchProvider"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 111,
+    "focalfunc": "func GetRuntimeEnv(key string) (string, error)",
+    "funcbody": "func GetRuntimeEnv(key string) (string, error) {\n\tfile, err := envFile()\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tif file == \"\" {\n\t\treturn \"\", fmt.Errorf(\"missing runtime env file\")\n\t}\n\n\tvar runtimeEnv string\n\tdata, err := os.ReadFile(file)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tenvStrings := strings.Split(string(data), \"\\n\")\n\tfor _, envItem := range envStrings {\n\t\tenvItem = strings.TrimSuffix(envItem, \"\\r\")\n\t\tenvKeyValue := strings.Split(envItem, \"=\")\n\t\tif len(envKeyValue) == 2 && strings.TrimSpace(envKeyValue[0]) == key {\n\t\t\truntimeEnv = strings.TrimSpace(envKeyValue[1])\n\t\t}\n\t}\n\treturn runtimeEnv, nil\n}",
+    "funcname": "GetRuntimeEnv"
+}

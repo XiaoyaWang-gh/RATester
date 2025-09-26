@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 240,
+    "focalfunc": "func IsPort(p string) bool",
+    "funcbody": "func IsPort(p string) bool {\n\tpi, err := strconv.Atoi(p)\n\tif err != nil {\n\t\treturn false\n\t}\n\tif pi > 65536 || pi < 1 {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "IsPort"
+}

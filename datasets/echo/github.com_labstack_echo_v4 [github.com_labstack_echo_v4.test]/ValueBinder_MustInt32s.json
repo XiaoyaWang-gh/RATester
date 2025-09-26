@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 637,
+    "focalfunc": "func (b *ValueBinder) MustInt32s(sourceParam string, dest *[]int32) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustInt32s(sourceParam string, dest *[]int32) *ValueBinder {\n\treturn b.intsValue(sourceParam, dest, true)\n}",
+    "funcname": "MustInt32s"
+}

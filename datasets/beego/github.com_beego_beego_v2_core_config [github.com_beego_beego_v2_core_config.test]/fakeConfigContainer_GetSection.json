@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 93,
+    "focalfunc": "func (c *fakeConfigContainer) GetSection(section string) (map[string]string, error)",
+    "funcbody": "func (c *fakeConfigContainer) GetSection(section string) (map[string]string, error) {\n\treturn nil, errors.New(\"not implement in the fakeConfigContainer\")\n}",
+    "funcname": "GetSection"
+}

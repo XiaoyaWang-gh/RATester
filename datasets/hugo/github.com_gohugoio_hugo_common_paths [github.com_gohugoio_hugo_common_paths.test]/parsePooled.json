@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 65,
+    "focalfunc": "func (pp *PathParser) parsePooled(c, s string) *Path",
+    "funcbody": "func (pp *PathParser) parsePooled(c, s string) *Path {\n\ts = NormalizePathStringBasic(s)\n\tp := getPath()\n\tp.component = c\n\tp, err := pp.doParse(c, s, p)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn p\n}",
+    "funcname": "parsePooled"
+}

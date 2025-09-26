@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 595,
+    "focalfunc": "func (m *taskManager) StopTask()",
+    "funcbody": "func (m *taskManager) StopTask() {\n\tgo func() {\n\t\tm.stop <- true\n\t}()\n}",
+    "funcname": "StopTask"
+}

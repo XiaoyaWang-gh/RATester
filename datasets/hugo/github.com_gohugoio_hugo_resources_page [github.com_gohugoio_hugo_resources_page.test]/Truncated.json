@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 514,
+    "focalfunc": "func (p *nopPage) Truncated(context.Context) bool",
+    "funcbody": "func (p *nopPage) Truncated(context.Context) bool {\n\treturn false\n}",
+    "funcname": "Truncated"
+}

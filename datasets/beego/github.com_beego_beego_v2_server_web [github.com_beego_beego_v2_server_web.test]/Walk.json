@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/fs.go",
+    "lineno": 36,
+    "focalfunc": "func walk(fs http.FileSystem, path string, info os.FileInfo, walkFn filepath.WalkFunc) error",
+    "funcbody": "func walk(fs http.FileSystem, path string, info os.FileInfo, walkFn filepath.WalkFunc) error {\n\tvar err error\n\tif !info.IsDir() {\n\t\treturn walkFn(path, info, nil)\n\t}\n\n\tdir, err := fs.Open(path)\n\tif err != nil {\n\t\tif err1 := walkFn(path, info, err); err1 != nil {\n\t\t\treturn err1\n\t\t}\n\t\treturn err\n\t}\n\tdefer dir.Close()\n\tdirs, err := dir.Readdir(-1)\n\terr1 := walkFn(path, info, err)\n\n\tif err != nil || err1 != nil {\n\n\t\treturn err1\n\t}\n\n\tfor _, fileInfo := range dirs {\n\t\tfilename := filepath.Join(path, fileInfo.Name())\n\t\tif err = walk(fs, filename, fileInfo, walkFn); err != nil {\n\t\t\tif !fileInfo.IsDir() || err != filepath.SkipDir {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "walk"
+}

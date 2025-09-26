@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 179,
+    "focalfunc": "func NewInvertedIndex(cfg Config) *InvertedIndex",
+    "funcbody": "func NewInvertedIndex(cfg Config) *InvertedIndex {\n\tidx := &InvertedIndex{index: make(map[string]map[Keyword][]Document), indexDocCount: make(map[string]int), cfg: cfg}\n\tfor _, conf := range cfg.Indices {\n\t\tidx.index[conf.Name] = make(map[Keyword][]Document)\n\t\tif conf.Weight < idx.minWeight {\n\n\t\t\tidx.minWeight = conf.Weight\n\t\t}\n\t\tif conf.Weight > idx.maxWeight {\n\t\t\tidx.maxWeight = conf.Weight\n\t\t}\n\t}\n\treturn idx\n}",
+    "funcname": "NewInvertedIndex"
+}

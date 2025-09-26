@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 133,
+    "focalfunc": "func (c *ContentSpec) SanitizeAnchorName(s string) string",
+    "funcbody": "func (c *ContentSpec) SanitizeAnchorName(s string) string {\n\treturn c.anchorNameSanitizer.SanitizeAnchorName(s)\n}",
+    "funcname": "SanitizeAnchorName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 245,
+    "focalfunc": "func (c *Client) BaseURL() string",
+    "funcbody": "func (c *Client) BaseURL() string {\n\treturn c.baseURL\n}",
+    "funcname": "BaseURL"
+}

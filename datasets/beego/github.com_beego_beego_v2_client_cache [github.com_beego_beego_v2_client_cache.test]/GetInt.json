@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/conv.go",
+    "lineno": 38,
+    "focalfunc": "func GetInt(v interface{}) int",
+    "funcbody": "func GetInt(v interface{}) int {\n\tswitch result := v.(type) {\n\tcase int:\n\t\treturn result\n\tcase int32:\n\t\treturn int(result)\n\tcase int64:\n\t\treturn int(result)\n\tdefault:\n\t\tif d := GetString(v); d != \"\" {\n\t\t\tvalue, _ := strconv.Atoi(d)\n\t\t\treturn value\n\t\t}\n\t}\n\treturn 0\n}",
+    "funcname": "GetInt"
+}

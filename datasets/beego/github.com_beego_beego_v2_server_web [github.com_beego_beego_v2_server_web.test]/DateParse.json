@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 121,
+    "focalfunc": "func DateParse(dateString, format string) (time.Time, error)",
+    "funcbody": "func DateParse(dateString, format string) (time.Time, error) {\n\treplacer := strings.NewReplacer(datePatterns...)\n\tformat = replacer.Replace(format)\n\treturn time.ParseInLocation(format, dateString, time.Local)\n}",
+    "funcname": "DateParse"
+}

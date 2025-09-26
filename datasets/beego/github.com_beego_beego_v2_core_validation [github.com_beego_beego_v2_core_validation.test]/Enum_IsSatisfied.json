@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 750,
+    "focalfunc": "func (e Enum) IsSatisfied(i interface{}) bool",
+    "funcbody": "func (e Enum) IsSatisfied(i interface{}) bool {\n\tif val, ok := i.(string); ok {\n\t\troles := strings.Split(e.Rules, \"|\")\n\t\tfor _, v := range roles {\n\t\t\tif val == strings.TrimSpace(v) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "IsSatisfied"
+}

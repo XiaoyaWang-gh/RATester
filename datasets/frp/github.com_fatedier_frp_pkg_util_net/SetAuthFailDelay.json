@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/http.go",
+    "lineno": 40,
+    "focalfunc": "func (authMid *HTTPAuthMiddleware) SetAuthFailDelay(delay time.Duration) *HTTPAuthMiddleware",
+    "funcbody": "func (authMid *HTTPAuthMiddleware) SetAuthFailDelay(delay time.Duration) *HTTPAuthMiddleware {\n\tauthMid.authFailDelay = delay\n\treturn authMid\n}",
+    "funcname": "SetAuthFailDelay"
+}

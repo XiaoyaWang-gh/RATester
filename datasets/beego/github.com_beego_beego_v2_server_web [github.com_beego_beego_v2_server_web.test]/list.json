@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin.go",
+    "lineno": 53,
+    "focalfunc": "func list(root string, p interface{}, m M)",
+    "funcbody": "func list(root string, p interface{}, m M) {\n\tpt := reflect.TypeOf(p)\n\tpv := reflect.ValueOf(p)\n\tif pt.Kind() == reflect.Ptr {\n\t\tpt = pt.Elem()\n\t\tpv = pv.Elem()\n\t}\n\tfor i := 0; i < pv.NumField(); i++ {\n\t\tvar key string\n\t\tif root == \"\" {\n\t\t\tkey = pt.Field(i).Name\n\t\t} else {\n\t\t\tkey = root + \".\" + pt.Field(i).Name\n\t\t}\n\t\tif pv.Field(i).Kind() == reflect.Struct {\n\t\t\tlist(key, pv.Field(i).Interface(), m)\n\t\t} else {\n\t\t\tm[key] = pv.Field(i).Interface()\n\t\t}\n\t}\n}",
+    "funcname": "list"
+}

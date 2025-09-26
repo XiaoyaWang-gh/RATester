@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 106,
+    "focalfunc": "func (w *WriteLogger) Write(p []byte) (n int, err error)",
+    "funcbody": "func (w *WriteLogger) Write(p []byte) (n int, err error) {\n\tLogger.Log(w.level, w.offset, string(bytes.TrimRight(p, \"\\n\")))\n\treturn len(p), nil\n}",
+    "funcname": "Write"
+}

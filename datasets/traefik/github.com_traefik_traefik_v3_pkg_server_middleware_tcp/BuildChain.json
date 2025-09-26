@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/tcp/middlewares.go",
+    "lineno": 35,
+    "focalfunc": "func (b *Builder) BuildChain(ctx context.Context, middlewares []string) *tcp.Chain",
+    "funcbody": "func (b *Builder) BuildChain(ctx context.Context, middlewares []string) *tcp.Chain {\n\tchain := tcp.NewChain()\n\n\tfor _, name := range middlewares {\n\t\tmiddlewareName := provider.GetQualifiedName(ctx, name)\n\n\t\tchain = chain.Append(func(next tcp.Handler) (tcp.Handler, error) {\n\t\t\tconstructorContext := provider.AddInContext(ctx, middlewareName)\n\t\t\tif midInf, ok := b.configs[middlewareName]; !ok || midInf.TCPMiddleware == nil {\n\t\t\t\treturn nil, fmt.Errorf(\"middleware %q does not exist\", middlewareName)\n\t\t\t}\n\n\t\t\tvar err error\n\t\t\tif constructorContext, err = checkRecursion(constructorContext, middlewareName); err != nil {\n\t\t\t\tb.configs[middlewareName].AddError(err, true)\n\t\t\t\treturn nil, err\n\t\t\t}\n\n\t\t\tconstructor, err := b.buildConstructor(constructorContext, middlewareName)\n\t\t\tif err != nil {\n\t\t\t\tb.configs[middlewareName].AddError(err, true)\n\t\t\t\treturn nil, err\n\t\t\t}\n\n\t\t\thandler, err := constructor(next)\n\t\t\tif err != nil {\n\t\t\t\tb.configs[middlewareName].AddError(err, true)\n\t\t\t\treturn nil, err\n\t\t\t}\n\n\t\t\treturn handler, nil\n\t\t})\n\t}\n\n\treturn &chain\n}",
+    "funcname": "BuildChain"
+}

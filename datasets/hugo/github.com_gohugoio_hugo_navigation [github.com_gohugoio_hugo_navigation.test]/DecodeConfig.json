@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 273,
+    "focalfunc": "func DecodeConfig(in any) (*config.ConfigNamespace[map[string]MenuConfig, Menus], error)",
+    "funcbody": "func DecodeConfig(in any) (*config.ConfigNamespace[map[string]MenuConfig, Menus], error) {\n\tbuildConfig := func(in any) (Menus, any, error) {\n\t\tret := Menus{}\n\n\t\tif in == nil {\n\t\t\treturn ret, map[string]any{}, nil\n\t\t}\n\n\t\tmenus, err := maps.ToStringMapE(in)\n\t\tif err != nil {\n\t\t\treturn ret, nil, err\n\t\t}\n\t\tmenus = maps.CleanConfigStringMap(menus)\n\n\t\tfor name, menu := range menus {\n\t\t\tm, err := cast.ToSliceE(menu)\n\t\t\tif err != nil {\n\t\t\t\treturn ret, nil, err\n\t\t\t} else {\n\t\t\t\tfor _, entry := range m {\n\t\t\t\t\tvar menuConfig MenuConfig\n\t\t\t\t\tif err := mapstructure.WeakDecode(entry, &menuConfig); err != nil {\n\t\t\t\t\t\treturn ret, nil, err\n\t\t\t\t\t}\n\t\t\t\t\tmaps.PrepareParams(menuConfig.Params)\n\t\t\t\t\tmenuEntry := MenuEntry{\n\t\t\t\t\t\tMenu:\t\tname,\n\t\t\t\t\t\tMenuConfig:\tmenuConfig,\n\t\t\t\t\t}\n\t\t\t\t\tmenuEntry.ConfiguredURL = menuEntry.MenuConfig.URL\n\n\t\t\t\t\tif ret[name] == nil {\n\t\t\t\t\t\tret[name] = Menu{}\n\t\t\t\t\t}\n\t\t\t\t\tret[name] = ret[name].Add(&menuEntry)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn ret, menus, nil\n\t}\n\n\treturn config.DecodeNamespace[map[string]MenuConfig](in, buildConfig)\n}",
+    "funcname": "DecodeConfig"
+}

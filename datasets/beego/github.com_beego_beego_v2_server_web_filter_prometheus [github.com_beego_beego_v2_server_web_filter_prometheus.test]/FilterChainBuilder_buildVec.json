@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/prometheus/filter.go",
+    "lineno": 62,
+    "focalfunc": "func (builder *FilterChainBuilder) buildVec() *prometheus.SummaryVec",
+    "funcbody": "func (builder *FilterChainBuilder) buildVec() *prometheus.SummaryVec {\n\tsummaryVec := prometheus.NewSummaryVec(prometheus.SummaryOpts{\n\t\tName:\t\t\"beego\",\n\t\tSubsystem:\t\"http_request\",\n\t\tConstLabels: map[string]string{\n\t\t\t\"server\":\tweb.BConfig.ServerName,\n\t\t\t\"env\":\t\tweb.BConfig.RunMode,\n\t\t\t\"appname\":\tweb.BConfig.AppName,\n\t\t},\n\t\tHelp:\t\"The statics info for http request\",\n\t}, []string{\"pattern\", \"method\", \"status\"})\n\treturn summaryVec\n}",
+    "funcname": "buildVec"
+}

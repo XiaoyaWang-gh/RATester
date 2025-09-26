@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 100,
+    "focalfunc": "func (input *BeegoInput) Scheme() string",
+    "funcbody": "func (input *BeegoInput) Scheme() string {\n\tif scheme := input.Header(\"X-Forwarded-Proto\"); scheme != \"\" {\n\t\treturn scheme\n\t}\n\tif input.Context.Request.URL.Scheme != \"\" {\n\t\treturn input.Context.Request.URL.Scheme\n\t}\n\tif input.Context.Request.TLS == nil {\n\t\treturn \"http\"\n\t}\n\treturn \"https\"\n}",
+    "funcname": "Scheme"
+}

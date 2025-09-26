@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 85,
+    "focalfunc": "func (s *JLWriter) Flush()",
+    "funcbody": "func (s *JLWriter) Flush() {\n}",
+    "funcname": "Flush"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 559,
+    "focalfunc": "func (app *App) RegisterCustomBinder(binder CustomBinder)",
+    "funcbody": "func (app *App) RegisterCustomBinder(binder CustomBinder) {\n\tapp.customBinders = append(app.customBinders, binder)\n}",
+    "funcname": "RegisterCustomBinder"
+}

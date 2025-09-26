@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 561,
+    "focalfunc": "func (c *Context) GetPostFormArray(key string) (values []string, ok bool)",
+    "funcbody": "func (c *Context) GetPostFormArray(key string) (values []string, ok bool) {\n\tc.initFormCache()\n\tvalues, ok = c.formCache[key]\n\treturn\n}",
+    "funcname": "GetPostFormArray"
+}

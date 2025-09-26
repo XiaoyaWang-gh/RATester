@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/cli/deprecation.go",
+    "lineno": 118,
+    "focalfunc": "func filterUnknownNodes(fType reflect.Type, node *parser.Node) bool",
+    "funcbody": "func filterUnknownNodes(fType reflect.Type, node *parser.Node) bool {\n\tvar children []*parser.Node\n\tfor _, child := range node.Children {\n\t\tif hasKnownNodes(fType, child) {\n\t\t\tchildren = append(children, child)\n\t\t}\n\t}\n\n\tnode.Children = children\n\treturn len(node.Children) > 0\n}",
+    "funcname": "filterUnknownNodes"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu_cache.go",
+    "lineno": 74,
+    "focalfunc": "func (c *menuCache) getP(key string, apply func(m *Menu), menuLists ...Menu) (Menu, bool)",
+    "funcbody": "func (c *menuCache) getP(key string, apply func(m *Menu), menuLists ...Menu) (Menu, bool) {\n\tc.Lock()\n\tdefer c.Unlock()\n\n\tif cached, ok := c.m[key]; ok {\n\t\tfor _, entry := range cached {\n\t\t\tif entry.matches(menuLists) {\n\t\t\t\treturn entry.out, true\n\t\t\t}\n\t\t}\n\t}\n\n\tm := menuLists[0]\n\tmenuCopy := append(Menu(nil), m...)\n\n\tif apply != nil {\n\t\tapply(&menuCopy)\n\t}\n\n\tentry := menuCacheEntry{in: menuLists, out: menuCopy}\n\tif v, ok := c.m[key]; ok {\n\t\tc.m[key] = append(v, entry)\n\t} else {\n\t\tc.m[key] = []menuCacheEntry{entry}\n\t}\n\n\treturn menuCopy, false\n}",
+    "funcname": "getP"
+}

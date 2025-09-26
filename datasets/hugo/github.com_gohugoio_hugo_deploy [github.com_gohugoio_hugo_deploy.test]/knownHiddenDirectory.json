@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 475,
+    "focalfunc": "func knownHiddenDirectory(name string) bool",
+    "funcbody": "func knownHiddenDirectory(name string) bool {\n\tknownDirectories := []string{\n\t\t\".well-known\",\n\t}\n\n\tfor _, dir := range knownDirectories {\n\t\tif name == dir {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "knownHiddenDirectory"
+}

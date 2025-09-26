@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/client.go",
+    "lineno": 173,
+    "focalfunc": "func UnmarshalClientConfFromIni(source interface{}) (ClientCommonConf, error)",
+    "funcbody": "func UnmarshalClientConfFromIni(source interface{}) (ClientCommonConf, error) {\n\tf, err := ini.LoadSources(ini.LoadOptions{\n\t\tInsensitive:\t\tfalse,\n\t\tInsensitiveSections:\tfalse,\n\t\tInsensitiveKeys:\tfalse,\n\t\tIgnoreInlineComment:\ttrue,\n\t\tAllowBooleanKeys:\ttrue,\n\t}, source)\n\tif err != nil {\n\t\treturn ClientCommonConf{}, err\n\t}\n\n\ts, err := f.GetSection(\"common\")\n\tif err != nil {\n\t\treturn ClientCommonConf{}, fmt.Errorf(\"invalid configuration file, not found [common] section\")\n\t}\n\n\tcommon := GetDefaultClientConf()\n\terr = s.MapTo(&common)\n\tif err != nil {\n\t\treturn ClientCommonConf{}, err\n\t}\n\n\tcommon.Metas = GetMapWithoutPrefix(s.KeysHash(), \"meta_\")\n\tcommon.ClientConfig.OidcAdditionalEndpointParams = GetMapWithoutPrefix(s.KeysHash(), \"oidc_additional_\")\n\n\treturn common, nil\n}",
+    "funcname": "UnmarshalClientConfFromIni"
+}

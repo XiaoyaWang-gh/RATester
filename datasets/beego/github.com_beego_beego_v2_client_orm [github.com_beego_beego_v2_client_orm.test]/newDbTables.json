@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 495,
+    "focalfunc": "func newDbTables(mi *models.ModelInfo, base dbBaser) *dbTables",
+    "funcbody": "func newDbTables(mi *models.ModelInfo, base dbBaser) *dbTables {\n\ttables := &dbTables{}\n\ttables.tablesM = make(map[string]*dbTable)\n\ttables.mi = mi\n\ttables.base = base\n\treturn tables\n}",
+    "funcname": "newDbTables"
+}

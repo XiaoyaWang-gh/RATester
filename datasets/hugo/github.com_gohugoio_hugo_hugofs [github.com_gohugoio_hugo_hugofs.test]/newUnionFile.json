@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 475,
+    "focalfunc": "func (fs *RootMappingFs) newUnionFile(fis ...FileMetaInfo) (afero.File, error)",
+    "funcbody": "func (fs *RootMappingFs) newUnionFile(fis ...FileMetaInfo) (afero.File, error) {\n\tif len(fis) == 1 {\n\t\treturn fis[0].Meta().Open()\n\t}\n\n\tif !fis[0].IsDir() {\n\n\t\treturn fis[len(fis)-1].Meta().Open()\n\t}\n\n\topeners := make([]func() (afero.File, error), len(fis))\n\tfor i := len(fis) - 1; i >= 0; i-- {\n\t\tfi := fis[i]\n\t\topeners[i] = func() (afero.File, error) {\n\t\t\tmeta := fi.Meta()\n\t\t\tf, err := meta.Open()\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\treturn &rootMappingDir{DirOnlyOps: f, fs: fs, name: meta.Name, meta: meta}, nil\n\t\t}\n\t}\n\n\tmerge := func(lofi, bofi []iofs.DirEntry) []iofs.DirEntry {\n\n\t\tfor _, fi1 := range bofi {\n\t\t\tvar found bool\n\t\t\tfor _, fi2 := range lofi {\n\t\t\t\tif !fi2.IsDir() {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\tif fi1.Name() == fi2.Name() {\n\t\t\t\t\tfound = true\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t\tif !found {\n\t\t\t\tlofi = append(lofi, fi1)\n\t\t\t}\n\t\t}\n\n\t\treturn lofi\n\t}\n\n\tinfo := func() (os.FileInfo, error) {\n\t\treturn fis[0], nil\n\t}\n\n\treturn overlayfs.OpenDir(merge, info, openers...)\n}",
+    "funcname": "newUnionFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 811,
+    "focalfunc": "func (app *App) HandlersCount() uint32",
+    "funcbody": "func (app *App) HandlersCount() uint32 {\n\treturn app.handlersCount\n}",
+    "funcname": "HandlersCount"
+}

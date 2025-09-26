@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/config.go",
+    "lineno": 35,
+    "focalfunc": "func newConfigCommand() *configCommand",
+    "funcbody": "func newConfigCommand() *configCommand {\n\treturn &configCommand{\n\t\tcommands: []simplecobra.Commander{\n\t\t\t&configMountsCommand{},\n\t\t},\n\t}\n}",
+    "funcname": "newConfigCommand"
+}

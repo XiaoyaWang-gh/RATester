@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 243,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetCheckRedirect(redirect func(req *http.Request, via []*http.Request) error) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetCheckRedirect(redirect func(req *http.Request, via []*http.Request) error) *BeegoHTTPRequest {\n\tb.setting.CheckRedirect = redirect\n\treturn b\n}",
+    "funcname": "SetCheckRedirect"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 346,
+    "focalfunc": "func NSAfter(filterList ...FilterFunc) LinkNamespace",
+    "funcbody": "func NSAfter(filterList ...FilterFunc) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Filter(\"after\", filterList...)\n\t}\n}",
+    "funcname": "NSAfter"
+}

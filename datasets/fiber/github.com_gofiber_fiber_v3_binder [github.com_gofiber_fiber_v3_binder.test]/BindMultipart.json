@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/form.go",
+    "lineno": 50,
+    "focalfunc": "func (b *formBinding) BindMultipart(reqCtx *fasthttp.RequestCtx, out any) error",
+    "funcbody": "func (b *formBinding) BindMultipart(reqCtx *fasthttp.RequestCtx, out any) error {\n\tdata, err := reqCtx.MultipartForm()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn parse(b.Name(), out, data.Value)\n}",
+    "funcname": "BindMultipart"
+}

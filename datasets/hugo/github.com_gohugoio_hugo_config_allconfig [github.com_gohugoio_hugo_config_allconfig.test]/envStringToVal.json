@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 321,
+    "focalfunc": "func (l *configLoader) envStringToVal(k, v string) any",
+    "funcbody": "func (l *configLoader) envStringToVal(k, v string) any {\n\tswitch k {\n\tcase \"disablekinds\", \"disablelanguages\":\n\t\tif strings.Contains(v, \",\") {\n\t\t\treturn strings.Split(v, \",\")\n\t\t} else {\n\t\t\treturn strings.Fields(v)\n\t\t}\n\tdefault:\n\t\treturn v\n\t}\n}",
+    "funcname": "envStringToVal"
+}

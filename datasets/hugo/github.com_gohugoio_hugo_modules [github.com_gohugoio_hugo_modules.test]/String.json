@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/config.go",
+    "lineno": 329,
+    "focalfunc": "func (v HugoVersion) String() string",
+    "funcbody": "func (v HugoVersion) String() string {\n\textended := \"\"\n\tif v.Extended {\n\t\textended = \" extended\"\n\t}\n\n\tif v.Min != \"\" && v.Max != \"\" {\n\t\treturn fmt.Sprintf(\"%s/%s%s\", v.Min, v.Max, extended)\n\t}\n\n\tif v.Min != \"\" {\n\t\treturn fmt.Sprintf(\"Min %s%s\", v.Min, extended)\n\t}\n\n\tif v.Max != \"\" {\n\t\treturn fmt.Sprintf(\"Max %s%s\", v.Max, extended)\n\t}\n\n\treturn extended\n}",
+    "funcname": "String"
+}

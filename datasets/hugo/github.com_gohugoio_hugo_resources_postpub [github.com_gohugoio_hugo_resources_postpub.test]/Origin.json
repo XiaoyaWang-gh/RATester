@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 76,
+    "focalfunc": "func (r *PostPublishResource) Origin() resource.Resource",
+    "funcbody": "func (r *PostPublishResource) Origin() resource.Resource {\n\treturn r.delegate\n}",
+    "funcname": "Origin"
+}

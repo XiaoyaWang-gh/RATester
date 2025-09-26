@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 46,
+    "focalfunc": "func New(deps *deps.Deps) *Namespace",
+    "funcbody": "func New(deps *deps.Deps) *Namespace {\n\tif deps.MemCache == nil {\n\t\tpanic(\"must provide MemCache\")\n\t}\n\n\treturn &Namespace{\n\t\tdeps:\tdeps,\n\t\tcacheUnmarshal: dynacache.GetOrCreatePartition[string, *resources.StaleValue[any]](\n\t\t\tdeps.MemCache,\n\t\t\t\"/tmpl/transform/unmarshal\",\n\t\t\tdynacache.OptionsPartition{Weight: 30, ClearWhen: dynacache.ClearOnChange},\n\t\t),\n\t\tcacheMath: dynacache.GetOrCreatePartition[string, template.HTML](\n\t\t\tdeps.MemCache,\n\t\t\t\"/tmpl/transform/math\",\n\t\t\tdynacache.OptionsPartition{Weight: 30, ClearWhen: dynacache.ClearNever},\n\t\t),\n\t}\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/buffers/buffers.go",
+    "lineno": 28,
+    "focalfunc": "func Get() Buffer",
+    "funcbody": "func Get() Buffer {\n\treturn bytebufferpool.Get()\n}",
+    "funcname": "Get"
+}

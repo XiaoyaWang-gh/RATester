@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 206,
+    "focalfunc": "func GetNestedParamFn(keyStr, separator string, lookupFn func(key string) any) (any, string, map[string]any, error)",
+    "funcbody": "func GetNestedParamFn(keyStr, separator string, lookupFn func(key string) any) (any, string, map[string]any, error) {\n\tkeySegments := strings.Split(keyStr, separator)\n\tif len(keySegments) == 0 {\n\t\treturn nil, \"\", nil, nil\n\t}\n\n\tfirst := lookupFn(keySegments[0])\n\tif first == nil {\n\t\treturn nil, \"\", nil, nil\n\t}\n\n\tif len(keySegments) == 1 {\n\t\treturn first, keySegments[0], nil, nil\n\t}\n\n\tswitch m := first.(type) {\n\tcase map[string]any:\n\t\tv, key, owner := getNested(m, keySegments[1:])\n\t\treturn v, key, owner, nil\n\tcase Params:\n\t\tv, key, owner := getNested(m, keySegments[1:])\n\t\treturn v, key, owner, nil\n\t}\n\n\treturn nil, \"\", nil, nil\n}",
+    "funcname": "GetNestedParamFn"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/tag_auto_wire_bean_factory.go",
+    "lineno": 46,
+    "focalfunc": "func NewTagAutoWireBeanFactory() *TagAutoWireBeanFactory",
+    "funcbody": "func NewTagAutoWireBeanFactory() *TagAutoWireBeanFactory {\n\treturn &TagAutoWireBeanFactory{\n\t\tAdapters: map[string]TypeAdapter{\n\t\t\t\"Time\": &TimeTypeAdapter{Layout: \"2006-01-02 15:04:05\"},\n\t\t},\n\n\t\tFieldTagParser: func(field reflect.StructField) *FieldMetadata {\n\t\t\treturn &FieldMetadata{\n\t\t\t\tDftValue: field.Tag.Get(DefaultValueTagKey),\n\t\t\t}\n\t\t},\n\t}\n}",
+    "funcname": "NewTagAutoWireBeanFactory"
+}

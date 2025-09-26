@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 133,
+    "focalfunc": "func heathCheck(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func heathCheck(rw http.ResponseWriter, r *http.Request) {\n\tvar (\n\t\tresult\t\t[]string\n\t\tdata\t\t= make(map[interface{}]interface{})\n\t\tresultList\t= new([][]string)\n\t\tcontent\t\t= M{\n\t\t\t\"Fields\": []string{\"Name\", \"Message\", \"Status\"},\n\t\t}\n\t)\n\n\tfor name, h := range admin.AdminCheckList {\n\t\tif err := h.Check(); err != nil {\n\t\t\tresult = []string{\n\t\t\t\t\"error\",\n\t\t\t\ttemplate.HTMLEscapeString(name),\n\t\t\t\ttemplate.HTMLEscapeString(err.Error()),\n\t\t\t}\n\t\t} else {\n\t\t\tresult = []string{\n\t\t\t\t\"success\",\n\t\t\t\ttemplate.HTMLEscapeString(name),\n\t\t\t\t\"OK\",\n\t\t\t}\n\t\t}\n\t\t*resultList = append(*resultList, result)\n\t}\n\n\tqueryParams := r.URL.Query()\n\tjsonFlag := queryParams.Get(\"json\")\n\tshouldReturnJSON, _ := strconv.ParseBool(jsonFlag)\n\n\tif shouldReturnJSON {\n\t\tresponse := buildHealthCheckResponseList(resultList)\n\t\tjsonResponse, err := json.Marshal(response)\n\n\t\tif err != nil {\n\t\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t\t} else {\n\t\t\twriteJSON(rw, jsonResponse)\n\t\t}\n\t\treturn\n\t}\n\n\tcontent[\"Data\"] = resultList\n\tdata[\"Content\"] = content\n\tdata[\"Title\"] = \"Health Check\"\n\n\twriteTemplate(rw, data, healthCheckTpl, defaultScriptsTpl)\n}",
+    "funcname": "heathCheck"
+}

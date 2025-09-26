@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 254,
+    "focalfunc": "func (au *absURLReplacer) replaceInHTML(path string, ct transform.FromTo)",
+    "funcbody": "func (au *absURLReplacer) replaceInHTML(path string, ct transform.FromTo) {\n\tdoReplace(path, ct, au.htmlQuotes)\n}",
+    "funcname": "replaceInHTML"
+}

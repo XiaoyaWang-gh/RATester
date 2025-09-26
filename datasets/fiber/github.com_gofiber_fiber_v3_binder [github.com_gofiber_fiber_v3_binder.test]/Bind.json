@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/xml.go",
+    "lineno": 14,
+    "focalfunc": "func (*xmlBinding) Bind(body []byte, out any) error",
+    "funcbody": "func (*xmlBinding) Bind(body []byte, out any) error {\n\tif err := xml.Unmarshal(body, out); err != nil {\n\t\treturn fmt.Errorf(\"failed to unmarshal xml: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "Bind"
+}

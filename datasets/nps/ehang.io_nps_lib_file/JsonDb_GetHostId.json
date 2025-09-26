@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 135,
+    "focalfunc": "func (s *JsonDb) GetHostId() int32",
+    "funcbody": "func (s *JsonDb) GetHostId() int32 {\n\treturn atomic.AddInt32(&s.HostIncreaseId, 1)\n}",
+    "funcname": "GetHostId"
+}

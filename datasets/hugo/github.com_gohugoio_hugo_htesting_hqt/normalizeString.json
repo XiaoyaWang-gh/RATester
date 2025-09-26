@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/hqt/checkers.go",
+    "lineno": 89,
+    "focalfunc": "func normalizeString(s string) string",
+    "funcbody": "func normalizeString(s string) string {\n\ts = strings.ReplaceAll(s, \"\\r\\n\", \"\\n\")\n\n\tlines := strings.Split(strings.TrimSpace(s), \"\\n\")\n\tfor i, line := range lines {\n\t\tlines[i] = strings.Join(strings.Fields(strings.TrimSpace(line)), \"\")\n\t}\n\treturn strings.Join(lines, \"\\n\")\n}",
+    "funcname": "normalizeString"
+}

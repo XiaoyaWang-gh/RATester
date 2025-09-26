@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 73,
+    "focalfunc": "func (m *routeMethods) isHandler() bool",
+    "funcbody": "func (m *routeMethods) isHandler() bool {\n\treturn m.connect != nil ||\n\t\tm.delete != nil ||\n\t\tm.get != nil ||\n\t\tm.head != nil ||\n\t\tm.options != nil ||\n\t\tm.patch != nil ||\n\t\tm.post != nil ||\n\t\tm.propfind != nil ||\n\t\tm.put != nil ||\n\t\tm.trace != nil ||\n\t\tm.report != nil ||\n\t\tlen(m.anyOther) != 0\n\n}",
+    "funcname": "isHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/hydratation/hydration.go",
+    "lineno": 84,
+    "focalfunc": "func setTyped(field reflect.Value, i interface{})",
+    "funcbody": "func setTyped(field reflect.Value, i interface{}) {\n\tbaseValue := reflect.ValueOf(i)\n\tif field.Kind().String() == field.Type().String() {\n\t\tfield.Set(baseValue)\n\t} else {\n\t\tfield.Set(baseValue.Convert(field.Type()))\n\t}\n}",
+    "funcname": "setTyped"
+}

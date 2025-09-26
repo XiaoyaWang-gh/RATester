@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 165,
+    "focalfunc": "func errRecover(errp *error)",
+    "funcbody": "func errRecover(errp *error) {\n\te := recover()\n\tif e != nil {\n\t\tswitch err := e.(type) {\n\t\tcase runtime.Error:\n\t\t\tpanic(e)\n\t\tcase writeError:\n\t\t\t*errp = err.Err\n\t\tcase ExecError:\n\t\t\t*errp = err\n\t\tdefault:\n\t\t\tpanic(e)\n\t\t}\n\t}\n}",
+    "funcname": "errRecover"
+}

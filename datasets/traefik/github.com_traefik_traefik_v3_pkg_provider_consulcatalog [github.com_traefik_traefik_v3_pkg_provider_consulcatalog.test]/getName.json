@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 313,
+    "focalfunc": "func getName(i itemData) string",
+    "funcbody": "func getName(i itemData) string {\n\tif !i.ExtraConf.ConsulCatalog.Canary {\n\t\treturn provider.Normalize(i.Name)\n\t}\n\n\ttags := make([]string, len(i.Tags))\n\tcopy(tags, i.Tags)\n\n\tsort.Strings(tags)\n\n\thasher := fnv.New64()\n\thasher.Write([]byte(strings.Join(tags, \"\")))\n\treturn provider.Normalize(fmt.Sprintf(\"%s-%d\", i.Name, hasher.Sum64()))\n}",
+    "funcname": "getName"
+}

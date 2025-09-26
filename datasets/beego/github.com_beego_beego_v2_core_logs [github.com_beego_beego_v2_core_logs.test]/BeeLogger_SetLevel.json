@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 350,
+    "focalfunc": "func (bl *BeeLogger) SetLevel(l int)",
+    "funcbody": "func (bl *BeeLogger) SetLevel(l int) {\n\tbl.level = l\n}",
+    "funcname": "SetLevel"
+}

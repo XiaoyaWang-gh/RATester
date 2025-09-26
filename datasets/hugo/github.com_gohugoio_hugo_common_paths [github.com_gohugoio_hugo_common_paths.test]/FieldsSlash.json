@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 367,
+    "focalfunc": "func FieldsSlash(s string) []string",
+    "funcbody": "func FieldsSlash(s string) []string {\n\tf := strings.FieldsFunc(s, slashFunc)\n\treturn f\n}",
+    "funcname": "FieldsSlash"
+}

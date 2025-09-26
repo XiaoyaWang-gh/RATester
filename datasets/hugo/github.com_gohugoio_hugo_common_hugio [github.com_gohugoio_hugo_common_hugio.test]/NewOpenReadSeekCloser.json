@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/readers.go",
+    "lineno": 85,
+    "focalfunc": "func NewOpenReadSeekCloser(r ReadSeekCloser) OpenReadSeekCloser",
+    "funcbody": "func NewOpenReadSeekCloser(r ReadSeekCloser) OpenReadSeekCloser {\n\treturn func() (ReadSeekCloser, error) {\n\t\tr.Seek(0, io.SeekStart)\n\t\treturn r, nil\n\t}\n}",
+    "funcname": "NewOpenReadSeekCloser"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/dashboard/dashboard.go",
+    "lineno": 19,
+    "focalfunc": "func Append(router *mux.Router, customAssets fs.FS)",
+    "funcbody": "func Append(router *mux.Router, customAssets fs.FS) {\n\tassets := customAssets\n\tif assets == nil {\n\t\tassets = webui.FS\n\t}\n\n\trouter.Methods(http.MethodGet).\n\t\tPath(\"/\").\n\t\tHandlerFunc(func(resp http.ResponseWriter, req *http.Request) {\n\t\t\thttp.Redirect(resp, req, safePrefix(req)+\"/dashboard/\", http.StatusFound)\n\t\t})\n\n\trouter.Methods(http.MethodGet).\n\t\tPathPrefix(\"/dashboard/\").\n\t\tHandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\n\t\t\tw.Header().Set(\"Content-Security-Policy\", \"frame-src 'self' https://traefik.io https://*.traefik.io;\")\n\n\t\t\tw.Header().Del(\"Content-Type\")\n\n\t\t\thttp.StripPrefix(\"/dashboard/\", http.FileServerFS(assets)).ServeHTTP(w, r)\n\t\t})\n}",
+    "funcname": "Append"
+}

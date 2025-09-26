@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 553,
+    "focalfunc": "func (p *ControllerRegister) getHttpMethodMapMethod(httpMethod, ctMethod string) map[string]string",
+    "funcbody": "func (p *ControllerRegister) getHttpMethodMapMethod(httpMethod, ctMethod string) map[string]string {\n\tmethods := make(map[string]string)\n\n\tif httpMethod != \"*\" {\n\n\t\tif ctMethod == \"\" {\n\t\t\tctMethod = httpMethod\n\t\t}\n\t\tmethods[httpMethod] = ctMethod\n\t\treturn methods\n\t}\n\n\tfor val := range HTTPMETHOD {\n\t\tif ctMethod == \"\" {\n\t\t\tmethods[val] = val\n\t\t} else {\n\t\t\tmethods[val] = ctMethod\n\t\t}\n\t}\n\treturn methods\n}",
+    "funcname": "getHttpMethodMapMethod"
+}

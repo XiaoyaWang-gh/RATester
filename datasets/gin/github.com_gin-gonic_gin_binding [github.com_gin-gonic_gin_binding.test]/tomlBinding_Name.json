@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/toml.go",
+    "lineno": 17,
+    "focalfunc": "func (tomlBinding) Name() string",
+    "funcbody": "func (tomlBinding) Name() string {\n\treturn \"toml\"\n}",
+    "funcname": "Name"
+}

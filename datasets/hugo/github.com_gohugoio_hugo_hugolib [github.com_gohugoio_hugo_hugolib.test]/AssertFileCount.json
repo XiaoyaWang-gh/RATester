@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 254,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertFileCount(dirname string, expected int)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertFileCount(dirname string, expected int) {\n\ts.Helper()\n\tfs := s.fs.WorkingDirReadOnly\n\tcount := 0\n\tafero.Walk(fs, dirname, func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif info.IsDir() {\n\t\t\treturn nil\n\t\t}\n\t\tcount++\n\t\treturn nil\n\t})\n\ts.Assert(count, qt.Equals, expected)\n}",
+    "funcname": "AssertFileCount"
+}

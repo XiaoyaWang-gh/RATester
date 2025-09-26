@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 114,
+    "focalfunc": "func (input *BeegoInput) Domain() string",
+    "funcbody": "func (input *BeegoInput) Domain() string {\n\treturn input.Host()\n}",
+    "funcname": "Domain"
+}

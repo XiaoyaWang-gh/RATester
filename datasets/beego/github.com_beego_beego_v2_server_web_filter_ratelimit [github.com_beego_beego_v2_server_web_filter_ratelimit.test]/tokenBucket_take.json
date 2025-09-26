@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/token_bucket.go",
+    "lineno": 58,
+    "focalfunc": "func (b *tokenBucket) take(amount uint) bool",
+    "funcbody": "func (b *tokenBucket) take(amount uint) bool {\n\tif b.rate <= 0 {\n\t\treturn true\n\t}\n\tb.Lock()\n\tdefer b.Unlock()\n\tnow := time.Now()\n\ttimes := uint(now.Sub(b.lastCheckAt) / b.rate)\n\tb.lastCheckAt = b.lastCheckAt.Add(time.Duration(times) * b.rate)\n\tb.remaining += times\n\tif b.remaining < amount {\n\t\treturn false\n\t}\n\tb.remaining -= amount\n\tif b.remaining > b.capacity {\n\t\tb.remaining = b.capacity\n\t}\n\treturn true\n}",
+    "funcname": "take"
+}

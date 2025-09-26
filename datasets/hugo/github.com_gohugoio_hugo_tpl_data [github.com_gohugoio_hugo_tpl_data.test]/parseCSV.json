@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 203,
+    "focalfunc": "func parseCSV(c []byte, sep string) ([][]string, error)",
+    "funcbody": "func parseCSV(c []byte, sep string) ([][]string, error) {\n\tif len(sep) != 1 {\n\t\treturn nil, errors.New(\"Incorrect length of CSV separator: \" + sep)\n\t}\n\tb := bytes.NewReader(c)\n\tr := csv.NewReader(b)\n\trSep := []rune(sep)\n\tr.Comma = rSep[0]\n\tr.FieldsPerRecord = 0\n\treturn r.ReadAll()\n}",
+    "funcname": "parseCSV"
+}

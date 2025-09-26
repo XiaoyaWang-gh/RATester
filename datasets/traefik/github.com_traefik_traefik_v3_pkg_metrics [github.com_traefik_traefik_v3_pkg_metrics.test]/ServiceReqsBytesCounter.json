@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 300,
+    "focalfunc": "func (r *standardRegistry) ServiceReqsBytesCounter() metrics.Counter",
+    "funcbody": "func (r *standardRegistry) ServiceReqsBytesCounter() metrics.Counter {\n\treturn r.serviceReqsBytesCounter\n}",
+    "funcname": "ServiceReqsBytesCounter"
+}

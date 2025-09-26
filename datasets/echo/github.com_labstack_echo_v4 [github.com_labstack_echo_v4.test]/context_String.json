@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 479,
+    "focalfunc": "func (c *context) String(code int, s string) (err error)",
+    "funcbody": "func (c *context) String(code int, s string) (err error) {\n\treturn c.Blob(code, MIMETextPlainCharsetUTF8, []byte(s))\n}",
+    "funcname": "String"
+}

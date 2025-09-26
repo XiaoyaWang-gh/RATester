@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1210,
+    "focalfunc": "func formatByteCount(b uint64) string",
+    "funcbody": "func formatByteCount(b uint64) string {\n\tconst unit = 1000\n\tif b < unit {\n\t\treturn fmt.Sprintf(\"%d B\", b)\n\t}\n\tdiv, exp := int64(unit), 0\n\tfor n := b / unit; n >= unit; n /= unit {\n\t\tdiv *= unit\n\t\texp++\n\t}\n\treturn fmt.Sprintf(\"%.1f %cB\",\n\t\tfloat64(b)/float64(div), \"kMGTPE\"[exp])\n}",
+    "funcname": "formatByteCount"
+}

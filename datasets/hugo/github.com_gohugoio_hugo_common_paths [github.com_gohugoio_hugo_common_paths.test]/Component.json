@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 323,
+    "focalfunc": "func (p *Path) Component() string",
+    "funcbody": "func (p *Path) Component() string {\n\treturn p.component\n}",
+    "funcname": "Component"
+}

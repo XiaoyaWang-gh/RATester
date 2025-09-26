@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 159,
+    "focalfunc": "func (r *Router) Reverse(name string, params ...interface{}) string",
+    "funcbody": "func (r *Router) Reverse(name string, params ...interface{}) string {\n\turi := new(bytes.Buffer)\n\tln := len(params)\n\tn := 0\n\tfor _, route := range r.routes {\n\t\tif route.Name == name {\n\t\t\tfor i, l := 0, len(route.Path); i < l; i++ {\n\t\t\t\thasBackslash := route.Path[i] == '\\\\'\n\t\t\t\tif hasBackslash && i+1 < l && route.Path[i+1] == ':' {\n\t\t\t\t\ti++\n\t\t\t\t}\n\t\t\t\tif n < ln && (route.Path[i] == '*' || (!hasBackslash && route.Path[i] == ':')) {\n\n\t\t\t\t\tfor ; i < l && route.Path[i] != '/'; i++ {\n\t\t\t\t\t}\n\t\t\t\t\turi.WriteString(fmt.Sprintf(\"%v\", params[n]))\n\t\t\t\t\tn++\n\t\t\t\t}\n\t\t\t\tif i < l {\n\t\t\t\t\turi.WriteByte(route.Path[i])\n\t\t\t\t}\n\t\t\t}\n\t\t\tbreak\n\t\t}\n\t}\n\treturn uri.String()\n}",
+    "funcname": "Reverse"
+}

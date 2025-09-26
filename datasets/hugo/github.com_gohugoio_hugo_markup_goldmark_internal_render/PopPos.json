@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 68,
+    "focalfunc": "func (ctx *Context) PopPos() int",
+    "funcbody": "func (ctx *Context) PopPos() int {\n\ti := len(ctx.positions) - 1\n\tp := ctx.positions[i]\n\tctx.positions = ctx.positions[:i]\n\treturn p\n}",
+    "funcname": "PopPos"
+}

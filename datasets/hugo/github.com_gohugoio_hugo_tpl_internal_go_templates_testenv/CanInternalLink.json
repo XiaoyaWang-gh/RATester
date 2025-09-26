@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 300,
+    "focalfunc": "func CanInternalLink(withCgo bool) bool",
+    "funcbody": "func CanInternalLink(withCgo bool) bool {\n\treturn false\n}",
+    "funcname": "CanInternalLink"
+}

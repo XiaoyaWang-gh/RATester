@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 253,
+    "focalfunc": "func createFuncMap(d *deps.Deps) map[string]any",
+    "funcbody": "func createFuncMap(d *deps.Deps) map[string]any {\n\tfuncMap := template.FuncMap{}\n\n\tnsMap := make(map[string]any)\n\tvar onCreated []func(namespaces map[string]any)\n\n\tfor _, nsf := range internal.TemplateFuncsNamespaceRegistry {\n\t\tns := nsf(d)\n\t\tif _, exists := funcMap[ns.Name]; exists {\n\t\t\tpanic(ns.Name + \" is a duplicate template func\")\n\t\t}\n\t\tfuncMap[ns.Name] = ns.Context\n\t\tcontextV, err := ns.Context(context.Background())\n\t\tif err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t\tnsMap[ns.Name] = contextV\n\t\tfor _, mm := range ns.MethodMappings {\n\t\t\tfor _, alias := range mm.Aliases {\n\t\t\t\tif _, exists := funcMap[alias]; exists {\n\t\t\t\t\tpanic(alias + \" is a duplicate template func\")\n\t\t\t\t}\n\t\t\t\tfuncMap[alias] = mm.Method\n\t\t\t}\n\t\t}\n\n\t\tif ns.OnCreated != nil {\n\t\t\tonCreated = append(onCreated, ns.OnCreated)\n\t\t}\n\t}\n\n\tfor _, f := range onCreated {\n\t\tf(nsMap)\n\t}\n\n\tif d.OverloadedTemplateFuncs != nil {\n\t\tfor k, v := range d.OverloadedTemplateFuncs {\n\t\t\tfuncMap[k] = v\n\t\t}\n\t}\n\n\treturn funcMap\n}",
+    "funcname": "createFuncMap"
+}

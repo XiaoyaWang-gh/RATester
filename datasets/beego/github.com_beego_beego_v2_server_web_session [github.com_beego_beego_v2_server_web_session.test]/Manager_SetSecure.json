@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 341,
+    "focalfunc": "func (manager *Manager) SetSecure(secure bool)",
+    "funcbody": "func (manager *Manager) SetSecure(secure bool) {\n\tmanager.config.Secure = secure\n}",
+    "funcname": "SetSecure"
+}

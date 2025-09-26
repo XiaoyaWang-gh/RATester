@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 53,
+    "focalfunc": "func NewXForwarded(insecure bool, trustedIps []string, next http.Handler) (*XForwarded, error)",
+    "funcbody": "func NewXForwarded(insecure bool, trustedIps []string, next http.Handler) (*XForwarded, error) {\n\tvar ipChecker *ip.Checker\n\tif len(trustedIps) > 0 {\n\t\tvar err error\n\t\tipChecker, err = ip.NewChecker(trustedIps)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\thostname, err := os.Hostname()\n\tif err != nil {\n\t\thostname = \"localhost\"\n\t}\n\n\treturn &XForwarded{\n\t\tinsecure:\tinsecure,\n\t\ttrustedIps:\ttrustedIps,\n\t\tipChecker:\tipChecker,\n\t\tnext:\t\tnext,\n\t\thostname:\thostname,\n\t}, nil\n}",
+    "funcname": "NewXForwarded"
+}

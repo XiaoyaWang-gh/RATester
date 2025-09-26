@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 215,
+    "focalfunc": "func (b *ValueBinder) MustCustomFunc(sourceParam string, customFunc func(values []string) []error) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustCustomFunc(sourceParam string, customFunc func(values []string) []error) *ValueBinder {\n\treturn b.customFunc(sourceParam, customFunc, true)\n}",
+    "funcname": "MustCustomFunc"
+}

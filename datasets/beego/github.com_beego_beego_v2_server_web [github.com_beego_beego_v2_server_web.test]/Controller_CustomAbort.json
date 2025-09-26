@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 398,
+    "focalfunc": "func (c *Controller) CustomAbort(status int, body string)",
+    "funcbody": "func (c *Controller) CustomAbort(status int, body string) {\n\tc.Ctx.Output.Status = status\n\n\tif _, ok := ErrorMaps[body]; ok {\n\t\tpanic(body)\n\t}\n\n\tc.Ctx.ResponseWriter.WriteHeader(status)\n\tc.Ctx.ResponseWriter.Write([]byte(body))\n\tpanic(ErrAbort)\n}",
+    "funcname": "CustomAbort"
+}

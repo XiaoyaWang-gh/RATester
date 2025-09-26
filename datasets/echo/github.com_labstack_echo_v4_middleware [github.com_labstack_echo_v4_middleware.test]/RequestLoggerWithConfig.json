@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/request_logger.go",
+    "lineno": 242,
+    "focalfunc": "func RequestLoggerWithConfig(config RequestLoggerConfig) echo.MiddlewareFunc",
+    "funcbody": "func RequestLoggerWithConfig(config RequestLoggerConfig) echo.MiddlewareFunc {\n\tmw, err := config.ToMiddleware()\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn mw\n}",
+    "funcname": "RequestLoggerWithConfig"
+}

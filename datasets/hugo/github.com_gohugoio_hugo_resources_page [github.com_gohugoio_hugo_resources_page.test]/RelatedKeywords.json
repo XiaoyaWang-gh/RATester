@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 454,
+    "focalfunc": "func (p *nopPage) RelatedKeywords(cfg related.IndexConfig) ([]related.Keyword, error)",
+    "funcbody": "func (p *nopPage) RelatedKeywords(cfg related.IndexConfig) ([]related.Keyword, error) {\n\treturn nil, nil\n}",
+    "funcname": "RelatedKeywords"
+}

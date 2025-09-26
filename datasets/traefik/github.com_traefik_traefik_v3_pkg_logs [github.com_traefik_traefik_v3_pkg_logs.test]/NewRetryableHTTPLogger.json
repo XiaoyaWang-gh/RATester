@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/hclog.go",
+    "lineno": 19,
+    "focalfunc": "func NewRetryableHTTPLogger(logger zerolog.Logger) *RetryableHTTPLogger",
+    "funcbody": "func NewRetryableHTTPLogger(logger zerolog.Logger) *RetryableHTTPLogger {\n\treturn &RetryableHTTPLogger{logger: logger}\n}",
+    "funcname": "NewRetryableHTTPLogger"
+}

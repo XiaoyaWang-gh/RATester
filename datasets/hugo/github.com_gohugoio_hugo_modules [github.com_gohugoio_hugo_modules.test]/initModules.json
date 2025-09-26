@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 187,
+    "focalfunc": "func (c *collector) initModules() error",
+    "funcbody": "func (c *collector) initModules() error {\n\tc.collected = &collected{\n\t\tseen:\t\tmake(map[string]bool),\n\t\tvendored:\tmake(map[string]vendoredModule),\n\t\tgomods:\t\tgoModules{},\n\t}\n\n\tif c.ccfg.IgnoreVendor == nil && c.isVendored(c.ccfg.WorkingDir) {\n\t\treturn nil\n\t}\n\n\treturn c.loadModules()\n}",
+    "funcname": "initModules"
+}

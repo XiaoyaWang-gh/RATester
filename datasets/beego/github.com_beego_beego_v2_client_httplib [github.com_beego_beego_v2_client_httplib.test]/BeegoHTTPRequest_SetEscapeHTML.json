@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 261,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetEscapeHTML(isEscape bool) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetEscapeHTML(isEscape bool) *BeegoHTTPRequest {\n\tb.setting.EscapeHTML = isEscape\n\treturn b\n}",
+    "funcname": "SetEscapeHTML"
+}

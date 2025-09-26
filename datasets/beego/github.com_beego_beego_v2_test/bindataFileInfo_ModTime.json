@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 68,
+    "focalfunc": "func (fi bindataFileInfo) ModTime() time.Time",
+    "funcbody": "func (fi bindataFileInfo) ModTime() time.Time {\n\treturn fi.modTime\n}",
+    "funcname": "ModTime"
+}

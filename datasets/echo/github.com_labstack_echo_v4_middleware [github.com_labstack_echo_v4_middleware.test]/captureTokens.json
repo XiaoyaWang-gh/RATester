@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/middleware.go",
+    "lineno": 22,
+    "focalfunc": "func captureTokens(pattern *regexp.Regexp, input string) *strings.Replacer",
+    "funcbody": "func captureTokens(pattern *regexp.Regexp, input string) *strings.Replacer {\n\tgroups := pattern.FindAllStringSubmatch(input, -1)\n\tif groups == nil {\n\t\treturn nil\n\t}\n\tvalues := groups[0][1:]\n\treplace := make([]string, 2*len(values))\n\tfor i, v := range values {\n\t\tj := 2 * i\n\t\treplace[j] = \"$\" + strconv.Itoa(i+1)\n\t\treplace[j+1] = v\n\t}\n\treturn strings.NewReplacer(replace...)\n}",
+    "funcname": "captureTokens"
+}

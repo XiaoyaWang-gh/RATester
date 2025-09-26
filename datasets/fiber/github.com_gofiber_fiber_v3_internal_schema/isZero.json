@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 48,
+    "focalfunc": "func isZero(v reflect.Value) bool",
+    "funcbody": "func isZero(v reflect.Value) bool {\n\tswitch v.Kind() {\n\tcase reflect.Func:\n\tcase reflect.Map, reflect.Slice:\n\t\treturn v.IsNil() || v.Len() == 0\n\tcase reflect.Array:\n\t\tz := true\n\t\tfor i := 0; i < v.Len(); i++ {\n\t\t\tz = z && isZero(v.Index(i))\n\t\t}\n\t\treturn z\n\tcase reflect.Struct:\n\t\ttype zero interface {\n\t\t\tIsZero() bool\n\t\t}\n\t\tif v.Type().Implements(reflect.TypeOf((*zero)(nil)).Elem()) {\n\t\t\tiz := v.MethodByName(\"IsZero\").Call([]reflect.Value{})[0]\n\t\t\treturn iz.Interface().(bool)\n\t\t}\n\t\tz := true\n\t\tfor i := 0; i < v.NumField(); i++ {\n\t\t\tz = z && isZero(v.Field(i))\n\t\t}\n\t\treturn z\n\t}\n\n\tz := reflect.Zero(v.Type())\n\treturn v.Interface() == z.Interface()\n}",
+    "funcname": "isZero"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/debug.go",
+    "lineno": 13,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\n\texpvar.Publish(\"Goroutines2\", expvar.Func(goroutines))\n}",
+    "funcname": "init"
+}

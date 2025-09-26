@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/digest_auth.go",
+    "lineno": 119,
+    "focalfunc": "func digestUserParser(user string) (string, string, error)",
+    "funcbody": "func digestUserParser(user string) (string, string, error) {\n\tsplit := strings.Split(user, \":\")\n\tif len(split) != 3 {\n\t\treturn \"\", \"\", fmt.Errorf(\"error parsing DigestUser: %v\", user)\n\t}\n\treturn split[0] + \":\" + split[1], split[2], nil\n}",
+    "funcname": "digestUserParser"
+}

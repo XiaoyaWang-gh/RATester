@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 46,
+    "focalfunc": "func (pathBridge) Separator() string",
+    "funcbody": "func (pathBridge) Separator() string {\n\treturn \"/\"\n}",
+    "funcname": "Separator"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 140,
+    "focalfunc": "func (s *Storage) Conn() map[string]entry",
+    "funcbody": "func (s *Storage) Conn() map[string]entry {\n\ts.mux.RLock()\n\tdefer s.mux.RUnlock()\n\treturn s.db\n}",
+    "funcname": "Conn"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 189,
+    "focalfunc": "func (b *commonBalancer) AddTarget(target *ProxyTarget) bool",
+    "funcbody": "func (b *commonBalancer) AddTarget(target *ProxyTarget) bool {\n\tb.mutex.Lock()\n\tdefer b.mutex.Unlock()\n\tfor _, t := range b.targets {\n\t\tif t.Name == target.Name {\n\t\t\treturn false\n\t\t}\n\t}\n\tb.targets = append(b.targets, target)\n\treturn true\n}",
+    "funcname": "AddTarget"
+}

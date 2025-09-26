@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/plugin.go",
+    "lineno": 69,
+    "focalfunc": "func validateUnixDomainSocketPluginOptions(c *v1.UnixDomainSocketPluginOptions) error",
+    "funcbody": "func validateUnixDomainSocketPluginOptions(c *v1.UnixDomainSocketPluginOptions) error {\n\tif c.UnixPath == \"\" {\n\t\treturn errors.New(\"unixPath is required\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateUnixDomainSocketPluginOptions"
+}

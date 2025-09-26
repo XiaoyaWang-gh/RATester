@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 418,
+    "focalfunc": "func putBuffer(buf *bytes.Buffer)",
+    "funcbody": "func putBuffer(buf *bytes.Buffer) {\n\tif buf.Len() > 1024 {\n\t\treturn\n\t}\n\tbuf.Reset()\n\tbufPool.Put(buf)\n}",
+    "funcname": "putBuffer"
+}

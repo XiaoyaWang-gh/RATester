@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_utils.go",
+    "lineno": 36,
+    "focalfunc": "func getExistPk(mi *models.ModelInfo, ind reflect.Value) (column string, value interface{}, exist bool)",
+    "funcbody": "func getExistPk(mi *models.ModelInfo, ind reflect.Value) (column string, value interface{}, exist bool) {\n\tfi := mi.Fields.Pk\n\n\tv := ind.FieldByIndex(fi.FieldIndex)\n\tif fi.FieldType&IsPositiveIntegerField > 0 {\n\t\tvu := v.Uint()\n\t\texist = vu > 0\n\t\tvalue = vu\n\t} else if fi.FieldType&IsIntegerField > 0 {\n\t\tvu := v.Int()\n\t\texist = true\n\t\tvalue = vu\n\t} else if fi.FieldType&IsRelField > 0 {\n\t\t_, value, exist = getExistPk(fi.RelModelInfo, reflect.Indirect(v))\n\t} else {\n\t\tvu := v.String()\n\t\texist = vu != \"\"\n\t\tvalue = vu\n\t}\n\n\tcolumn = fi.Column\n\treturn\n}",
+    "funcname": "getExistPk"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tlsmanager.go",
+    "lineno": 237,
+    "focalfunc": "func (m *Manager) GetServerCertificates() []*x509.Certificate",
+    "funcbody": "func (m *Manager) GetServerCertificates() []*x509.Certificate {\n\tvar certificates []*x509.Certificate\n\n\tdefaultStore, ok := m.stores[DefaultTLSStoreName]\n\tif !ok || defaultStore == nil {\n\t\treturn certificates\n\t}\n\n\tif defaultStore.DynamicCerts != nil && defaultStore.DynamicCerts.Get() != nil {\n\t\tfor _, cert := range defaultStore.DynamicCerts.Get().(map[string]*tls.Certificate) {\n\t\t\tx509Cert, err := x509.ParseCertificate(cert.Certificate[0])\n\t\t\tif err != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tcertificates = append(certificates, x509Cert)\n\t\t}\n\t}\n\n\tif defaultStore.DefaultCertificate != nil {\n\t\tx509Cert, err := x509.ParseCertificate(defaultStore.DefaultCertificate.Certificate[0])\n\t\tif err != nil {\n\t\t\treturn certificates\n\t\t}\n\n\t\tif x509Cert.Subject.CommonName == generate.DefaultDomain {\n\t\t\treturn certificates\n\t\t}\n\n\t\tcertificates = append(certificates, x509Cert)\n\t}\n\n\treturn certificates\n}",
+    "funcname": "GetServerCertificates"
+}

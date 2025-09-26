@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 333,
+    "focalfunc": "func (pm *Manager) Add(name string, pxy Proxy) error",
+    "funcbody": "func (pm *Manager) Add(name string, pxy Proxy) error {\n\tpm.mu.Lock()\n\tdefer pm.mu.Unlock()\n\tif _, ok := pm.pxys[name]; ok {\n\t\treturn fmt.Errorf(\"proxy name [%s] is already in use\", name)\n\t}\n\n\tpm.pxys[name] = pxy\n\treturn nil\n}",
+    "funcname": "Add"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 522,
+    "focalfunc": "func expandDefaultValues(values []string, defaults []string) []string",
+    "funcbody": "func expandDefaultValues(values []string, defaults []string) []string {\n\tvar out []string\n\tfor _, v := range values {\n\t\tif v == \":default\" {\n\t\t\tout = append(out, defaults...)\n\t\t} else {\n\t\t\tout = append(out, v)\n\t\t}\n\t}\n\treturn out\n}",
+    "funcname": "expandDefaultValues"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1928,
+    "focalfunc": "func (c *DefaultCtx) getMatched() bool",
+    "funcbody": "func (c *DefaultCtx) getMatched() bool {\n\treturn c.matched\n}",
+    "funcname": "getMatched"
+}

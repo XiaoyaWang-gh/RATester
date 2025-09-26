@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/configuration.go",
+    "lineno": 18,
+    "focalfunc": "func NewTraefikConfiguration() *TraefikCmdConfiguration",
+    "funcbody": "func NewTraefikConfiguration() *TraefikCmdConfiguration {\n\treturn &TraefikCmdConfiguration{\n\t\tConfiguration: static.Configuration{\n\t\t\tGlobal: &static.Global{\n\t\t\t\tCheckNewVersion: true,\n\t\t\t},\n\t\t\tEntryPoints:\tmake(static.EntryPoints),\n\t\t\tProviders: &static.Providers{\n\t\t\t\tProvidersThrottleDuration: ptypes.Duration(2 * time.Second),\n\t\t\t},\n\t\t\tServersTransport: &static.ServersTransport{\n\t\t\t\tMaxIdleConnsPerHost: 200,\n\t\t\t},\n\t\t\tTCPServersTransport: &static.TCPServersTransport{\n\t\t\t\tDialTimeout:\tptypes.Duration(30 * time.Second),\n\t\t\t\tDialKeepAlive:\tptypes.Duration(15 * time.Second),\n\t\t\t},\n\t\t},\n\t\tConfigFile:\t\"\",\n\t}\n}",
+    "funcname": "NewTraefikConfiguration"
+}

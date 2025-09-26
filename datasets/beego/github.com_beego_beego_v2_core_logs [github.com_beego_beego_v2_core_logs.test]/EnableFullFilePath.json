@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 689,
+    "focalfunc": "func EnableFullFilePath(b bool)",
+    "funcbody": "func EnableFullFilePath(b bool) {\n\tbeeLogger.enableFullFilePath = b\n}",
+    "funcname": "EnableFullFilePath"
+}

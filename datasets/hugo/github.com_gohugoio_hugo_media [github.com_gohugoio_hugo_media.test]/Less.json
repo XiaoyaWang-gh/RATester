@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 235,
+    "focalfunc": "func (t Types) Less(i, j int) bool",
+    "funcbody": "func (t Types) Less(i, j int) bool\t{ return t[i].Type < t[j].Type }",
+    "funcname": "Less"
+}

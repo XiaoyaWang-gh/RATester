@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 363,
+    "focalfunc": "func extractOffsetAndType(e error) (int, string)",
+    "funcbody": "func extractOffsetAndType(e error) (int, string) {\n\tswitch v := e.(type) {\n\tcase *json.UnmarshalTypeError:\n\t\treturn int(v.Offset), \"json\"\n\tcase *json.SyntaxError:\n\t\treturn int(v.Offset), \"json\"\n\tdefault:\n\t\treturn -1, \"\"\n\t}\n}",
+    "funcname": "extractOffsetAndType"
+}

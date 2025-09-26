@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 212,
+    "focalfunc": "func (c *collector) getVendoredDir(path string) (vendoredModule, bool)",
+    "funcbody": "func (c *collector) getVendoredDir(path string) (vendoredModule, bool) {\n\tv, found := c.vendored[path]\n\treturn v, found\n}",
+    "funcname": "getVendoredDir"
+}

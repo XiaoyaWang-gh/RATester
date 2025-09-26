@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/ssh/client.go",
+    "lineno": 19,
+    "focalfunc": "func NewTunnelClient(localAddr string, sshServer string, commands string) *TunnelClient",
+    "funcbody": "func NewTunnelClient(localAddr string, sshServer string, commands string) *TunnelClient {\n\treturn &TunnelClient{\n\t\tlocalAddr:\tlocalAddr,\n\t\tsshServer:\tsshServer,\n\t\tcommands:\tcommands,\n\t}\n}",
+    "funcname": "NewTunnelClient"
+}

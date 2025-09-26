@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 367,
+    "focalfunc": "func (input *BeegoInput) CopyBody(MaxMemory int64) []byte",
+    "funcbody": "func (input *BeegoInput) CopyBody(MaxMemory int64) []byte {\n\tif input.Context.Request.Body == nil {\n\t\treturn []byte{}\n\t}\n\n\tvar requestbody []byte\n\tsafe := &io.LimitedReader{R: input.Context.Request.Body, N: MaxMemory}\n\tif input.Header(\"Content-Encoding\") == \"gzip\" {\n\t\treader, err := gzip.NewReader(safe)\n\t\tif err != nil {\n\t\t\treturn nil\n\t\t}\n\t\trequestbody, _ = io.ReadAll(reader)\n\t} else {\n\t\trequestbody, _ = io.ReadAll(safe)\n\t}\n\n\tinput.Context.Request.Body.Close()\n\tbf := bytes.NewBuffer(requestbody)\n\tinput.Context.Request.Body = http.MaxBytesReader(input.Context.ResponseWriter, io.NopCloser(bf), MaxMemory)\n\tinput.RequestBody = requestbody\n\treturn requestbody\n}",
+    "funcname": "CopyBody"
+}

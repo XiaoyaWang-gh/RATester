@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 317,
+    "focalfunc": "func toTypographicPunctuationMap(t goldmark_config.Typographer) map[extension.TypographicPunctuation][]byte",
+    "funcbody": "func toTypographicPunctuationMap(t goldmark_config.Typographer) map[extension.TypographicPunctuation][]byte {\n\treturn map[extension.TypographicPunctuation][]byte{\n\t\textension.LeftSingleQuote:\t[]byte(t.LeftSingleQuote),\n\t\textension.RightSingleQuote:\t[]byte(t.RightSingleQuote),\n\t\textension.LeftDoubleQuote:\t[]byte(t.LeftDoubleQuote),\n\t\textension.RightDoubleQuote:\t[]byte(t.RightDoubleQuote),\n\t\textension.EnDash:\t\t[]byte(t.EnDash),\n\t\textension.EmDash:\t\t[]byte(t.EmDash),\n\t\textension.Ellipsis:\t\t[]byte(t.Ellipsis),\n\t\textension.LeftAngleQuote:\t[]byte(t.LeftAngleQuote),\n\t\textension.RightAngleQuote:\t[]byte(t.RightAngleQuote),\n\t\textension.Apostrophe:\t\t[]byte(t.Apostrophe),\n\t}\n}",
+    "funcname": "toTypographicPunctuationMap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 52,
+    "focalfunc": "func (c *connWriter) Init(config string) error",
+    "funcbody": "func (c *connWriter) Init(config string) error {\n\tres := json.Unmarshal([]byte(config), c)\n\tif res == nil && len(c.Formatter) > 0 {\n\t\tfmtr, ok := GetFormatter(c.Formatter)\n\t\tif !ok {\n\t\t\treturn fmt.Errorf(\"the formatter with name: %s not found\", c.Formatter)\n\t\t}\n\t\tc.formatter = fmtr\n\t}\n\treturn res\n}",
+    "funcname": "Init"
+}

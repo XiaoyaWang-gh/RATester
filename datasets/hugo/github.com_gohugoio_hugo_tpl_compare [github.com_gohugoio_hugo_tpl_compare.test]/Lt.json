@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 220,
+    "focalfunc": "func (n *Namespace) Lt(first any, others ...any) bool",
+    "funcbody": "func (n *Namespace) Lt(first any, others ...any) bool {\n\treturn n.LtCollate(nil, first, others...)\n}",
+    "funcname": "Lt"
+}

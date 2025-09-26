@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form.go",
+    "lineno": 35,
+    "focalfunc": "func (formPostBinding) Name() string",
+    "funcbody": "func (formPostBinding) Name() string {\n\treturn \"form-urlencoded\"\n}",
+    "funcname": "Name"
+}

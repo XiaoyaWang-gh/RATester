@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 299,
+    "focalfunc": "func (ctl *Control) heartbeatWorker()",
+    "funcbody": "func (ctl *Control) heartbeatWorker() {\n\tif ctl.serverCfg.Transport.HeartbeatTimeout <= 0 {\n\t\treturn\n\t}\n\n\txl := ctl.xl\n\tgo wait.Until(func() {\n\t\tif time.Since(ctl.lastPing.Load().(time.Time)) > time.Duration(ctl.serverCfg.Transport.HeartbeatTimeout)*time.Second {\n\t\t\txl.Warnf(\"heartbeat timeout\")\n\t\t\tctl.conn.Close()\n\t\t\treturn\n\t\t}\n\t}, time.Second, ctl.doneCh)\n}",
+    "funcname": "heartbeatWorker"
+}

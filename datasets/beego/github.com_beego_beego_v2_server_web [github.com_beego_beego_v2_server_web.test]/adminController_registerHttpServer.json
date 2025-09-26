@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 35,
+    "focalfunc": "func (a *adminController) registerHttpServer(svr *HttpServer)",
+    "funcbody": "func (a *adminController) registerHttpServer(svr *HttpServer) {\n\ta.servers = append(a.servers, svr)\n}",
+    "funcname": "registerHttpServer"
+}

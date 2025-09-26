@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/headermodifier/response_header_modifier.go",
+    "lineno": 42,
+    "focalfunc": "func (r *responseHeaderModifier) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (r *responseHeaderModifier) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tr.next.ServeHTTP(middlewares.NewResponseModifier(rw, req, r.modifyResponseHeaders), req)\n}",
+    "funcname": "ServeHTTP"
+}

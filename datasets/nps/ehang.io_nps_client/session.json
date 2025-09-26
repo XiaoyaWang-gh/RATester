@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/health.go",
+    "lineno": 41,
+    "focalfunc": "func session(healths []*file.Health, h *sheap.IntHeap)",
+    "funcbody": "func session(healths []*file.Health, h *sheap.IntHeap) {\n\tfor {\n\t\tif h.Len() == 0 {\n\t\t\tlogs.Error(\"health check error\")\n\t\t\tbreak\n\t\t}\n\t\trs := heap.Pop(h).(int64) - time.Now().Unix()\n\t\tif rs <= 0 {\n\t\t\tcontinue\n\t\t}\n\t\ttimer := time.NewTimer(time.Duration(rs) * time.Second)\n\t\tselect {\n\t\tcase <-timer.C:\n\t\t\tfor _, v := range healths {\n\t\t\t\tif v.HealthNextTime.Before(time.Now()) {\n\t\t\t\t\tv.HealthNextTime = time.Now().Add(time.Duration(v.HealthCheckInterval) * time.Second)\n\n\t\t\t\t\tgo check(v)\n\n\t\t\t\t\theap.Push(h, v.HealthNextTime.Unix())\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "session"
+}

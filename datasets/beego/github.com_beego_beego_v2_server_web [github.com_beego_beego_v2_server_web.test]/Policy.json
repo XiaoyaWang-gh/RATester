@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/policy.go",
+    "lineno": 75,
+    "focalfunc": "func Policy(pattern, method string, policy ...PolicyFunc)",
+    "funcbody": "func Policy(pattern, method string, policy ...PolicyFunc) {\n\tBeeApp.Handlers.addToPolicy(method, pattern, policy...)\n}",
+    "funcname": "Policy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 605,
+    "focalfunc": "func (g *gauge) Set(value float64)",
+    "funcbody": "func (g *gauge) Set(value float64) {\n\tg.collector.Set(value)\n}",
+    "funcname": "Set"
+}

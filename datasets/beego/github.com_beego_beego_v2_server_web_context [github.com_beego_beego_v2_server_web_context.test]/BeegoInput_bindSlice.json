@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 587,
+    "focalfunc": "func (input *BeegoInput) bindSlice(params *url.Values, key string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindSlice(params *url.Values, key string, typ reflect.Type) reflect.Value {\n\tmaxIndex := -1\n\tnumNoIndex := 0\n\tsliceValues := []sliceValue{}\n\tfor reqKey, vals := range *params {\n\t\tif !strings.HasPrefix(reqKey, key+\"[\") {\n\t\t\tcontinue\n\t\t}\n\n\t\tindex := -1\n\t\tleftBracket, rightBracket := len(key), strings.Index(reqKey[len(key):], \"]\")+len(key)\n\t\tif rightBracket > leftBracket+1 {\n\t\t\tindex, _ = strconv.Atoi(reqKey[leftBracket+1 : rightBracket])\n\t\t}\n\t\tsubKeyIndex := rightBracket + 1\n\n\t\tif index > -1 {\n\t\t\tif index > maxIndex {\n\t\t\t\tmaxIndex = index\n\t\t\t}\n\t\t\tsliceValues = append(sliceValues, sliceValue{\n\t\t\t\tindex:\tindex,\n\t\t\t\tvalue:\tinput.bind(reqKey[:subKeyIndex], typ.Elem()),\n\t\t\t})\n\t\t\tcontinue\n\t\t}\n\n\t\tnumNoIndex += len(vals)\n\t\tfor _, val := range vals {\n\n\t\t\tsliceValues = append(sliceValues, sliceValue{\n\t\t\t\tindex:\t-1,\n\t\t\t\tvalue:\tinput.bindValue(val, typ.Elem()),\n\t\t\t})\n\t\t}\n\t}\n\tresultArray := reflect.MakeSlice(typ, maxIndex+1, maxIndex+1+numNoIndex)\n\tfor _, sv := range sliceValues {\n\t\tif sv.index != -1 {\n\t\t\tresultArray.Index(sv.index).Set(sv.value)\n\t\t} else {\n\t\t\tresultArray = reflect.Append(resultArray, sv.value)\n\t\t}\n\t}\n\treturn resultArray\n}",
+    "funcname": "bindSlice"
+}

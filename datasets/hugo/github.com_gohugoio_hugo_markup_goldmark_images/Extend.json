@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/images/transform.go",
+    "lineno": 28,
+    "focalfunc": "func (e *imagesExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (e *imagesExtension) Extend(m goldmark.Markdown) {\n\tm.Parser().AddOptions(\n\t\tparser.WithASTTransformers(\n\t\t\tutil.Prioritized(&Transformer{wrapStandAloneImageWithinParagraph: e.wrapStandAloneImageWithinParagraph}, 300),\n\t\t),\n\t)\n}",
+    "funcname": "Extend"
+}

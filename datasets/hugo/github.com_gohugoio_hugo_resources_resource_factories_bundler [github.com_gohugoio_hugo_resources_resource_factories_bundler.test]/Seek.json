@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/bundler/bundler.go",
+    "lineno": 62,
+    "focalfunc": "func (r *multiReadSeekCloser) Seek(offset int64, whence int) (newOffset int64, err error)",
+    "funcbody": "func (r *multiReadSeekCloser) Seek(offset int64, whence int) (newOffset int64, err error) {\n\tfor _, s := range r.sources {\n\t\tnewOffset, err = s.Seek(offset, whence)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t}\n\n\tr.mr = io.MultiReader(toReaders(r.sources)...)\n\n\treturn\n}",
+    "funcname": "Seek"
+}

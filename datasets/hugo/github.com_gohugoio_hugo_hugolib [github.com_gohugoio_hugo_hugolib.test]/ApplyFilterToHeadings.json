@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 216,
+    "focalfunc": "func (p *pageState) ApplyFilterToHeadings(ctx context.Context, fn func(*tableofcontents.Heading) bool) related.Document",
+    "funcbody": "func (p *pageState) ApplyFilterToHeadings(ctx context.Context, fn func(*tableofcontents.Heading) bool) related.Document {\n\tfragments := p.pageOutput.pco.c().Fragments(ctx)\n\theadings := fragments.Headings.FilterBy(fn)\n\treturn &pageHeadingsFiltered{\n\t\tpageState:\tp,\n\t\theadings:\theadings,\n\t}\n}",
+    "funcname": "ApplyFilterToHeadings"
+}

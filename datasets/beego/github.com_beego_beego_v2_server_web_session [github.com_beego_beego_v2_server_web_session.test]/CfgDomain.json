@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 97,
+    "focalfunc": "func CfgDomain(domain string) ManagerConfigOpt",
+    "funcbody": "func CfgDomain(domain string) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.Domain = domain\n\t}\n}",
+    "funcname": "CfgDomain"
+}

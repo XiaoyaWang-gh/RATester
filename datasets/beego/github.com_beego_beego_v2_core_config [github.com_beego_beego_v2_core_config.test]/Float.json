@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 58,
+    "focalfunc": "func Float(key string) (float64, error)",
+    "funcbody": "func Float(key string) (float64, error) {\n\treturn globalInstance.Float(key)\n}",
+    "funcname": "Float"
+}

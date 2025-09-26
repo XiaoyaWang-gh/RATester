@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 115,
+    "focalfunc": "func LookupEqualFold[T any | string](m map[string]T, key string) (T, string, bool)",
+    "funcbody": "func LookupEqualFold[T any | string](m map[string]T, key string) (T, string, bool) {\n\tif v, found := m[key]; found {\n\t\treturn v, key, true\n\t}\n\tfor k, v := range m {\n\t\tif strings.EqualFold(k, key) {\n\t\t\treturn v, k, true\n\t\t}\n\t}\n\tvar s T\n\treturn s, \"\", false\n}",
+    "funcname": "LookupEqualFold"
+}

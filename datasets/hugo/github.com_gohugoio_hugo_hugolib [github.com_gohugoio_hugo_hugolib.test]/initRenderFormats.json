@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 216,
+    "focalfunc": "func (s *Site) initRenderFormats()",
+    "funcbody": "func (s *Site) initRenderFormats() {\n\tformatSet := make(map[string]bool)\n\tformats := output.Formats{}\n\n\tw := &doctree.NodeShiftTreeWalker[contentNodeI]{\n\t\tTree:\ts.pageMap.treePages,\n\t\tHandle: func(key string, n contentNodeI, match doctree.DimensionFlag) (bool, error) {\n\t\t\tif p, ok := n.(*pageState); ok {\n\t\t\t\tfor _, f := range p.m.configuredOutputFormats {\n\t\t\t\t\tif !formatSet[f.Name] {\n\t\t\t\t\t\tformats = append(formats, f)\n\t\t\t\t\t\tformatSet[f.Name] = true\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn false, nil\n\t\t},\n\t}\n\n\tif err := w.Walk(context.TODO()); err != nil {\n\t\tpanic(err)\n\t}\n\n\tfor _, kind := range kinds.AllKindsInPages {\n\t\tif siteFormats, found := s.conf.C.KindOutputFormats[kind]; found {\n\t\t\tfor _, f := range siteFormats {\n\t\t\t\tif !formatSet[f.Name] {\n\t\t\t\t\tformats = append(formats, f)\n\t\t\t\t\tformatSet[f.Name] = true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tsort.Sort(formats)\n\ts.renderFormats = formats\n}",
+    "funcname": "initRenderFormats"
+}

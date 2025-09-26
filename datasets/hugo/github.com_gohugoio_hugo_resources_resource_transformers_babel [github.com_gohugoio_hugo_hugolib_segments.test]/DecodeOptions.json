@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/babel/babel.go",
+    "lineno": 52,
+    "focalfunc": "func DecodeOptions(m map[string]any) (opts Options, err error)",
+    "funcbody": "func DecodeOptions(m map[string]any) (opts Options, err error) {\n\tif m == nil {\n\t\treturn\n\t}\n\terr = mapstructure.WeakDecode(m, &opts)\n\treturn\n}",
+    "funcname": "DecodeOptions"
+}

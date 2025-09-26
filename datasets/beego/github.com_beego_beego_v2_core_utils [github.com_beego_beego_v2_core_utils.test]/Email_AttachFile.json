@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 164,
+    "focalfunc": "func (e *Email) AttachFile(args ...string) (a *Attachment, err error)",
+    "funcbody": "func (e *Email) AttachFile(args ...string) (a *Attachment, err error) {\n\tif len(args) < 1 || len(args) > 2 {\n\t\terr = errors.New(\"Must specify a file name and number of parameters can not exceed at least two\")\n\t\treturn\n\t}\n\tfilename := args[0]\n\tid := \"\"\n\tif len(args) > 1 {\n\t\tid = args[1]\n\t}\n\tf, err := os.Open(filename)\n\tif err != nil {\n\t\treturn\n\t}\n\tdefer f.Close()\n\tct := mime.TypeByExtension(filepath.Ext(filename))\n\tbasename := path.Base(filename)\n\treturn e.Attach(f, basename, ct, id)\n}",
+    "funcname": "AttachFile"
+}

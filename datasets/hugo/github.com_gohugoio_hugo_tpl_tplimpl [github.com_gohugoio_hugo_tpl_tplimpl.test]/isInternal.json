@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 151,
+    "focalfunc": "func isInternal(name string) bool",
+    "funcbody": "func isInternal(name string) bool {\n\treturn strings.HasPrefix(name, internalPathPrefix)\n}",
+    "funcname": "isInternal"
+}

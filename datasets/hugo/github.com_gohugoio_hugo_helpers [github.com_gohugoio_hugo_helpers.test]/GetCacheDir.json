@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 328,
+    "focalfunc": "func GetCacheDir(fs afero.Fs, cacheDir string) (string, error)",
+    "funcbody": "func GetCacheDir(fs afero.Fs, cacheDir string) (string, error) {\n\tcacheDir = cacheDirDefault(cacheDir)\n\n\tif cacheDir != \"\" {\n\t\texists, err := DirExists(cacheDir, fs)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t\tif !exists {\n\t\t\terr := fs.MkdirAll(cacheDir, 0o777)\n\t\t\tif err != nil {\n\t\t\t\treturn \"\", fmt.Errorf(\"failed to create cache dir: %w\", err)\n\t\t\t}\n\t\t}\n\t\treturn cacheDir, nil\n\t}\n\n\tconst hugoCacheBase = \"hugo_cache\"\n\n\tif !htesting.IsTest {\n\t\tuserCacheDir, err := os.UserCacheDir()\n\t\tif err == nil {\n\t\t\tcacheDir := filepath.Join(userCacheDir, hugoCacheBase)\n\t\t\tif err := fs.Mkdir(cacheDir, 0o777); err == nil || os.IsExist(err) {\n\t\t\t\treturn cacheDir, nil\n\t\t\t}\n\t\t}\n\t}\n\n\tuserName := os.Getenv(\"USER\")\n\tif userName != \"\" {\n\t\treturn GetTempDir(hugoCacheBase+\"_\"+userName, fs), nil\n\t} else {\n\t\treturn GetTempDir(hugoCacheBase, fs), nil\n\t}\n}",
+    "funcname": "GetCacheDir"
+}

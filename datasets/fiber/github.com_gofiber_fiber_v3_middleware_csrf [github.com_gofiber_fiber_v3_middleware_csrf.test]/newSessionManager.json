@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/session_manager.go",
+    "lineno": 16,
+    "focalfunc": "func newSessionManager(s *session.Store, k string) *sessionManager",
+    "funcbody": "func newSessionManager(s *session.Store, k string) *sessionManager {\n\n\tsessionManager := &sessionManager{\n\t\tkey: k,\n\t}\n\tif s != nil {\n\n\t\tsessionManager.session = s\n\t}\n\treturn sessionManager\n}",
+    "funcname": "newSessionManager"
+}

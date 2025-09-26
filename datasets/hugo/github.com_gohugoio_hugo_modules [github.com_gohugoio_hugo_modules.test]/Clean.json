@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 415,
+    "focalfunc": "func (c *Client) Clean(pattern string) error",
+    "funcbody": "func (c *Client) Clean(pattern string) error {\n\tmods, err := c.listGoMods()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tvar g glob.Glob\n\n\tif pattern != \"\" {\n\t\tvar err error\n\t\tg, err = hglob.GetGlob(pattern)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tfor _, m := range mods {\n\t\tif m.Replace != nil || m.Main {\n\t\t\tcontinue\n\t\t}\n\n\t\tif g != nil && !g.Match(m.Path) {\n\t\t\tcontinue\n\t\t}\n\t\tdirCount, err := hugofs.MakeReadableAndRemoveAllModulePkgDir(c.fs, m.Dir)\n\t\tif err == nil {\n\t\t\tc.logger.Printf(\"hugo: removed %d dirs in module cache for %q\", dirCount, m.Path)\n\t\t}\n\t}\n\treturn err\n}",
+    "funcname": "Clean"
+}

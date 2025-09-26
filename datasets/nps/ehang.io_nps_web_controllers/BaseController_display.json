@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 66,
+    "focalfunc": "func (s *BaseController) display(tpl ...string)",
+    "funcbody": "func (s *BaseController) display(tpl ...string) {\n\ts.Data[\"web_base_url\"] = beego.AppConfig.String(\"web_base_url\")\n\tvar tplname string\n\tif s.Data[\"menu\"] == nil {\n\t\ts.Data[\"menu\"] = s.actionName\n\t}\n\tif len(tpl) > 0 {\n\t\ttplname = strings.Join([]string{tpl[0], \"html\"}, \".\")\n\t} else {\n\t\ttplname = s.controllerName + \"/\" + s.actionName + \".html\"\n\t}\n\tip := s.Ctx.Request.Host\n\ts.Data[\"ip\"] = common.GetIpByAddr(ip)\n\ts.Data[\"bridgeType\"] = beego.AppConfig.String(\"bridge_type\")\n\tif common.IsWindows() {\n\t\ts.Data[\"win\"] = \".exe\"\n\t}\n\ts.Data[\"p\"] = server.Bridge.TunnelPort\n\ts.Data[\"proxyPort\"] = beego.AppConfig.String(\"hostPort\")\n\ts.Layout = \"public/layout.html\"\n\ts.TplName = tplname\n}",
+    "funcname": "display"
+}

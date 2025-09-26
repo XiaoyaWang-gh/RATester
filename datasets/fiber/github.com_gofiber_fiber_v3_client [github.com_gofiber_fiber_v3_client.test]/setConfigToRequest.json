@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 608,
+    "focalfunc": "func setConfigToRequest(req *Request, config ...Config)",
+    "funcbody": "func setConfigToRequest(req *Request, config ...Config) {\n\tif len(config) == 0 {\n\t\treturn\n\t}\n\tcfg := config[0]\n\n\tif cfg.Ctx != nil {\n\t\treq.SetContext(cfg.Ctx)\n\t}\n\n\tif cfg.UserAgent != \"\" {\n\t\treq.SetUserAgent(cfg.UserAgent)\n\t}\n\n\tif cfg.Referer != \"\" {\n\t\treq.SetReferer(cfg.Referer)\n\t}\n\n\tif cfg.Header != nil {\n\t\treq.SetHeaders(cfg.Header)\n\t}\n\n\tif cfg.Param != nil {\n\t\treq.SetParams(cfg.Param)\n\t}\n\n\tif cfg.Cookie != nil {\n\t\treq.SetCookies(cfg.Cookie)\n\t}\n\n\tif cfg.PathParam != nil {\n\t\treq.SetPathParams(cfg.PathParam)\n\t}\n\n\tif cfg.Timeout != 0 {\n\t\treq.SetTimeout(cfg.Timeout)\n\t}\n\n\tif cfg.MaxRedirects != 0 {\n\t\treq.SetMaxRedirects(cfg.MaxRedirects)\n\t}\n\n\tif cfg.Body != nil {\n\t\treq.SetJSON(cfg.Body)\n\t\treturn\n\t}\n\n\tif cfg.FormData != nil {\n\t\treq.SetFormDatas(cfg.FormData)\n\t\treturn\n\t}\n\n\tif len(cfg.File) != 0 {\n\t\treq.AddFiles(cfg.File...)\n\t\treturn\n\t}\n}",
+    "funcname": "setConfigToRequest"
+}

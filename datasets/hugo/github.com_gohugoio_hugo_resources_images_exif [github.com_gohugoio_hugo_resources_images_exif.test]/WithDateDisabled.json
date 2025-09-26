@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 89,
+    "focalfunc": "func WithDateDisabled(disabled bool) func(*Decoder) error",
+    "funcbody": "func WithDateDisabled(disabled bool) func(*Decoder) error {\n\treturn func(d *Decoder) error {\n\t\td.noDate = disabled\n\t\treturn nil\n\t}\n}",
+    "funcname": "WithDateDisabled"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 166,
+    "focalfunc": "func applyCIMultiplier(timeout time.Duration) time.Duration",
+    "funcbody": "func applyCIMultiplier(timeout time.Duration) time.Duration {\n\tci := os.Getenv(\"CI\")\n\tif len(ci) > 0 {\n\t\tlog.Debug().Msgf(\"Apply CI multiplier: %d\", CITimeoutMultiplier)\n\t\treturn time.Duration(float64(timeout) * CITimeoutMultiplier)\n\t}\n\treturn timeout\n}",
+    "funcname": "applyCIMultiplier"
+}

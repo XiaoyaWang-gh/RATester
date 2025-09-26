@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 81,
+    "focalfunc": "func commonReplace(name, content string) string",
+    "funcbody": "func commonReplace(name, content string) string {\n\tif strings.HasSuffix(name, \"_test.go\") {\n\t\tcontent = strings.Replace(content, \"package template\\n\", `// +build go1.13,!windows\n\npackage template\n`, 1)\n\t\tcontent = strings.Replace(content, \"package template_test\\n\", `// +build go1.13\n\npackage template_test\n`, 1)\n\n\t\tcontent = strings.Replace(content, \"package parse\\n\", `// +build go1.13\n\npackage parse\n`, 1)\n\n\t}\n\n\treturn content\n}",
+    "funcname": "commonReplace"
+}

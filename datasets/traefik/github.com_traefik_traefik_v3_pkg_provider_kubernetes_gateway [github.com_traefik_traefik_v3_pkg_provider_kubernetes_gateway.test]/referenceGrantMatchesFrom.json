@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1158,
+    "focalfunc": "func referenceGrantMatchesFrom(referenceGrant *gatev1beta1.ReferenceGrant, group, kind, namespace string) bool",
+    "funcbody": "func referenceGrantMatchesFrom(referenceGrant *gatev1beta1.ReferenceGrant, group, kind, namespace string) bool {\n\tfor _, from := range referenceGrant.Spec.From {\n\t\tsanitizedGroup := string(from.Group)\n\t\tif sanitizedGroup == \"\" {\n\t\t\tsanitizedGroup = groupCore\n\t\t}\n\t\tif string(from.Namespace) != namespace || string(from.Kind) != kind || sanitizedGroup != group {\n\t\t\tcontinue\n\t\t}\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "referenceGrantMatchesFrom"
+}

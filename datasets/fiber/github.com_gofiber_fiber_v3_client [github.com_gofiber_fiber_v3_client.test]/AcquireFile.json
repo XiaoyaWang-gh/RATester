@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 897,
+    "focalfunc": "func AcquireFile(setter ...SetFileFunc) *File",
+    "funcbody": "func AcquireFile(setter ...SetFileFunc) *File {\n\tfv := filePool.Get()\n\tif fv != nil {\n\t\tf, ok := fv.(*File)\n\t\tif !ok {\n\t\t\tpanic(errors.New(\"failed to type-assert to *File\"))\n\t\t}\n\t\tfor _, v := range setter {\n\t\t\tv(f)\n\t\t}\n\t\treturn f\n\t}\n\tf := &File{}\n\tfor _, v := range setter {\n\t\tv(f)\n\t}\n\treturn f\n}",
+    "funcname": "AcquireFile"
+}

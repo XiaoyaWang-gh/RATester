@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 142,
+    "focalfunc": "func (l Languages) AsIndexSet() map[string]int",
+    "funcbody": "func (l Languages) AsIndexSet() map[string]int {\n\tm := make(map[string]int)\n\tfor i, lang := range l {\n\t\tm[lang.Lang] = i\n\t}\n\n\treturn m\n}",
+    "funcname": "AsIndexSet"
+}

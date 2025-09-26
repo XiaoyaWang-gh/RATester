@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 350,
+    "focalfunc": "func (p Pages) ByLanguage() Pages",
+    "funcbody": "func (p Pages) ByLanguage() Pages {\n\tconst key = \"pageSort.ByLanguage\"\n\n\tpages, _ := spc.get(key, pageBy(lessPageLanguage).Sort, p)\n\n\treturn pages\n}",
+    "funcname": "ByLanguage"
+}

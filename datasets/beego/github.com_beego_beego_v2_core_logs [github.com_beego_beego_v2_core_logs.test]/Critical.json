@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 745,
+    "focalfunc": "func Critical(f interface{}, v ...interface{})",
+    "funcbody": "func Critical(f interface{}, v ...interface{}) {\n\tbeeLogger.Critical(formatPattern(f, v...), v...)\n}",
+    "funcname": "Critical"
+}

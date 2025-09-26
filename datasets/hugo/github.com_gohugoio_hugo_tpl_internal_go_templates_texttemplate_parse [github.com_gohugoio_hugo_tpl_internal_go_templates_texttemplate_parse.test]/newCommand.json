@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 301,
+    "focalfunc": "func (t *Tree) newCommand(pos Pos) *CommandNode",
+    "funcbody": "func (t *Tree) newCommand(pos Pos) *CommandNode {\n\treturn &CommandNode{tr: t, NodeType: NodeCommand, Pos: pos}\n}",
+    "funcname": "newCommand"
+}

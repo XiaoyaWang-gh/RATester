@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 86,
+    "focalfunc": "func (c *fakeConfigContainer) DIY(key string) (interface{}, error)",
+    "funcbody": "func (c *fakeConfigContainer) DIY(key string) (interface{}, error) {\n\tif v, ok := c.data[strings.ToLower(key)]; ok {\n\t\treturn v, nil\n\t}\n\treturn nil, errors.New(\"key not find\")\n}",
+    "funcname": "DIY"
+}

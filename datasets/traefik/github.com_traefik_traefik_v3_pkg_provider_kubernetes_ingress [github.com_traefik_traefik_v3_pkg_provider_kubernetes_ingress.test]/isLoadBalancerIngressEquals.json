@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 309,
+    "focalfunc": "func isLoadBalancerIngressEquals(aSlice, bSlice []netv1.IngressLoadBalancerIngress) bool",
+    "funcbody": "func isLoadBalancerIngressEquals(aSlice, bSlice []netv1.IngressLoadBalancerIngress) bool {\n\tif len(aSlice) != len(bSlice) {\n\t\treturn false\n\t}\n\n\taMap := make(map[string]struct{})\n\tfor _, aIngress := range aSlice {\n\t\taMap[aIngress.Hostname+aIngress.IP] = struct{}{}\n\t}\n\n\tfor _, bIngress := range bSlice {\n\t\tif _, exists := aMap[bIngress.Hostname+bIngress.IP]; !exists {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "isLoadBalancerIngressEquals"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 228,
+    "focalfunc": "func (svr *Service) apiPutConfig(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (svr *Service) apiPutConfig(w http.ResponseWriter, r *http.Request) {\n\tres := GeneralResponse{Code: 200}\n\n\tlog.Infof(\"Http put request [/api/config]\")\n\tdefer func() {\n\t\tlog.Infof(\"Http put response [/api/config], code [%d]\", res.Code)\n\t\tw.WriteHeader(res.Code)\n\t\tif len(res.Msg) > 0 {\n\t\t\t_, _ = w.Write([]byte(res.Msg))\n\t\t}\n\t}()\n\n\tbody, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\tres.Code = 400\n\t\tres.Msg = fmt.Sprintf(\"read request body error: %v\", err)\n\t\tlog.Warnf(\"%s\", res.Msg)\n\t\treturn\n\t}\n\n\tif len(body) == 0 {\n\t\tres.Code = 400\n\t\tres.Msg = \"body can't be empty\"\n\t\tlog.Warnf(\"%s\", res.Msg)\n\t\treturn\n\t}\n\n\tif err := os.WriteFile(svr.configFilePath, body, 0o600); err != nil {\n\t\tres.Code = 500\n\t\tres.Msg = fmt.Sprintf(\"write content to frpc config file error: %v\", err)\n\t\tlog.Warnf(\"%s\", res.Msg)\n\t\treturn\n\t}\n}",
+    "funcname": "apiPutConfig"
+}

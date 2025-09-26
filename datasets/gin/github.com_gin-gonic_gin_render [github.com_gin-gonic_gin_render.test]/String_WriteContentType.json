@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/text.go",
+    "lineno": 28,
+    "focalfunc": "func (r String) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r String) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, plainContentType)\n}",
+    "funcname": "WriteContentType"
+}

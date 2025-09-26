@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/chain.go",
+    "lineno": 77,
+    "focalfunc": "func (c *Chain) Apply(to io.Writer, from io.Reader) error",
+    "funcbody": "func (c *Chain) Apply(to io.Writer, from io.Reader) error {\n\tif len(*c) == 0 {\n\t\t_, err := io.Copy(to, from)\n\t\treturn err\n\t}\n\n\tb1 := bp.GetBuffer()\n\tdefer bp.PutBuffer(b1)\n\n\tif _, err := b1.ReadFrom(from); err != nil {\n\t\treturn err\n\t}\n\n\tb2 := bp.GetBuffer()\n\tdefer bp.PutBuffer(b2)\n\n\tfb := &fromToBuffer{from: b1, to: b2}\n\n\tfor i, tr := range *c {\n\t\tif i > 0 {\n\t\t\tif fb.from == b1 {\n\t\t\t\tfb.from = b2\n\t\t\t\tfb.to = b1\n\t\t\t\tfb.to.Reset()\n\t\t\t} else {\n\t\t\t\tfb.from = b1\n\t\t\t\tfb.to = b2\n\t\t\t\tfb.to.Reset()\n\t\t\t}\n\t\t}\n\n\t\tif err := tr(fb); err != nil {\n\n\t\t\tfilename := \"output.html\"\n\t\t\ttempfile, ferr := os.CreateTemp(\"\", \"hugo-transform-error\")\n\t\t\tif ferr == nil {\n\t\t\t\tfilename = tempfile.Name()\n\t\t\t\tdefer tempfile.Close()\n\t\t\t\t_, _ = io.Copy(tempfile, fb.from)\n\t\t\t\treturn herrors.NewFileErrorFromFile(err, filename, hugofs.Os, nil)\n\t\t\t}\n\t\t\treturn herrors.NewFileErrorFromName(err, filename).UpdateContent(fb.from, nil)\n\n\t\t}\n\t}\n\n\t_, err := fb.to.WriteTo(to)\n\treturn err\n}",
+    "funcname": "Apply"
+}

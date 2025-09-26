@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/ingressroutetcp.go",
+    "lineno": 75,
+    "focalfunc": "func (c *ingressRouteTCPs) Get(ctx context.Context, name string, options v1.GetOptions) (result *v1alpha1.IngressRouteTCP, err error)",
+    "funcbody": "func (c *ingressRouteTCPs) Get(ctx context.Context, name string, options v1.GetOptions) (result *v1alpha1.IngressRouteTCP, err error) {\n\tresult = &v1alpha1.IngressRouteTCP{}\n\terr = c.client.Get().\n\t\tNamespace(c.ns).\n\t\tResource(\"ingressroutetcps\").\n\t\tName(name).\n\t\tVersionedParams(&options, scheme.ParameterCodec).\n\t\tDo(ctx).\n\t\tInto(result)\n\treturn\n}",
+    "funcname": "Get"
+}

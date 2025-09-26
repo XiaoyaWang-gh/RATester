@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 36,
+    "focalfunc": "func newLinkRenderer(cfg goldmark_config.Config) renderer.NodeRenderer",
+    "funcbody": "func newLinkRenderer(cfg goldmark_config.Config) renderer.NodeRenderer {\n\tr := &hookedRenderer{\n\t\tlinkifyProtocol:\t[]byte(cfg.Extensions.LinkifyProtocol),\n\t\tConfig: html.Config{\n\t\t\tWriter: html.DefaultWriter,\n\t\t},\n\t}\n\treturn r\n}",
+    "funcname": "newLinkRenderer"
+}

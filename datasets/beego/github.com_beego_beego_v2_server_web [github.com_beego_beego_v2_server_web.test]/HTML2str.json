@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 52,
+    "focalfunc": "func HTML2str(html string) string",
+    "funcbody": "func HTML2str(html string) string {\n\tre := regexp.MustCompile(`\\<[\\S\\s]+?\\>`)\n\thtml = re.ReplaceAllStringFunc(html, strings.ToLower)\n\n\tre = regexp.MustCompile(`\\<style[\\S\\s]+?\\</style\\>`)\n\thtml = re.ReplaceAllString(html, \"\")\n\n\tre = regexp.MustCompile(`\\<script[\\S\\s]+?\\</script\\>`)\n\thtml = re.ReplaceAllString(html, \"\")\n\n\tre = regexp.MustCompile(`\\<[\\S\\s]+?\\>`)\n\thtml = re.ReplaceAllString(html, \"\\n\")\n\n\tre = regexp.MustCompile(`\\s{2,}`)\n\thtml = re.ReplaceAllString(html, \"\\n\")\n\n\treturn strings.TrimSpace(html)\n}",
+    "funcname": "HTML2str"
+}

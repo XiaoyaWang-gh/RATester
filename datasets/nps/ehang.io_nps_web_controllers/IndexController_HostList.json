@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 208,
+    "focalfunc": "func (s *IndexController) HostList()",
+    "funcbody": "func (s *IndexController) HostList() {\n\tif s.Ctx.Request.Method == \"GET\" {\n\t\ts.Data[\"client_id\"] = s.getEscapeString(\"client_id\")\n\t\ts.Data[\"menu\"] = \"host\"\n\t\ts.SetInfo(\"host list\")\n\t\ts.display(\"index/hlist\")\n\t} else {\n\t\tstart, length := s.GetAjaxParams()\n\t\tclientId := s.GetIntNoErr(\"client_id\")\n\t\tlist, cnt := file.GetDb().GetHost(start, length, clientId, s.getEscapeString(\"search\"))\n\t\ts.AjaxTable(list, cnt, cnt, nil)\n\t}\n}",
+    "funcname": "HostList"
+}

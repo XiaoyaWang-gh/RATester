@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 301,
+    "focalfunc": "func length(item reflect.Value) (int, error)",
+    "funcbody": "func length(item reflect.Value) (int, error) {\n\titem, isNil := indirect(item)\n\tif isNil {\n\t\treturn 0, fmt.Errorf(\"len of nil pointer\")\n\t}\n\tswitch item.Kind() {\n\tcase reflect.Array, reflect.Chan, reflect.Map, reflect.Slice, reflect.String:\n\t\treturn item.Len(), nil\n\t}\n\treturn 0, fmt.Errorf(\"len of type %s\", item.Type())\n}",
+    "funcname": "length"
+}

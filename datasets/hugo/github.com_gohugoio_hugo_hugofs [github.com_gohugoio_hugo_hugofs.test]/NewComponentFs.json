@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/component_fs.go",
+    "lineno": 31,
+    "focalfunc": "func NewComponentFs(opts ComponentFsOptions) *componentFs",
+    "funcbody": "func NewComponentFs(opts ComponentFsOptions) *componentFs {\n\tif opts.Component == \"\" {\n\t\tpanic(\"ComponentFsOptions.PathParser.Component must be set\")\n\t}\n\tif opts.Fs == nil {\n\t\tpanic(\"ComponentFsOptions.Fs must be set\")\n\t}\n\tbfs := NewBasePathFs(opts.Fs, opts.Component)\n\treturn &componentFs{Fs: bfs, opts: opts}\n}",
+    "funcname": "NewComponentFs"
+}

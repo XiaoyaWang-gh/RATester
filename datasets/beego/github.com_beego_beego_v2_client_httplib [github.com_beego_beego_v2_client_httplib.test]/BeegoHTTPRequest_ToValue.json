@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 680,
+    "focalfunc": "func (b *BeegoHTTPRequest) ToValue(value interface{}) error",
+    "funcbody": "func (b *BeegoHTTPRequest) ToValue(value interface{}) error {\n\tif value == nil {\n\t\treturn nil\n\t}\n\n\tcontentType := strings.Split(b.resp.Header.Get(contentTypeKey), \";\")[0]\n\n\tswitch contentType {\n\tcase \"application/json\":\n\t\treturn b.ToJSON(value)\n\tcase \"text/xml\", \"application/xml\":\n\t\treturn b.ToXML(value)\n\tcase \"text/yaml\", \"application/x-yaml\", \"application/x+yaml\":\n\t\treturn b.ToYAML(value)\n\t}\n\n\tif err := b.ToJSON(value); err == nil {\n\t\treturn nil\n\t}\n\tif err := b.ToYAML(value); err == nil {\n\t\treturn nil\n\t}\n\tif err := b.ToXML(value); err == nil {\n\t\treturn nil\n\t}\n\n\treturn berror.Error(UnmarshalResponseToObjectFailed, \"unmarshal body to object failed.\")\n}",
+    "funcname": "ToValue"
+}

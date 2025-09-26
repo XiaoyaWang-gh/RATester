@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/processing_stats.go",
+    "lineno": 65,
+    "focalfunc": "func (s *ProcessingStats) Add(counter *uint64, amount int)",
+    "funcbody": "func (s *ProcessingStats) Add(counter *uint64, amount int) {\n\tatomic.AddUint64(counter, uint64(amount))\n}",
+    "funcname": "Add"
+}

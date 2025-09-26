@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 269,
+    "focalfunc": "func (c *Controller) HandleReport(m *msg.NatHoleReport)",
+    "funcbody": "func (c *Controller) HandleReport(m *msg.NatHoleReport) {\n\tc.mu.RLock()\n\tsession, ok := c.sessions[m.Sid]\n\tc.mu.RUnlock()\n\tif !ok {\n\t\tlog.Tracef(\"sid [%s] report make hole success: %v, but session not found\", m.Sid, m.Success)\n\t\treturn\n\t}\n\tif m.Success {\n\t\tc.analyzer.ReportSuccess(session.analysisKey, session.recommandMode, session.recommandIndex)\n\t}\n\tlog.Infof(\"sid [%s] report make hole success: %v, mode %v, index %v\",\n\t\tm.Sid, m.Success, session.recommandMode, session.recommandIndex)\n}",
+    "funcname": "HandleReport"
+}

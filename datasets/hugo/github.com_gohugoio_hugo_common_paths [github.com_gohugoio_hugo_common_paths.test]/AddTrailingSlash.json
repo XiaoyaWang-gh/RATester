@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 81,
+    "focalfunc": "func AddTrailingSlash(path string) string",
+    "funcbody": "func AddTrailingSlash(path string) string {\n\tif !strings.HasSuffix(path, \"/\") {\n\t\tpath += \"/\"\n\t}\n\treturn path\n}",
+    "funcname": "AddTrailingSlash"
+}

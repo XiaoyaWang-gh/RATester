@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 111,
+    "focalfunc": "func (bc *MemoryCache) Delete(ctx context.Context, key string) error",
+    "funcbody": "func (bc *MemoryCache) Delete(ctx context.Context, key string) error {\n\tbc.Lock()\n\tdefer bc.Unlock()\n\tdelete(bc.items, key)\n\treturn nil\n}",
+    "funcname": "Delete"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/closer.go",
+    "lineno": 37,
+    "focalfunc": "func (cs *Closers) Close() error",
+    "funcbody": "func (cs *Closers) Close() error {\n\tcs.mu.Lock()\n\tdefer cs.mu.Unlock()\n\tfor _, c := range cs.cs {\n\t\tc.Close()\n\t}\n\n\tcs.cs = cs.cs[:0]\n\n\treturn nil\n}",
+    "funcname": "Close"
+}

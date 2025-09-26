@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 77,
+    "focalfunc": "func (x *XForwarded) isTrustedIP(ip string) bool",
+    "funcbody": "func (x *XForwarded) isTrustedIP(ip string) bool {\n\tif x.ipChecker == nil {\n\t\treturn false\n\t}\n\treturn x.ipChecker.IsAuthorized(ip) == nil\n}",
+    "funcname": "isTrustedIP"
+}

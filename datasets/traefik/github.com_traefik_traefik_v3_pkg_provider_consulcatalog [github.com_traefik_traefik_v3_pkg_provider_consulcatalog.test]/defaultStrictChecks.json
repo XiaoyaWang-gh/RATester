@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 329,
+    "focalfunc": "func defaultStrictChecks() []string",
+    "funcbody": "func defaultStrictChecks() []string {\n\treturn []string{api.HealthPassing, api.HealthWarning}\n}",
+    "funcname": "defaultStrictChecks"
+}

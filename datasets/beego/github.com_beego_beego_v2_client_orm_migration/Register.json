@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 163,
+    "focalfunc": "func Register(name string, m Migrationer) error",
+    "funcbody": "func Register(name string, m Migrationer) error {\n\tif _, ok := migrationMap[name]; ok {\n\t\treturn errors.New(\"already exist name:\" + name)\n\t}\n\tmigrationMap[name] = m\n\treturn nil\n}",
+    "funcname": "Register"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 141,
+    "focalfunc": "func tryToSetValue(value reflect.Value, field reflect.StructField, setter setter, tag string) (bool, error)",
+    "funcbody": "func tryToSetValue(value reflect.Value, field reflect.StructField, setter setter, tag string) (bool, error) {\n\tvar tagValue string\n\tvar setOpt setOptions\n\n\ttagValue = field.Tag.Get(tag)\n\ttagValue, opts := head(tagValue, \",\")\n\n\tif tagValue == \"\" {\n\t\ttagValue = field.Name\n\t}\n\tif tagValue == \"\" {\n\t\treturn false, nil\n\t}\n\n\tvar opt string\n\tfor len(opts) > 0 {\n\t\topt, opts = head(opts, \",\")\n\n\t\tif k, v := head(opt, \"=\"); k == \"default\" {\n\t\t\tsetOpt.isDefaultExists = true\n\t\t\tsetOpt.defaultValue = v\n\t\t}\n\t}\n\n\treturn setter.TrySet(value, field, tagValue, setOpt)\n}",
+    "funcname": "tryToSetValue"
+}

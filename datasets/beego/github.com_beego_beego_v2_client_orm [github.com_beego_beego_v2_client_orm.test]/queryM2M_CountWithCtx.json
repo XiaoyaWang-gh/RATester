@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_querym2m.go",
+    "lineno": 150,
+    "focalfunc": "func (o *queryM2M) CountWithCtx(ctx context.Context) (int64, error)",
+    "funcbody": "func (o *queryM2M) CountWithCtx(ctx context.Context) (int64, error) {\n\tfi := o.fi\n\treturn o.qs.Filter(fi.ReverseFieldInfo.Name, o.md).CountWithCtx(ctx)\n}",
+    "funcname": "CountWithCtx"
+}

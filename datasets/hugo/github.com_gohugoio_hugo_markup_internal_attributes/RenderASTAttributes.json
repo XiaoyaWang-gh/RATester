@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/attributes/attributes.go",
+    "lineno": 179,
+    "focalfunc": "func RenderASTAttributes(w hugio.FlexiWriter, attributes ...ast.Attribute)",
+    "funcbody": "func RenderASTAttributes(w hugio.FlexiWriter, attributes ...ast.Attribute) {\n\tfor _, attr := range attributes {\n\n\t\ta := strings.ToLower(string(attr.Name))\n\t\tif strings.HasPrefix(a, \"on\") {\n\t\t\tcontinue\n\t\t}\n\n\t\t_, _ = w.WriteString(\" \")\n\t\t_, _ = w.Write(attr.Name)\n\t\t_, _ = w.WriteString(`=\"`)\n\n\t\tswitch v := attr.Value.(type) {\n\t\tcase []byte:\n\t\t\t_, _ = w.Write(util.EscapeHTML(v))\n\t\tdefault:\n\t\t\tw.WriteString(cast.ToString(v))\n\t\t}\n\n\t\t_ = w.WriteByte('\"')\n\t}\n}",
+    "funcname": "RenderASTAttributes"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/auth.go",
+    "lineno": 72,
+    "focalfunc": "func BasicAuth(accounts Accounts) HandlerFunc",
+    "funcbody": "func BasicAuth(accounts Accounts) HandlerFunc {\n\treturn BasicAuthForRealm(accounts, \"\")\n}",
+    "funcname": "BasicAuth"
+}

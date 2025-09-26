@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/mockservers.go",
+    "lineno": 79,
+    "focalfunc": "func (m *MockServers) GetParam(key string) interface{}",
+    "funcbody": "func (m *MockServers) GetParam(key string) interface{} {\n\tparams := m.GetTemplateParams()\n\tif v, ok := params[key]; ok {\n\t\treturn v\n\t}\n\treturn nil\n}",
+    "funcname": "GetParam"
+}

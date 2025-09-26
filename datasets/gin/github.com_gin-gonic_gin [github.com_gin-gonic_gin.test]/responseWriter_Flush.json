@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 121,
+    "focalfunc": "func (w *responseWriter) Flush()",
+    "funcbody": "func (w *responseWriter) Flush() {\n\tw.WriteHeaderNow()\n\tw.ResponseWriter.(http.Flusher).Flush()\n}",
+    "funcname": "Flush"
+}

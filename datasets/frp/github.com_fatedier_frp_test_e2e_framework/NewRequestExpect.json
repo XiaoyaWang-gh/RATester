@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 48,
+    "focalfunc": "func NewRequestExpect(f *Framework) *RequestExpect",
+    "funcbody": "func NewRequestExpect(f *Framework) *RequestExpect {\n\treturn &RequestExpect{\n\t\treq:\t\tNewRequest(),\n\t\tf:\t\tf,\n\t\texpectResp:\t[]byte(consts.TestString),\n\t\texpectError:\tfalse,\n\t\texplain:\tmake([]interface{}, 0),\n\t}\n}",
+    "funcname": "NewRequestExpect"
+}

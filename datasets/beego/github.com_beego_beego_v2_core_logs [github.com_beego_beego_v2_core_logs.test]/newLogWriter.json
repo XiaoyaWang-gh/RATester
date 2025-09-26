@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 29,
+    "focalfunc": "func newLogWriter(wr io.Writer) *logWriter",
+    "funcbody": "func newLogWriter(wr io.Writer) *logWriter {\n\treturn &logWriter{writer: wr}\n}",
+    "funcname": "newLogWriter"
+}

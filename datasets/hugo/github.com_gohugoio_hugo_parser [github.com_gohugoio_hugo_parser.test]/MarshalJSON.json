@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/lowercase_camel_json.go",
+    "lineno": 88,
+    "focalfunc": "func (c ReplacingJSONMarshaller) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (c ReplacingJSONMarshaller) MarshalJSON() ([]byte, error) {\n\tconverted, err := json.Marshal(c.Value)\n\n\tif c.KeysToLower {\n\t\tconverted = keyMatchRegex.ReplaceAllFunc(\n\t\t\tconverted,\n\t\t\tfunc(match []byte) []byte {\n\t\t\t\treturn bytes.ToLower(match)\n\t\t\t},\n\t\t)\n\t}\n\n\tif c.OmitEmpty {\n\t\t// It's tricky to do this with a regexp, so convert it to a map, remove zero values and convert back.\n\t\tvar m map[string]interface{}\n\t\terr = json.Unmarshal(converted, &m)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tvar removeZeroVAlues func(m map[string]any)\n\t\tremoveZeroVAlues = func(m map[string]any) {\n\t\t\tfor k, v := range m {\n\t\t\t\tif !hreflect.IsTruthful(v) {\n\t\t\t\t\tdelete(m, k)\n\t\t\t\t} else {\n\t\t\t\t\tswitch vv := v.(type) {\n\t\t\t\t\tcase map[string]interface{}:\n\t\t\t\t\t\tremoveZeroVAlues(vv)\n\t\t\t\t\tcase []interface{}:\n\t\t\t\t\t\tfor _, vvv := range vv {\n\t\t\t\t\t\t\tif m, ok := vvv.(map[string]any); ok {\n\t\t\t\t\t\t\t\tremoveZeroVAlues(m)\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tremoveZeroVAlues(m)\n\t\tconverted, err = json.Marshal(m)\n\n\t}\n\n\treturn converted, err\n}",
+    "funcname": "MarshalJSON"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/aggregator.go",
+    "lineno": 31,
+    "focalfunc": "func maybeThrottledProvide(prd provider.Provider, defaultDuration time.Duration) func(chan<- dynamic.Message, *safe.Pool) error",
+    "funcbody": "func maybeThrottledProvide(prd provider.Provider, defaultDuration time.Duration) func(chan<- dynamic.Message, *safe.Pool) error {\n\tproviderThrottleDuration := defaultDuration\n\tif throttled, ok := prd.(throttled); ok {\n\n\t\tproviderThrottleDuration = throttled.ThrottleDuration()\n\t}\n\n\tif providerThrottleDuration == 0 {\n\n\t\treturn prd.Provide\n\t}\n\n\treturn func(configurationChan chan<- dynamic.Message, pool *safe.Pool) error {\n\t\trc := newRingChannel()\n\t\tpool.GoCtx(func(ctx context.Context) {\n\t\t\tfor {\n\t\t\t\tselect {\n\t\t\t\tcase <-ctx.Done():\n\t\t\t\t\treturn\n\t\t\t\tcase msg := <-rc.out():\n\t\t\t\t\tconfigurationChan <- msg\n\t\t\t\t\ttime.Sleep(providerThrottleDuration)\n\t\t\t\t}\n\t\t\t}\n\t\t})\n\n\t\treturn prd.Provide(rc.in(), pool)\n\t}\n}",
+    "funcname": "maybeThrottledProvide"
+}

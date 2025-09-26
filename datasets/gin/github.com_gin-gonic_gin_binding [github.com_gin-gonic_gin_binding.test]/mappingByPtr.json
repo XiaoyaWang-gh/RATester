@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 77,
+    "focalfunc": "func mappingByPtr(ptr any, setter setter, tag string) error",
+    "funcbody": "func mappingByPtr(ptr any, setter setter, tag string) error {\n\t_, err := mapping(reflect.ValueOf(ptr), emptyField, setter, tag)\n\treturn err\n}",
+    "funcname": "mappingByPtr"
+}

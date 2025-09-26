@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1322,
+    "focalfunc": "func (p *ControllerRegister) handleParamResponse(context *beecontext.Context, execController ControllerInterface, results []reflect.Value)",
+    "funcbody": "func (p *ControllerRegister) handleParamResponse(context *beecontext.Context, execController ControllerInterface, results []reflect.Value) {\n\n\tfor i := len(results) - 1; i >= 0; i-- {\n\t\tresult := results[i]\n\t\tif result.Kind() != reflect.Interface || !result.IsNil() {\n\t\t\tresultValue := result.Interface()\n\t\t\tcontext.RenderMethodResult(resultValue)\n\t\t}\n\t}\n\tif !context.ResponseWriter.Started && len(results) > 0 && context.Output.Status == 0 {\n\t\tcontext.Output.SetStatus(200)\n\t}\n}",
+    "funcname": "handleParamResponse"
+}

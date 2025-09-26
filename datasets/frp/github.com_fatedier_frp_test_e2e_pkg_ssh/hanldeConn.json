@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/ssh/client.go",
+    "lineno": 82,
+    "focalfunc": "func (c *TunnelClient) hanldeConn(conn net.Conn)",
+    "funcbody": "func (c *TunnelClient) hanldeConn(conn net.Conn) {\n\tdefer conn.Close()\n\tlocal, err := net.Dial(\"tcp\", c.localAddr)\n\tif err != nil {\n\t\treturn\n\t}\n\t_, _, _ = libio.Join(local, conn)\n}",
+    "funcname": "hanldeConn"
+}

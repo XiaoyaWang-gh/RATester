@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1778,
+    "focalfunc": "func (c *DefaultCtx) WriteString(s string) (int, error)",
+    "funcbody": "func (c *DefaultCtx) WriteString(s string) (int, error) {\n\tc.fasthttp.Response.AppendBodyString(s)\n\treturn len(s), nil\n}",
+    "funcname": "WriteString"
+}

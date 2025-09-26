@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 79,
+    "focalfunc": "func WithEnableGzip(enable bool) ClientOption",
+    "funcbody": "func WithEnableGzip(enable bool) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.Gzip = enable\n\t}\n}",
+    "funcname": "WithEnableGzip"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/legacy/basic/client_server.go",
+    "lineno": 89,
+    "focalfunc": "func defineClientServerTest(desc string, f *framework.Framework, configures *generalTestConfigures)",
+    "funcbody": "func defineClientServerTest(desc string, f *framework.Framework, configures *generalTestConfigures) {\n\tginkgo.It(desc, func() {\n\t\trunClientServerTest(f, configures)\n\t})\n}",
+    "funcname": "defineClientServerTest"
+}

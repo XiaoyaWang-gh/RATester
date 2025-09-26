@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 829,
+    "focalfunc": "func contextAfterText(c context, s []byte) (context, int)",
+    "funcbody": "func contextAfterText(c context, s []byte) (context, int) {\n\tif c.delim == delimNone {\n\t\tc1, i := tSpecialTagEnd(c, s)\n\t\tif i == 0 {\n\n\t\t\treturn c1, 0\n\t\t}\n\n\t\treturn transitionFunc[c.state](c, s[:i])\n\t}\n\n\ti := bytes.IndexAny(s, delimEnds[c.delim])\n\tif i == -1 {\n\t\ti = len(s)\n\t}\n\tif c.delim == delimSpaceOrTagEnd {\n\n\t\tif j := bytes.IndexAny(s[:i], \"\\\"'<=`\"); j >= 0 {\n\t\t\treturn context{\n\t\t\t\tstate:\tstateError,\n\t\t\t\terr:\terrorf(ErrBadHTML, nil, 0, \"%q in unquoted attr: %q\", s[j:j+1], s[:i]),\n\t\t\t}, len(s)\n\t\t}\n\t}\n\tif i == len(s) {\n\n\t\tfor u := []byte(html.UnescapeString(string(s))); len(u) != 0; {\n\t\t\tc1, i1 := transitionFunc[c.state](c, u)\n\t\t\tc, u = c1, u[i1:]\n\t\t}\n\t\treturn c, len(s)\n\t}\n\n\telement := c.element\n\n\tif c.state == stateAttr && c.element == elementScript && c.attr == attrScriptType && !isJSType(string(s[:i])) {\n\t\telement = elementNone\n\t}\n\n\tif c.delim != delimSpaceOrTagEnd {\n\n\t\ti++\n\t}\n\n\treturn context{state: stateTag, element: element}, i\n}",
+    "funcname": "contextAfterText"
+}

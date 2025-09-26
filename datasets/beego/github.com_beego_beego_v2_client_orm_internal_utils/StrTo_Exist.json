@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 43,
+    "focalfunc": "func (f StrTo) Exist() bool",
+    "funcbody": "func (f StrTo) Exist() bool {\n\treturn string(f) != string(rune(0x1E))\n}",
+    "funcname": "Exist"
+}

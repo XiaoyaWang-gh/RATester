@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefix/strip_prefix.go",
+    "lineno": 52,
+    "focalfunc": "func (s *stripPrefix) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (s *stripPrefix) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tfor _, prefix := range s.prefixes {\n\t\tif strings.HasPrefix(req.URL.Path, prefix) {\n\t\t\treq.URL.Path = s.getPrefixStripped(req.URL.Path, prefix)\n\t\t\tif req.URL.RawPath != \"\" {\n\t\t\t\treq.URL.RawPath = s.getPrefixStripped(req.URL.RawPath, prefix)\n\t\t\t}\n\t\t\ts.serveRequest(rw, req, strings.TrimSpace(prefix))\n\t\t\treturn\n\t\t}\n\t}\n\ts.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

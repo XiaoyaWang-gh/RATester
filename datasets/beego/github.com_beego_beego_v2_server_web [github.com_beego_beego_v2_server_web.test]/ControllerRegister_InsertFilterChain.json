@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 820,
+    "focalfunc": "func (p *ControllerRegister) InsertFilterChain(pattern string, chain FilterChain, opts ...FilterOpt)",
+    "funcbody": "func (p *ControllerRegister) InsertFilterChain(pattern string, chain FilterChain, opts ...FilterOpt) {\n\topts = append([]FilterOpt{WithCaseSensitive(p.cfg.RouterCaseSensitive)}, opts...)\n\tp.filterChains = append(p.filterChains, filterChainConfig{\n\t\tpattern:\tpattern,\n\t\tchain:\t\tchain,\n\t\topts:\t\topts,\n\t})\n}",
+    "funcname": "InsertFilterChain"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/util.go",
+    "lineno": 54,
+    "focalfunc": "func WithRangePorts(from, to int) NameOption",
+    "funcbody": "func WithRangePorts(from, to int) NameOption {\n\treturn func(builder *nameBuilder) *nameBuilder {\n\t\tbuilder.rangePortFrom = from\n\t\tbuilder.rangePortTo = to\n\t\treturn builder\n\t}\n}",
+    "funcname": "WithRangePorts"
+}

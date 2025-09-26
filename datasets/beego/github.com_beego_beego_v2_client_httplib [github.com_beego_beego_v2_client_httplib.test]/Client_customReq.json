@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 72,
+    "focalfunc": "func (c *Client) customReq(req *BeegoHTTPRequest, opts []BeegoHTTPRequestOption)",
+    "funcbody": "func (c *Client) customReq(req *BeegoHTTPRequest, opts []BeegoHTTPRequestOption) {\n\treq.Setting(c.Setting)\n\topts = append(c.CommonOpts, opts...)\n\tfor _, o := range opts {\n\t\to(req)\n\t}\n}",
+    "funcname": "customReq"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 50,
+    "focalfunc": "func XxHashFromStringHexEncoded(f string) string",
+    "funcbody": "func XxHashFromStringHexEncoded(f string) string {\n\th := xxhash.New()\n\th.WriteString(f)\n\thash := h.Sum(nil)\n\treturn hex.EncodeToString(hash)\n}",
+    "funcname": "XxHashFromStringHexEncoded"
+}

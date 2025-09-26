@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 153,
+    "focalfunc": "func getNested(m map[string]any, indices []string) (any, string, map[string]any)",
+    "funcbody": "func getNested(m map[string]any, indices []string) (any, string, map[string]any) {\n\tif len(indices) == 0 {\n\t\treturn nil, \"\", nil\n\t}\n\n\tfirst := indices[0]\n\tv, found := m[strings.ToLower(cast.ToString(first))]\n\tif !found {\n\t\tif len(indices) == 1 {\n\t\t\treturn nil, first, m\n\t\t}\n\t\treturn nil, \"\", nil\n\n\t}\n\n\tif len(indices) == 1 {\n\t\treturn v, first, m\n\t}\n\n\tswitch m2 := v.(type) {\n\tcase Params:\n\t\treturn getNested(m2, indices[1:])\n\tcase map[string]any:\n\t\treturn getNested(m2, indices[1:])\n\tdefault:\n\t\treturn nil, \"\", nil\n\t}\n}",
+    "funcname": "getNested"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 149,
+    "focalfunc": "func (app *App) next(c *DefaultCtx) (bool, error)",
+    "funcbody": "func (app *App) next(c *DefaultCtx) (bool, error) {\n\n\ttree, ok := app.treeStack[c.methodINT][c.treePath]\n\tif !ok {\n\t\ttree = app.treeStack[c.methodINT][\"\"]\n\t}\n\tlenTree := len(tree) - 1\n\n\tfor c.indexRoute < lenTree {\n\n\t\tc.indexRoute++\n\n\t\troute := tree[c.indexRoute]\n\n\t\tvar match bool\n\t\tvar err error\n\n\t\tif route.mount {\n\t\t\tcontinue\n\t\t}\n\n\t\tmatch = route.match(c.detectionPath, c.path, &c.values)\n\t\tif !match {\n\n\t\t\tcontinue\n\t\t}\n\n\t\tc.route = route\n\n\t\tif !c.matched && !route.use {\n\t\t\tc.matched = true\n\t\t}\n\n\t\tc.indexHandler = 0\n\t\tif len(route.Handlers) > 0 {\n\t\t\terr = route.Handlers[0](c)\n\t\t}\n\t\treturn match, err\n\t}\n\n\terr := NewError(StatusNotFound, \"Cannot \"+c.method+\" \"+html.EscapeString(c.pathOriginal))\n\tif !c.matched && app.methodExist(c) {\n\n\t\terr = ErrMethodNotAllowed\n\t}\n\treturn false, err\n}",
+    "funcname": "next"
+}

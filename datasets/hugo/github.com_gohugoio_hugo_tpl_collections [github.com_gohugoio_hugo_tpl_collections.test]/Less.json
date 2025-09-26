@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/sort.go",
+    "lineno": 157,
+    "focalfunc": "func (p pairList) Less(i, j int) bool",
+    "funcbody": "func (p pairList) Less(i, j int) bool {\n\tiv := p.Pairs[i].Key\n\tjv := p.Pairs[j].Key\n\n\tif iv.IsValid() {\n\t\tif jv.IsValid() {\n\n\t\t\treturn p.sortComp.LtCollate(p.Collator, iv.Interface(), jv.Interface())\n\t\t}\n\n\t\treturn p.sortComp.LtCollate(p.Collator, iv.Interface(), reflect.Zero(iv.Type()))\n\t}\n\n\tif jv.IsValid() {\n\n\t\treturn p.sortComp.LtCollate(p.Collator, reflect.Zero(jv.Type()), jv.Interface())\n\t}\n\n\treturn false\n}",
+    "funcname": "Less"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/logger.go",
+    "lineno": 73,
+    "focalfunc": "func getLogLevel(staticConfiguration *static.Configuration) zerolog.Level",
+    "funcbody": "func getLogLevel(staticConfiguration *static.Configuration) zerolog.Level {\n\tlevelStr := \"error\"\n\tif staticConfiguration.Log != nil && staticConfiguration.Log.Level != \"\" {\n\t\tlevelStr = strings.ToLower(staticConfiguration.Log.Level)\n\t}\n\n\tlogLevel, err := zerolog.ParseLevel(strings.ToLower(levelStr))\n\tif err != nil {\n\t\tlog.Error().Err(err).\n\t\t\tStr(\"logLevel\", levelStr).\n\t\t\tMsg(\"Unspecified or invalid log level, setting the level to default (ERROR)...\")\n\n\t\tlogLevel = zerolog.ErrorLevel\n\t}\n\n\treturn logLevel\n}",
+    "funcname": "getLogLevel"
+}

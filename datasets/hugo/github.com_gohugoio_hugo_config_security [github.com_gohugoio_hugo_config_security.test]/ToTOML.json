@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 99,
+    "focalfunc": "func (c Config) ToTOML() string",
+    "funcbody": "func (c Config) ToTOML() string {\n\tsec := c.ToSecurityMap()\n\n\tvar b bytes.Buffer\n\n\tif err := parser.InterfaceToConfig(sec, metadecoders.TOML, &b); err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn strings.TrimSpace(b.String())\n}",
+    "funcname": "ToTOML"
+}

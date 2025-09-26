@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 260,
+    "focalfunc": "func attr(node *html.Node, key string) string",
+    "funcbody": "func attr(node *html.Node, key string) string {\n\tfor _, a := range node.Attr {\n\t\tif a.Key == key {\n\t\t\treturn a.Val\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "attr"
+}

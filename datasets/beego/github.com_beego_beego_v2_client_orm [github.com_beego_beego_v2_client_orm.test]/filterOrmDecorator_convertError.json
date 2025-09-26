@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 525,
+    "focalfunc": "func (*filterOrmDecorator) convertError(v interface{}) error",
+    "funcbody": "func (*filterOrmDecorator) convertError(v interface{}) error {\n\tif v == nil {\n\t\treturn nil\n\t}\n\treturn v.(error)\n}",
+    "funcname": "convertError"
+}

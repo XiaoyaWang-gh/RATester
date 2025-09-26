@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/paths/paths.go",
+    "lineno": 91,
+    "focalfunc": "func (p *Paths) GetBasePath(isRelativeURL bool) string",
+    "funcbody": "func (p *Paths) GetBasePath(isRelativeURL bool) string {\n\tif isRelativeURL && p.Cfg.CanonifyURLs() {\n\n\t\treturn \"\"\n\t}\n\treturn p.Cfg.BaseURL().BasePathNoTrailingSlash\n}",
+    "funcname": "GetBasePath"
+}

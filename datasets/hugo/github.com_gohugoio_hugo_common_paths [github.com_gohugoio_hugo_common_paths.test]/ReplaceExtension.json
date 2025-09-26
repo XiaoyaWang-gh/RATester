@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 111,
+    "focalfunc": "func ReplaceExtension(path string, newExt string) string",
+    "funcbody": "func ReplaceExtension(path string, newExt string) string {\n\tf, _ := fileAndExt(path, fpb)\n\treturn f + \".\" + newExt\n}",
+    "funcname": "ReplaceExtension"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 296,
+    "focalfunc": "func FileGetContents(filename string) ([]byte, error)",
+    "funcbody": "func FileGetContents(filename string) ([]byte, error) {\n\tdata, err := os.ReadFile(filename)\n\tif err != nil {\n\t\treturn nil, berror.Wrapf(err, ReadFileCacheContentFailed,\n\t\t\t\"could not read the data from the file: %s, \"+\n\t\t\t\t\"please confirm that file exist and Beego has the permission to read the content.\", filename)\n\t}\n\treturn data, nil\n}",
+    "funcname": "FileGetContents"
+}

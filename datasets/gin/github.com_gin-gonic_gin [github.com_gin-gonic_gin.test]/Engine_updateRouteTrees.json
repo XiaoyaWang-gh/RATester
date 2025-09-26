@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 494,
+    "focalfunc": "func (engine *Engine) updateRouteTrees()",
+    "funcbody": "func (engine *Engine) updateRouteTrees() {\n\tfor _, tree := range engine.trees {\n\t\tupdateRouteTree(tree.root)\n\t}\n}",
+    "funcname": "updateRouteTrees"
+}

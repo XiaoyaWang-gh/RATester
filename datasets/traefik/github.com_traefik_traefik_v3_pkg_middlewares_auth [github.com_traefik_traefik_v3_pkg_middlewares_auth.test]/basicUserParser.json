@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/basic_auth.go",
+    "lineno": 108,
+    "focalfunc": "func basicUserParser(user string) (string, string, error)",
+    "funcbody": "func basicUserParser(user string) (string, string, error) {\n\tsplit := strings.Split(user, \":\")\n\tif len(split) != 2 {\n\t\treturn \"\", \"\", fmt.Errorf(\"error parsing BasicUser: %v\", user)\n\t}\n\treturn split[0], split[1], nil\n}",
+    "funcname": "basicUserParser"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 59,
+    "focalfunc": "func (c *Config) Compile() (ConfigCompiled, error)",
+    "funcbody": "func (c *Config) Compile() (ConfigCompiled, error) {\n\tvar cc ConfigCompiled\n\n\tp, err := c.Cache.For.CompilePredicate()\n\tif err != nil {\n\t\treturn cc, err\n\t}\n\n\tcc.For = p\n\n\tfor _, pc := range c.Polls {\n\n\t\tp, err := pc.For.CompilePredicate()\n\t\tif err != nil {\n\t\t\treturn cc, err\n\t\t}\n\n\t\tcc.PollConfigs = append(cc.PollConfigs, PollConfigCompiled{\n\t\t\tFor:\tp,\n\t\t\tConfig:\tpc,\n\t\t})\n\t}\n\n\treturn cc, nil\n}",
+    "funcname": "Compile"
+}

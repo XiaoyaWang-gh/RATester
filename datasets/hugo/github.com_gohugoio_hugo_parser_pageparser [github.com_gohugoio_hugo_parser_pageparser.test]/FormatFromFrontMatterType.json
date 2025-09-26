@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 94,
+    "focalfunc": "func FormatFromFrontMatterType(typ ItemType) metadecoders.Format",
+    "funcbody": "func FormatFromFrontMatterType(typ ItemType) metadecoders.Format {\n\tswitch typ {\n\tcase TypeFrontMatterJSON:\n\t\treturn metadecoders.JSON\n\tcase TypeFrontMatterORG:\n\t\treturn metadecoders.ORG\n\tcase TypeFrontMatterTOML:\n\t\treturn metadecoders.TOML\n\tcase TypeFrontMatterYAML:\n\t\treturn metadecoders.YAML\n\tdefault:\n\t\treturn \"\"\n\t}\n}",
+    "funcname": "FormatFromFrontMatterType"
+}

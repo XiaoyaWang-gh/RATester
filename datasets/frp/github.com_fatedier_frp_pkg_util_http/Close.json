@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/server.go",
+    "lineno": 102,
+    "focalfunc": "func (s *Server) Close() error",
+    "funcbody": "func (s *Server) Close() error {\n\treturn s.hs.Close()\n}",
+    "funcname": "Close"
+}

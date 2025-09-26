@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/append.go",
+    "lineno": 128,
+    "focalfunc": "func appendToInterfaceSlice(tov reflect.Value, from ...any) ([]any, error)",
+    "funcbody": "func appendToInterfaceSlice(tov reflect.Value, from ...any) ([]any, error) {\n\tvar tos []any\n\n\tfor i := 0; i < tov.Len(); i++ {\n\t\ttos = append(tos, tov.Index(i).Interface())\n\t}\n\n\ttos = append(tos, from...)\n\n\treturn tos, nil\n}",
+    "funcname": "appendToInterfaceSlice"
+}

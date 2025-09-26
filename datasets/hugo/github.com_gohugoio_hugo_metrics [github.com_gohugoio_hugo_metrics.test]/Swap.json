@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 204,
+    "focalfunc": "func (b bySum) Swap(i, j int)",
+    "funcbody": "func (b bySum) Swap(i, j int)\t{ b[i], b[j] = b[j], b[i] }",
+    "funcname": "Swap"
+}

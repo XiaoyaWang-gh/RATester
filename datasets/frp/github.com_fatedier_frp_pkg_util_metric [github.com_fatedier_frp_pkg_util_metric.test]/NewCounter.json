@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/counter.go",
+    "lineno": 29,
+    "focalfunc": "func NewCounter() Counter",
+    "funcbody": "func NewCounter() Counter {\n\treturn &StandardCounter{\n\t\tcount: 0,\n\t}\n}",
+    "funcname": "NewCounter"
+}

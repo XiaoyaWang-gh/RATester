@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ip/checker.go",
+    "lineno": 18,
+    "focalfunc": "func NewChecker(trustedIPs []string) (*Checker, error)",
+    "funcbody": "func NewChecker(trustedIPs []string) (*Checker, error) {\n\tif len(trustedIPs) == 0 {\n\t\treturn nil, errors.New(\"no trusted IPs provided\")\n\t}\n\n\tchecker := &Checker{}\n\n\tfor _, ipMask := range trustedIPs {\n\t\tif ipAddr := net.ParseIP(ipMask); ipAddr != nil {\n\t\t\tchecker.authorizedIPs = append(checker.authorizedIPs, &ipAddr)\n\t\t\tcontinue\n\t\t}\n\n\t\t_, ipAddr, err := net.ParseCIDR(ipMask)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"parsing CIDR trusted IPs %s: %w\", ipAddr, err)\n\t\t}\n\t\tchecker.authorizedIPsNet = append(checker.authorizedIPsNet, ipAddr)\n\t}\n\n\treturn checker, nil\n}",
+    "funcname": "NewChecker"
+}

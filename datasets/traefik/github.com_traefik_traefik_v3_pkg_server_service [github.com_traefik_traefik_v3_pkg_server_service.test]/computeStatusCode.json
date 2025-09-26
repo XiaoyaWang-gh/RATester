@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 108,
+    "focalfunc": "func computeStatusCode(err error) int",
+    "funcbody": "func computeStatusCode(err error) int {\n\tswitch {\n\tcase errors.Is(err, io.EOF):\n\t\treturn http.StatusBadGateway\n\tcase errors.Is(err, context.Canceled):\n\t\treturn StatusClientClosedRequest\n\tdefault:\n\t\tvar netErr net.Error\n\t\tif errors.As(err, &netErr) {\n\t\t\tif netErr.Timeout() {\n\t\t\t\treturn http.StatusGatewayTimeout\n\t\t\t}\n\n\t\t\treturn http.StatusBadGateway\n\t\t}\n\t}\n\n\treturn http.StatusInternalServerError\n}",
+    "funcname": "computeStatusCode"
+}

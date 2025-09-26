@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 118,
+    "focalfunc": "func (s *DbUtils) DelTask(id int) error",
+    "funcbody": "func (s *DbUtils) DelTask(id int) error {\n\ts.JsonDb.Tasks.Delete(id)\n\ts.JsonDb.StoreTasksToJsonFile()\n\treturn nil\n}",
+    "funcname": "DelTask"
+}

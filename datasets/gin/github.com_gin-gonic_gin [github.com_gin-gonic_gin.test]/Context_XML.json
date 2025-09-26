@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1044,
+    "focalfunc": "func (c *Context) XML(code int, obj any)",
+    "funcbody": "func (c *Context) XML(code int, obj any) {\n\tc.Render(code, render.XML{Data: obj})\n}",
+    "funcname": "XML"
+}

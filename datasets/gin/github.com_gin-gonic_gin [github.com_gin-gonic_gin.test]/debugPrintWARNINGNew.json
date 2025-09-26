@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 90,
+    "focalfunc": "func debugPrintWARNINGNew()",
+    "funcbody": "func debugPrintWARNINGNew() {\n\tdebugPrint(`[WARNING] Running in \"debug\" mode. Switch to \"release\" mode in production.\n - using env:\texport GIN_MODE=release\n - using code:\tgin.SetMode(gin.ReleaseMode)\n\n`)\n}",
+    "funcname": "debugPrintWARNINGNew"
+}

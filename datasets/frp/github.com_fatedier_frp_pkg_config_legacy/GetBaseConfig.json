@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/visitor.go",
+    "lineno": 76,
+    "focalfunc": "func (cfg *BaseVisitorConf) GetBaseConfig() *BaseVisitorConf",
+    "funcbody": "func (cfg *BaseVisitorConf) GetBaseConfig() *BaseVisitorConf {\n\treturn cfg\n}",
+    "funcname": "GetBaseConfig"
+}

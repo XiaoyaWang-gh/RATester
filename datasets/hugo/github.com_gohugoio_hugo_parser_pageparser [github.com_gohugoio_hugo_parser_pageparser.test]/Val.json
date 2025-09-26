@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 56,
+    "focalfunc": "func (i Item) Val(source []byte) []byte",
+    "funcbody": "func (i Item) Val(source []byte) []byte {\n\tif len(i.segments) == 0 {\n\t\treturn source[i.low:i.high]\n\t}\n\n\tif len(i.segments) == 1 {\n\t\treturn source[i.segments[0].Low:i.segments[0].High]\n\t}\n\n\tvar b bytes.Buffer\n\tfor _, s := range i.segments {\n\t\tb.Write(source[s.Low:s.High])\n\t}\n\treturn b.Bytes()\n}",
+    "funcname": "Val"
+}

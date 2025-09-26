@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 75,
+    "focalfunc": "func (sc *SimpleCondition) matchPath(ctx context.Context, req *httplib.BeegoHTTPRequest) bool",
+    "funcbody": "func (sc *SimpleCondition) matchPath(ctx context.Context, req *httplib.BeegoHTTPRequest) bool {\n\tpath := req.GetRequest().URL.Path\n\treturn path == sc.path\n}",
+    "funcname": "matchPath"
+}

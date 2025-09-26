@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/extractor.go",
+    "lineno": 168,
+    "focalfunc": "func valuesFromCookie(name string) ValuesExtractor",
+    "funcbody": "func valuesFromCookie(name string) ValuesExtractor {\n\treturn func(c echo.Context) ([]string, error) {\n\t\tcookies := c.Cookies()\n\t\tif len(cookies) == 0 {\n\t\t\treturn nil, errCookieExtractorValueMissing\n\t\t}\n\n\t\tresult := make([]string, 0)\n\t\tfor i, cookie := range cookies {\n\t\t\tif name == cookie.Name {\n\t\t\t\tresult = append(result, cookie.Value)\n\t\t\t\tif i >= extractorLimit-1 {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif len(result) == 0 {\n\t\t\treturn nil, errCookieExtractorValueMissing\n\t\t}\n\t\treturn result, nil\n\t}\n}",
+    "funcname": "valuesFromCookie"
+}

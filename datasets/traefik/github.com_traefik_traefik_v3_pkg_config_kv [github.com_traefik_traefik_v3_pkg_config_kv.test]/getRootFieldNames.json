@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/kv/kv.go",
+    "lineno": 37,
+    "focalfunc": "func getRootFieldNames(rootName string, element interface{}) []string",
+    "funcbody": "func getRootFieldNames(rootName string, element interface{}) []string {\n\tif element == nil {\n\t\treturn nil\n\t}\n\n\trootType := reflect.TypeOf(element)\n\n\treturn getFieldNames(rootName, rootType)\n}",
+    "funcname": "getRootFieldNames"
+}

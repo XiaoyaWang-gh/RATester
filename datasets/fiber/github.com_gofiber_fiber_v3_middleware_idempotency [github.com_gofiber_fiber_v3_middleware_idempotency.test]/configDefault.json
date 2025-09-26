@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/idempotency/config.go",
+    "lineno": 77,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\tcfg := ConfigDefault\n\n\t\tcfg.Lock = NewMemoryLock()\n\t\tcfg.Storage = memory.New(memory.Config{\n\t\t\tGCInterval: cfg.Lifetime / 2,\n\t\t})\n\n\t\treturn cfg\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Next == nil {\n\t\tcfg.Next = ConfigDefault.Next\n\t}\n\n\tif cfg.Lifetime.Nanoseconds() == 0 {\n\t\tcfg.Lifetime = ConfigDefault.Lifetime\n\t}\n\n\tif cfg.KeyHeader == \"\" {\n\t\tcfg.KeyHeader = ConfigDefault.KeyHeader\n\t}\n\tif cfg.KeyHeaderValidate == nil {\n\t\tcfg.KeyHeaderValidate = ConfigDefault.KeyHeaderValidate\n\t}\n\n\tif cfg.KeepResponseHeaders != nil && len(cfg.KeepResponseHeaders) == 0 {\n\t\tcfg.KeepResponseHeaders = ConfigDefault.KeepResponseHeaders\n\t}\n\n\tif cfg.Lock == nil {\n\t\tcfg.Lock = NewMemoryLock()\n\t}\n\n\tif cfg.Storage == nil {\n\t\tcfg.Storage = memory.New(memory.Config{\n\t\t\tGCInterval: cfg.Lifetime / 2,\n\t\t})\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

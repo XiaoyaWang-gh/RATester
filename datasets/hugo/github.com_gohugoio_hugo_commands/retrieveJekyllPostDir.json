@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 600,
+    "focalfunc": "func (c *importCommand) retrieveJekyllPostDir(fs afero.Fs, dir string) (bool, bool)",
+    "funcbody": "func (c *importCommand) retrieveJekyllPostDir(fs afero.Fs, dir string) (bool, bool) {\n\tif strings.HasSuffix(dir, \"_posts\") || strings.HasSuffix(dir, \"_drafts\") {\n\t\tisEmpty, _ := helpers.IsEmpty(dir, fs)\n\t\treturn true, !isEmpty\n\t}\n\n\tif entries, err := os.ReadDir(dir); err == nil {\n\t\tfor _, entry := range entries {\n\t\t\tif entry.IsDir() {\n\t\t\t\tsubDir := filepath.Join(dir, entry.Name())\n\t\t\t\tif isPostDir, hasAnyPost := c.retrieveJekyllPostDir(fs, subDir); isPostDir {\n\t\t\t\t\treturn isPostDir, hasAnyPost\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn false, true\n}",
+    "funcname": "retrieveJekyllPostDir"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 86,
+    "focalfunc": "func IsTruthfulValue(val reflect.Value) (truth bool)",
+    "funcbody": "func IsTruthfulValue(val reflect.Value) (truth bool) {\n\tval = indirectInterface(val)\n\n\tif !val.IsValid() {\n\n\t\treturn\n\t}\n\n\tif val.Type().Implements(zeroType) {\n\t\treturn !val.Interface().(types.Zeroer).IsZero()\n\t}\n\n\tswitch val.Kind() {\n\tcase reflect.Array, reflect.Map, reflect.Slice, reflect.String:\n\t\ttruth = val.Len() > 0\n\tcase reflect.Bool:\n\t\ttruth = val.Bool()\n\tcase reflect.Complex64, reflect.Complex128:\n\t\ttruth = val.Complex() != 0\n\tcase reflect.Chan, reflect.Func, reflect.Ptr, reflect.Interface:\n\t\ttruth = !val.IsNil()\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\ttruth = val.Int() != 0\n\tcase reflect.Float32, reflect.Float64:\n\t\ttruth = val.Float() != 0\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:\n\t\ttruth = val.Uint() != 0\n\tcase reflect.Struct:\n\t\ttruth = true\n\tdefault:\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "IsTruthfulValue"
+}

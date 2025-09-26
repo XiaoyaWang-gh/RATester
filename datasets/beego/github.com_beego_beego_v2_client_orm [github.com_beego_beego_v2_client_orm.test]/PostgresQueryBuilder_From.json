@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 53,
+    "focalfunc": "func (qb *PostgresQueryBuilder) From(tables ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) From(tables ...string) QueryBuilder {\n\tstr := processingStr(tables)\n\tqb.tokens = append(qb.tokens, \"FROM\", str)\n\treturn qb\n}",
+    "funcname": "From"
+}

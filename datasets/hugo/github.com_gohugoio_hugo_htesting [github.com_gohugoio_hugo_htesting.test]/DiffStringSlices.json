@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 82,
+    "focalfunc": "func DiffStringSlices(slice1 []string, slice2 []string) []string",
+    "funcbody": "func DiffStringSlices(slice1 []string, slice2 []string) []string {\n\tdiffStr := []string{}\n\tm := map[string]int{}\n\n\tfor _, s1Val := range slice1 {\n\t\tm[s1Val] = 1\n\t}\n\tfor _, s2Val := range slice2 {\n\t\tm[s2Val] = m[s2Val] + 1\n\t}\n\n\tfor mKey, mVal := range m {\n\t\tif mVal == 1 {\n\t\t\tdiffStr = append(diffStr, mKey)\n\t\t}\n\t}\n\n\treturn diffStr\n}",
+    "funcname": "DiffStringSlices"
+}

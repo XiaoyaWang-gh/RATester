@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 374,
+    "focalfunc": "func NewSessionLog(out io.Writer) *Log",
+    "funcbody": "func NewSessionLog(out io.Writer) *Log {\n\tsl := new(Log)\n\tsl.Logger = log.New(out, \"[SESSION]\", 1e9)\n\treturn sl\n}",
+    "funcname": "NewSessionLog"
+}

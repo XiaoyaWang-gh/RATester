@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/jwt.go",
+    "lineno": 288,
+    "focalfunc": "func (config *JWTConfig) defaultKeyFunc(t *jwt.Token) (interface{}, error)",
+    "funcbody": "func (config *JWTConfig) defaultKeyFunc(t *jwt.Token) (interface{}, error) {\n\n\tif t.Method.Alg() != config.SigningMethod {\n\t\treturn nil, fmt.Errorf(\"unexpected jwt signing method=%v\", t.Header[\"alg\"])\n\t}\n\tif len(config.SigningKeys) > 0 {\n\t\tif kid, ok := t.Header[\"kid\"].(string); ok {\n\t\t\tif key, ok := config.SigningKeys[kid]; ok {\n\t\t\t\treturn key, nil\n\t\t\t}\n\t\t}\n\t\treturn nil, fmt.Errorf(\"unexpected jwt key id=%v\", t.Header[\"kid\"])\n\t}\n\n\treturn config.SigningKey, nil\n}",
+    "funcname": "defaultKeyFunc"
+}

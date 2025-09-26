@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 296,
+    "focalfunc": "func (c *context) RealIP() string",
+    "funcbody": "func (c *context) RealIP() string {\n\tif c.echo != nil && c.echo.IPExtractor != nil {\n\t\treturn c.echo.IPExtractor(c.request)\n\t}\n\n\tif ip := c.request.Header.Get(HeaderXForwardedFor); ip != \"\" {\n\t\ti := strings.IndexAny(ip, \",\")\n\t\tif i > 0 {\n\t\t\txffip := strings.TrimSpace(ip[:i])\n\t\t\txffip = strings.TrimPrefix(xffip, \"[\")\n\t\t\txffip = strings.TrimSuffix(xffip, \"]\")\n\t\t\treturn xffip\n\t\t}\n\t\treturn ip\n\t}\n\tif ip := c.request.Header.Get(HeaderXRealIP); ip != \"\" {\n\t\tip = strings.TrimPrefix(ip, \"[\")\n\t\tip = strings.TrimSuffix(ip, \"]\")\n\t\treturn ip\n\t}\n\tra, _, _ := net.SplitHostPort(c.request.RemoteAddr)\n\treturn ra\n}",
+    "funcname": "RealIP"
+}

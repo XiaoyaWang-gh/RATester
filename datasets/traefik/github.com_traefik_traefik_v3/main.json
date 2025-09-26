@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/generate.go",
+    "lineno": 5,
+    "focalfunc": "func main()",
+    "funcbody": "func main()\t{}",
+    "funcname": "main"
+}

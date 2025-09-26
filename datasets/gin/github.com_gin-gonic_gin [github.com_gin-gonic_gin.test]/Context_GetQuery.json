@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 462,
+    "focalfunc": "func (c *Context) GetQuery(key string) (string, bool)",
+    "funcbody": "func (c *Context) GetQuery(key string) (string, bool) {\n\tif values, ok := c.GetQueryArray(key); ok {\n\t\treturn values[0], ok\n\t}\n\treturn \"\", false\n}",
+    "funcname": "GetQuery"
+}

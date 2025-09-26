@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 53,
+    "focalfunc": "func (p *PathSpec) AbsURL(in string, addLanguage bool) string",
+    "funcbody": "func (p *PathSpec) AbsURL(in string, addLanguage bool) string {\n\tisAbs, err := p.IsAbsURL(in)\n\tif err != nil {\n\t\treturn in\n\t}\n\tif isAbs || strings.HasPrefix(in, \"//\") {\n\n\t\treturn in\n\t}\n\n\tbaseURL := p.getBaseURLRoot(in)\n\n\tif addLanguage {\n\t\tprefix := p.GetLanguagePrefix()\n\t\tif prefix != \"\" {\n\t\t\thasPrefix := false\n\n\t\t\tin2 := in\n\t\t\tif strings.HasPrefix(in, \"/\") {\n\t\t\t\tin2 = in[1:]\n\t\t\t}\n\t\t\tif in2 == prefix {\n\t\t\t\thasPrefix = true\n\t\t\t} else {\n\t\t\t\thasPrefix = strings.HasPrefix(in2, prefix+\"/\")\n\t\t\t}\n\n\t\t\tif !hasPrefix {\n\t\t\t\taddSlash := in == \"\" || strings.HasSuffix(in, \"/\")\n\t\t\t\tin = path.Join(prefix, in)\n\n\t\t\t\tif addSlash {\n\t\t\t\t\tin += \"/\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\treturn paths.MakePermalink(baseURL, in).String()\n}",
+    "funcname": "AbsURL"
+}

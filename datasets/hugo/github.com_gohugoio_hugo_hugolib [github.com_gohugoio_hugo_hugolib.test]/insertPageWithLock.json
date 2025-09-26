@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 167,
+    "focalfunc": "func (m *pageMap) insertPageWithLock(s string, p *pageState) (contentNodeI, contentNodeI, bool)",
+    "funcbody": "func (m *pageMap) insertPageWithLock(s string, p *pageState) (contentNodeI, contentNodeI, bool) {\n\tu, n, replaced := m.treePages.InsertIntoValuesDimensionWithLock(s, p)\n\n\tif replaced && !m.s.h.isRebuild() && m.s.conf.PrintPathWarnings {\n\t\tvar messageDetail string\n\t\tif p1, ok := n.(*pageState); ok && p1.File() != nil {\n\t\t\tmessageDetail = fmt.Sprintf(\" file: %q\", p1.File().Filename())\n\t\t}\n\t\tif p2, ok := u.(*pageState); ok && p2.File() != nil {\n\t\t\tmessageDetail += fmt.Sprintf(\" file: %q\", p2.File().Filename())\n\t\t}\n\n\t\tm.s.Log.Warnf(\"Duplicate content path: %q%s\", s, messageDetail)\n\t}\n\n\treturn u, n, replaced\n}",
+    "funcname": "insertPageWithLock"
+}

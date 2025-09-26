@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 211,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertLogContains(els ...string)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertLogContains(els ...string) {\n\ts.Helper()\n\tfor _, el := range els {\n\t\tvar negate bool\n\t\tel, negate = s.negate(el)\n\t\tcheck := qt.Contains\n\t\tif negate {\n\t\t\tcheck = qt.Not(qt.Contains)\n\t\t}\n\t\ts.Assert(s.lastBuildLog, check, el)\n\t}\n}",
+    "funcname": "AssertLogContains"
+}

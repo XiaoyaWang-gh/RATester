@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 607,
+    "focalfunc": "func (i IP) DefaultMessage() string",
+    "funcbody": "func (i IP) DefaultMessage() string {\n\treturn MessageTmpls[\"IP\"]\n}",
+    "funcname": "DefaultMessage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 963,
+    "focalfunc": "func (e *Echo) findRouter(host string) *Router",
+    "funcbody": "func (e *Echo) findRouter(host string) *Router {\n\tif len(e.routers) > 0 {\n\t\tif r, ok := e.routers[host]; ok {\n\t\t\treturn r\n\t\t}\n\t}\n\treturn e.router\n}",
+    "funcname": "findRouter"
+}

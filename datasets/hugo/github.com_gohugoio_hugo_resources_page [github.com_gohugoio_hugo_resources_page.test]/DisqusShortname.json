@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 472,
+    "focalfunc": "func (testSite) DisqusShortname() string",
+    "funcbody": "func (testSite) DisqusShortname() string {\n\treturn \"\"\n}",
+    "funcname": "DisqusShortname"
+}

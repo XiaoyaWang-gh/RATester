@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 180,
+    "focalfunc": "func (r PureJSON) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r PureJSON) Render(w http.ResponseWriter) error {\n\tr.WriteContentType(w)\n\tencoder := json.NewEncoder(w)\n\tencoder.SetEscapeHTML(false)\n\treturn encoder.Encode(r.Data)\n}",
+    "funcname": "Render"
+}

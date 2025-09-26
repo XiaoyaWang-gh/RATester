@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 204,
+    "focalfunc": "func (b *commonBalancer) RemoveTarget(name string) bool",
+    "funcbody": "func (b *commonBalancer) RemoveTarget(name string) bool {\n\tb.mutex.Lock()\n\tdefer b.mutex.Unlock()\n\tfor i, t := range b.targets {\n\t\tif t.Name == name {\n\t\t\tb.targets = append(b.targets[:i], b.targets[i+1:]...)\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "RemoveTarget"
+}

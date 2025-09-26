@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 565,
+    "focalfunc": "func (c *Controller) GetUint16(key string, def ...uint16) (uint16, error)",
+    "funcbody": "func (c *Controller) GetUint16(key string, def ...uint16) (uint16, error) {\n\tstrv := c.Ctx.Input.Query(key)\n\tif len(strv) == 0 && len(def) > 0 {\n\t\treturn def[0], nil\n\t}\n\tu64, err := strconv.ParseUint(strv, 10, 16)\n\treturn uint16(u64), err\n}",
+    "funcname": "GetUint16"
+}

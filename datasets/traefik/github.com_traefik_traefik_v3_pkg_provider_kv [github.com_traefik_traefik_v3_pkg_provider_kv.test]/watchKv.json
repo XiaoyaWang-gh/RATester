@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/kv.go",
+    "lineno": 95,
+    "focalfunc": "func (p *Provider) watchKv(ctx context.Context, configurationChan chan<- dynamic.Message) error",
+    "funcbody": "func (p *Provider) watchKv(ctx context.Context, configurationChan chan<- dynamic.Message) error {\n\toperation := func() error {\n\t\tevents, err := p.kvClient.WatchTree(ctx, p.RootKey, nil)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"failed to watch KV: %w\", err)\n\t\t}\n\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-ctx.Done():\n\t\t\t\treturn nil\n\t\t\tcase _, ok := <-events:\n\t\t\t\tif !ok {\n\t\t\t\t\treturn errors.New(\"the WatchTree channel is closed\")\n\t\t\t\t}\n\n\t\t\t\tconfiguration, errC := p.buildConfiguration(ctx)\n\t\t\t\tif errC != nil {\n\t\t\t\t\treturn errC\n\t\t\t\t}\n\n\t\t\t\tif configuration != nil {\n\t\t\t\t\tconfigurationChan <- dynamic.Message{\n\t\t\t\t\t\tProviderName:\tp.name,\n\t\t\t\t\t\tConfiguration:\tconfiguration,\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tnotify := func(err error, time time.Duration) {\n\t\tlog.Ctx(ctx).Error().Err(err).Msgf(\"Provider error, retrying in %s\", time)\n\t}\n\n\treturn backoff.RetryNotify(safe.OperationWithRecover(operation),\n\t\tbackoff.WithContext(job.NewBackOff(backoff.NewExponentialBackOff()), ctx), notify)\n}",
+    "funcname": "watchKv"
+}

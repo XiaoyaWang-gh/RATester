@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 167,
+    "focalfunc": "func (g *HTTPGroup) chooseEndpoint() (string, error)",
+    "funcbody": "func (g *HTTPGroup) chooseEndpoint() (string, error) {\n\tnewIndex := atomic.AddUint64(&g.index, 1)\n\tname := \"\"\n\n\tg.mu.RLock()\n\tgroup := g.group\n\tdomain := g.domain\n\tlocation := g.location\n\trouteByHTTPUser := g.routeByHTTPUser\n\tif len(g.pxyNames) > 0 {\n\t\tname = g.pxyNames[int(newIndex)%len(g.pxyNames)]\n\t}\n\tg.mu.RUnlock()\n\n\tif name == \"\" {\n\t\treturn \"\", fmt.Errorf(\"no healthy endpoint for http group [%s], domain [%s], location [%s], routeByHTTPUser [%s]\",\n\t\t\tgroup, domain, location, routeByHTTPUser)\n\t}\n\treturn name, nil\n}",
+    "funcname": "chooseEndpoint"
+}

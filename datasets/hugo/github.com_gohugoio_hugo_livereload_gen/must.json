@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/gen/main.go",
+    "lineno": 57,
+    "focalfunc": "func must(err error)",
+    "funcbody": "func must(err error) {\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n}",
+    "funcname": "must"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 140,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetBasicAuth(username, password string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetBasicAuth(username, password string) *BeegoHTTPRequest {\n\tb.req.SetBasicAuth(username, password)\n\treturn b\n}",
+    "funcname": "SetBasicAuth"
+}

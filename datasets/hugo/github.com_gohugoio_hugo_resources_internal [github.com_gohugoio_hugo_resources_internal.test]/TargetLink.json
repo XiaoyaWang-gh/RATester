@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/resourcepaths.go",
+    "lineno": 62,
+    "focalfunc": "func (d ResourcePaths) TargetLink() string",
+    "funcbody": "func (d ResourcePaths) TargetLink() string {\n\treturn d.join(d.BaseDirLink, d.Dir, d.File)\n}",
+    "funcname": "TargetLink"
+}

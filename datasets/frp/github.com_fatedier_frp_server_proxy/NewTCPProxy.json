@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/tcp.go",
+    "lineno": 37,
+    "focalfunc": "func NewTCPProxy(baseProxy *BaseProxy) Proxy",
+    "funcbody": "func NewTCPProxy(baseProxy *BaseProxy) Proxy {\n\tunwrapped, ok := baseProxy.GetConfigurer().(*v1.TCPProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\tbaseProxy.usedPortsNum = 1\n\treturn &TCPProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t}\n}",
+    "funcname": "NewTCPProxy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1699,
+    "focalfunc": "func (c *DefaultCtx) Stale() bool",
+    "funcbody": "func (c *DefaultCtx) Stale() bool {\n\treturn !c.Fresh()\n}",
+    "funcname": "Stale"
+}

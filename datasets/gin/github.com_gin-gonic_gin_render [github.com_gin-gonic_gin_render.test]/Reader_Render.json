@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/reader.go",
+    "lineno": 22,
+    "focalfunc": "func (r Reader) Render(w http.ResponseWriter) (err error)",
+    "funcbody": "func (r Reader) Render(w http.ResponseWriter) (err error) {\n\tr.WriteContentType(w)\n\tif r.ContentLength >= 0 {\n\t\tif r.Headers == nil {\n\t\t\tr.Headers = map[string]string{}\n\t\t}\n\t\tr.Headers[\"Content-Length\"] = strconv.FormatInt(r.ContentLength, 10)\n\t}\n\tr.writeHeaders(w, r.Headers)\n\t_, err = io.Copy(w, r.Reader)\n\treturn\n}",
+    "funcname": "Render"
+}

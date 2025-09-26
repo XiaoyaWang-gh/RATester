@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 567,
+    "focalfunc": "func (l configLoader) deleteMergeStrategies()",
+    "funcbody": "func (l configLoader) deleteMergeStrategies() {\n\tl.cfg.WalkParams(func(params ...maps.KeyParams) bool {\n\t\tparams[len(params)-1].Params.DeleteMergeStrategy()\n\t\treturn false\n\t})\n}",
+    "funcname": "deleteMergeStrategies"
+}

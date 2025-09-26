@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 253,
+    "focalfunc": "func MustHaveExternalNetwork(t testing.TB)",
+    "funcbody": "func MustHaveExternalNetwork(t testing.TB) {\n\tif runtime.GOOS == \"js\" || runtime.GOOS == \"wasip1\" {\n\t\tt.Helper()\n\t\tt.Skipf(\"skipping test: no external network on %s\", runtime.GOOS)\n\t}\n\tif testing.Short() {\n\t\tt.Helper()\n\t\tt.Skipf(\"skipping test: no external network in -short mode\")\n\t}\n}",
+    "funcname": "MustHaveExternalNetwork"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 141,
+    "focalfunc": "func getColumnName(ft int, addrField reflect.Value, sf reflect.StructField, col string) string",
+    "funcbody": "func getColumnName(ft int, addrField reflect.Value, sf reflect.StructField, col string) string {\n\tcolumn := col\n\tif col == \"\" {\n\t\tcolumn = NameStrategyMap[NameStrategy](sf.Name)\n\t}\n\tswitch ft {\n\tcase RelForeignKey, RelOneToOne:\n\t\tif len(col) == 0 {\n\t\t\tcolumn = column + \"_id\"\n\t\t}\n\tcase RelManyToMany, RelReverseMany, RelReverseOne:\n\t\tcolumn = sf.Name\n\t}\n\treturn column\n}",
+    "funcname": "getColumnName"
+}

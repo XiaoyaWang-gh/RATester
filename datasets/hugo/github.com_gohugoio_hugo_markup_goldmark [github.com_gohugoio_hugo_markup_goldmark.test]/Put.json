@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/autoid.go",
+    "lineno": 131,
+    "focalfunc": "func (ids *idFactory) Put(value []byte)",
+    "funcbody": "func (ids *idFactory) Put(value []byte) {\n\tids.vals[util.BytesToReadOnlyString(value)] = struct{}{}\n}",
+    "funcname": "Put"
+}

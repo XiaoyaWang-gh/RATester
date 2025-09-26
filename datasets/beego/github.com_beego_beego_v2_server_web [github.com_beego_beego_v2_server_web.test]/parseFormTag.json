@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 369,
+    "focalfunc": "func parseFormTag(fieldT reflect.StructField) (label, name, fType string, id string, class string, ignored bool, required bool)",
+    "funcbody": "func parseFormTag(fieldT reflect.StructField) (label, name, fType string, id string, class string, ignored bool, required bool) {\n\ttags := strings.Split(fieldT.Tag.Get(\"form\"), \",\")\n\tlabel = fieldT.Name + \": \"\n\tname = fieldT.Name\n\tfType = \"text\"\n\tignored = false\n\tid = fieldT.Tag.Get(\"id\")\n\tclass = fieldT.Tag.Get(\"class\")\n\n\trequired = false\n\trequiredField := fieldT.Tag.Get(\"required\")\n\tif requiredField != \"-\" && requiredField != \"\" {\n\t\trequired, _ = strconv.ParseBool(requiredField)\n\t}\n\n\tswitch len(tags) {\n\tcase 1:\n\t\tif tags[0] == \"-\" {\n\t\t\tignored = true\n\t\t}\n\t\tif len(tags[0]) > 0 {\n\t\t\tname = tags[0]\n\t\t}\n\tcase 2:\n\t\tif len(tags[0]) > 0 {\n\t\t\tname = tags[0]\n\t\t}\n\t\tif len(tags[1]) > 0 {\n\t\t\tfType = tags[1]\n\t\t}\n\tcase 3:\n\t\tif len(tags[0]) > 0 {\n\t\t\tname = tags[0]\n\t\t}\n\t\tif len(tags[1]) > 0 {\n\t\t\tfType = tags[1]\n\t\t}\n\t\tif len(tags[2]) > 0 {\n\t\t\tlabel = tags[2]\n\t\t}\n\t}\n\n\treturn\n}",
+    "funcname": "parseFormTag"
+}

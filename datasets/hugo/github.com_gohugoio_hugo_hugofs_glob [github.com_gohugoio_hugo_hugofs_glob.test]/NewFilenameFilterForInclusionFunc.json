@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/filename_filter.go",
+    "lineno": 97,
+    "focalfunc": "func NewFilenameFilterForInclusionFunc(shouldInclude func(filename string) bool) *FilenameFilter",
+    "funcbody": "func NewFilenameFilterForInclusionFunc(shouldInclude func(filename string) bool) *FilenameFilter {\n\treturn &FilenameFilter{shouldInclude: shouldInclude, isWindows: isWindows}\n}",
+    "funcname": "NewFilenameFilterForInclusionFunc"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/weighted.go",
+    "lineno": 58,
+    "focalfunc": "func NewWeightedPage(weight int, p Page, owner Page) WeightedPage",
+    "funcbody": "func NewWeightedPage(weight int, p Page, owner Page) WeightedPage {\n\treturn WeightedPage{Weight: weight, Page: p, owner: owner}\n}",
+    "funcname": "NewWeightedPage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 657,
+    "focalfunc": "func lexRawQuote(l *lexer) stateFn",
+    "funcbody": "func lexRawQuote(l *lexer) stateFn {\nLoop:\n\tfor {\n\t\tswitch l.next() {\n\t\tcase eof:\n\t\t\treturn l.errorf(\"unterminated raw quoted string\")\n\t\tcase '`':\n\t\t\tbreak Loop\n\t\t}\n\t}\n\treturn l.emit(itemRawString)\n}",
+    "funcname": "lexRawQuote"
+}

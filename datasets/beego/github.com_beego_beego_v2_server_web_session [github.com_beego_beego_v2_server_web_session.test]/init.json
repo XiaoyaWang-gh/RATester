@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 35,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tgob.Register([]interface{}{})\n\tgob.Register(map[int]interface{}{})\n\tgob.Register(map[string]interface{}{})\n\tgob.Register(map[interface{}]interface{}{})\n\tgob.Register(map[string]string{})\n\tgob.Register(map[int]string{})\n\tgob.Register(map[int]int{})\n\tgob.Register(map[int]int64{})\n}",
+    "funcname": "init"
+}

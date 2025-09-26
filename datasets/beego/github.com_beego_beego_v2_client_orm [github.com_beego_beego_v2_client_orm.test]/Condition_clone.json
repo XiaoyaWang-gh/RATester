@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 155,
+    "focalfunc": "func (c Condition) clone() *Condition",
+    "funcbody": "func (c Condition) clone() *Condition {\n\tparams := make([]condValue, len(c.params))\n\tcopy(params, c.params)\n\tc.params = params\n\treturn &c\n}",
+    "funcname": "clone"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/version.go",
+    "lineno": 7,
+    "focalfunc": "func GetVersion(connState *tls.ConnectionState) string",
+    "funcbody": "func GetVersion(connState *tls.ConnectionState) string {\n\tswitch connState.Version {\n\tcase tls.VersionTLS10:\n\t\treturn \"1.0\"\n\tcase tls.VersionTLS11:\n\t\treturn \"1.1\"\n\tcase tls.VersionTLS12:\n\t\treturn \"1.2\"\n\tcase tls.VersionTLS13:\n\t\treturn \"1.3\"\n\t}\n\n\treturn \"unknown\"\n}",
+    "funcname": "GetVersion"
+}

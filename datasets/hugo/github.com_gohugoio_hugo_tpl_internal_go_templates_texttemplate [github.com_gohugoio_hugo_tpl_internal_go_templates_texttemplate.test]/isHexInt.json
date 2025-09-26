@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 571,
+    "focalfunc": "func isHexInt(s string) bool",
+    "funcbody": "func isHexInt(s string) bool {\n\treturn len(s) > 2 && s[0] == '0' && (s[1] == 'x' || s[1] == 'X') && !strings.ContainsAny(s, \"pP\")\n}",
+    "funcname": "isHexInt"
+}

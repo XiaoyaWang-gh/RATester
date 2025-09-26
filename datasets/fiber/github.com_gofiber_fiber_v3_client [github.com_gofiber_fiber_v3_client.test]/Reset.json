@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 132,
+    "focalfunc": "func (r *Response) Reset()",
+    "funcbody": "func (r *Response) Reset() {\n\tr.client = nil\n\tr.request = nil\n\n\tfor len(r.cookie) != 0 {\n\t\tt := r.cookie[0]\n\t\tr.cookie = r.cookie[1:]\n\t\tfasthttp.ReleaseCookie(t)\n\t}\n\n\tr.RawResponse.Reset()\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/blockquotes/blockquotes.go",
+    "lineno": 41,
+    "focalfunc": "func (e *blockquotesExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (e *blockquotesExtension) Extend(m goldmark.Markdown) {\n\tm.Renderer().AddOptions(renderer.WithNodeRenderers(\n\t\tutil.Prioritized(newHTMLRenderer(), 100),\n\t))\n}",
+    "funcname": "Extend"
+}

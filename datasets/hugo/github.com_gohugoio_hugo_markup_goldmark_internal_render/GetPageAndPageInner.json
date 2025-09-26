@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 179,
+    "focalfunc": "func GetPageAndPageInner(rctx *Context) (any, any)",
+    "funcbody": "func GetPageAndPageInner(rctx *Context) (any, any) {\n\tp := rctx.DocumentContext().Document\n\tpid := rctx.PeekPid()\n\tif pid > 0 {\n\t\tif lookup := rctx.DocumentContext().DocumentLookup; lookup != nil {\n\t\t\tif v := rctx.DocumentContext().DocumentLookup(pid); v != nil {\n\t\t\t\treturn p, v\n\t\t\t}\n\t\t}\n\t}\n\treturn p, p\n}",
+    "funcname": "GetPageAndPageInner"
+}

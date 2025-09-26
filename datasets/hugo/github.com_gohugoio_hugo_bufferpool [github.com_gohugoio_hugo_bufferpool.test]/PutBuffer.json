@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/bufferpool/bufpool.go",
+    "lineno": 35,
+    "focalfunc": "func PutBuffer(buf *bytes.Buffer)",
+    "funcbody": "func PutBuffer(buf *bytes.Buffer) {\n\tbuf.Reset()\n\tbufferPool.Put(buf)\n}",
+    "funcname": "PutBuffer"
+}

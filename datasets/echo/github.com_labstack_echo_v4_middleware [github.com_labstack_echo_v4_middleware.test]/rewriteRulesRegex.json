@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/middleware.go",
+    "lineno": 37,
+    "focalfunc": "func rewriteRulesRegex(rewrite map[string]string) map[*regexp.Regexp]string",
+    "funcbody": "func rewriteRulesRegex(rewrite map[string]string) map[*regexp.Regexp]string {\n\n\trulesRegex := map[*regexp.Regexp]string{}\n\tfor k, v := range rewrite {\n\t\tk = regexp.QuoteMeta(k)\n\t\tk = strings.ReplaceAll(k, `\\*`, \"(.*?)\")\n\t\tif strings.HasPrefix(k, `\\^`) {\n\t\t\tk = strings.ReplaceAll(k, `\\^`, \"^\")\n\t\t}\n\t\tk = k + \"$\"\n\t\trulesRegex[regexp.MustCompile(k)] = v\n\t}\n\treturn rulesRegex\n}",
+    "funcname": "rewriteRulesRegex"
+}

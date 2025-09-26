@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 223,
+    "focalfunc": "func (cj *CookieJar) Release()",
+    "funcbody": "func (cj *CookieJar) Release() {\n\n\tcj.hostCookies = nil\n}",
+    "funcname": "Release"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 146,
+    "focalfunc": "func (t *Template) lookupAndEscapeTemplate(name string) (tmpl *Template, err error)",
+    "funcbody": "func (t *Template) lookupAndEscapeTemplate(name string) (tmpl *Template, err error) {\n\tt.nameSpace.mu.Lock()\n\tdefer t.nameSpace.mu.Unlock()\n\tt.nameSpace.escaped = true\n\ttmpl = t.set[name]\n\tif tmpl == nil {\n\t\treturn nil, fmt.Errorf(\"html/template: %q is undefined\", name)\n\t}\n\tif tmpl.escapeErr != nil && tmpl.escapeErr != escapeOK {\n\t\treturn nil, tmpl.escapeErr\n\t}\n\tif tmpl.text.Tree == nil || tmpl.text.Root == nil {\n\t\treturn nil, fmt.Errorf(\"html/template: %q is an incomplete template\", name)\n\t}\n\tif t.text.Lookup(name) == nil {\n\t\tpanic(\"html/template internal error: template escaping out of sync\")\n\t}\n\tif tmpl.escapeErr == nil {\n\t\terr = escapeTemplate(tmpl, tmpl.text.Root, name)\n\t}\n\treturn tmpl, err\n}",
+    "funcname": "lookupAndEscapeTemplate"
+}

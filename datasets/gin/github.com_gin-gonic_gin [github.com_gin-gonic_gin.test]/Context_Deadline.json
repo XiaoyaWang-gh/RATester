@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1247,
+    "focalfunc": "func (c *Context) Deadline() (deadline time.Time, ok bool)",
+    "funcbody": "func (c *Context) Deadline() (deadline time.Time, ok bool) {\n\tif !c.hasRequestContext() {\n\t\treturn\n\t}\n\treturn c.Request.Context().Deadline()\n}",
+    "funcname": "Deadline"
+}

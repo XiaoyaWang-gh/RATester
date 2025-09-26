@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 226,
+    "focalfunc": "func Default(opts ...OptionFunc) *Engine",
+    "funcbody": "func Default(opts ...OptionFunc) *Engine {\n\tdebugPrintWARNINGDefault()\n\tengine := New()\n\tengine.Use(Logger(), Recovery())\n\treturn engine.With(opts...)\n}",
+    "funcname": "Default"
+}

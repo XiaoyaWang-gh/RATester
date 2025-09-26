@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 277,
+    "focalfunc": "func (p *siprng) Float64() float64",
+    "funcbody": "func (p *siprng) Float64() float64\t{ return float64(p.Int63()) / (1 << 63) }",
+    "funcname": "Float64"
+}

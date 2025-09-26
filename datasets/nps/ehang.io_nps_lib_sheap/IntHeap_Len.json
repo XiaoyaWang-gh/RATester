@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/sheap/heap.go",
+    "lineno": 5,
+    "focalfunc": "func (h IntHeap) Len() int",
+    "funcbody": "func (h IntHeap) Len() int\t{ return len(h) }",
+    "funcname": "Len"
+}

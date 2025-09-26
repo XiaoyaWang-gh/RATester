@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 164,
+    "focalfunc": "func doWithGoFiles(dir string,\n\trewrite func(name string),\n\ttransform func(name, in string) string,\n)",
+    "funcbody": "func doWithGoFiles(dir string,\n\trewrite func(name string),\n\ttransform func(name, in string) string,\n) {\n\tif rewrite == nil && transform == nil {\n\t\treturn\n\t}\n\tmust(filepath.Walk(filepath.Join(forkRoot, dir), func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif info.IsDir() {\n\t\t\treturn nil\n\t\t}\n\n\t\tif !strings.HasSuffix(path, \".go\") || strings.Contains(path, \"hugo_\") {\n\t\t\treturn nil\n\t\t}\n\n\t\tfmt.Println(\"Handle\", path)\n\n\t\tif rewrite != nil {\n\t\t\trewrite(path)\n\t\t}\n\n\t\tif transform == nil {\n\t\t\treturn nil\n\t\t}\n\n\t\tdata, err := os.ReadFile(path)\n\t\tmust(err)\n\t\tf, err := os.Create(path)\n\t\tmust(err)\n\t\tdefer f.Close()\n\t\t_, err = f.WriteString(transform(path, string(data)))\n\t\tmust(err)\n\n\t\treturn nil\n\t}))\n}",
+    "funcname": "doWithGoFiles"
+}

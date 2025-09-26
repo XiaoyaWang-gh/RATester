@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/wasm.go",
+    "lineno": 25,
+    "focalfunc": "func (w WasmLogger) IsEnabled(level api.LogLevel) bool",
+    "funcbody": "func (w WasmLogger) IsEnabled(level api.LogLevel) bool {\n\treturn true\n}",
+    "funcname": "IsEnabled"
+}

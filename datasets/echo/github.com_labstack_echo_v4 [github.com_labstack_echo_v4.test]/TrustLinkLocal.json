@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 154,
+    "focalfunc": "func TrustLinkLocal(v bool) TrustOption",
+    "funcbody": "func TrustLinkLocal(v bool) TrustOption {\n\treturn func(c *ipChecker) {\n\t\tc.trustLinkLocal = v\n\t}\n}",
+    "funcname": "TrustLinkLocal"
+}

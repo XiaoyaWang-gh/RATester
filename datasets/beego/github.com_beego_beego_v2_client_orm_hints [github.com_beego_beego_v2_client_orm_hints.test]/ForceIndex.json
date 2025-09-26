@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 53,
+    "focalfunc": "func ForceIndex(indexes ...string) *Hint",
+    "funcbody": "func ForceIndex(indexes ...string) *Hint {\n\treturn NewHint(KeyForceIndex, indexes)\n}",
+    "funcname": "ForceIndex"
+}

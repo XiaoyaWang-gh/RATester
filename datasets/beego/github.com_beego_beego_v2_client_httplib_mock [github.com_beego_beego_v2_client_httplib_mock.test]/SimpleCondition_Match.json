@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 59,
+    "focalfunc": "func (sc *SimpleCondition) Match(ctx context.Context, req *httplib.BeegoHTTPRequest) bool",
+    "funcbody": "func (sc *SimpleCondition) Match(ctx context.Context, req *httplib.BeegoHTTPRequest) bool {\n\tvar res bool\n\tif len(sc.path) > 0 {\n\t\tres = sc.matchPath(ctx, req)\n\t} else if len(sc.pathReg) > 0 {\n\t\tres = sc.matchPathReg(ctx, req)\n\t} else {\n\t\treturn false\n\t}\n\treturn res &&\n\t\tsc.matchMethod(ctx, req) &&\n\t\tsc.matchQuery(ctx, req) &&\n\t\tsc.matchHeader(ctx, req) &&\n\t\tsc.matchBodyFields(ctx, req)\n}",
+    "funcname": "Match"
+}

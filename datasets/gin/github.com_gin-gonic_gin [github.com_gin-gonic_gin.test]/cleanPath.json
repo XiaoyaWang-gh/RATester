@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/path.go",
+    "lineno": 21,
+    "focalfunc": "func cleanPath(p string) string",
+    "funcbody": "func cleanPath(p string) string {\n\tconst stackBufSize = 128\n\n\tif p == \"\" {\n\t\treturn \"/\"\n\t}\n\n\tbuf := make([]byte, 0, stackBufSize)\n\n\tn := len(p)\n\n\tr := 1\n\tw := 1\n\n\tif p[0] != '/' {\n\t\tr = 0\n\n\t\tif n+1 > stackBufSize {\n\t\t\tbuf = make([]byte, n+1)\n\t\t} else {\n\t\t\tbuf = buf[:n+1]\n\t\t}\n\t\tbuf[0] = '/'\n\t}\n\n\ttrailing := n > 1 && p[n-1] == '/'\n\n\tfor r < n {\n\t\tswitch {\n\t\tcase p[r] == '/':\n\n\t\t\tr++\n\n\t\tcase p[r] == '.' && r+1 == n:\n\t\t\ttrailing = true\n\t\t\tr++\n\n\t\tcase p[r] == '.' && p[r+1] == '/':\n\n\t\t\tr += 2\n\n\t\tcase p[r] == '.' && p[r+1] == '.' && (r+2 == n || p[r+2] == '/'):\n\n\t\t\tr += 3\n\n\t\t\tif w > 1 {\n\n\t\t\t\tw--\n\n\t\t\t\tif len(buf) == 0 {\n\t\t\t\t\tfor w > 1 && p[w] != '/' {\n\t\t\t\t\t\tw--\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\tfor w > 1 && buf[w] != '/' {\n\t\t\t\t\t\tw--\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\tdefault:\n\n\t\t\tif w > 1 {\n\t\t\t\tbufApp(&buf, p, w, '/')\n\t\t\t\tw++\n\t\t\t}\n\n\t\t\tfor r < n && p[r] != '/' {\n\t\t\t\tbufApp(&buf, p, w, p[r])\n\t\t\t\tw++\n\t\t\t\tr++\n\t\t\t}\n\t\t}\n\t}\n\n\tif trailing && w > 1 {\n\t\tbufApp(&buf, p, w, '/')\n\t\tw++\n\t}\n\n\tif len(buf) == 0 {\n\t\treturn p[:w]\n\t}\n\treturn string(buf[:w])\n}",
+    "funcname": "cleanPath"
+}

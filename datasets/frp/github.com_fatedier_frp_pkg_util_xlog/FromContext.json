@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/ctx.go",
+    "lineno": 31,
+    "focalfunc": "func FromContext(ctx context.Context) (xl *Logger, ok bool)",
+    "funcbody": "func FromContext(ctx context.Context) (xl *Logger, ok bool) {\n\txl, ok = ctx.Value(xlogKey).(*Logger)\n\treturn\n}",
+    "funcname": "FromContext"
+}

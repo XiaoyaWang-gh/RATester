@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 87,
+    "focalfunc": "func GetDottedRelativePath(inPath string) string",
+    "funcbody": "func GetDottedRelativePath(inPath string) string {\n\tinPath = path.Clean(filepath.ToSlash(inPath))\n\n\tif inPath == \".\" {\n\t\treturn \"./\"\n\t}\n\n\tif !isFileRe.MatchString(inPath) && !strings.HasSuffix(inPath, \"/\") {\n\t\tinPath += \"/\"\n\t}\n\n\tif !strings.HasPrefix(inPath, \"/\") {\n\t\tinPath = \"/\" + inPath\n\t}\n\n\tdir, _ := path.Split(inPath)\n\n\tsectionCount := strings.Count(dir, \"/\")\n\n\tif sectionCount == 0 || dir == \"/\" {\n\t\treturn \"./\"\n\t}\n\n\tvar dottedPath string\n\n\tfor i := 1; i < sectionCount; i++ {\n\t\tdottedPath += \"../\"\n\t}\n\n\treturn dottedPath\n}",
+    "funcname": "GetDottedRelativePath"
+}

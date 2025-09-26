@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 329,
+    "focalfunc": "func (r *rootCommand) newDepsConfig(conf *commonConfig) deps.DepsCfg",
+    "funcbody": "func (r *rootCommand) newDepsConfig(conf *commonConfig) deps.DepsCfg {\n\treturn deps.DepsCfg{Configs: conf.configs, Fs: conf.fs, LogOut: r.logger.Out(), LogLevel: r.logger.Level(), ChangesFromBuild: r.changesFromBuild}\n}",
+    "funcname": "newDepsConfig"
+}

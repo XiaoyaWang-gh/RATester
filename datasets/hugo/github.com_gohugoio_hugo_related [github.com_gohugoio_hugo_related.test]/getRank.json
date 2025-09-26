@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 300,
+    "focalfunc": "func getRank(doc Document, weight int) *rank",
+    "funcbody": "func getRank(doc Document, weight int) *rank {\n\tr := rankPool.Get().(*rank)\n\tr.Doc = doc\n\tr.Weight = weight\n\tr.Matches = 1\n\treturn r\n}",
+    "funcname": "getRank"
+}

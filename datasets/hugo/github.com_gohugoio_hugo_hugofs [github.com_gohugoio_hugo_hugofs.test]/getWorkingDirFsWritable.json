@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 134,
+    "focalfunc": "func getWorkingDirFsWritable(base afero.Fs, workingDir string) afero.Fs",
+    "funcbody": "func getWorkingDirFsWritable(base afero.Fs, workingDir string) afero.Fs {\n\tif workingDir == \"\" {\n\t\treturn base\n\t}\n\treturn NewBasePathFs(base, workingDir)\n}",
+    "funcname": "getWorkingDirFsWritable"
+}

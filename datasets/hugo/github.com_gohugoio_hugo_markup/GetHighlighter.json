@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup.go",
+    "lineno": 127,
+    "focalfunc": "func (r *converterRegistry) GetHighlighter() highlight.Highlighter",
+    "funcbody": "func (r *converterRegistry) GetHighlighter() highlight.Highlighter {\n\treturn r.config.Highlighter\n}",
+    "funcname": "GetHighlighter"
+}

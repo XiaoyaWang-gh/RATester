@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 777,
+    "focalfunc": "func (p *ControllerRegister) addAutoPrefixMethod(prefix, controllerName, methodName string, ctrl reflect.Type)",
+    "funcbody": "func (p *ControllerRegister) addAutoPrefixMethod(prefix, controllerName, methodName string, ctrl reflect.Type) {\n\tpattern := path.Join(prefix, strings.ToLower(controllerName), strings.ToLower(methodName), \"*\")\n\tpatternInit := path.Join(prefix, controllerName, methodName, \"*\")\n\tpatternFix := path.Join(prefix, strings.ToLower(controllerName), strings.ToLower(methodName))\n\tpatternFixInit := path.Join(prefix, controllerName, methodName)\n\n\troute := p.createBeegoRouter(ctrl, pattern)\n\troute.methods = map[string]string{\"*\": methodName}\n\tfor m := range HTTPMETHOD {\n\n\t\tp.addToRouter(m, pattern, route)\n\n\t\tif p.cfg.RouterCaseSensitive {\n\t\t\tp.addToRouter(m, patternInit, route)\n\t\t\tp.addToRouter(m, patternFix, route)\n\t\t\tp.addToRouter(m, patternFixInit, route)\n\t\t}\n\t}\n}",
+    "funcname": "addAutoPrefixMethod"
+}

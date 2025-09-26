@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 560,
+    "focalfunc": "func (p *Path) identifierIndex(i int) int",
+    "funcbody": "func (p *Path) identifierIndex(i int) int {\n\tif i < 0 || i >= len(p.identifiers) {\n\t\treturn -1\n\t}\n\treturn i\n}",
+    "funcname": "identifierIndex"
+}

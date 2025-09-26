@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 182,
+    "focalfunc": "func (m Type) IsText() bool",
+    "funcbody": "func (m Type) IsText() bool {\n\tif m.MainType == \"text\" {\n\t\treturn true\n\t}\n\tswitch m.SubType {\n\tcase \"javascript\", \"json\", \"rss\", \"xml\", \"svg\", \"toml\", \"yml\", \"yaml\":\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "IsText"
+}

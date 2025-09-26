@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 299,
+    "focalfunc": "func decorateFileInfo(fi FileNameIsDir, opener func() (afero.File, error), filename string, inMeta *FileMeta) FileMetaInfo",
+    "funcbody": "func decorateFileInfo(fi FileNameIsDir, opener func() (afero.File, error), filename string, inMeta *FileMeta) FileMetaInfo {\n\tvar meta *FileMeta\n\tvar fim FileMetaInfo\n\n\tvar ok bool\n\tif fim, ok = fi.(FileMetaInfo); ok {\n\t\tmeta = fim.Meta()\n\t} else {\n\t\tmeta = NewFileMeta()\n\t\tfim = NewFileMetaInfo(fi, meta)\n\t}\n\n\tif opener != nil {\n\t\tmeta.OpenFunc = opener\n\t}\n\n\tnfilename := normalizeFilename(filename)\n\tif nfilename != \"\" {\n\t\tmeta.Filename = nfilename\n\t}\n\n\tmeta.Merge(inMeta)\n\n\treturn fim\n}",
+    "funcname": "decorateFileInfo"
+}

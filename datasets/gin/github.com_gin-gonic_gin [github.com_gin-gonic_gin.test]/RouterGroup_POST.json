@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 111,
+    "focalfunc": "func (group *RouterGroup) POST(relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) POST(relativePath string, handlers ...HandlerFunc) IRoutes {\n\treturn group.handle(http.MethodPost, relativePath, handlers)\n}",
+    "funcname": "POST"
+}

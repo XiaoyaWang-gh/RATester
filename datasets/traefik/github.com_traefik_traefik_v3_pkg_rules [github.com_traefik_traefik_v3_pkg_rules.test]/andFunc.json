@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 58,
+    "focalfunc": "func andFunc(left, right TreeBuilder) TreeBuilder",
+    "funcbody": "func andFunc(left, right TreeBuilder) TreeBuilder {\n\treturn func() *Tree {\n\t\treturn &Tree{\n\t\t\tMatcher:\tand,\n\t\t\tRuleLeft:\tleft(),\n\t\t\tRuleRight:\tright(),\n\t\t}\n\t}\n}",
+    "funcname": "andFunc"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 379,
+    "focalfunc": "func (c *context) QueryParams() url.Values",
+    "funcbody": "func (c *context) QueryParams() url.Values {\n\tif c.query == nil {\n\t\tc.query = c.request.URL.Query()\n\t}\n\treturn c.query\n}",
+    "funcname": "QueryParams"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/tool/utils.go",
+    "lineno": 33,
+    "focalfunc": "func TestServerPort(p int, m string) (b bool)",
+    "funcbody": "func TestServerPort(p int, m string) (b bool) {\n\tif m == \"p2p\" || m == \"secret\" {\n\t\treturn true\n\t}\n\tif p > 65535 || p < 0 {\n\t\treturn false\n\t}\n\tif len(ports) != 0 {\n\t\tif !common.InIntArr(ports, p) {\n\t\t\treturn false\n\t\t}\n\t}\n\tif m == \"udp\" {\n\t\tb = common.TestUdpPort(p)\n\t} else {\n\t\tb = common.TestTcpPort(p)\n\t}\n\treturn\n}",
+    "funcname": "TestServerPort"
+}

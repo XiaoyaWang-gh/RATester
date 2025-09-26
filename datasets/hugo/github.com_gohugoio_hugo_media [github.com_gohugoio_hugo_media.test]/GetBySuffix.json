@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 306,
+    "focalfunc": "func (t Types) GetBySuffix(suffix string) (tp Type, si SuffixInfo, found bool)",
+    "funcbody": "func (t Types) GetBySuffix(suffix string) (tp Type, si SuffixInfo, found bool) {\n\tsuffix = strings.ToLower(suffix)\n\tfor _, tt := range t {\n\t\tif tt.hasSuffix(suffix) {\n\t\t\tif found {\n\n\t\t\t\tfound = false\n\t\t\t\treturn\n\t\t\t}\n\t\t\ttp = tt\n\t\t\tsi = SuffixInfo{\n\t\t\t\tFullSuffix:\ttt.Delimiter + suffix,\n\t\t\t\tSuffix:\t\tsuffix,\n\t\t\t}\n\t\t\tfound = true\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "GetBySuffix"
+}

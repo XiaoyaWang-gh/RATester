@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/random_expired_cache.go",
+    "lineno": 60,
+    "focalfunc": "func defaultExpiredFunc() func() time.Duration",
+    "funcbody": "func defaultExpiredFunc() func() time.Duration {\n\tconst size = 5\n\tvar randTimes [size]time.Duration\n\tfor i := range randTimes {\n\t\trandTimes[i] = time.Duration(i+3) * time.Second\n\t}\n\n\tfor i := range randTimes {\n\t\tn := rand.Intn(size)\n\t\trandTimes[i], randTimes[n] = randTimes[n], randTimes[i]\n\t}\n\tvar i uint64\n\treturn func() time.Duration {\n\t\treturn randTimes[atomic.AddUint64(&i, 1)%size]\n\t}\n}",
+    "funcname": "defaultExpiredFunc"
+}

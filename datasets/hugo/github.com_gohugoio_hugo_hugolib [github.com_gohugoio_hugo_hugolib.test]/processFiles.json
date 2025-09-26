@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 1171,
+    "focalfunc": "func (s *HugoSites) processFiles(ctx context.Context, l logg.LevelLogger, buildConfig *BuildCfg, filenames ...pathChange) error",
+    "funcbody": "func (s *HugoSites) processFiles(ctx context.Context, l logg.LevelLogger, buildConfig *BuildCfg, filenames ...pathChange) error {\n\tif s.Deps == nil {\n\t\tpanic(\"nil deps on site\")\n\t}\n\n\tsourceSpec := source.NewSourceSpec(s.PathSpec, buildConfig.ContentInclusionFilter, s.BaseFs.Content.Fs)\n\n\tpageMap := s.Sites[0].pageMap\n\n\tc := newPagesCollector(ctx, s.h, sourceSpec, s.Log, l, pageMap, buildConfig, filenames)\n\n\tif err := c.Collect(); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "processFiles"
+}

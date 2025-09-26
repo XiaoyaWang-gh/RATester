@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 363,
+    "focalfunc": "func (h *Handler) keepAccessLog(statusCode, retryAttempts int, duration time.Duration) bool",
+    "funcbody": "func (h *Handler) keepAccessLog(statusCode, retryAttempts int, duration time.Duration) bool {\n\tif h.config.Filters == nil {\n\n\t\treturn true\n\t}\n\n\tif len(h.httpCodeRanges) == 0 && !h.config.Filters.RetryAttempts && h.config.Filters.MinDuration == 0 {\n\n\t\treturn true\n\t}\n\n\tif h.httpCodeRanges.Contains(statusCode) {\n\t\treturn true\n\t}\n\n\tif h.config.Filters.RetryAttempts && retryAttempts > 0 {\n\t\treturn true\n\t}\n\n\tif h.config.Filters.MinDuration > 0 && (ptypes.Duration(duration) > h.config.Filters.MinDuration) {\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "keepAccessLog"
+}

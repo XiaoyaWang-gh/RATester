@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 242,
+    "focalfunc": "func (engine *Engine) allocateContext(maxParams uint16) *Context",
+    "funcbody": "func (engine *Engine) allocateContext(maxParams uint16) *Context {\n\tv := make(Params, 0, maxParams)\n\tskippedNodes := make([]skippedNode, 0, engine.maxSections)\n\treturn &Context{engine: engine, params: &v, skippedNodes: &skippedNodes}\n}",
+    "funcname": "allocateContext"
+}

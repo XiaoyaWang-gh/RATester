@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1038,
+    "focalfunc": "func (c *Context) PureJSON(code int, obj any)",
+    "funcbody": "func (c *Context) PureJSON(code int, obj any) {\n\tc.Render(code, render.PureJSON{Data: obj})\n}",
+    "funcname": "PureJSON"
+}

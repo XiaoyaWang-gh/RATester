@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 62,
+    "focalfunc": "func (c HandlersChain) Last() HandlerFunc",
+    "funcbody": "func (c HandlersChain) Last() HandlerFunc {\n\tif length := len(c); length > 0 {\n\t\treturn c[length-1]\n\t}\n\treturn nil\n}",
+    "funcname": "Last"
+}

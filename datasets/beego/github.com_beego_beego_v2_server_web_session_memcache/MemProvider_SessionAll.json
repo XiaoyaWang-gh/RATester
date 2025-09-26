@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 243,
+    "focalfunc": "func (rp *MemProvider) SessionAll(context.Context) int",
+    "funcbody": "func (rp *MemProvider) SessionAll(context.Context) int {\n\treturn 0\n}",
+    "funcname": "SessionAll"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/timeout.go",
+    "lineno": 106,
+    "focalfunc": "func (config TimeoutConfig) ToMiddleware() (echo.MiddlewareFunc, error)",
+    "funcbody": "func (config TimeoutConfig) ToMiddleware() (echo.MiddlewareFunc, error) {\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultTimeoutConfig.Skipper\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) || config.Timeout == 0 {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\terrChan := make(chan error, 1)\n\t\t\thandlerWrapper := echoHandlerFuncWrapper{\n\t\t\t\twriter:\t\t&ignorableWriter{ResponseWriter: c.Response().Writer},\n\t\t\t\tctx:\t\tc,\n\t\t\t\thandler:\tnext,\n\t\t\t\terrChan:\terrChan,\n\t\t\t\terrHandler:\tconfig.OnTimeoutRouteErrorHandler,\n\t\t\t}\n\t\t\thandler := http.TimeoutHandler(handlerWrapper, config.Timeout, config.ErrorMessage)\n\t\t\thandler.ServeHTTP(handlerWrapper.writer, c.Request())\n\n\t\t\tselect {\n\t\t\tcase err := <-errChan:\n\t\t\t\treturn err\n\t\t\tdefault:\n\t\t\t\treturn nil\n\t\t\t}\n\t\t}\n\t}, nil\n}",
+    "funcname": "ToMiddleware"
+}

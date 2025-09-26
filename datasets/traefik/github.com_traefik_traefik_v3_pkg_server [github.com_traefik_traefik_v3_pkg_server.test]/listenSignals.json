@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_signals.go",
+    "lineno": 18,
+    "focalfunc": "func (s *Server) listenSignals(ctx context.Context)",
+    "funcbody": "func (s *Server) listenSignals(ctx context.Context) {\n\tfor {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\t\tcase sig := <-s.signals:\n\t\t\tif sig == syscall.SIGUSR1 {\n\t\t\t\tlog.Info().Msgf(\"Closing and re-opening log files for rotation: %+v\", sig)\n\n\t\t\t\tif err := s.observabilityMgr.RotateAccessLogs(); err != nil {\n\t\t\t\t\tlog.Error().Err(err).Msg(\"Error rotating access log\")\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "listenSignals"
+}

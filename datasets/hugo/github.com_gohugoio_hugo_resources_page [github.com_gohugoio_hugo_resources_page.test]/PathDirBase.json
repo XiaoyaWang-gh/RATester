@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 398,
+    "focalfunc": "func (p *pagePathBuilder) PathDirBase() string",
+    "funcbody": "func (p *pagePathBuilder) PathDirBase() string {\n\tif p.noSubResources {\n\t\treturn \"\"\n\t}\n\n\tdir := p.Path(0)\n\tisIndex := strings.HasPrefix(p.Last(), p.d.Type.BaseName+\".\")\n\n\tif isIndex {\n\t\tdir = paths.Dir(dir)\n\t} else {\n\t\tdir = strings.TrimSuffix(dir, p.fullSuffix)\n\t}\n\n\tif dir == \"/\" {\n\t\tdir = \"\"\n\t}\n\n\treturn dir\n}",
+    "funcname": "PathDirBase"
+}

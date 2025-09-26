@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 32,
+    "focalfunc": "func NewTracing(conf *static.Tracing) (*Tracer, io.Closer, error)",
+    "funcbody": "func NewTracing(conf *static.Tracing) (*Tracer, io.Closer, error) {\n\tvar backend Backend\n\n\tif conf.OTLP != nil {\n\t\tbackend = conf.OTLP\n\t}\n\n\tif backend == nil {\n\t\tlog.Debug().Msg(\"Could not initialize tracing, using OpenTelemetry by default\")\n\t\tdefaultBackend := &opentelemetry.Config{}\n\t\tbackend = defaultBackend\n\t}\n\n\totel.SetTextMapPropagator(autoprop.NewTextMapPropagator())\n\n\ttr, closer, err := backend.Setup(conf.ServiceName, conf.SampleRate, conf.GlobalAttributes)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\n\treturn NewTracer(tr, conf.CapturedRequestHeaders, conf.CapturedResponseHeaders, conf.SafeQueryParams), closer, nil\n}",
+    "funcname": "NewTracing"
+}

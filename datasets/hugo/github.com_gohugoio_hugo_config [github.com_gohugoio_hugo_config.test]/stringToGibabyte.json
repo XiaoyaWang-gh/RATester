@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/env.go",
+    "lineno": 65,
+    "focalfunc": "func stringToGibabyte(f string) uint64",
+    "funcbody": "func stringToGibabyte(f string) uint64 {\n\tif v, err := strconv.ParseFloat(f, 32); err == nil && v > 0 {\n\t\treturn uint64(v * gigabyte)\n\t}\n\treturn 0\n}",
+    "funcname": "stringToGibabyte"
+}

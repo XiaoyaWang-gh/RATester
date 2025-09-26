@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 830,
+    "focalfunc": "func (f *rootMappingDir) Stat() (iofs.FileInfo, error)",
+    "funcbody": "func (f *rootMappingDir) Stat() (iofs.FileInfo, error) {\n\treturn nil, errIsDir\n}",
+    "funcname": "Stat"
+}

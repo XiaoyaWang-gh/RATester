@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 55,
+    "focalfunc": "func NewLanguage(lang, defaultContentLanguage, timeZone string, languageConfig LanguageConfig) (*Language, error)",
+    "funcbody": "func NewLanguage(lang, defaultContentLanguage, timeZone string, languageConfig LanguageConfig) (*Language, error) {\n\ttranslator := translators.GetTranslator(lang)\n\tif translator == nil {\n\t\ttranslator = translators.GetTranslator(defaultContentLanguage)\n\t\tif translator == nil {\n\t\t\ttranslator = translators.GetTranslator(\"en\")\n\t\t}\n\t}\n\n\tvar coll1, coll2 *Collator\n\ttag, err := language.Parse(lang)\n\tif err == nil {\n\t\tcoll1 = &Collator{\n\t\t\tc: collate.New(tag),\n\t\t}\n\t\tcoll2 = &Collator{\n\t\t\tc: collate.New(tag),\n\t\t}\n\t} else {\n\t\tcoll1 = &Collator{\n\t\t\tc: collate.New(language.English),\n\t\t}\n\t\tcoll2 = &Collator{\n\t\t\tc: collate.New(language.English),\n\t\t}\n\t}\n\n\tl := &Language{\n\t\tLang:\t\tlang,\n\t\tLanguageConfig:\tlanguageConfig,\n\t\ttranslator:\ttranslator,\n\t\ttimeFormatter:\thtime.NewTimeFormatter(translator),\n\t\ttag:\t\ttag,\n\t\tcollator1:\tcoll1,\n\t\tcollator2:\tcoll2,\n\t}\n\n\treturn l, l.loadLocation(timeZone)\n}",
+    "funcname": "NewLanguage"
+}

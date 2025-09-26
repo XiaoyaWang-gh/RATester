@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/pagemeta.go",
+    "lineno": 67,
+    "focalfunc": "func (b BuildConfig) IsZero() bool",
+    "funcbody": "func (b BuildConfig) IsZero() bool {\n\treturn !b.set\n}",
+    "funcname": "IsZero"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 84,
+    "focalfunc": "func (c ConfigLanguage) IsMultilingual() bool",
+    "funcbody": "func (c ConfigLanguage) IsMultilingual() bool {\n\treturn len(c.m.Languages) > 1\n}",
+    "funcname": "IsMultilingual"
+}

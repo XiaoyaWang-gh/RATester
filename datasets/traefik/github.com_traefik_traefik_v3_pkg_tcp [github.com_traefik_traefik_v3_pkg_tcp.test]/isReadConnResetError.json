@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/proxy_unix.go",
+    "lineno": 13,
+    "focalfunc": "func isReadConnResetError(err error) bool",
+    "funcbody": "func isReadConnResetError(err error) bool {\n\tvar oerr *net.OpError\n\treturn errors.As(err, &oerr) && oerr.Op == \"read\" && errors.Is(err, syscall.ECONNRESET)\n}",
+    "funcname": "isReadConnResetError"
+}

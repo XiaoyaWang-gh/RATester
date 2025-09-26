@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 632,
+    "focalfunc": "func (c *Controller) GetFile(key string) (multipart.File, *multipart.FileHeader, error)",
+    "funcbody": "func (c *Controller) GetFile(key string) (multipart.File, *multipart.FileHeader, error) {\n\treturn c.Ctx.Request.FormFile(key)\n}",
+    "funcname": "GetFile"
+}

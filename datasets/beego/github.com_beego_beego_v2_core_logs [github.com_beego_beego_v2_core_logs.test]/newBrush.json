@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/console.go",
+    "lineno": 30,
+    "focalfunc": "func newBrush(color string) brush",
+    "funcbody": "func newBrush(color string) brush {\n\tpre := \"\\033[\"\n\treset := \"\\033[0m\"\n\treturn func(text string) string {\n\t\treturn pre + color + \"m\" + text + reset\n\t}\n}",
+    "funcname": "newBrush"
+}

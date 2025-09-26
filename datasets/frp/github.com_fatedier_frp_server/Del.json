@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 72,
+    "focalfunc": "func (cm *ControlManager) Del(runID string, ctl *Control)",
+    "funcbody": "func (cm *ControlManager) Del(runID string, ctl *Control) {\n\tcm.mu.Lock()\n\tdefer cm.mu.Unlock()\n\tif c, ok := cm.ctlsByRunID[runID]; ok && c == ctl {\n\t\tdelete(cm.ctlsByRunID, runID)\n\t}\n}",
+    "funcname": "Del"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 219,
+    "focalfunc": "func splitPages(pages Pages, size int) []paginatedElement",
+    "funcbody": "func splitPages(pages Pages, size int) []paginatedElement {\n\tvar split []paginatedElement\n\tfor low, j := 0, len(pages); low < j; low += size {\n\t\thigh := int(math.Min(float64(low+size), float64(len(pages))))\n\t\tsplit = append(split, pages[low:high])\n\t}\n\n\treturn split\n}",
+    "funcname": "splitPages"
+}

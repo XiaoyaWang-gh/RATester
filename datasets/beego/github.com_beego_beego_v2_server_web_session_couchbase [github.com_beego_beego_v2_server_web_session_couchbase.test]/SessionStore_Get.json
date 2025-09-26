@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 76,
+    "focalfunc": "func (cs *SessionStore) Get(ctx context.Context, key interface{}) interface{}",
+    "funcbody": "func (cs *SessionStore) Get(ctx context.Context, key interface{}) interface{} {\n\tcs.lock.RLock()\n\tdefer cs.lock.RUnlock()\n\tif v, ok := cs.values[key]; ok {\n\t\treturn v\n\t}\n\treturn nil\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/terminal/colors.go",
+    "lineno": 68,
+    "focalfunc": "func colorize(s, color string) string",
+    "funcbody": "func colorize(s, color string) string {\n\ts = fmt.Sprintf(color, doublePercent(s))\n\treturn singlePercent(s)\n}",
+    "funcname": "colorize"
+}

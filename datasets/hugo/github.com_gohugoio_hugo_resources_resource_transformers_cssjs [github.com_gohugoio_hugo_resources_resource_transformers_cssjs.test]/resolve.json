@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/inline_imports.go",
+    "lineno": 160,
+    "focalfunc": "func (imp *importResolver) resolve() (io.Reader, error)",
+    "funcbody": "func (imp *importResolver) resolve() (io.Reader, error) {\n\tcontent, err := io.ReadAll(imp.r)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tcontents := string(content)\n\n\t_, newContent, err := imp.importRecursive(0, contents, imp.inPath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn strings.NewReader(newContent), nil\n}",
+    "funcname": "resolve"
+}

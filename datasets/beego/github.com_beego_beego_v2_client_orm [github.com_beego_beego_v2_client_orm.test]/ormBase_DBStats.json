@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 515,
+    "focalfunc": "func (o *ormBase) DBStats() *sql.DBStats",
+    "funcbody": "func (o *ormBase) DBStats() *sql.DBStats {\n\tif o.alias != nil && o.alias.DB != nil {\n\t\tstats := o.alias.DB.DB.Stats()\n\t\treturn &stats\n\t}\n\treturn nil\n}",
+    "funcname": "DBStats"
+}

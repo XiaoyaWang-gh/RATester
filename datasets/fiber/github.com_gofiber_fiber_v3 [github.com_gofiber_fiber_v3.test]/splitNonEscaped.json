@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 483,
+    "focalfunc": "func splitNonEscaped(s, sep string) []string",
+    "funcbody": "func splitNonEscaped(s, sep string) []string {\n\tvar result []string\n\ti := findNextNonEscapedCharsetPosition(s, []byte(sep))\n\n\tfor i > -1 {\n\t\tresult = append(result, s[:i])\n\t\ts = s[i+len(sep):]\n\t\ti = findNextNonEscapedCharsetPosition(s, []byte(sep))\n\t}\n\n\treturn append(result, s)\n}",
+    "funcname": "splitNonEscaped"
+}

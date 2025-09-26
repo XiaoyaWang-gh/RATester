@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 676,
+    "focalfunc": "func isAlphaNumeric(r rune) bool",
+    "funcbody": "func isAlphaNumeric(r rune) bool {\n\treturn r == '_' || unicode.IsLetter(r) || unicode.IsDigit(r)\n}",
+    "funcname": "isAlphaNumeric"
+}

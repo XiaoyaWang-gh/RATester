@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 368,
+    "focalfunc": "func (r *responseWriter) close() error",
+    "funcbody": "func (r *responseWriter) close() error {\n\tif r.hijacked {\n\t\treturn nil\n\t}\n\n\tif !r.headersSent {\n\t\tr.rw.WriteHeader(r.statusCode)\n\t\tr.headersSent = true\n\t}\n\n\tif !r.seenData {\n\t\treturn nil\n\t}\n\n\tif r.compressionDisabled {\n\t\treturn nil\n\t}\n\n\tif len(r.buf) == 0 {\n\n\t\treturn r.compressionWriter.Close()\n\t}\n\n\tif !r.compressionStarted {\n\t\tn, err := r.rw.Write(r.buf)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif n < len(r.buf) {\n\t\t\treturn io.ErrShortWrite\n\t\t}\n\t\treturn nil\n\t}\n\n\tn, err := r.compressionWriter.Write(r.buf)\n\tif err != nil {\n\t\tr.compressionWriter.Close()\n\t\treturn err\n\t}\n\tif n < len(r.buf) {\n\t\tr.compressionWriter.Close()\n\t\treturn io.ErrShortWrite\n\t}\n\treturn r.compressionWriter.Close()\n}",
+    "funcname": "close"
+}

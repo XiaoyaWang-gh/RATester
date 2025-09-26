@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/helper.go",
+    "lineno": 62,
+    "focalfunc": "func parseFiles(t *Template, readFile func(string) (string, []byte, error), filenames ...string) (*Template, error)",
+    "funcbody": "func parseFiles(t *Template, readFile func(string) (string, []byte, error), filenames ...string) (*Template, error) {\n\tif len(filenames) == 0 {\n\n\t\treturn nil, fmt.Errorf(\"template: no files named in call to ParseFiles\")\n\t}\n\tfor _, filename := range filenames {\n\t\tname, b, err := readFile(filename)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\ts := string(b)\n\t\t// First template becomes return value if not already defined,\n\t\t// and we use that one for subsequent New calls to associate\n\t\t// all the templates together. Also, if this file has the same name\n\t\t// as t, this file becomes the contents of t, so\n\t\t//  t, err := New(name).Funcs(xxx).ParseFiles(name)\n\t\t// works. Otherwise we create a new template associated with t.\n\t\tvar tmpl *Template\n\t\tif t == nil {\n\t\t\tt = New(name)\n\t\t}\n\t\tif name == t.Name() {\n\t\t\ttmpl = t\n\t\t} else {\n\t\t\ttmpl = t.New(name)\n\t\t}\n\t\t_, err = tmpl.Parse(s)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn t, nil\n}",
+    "funcname": "parseFiles"
+}

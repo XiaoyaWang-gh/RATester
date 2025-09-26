@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/earlydata/config.go",
+    "lineno": 49,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.IsEarlyData == nil {\n\t\tcfg.IsEarlyData = ConfigDefault.IsEarlyData\n\t}\n\n\tif cfg.AllowEarlyData == nil {\n\t\tcfg.AllowEarlyData = ConfigDefault.AllowEarlyData\n\t}\n\n\tif cfg.Error == nil {\n\t\tcfg.Error = ConfigDefault.Error\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

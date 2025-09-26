@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pprof.go",
+    "lineno": 24,
+    "focalfunc": "func runPProf(ipPort string)",
+    "funcbody": "func runPProf(ipPort string) {\n\tgo func() {\n\t\t_ = http.ListenAndServe(ipPort, nil)\n\t}()\n\tlogs.Info(\"PProf debug listen on\", ipPort)\n}",
+    "funcname": "runPProf"
+}

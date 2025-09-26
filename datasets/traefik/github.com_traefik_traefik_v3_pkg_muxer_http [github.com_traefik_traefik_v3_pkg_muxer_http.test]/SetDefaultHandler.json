@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 64,
+    "focalfunc": "func (m *Muxer) SetDefaultHandler(handler http.Handler)",
+    "funcbody": "func (m *Muxer) SetDefaultHandler(handler http.Handler) {\n\tm.defaultHandler = handler\n}",
+    "funcname": "SetDefaultHandler"
+}

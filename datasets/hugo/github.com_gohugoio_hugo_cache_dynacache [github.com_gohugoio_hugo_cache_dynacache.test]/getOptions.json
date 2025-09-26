@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 573,
+    "focalfunc": "func (p *Partition[K, V]) getOptions() OptionsPartition",
+    "funcbody": "func (p *Partition[K, V]) getOptions() OptionsPartition {\n\treturn p.opts\n}",
+    "funcname": "getOptions"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/discovery.go",
+    "lineno": 96,
+    "focalfunc": "func (c *discoverConn) readLoop()",
+    "funcbody": "func (c *discoverConn) readLoop() {\n\tfor {\n\t\tbuf := make([]byte, 1024)\n\t\tn, addr, err := c.conn.ReadFromUDP(buf)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tbuf = buf[:n]\n\n\t\tc.messageChan <- &Message{\n\t\t\tBody:\tbuf,\n\t\t\tAddr:\taddr.String(),\n\t\t}\n\t}\n}",
+    "funcname": "readLoop"
+}

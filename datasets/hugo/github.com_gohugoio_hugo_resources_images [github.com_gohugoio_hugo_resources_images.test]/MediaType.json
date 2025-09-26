@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 393,
+    "focalfunc": "func (f Format) MediaType() media.Type",
+    "funcbody": "func (f Format) MediaType() media.Type {\n\tswitch f {\n\tcase JPEG:\n\t\treturn media.Builtin.JPEGType\n\tcase PNG:\n\t\treturn media.Builtin.PNGType\n\tcase GIF:\n\t\treturn media.Builtin.GIFType\n\tcase TIFF:\n\t\treturn media.Builtin.TIFFType\n\tcase BMP:\n\t\treturn media.Builtin.BMPType\n\tcase WEBP:\n\t\treturn media.Builtin.WEBPType\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"%d is not a valid image format\", f))\n\t}\n}",
+    "funcname": "MediaType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 191,
+    "focalfunc": "func (*BaseConfiger) Sub(string) (Configer, error)",
+    "funcbody": "func (*BaseConfiger) Sub(string) (Configer, error) {\n\treturn nil, errors.New(\"unsupported operation\")\n}",
+    "funcname": "Sub"
+}

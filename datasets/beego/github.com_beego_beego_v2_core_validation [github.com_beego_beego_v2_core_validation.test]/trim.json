@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 237,
+    "focalfunc": "func trim(name, key string, s []string) (ts []interface{}, err error)",
+    "funcbody": "func trim(name, key string, s []string) (ts []interface{}, err error) {\n\tts = make([]interface{}, len(s), len(s)+1)\n\tfn, ok := funcs[name]\n\tif !ok {\n\t\terr = fmt.Errorf(\"doesn't exists %s valid function\", name)\n\t\treturn\n\t}\n\tfor i := 0; i < len(s); i++ {\n\t\tvar param interface{}\n\n\t\tif param, err = parseParam(fn.Type().In(i+2), strings.TrimSpace(s[i])); err != nil {\n\t\t\treturn\n\t\t}\n\t\tts[i] = param\n\t}\n\tts = append(ts, key)\n\treturn\n}",
+    "funcname": "trim"
+}

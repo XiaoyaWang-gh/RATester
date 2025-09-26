@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 730,
+    "focalfunc": "func applyOrdering(ordering []*regexp.Regexp, uploads []*fileToUpload) [][]*fileToUpload",
+    "funcbody": "func applyOrdering(ordering []*regexp.Regexp, uploads []*fileToUpload) [][]*fileToUpload {\n\n\tsort.Slice(uploads, func(i, j int) bool { return uploads[i].Local.SlashPath < uploads[j].Local.SlashPath })\n\n\tretval := make([][]*fileToUpload, len(ordering)+1)\n\tfor _, u := range uploads {\n\t\tmatched := false\n\t\tfor i, re := range ordering {\n\t\t\tif re.MatchString(u.Local.SlashPath) {\n\t\t\t\tretval[i] = append(retval[i], u)\n\t\t\t\tmatched = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !matched {\n\t\t\tretval[len(ordering)] = append(retval[len(ordering)], u)\n\t\t}\n\t}\n\treturn retval\n}",
+    "funcname": "applyOrdering"
+}

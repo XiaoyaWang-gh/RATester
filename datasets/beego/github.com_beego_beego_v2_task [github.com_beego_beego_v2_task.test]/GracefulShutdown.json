@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 484,
+    "focalfunc": "func GracefulShutdown() <-chan struct{}",
+    "funcbody": "func GracefulShutdown() <-chan struct{} {\n\treturn globalTaskManager.GracefulShutdown()\n}",
+    "funcname": "GracefulShutdown"
+}

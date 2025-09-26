@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/templatefuncsRegistry.go",
+    "lineno": 115,
+    "focalfunc": "func methodToName(m any) string",
+    "funcbody": "func methodToName(m any) string {\n\tname := runtime.FuncForPC(reflect.ValueOf(m).Pointer()).Name()\n\tname = filepath.Ext(name)\n\tname = strings.TrimPrefix(name, \".\")\n\tname = strings.TrimSuffix(name, \"-fm\")\n\treturn name\n}",
+    "funcname": "methodToName"
+}

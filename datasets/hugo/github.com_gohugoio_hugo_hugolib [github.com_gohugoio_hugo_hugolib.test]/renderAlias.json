@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/alias.go",
+    "lineno": 49,
+    "focalfunc": "func (a aliasHandler) renderAlias(permalink string, p page.Page) (io.Reader, error)",
+    "funcbody": "func (a aliasHandler) renderAlias(permalink string, p page.Page) (io.Reader, error) {\n\tvar templ tpl.Template\n\tvar found bool\n\n\ttempl, found = a.t.Lookup(\"alias.html\")\n\tif !found {\n\n\t\ttempl, found = a.t.Lookup(\"_internal/alias.html\")\n\t\tif !found {\n\t\t\treturn nil, errors.New(\"no alias template found\")\n\t\t}\n\t}\n\n\tdata := aliasPage{\n\t\tpermalink,\n\t\tp,\n\t}\n\n\tctx := tpl.Context.Page.Set(context.Background(), p)\n\n\tbuffer := new(bytes.Buffer)\n\terr := a.t.ExecuteWithContext(ctx, templ, buffer, data)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn buffer, nil\n}",
+    "funcname": "renderAlias"
+}

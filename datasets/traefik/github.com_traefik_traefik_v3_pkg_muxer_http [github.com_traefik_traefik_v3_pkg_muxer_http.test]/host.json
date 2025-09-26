@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 71,
+    "focalfunc": "func host(tree *matchersTree, hosts ...string) error",
+    "funcbody": "func host(tree *matchersTree, hosts ...string) error {\n\thost := hosts[0]\n\n\tif !IsASCII(host) {\n\t\treturn fmt.Errorf(\"invalid value %q for Host matcher, non-ASCII characters are not allowed\", host)\n\t}\n\n\thost = strings.ToLower(host)\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treqHost := requestdecorator.GetCanonizedHost(req.Context())\n\t\tif len(reqHost) == 0 {\n\t\t\treturn false\n\t\t}\n\n\t\tif reqHost == host {\n\t\t\treturn true\n\t\t}\n\n\t\tflatH := requestdecorator.GetCNAMEFlatten(req.Context())\n\t\tif len(flatH) > 0 {\n\t\t\treturn strings.EqualFold(flatH, host)\n\t\t}\n\n\t\tif last := len(host) - 1; last >= 0 && host[last] == '.' {\n\t\t\th := host[:last]\n\t\t\tif reqHost == h {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\tif last := len(reqHost) - 1; last >= 0 && reqHost[last] == '.' {\n\t\t\th := reqHost[:last]\n\t\t\tif h == host {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn nil\n}",
+    "funcname": "host"
+}

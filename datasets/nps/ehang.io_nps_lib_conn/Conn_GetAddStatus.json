@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 316,
+    "focalfunc": "func (s *Conn) GetAddStatus() (b bool)",
+    "funcbody": "func (s *Conn) GetAddStatus() (b bool) {\n\tbinary.Read(s.Conn, binary.LittleEndian, &b)\n\treturn\n}",
+    "funcname": "GetAddStatus"
+}

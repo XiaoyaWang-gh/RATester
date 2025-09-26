@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 103,
+    "focalfunc": "func ChangeHostAndHeader(r *http.Request, host string, header string, addr string, addOrigin bool)",
+    "funcbody": "func ChangeHostAndHeader(r *http.Request, host string, header string, addr string, addOrigin bool) {\n\tif host != \"\" {\n\t\tr.Host = host\n\t}\n\tif header != \"\" {\n\t\th := strings.Split(header, \"\\n\")\n\t\tfor _, v := range h {\n\t\t\thd := strings.Split(v, \":\")\n\t\t\tif len(hd) == 2 {\n\t\t\t\tr.Header.Set(hd[0], hd[1])\n\t\t\t}\n\t\t}\n\t}\n\taddr = strings.Split(addr, \":\")[0]\n\tif prior, ok := r.Header[\"X-Forwarded-For\"]; ok {\n\t\taddr = strings.Join(prior, \", \") + \", \" + addr\n\t}\n\tif addOrigin {\n\t\tr.Header.Set(\"X-Forwarded-For\", addr)\n\t\tr.Header.Set(\"X-Real-IP\", addr)\n\t}\n}",
+    "funcname": "ChangeHostAndHeader"
+}

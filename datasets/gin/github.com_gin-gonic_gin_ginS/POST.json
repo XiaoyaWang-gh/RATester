@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 62,
+    "focalfunc": "func POST(relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes",
+    "funcbody": "func POST(relativePath string, handlers ...gin.HandlerFunc) gin.IRoutes {\n\treturn engine().POST(relativePath, handlers...)\n}",
+    "funcname": "POST"
+}

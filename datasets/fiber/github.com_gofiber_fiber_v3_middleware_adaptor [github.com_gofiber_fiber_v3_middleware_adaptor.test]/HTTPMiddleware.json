@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/adaptor/adaptor.go",
+    "lineno": 93,
+    "focalfunc": "func HTTPMiddleware(mw func(http.Handler) http.Handler) fiber.Handler",
+    "funcbody": "func HTTPMiddleware(mw func(http.Handler) http.Handler) fiber.Handler {\n\treturn func(c fiber.Ctx) error {\n\t\tvar next bool\n\t\tnextHandler := http.HandlerFunc(func(_ http.ResponseWriter, r *http.Request) {\n\n\t\t\tnext = true\n\t\t\tc.Request().Header.SetMethod(r.Method)\n\t\t\tc.Request().SetRequestURI(r.RequestURI)\n\t\t\tc.Request().SetHost(r.Host)\n\t\t\tc.Request().Header.SetHost(r.Host)\n\n\t\t\tfor key, val := range r.Header {\n\t\t\t\tfor _, v := range val {\n\t\t\t\t\tc.Request().Header.Set(key, v)\n\t\t\t\t}\n\t\t\t}\n\t\t\tCopyContextToFiberContext(r.Context(), c.Context())\n\t\t})\n\n\t\tif err := HTTPHandler(mw(nextHandler))(c); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tif next {\n\t\t\treturn c.Next()\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "HTTPMiddleware"
+}

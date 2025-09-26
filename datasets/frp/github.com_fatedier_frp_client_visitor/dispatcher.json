@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/sudp.go",
+    "lineno": 73,
+    "focalfunc": "func (sv *SUDPVisitor) dispatcher()",
+    "funcbody": "func (sv *SUDPVisitor) dispatcher() {\n\txl := xlog.FromContextSafe(sv.ctx)\n\n\tvar (\n\t\tvisitorConn\tnet.Conn\n\t\terr\t\terror\n\n\t\tfirstPacket\t*msg.UDPPacket\n\t)\n\n\tfor {\n\t\tselect {\n\t\tcase firstPacket = <-sv.sendCh:\n\t\t\tif firstPacket == nil {\n\t\t\t\txl.Infof(\"frpc sudp visitor proxy is closed\")\n\t\t\t\treturn\n\t\t\t}\n\t\tcase <-sv.checkCloseCh:\n\t\t\txl.Infof(\"frpc sudp visitor proxy is closed\")\n\t\t\treturn\n\t\t}\n\n\t\tvisitorConn, err = sv.getNewVisitorConn()\n\t\tif err != nil {\n\t\t\txl.Warnf(\"newVisitorConn to frps error: %v, try to reconnect\", err)\n\t\t\tcontinue\n\t\t}\n\n\t\tsv.worker(visitorConn, firstPacket)\n\n\t\tselect {\n\t\tcase <-sv.checkCloseCh:\n\t\t\treturn\n\t\tdefault:\n\t\t}\n\t}\n}",
+    "funcname": "dispatcher"
+}

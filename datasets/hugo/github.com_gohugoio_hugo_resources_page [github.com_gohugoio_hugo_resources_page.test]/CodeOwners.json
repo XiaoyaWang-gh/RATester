@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 214,
+    "focalfunc": "func (p *nopPage) CodeOwners() []string",
+    "funcbody": "func (p *nopPage) CodeOwners() []string {\n\treturn nil\n}",
+    "funcname": "CodeOwners"
+}

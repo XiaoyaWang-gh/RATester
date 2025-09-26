@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/client.go",
+    "lineno": 75,
+    "focalfunc": "func (s *ClientController) GetClient()",
+    "funcbody": "func (s *ClientController) GetClient() {\n\tif s.Ctx.Request.Method == \"POST\" {\n\t\tid := s.GetIntNoErr(\"id\")\n\t\tdata := make(map[string]interface{})\n\t\tif c, err := file.GetDb().GetClient(id); err != nil {\n\t\t\tdata[\"code\"] = 0\n\t\t} else {\n\t\t\tdata[\"code\"] = 1\n\t\t\tdata[\"data\"] = c\n\t\t}\n\t\ts.Data[\"json\"] = data\n\t\ts.ServeJSON()\n\t}\n}",
+    "funcname": "GetClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 759,
+    "focalfunc": "func newAppConfig(appConfigProvider, appConfigPath string) (*beegoAppConfig, error)",
+    "funcbody": "func newAppConfig(appConfigProvider, appConfigPath string) (*beegoAppConfig, error) {\n\tac, err := config.NewConfig(appConfigProvider, appConfigPath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &beegoAppConfig{innerConfig: ac}, nil\n}",
+    "funcname": "newAppConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 69,
+    "focalfunc": "func (t *TreeShiftTree[T]) LongestPrefix(s string) (string, T)",
+    "funcbody": "func (t *TreeShiftTree[T]) LongestPrefix(s string) (string, T) {\n\treturn t.trees[t.v].LongestPrefix(s)\n}",
+    "funcname": "LongestPrefix"
+}

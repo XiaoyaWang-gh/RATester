@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 82,
+    "focalfunc": "func (fi *File) BaseFileName() string",
+    "funcbody": "func (fi *File) BaseFileName() string {\n\treturn fi.p().NameNoExt()\n}",
+    "funcname": "BaseFileName"
+}

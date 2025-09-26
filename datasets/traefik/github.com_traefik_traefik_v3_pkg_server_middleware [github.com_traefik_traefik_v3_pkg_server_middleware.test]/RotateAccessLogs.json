@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 145,
+    "focalfunc": "func (o *ObservabilityMgr) RotateAccessLogs() error",
+    "funcbody": "func (o *ObservabilityMgr) RotateAccessLogs() error {\n\tif o.accessLoggerMiddleware == nil {\n\t\treturn nil\n\t}\n\n\treturn o.accessLoggerMiddleware.Rotate()\n}",
+    "funcname": "RotateAccessLogs"
+}

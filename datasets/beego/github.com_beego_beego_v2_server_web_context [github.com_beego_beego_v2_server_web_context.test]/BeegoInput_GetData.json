@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 402,
+    "focalfunc": "func (input *BeegoInput) GetData(key interface{}) interface{}",
+    "funcbody": "func (input *BeegoInput) GetData(key interface{}) interface{} {\n\tinput.dataLock.Lock()\n\tdefer input.dataLock.Unlock()\n\tif v, ok := input.data[key]; ok {\n\t\treturn v\n\t}\n\treturn nil\n}",
+    "funcname": "GetData"
+}

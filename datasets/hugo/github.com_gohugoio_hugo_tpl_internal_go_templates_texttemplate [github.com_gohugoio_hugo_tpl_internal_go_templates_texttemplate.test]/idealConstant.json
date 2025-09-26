@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 540,
+    "focalfunc": "func (s *state) idealConstant(constant *parse.NumberNode) reflect.Value",
+    "funcbody": "func (s *state) idealConstant(constant *parse.NumberNode) reflect.Value {\n\n\ts.at(constant)\n\tswitch {\n\tcase constant.IsComplex:\n\t\treturn reflect.ValueOf(constant.Complex128)\n\n\tcase constant.IsFloat &&\n\t\t!isHexInt(constant.Text) && !isRuneInt(constant.Text) &&\n\t\tstrings.ContainsAny(constant.Text, \".eEpP\"):\n\t\treturn reflect.ValueOf(constant.Float64)\n\n\tcase constant.IsInt:\n\t\tn := int(constant.Int64)\n\t\tif int64(n) != constant.Int64 {\n\t\t\ts.errorf(\"%s overflows int\", constant.Text)\n\t\t}\n\t\treturn reflect.ValueOf(n)\n\n\tcase constant.IsUint:\n\t\ts.errorf(\"%s overflows int\", constant.Text)\n\t}\n\treturn zero\n}",
+    "funcname": "idealConstant"
+}

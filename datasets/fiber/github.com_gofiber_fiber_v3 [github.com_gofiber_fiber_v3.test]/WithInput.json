@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 142,
+    "focalfunc": "func (r *Redirect) WithInput() *Redirect",
+    "funcbody": "func (r *Redirect) WithInput() *Redirect {\n\n\tctype := utils.ToLower(utils.UnsafeString(r.c.Context().Request.Header.ContentType()))\n\tctype = binder.FilterFlags(utils.ParseVendorSpecificContentType(ctype))\n\n\toldInput := make(map[string]string)\n\tswitch ctype {\n\tcase MIMEApplicationForm:\n\t\t_ = r.c.Bind().Form(oldInput)\n\tcase MIMEMultipartForm:\n\t\t_ = r.c.Bind().MultipartForm(oldInput)\n\tdefault:\n\t\t_ = r.c.Bind().Query(oldInput)\n\t}\n\n\tfor k, v := range oldInput {\n\t\tr.messages = append(r.messages, redirectionMsg{\n\t\t\tkey:\t\tk,\n\t\t\tvalue:\t\tv,\n\t\t\tisOldInput:\ttrue,\n\t\t})\n\t}\n\n\treturn r\n}",
+    "funcname": "WithInput"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/ctx.go",
+    "lineno": 27,
+    "focalfunc": "func NewContext(ctx context.Context, xl *Logger) context.Context",
+    "funcbody": "func NewContext(ctx context.Context, xl *Logger) context.Context {\n\treturn context.WithValue(ctx, xlogKey, xl)\n}",
+    "funcname": "NewContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 126,
+    "focalfunc": "func (vm *Manager) UpdateAll(cfgs []v1.VisitorConfigurer)",
+    "funcbody": "func (vm *Manager) UpdateAll(cfgs []v1.VisitorConfigurer) {\n\tif len(cfgs) > 0 {\n\n\t\tvm.keepVisitorsRunningOnce.Do(func() {\n\t\t\tgo vm.keepVisitorsRunning()\n\t\t})\n\t}\n\n\txl := xlog.FromContextSafe(vm.ctx)\n\tcfgsMap := lo.KeyBy(cfgs, func(c v1.VisitorConfigurer) string {\n\t\treturn c.GetBaseConfig().Name\n\t})\n\tvm.mu.Lock()\n\tdefer vm.mu.Unlock()\n\n\tdelNames := make([]string, 0)\n\tfor name, oldCfg := range vm.cfgs {\n\t\tdel := false\n\t\tcfg, ok := cfgsMap[name]\n\t\tif !ok || !reflect.DeepEqual(oldCfg, cfg) {\n\t\t\tdel = true\n\t\t}\n\n\t\tif del {\n\t\t\tdelNames = append(delNames, name)\n\t\t\tdelete(vm.cfgs, name)\n\t\t\tif visitor, ok := vm.visitors[name]; ok {\n\t\t\t\tvisitor.Close()\n\t\t\t}\n\t\t\tdelete(vm.visitors, name)\n\t\t}\n\t}\n\tif len(delNames) > 0 {\n\t\txl.Infof(\"visitor removed: %v\", delNames)\n\t}\n\n\taddNames := make([]string, 0)\n\tfor _, cfg := range cfgs {\n\t\tname := cfg.GetBaseConfig().Name\n\t\tif _, ok := vm.cfgs[name]; !ok {\n\t\t\tvm.cfgs[name] = cfg\n\t\t\taddNames = append(addNames, name)\n\t\t\t_ = vm.startVisitor(cfg)\n\t\t}\n\t}\n\tif len(addNames) > 0 {\n\t\txl.Infof(\"visitor added: %v\", addNames)\n\t}\n}",
+    "funcname": "UpdateAll"
+}

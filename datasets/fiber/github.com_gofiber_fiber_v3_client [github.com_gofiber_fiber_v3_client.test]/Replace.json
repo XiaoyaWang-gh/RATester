@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 712,
+    "focalfunc": "func Replace(c *Client) func()",
+    "funcbody": "func Replace(c *Client) func() {\n\treplaceMu.Lock()\n\tdefer replaceMu.Unlock()\n\n\toldClient := defaultClient\n\tdefaultClient = c\n\n\treturn func() {\n\t\treplaceMu.Lock()\n\t\tdefer replaceMu.Unlock()\n\n\t\tdefaultClient = oldClient\n\t}\n}",
+    "funcname": "Replace"
+}

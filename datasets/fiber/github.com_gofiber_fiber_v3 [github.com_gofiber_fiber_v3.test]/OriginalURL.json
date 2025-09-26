@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1055,
+    "focalfunc": "func (c *DefaultCtx) OriginalURL() string",
+    "funcbody": "func (c *DefaultCtx) OriginalURL() string {\n\treturn c.app.getString(c.fasthttp.Request.Header.RequestURI())\n}",
+    "funcname": "OriginalURL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 197,
+    "focalfunc": "func (c *core) execute(ctx context.Context, client *Client, req *Request) (*Response, error)",
+    "funcbody": "func (c *core) execute(ctx context.Context, client *Client, req *Request) (*Response, error) {\n\n\tc.ctx = ctx\n\tc.client = client\n\tc.req = req\n\n\terr := c.preHooks()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tcancel := c.timeout()\n\tif cancel != nil {\n\t\tdefer cancel()\n\t}\n\n\tresp, err := c.execFunc()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\terr = c.afterHooks(resp)\n\tif err != nil {\n\t\tresp.Close()\n\t\treturn nil, err\n\t}\n\n\treturn resp, nil\n}",
+    "funcname": "execute"
+}

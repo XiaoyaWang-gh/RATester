@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 54,
+    "focalfunc": "func (s *TRPClient) Start()",
+    "funcbody": "func (s *TRPClient) Start() {\n\tCloseClient = false\nretry:\n\tif CloseClient {\n\t\treturn\n\t}\n\tNowStatus = 0\n\tc, err := NewConn(s.bridgeConnType, s.vKey, s.svrAddr, common.WORK_MAIN, s.proxyUrl)\n\tif err != nil {\n\t\tlogs.Error(\"The connection server failed and will be reconnected in five seconds, error\", err.Error())\n\t\ttime.Sleep(time.Second * 5)\n\t\tgoto retry\n\t}\n\tif c == nil {\n\t\tlogs.Error(\"Error data from server, and will be reconnected in five seconds\")\n\t\ttime.Sleep(time.Second * 5)\n\t\tgoto retry\n\t}\n\tlogs.Info(\"Successful connection with server %s\", s.svrAddr)\n\n\tgo s.ping()\n\ts.signal = c\n\n\tgo s.newChan()\n\n\tif s.cnf != nil && len(s.cnf.Healths) > 0 {\n\t\tgo heathCheck(s.cnf.Healths, s.signal)\n\t}\n\tNowStatus = 1\n\n\ts.handleMain()\n}",
+    "funcname": "Start"
+}

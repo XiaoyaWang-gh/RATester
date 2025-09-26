@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 367,
+    "focalfunc": "func (t *Tree) textOrAction() Node",
+    "funcbody": "func (t *Tree) textOrAction() Node {\n\tswitch token := t.nextNonSpace(); token.typ {\n\tcase itemText:\n\t\treturn t.newText(token.pos, token.val)\n\tcase itemLeftDelim:\n\t\tt.actionLine = token.line\n\t\tdefer t.clearActionLine()\n\t\treturn t.action()\n\tcase itemComment:\n\t\treturn t.newComment(token.pos, token.val)\n\tdefault:\n\t\tt.unexpected(token, \"input\")\n\t}\n\treturn nil\n}",
+    "funcname": "textOrAction"
+}

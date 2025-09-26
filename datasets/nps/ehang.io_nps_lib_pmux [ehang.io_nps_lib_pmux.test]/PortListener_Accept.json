@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/plistener.go",
+    "lineno": 22,
+    "focalfunc": "func (pListener *PortListener) Accept() (net.Conn, error)",
+    "funcbody": "func (pListener *PortListener) Accept() (net.Conn, error) {\n\tif pListener.isClose {\n\t\treturn nil, errors.New(\"the listener has closed\")\n\t}\n\tconn := <-pListener.connCh\n\tif conn != nil {\n\t\treturn conn, nil\n\t}\n\treturn nil, errors.New(\"the listener has closed\")\n}",
+    "funcname": "Accept"
+}

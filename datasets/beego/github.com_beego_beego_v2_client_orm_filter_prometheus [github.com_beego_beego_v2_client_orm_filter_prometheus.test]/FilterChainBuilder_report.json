@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/prometheus/filter.go",
+    "lineno": 75,
+    "focalfunc": "func (builder *FilterChainBuilder) report(ctx context.Context, inv *orm.Invocation, dur time.Duration)",
+    "funcbody": "func (builder *FilterChainBuilder) report(ctx context.Context, inv *orm.Invocation, dur time.Duration) {\n\n\tif strings.HasPrefix(inv.Method, \"Begin\") {\n\t\treturn\n\t}\n\tif inv.Method == \"Commit\" || inv.Method == \"Rollback\" {\n\t\tbuilder.reportTxn(ctx, inv)\n\t\treturn\n\t}\n\tsummaryVec.WithLabelValues(inv.Method, inv.GetTableName(),\n\t\tstrconv.FormatBool(inv.InsideTx), inv.TxName).Observe(float64(dur))\n}",
+    "funcname": "report"
+}

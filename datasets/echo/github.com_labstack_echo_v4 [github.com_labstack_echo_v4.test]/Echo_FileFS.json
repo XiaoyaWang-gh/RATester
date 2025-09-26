@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 86,
+    "focalfunc": "func (e *Echo) FileFS(path, file string, filesystem fs.FS, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (e *Echo) FileFS(path, file string, filesystem fs.FS, m ...MiddlewareFunc) *Route {\n\treturn e.GET(path, StaticFileHandler(file, filesystem), m...)\n}",
+    "funcname": "FileFS"
+}

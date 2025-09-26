@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 383,
+    "focalfunc": "func (c *clientWrapper) ListGateways() []*gatev1.Gateway",
+    "funcbody": "func (c *clientWrapper) ListGateways() []*gatev1.Gateway {\n\tvar result []*gatev1.Gateway\n\n\tfor ns, factory := range c.factoriesGateway {\n\t\tgateways, err := factory.Gateway().V1().Gateways().Lister().Gateways(ns).List(labels.Everything())\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Msgf(\"Failed to list Gateways in namespace %s\", ns)\n\t\t\tcontinue\n\t\t}\n\t\tresult = append(result, gateways...)\n\t}\n\n\treturn result\n}",
+    "funcname": "ListGateways"
+}

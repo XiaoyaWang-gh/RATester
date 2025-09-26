@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 81,
+    "focalfunc": "func (qb *PostgresQueryBuilder) On(cond string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) On(cond string) QueryBuilder {\n\tvar str string\n\tcond = strings.Replace(cond, \" \", \"\", -1)\n\tslice := strings.Split(cond, \"=\")\n\tfor i := 0; i < len(slice); i++ {\n\t\tsli := strings.Split(slice[i], \".\")\n\t\ts := strings.Join(sli, `\".\"`)\n\t\ts = fmt.Sprintf(\"%s%s%s\", quote, s, quote)\n\t\tif i == 0 {\n\t\t\tstr = s + \" =\" + \" \"\n\t\t} else {\n\t\t\tstr += s\n\t\t}\n\t}\n\n\tqb.tokens = append(qb.tokens, \"ON\", str)\n\treturn qb\n}",
+    "funcname": "On"
+}

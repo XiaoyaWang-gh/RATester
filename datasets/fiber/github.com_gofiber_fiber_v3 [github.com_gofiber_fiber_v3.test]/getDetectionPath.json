@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1916,
+    "focalfunc": "func (c *DefaultCtx) getDetectionPath() string",
+    "funcbody": "func (c *DefaultCtx) getDetectionPath() string {\n\treturn c.detectionPath\n}",
+    "funcname": "getDetectionPath"
+}

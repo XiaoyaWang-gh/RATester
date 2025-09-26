@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/multifile.go",
+    "lineno": 116,
+    "focalfunc": "func (f *multiFileLogWriter) Flush()",
+    "funcbody": "func (f *multiFileLogWriter) Flush() {\n\tfor i := 0; i < len(f.writers); i++ {\n\t\tif f.writers[i] != nil {\n\t\t\tf.writers[i].Flush()\n\t\t}\n\t}\n}",
+    "funcname": "Flush"
+}

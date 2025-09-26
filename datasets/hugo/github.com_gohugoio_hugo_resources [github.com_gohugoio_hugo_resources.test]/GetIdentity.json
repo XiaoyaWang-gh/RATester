@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 195,
+    "focalfunc": "func (r *resourceAdapter) GetIdentity() identity.Identity",
+    "funcbody": "func (r *resourceAdapter) GetIdentity() identity.Identity {\n\treturn identity.FirstIdentity(r.target)\n}",
+    "funcname": "GetIdentity"
+}

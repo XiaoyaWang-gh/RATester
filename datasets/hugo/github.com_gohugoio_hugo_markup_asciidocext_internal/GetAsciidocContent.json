@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 57,
+    "focalfunc": "func (a *AsciidocConverter) GetAsciidocContent(src []byte, ctx converter.DocumentContext) ([]byte, error)",
+    "funcbody": "func (a *AsciidocConverter) GetAsciidocContent(src []byte, ctx converter.DocumentContext) ([]byte, error) {\n\tif !HasAsciiDoc() {\n\t\ta.Cfg.Logger.Errorln(\"asciidoctor not found in $PATH: Please install.\\n\",\n\t\t\t\"                 Leaving AsciiDoc content unrendered.\")\n\t\treturn src, nil\n\t}\n\n\targs := a.ParseArgs(ctx)\n\targs = append(args, \"-\")\n\n\ta.Cfg.Logger.Infoln(\"Rendering\", ctx.DocumentName, \" using asciidoctor args\", args, \"...\")\n\n\treturn internal.ExternallyRenderContent(a.Cfg, ctx, src, asciiDocBinaryName, args)\n}",
+    "funcname": "GetAsciidocContent"
+}

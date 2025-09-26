@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 735,
+    "focalfunc": "func (ns *Namespace) Uniq(l any) (any, error)",
+    "funcbody": "func (ns *Namespace) Uniq(l any) (any, error) {\n\tif l == nil {\n\t\treturn make([]any, 0), nil\n\t}\n\n\tv := reflect.ValueOf(l)\n\tvar slice reflect.Value\n\n\tswitch v.Kind() {\n\tcase reflect.Slice:\n\t\tslice = reflect.MakeSlice(v.Type(), 0, 0)\n\n\tcase reflect.Array:\n\t\tslice = reflect.MakeSlice(reflect.SliceOf(v.Type().Elem()), 0, 0)\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"type %T not supported\", l)\n\t}\n\n\tseen := make(map[any]bool)\n\n\tfor i := 0; i < v.Len(); i++ {\n\t\tev, _ := indirectInterface(v.Index(i))\n\n\t\tkey := normalize(ev)\n\n\t\tif _, found := seen[key]; !found {\n\t\t\tslice = reflect.Append(slice, ev)\n\t\t\tseen[key] = true\n\t\t}\n\t}\n\n\treturn slice.Interface(), nil\n}",
+    "funcname": "Uniq"
+}

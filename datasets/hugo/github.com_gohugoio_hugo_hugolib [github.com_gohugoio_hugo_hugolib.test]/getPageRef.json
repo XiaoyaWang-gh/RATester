@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 46,
+    "focalfunc": "func (c *pageFinder) getPageRef(context page.Page, ref string) (page.Page, error)",
+    "funcbody": "func (c *pageFinder) getPageRef(context page.Page, ref string) (page.Page, error) {\n\tn, err := c.getContentNode(context, true, ref)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif p, ok := n.(page.Page); ok {\n\t\treturn p, nil\n\t}\n\treturn nil, nil\n}",
+    "funcname": "getPageRef"
+}

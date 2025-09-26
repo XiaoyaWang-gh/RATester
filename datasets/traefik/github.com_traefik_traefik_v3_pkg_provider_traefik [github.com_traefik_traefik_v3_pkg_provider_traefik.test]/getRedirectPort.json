@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 166,
+    "focalfunc": "func (i *Provider) getRedirectPort(name string, def *static.Redirections) (string, error)",
+    "funcbody": "func (i *Provider) getRedirectPort(name string, def *static.Redirections) (string, error) {\n\texp := regexp.MustCompile(`^:(\\d+)$`)\n\n\tif exp.MatchString(def.EntryPoint.To) {\n\t\t_, port, err := net.SplitHostPort(def.EntryPoint.To)\n\t\tif err != nil {\n\t\t\treturn \"\", fmt.Errorf(\"invalid port value: %w\", err)\n\t\t}\n\n\t\treturn port, nil\n\t}\n\n\treturn i.getEntryPointPort(name, def)\n}",
+    "funcname": "getRedirectPort"
+}

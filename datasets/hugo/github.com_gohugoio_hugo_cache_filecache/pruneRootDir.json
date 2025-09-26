@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_pruner.go",
+    "lineno": 120,
+    "focalfunc": "func (c *Cache) pruneRootDir(force bool) (int, error)",
+    "funcbody": "func (c *Cache) pruneRootDir(force bool) (int, error) {\n\tif err := c.init(); err != nil {\n\t\treturn 0, err\n\t}\n\tinfo, err := c.Fs.Stat(c.pruneAllRootDir)\n\tif err != nil {\n\t\tif herrors.IsNotExist(err) {\n\t\t\treturn 0, nil\n\t\t}\n\t\treturn 0, err\n\t}\n\n\tif !force && !c.isExpired(info.ModTime()) {\n\t\treturn 0, nil\n\t}\n\n\treturn hugofs.MakeReadableAndRemoveAllModulePkgDir(c.Fs, c.pruneAllRootDir)\n}",
+    "funcname": "pruneRootDir"
+}

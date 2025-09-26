@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 377,
+    "focalfunc": "func newFilterOpts(vals ...any) filterOpts",
+    "funcbody": "func newFilterOpts(vals ...any) filterOpts {\n\treturn filterOpts{\n\t\tVersion:\tfilterAPIVersion,\n\t\tVals:\t\tvals,\n\t}\n}",
+    "funcname": "newFilterOpts"
+}

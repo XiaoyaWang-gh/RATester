@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/extractor.go",
+    "lineno": 97,
+    "focalfunc": "func valuesFromHeader(header string, valuePrefix string) ValuesExtractor",
+    "funcbody": "func valuesFromHeader(header string, valuePrefix string) ValuesExtractor {\n\tprefixLen := len(valuePrefix)\n\n\theader = textproto.CanonicalMIMEHeaderKey(header)\n\treturn func(c echo.Context) ([]string, error) {\n\t\tvalues := c.Request().Header.Values(header)\n\t\tif len(values) == 0 {\n\t\t\treturn nil, errHeaderExtractorValueMissing\n\t\t}\n\n\t\tresult := make([]string, 0)\n\t\tfor i, value := range values {\n\t\t\tif prefixLen == 0 {\n\t\t\t\tresult = append(result, value)\n\t\t\t\tif i >= extractorLimit-1 {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif len(value) > prefixLen && strings.EqualFold(value[:prefixLen], valuePrefix) {\n\t\t\t\tresult = append(result, value[prefixLen:])\n\t\t\t\tif i >= extractorLimit-1 {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tif len(result) == 0 {\n\t\t\tif prefixLen > 0 {\n\t\t\t\treturn nil, errHeaderExtractorValueInvalid\n\t\t\t}\n\t\t\treturn nil, errHeaderExtractorValueMissing\n\t\t}\n\t\treturn result, nil\n\t}\n}",
+    "funcname": "valuesFromHeader"
+}

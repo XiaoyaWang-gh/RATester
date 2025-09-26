@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/test_helpers.go",
+    "lineno": 10,
+    "focalfunc": "func CreateTestContext(w http.ResponseWriter) (c *Context, r *Engine)",
+    "funcbody": "func CreateTestContext(w http.ResponseWriter) (c *Context, r *Engine) {\n\tr = New()\n\tc = r.allocateContext(0)\n\tc.reset()\n\tc.writermem.reset(w)\n\treturn\n}",
+    "funcname": "CreateTestContext"
+}

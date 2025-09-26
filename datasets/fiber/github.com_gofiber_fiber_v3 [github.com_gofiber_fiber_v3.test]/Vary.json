@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1761,
+    "focalfunc": "func (c *DefaultCtx) Vary(fields ...string)",
+    "funcbody": "func (c *DefaultCtx) Vary(fields ...string) {\n\tc.Append(HeaderVary, fields...)\n}",
+    "funcname": "Vary"
+}

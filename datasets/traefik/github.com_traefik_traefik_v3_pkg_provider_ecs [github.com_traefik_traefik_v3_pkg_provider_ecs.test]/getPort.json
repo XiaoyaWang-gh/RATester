@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/config.go",
+    "lineno": 291,
+    "focalfunc": "func getPort(instance ecsInstance, serverPort string) string",
+    "funcbody": "func getPort(instance ecsInstance, serverPort string) string {\n\tif len(serverPort) > 0 {\n\t\tfor _, port := range instance.machine.ports {\n\t\t\tcontainerPort := strconv.FormatInt(port.containerPort, 10)\n\t\t\tif serverPort == containerPort {\n\t\t\t\treturn strconv.FormatInt(port.hostPort, 10)\n\t\t\t}\n\t\t}\n\n\t\treturn serverPort\n\t}\n\n\tvar ports []nat.Port\n\tfor _, port := range instance.machine.ports {\n\t\tnatPort, err := nat.NewPort(port.protocol, strconv.FormatInt(port.hostPort, 10))\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tports = append(ports, natPort)\n\t}\n\n\tless := func(i, j nat.Port) bool {\n\t\treturn i.Int() < j.Int()\n\t}\n\tnat.Sort(ports, less)\n\n\tif len(ports) > 0 {\n\t\treturn ports[0].Port()\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "getPort"
+}

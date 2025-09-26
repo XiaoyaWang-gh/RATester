@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 170,
+    "focalfunc": "func (p *Paginator) Offset() int",
+    "funcbody": "func (p *Paginator) Offset() int {\n\treturn (p.Page() - 1) * p.PerPageNums\n}",
+    "funcname": "Offset"
+}

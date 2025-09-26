@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_tls.go",
+    "lineno": 87,
+    "focalfunc": "func (c *ChallengeTLSALPN) CleanUp(domain, _, keyAuth string) error",
+    "funcbody": "func (c *ChallengeTLSALPN) CleanUp(domain, _, keyAuth string) error {\n\tlog.Debug().Str(logs.ProviderName, providerNameALPN).\n\t\tMsgf(\"TLS Challenge CleanUp temp certificate for %s\", domain)\n\n\tc.muCerts.Lock()\n\tdelete(c.certs, keyAuth)\n\tconf := createMessage(c.certs)\n\tc.muCerts.Unlock()\n\n\tc.configurationChan <- conf\n\n\treturn nil\n}",
+    "funcname": "CleanUp"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 69,
+    "focalfunc": "func (r *Response) String() string",
+    "funcbody": "func (r *Response) String() string {\n\treturn utils.Trim(string(r.Body()), ' ')\n}",
+    "funcname": "String"
+}

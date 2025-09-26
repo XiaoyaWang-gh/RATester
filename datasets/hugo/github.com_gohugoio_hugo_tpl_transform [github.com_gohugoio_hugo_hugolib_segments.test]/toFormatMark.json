@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/remarshal.go",
+    "lineno": 81,
+    "focalfunc": "func toFormatMark(format string) (metadecoders.Format, error)",
+    "funcbody": "func toFormatMark(format string) (metadecoders.Format, error) {\n\tif f := metadecoders.FormatFromString(format); f != \"\" {\n\t\treturn f, nil\n\t}\n\n\treturn \"\", errors.New(\"failed to detect target data serialization format\")\n}",
+    "funcname": "toFormatMark"
+}

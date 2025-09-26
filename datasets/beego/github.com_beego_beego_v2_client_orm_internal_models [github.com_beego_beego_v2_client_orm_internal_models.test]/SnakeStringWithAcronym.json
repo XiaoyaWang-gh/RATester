@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 258,
+    "focalfunc": "func SnakeStringWithAcronym(s string) string",
+    "funcbody": "func SnakeStringWithAcronym(s string) string {\n\tdata := make([]byte, 0, len(s)*2)\n\tnum := len(s)\n\tfor i := 0; i < num; i++ {\n\t\td := s[i]\n\t\tbefore := false\n\t\tafter := false\n\t\tif i > 0 {\n\t\t\tbefore = s[i-1] >= 'a' && s[i-1] <= 'z'\n\t\t}\n\t\tif i+1 < num {\n\t\t\tafter = s[i+1] >= 'a' && s[i+1] <= 'z'\n\t\t}\n\t\tif i > 0 && d >= 'A' && d <= 'Z' && (before || after) {\n\t\t\tdata = append(data, '_')\n\t\t}\n\t\tdata = append(data, d)\n\t}\n\treturn strings.ToLower(string(data))\n}",
+    "funcname": "SnakeStringWithAcronym"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 513,
+    "focalfunc": "func (p *Path) Disabled() bool",
+    "funcbody": "func (p *Path) Disabled() bool {\n\treturn p.disabled\n}",
+    "funcname": "Disabled"
+}

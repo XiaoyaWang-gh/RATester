@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/protobuf.go",
+    "lineno": 34,
+    "focalfunc": "func (r ProtoBuf) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r ProtoBuf) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, protobufContentType)\n}",
+    "funcname": "WriteContentType"
+}

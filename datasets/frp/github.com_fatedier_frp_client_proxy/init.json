@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/xtcp.go",
+    "lineno": 35,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tRegisterProxyFactory(reflect.TypeOf(&v1.XTCPProxyConfig{}), NewXTCPProxy)\n}",
+    "funcname": "init"
+}

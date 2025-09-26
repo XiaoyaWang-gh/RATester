@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 199,
+    "focalfunc": "func (l *lexer) accept(valid string) bool",
+    "funcbody": "func (l *lexer) accept(valid string) bool {\n\tif strings.ContainsRune(valid, l.next()) {\n\t\treturn true\n\t}\n\tl.backup()\n\treturn false\n}",
+    "funcname": "accept"
+}

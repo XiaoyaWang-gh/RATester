@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 116,
+    "focalfunc": "func (srv *Server) ListenTLS(certFile string, keyFile string) (net.Listener, error)",
+    "funcbody": "func (srv *Server) ListenTLS(certFile string, keyFile string) (net.Listener, error) {\n\taddr := srv.Addr\n\tif addr == \"\" {\n\t\taddr = \":https\"\n\t}\n\n\tif srv.TLSConfig == nil {\n\t\tsrv.TLSConfig = &tls.Config{}\n\t}\n\tif srv.TLSConfig.NextProtos == nil {\n\t\tsrv.TLSConfig.NextProtos = []string{\"http/1.1\"}\n\t}\n\n\tsrv.TLSConfig.Certificates = make([]tls.Certificate, 1)\n\tcert, err := tls.LoadX509KeyPair(certFile, keyFile)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tsrv.TLSConfig.Certificates[0] = cert\n\n\tgo srv.handleSignals()\n\n\tln, err := srv.getListener(addr)\n\tif err != nil {\n\t\tlog.Println(err)\n\t\treturn nil, err\n\t}\n\ttlsListener := tls.NewListener(tcpKeepAliveListener{ln.(*net.TCPListener)}, srv.TLSConfig)\n\treturn tlsListener, nil\n}",
+    "funcname": "ListenTLS"
+}

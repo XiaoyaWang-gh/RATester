@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 74,
+    "focalfunc": "func (ns *Namespace) CountWords(s any) (int, error)",
+    "funcbody": "func (ns *Namespace) CountWords(s any) (int, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn 0, fmt.Errorf(\"failed to convert content to string: %w\", err)\n\t}\n\n\tisCJKLanguage, err := regexp.MatchString(`\\p{Han}|\\p{Hangul}|\\p{Hiragana}|\\p{Katakana}`, ss)\n\tif err != nil {\n\t\treturn 0, fmt.Errorf(\"failed to match regex pattern against string: %w\", err)\n\t}\n\n\tif !isCJKLanguage {\n\t\treturn len(strings.Fields(tpl.StripHTML(ss))), nil\n\t}\n\n\tcounter := 0\n\tfor _, word := range strings.Fields(tpl.StripHTML(ss)) {\n\t\truneCount := utf8.RuneCountInString(word)\n\t\tif len(word) == runeCount {\n\t\t\tcounter++\n\t\t} else {\n\t\t\tcounter += runeCount\n\t\t}\n\t}\n\n\treturn counter, nil\n}",
+    "funcname": "CountWords"
+}

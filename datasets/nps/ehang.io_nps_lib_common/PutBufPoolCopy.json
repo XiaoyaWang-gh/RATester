@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 45,
+    "focalfunc": "func PutBufPoolCopy(buf []byte)",
+    "funcbody": "func PutBufPoolCopy(buf []byte) {\n\tif cap(buf) == PoolSizeCopy {\n\t\tBufPoolCopy.Put(buf[:PoolSizeCopy])\n\t}\n}",
+    "funcname": "PutBufPoolCopy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/format.go",
+    "lineno": 35,
+    "focalfunc": "func FormatFromStrings(ss ...string) Format",
+    "funcbody": "func FormatFromStrings(ss ...string) Format {\n\tfor _, s := range ss {\n\t\tif f := FormatFromString(s); f != \"\" {\n\t\t\treturn f\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "FormatFromStrings"
+}

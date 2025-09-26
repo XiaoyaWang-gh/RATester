@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 193,
+    "focalfunc": "func TokenFromContext(c fiber.Ctx) string",
+    "funcbody": "func TokenFromContext(c fiber.Ctx) string {\n\ttoken, ok := c.Locals(tokenKey).(string)\n\tif !ok {\n\t\treturn \"\"\n\t}\n\treturn token\n}",
+    "funcname": "TokenFromContext"
+}

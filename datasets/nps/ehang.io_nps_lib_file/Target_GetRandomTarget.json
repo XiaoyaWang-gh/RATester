@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 193,
+    "focalfunc": "func (s *Target) GetRandomTarget() (string, error)",
+    "funcbody": "func (s *Target) GetRandomTarget() (string, error) {\n\tif s.TargetArr == nil {\n\t\ts.TargetArr = strings.Split(s.TargetStr, \"\\n\")\n\t}\n\tif len(s.TargetArr) == 1 {\n\t\treturn s.TargetArr[0], nil\n\t}\n\tif len(s.TargetArr) == 0 {\n\t\treturn \"\", errors.New(\"all inward-bending targets are offline\")\n\t}\n\ts.Lock()\n\tdefer s.Unlock()\n\tif s.nowIndex >= len(s.TargetArr)-1 {\n\t\ts.nowIndex = -1\n\t}\n\ts.nowIndex++\n\treturn s.TargetArr[s.nowIndex], nil\n}",
+    "funcname": "GetRandomTarget"
+}

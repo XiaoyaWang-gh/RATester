@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 184,
+    "focalfunc": "func (o querySet) UseIndex(indexes ...string) QuerySeter",
+    "funcbody": "func (o querySet) UseIndex(indexes ...string) QuerySeter {\n\to.useIndex = hints.KeyUseIndex\n\to.indexes = indexes\n\treturn &o\n}",
+    "funcname": "UseIndex"
+}

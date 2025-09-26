@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 310,
+    "focalfunc": "func (r *Router) SetHTTPHandler(handler http.Handler)",
+    "funcbody": "func (r *Router) SetHTTPHandler(handler http.Handler) {\n\tr.httpHandler = handler\n}",
+    "funcname": "SetHTTPHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 163,
+    "focalfunc": "func (a errorMsgs) String() string",
+    "funcbody": "func (a errorMsgs) String() string {\n\tif len(a) == 0 {\n\t\treturn \"\"\n\t}\n\tvar buffer strings.Builder\n\tfor i, msg := range a {\n\t\tfmt.Fprintf(&buffer, \"Error #%02d: %s\\n\", i+1, msg.Err)\n\t\tif msg.Meta != nil {\n\t\t\tfmt.Fprintf(&buffer, \"     Meta: %v\\n\", msg.Meta)\n\t\t}\n\t}\n\treturn buffer.String()\n}",
+    "funcname": "String"
+}

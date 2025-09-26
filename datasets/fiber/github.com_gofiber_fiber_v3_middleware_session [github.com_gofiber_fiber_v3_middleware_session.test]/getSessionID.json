@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/store.go",
+    "lineno": 102,
+    "focalfunc": "func (s *Store) getSessionID(c fiber.Ctx) string",
+    "funcbody": "func (s *Store) getSessionID(c fiber.Ctx) string {\n\tid := c.Cookies(s.sessionName)\n\tif len(id) > 0 {\n\t\treturn utils.CopyString(id)\n\t}\n\n\tif s.source == SourceHeader {\n\t\tid = string(c.Request().Header.Peek(s.sessionName))\n\t\tif len(id) > 0 {\n\t\t\treturn id\n\t\t}\n\t}\n\n\tif s.source == SourceURLQuery {\n\t\tid = fiber.Query[string](c, s.sessionName)\n\t\tif len(id) > 0 {\n\t\t\treturn utils.CopyString(id)\n\t\t}\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "getSessionID"
+}

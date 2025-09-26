@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/npm/package_builder.go",
+    "lineno": 236,
+    "focalfunc": "func (b *packageBuilder) unmarshal(r io.Reader) map[string]any",
+    "funcbody": "func (b *packageBuilder) unmarshal(r io.Reader) map[string]any {\n\tm := make(map[string]any)\n\terr := json.Unmarshal(helpers.ReaderToBytes(r), &m)\n\tif err != nil {\n\t\tb.err = err\n\t}\n\treturn m\n}",
+    "funcname": "unmarshal"
+}

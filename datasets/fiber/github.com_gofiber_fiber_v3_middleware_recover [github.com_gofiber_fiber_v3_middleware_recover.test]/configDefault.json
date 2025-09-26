@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/recover/config.go",
+    "lineno": 33,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.EnableStackTrace && cfg.StackTraceHandler == nil {\n\t\tcfg.StackTraceHandler = defaultStackTraceHandler\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/daemon/daemon.go",
+    "lineno": 102,
+    "focalfunc": "func stop(f string, p string, pidPath string)",
+    "funcbody": "func stop(f string, p string, pidPath string) {\n\tif !status(f, pidPath) {\n\t\tlog.Printf(\" %s is not running\", f)\n\t\treturn\n\t}\n\tvar c *exec.Cmd\n\tvar err error\n\tif common.IsWindows() {\n\t\tp := strings.Split(p, `\\`)\n\t\tc = exec.Command(\"taskkill\", \"/F\", \"/IM\", p[len(p)-1])\n\t} else {\n\t\tb, err := ioutil.ReadFile(filepath.Join(pidPath, f+\".pid\"))\n\t\tif err == nil {\n\t\t\tc = exec.Command(\"/bin/bash\", \"-c\", `kill -9 `+string(b))\n\t\t} else {\n\t\t\tlog.Fatalln(\"stop error,pid file does not exist\")\n\t\t}\n\t}\n\terr = c.Run()\n\tif err != nil {\n\t\tlog.Println(\"stop error,\", err)\n\t} else {\n\t\tlog.Println(\"stop ok\")\n\t}\n}",
+    "funcname": "stop"
+}

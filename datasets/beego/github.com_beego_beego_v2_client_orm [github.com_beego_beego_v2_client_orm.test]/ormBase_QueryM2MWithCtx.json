@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 317,
+    "focalfunc": "func (o *ormBase) QueryM2MWithCtx(_ context.Context, md interface{}, name string) QueryM2Mer",
+    "funcbody": "func (o *ormBase) QueryM2MWithCtx(_ context.Context, md interface{}, name string) QueryM2Mer {\n\tlogs.Warn(\"QueryM2MWithCtx is DEPRECATED. Use methods with `WithCtx` suffix on QueryM2M as replacement please.\")\n\treturn o.QueryM2M(md, name)\n}",
+    "funcname": "QueryM2MWithCtx"
+}

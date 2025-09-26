@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 41,
+    "focalfunc": "func DomainCheck(domain string) bool",
+    "funcbody": "func DomainCheck(domain string) bool {\n\tvar match bool\n\tIsLine := \"^((http://)|(https://))?([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6}(/)\"\n\tNotLine := \"^((http://)|(https://))?([a-zA-Z0-9]([a-zA-Z0-9\\\\-]{0,61}[a-zA-Z0-9])?\\\\.)+[a-zA-Z]{2,6}\"\n\tmatch, _ = regexp.MatchString(IsLine, domain)\n\tif !match {\n\t\tmatch, _ = regexp.MatchString(NotLine, domain)\n\t}\n\treturn match\n}",
+    "funcname": "DomainCheck"
+}

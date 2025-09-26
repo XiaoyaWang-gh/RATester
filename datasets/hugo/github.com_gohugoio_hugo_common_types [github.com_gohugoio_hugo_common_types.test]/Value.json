@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 120,
+    "focalfunc": "func (l LowHigh[S]) Value(source S) S",
+    "funcbody": "func (l LowHigh[S]) Value(source S) S {\n\treturn source[l.Low:l.High]\n}",
+    "funcname": "Value"
+}

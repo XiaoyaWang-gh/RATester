@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 203,
+    "focalfunc": "func isGRPCRequest(req *http.Request) bool",
+    "funcbody": "func isGRPCRequest(req *http.Request) bool {\n\treturn strings.HasPrefix(req.Header.Get(\"Content-Type\"), \"application/grpc\")\n}",
+    "funcname": "isGRPCRequest"
+}

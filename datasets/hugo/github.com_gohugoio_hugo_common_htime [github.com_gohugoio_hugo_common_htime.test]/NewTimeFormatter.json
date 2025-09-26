@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/htime/time.go",
+    "lineno": 81,
+    "focalfunc": "func NewTimeFormatter(ltr locales.Translator) TimeFormatter",
+    "funcbody": "func NewTimeFormatter(ltr locales.Translator) TimeFormatter {\n\tif ltr == nil {\n\t\tpanic(\"must provide a locales.Translator\")\n\t}\n\treturn TimeFormatter{\n\t\tltr: ltr,\n\t}\n}",
+    "funcname": "NewTimeFormatter"
+}

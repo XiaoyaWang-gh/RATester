@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/utils.go",
+    "lineno": 24,
+    "focalfunc": "func SetNameStrategy(s string)",
+    "funcbody": "func SetNameStrategy(s string) {\n\tif models.SnakeAcronymNameStrategy != s {\n\t\tmodels.NameStrategy = models.DefaultNameStrategy\n\t}\n\tmodels.NameStrategy = s\n}",
+    "funcname": "SetNameStrategy"
+}

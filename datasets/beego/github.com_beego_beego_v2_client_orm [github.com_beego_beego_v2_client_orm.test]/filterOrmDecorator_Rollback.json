@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 493,
+    "focalfunc": "func (f *filterOrmDecorator) Rollback() error",
+    "funcbody": "func (f *filterOrmDecorator) Rollback() error {\n\tinv := &Invocation{\n\t\tMethod:\t\t\"Rollback\",\n\t\tArgs:\t\t[]interface{}{},\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tTxName:\t\tf.txName,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\terr := f.TxCommitter.Rollback()\n\t\t\treturn []interface{}{err}\n\t\t},\n\t}\n\tres := f.root(context.Background(), inv)\n\treturn f.convertError(res[0])\n}",
+    "funcname": "Rollback"
+}

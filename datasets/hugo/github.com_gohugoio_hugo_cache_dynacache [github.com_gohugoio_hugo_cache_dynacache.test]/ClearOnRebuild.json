@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 469,
+    "focalfunc": "func (p *Partition[K, V]) clearOnRebuild(changeset ...identity.Identity)",
+    "funcbody": "func (p *Partition[K, V]) clearOnRebuild(changeset ...identity.Identity) {\n\topts := p.getOptions()\n\tif opts.ClearWhen == ClearNever {\n\t\treturn\n\t}\n\n\tif opts.ClearWhen == ClearOnRebuild {\n\n\t\tp.Clear()\n\t\treturn\n\t}\n\n\tdepsFinder := identity.NewFinder(identity.FinderConfig{})\n\n\tshouldDelete := func(key K, v V) bool {\n\n\t\tif resource.StaleVersion(v) > 0 {\n\t\t\treturn true\n\t\t}\n\n\t\tif len(changeset) == 0 {\n\n\t\t\treturn false\n\t\t}\n\n\t\tvar probablyDependent bool\n\t\tidentity.WalkIdentitiesShallow(v, func(level int, id2 identity.Identity) bool {\n\t\t\tfor _, id := range changeset {\n\t\t\t\tif r := depsFinder.Contains(id, id2, -1); r > 0 {\n\n\t\t\t\t\tprobablyDependent = true\n\t\t\t\t\treturn true\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn false\n\t\t})\n\n\t\treturn probablyDependent\n\t}\n\n\tp.c.DeleteFunc(func(key K, v V) bool {\n\t\tif shouldDelete(key, v) {\n\t\t\tp.trace.Log(\n\t\t\t\tlogg.StringFunc(\n\t\t\t\t\tfunc() string {\n\t\t\t\t\t\treturn fmt.Sprintf(\"first pass: clearing cache key %v\", key)\n\t\t\t\t\t},\n\t\t\t\t),\n\t\t\t)\n\t\t\treturn true\n\t\t}\n\t\treturn false\n\t})\n}",
+    "funcname": "clearOnRebuild"
+}

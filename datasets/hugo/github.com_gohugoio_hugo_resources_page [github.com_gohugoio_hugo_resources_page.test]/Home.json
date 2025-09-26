@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 431,
+    "focalfunc": "func (t testSite) Home() Page",
+    "funcbody": "func (t testSite) Home() Page {\n\treturn nil\n}",
+    "funcname": "Home"
+}

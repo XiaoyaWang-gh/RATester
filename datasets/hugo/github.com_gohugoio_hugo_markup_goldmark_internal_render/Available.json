@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 34,
+    "focalfunc": "func (b *BufWriter) Available() int",
+    "funcbody": "func (b *BufWriter) Available() int {\n\treturn maxInt\n}",
+    "funcname": "Available"
+}

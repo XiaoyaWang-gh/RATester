@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 151,
+    "focalfunc": "func applyOptionsFromCodeBlockContext(ctx hooks.CodeblockContext, cfg *Config) error",
+    "funcbody": "func applyOptionsFromCodeBlockContext(ctx hooks.CodeblockContext, cfg *Config) error {\n\tif cfg.LineAnchors == \"\" {\n\t\tconst lineAnchorPrefix = \"hl-\"\n\n\t\tcfg.LineAnchors = fmt.Sprintf(\"%s%d\", lineAnchorPrefix, ctx.Ordinal())\n\t}\n\n\treturn nil\n}",
+    "funcname": "applyOptionsFromCodeBlockContext"
+}

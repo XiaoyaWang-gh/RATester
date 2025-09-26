@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 488,
+    "focalfunc": "func (e *BigIntegerField) FieldType() int",
+    "funcbody": "func (e *BigIntegerField) FieldType() int {\n\treturn TypeBigIntegerField\n}",
+    "funcname": "FieldType"
+}

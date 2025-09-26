@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/common.go",
+    "lineno": 24,
+    "focalfunc": "func validateWebServerConfig(c *v1.WebServerConfig) error",
+    "funcbody": "func validateWebServerConfig(c *v1.WebServerConfig) error {\n\tif c.TLS != nil {\n\t\tif c.TLS.CertFile == \"\" {\n\t\t\treturn fmt.Errorf(\"tls.certFile must be specified when tls is enabled\")\n\t\t}\n\t\tif c.TLS.KeyFile == \"\" {\n\t\t\treturn fmt.Errorf(\"tls.keyFile must be specified when tls is enabled\")\n\t\t}\n\t}\n\n\treturn ValidatePort(c.Port, \"webServer.port\")\n}",
+    "funcname": "validateWebServerConfig"
+}

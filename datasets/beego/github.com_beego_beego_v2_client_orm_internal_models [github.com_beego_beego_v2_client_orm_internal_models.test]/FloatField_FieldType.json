@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 342,
+    "focalfunc": "func (e *FloatField) FieldType() int",
+    "funcbody": "func (e *FloatField) FieldType() int {\n\treturn TypeFloatField\n}",
+    "funcname": "FieldType"
+}

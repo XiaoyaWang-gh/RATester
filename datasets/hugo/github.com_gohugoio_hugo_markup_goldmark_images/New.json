@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/images/transform.go",
+    "lineno": 24,
+    "focalfunc": "func New(wrapStandAloneImageWithinParagraph bool) goldmark.Extender",
+    "funcbody": "func New(wrapStandAloneImageWithinParagraph bool) goldmark.Extender {\n\treturn &imagesExtension{wrapStandAloneImageWithinParagraph: wrapStandAloneImageWithinParagraph}\n}",
+    "funcname": "New"
+}

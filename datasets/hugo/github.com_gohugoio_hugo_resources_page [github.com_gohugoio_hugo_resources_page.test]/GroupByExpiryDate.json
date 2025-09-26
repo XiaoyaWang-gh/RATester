@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 304,
+    "focalfunc": "func (p Pages) GroupByExpiryDate(format string, order ...string) (PagesGroup, error)",
+    "funcbody": "func (p Pages) GroupByExpiryDate(format string, order ...string) (PagesGroup, error) {\n\tsorter := func(p Pages) Pages {\n\t\treturn p.ByExpiryDate()\n\t}\n\tgetDate := func(p Page) time.Time {\n\t\treturn p.ExpiryDate()\n\t}\n\treturn p.groupByDateField(format, sorter, getDate, order...)\n}",
+    "funcname": "GroupByExpiryDate"
+}

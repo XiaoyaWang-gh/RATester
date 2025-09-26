@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/expvar/config.go",
+    "lineno": 19,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Next == nil {\n\t\tcfg.Next = ConfigDefault.Next\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

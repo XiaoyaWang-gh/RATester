@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 42,
+    "focalfunc": "func newSessionProvider() *SessionProvider",
+    "funcbody": "func newSessionProvider() *SessionProvider {\n\treturn &SessionProvider{\n\t\tStore: newSessionStore(),\n\t}\n}",
+    "funcname": "newSessionProvider"
+}

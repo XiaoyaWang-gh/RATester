@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/env.go",
+    "lineno": 47,
+    "focalfunc": "func GetMemoryLimit() uint64",
+    "funcbody": "func GetMemoryLimit() uint64 {\n\tif mem := os.Getenv(\"HUGO_MEMORYLIMIT\"); mem != \"\" {\n\t\tif v := stringToGibabyte(mem); v > 0 {\n\t\t\treturn v\n\t\t}\n\t}\n\n\tm := memory.TotalMemory()\n\tif m != 0 {\n\t\treturn uint64(m / 4)\n\t}\n\n\treturn 2 * gigabyte\n}",
+    "funcname": "GetMemoryLimit"
+}

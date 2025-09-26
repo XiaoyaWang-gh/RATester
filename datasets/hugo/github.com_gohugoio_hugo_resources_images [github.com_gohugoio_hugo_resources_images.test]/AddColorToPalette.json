@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 92,
+    "focalfunc": "func AddColorToPalette(c color.Color, p color.Palette) color.Palette",
+    "funcbody": "func AddColorToPalette(c color.Color, p color.Palette) color.Palette {\n\tvar found bool\n\tfor _, cc := range p {\n\t\tif c == cc {\n\t\t\tfound = true\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif !found {\n\t\tp = append(color.Palette{c}, p...)\n\t}\n\n\treturn p\n}",
+    "funcname": "AddColorToPalette"
+}

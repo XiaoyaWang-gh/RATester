@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 166,
+    "focalfunc": "func (l *Listener) getConn(raddr net.Addr) (*Conn, error)",
+    "funcbody": "func (l *Listener) getConn(raddr net.Addr) (*Conn, error) {\n\tl.mu.Lock()\n\tdefer l.mu.Unlock()\n\n\tconn, ok := l.conns[raddr.String()]\n\tif ok {\n\t\treturn conn, nil\n\t}\n\n\tif !l.accepting {\n\t\treturn nil, errClosedListener\n\t}\n\tconn = l.newConn(raddr)\n\tl.conns[raddr.String()] = conn\n\tl.acceptCh <- conn\n\tgo conn.readLoop()\n\n\treturn conn, nil\n}",
+    "funcname": "getConn"
+}

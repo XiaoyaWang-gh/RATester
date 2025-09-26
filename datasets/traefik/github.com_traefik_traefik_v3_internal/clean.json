@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 202,
+    "focalfunc": "func clean(element any)",
+    "funcbody": "func clean(element any) {\n\tvalSvcs := reflect.ValueOf(element)\n\n\tkey := valSvcs.MapKeys()[0]\n\tvalueSvcRoot := valSvcs.MapIndex(key).Elem()\n\n\tvar svcFieldNames []string\n\tfor i := range valueSvcRoot.NumField() {\n\t\tfield := valueSvcRoot.Type().Field(i)\n\n\t\tif field.Tag.Get(\"file\") == \"-\" && field.Tag.Get(\"kv\") == \"-\" && field.Tag.Get(\"label\") == \"-\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tsvcFieldNames = append(svcFieldNames, field.Name)\n\t}\n\n\tsort.Strings(svcFieldNames)\n\n\tfor i, fieldName := range svcFieldNames {\n\t\tv := reflect.New(valueSvcRoot.Type())\n\t\tv.Elem().FieldByName(fieldName).Set(valueSvcRoot.FieldByName(fieldName))\n\n\t\tvalSvcs.SetMapIndex(reflect.ValueOf(fmt.Sprintf(\"%s%.2d\", valueSvcRoot.Type().Name(), i+1)), v)\n\t}\n\n\tvalSvcs.SetMapIndex(reflect.ValueOf(fmt.Sprintf(\"%s0\", valueSvcRoot.Type().Name())), reflect.Value{})\n\tvalSvcs.SetMapIndex(reflect.ValueOf(fmt.Sprintf(\"%s1\", valueSvcRoot.Type().Name())), reflect.Value{})\n}",
+    "funcname": "clean"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 67,
+    "focalfunc": "func (fi *File) Ext() string",
+    "funcbody": "func (fi *File) Ext() string\t{ return fi.p().Ext() }",
+    "funcname": "Ext"
+}

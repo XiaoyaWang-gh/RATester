@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 206,
+    "focalfunc": "func DomainForward(hostname, addr string, clients ...*fasthttp.Client) fiber.Handler",
+    "funcbody": "func DomainForward(hostname, addr string, clients ...*fasthttp.Client) fiber.Handler {\n\treturn func(c fiber.Ctx) error {\n\t\thost := string(c.Request().Host())\n\t\tif host == hostname {\n\t\t\treturn Do(c, addr+c.OriginalURL(), clients...)\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "DomainForward"
+}

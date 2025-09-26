@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 120,
+    "focalfunc": "func (c *aliLSWriter) Format(lm *logs.LogMsg) string",
+    "funcbody": "func (c *aliLSWriter) Format(lm *logs.LogMsg) string {\n\treturn lm.OldStyleFormat()\n}",
+    "funcname": "Format"
+}

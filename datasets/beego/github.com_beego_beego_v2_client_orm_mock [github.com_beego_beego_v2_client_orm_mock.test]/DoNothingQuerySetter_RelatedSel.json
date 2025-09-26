@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 124,
+    "focalfunc": "func (d *DoNothingQuerySetter) RelatedSel(params ...interface{}) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) RelatedSel(params ...interface{}) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "RelatedSel"
+}

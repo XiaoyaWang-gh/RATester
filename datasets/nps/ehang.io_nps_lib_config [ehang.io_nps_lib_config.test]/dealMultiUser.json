@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 266,
+    "focalfunc": "func dealMultiUser(s string) map[string]string",
+    "funcbody": "func dealMultiUser(s string) map[string]string {\n\tmultiUserMap := make(map[string]string)\n\tfor _, v := range splitStr(s) {\n\t\titem := strings.Split(v, \"=\")\n\t\tif len(item) == 0 {\n\t\t\tcontinue\n\t\t} else if len(item) == 1 {\n\t\t\titem = append(item, \"\")\n\t\t}\n\t\tmultiUserMap[strings.TrimSpace(item[0])] = item[1]\n\t}\n\treturn multiUserMap\n}",
+    "funcname": "dealMultiUser"
+}

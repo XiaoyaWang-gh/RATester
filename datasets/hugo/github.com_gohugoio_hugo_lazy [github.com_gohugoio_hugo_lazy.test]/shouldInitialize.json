@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 142,
+    "focalfunc": "func (ini *Init) shouldInitialize() bool",
+    "funcbody": "func (ini *Init) shouldInitialize() bool {\n\treturn !(ini == nil || ini.init.Done() || ini.init.InProgress())\n}",
+    "funcname": "shouldInitialize"
+}

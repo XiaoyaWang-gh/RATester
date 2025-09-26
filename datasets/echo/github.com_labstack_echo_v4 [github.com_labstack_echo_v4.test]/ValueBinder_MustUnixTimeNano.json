@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1301,
+    "focalfunc": "func (b *ValueBinder) MustUnixTimeNano(sourceParam string, dest *time.Time) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustUnixTimeNano(sourceParam string, dest *time.Time) *ValueBinder {\n\treturn b.unixTime(sourceParam, dest, true, time.Nanosecond)\n}",
+    "funcname": "MustUnixTimeNano"
+}

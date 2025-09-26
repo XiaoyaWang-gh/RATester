@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 240,
+    "focalfunc": "func (l configLoader) applyFlagsOverrides(cfg config.Provider) error",
+    "funcbody": "func (l configLoader) applyFlagsOverrides(cfg config.Provider) error {\n\tfor _, k := range cfg.Keys() {\n\t\tl.cfg.Set(k, cfg.Get(k))\n\t}\n\treturn nil\n}",
+    "funcname": "applyFlagsOverrides"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 551,
+    "focalfunc": "func AllDispatchers(katexOpts Options) *Dispatchers",
+    "funcbody": "func AllDispatchers(katexOpts Options) *Dispatchers {\n\tif katexOpts.Runtime.Data == nil {\n\t\tkatexOpts.Runtime = Binary{Name: \"javy_quickjs_provider_v2\", Data: quickjsWasm}\n\t}\n\tif katexOpts.Main.Data == nil {\n\t\tkatexOpts.Main = Binary{Name: \"renderkatex\", Data: katexWasm}\n\t}\n\n\tif katexOpts.Infof == nil {\n\t\tkatexOpts.Infof = func(format string, v ...any) {\n\n\t\t}\n\t}\n\n\treturn &Dispatchers{\n\t\tkatex: &lazyDispatcher[KatexInput, KatexOutput]{opts: katexOpts},\n\t}\n}",
+    "funcname": "AllDispatchers"
+}

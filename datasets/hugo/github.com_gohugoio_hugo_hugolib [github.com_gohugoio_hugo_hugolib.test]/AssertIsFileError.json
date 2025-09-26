@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 380,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertIsFileError(err error) herrors.FileError",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertIsFileError(err error) herrors.FileError {\n\ts.Assert(err, qt.ErrorAs, new(herrors.FileError))\n\treturn herrors.UnwrapFileError(err)\n}",
+    "funcname": "AssertIsFileError"
+}

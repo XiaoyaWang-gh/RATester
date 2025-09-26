@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 103,
+    "focalfunc": "func (group *RouterGroup) Handle(httpMethod, relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) Handle(httpMethod, relativePath string, handlers ...HandlerFunc) IRoutes {\n\tif matched := regEnLetter.MatchString(httpMethod); !matched {\n\t\tpanic(\"http method \" + httpMethod + \" is not valid\")\n\t}\n\treturn group.handle(httpMethod, relativePath, handlers)\n}",
+    "funcname": "Handle"
+}

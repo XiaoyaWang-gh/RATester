@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 74,
+    "focalfunc": "func (r *Router) GetTLSGetClientInfo() func(info *tls.ClientHelloInfo) (*tls.Config, error)",
+    "funcbody": "func (r *Router) GetTLSGetClientInfo() func(info *tls.ClientHelloInfo) (*tls.Config, error) {\n\treturn func(info *tls.ClientHelloInfo) (*tls.Config, error) {\n\t\tif tlsConfig, ok := r.hostHTTPTLSConfig[info.ServerName]; ok {\n\t\t\treturn tlsConfig, nil\n\t\t}\n\n\t\treturn r.httpsTLSConfig, nil\n\t}\n}",
+    "funcname": "GetTLSGetClientInfo"
+}

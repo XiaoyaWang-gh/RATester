@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 153,
+    "focalfunc": "func (c *ConfigContainer) DefaultBool(key string, defaultVal bool) bool",
+    "funcbody": "func (c *ConfigContainer) DefaultBool(key string, defaultVal bool) bool {\n\tv, err := c.Bool(key)\n\tif err != nil {\n\t\treturn defaultVal\n\t}\n\treturn v\n}",
+    "funcname": "DefaultBool"
+}

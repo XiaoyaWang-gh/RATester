@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 178,
+    "focalfunc": "func lockViewPaths()",
+    "funcbody": "func lockViewPaths() {\n\tbeeViewPathTemplateLocked = true\n}",
+    "funcname": "lockViewPaths"
+}

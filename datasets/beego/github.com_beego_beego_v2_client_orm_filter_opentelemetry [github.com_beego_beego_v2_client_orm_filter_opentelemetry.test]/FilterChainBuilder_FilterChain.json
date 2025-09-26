@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentelemetry/filter.go",
+    "lineno": 56,
+    "focalfunc": "func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter",
+    "funcbody": "func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter {\n\treturn func(ctx context.Context, inv *orm.Invocation) []interface{} {\n\t\tif strings.HasPrefix(inv.Method, \"Begin\") || inv.Method == \"Commit\" || inv.Method == \"Rollback\" {\n\t\t\treturn next(ctx, inv)\n\t\t}\n\t\tspanCtx, span := otel.Tracer(\"beego_orm\").Start(ctx, invOperationName(ctx, inv))\n\t\tdefer span.End()\n\n\t\tres := next(spanCtx, inv)\n\t\tbuilder.buildSpan(spanCtx, span, inv)\n\t\treturn res\n\t}\n}",
+    "funcname": "FilterChain"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/conv.go",
+    "lineno": 12,
+    "focalfunc": "func ConvertParams(methodParams []*MethodParam, methodType reflect.Type, ctx *beecontext.Context) (result []reflect.Value)",
+    "funcbody": "func ConvertParams(methodParams []*MethodParam, methodType reflect.Type, ctx *beecontext.Context) (result []reflect.Value) {\n\tresult = make([]reflect.Value, 0, len(methodParams))\n\tfor i := 0; i < len(methodParams); i++ {\n\t\treflectValue := convertParam(methodParams[i], methodType.In(i), ctx)\n\t\tresult = append(result, reflectValue)\n\t}\n\treturn\n}",
+    "funcname": "ConvertParams"
+}

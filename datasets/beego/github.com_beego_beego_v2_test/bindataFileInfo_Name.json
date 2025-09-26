@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 56,
+    "focalfunc": "func (fi bindataFileInfo) Name() string",
+    "funcbody": "func (fi bindataFileInfo) Name() string {\n\treturn fi.name\n}",
+    "funcname": "Name"
+}

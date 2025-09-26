@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 147,
+    "focalfunc": "func (o querySet) OrderBy(expressions ...string) QuerySeter",
+    "funcbody": "func (o querySet) OrderBy(expressions ...string) QuerySeter {\n\tif len(expressions) <= 0 {\n\t\treturn &o\n\t}\n\to.orders = order_clause.ParseOrder(expressions...)\n\treturn &o\n}",
+    "funcname": "OrderBy"
+}

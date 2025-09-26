@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 713,
+    "focalfunc": "func getProtocol(portSpec corev1.ServicePort, portName string, svcConfig *ServiceConfig) string",
+    "funcbody": "func getProtocol(portSpec corev1.ServicePort, portName string, svcConfig *ServiceConfig) string {\n\tif svcConfig != nil && svcConfig.Service != nil && svcConfig.Service.ServersScheme != \"\" {\n\t\treturn svcConfig.Service.ServersScheme\n\t}\n\n\tprotocol := \"http\"\n\tif portSpec.Port == 443 || strings.HasPrefix(portName, \"https\") {\n\t\tprotocol = \"https\"\n\t}\n\n\treturn protocol\n}",
+    "funcname": "getProtocol"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 41,
+    "focalfunc": "func NewTransactionID() string",
+    "funcbody": "func NewTransactionID() string {\n\tid, _ := util.RandID()\n\treturn fmt.Sprintf(\"%d%s\", time.Now().Unix(), id)\n}",
+    "funcname": "NewTransactionID"
+}

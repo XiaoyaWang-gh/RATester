@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/tcp/service.go",
+    "lineno": 122,
+    "focalfunc": "func shuffle[T any](values []T, r *rand.Rand) []T",
+    "funcbody": "func shuffle[T any](values []T, r *rand.Rand) []T {\n\tshuffled := make([]T, len(values))\n\tcopy(shuffled, values)\n\tr.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })\n\n\treturn shuffled\n}",
+    "funcname": "shuffle"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_rawSetter.go",
+    "lineno": 53,
+    "focalfunc": "func (d *DoNothingRawSetter) RowsToMap(result *orm.Params, keyCol, valueCol string) (int64, error)",
+    "funcbody": "func (d *DoNothingRawSetter) RowsToMap(result *orm.Params, keyCol, valueCol string) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "RowsToMap"
+}

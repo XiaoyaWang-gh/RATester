@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/clientset.go",
+    "lineno": 122,
+    "focalfunc": "func New(c rest.Interface) *Clientset",
+    "funcbody": "func New(c rest.Interface) *Clientset {\n\tvar cs Clientset\n\tcs.traefikV1alpha1 = traefikv1alpha1.New(c)\n\n\tcs.DiscoveryClient = discovery.NewDiscoveryClient(c)\n\treturn &cs\n}",
+    "funcname": "New"
+}

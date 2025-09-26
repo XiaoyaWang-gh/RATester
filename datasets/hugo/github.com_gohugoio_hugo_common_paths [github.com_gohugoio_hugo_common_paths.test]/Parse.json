@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 95,
+    "focalfunc": "func (pp *PathParser) parse(component, s string) (*Path, error)",
+    "funcbody": "func (pp *PathParser) parse(component, s string) (*Path, error) {\n\tss := NormalizePathStringBasic(s)\n\n\tp, err := pp.doParse(component, ss, pp.newPath(component))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif s != ss {\n\t\tvar err error\n\n\t\tp.unnormalized, err = pp.doParse(component, s, pp.newPath(component))\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t} else {\n\t\tp.unnormalized = p\n\t}\n\n\treturn p, nil\n}",
+    "funcname": "parse"
+}

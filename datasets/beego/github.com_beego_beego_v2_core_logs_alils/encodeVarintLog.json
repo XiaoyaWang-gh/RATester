@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 352,
+    "focalfunc": "func encodeVarintLog(data []byte, offset int, v uint64) int",
+    "funcbody": "func encodeVarintLog(data []byte, offset int, v uint64) int {\n\tfor v >= 1<<7 {\n\t\tdata[offset] = uint8(v&0x7f | 0x80)\n\t\tv >>= 7\n\t\toffset++\n\t}\n\tdata[offset] = uint8(v)\n\treturn offset + 1\n}",
+    "funcname": "encodeVarintLog"
+}

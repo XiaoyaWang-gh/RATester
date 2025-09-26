@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 91,
+    "focalfunc": "func (s *Client) HasTunnel(t *Tunnel) (exist bool)",
+    "funcbody": "func (s *Client) HasTunnel(t *Tunnel) (exist bool) {\n\tGetDb().JsonDb.Tasks.Range(func(key, value interface{}) bool {\n\t\tv := value.(*Tunnel)\n\t\tif v.Client.Id == s.Id && v.Port == t.Port && t.Port != 0 {\n\t\t\texist = true\n\t\t\treturn false\n\t\t}\n\t\treturn true\n\t})\n\treturn\n}",
+    "funcname": "HasTunnel"
+}

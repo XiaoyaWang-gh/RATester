@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/mysql/sess_mysql.go",
+    "lineno": 236,
+    "focalfunc": "func (mp *Provider) SessionAll(context.Context) int",
+    "funcbody": "func (mp *Provider) SessionAll(context.Context) int {\n\tc := mp.connectInit()\n\tdefer c.Close()\n\tvar total int\n\terr := c.QueryRow(\"SELECT count(*) as num from \" + TableName).Scan(&total)\n\tif err != nil {\n\t\treturn 0\n\t}\n\treturn total\n}",
+    "funcname": "SessionAll"
+}

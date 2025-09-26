@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/singleflight.go",
+    "lineno": 51,
+    "focalfunc": "func (s *SingleflightCache) Get(ctx context.Context, key string) (any, error)",
+    "funcbody": "func (s *SingleflightCache) Get(ctx context.Context, key string) (any, error) {\n\tval, err := s.Cache.Get(ctx, key)\n\tif val == nil || err != nil {\n\t\tval, err, _ = s.group.Do(key, func() (interface{}, error) {\n\t\t\tv, er := s.loadFunc(ctx, key)\n\t\t\tif er != nil {\n\t\t\t\treturn nil, berror.Wrap(er, LoadFuncFailed, \"cache unable to load data\")\n\t\t\t}\n\t\t\ter = s.Cache.Put(ctx, key, v, s.expiration)\n\t\t\treturn v, er\n\t\t})\n\t}\n\treturn val, err\n}",
+    "funcname": "Get"
+}

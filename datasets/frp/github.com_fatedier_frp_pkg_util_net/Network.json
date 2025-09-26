@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/listener.go",
+    "lineno": 77,
+    "focalfunc": "func (ia *InternalAddr) Network() string",
+    "funcbody": "func (ia *InternalAddr) Network() string {\n\treturn \"internal\"\n}",
+    "funcname": "Network"
+}

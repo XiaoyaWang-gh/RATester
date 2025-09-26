@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 38,
+    "focalfunc": "func Listen(listenConfig net.ListenConfig, network, address string, timeout time.Duration) (*Listener, error)",
+    "funcbody": "func Listen(listenConfig net.ListenConfig, network, address string, timeout time.Duration) (*Listener, error) {\n\tif timeout <= 0 {\n\t\treturn nil, errors.New(\"timeout should be greater than zero\")\n\t}\n\n\tpacketConn, err := listenConfig.ListenPacket(context.Background(), network, address)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"listen packet: %w\", err)\n\t}\n\tpConn, ok := packetConn.(*net.UDPConn)\n\tif !ok {\n\t\treturn nil, errors.New(\"packet conn is not an UDPConn\")\n\t}\n\n\tl := &Listener{\n\t\tpConn:\t\tpConn,\n\t\tacceptCh:\tmake(chan *Conn),\n\t\tconns:\t\tmake(map[string]*Conn),\n\t\taccepting:\ttrue,\n\t\ttimeout:\ttimeout,\n\t}\n\n\tgo l.readLoop()\n\n\treturn l, nil\n}",
+    "funcname": "Listen"
+}

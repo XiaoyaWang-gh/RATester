@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 581,
+    "focalfunc": "func (c *Context) get(m map[string][]string, key string) (map[string]string, bool)",
+    "funcbody": "func (c *Context) get(m map[string][]string, key string) (map[string]string, bool) {\n\tdicts := make(map[string]string)\n\texist := false\n\tfor k, v := range m {\n\t\tif i := strings.IndexByte(k, '['); i >= 1 && k[0:i] == key {\n\t\t\tif j := strings.IndexByte(k[i+1:], ']'); j >= 1 {\n\t\t\t\texist = true\n\t\t\t\tdicts[k[i+1:][:j]] = v[0]\n\t\t\t}\n\t\t}\n\t}\n\treturn dicts, exist\n}",
+    "funcname": "get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_spec.go",
+    "lineno": 214,
+    "focalfunc": "func (r *Spec) MediaTypes() media.Types",
+    "funcbody": "func (r *Spec) MediaTypes() media.Types {\n\treturn r.Cfg.GetConfigSection(\"mediaTypes\").(media.Types)\n}",
+    "funcname": "MediaTypes"
+}

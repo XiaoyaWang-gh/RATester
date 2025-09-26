@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/hub.go",
+    "lineno": 37,
+    "focalfunc": "func (h *hub) run()",
+    "funcbody": "func (h *hub) run() {\n\tfor {\n\t\tselect {\n\t\tcase c := <-h.register:\n\t\t\th.connections[c] = true\n\t\tcase c := <-h.unregister:\n\t\t\tdelete(h.connections, c)\n\t\t\tc.close()\n\t\tcase m := <-h.broadcast:\n\t\t\tfor c := range h.connections {\n\t\t\t\tselect {\n\t\t\t\tcase c.send <- m:\n\t\t\t\tdefault:\n\t\t\t\t\tdelete(h.connections, c)\n\t\t\t\t\tc.close()\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "run"
+}

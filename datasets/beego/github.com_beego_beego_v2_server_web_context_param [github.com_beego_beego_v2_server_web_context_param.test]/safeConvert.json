@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/conv.go",
+    "lineno": 66,
+    "focalfunc": "func safeConvert(value reflect.Value, t reflect.Type) (result reflect.Value, err error)",
+    "funcbody": "func safeConvert(value reflect.Value, t reflect.Type) (result reflect.Value, err error) {\n\tdefer func() {\n\t\tif r := recover(); r != nil {\n\t\t\tvar ok bool\n\t\t\terr, ok = r.(error)\n\t\t\tif !ok {\n\t\t\t\terr = fmt.Errorf(\"%v\", r)\n\t\t\t}\n\t\t}\n\t}()\n\tresult = value.Convert(t)\n\treturn\n}",
+    "funcname": "safeConvert"
+}

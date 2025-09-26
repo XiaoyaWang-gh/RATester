@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 136,
+    "focalfunc": "func Uglify(in string) string",
+    "funcbody": "func Uglify(in string) string {\n\tif path.Ext(in) == \"\" {\n\t\tif len(in) < 2 {\n\t\t\treturn \"/\"\n\t\t}\n\n\t\treturn path.Clean(in) + \".html\"\n\t}\n\n\tname, ext := fileAndExt(in, pb)\n\tif name == \"index\" {\n\n\t\td := path.Dir(in)\n\t\tif len(d) > 1 {\n\t\t\treturn d + ext\n\t\t}\n\t\treturn in\n\t}\n\n\tif name == \"\" {\n\t\treturn path.Dir(in) + \"index\" + ext\n\t}\n\n\treturn path.Clean(in)\n}",
+    "funcname": "Uglify"
+}

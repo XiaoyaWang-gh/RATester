@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/grpcroute.go",
+    "lineno": 427,
+    "focalfunc": "func buildGRPCHeaderRules(headers []gatev1.GRPCHeaderMatch) []string",
+    "funcbody": "func buildGRPCHeaderRules(headers []gatev1.GRPCHeaderMatch) []string {\n\tvar rules []string\n\tfor _, header := range headers {\n\t\tswitch ptr.Deref(header.Type, gatev1.HeaderMatchExact) {\n\t\tcase gatev1.HeaderMatchExact:\n\t\t\trules = append(rules, fmt.Sprintf(\"Header(`%s`,`%s`)\", header.Name, header.Value))\n\t\tcase gatev1.HeaderMatchRegularExpression:\n\t\t\trules = append(rules, fmt.Sprintf(\"HeaderRegexp(`%s`,`%s`)\", header.Name, header.Value))\n\t\t}\n\t}\n\n\treturn rules\n}",
+    "funcname": "buildGRPCHeaderRules"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 54,
+    "focalfunc": "func (c *searchCriterion) withStatus(name string) bool",
+    "funcbody": "func (c *searchCriterion) withStatus(name string) bool {\n\treturn c.Status == \"\" || strings.EqualFold(name, c.Status)\n}",
+    "funcname": "withStatus"
+}

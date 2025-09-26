@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/config.go",
+    "lineno": 180,
+    "focalfunc": "func (p *DynConfBuilder) keepContainer(ctx context.Context, container dockerData) bool",
+    "funcbody": "func (p *DynConfBuilder) keepContainer(ctx context.Context, container dockerData) bool {\n\tlogger := log.Ctx(ctx)\n\n\tif !container.ExtraConf.Enable {\n\t\tlogger.Debug().Msg(\"Filtering disabled container\")\n\t\treturn false\n\t}\n\n\tmatches, err := constraints.MatchLabels(container.Labels, p.Constraints)\n\tif err != nil {\n\t\tlogger.Error().Err(err).Msg(\"Error matching constraints expression\")\n\t\treturn false\n\t}\n\tif !matches {\n\t\tlogger.Debug().Msgf(\"Container pruned by constraint expression: %q\", p.Constraints)\n\t\treturn false\n\t}\n\n\tif !p.AllowEmptyServices && container.Health != \"\" && container.Health != dockertypes.Healthy {\n\t\tlogger.Debug().Msg(\"Filtering unhealthy or starting container\")\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "keepContainer"
+}

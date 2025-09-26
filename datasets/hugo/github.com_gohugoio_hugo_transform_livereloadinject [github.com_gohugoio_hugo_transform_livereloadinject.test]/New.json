@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/livereloadinject/livereloadinject.go",
+    "lineno": 39,
+    "focalfunc": "func New(baseURL *url.URL) transform.Transformer",
+    "funcbody": "func New(baseURL *url.URL) transform.Transformer {\n\treturn func(ft transform.FromTo) error {\n\t\tb := ft.From().Bytes()\n\n\t\tidx := 0\n\t\tfor _, tag := range tagsBeforeHead {\n\t\t\tidx += len(ignoredSyntax.Find(b[idx:]))\n\t\t\tidx += len(tag.Find(b[idx:]))\n\t\t}\n\n\t\tpath := strings.TrimSuffix(baseURL.Path, \"/\")\n\n\t\tsrc := path + \"/livereload.js?mindelay=10&v=2\"\n\t\tsrc += \"&port=\" + baseURL.Port()\n\t\tsrc += \"&path=\" + strings.TrimPrefix(path+\"/livereload\", \"/\")\n\n\t\tscript := []byte(fmt.Sprintf(`<script src=\"%s\" data-no-instant defer></script>`, html.EscapeString(src)))\n\n\t\tc := make([]byte, len(b)+len(script))\n\t\tcopy(c, b[:idx])\n\t\tcopy(c[idx:], script)\n\t\tcopy(c[idx+len(script):], b[idx:])\n\n\t\tif _, err := ft.To().Write(c); err != nil {\n\t\t\tloggers.Log().Warnf(\"Failed to inject LiveReload script:\", err)\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "New"
+}

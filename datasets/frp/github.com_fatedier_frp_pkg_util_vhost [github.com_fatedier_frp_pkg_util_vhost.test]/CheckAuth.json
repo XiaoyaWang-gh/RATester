@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 188,
+    "focalfunc": "func (rp *HTTPReverseProxy) CheckAuth(domain, location, routeByHTTPUser, user, passwd string) bool",
+    "funcbody": "func (rp *HTTPReverseProxy) CheckAuth(domain, location, routeByHTTPUser, user, passwd string) bool {\n\tvr, ok := rp.getVhost(domain, location, routeByHTTPUser)\n\tif ok {\n\t\tcheckUser := vr.payload.(*RouteConfig).Username\n\t\tcheckPasswd := vr.payload.(*RouteConfig).Password\n\t\tif (checkUser != \"\" || checkPasswd != \"\") && (checkUser != user || checkPasswd != passwd) {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "CheckAuth"
+}

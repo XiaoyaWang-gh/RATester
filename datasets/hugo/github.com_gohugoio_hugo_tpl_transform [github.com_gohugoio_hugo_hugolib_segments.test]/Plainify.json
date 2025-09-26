@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 192,
+    "focalfunc": "func (ns *Namespace) Plainify(s any) (template.HTML, error)",
+    "funcbody": "func (ns *Namespace) Plainify(s any) (template.HTML, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn template.HTML(tpl.StripHTML(ss)), nil\n}",
+    "funcname": "Plainify"
+}

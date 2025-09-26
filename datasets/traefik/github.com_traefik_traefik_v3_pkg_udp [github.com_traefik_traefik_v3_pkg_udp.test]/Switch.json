@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/switcher.go",
+    "lineno": 24,
+    "focalfunc": "func (s *HandlerSwitcher) Switch(handler Handler)",
+    "funcbody": "func (s *HandlerSwitcher) Switch(handler Handler) {\n\ts.handler.Set(handler)\n}",
+    "funcname": "Switch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/server.go",
+    "lineno": 120,
+    "focalfunc": "func (s *Server) registerPprofHandlers()",
+    "funcbody": "func (s *Server) registerPprofHandlers() {\n\ts.router.HandleFunc(\"/debug/pprof/cmdline\", pprof.Cmdline)\n\ts.router.HandleFunc(\"/debug/pprof/profile\", pprof.Profile)\n\ts.router.HandleFunc(\"/debug/pprof/symbol\", pprof.Symbol)\n\ts.router.HandleFunc(\"/debug/pprof/trace\", pprof.Trace)\n\ts.router.PathPrefix(\"/debug/pprof/\").HandlerFunc(pprof.Index)\n}",
+    "funcname": "registerPprofHandlers"
+}

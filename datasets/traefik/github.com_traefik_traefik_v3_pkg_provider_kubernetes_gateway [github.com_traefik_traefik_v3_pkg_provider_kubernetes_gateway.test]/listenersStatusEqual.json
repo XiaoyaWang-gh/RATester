@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 794,
+    "focalfunc": "func listenersStatusEqual(listenerA, listenerB []gatev1.ListenerStatus) bool",
+    "funcbody": "func listenersStatusEqual(listenerA, listenerB []gatev1.ListenerStatus) bool {\n\treturn slices.EqualFunc(listenerA, listenerB, func(lA gatev1.ListenerStatus, lB gatev1.ListenerStatus) bool {\n\t\treturn lA.Name == lB.Name &&\n\t\t\tlA.AttachedRoutes == lB.AttachedRoutes &&\n\t\t\tconditionsEqual(lA.Conditions, lB.Conditions)\n\t})\n}",
+    "funcname": "listenersStatusEqual"
+}

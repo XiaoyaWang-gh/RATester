@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 321,
+    "focalfunc": "func (l PermalinkExpander) pageToPermalinkSections(p Page, _ string) (string, error)",
+    "funcbody": "func (l PermalinkExpander) pageToPermalinkSections(p Page, _ string) (string, error) {\n\treturn p.CurrentSection().SectionsPath(), nil\n}",
+    "funcname": "pageToPermalinkSections"
+}

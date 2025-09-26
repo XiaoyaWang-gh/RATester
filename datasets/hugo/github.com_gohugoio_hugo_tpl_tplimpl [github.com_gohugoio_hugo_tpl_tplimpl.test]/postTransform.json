@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 906,
+    "focalfunc": "func (t *templateHandler) postTransform() error",
+    "funcbody": "func (t *templateHandler) postTransform() error {\n\tdefineCheckedHTML := false\n\tdefineCheckedText := false\n\n\tfor _, v := range t.main.templates {\n\t\tif v.typ == templateShortcode {\n\t\t\tt.addShortcodeVariant(v)\n\t\t}\n\n\t\tif defineCheckedHTML && defineCheckedText {\n\t\t\tcontinue\n\t\t}\n\n\t\tisText := isText(v.Template)\n\t\tif isText {\n\t\t\tif defineCheckedText {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tdefineCheckedText = true\n\t\t} else {\n\t\t\tif defineCheckedHTML {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tdefineCheckedHTML = true\n\t\t}\n\n\t\tif err := t.extractPartials(v.Template); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tfor name, source := range t.transformNotFound {\n\t\tlookup := t.main.newTemplateLookup(source)\n\t\ttempl := lookup(name)\n\t\tif templ != nil {\n\t\t\t_, err := applyTemplateTransformers(templ, lookup)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\n\tfor _, v := range t.shortcodes {\n\t\tsort.Slice(v.variants, func(i, j int) bool {\n\t\t\tv1, v2 := v.variants[i], v.variants[j]\n\t\t\tname1, name2 := v1.ts.Name(), v2.ts.Name()\n\t\t\tisHTMl1, isHTML2 := strings.HasSuffix(name1, \"html\"), strings.HasSuffix(name2, \"html\")\n\n\t\t\tif isHTMl1 || isHTML2 && !(isHTMl1 && isHTML2) {\n\t\t\t\treturn isHTMl1\n\t\t\t}\n\n\t\t\treturn name1 < name2\n\t\t})\n\t}\n\n\treturn nil\n}",
+    "funcname": "postTransform"
+}

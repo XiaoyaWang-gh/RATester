@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 43,
+    "focalfunc": "func newServiceRepresentation(name string, si *runtime.ServiceInfo) serviceRepresentation",
+    "funcbody": "func newServiceRepresentation(name string, si *runtime.ServiceInfo) serviceRepresentation {\n\treturn serviceRepresentation{\n\t\tServiceInfo:\tsi,\n\t\tName:\t\tname,\n\t\tProvider:\tgetProviderName(name),\n\t\tServerStatus:\tsi.GetAllStatus(),\n\t\tType:\t\tstrings.ToLower(extractType(si.Service)),\n\t}\n}",
+    "funcname": "newServiceRepresentation"
+}

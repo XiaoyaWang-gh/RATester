@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/batcher.go",
+    "lineno": 81,
+    "focalfunc": "func (b *Batcher) Close()",
+    "funcbody": "func (b *Batcher) Close() {\n\tb.done <- struct{}{}\n\tb.FileWatcher.Close()\n\tb.ticker.Stop()\n}",
+    "funcname": "Close"
+}

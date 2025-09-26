@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/passthrough/passthrough.go",
+    "lineno": 44,
+    "focalfunc": "func (e *passthroughExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (e *passthroughExtension) Extend(m goldmark.Markdown) {\n\tconfiguredInlines := e.cfg.Delimiters.Inline\n\tconfiguredBlocks := e.cfg.Delimiters.Block\n\n\tinlineDelimiters := make([]passthrough.Delimiters, len(configuredInlines))\n\tblockDelimiters := make([]passthrough.Delimiters, len(configuredBlocks))\n\n\tfor i, d := range configuredInlines {\n\t\tinlineDelimiters[i] = passthrough.Delimiters{\n\t\t\tOpen:\td[0],\n\t\t\tClose:\td[1],\n\t\t}\n\t}\n\n\tfor i, d := range configuredBlocks {\n\t\tblockDelimiters[i] = passthrough.Delimiters{\n\t\t\tOpen:\td[0],\n\t\t\tClose:\td[1],\n\t\t}\n\t}\n\n\tpse := passthrough.New(\n\t\tpassthrough.Config{\n\t\t\tInlineDelimiters:\tinlineDelimiters,\n\t\t\tBlockDelimiters:\tblockDelimiters,\n\t\t},\n\t)\n\n\tpse.Extend(m)\n\n\tm.Renderer().AddOptions(renderer.WithNodeRenderers(\n\t\tutil.Prioritized(newHTMLRenderer(), 90),\n\t))\n}",
+    "funcname": "Extend"
+}

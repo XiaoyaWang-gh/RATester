@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/babel/babel.go",
+    "lineno": 235,
+    "focalfunc": "func (c *Client) Process(res resources.ResourceTransformer, options Options) (resource.Resource, error)",
+    "funcbody": "func (c *Client) Process(res resources.ResourceTransformer, options Options) (resource.Resource, error) {\n\treturn res.Transform(\n\t\t&babelTransformation{rs: c.rs, options: options},\n\t)\n}",
+    "funcname": "Process"
+}

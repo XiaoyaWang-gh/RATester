@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 147,
+    "focalfunc": "func (c *Controller) GenSid() string",
+    "funcbody": "func (c *Controller) GenSid() string {\n\tt := time.Now().Unix()\n\tid, _ := util.RandID()\n\treturn fmt.Sprintf(\"%d%s\", t, id)\n}",
+    "funcname": "GenSid"
+}

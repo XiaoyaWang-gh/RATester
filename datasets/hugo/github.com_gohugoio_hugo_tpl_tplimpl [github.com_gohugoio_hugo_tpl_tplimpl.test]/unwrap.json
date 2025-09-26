@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1209,
+    "focalfunc": "func unwrap(templ tpl.Template) tpl.Template",
+    "funcbody": "func unwrap(templ tpl.Template) tpl.Template {\n\tif ts, ok := templ.(*templateState); ok {\n\t\treturn ts.Template\n\t}\n\treturn templ\n}",
+    "funcname": "unwrap"
+}

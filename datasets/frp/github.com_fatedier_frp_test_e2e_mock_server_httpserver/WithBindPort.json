@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 41,
+    "focalfunc": "func WithBindPort(port int) Option",
+    "funcbody": "func WithBindPort(port int) Option {\n\treturn func(s *Server) *Server {\n\t\ts.bindPort = port\n\t\treturn s\n\t}\n}",
+    "funcname": "WithBindPort"
+}

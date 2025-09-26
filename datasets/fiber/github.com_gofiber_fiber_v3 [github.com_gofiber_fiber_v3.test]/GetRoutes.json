@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 611,
+    "focalfunc": "func (app *App) GetRoutes(filterUseOption ...bool) []Route",
+    "funcbody": "func (app *App) GetRoutes(filterUseOption ...bool) []Route {\n\tvar rs []Route\n\tvar filterUse bool\n\tif len(filterUseOption) != 0 {\n\t\tfilterUse = filterUseOption[0]\n\t}\n\tfor _, routes := range app.stack {\n\t\tfor _, route := range routes {\n\t\t\tif filterUse && route.use {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\trs = append(rs, *route)\n\t\t}\n\t}\n\treturn rs\n}",
+    "funcname": "GetRoutes"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/tcpmux.go",
+    "lineno": 48,
+    "focalfunc": "func (pxy *TCPMuxProxy) httpConnectListen(\n\tdomain, routeByHTTPUser, httpUser, httpPwd string, addrs []string) ([]string, error,\n)",
+    "funcbody": "func (pxy *TCPMuxProxy) httpConnectListen(\n\tdomain, routeByHTTPUser, httpUser, httpPwd string, addrs []string) ([]string, error,\n) {\n\tvar l net.Listener\n\tvar err error\n\trouteConfig := &vhost.RouteConfig{\n\t\tDomain:\t\t\tdomain,\n\t\tRouteByHTTPUser:\trouteByHTTPUser,\n\t\tUsername:\t\thttpUser,\n\t\tPassword:\t\thttpPwd,\n\t}\n\tif pxy.cfg.LoadBalancer.Group != \"\" {\n\t\tl, err = pxy.rc.TCPMuxGroupCtl.Listen(pxy.ctx, pxy.cfg.Multiplexer,\n\t\t\tpxy.cfg.LoadBalancer.Group, pxy.cfg.LoadBalancer.GroupKey, *routeConfig)\n\t} else {\n\t\tl, err = pxy.rc.TCPMuxHTTPConnectMuxer.Listen(pxy.ctx, routeConfig)\n\t}\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tpxy.xl.Infof(\"tcpmux httpconnect multiplexer listens for host [%s], group [%s] routeByHTTPUser [%s]\",\n\t\tdomain, pxy.cfg.LoadBalancer.Group, pxy.cfg.RouteByHTTPUser)\n\tpxy.listeners = append(pxy.listeners, l)\n\treturn append(addrs, util.CanonicalAddr(domain, pxy.serverCfg.TCPMuxHTTPConnectPort)), nil\n}",
+    "funcname": "httpConnectListen"
+}

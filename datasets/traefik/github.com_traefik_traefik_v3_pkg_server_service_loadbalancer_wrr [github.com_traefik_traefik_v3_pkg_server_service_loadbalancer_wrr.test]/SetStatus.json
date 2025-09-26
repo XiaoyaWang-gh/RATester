@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 121,
+    "focalfunc": "func (b *Balancer) SetStatus(ctx context.Context, childName string, up bool)",
+    "funcbody": "func (b *Balancer) SetStatus(ctx context.Context, childName string, up bool) {\n\tb.handlersMu.Lock()\n\tdefer b.handlersMu.Unlock()\n\n\tupBefore := len(b.status) > 0\n\n\tstatus := \"DOWN\"\n\tif up {\n\t\tstatus = \"UP\"\n\t}\n\n\tlog.Ctx(ctx).Debug().Msgf(\"Setting status of %s to %v\", childName, status)\n\n\tif up {\n\t\tb.status[childName] = struct{}{}\n\t} else {\n\t\tdelete(b.status, childName)\n\t}\n\n\tupAfter := len(b.status) > 0\n\tstatus = \"DOWN\"\n\tif upAfter {\n\t\tstatus = \"UP\"\n\t}\n\n\tif upBefore == upAfter {\n\n\t\tlog.Ctx(ctx).Debug().Msgf(\"Still %s, no need to propagate\", status)\n\t\treturn\n\t}\n\n\tlog.Ctx(ctx).Debug().Msgf(\"Propagating new %s status\", status)\n\tfor _, fn := range b.updaters {\n\t\tfn(upAfter)\n\t}\n}",
+    "funcname": "SetStatus"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 728,
+    "focalfunc": "func filepathOrContent(fileOrContent interface{}) (content []byte, err error)",
+    "funcbody": "func filepathOrContent(fileOrContent interface{}) (content []byte, err error) {\n\tswitch v := fileOrContent.(type) {\n\tcase string:\n\t\treturn os.ReadFile(v)\n\tcase []byte:\n\t\treturn v, nil\n\tdefault:\n\t\treturn nil, ErrInvalidCertOrKeyType\n\t}\n}",
+    "funcname": "filepathOrContent"
+}

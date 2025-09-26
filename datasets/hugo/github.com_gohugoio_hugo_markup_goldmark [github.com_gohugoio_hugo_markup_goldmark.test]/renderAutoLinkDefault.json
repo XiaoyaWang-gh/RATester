@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 369,
+    "focalfunc": "func (r *hookedRenderer) renderAutoLinkDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderAutoLinkDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tn := node.(*ast.AutoLink)\n\tif !entering {\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\t_, _ = w.WriteString(`<a href=\"`)\n\turl := r.autoLinkURL(n, source)\n\tlabel := n.Label(source)\n\tif n.AutoLinkType == ast.AutoLinkEmail && !bytes.HasPrefix(bytes.ToLower(url), []byte(\"mailto:\")) {\n\t\t_, _ = w.WriteString(\"mailto:\")\n\t}\n\t_, _ = w.Write(util.EscapeHTML(util.URLEscape(url, false)))\n\tif n.Attributes() != nil {\n\t\t_ = w.WriteByte('\"')\n\t\thtml.RenderAttributes(w, n, html.LinkAttributeFilter)\n\t\t_ = w.WriteByte('>')\n\t} else {\n\t\t_, _ = w.WriteString(`\">`)\n\t}\n\t_, _ = w.Write(util.EscapeHTML(label))\n\t_, _ = w.WriteString(`</a>`)\n\treturn ast.WalkContinue, nil\n}",
+    "funcname": "renderAutoLinkDefault"
+}

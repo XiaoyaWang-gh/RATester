@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 274,
+    "focalfunc": "func hash(input string) string",
+    "funcbody": "func hash(input string) string {\n\thasher := fnv.New64()\n\n\t_, _ = hasher.Write([]byte(input))\n\n\treturn strconv.FormatUint(hasher.Sum64(), 16)\n}",
+    "funcname": "hash"
+}

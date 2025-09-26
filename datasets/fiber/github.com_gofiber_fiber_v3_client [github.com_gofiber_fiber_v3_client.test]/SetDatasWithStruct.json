@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 769,
+    "focalfunc": "func (f *FormData) SetDatasWithStruct(v any)",
+    "funcbody": "func (f *FormData) SetDatasWithStruct(v any) {\n\tSetValWithStruct(f, \"form\", v)\n}",
+    "funcname": "SetDatasWithStruct"
+}

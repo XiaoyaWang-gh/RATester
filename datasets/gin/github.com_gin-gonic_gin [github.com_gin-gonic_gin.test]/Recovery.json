@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/recovery.go",
+    "lineno": 33,
+    "focalfunc": "func Recovery() HandlerFunc",
+    "funcbody": "func Recovery() HandlerFunc {\n\treturn RecoveryWithWriter(DefaultErrorWriter)\n}",
+    "funcname": "Recovery"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/logrus.go",
+    "lineno": 27,
+    "focalfunc": "func (l LogrusStdWrapper) Fatal(args ...interface{})",
+    "funcbody": "func (l LogrusStdWrapper) Fatal(args ...interface{}) {\n\tl.logger.Fatal().CallerSkipFrame(1).MsgFunc(msgFunc(args...))\n}",
+    "funcname": "Fatal"
+}

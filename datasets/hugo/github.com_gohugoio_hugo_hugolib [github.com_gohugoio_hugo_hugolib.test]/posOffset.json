@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 648,
+    "focalfunc": "func (p *pageState) posOffset(offset int) text.Position",
+    "funcbody": "func (p *pageState) posOffset(offset int) text.Position {\n\treturn p.posFromInput(p.m.content.mustSource(), offset)\n}",
+    "funcname": "posOffset"
+}

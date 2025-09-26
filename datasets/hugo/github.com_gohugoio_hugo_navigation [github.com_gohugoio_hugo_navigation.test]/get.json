@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu_cache.go",
+    "lineno": 65,
+    "focalfunc": "func (c *menuCache) get(key string, apply func(m Menu), menuLists ...Menu) (Menu, bool)",
+    "funcbody": "func (c *menuCache) get(key string, apply func(m Menu), menuLists ...Menu) (Menu, bool) {\n\treturn c.getP(key, func(m *Menu) {\n\t\tif apply != nil {\n\t\t\tapply(*m)\n\t\t}\n\t}, menuLists...)\n}",
+    "funcname": "get"
+}

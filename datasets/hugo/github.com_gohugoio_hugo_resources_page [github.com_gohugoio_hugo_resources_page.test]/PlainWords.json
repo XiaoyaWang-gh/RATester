@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 587,
+    "focalfunc": "func (c *nopContent) PlainWords(context.Context) []string",
+    "funcbody": "func (c *nopContent) PlainWords(context.Context) []string {\n\treturn nil\n}",
+    "funcname": "PlainWords"
+}

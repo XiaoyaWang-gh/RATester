@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 126,
+    "focalfunc": "func (group *RouterGroup) PATCH(relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) PATCH(relativePath string, handlers ...HandlerFunc) IRoutes {\n\treturn group.handle(http.MethodPatch, relativePath, handlers)\n}",
+    "funcname": "PATCH"
+}

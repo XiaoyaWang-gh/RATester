@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1144,
+    "focalfunc": "func chmodFilter(dst, src os.FileInfo) bool",
+    "funcbody": "func chmodFilter(dst, src os.FileInfo) bool {\n\n\treturn src.IsDir()\n}",
+    "funcname": "chmodFilter"
+}

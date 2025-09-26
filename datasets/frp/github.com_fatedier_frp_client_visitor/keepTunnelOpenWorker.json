@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 132,
+    "focalfunc": "func (sv *XTCPVisitor) keepTunnelOpenWorker()",
+    "funcbody": "func (sv *XTCPVisitor) keepTunnelOpenWorker() {\n\txl := xlog.FromContextSafe(sv.ctx)\n\tticker := time.NewTicker(time.Duration(sv.cfg.MinRetryInterval) * time.Second)\n\tdefer ticker.Stop()\n\n\tsv.startTunnelCh <- struct{}{}\n\tfor {\n\t\tselect {\n\t\tcase <-sv.ctx.Done():\n\t\t\treturn\n\t\tcase <-ticker.C:\n\t\t\txl.Debugf(\"keepTunnelOpenWorker try to check tunnel...\")\n\t\t\tconn, err := sv.getTunnelConn()\n\t\t\tif err != nil {\n\t\t\t\txl.Warnf(\"keepTunnelOpenWorker get tunnel connection error: %v\", err)\n\t\t\t\t_ = sv.retryLimiter.Wait(sv.ctx)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\txl.Debugf(\"keepTunnelOpenWorker check success\")\n\t\t\tif conn != nil {\n\t\t\t\tconn.Close()\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "keepTunnelOpenWorker"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 197,
+    "focalfunc": "func (fp *FileProvider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (fp *FileProvider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tfilepder.lock.Lock()\n\tdefer filepder.lock.Unlock()\n\n\tif len(sid) < 2 {\n\t\tSLogger.Println(\"min length of session id is 2 but got length: \", sid)\n\t\treturn false, errors.New(\"min length of session id is 2\")\n\t}\n\n\t_, err := os.Stat(filepath.Join(fp.savePath, string(sid[0]), string(sid[1]), sid))\n\treturn err == nil, nil\n}",
+    "funcname": "SessionExist"
+}

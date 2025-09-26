@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 466,
+    "focalfunc": "func (c *serverCommand) Name() string",
+    "funcbody": "func (c *serverCommand) Name() string {\n\treturn \"server\"\n}",
+    "funcname": "Name"
+}

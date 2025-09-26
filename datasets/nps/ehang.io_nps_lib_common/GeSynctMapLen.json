@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 390,
+    "focalfunc": "func GeSynctMapLen(m sync.Map) int",
+    "funcbody": "func GeSynctMapLen(m sync.Map) int {\n\tvar c int\n\tm.Range(func(key, value interface{}) bool {\n\t\tc++\n\t\treturn true\n\t})\n\treturn c\n}",
+    "funcname": "GeSynctMapLen"
+}

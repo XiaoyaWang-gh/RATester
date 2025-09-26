@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/static/entrypoints.go",
+    "lineno": 28,
+    "focalfunc": "func (ep EntryPoint) GetAddress() string",
+    "funcbody": "func (ep EntryPoint) GetAddress() string {\n\tsplitN := strings.SplitN(ep.Address, \"/\", 2)\n\treturn splitN[0]\n}",
+    "funcname": "GetAddress"
+}

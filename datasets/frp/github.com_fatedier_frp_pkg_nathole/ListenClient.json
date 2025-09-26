@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 125,
+    "focalfunc": "func (c *Controller) ListenClient(name string, sk string, allowUsers []string) (chan string, error)",
+    "funcbody": "func (c *Controller) ListenClient(name string, sk string, allowUsers []string) (chan string, error) {\n\tcfg := &ClientCfg{\n\t\tname:\t\tname,\n\t\tsk:\t\tsk,\n\t\tallowUsers:\tallowUsers,\n\t\tsidCh:\t\tmake(chan string),\n\t}\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tif _, ok := c.clientCfgs[name]; ok {\n\t\treturn nil, fmt.Errorf(\"proxy [%s] is repeated\", name)\n\t}\n\tc.clientCfgs[name] = cfg\n\treturn cfg.sidCh, nil\n}",
+    "funcname": "ListenClient"
+}

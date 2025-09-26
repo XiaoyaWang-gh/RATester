@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/pswarm.go",
+    "lineno": 50,
+    "focalfunc": "func (p *SwarmProvider) Init() error",
+    "funcbody": "func (p *SwarmProvider) Init() error {\n\tdefaultRuleTpl, err := provider.MakeDefaultRuleTemplate(p.DefaultRule, nil)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"error while parsing default rule: %w\", err)\n\t}\n\n\tp.defaultRuleTpl = defaultRuleTpl\n\treturn nil\n}",
+    "funcname": "Init"
+}

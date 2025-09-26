@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/gui/npc/npc.go",
+    "lineno": 172,
+    "focalfunc": "func loadConfig() (host, vkey, connType string)",
+    "funcbody": "func loadConfig() (host, vkey, connType string) {\n\tph, err := getDir()\n\tif err != nil {\n\t\tlogs.Warn(\"not found config dir\")\n\t\treturn\n\t}\n\tf, err := os.OpenFile(path.Join(ph, \"npc.conf\"), os.O_RDONLY, 0644)\n\tdefer f.Close()\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\treturn\n\t}\n\tdata, err := ioutil.ReadAll(f)\n\tif err != nil {\n\t\tlogs.Error(err)\n\t\treturn\n\t}\n\tli := strings.Split(string(data), \"\\n\")\n\thost = li[0]\n\tvkey = li[1]\n\tconnType = li[2]\n\treturn\n}",
+    "funcname": "loadConfig"
+}

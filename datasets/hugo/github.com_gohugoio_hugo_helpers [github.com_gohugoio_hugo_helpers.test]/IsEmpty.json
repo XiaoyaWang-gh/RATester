@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 413,
+    "focalfunc": "func IsEmpty(path string, fs afero.Fs) (bool, error)",
+    "funcbody": "func IsEmpty(path string, fs afero.Fs) (bool, error) {\n\tvar hasFile bool\n\terr := afero.Walk(fs, path, func(path string, info os.FileInfo, err error) error {\n\t\tif info.IsDir() {\n\t\t\treturn nil\n\t\t}\n\t\thasFile = true\n\t\treturn filepath.SkipDir\n\t})\n\treturn !hasFile, err\n}",
+    "funcname": "IsEmpty"
+}

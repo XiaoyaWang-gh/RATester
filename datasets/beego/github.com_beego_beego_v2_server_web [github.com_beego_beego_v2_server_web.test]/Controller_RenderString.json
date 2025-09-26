@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 300,
+    "focalfunc": "func (c *Controller) RenderString() (string, error)",
+    "funcbody": "func (c *Controller) RenderString() (string, error) {\n\tb, e := c.RenderBytes()\n\tif e != nil {\n\t\treturn \"\", e\n\t}\n\treturn string(b), e\n}",
+    "funcname": "RenderString"
+}

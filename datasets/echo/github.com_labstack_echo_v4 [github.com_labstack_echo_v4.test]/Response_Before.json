@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 42,
+    "focalfunc": "func (r *Response) Before(fn func())",
+    "funcbody": "func (r *Response) Before(fn func()) {\n\tr.beforeFuncs = append(r.beforeFuncs, fn)\n}",
+    "funcname": "Before"
+}

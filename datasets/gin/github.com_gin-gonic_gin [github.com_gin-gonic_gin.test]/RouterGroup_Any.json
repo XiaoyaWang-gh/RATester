@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 147,
+    "focalfunc": "func (group *RouterGroup) Any(relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) Any(relativePath string, handlers ...HandlerFunc) IRoutes {\n\tfor _, method := range anyMethods {\n\t\tgroup.handle(method, relativePath, handlers)\n\t}\n\n\treturn group.returnObj()\n}",
+    "funcname": "Any"
+}

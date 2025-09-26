@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 214,
+    "focalfunc": "func (ms *menuSorter) Len() int",
+    "funcbody": "func (ms *menuSorter) Len() int\t{ return len(ms.menu) }",
+    "funcname": "Len"
+}

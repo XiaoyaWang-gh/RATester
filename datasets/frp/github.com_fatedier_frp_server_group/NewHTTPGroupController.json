@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 23,
+    "focalfunc": "func NewHTTPGroupController(vhostRouter *vhost.Routers) *HTTPGroupController",
+    "funcbody": "func NewHTTPGroupController(vhostRouter *vhost.Routers) *HTTPGroupController {\n\treturn &HTTPGroupController{\n\t\tgroups:\t\tmake(map[string]*HTTPGroup),\n\t\tvhostRouter:\tvhostRouter,\n\t}\n}",
+    "funcname": "NewHTTPGroupController"
+}

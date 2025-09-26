@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 716,
+    "focalfunc": "func serveError(c *Context, code int, defaultMessage []byte)",
+    "funcbody": "func serveError(c *Context, code int, defaultMessage []byte) {\n\tc.writermem.status = code\n\tc.Next()\n\tif c.writermem.Written() {\n\t\treturn\n\t}\n\tif c.writermem.Status() == code {\n\t\tc.writermem.Header()[\"Content-Type\"] = mimePlain\n\t\t_, err := c.Writer.Write(defaultMessage)\n\t\tif err != nil {\n\t\t\tdebugPrint(\"cannot write message to writer during serve error: %v\", err)\n\t\t}\n\t\treturn\n\t}\n\tc.writermem.WriteHeaderNow()\n}",
+    "funcname": "serveError"
+}

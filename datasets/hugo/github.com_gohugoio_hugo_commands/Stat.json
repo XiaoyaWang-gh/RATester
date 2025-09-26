@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 145,
+    "focalfunc": "func (fs *countingStatFs) Stat(name string) (os.FileInfo, error)",
+    "funcbody": "func (fs *countingStatFs) Stat(name string) (os.FileInfo, error) {\n\tf, err := fs.Fs.Stat(name)\n\tif err == nil {\n\t\tif !f.IsDir() {\n\t\t\tatomic.AddUint64(&fs.statCounter, 1)\n\t\t}\n\t}\n\treturn f, err\n}",
+    "funcname": "Stat"
+}

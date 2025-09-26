@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 388,
+    "focalfunc": "func PathEscape(pth string) string",
+    "funcbody": "func PathEscape(pth string) string {\n\tu, err := url.Parse(pth)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn u.EscapedPath()\n}",
+    "funcname": "PathEscape"
+}

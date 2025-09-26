@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 360,
+    "focalfunc": "func (f Format) ToImageMetaImageFormatFormat() imagemeta.ImageFormat",
+    "funcbody": "func (f Format) ToImageMetaImageFormatFormat() imagemeta.ImageFormat {\n\tswitch f {\n\tcase JPEG:\n\t\treturn imagemeta.JPEG\n\tcase PNG:\n\t\treturn imagemeta.PNG\n\tcase TIFF:\n\t\treturn imagemeta.TIFF\n\tcase WEBP:\n\t\treturn imagemeta.WebP\n\tdefault:\n\t\treturn -1\n\t}\n}",
+    "funcname": "ToImageMetaImageFormatFormat"
+}

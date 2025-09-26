@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 252,
+    "focalfunc": "func (l *logAdapter) LoggCount(level logg.Level) int",
+    "funcbody": "func (l *logAdapter) LoggCount(level logg.Level) int {\n\tl.logCounters.mu.RLock()\n\tdefer l.logCounters.mu.RUnlock()\n\treturn l.logCounters.counters[level]\n}",
+    "funcname": "LoggCount"
+}

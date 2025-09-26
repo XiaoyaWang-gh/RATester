@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 220,
+    "focalfunc": "func (r RootMapping) trimFrom(name string) string",
+    "funcbody": "func (r RootMapping) trimFrom(name string) string {\n\tif name == \"\" {\n\t\treturn \"\"\n\t}\n\treturn strings.TrimPrefix(name, r.From)\n}",
+    "funcname": "trimFrom"
+}

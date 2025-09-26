@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 57,
+    "focalfunc": "func IsFloat(kind reflect.Kind) bool",
+    "funcbody": "func IsFloat(kind reflect.Kind) bool {\n\tswitch kind {\n\tcase reflect.Float32, reflect.Float64:\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "IsFloat"
+}

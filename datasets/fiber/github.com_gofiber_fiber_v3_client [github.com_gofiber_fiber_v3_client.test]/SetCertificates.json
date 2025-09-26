@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 172,
+    "focalfunc": "func (c *Client) SetCertificates(certs ...tls.Certificate) *Client",
+    "funcbody": "func (c *Client) SetCertificates(certs ...tls.Certificate) *Client {\n\tconfig := c.TLSConfig()\n\tconfig.Certificates = append(config.Certificates, certs...)\n\treturn c\n}",
+    "funcname": "SetCertificates"
+}

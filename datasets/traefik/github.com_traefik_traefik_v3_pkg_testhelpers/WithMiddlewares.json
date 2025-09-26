@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 81,
+    "focalfunc": "func WithMiddlewares(opts ...func(*dynamic.Middleware) string) func(*dynamic.HTTPConfiguration)",
+    "funcbody": "func WithMiddlewares(opts ...func(*dynamic.Middleware) string) func(*dynamic.HTTPConfiguration) {\n\treturn func(c *dynamic.HTTPConfiguration) {\n\t\tc.Middlewares = make(map[string]*dynamic.Middleware)\n\t\tfor _, opt := range opts {\n\t\t\tb := &dynamic.Middleware{}\n\t\t\tname := opt(b)\n\t\t\tc.Middlewares[name] = b\n\t\t}\n\t}\n}",
+    "funcname": "WithMiddlewares"
+}

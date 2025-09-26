@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/builder.go",
+    "lineno": 113,
+    "focalfunc": "func (b Builder) Build(pName string, config map[string]interface{}, middlewareName string) (Constructor, error)",
+    "funcbody": "func (b Builder) Build(pName string, config map[string]interface{}, middlewareName string) (Constructor, error) {\n\tif b.middlewareBuilders == nil {\n\t\treturn nil, fmt.Errorf(\"no plugin definitions in the static configuration: %s\", pName)\n\t}\n\n\tif descriptor, ok := b.middlewareBuilders[pName]; ok {\n\t\tm, err := descriptor.newMiddleware(config, middlewareName)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\treturn m.NewHandler, nil\n\t}\n\n\treturn nil, fmt.Errorf(\"unknown plugin type: %s\", pName)\n}",
+    "funcname": "Build"
+}

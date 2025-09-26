@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 37,
+    "focalfunc": "func WithUserAgent(userAgent string) ClientOption",
+    "funcbody": "func WithUserAgent(userAgent string) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.UserAgent = userAgent\n\t}\n}",
+    "funcname": "WithUserAgent"
+}

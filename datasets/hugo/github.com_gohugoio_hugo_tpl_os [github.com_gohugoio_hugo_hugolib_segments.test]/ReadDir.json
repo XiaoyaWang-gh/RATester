@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/os/os.go",
+    "lineno": 113,
+    "focalfunc": "func (ns *Namespace) ReadDir(i any) ([]_os.FileInfo, error)",
+    "funcbody": "func (ns *Namespace) ReadDir(i any) ([]_os.FileInfo, error) {\n\tpath, err := cast.ToStringE(i)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tlist, err := afero.ReadDir(ns.workFs, path)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to read directory %q: %s\", path, err)\n\t}\n\n\treturn list, nil\n}",
+    "funcname": "ReadDir"
+}

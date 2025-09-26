@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rewrite.go",
+    "lineno": 51,
+    "focalfunc": "func RewriteWithConfig(config RewriteConfig) echo.MiddlewareFunc",
+    "funcbody": "func RewriteWithConfig(config RewriteConfig) echo.MiddlewareFunc {\n\n\tif config.Rules == nil && config.RegexRules == nil {\n\t\tpanic(\"echo: rewrite middleware requires url path rewrite rules or regex rules\")\n\t}\n\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultBodyDumpConfig.Skipper\n\t}\n\n\tif config.RegexRules == nil {\n\t\tconfig.RegexRules = make(map[*regexp.Regexp]string)\n\t}\n\tfor k, v := range rewriteRulesRegex(config.Rules) {\n\t\tconfig.RegexRules[k] = v\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) (err error) {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\tif err := rewriteURL(config.RegexRules, c.Request()); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "RewriteWithConfig"
+}

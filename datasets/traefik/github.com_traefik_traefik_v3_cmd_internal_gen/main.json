@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/main.go",
+    "lineno": 42,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\tdest := filepath.Join(path.Join(build.Default.GOPATH, \"src\"), destModuleName, destPkg)\n\n\tlog.Println(\"Output:\", dest)\n\n\terr := run(dest)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n}",
+    "funcname": "main"
+}

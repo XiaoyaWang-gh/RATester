@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 250,
+    "focalfunc": "func RestoreAsset(dir, name string) error",
+    "funcbody": "func RestoreAsset(dir, name string) error {\n\tdata, err := Asset(name)\n\tif err != nil {\n\t\treturn err\n\t}\n\tinfo, err := AssetInfo(name)\n\tif err != nil {\n\t\treturn err\n\t}\n\terr = os.MkdirAll(_filePath(dir, filepath.Dir(name)), os.FileMode(0o755))\n\tif err != nil {\n\t\treturn err\n\t}\n\terr = ioutil.WriteFile(_filePath(dir, name), data, info.Mode())\n\tif err != nil {\n\t\treturn err\n\t}\n\terr = os.Chtimes(_filePath(dir, name), info.ModTime(), info.ModTime())\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "RestoreAsset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 175,
+    "focalfunc": "func (d *dbBasePostgres) DbTypes() map[string]string",
+    "funcbody": "func (d *dbBasePostgres) DbTypes() map[string]string {\n\treturn postgresTypes\n}",
+    "funcname": "DbTypes"
+}

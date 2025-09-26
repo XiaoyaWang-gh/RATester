@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 416,
+    "focalfunc": "func (c *context) MultipartForm() (*multipart.Form, error)",
+    "funcbody": "func (c *context) MultipartForm() (*multipart.Form, error) {\n\terr := c.request.ParseMultipartForm(defaultMemory)\n\treturn c.request.MultipartForm, err\n}",
+    "funcname": "MultipartForm"
+}

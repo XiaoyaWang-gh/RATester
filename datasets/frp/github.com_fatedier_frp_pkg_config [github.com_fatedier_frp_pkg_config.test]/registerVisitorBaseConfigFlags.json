@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 134,
+    "focalfunc": "func registerVisitorBaseConfigFlags(cmd *cobra.Command, c *v1.VisitorBaseConfig, _ ...RegisterFlagOption)",
+    "funcbody": "func registerVisitorBaseConfigFlags(cmd *cobra.Command, c *v1.VisitorBaseConfig, _ ...RegisterFlagOption) {\n\tif c == nil {\n\t\treturn\n\t}\n\tcmd.Flags().StringVarP(&c.Name, \"visitor_name\", \"n\", \"\", \"visitor name\")\n\tcmd.Flags().BoolVarP(&c.Transport.UseEncryption, \"ue\", \"\", false, \"use encryption\")\n\tcmd.Flags().BoolVarP(&c.Transport.UseCompression, \"uc\", \"\", false, \"use compression\")\n\tcmd.Flags().StringVarP(&c.SecretKey, \"sk\", \"\", \"\", \"secret key\")\n\tcmd.Flags().StringVarP(&c.ServerName, \"server_name\", \"\", \"\", \"server name\")\n\tcmd.Flags().StringVarP(&c.BindAddr, \"bind_addr\", \"\", \"\", \"bind addr\")\n\tcmd.Flags().IntVarP(&c.BindPort, \"bind_port\", \"\", 0, \"bind port\")\n}",
+    "funcname": "registerVisitorBaseConfigFlags"
+}

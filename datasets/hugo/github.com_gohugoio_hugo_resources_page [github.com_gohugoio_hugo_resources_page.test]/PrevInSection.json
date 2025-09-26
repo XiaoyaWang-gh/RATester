@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 390,
+    "focalfunc": "func (p *nopPage) PrevInSection() Page",
+    "funcbody": "func (p *nopPage) PrevInSection() Page {\n\treturn nil\n}",
+    "funcname": "PrevInSection"
+}

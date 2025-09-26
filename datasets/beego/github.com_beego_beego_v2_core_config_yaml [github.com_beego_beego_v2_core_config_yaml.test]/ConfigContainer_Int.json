@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 162,
+    "focalfunc": "func (c *ConfigContainer) Int(key string) (int, error)",
+    "funcbody": "func (c *ConfigContainer) Int(key string) (int, error) {\n\tif v, err := c.getData(key); err != nil {\n\t\treturn 0, err\n\t} else if vv, ok := v.(int); ok {\n\t\treturn vv, nil\n\t} else if vv, ok := v.(int64); ok {\n\t\treturn int(vv), nil\n\t}\n\treturn 0, errors.New(\"not int value\")\n}",
+    "funcname": "Int"
+}

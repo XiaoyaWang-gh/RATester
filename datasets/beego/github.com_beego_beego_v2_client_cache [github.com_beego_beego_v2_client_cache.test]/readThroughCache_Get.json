@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/read_through.go",
+    "lineno": 47,
+    "focalfunc": "func (c *readThroughCache) Get(ctx context.Context, key string) (any, error)",
+    "funcbody": "func (c *readThroughCache) Get(ctx context.Context, key string) (any, error) {\n\tval, err := c.Cache.Get(ctx, key)\n\tif val == nil || err != nil {\n\t\tval, err = c.loadFunc(ctx, key)\n\t\tif err != nil {\n\t\t\treturn nil, berror.Wrap(\n\t\t\t\terr, LoadFuncFailed, \"cache unable to load data\")\n\t\t}\n\t\terr = c.Cache.Put(ctx, key, val, c.expiration)\n\t\tif err != nil {\n\t\t\treturn val, err\n\t\t}\n\t}\n\treturn val, nil\n}",
+    "funcname": "Get"
+}

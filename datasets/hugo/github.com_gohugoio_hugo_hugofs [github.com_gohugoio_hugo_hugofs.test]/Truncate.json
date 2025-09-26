@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 123,
+    "focalfunc": "func (f *noOpRegularFileOps) Truncate(size int64) error",
+    "funcbody": "func (f *noOpRegularFileOps) Truncate(size int64) error {\n\tpanic(errNoOp)\n}",
+    "funcname": "Truncate"
+}

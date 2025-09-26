@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/etag/etag.go",
+    "lineno": 107,
+    "focalfunc": "func appendUint(dst []byte, n uint32) []byte",
+    "funcbody": "func appendUint(dst []byte, n uint32) []byte {\n\tvar b [20]byte\n\tbuf := b[:]\n\ti := len(buf)\n\tvar q uint32\n\tfor n >= 10 {\n\t\ti--\n\t\tq = n / 10\n\t\tbuf[i] = '0' + byte(n-q*10)\n\t\tn = q\n\t}\n\ti--\n\tbuf[i] = '0' + byte(n)\n\n\tdst = append(dst, buf[i:]...)\n\treturn dst\n}",
+    "funcname": "appendUint"
+}

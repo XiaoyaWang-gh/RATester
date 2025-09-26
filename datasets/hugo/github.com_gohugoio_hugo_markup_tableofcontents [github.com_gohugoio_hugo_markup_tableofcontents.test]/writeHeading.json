@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 216,
+    "focalfunc": "func (b *tocBuilder) writeHeading(level, indent int, h *Heading)",
+    "funcbody": "func (b *tocBuilder) writeHeading(level, indent int, h *Heading) {\n\tb.indent(indent)\n\tb.s.WriteString(\"<li>\")\n\tif !h.IsZero() {\n\t\tb.s.WriteString(\"<a href=\\\"#\" + h.ID + \"\\\">\" + h.Title + \"</a>\")\n\t}\n\tb.writeHeadings(level, indent, h.Headings)\n\tb.s.WriteString(\"</li>\\n\")\n}",
+    "funcname": "writeHeading"
+}

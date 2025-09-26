@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 341,
+    "focalfunc": "func (engine *Engine) addRoute(method, path string, handlers HandlersChain)",
+    "funcbody": "func (engine *Engine) addRoute(method, path string, handlers HandlersChain) {\n\tassert1(path[0] == '/', \"path must begin with '/'\")\n\tassert1(method != \"\", \"HTTP method can not be empty\")\n\tassert1(len(handlers) > 0, \"there must be at least one handler\")\n\n\tdebugPrintRoute(method, path, handlers)\n\n\troot := engine.trees.get(method)\n\tif root == nil {\n\t\troot = new(node)\n\t\troot.fullPath = \"/\"\n\t\tengine.trees = append(engine.trees, methodTree{method: method, root: root})\n\t}\n\troot.addRoute(path, handlers)\n\n\tif paramsCount := countParams(path); paramsCount > engine.maxParams {\n\t\tengine.maxParams = paramsCount\n\t}\n\n\tif sectionsCount := countSections(path); sectionsCount > engine.maxSections {\n\t\tengine.maxSections = sectionsCount\n\t}\n}",
+    "funcname": "addRoute"
+}

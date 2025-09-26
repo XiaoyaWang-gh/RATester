@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__data.go",
+    "lineno": 31,
+    "focalfunc": "func (p *pageData) Data() any",
+    "funcbody": "func (p *pageData) Data() any {\n\tp.dataInit.Do(func() {\n\t\tp.data = make(page.Data)\n\n\t\tif p.Kind() == kinds.KindPage {\n\t\t\treturn\n\t\t}\n\n\t\tswitch p.Kind() {\n\t\tcase kinds.KindTerm:\n\t\t\tpath := p.Path()\n\t\t\tname := p.s.pageMap.cfg.getTaxonomyConfig(path)\n\t\t\tterm := p.s.Taxonomies()[name.plural].Get(strings.TrimPrefix(path, name.pluralTreeKey))\n\t\t\tp.data[name.singular] = term\n\t\t\tp.data[\"Singular\"] = name.singular\n\t\t\tp.data[\"Plural\"] = name.plural\n\t\t\tp.data[\"Term\"] = p.m.term\n\t\tcase kinds.KindTaxonomy:\n\t\t\tviewCfg := p.s.pageMap.cfg.getTaxonomyConfig(p.Path())\n\t\t\tp.data[\"Singular\"] = viewCfg.singular\n\t\t\tp.data[\"Plural\"] = viewCfg.plural\n\t\t\tp.data[\"Terms\"] = p.s.Taxonomies()[viewCfg.plural]\n\n\t\t\tp.data[\"OrderedIndex\"] = p.data[\"Terms\"]\n\t\t\tp.data[\"Index\"] = p.data[\"Terms\"]\n\t\t}\n\n\t\tp.data[\"pages\"] = p.Pages\n\t})\n\n\treturn p.data\n}",
+    "funcname": "Data"
+}

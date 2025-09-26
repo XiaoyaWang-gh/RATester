@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 142,
+    "focalfunc": "func (r *hookedRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer)",
+    "funcbody": "func (r *hookedRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer) {\n\treg.Register(ast.KindLink, r.renderLink)\n\treg.Register(ast.KindAutoLink, r.renderAutoLink)\n\treg.Register(ast.KindImage, r.renderImage)\n\treg.Register(ast.KindHeading, r.renderHeading)\n}",
+    "funcname": "RegisterFuncs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 148,
+    "focalfunc": "func (c *Client) SetXMLUnmarshal(f utils.XMLUnmarshal) *Client",
+    "funcbody": "func (c *Client) SetXMLUnmarshal(f utils.XMLUnmarshal) *Client {\n\tc.xmlUnmarshal = f\n\treturn c\n}",
+    "funcname": "SetXMLUnmarshal"
+}

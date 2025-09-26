@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 138,
+    "focalfunc": "func (fi *File) p() *paths.Path",
+    "funcbody": "func (fi *File) p() *paths.Path {\n\treturn fi.fim.Meta().PathInfo.Unnormalized()\n}",
+    "funcname": "p"
+}

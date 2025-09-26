@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 288,
+    "focalfunc": "func (r *standardRegistry) ServiceReqDurationHistogram() ScalableHistogram",
+    "funcbody": "func (r *standardRegistry) ServiceReqDurationHistogram() ScalableHistogram {\n\treturn r.serviceReqDurationHistogram\n}",
+    "funcname": "ServiceReqDurationHistogram"
+}

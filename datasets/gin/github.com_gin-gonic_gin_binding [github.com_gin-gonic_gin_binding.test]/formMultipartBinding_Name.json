@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form.go",
+    "lineno": 49,
+    "focalfunc": "func (formMultipartBinding) Name() string",
+    "funcbody": "func (formMultipartBinding) Name() string {\n\treturn \"multipart/form-data\"\n}",
+    "funcname": "Name"
+}

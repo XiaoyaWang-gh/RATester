@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/domains.go",
+    "lineno": 18,
+    "focalfunc": "func (d *Domain) ToStrArray() []string",
+    "funcbody": "func (d *Domain) ToStrArray() []string {\n\tvar domains []string\n\tif len(d.Main) > 0 {\n\t\tdomains = []string{d.Main}\n\t}\n\treturn append(domains, d.SANs...)\n}",
+    "funcname": "ToStrArray"
+}

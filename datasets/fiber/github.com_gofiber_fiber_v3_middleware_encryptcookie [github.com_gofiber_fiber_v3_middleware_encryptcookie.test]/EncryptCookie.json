@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/encryptcookie/utils.go",
+    "lineno": 16,
+    "focalfunc": "func EncryptCookie(value, key string) (string, error)",
+    "funcbody": "func EncryptCookie(value, key string) (string, error) {\n\tkeyDecoded, err := base64.StdEncoding.DecodeString(key)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to base64-decode key: %w\", err)\n\t}\n\n\tkeyLen := len(keyDecoded)\n\tif keyLen != 16 && keyLen != 24 && keyLen != 32 {\n\t\treturn \"\", ErrInvalidKeyLength\n\t}\n\n\tblock, err := aes.NewCipher(keyDecoded)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to create AES cipher: %w\", err)\n\t}\n\n\tgcm, err := cipher.NewGCM(block)\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to create GCM mode: %w\", err)\n\t}\n\n\tnonce := make([]byte, gcm.NonceSize())\n\tif _, err = io.ReadFull(rand.Reader, nonce); err != nil {\n\t\treturn \"\", fmt.Errorf(\"failed to read nonce: %w\", err)\n\t}\n\n\tciphertext := gcm.Seal(nonce, nonce, []byte(value), nil)\n\treturn base64.StdEncoding.EncodeToString(ciphertext), nil\n}",
+    "funcname": "EncryptCookie"
+}

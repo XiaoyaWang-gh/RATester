@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 260,
+    "focalfunc": "func tURL(c context, s []byte) (context, int)",
+    "funcbody": "func tURL(c context, s []byte) (context, int) {\n\tif bytes.ContainsAny(s, \"#?\") {\n\t\tc.urlPart = urlPartQueryOrFrag\n\t} else if len(s) != eatWhiteSpace(s, 0) && c.urlPart == urlPartNone {\n\n\t\tc.urlPart = urlPartPreQuery\n\t}\n\treturn c, len(s)\n}",
+    "funcname": "tURL"
+}

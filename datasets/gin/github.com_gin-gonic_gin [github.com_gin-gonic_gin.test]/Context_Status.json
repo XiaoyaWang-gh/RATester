@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 907,
+    "focalfunc": "func (c *Context) Status(code int)",
+    "funcbody": "func (c *Context) Status(code int) {\n\tc.Writer.WriteHeader(code)\n}",
+    "funcname": "Status"
+}

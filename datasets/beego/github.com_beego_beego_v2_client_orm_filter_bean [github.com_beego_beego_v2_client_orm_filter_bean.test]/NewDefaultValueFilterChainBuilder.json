@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/bean/default_value_filter.go",
+    "lineno": 43,
+    "focalfunc": "func NewDefaultValueFilterChainBuilder(typeAdapters map[string]bean.TypeAdapter,\n\tincludeInsertOrUpdate bool,\n\tcompatibleWithOldStyle bool) *DefaultValueFilterChainBuilder",
+    "funcbody": "func NewDefaultValueFilterChainBuilder(typeAdapters map[string]bean.TypeAdapter,\n\tincludeInsertOrUpdate bool,\n\tcompatibleWithOldStyle bool) *DefaultValueFilterChainBuilder {\n\tfactory := bean.NewTagAutoWireBeanFactory()\n\n\tif compatibleWithOldStyle {\n\t\tnewParser := factory.FieldTagParser\n\t\tfactory.FieldTagParser = func(field reflect.StructField) *bean.FieldMetadata {\n\t\t\tif newParser != nil && field.Tag.Get(bean.DefaultValueTagKey) != \"\" {\n\t\t\t\treturn newParser(field)\n\t\t\t} else {\n\t\t\t\tres := &bean.FieldMetadata{}\n\t\t\t\tormMeta := field.Tag.Get(\"orm\")\n\t\t\t\tormMetaParts := strings.Split(ormMeta, \";\")\n\t\t\t\tfor _, p := range ormMetaParts {\n\t\t\t\t\tif strings.HasPrefix(p, \"default(\") && strings.HasSuffix(p, \")\") {\n\t\t\t\t\t\tres.DftValue = p[8 : len(p)-1]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn res\n\t\t\t}\n\t\t}\n\t}\n\n\tfor k, v := range typeAdapters {\n\t\tfactory.Adapters[k] = v\n\t}\n\n\treturn &DefaultValueFilterChainBuilder{\n\t\tfactory:\t\tfactory,\n\t\tcompatibleWithOldStyle:\tcompatibleWithOldStyle,\n\t\tincludeInsertOrUpdate:\tincludeInsertOrUpdate,\n\t}\n}",
+    "funcname": "NewDefaultValueFilterChainBuilder"
+}

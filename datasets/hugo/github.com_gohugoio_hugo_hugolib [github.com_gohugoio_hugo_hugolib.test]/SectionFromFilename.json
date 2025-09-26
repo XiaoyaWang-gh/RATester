@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_factory.go",
+    "lineno": 90,
+    "focalfunc": "func (f ContentFactory) SectionFromFilename(filename string) (string, error)",
+    "funcbody": "func (f ContentFactory) SectionFromFilename(filename string) (string, error) {\n\tfilename = filepath.Clean(filename)\n\trel, _, err := f.h.AbsProjectContentDir(filename)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tparts := strings.Split(paths.ToSlashTrimLeading(rel), \"/\")\n\tif len(parts) < 2 {\n\t\treturn \"\", nil\n\t}\n\treturn parts[0], nil\n}",
+    "funcname": "SectionFromFilename"
+}

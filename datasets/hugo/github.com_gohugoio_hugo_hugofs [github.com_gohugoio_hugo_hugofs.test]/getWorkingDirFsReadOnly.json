@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 127,
+    "focalfunc": "func getWorkingDirFsReadOnly(base afero.Fs, workingDir string) afero.Fs",
+    "funcbody": "func getWorkingDirFsReadOnly(base afero.Fs, workingDir string) afero.Fs {\n\tif workingDir == \"\" {\n\t\treturn NewReadOnlyFs(base)\n\t}\n\treturn NewBasePathFs(NewReadOnlyFs(base), workingDir)\n}",
+    "funcname": "getWorkingDirFsReadOnly"
+}

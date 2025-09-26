@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/http.go",
+    "lineno": 190,
+    "focalfunc": "func (pxy *HTTPProxy) updateStatsAfterClosedConn(totalRead, totalWrite int64)",
+    "funcbody": "func (pxy *HTTPProxy) updateStatsAfterClosedConn(totalRead, totalWrite int64) {\n\tname := pxy.GetName()\n\tproxyType := pxy.GetConfigurer().GetBaseConfig().Type\n\tmetrics.Server.CloseConnection(name, proxyType)\n\tmetrics.Server.AddTrafficIn(name, proxyType, totalWrite)\n\tmetrics.Server.AddTrafficOut(name, proxyType, totalRead)\n}",
+    "funcname": "updateStatsAfterClosedConn"
+}

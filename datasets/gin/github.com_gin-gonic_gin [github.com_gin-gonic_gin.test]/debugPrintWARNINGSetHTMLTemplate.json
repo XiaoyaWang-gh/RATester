@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 98,
+    "focalfunc": "func debugPrintWARNINGSetHTMLTemplate()",
+    "funcbody": "func debugPrintWARNINGSetHTMLTemplate() {\n\tdebugPrint(`[WARNING] Since SetHTMLTemplate() is NOT thread-safe. It should only be called\nat initialization. ie. before any route is registered or the router is listening in a socket:\n\n\trouter := gin.Default()\n\trouter.SetHTMLTemplate(template) // << good place\n\n`)\n}",
+    "funcname": "debugPrintWARNINGSetHTMLTemplate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 972,
+    "focalfunc": "func handlerName(h HandlerFunc) string",
+    "funcbody": "func handlerName(h HandlerFunc) string {\n\tt := reflect.ValueOf(h).Type()\n\tif t.Kind() == reflect.Func {\n\t\treturn runtime.FuncForPC(reflect.ValueOf(h).Pointer()).Name()\n\t}\n\treturn t.String()\n}",
+    "funcname": "handlerName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 511,
+    "focalfunc": "func (b *BeegoHTTPRequest) buildCookieJar() http.CookieJar",
+    "funcbody": "func (b *BeegoHTTPRequest) buildCookieJar() http.CookieJar {\n\tvar jar http.CookieJar\n\tif b.setting.EnableCookie {\n\t\tif defaultCookieJar == nil {\n\t\t\tcreateDefaultCookie()\n\t\t}\n\t\tjar = defaultCookieJar\n\t}\n\treturn jar\n}",
+    "funcname": "buildCookieJar"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/attributes/attributes.go",
+    "lineno": 148,
+    "focalfunc": "func (a *AttributesHolder) Attributes() map[string]any",
+    "funcbody": "func (a *AttributesHolder) Attributes() map[string]any {\n\ta.attributesMapInit.Do(func() {\n\t\ta.attributesMap = make(map[string]any)\n\t\tfor _, v := range a.attributes {\n\t\t\ta.attributesMap[v.Name] = v.Value\n\t\t}\n\t})\n\treturn a.attributesMap\n}",
+    "funcname": "Attributes"
+}

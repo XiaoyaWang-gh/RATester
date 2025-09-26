@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/itemtype_string.go",
+    "lineno": 7,
+    "focalfunc": "func _()",
+    "funcbody": "func _() {\n\t// An \"invalid array index\" compiler error signifies that the constant values have changed.\n\t// Re-run the stringer command to generate them again.\n\tvar x [1]struct{}\n\t_ = x[tError-0]\n\t_ = x[tEOF-1]\n\t_ = x[TypeLeadSummaryDivider-2]\n\t_ = x[TypeFrontMatterYAML-3]\n\t_ = x[TypeFrontMatterTOML-4]\n\t_ = x[TypeFrontMatterJSON-5]\n\t_ = x[TypeFrontMatterORG-6]\n\t_ = x[TypeIgnore-7]\n\t_ = x[tLeftDelimScNoMarkup-8]\n\t_ = x[tRightDelimScNoMarkup-9]\n\t_ = x[tLeftDelimScWithMarkup-10]\n\t_ = x[tRightDelimScWithMarkup-11]\n\t_ = x[tScClose-12]\n\t_ = x[tScName-13]\n\t_ = x[tScNameInline-14]\n\t_ = x[tScParam-15]\n\t_ = x[tScParamVal-16]\n\t_ = x[tIndentation-17]\n\t_ = x[tText-18]\n\t_ = x[tKeywordMarker-19]\n}",
+    "funcname": "_"
+}

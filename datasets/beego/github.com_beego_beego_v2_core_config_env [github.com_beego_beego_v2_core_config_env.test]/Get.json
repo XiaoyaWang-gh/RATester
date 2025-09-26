@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 41,
+    "focalfunc": "func Get(key string, defVal string) string",
+    "funcbody": "func Get(key string, defVal string) string {\n\tif val, ok := env.Load(key); ok {\n\t\treturn val.(string)\n\t}\n\treturn defVal\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 121,
+    "focalfunc": "func (g *Group) Add(method, path string, handler HandlerFunc, middleware ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) Add(method, path string, handler HandlerFunc, middleware ...MiddlewareFunc) *Route {\n\n\tm := make([]MiddlewareFunc, 0, len(g.middleware)+len(middleware))\n\tm = append(m, g.middleware...)\n\tm = append(m, middleware...)\n\treturn g.echo.add(g.host, method, g.prefix+path, handler, m...)\n}",
+    "funcname": "Add"
+}

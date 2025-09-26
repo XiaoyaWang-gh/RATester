@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/env/env.go",
+    "lineno": 65,
+    "focalfunc": "func MustSet(key string, value string) error",
+    "funcbody": "func MustSet(key string, value string) error {\n\terr := os.Setenv(key, value)\n\tif err != nil {\n\t\treturn err\n\t}\n\tenv.Store(key, value)\n\treturn nil\n}",
+    "funcname": "MustSet"
+}

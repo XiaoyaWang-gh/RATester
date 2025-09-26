@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 425,
+    "focalfunc": "func filterIngressClassByName(ingressClassName string, ics []*netv1.IngressClass) []*netv1.IngressClass",
+    "funcbody": "func filterIngressClassByName(ingressClassName string, ics []*netv1.IngressClass) []*netv1.IngressClass {\n\tvar ingressClasses []*netv1.IngressClass\n\n\tfor _, ic := range ics {\n\t\tif ic.Name == ingressClassName {\n\t\t\tingressClasses = append(ingressClasses, ic)\n\t\t}\n\t}\n\n\treturn ingressClasses\n}",
+    "funcname": "filterIngressClassByName"
+}

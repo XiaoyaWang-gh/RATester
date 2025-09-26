@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 173,
+    "focalfunc": "func (b *Balancer) nextServer() (*namedHandler, error)",
+    "funcbody": "func (b *Balancer) nextServer() (*namedHandler, error) {\n\tb.handlersMu.Lock()\n\tdefer b.handlersMu.Unlock()\n\n\tif len(b.handlers) == 0 || len(b.status) == 0 {\n\t\treturn nil, errNoAvailableServer\n\t}\n\n\tvar handler *namedHandler\n\tfor {\n\n\t\thandler = heap.Pop(b).(*namedHandler)\n\n\t\tb.curDeadline = handler.deadline\n\t\thandler.deadline += 1 / handler.weight\n\n\t\theap.Push(b, handler)\n\t\tif _, ok := b.status[handler.name]; ok {\n\t\t\tbreak\n\t\t}\n\t}\n\n\tlog.Debug().Msgf(\"Service selected by WRR: %s\", handler.name)\n\treturn handler, nil\n}",
+    "funcname": "nextServer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/middleware.go",
+    "lineno": 88,
+    "focalfunc": "func DefaultSkipper(echo.Context) bool",
+    "funcbody": "func DefaultSkipper(echo.Context) bool {\n\treturn false\n}",
+    "funcname": "DefaultSkipper"
+}

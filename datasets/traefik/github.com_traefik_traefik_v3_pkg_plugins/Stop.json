@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/providers.go",
+    "lineno": 42,
+    "focalfunc": "func (p _PP) Stop() error",
+    "funcbody": "func (p _PP) Stop() error {\n\treturn p.WStop()\n}",
+    "funcname": "Stop"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/rest/rest.go",
+    "lineno": 35,
+    "focalfunc": "func (p *Provider) CreateRouter() *mux.Router",
+    "funcbody": "func (p *Provider) CreateRouter() *mux.Router {\n\trouter := mux.NewRouter()\n\trouter.Methods(http.MethodPut).Path(\"/api/providers/{provider}\").Handler(p)\n\treturn router\n}",
+    "funcname": "CreateRouter"
+}

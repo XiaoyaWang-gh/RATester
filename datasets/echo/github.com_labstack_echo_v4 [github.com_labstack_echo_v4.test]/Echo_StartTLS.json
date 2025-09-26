@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 697,
+    "focalfunc": "func (e *Echo) StartTLS(address string, certFile, keyFile interface{}) (err error)",
+    "funcbody": "func (e *Echo) StartTLS(address string, certFile, keyFile interface{}) (err error) {\n\te.startupMutex.Lock()\n\tvar cert []byte\n\tif cert, err = filepathOrContent(certFile); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn\n\t}\n\n\tvar key []byte\n\tif key, err = filepathOrContent(keyFile); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn\n\t}\n\n\ts := e.TLSServer\n\ts.TLSConfig = new(tls.Config)\n\ts.TLSConfig.Certificates = make([]tls.Certificate, 1)\n\tif s.TLSConfig.Certificates[0], err = tls.X509KeyPair(cert, key); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn\n\t}\n\n\te.configureTLS(address)\n\tif err := e.configureServer(s); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn err\n\t}\n\te.startupMutex.Unlock()\n\treturn s.Serve(e.TLSListener)\n}",
+    "funcname": "StartTLS"
+}

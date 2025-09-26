@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 599,
+    "focalfunc": "func (c *nopContent) ReadingTime(context.Context) int",
+    "funcbody": "func (c *nopContent) ReadingTime(context.Context) int {\n\treturn 0\n}",
+    "funcname": "ReadingTime"
+}

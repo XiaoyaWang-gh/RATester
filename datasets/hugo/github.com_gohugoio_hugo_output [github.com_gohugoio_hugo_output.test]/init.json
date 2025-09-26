@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/outputFormat.go",
+    "lineno": 220,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tsort.Sort(DefaultFormats)\n}",
+    "funcname": "init"
+}

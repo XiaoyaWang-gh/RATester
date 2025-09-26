@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/regexp.go",
+    "lineno": 54,
+    "focalfunc": "func (ns *Namespace) FindRESubmatch(expr string, content any, limit ...any) ([][]string, error)",
+    "funcbody": "func (ns *Namespace) FindRESubmatch(expr string, content any, limit ...any) ([][]string, error) {\n\tre, err := hstrings.GetOrCompileRegexp(expr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tconv, err := cast.ToStringE(content)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tn := -1\n\tif len(limit) > 0 {\n\t\tn, err = cast.ToIntE(limit[0])\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\treturn re.FindAllStringSubmatch(conv, n), nil\n}",
+    "funcname": "FindRESubmatch"
+}

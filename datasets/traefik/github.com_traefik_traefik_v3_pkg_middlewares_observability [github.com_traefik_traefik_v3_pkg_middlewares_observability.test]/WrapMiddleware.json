@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/middleware.go",
+    "lineno": 21,
+    "focalfunc": "func WrapMiddleware(ctx context.Context, constructor alice.Constructor) alice.Constructor",
+    "funcbody": "func WrapMiddleware(ctx context.Context, constructor alice.Constructor) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\tif constructor == nil {\n\t\t\treturn nil, nil\n\t\t}\n\t\thandler, err := constructor(next)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tif traceableHandler, ok := handler.(Traceable); ok {\n\t\t\tname, typeName, spanKind := traceableHandler.GetTracingInformation()\n\t\t\tlog.Ctx(ctx).Debug().Str(logs.MiddlewareName, name).Msg(\"Adding tracing to middleware\")\n\t\t\treturn NewMiddleware(handler, name, typeName, spanKind), nil\n\t\t}\n\t\treturn handler, nil\n\t}\n}",
+    "funcname": "WrapMiddleware"
+}

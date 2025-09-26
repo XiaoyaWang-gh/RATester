@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/models_boot.go",
+    "lineno": 47,
+    "focalfunc": "func BootStrap()",
+    "funcbody": "func BootStrap() {\n\tBootStrapWithAlias(\"default\")\n}",
+    "funcname": "BootStrap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/parsers.go",
+    "lineno": 15,
+    "focalfunc": "func getParser(param *MethodParam, t reflect.Type) paramParser",
+    "funcbody": "func getParser(param *MethodParam, t reflect.Type) paramParser {\n\tswitch t.Kind() {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64,\n\t\treflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:\n\t\treturn intParser{}\n\tcase reflect.Slice:\n\t\tif t.Elem().Kind() == reflect.Uint8 {\n\t\t\treturn stringParser{}\n\t\t}\n\t\tif param.in == body {\n\t\t\treturn jsonParser{}\n\t\t}\n\t\telemParser := getParser(param, t.Elem())\n\t\tif elemParser == (jsonParser{}) {\n\t\t\treturn elemParser\n\t\t}\n\t\treturn sliceParser(elemParser)\n\tcase reflect.Bool:\n\t\treturn boolParser{}\n\tcase reflect.String:\n\t\treturn stringParser{}\n\tcase reflect.Float32, reflect.Float64:\n\t\treturn floatParser{}\n\tcase reflect.Ptr:\n\t\telemParser := getParser(param, t.Elem())\n\t\tif elemParser == (jsonParser{}) {\n\t\t\treturn elemParser\n\t\t}\n\t\treturn ptrParser(elemParser)\n\tdefault:\n\t\tif t.PkgPath() == \"time\" && t.Name() == \"Time\" {\n\t\t\treturn timeParser{}\n\t\t}\n\t\treturn jsonParser{}\n\t}\n}",
+    "funcname": "getParser"
+}

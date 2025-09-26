@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 242,
+    "focalfunc": "func (b *BuildState) resolveDeletedPaths()",
+    "funcbody": "func (b *BuildState) resolveDeletedPaths() {\n\tif b.sourceInfosPrevious == nil {\n\t\tb.DeletedPaths = nil\n\t\treturn\n\t}\n\tvar paths []string\n\tb.sourceInfosPrevious.ForEeach(func(k string, _ *sourceInfo) {\n\t\tif _, found := b.sourceInfosCurrent.Get(k); !found {\n\t\t\tpaths = append(paths, k)\n\t\t}\n\t})\n\n\tb.DeletedPaths = paths\n}",
+    "funcname": "resolveDeletedPaths"
+}

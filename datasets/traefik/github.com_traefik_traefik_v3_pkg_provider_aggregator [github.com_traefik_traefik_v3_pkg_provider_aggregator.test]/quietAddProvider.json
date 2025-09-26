@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/aggregator.go",
+    "lineno": 144,
+    "focalfunc": "func (p *ProviderAggregator) quietAddProvider(provider provider.Provider)",
+    "funcbody": "func (p *ProviderAggregator) quietAddProvider(provider provider.Provider) {\n\terr := p.AddProvider(provider)\n\tif err != nil {\n\t\tlog.Error().Err(err).Msgf(\"Error while initializing provider %T\", provider)\n\t}\n}",
+    "funcname": "quietAddProvider"
+}

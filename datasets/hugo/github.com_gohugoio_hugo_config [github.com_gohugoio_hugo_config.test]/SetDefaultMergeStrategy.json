@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 356,
+    "focalfunc": "func (c *defaultConfigProvider) SetDefaultMergeStrategy()",
+    "funcbody": "func (c *defaultConfigProvider) SetDefaultMergeStrategy() {\n\tc.WalkParams(func(params ...maps.KeyParams) bool {\n\t\tif len(params) == 0 {\n\t\t\treturn false\n\t\t}\n\t\tp := params[len(params)-1].Params\n\t\tvar found bool\n\t\tif _, found = p.GetMergeStrategy(); found {\n\n\t\t\treturn false\n\t\t}\n\t\tstrategy := c.determineMergeStrategy(params...)\n\t\tif strategy != \"\" {\n\t\t\tp.SetMergeStrategy(strategy)\n\t\t}\n\t\treturn false\n\t})\n}",
+    "funcname": "SetDefaultMergeStrategy"
+}

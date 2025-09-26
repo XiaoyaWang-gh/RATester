@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/kv/kv_node.go",
+    "lineno": 68,
+    "focalfunc": "func containsNode(nodes []*parser.Node, name string) *parser.Node",
+    "funcbody": "func containsNode(nodes []*parser.Node, name string) *parser.Node {\n\tfor _, n := range nodes {\n\t\tif strings.EqualFold(name, n.Name) {\n\t\t\treturn n\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "containsNode"
+}

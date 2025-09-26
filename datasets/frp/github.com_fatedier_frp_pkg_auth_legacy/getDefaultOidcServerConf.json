@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/legacy/legacy.go",
+    "lineno": 125,
+    "focalfunc": "func getDefaultOidcServerConf() OidcServerConfig",
+    "funcbody": "func getDefaultOidcServerConf() OidcServerConfig {\n\treturn OidcServerConfig{\n\t\tOidcIssuer:\t\t\"\",\n\t\tOidcAudience:\t\t\"\",\n\t\tOidcSkipExpiryCheck:\tfalse,\n\t\tOidcSkipIssuerCheck:\tfalse,\n\t}\n}",
+    "funcname": "getDefaultOidcServerConf"
+}

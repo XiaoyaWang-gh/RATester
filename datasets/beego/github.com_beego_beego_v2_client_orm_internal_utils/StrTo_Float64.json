@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 59,
+    "focalfunc": "func (f StrTo) Float64() (float64, error)",
+    "funcbody": "func (f StrTo) Float64() (float64, error) {\n\treturn strconv.ParseFloat(f.String(), 64)\n}",
+    "funcname": "Float64"
+}

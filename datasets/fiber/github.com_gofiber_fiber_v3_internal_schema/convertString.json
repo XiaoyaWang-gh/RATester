@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/converter.go",
+    "lineno": 108,
+    "focalfunc": "func convertString(value string) reflect.Value",
+    "funcbody": "func convertString(value string) reflect.Value {\n\treturn reflect.ValueOf(value)\n}",
+    "funcname": "convertString"
+}

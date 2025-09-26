@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 623,
+    "focalfunc": "func (r *resourceAdapter) initTransform(publish, setContent bool)",
+    "funcbody": "func (r *resourceAdapter) initTransform(publish, setContent bool) {\n\tr.transformationsInit.Do(func() {\n\t\tif len(r.transformations) == 0 {\n\n\t\t\treturn\n\t\t}\n\n\t\tif publish {\n\n\t\t\tr.publishOnce = nil\n\t\t}\n\n\t\tr.transformationsErr = r.getOrTransform(publish, setContent)\n\t\tif r.transformationsErr != nil {\n\t\t\tif r.spec.ErrorSender != nil {\n\t\t\t\tr.spec.ErrorSender.SendError(r.transformationsErr)\n\t\t\t} else {\n\t\t\t\tr.spec.Logger.Errorf(\"Transformation failed: %s\", r.transformationsErr)\n\t\t\t}\n\t\t}\n\t})\n\n\tif publish && r.publishOnce != nil {\n\t\tr.publish()\n\t}\n}",
+    "funcname": "initTransform"
+}

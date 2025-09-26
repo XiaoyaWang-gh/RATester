@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 676,
+    "focalfunc": "func eatWhiteSpace(s []byte, i int) int",
+    "funcbody": "func eatWhiteSpace(s []byte, i int) int {\n\tfor j := i; j < len(s); j++ {\n\t\tswitch s[j] {\n\t\tcase ' ', '\\t', '\\n', '\\f', '\\r':\n\n\t\tdefault:\n\t\t\treturn j\n\t\t}\n\t}\n\treturn len(s)\n}",
+    "funcname": "eatWhiteSpace"
+}

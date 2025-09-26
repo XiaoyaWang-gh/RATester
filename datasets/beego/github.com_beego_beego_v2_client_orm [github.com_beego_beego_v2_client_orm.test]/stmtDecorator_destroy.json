@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 554,
+    "focalfunc": "func (s *stmtDecorator) destroy()",
+    "funcbody": "func (s *stmtDecorator) destroy() {\n\tgo func() {\n\t\ts.wg.Wait()\n\t\t_ = s.stmt.Close()\n\t}()\n}",
+    "funcname": "destroy"
+}

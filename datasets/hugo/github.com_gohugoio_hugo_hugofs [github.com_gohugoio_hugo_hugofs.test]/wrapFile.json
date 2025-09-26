@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/hashing_fs.go",
+    "lineno": 70,
+    "focalfunc": "func (fs *hashingFs) wrapFile(f afero.File) afero.File",
+    "funcbody": "func (fs *hashingFs) wrapFile(f afero.File) afero.File {\n\treturn &hashingFile{File: f, h: xxhash.New(), hashReceiver: fs.hashReceiver}\n}",
+    "funcname": "wrapFile"
+}

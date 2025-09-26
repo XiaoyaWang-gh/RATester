@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 157,
+    "focalfunc": "func FilterGlobParts(a []string) []string",
+    "funcbody": "func FilterGlobParts(a []string) []string {\n\tb := a[:0]\n\tfor _, x := range a {\n\t\tif !HasGlobChar(x) {\n\t\t\tb = append(b, x)\n\t\t}\n\t}\n\treturn b\n}",
+    "funcname": "FilterGlobParts"
+}

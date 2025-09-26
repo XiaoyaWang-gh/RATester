@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 17,
+    "focalfunc": "func NewJsonDb(runPath string) *JsonDb",
+    "funcbody": "func NewJsonDb(runPath string) *JsonDb {\n\treturn &JsonDb{\n\t\tRunPath:\trunPath,\n\t\tTaskFilePath:\tfilepath.Join(runPath, \"conf\", \"tasks.json\"),\n\t\tHostFilePath:\tfilepath.Join(runPath, \"conf\", \"hosts.json\"),\n\t\tClientFilePath:\tfilepath.Join(runPath, \"conf\", \"clients.json\"),\n\t}\n}",
+    "funcname": "NewJsonDb"
+}

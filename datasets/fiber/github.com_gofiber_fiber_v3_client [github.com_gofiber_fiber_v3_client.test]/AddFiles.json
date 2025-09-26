@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 459,
+    "focalfunc": "func (r *Request) AddFiles(files ...*File) *Request",
+    "funcbody": "func (r *Request) AddFiles(files ...*File) *Request {\n\tr.files = append(r.files, files...)\n\tr.resetBody(filesBody)\n\treturn r\n}",
+    "funcname": "AddFiles"
+}

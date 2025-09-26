@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 68,
+    "focalfunc": "func (rc *Cache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error)",
+    "funcbody": "func (rc *Cache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error) {\n\trv := make([]interface{}, len(keys))\n\n\tmv, err := rc.conn.GetMulti(keys)\n\tif err != nil {\n\t\treturn rv, berror.Wrapf(err, cache.MemCacheCurdFailed,\n\t\t\t\"could not read multiple key-values from memcache, \"+\n\t\t\t\t\"please check your keys, network and connection. Root cause: %s\",\n\t\t\terr.Error())\n\t}\n\n\tkeysErr := make([]string, 0)\n\tfor i, ki := range keys {\n\t\tif _, ok := mv[ki]; !ok {\n\t\t\tkeysErr = append(keysErr, fmt.Sprintf(\"key [%s] error: %s\", ki, \"key not exist\"))\n\t\t\tcontinue\n\t\t}\n\t\trv[i] = mv[ki].Value\n\t}\n\n\tif len(keysErr) == 0 {\n\t\treturn rv, nil\n\t}\n\treturn rv, berror.Error(cache.MultiGetFailed, strings.Join(keysErr, \"; \"))\n}",
+    "funcname": "GetMulti"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/protobuf.go",
+    "lineno": 29,
+    "focalfunc": "func (protobufBinding) BindBody(body []byte, obj any) error",
+    "funcbody": "func (protobufBinding) BindBody(body []byte, obj any) error {\n\tmsg, ok := obj.(proto.Message)\n\tif !ok {\n\t\treturn errors.New(\"obj is not ProtoMessage\")\n\t}\n\tif err := proto.Unmarshal(body, msg); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n\n}",
+    "funcname": "BindBody"
+}

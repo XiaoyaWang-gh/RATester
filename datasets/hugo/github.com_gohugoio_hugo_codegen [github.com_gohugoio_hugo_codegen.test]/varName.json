@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 524,
+    "focalfunc": "func varName(name string) string",
+    "funcbody": "func varName(name string) string {\n\tname = firstToLower(name)\n\n\tswitch name {\n\tcase \"type\":\n\t\tname = \"typ\"\n\tcase \"package\":\n\t\tname = \"pkg\"\n\n\tcase \"len\":\n\t\tname = \"length\"\n\t}\n\n\treturn name\n}",
+    "funcname": "varName"
+}

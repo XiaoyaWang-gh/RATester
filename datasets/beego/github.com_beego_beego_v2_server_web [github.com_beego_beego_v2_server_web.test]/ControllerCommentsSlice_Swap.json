@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 103,
+    "focalfunc": "func (p ControllerCommentsSlice) Swap(i, j int)",
+    "funcbody": "func (p ControllerCommentsSlice) Swap(i, j int)\t{ p[i], p[j] = p[j], p[i] }",
+    "funcname": "Swap"
+}

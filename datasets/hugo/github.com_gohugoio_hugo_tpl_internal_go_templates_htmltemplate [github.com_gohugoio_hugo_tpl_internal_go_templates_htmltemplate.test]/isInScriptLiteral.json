@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/context.go",
+    "lineno": 186,
+    "focalfunc": "func isInScriptLiteral(s state) bool",
+    "funcbody": "func isInScriptLiteral(s state) bool {\n\n\tswitch s {\n\tcase stateJSDqStr, stateJSSqStr, stateJSTmplLit, stateJSRegexp:\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "isInScriptLiteral"
+}

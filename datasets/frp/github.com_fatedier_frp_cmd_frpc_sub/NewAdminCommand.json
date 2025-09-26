@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/admin.go",
+    "lineno": 52,
+    "focalfunc": "func NewAdminCommand(name, short string, handler func(*v1.ClientCommonConfig) error) *cobra.Command",
+    "funcbody": "func NewAdminCommand(name, short string, handler func(*v1.ClientCommonConfig) error) *cobra.Command {\n\treturn &cobra.Command{\n\t\tUse:\tname,\n\t\tShort:\tshort,\n\t\tRun: func(cmd *cobra.Command, args []string) {\n\t\t\tcfg, _, _, _, err := config.LoadClientConfig(cfgFile, strictConfigMode)\n\t\t\tif err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t\tos.Exit(1)\n\t\t\t}\n\t\t\tif cfg.WebServer.Port <= 0 {\n\t\t\t\tfmt.Println(\"web server port should be set if you want to use this feature\")\n\t\t\t\tos.Exit(1)\n\t\t\t}\n\n\t\t\tif err := handler(cfg); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t\tos.Exit(1)\n\t\t\t}\n\t\t},\n\t}\n}",
+    "funcname": "NewAdminCommand"
+}

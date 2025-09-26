@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/traefikio/v1alpha1/zz_generated.deepcopy.go",
+    "lineno": 1884,
+    "focalfunc": "func (in *WeightedRoundRobin) DeepCopyInto(out *WeightedRoundRobin)",
+    "funcbody": "func (in *WeightedRoundRobin) DeepCopyInto(out *WeightedRoundRobin) {\n\t*out = *in\n\tif in.Services != nil {\n\t\tin, out := &in.Services, &out.Services\n\t\t*out = make([]Service, len(*in))\n\t\tfor i := range *in {\n\t\t\t(*in)[i].DeepCopyInto(&(*out)[i])\n\t\t}\n\t}\n\tif in.Sticky != nil {\n\t\tin, out := &in.Sticky, &out.Sticky\n\t\t*out = new(dynamic.Sticky)\n\t\t(*in).DeepCopyInto(*out)\n\t}\n\treturn\n}",
+    "funcname": "DeepCopyInto"
+}

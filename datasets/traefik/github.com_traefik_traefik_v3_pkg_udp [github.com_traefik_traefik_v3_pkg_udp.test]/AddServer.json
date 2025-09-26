@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/wrr_load_balancer.go",
+    "lineno": 46,
+    "focalfunc": "func (b *WRRLoadBalancer) AddServer(serverHandler Handler)",
+    "funcbody": "func (b *WRRLoadBalancer) AddServer(serverHandler Handler) {\n\tw := 1\n\tb.AddWeightedServer(serverHandler, &w)\n}",
+    "funcname": "AddServer"
+}

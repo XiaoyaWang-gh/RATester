@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 940,
+    "focalfunc": "func (t *Tree) newContinue(pos Pos, line int) *ContinueNode",
+    "funcbody": "func (t *Tree) newContinue(pos Pos, line int) *ContinueNode {\n\treturn &ContinueNode{tr: t, NodeType: NodeContinue, Pos: pos, Line: line}\n}",
+    "funcname": "newContinue"
+}

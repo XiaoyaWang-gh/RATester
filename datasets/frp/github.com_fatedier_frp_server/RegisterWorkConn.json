@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/service.go",
+    "lineno": 613,
+    "focalfunc": "func (svr *Service) RegisterWorkConn(workConn net.Conn, newMsg *msg.NewWorkConn) error",
+    "funcbody": "func (svr *Service) RegisterWorkConn(workConn net.Conn, newMsg *msg.NewWorkConn) error {\n\txl := netpkg.NewLogFromConn(workConn)\n\tctl, exist := svr.ctlManager.GetByID(newMsg.RunID)\n\tif !exist {\n\t\txl.Warnf(\"No client control found for run id [%s]\", newMsg.RunID)\n\t\treturn fmt.Errorf(\"no client control found for run id [%s]\", newMsg.RunID)\n\t}\n\n\tcontent := &plugin.NewWorkConnContent{\n\t\tUser: plugin.UserInfo{\n\t\t\tUser:\tctl.loginMsg.User,\n\t\t\tMetas:\tctl.loginMsg.Metas,\n\t\t\tRunID:\tctl.loginMsg.RunID,\n\t\t},\n\t\tNewWorkConn:\t*newMsg,\n\t}\n\tretContent, err := svr.pluginManager.NewWorkConn(content)\n\tif err == nil {\n\t\tnewMsg = &retContent.NewWorkConn\n\n\t\terr = ctl.authVerifier.VerifyNewWorkConn(newMsg)\n\t}\n\tif err != nil {\n\t\txl.Warnf(\"invalid NewWorkConn with run id [%s]\", newMsg.RunID)\n\t\t_ = msg.WriteMsg(workConn, &msg.StartWorkConn{\n\t\t\tError: util.GenerateResponseErrorString(\"invalid NewWorkConn\", err, lo.FromPtr(svr.cfg.DetailedErrorsToClient)),\n\t\t})\n\t\treturn fmt.Errorf(\"invalid NewWorkConn with run id [%s]\", newMsg.RunID)\n\t}\n\treturn ctl.RegisterWorkConn(workConn)\n}",
+    "funcname": "RegisterWorkConn"
+}

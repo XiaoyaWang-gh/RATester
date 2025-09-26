@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/postgres/sess_postgresql.go",
+    "lineno": 101,
+    "focalfunc": "func (st *SessionStore) Flush(context.Context) error",
+    "funcbody": "func (st *SessionStore) Flush(context.Context) error {\n\tst.lock.Lock()\n\tdefer st.lock.Unlock()\n\tst.values = make(map[interface{}]interface{})\n\treturn nil\n}",
+    "funcname": "Flush"
+}

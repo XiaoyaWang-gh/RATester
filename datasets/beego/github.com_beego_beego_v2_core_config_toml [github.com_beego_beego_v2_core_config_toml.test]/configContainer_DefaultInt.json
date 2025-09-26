@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 212,
+    "focalfunc": "func (c *configContainer) DefaultInt(key string, defaultVal int) int",
+    "funcbody": "func (c *configContainer) DefaultInt(key string, defaultVal int) int {\n\treturn int(c.DefaultInt64(key, int64(defaultVal)))\n}",
+    "funcname": "DefaultInt"
+}

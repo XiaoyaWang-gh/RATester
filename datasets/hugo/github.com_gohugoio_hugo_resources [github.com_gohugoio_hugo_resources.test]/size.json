@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 402,
+    "focalfunc": "func (l *genericResource) size() int64",
+    "funcbody": "func (l *genericResource) size() int64 {\n\tl.hash()\n\treturn l.h.size\n}",
+    "funcname": "size"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 228,
+    "focalfunc": "func (r *standardRegistry) LastConfigReloadSuccessGauge() metrics.Gauge",
+    "funcbody": "func (r *standardRegistry) LastConfigReloadSuccessGauge() metrics.Gauge {\n\treturn r.lastConfigReloadSuccessGauge\n}",
+    "funcname": "LastConfigReloadSuccessGauge"
+}

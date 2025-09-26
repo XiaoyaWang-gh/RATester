@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 662,
+    "focalfunc": "func (p *Provider) addCertificateForDomain(domain types.Domain, crt *certificate.Resource, tlsStore string) error",
+    "funcbody": "func (p *Provider) addCertificateForDomain(domain types.Domain, crt *certificate.Resource, tlsStore string) error {\n\tif crt == nil {\n\t\treturn nil\n\t}\n\n\tp.certificatesMu.Lock()\n\tdefer p.certificatesMu.Unlock()\n\n\tcert := Certificate{Certificate: crt.Certificate, Key: crt.PrivateKey, Domain: domain}\n\n\tcertUpdated := false\n\tfor _, domainsCertificate := range p.certificates {\n\t\tif reflect.DeepEqual(domain, domainsCertificate.Certificate.Domain) {\n\t\t\tdomainsCertificate.Certificate = cert\n\t\t\tcertUpdated = true\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif !certUpdated {\n\t\tp.certificates = append(p.certificates, &CertAndStore{Certificate: cert, Store: tlsStore})\n\t}\n\n\tp.configurationChan <- p.buildMessage()\n\n\treturn p.Store.SaveCertificates(p.ResolverName, p.certificates)\n}",
+    "funcname": "addCertificateForDomain"
+}

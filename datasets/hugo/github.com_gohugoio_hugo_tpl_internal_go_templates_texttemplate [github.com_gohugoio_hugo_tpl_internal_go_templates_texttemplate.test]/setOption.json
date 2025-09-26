@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/option.go",
+    "lineno": 50,
+    "focalfunc": "func (t *Template) setOption(opt string)",
+    "funcbody": "func (t *Template) setOption(opt string) {\n\tif opt == \"\" {\n\t\tpanic(\"empty option string\")\n\t}\n\n\tif key, value, ok := strings.Cut(opt, \"=\"); ok {\n\t\tswitch key {\n\t\tcase \"missingkey\":\n\t\t\tswitch value {\n\t\t\tcase \"invalid\", \"default\":\n\t\t\t\tt.option.missingKey = mapInvalid\n\t\t\t\treturn\n\t\t\tcase \"zero\":\n\t\t\t\tt.option.missingKey = mapZeroValue\n\t\t\t\treturn\n\t\t\tcase \"error\":\n\t\t\t\tt.option.missingKey = mapError\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n\tpanic(\"unrecognized option: \" + opt)\n}",
+    "funcname": "setOption"
+}

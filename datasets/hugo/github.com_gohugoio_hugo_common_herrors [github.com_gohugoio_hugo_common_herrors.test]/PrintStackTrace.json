@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 30,
+    "focalfunc": "func PrintStackTrace(w io.Writer)",
+    "funcbody": "func PrintStackTrace(w io.Writer) {\n\tbuf := make([]byte, 1<<16)\n\truntime.Stack(buf, true)\n\tfmt.Fprintf(w, \"%s\", buf)\n}",
+    "funcname": "PrintStackTrace"
+}

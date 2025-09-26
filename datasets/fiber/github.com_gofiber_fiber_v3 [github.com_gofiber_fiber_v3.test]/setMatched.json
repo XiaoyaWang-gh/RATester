@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1940,
+    "focalfunc": "func (c *DefaultCtx) setMatched(matched bool)",
+    "funcbody": "func (c *DefaultCtx) setMatched(matched bool) {\n\tc.matched = matched\n}",
+    "funcname": "setMatched"
+}

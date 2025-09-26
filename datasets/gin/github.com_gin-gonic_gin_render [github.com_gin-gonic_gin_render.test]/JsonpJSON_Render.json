@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 116,
+    "focalfunc": "func (r JsonpJSON) Render(w http.ResponseWriter) (err error)",
+    "funcbody": "func (r JsonpJSON) Render(w http.ResponseWriter) (err error) {\n\tr.WriteContentType(w)\n\tret, err := json.Marshal(r.Data)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif r.Callback == \"\" {\n\t\t_, err = w.Write(ret)\n\t\treturn err\n\t}\n\n\tcallback := template.JSEscapeString(r.Callback)\n\tif _, err = w.Write(bytesconv.StringToBytes(callback)); err != nil {\n\t\treturn err\n\t}\n\n\tif _, err = w.Write(bytesconv.StringToBytes(\"(\")); err != nil {\n\t\treturn err\n\t}\n\n\tif _, err = w.Write(ret); err != nil {\n\t\treturn err\n\t}\n\n\tif _, err = w.Write(bytesconv.StringToBytes(\");\")); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "Render"
+}

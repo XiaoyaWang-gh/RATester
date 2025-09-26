@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/resampling.go",
+    "lineno": 185,
+    "focalfunc": "func (r resamp) Kernel(x float32) float32",
+    "funcbody": "func (r resamp) Kernel(x float32) float32 {\n\treturn r.kernel(x)\n}",
+    "funcname": "Kernel"
+}

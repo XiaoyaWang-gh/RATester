@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/config.go",
+    "lineno": 26,
+    "focalfunc": "func NewDynConfBuilder(configuration Shared, apiClient client.APIClient) *DynConfBuilder",
+    "funcbody": "func NewDynConfBuilder(configuration Shared, apiClient client.APIClient) *DynConfBuilder {\n\treturn &DynConfBuilder{Shared: configuration, apiClient: apiClient}\n}",
+    "funcname": "NewDynConfBuilder"
+}

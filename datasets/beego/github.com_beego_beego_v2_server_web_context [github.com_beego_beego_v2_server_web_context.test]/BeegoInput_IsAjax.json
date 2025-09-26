@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 176,
+    "focalfunc": "func (input *BeegoInput) IsAjax() bool",
+    "funcbody": "func (input *BeegoInput) IsAjax() bool {\n\treturn input.Header(\"X-Requested-With\") == \"XMLHttpRequest\"\n}",
+    "funcname": "IsAjax"
+}

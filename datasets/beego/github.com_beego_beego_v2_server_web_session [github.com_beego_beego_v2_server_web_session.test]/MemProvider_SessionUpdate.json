@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 188,
+    "focalfunc": "func (pder *MemProvider) SessionUpdate(ctx context.Context, sid string) error",
+    "funcbody": "func (pder *MemProvider) SessionUpdate(ctx context.Context, sid string) error {\n\tpder.lock.Lock()\n\tdefer pder.lock.Unlock()\n\tif element, ok := pder.sessions[sid]; ok {\n\t\telement.Value.(*MemSessionStore).timeAccessed = time.Now()\n\t\tpder.list.MoveToFront(element)\n\t\treturn nil\n\t}\n\treturn nil\n}",
+    "funcname": "SessionUpdate"
+}

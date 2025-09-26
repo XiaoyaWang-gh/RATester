@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 402,
+    "focalfunc": "func (c *clientWrapper) UpdateGatewayClassStatus(ctx context.Context, name string, status gatev1.GatewayClassStatus) error",
+    "funcbody": "func (c *clientWrapper) UpdateGatewayClassStatus(ctx context.Context, name string, status gatev1.GatewayClassStatus) error {\n\terr := retry.RetryOnConflict(retry.DefaultRetry, func() error {\n\t\tcurrentGatewayClass, err := c.factoryGatewayClass.Gateway().V1().GatewayClasses().Lister().Get(name)\n\t\tif err != nil {\n\n\t\t\treturn err\n\t\t}\n\n\t\tif conditionsEqual(currentGatewayClass.Status.Conditions, status.Conditions) {\n\t\t\treturn nil\n\t\t}\n\n\t\tcurrentGatewayClass = currentGatewayClass.DeepCopy()\n\t\tcurrentGatewayClass.Status = status\n\n\t\tif _, err = c.csGateway.GatewayV1().GatewayClasses().UpdateStatus(ctx, currentGatewayClass, metav1.UpdateOptions{}); err != nil {\n\n\t\t\treturn err\n\t\t}\n\n\t\treturn nil\n\t})\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to update GatewayClass %q status: %w\", name, err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "UpdateGatewayClassStatus"
+}

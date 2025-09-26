@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/diagrams/goat.go",
+    "lineno": 31,
+    "focalfunc": "func (d goatDiagram) Inner() template.HTML",
+    "funcbody": "func (d goatDiagram) Inner() template.HTML {\n\treturn template.HTML(d.d.Body)\n}",
+    "funcname": "Inner"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 32,
+    "focalfunc": "func (ls *SessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (ls *SessionStore) Set(ctx context.Context, key, value interface{}) error {\n\tls.lock.Lock()\n\tdefer ls.lock.Unlock()\n\tls.values[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

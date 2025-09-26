@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 74,
+    "focalfunc": "func (s *SMTPWriter) getSMTPAuth(host string) smtp.Auth",
+    "funcbody": "func (s *SMTPWriter) getSMTPAuth(host string) smtp.Auth {\n\tif len(strings.Trim(s.Username, \" \")) == 0 && len(strings.Trim(s.Password, \" \")) == 0 {\n\t\treturn nil\n\t}\n\treturn smtp.PlainAuth(\n\t\t\"\",\n\t\ts.Username,\n\t\ts.Password,\n\t\thost,\n\t)\n}",
+    "funcname": "getSMTPAuth"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 75,
+    "focalfunc": "func IsNil(v any) bool",
+    "funcbody": "func IsNil(v any) bool {\n\tif v == nil {\n\t\treturn true\n\t}\n\n\tvalue := reflect.ValueOf(v)\n\tswitch value.Kind() {\n\tcase reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice:\n\t\treturn value.IsNil()\n\t}\n\n\treturn false\n}",
+    "funcname": "IsNil"
+}

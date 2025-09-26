@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 344,
+    "focalfunc": "func lexComment(l *lexer) stateFn",
+    "funcbody": "func lexComment(l *lexer) stateFn {\n\tl.pos += Pos(len(leftComment))\n\tx := strings.Index(l.input[l.pos:], rightComment)\n\tif x < 0 {\n\t\treturn l.errorf(\"unclosed comment\")\n\t}\n\tl.pos += Pos(x + len(rightComment))\n\tdelim, trimSpace := l.atRightDelim()\n\tif !delim {\n\t\treturn l.errorf(\"comment ends before closing delimiter\")\n\t}\n\ti := l.thisItem(itemComment)\n\tif trimSpace {\n\t\tl.pos += trimMarkerLen\n\t}\n\tl.pos += Pos(len(l.rightDelim))\n\tif trimSpace {\n\t\tl.pos += leftTrimLength(l.input[l.pos:])\n\t}\n\tl.ignore()\n\tif l.options.emitComment {\n\t\treturn l.emitItem(i)\n\t}\n\treturn lexText\n}",
+    "funcname": "lexComment"
+}

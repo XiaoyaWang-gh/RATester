@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/file/file.go",
+    "lineno": 174,
+    "focalfunc": "func (p *Provider) buildConfiguration() (*dynamic.Configuration, error)",
+    "funcbody": "func (p *Provider) buildConfiguration() (*dynamic.Configuration, error) {\n\tctx := log.With().Str(logs.ProviderName, providerName).Logger().WithContext(context.Background())\n\n\tif len(p.Directory) > 0 {\n\t\treturn p.loadFileConfigFromDirectory(ctx, p.Directory, nil)\n\t}\n\n\tif len(p.Filename) > 0 {\n\t\treturn p.loadFileConfig(ctx, p.Filename, true)\n\t}\n\n\treturn nil, errors.New(\"error using file configuration provider, neither filename nor directory is defined\")\n}",
+    "funcname": "buildConfiguration"
+}

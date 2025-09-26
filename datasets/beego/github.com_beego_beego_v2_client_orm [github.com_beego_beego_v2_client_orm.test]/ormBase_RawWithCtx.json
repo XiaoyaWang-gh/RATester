@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 505,
+    "focalfunc": "func (o *ormBase) RawWithCtx(_ context.Context, query string, args ...interface{}) RawSeter",
+    "funcbody": "func (o *ormBase) RawWithCtx(_ context.Context, query string, args ...interface{}) RawSeter {\n\treturn newRawSet(o, query, args)\n}",
+    "funcname": "RawWithCtx"
+}

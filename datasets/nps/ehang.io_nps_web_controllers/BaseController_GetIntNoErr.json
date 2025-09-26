@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 102,
+    "focalfunc": "func (s *BaseController) GetIntNoErr(key string, def ...int) int",
+    "funcbody": "func (s *BaseController) GetIntNoErr(key string, def ...int) int {\n\tstrv := s.Ctx.Input.Query(key)\n\tif len(strv) == 0 && len(def) > 0 {\n\t\treturn def[0]\n\t}\n\tval, _ := strconv.Atoi(strv)\n\treturn val\n}",
+    "funcname": "GetIntNoErr"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/response_modifier.go",
+    "lineno": 38,
+    "focalfunc": "func (r *ResponseModifier) WriteHeader(code int)",
+    "funcbody": "func (r *ResponseModifier) WriteHeader(code int) {\n\tif r.headersSent {\n\t\treturn\n\t}\n\n\tif code >= 100 && code <= 199 {\n\t\tr.rw.WriteHeader(code)\n\t\treturn\n\t}\n\n\tdefer func() {\n\t\tr.code = code\n\t\tr.headersSent = true\n\t}()\n\n\tif r.modifier == nil || r.modified {\n\t\tr.rw.WriteHeader(code)\n\t\treturn\n\t}\n\n\tresp := http.Response{\n\t\tHeader:\t\tr.rw.Header(),\n\t\tRequest:\tr.req,\n\t}\n\n\tif err := r.modifier(&resp); err != nil {\n\t\tr.modifierErr = err\n\n\t\tlog.Error().Err(err).Msg(\"Error when applying response modifier\")\n\t\tr.rw.WriteHeader(http.StatusInternalServerError)\n\t\treturn\n\t}\n\n\tr.modified = true\n\tr.rw.WriteHeader(code)\n}",
+    "funcname": "WriteHeader"
+}

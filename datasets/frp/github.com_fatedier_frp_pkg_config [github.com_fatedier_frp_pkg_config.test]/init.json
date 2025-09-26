@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 41,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tglbEnvs = make(map[string]string)\n\tenvs := os.Environ()\n\tfor _, env := range envs {\n\t\tpair := strings.SplitN(env, \"=\", 2)\n\t\tif len(pair) != 2 {\n\t\t\tcontinue\n\t\t}\n\t\tglbEnvs[pair[0]] = pair[1]\n\t}\n}",
+    "funcname": "init"
+}

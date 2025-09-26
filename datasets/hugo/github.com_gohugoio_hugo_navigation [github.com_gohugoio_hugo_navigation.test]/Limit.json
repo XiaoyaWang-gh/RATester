@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 227,
+    "focalfunc": "func (m Menu) Limit(n int) Menu",
+    "funcbody": "func (m Menu) Limit(n int) Menu {\n\tif len(m) > n {\n\t\treturn m[0:n]\n\t}\n\treturn m\n}",
+    "funcname": "Limit"
+}

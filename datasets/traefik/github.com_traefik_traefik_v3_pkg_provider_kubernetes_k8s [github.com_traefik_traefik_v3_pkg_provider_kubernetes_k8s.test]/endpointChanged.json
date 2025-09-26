@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/event_handler.go",
+    "lineno": 90,
+    "focalfunc": "func endpointChanged(a, b discoveryv1.Endpoint) bool",
+    "funcbody": "func endpointChanged(a, b discoveryv1.Endpoint) bool {\n\tif len(a.Addresses) != len(b.Addresses) {\n\t\treturn true\n\t}\n\n\tfor i, aaddr := range a.Addresses {\n\t\tbaddr := b.Addresses[i]\n\t\tif aaddr != baddr {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "endpointChanged"
+}

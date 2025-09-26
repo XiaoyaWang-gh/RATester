@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/text/transform.go",
+    "lineno": 66,
+    "focalfunc": "func VisitLinesAfter(s string, fn func(line string))",
+    "funcbody": "func VisitLinesAfter(s string, fn func(line string)) {\n\thigh := strings.IndexRune(s, '\\n')\n\tfor high != -1 {\n\t\tfn(s[:high+1])\n\t\ts = s[high+1:]\n\n\t\thigh = strings.IndexRune(s, '\\n')\n\t}\n\n\tif s != \"\" {\n\t\tfn(s)\n\t}\n}",
+    "funcname": "VisitLinesAfter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager_msgp.go",
+    "lineno": 157,
+    "focalfunc": "func (z item) Msgsize() (s int)",
+    "funcbody": "func (z item) Msgsize() (s int) {\n\ts = 1 + 9 + msgp.IntSize + 9 + msgp.IntSize + 4 + msgp.Uint64Size\n\treturn\n}",
+    "funcname": "Msgsize"
+}

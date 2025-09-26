@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 35,
+    "focalfunc": "func New() *Namespace",
+    "funcbody": "func New() *Namespace {\n\treturn &Namespace{}\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/config.go",
+    "lineno": 411,
+    "focalfunc": "func (m Mount) key() string",
+    "funcbody": "func (m Mount) key() string {\n\treturn strings.Join([]string{m.Lang, m.Source, m.Target}, \"/\")\n}",
+    "funcname": "key"
+}

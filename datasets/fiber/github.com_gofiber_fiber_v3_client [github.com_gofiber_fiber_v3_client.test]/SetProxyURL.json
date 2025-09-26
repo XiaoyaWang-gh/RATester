@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 224,
+    "focalfunc": "func (c *Client) SetProxyURL(proxyURL string) error",
+    "funcbody": "func (c *Client) SetProxyURL(proxyURL string) error {\n\tc.fasthttp.Dial = fasthttpproxy.FasthttpHTTPDialer(proxyURL)\n\n\treturn nil\n}",
+    "funcname": "SetProxyURL"
+}

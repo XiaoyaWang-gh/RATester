@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 411,
+    "focalfunc": "func (r *NodeShiftTree[T]) Has(s string) bool",
+    "funcbody": "func (r *NodeShiftTree[T]) Has(s string) bool {\n\t_, ok := r.get(s)\n\treturn ok\n}",
+    "funcname": "Has"
+}

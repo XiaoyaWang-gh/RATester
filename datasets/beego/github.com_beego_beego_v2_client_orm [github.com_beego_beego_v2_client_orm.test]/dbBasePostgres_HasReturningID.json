@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 133,
+    "focalfunc": "func (d *dbBasePostgres) HasReturningID(mi *models.ModelInfo, query *string) bool",
+    "funcbody": "func (d *dbBasePostgres) HasReturningID(mi *models.ModelInfo, query *string) bool {\n\tfi := mi.Fields.Pk\n\tif fi.FieldType&IsPositiveIntegerField == 0 && fi.FieldType&IsIntegerField == 0 {\n\t\treturn false\n\t}\n\n\tif query != nil {\n\t\t*query = fmt.Sprintf(`%s RETURNING \"%s\"`, *query, fi.Column)\n\t}\n\treturn true\n}",
+    "funcname": "HasReturningID"
+}

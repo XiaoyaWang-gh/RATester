@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 117,
+    "focalfunc": "func lastChar(str string) uint8",
+    "funcbody": "func lastChar(str string) uint8 {\n\tif str == \"\" {\n\t\tpanic(\"The length of the string can't be 0\")\n\t}\n\treturn str[len(str)-1]\n}",
+    "funcname": "lastChar"
+}

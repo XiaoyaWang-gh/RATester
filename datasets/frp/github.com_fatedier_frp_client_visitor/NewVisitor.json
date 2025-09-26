@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor.go",
+    "lineno": 48,
+    "focalfunc": "func NewVisitor(\n\tctx context.Context,\n\tcfg v1.VisitorConfigurer,\n\tclientCfg *v1.ClientCommonConfig,\n\thelper Helper,\n) (visitor Visitor)",
+    "funcbody": "func NewVisitor(\n\tctx context.Context,\n\tcfg v1.VisitorConfigurer,\n\tclientCfg *v1.ClientCommonConfig,\n\thelper Helper,\n) (visitor Visitor) {\n\txl := xlog.FromContextSafe(ctx).Spawn().AppendPrefix(cfg.GetBaseConfig().Name)\n\tbaseVisitor := BaseVisitor{\n\t\tclientCfg:\tclientCfg,\n\t\thelper:\t\thelper,\n\t\tctx:\t\txlog.NewContext(ctx, xl),\n\t\tinternalLn:\tnetpkg.NewInternalListener(),\n\t}\n\tswitch cfg := cfg.(type) {\n\tcase *v1.STCPVisitorConfig:\n\t\tvisitor = &STCPVisitor{\n\t\t\tBaseVisitor:\t&baseVisitor,\n\t\t\tcfg:\t\tcfg,\n\t\t}\n\tcase *v1.XTCPVisitorConfig:\n\t\tvisitor = &XTCPVisitor{\n\t\t\tBaseVisitor:\t&baseVisitor,\n\t\t\tcfg:\t\tcfg,\n\t\t\tstartTunnelCh:\tmake(chan struct{}),\n\t\t}\n\tcase *v1.SUDPVisitorConfig:\n\t\tvisitor = &SUDPVisitor{\n\t\t\tBaseVisitor:\t&baseVisitor,\n\t\t\tcfg:\t\tcfg,\n\t\t\tcheckCloseCh:\tmake(chan struct{}),\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "NewVisitor"
+}

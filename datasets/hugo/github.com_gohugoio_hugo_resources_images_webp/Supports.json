@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/webp/webp_notavailable.go",
+    "lineno": 34,
+    "focalfunc": "func Supports() bool",
+    "funcbody": "func Supports() bool {\n\treturn false\n}",
+    "funcname": "Supports"
+}

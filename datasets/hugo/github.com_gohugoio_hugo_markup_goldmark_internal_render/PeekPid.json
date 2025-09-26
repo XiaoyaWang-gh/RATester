@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 88,
+    "focalfunc": "func (ctx *Context) PeekPid() uint64",
+    "funcbody": "func (ctx *Context) PeekPid() uint64 {\n\tif len(ctx.pids) == 0 {\n\t\treturn 0\n\t}\n\treturn ctx.pids[len(ctx.pids)-1]\n}",
+    "funcname": "PeekPid"
+}

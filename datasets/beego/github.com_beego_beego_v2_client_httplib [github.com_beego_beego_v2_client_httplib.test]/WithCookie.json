@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 102,
+    "focalfunc": "func WithCookie(cookie *http.Cookie) BeegoHTTPRequestOption",
+    "funcbody": "func WithCookie(cookie *http.Cookie) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.Header(\"Cookie\", cookie.String())\n\t}\n}",
+    "funcname": "WithCookie"
+}

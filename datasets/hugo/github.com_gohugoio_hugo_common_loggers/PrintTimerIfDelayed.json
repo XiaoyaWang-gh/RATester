@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 268,
+    "focalfunc": "func (l *logAdapter) PrintTimerIfDelayed(start time.Time, name string)",
+    "funcbody": "func (l *logAdapter) PrintTimerIfDelayed(start time.Time, name string) {\n\telapsed := time.Since(start)\n\tmilli := int(1000 * elapsed.Seconds())\n\tif milli < 500 {\n\t\treturn\n\t}\n\tl.Printf(\"%s in %v ms\", name, milli)\n}",
+    "funcname": "PrintTimerIfDelayed"
+}

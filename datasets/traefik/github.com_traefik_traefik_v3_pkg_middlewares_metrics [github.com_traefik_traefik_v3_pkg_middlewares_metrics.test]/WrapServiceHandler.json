@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 111,
+    "focalfunc": "func WrapServiceHandler(ctx context.Context, registry metrics.Registry, serviceName string) alice.Constructor",
+    "funcbody": "func WrapServiceHandler(ctx context.Context, registry metrics.Registry, serviceName string) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\treturn NewServiceMiddleware(ctx, next, registry, serviceName), nil\n\t}\n}",
+    "funcname": "WrapServiceHandler"
+}

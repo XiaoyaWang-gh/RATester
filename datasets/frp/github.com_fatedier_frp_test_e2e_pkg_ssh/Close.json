@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/ssh/client.go",
+    "lineno": 63,
+    "focalfunc": "func (c *TunnelClient) Close()",
+    "funcbody": "func (c *TunnelClient) Close() {\n\tif c.sshConn != nil {\n\t\t_ = c.sshConn.Close()\n\t}\n\tif c.ln != nil {\n\t\t_ = c.ln.Close()\n\t}\n}",
+    "funcname": "Close"
+}

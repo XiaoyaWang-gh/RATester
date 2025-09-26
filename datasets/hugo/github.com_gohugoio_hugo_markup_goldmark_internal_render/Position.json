@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 250,
+    "focalfunc": "func (c *hookBase) Position() htext.Position",
+    "funcbody": "func (c *hookBase) Position() htext.Position {\n\tc.posInit.Do(func() {\n\t\tc.pos = c.createPos()\n\t})\n\treturn c.pos\n}",
+    "funcname": "Position"
+}

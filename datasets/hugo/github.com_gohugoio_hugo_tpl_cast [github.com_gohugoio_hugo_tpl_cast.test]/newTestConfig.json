@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/cast/docshelper.go",
+    "lineno": 49,
+    "focalfunc": "func newTestConfig() config.Provider",
+    "funcbody": "func newTestConfig() config.Provider {\n\tv := config.New()\n\tv.Set(\"contentDir\", \"content\")\n\treturn v\n}",
+    "funcname": "newTestConfig"
+}

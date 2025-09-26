@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 433,
+    "focalfunc": "func (v *Validation) RecursiveValid(objc interface{}) (bool, error)",
+    "funcbody": "func (v *Validation) RecursiveValid(objc interface{}) (bool, error) {\n\n\tpass, err := v.Valid(objc)\n\tif err != nil || !pass {\n\t\treturn pass, err\n\t}\n\n\tobjT := reflect.TypeOf(objc)\n\tobjV := reflect.ValueOf(objc)\n\n\tif isStructPtr(objT) {\n\t\tobjT = objT.Elem()\n\t\tobjV = objV.Elem()\n\t}\n\n\tfor i := 0; i < objT.NumField(); i++ {\n\n\t\tt := objT.Field(i).Type\n\n\t\tif isStruct(t) || isStructPtr(t) {\n\n\t\t\tif objV.Field(i).CanInterface() {\n\t\t\t\tpass, err = v.RecursiveValid(objV.Field(i).Interface())\n\t\t\t}\n\t\t}\n\t}\n\treturn pass, err\n}",
+    "funcname": "RecursiveValid"
+}

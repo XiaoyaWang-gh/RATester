@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_overview.go",
+    "lineno": 183,
+    "focalfunc": "func getUDPRouterSection(routers map[string]*runtime.UDPRouterInfo) *section",
+    "funcbody": "func getUDPRouterSection(routers map[string]*runtime.UDPRouterInfo) *section {\n\tvar countErrors int\n\tvar countWarnings int\n\tfor _, rt := range routers {\n\t\tswitch rt.Status {\n\t\tcase runtime.StatusDisabled:\n\t\t\tcountErrors++\n\t\tcase runtime.StatusWarning:\n\t\t\tcountWarnings++\n\t\t}\n\t}\n\n\treturn &section{\n\t\tTotal:\t\tlen(routers),\n\t\tWarnings:\tcountWarnings,\n\t\tErrors:\t\tcountErrors,\n\t}\n}",
+    "funcname": "getUDPRouterSection"
+}

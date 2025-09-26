@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 231,
+    "focalfunc": "func (d dirEntry) Type() fs.FileMode",
+    "funcbody": "func (d dirEntry) Type() fs.FileMode\t{ return d.FileInfo.Mode().Type() }",
+    "funcname": "Type"
+}

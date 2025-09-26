@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/generate/generate.go",
+    "lineno": 45,
+    "focalfunc": "func KeyPair(domain string, expiration time.Time) ([]byte, []byte, error)",
+    "funcbody": "func KeyPair(domain string, expiration time.Time) ([]byte, []byte, error) {\n\trsaPrivKey, err := rsa.GenerateKey(rand.Reader, 2048)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\tkeyPEM := pem.EncodeToMemory(&pem.Block{Type: \"RSA PRIVATE KEY\", Bytes: x509.MarshalPKCS1PrivateKey(rsaPrivKey)})\n\n\tcertPEM, err := PemCert(rsaPrivKey, domain, expiration)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\treturn certPEM, keyPEM, nil\n}",
+    "funcname": "KeyPair"
+}

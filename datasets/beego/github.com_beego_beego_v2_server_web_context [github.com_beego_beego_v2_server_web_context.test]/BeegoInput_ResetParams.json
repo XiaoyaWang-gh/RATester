@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 322,
+    "focalfunc": "func (input *BeegoInput) ResetParams()",
+    "funcbody": "func (input *BeegoInput) ResetParams() {\n\tinput.pnames = input.pnames[:0]\n\tinput.pvalues = input.pvalues[:0]\n}",
+    "funcname": "ResetParams"
+}

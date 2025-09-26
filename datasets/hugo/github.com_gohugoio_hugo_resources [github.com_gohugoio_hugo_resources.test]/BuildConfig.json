@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_spec.go",
+    "lineno": 222,
+    "focalfunc": "func (r *Spec) BuildConfig() config.BuildConfig",
+    "funcbody": "func (r *Spec) BuildConfig() config.BuildConfig {\n\treturn r.Cfg.GetConfigSection(\"build\").(config.BuildConfig)\n}",
+    "funcname": "BuildConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 35,
+    "focalfunc": "func (s *Stack[T]) Pop() (T, bool)",
+    "funcbody": "func (s *Stack[T]) Pop() (T, bool) {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\tif len(s.items) == 0 {\n\t\treturn s.zero, false\n\t}\n\titem := s.items[len(s.items)-1]\n\ts.items = s.items[:len(s.items)-1]\n\treturn item, true\n}",
+    "funcname": "Pop"
+}

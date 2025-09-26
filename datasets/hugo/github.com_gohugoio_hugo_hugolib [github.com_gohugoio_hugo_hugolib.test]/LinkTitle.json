@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 187,
+    "focalfunc": "func (p *pageMeta) LinkTitle() string",
+    "funcbody": "func (p *pageMeta) LinkTitle() string {\n\tif p.pageConfig.LinkTitle != \"\" {\n\t\treturn p.pageConfig.LinkTitle\n\t}\n\n\treturn p.Title()\n}",
+    "funcname": "LinkTitle"
+}

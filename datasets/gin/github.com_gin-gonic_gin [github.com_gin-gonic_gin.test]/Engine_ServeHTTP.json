@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 624,
+    "focalfunc": "func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (engine *Engine) ServeHTTP(w http.ResponseWriter, req *http.Request) {\n\tc := engine.pool.Get().(*Context)\n\tc.writermem.reset(w)\n\tc.Request = req\n\tc.reset()\n\n\tengine.handleHTTPRequest(c)\n\n\tengine.pool.Put(c)\n}",
+    "funcname": "ServeHTTP"
+}

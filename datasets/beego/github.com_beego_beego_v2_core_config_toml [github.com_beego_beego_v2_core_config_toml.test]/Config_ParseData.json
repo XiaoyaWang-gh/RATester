@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 41,
+    "focalfunc": "func (c *Config) ParseData(data []byte) (config.Configer, error)",
+    "funcbody": "func (c *Config) ParseData(data []byte) (config.Configer, error) {\n\tt, err := toml.LoadBytes(data)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &configContainer{\n\t\tt: t,\n\t}, nil\n}",
+    "funcname": "ParseData"
+}

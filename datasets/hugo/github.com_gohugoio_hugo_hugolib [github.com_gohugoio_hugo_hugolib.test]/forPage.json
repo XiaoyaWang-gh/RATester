@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/gitinfo.go",
+    "lineno": 33,
+    "focalfunc": "func (g *gitInfo) forPage(p page.Page) source.GitInfo",
+    "funcbody": "func (g *gitInfo) forPage(p page.Page) source.GitInfo {\n\tname := strings.TrimPrefix(filepath.ToSlash(p.File().Filename()), g.contentDir)\n\tname = strings.TrimPrefix(name, \"/\")\n\tgi, found := g.repo.Files[name]\n\tif !found {\n\t\treturn source.GitInfo{}\n\t}\n\treturn source.NewGitInfo(*gi)\n}",
+    "funcname": "forPage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 119,
+    "focalfunc": "func (r *PostPublishResource) fieldToString(receiver any, path string) string",
+    "funcbody": "func (r *PostPublishResource) fieldToString(receiver any, path string) string {\n\tfieldname := strings.Split(path, \".\")[1]\n\n\treceiverv := reflect.ValueOf(receiver)\n\tswitch receiverv.Kind() {\n\tcase reflect.Map:\n\t\tv := receiverv.MapIndex(reflect.ValueOf(fieldname))\n\t\treturn cast.ToString(v.Interface())\n\tdefault:\n\t\tv := receiverv.FieldByName(fieldname)\n\t\tif !v.IsValid() {\n\t\t\tmethod := hreflect.GetMethodByName(receiverv, fieldname)\n\t\t\tif method.IsValid() {\n\t\t\t\tvals := method.Call(nil)\n\t\t\t\tif len(vals) > 0 {\n\t\t\t\t\tv = vals[0]\n\t\t\t\t}\n\n\t\t\t}\n\t\t}\n\n\t\tif v.IsValid() {\n\t\t\treturn cast.ToString(v.Interface())\n\t\t}\n\t\treturn \"\"\n\t}\n}",
+    "funcname": "fieldToString"
+}

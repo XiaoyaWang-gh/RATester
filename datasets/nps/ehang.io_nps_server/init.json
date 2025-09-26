@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 31,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tRunList = sync.Map{}\n}",
+    "funcname": "init"
+}

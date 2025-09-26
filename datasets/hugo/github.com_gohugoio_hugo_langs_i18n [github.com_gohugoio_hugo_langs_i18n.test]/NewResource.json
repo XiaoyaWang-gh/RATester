@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/translationProvider.go",
+    "lineno": 48,
+    "focalfunc": "func (tp *TranslationProvider) NewResource(dst *deps.Deps) error",
+    "funcbody": "func (tp *TranslationProvider) NewResource(dst *deps.Deps) error {\n\tdefaultLangTag, err := language.Parse(dst.Conf.DefaultContentLanguage())\n\tif err != nil {\n\t\tdefaultLangTag = language.English\n\t}\n\tbundle := i18n.NewBundle(defaultLangTag)\n\n\tbundle.RegisterUnmarshalFunc(\"toml\", toml.Unmarshal)\n\tbundle.RegisterUnmarshalFunc(\"yaml\", yaml.Unmarshal)\n\tbundle.RegisterUnmarshalFunc(\"yml\", yaml.Unmarshal)\n\tbundle.RegisterUnmarshalFunc(\"json\", json.Unmarshal)\n\n\tw := hugofs.NewWalkway(\n\t\thugofs.WalkwayConfig{\n\t\t\tFs:\t\tdst.BaseFs.I18n.Fs,\n\t\t\tIgnoreFile:\tdst.SourceSpec.IgnoreFile,\n\t\t\tPathParser:\tdst.SourceSpec.Cfg.PathParser(),\n\t\t\tWalkFn: func(path string, info hugofs.FileMetaInfo) error {\n\t\t\t\tif info.IsDir() {\n\t\t\t\t\treturn nil\n\t\t\t\t}\n\t\t\t\treturn addTranslationFile(bundle, source.NewFileInfo(info))\n\t\t\t},\n\t\t})\n\n\tif err := w.Walk(); err != nil {\n\t\treturn err\n\t}\n\n\ttp.t = NewTranslator(bundle, dst.Conf, dst.Log)\n\n\tdst.Translate = tp.t.Func(dst.Conf.Language().Lang)\n\n\treturn nil\n}",
+    "funcname": "NewResource"
+}

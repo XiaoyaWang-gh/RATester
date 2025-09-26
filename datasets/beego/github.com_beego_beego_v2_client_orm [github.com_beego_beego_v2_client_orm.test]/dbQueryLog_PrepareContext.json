@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 149,
+    "focalfunc": "func (d *dbQueryLog) PrepareContext(ctx context.Context, query string) (*sql.Stmt, error)",
+    "funcbody": "func (d *dbQueryLog) PrepareContext(ctx context.Context, query string) (*sql.Stmt, error) {\n\ta := time.Now()\n\tstmt, err := d.db.PrepareContext(ctx, query)\n\tdebugLogQueies(d.alias, \"db.Prepare\", query, a, err)\n\treturn stmt, err\n}",
+    "funcname": "PrepareContext"
+}

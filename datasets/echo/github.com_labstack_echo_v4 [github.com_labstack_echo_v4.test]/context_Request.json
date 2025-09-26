@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 250,
+    "focalfunc": "func (c *context) Request() *http.Request",
+    "funcbody": "func (c *context) Request() *http.Request {\n\treturn c.request\n}",
+    "funcname": "Request"
+}

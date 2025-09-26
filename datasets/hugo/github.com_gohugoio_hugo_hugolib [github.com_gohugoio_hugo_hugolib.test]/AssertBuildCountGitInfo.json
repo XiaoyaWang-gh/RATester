@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 244,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertBuildCountGitInfo(count int)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertBuildCountGitInfo(count int) {\n\ts.Helper()\n\ts.Assert(s.H.init.gitInfo.InitCount(), qt.Equals, count)\n}",
+    "funcname": "AssertBuildCountGitInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 239,
+    "focalfunc": "func (e *DateField) String() string",
+    "funcbody": "func (e *DateField) String() string {\n\treturn e.Value().String()\n}",
+    "funcname": "String"
+}

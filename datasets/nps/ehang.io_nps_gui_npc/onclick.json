@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/gui/npc/npc.go",
+    "lineno": 101,
+    "focalfunc": "func onclick(s, v, c string)",
+    "funcbody": "func onclick(s, v, c string) {\n\tstart = !start\n\tif start {\n\t\tclosing = false\n\t\tstatus = \"Stop!\"\n\n\t\tfmt.Println(\"submit\", s, v, c)\n\t\tsp, vk, ct := loadConfig()\n\t\tif sp != s || vk != v || ct != c {\n\t\t\tsaveConfig(s, v, c)\n\t\t}\n\t\tgo func() {\n\t\t\tfor {\n\t\t\t\tcl = client.NewRPClient(s, v, c, \"\", nil, 60)\n\t\t\t\tstatus = \"Stop!\"\n\t\t\t\trefreshCh <- struct{}{}\n\t\t\t\tcl.Start()\n\t\t\t\tlogs.Warn(\"client closed, reconnecting in 5 seconds...\")\n\t\t\t\tif closing {\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tstatus = \"Reconnecting...\"\n\t\t\t\trefreshCh <- struct{}{}\n\t\t\t\ttime.Sleep(time.Second * 5)\n\t\t\t}\n\t\t}()\n\t} else {\n\n\t\tstatus = \"Start!\"\n\t\tclosing = true\n\t\tif cl != nil {\n\t\t\tgo cl.Close()\n\t\t\tcl = nil\n\t\t}\n\t}\n\trefreshCh <- struct{}{}\n}",
+    "funcname": "onclick"
+}

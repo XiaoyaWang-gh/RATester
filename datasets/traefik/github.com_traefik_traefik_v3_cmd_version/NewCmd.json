@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/version/version.go",
+    "lineno": 21,
+    "focalfunc": "func NewCmd() *cli.Command",
+    "funcbody": "func NewCmd() *cli.Command {\n\treturn &cli.Command{\n\t\tName:\t\t\"version\",\n\t\tDescription:\t`Shows the current Traefik version.`,\n\t\tConfiguration:\tnil,\n\t\tRun: func(_ []string) error {\n\t\t\tif err := GetPrint(os.Stdout); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tfmt.Print(\"\\n\")\n\t\t\treturn nil\n\t\t},\n\t}\n}",
+    "funcname": "NewCmd"
+}

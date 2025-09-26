@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/snappy.go",
+    "lineno": 36,
+    "focalfunc": "func (s *SnappyConn) Read(b []byte) (n int, err error)",
+    "funcbody": "func (s *SnappyConn) Read(b []byte) (n int, err error) {\n\treturn s.r.Read(b)\n}",
+    "funcname": "Read"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 255,
+    "focalfunc": "func (m Menu) Reverse() Menu",
+    "funcbody": "func (m Menu) Reverse() Menu {\n\tconst key = \"menuSort.Reverse\"\n\treverseFunc := func(menu Menu) {\n\t\tfor i, j := 0, len(menu)-1; i < j; i, j = i+1, j-1 {\n\t\t\tmenu[i], menu[j] = menu[j], menu[i]\n\t\t}\n\t}\n\tmenus, _ := smc.get(key, reverseFunc, m)\n\n\treturn menus\n}",
+    "funcname": "Reverse"
+}

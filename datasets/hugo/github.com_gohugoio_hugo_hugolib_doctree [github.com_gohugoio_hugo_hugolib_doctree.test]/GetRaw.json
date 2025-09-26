@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 251,
+    "focalfunc": "func (r *NodeShiftTree[T]) GetRaw(s string) (T, bool)",
+    "funcbody": "func (r *NodeShiftTree[T]) GetRaw(s string) (T, bool) {\n\tv, ok := r.tree.Get(s)\n\tif !ok {\n\t\tvar t T\n\t\treturn t, false\n\t}\n\treturn v.(T), true\n}",
+    "funcname": "GetRaw"
+}

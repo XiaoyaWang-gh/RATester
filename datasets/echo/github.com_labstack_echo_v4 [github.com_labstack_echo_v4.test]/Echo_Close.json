@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 872,
+    "focalfunc": "func (e *Echo) Close() error",
+    "funcbody": "func (e *Echo) Close() error {\n\te.startupMutex.Lock()\n\tdefer e.startupMutex.Unlock()\n\tif err := e.TLSServer.Close(); err != nil {\n\t\treturn err\n\t}\n\treturn e.Server.Close()\n}",
+    "funcname": "Close"
+}

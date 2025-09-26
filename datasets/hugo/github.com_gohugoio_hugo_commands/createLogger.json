@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 434,
+    "focalfunc": "func (r *rootCommand) createLogger(running bool) (loggers.Logger, error)",
+    "funcbody": "func (r *rootCommand) createLogger(running bool) (loggers.Logger, error) {\n\tlevel := logg.LevelWarn\n\n\tif r.devMode {\n\t\tlevel = logg.LevelTrace\n\t} else {\n\t\tif r.logLevel != \"\" {\n\t\t\tswitch strings.ToLower(r.logLevel) {\n\t\t\tcase \"debug\":\n\t\t\t\tlevel = logg.LevelDebug\n\t\t\tcase \"info\":\n\t\t\t\tlevel = logg.LevelInfo\n\t\t\tcase \"warn\", \"warning\":\n\t\t\t\tlevel = logg.LevelWarn\n\t\t\tcase \"error\":\n\t\t\t\tlevel = logg.LevelError\n\t\t\tdefault:\n\t\t\t\treturn nil, fmt.Errorf(\"invalid log level: %q, must be one of debug, warn, info or error\", r.logLevel)\n\t\t\t}\n\t\t} else {\n\t\t\tif r.verbose {\n\t\t\t\thugo.Deprecate(\"--verbose\", \"use --logLevel info\", \"v0.114.0\")\n\t\t\t\thugo.Deprecate(\"--verbose\", \"use --logLevel info\", \"v0.114.0\")\n\t\t\t\tlevel = logg.LevelInfo\n\t\t\t}\n\n\t\t\tif r.debug {\n\t\t\t\thugo.Deprecate(\"--debug\", \"use --logLevel debug\", \"v0.114.0\")\n\t\t\t\tlevel = logg.LevelDebug\n\t\t\t}\n\t\t}\n\t}\n\n\toptsLogger := loggers.Options{\n\t\tDistinctLevel:\tlogg.LevelWarn,\n\t\tLevel:\t\tlevel,\n\t\tStdout:\t\tr.Out,\n\t\tStderr:\t\tr.Out,\n\t\tStoreErrors:\trunning,\n\t}\n\n\treturn loggers.New(optsLogger), nil\n}",
+    "funcname": "createLogger"
+}

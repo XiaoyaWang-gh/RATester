@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/resources.go",
+    "lineno": 101,
+    "focalfunc": "func getLocal(workingDir, url string, fs afero.Fs) ([]byte, error)",
+    "funcbody": "func getLocal(workingDir, url string, fs afero.Fs) ([]byte, error) {\n\tfilename := filepath.Join(workingDir, url)\n\treturn afero.ReadFile(fs, filename)\n}",
+    "funcname": "getLocal"
+}

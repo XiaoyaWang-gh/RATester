@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 135,
+    "focalfunc": "func (s *state) errorf(format string, args ...any)",
+    "funcbody": "func (s *state) errorf(format string, args ...any) {\n\tname := doublePercent(s.tmpl.Name())\n\tif s.node == nil {\n\t\tformat = fmt.Sprintf(\"template: %s: %s\", name, format)\n\t} else {\n\t\tlocation, context := s.tmpl.ErrorContext(s.node)\n\t\tformat = fmt.Sprintf(\"template: %s: executing %q at <%s>: %s\", location, name, doublePercent(context), format)\n\t}\n\tpanic(ExecError{\n\t\tName:\ts.tmpl.Name(),\n\t\tErr:\tfmt.Errorf(format, args...),\n\t})\n}",
+    "funcname": "errorf"
+}

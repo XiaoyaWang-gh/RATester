@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 241,
+    "focalfunc": "func lex(name, input, left, right string) *lexer",
+    "funcbody": "func lex(name, input, left, right string) *lexer {\n\tif left == \"\" {\n\t\tleft = leftDelim\n\t}\n\tif right == \"\" {\n\t\tright = rightDelim\n\t}\n\tl := &lexer{\n\t\tname:\t\tname,\n\t\tinput:\t\tinput,\n\t\tleftDelim:\tleft,\n\t\trightDelim:\tright,\n\t\tline:\t\t1,\n\t\tstartLine:\t1,\n\t\tinsideAction:\tfalse,\n\t}\n\treturn l\n}",
+    "funcname": "lex"
+}

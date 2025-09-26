@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/images/transform.go",
+    "lineno": 41,
+    "focalfunc": "func (t *Transformer) Transform(doc *ast.Document, reader text.Reader, pctx parser.Context)",
+    "funcbody": "func (t *Transformer) Transform(doc *ast.Document, reader text.Reader, pctx parser.Context) {\n\tvar ordinal int\n\tast.Walk(doc, func(node ast.Node, enter bool) (ast.WalkStatus, error) {\n\t\tif !enter {\n\t\t\treturn ast.WalkContinue, nil\n\t\t}\n\n\t\tif n, ok := node.(*ast.Image); ok {\n\t\t\tparent := n.Parent()\n\t\t\tn.SetAttributeString(AttrOrdinal, ordinal)\n\t\t\tordinal++\n\n\t\t\tif !t.wrapStandAloneImageWithinParagraph {\n\t\t\t\tisBlock := parent.ChildCount() == 1\n\t\t\t\tif isBlock {\n\t\t\t\t\tn.SetAttributeString(AttrIsBlock, true)\n\t\t\t\t}\n\n\t\t\t\tif isBlock && parent.Kind() == ast.KindParagraph {\n\t\t\t\t\tfor _, attr := range parent.Attributes() {\n\n\t\t\t\t\t\tn.SetAttribute(attr.Name, attr.Value)\n\t\t\t\t\t}\n\t\t\t\t\tgrandParent := parent.Parent()\n\t\t\t\t\tgrandParent.ReplaceChild(grandParent, parent, n)\n\t\t\t\t}\n\t\t\t}\n\n\t\t}\n\n\t\treturn ast.WalkContinue, nil\n\t})\n}",
+    "funcname": "Transform"
+}

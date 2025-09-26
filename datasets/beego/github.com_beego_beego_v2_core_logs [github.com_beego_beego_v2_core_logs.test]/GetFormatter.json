@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/formatter.go",
+    "lineno": 59,
+    "focalfunc": "func GetFormatter(name string) (LogFormatter, bool)",
+    "funcbody": "func GetFormatter(name string) (LogFormatter, bool) {\n\tres, ok := formatterMap[name]\n\treturn res, ok\n}",
+    "funcname": "GetFormatter"
+}

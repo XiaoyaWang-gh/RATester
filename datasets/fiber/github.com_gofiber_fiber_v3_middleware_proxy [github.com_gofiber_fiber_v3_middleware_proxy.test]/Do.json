@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 127,
+    "focalfunc": "func Do(c fiber.Ctx, addr string, clients ...*fasthttp.Client) error",
+    "funcbody": "func Do(c fiber.Ctx, addr string, clients ...*fasthttp.Client) error {\n\treturn doAction(c, addr, func(cli *fasthttp.Client, req *fasthttp.Request, resp *fasthttp.Response) error {\n\t\treturn cli.Do(req, resp)\n\t}, clients...)\n}",
+    "funcname": "Do"
+}

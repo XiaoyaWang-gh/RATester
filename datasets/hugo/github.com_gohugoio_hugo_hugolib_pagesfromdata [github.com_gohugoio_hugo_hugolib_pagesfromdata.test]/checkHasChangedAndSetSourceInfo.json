@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 226,
+    "focalfunc": "func (b *BuildState) checkHasChangedAndSetSourceInfo(changedPath string, v any) bool",
+    "funcbody": "func (b *BuildState) checkHasChangedAndSetSourceInfo(changedPath string, v any) bool {\n\th := b.hash(v)\n\tsi, found := b.sourceInfosPrevious.Get(changedPath)\n\tif found {\n\t\tb.sourceInfosCurrent.Set(changedPath, si)\n\t\tif si.hash == h {\n\t\t\treturn false\n\t\t}\n\t} else {\n\t\tsi = &sourceInfo{}\n\t\tb.sourceInfosCurrent.Set(changedPath, si)\n\t}\n\tsi.hash = h\n\treturn true\n}",
+    "funcname": "checkHasChangedAndSetSourceInfo"
+}

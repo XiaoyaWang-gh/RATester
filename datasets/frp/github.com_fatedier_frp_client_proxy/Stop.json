@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 163,
+    "focalfunc": "func (pw *Wrapper) Stop()",
+    "funcbody": "func (pw *Wrapper) Stop() {\n\tpw.mu.Lock()\n\tdefer pw.mu.Unlock()\n\tclose(pw.closeCh)\n\tclose(pw.healthNotifyCh)\n\tpw.pxy.Close()\n\tif pw.monitor != nil {\n\t\tpw.monitor.Stop()\n\t}\n\tpw.Phase = ProxyPhaseClosed\n\tpw.close()\n}",
+    "funcname": "Stop"
+}

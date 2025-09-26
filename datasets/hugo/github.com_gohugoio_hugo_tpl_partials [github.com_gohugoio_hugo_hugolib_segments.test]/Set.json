@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 107,
+    "focalfunc": "func (c *contextWrapper) Set(in any) string",
+    "funcbody": "func (c *contextWrapper) Set(in any) string {\n\tc.Result = in\n\treturn \"\"\n}",
+    "funcname": "Set"
+}

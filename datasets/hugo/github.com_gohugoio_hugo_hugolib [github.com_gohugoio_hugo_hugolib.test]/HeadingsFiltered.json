@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 207,
+    "focalfunc": "func (p *pageHeadingsFiltered) HeadingsFiltered(context.Context) tableofcontents.Headings",
+    "funcbody": "func (p *pageHeadingsFiltered) HeadingsFiltered(context.Context) tableofcontents.Headings {\n\treturn p.headings\n}",
+    "funcname": "HeadingsFiltered"
+}

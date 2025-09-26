@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 350,
+    "focalfunc": "func tJSTmpl(c context, s []byte) (context, int)",
+    "funcbody": "func tJSTmpl(c context, s []byte) (context, int) {\n\tvar k int\n\tfor {\n\t\ti := k + bytes.IndexAny(s[k:], \"`\\\\$\")\n\t\tif i < k {\n\t\t\tbreak\n\t\t}\n\t\tswitch s[i] {\n\t\tcase '\\\\':\n\t\t\ti++\n\t\t\tif i == len(s) {\n\t\t\t\treturn context{\n\t\t\t\t\tstate:\tstateError,\n\t\t\t\t\terr:\terrorf(ErrPartialEscape, nil, 0, \"unfinished escape sequence in JS string: %q\", s),\n\t\t\t\t}, len(s)\n\t\t\t}\n\t\tcase '$':\n\t\t\tif len(s) >= i+2 && s[i+1] == '{' {\n\t\t\t\tc.jsBraceDepth = append(c.jsBraceDepth, 0)\n\t\t\t\tc.state = stateJS\n\t\t\t\treturn c, i + 2\n\t\t\t}\n\t\tcase '`':\n\n\t\t\tc.state = stateJS\n\t\t\treturn c, i + 1\n\t\t}\n\t\tk = i + 1\n\t}\n\n\treturn c, len(s)\n}",
+    "funcname": "tJSTmpl"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 194,
+    "focalfunc": "func (v *visitorHelperImpl) ConnectServer() (net.Conn, error)",
+    "funcbody": "func (v *visitorHelperImpl) ConnectServer() (net.Conn, error) {\n\treturn v.connectServerFn()\n}",
+    "funcname": "ConnectServer"
+}

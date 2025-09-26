@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 917,
+    "focalfunc": "func printTree(resultList *[][]string, t *Tree)",
+    "funcbody": "func printTree(resultList *[][]string, t *Tree) {\n\tfor _, tr := range t.fixrouters {\n\t\tprintTree(resultList, tr)\n\t}\n\tif t.wildcard != nil {\n\t\tprintTree(resultList, t.wildcard)\n\t}\n\tfor _, l := range t.leaves {\n\t\tif v, ok := l.runObject.(*ControllerInfo); ok {\n\t\t\tif v.routerType == routerTypeBeego {\n\t\t\t\tresult := []string{\n\t\t\t\t\ttemplate.HTMLEscapeString(v.pattern),\n\t\t\t\t\ttemplate.HTMLEscapeString(fmt.Sprintf(\"%s\", v.methods)),\n\t\t\t\t\ttemplate.HTMLEscapeString(v.controllerType.String()),\n\t\t\t\t}\n\t\t\t\t*resultList = append(*resultList, result)\n\t\t\t} else if v.routerType == routerTypeRESTFul {\n\t\t\t\tresult := []string{\n\t\t\t\t\ttemplate.HTMLEscapeString(v.pattern),\n\t\t\t\t\ttemplate.HTMLEscapeString(fmt.Sprintf(\"%s\", v.methods)),\n\t\t\t\t\t\"\",\n\t\t\t\t}\n\t\t\t\t*resultList = append(*resultList, result)\n\t\t\t} else if v.routerType == routerTypeHandler {\n\t\t\t\tresult := []string{\n\t\t\t\t\ttemplate.HTMLEscapeString(v.pattern),\n\t\t\t\t\t\"\",\n\t\t\t\t\t\"\",\n\t\t\t\t}\n\t\t\t\t*resultList = append(*resultList, result)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "printTree"
+}

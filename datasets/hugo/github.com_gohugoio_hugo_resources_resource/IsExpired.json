@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/dates.go",
+    "lineno": 48,
+    "focalfunc": "func IsExpired(d Dated) bool",
+    "funcbody": "func IsExpired(d Dated) bool {\n\tif d.ExpiryDate().IsZero() {\n\t\treturn false\n\t}\n\treturn d.ExpiryDate().Before(htime.Now())\n}",
+    "funcname": "IsExpired"
+}

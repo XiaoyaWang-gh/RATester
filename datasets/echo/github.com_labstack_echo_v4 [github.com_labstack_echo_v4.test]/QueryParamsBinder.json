@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 109,
+    "focalfunc": "func QueryParamsBinder(c Context) *ValueBinder",
+    "funcbody": "func QueryParamsBinder(c Context) *ValueBinder {\n\treturn &ValueBinder{\n\t\tfailFast:\ttrue,\n\t\tValueFunc:\tc.QueryParam,\n\t\tValuesFunc: func(sourceParam string) []string {\n\t\t\tvalues, ok := c.QueryParams()[sourceParam]\n\t\t\tif !ok {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn values\n\t\t},\n\t\tErrorFunc:\tNewBindingError,\n\t}\n}",
+    "funcname": "QueryParamsBinder"
+}

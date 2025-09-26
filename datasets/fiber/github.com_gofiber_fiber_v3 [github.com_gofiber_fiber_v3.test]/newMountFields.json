@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 30,
+    "focalfunc": "func newMountFields(app *App) *mountFields",
+    "funcbody": "func newMountFields(app *App) *mountFields {\n\treturn &mountFields{\n\t\tappList:\tmap[string]*App{\"\": app},\n\t\tappListKeys:\tmake([]string, 0),\n\t}\n}",
+    "funcname": "newMountFields"
+}

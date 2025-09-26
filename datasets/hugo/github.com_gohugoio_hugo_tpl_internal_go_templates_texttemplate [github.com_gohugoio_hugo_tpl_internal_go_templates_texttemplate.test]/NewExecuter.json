@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/hugo_template.go",
+    "lineno": 59,
+    "focalfunc": "func NewExecuter(helper ExecHelper) Executer",
+    "funcbody": "func NewExecuter(helper ExecHelper) Executer {\n\treturn &executer{helper: helper}\n}",
+    "funcname": "NewExecuter"
+}

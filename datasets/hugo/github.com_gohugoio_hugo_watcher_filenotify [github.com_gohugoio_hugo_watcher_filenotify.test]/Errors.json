@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 100,
+    "focalfunc": "func (w *filePoller) Errors() <-chan error",
+    "funcbody": "func (w *filePoller) Errors() <-chan error {\n\treturn w.errors\n}",
+    "funcname": "Errors"
+}

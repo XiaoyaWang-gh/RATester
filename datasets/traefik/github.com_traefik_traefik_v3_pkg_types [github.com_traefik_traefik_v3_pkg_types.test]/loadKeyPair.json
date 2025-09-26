@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/tls.go",
+    "lineno": 79,
+    "focalfunc": "func loadKeyPair(cert, key string) (tls.Certificate, error)",
+    "funcbody": "func loadKeyPair(cert, key string) (tls.Certificate, error) {\n\tkeyPair, err := tls.X509KeyPair([]byte(cert), []byte(key))\n\tif err == nil {\n\t\treturn keyPair, nil\n\t}\n\n\t_, err = os.Stat(cert)\n\tif err != nil {\n\t\treturn tls.Certificate{}, errors.New(\"cert file does not exist\")\n\t}\n\n\t_, err = os.Stat(key)\n\tif err != nil {\n\t\treturn tls.Certificate{}, errors.New(\"key file does not exist\")\n\t}\n\n\tkeyPair, err = tls.LoadX509KeyPair(cert, key)\n\tif err != nil {\n\t\treturn tls.Certificate{}, err\n\t}\n\n\treturn keyPair, nil\n}",
+    "funcname": "loadKeyPair"
+}

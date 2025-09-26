@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/resampling.go",
+    "lineno": 209,
+    "focalfunc": "func sinc(x float32) float32",
+    "funcbody": "func sinc(x float32) float32 {\n\tif x == 0 {\n\t\treturn 1\n\t}\n\treturn float32(math.Sin(math.Pi*float64(x)) / (math.Pi * float64(x)))\n}",
+    "funcname": "sinc"
+}

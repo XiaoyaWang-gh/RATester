@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 616,
+    "focalfunc": "func (c *serverCommand) setServerInfoInConfig() error",
+    "funcbody": "func (c *serverCommand) setServerInfoInConfig() error {\n\tif len(c.serverPorts) == 0 {\n\t\tpanic(\"no server ports set\")\n\t}\n\treturn c.withConfE(func(conf *commonConfig) error {\n\t\tfor i, language := range conf.configs.Languages {\n\t\t\tisMultihost := conf.configs.IsMultihost\n\t\t\tvar serverPort int\n\t\t\tif isMultihost {\n\t\t\t\tserverPort = c.serverPorts[i].p\n\t\t\t} else {\n\t\t\t\tserverPort = c.serverPorts[0].p\n\t\t\t}\n\t\t\tlangConfig := conf.configs.LanguageConfigMap[language.Lang]\n\t\t\tbaseURLStr, err := c.fixURL(langConfig.BaseURL, c.r.baseURL, serverPort)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tbaseURL, err := urls.NewBaseURLFromString(baseURLStr)\n\t\t\tif err != nil {\n\t\t\t\treturn fmt.Errorf(\"failed to create baseURL from %q: %s\", baseURLStr, err)\n\t\t\t}\n\n\t\t\tbaseURLLiveReload := baseURL\n\t\t\tif c.liveReloadPort != -1 {\n\t\t\t\tbaseURLLiveReload, _ = baseURLLiveReload.WithPort(c.liveReloadPort)\n\t\t\t}\n\t\t\tlangConfig.C.SetServerInfo(baseURL, baseURLLiveReload, c.serverInterface)\n\n\t\t}\n\t\treturn nil\n\t})\n}",
+    "funcname": "setServerInfoInConfig"
+}

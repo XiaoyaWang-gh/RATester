@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/apply.go",
+    "lineno": 109,
+    "focalfunc": "func (ns *Namespace) lookupFunc(ctx context.Context, fname string) (reflect.Value, bool)",
+    "funcbody": "func (ns *Namespace) lookupFunc(ctx context.Context, fname string) (reflect.Value, bool) {\n\tnamespace, methodName, ok := strings.Cut(fname, \".\")\n\tif !ok {\n\t\ttempl := ns.deps.Tmpl().(tpl.TemplateFuncGetter)\n\t\treturn templ.GetFunc(fname)\n\t}\n\n\tnv, found := ns.lookupFunc(ctx, namespace)\n\tif !found {\n\t\treturn reflect.Value{}, false\n\t}\n\n\tfn, ok := nv.Interface().(func(context.Context, ...any) (any, error))\n\tif !ok {\n\t\treturn reflect.Value{}, false\n\t}\n\tv, err := fn(ctx)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tnv = reflect.ValueOf(v)\n\n\tm := hreflect.GetMethodByName(nv, methodName)\n\n\tif m.Kind() == reflect.Invalid {\n\t\treturn reflect.Value{}, false\n\t}\n\treturn m, true\n}",
+    "funcname": "lookupFunc"
+}

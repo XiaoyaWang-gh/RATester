@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 923,
+    "focalfunc": "func (t *Tree) newBreak(pos Pos, line int) *BreakNode",
+    "funcbody": "func (t *Tree) newBreak(pos Pos, line int) *BreakNode {\n\treturn &BreakNode{tr: t, NodeType: NodeBreak, Pos: pos, Line: line}\n}",
+    "funcname": "newBreak"
+}

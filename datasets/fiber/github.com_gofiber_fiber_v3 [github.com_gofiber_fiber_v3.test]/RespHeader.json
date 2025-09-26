@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 87,
+    "focalfunc": "func (b *Bind) RespHeader(out any) error",
+    "funcbody": "func (b *Bind) RespHeader(out any) error {\n\tif err := b.returnErr(binder.RespHeaderBinder.Bind(b.ctx.Response(), out)); err != nil {\n\t\treturn err\n\t}\n\n\treturn b.validateStruct(out)\n}",
+    "funcname": "RespHeader"
+}

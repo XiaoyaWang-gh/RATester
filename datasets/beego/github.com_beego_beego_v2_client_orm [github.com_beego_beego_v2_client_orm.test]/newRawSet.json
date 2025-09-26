@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 916,
+    "focalfunc": "func newRawSet(orm *ormBase, query string, args []interface{}) RawSeter",
+    "funcbody": "func newRawSet(orm *ormBase, query string, args []interface{}) RawSeter {\n\to := new(rawSet)\n\to.query = query\n\to.args = args\n\to.orm = orm\n\treturn o\n}",
+    "funcname": "newRawSet"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 235,
+    "focalfunc": "func NewFileMetaInfo(fi FileNameIsDir, m *FileMeta) FileMetaInfo",
+    "funcbody": "func NewFileMetaInfo(fi FileNameIsDir, m *FileMeta) FileMetaInfo {\n\tif m == nil {\n\t\tpanic(\"FileMeta must be set\")\n\t}\n\tif fim, ok := fi.(MetaProvider); ok {\n\t\tm.Merge(fim.Meta())\n\t}\n\tswitch v := fi.(type) {\n\tcase fs.DirEntry:\n\t\treturn &dirEntryMeta{DirEntry: v, m: m}\n\tcase fs.FileInfo:\n\t\treturn &dirEntryMeta{DirEntry: dirEntry{v}, m: m}\n\tcase nil:\n\t\treturn &dirEntryMeta{DirEntry: dirEntry{}, m: m}\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"Unsupported type: %T\", fi))\n\t}\n}",
+    "funcname": "NewFileMetaInfo"
+}

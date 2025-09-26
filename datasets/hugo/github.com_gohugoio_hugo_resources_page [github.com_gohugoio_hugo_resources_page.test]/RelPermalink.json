@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_outputformat.go",
+    "lineno": 64,
+    "focalfunc": "func (o OutputFormat) RelPermalink() string",
+    "funcbody": "func (o OutputFormat) RelPermalink() string {\n\treturn o.relPermalink\n}",
+    "funcname": "RelPermalink"
+}

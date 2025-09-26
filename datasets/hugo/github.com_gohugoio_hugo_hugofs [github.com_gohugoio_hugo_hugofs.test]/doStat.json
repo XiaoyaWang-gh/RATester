@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 656,
+    "focalfunc": "func (fs *RootMappingFs) doStat(name string) ([]FileMetaInfo, error)",
+    "funcbody": "func (fs *RootMappingFs) doStat(name string) ([]FileMetaInfo, error) {\n\tfis, err := fs.doDoStat(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\t// Sanity check. Check that all is either file or directories.\n\tvar isDir, isFile bool\n\tfor _, fi := range fis {\n\t\tif fi.IsDir() {\n\t\t\tisDir = true\n\t\t} else {\n\t\t\tisFile = true\n\t\t}\n\t}\n\tif isDir && isFile {\n\n\t\treturn nil, os.ErrNotExist\n\t}\n\n\treturn fis, nil\n}",
+    "funcname": "doStat"
+}

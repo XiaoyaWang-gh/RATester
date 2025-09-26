@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 107,
+    "focalfunc": "func (p *pagesFromDataTemplateContext) AddResource(v any) (string, error)",
+    "funcbody": "func (p *pagesFromDataTemplateContext) AddResource(v any) (string, error) {\n\tpath, m, err := p.toPathMap(v)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif !p.p.buildState.checkHasChangedAndSetSourceInfo(path, m) {\n\t\treturn \"\", nil\n\t}\n\n\tvar rd pagemeta.ResourceConfig\n\tif err := mapstructure.WeakDecode(m, &rd); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tp.p.buildState.NumResourcesAdded++\n\n\tif err := rd.Validate(); err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn \"\", p.p.HandleResource(p.p, &rd)\n}",
+    "funcname": "AddResource"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 739,
+    "focalfunc": "func (z ZipCode) GetLimitValue() interface{}",
+    "funcbody": "func (z ZipCode) GetLimitValue() interface{} {\n\treturn nil\n}",
+    "funcname": "GetLimitValue"
+}

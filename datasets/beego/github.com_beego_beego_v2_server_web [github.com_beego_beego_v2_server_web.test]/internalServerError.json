@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 304,
+    "focalfunc": "func internalServerError(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func internalServerError(rw http.ResponseWriter, r *http.Request) {\n\tresponseError(rw, r,\n\t\t500,\n\t\t\"<br>The page you have requested is down right now.\"+\n\t\t\t\"<br><br><ul>\"+\n\t\t\t\"<br>Please try again later and report the error to the website administrator\"+\n\t\t\t\"<br></ul>\",\n\t)\n}",
+    "funcname": "internalServerError"
+}

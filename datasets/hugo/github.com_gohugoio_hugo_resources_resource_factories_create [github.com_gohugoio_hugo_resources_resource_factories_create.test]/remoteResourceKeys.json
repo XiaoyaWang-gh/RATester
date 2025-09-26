@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 311,
+    "focalfunc": "func remoteResourceKeys(uri string, optionsm map[string]any) (string, string)",
+    "funcbody": "func remoteResourceKeys(uri string, optionsm map[string]any) (string, string) {\n\tvar userKey string\n\tif key, k, found := maps.LookupEqualFold(optionsm, \"key\"); found {\n\t\tuserKey = hashing.HashString(key)\n\t\tdelete(optionsm, k)\n\t}\n\toptionsKey := hashing.HashString(uri, optionsm)\n\tif userKey == \"\" {\n\t\tuserKey = optionsKey\n\t}\n\treturn userKey, optionsKey\n}",
+    "funcname": "remoteResourceKeys"
+}

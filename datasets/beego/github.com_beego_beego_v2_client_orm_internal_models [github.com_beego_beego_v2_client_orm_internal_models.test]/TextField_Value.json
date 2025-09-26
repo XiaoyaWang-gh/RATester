@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 665,
+    "focalfunc": "func (e TextField) Value() string",
+    "funcbody": "func (e TextField) Value() string {\n\treturn string(e)\n}",
+    "funcname": "Value"
+}

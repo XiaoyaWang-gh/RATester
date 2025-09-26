@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/redirect.go",
+    "lineno": 20,
+    "focalfunc": "func (r Redirect) Render(w http.ResponseWriter) error",
+    "funcbody": "func (r Redirect) Render(w http.ResponseWriter) error {\n\tif (r.Code < http.StatusMultipleChoices || r.Code > http.StatusPermanentRedirect) && r.Code != http.StatusCreated {\n\t\tpanic(fmt.Sprintf(\"Cannot redirect with status code %d\", r.Code))\n\t}\n\thttp.Redirect(w, r.Request, r.Location, r.Code)\n\treturn nil\n}",
+    "funcname": "Render"
+}

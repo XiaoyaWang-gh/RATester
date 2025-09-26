@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 287,
+    "focalfunc": "func originMatchesHost(c fiber.Ctx, trustedOrigins []string, trustedSubOrigins []subdomain) error",
+    "funcbody": "func originMatchesHost(c fiber.Ctx, trustedOrigins []string, trustedSubOrigins []subdomain) error {\n\torigin := strings.ToLower(c.Get(fiber.HeaderOrigin))\n\tif origin == \"\" || origin == \"null\" {\n\t\treturn errOriginNotFound\n\t}\n\n\toriginURL, err := url.Parse(origin)\n\tif err != nil {\n\t\treturn ErrOriginInvalid\n\t}\n\n\tif originURL.Scheme == c.Scheme() && originURL.Host == c.Host() {\n\t\treturn nil\n\t}\n\n\tfor _, trustedOrigin := range trustedOrigins {\n\t\tif origin == trustedOrigin {\n\t\t\treturn nil\n\t\t}\n\t}\n\n\tfor _, trustedSubOrigin := range trustedSubOrigins {\n\t\tif trustedSubOrigin.match(origin) {\n\t\t\treturn nil\n\t\t}\n\t}\n\n\treturn ErrOriginNoMatch\n}",
+    "funcname": "originMatchesHost"
+}

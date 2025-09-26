@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 170,
+    "focalfunc": "func (c *BaseConfiger) DefaultFloat(key string, defaultVal float64) float64",
+    "funcbody": "func (c *BaseConfiger) DefaultFloat(key string, defaultVal float64) float64 {\n\tif res, err := c.Float(key); err == nil {\n\t\treturn res\n\t}\n\treturn defaultVal\n}",
+    "funcname": "DefaultFloat"
+}

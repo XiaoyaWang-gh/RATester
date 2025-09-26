@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/addon/retry/config.go",
+    "lineno": 47,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\tif len(config) == 0 {\n\t\treturn DefaultConfig\n\t}\n\tcfg := config[0]\n\tif cfg.InitialInterval == 0 {\n\t\tcfg.InitialInterval = DefaultConfig.InitialInterval\n\t}\n\tif cfg.MaxBackoffTime == 0 {\n\t\tcfg.MaxBackoffTime = DefaultConfig.MaxBackoffTime\n\t}\n\tif cfg.Multiplier <= 0 {\n\t\tcfg.Multiplier = DefaultConfig.Multiplier\n\t}\n\tif cfg.MaxRetryCount <= 0 {\n\t\tcfg.MaxRetryCount = DefaultConfig.MaxRetryCount\n\t}\n\tif cfg.currentInterval != cfg.InitialInterval {\n\t\tcfg.currentInterval = DefaultConfig.currentInterval\n\t}\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

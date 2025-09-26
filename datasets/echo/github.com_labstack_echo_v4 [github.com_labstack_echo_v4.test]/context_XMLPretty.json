@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 562,
+    "focalfunc": "func (c *context) XMLPretty(code int, i interface{}, indent string) (err error)",
+    "funcbody": "func (c *context) XMLPretty(code int, i interface{}, indent string) (err error) {\n\treturn c.xml(code, i, indent)\n}",
+    "funcname": "XMLPretty"
+}

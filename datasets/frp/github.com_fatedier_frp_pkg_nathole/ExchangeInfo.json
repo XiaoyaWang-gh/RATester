@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/nathole.go",
+    "lineno": 153,
+    "focalfunc": "func ExchangeInfo(\n\tctx context.Context, transporter transport.MessageTransporter,\n\tlaneKey string, m msg.Message, timeout time.Duration,\n) (*msg.NatHoleResp, error)",
+    "funcbody": "func ExchangeInfo(\n\tctx context.Context, transporter transport.MessageTransporter,\n\tlaneKey string, m msg.Message, timeout time.Duration,\n) (*msg.NatHoleResp, error) {\n\ttimeoutCtx, cancel := context.WithTimeout(ctx, timeout)\n\tdefer cancel()\n\n\tvar natHoleRespMsg *msg.NatHoleResp\n\tm, err := transporter.Do(timeoutCtx, m, laneKey, msg.TypeNameNatHoleResp)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"get natHoleRespMsg error: %v\", err)\n\t}\n\tmm, ok := m.(*msg.NatHoleResp)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"get natHoleRespMsg error: invalid message type\")\n\t}\n\tnatHoleRespMsg = mm\n\n\tif natHoleRespMsg.Error != \"\" {\n\t\treturn nil, fmt.Errorf(\"natHoleRespMsg get error info: %s\", natHoleRespMsg.Error)\n\t}\n\tif len(natHoleRespMsg.CandidateAddrs) == 0 {\n\t\treturn nil, fmt.Errorf(\"natHoleRespMsg get empty candidate addresses\")\n\t}\n\treturn natHoleRespMsg, nil\n}",
+    "funcname": "ExchangeInfo"
+}

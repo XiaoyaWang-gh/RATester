@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 154,
+    "focalfunc": "func (r AsciiJSON) Render(w http.ResponseWriter) (err error)",
+    "funcbody": "func (r AsciiJSON) Render(w http.ResponseWriter) (err error) {\n\tr.WriteContentType(w)\n\tret, err := json.Marshal(r.Data)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tvar buffer bytes.Buffer\n\tfor _, r := range bytesconv.BytesToString(ret) {\n\t\tcvt := string(r)\n\t\tif r >= 128 {\n\t\t\tcvt = fmt.Sprintf(\"\\\\u%04x\", int64(r))\n\t\t}\n\t\tbuffer.WriteString(cvt)\n\t}\n\n\t_, err = w.Write(buffer.Bytes())\n\treturn err\n}",
+    "funcname": "Render"
+}

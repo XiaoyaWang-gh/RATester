@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 205,
+    "focalfunc": "func newReusableRequest(req *http.Request, mirrorBody bool, maxBodySize int64) (*reusableRequest, []byte, error)",
+    "funcbody": "func newReusableRequest(req *http.Request, mirrorBody bool, maxBodySize int64) (*reusableRequest, []byte, error) {\n\tif req == nil {\n\t\treturn nil, nil, errors.New(\"nil input request\")\n\t}\n\tif req.Body == nil || req.ContentLength == 0 || !mirrorBody {\n\t\treturn &reusableRequest{req: req}, nil, nil\n\t}\n\n\tif maxBodySize < 0 {\n\t\tbody, err := io.ReadAll(req.Body)\n\t\tif err != nil {\n\t\t\treturn nil, nil, err\n\t\t}\n\t\treturn &reusableRequest{\n\t\t\treq:\treq,\n\t\t\tbody:\tbody,\n\t\t}, nil, nil\n\t}\n\n\tbody := make([]byte, maxBodySize+1)\n\tn, err := io.ReadFull(req.Body, body)\n\tif err != nil && !errors.Is(err, io.ErrUnexpectedEOF) {\n\t\treturn nil, nil, err\n\t}\n\n\tif errors.Is(err, io.ErrUnexpectedEOF) {\n\t\treturn &reusableRequest{\n\t\t\treq:\treq,\n\t\t\tbody:\tbody[:n],\n\t\t}, nil, nil\n\t}\n\n\treturn nil, body[:n], errBodyTooLarge\n}",
+    "funcname": "newReusableRequest"
+}

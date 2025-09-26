@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 188,
+    "focalfunc": "func newTemplateNamespace(funcs map[string]any) *templateNamespace",
+    "funcbody": "func newTemplateNamespace(funcs map[string]any) *templateNamespace {\n\treturn &templateNamespace{\n\t\tprototypeHTML:\thtmltemplate.New(\"\").Funcs(funcs),\n\t\tprototypeText:\ttexttemplate.New(\"\").Funcs(funcs),\n\t\ttemplateStateMap: &templateStateMap{\n\t\t\ttemplates: make(map[string]*templateState),\n\t\t},\n\t}\n}",
+    "funcname": "newTemplateNamespace"
+}

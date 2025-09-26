@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 200,
+    "focalfunc": "func (d *dbQueryLog) Commit() error",
+    "funcbody": "func (d *dbQueryLog) Commit() error {\n\ta := time.Now()\n\terr := d.db.(txEnder).Commit()\n\tdebugLogQueies(d.alias, \"tx.Commit\", \"COMMIT\", a, err)\n\treturn err\n}",
+    "funcname": "Commit"
+}

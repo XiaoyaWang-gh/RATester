@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1180,
+    "focalfunc": "func partitionDynamicEvents(sourceFs *filesystems.SourceFilesystems, events []fsnotify.Event) (de dynamicEvents)",
+    "funcbody": "func partitionDynamicEvents(sourceFs *filesystems.SourceFilesystems, events []fsnotify.Event) (de dynamicEvents) {\n\tfor _, e := range events {\n\t\tif !sourceFs.IsContent(e.Name) {\n\t\t\tde.AssetEvents = append(de.AssetEvents, e)\n\t\t} else {\n\t\t\tde.ContentEvents = append(de.ContentEvents, e)\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "partitionDynamicEvents"
+}

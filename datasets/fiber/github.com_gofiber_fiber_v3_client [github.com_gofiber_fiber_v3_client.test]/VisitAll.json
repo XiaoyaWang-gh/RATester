@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 723,
+    "focalfunc": "func (p PathParam) VisitAll(f func(key, val string))",
+    "funcbody": "func (p PathParam) VisitAll(f func(key, val string)) {\n\tfor k, v := range p {\n\t\tf(k, v)\n\t}\n}",
+    "funcname": "VisitAll"
+}

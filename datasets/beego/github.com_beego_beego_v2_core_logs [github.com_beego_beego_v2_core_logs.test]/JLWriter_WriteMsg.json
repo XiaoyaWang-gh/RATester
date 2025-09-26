@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 55,
+    "focalfunc": "func (s *JLWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (s *JLWriter) WriteMsg(lm *LogMsg) error {\n\tif lm.Level > s.Level {\n\t\treturn nil\n\t}\n\n\ttext := s.formatter.Format(lm)\n\n\tform := url.Values{}\n\tform.Add(\"authorName\", s.AuthorName)\n\tform.Add(\"title\", s.Title)\n\tform.Add(\"text\", text)\n\tif s.RedirectURL != \"\" {\n\t\tform.Add(\"redirectUrl\", s.RedirectURL)\n\t}\n\tif s.ImageURL != \"\" {\n\t\tform.Add(\"imageUrl\", s.ImageURL)\n\t}\n\n\tresp, err := http.PostForm(s.WebhookURL, form)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer resp.Body.Close()\n\tif resp.StatusCode != http.StatusOK {\n\t\treturn fmt.Errorf(\"Post webhook failed %s %d\", resp.Status, resp.StatusCode)\n\t}\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

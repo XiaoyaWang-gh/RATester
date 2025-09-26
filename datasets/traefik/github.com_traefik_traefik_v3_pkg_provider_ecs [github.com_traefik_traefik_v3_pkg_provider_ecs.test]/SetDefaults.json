@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/ecs.go",
+    "lineno": 87,
+    "focalfunc": "func (p *Provider) SetDefaults()",
+    "funcbody": "func (p *Provider) SetDefaults() {\n\tp.Clusters = []string{\"default\"}\n\tp.AutoDiscoverClusters = false\n\tp.HealthyTasksOnly = false\n\tp.ExposedByDefault = true\n\tp.RefreshSeconds = 15\n\tp.DefaultRule = DefaultTemplateRule\n}",
+    "funcname": "SetDefaults"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 458,
+    "focalfunc": "func (n Numeric) GetKey() string",
+    "funcbody": "func (n Numeric) GetKey() string {\n\treturn n.Key\n}",
+    "funcname": "GetKey"
+}

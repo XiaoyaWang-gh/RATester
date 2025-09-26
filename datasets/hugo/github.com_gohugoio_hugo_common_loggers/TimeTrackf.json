@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 367,
+    "focalfunc": "func TimeTrackf(l logg.LevelLogger, start time.Time, fields logg.Fields, format string, a ...any)",
+    "funcbody": "func TimeTrackf(l logg.LevelLogger, start time.Time, fields logg.Fields, format string, a ...any) {\n\telapsed := time.Since(start)\n\tif fields != nil {\n\t\tl = l.WithFields(fields)\n\t}\n\tl.WithField(\"duration\", elapsed).Logf(format, a...)\n}",
+    "funcname": "TimeTrackf"
+}

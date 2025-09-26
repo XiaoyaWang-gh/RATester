@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/tasks/tasks.go",
+    "lineno": 93,
+    "focalfunc": "func (r *RunEvery) Add(name string, f Func)",
+    "funcbody": "func (r *RunEvery) Add(name string, f Func) {\n\tr.mu.Lock()\n\tdefer r.mu.Unlock()\n\tif r.funcs == nil {\n\t\tr.funcs = make(map[string]*Func)\n\t}\n\tif f.IntervalLow == 0 {\n\t\tf.IntervalLow = 500 * time.Millisecond\n\t}\n\tif f.IntervalHigh <= f.IntervalLow {\n\t\tf.IntervalHigh = 20 * time.Second\n\t}\n\n\tstart := f.IntervalHigh / 3\n\tif start < f.IntervalLow {\n\t\tstart = f.IntervalLow\n\t}\n\tf.interval = start\n\tf.last = time.Now()\n\n\tr.funcs[name] = &f\n}",
+    "funcname": "Add"
+}

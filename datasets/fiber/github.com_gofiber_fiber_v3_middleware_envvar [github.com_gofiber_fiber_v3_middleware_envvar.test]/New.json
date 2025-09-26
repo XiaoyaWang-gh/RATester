@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/envvar/envvar.go",
+    "lineno": 26,
+    "focalfunc": "func New(config ...Config) fiber.Handler",
+    "funcbody": "func New(config ...Config) fiber.Handler {\n\tvar cfg Config\n\tif len(config) > 0 {\n\t\tcfg = config[0]\n\t}\n\n\treturn func(c fiber.Ctx) error {\n\t\tif c.Method() != fiber.MethodGet {\n\t\t\treturn fiber.ErrMethodNotAllowed\n\t\t}\n\n\t\tenvVar := newEnvVar(cfg)\n\t\tvarsByte, err := c.App().Config().JSONEncoder(envVar)\n\t\tif err != nil {\n\t\t\treturn c.Status(fiber.StatusInternalServerError).SendString(err.Error())\n\t\t}\n\t\tc.Set(fiber.HeaderContentType, fiber.MIMEApplicationJSONCharsetUTF8)\n\t\treturn c.Send(varsByte)\n\t}\n}",
+    "funcname": "New"
+}

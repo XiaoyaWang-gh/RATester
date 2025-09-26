@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 98,
+    "focalfunc": "func (v *Muxer) SetRewriteHostFunc(f hostRewriteFunc) *Muxer",
+    "funcbody": "func (v *Muxer) SetRewriteHostFunc(f hostRewriteFunc) *Muxer {\n\tv.rewriteHost = f\n\treturn v\n}",
+    "funcname": "SetRewriteHostFunc"
+}

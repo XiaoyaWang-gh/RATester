@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 37,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tpid = os.Getpid()\n}",
+    "funcname": "init"
+}

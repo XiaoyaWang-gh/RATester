@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 143,
+    "focalfunc": "func (r *readCounter) Close() error",
+    "funcbody": "func (r *readCounter) Close() error {\n\treturn r.source.Close()\n}",
+    "funcname": "Close"
+}

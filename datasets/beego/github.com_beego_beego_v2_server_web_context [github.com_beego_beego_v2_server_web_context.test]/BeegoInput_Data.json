@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 392,
+    "focalfunc": "func (input *BeegoInput) Data() map[interface{}]interface{}",
+    "funcbody": "func (input *BeegoInput) Data() map[interface{}]interface{} {\n\tinput.dataLock.Lock()\n\tdefer input.dataLock.Unlock()\n\tif input.data == nil {\n\t\tinput.data = make(map[interface{}]interface{})\n\t}\n\treturn input.data\n}",
+    "funcname": "Data"
+}

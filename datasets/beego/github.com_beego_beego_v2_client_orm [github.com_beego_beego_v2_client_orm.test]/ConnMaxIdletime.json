@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 601,
+    "focalfunc": "func ConnMaxIdletime(v time.Duration) DBOption",
+    "funcbody": "func ConnMaxIdletime(v time.Duration) DBOption {\n\treturn func(al *alias) {\n\t\tal.SetConnMaxIdleTime(v)\n\t}\n}",
+    "funcname": "ConnMaxIdletime"
+}

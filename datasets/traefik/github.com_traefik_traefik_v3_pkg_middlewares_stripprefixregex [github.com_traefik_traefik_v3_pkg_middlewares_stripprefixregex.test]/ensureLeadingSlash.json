@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefixregex/strip_prefix_regex.go",
+    "lineno": 75,
+    "focalfunc": "func ensureLeadingSlash(str string) string",
+    "funcbody": "func ensureLeadingSlash(str string) string {\n\tif str == \"\" {\n\t\treturn str\n\t}\n\n\tif str[0] == '/' {\n\t\treturn str\n\t}\n\n\treturn \"/\" + str\n}",
+    "funcname": "ensureLeadingSlash"
+}

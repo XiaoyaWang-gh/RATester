@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/query.go",
+    "lineno": 15,
+    "focalfunc": "func (queryBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (queryBinding) Bind(req *http.Request, obj any) error {\n\tvalues := req.URL.Query()\n\tif err := mapForm(obj, values); err != nil {\n\t\treturn err\n\t}\n\treturn validate(obj)\n}",
+    "funcname": "Bind"
+}

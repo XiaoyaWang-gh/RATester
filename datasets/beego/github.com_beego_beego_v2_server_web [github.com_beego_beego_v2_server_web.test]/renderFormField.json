@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 316,
+    "focalfunc": "func renderFormField(label, name, fType string, value interface{}, id string, class string, required bool) string",
+    "funcbody": "func renderFormField(label, name, fType string, value interface{}, id string, class string, required bool) string {\n\tif id != \"\" {\n\t\tid = \" id=\\\"\" + id + \"\\\"\"\n\t}\n\n\tif class != \"\" {\n\t\tclass = \" class=\\\"\" + class + \"\\\"\"\n\t}\n\n\trequiredString := \"\"\n\tif required {\n\t\trequiredString = \" required\"\n\t}\n\n\tif isValidForInput(fType) {\n\t\treturn fmt.Sprintf(`%v<input%v%v name=\"%v\" type=\"%v\" value=\"%v\"%v>`, label, id, class, name, fType, value, requiredString)\n\t}\n\n\tif fType == \"select\" {\n\t\tvalueStr, ok := value.(string)\n\t\tif !ok {\n\t\t\tlogs.Error(\"for select value must comma separated string that are the options for select\")\n\t\t\treturn \"\"\n\t\t}\n\n\t\tvar selectBuilder strings.Builder\n\t\tselectBuilder.WriteString(fmt.Sprintf(`%v<select%v%v name=\"%v\"></br>`, label, id, class, name))\n\n\t\tfor _, option := range strings.Split(valueStr, \",\") {\n\t\t\tselectBuilder.WriteString(fmt.Sprintf(`  <option value=\"%v\"> %v </option></br>`, option, option))\n\t\t}\n\n\t\tselectBuilder.WriteString(`</select>`)\n\n\t\treturn selectBuilder.String()\n\t}\n\n\treturn fmt.Sprintf(`%v<%v%v%v name=\"%v\"%v>%v</%v>`, label, fType, id, class, name, requiredString, value, fType)\n}",
+    "funcname": "renderFormField"
+}

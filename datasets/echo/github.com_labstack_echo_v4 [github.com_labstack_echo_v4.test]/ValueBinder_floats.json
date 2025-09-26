@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1041,
+    "focalfunc": "func (b *ValueBinder) floats(sourceParam string, values []string, dest interface{}) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) floats(sourceParam string, values []string, dest interface{}) *ValueBinder {\n\tswitch d := dest.(type) {\n\tcase *[]float64:\n\t\ttmp := make([]float64, len(values))\n\t\tfor i, v := range values {\n\t\t\tb.float(sourceParam, v, &tmp[i], 64)\n\t\t\tif b.failFast && b.errors != nil {\n\t\t\t\treturn b\n\t\t\t}\n\t\t}\n\t\tif b.errors == nil {\n\t\t\t*d = tmp\n\t\t}\n\tcase *[]float32:\n\t\ttmp := make([]float32, len(values))\n\t\tfor i, v := range values {\n\t\t\tb.float(sourceParam, v, &tmp[i], 32)\n\t\t\tif b.failFast && b.errors != nil {\n\t\t\t\treturn b\n\t\t\t}\n\t\t}\n\t\tif b.errors == nil {\n\t\t\t*d = tmp\n\t\t}\n\t}\n\treturn b\n}",
+    "funcname": "floats"
+}

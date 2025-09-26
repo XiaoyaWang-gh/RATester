@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 96,
+    "focalfunc": "func SortNone() Option",
+    "funcbody": "func SortNone() Option {\n\treturn sort(None)\n}",
+    "funcname": "SortNone"
+}

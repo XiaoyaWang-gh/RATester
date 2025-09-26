@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 232,
+    "focalfunc": "func parseORGDate(s string) string",
+    "funcbody": "func parseORGDate(s string) string {\n\tr := regexp.MustCompile(`[<\\[](\\d{4}-\\d{2}-\\d{2}) .*[>\\]]`)\n\tif m := r.FindStringSubmatch(s); m != nil {\n\t\treturn m[1]\n\t}\n\treturn s\n}",
+    "funcname": "parseORGDate"
+}

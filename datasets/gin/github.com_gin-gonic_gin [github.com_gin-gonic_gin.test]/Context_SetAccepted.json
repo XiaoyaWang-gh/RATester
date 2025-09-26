@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1231,
+    "focalfunc": "func (c *Context) SetAccepted(formats ...string)",
+    "funcbody": "func (c *Context) SetAccepted(formats ...string) {\n\tc.Accepted = formats\n}",
+    "funcname": "SetAccepted"
+}

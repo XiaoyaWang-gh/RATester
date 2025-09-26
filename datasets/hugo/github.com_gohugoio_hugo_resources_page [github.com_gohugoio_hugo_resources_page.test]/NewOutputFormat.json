@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_outputformat.go",
+    "lineno": 68,
+    "focalfunc": "func NewOutputFormat(relPermalink, permalink string, isCanonical bool, f output.Format) OutputFormat",
+    "funcbody": "func NewOutputFormat(relPermalink, permalink string, isCanonical bool, f output.Format) OutputFormat {\n\tisUserConfigured := true\n\tfor _, d := range output.DefaultFormats {\n\t\tif strings.EqualFold(d.Name, f.Name) {\n\t\t\tisUserConfigured = false\n\t\t}\n\t}\n\trel := f.Rel\n\n\tif isCanonical && !isUserConfigured {\n\t\trel = \"canonical\"\n\t}\n\treturn OutputFormat{Rel: rel, Format: f, relPermalink: relPermalink, permalink: permalink}\n}",
+    "funcname": "NewOutputFormat"
+}

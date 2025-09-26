@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 268,
+    "focalfunc": "func MkidrDirAll(path string, v ...string)",
+    "funcbody": "func MkidrDirAll(path string, v ...string) {\n\tfor _, item := range v {\n\t\tif err := os.MkdirAll(filepath.Join(path, item), 0755); err != nil {\n\t\t\tlog.Fatalf(\"Failed to create directory %s error:%s\", path, err.Error())\n\t\t}\n\t}\n}",
+    "funcname": "MkidrDirAll"
+}

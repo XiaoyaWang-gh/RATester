@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 124,
+    "focalfunc": "func subFS(currentFs fs.FS, root string) (fs.FS, error)",
+    "funcbody": "func subFS(currentFs fs.FS, root string) (fs.FS, error) {\n\troot = filepath.ToSlash(filepath.Clean(root))\n\tif dFS, ok := currentFs.(*defaultFS); ok {\n\n\t\tif !filepath.IsAbs(root) {\n\t\t\troot = filepath.Join(dFS.prefix, root)\n\t\t}\n\t\treturn &defaultFS{\n\t\t\tprefix:\troot,\n\t\t\tfs:\tos.DirFS(root),\n\t\t}, nil\n\t}\n\treturn fs.Sub(currentFs, root)\n}",
+    "funcname": "subFS"
+}

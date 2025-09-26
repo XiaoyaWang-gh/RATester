@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 546,
+    "focalfunc": "func (c *Context) initFormCache()",
+    "funcbody": "func (c *Context) initFormCache() {\n\tif c.formCache == nil {\n\t\tc.formCache = make(url.Values)\n\t\treq := c.Request\n\t\tif err := req.ParseMultipartForm(c.engine.MaxMultipartMemory); err != nil {\n\t\t\tif !errors.Is(err, http.ErrNotMultipart) {\n\t\t\t\tdebugPrint(\"error on parse multipart form array: %v\", err)\n\t\t\t}\n\t\t}\n\t\tc.formCache = req.PostForm\n\t}\n}",
+    "funcname": "initFormCache"
+}

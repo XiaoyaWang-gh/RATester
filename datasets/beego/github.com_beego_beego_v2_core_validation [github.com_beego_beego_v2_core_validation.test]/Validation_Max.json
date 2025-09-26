@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 155,
+    "focalfunc": "func (v *Validation) Max(obj interface{}, max int, key string) *Result",
+    "funcbody": "func (v *Validation) Max(obj interface{}, max int, key string) *Result {\n\treturn v.apply(Max{max, key}, obj)\n}",
+    "funcname": "Max"
+}

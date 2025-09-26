@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/debug/debug.go",
+    "lineno": 170,
+    "focalfunc": "func (ns *Namespace) TestDeprecationWarn(item, alternative string) string",
+    "funcbody": "func (ns *Namespace) TestDeprecationWarn(item, alternative string) string {\n\tv := hugo.CurrentVersion\n\tv.Minor -= 6\n\thugo.Deprecate(item, alternative, v.String())\n\treturn \"\"\n}",
+    "funcname": "TestDeprecationWarn"
+}

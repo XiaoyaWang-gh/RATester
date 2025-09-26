@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/default_validator.go",
+    "lineno": 76,
+    "focalfunc": "func (v *defaultValidator) validateStruct(obj any) error",
+    "funcbody": "func (v *defaultValidator) validateStruct(obj any) error {\n\tv.lazyinit()\n\treturn v.validate.Struct(obj)\n}",
+    "funcname": "validateStruct"
+}

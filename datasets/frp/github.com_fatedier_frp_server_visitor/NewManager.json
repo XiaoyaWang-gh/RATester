@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/visitor/visitor.go",
+    "lineno": 43,
+    "focalfunc": "func NewManager() *Manager",
+    "funcbody": "func NewManager() *Manager {\n\treturn &Manager{\n\t\tlisteners: make(map[string]*listenerBundle),\n\t}\n}",
+    "funcname": "NewManager"
+}

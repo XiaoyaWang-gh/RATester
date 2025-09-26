@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 437,
+    "focalfunc": "func (c *hugoBuilder) copyStaticTo(sourceFs *filesystems.SourceFilesystem) (uint64, error)",
+    "funcbody": "func (c *hugoBuilder) copyStaticTo(sourceFs *filesystems.SourceFilesystem) (uint64, error) {\n\tinfol := c.r.logger.InfoCommand(\"static\")\n\tpublishDir := helpers.FilePathSeparator\n\n\tif sourceFs.PublishFolder != \"\" {\n\t\tpublishDir = filepath.Join(publishDir, sourceFs.PublishFolder)\n\t}\n\n\tfs := &countingStatFs{Fs: sourceFs.Fs}\n\n\tsyncer := fsync.NewSyncer()\n\tc.withConf(func(conf *commonConfig) {\n\t\tsyncer.NoTimes = conf.configs.Base.NoTimes\n\t\tsyncer.NoChmod = conf.configs.Base.NoChmod\n\t\tsyncer.ChmodFilter = chmodFilter\n\n\t\tsyncer.DestFs = conf.fs.PublishDirStatic\n\n\t\tsyncer.Delete = conf.configs.Base.CleanDestinationDir\n\t})\n\n\tsyncer.SrcFs = fs\n\n\tif syncer.Delete {\n\t\tinfol.Logf(\"removing all files from destination that don't exist in static dirs\")\n\n\t\tsyncer.DeleteFilter = func(f fsync.FileInfo) bool {\n\t\t\treturn f.IsDir() && strings.HasPrefix(f.Name(), \".\")\n\t\t}\n\t}\n\tstart := time.Now()\n\n\terr := syncer.Sync(publishDir, helpers.FilePathSeparator)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tloggers.TimeTrackf(infol, start, nil, \"syncing static files to %s\", publishDir)\n\n\tnumFiles := fs.statCounter / 2\n\n\treturn numFiles, err\n}",
+    "funcname": "copyStaticTo"
+}

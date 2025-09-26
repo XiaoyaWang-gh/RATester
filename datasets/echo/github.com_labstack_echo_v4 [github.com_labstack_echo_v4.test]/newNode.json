@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 398,
+    "focalfunc": "func newNode(\n\tt kind,\n\tpre string,\n\tp *node,\n\tsc children,\n\toriginalPath string,\n\tmethods *routeMethods,\n\tparamsCount int,\n\tparamChildren,\n\tanyChildren *node,\n\tnotFoundHandler *routeMethod,\n) *node",
+    "funcbody": "func newNode(\n\tt kind,\n\tpre string,\n\tp *node,\n\tsc children,\n\toriginalPath string,\n\tmethods *routeMethods,\n\tparamsCount int,\n\tparamChildren,\n\tanyChildren *node,\n\tnotFoundHandler *routeMethod,\n) *node {\n\treturn &node{\n\t\tkind:\t\t\tt,\n\t\tlabel:\t\t\tpre[0],\n\t\tprefix:\t\t\tpre,\n\t\tparent:\t\t\tp,\n\t\tstaticChildren:\t\tsc,\n\t\toriginalPath:\t\toriginalPath,\n\t\tmethods:\t\tmethods,\n\t\tparamsCount:\t\tparamsCount,\n\t\tparamChild:\t\tparamChildren,\n\t\tanyChild:\t\tanyChildren,\n\t\tisLeaf:\t\t\tsc == nil && paramChildren == nil && anyChildren == nil,\n\t\tisHandler:\t\tmethods.isHandler(),\n\t\tnotFoundHandler:\tnotFoundHandler,\n\t}\n}",
+    "funcname": "newNode"
+}

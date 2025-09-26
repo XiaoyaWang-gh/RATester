@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 775,
+    "focalfunc": "func Info(f interface{}, v ...interface{})",
+    "funcbody": "func Info(f interface{}, v ...interface{}) {\n\tbeeLogger.Info(formatPattern(f, v...), v...)\n}",
+    "funcname": "Info"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/auth.go",
+    "lineno": 76,
+    "focalfunc": "func processAccounts(accounts Accounts) authPairs",
+    "funcbody": "func processAccounts(accounts Accounts) authPairs {\n\tlength := len(accounts)\n\tassert1(length > 0, \"Empty list of authorized credentials\")\n\tpairs := make(authPairs, 0, length)\n\tfor user, password := range accounts {\n\t\tassert1(user != \"\", \"User can not be empty\")\n\t\tvalue := authorizationHeader(user, password)\n\t\tpairs = append(pairs, authPair{\n\t\t\tvalue:\tvalue,\n\t\t\tuser:\tuser,\n\t\t})\n\t}\n\treturn pairs\n}",
+    "funcname": "processAccounts"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/fake/clientset_generated.go",
+    "lineno": 44,
+    "focalfunc": "func NewSimpleClientset(objects ...runtime.Object) *Clientset",
+    "funcbody": "func NewSimpleClientset(objects ...runtime.Object) *Clientset {\n\to := testing.NewObjectTracker(scheme, codecs.UniversalDecoder())\n\tfor _, obj := range objects {\n\t\tif err := o.Add(obj); err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t}\n\n\tcs := &Clientset{tracker: o}\n\tcs.discovery = &fakediscovery.FakeDiscovery{Fake: &cs.Fake}\n\tcs.AddReactor(\"*\", \"*\", testing.ObjectReaction(o))\n\tcs.AddWatchReactor(\"*\", func(action testing.Action) (handled bool, ret watch.Interface, err error) {\n\t\tgvr := action.GetResource()\n\t\tns := action.GetNamespace()\n\t\twatch, err := o.Watch(gvr, ns)\n\t\tif err != nil {\n\t\t\treturn false, nil, err\n\t\t}\n\t\treturn true, watch, nil\n\t})\n\n\treturn cs\n}",
+    "funcname": "NewSimpleClientset"
+}

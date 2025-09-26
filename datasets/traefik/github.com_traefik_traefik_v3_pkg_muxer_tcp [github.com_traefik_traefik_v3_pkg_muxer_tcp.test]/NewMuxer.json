@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/mux.go",
+    "lineno": 50,
+    "focalfunc": "func NewMuxer() (*Muxer, error)",
+    "funcbody": "func NewMuxer() (*Muxer, error) {\n\tvar matcherNames []string\n\tfor matcherName := range tcpFuncs {\n\t\tmatcherNames = append(matcherNames, matcherName)\n\t}\n\n\tparser, err := rules.NewParser(matcherNames)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error while creating rules parser: %w\", err)\n\t}\n\n\tvar matchersV2 []string\n\tfor matcher := range tcpFuncsV2 {\n\t\tmatchersV2 = append(matchersV2, matcher)\n\t}\n\n\tparserV2, err := rules.NewParser(matchersV2)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error while creating v2 rules parser: %w\", err)\n\t}\n\n\treturn &Muxer{\n\t\tparser:\t\tparser,\n\t\tparserV2:\tparserV2,\n\t}, nil\n}",
+    "funcname": "NewMuxer"
+}

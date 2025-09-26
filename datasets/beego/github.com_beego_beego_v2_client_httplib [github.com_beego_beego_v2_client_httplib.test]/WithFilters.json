@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 126,
+    "focalfunc": "func WithFilters(fcs ...FilterChain) BeegoHTTPRequestOption",
+    "funcbody": "func WithFilters(fcs ...FilterChain) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.SetFilters(fcs...)\n\t}\n}",
+    "funcname": "WithFilters"
+}

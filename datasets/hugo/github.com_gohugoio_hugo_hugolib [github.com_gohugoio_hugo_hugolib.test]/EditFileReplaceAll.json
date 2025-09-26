@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 459,
+    "focalfunc": "func (s *IntegrationTestBuilder) EditFileReplaceAll(filename, old, new string) *IntegrationTestBuilder",
+    "funcbody": "func (s *IntegrationTestBuilder) EditFileReplaceAll(filename, old, new string) *IntegrationTestBuilder {\n\treturn s.EditFileReplaceFunc(filename, func(s string) string {\n\t\treturn strings.ReplaceAll(s, old, new)\n\t})\n}",
+    "funcname": "EditFileReplaceAll"
+}

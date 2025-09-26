@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 207,
+    "focalfunc": "func (t *Template) Parse(text string) (*Template, error)",
+    "funcbody": "func (t *Template) Parse(text string) (*Template, error) {\n\tt.init()\n\tt.muFuncs.RLock()\n\ttrees, err := parse.Parse(t.name, text, t.leftDelim, t.rightDelim, t.parseFuncs, builtins())\n\tt.muFuncs.RUnlock()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tfor name, tree := range trees {\n\t\tif _, err := t.AddParseTree(name, tree); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn t, nil\n}",
+    "funcname": "Parse"
+}

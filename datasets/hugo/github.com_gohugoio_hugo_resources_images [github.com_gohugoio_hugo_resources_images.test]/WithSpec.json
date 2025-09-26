@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 139,
+    "focalfunc": "func (i Image) WithSpec(s Spec) *Image",
+    "funcbody": "func (i Image) WithSpec(s Spec) *Image {\n\ti.Spec = s\n\ti.imageConfig = &imageConfig{}\n\treturn &i\n}",
+    "funcname": "WithSpec"
+}

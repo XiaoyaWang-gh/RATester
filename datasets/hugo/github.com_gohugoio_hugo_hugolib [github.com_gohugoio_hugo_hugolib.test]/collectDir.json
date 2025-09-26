@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pages_capture.go",
+    "lineno": 205,
+    "focalfunc": "func (c *pagesCollector) collectDir(dirPath *paths.Path, isDir bool, inFilter func(fim hugofs.FileMetaInfo) bool) error",
+    "funcbody": "func (c *pagesCollector) collectDir(dirPath *paths.Path, isDir bool, inFilter func(fim hugofs.FileMetaInfo) bool) error {\n\tvar dpath string\n\tif dirPath != nil {\n\t\tif isDir {\n\t\t\tdpath = filepath.FromSlash(dirPath.Unnormalized().Path())\n\t\t} else {\n\t\t\tdpath = filepath.FromSlash(dirPath.Unnormalized().Dir())\n\t\t}\n\t}\n\n\tif c.seenDirs[dpath] {\n\t\treturn nil\n\t}\n\tc.seenDirs[dpath] = true\n\n\troot, err := c.fs.Stat(dpath)\n\tif err != nil {\n\t\tif os.IsNotExist(err) {\n\t\t\treturn nil\n\t\t}\n\t\treturn err\n\t}\n\n\trootm := root.(hugofs.FileMetaInfo)\n\n\tif err := c.collectDirDir(dpath, rootm, inFilter); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "collectDir"
+}

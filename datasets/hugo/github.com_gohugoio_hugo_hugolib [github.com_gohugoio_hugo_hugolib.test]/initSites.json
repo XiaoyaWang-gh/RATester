@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 222,
+    "focalfunc": "func (h *HugoSites) initSites(config *BuildCfg) error",
+    "funcbody": "func (h *HugoSites) initSites(config *BuildCfg) error {\n\th.reset(config)\n\treturn nil\n}",
+    "funcname": "initSites"
+}

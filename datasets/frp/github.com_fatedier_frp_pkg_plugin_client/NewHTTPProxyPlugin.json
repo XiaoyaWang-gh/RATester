@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 48,
+    "focalfunc": "func NewHTTPProxyPlugin(options v1.ClientPluginOptions) (Plugin, error)",
+    "funcbody": "func NewHTTPProxyPlugin(options v1.ClientPluginOptions) (Plugin, error) {\n\topts := options.(*v1.HTTPProxyPluginOptions)\n\tlistener := NewProxyListener()\n\n\thp := &HTTPProxy{\n\t\tl:\tlistener,\n\t\topts:\topts,\n\t}\n\n\thp.s = &http.Server{\n\t\tHandler:\t\thp,\n\t\tReadHeaderTimeout:\t60 * time.Second,\n\t}\n\n\tgo func() {\n\t\t_ = hp.s.Serve(listener)\n\t}()\n\treturn hp, nil\n}",
+    "funcname": "NewHTTPProxyPlugin"
+}

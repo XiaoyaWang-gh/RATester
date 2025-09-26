@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 47,
+    "focalfunc": "func WrapH(h http.Handler) HandlerFunc",
+    "funcbody": "func WrapH(h http.Handler) HandlerFunc {\n\treturn func(c *Context) {\n\t\th.ServeHTTP(c.Writer, c.Request)\n\t}\n}",
+    "funcname": "WrapH"
+}

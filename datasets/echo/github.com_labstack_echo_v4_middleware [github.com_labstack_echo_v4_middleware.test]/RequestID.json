@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/request_id.go",
+    "lineno": 34,
+    "focalfunc": "func RequestID() echo.MiddlewareFunc",
+    "funcbody": "func RequestID() echo.MiddlewareFunc {\n\treturn RequestIDWithConfig(DefaultRequestIDConfig)\n}",
+    "funcname": "RequestID"
+}

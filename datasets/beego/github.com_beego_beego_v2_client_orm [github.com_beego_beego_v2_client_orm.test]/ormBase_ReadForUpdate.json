@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 158,
+    "focalfunc": "func (o *ormBase) ReadForUpdate(md interface{}, cols ...string) error",
+    "funcbody": "func (o *ormBase) ReadForUpdate(md interface{}, cols ...string) error {\n\treturn o.ReadForUpdateWithCtx(context.Background(), md, cols...)\n}",
+    "funcname": "ReadForUpdate"
+}

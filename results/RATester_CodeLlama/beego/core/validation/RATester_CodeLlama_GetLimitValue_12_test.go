@@ -1,0 +1,19 @@
+package validation
+
+import (
+	"fmt"
+	"testing"
+)
+
+func TestGetLimitValue_12(t *testing.T) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered in main", r)
+		}
+	}()
+
+	b := Base64{}
+	if b.GetLimitValue() != nil {
+		t.Errorf("GetLimitValue() = %v, want nil", b.GetLimitValue())
+	}
+}

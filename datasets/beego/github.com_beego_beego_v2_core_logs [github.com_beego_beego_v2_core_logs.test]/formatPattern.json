@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 790,
+    "focalfunc": "func formatPattern(f interface{}, v ...interface{}) string",
+    "funcbody": "func formatPattern(f interface{}, v ...interface{}) string {\n\tvar msg string\n\tswitch f.(type) {\n\tcase string:\n\t\tmsg = f.(string)\n\t\tif len(v) == 0 {\n\t\t\treturn msg\n\t\t}\n\t\tif !strings.Contains(msg, \"%\") {\n\n\t\t\tmsg += strings.Repeat(\" %v\", len(v))\n\t\t}\n\tdefault:\n\t\tmsg = fmt.Sprint(f)\n\t\tif len(v) == 0 {\n\t\t\treturn msg\n\t\t}\n\t\tmsg += strings.Repeat(\" %v\", len(v))\n\t}\n\treturn msg\n}",
+    "funcname": "formatPattern"
+}

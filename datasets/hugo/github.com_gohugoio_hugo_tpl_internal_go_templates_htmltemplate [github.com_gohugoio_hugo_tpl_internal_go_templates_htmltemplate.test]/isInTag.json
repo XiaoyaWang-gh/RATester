@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/context.go",
+    "lineno": 175,
+    "focalfunc": "func isInTag(s state) bool",
+    "funcbody": "func isInTag(s state) bool {\n\tswitch s {\n\tcase stateTag, stateAttrName, stateAfterName, stateBeforeValue, stateAttr:\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "isInTag"
+}

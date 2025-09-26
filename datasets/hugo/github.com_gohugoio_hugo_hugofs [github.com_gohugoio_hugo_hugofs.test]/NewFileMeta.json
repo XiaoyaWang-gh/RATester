@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 42,
+    "focalfunc": "func NewFileMeta() *FileMeta",
+    "funcbody": "func NewFileMeta() *FileMeta {\n\treturn &FileMeta{}\n}",
+    "funcname": "NewFileMeta"
+}

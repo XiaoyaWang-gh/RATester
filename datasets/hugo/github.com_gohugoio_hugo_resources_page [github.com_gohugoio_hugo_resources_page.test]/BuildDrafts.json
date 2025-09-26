@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 476,
+    "focalfunc": "func (s testSite) BuildDrafts() bool",
+    "funcbody": "func (s testSite) BuildDrafts() bool {\n\treturn false\n}",
+    "funcname": "BuildDrafts"
+}

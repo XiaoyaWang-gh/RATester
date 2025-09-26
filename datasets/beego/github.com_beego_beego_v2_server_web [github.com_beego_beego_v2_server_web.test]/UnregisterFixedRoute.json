@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 343,
+    "focalfunc": "func UnregisterFixedRoute(fixedRoute string, method string) *HttpServer",
+    "funcbody": "func UnregisterFixedRoute(fixedRoute string, method string) *HttpServer {\n\treturn BeeApp.UnregisterFixedRoute(fixedRoute, method)\n}",
+    "funcname": "UnregisterFixedRoute"
+}

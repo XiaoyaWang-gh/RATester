@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/cmd/nps/nps.go",
+    "lineno": 161,
+    "focalfunc": "func (p *nps) Start(s service.Service) error",
+    "funcbody": "func (p *nps) Start(s service.Service) error {\n\t_, _ = s.Status()\n\tgo p.run()\n\treturn nil\n}",
+    "funcname": "Start"
+}

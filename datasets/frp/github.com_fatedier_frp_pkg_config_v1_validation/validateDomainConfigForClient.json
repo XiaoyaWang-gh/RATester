@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 74,
+    "focalfunc": "func validateDomainConfigForClient(c *v1.DomainConfig) error",
+    "funcbody": "func validateDomainConfigForClient(c *v1.DomainConfig) error {\n\tif c.SubDomain == \"\" && len(c.CustomDomains) == 0 {\n\t\treturn errors.New(\"subdomain and custom domains should not be both empty\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateDomainConfigForClient"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 464,
+    "focalfunc": "func (b *BeegoHTTPRequest) doRequest(_ context.Context) (*http.Response, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) doRequest(_ context.Context) (*http.Response, error) {\n\tparamBody := b.buildParamBody()\n\n\tb.buildURL(paramBody)\n\turlParsed, err := url.Parse(b.url)\n\tif err != nil {\n\t\treturn nil, berror.Wrapf(err, InvalidUrl, \"parse url failed, the url is %s\", b.url)\n\t}\n\n\tb.req.URL = urlParsed\n\n\ttrans := b.buildTrans()\n\n\tjar := b.buildCookieJar()\n\n\tclient := &http.Client{\n\t\tTransport:\ttrans,\n\t\tJar:\t\tjar,\n\t}\n\n\tif b.setting.UserAgent != \"\" && b.req.Header.Get(\"User-Agent\") == \"\" {\n\t\tb.req.Header.Set(\"User-Agent\", b.setting.UserAgent)\n\t}\n\n\tif b.setting.CheckRedirect != nil {\n\t\tclient.CheckRedirect = b.setting.CheckRedirect\n\t}\n\n\treturn b.sendRequest(client)\n}",
+    "funcname": "doRequest"
+}

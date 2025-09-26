@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 265,
+    "focalfunc": "func (p *siprng) Int31n(n int32) int32",
+    "funcbody": "func (p *siprng) Int31n(n int32) int32 {\n\tif n <= 0 {\n\t\tpanic(\"invalid argument to Int31n\")\n\t}\n\tmax := int32((1 << 31) - 1 - (1<<31)%uint32(n))\n\tv := p.Int31()\n\tfor v > max {\n\t\tv = p.Int31()\n\t}\n\treturn v % n\n}",
+    "funcname": "Int31n"
+}

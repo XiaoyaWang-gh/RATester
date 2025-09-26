@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 261,
+    "focalfunc": "func (o querySet) DeleteWithCtx(ctx context.Context) (int64, error)",
+    "funcbody": "func (o querySet) DeleteWithCtx(ctx context.Context) (int64, error) {\n\treturn o.orm.alias.DbBaser.DeleteBatch(ctx, o.orm.db, &o, o.mi, o.cond, o.orm.alias.TZ)\n}",
+    "funcname": "DeleteWithCtx"
+}

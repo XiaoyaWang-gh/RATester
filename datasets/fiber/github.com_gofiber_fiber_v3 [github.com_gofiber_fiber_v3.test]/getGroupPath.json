@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 216,
+    "focalfunc": "func getGroupPath(prefix, path string) string",
+    "funcbody": "func getGroupPath(prefix, path string) string {\n\tif len(path) == 0 {\n\t\treturn prefix\n\t}\n\n\tif path[0] != '/' {\n\t\tpath = \"/\" + path\n\t}\n\n\treturn utils.TrimRight(prefix, '/') + path\n}",
+    "funcname": "getGroupPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 143,
+    "focalfunc": "func NewPortsRangeSliceFromString(str string) ([]PortsRange, error)",
+    "funcbody": "func NewPortsRangeSliceFromString(str string) ([]PortsRange, error) {\n\tstr = strings.TrimSpace(str)\n\tout := []PortsRange{}\n\tnumRanges := strings.Split(str, \",\")\n\tfor _, numRangeStr := range numRanges {\n\n\t\tnumArray := strings.Split(numRangeStr, \"-\")\n\n\t\trangeType := len(numArray)\n\t\tswitch rangeType {\n\t\tcase 1:\n\n\t\t\tsingleNum, err := strconv.ParseInt(strings.TrimSpace(numArray[0]), 10, 64)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"range number is invalid, %v\", err)\n\t\t\t}\n\t\t\tout = append(out, PortsRange{Single: int(singleNum)})\n\t\tcase 2:\n\n\t\t\tmin, err := strconv.ParseInt(strings.TrimSpace(numArray[0]), 10, 64)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"range number is invalid, %v\", err)\n\t\t\t}\n\t\t\tmax, err := strconv.ParseInt(strings.TrimSpace(numArray[1]), 10, 64)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"range number is invalid, %v\", err)\n\t\t\t}\n\t\t\tif max < min {\n\t\t\t\treturn nil, fmt.Errorf(\"range number is invalid\")\n\t\t\t}\n\t\t\tout = append(out, PortsRange{Start: int(min), End: int(max)})\n\t\tdefault:\n\t\t\treturn nil, fmt.Errorf(\"range number is invalid\")\n\t\t}\n\t}\n\treturn out, nil\n}",
+    "funcname": "NewPortsRangeSliceFromString"
+}

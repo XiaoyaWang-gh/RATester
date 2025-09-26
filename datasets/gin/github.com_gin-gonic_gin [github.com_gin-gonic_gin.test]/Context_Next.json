@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 186,
+    "focalfunc": "func (c *Context) Next()",
+    "funcbody": "func (c *Context) Next() {\n\tc.index++\n\tfor c.index < int8(len(c.handlers)) {\n\t\tif c.handlers[c.index] == nil {\n\t\t\tcontinue\n\t\t}\n\t\tc.handlers[c.index](c)\n\t\tc.index++\n\t}\n}",
+    "funcname": "Next"
+}

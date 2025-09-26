@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 75,
+    "focalfunc": "func NewFramework(opt Options) *Framework",
+    "funcbody": "func NewFramework(opt Options) *Framework {\n\tf := &Framework{\n\t\tportAllocator:\tport.NewAllocator(opt.FromPortIndex, opt.ToPortIndex, opt.TotalParallelNode, opt.CurrentNodeIndex-1),\n\t\tusedPorts:\tmake(map[string]int),\n\t}\n\n\tginkgo.BeforeEach(f.BeforeEach)\n\tginkgo.AfterEach(f.AfterEach)\n\treturn f\n}",
+    "funcname": "NewFramework"
+}

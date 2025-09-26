@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 100,
+    "focalfunc": "func (c ConfigLanguage) IgnoredLogs() map[string]bool",
+    "funcbody": "func (c ConfigLanguage) IgnoredLogs() map[string]bool {\n\treturn c.config.C.IgnoredLogs\n}",
+    "funcname": "IgnoredLogs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/regexp.go",
+    "lineno": 23,
+    "focalfunc": "func (ns *Namespace) FindRE(expr string, content any, limit ...any) ([]string, error)",
+    "funcbody": "func (ns *Namespace) FindRE(expr string, content any, limit ...any) ([]string, error) {\n\tre, err := hstrings.GetOrCompileRegexp(expr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tconv, err := cast.ToStringE(content)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif len(limit) == 0 {\n\t\treturn re.FindAllString(conv, -1), nil\n\t}\n\n\tlim, err := cast.ToIntE(limit[0])\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn re.FindAllString(conv, lim), nil\n}",
+    "funcname": "FindRE"
+}

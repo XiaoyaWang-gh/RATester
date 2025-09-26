@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/client.go",
+    "lineno": 166,
+    "focalfunc": "func (s *ClientController) Del()",
+    "funcbody": "func (s *ClientController) Del() {\n\tid := s.GetIntNoErr(\"id\")\n\tif err := file.GetDb().DelClient(id); err != nil {\n\t\ts.AjaxErr(\"delete error\")\n\t}\n\tserver.DelTunnelAndHostByClientId(id, false)\n\tserver.DelClientConnect(id)\n\ts.AjaxOk(\"delete success\")\n}",
+    "funcname": "Del"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/files/classifier.go",
+    "lineno": 32,
+    "focalfunc": "func IsGoTmplExt(ext string) bool",
+    "funcbody": "func IsGoTmplExt(ext string) bool {\n\treturn ext == \"gotmpl\"\n}",
+    "funcname": "IsGoTmplExt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 444,
+    "focalfunc": "func findNextCharsetPositionConstraint(search string, charset []byte) int",
+    "funcbody": "func findNextCharsetPositionConstraint(search string, charset []byte) int {\n\tconstraintStart := findNextNonEscapedCharsetPosition(search, parameterConstraintStartChars)\n\tconstraintEnd := findNextNonEscapedCharsetPosition(search, parameterConstraintEndChars)\n\tnextPosition := -1\n\n\tfor _, char := range charset {\n\t\tpos := strings.IndexByte(search, char)\n\n\t\tif pos != -1 && (pos < nextPosition || nextPosition == -1) {\n\t\t\tif (pos > constraintStart && pos > constraintEnd) || (pos < constraintStart && pos < constraintEnd) {\n\t\t\t\tnextPosition = pos\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nextPosition\n}",
+    "funcname": "findNextCharsetPositionConstraint"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 133,
+    "focalfunc": "func (r *hugoContextRenderer) handleHugoContext(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hugoContextRenderer) handleHugoContext(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tif !entering {\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\thctx := node.(*HugoContext)\n\tctx, ok := w.(*render.Context)\n\tif !ok {\n\t\treturn ast.WalkContinue, nil\n\t}\n\tif hctx.Closing {\n\t\t_ = ctx.PopPid()\n\t} else {\n\t\tctx.PushPid(hctx.Pid)\n\t}\n\treturn ast.WalkContinue, nil\n}",
+    "funcname": "handleHugoContext"
+}

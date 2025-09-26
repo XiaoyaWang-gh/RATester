@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_store.go",
+    "lineno": 243,
+    "focalfunc": "func LogsBytesDecode(data []byte) (gl *LogGroupList, err error)",
+    "funcbody": "func LogsBytesDecode(data []byte) (gl *LogGroupList, err error) {\n\tgl = &LogGroupList{}\n\terr = proto.Unmarshal(data, gl)\n\tif err != nil {\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "LogsBytesDecode"
+}

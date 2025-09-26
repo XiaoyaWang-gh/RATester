@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 284,
+    "focalfunc": "func (s *Sock5ModeServer) handleConn(c net.Conn)",
+    "funcbody": "func (s *Sock5ModeServer) handleConn(c net.Conn) {\n\tbuf := make([]byte, 2)\n\tif _, err := io.ReadFull(c, buf); err != nil {\n\t\tlogs.Warn(\"negotiation err\", err)\n\t\tc.Close()\n\t\treturn\n\t}\n\n\tif version := buf[0]; version != 5 {\n\t\tlogs.Warn(\"only support socks5, request from: \", c.RemoteAddr())\n\t\tc.Close()\n\t\treturn\n\t}\n\tnMethods := buf[1]\n\n\tmethods := make([]byte, nMethods)\n\tif len, err := c.Read(methods); len != int(nMethods) || err != nil {\n\t\tlogs.Warn(\"wrong method\")\n\t\tc.Close()\n\t\treturn\n\t}\n\tif (s.task.Client.Cnf.U != \"\" && s.task.Client.Cnf.P != \"\") || (s.task.MultiAccount != nil && len(s.task.MultiAccount.AccountMap) > 0) {\n\t\tbuf[1] = UserPassAuth\n\t\tc.Write(buf)\n\t\tif err := s.Auth(c); err != nil {\n\t\t\tc.Close()\n\t\t\tlogs.Warn(\"Validation failed:\", err)\n\t\t\treturn\n\t\t}\n\t} else {\n\t\tbuf[1] = 0\n\t\tc.Write(buf)\n\t}\n\ts.handleRequest(c)\n}",
+    "funcname": "handleConn"
+}

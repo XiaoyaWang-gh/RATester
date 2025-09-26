@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/logger/default_logger.go",
+    "lineno": 151,
+    "focalfunc": "func appendInt(output Buffer, v int) (int, error)",
+    "funcbody": "func appendInt(output Buffer, v int) (int, error) {\n\told := output.Len()\n\toutput.Set(strconv.AppendInt(output.Bytes(), int64(v), 10))\n\treturn output.Len() - old, nil\n}",
+    "funcname": "appendInt"
+}

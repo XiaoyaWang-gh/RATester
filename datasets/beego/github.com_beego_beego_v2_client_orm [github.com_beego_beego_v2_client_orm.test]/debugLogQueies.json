@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 38,
+    "focalfunc": "func debugLogQueies(alias *alias, operation, query string, t time.Time, err error, args ...interface{})",
+    "funcbody": "func debugLogQueies(alias *alias, operation, query string, t time.Time, err error, args ...interface{}) {\n\tlogMap := make(map[string]interface{})\n\tsub := time.Since(t) / 1e5\n\telsp := float64(int(sub)) / 10.0\n\tlogMap[\"cost_time\"] = elsp\n\tflag := \"OK\"\n\tif err != nil {\n\t\tflag = \"FAIL\"\n\t}\n\n\tlogMap[\"flag\"] = flag\n\tcon := fmt.Sprintf(\" -[Queries/%s] - [  %s / %11s / %7.1fms] - [%s]\", alias.Name, flag, operation, elsp, query)\n\tlogMap[\"alias_name\"] = alias.Name\n\tlogMap[\"operation\"] = operation\n\tlogMap[\"query\"] = query\n\tcons := make([]string, 0, len(args))\n\tfor _, arg := range args {\n\t\tcons = append(cons, fmt.Sprintf(\"%v\", arg))\n\t}\n\tif len(cons) > 0 {\n\t\tcon += fmt.Sprintf(\" - `%s`\", strings.Join(cons, \"`, `\"))\n\t\tlogMap[\"cons\"] = cons\n\t}\n\tif err != nil {\n\t\tcon += \" - \" + err.Error()\n\t\tlogMap[\"err\"] = err\n\t}\n\tlogMap[\"sql\"] = fmt.Sprintf(\"%s-`%s`\", query, strings.Join(cons, \"`, `\"))\n\tif LogFunc != nil {\n\t\tLogFunc(logMap)\n\t}\n\tDebugLog.Println(con)\n}",
+    "funcname": "debugLogQueies"
+}

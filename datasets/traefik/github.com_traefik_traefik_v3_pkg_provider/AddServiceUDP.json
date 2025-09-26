@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 300,
+    "focalfunc": "func AddServiceUDP(configuration *dynamic.UDPConfiguration, serviceName string, service *dynamic.UDPService) bool",
+    "funcbody": "func AddServiceUDP(configuration *dynamic.UDPConfiguration, serviceName string, service *dynamic.UDPService) bool {\n\tif _, ok := configuration.Services[serviceName]; !ok {\n\t\tconfiguration.Services[serviceName] = service\n\t\treturn true\n\t}\n\n\tif !configuration.Services[serviceName].LoadBalancer.Mergeable(service.LoadBalancer) {\n\t\treturn false\n\t}\n\n\tuniq := map[string]struct{}{}\n\tfor _, server := range configuration.Services[serviceName].LoadBalancer.Servers {\n\t\tuniq[server.Address] = struct{}{}\n\t}\n\n\tfor _, server := range service.LoadBalancer.Servers {\n\t\tif _, ok := uniq[server.Address]; !ok {\n\t\t\tconfiguration.Services[serviceName].LoadBalancer.Servers = append(configuration.Services[serviceName].LoadBalancer.Servers, server)\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "AddServiceUDP"
+}

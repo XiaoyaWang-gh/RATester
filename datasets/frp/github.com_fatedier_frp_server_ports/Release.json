@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/ports/ports.go",
+    "lineno": 165,
+    "focalfunc": "func (pm *Manager) Release(port int)",
+    "funcbody": "func (pm *Manager) Release(port int) {\n\tpm.mu.Lock()\n\tdefer pm.mu.Unlock()\n\tif ctx, ok := pm.usedPorts[port]; ok {\n\t\tpm.freePorts[port] = struct{}{}\n\t\tdelete(pm.usedPorts, port)\n\t\tctx.Closed = true\n\t\tctx.UpdateTime = time.Now()\n\t}\n}",
+    "funcname": "Release"
+}

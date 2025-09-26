@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages.go",
+    "lineno": 92,
+    "focalfunc": "func (p Pages) Group(key any, in any) (any, error)",
+    "funcbody": "func (p Pages) Group(key any, in any) (any, error) {\n\tpages, err := ToPages(in)\n\tif err != nil {\n\t\treturn PageGroup{}, err\n\t}\n\treturn PageGroup{Key: key, Pages: pages}, nil\n}",
+    "funcname": "Group"
+}

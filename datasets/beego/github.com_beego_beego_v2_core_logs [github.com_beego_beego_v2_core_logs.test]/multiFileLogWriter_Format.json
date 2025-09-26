@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/multifile.go",
+    "lineno": 86,
+    "focalfunc": "func (*multiFileLogWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (*multiFileLogWriter) Format(lm *LogMsg) string {\n\treturn lm.OldStyleFormat()\n}",
+    "funcname": "Format"
+}

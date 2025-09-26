@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 230,
+    "focalfunc": "func (pw *Wrapper) statusNormalCallback()",
+    "funcbody": "func (pw *Wrapper) statusNormalCallback() {\n\txl := pw.xl\n\tatomic.StoreUint32(&pw.health, 0)\n\t_ = errors.PanicToError(func() {\n\t\tselect {\n\t\tcase pw.healthNotifyCh <- struct{}{}:\n\t\tdefault:\n\t\t}\n\t})\n\txl.Infof(\"health check success\")\n}",
+    "funcname": "statusNormalCallback"
+}

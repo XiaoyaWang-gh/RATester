@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 128,
+    "focalfunc": "func (p *Provider) ListenConfiguration(config dynamic.Configuration)",
+    "funcbody": "func (p *Provider) ListenConfiguration(config dynamic.Configuration) {\n\tp.configFromListenerChan <- config\n}",
+    "funcname": "ListenConfiguration"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 299,
+    "focalfunc": "func (e *globalErrHandler) StopErrorCollector()",
+    "funcbody": "func (e *globalErrHandler) StopErrorCollector() {\n\tif e.buildErrors != nil {\n\t\tclose(e.quit)\n\t\tclose(e.buildErrors)\n\t}\n}",
+    "funcname": "StopErrorCollector"
+}

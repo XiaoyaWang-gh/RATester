@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/safe.go",
+    "lineno": 45,
+    "focalfunc": "func (ns *Namespace) HTMLAttr(s any) (template.HTMLAttr, error)",
+    "funcbody": "func (ns *Namespace) HTMLAttr(s any) (template.HTMLAttr, error) {\n\tss, err := cast.ToStringE(s)\n\treturn template.HTMLAttr(ss), err\n}",
+    "funcname": "HTMLAttr"
+}

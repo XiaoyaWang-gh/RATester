@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 501,
+    "focalfunc": "func toInt(v reflect.Value) (int64, error)",
+    "funcbody": "func toInt(v reflect.Value) (int64, error) {\n\tswitch v.Kind() {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn v.Int(), nil\n\tcase reflect.Interface:\n\t\treturn toInt(v.Elem())\n\t}\n\treturn -1, errors.New(\"unable to convert value to int\")\n}",
+    "funcname": "toInt"
+}

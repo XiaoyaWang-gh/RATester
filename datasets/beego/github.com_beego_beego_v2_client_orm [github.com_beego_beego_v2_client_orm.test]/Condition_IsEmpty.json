@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 150,
+    "focalfunc": "func (c *Condition) IsEmpty() bool",
+    "funcbody": "func (c *Condition) IsEmpty() bool {\n\treturn len(c.params) == 0\n}",
+    "funcname": "IsEmpty"
+}

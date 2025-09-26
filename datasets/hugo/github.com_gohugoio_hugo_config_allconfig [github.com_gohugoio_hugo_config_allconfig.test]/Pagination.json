@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 251,
+    "focalfunc": "func (c ConfigLanguage) Pagination() config.Pagination",
+    "funcbody": "func (c ConfigLanguage) Pagination() config.Pagination {\n\treturn c.config.Pagination\n}",
+    "funcname": "Pagination"
+}

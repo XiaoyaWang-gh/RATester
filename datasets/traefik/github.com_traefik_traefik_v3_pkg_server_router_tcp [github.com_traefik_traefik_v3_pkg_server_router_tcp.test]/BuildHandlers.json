@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/manager.go",
+    "lineno": 75,
+    "focalfunc": "func (m *Manager) BuildHandlers(rootCtx context.Context, entryPoints []string) map[string]*Router",
+    "funcbody": "func (m *Manager) BuildHandlers(rootCtx context.Context, entryPoints []string) map[string]*Router {\n\tentryPointsRouters := m.getTCPRouters(rootCtx, entryPoints)\n\tentryPointsRoutersHTTP := m.getHTTPRouters(rootCtx, entryPoints, true)\n\n\tentryPointHandlers := make(map[string]*Router)\n\tfor _, entryPointName := range entryPoints {\n\t\trouters := entryPointsRouters[entryPointName]\n\n\t\tlogger := log.Ctx(rootCtx).With().Str(logs.EntryPointName, entryPointName).Logger()\n\t\tctx := logger.WithContext(rootCtx)\n\n\t\thandler, err := m.buildEntryPointHandler(ctx, routers, entryPointsRoutersHTTP[entryPointName], m.httpHandlers[entryPointName], m.httpsHandlers[entryPointName])\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\t\tentryPointHandlers[entryPointName] = handler\n\t}\n\treturn entryPointHandlers\n}",
+    "funcname": "BuildHandlers"
+}

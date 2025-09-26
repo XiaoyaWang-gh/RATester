@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/gui/npc/npc.go",
+    "lineno": 44,
+    "focalfunc": "func WidgetScreen() fyne.CanvasObject",
+    "funcbody": "func WidgetScreen() fyne.CanvasObject {\n\treturn fyne.NewContainerWithLayout(layout.NewBorderLayout(nil, nil, nil, nil),\n\t\tmakeMainTab(),\n\t)\n}",
+    "funcname": "WidgetScreen"
+}

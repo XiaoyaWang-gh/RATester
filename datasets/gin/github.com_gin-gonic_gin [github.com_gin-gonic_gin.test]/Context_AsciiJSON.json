@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1032,
+    "focalfunc": "func (c *Context) AsciiJSON(code int, obj any)",
+    "funcbody": "func (c *Context) AsciiJSON(code int, obj any) {\n\tc.Render(code, render.AsciiJSON{Data: obj})\n}",
+    "funcname": "AsciiJSON"
+}

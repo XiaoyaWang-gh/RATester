@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 69,
+    "focalfunc": "func WithprintableContentTypes(types []string) BuilderOption",
+    "funcbody": "func WithprintableContentTypes(types []string) BuilderOption {\n\treturn func(h *FilterChainBuilder) {\n\t\th.printableContentTypes = types\n\t}\n}",
+    "funcname": "WithprintableContentTypes"
+}

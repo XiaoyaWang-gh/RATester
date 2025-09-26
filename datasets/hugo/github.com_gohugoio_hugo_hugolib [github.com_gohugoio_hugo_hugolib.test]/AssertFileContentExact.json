@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 302,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertFileContentExact(filename string, matches ...string)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertFileContentExact(filename string, matches ...string) {\n\ts.Helper()\n\tcontent := s.FileContent(filename)\n\tfor _, m := range matches {\n\t\ts.Assert(content, qt.Contains, m, qt.Commentf(m))\n\t}\n}",
+    "funcname": "AssertFileContentExact"
+}

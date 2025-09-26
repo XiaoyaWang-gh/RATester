@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 590,
+    "focalfunc": "func (c *context) Attachment(file, name string) error",
+    "funcbody": "func (c *context) Attachment(file, name string) error {\n\treturn c.contentDisposition(file, name, \"attachment\")\n}",
+    "funcname": "Attachment"
+}

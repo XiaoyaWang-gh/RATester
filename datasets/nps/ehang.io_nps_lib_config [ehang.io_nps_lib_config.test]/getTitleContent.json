@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 102,
+    "focalfunc": "func getTitleContent(s string) string",
+    "funcbody": "func getTitleContent(s string) string {\n\tre, _ := regexp.Compile(`[\\[\\]]`)\n\treturn re.ReplaceAllString(s, \"\")\n}",
+    "funcname": "getTitleContent"
+}

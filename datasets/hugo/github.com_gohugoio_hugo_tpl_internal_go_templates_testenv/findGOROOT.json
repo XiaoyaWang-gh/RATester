@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 128,
+    "focalfunc": "func findGOROOT() (string, error)",
+    "funcbody": "func findGOROOT() (string, error) {\n\tgorootOnce.Do(func() {\n\t\tgorootPath = runtime.GOROOT()\n\t\tif gorootPath != \"\" {\n\n\t\t\treturn\n\t\t}\n\n\t\tcwd, err := os.Getwd()\n\t\tif err != nil {\n\t\t\tgorootErr = fmt.Errorf(\"finding GOROOT: %w\", err)\n\t\t\treturn\n\t\t}\n\n\t\tdir := cwd\n\t\tfor {\n\t\t\tparent := filepath.Dir(dir)\n\t\t\tif parent == dir {\n\n\t\t\t\tgorootErr = fmt.Errorf(\"failed to locate GOROOT/src in any parent directory\")\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\tif base := filepath.Base(dir); base != \"src\" {\n\t\t\t\tdir = parent\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tb, err := os.ReadFile(filepath.Join(dir, \"go.mod\"))\n\t\t\tif err != nil {\n\t\t\t\tif os.IsNotExist(err) {\n\t\t\t\t\tdir = parent\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\tgorootErr = fmt.Errorf(\"finding GOROOT: %w\", err)\n\t\t\t\treturn\n\t\t\t}\n\t\t\tgoMod := string(b)\n\n\t\t\tfor goMod != \"\" {\n\t\t\t\tvar line string\n\t\t\t\tline, goMod, _ = strings.Cut(goMod, \"\\n\")\n\t\t\t\tfields := strings.Fields(line)\n\t\t\t\tif len(fields) >= 2 && fields[0] == \"module\" && fields[1] == \"std\" {\n\n\t\t\t\t\tgorootPath = parent\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t})\n\n\treturn gorootPath, gorootErr\n}",
+    "funcname": "findGOROOT"
+}

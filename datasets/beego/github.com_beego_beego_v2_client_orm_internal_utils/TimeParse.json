@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 226,
+    "focalfunc": "func TimeParse(dateString, format string) (time.Time, error)",
+    "funcbody": "func TimeParse(dateString, format string) (time.Time, error) {\n\ttp, err := time.ParseInLocation(format, dateString, DefaultTimeLoc)\n\treturn tp, err\n}",
+    "funcname": "TimeParse"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 334,
+    "focalfunc": "func (ns *Namespace) doArithmetic(inputs []any, operation rune) (value any, err error)",
+    "funcbody": "func (ns *Namespace) doArithmetic(inputs []any, operation rune) (value any, err error) {\n\tif len(inputs) < 2 {\n\t\treturn nil, errMustTwoNumbersError\n\t}\n\tvalue = inputs[0]\n\tfor i := 1; i < len(inputs); i++ {\n\t\tvalue, err = _math.DoArithmetic(value, inputs[i], operation)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "doArithmetic"
+}

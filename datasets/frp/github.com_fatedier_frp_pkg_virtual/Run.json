@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 73,
+    "focalfunc": "func (c *Client) Run(ctx context.Context) error",
+    "funcbody": "func (c *Client) Run(ctx context.Context) error {\n\treturn c.svr.Run(ctx)\n}",
+    "funcname": "Run"
+}

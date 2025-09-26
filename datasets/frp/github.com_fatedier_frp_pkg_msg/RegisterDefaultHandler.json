@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 97,
+    "focalfunc": "func (d *Dispatcher) RegisterDefaultHandler(handler func(Message))",
+    "funcbody": "func (d *Dispatcher) RegisterDefaultHandler(handler func(Message)) {\n\td.defaultHandler = handler\n}",
+    "funcname": "RegisterDefaultHandler"
+}

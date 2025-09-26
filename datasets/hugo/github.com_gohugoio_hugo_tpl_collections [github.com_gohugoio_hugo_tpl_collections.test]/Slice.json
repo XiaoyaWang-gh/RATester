@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 606,
+    "focalfunc": "func (ns *Namespace) Slice(args ...any) any",
+    "funcbody": "func (ns *Namespace) Slice(args ...any) any {\n\tif len(args) == 0 {\n\t\treturn args\n\t}\n\n\treturn collections.Slice(args...)\n}",
+    "funcname": "Slice"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 519,
+    "focalfunc": "func readFileOS(file string) (name string, b []byte, err error)",
+    "funcbody": "func readFileOS(file string) (name string, b []byte, err error) {\n\tname = filepath.Base(file)\n\tb, err = os.ReadFile(file)\n\treturn\n}",
+    "funcname": "readFileOS"
+}

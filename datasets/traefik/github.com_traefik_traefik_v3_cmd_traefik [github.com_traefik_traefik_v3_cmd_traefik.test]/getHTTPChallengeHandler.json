@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 375,
+    "focalfunc": "func getHTTPChallengeHandler(acmeProviders []*acme.Provider, httpChallengeProvider http.Handler) http.Handler",
+    "funcbody": "func getHTTPChallengeHandler(acmeProviders []*acme.Provider, httpChallengeProvider http.Handler) http.Handler {\n\tvar acmeHTTPHandler http.Handler\n\tfor _, p := range acmeProviders {\n\t\tif p != nil && p.HTTPChallenge != nil {\n\t\t\tacmeHTTPHandler = httpChallengeProvider\n\t\t\tbreak\n\t\t}\n\t}\n\treturn acmeHTTPHandler\n}",
+    "funcname": "getHTTPChallengeHandler"
+}

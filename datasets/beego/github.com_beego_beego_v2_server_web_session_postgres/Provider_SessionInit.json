@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/postgres/sess_postgresql.go",
+    "lineno": 150,
+    "focalfunc": "func (mp *Provider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error",
+    "funcbody": "func (mp *Provider) SessionInit(ctx context.Context, maxlifetime int64, savePath string) error {\n\tmp.maxlifetime = maxlifetime\n\tmp.savePath = savePath\n\treturn nil\n}",
+    "funcname": "SessionInit"
+}

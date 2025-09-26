@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 73,
+    "focalfunc": "func (e *RequestExpect) PortName(name string) *RequestExpect",
+    "funcbody": "func (e *RequestExpect) PortName(name string) *RequestExpect {\n\tif e.f != nil {\n\t\te.req.Port(e.f.PortByName(name))\n\t}\n\treturn e\n}",
+    "funcname": "PortName"
+}

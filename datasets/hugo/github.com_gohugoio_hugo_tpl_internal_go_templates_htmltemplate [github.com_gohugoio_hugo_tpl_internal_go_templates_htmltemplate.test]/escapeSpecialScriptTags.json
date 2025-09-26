@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 745,
+    "focalfunc": "func escapeSpecialScriptTags(s []byte) []byte",
+    "funcbody": "func escapeSpecialScriptTags(s []byte) []byte {\n\treturn specialScriptTagRE.ReplaceAll(s, specialScriptTagReplacement)\n}",
+    "funcname": "escapeSpecialScriptTags"
+}

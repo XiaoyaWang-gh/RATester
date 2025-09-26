@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 453,
+    "focalfunc": "func executeError(err *errorInfo, ctx *context.Context, code int)",
+    "funcbody": "func executeError(err *errorInfo, ctx *context.Context, code int) {\n\n\tLogAccess(ctx, nil, code)\n\n\tif err.errorType == errorTypeHandler {\n\t\tctx.ResponseWriter.WriteHeader(code)\n\t\terr.handler(ctx.ResponseWriter, ctx.Request)\n\t\treturn\n\t}\n\tif err.errorType == errorTypeController {\n\t\tctx.Output.SetStatus(code)\n\n\t\tvc := reflect.New(err.controllerType)\n\t\texecController, ok := vc.Interface().(ControllerInterface)\n\t\tif !ok {\n\t\t\tpanic(\"controller is not ControllerInterface\")\n\t\t}\n\n\t\texecController.Init(ctx, err.controllerType.Name(), err.method, vc.Interface())\n\n\t\texecController.Prepare()\n\n\t\texecController.URLMapping()\n\n\t\tmethod := vc.MethodByName(err.method)\n\t\tmethod.Call([]reflect.Value{})\n\n\t\tif BConfig.WebConfig.AutoRender {\n\t\t\tif err := execController.Render(); err != nil {\n\t\t\t\tpanic(err)\n\t\t\t}\n\t\t}\n\n\t\texecController.Finish()\n\t}\n}",
+    "funcname": "executeError"
+}

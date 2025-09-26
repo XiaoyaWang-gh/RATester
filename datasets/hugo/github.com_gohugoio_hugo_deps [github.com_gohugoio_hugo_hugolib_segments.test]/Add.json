@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 315,
+    "focalfunc": "func (b *Listeners) Add(f func())",
+    "funcbody": "func (b *Listeners) Add(f func()) {\n\tif b == nil {\n\t\treturn\n\t}\n\tb.Lock()\n\tdefer b.Unlock()\n\tb.listeners = append(b.listeners, f)\n}",
+    "funcname": "Add"
+}

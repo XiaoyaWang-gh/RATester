@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 377,
+    "focalfunc": "func (m *Image) drawCircle(x, y, radius int, colorIdx uint8)",
+    "funcbody": "func (m *Image) drawCircle(x, y, radius int, colorIdx uint8) {\n\tf := 1 - radius\n\tdfx := 1\n\tdfy := -2 * radius\n\txo := 0\n\tyo := radius\n\n\tm.SetColorIndex(x, y+radius, colorIdx)\n\tm.SetColorIndex(x, y-radius, colorIdx)\n\tm.drawHorizLine(x-radius, x+radius, y, colorIdx)\n\n\tfor xo < yo {\n\t\tif f >= 0 {\n\t\t\tyo--\n\t\t\tdfy += 2\n\t\t\tf += dfy\n\t\t}\n\t\txo++\n\t\tdfx += 2\n\t\tf += dfx\n\t\tm.drawHorizLine(x-xo, x+xo, y+yo, colorIdx)\n\t\tm.drawHorizLine(x-xo, x+xo, y-yo, colorIdx)\n\t\tm.drawHorizLine(x-yo, x+yo, y+xo, colorIdx)\n\t\tm.drawHorizLine(x-yo, x+yo, y-xo, colorIdx)\n\t}\n}",
+    "funcname": "drawCircle"
+}

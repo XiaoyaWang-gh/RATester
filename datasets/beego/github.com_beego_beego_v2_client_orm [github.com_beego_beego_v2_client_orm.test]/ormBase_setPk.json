@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 212,
+    "focalfunc": "func (*ormBase) setPk(mi *models.ModelInfo, ind reflect.Value, id int64)",
+    "funcbody": "func (*ormBase) setPk(mi *models.ModelInfo, ind reflect.Value, id int64) {\n\tif mi.Fields.Pk != nil && mi.Fields.Pk.Auto {\n\t\tif mi.Fields.Pk.FieldType&IsPositiveIntegerField > 0 {\n\t\t\tind.FieldByIndex(mi.Fields.Pk.FieldIndex).SetUint(uint64(id))\n\t\t} else {\n\t\t\tind.FieldByIndex(mi.Fields.Pk.FieldIndex).SetInt(id)\n\t\t}\n\t}\n}",
+    "funcname": "setPk"
+}

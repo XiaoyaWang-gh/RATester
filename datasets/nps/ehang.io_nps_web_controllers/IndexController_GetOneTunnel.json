@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 128,
+    "focalfunc": "func (s *IndexController) GetOneTunnel()",
+    "funcbody": "func (s *IndexController) GetOneTunnel() {\n\tid := s.GetIntNoErr(\"id\")\n\tdata := make(map[string]interface{})\n\tif t, err := file.GetDb().GetTask(id); err != nil {\n\t\tdata[\"code\"] = 0\n\t} else {\n\t\tdata[\"code\"] = 1\n\t\tdata[\"data\"] = t\n\t}\n\ts.Data[\"json\"] = data\n\ts.ServeJSON()\n}",
+    "funcname": "GetOneTunnel"
+}

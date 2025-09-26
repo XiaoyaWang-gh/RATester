@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 469,
+    "focalfunc": "func DeleteTask(taskName string)",
+    "funcbody": "func DeleteTask(taskName string) {\n\tglobalTaskManager.DeleteTask(taskName)\n}",
+    "funcname": "DeleteTask"
+}

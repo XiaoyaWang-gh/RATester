@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/cookie/cookie.go",
+    "lineno": 37,
+    "focalfunc": "func sanitizeName(backend string) string",
+    "funcbody": "func sanitizeName(backend string) string {\n\tsanitizer := func(r rune) rune {\n\t\tswitch r {\n\t\tcase '!', '#', '$', '%', '&', '\\'', '*', '+', '-', '.', '^', '`', '|', '~':\n\t\t\treturn r\n\t\t}\n\n\t\tswitch {\n\t\tcase 'a' <= r && r <= 'z':\n\t\t\tfallthrough\n\t\tcase 'A' <= r && r <= 'Z':\n\t\t\tfallthrough\n\t\tcase '0' <= r && r <= '9':\n\t\t\treturn r\n\t\tdefault:\n\t\t\treturn '_'\n\t\t}\n\t}\n\n\treturn strings.Map(sanitizer, backend)\n}",
+    "funcname": "sanitizeName"
+}

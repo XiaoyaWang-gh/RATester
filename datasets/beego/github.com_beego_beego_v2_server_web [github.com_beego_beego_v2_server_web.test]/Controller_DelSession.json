@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 731,
+    "focalfunc": "func (c *Controller) DelSession(name interface{}) error",
+    "funcbody": "func (c *Controller) DelSession(name interface{}) error {\n\tif c.CruSession == nil {\n\t\tc.StartSession()\n\t}\n\treturn c.CruSession.Delete(context2.Background(), name)\n}",
+    "funcname": "DelSession"
+}

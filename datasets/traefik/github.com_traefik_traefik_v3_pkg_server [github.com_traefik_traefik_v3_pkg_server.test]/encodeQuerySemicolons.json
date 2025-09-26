@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 724,
+    "focalfunc": "func encodeQuerySemicolons(h http.Handler) http.Handler",
+    "funcbody": "func encodeQuerySemicolons(h http.Handler) http.Handler {\n\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\tif strings.Contains(req.URL.RawQuery, \";\") {\n\t\t\tr2 := new(http.Request)\n\t\t\t*r2 = *req\n\t\t\tr2.URL = new(url.URL)\n\t\t\t*r2.URL = *req.URL\n\n\t\t\tr2.URL.RawQuery = strings.ReplaceAll(req.URL.RawQuery, \";\", \"%3B\")\n\n\t\t\tr2.RequestURI = r2.URL.RequestURI()\n\n\t\t\th.ServeHTTP(rw, r2)\n\t\t} else {\n\t\t\th.ServeHTTP(rw, req)\n\t\t}\n\t})\n}",
+    "funcname": "encodeQuerySemicolons"
+}

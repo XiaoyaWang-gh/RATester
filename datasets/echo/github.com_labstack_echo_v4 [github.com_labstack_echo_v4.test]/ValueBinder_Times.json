@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1130,
+    "focalfunc": "func (b *ValueBinder) times(sourceParam string, dest *[]time.Time, layout string, valueMustExist bool) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) times(sourceParam string, dest *[]time.Time, layout string, valueMustExist bool) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\n\tvalues := b.ValuesFunc(sourceParam)\n\tif len(values) == 0 {\n\t\tif valueMustExist {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{}, \"required field value is empty\", nil))\n\t\t}\n\t\treturn b\n\t}\n\n\ttmp := make([]time.Time, len(values))\n\tfor i, v := range values {\n\t\tt, err := time.Parse(layout, v)\n\t\tif err != nil {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{v}, \"failed to bind field value to Time\", err))\n\t\t\tif b.failFast {\n\t\t\t\treturn b\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\t\ttmp[i] = t\n\t}\n\tif b.errors == nil {\n\t\t*dest = tmp\n\t}\n\treturn b\n}",
+    "funcname": "times"
+}

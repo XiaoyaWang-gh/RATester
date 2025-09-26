@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_project.go",
+    "lineno": 32,
+    "focalfunc": "func NewLogProject(name, endpoint, AccessKeyID, accessKeySecret string) (p *LogProject, err error)",
+    "funcbody": "func NewLogProject(name, endpoint, AccessKeyID, accessKeySecret string) (p *LogProject, err error) {\n\tp = &LogProject{\n\t\tName:\t\t\tname,\n\t\tEndpoint:\t\tendpoint,\n\t\tAccessKeyID:\t\tAccessKeyID,\n\t\tAccessKeySecret:\taccessKeySecret,\n\t}\n\treturn p, nil\n}",
+    "funcname": "NewLogProject"
+}

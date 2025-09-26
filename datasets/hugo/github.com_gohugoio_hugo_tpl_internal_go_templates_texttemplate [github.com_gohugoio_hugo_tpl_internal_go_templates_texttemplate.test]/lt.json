@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 536,
+    "focalfunc": "func lt(arg1, arg2 reflect.Value) (bool, error)",
+    "funcbody": "func lt(arg1, arg2 reflect.Value) (bool, error) {\n\targ1 = indirectInterface(arg1)\n\tk1, err := basicKind(arg1)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\targ2 = indirectInterface(arg2)\n\tk2, err := basicKind(arg2)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\ttruth := false\n\tif k1 != k2 {\n\n\t\tswitch {\n\t\tcase k1 == intKind && k2 == uintKind:\n\t\t\ttruth = arg1.Int() < 0 || uint64(arg1.Int()) < arg2.Uint()\n\t\tcase k1 == uintKind && k2 == intKind:\n\t\t\ttruth = arg2.Int() >= 0 && arg1.Uint() < uint64(arg2.Int())\n\t\tdefault:\n\t\t\treturn false, errBadComparison\n\t\t}\n\t} else {\n\t\tswitch k1 {\n\t\tcase boolKind, complexKind:\n\t\t\treturn false, errBadComparisonType\n\t\tcase floatKind:\n\t\t\ttruth = arg1.Float() < arg2.Float()\n\t\tcase intKind:\n\t\t\ttruth = arg1.Int() < arg2.Int()\n\t\tcase stringKind:\n\t\t\ttruth = arg1.String() < arg2.String()\n\t\tcase uintKind:\n\t\t\ttruth = arg1.Uint() < arg2.Uint()\n\t\tdefault:\n\t\t\tpanic(\"invalid kind\")\n\t\t}\n\t}\n\treturn truth, nil\n}",
+    "funcname": "lt"
+}

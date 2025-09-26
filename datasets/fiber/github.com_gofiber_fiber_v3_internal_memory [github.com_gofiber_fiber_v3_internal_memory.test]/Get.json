@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/memory/memory.go",
+    "lineno": 33,
+    "focalfunc": "func (s *Storage) Get(key string) any",
+    "funcbody": "func (s *Storage) Get(key string) any {\n\ts.RLock()\n\tv, ok := s.data[key]\n\ts.RUnlock()\n\tif !ok || v.e != 0 && v.e <= utils.Timestamp() {\n\t\treturn nil\n\t}\n\treturn v.v\n}",
+    "funcname": "Get"
+}

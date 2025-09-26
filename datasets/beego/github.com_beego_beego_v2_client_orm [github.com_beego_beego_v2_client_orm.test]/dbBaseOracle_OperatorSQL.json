@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 74,
+    "focalfunc": "func (d *dbBaseOracle) OperatorSQL(operator string) string",
+    "funcbody": "func (d *dbBaseOracle) OperatorSQL(operator string) string {\n\treturn oracleOperators[operator]\n}",
+    "funcname": "OperatorSQL"
+}

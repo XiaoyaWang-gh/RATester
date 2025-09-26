@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/v1/basic/client_server.go",
+    "lineno": 26,
+    "focalfunc": "func renderBindPortConfig(protocol string) string",
+    "funcbody": "func renderBindPortConfig(protocol string) string {\n\tif protocol == \"kcp\" {\n\t\treturn fmt.Sprintf(`kcpBindPort = {{ .%s }}`, consts.PortServerName)\n\t} else if protocol == \"quic\" {\n\t\treturn fmt.Sprintf(`quicBindPort = {{ .%s }}`, consts.PortServerName)\n\t}\n\treturn \"\"\n}",
+    "funcname": "renderBindPortConfig"
+}

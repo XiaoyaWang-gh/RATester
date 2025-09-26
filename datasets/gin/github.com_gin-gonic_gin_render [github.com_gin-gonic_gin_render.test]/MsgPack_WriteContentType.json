@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/msgpack.go",
+    "lineno": 29,
+    "focalfunc": "func (r MsgPack) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r MsgPack) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, msgpackContentType)\n}",
+    "funcname": "WriteContentType"
+}

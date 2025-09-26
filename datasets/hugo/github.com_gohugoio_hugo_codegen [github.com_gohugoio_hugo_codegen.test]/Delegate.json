@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 289,
+    "focalfunc": "func (m Method) Delegate(receiver, delegate string) string",
+    "funcbody": "func (m Method) Delegate(receiver, delegate string) string {\n\tret := \"\"\n\tif len(m.Out) > 0 {\n\t\tret = \"return \"\n\t}\n\treturn fmt.Sprintf(\"%s%s.%s.%s%s\", ret, receiverShort(receiver), delegate, m.Name, m.inOutStr())\n}",
+    "funcname": "Delegate"
+}

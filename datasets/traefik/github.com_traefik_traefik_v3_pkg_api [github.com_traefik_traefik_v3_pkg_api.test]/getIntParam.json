@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 125,
+    "focalfunc": "func getIntParam(request *http.Request, key string, defaultValue int) (int, error)",
+    "funcbody": "func getIntParam(request *http.Request, key string, defaultValue int) (int, error) {\n\traw := request.URL.Query().Get(key)\n\tif raw == \"\" {\n\t\treturn defaultValue, nil\n\t}\n\n\tvalue, err := strconv.Atoi(raw)\n\tif err != nil || value <= 0 {\n\t\treturn 0, fmt.Errorf(\"invalid request: %s: %d\", key, value)\n\t}\n\treturn value, nil\n}",
+    "funcname": "getIntParam"
+}

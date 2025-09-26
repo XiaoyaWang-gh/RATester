@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 243,
+    "focalfunc": "func (m Menu) ByName() Menu",
+    "funcbody": "func (m Menu) ByName() Menu {\n\tconst key = \"menuSort.ByName\"\n\ttitle := func(m1, m2 *MenuEntry) bool {\n\t\treturn compare.LessStrings(m1.Name, m2.Name)\n\t}\n\n\tmenus, _ := smc.get(key, menuEntryBy(title).Sort, m)\n\n\treturn menus\n}",
+    "funcname": "ByName"
+}

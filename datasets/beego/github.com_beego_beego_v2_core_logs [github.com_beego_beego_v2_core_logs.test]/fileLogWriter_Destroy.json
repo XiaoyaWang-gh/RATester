@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 429,
+    "focalfunc": "func (w *fileLogWriter) Destroy()",
+    "funcbody": "func (w *fileLogWriter) Destroy() {\n\tw.fileWriter.Close()\n}",
+    "funcname": "Destroy"
+}

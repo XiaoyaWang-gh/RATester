@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/static.go",
+    "lineno": 133,
+    "focalfunc": "func Static(root string) echo.MiddlewareFunc",
+    "funcbody": "func Static(root string) echo.MiddlewareFunc {\n\tc := DefaultStaticConfig\n\tc.Root = root\n\treturn StaticWithConfig(c)\n}",
+    "funcname": "Static"
+}

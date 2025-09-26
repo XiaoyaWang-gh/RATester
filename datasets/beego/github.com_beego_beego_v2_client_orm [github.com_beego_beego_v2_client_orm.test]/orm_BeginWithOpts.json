@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 537,
+    "focalfunc": "func (o *orm) BeginWithOpts(opts *sql.TxOptions) (TxOrmer, error)",
+    "funcbody": "func (o *orm) BeginWithOpts(opts *sql.TxOptions) (TxOrmer, error) {\n\treturn o.BeginWithCtxAndOpts(context.Background(), opts)\n}",
+    "funcname": "BeginWithOpts"
+}

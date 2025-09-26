@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 59,
+    "focalfunc": "func NewClient(opts ClientOptions) (*Client, error)",
+    "funcbody": "func NewClient(opts ClientOptions) (*Client, error) {\n\tbaseURL, err := url.Parse(pluginsURL)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tsourcesRootPath := filepath.Join(filepath.FromSlash(opts.Output), sourcesFolder)\n\terr = resetDirectory(sourcesRootPath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tgoPath, err := os.MkdirTemp(sourcesRootPath, \"gop-*\")\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create GoPath: %w\", err)\n\t}\n\n\tarchivesPath := filepath.Join(filepath.FromSlash(opts.Output), archivesFolder)\n\terr = os.MkdirAll(archivesPath, 0o755)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create archives directory %s: %w\", archivesPath, err)\n\t}\n\n\tclient := retryablehttp.NewClient()\n\tclient.Logger = logs.NewRetryableHTTPLogger(log.Logger)\n\tclient.HTTPClient = &http.Client{Timeout: 10 * time.Second}\n\tclient.RetryMax = 3\n\n\treturn &Client{\n\t\tHTTPClient:\tclient.StandardClient(),\n\t\tbaseURL:\tbaseURL,\n\n\t\tarchives:\tarchivesPath,\n\t\tstateFile:\tfilepath.Join(archivesPath, stateFilename),\n\n\t\tgoPath:\t\tgoPath,\n\t\tsources:\tfilepath.Join(goPath, goPathSrc),\n\t}, nil\n}",
+    "funcname": "NewClient"
+}

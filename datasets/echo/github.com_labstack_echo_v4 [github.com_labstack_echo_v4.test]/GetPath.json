@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 955,
+    "focalfunc": "func GetPath(r *http.Request) string",
+    "funcbody": "func GetPath(r *http.Request) string {\n\tpath := r.URL.RawPath\n\tif path == \"\" {\n\t\tpath = r.URL.Path\n\t}\n\treturn path\n}",
+    "funcname": "GetPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/format.go",
+    "lineno": 46,
+    "focalfunc": "func FormatFromString(formatStr string) Format",
+    "funcbody": "func FormatFromString(formatStr string) Format {\n\tformatStr = strings.ToLower(formatStr)\n\tif strings.Contains(formatStr, \".\") {\n\n\t\tformatStr = strings.TrimPrefix(filepath.Ext(formatStr), \".\")\n\t}\n\tswitch formatStr {\n\tcase \"yaml\", \"yml\":\n\t\treturn YAML\n\tcase \"json\":\n\t\treturn JSON\n\tcase \"toml\":\n\t\treturn TOML\n\tcase \"org\":\n\t\treturn ORG\n\tcase \"csv\":\n\t\treturn CSV\n\tcase \"xml\":\n\t\treturn XML\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "FormatFromString"
+}

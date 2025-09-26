@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/internal/bytesconv/bytesconv.go",
+    "lineno": 19,
+    "focalfunc": "func BytesToString(b []byte) string",
+    "funcbody": "func BytesToString(b []byte) string {\n\treturn unsafe.String(unsafe.SliceData(b), len(b))\n}",
+    "funcname": "BytesToString"
+}

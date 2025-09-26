@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 350,
+    "focalfunc": "func (b *BeegoHTTPRequest) JSONMarshal(obj interface{}) ([]byte, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) JSONMarshal(obj interface{}) ([]byte, error) {\n\tbf := bytes.NewBuffer([]byte{})\n\tjsonEncoder := json.NewEncoder(bf)\n\tjsonEncoder.SetEscapeHTML(b.setting.EscapeHTML)\n\terr := jsonEncoder.Encode(obj)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn bf.Bytes(), nil\n}",
+    "funcname": "JSONMarshal"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect_msgp.go",
+    "lineno": 266,
+    "focalfunc": "func (z redirectionMsgs) Msgsize() (s int)",
+    "funcbody": "func (z redirectionMsgs) Msgsize() (s int) {\n\ts = msgp.ArrayHeaderSize\n\tfor zb0003 := range z {\n\t\ts += z[zb0003].Msgsize()\n\t}\n\treturn\n}",
+    "funcname": "Msgsize"
+}

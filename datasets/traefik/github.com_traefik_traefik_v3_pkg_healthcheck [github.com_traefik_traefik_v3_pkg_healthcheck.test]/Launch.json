@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/healthcheck/healthcheck.go",
+    "lineno": 96,
+    "focalfunc": "func (shc *ServiceHealthChecker) Launch(ctx context.Context)",
+    "funcbody": "func (shc *ServiceHealthChecker) Launch(ctx context.Context) {\n\tticker := time.NewTicker(shc.interval)\n\tdefer ticker.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\n\t\tcase <-ticker.C:\n\t\t\tfor proxyName, target := range shc.targets {\n\t\t\t\tselect {\n\t\t\t\tcase <-ctx.Done():\n\t\t\t\t\treturn\n\t\t\t\tdefault:\n\t\t\t\t}\n\n\t\t\t\tup := true\n\t\t\t\tserverUpMetricValue := float64(1)\n\n\t\t\t\tif err := shc.executeHealthCheck(ctx, shc.config, target); err != nil {\n\n\t\t\t\t\tif errors.Is(err, context.Canceled) {\n\t\t\t\t\t\treturn\n\t\t\t\t\t}\n\n\t\t\t\t\tlog.Ctx(ctx).Warn().\n\t\t\t\t\t\tStr(\"targetURL\", target.String()).\n\t\t\t\t\t\tErr(err).\n\t\t\t\t\t\tMsg(\"Health check failed.\")\n\n\t\t\t\t\tup = false\n\t\t\t\t\tserverUpMetricValue = float64(0)\n\t\t\t\t}\n\n\t\t\t\tshc.balancer.SetStatus(ctx, proxyName, up)\n\n\t\t\t\tstatusStr := runtime.StatusDown\n\t\t\t\tif up {\n\t\t\t\t\tstatusStr = runtime.StatusUp\n\t\t\t\t}\n\n\t\t\t\tshc.info.UpdateServerStatus(target.String(), statusStr)\n\n\t\t\t\tshc.metrics.ServiceServerUpGauge().\n\t\t\t\t\tWith(\"service\", shc.serviceName, \"url\", target.String()).\n\t\t\t\t\tSet(serverUpMetricValue)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "Launch"
+}

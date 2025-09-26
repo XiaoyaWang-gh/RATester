@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 769,
+    "focalfunc": "func (j *JsonbField) SetRaw(value interface{}) error",
+    "funcbody": "func (j *JsonbField) SetRaw(value interface{}) error {\n\tswitch d := value.(type) {\n\tcase string:\n\t\tj.Set(d)\n\tdefault:\n\t\treturn fmt.Errorf(\"<JsonbField.SetRaw> unknown value `%s`\", value)\n\t}\n\treturn nil\n}",
+    "funcname": "SetRaw"
+}

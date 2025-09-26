@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 76,
+    "focalfunc": "func NewHTTPGroup(ctl *HTTPGroupController) *HTTPGroup",
+    "funcbody": "func NewHTTPGroup(ctl *HTTPGroupController) *HTTPGroup {\n\treturn &HTTPGroup{\n\t\tcreateFuncs:\tmake(map[string]vhost.CreateConnFunc),\n\t\tpxyNames:\tmake([]string, 0),\n\t\tctl:\t\tctl,\n\t}\n}",
+    "funcname": "NewHTTPGroup"
+}

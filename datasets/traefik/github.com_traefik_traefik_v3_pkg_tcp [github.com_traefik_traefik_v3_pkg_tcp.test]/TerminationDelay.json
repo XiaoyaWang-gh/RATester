@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/dialer.go",
+    "lineno": 34,
+    "focalfunc": "func (d tcpDialer) TerminationDelay() time.Duration",
+    "funcbody": "func (d tcpDialer) TerminationDelay() time.Duration {\n\treturn d.terminationDelay\n}",
+    "funcname": "TerminationDelay"
+}

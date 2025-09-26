@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/rst/convert.go",
+    "lineno": 35,
+    "focalfunc": "func (p provider) New(cfg converter.ProviderConfig) (converter.Provider, error)",
+    "funcbody": "func (p provider) New(cfg converter.ProviderConfig) (converter.Provider, error) {\n\treturn converter.NewProvider(\"rst\", func(ctx converter.DocumentContext) (converter.Converter, error) {\n\t\treturn &rstConverter{\n\t\t\tctx:\tctx,\n\t\t\tcfg:\tcfg,\n\t\t}, nil\n\t}), nil\n}",
+    "funcname": "New"
+}

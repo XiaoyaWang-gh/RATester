@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 188,
+    "focalfunc": "func indexArg(index reflect.Value, cap int) (int, error)",
+    "funcbody": "func indexArg(index reflect.Value, cap int) (int, error) {\n\tvar x int64\n\tswitch index.Kind() {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\tx = index.Int()\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:\n\t\tx = int64(index.Uint())\n\tcase reflect.Invalid:\n\t\treturn 0, fmt.Errorf(\"cannot index slice/array with nil\")\n\tdefault:\n\t\treturn 0, fmt.Errorf(\"cannot index slice/array with type %s\", index.Type())\n\t}\n\tif x < 0 || int(x) < 0 || int(x) > cap {\n\t\treturn 0, fmt.Errorf(\"index out of range: %d\", x)\n\t}\n\treturn int(x), nil\n}",
+    "funcname": "indexArg"
+}

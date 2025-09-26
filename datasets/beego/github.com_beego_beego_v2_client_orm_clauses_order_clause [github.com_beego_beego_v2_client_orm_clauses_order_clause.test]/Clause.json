@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 25,
+    "focalfunc": "func Clause(options ...Option) *Order",
+    "funcbody": "func Clause(options ...Option) *Order {\n\to := &Order{}\n\tfor _, option := range options {\n\t\toption(o)\n\t}\n\n\treturn o\n}",
+    "funcname": "Clause"
+}

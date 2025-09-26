@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_m.go",
+    "lineno": 50,
+    "focalfunc": "func AddModelFields(mi *ModelInfo, ind reflect.Value, mName string, index []int)",
+    "funcbody": "func AddModelFields(mi *ModelInfo, ind reflect.Value, mName string, index []int) {\n\tvar (\n\t\terr\terror\n\t\tfi\t*FieldInfo\n\t\tsf\treflect.StructField\n\t)\n\n\tfor i := 0; i < ind.NumField(); i++ {\n\t\tfield := ind.Field(i)\n\t\tsf = ind.Type().Field(i)\n\n\t\tif sf.PkgPath != \"\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tif sf.Anonymous {\n\t\t\tAddModelFields(mi, field, mName+\".\"+sf.Name, append(index, i))\n\t\t\tcontinue\n\t\t}\n\n\t\tfi, err = NewFieldInfo(mi, field, sf, mName)\n\t\tif err == errSkipField {\n\t\t\terr = nil\n\t\t\tcontinue\n\t\t} else if err != nil {\n\t\t\tbreak\n\t\t}\n\n\t\tfi.FieldIndex = append(fi.FieldIndex, index...)\n\t\tfi.FieldIndex = append(fi.FieldIndex, i)\n\t\tfi.Mi = mi\n\t\tfi.InModel = true\n\t\tif !mi.Fields.Add(fi) {\n\t\t\terr = fmt.Errorf(\"duplicate column name: %s\", fi.Column)\n\t\t\tbreak\n\t\t}\n\t\tif fi.Pk {\n\t\t\tif mi.Fields.Pk != nil {\n\t\t\t\terr = fmt.Errorf(\"one model must have one pk field only\")\n\t\t\t\tbreak\n\t\t\t} else {\n\t\t\t\tmi.Fields.Pk = fi\n\t\t\t}\n\t\t}\n\t}\n\n\tif err != nil {\n\t\tfmt.Println(fmt.Errorf(\"field: %s.%s, %s\", ind.Type(), sf.Name, err))\n\t\tos.Exit(2)\n\t}\n}",
+    "funcname": "AddModelFields"
+}

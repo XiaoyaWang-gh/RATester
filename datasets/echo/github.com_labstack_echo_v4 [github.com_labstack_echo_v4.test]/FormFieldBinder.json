@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 151,
+    "focalfunc": "func FormFieldBinder(c Context) *ValueBinder",
+    "funcbody": "func FormFieldBinder(c Context) *ValueBinder {\n\tvb := &ValueBinder{\n\t\tfailFast:\ttrue,\n\t\tValueFunc: func(sourceParam string) string {\n\t\t\treturn c.Request().FormValue(sourceParam)\n\t\t},\n\t\tErrorFunc:\tNewBindingError,\n\t}\n\tvb.ValuesFunc = func(sourceParam string) []string {\n\t\tif c.Request().Form == nil {\n\n\t\t\t_ = c.Request().ParseMultipartForm(32 << 20)\n\t\t}\n\t\tvalues, ok := c.Request().Form[sourceParam]\n\t\tif !ok {\n\t\t\treturn nil\n\t\t}\n\t\treturn values\n\t}\n\n\treturn vb\n}",
+    "funcname": "FormFieldBinder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 91,
+    "focalfunc": "func (be *BindingError) Error() string",
+    "funcbody": "func (be *BindingError) Error() string {\n\treturn fmt.Sprintf(\"%s, field=%s\", be.HTTPError.Error(), be.Field)\n}",
+    "funcname": "Error"
+}

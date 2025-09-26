@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 228,
+    "focalfunc": "func (l *UDPListener) WriteMsg(buf []byte, remoteAddr *net.UDPAddr) (err error)",
+    "funcbody": "func (l *UDPListener) WriteMsg(buf []byte, remoteAddr *net.UDPAddr) (err error) {\n\n\tpacket := &UDPPacket{\n\t\tBuf:\t\tbuf,\n\t\tRemoteAddr:\tremoteAddr,\n\t}\n\terr = l.writeUDPPacket(packet)\n\treturn\n}",
+    "funcname": "WriteMsg"
+}

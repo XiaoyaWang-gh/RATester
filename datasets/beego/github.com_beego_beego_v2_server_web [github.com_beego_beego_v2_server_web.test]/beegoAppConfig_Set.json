@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 771,
+    "focalfunc": "func (b *beegoAppConfig) Set(key, val string) error",
+    "funcbody": "func (b *beegoAppConfig) Set(key, val string) error {\n\tif err := b.innerConfig.Set(BConfig.RunMode+\"::\"+key, val); err != nil {\n\t\treturn b.innerConfig.Set(key, val)\n\t}\n\treturn nil\n}",
+    "funcname": "Set"
+}

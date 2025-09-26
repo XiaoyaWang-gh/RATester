@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_queryM2Mer.go",
+    "lineno": 39,
+    "focalfunc": "func (d *DoNothingQueryM2Mer) ClearWithCtx(ctx context.Context) (int64, error)",
+    "funcbody": "func (d *DoNothingQueryM2Mer) ClearWithCtx(ctx context.Context) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "ClearWithCtx"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1852,
+    "focalfunc": "func (c *DefaultCtx) Bind() *Bind",
+    "funcbody": "func (c *DefaultCtx) Bind() *Bind {\n\tif c.bind == nil {\n\t\tc.bind = &Bind{\n\t\t\tctx:\tc,\n\t\t\tshould:\ttrue,\n\t\t}\n\t}\n\treturn c.bind\n}",
+    "funcname": "Bind"
+}

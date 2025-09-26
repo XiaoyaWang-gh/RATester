@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 253,
+    "focalfunc": "func (f *fieldInfo) paths(prefix string) []string",
+    "funcbody": "func (f *fieldInfo) paths(prefix string) []string {\n\tif f.alias == f.canonicalAlias {\n\t\treturn []string{prefix + f.alias}\n\t}\n\treturn []string{prefix + f.alias, prefix + f.canonicalAlias}\n}",
+    "funcname": "paths"
+}

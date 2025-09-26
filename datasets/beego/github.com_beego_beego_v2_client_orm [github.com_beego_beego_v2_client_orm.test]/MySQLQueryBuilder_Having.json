@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 134,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Having(cond string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Having(cond string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"HAVING\", cond)\n\treturn qb\n}",
+    "funcname": "Having"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 89,
+    "focalfunc": "func (s *JLWriter) Destroy()",
+    "funcbody": "func (s *JLWriter) Destroy() {\n}",
+    "funcname": "Destroy"
+}

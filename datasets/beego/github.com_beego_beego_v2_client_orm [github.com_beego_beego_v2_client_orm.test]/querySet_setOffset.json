@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 119,
+    "focalfunc": "func (o *querySet) setOffset(num interface{})",
+    "funcbody": "func (o *querySet) setOffset(num interface{}) {\n\to.offset = utils.ToInt64(num)\n}",
+    "funcname": "setOffset"
+}

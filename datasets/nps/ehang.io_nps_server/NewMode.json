@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 126,
+    "focalfunc": "func NewMode(Bridge *bridge.Bridge, c *file.Tunnel) proxy.Service",
+    "funcbody": "func NewMode(Bridge *bridge.Bridge, c *file.Tunnel) proxy.Service {\n\tvar service proxy.Service\n\tswitch c.Mode {\n\tcase \"tcp\", \"file\":\n\t\tservice = proxy.NewTunnelModeServer(proxy.ProcessTunnel, Bridge, c)\n\tcase \"socks5\":\n\t\tservice = proxy.NewSock5ModeServer(Bridge, c)\n\tcase \"httpProxy\":\n\t\tservice = proxy.NewTunnelModeServer(proxy.ProcessHttp, Bridge, c)\n\tcase \"tcpTrans\":\n\t\tservice = proxy.NewTunnelModeServer(proxy.HandleTrans, Bridge, c)\n\tcase \"udp\":\n\t\tservice = proxy.NewUdpModeServer(Bridge, c)\n\tcase \"webServer\":\n\t\tInitFromCsv()\n\t\tt := &file.Tunnel{\n\t\t\tPort:\t0,\n\t\t\tMode:\t\"httpHostServer\",\n\t\t\tStatus:\ttrue,\n\t\t}\n\t\tAddTask(t)\n\t\tservice = proxy.NewWebServer(Bridge)\n\tcase \"httpHostServer\":\n\t\thttpPort, _ := beego.AppConfig.Int(\"http_proxy_port\")\n\t\thttpsPort, _ := beego.AppConfig.Int(\"https_proxy_port\")\n\t\tuseCache, _ := beego.AppConfig.Bool(\"http_cache\")\n\t\tcacheLen, _ := beego.AppConfig.Int(\"http_cache_length\")\n\t\taddOrigin, _ := beego.AppConfig.Bool(\"http_add_origin_header\")\n\t\tservice = proxy.NewHttp(Bridge, c, httpPort, httpsPort, useCache, cacheLen, addOrigin)\n\t}\n\treturn service\n}",
+    "funcname": "NewMode"
+}

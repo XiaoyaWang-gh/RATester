@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 568,
+    "focalfunc": "func (c *DefaultCtx) FormFile(key string) (*multipart.FileHeader, error)",
+    "funcbody": "func (c *DefaultCtx) FormFile(key string) (*multipart.FileHeader, error) {\n\treturn c.fasthttp.FormFile(key)\n}",
+    "funcname": "FormFile"
+}

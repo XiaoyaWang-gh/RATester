@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 377,
+    "focalfunc": "func encodeWord(charset, s string) string",
+    "funcbody": "func encodeWord(charset, s string) string {\n\tbuf := getBuffer()\n\n\tbuf.WriteString(\"=?\")\n\tbuf.WriteString(charset)\n\tbuf.WriteByte('?')\n\tbuf.WriteByte('q')\n\tbuf.WriteByte('?')\n\n\tenc := make([]byte, 3)\n\tfor i := 0; i < len(s); i++ {\n\t\tb := s[i]\n\t\tswitch {\n\t\tcase b == ' ':\n\t\t\tbuf.WriteByte('_')\n\t\tcase b <= '~' && b >= '!' && b != '=' && b != '?' && b != '_':\n\t\t\tbuf.WriteByte(b)\n\t\tdefault:\n\t\t\tenc[0] = '='\n\t\t\tenc[1] = upperhex[b>>4]\n\t\t\tenc[2] = upperhex[b&0x0f]\n\t\t\tbuf.Write(enc)\n\t\t}\n\t}\n\tbuf.WriteString(\"?=\")\n\n\tes := buf.String()\n\tputBuffer(buf)\n\treturn es\n}",
+    "funcname": "encodeWord"
+}

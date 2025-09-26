@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 654,
+    "focalfunc": "func eatTagName(s []byte, i int) (int, element)",
+    "funcbody": "func eatTagName(s []byte, i int) (int, element) {\n\tif i == len(s) || !asciiAlpha(s[i]) {\n\t\treturn i, elementNone\n\t}\n\tj := i + 1\n\tfor j < len(s) {\n\t\tx := s[j]\n\t\tif asciiAlphaNum(x) {\n\t\t\tj++\n\t\t\tcontinue\n\t\t}\n\n\t\tif (x == ':' || x == '-') && j+1 < len(s) && asciiAlphaNum(s[j+1]) {\n\t\t\tj += 2\n\t\t\tcontinue\n\t\t}\n\t\tbreak\n\t}\n\treturn j, elementNameMap[strings.ToLower(string(s[i:j]))]\n}",
+    "funcname": "eatTagName"
+}

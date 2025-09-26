@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/adaptor/adaptor.go",
+    "lineno": 124,
+    "focalfunc": "func FiberHandler(h fiber.Handler) http.Handler",
+    "funcbody": "func FiberHandler(h fiber.Handler) http.Handler {\n\treturn FiberHandlerFunc(h)\n}",
+    "funcname": "FiberHandler"
+}

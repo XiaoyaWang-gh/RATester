@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 272,
+    "focalfunc": "func (s *Conn) Close() error",
+    "funcbody": "func (s *Conn) Close() error {\n\treturn s.Conn.Close()\n}",
+    "funcname": "Close"
+}

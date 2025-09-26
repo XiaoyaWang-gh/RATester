@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 431,
+    "focalfunc": "func (cfg *BuildCfg) shouldRender(p *pageState) bool",
+    "funcbody": "func (cfg *BuildCfg) shouldRender(p *pageState) bool {\n\tif p.skipRender() {\n\t\treturn false\n\t}\n\n\tif !p.renderOnce {\n\t\treturn true\n\t}\n\n\tshouldRender := p.renderState == 0\n\n\tif !shouldRender {\n\t\treturn false\n\t}\n\n\tfastRenderMode := p.s.Conf.FastRenderMode()\n\n\tif !fastRenderMode || p.s.h.buildCounter.Load() == 0 {\n\t\treturn shouldRender\n\t}\n\n\tif !p.render {\n\n\t\treturn false\n\t}\n\n\tif p.outputFormat().IsHTML {\n\n\t\treturn cfg.RecentlyVisited.Contains(p.RelPermalink())\n\t}\n\n\tfor _, po := range p.pageOutputs {\n\t\tif po.render && po.f.IsHTML && cfg.RecentlyVisited.Contains(po.RelPermalink()) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "shouldRender"
+}

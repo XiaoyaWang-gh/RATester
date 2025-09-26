@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 56,
+    "focalfunc": "func (d *DoNothingOrm) LoadRelated(md interface{}, name string, args ...utils.KV) (int64, error)",
+    "funcbody": "func (d *DoNothingOrm) LoadRelated(md interface{}, name string, args ...utils.KV) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "LoadRelated"
+}

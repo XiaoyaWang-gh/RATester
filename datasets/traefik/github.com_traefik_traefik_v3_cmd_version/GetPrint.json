@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/version/version.go",
+    "lineno": 37,
+    "focalfunc": "func GetPrint(wr io.Writer) error",
+    "funcbody": "func GetPrint(wr io.Writer) error {\n\ttmpl, err := template.New(\"\").Parse(versionTemplate)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tv := struct {\n\t\tVersion\t\tstring\n\t\tCodename\tstring\n\t\tGoVersion\tstring\n\t\tBuildTime\tstring\n\t\tOs\t\tstring\n\t\tArch\t\tstring\n\t}{\n\t\tVersion:\tversion.Version,\n\t\tCodename:\tversion.Codename,\n\t\tGoVersion:\truntime.Version(),\n\t\tBuildTime:\tversion.BuildDate,\n\t\tOs:\t\truntime.GOOS,\n\t\tArch:\t\truntime.GOARCH,\n\t}\n\n\treturn tmpl.Execute(wr, v)\n}",
+    "funcname": "GetPrint"
+}

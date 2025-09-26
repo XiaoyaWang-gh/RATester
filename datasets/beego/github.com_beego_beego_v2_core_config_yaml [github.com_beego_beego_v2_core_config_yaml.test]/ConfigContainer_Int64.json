@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 184,
+    "focalfunc": "func (c *ConfigContainer) Int64(key string) (int64, error)",
+    "funcbody": "func (c *ConfigContainer) Int64(key string) (int64, error) {\n\tv, err := c.getData(key)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tswitch val := v.(type) {\n\tcase int:\n\t\treturn int64(val), nil\n\tcase int64:\n\t\treturn val, nil\n\tdefault:\n\t\treturn 0, errors.New(\"not int or int64 value\")\n\t}\n}",
+    "funcname": "Int64"
+}

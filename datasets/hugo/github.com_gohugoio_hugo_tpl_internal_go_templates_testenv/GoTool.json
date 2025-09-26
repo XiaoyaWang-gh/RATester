@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 219,
+    "focalfunc": "func GoTool() (string, error)",
+    "funcbody": "func GoTool() (string, error) {\n\tif !HasGoBuild() {\n\t\treturn \"\", errors.New(\"platform cannot run go tool\")\n\t}\n\tgoToolOnce.Do(func() {\n\t\tgoToolPath, goToolErr = exec.LookPath(\"go\")\n\t})\n\treturn goToolPath, goToolErr\n}",
+    "funcname": "GoTool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 139,
+    "focalfunc": "func (p *Provider) RegisterBackendFuncs(group, kind string, builderFunc BuildBackendFunc)",
+    "funcbody": "func (p *Provider) RegisterBackendFuncs(group, kind string, builderFunc BuildBackendFunc) {\n\tif p.groupKindBackendFuncs == nil {\n\t\tp.groupKindBackendFuncs = map[string]map[string]BuildBackendFunc{}\n\t}\n\n\tif p.groupKindBackendFuncs[group] == nil {\n\t\tp.groupKindBackendFuncs[group] = map[string]BuildBackendFunc{}\n\t}\n\n\tp.groupKindBackendFuncs[group][kind] = builderFunc\n}",
+    "funcname": "RegisterBackendFuncs"
+}

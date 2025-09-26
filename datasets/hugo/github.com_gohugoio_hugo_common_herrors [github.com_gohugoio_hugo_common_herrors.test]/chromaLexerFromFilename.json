@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/error_locator.go",
+    "lineno": 105,
+    "focalfunc": "func chromaLexerFromFilename(filename string) string",
+    "funcbody": "func chromaLexerFromFilename(filename string) string {\n\tif strings.Contains(filename, \"layouts\") {\n\t\treturn \"go-html-template\"\n\t}\n\n\text := extNoDelimiter(filename)\n\treturn chromaLexerFromType(ext)\n}",
+    "funcname": "chromaLexerFromFilename"
+}

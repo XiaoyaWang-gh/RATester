@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 95,
+    "focalfunc": "func (mc *ModelCache) Clean()",
+    "funcbody": "func (mc *ModelCache) Clean() {\n\tmc.Lock()\n\tdefer mc.Unlock()\n\n\tmc.orders = make([]string, 0)\n\tmc.cache = make(map[string]*ModelInfo)\n\tmc.cacheByFullName = make(map[string]*ModelInfo)\n\tmc.done = false\n}",
+    "funcname": "Clean"
+}

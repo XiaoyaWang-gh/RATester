@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 172,
+    "focalfunc": "func (ctl *Control) handleNatHoleResp(m msg.Message)",
+    "funcbody": "func (ctl *Control) handleNatHoleResp(m msg.Message) {\n\txl := ctl.xl\n\tinMsg := m.(*msg.NatHoleResp)\n\n\tok := ctl.msgTransporter.DispatchWithType(inMsg, msg.TypeNameNatHoleResp, inMsg.TransactionID)\n\tif !ok {\n\t\txl.Tracef(\"dispatch NatHoleResp message to related proxy error\")\n\t}\n}",
+    "funcname": "handleNatHoleResp"
+}

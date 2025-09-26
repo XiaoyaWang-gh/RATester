@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 89,
+    "focalfunc": "func (ns *Namespace) Highlight(s any, lang string, opts ...any) (template.HTML, error)",
+    "funcbody": "func (ns *Namespace) Highlight(s any, lang string, opts ...any) (template.HTML, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tvar optsv any\n\tif len(opts) > 0 {\n\t\toptsv = opts[0]\n\t}\n\n\thl := ns.deps.ContentSpec.Converters.GetHighlighter()\n\thighlighted, err := hl.Highlight(ss, lang, optsv)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn template.HTML(highlighted), nil\n}",
+    "funcname": "Highlight"
+}

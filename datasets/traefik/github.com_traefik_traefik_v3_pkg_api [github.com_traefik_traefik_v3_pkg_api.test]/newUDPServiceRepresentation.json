@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_udp.go",
+    "lineno": 37,
+    "focalfunc": "func newUDPServiceRepresentation(name string, si *runtime.UDPServiceInfo) udpServiceRepresentation",
+    "funcbody": "func newUDPServiceRepresentation(name string, si *runtime.UDPServiceInfo) udpServiceRepresentation {\n\treturn udpServiceRepresentation{\n\t\tUDPServiceInfo:\tsi,\n\t\tName:\t\tname,\n\t\tProvider:\tgetProviderName(name),\n\t\tType:\t\tstrings.ToLower(extractType(si.UDPService)),\n\t}\n}",
+    "funcname": "newUDPServiceRepresentation"
+}

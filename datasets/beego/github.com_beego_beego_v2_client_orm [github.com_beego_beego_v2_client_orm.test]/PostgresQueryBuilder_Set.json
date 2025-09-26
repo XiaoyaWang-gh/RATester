@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 176,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Set(kv ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Set(kv ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"SET\", strings.Join(kv, CommaSpace))\n\treturn qb\n}",
+    "funcname": "Set"
+}

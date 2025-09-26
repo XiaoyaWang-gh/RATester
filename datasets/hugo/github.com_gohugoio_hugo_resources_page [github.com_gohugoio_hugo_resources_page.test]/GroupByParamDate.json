@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 332,
+    "focalfunc": "func (p Pages) GroupByParamDate(key string, format string, order ...string) (PagesGroup, error)",
+    "funcbody": "func (p Pages) GroupByParamDate(key string, format string, order ...string) (PagesGroup, error) {\n\n\tdates := make(map[Page]time.Time)\n\n\tsorter := func(pages Pages) Pages {\n\t\tvar r Pages\n\n\t\tfor _, p := range pages {\n\t\t\tparam := resource.GetParam(p, key)\n\t\t\tvar t time.Time\n\n\t\t\tif param != nil {\n\t\t\t\tvar ok bool\n\t\t\t\tif t, ok = param.(time.Time); !ok {\n\n\t\t\t\t\tt = cast.ToTime(param)\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tdates[p] = t\n\t\t\tr = append(r, p)\n\t\t}\n\n\t\tpdate := func(p1, p2 Page) bool {\n\t\t\treturn dates[p1].Unix() < dates[p2].Unix()\n\t\t}\n\t\tpageBy(pdate).Sort(r)\n\t\treturn r\n\t}\n\tgetDate := func(p Page) time.Time {\n\t\treturn dates[p]\n\t}\n\treturn p.groupByDateField(format, sorter, getDate, order...)\n}",
+    "funcname": "GroupByParamDate"
+}

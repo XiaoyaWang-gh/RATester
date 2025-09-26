@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/readers.go",
+    "lineno": 51,
+    "focalfunc": "func NewReadSeekerNoOpCloser(r ReadSeeker) ReadSeekCloser",
+    "funcbody": "func NewReadSeekerNoOpCloser(r ReadSeeker) ReadSeekCloser {\n\treturn readSeekerNopCloser{r}\n}",
+    "funcname": "NewReadSeekerNoOpCloser"
+}

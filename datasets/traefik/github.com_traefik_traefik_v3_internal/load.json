@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 361,
+    "focalfunc": "func (c client) load(parentKey string, conf map[string]interface{}) error",
+    "funcbody": "func (c client) load(parentKey string, conf map[string]interface{}) error {\n\tfor k, v := range conf {\n\t\tswitch entry := v.(type) {\n\t\tcase map[string]interface{}:\n\t\t\tkey := path.Join(parentKey, k)\n\n\t\t\tif len(entry) == 0 {\n\t\t\t\terr := c.store.Put(key, nil, nil)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\terr := c.load(key, entry)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t}\n\t\tcase []map[string]interface{}:\n\t\t\tfor i, o := range entry {\n\t\t\t\tkey := path.Join(parentKey, k, strconv.Itoa(i))\n\n\t\t\t\tif err := c.load(key, o); err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t}\n\t\tcase []interface{}:\n\t\t\tfor i, o := range entry {\n\t\t\t\tkey := path.Join(parentKey, k, strconv.Itoa(i))\n\n\t\t\t\terr := c.store.Put(key, []byte(fmt.Sprintf(\"%v\", o)), nil)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t}\n\t\tdefault:\n\t\t\tkey := path.Join(parentKey, k)\n\n\t\t\terr := c.store.Put(key, []byte(fmt.Sprintf(\"%v\", v)), nil)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "load"
+}

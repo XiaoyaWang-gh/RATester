@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 265,
+    "focalfunc": "func PrintFs(fs afero.Fs, path string, w io.Writer)",
+    "funcbody": "func PrintFs(fs afero.Fs, path string, w io.Writer) {\n\tif fs == nil {\n\t\treturn\n\t}\n\n\tafero.Walk(fs, path, func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\tpanic(fmt.Sprintf(\"error: path %q: %s\", path, err))\n\t\t}\n\t\tpath = filepath.ToSlash(path)\n\t\tif path == \"\" {\n\t\t\tpath = \".\"\n\t\t}\n\t\tfmt.Fprintln(w, path, info.IsDir())\n\t\treturn nil\n\t})\n}",
+    "funcname": "PrintFs"
+}

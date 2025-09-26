@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 198,
+    "focalfunc": "func (c *Cache) GetOrCreate(id string, create func() (io.ReadCloser, error)) (ItemInfo, io.ReadCloser, error)",
+    "funcbody": "func (c *Cache) GetOrCreate(id string, create func() (io.ReadCloser, error)) (ItemInfo, io.ReadCloser, error) {\n\tif err := c.init(); err != nil {\n\t\treturn ItemInfo{}, nil, err\n\t}\n\tid = cleanID(id)\n\n\tc.nlocker.Lock(id)\n\tdefer c.nlocker.Unlock(id)\n\n\tinfo := ItemInfo{Name: id}\n\n\tif r := c.getOrRemove(id); r != nil {\n\t\treturn info, r, nil\n\t}\n\n\tvar (\n\t\tr\tio.ReadCloser\n\t\terr\terror\n\t)\n\n\tr, err = create()\n\tif err != nil {\n\t\treturn info, nil, err\n\t}\n\n\tif c.maxAge == 0 {\n\n\t\treturn info, hugio.ToReadCloser(r), nil\n\t}\n\n\tvar buff bytes.Buffer\n\treturn info,\n\t\thugio.ToReadCloser(&buff),\n\t\tc.writeReader(id, io.TeeReader(r, &buff))\n}",
+    "funcname": "GetOrCreate"
+}

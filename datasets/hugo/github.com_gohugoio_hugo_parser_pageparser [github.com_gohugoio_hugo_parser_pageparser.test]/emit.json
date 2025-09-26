@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 142,
+    "focalfunc": "func (l *pageLexer) emit(t ItemType)",
+    "funcbody": "func (l *pageLexer) emit(t ItemType) {\n\tdefer func() {\n\t\tl.start = l.pos\n\t}()\n\n\tif t == tText {\n\n\t\tfor i := l.pos - 1; i >= l.start; i-- {\n\t\t\tb := l.input[i]\n\t\t\tif b != ' ' && b != '\\t' && b != '\\r' && b != '\\n' {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tif i == l.start && b != '\\n' {\n\t\t\t\tl.append(Item{Type: tIndentation, low: l.start, high: l.pos})\n\t\t\t\treturn\n\t\t\t} else if b == '\\n' && i < l.pos-1 {\n\t\t\t\tl.append(Item{Type: t, low: l.start, high: i + 1})\n\t\t\t\tl.append(Item{Type: tIndentation, low: i + 1, high: l.pos})\n\t\t\t\treturn\n\t\t\t} else if b == '\\n' && i == l.pos-1 {\n\t\t\t\tbreak\n\t\t\t}\n\n\t\t}\n\t}\n\n\tl.append(Item{Type: t, low: l.start, high: l.pos})\n}",
+    "funcname": "emit"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 80,
+    "focalfunc": "func (s *IndexController) GetTunnel()",
+    "funcbody": "func (s *IndexController) GetTunnel() {\n\tstart, length := s.GetAjaxParams()\n\ttaskType := s.getEscapeString(\"type\")\n\tclientId := s.GetIntNoErr(\"client_id\")\n\tlist, cnt := server.GetTunnel(start, length, taskType, clientId, s.getEscapeString(\"search\"))\n\ts.AjaxTable(list, cnt, cnt, nil)\n}",
+    "funcname": "GetTunnel"
+}

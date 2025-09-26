@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 164,
+    "focalfunc": "func (cc *codeCatcher) isFilteredCode() bool",
+    "funcbody": "func (cc *codeCatcher) isFilteredCode() bool {\n\treturn cc.caughtFilteredCode\n}",
+    "funcname": "isFilteredCode"
+}

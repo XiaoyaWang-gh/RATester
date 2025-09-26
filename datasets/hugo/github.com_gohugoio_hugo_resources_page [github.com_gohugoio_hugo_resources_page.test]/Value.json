@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 97,
+    "focalfunc": "func (s HtmlSummary) Value(l types.LowHigh[string]) string",
+    "funcbody": "func (s HtmlSummary) Value(l types.LowHigh[string]) string {\n\treturn s.source[l.Low:l.High]\n}",
+    "funcname": "Value"
+}

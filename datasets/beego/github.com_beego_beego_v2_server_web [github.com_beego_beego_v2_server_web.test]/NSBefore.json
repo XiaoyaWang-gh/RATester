@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 339,
+    "focalfunc": "func NSBefore(filterList ...FilterFunc) LinkNamespace",
+    "funcbody": "func NSBefore(filterList ...FilterFunc) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Filter(\"before\", filterList...)\n\t}\n}",
+    "funcname": "NSBefore"
+}

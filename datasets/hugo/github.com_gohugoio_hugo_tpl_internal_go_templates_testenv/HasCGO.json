@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 265,
+    "focalfunc": "func HasCGO() bool",
+    "funcbody": "func HasCGO() bool {\n\thasCgoOnce.Do(func() {\n\t\tgoTool, err := GoTool()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tcmd := exec.Command(goTool, \"env\", \"CGO_ENABLED\")\n\t\tcmd.Env = origEnv\n\t\tout, err := cmd.Output()\n\t\tif err != nil {\n\t\t\tpanic(fmt.Sprintf(\"%v: %v\", cmd, out))\n\t\t}\n\t\thasCgo, err = strconv.ParseBool(string(bytes.TrimSpace(out)))\n\t\tif err != nil {\n\t\t\tpanic(fmt.Sprintf(\"%v: non-boolean output %q\", cmd, out))\n\t\t}\n\t})\n\treturn hasCgo\n}",
+    "funcname": "HasCGO"
+}

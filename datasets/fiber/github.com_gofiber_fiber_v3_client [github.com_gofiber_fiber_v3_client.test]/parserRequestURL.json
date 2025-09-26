@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/hooks.go",
+    "lineno": 62,
+    "focalfunc": "func parserRequestURL(c *Client, req *Request) error",
+    "funcbody": "func parserRequestURL(c *Client, req *Request) error {\n\tsplitURL := strings.Split(req.url, \"?\")\n\n\tsplitURL = append(splitURL, \"\")\n\n\turi := splitURL[0]\n\tif !protocolCheck.MatchString(uri) {\n\t\turi = c.baseURL + uri\n\t\tif !protocolCheck.MatchString(uri) {\n\t\t\treturn ErrURLFormat\n\t\t}\n\t}\n\n\treq.path.VisitAll(func(key, val string) {\n\t\turi = strings.ReplaceAll(uri, \":\"+key, val)\n\t})\n\tc.path.VisitAll(func(key, val string) {\n\t\turi = strings.ReplaceAll(uri, \":\"+key, val)\n\t})\n\n\treq.RawRequest.SetRequestURI(uri)\n\n\thashSplit := strings.Split(splitURL[1], \"#\")\n\thashSplit = append(hashSplit, \"\")\n\targs := fasthttp.AcquireArgs()\n\tdefer func() {\n\t\tfasthttp.ReleaseArgs(args)\n\t}()\n\n\targs.Parse(hashSplit[0])\n\tc.params.VisitAll(func(key, value []byte) {\n\t\targs.AddBytesKV(key, value)\n\t})\n\treq.params.VisitAll(func(key, value []byte) {\n\t\targs.AddBytesKV(key, value)\n\t})\n\treq.RawRequest.URI().SetQueryStringBytes(utils.CopyBytes(args.QueryString()))\n\treq.RawRequest.URI().SetHash(hashSplit[1])\n\n\treturn nil\n}",
+    "funcname": "parserRequestURL"
+}

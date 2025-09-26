@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/oidc.go",
+    "lineno": 123,
+    "focalfunc": "func (auth *OidcAuthConsumer) verifyPostLoginToken(privilegeKey string) (err error)",
+    "funcbody": "func (auth *OidcAuthConsumer) verifyPostLoginToken(privilegeKey string) (err error) {\n\ttoken, err := auth.verifier.Verify(context.Background(), privilegeKey)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"invalid OIDC token in ping: %v\", err)\n\t}\n\tif token.Subject != auth.subjectFromLogin {\n\t\treturn fmt.Errorf(\"received different OIDC subject in login and ping. \"+\n\t\t\t\"original subject: %s, \"+\n\t\t\t\"new subject: %s\",\n\t\t\tauth.subjectFromLogin, token.Subject)\n\t}\n\treturn nil\n}",
+    "funcname": "verifyPostLoginToken"
+}

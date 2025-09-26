@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 219,
+    "focalfunc": "func ModifyPathBundleTypeResource(p *Path)",
+    "funcbody": "func ModifyPathBundleTypeResource(p *Path) {\n\tif p.IsContent() {\n\t\tp.bundleType = PathTypeContentResource\n\t} else {\n\t\tp.bundleType = PathTypeFile\n\t}\n}",
+    "funcname": "ModifyPathBundleTypeResource"
+}

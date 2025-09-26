@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/failover/failover.go",
+    "lineno": 31,
+    "focalfunc": "func New(hc *dynamic.HealthCheck) *Failover",
+    "funcbody": "func New(hc *dynamic.HealthCheck) *Failover {\n\treturn &Failover{\n\t\twantsHealthCheck: hc != nil,\n\t}\n}",
+    "funcname": "New"
+}

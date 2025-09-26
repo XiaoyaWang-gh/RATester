@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/dartsass/client.go",
+    "lineno": 199,
+    "focalfunc": "func decodeOptions(m map[string]any) (opts Options, err error)",
+    "funcbody": "func decodeOptions(m map[string]any) (opts Options, err error) {\n\tif m == nil {\n\t\treturn\n\t}\n\terr = mapstructure.WeakDecode(m, &opts)\n\n\tif opts.TargetPath != \"\" {\n\t\topts.TargetPath = paths.ToSlashTrimLeading(opts.TargetPath)\n\t}\n\n\treturn\n}",
+    "funcname": "decodeOptions"
+}

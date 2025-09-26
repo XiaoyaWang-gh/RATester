@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/cache.go",
+    "lineno": 80,
+    "focalfunc": "func (c *Cache[K, T]) Drain() map[K]T",
+    "funcbody": "func (c *Cache[K, T]) Drain() map[K]T {\n\tc.Lock()\n\tm := c.m\n\tc.m = make(map[K]T)\n\tc.Unlock()\n\treturn m\n}",
+    "funcname": "Drain"
+}

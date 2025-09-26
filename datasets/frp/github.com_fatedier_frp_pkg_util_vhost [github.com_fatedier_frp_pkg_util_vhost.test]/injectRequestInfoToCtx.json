@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 289,
+    "focalfunc": "func (rp *HTTPReverseProxy) injectRequestInfoToCtx(req *http.Request) *http.Request",
+    "funcbody": "func (rp *HTTPReverseProxy) injectRequestInfoToCtx(req *http.Request) *http.Request {\n\tuser := \"\"\n\n\tif req.URL.Host != \"\" {\n\t\tproxyAuth := req.Header.Get(\"Proxy-Authorization\")\n\t\tif proxyAuth != \"\" {\n\t\t\tuser, _, _ = parseBasicAuth(proxyAuth)\n\t\t}\n\t}\n\tif user == \"\" {\n\t\tuser, _, _ = req.BasicAuth()\n\t}\n\n\treqRouteInfo := &RequestRouteInfo{\n\t\tURL:\t\treq.URL.Path,\n\t\tHost:\t\treq.Host,\n\t\tHTTPUser:\tuser,\n\t\tRemoteAddr:\treq.RemoteAddr,\n\t\tURLHost:\treq.URL.Host,\n\t}\n\n\toriginalHost, _ := httppkg.CanonicalHost(reqRouteInfo.Host)\n\trc := rp.GetRouteConfig(originalHost, reqRouteInfo.URL, reqRouteInfo.HTTPUser)\n\n\tnewctx := req.Context()\n\tnewctx = context.WithValue(newctx, RouteInfoKey, reqRouteInfo)\n\tnewctx = context.WithValue(newctx, RouteConfigKey, rc)\n\treturn req.Clone(newctx)\n}",
+    "funcname": "injectRequestInfoToCtx"
+}

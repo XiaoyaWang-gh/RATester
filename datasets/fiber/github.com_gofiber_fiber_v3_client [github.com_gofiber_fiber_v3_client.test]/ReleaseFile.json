@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 919,
+    "focalfunc": "func ReleaseFile(f *File)",
+    "funcbody": "func ReleaseFile(f *File) {\n\tf.Reset()\n\tfilePool.Put(f)\n}",
+    "funcname": "ReleaseFile"
+}

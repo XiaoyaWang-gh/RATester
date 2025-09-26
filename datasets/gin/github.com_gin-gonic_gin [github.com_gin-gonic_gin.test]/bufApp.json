@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/path.go",
+    "lineno": 127,
+    "focalfunc": "func bufApp(buf *[]byte, s string, w int, c byte)",
+    "funcbody": "func bufApp(buf *[]byte, s string, w int, c byte) {\n\tb := *buf\n\tif len(b) == 0 {\n\n\t\tif s[w] == c {\n\t\t\treturn\n\t\t}\n\n\t\tlength := len(s)\n\t\tif length > cap(b) {\n\t\t\t*buf = make([]byte, length)\n\t\t} else {\n\t\t\t*buf = (*buf)[:length]\n\t\t}\n\t\tb = *buf\n\n\t\tcopy(b, s[:w])\n\t}\n\tb[w] = c\n}",
+    "funcname": "bufApp"
+}

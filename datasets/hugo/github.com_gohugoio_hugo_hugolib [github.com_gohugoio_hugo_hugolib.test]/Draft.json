@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 163,
+    "focalfunc": "func (p *pageMeta) Draft() bool",
+    "funcbody": "func (p *pageMeta) Draft() bool {\n\treturn p.pageConfig.Draft\n}",
+    "funcname": "Draft"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 102,
+    "focalfunc": "func (s Span) TracerProvider() trace.TracerProvider",
+    "funcbody": "func (s Span) TracerProvider() trace.TracerProvider {\n\treturn s.tracerProvider\n}",
+    "funcname": "TracerProvider"
+}

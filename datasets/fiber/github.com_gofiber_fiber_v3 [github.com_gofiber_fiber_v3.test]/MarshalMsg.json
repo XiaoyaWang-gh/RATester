@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect_msgp.go",
+    "lineno": 228,
+    "focalfunc": "func (z redirectionMsgs) MarshalMsg(b []byte) (o []byte, err error)",
+    "funcbody": "func (z redirectionMsgs) MarshalMsg(b []byte) (o []byte, err error) {\n\to = msgp.Require(b, z.Msgsize())\n\to = msgp.AppendArrayHeader(o, uint32(len(z)))\n\tfor zb0003 := range z {\n\t\to, err = z[zb0003].MarshalMsg(o)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err, zb0003)\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "MarshalMsg"
+}

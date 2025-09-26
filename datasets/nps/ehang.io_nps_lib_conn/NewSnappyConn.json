@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/snappy.go",
+    "lineno": 16,
+    "focalfunc": "func NewSnappyConn(conn io.ReadWriteCloser) *SnappyConn",
+    "funcbody": "func NewSnappyConn(conn io.ReadWriteCloser) *SnappyConn {\n\tc := new(SnappyConn)\n\tc.w = snappy.NewBufferedWriter(conn)\n\tc.r = snappy.NewReader(conn)\n\tc.c = conn.(io.Closer)\n\treturn c\n}",
+    "funcname": "NewSnappyConn"
+}

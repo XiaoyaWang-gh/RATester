@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/scss/client.go",
+    "lineno": 91,
+    "focalfunc": "func replaceRegularImportsOut(s string) string",
+    "funcbody": "func replaceRegularImportsOut(s string) string {\n\treturn regularCSSImportFrom.ReplaceAllString(s, \"@import \\\"$2\\\";\")\n}",
+    "funcname": "replaceRegularImportsOut"
+}

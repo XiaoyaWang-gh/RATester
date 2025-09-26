@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 487,
+    "focalfunc": "func toFloat(v reflect.Value) (float64, error)",
+    "funcbody": "func toFloat(v reflect.Value) (float64, error) {\n\tswitch v.Kind() {\n\tcase reflect.Float32, reflect.Float64:\n\t\treturn v.Float(), nil\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn v.Convert(reflect.TypeOf(float64(0))).Float(), nil\n\tcase reflect.Interface:\n\t\treturn toFloat(v.Elem())\n\t}\n\treturn -1, errors.New(\"unable to convert value to float\")\n}",
+    "funcname": "toFloat"
+}

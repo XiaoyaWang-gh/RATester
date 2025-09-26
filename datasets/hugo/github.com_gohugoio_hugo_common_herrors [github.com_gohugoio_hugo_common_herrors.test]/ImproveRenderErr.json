@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 143,
+    "focalfunc": "func ImproveRenderErr(inErr error) (outErr error)",
+    "funcbody": "func ImproveRenderErr(inErr error) (outErr error) {\n\toutErr = inErr\n\tmsg := improveIfNilPointerMsg(inErr)\n\tif msg != \"\" {\n\t\toutErr = &errMessage{msg: msg, err: outErr}\n\t}\n\n\tif strings.Contains(inErr.Error(), deferredPrefix) {\n\t\tmsg := deferredStringToRemove.ReplaceAllString(inErr.Error(), \"executing \")\n\t\toutErr = &errMessage{msg: msg, err: outErr}\n\t}\n\treturn\n}",
+    "funcname": "ImproveRenderErr"
+}

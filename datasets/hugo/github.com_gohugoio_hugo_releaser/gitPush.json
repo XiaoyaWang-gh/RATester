@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 189,
+    "focalfunc": "func (r *ReleaseHandler) gitPush()",
+    "funcbody": "func (r *ReleaseHandler) gitPush() {\n\tif r.skipPush {\n\t\treturn\n\t}\n\tif _, err := r.git(\"push\", \"origin\", \"HEAD\"); err != nil {\n\t\tlog.Fatal(\"push failed:\", err)\n\t}\n}",
+    "funcname": "gitPush"
+}

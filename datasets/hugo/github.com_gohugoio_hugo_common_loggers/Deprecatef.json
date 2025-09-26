@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 349,
+    "focalfunc": "func (l *logAdapter) Deprecatef(fail bool, format string, v ...any)",
+    "funcbody": "func (l *logAdapter) Deprecatef(fail bool, format string, v ...any) {\n\tformat = \"DEPRECATED: \" + format\n\tif fail {\n\t\tl.errorl.Logf(format, v...)\n\t} else {\n\t\tl.warnl.Logf(format, v...)\n\t}\n}",
+    "funcname": "Deprecatef"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 126,
+    "focalfunc": "func IsApplicableTableForDB(val reflect.Value, db string) bool",
+    "funcbody": "func IsApplicableTableForDB(val reflect.Value, db string) bool {\n\tif !val.IsValid() {\n\t\treturn true\n\t}\n\tfun := val.MethodByName(\"IsApplicableTableForDB\")\n\tif fun.IsValid() {\n\t\tvals := fun.Call([]reflect.Value{reflect.ValueOf(db)})\n\t\tif len(vals) > 0 && vals[0].Kind() == reflect.Bool {\n\t\t\treturn vals[0].Bool()\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "IsApplicableTableForDB"
+}

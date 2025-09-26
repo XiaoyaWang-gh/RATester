@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 65,
+    "focalfunc": "func (output *BeegoOutput) Body(content []byte) error",
+    "funcbody": "func (output *BeegoOutput) Body(content []byte) error {\n\tvar encoding string\n\tbuf := &bytes.Buffer{}\n\tif output.EnableGzip {\n\t\tencoding = ParseEncoding(output.Context.Request)\n\t}\n\tif b, n, _ := WriteBody(encoding, buf, content); b {\n\t\toutput.Header(\"Content-Encoding\", n)\n\t\toutput.Header(\"Content-Length\", strconv.Itoa(buf.Len()))\n\t} else {\n\t\toutput.Header(\"Content-Length\", strconv.Itoa(len(content)))\n\t}\n\n\tif output.Status != 0 {\n\t\toutput.Context.ResponseWriter.WriteHeader(output.Status)\n\t\toutput.Status = 0\n\t} else {\n\t\toutput.Context.ResponseWriter.Started = true\n\t}\n\tio.Copy(output.Context.ResponseWriter, buf)\n\treturn nil\n}",
+    "funcname": "Body"
+}

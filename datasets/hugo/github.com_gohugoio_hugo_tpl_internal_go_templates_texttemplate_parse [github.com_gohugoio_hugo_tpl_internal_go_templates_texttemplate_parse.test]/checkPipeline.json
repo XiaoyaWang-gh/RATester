@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 509,
+    "focalfunc": "func (t *Tree) checkPipeline(pipe *PipeNode, context string)",
+    "funcbody": "func (t *Tree) checkPipeline(pipe *PipeNode, context string) {\n\n\tif len(pipe.Cmds) == 0 {\n\t\tt.errorf(\"missing value for %s\", context)\n\t}\n\n\tfor i, c := range pipe.Cmds[1:] {\n\t\tswitch c.Args[0].Type() {\n\t\tcase NodeBool, NodeDot, NodeNil, NodeNumber, NodeString:\n\n\t\t\tt.errorf(\"non executable command in pipeline stage %d\", i+2)\n\t\t}\n\t}\n}",
+    "funcname": "checkPipeline"
+}

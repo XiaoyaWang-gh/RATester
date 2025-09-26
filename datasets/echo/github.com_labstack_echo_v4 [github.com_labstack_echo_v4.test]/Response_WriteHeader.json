@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 56,
+    "focalfunc": "func (r *Response) WriteHeader(code int)",
+    "funcbody": "func (r *Response) WriteHeader(code int) {\n\tif r.Committed {\n\t\tr.echo.Logger.Warn(\"response already committed\")\n\t\treturn\n\t}\n\tr.Status = code\n\tfor _, fn := range r.beforeFuncs {\n\t\tfn()\n\t}\n\tr.Writer.WriteHeader(r.Status)\n\tr.Committed = true\n}",
+    "funcname": "WriteHeader"
+}

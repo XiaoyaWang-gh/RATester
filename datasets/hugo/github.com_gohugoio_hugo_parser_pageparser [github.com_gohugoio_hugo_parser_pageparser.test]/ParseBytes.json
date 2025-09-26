@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 122,
+    "focalfunc": "func parseBytes(b []byte, cfg Config, start stateFunc) (*pageLexer, error)",
+    "funcbody": "func parseBytes(b []byte, cfg Config, start stateFunc) (*pageLexer, error) {\n\tlexer := newPageLexer(b, start, cfg)\n\tlexer.run()\n\treturn lexer, nil\n}",
+    "funcname": "parseBytes"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/cache.go",
+    "lineno": 43,
+    "focalfunc": "func (c *Cache[K, T]) GetOrCreate(key K, create func() (T, error)) (T, error)",
+    "funcbody": "func (c *Cache[K, T]) GetOrCreate(key K, create func() (T, error)) (T, error) {\n\tc.RLock()\n\tv, found := c.m[key]\n\tc.RUnlock()\n\tif found {\n\t\treturn v, nil\n\t}\n\tc.Lock()\n\tdefer c.Unlock()\n\tv, found = c.m[key]\n\tif found {\n\t\treturn v, nil\n\t}\n\tv, err := create()\n\tif err != nil {\n\t\treturn v, err\n\t}\n\tc.m[key] = v\n\treturn v, nil\n}",
+    "funcname": "GetOrCreate"
+}

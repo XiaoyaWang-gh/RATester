@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefixregex/strip_prefix_regex.go",
+    "lineno": 50,
+    "focalfunc": "func (s *stripPrefixRegex) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (s *stripPrefixRegex) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tfor _, exp := range s.expressions {\n\t\tparts := exp.FindStringSubmatch(req.URL.Path)\n\t\tif len(parts) > 0 && len(parts[0]) > 0 {\n\t\t\tprefix := parts[0]\n\t\t\tif !strings.HasPrefix(req.URL.Path, prefix) {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\treq.Header.Add(stripprefix.ForwardedPrefixHeader, prefix)\n\n\t\t\treq.URL.Path = ensureLeadingSlash(strings.Replace(req.URL.Path, prefix, \"\", 1))\n\t\t\tif req.URL.RawPath != \"\" {\n\t\t\t\treq.URL.RawPath = ensureLeadingSlash(req.URL.RawPath[len(prefix):])\n\t\t\t}\n\n\t\t\treq.RequestURI = req.URL.RequestURI()\n\t\t\ts.next.ServeHTTP(rw, req)\n\t\t\treturn\n\t\t}\n\t}\n\n\ts.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

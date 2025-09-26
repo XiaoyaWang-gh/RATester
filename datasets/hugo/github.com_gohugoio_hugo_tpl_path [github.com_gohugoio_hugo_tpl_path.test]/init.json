@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/path/init.go",
+    "lineno": 27,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx := New(d)\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.Split,\n\t\t\tnil,\n\t\t\t[][2]string{\n\t\t\t\t{`{{ \"/my/path/filename.txt\" | path.Split }}`, `/my/path/|filename.txt`},\n\t\t\t\t{fmt.Sprintf(`{{ %q | path.Split }}`, filepath.FromSlash(\"/my/path/filename.txt\")), `/my/path/|filename.txt`},\n\t\t\t},\n\t\t)\n\n\t\ttestDir := filepath.Join(\"my\", \"path\")\n\t\ttestFile := filepath.Join(testDir, \"filename.txt\")\n\n\t\tns.AddMethodMapping(ctx.Join,\n\t\t\tnil,\n\t\t\t[][2]string{\n\t\t\t\t{fmt.Sprintf(`{{ slice %q \"filename.txt\" | path.Join }}`, testDir), `my/path/filename.txt`},\n\t\t\t\t{`{{ path.Join \"my\" \"path\" \"filename.txt\" }}`, `my/path/filename.txt`},\n\t\t\t\t{fmt.Sprintf(`{{ %q | path.Ext }}`, testFile), `.txt`},\n\t\t\t\t{fmt.Sprintf(`{{ %q | path.Base }}`, testFile), `filename.txt`},\n\t\t\t\t{fmt.Sprintf(`{{ %q | path.Dir }}`, testFile), `my/path`},\n\t\t\t},\n\t\t)\n\n\t\treturn ns\n\t}\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

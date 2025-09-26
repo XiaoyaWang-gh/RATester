@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/kcp.go",
+    "lineno": 30,
+    "focalfunc": "func ListenKcp(address string) (l *KCPListener, err error)",
+    "funcbody": "func ListenKcp(address string) (l *KCPListener, err error) {\n\tlistener, err := kcp.ListenWithOptions(address, nil, 10, 3)\n\tif err != nil {\n\t\treturn l, err\n\t}\n\t_ = listener.SetReadBuffer(4194304)\n\t_ = listener.SetWriteBuffer(4194304)\n\n\tl = &KCPListener{\n\t\tlistener:\tlistener,\n\t\tacceptCh:\tmake(chan net.Conn),\n\t\tcloseFlag:\tfalse,\n\t}\n\n\tgo func() {\n\t\tfor {\n\t\t\tconn, err := listener.AcceptKCP()\n\t\t\tif err != nil {\n\t\t\t\tif l.closeFlag {\n\t\t\t\t\tclose(l.acceptCh)\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tconn.SetStreamMode(true)\n\t\t\tconn.SetWriteDelay(true)\n\t\t\tconn.SetNoDelay(1, 20, 2, 1)\n\t\t\tconn.SetMtu(1350)\n\t\t\tconn.SetWindowSize(1024, 1024)\n\t\t\tconn.SetACKNoDelay(false)\n\n\t\t\tl.acceptCh <- conn\n\t\t}\n\t}()\n\treturn l, err\n}",
+    "funcname": "ListenKcp"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 475,
+    "focalfunc": "func DecodeFrontMatterConfig(cfg config.Provider) (FrontmatterConfig, error)",
+    "funcbody": "func DecodeFrontMatterConfig(cfg config.Provider) (FrontmatterConfig, error) {\n\tc := newDefaultFrontmatterConfig()\n\tdefaultConfig := c\n\n\tif cfg.IsSet(\"frontmatter\") {\n\t\tfm := cfg.GetStringMap(\"frontmatter\")\n\t\tfor k, v := range fm {\n\t\t\tloki := strings.ToLower(k)\n\t\t\tswitch loki {\n\t\t\tcase fmDate:\n\t\t\t\tc.Date = toLowerSlice(v)\n\t\t\tcase fmPubDate:\n\t\t\t\tc.PublishDate = toLowerSlice(v)\n\t\t\tcase fmLastmod:\n\t\t\t\tc.Lastmod = toLowerSlice(v)\n\t\t\tcase fmExpiryDate:\n\t\t\t\tc.ExpiryDate = toLowerSlice(v)\n\t\t\t}\n\t\t}\n\t}\n\n\texpander := func(c, d []string) []string {\n\t\tout := expandDefaultValues(c, d)\n\t\tout = addDateFieldAliases(out)\n\t\treturn out\n\t}\n\n\tc.Date = expander(c.Date, defaultConfig.Date)\n\tc.PublishDate = expander(c.PublishDate, defaultConfig.PublishDate)\n\tc.Lastmod = expander(c.Lastmod, defaultConfig.Lastmod)\n\tc.ExpiryDate = expander(c.ExpiryDate, defaultConfig.ExpiryDate)\n\n\treturn c, nil\n}",
+    "funcname": "DecodeFrontMatterConfig"
+}

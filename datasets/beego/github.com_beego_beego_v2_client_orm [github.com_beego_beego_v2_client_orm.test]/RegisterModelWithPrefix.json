@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/models_boot.go",
+    "lineno": 32,
+    "focalfunc": "func RegisterModelWithPrefix(prefix string, models ...interface{})",
+    "funcbody": "func RegisterModelWithPrefix(prefix string, models ...interface{}) {\n\tif err := defaultModelCache.Register(prefix, true, models...); err != nil {\n\t\tpanic(err)\n\t}\n}",
+    "funcname": "RegisterModelWithPrefix"
+}

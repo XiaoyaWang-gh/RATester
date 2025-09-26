@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 199,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\tlogger := log.With().Str(logs.ProviderName, providerName).Logger()\n\n\tvar err error\n\tp.client, err = p.newK8sClient(logger.WithContext(context.Background()))\n\tif err != nil {\n\t\treturn fmt.Errorf(\"creating k8s client: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

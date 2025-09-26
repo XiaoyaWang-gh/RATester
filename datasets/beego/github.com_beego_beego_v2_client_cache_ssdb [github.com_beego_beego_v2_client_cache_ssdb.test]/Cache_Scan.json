@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 154,
+    "focalfunc": "func (rc *Cache) Scan(keyStart string, keyEnd string, limit int) ([]string, error)",
+    "funcbody": "func (rc *Cache) Scan(keyStart string, keyEnd string, limit int) ([]string, error) {\n\tresp, err := rc.conn.Do(\"scan\", keyStart, keyEnd, limit)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn resp, nil\n}",
+    "funcname": "Scan"
+}

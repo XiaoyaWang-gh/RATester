@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ratelimiter/rate_limiter.go",
+    "lineno": 179,
+    "focalfunc": "func (rl *rateLimiter) serveDelayError(ctx context.Context, w http.ResponseWriter, delay time.Duration)",
+    "funcbody": "func (rl *rateLimiter) serveDelayError(ctx context.Context, w http.ResponseWriter, delay time.Duration) {\n\tw.Header().Set(\"Retry-After\", fmt.Sprintf(\"%.0f\", math.Ceil(delay.Seconds())))\n\tw.Header().Set(\"X-Retry-In\", delay.String())\n\tw.WriteHeader(http.StatusTooManyRequests)\n\n\tif _, err := w.Write([]byte(http.StatusText(http.StatusTooManyRequests))); err != nil {\n\t\tlog.Ctx(ctx).Error().Err(err).Msg(\"Could not serve 429\")\n\t}\n}",
+    "funcname": "serveDelayError"
+}

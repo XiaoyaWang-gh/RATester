@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 72,
+    "focalfunc": "func (i Item) ValStr(source []byte) string",
+    "funcbody": "func (i Item) ValStr(source []byte) string {\n\treturn string(i.Val(source))\n}",
+    "funcname": "ValStr"
+}

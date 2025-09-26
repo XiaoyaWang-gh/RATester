@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 704,
+    "focalfunc": "func (p PathParam) SetParams(m map[string]string)",
+    "funcbody": "func (p PathParam) SetParams(m map[string]string) {\n\tfor k, v := range m {\n\t\tp[k] = v\n\t}\n}",
+    "funcname": "SetParams"
+}

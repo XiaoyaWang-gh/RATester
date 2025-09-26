@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager_msgp.go",
+    "lineno": 57,
+    "focalfunc": "func (z item) EncodeMsg(en *msgp.Writer) (err error)",
+    "funcbody": "func (z item) EncodeMsg(en *msgp.Writer) (err error) {\n\n\terr = en.Append(0x83, 0xa8, 0x63, 0x75, 0x72, 0x72, 0x48, 0x69, 0x74, 0x73)\n\tif err != nil {\n\t\treturn\n\t}\n\terr = en.WriteInt(z.currHits)\n\tif err != nil {\n\t\terr = msgp.WrapError(err, \"currHits\")\n\t\treturn\n\t}\n\n\terr = en.Append(0xa8, 0x70, 0x72, 0x65, 0x76, 0x48, 0x69, 0x74, 0x73)\n\tif err != nil {\n\t\treturn\n\t}\n\terr = en.WriteInt(z.prevHits)\n\tif err != nil {\n\t\terr = msgp.WrapError(err, \"prevHits\")\n\t\treturn\n\t}\n\n\terr = en.Append(0xa3, 0x65, 0x78, 0x70)\n\tif err != nil {\n\t\treturn\n\t}\n\terr = en.WriteUint64(z.exp)\n\tif err != nil {\n\t\terr = msgp.WrapError(err, \"exp\")\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "EncodeMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 252,
+    "focalfunc": "func (b *ValueBinder) MustString(sourceParam string, dest *string) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustString(sourceParam string, dest *string) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\n\tvalue := b.ValueFunc(sourceParam)\n\tif value == \"\" {\n\t\tb.setError(b.ErrorFunc(sourceParam, []string{value}, \"required field value is empty\", nil))\n\t\treturn b\n\t}\n\t*dest = value\n\treturn b\n}",
+    "funcname": "MustString"
+}

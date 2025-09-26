@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 77,
+    "focalfunc": "func (o rawSet) SetArgs(args ...interface{}) RawSeter",
+    "funcbody": "func (o rawSet) SetArgs(args ...interface{}) RawSeter {\n\to.args = args\n\treturn &o\n}",
+    "funcname": "SetArgs"
+}

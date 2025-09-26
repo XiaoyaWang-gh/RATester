@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 126,
+    "focalfunc": "func (g *HTTPGroup) UnRegister(proxyName string) (isEmpty bool)",
+    "funcbody": "func (g *HTTPGroup) UnRegister(proxyName string) (isEmpty bool) {\n\tg.mu.Lock()\n\tdefer g.mu.Unlock()\n\tdelete(g.createFuncs, proxyName)\n\tfor i, name := range g.pxyNames {\n\t\tif name == proxyName {\n\t\t\tg.pxyNames = append(g.pxyNames[:i], g.pxyNames[i+1:]...)\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif len(g.createFuncs) == 0 {\n\t\tisEmpty = true\n\t\tg.ctl.vhostRouter.Del(g.domain, g.location, g.routeByHTTPUser)\n\t}\n\treturn\n}",
+    "funcname": "UnRegister"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 217,
+    "focalfunc": "func Htmlunquote(text string) string",
+    "funcbody": "func Htmlunquote(text string) string {\n\n\ttext = html.UnescapeString(text)\n\n\treturn strings.TrimSpace(text)\n}",
+    "funcname": "Htmlunquote"
+}

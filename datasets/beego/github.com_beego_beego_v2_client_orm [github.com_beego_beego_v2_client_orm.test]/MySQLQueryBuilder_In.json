@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 92,
+    "focalfunc": "func (qb *MySQLQueryBuilder) In(vals ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) In(vals ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"IN\", \"(\", strings.Join(vals, CommaSpace), \")\")\n\treturn qb\n}",
+    "funcname": "In"
+}

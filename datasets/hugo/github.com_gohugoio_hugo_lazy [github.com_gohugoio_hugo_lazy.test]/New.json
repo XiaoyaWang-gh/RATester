@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 25,
+    "focalfunc": "func New() *Init",
+    "funcbody": "func New() *Init {\n\treturn &Init{}\n}",
+    "funcname": "New"
+}

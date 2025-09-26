@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 378,
+    "focalfunc": "func CPUIsSlow() bool",
+    "funcbody": "func CPUIsSlow() bool {\n\tswitch runtime.GOARCH {\n\tcase \"arm\", \"mips\", \"mipsle\", \"mips64\", \"mips64le\", \"wasm\":\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "CPUIsSlow"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 94,
+    "focalfunc": "func (pc *pipeConnector) Connect() (net.Conn, error)",
+    "funcbody": "func (pc *pipeConnector) Connect() (net.Conn, error) {\n\tc1, c2 := net.Pipe()\n\tif err := pc.peerListener.PutConn(c1); err != nil {\n\t\tc1.Close()\n\t\tc2.Close()\n\t\treturn nil, err\n\t}\n\treturn c2, nil\n}",
+    "funcname": "Connect"
+}

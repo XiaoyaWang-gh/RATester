@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 129,
+    "focalfunc": "func (t *Template) AddParseTree(name string, tree *parse.Tree) (*Template, error)",
+    "funcbody": "func (t *Template) AddParseTree(name string, tree *parse.Tree) (*Template, error) {\n\tt.init()\n\tt.muTmpl.Lock()\n\tdefer t.muTmpl.Unlock()\n\tnt := t\n\tif name != t.name {\n\t\tnt = t.New(name)\n\t}\n\n\tif t.associate(nt, tree) || nt.Tree == nil {\n\t\tnt.Tree = tree\n\t}\n\treturn nt, nil\n}",
+    "funcname": "AddParseTree"
+}

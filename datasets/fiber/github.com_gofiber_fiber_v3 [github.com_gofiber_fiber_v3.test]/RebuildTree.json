@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 422,
+    "focalfunc": "func (app *App) RebuildTree() *App",
+    "funcbody": "func (app *App) RebuildTree() *App {\n\tapp.mutex.Lock()\n\tdefer app.mutex.Unlock()\n\n\treturn app.buildTree()\n}",
+    "funcname": "RebuildTree"
+}

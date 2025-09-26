@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 139,
+    "focalfunc": "func (pt pageTree) Ancestors() page.Pages",
+    "funcbody": "func (pt pageTree) Ancestors() page.Pages {\n\tvar ancestors page.Pages\n\tparent := pt.Parent()\n\tfor parent != nil {\n\t\tancestors = append(ancestors, parent)\n\t\tparent = parent.Parent()\n\t}\n\treturn ancestors\n}",
+    "funcname": "Ancestors"
+}

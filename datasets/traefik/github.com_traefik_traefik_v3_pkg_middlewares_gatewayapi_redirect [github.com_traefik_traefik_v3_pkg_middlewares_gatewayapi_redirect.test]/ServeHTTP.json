@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/redirect/request_redirect.go",
+    "lineno": 59,
+    "focalfunc": "func (r redirect) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (r redirect) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tredirectURL := *req.URL\n\tredirectURL.Host = req.Host\n\n\tif r.scheme != nil {\n\t\tredirectURL.Scheme = *r.scheme\n\t}\n\n\thost := redirectURL.Hostname()\n\tif r.hostname != nil {\n\t\thost = *r.hostname\n\t}\n\n\tport := redirectURL.Port()\n\tif r.port != nil {\n\t\tport = *r.port\n\t}\n\n\tif port != \"\" {\n\t\thost = net.JoinHostPort(host, port)\n\t}\n\tredirectURL.Host = host\n\n\tif r.path != nil && r.pathPrefix == nil {\n\t\tredirectURL.Path = *r.path\n\t}\n\n\tif r.path != nil && r.pathPrefix != nil {\n\t\tredirectURL.Path = path.Join(*r.path, strings.TrimPrefix(req.URL.Path, *r.pathPrefix))\n\n\t\tif strings.HasSuffix(req.URL.Path, \"/\") && !strings.HasSuffix(redirectURL.Path, \"/\") {\n\t\t\tredirectURL.Path += \"/\"\n\t\t}\n\t}\n\n\trw.Header().Set(\"Location\", redirectURL.String())\n\n\trw.WriteHeader(r.statusCode)\n\tif _, err := rw.Write([]byte(http.StatusText(r.statusCode))); err != nil {\n\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "ServeHTTP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/writers.go",
+    "lineno": 103,
+    "focalfunc": "func (c PipeReadWriteCloser) Close() (err error)",
+    "funcbody": "func (c PipeReadWriteCloser) Close() (err error) {\n\tif err = c.PipeReader.Close(); err != nil {\n\t\treturn\n\t}\n\terr = c.PipeWriter.Close()\n\treturn\n}",
+    "funcname": "Close"
+}

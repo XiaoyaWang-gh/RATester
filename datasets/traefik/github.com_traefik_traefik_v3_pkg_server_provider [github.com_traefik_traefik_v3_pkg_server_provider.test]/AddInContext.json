@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/provider/provider.go",
+    "lineno": 17,
+    "focalfunc": "func AddInContext(ctx context.Context, elementName string) context.Context",
+    "funcbody": "func AddInContext(ctx context.Context, elementName string) context.Context {\n\tparts := strings.Split(elementName, \"@\")\n\tif len(parts) == 1 {\n\t\tlog.Ctx(ctx).Debug().Msgf(\"Could not find a provider for %s\", elementName)\n\t\treturn ctx\n\t}\n\n\tif name, ok := ctx.Value(key).(string); ok && name == parts[1] {\n\t\treturn ctx\n\t}\n\n\treturn context.WithValue(ctx, key, parts[1])\n}",
+    "funcname": "AddInContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 1058,
+    "focalfunc": "func (app *App) startupProcess() *App",
+    "funcbody": "func (app *App) startupProcess() *App {\n\tapp.mutex.Lock()\n\tdefer app.mutex.Unlock()\n\n\tapp.mountStartupProcess()\n\n\tapp.buildTree()\n\n\treturn app\n}",
+    "funcname": "startupProcess"
+}

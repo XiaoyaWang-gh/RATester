@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 193,
+    "focalfunc": "func (pco *pageContentOutput) PlainWords(ctx context.Context) []string",
+    "funcbody": "func (pco *pageContentOutput) PlainWords(ctx context.Context) []string {\n\treturn pco.mustRender(ctx).PlainWords(ctx)\n}",
+    "funcname": "PlainWords"
+}

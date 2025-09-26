@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 955,
+    "focalfunc": "func (s *state) evalUnsignedInteger(typ reflect.Type, n parse.Node) reflect.Value",
+    "funcbody": "func (s *state) evalUnsignedInteger(typ reflect.Type, n parse.Node) reflect.Value {\n\ts.at(n)\n\tif n, ok := n.(*parse.NumberNode); ok && n.IsUint {\n\t\tvalue := reflect.New(typ).Elem()\n\t\tvalue.SetUint(n.Uint64)\n\t\treturn value\n\t}\n\ts.errorf(\"expected unsigned integer; found %s\", n)\n\tpanic(\"not reached\")\n}",
+    "funcname": "evalUnsignedInteger"
+}

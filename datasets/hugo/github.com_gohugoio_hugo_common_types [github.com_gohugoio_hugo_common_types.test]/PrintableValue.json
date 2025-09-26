@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/types.go",
+    "lineno": 149,
+    "focalfunc": "func (r Result[T]) PrintableValue() any",
+    "funcbody": "func (r Result[T]) PrintableValue() any {\n\tif r.Err != nil {\n\t\tpanic(r.Err)\n\t}\n\treturn r.Value\n}",
+    "funcname": "PrintableValue"
+}

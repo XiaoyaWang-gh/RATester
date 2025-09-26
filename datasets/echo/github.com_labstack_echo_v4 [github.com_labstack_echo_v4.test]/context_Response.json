@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 258,
+    "focalfunc": "func (c *context) Response() *Response",
+    "funcbody": "func (c *context) Response() *Response {\n\treturn c.response\n}",
+    "funcname": "Response"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 98,
+    "focalfunc": "func (ns *Namespace) Ceil(n any) (float64, error)",
+    "funcbody": "func (ns *Namespace) Ceil(n any) (float64, error) {\n\txf, err := cast.ToFloat64E(n)\n\tif err != nil {\n\t\treturn 0, errors.New(\"Ceil operator can't be used with non-float value\")\n\t}\n\n\treturn math.Ceil(xf), nil\n}",
+    "funcname": "Ceil"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/urlrewrite/url_rewrite.go",
+    "lineno": 45,
+    "focalfunc": "func (u urlRewrite) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (u urlRewrite) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tnewPath := req.URL.Path\n\tif u.path != nil && u.pathPrefix == nil {\n\t\tnewPath = *u.path\n\t}\n\tif u.path != nil && u.pathPrefix != nil {\n\t\tnewPath = path.Join(*u.path, strings.TrimPrefix(req.URL.Path, *u.pathPrefix))\n\n\t\tif strings.HasSuffix(req.URL.Path, \"/\") && !strings.HasSuffix(newPath, \"/\") {\n\t\t\tnewPath += \"/\"\n\t\t}\n\t}\n\n\treq.URL.Path = newPath\n\treq.URL.RawPath = req.URL.EscapedPath()\n\treq.RequestURI = req.URL.RequestURI()\n\n\tif u.hostname != nil {\n\t\treq.Host = *u.hostname\n\t}\n\n\tu.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 88,
+    "focalfunc": "func (s *TRPClient) handleMain()",
+    "funcbody": "func (s *TRPClient) handleMain() {\n\tfor {\n\t\tflags, err := s.signal.ReadFlag()\n\t\tif err != nil {\n\t\t\tlogs.Error(\"Accept server data error %s, end this service\", err.Error())\n\t\t\tbreak\n\t\t}\n\t\tswitch flags {\n\t\tcase common.NEW_UDP_CONN:\n\n\t\t\tif lAddr, err := s.signal.GetShortLenContent(); err != nil {\n\t\t\t\tlogs.Warn(err)\n\t\t\t\treturn\n\t\t\t} else if pwd, err := s.signal.GetShortLenContent(); err == nil {\n\t\t\t\tvar localAddr string\n\n\t\t\t\tif v, ok := s.p2pAddr[crypt.Md5(string(pwd)+strconv.Itoa(int(time.Now().Unix()/100)))]; !ok {\n\t\t\t\t\ttmpConn, err := common.GetLocalUdpAddr()\n\t\t\t\t\tif err != nil {\n\t\t\t\t\t\tlogs.Error(err)\n\t\t\t\t\t\treturn\n\t\t\t\t\t}\n\t\t\t\t\tlocalAddr = tmpConn.LocalAddr().String()\n\t\t\t\t} else {\n\t\t\t\t\tlocalAddr = v\n\t\t\t\t}\n\t\t\t\tgo s.newUdpConn(localAddr, string(lAddr), string(pwd))\n\t\t\t}\n\t\t}\n\t}\n\ts.Close()\n}",
+    "funcname": "handleMain"
+}

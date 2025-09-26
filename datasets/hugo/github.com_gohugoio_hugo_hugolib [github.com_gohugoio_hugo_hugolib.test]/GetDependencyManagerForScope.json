@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 134,
+    "focalfunc": "func (p *pageState) GetDependencyManagerForScope(scope int) identity.Manager",
+    "funcbody": "func (p *pageState) GetDependencyManagerForScope(scope int) identity.Manager {\n\tswitch scope {\n\tcase pageDependencyScopeDefault:\n\t\treturn p.dependencyManagerOutput\n\tcase pageDependencyScopeGlobal:\n\t\treturn p.dependencyManager\n\tdefault:\n\t\treturn identity.NopManager\n\t}\n}",
+    "funcname": "GetDependencyManagerForScope"
+}

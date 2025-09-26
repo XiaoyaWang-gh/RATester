@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1144,
+    "focalfunc": "func (t *textTemplateWrapperWithLock) Lookup(name string) (tpl.Template, bool)",
+    "funcbody": "func (t *textTemplateWrapperWithLock) Lookup(name string) (tpl.Template, bool) {\n\tt.RLock()\n\ttempl := t.Template.Lookup(name)\n\tt.RUnlock()\n\tif templ == nil {\n\t\treturn nil, false\n\t}\n\treturn &textTemplateWrapperWithLock{\n\t\tRWMutex:\tt.RWMutex,\n\t\tTemplate:\ttempl,\n\t}, true\n}",
+    "funcname": "Lookup"
+}

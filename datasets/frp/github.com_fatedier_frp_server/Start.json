@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 203,
+    "focalfunc": "func (ctl *Control) Start()",
+    "funcbody": "func (ctl *Control) Start() {\n\tloginRespMsg := &msg.LoginResp{\n\t\tVersion:\tversion.Full(),\n\t\tRunID:\t\tctl.runID,\n\t\tError:\t\t\"\",\n\t}\n\t_ = msg.WriteMsg(ctl.conn, loginRespMsg)\n\n\tgo func() {\n\t\tfor i := 0; i < ctl.poolCount; i++ {\n\n\t\t\t_ = ctl.msgDispatcher.Send(&msg.ReqWorkConn{})\n\t\t}\n\t}()\n\tgo ctl.worker()\n}",
+    "funcname": "Start"
+}

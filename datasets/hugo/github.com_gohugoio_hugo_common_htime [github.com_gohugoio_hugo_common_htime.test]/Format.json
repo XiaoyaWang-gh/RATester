@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/htime/time.go",
+    "lineno": 95,
+    "focalfunc": "func (f TimeFormatter) Format(t time.Time, layout string) string",
+    "funcbody": "func (f TimeFormatter) Format(t time.Time, layout string) string {\n\tif layout == \"\" {\n\t\treturn \"\"\n\t}\n\n\tif layout[0] == ':' {\n\n\t\tswitch strings.ToLower(layout[1:]) {\n\t\tcase \"date_full\":\n\t\t\treturn f.ltr.FmtDateFull(t)\n\t\tcase \"date_long\":\n\t\t\treturn f.ltr.FmtDateLong(t)\n\t\tcase \"date_medium\":\n\t\t\treturn f.ltr.FmtDateMedium(t)\n\t\tcase \"date_short\":\n\t\t\treturn f.ltr.FmtDateShort(t)\n\t\tcase \"time_full\":\n\t\t\treturn f.ltr.FmtTimeFull(t)\n\t\tcase \"time_long\":\n\t\t\treturn f.ltr.FmtTimeLong(t)\n\t\tcase \"time_medium\":\n\t\t\treturn f.ltr.FmtTimeMedium(t)\n\t\tcase \"time_short\":\n\t\t\treturn f.ltr.FmtTimeShort(t)\n\t\t}\n\t}\n\n\ts := t.Format(layout)\n\n\tmonthIdx := t.Month() - 1\n\tdayIdx := t.Weekday()\n\n\tif strings.Contains(layout, \"January\") {\n\t\ts = strings.ReplaceAll(s, longMonthNames[monthIdx], f.ltr.MonthWide(t.Month()))\n\t} else if strings.Contains(layout, \"Jan\") {\n\t\ts = strings.ReplaceAll(s, shortMonthNames[monthIdx], f.ltr.MonthAbbreviated(t.Month()))\n\t}\n\n\tif strings.Contains(layout, \"Monday\") {\n\t\ts = strings.ReplaceAll(s, longDayNames[dayIdx], f.ltr.WeekdayWide(t.Weekday()))\n\t} else if strings.Contains(layout, \"Mon\") {\n\t\ts = strings.ReplaceAll(s, shortDayNames[dayIdx], f.ltr.WeekdayAbbreviated(t.Weekday()))\n\t}\n\n\treturn s\n}",
+    "funcname": "Format"
+}

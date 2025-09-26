@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 109,
+    "focalfunc": "func (e *hugoBuilderErrState) isPaused() bool",
+    "funcbody": "func (e *hugoBuilderErrState) isPaused() bool {\n\te.mu.Lock()\n\tdefer e.mu.Unlock()\n\treturn e.paused\n}",
+    "funcname": "isPaused"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 70,
+    "focalfunc": "func getMinVer(v string) (uint64, error)",
+    "funcbody": "func getMinVer(v string) (uint64, error) {\n\tfirst := strings.IndexByte(v, '.')\n\tlast := strings.LastIndexByte(v, '.')\n\tif first == last {\n\t\treturn strconv.ParseUint(v[first+1:], 10, 64)\n\t}\n\treturn strconv.ParseUint(v[first+1:last], 10, 64)\n}",
+    "funcname": "getMinVer"
+}

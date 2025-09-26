@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 50,
+    "focalfunc": "func (k partialCacheKey) Key() string",
+    "funcbody": "func (k partialCacheKey) Key() string {\n\tif k.Variants == nil {\n\t\treturn k.Name\n\t}\n\treturn hashing.HashString(append([]any{k.Name}, k.Variants...)...)\n}",
+    "funcname": "Key"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode_page.go",
+    "lineno": 54,
+    "focalfunc": "func (p prerenderedShortcode) renderShortcodeString(context.Context) (string, bool, error)",
+    "funcbody": "func (p prerenderedShortcode) renderShortcodeString(context.Context) (string, bool, error) {\n\treturn p.s, p.hasVariants, nil\n}",
+    "funcname": "renderShortcodeString"
+}

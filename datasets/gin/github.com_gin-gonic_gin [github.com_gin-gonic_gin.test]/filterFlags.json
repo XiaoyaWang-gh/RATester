@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 84,
+    "focalfunc": "func filterFlags(content string) string",
+    "funcbody": "func filterFlags(content string) string {\n\tfor i, char := range content {\n\t\tif char == ' ' || char == ';' {\n\t\t\treturn content[:i]\n\t\t}\n\t}\n\treturn content\n}",
+    "funcname": "filterFlags"
+}

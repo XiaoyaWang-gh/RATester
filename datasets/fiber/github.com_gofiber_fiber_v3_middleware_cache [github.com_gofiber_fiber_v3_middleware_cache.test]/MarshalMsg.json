@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/manager_msgp.go",
+    "lineno": 193,
+    "focalfunc": "func (z *item) MarshalMsg(b []byte) (o []byte, err error)",
+    "funcbody": "func (z *item) MarshalMsg(b []byte) (o []byte, err error) {\n\to = msgp.Require(b, z.Msgsize())\n\n\to = append(o, 0x87, 0xa7, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x73)\n\to = msgp.AppendMapHeader(o, uint32(len(z.headers)))\n\tfor za0001, za0002 := range z.headers {\n\t\to = msgp.AppendString(o, za0001)\n\t\to = msgp.AppendBytes(o, za0002)\n\t}\n\n\to = append(o, 0xa4, 0x62, 0x6f, 0x64, 0x79)\n\to = msgp.AppendBytes(o, z.body)\n\n\to = append(o, 0xa5, 0x63, 0x74, 0x79, 0x70, 0x65)\n\to = msgp.AppendBytes(o, z.ctype)\n\n\to = append(o, 0xa9, 0x63, 0x65, 0x6e, 0x63, 0x6f, 0x64, 0x69, 0x6e, 0x67)\n\to = msgp.AppendBytes(o, z.cencoding)\n\n\to = append(o, 0xa6, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73)\n\to = msgp.AppendInt(o, z.status)\n\n\to = append(o, 0xa3, 0x65, 0x78, 0x70)\n\to = msgp.AppendUint64(o, z.exp)\n\n\to = append(o, 0xa7, 0x68, 0x65, 0x61, 0x70, 0x69, 0x64, 0x78)\n\to = msgp.AppendInt(o, z.heapidx)\n\treturn\n}",
+    "funcname": "MarshalMsg"
+}

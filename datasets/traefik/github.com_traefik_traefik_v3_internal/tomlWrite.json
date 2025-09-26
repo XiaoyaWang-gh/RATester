@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 187,
+    "focalfunc": "func tomlWrite(outputFile string, element any) error",
+    "funcbody": "func tomlWrite(outputFile string, element any) error {\n\tfile, err := os.OpenFile(outputFile, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0o666)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer file.Close()\n\n\tif _, err := file.WriteString(commentGenerated); err != nil {\n\t\treturn err\n\t}\n\n\treturn toml.NewEncoder(file).Encode(element)\n}",
+    "funcname": "tomlWrite"
+}

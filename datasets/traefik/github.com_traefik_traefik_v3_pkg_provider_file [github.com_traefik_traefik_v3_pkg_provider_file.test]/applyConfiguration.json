@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/file/file.go",
+    "lineno": 162,
+    "focalfunc": "func (p *Provider) applyConfiguration(configurationChan chan<- dynamic.Message) error",
+    "funcbody": "func (p *Provider) applyConfiguration(configurationChan chan<- dynamic.Message) error {\n\tconfiguration, err := p.buildConfiguration()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tsendConfigToChannel(configurationChan, configuration)\n\treturn nil\n}",
+    "funcname": "applyConfiguration"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 111,
+    "focalfunc": "func (q *BandwidthQuantity) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (q *BandwidthQuantity) MarshalJSON() ([]byte, error) {\n\treturn []byte(\"\\\"\" + q.s + \"\\\"\"), nil\n}",
+    "funcname": "MarshalJSON"
+}

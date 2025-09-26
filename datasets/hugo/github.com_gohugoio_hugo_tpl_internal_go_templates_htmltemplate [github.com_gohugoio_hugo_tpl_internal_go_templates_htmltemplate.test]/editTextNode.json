@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 907,
+    "focalfunc": "func (e *escaper) editTextNode(n *parse.TextNode, text []byte)",
+    "funcbody": "func (e *escaper) editTextNode(n *parse.TextNode, text []byte) {\n\tif _, ok := e.textNodeEdits[n]; ok {\n\t\tpanic(fmt.Sprintf(\"node %s shared between templates\", n))\n\t}\n\te.textNodeEdits[n] = text\n}",
+    "funcname": "editTextNode"
+}

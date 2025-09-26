@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 53,
+    "focalfunc": "func (o *Order) IsRaw() bool",
+    "funcbody": "func (o *Order) IsRaw() bool {\n\treturn o.isRaw\n}",
+    "funcname": "IsRaw"
+}

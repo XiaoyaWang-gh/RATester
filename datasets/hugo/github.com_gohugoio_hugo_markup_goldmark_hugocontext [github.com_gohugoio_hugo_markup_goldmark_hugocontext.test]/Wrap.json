@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/hugocontext/hugocontext.go",
+    "lineno": 37,
+    "focalfunc": "func Wrap(b []byte, pid uint64) string",
+    "funcbody": "func Wrap(b []byte, pid uint64) string {\n\tbuf := bufferpool.GetBuffer()\n\tdefer bufferpool.PutBuffer(buf)\n\tbuf.Write(prefix)\n\tbuf.WriteString(\" pid=\")\n\tbuf.WriteString(strconv.FormatUint(pid, 10))\n\tbuf.Write(endDelim)\n\tbuf.WriteByte('\\n')\n\tbuf.Write(b)\n\tbuf.Write(prefix)\n\tbuf.Write(closingDelimAndNewline)\n\treturn buf.String()\n}",
+    "funcname": "Wrap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/mockservers.go",
+    "lineno": 29,
+    "focalfunc": "func NewMockServers(portAllocator *port.Allocator) *MockServers",
+    "funcbody": "func NewMockServers(portAllocator *port.Allocator) *MockServers {\n\ts := &MockServers{}\n\ttcpPort := portAllocator.Get()\n\tudpPort := portAllocator.Get()\n\thttpPort := portAllocator.Get()\n\ts.tcpEchoServer = streamserver.New(streamserver.TCP, streamserver.WithBindPort(tcpPort))\n\ts.udpEchoServer = streamserver.New(streamserver.UDP, streamserver.WithBindPort(udpPort))\n\ts.httpSimpleServer = httpserver.New(httpserver.WithBindPort(httpPort),\n\t\thttpserver.WithHandler(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {\n\t\t\t_, _ = w.Write([]byte(consts.TestString))\n\t\t})),\n\t)\n\n\tudsIndex := portAllocator.Get()\n\tudsAddr := fmt.Sprintf(\"%s/frp_echo_server_%d.sock\", os.TempDir(), udsIndex)\n\tos.Remove(udsAddr)\n\ts.udsEchoServer = streamserver.New(streamserver.Unix, streamserver.WithBindAddr(udsAddr))\n\treturn s\n}",
+    "funcname": "NewMockServers"
+}

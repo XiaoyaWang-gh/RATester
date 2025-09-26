@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 1005,
+    "focalfunc": "func newListener(address, network string) (*tcpKeepAliveListener, error)",
+    "funcbody": "func newListener(address, network string) (*tcpKeepAliveListener, error) {\n\tif network != \"tcp\" && network != \"tcp4\" && network != \"tcp6\" {\n\t\treturn nil, ErrInvalidListenerNetwork\n\t}\n\tl, err := net.Listen(network, address)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &tcpKeepAliveListener{l.(*net.TCPListener)}, nil\n}",
+    "funcname": "newListener"
+}

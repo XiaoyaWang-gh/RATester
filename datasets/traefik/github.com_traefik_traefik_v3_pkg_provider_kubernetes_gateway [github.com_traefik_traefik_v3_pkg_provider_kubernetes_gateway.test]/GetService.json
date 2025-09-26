@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 677,
+    "focalfunc": "func (c *clientWrapper) GetService(namespace, name string) (*corev1.Service, bool, error)",
+    "funcbody": "func (c *clientWrapper) GetService(namespace, name string) (*corev1.Service, bool, error) {\n\tif !c.isWatchedNamespace(namespace) {\n\t\treturn nil, false, fmt.Errorf(\"failed to get service %s/%s: namespace is not within watched namespaces\", namespace, name)\n\t}\n\n\tservice, err := c.factoriesKube[c.lookupNamespace(namespace)].Core().V1().Services().Lister().Services(namespace).Get(name)\n\texist, err := translateNotFoundError(err)\n\n\treturn service, exist, err\n}",
+    "funcname": "GetService"
+}

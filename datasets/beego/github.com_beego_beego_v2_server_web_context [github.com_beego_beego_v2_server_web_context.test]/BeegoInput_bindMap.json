@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 671,
+    "focalfunc": "func (input *BeegoInput) bindMap(params *url.Values, key string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindMap(params *url.Values, key string, typ reflect.Type) reflect.Value {\n\tvar (\n\t\tresult\t\t= reflect.MakeMap(typ)\n\t\tkeyType\t\t= typ.Key()\n\t\tvalueType\t= typ.Elem()\n\t)\n\tfor paramName, values := range *params {\n\t\tif !strings.HasPrefix(paramName, key+\"[\") || paramName[len(paramName)-1] != ']' {\n\t\t\tcontinue\n\t\t}\n\n\t\tkey := paramName[len(key)+1 : len(paramName)-1]\n\t\tresult.SetMapIndex(input.bindValue(key, keyType), input.bindValue(values[0], valueType))\n\t}\n\treturn result\n}",
+    "funcname": "bindMap"
+}

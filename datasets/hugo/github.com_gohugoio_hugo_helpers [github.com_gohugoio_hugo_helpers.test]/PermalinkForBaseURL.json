@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/pathspec.go",
+    "lineno": 76,
+    "focalfunc": "func (p *PathSpec) PermalinkForBaseURL(link, baseURL string) string",
+    "funcbody": "func (p *PathSpec) PermalinkForBaseURL(link, baseURL string) string {\n\treturn baseURL + strings.TrimPrefix(link, \"/\")\n}",
+    "funcname": "PermalinkForBaseURL"
+}

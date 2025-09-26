@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/consul_catalog.go",
+    "lineno": 57,
+    "focalfunc": "func (p *ProviderBuilder) BuildProviders() []*Provider",
+    "funcbody": "func (p *ProviderBuilder) BuildProviders() []*Provider {\n\tif len(p.Namespaces) == 0 {\n\t\treturn []*Provider{{\n\t\t\tConfiguration:\tp.Configuration,\n\t\t\tname:\t\tproviderName,\n\t\t}}\n\t}\n\n\tvar providers []*Provider\n\tfor _, namespace := range p.Namespaces {\n\t\tproviders = append(providers, &Provider{\n\t\t\tConfiguration:\tp.Configuration,\n\t\t\tname:\t\tproviderName + \"-\" + namespace,\n\t\t\tnamespace:\tnamespace,\n\t\t})\n\t}\n\n\treturn providers\n}",
+    "funcname": "BuildProviders"
+}

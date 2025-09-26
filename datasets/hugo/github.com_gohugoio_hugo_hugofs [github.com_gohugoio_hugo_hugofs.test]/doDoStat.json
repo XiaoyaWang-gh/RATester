@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 678,
+    "focalfunc": "func (fs *RootMappingFs) doDoStat(name string) ([]FileMetaInfo, error)",
+    "funcbody": "func (fs *RootMappingFs) doDoStat(name string) ([]FileMetaInfo, error) {\n\tname = fs.cleanName(name)\n\tkey := filepathSeparator + name\n\n\troots := fs.getRoot(key)\n\n\tif roots == nil {\n\t\tif fs.hasPrefix(key) {\n\n\t\t\treturn []FileMetaInfo{newDirNameOnlyFileInfo(name, nil, fs.virtualDirOpener(name))}, nil\n\t\t}\n\n\t\t_, roots := fs.getRoots(key)\n\t\tif roots == nil {\n\t\t\treturn nil, &os.PathError{Op: \"LStat\", Path: name, Err: os.ErrNotExist}\n\t\t}\n\n\t\tvar err error\n\t\tvar fis []FileMetaInfo\n\n\t\tfor _, rm := range roots {\n\t\t\tvar fi FileMetaInfo\n\t\t\tfi, err = fs.statRoot(rm, name)\n\t\t\tif err == nil {\n\t\t\t\tfis = append(fis, fi)\n\t\t\t}\n\t\t}\n\n\t\tif fis != nil {\n\t\t\treturn fis, nil\n\t\t}\n\n\t\tif err == nil {\n\t\t\terr = &os.PathError{Op: \"LStat\", Path: name, Err: err}\n\t\t}\n\n\t\treturn nil, err\n\t}\n\n\treturn []FileMetaInfo{newDirNameOnlyFileInfo(name, roots[0].Meta, fs.virtualDirOpener(name))}, nil\n}",
+    "funcname": "doDoStat"
+}

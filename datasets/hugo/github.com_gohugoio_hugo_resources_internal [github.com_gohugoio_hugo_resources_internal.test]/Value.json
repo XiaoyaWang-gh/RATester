@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/key.go",
+    "lineno": 36,
+    "focalfunc": "func (k ResourceTransformationKey) Value() string",
+    "funcbody": "func (k ResourceTransformationKey) Value() string {\n\tif len(k.elements) == 0 {\n\t\treturn k.Name\n\t}\n\n\treturn k.Name + \"_\" + hashing.HashString(k.elements...)\n}",
+    "funcname": "Value"
+}

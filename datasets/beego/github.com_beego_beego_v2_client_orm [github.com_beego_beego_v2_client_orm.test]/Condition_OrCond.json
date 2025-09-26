@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 125,
+    "focalfunc": "func (c *Condition) OrCond(cond *Condition) *Condition",
+    "funcbody": "func (c *Condition) OrCond(cond *Condition) *Condition {\n\tc = c.clone()\n\tif c == cond {\n\t\tpanic(fmt.Errorf(\"<Condition.OrCond> cannot use self as sub cond\"))\n\t}\n\tif cond != nil {\n\t\tc.params = append(c.params, condValue{cond: cond, isCond: true, isOr: true})\n\t}\n\treturn c\n}",
+    "funcname": "OrCond"
+}

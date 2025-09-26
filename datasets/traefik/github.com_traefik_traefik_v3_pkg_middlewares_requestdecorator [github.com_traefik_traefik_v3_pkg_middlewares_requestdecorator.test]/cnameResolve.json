@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/hostresolver.go",
+    "lineno": 75,
+    "focalfunc": "func cnameResolve(ctx context.Context, host, resolvPath string) (*cnameResolv, error)",
+    "funcbody": "func cnameResolve(ctx context.Context, host, resolvPath string) (*cnameResolv, error) {\n\tconfig, err := dns.ClientConfigFromFile(resolvPath)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"invalid resolver configuration file: %s\", resolvPath)\n\t}\n\n\tif net.ParseIP(host) != nil {\n\t\treturn nil, nil\n\t}\n\n\tclient := &dns.Client{Timeout: 30 * time.Second}\n\n\tm := &dns.Msg{}\n\tm.SetQuestion(dns.Fqdn(host), dns.TypeCNAME)\n\n\tvar result []*cnameResolv\n\tfor _, server := range config.Servers {\n\t\ttempRecord, err := getRecord(client, m, server, config.Port)\n\t\tif err != nil {\n\t\t\tif errors.Is(err, errNoCNAMERecord) {\n\t\t\t\tlog.Ctx(ctx).Debug().Err(err).Msgf(\"CNAME lookup for hostname %q\", host)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tlog.Ctx(ctx).Error().Err(err).Msgf(\"CNAME lookup for hostname %q\", host)\n\t\t\tcontinue\n\t\t}\n\t\tresult = append(result, tempRecord)\n\t}\n\n\tif len(result) == 0 {\n\t\treturn nil, nil\n\t}\n\n\tsort.Sort(byTTL(result))\n\treturn result[0], nil\n}",
+    "funcname": "cnameResolve"
+}

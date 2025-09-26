@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/middleware.go",
+    "lineno": 12,
+    "focalfunc": "func GetLogger(ctx context.Context, middleware, middlewareType string) *zerolog.Logger",
+    "funcbody": "func GetLogger(ctx context.Context, middleware, middlewareType string) *zerolog.Logger {\n\tlogger := log.Ctx(ctx).With().\n\t\tStr(logs.MiddlewareName, middleware).\n\t\tStr(logs.MiddlewareType, middlewareType).\n\t\tLogger()\n\n\treturn &logger\n}",
+    "funcname": "GetLogger"
+}

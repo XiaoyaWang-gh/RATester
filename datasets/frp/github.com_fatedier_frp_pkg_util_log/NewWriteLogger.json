@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 99,
+    "focalfunc": "func NewWriteLogger(level log.Level, offset int) *WriteLogger",
+    "funcbody": "func NewWriteLogger(level log.Level, offset int) *WriteLogger {\n\treturn &WriteLogger{\n\t\tlevel:\tlevel,\n\t\toffset:\toffset,\n\t}\n}",
+    "funcname": "NewWriteLogger"
+}

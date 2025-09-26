@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 930,
+    "focalfunc": "func WrapHandler(h http.Handler) HandlerFunc",
+    "funcbody": "func WrapHandler(h http.Handler) HandlerFunc {\n\treturn func(c Context) error {\n\t\th.ServeHTTP(c.Response(), c.Request())\n\t\treturn nil\n\t}\n}",
+    "funcname": "WrapHandler"
+}

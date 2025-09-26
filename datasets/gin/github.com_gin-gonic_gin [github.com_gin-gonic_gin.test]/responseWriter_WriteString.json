@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 88,
+    "focalfunc": "func (w *responseWriter) WriteString(s string) (n int, err error)",
+    "funcbody": "func (w *responseWriter) WriteString(s string) (n int, err error) {\n\tw.WriteHeaderNow()\n\tn, err = io.WriteString(w.ResponseWriter, s)\n\tw.size += n\n\treturn\n}",
+    "funcname": "WriteString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 308,
+    "focalfunc": "func Router(rootpath string, c ControllerInterface, mappingMethods ...string) *HttpServer",
+    "funcbody": "func Router(rootpath string, c ControllerInterface, mappingMethods ...string) *HttpServer {\n\treturn RouterWithOpts(rootpath, c, WithRouterMethods(c, mappingMethods...))\n}",
+    "funcname": "Router"
+}

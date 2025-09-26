@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 407,
+    "focalfunc": "func (l *genericResource) hash() uint64",
+    "funcbody": "func (l *genericResource) hash() uint64 {\n\tif err := l.h.init(l); err != nil {\n\t\tpanic(err)\n\t}\n\treturn l.h.value\n}",
+    "funcname": "hash"
+}

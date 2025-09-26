@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 338,
+    "focalfunc": "func (*Filters) Sepia(percentage any) gift.Filter",
+    "funcbody": "func (*Filters) Sepia(percentage any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(percentage),\n\t\tFilter:\t\tgift.Sepia(cast.ToFloat32(percentage)),\n\t}\n}",
+    "funcname": "Sepia"
+}

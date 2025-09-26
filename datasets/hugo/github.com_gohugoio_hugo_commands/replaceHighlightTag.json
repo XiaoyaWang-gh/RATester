@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 523,
+    "focalfunc": "func (c *importCommand) replaceHighlightTag(match string) string",
+    "funcbody": "func (c *importCommand) replaceHighlightTag(match string) string {\n\tr := regexp.MustCompile(`{%\\s*highlight\\s*(.*?)\\s*%}`)\n\tparts := r.FindStringSubmatch(match)\n\tlastQuote := rune(0)\n\tf := func(c rune) bool {\n\t\tswitch {\n\t\tcase c == lastQuote:\n\t\t\tlastQuote = rune(0)\n\t\t\treturn false\n\t\tcase lastQuote != rune(0):\n\t\t\treturn false\n\t\tcase unicode.In(c, unicode.Quotation_Mark):\n\t\t\tlastQuote = c\n\t\t\treturn false\n\t\tdefault:\n\t\t\treturn unicode.IsSpace(c)\n\t\t}\n\t}\n\n\titems := strings.FieldsFunc(parts[1], f)\n\n\tresult := bytes.NewBufferString(\"{{< highlight \")\n\tresult.WriteString(items[0])\n\toptions := items[1:]\n\tfor i, opt := range options {\n\t\topt = strings.Replace(opt, \"\\\"\", \"\", -1)\n\t\tif opt == \"linenos\" {\n\t\t\topt = \"linenos=table\"\n\t\t}\n\t\tif i == 0 {\n\t\t\topt = \" \\\"\" + opt\n\t\t}\n\t\tif i < len(options)-1 {\n\t\t\topt += \",\"\n\t\t} else if i == len(options)-1 {\n\t\t\topt += \"\\\"\"\n\t\t}\n\t\tresult.WriteString(opt)\n\t}\n\n\tresult.WriteString(\" >}}\")\n\treturn result.String()\n}",
+    "funcname": "replaceHighlightTag"
+}

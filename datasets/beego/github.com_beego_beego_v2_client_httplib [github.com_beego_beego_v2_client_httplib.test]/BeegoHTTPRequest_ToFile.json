@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 605,
+    "focalfunc": "func (b *BeegoHTTPRequest) ToFile(filename string) error",
+    "funcbody": "func (b *BeegoHTTPRequest) ToFile(filename string) error {\n\tresp, err := b.getResponse()\n\tif err != nil {\n\t\treturn err\n\t}\n\tif resp.Body == nil {\n\t\treturn nil\n\t}\n\tdefer resp.Body.Close()\n\terr = pathExistAndMkdir(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\t_, err = io.Copy(f, resp.Body)\n\treturn err\n}",
+    "funcname": "ToFile"
+}

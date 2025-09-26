@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/i18n.go",
+    "lineno": 42,
+    "focalfunc": "func NewTranslator(b *i18n.Bundle, cfg config.AllProvider, logger loggers.Logger) Translator",
+    "funcbody": "func NewTranslator(b *i18n.Bundle, cfg config.AllProvider, logger loggers.Logger) Translator {\n\tt := Translator{cfg: cfg, logger: logger, translateFuncs: make(map[string]translateFunc)}\n\tt.initFuncs(b)\n\treturn t\n}",
+    "funcname": "NewTranslator"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 48,
+    "focalfunc": "func (ns *Namespace) CountRunes(s any) (int, error)",
+    "funcbody": "func (ns *Namespace) CountRunes(s any) (int, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn 0, fmt.Errorf(\"failed to convert content to string: %w\", err)\n\t}\n\n\tcounter := 0\n\tfor _, r := range tpl.StripHTML(ss) {\n\t\tif !helpers.IsWhitespace(r) {\n\t\t\tcounter++\n\t\t}\n\t}\n\n\treturn counter, nil\n}",
+    "funcname": "CountRunes"
+}

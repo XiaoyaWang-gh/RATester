@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/tables/tables.go",
+    "lineno": 100,
+    "focalfunc": "func (r *htmlRenderer) peekTable(ctx *render.Context) *hooks.Table",
+    "funcbody": "func (r *htmlRenderer) peekTable(ctx *render.Context) *hooks.Table {\n\tv := ctx.PeekValue(gast.KindTable)\n\tif v == nil {\n\t\tpanic(\"table not found\")\n\t}\n\treturn v.(*hooks.Table)\n}",
+    "funcname": "peekTable"
+}

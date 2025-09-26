@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 109,
+    "focalfunc": "func (m *MenuEntry) KeyName() string",
+    "funcbody": "func (m *MenuEntry) KeyName() string {\n\tif m.Identifier != \"\" {\n\t\treturn m.Identifier\n\t}\n\treturn m.Name\n}",
+    "funcname": "KeyName"
+}

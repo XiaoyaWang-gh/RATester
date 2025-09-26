@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 129,
+    "focalfunc": "func (ctx *Context) YamlResp(data interface{}) error",
+    "funcbody": "func (ctx *Context) YamlResp(data interface{}) error {\n\treturn ctx.Output.YAML(data)\n}",
+    "funcname": "YamlResp"
+}

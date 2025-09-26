@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 347,
+    "focalfunc": "func (c *Cache) getBytesAndRemoveIfExpired(id string) ([]byte, bool)",
+    "funcbody": "func (c *Cache) getBytesAndRemoveIfExpired(id string) ([]byte, bool) {\n\tif c.maxAge == 0 {\n\n\t\treturn nil, false\n\t}\n\n\tf, err := c.Fs.Open(id)\n\tif err != nil {\n\t\treturn nil, false\n\t}\n\tdefer f.Close()\n\n\tb, err := io.ReadAll(f)\n\tif err != nil {\n\t\treturn nil, false\n\t}\n\n\tremoved, err := c.removeIfExpired(id)\n\tif err != nil {\n\t\treturn nil, false\n\t}\n\n\treturn b, removed\n}",
+    "funcname": "getBytesAndRemoveIfExpired"
+}

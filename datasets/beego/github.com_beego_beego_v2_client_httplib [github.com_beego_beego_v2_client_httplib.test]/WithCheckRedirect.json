@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 65,
+    "focalfunc": "func WithCheckRedirect(redirect func(req *http.Request, via []*http.Request) error) ClientOption",
+    "funcbody": "func WithCheckRedirect(redirect func(req *http.Request, via []*http.Request) error) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.CheckRedirect = redirect\n\t}\n}",
+    "funcname": "WithCheckRedirect"
+}

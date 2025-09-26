@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 71,
+    "focalfunc": "func (g *Group) PUT(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) PUT(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn g.Add(http.MethodPut, path, h, m...)\n}",
+    "funcname": "PUT"
+}

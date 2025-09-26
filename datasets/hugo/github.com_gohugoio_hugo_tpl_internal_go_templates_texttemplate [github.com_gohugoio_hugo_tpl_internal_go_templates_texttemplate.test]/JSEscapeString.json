@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 730,
+    "focalfunc": "func JSEscapeString(s string) string",
+    "funcbody": "func JSEscapeString(s string) string {\n\n\tif strings.IndexFunc(s, jsIsSpecial) < 0 {\n\t\treturn s\n\t}\n\tvar b strings.Builder\n\tJSEscape(&b, []byte(s))\n\treturn b.String()\n}",
+    "funcname": "JSEscapeString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 78,
+    "focalfunc": "func (ns *Namespace) Emojify(s any) (template.HTML, error)",
+    "funcbody": "func (ns *Namespace) Emojify(s any) (template.HTML, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn template.HTML(helpers.Emojify([]byte(ss))), nil\n}",
+    "funcname": "Emojify"
+}

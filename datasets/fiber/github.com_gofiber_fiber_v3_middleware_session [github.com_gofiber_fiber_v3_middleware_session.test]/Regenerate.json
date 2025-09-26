@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 125,
+    "focalfunc": "func (s *Session) Regenerate() error",
+    "funcbody": "func (s *Session) Regenerate() error {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\n\tif err := s.config.Storage.Delete(s.id); err != nil {\n\t\treturn err\n\t}\n\n\ts.refresh()\n\n\treturn nil\n}",
+    "funcname": "Regenerate"
+}

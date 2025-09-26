@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/beego.go",
+    "lineno": 95,
+    "focalfunc": "func InitBeegoBeforeTest(appConfigPath string)",
+    "funcbody": "func InitBeegoBeforeTest(appConfigPath string) {\n\tif err := LoadAppConfig(appConfigProvider, appConfigPath); err != nil {\n\t\tpanic(err)\n\t}\n\tBConfig.RunMode = \"test\"\n\tinitBeforeHTTPRun()\n}",
+    "funcname": "InitBeegoBeforeTest"
+}

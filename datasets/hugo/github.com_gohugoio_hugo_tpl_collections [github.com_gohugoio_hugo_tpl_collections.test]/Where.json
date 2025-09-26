@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 29,
+    "focalfunc": "func (ns *Namespace) Where(ctx context.Context, c, key any, args ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Where(ctx context.Context, c, key any, args ...any) (any, error) {\n\tseqv, isNil := indirect(reflect.ValueOf(c))\n\tif isNil {\n\t\treturn nil, errors.New(\"can't iterate over a nil value of type \" + reflect.ValueOf(c).Type().String())\n\t}\n\n\tmv, op, err := parseWhereArgs(args...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tctxv := reflect.ValueOf(ctx)\n\n\tvar path []string\n\tkv := reflect.ValueOf(key)\n\tif kv.Kind() == reflect.String {\n\t\tpath = strings.Split(strings.Trim(kv.String(), \".\"), \".\")\n\t}\n\n\tswitch seqv.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\treturn ns.checkWhereArray(ctxv, seqv, kv, mv, path, op)\n\tcase reflect.Map:\n\t\treturn ns.checkWhereMap(ctxv, seqv, kv, mv, path, op)\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"can't iterate over %T\", c)\n\t}\n}",
+    "funcname": "Where"
+}

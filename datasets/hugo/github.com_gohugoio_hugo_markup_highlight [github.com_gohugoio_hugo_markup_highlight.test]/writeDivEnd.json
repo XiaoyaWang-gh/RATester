@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 324,
+    "focalfunc": "func writeDivEnd(w hugio.FlexiWriter)",
+    "funcbody": "func writeDivEnd(w hugio.FlexiWriter) {\n\tw.WriteString(\"</div>\")\n}",
+    "funcname": "writeDivEnd"
+}

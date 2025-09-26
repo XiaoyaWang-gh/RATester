@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup.go",
+    "lineno": 135,
+    "focalfunc": "func addConverter(m map[string]converter.Provider, c converter.Provider, aliases ...string)",
+    "funcbody": "func addConverter(m map[string]converter.Provider, c converter.Provider, aliases ...string) {\n\tfor _, alias := range aliases {\n\t\tm[alias] = c\n\t}\n}",
+    "funcname": "addConverter"
+}

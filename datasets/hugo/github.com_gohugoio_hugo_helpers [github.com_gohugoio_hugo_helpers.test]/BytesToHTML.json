@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 90,
+    "focalfunc": "func BytesToHTML(b []byte) template.HTML",
+    "funcbody": "func BytesToHTML(b []byte) template.HTML {\n\treturn template.HTML(string(b))\n}",
+    "funcname": "BytesToHTML"
+}

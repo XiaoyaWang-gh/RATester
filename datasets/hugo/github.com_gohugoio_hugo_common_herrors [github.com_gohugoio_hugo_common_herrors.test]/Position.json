@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 140,
+    "focalfunc": "func (e fileError) Position() text.Position",
+    "funcbody": "func (e fileError) Position() text.Position {\n\treturn e.position\n}",
+    "funcname": "Position"
+}

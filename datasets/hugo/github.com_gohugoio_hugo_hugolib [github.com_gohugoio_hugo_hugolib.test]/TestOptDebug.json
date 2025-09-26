@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 64,
+    "focalfunc": "func TestOptDebug() TestOpt",
+    "funcbody": "func TestOptDebug() TestOpt {\n\treturn func(c *IntegrationTestConfig) {\n\t\tc.LogLevel = logg.LevelDebug\n\t}\n}",
+    "funcname": "TestOptDebug"
+}

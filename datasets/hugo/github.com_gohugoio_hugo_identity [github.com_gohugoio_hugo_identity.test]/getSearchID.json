@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 35,
+    "focalfunc": "func getSearchID() *searchID",
+    "funcbody": "func getSearchID() *searchID {\n\treturn searchIDPool.Get().(*searchID)\n}",
+    "funcname": "getSearchID"
+}

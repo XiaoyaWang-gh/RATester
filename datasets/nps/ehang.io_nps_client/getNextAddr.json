@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/control.go",
+    "lineno": 465,
+    "focalfunc": "func getNextAddr(addr string, n int) (string, error)",
+    "funcbody": "func getNextAddr(addr string, n int) (string, error) {\n\tarr := strings.Split(addr, \":\")\n\tif len(arr) != 2 {\n\t\treturn \"\", errors.New(fmt.Sprintf(\"the format of %s incorrect\", addr))\n\t}\n\tif p, err := strconv.Atoi(arr[1]); err != nil {\n\t\treturn \"\", err\n\t} else {\n\t\treturn arr[0] + \":\" + strconv.Itoa(p+n), nil\n\t}\n}",
+    "funcname": "getNextAddr"
+}

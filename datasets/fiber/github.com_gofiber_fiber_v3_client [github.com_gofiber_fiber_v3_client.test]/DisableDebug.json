@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 464,
+    "focalfunc": "func (c *Client) DisableDebug() *Client",
+    "funcbody": "func (c *Client) DisableDebug() *Client {\n\tc.debug = false\n\treturn c\n}",
+    "funcname": "DisableDebug"
+}

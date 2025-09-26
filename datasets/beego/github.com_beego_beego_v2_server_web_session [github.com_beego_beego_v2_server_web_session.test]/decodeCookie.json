@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 143,
+    "focalfunc": "func decodeCookie(block cipher.Block, hashKey, name, value string, gcmaxlifetime int64) (map[interface{}]interface{}, error)",
+    "funcbody": "func decodeCookie(block cipher.Block, hashKey, name, value string, gcmaxlifetime int64) (map[interface{}]interface{}, error) {\n\n\tb, err := decode([]byte(value))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tparts := bytes.SplitN(b, []byte(\"|\"), 3)\n\tif len(parts) != 3 {\n\t\treturn nil, errors.New(\"Decode: invalid value format\")\n\t}\n\n\tb = append([]byte(name+\"|\"), b[:len(b)-len(parts[2])]...)\n\th := hmac.New(sha256.New, []byte(hashKey))\n\th.Write(b)\n\tsig := h.Sum(nil)\n\tif len(sig) != len(parts[2]) || subtle.ConstantTimeCompare(sig, parts[2]) != 1 {\n\t\treturn nil, errors.New(\"Decode: the value is not valid\")\n\t}\n\t// 3. Verify date ranges.\n\tvar t1 int64\n\tif t1, err = strconv.ParseInt(string(parts[0]), 10, 64); err != nil {\n\t\treturn nil, errors.New(\"Decode: invalid timestamp\")\n\t}\n\tt2 := time.Now().UTC().Unix()\n\tif t1 > t2 {\n\t\treturn nil, errors.New(\"Decode: timestamp is too new\")\n\t}\n\tif t1 < t2-gcmaxlifetime {\n\t\treturn nil, errors.New(\"Decode: expired timestamp\")\n\t}\n\n\tb, err = decode(parts[1])\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif b, err = decrypt(block, b); err != nil {\n\t\treturn nil, err\n\t}\n\n\tdst, err := DecodeGob(b)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn dst, nil\n}",
+    "funcname": "decodeCookie"
+}

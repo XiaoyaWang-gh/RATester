@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/config.go",
+    "lineno": 288,
+    "focalfunc": "func (p *DynConfBuilder) getIPPort(ctx context.Context, container dockerData, serverPort string) (string, string, error)",
+    "funcbody": "func (p *DynConfBuilder) getIPPort(ctx context.Context, container dockerData, serverPort string) (string, string, error) {\n\tlogger := log.Ctx(ctx)\n\n\tvar ip, port string\n\tusedBound := false\n\n\tif p.UseBindPortIP {\n\t\tportBinding, err := p.getPortBinding(container, serverPort)\n\t\tswitch {\n\t\tcase err != nil:\n\t\t\tlogger.Info().Msgf(\"Unable to find a binding for container %q, falling back on its internal IP/Port.\", container.Name)\n\t\tcase portBinding.HostIP == \"0.0.0.0\" || len(portBinding.HostIP) == 0:\n\t\t\tlogger.Info().Msgf(\"Cannot determine the IP address (got %q) for %q's binding, falling back on its internal IP/Port.\", portBinding.HostIP, container.Name)\n\t\tdefault:\n\t\t\tip = portBinding.HostIP\n\t\t\tport = portBinding.HostPort\n\t\t\tusedBound = true\n\t\t}\n\t}\n\n\tif !usedBound {\n\t\tip = p.getIPAddress(ctx, container)\n\t\tport = getPort(container, serverPort)\n\t}\n\n\tif len(ip) == 0 {\n\t\treturn \"\", \"\", fmt.Errorf(\"unable to find the IP address for the container %q: the server is ignored\", container.Name)\n\t}\n\n\treturn ip, port, nil\n}",
+    "funcname": "getIPPort"
+}

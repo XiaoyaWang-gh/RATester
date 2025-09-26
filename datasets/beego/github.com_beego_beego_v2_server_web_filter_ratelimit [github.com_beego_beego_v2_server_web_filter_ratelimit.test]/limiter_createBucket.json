@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 136,
+    "focalfunc": "func (l *limiter) createBucket(key string) bucket",
+    "funcbody": "func (l *limiter) createBucket(key string) bucket {\n\tl.Lock()\n\tdefer l.Unlock()\n\n\tb, ok := l.buckets[key]\n\tif ok {\n\t\treturn b\n\t}\n\tb = l.bucketFactory(withCapacity(l.capacity), withRate(l.rate))\n\tl.buckets[key] = b\n\treturn b\n}",
+    "funcname": "createBucket"
+}

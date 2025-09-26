@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/conv.go",
+    "lineno": 40,
+    "focalfunc": "func getParamValue(param *MethodParam, ctx *beecontext.Context) string",
+    "funcbody": "func getParamValue(param *MethodParam, ctx *beecontext.Context) string {\n\tswitch param.in {\n\tcase body:\n\t\treturn string(ctx.Input.RequestBody)\n\tcase header:\n\t\treturn ctx.Input.Header(param.name)\n\tcase path:\n\t\treturn ctx.Input.Query(\":\" + param.name)\n\tdefault:\n\t\treturn ctx.Input.Query(param.name)\n\t}\n}",
+    "funcname": "getParamValue"
+}

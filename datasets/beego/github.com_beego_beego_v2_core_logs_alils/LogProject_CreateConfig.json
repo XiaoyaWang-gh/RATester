@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_project.go",
+    "lineno": 592,
+    "focalfunc": "func (p *LogProject) CreateConfig(c *LogConfig) (err error)",
+    "funcbody": "func (p *LogProject) CreateConfig(c *LogConfig) (err error) {\n\tbody, err := json.Marshal(c)\n\tif err != nil {\n\t\treturn\n\t}\n\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\":\tfmt.Sprintf(\"%v\", len(body)),\n\t\t\"Content-Type\":\t\t\"application/json\",\n\t\t\"Accept-Encoding\":\t\"deflate\",\n\t}\n\n\tr, err := request(p, \"POST\", \"/configs\", h, body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbody, err = io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(body, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to update config\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Printf(\"%s\\n\", dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "CreateConfig"
+}

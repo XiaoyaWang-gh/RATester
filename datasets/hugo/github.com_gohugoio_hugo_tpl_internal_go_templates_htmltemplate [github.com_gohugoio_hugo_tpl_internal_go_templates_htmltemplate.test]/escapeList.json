@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 570,
+    "focalfunc": "func (e *escaper) escapeList(c context, n *parse.ListNode) context",
+    "funcbody": "func (e *escaper) escapeList(c context, n *parse.ListNode) context {\n\tif n == nil {\n\t\treturn c\n\t}\n\tfor _, m := range n.Nodes {\n\t\tc = e.escape(c, m)\n\t\tif c.state == stateDead {\n\t\t\tbreak\n\t\t}\n\t}\n\treturn c\n}",
+    "funcname": "escapeList"
+}

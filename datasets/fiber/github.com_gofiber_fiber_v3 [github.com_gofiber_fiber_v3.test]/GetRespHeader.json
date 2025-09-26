@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 653,
+    "focalfunc": "func (c *DefaultCtx) GetRespHeader(key string, defaultValue ...string) string",
+    "funcbody": "func (c *DefaultCtx) GetRespHeader(key string, defaultValue ...string) string {\n\treturn defaultString(c.app.getString(c.fasthttp.Response.Header.Peek(key)), defaultValue)\n}",
+    "funcname": "GetRespHeader"
+}

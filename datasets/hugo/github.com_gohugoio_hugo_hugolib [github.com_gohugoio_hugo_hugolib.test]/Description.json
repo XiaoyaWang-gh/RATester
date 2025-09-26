@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 155,
+    "focalfunc": "func (p *pageMeta) Description() string",
+    "funcbody": "func (p *pageMeta) Description() string {\n\treturn p.pageConfig.Description\n}",
+    "funcname": "Description"
+}

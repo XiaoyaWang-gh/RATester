@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/config.go",
+    "lineno": 386,
+    "focalfunc": "func (p *DynConfBuilder) getPortBinding(container dockerData, serverPort string) (*nat.PortBinding, error)",
+    "funcbody": "func (p *DynConfBuilder) getPortBinding(container dockerData, serverPort string) (*nat.PortBinding, error) {\n\tport := getPort(container, serverPort)\n\n\tfor netPort, portBindings := range container.NetworkSettings.Ports {\n\t\tif strings.EqualFold(string(netPort), port+\"/TCP\") || strings.EqualFold(string(netPort), port+\"/UDP\") {\n\t\t\tfor _, p := range portBindings {\n\t\t\t\treturn &p, nil\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil, fmt.Errorf(\"unable to find the external IP:Port for the container %q\", container.Name)\n}",
+    "funcname": "getPortBinding"
+}

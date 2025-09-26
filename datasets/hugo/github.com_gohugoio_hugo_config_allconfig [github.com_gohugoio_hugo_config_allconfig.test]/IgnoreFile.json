@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 195,
+    "focalfunc": "func (c ConfigLanguage) IgnoreFile(s string) bool",
+    "funcbody": "func (c ConfigLanguage) IgnoreFile(s string) bool {\n\treturn c.config.C.IgnoreFile(s)\n}",
+    "funcname": "IgnoreFile"
+}

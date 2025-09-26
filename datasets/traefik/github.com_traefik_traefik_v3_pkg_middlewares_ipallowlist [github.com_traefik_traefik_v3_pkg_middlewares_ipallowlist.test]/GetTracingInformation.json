@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ipallowlist/ip_allowlist.go",
+    "lineno": 68,
+    "focalfunc": "func (al *ipAllowLister) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (al *ipAllowLister) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn al.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 257,
+    "focalfunc": "func (s *Conn) getInfo(t interface{}) (err error)",
+    "funcbody": "func (s *Conn) getInfo(t interface{}) (err error) {\n\tvar l int\n\tbuf := common.BufPoolMax.Get().([]byte)\n\tdefer common.PutBufPoolMax(buf)\n\tif l, err = s.GetLen(); err != nil {\n\t\treturn\n\t} else if _, err = s.ReadLen(l, buf); err != nil {\n\t\treturn\n\t} else {\n\t\tjson.Unmarshal(buf[:l], &t)\n\t}\n\treturn\n}",
+    "funcname": "getInfo"
+}

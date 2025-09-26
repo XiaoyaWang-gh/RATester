@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 92,
+    "focalfunc": "func (s *Storage) Reset() error",
+    "funcbody": "func (s *Storage) Reset() error {\n\tndb := make(map[string]entry)\n\ts.mux.Lock()\n\ts.db = ndb\n\ts.mux.Unlock()\n\treturn nil\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 242,
+    "focalfunc": "func FindCWD() (string, error)",
+    "funcbody": "func FindCWD() (string, error) {\n\tserverFile, err := filepath.Abs(os.Args[0])\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"can't get absolute path for executable: %v\", err)\n\t}\n\n\tpath := filepath.Dir(serverFile)\n\trealFile, err := filepath.EvalSymlinks(serverFile)\n\tif err != nil {\n\t\tif _, err = os.Stat(serverFile + \".exe\"); err == nil {\n\t\t\trealFile = filepath.Clean(serverFile + \".exe\")\n\t\t}\n\t}\n\n\tif err == nil && realFile != serverFile {\n\t\tpath = filepath.Dir(realFile)\n\t}\n\n\treturn path, nil\n}",
+    "funcname": "FindCWD"
+}

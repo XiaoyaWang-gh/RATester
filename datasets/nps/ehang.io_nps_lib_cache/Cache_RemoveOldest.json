@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 71,
+    "focalfunc": "func (c *Cache) RemoveOldest()",
+    "funcbody": "func (c *Cache) RemoveOldest() {\n\tele := c.ll.Back()\n\tif ele != nil {\n\t\tc.removeElement(ele)\n\t}\n}",
+    "funcname": "RemoveOldest"
+}

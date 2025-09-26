@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 108,
+    "focalfunc": "func (b *DefaultBinder) BindHeaders(c Context, i interface{}) error",
+    "funcbody": "func (b *DefaultBinder) BindHeaders(c Context, i interface{}) error {\n\tif err := b.bindData(i, c.Request().Header, \"header\"); err != nil {\n\t\treturn NewHTTPError(http.StatusBadRequest, err.Error()).SetInternal(err)\n\t}\n\treturn nil\n}",
+    "funcname": "BindHeaders"
+}

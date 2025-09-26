@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 791,
+    "focalfunc": "func (s *IntegrationTestBuilder) readWorkingDir(t testing.TB, fs *hugofs.Fs, filename string) string",
+    "funcbody": "func (s *IntegrationTestBuilder) readWorkingDir(t testing.TB, fs *hugofs.Fs, filename string) string {\n\tt.Helper()\n\treturn s.readFileFromFs(t, fs.WorkingDirReadOnly, filename)\n}",
+    "funcname": "readWorkingDir"
+}

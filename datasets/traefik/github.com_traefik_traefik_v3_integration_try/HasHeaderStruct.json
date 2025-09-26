@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 165,
+    "focalfunc": "func HasHeaderStruct(header http.Header) ResponseCondition",
+    "funcbody": "func HasHeaderStruct(header http.Header) ResponseCondition {\n\treturn func(res *http.Response) error {\n\t\tfor key := range header {\n\t\t\tif _, ok := res.Header[key]; !ok {\n\t\t\t\treturn fmt.Errorf(\"header %s not present in the response. Expected headers: %v Got response headers: %v\", key, header, res.Header)\n\t\t\t}\n\n\t\t\tif !reflect.DeepEqual(header[key], res.Header[key]) {\n\t\t\t\treturn fmt.Errorf(\"for header %s got values %v, wanted %v\", key, res.Header[key], header[key])\n\t\t\t}\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "HasHeaderStruct"
+}

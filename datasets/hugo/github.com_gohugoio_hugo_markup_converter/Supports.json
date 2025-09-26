@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 84,
+    "focalfunc": "func (nopConverter) Supports(feature identity.Identity) bool",
+    "funcbody": "func (nopConverter) Supports(feature identity.Identity) bool {\n\treturn false\n}",
+    "funcname": "Supports"
+}

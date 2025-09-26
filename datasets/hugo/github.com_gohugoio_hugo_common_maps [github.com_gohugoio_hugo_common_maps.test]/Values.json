@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 113,
+    "focalfunc": "func (c *Scratch) Values() map[string]any",
+    "funcbody": "func (c *Scratch) Values() map[string]any {\n\tc.mu.RLock()\n\tdefer c.mu.RUnlock()\n\treturn c.values\n}",
+    "funcname": "Values"
+}

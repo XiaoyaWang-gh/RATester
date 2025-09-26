@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 209,
+    "focalfunc": "func (c *Client) SetRootCertificateFromString(pem string) *Client",
+    "funcbody": "func (c *Client) SetRootCertificateFromString(pem string) *Client {\n\tconfig := c.TLSConfig()\n\n\tif config.RootCAs == nil {\n\t\tconfig.RootCAs = x509.NewCertPool()\n\t}\n\n\tif !config.RootCAs.AppendCertsFromPEM([]byte(pem)) {\n\t\tc.logger.Panicf(\"client: %v\", ErrFailedToAppendCert)\n\t}\n\n\treturn c\n}",
+    "funcname": "SetRootCertificateFromString"
+}

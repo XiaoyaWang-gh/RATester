@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 27,
+    "focalfunc": "func New(config ...Config) *Storage",
+    "funcbody": "func New(config ...Config) *Storage {\n\n\tcfg := configDefault(config...)\n\n\tstore := &Storage{\n\t\tdb:\t\tmake(map[string]entry),\n\t\tgcInterval:\tcfg.GCInterval,\n\t\tdone:\t\tmake(chan struct{}),\n\t}\n\n\tutils.StartTimeStampUpdater()\n\tgo store.gc()\n\n\treturn store\n}",
+    "funcname": "New"
+}

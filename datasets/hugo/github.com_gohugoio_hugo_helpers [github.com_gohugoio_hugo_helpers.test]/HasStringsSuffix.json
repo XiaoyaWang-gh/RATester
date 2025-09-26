@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 218,
+    "focalfunc": "func HasStringsSuffix(s, suffix []string) bool",
+    "funcbody": "func HasStringsSuffix(s, suffix []string) bool {\n\treturn len(s) >= len(suffix) && compareStringSlices(s[len(s)-len(suffix):], suffix)\n}",
+    "funcname": "HasStringsSuffix"
+}

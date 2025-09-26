@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 343,
+    "focalfunc": "func (fs *RootMappingFs) ReverseLookupComponent(component, filename string) ([]ComponentPath, error)",
+    "funcbody": "func (fs *RootMappingFs) ReverseLookupComponent(component, filename string) ([]ComponentPath, error) {\n\tfilename = fs.cleanName(filename)\n\tkey := filepathSeparator + filename\n\n\ts, roots := fs.getRootsReverse(key)\n\n\tif len(roots) == 0 {\n\t\treturn nil, nil\n\t}\n\n\tvar cps []ComponentPath\n\n\tbase := strings.TrimPrefix(key, s)\n\tdir, name := filepath.Split(base)\n\n\tfor _, first := range roots {\n\t\tif component != \"\" && first.FromBase != component {\n\t\t\tcontinue\n\t\t}\n\n\t\tvar filename string\n\t\tif first.Meta.Rename != nil {\n\n\t\t\tif newname, ok := first.Meta.Rename(name, true); ok {\n\t\t\t\tfilename = filepathSeparator + filepath.Join(first.path, dir, newname)\n\t\t\t} else {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t} else {\n\n\t\t\tfilename = filepathSeparator + filepath.Join(first.path, dir, name)\n\t\t}\n\n\t\tcps = append(cps, ComponentPath{\n\t\t\tComponent:\tfirst.FromBase,\n\t\t\tPath:\t\tpaths.ToSlashTrimLeading(filename),\n\t\t\tLang:\t\tfirst.Meta.Lang,\n\t\t\tWatch:\t\tfirst.Meta.Watch,\n\t\t})\n\t}\n\n\treturn cps, nil\n}",
+    "funcname": "ReverseLookupComponent"
+}

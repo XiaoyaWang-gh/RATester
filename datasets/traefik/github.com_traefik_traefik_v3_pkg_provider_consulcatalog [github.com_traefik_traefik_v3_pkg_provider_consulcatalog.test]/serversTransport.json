@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/connect_tls.go",
+    "lineno": 54,
+    "focalfunc": "func (c *connectCert) serversTransport(item itemData) *dynamic.ServersTransport",
+    "funcbody": "func (c *connectCert) serversTransport(item itemData) *dynamic.ServersTransport {\n\tspiffeID := fmt.Sprintf(\"spiffe:///ns/%s/dc/%s/svc/%s\",\n\t\titem.Namespace,\n\t\titem.Datacenter,\n\t\titem.Name,\n\t)\n\n\treturn &dynamic.ServersTransport{\n\n\t\tServerName:\tfmt.Sprintf(\"%s-%s-%s\", item.Namespace, item.Datacenter, item.Name),\n\n\t\tInsecureSkipVerify:\ttrue,\n\t\tRootCAs:\t\tc.getRoot(),\n\t\tCertificates: traefiktls.Certificates{\n\t\t\tc.getLeaf(),\n\t\t},\n\t\tPeerCertURI:\tspiffeID,\n\t}\n}",
+    "funcname": "serversTransport"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 42,
+    "focalfunc": "func InitLogger(logPath string, levelStr string, maxDays int, disableLogColor bool)",
+    "funcbody": "func InitLogger(logPath string, levelStr string, maxDays int, disableLogColor bool) {\n\toptions := []log.Option{}\n\tif logPath == \"console\" {\n\t\tif !disableLogColor {\n\t\t\toptions = append(options,\n\t\t\t\tlog.WithOutput(log.NewConsoleWriter(log.ConsoleConfig{\n\t\t\t\t\tColorful: true,\n\t\t\t\t}, os.Stdout)),\n\t\t\t)\n\t\t}\n\t} else {\n\t\twriter := log.NewRotateFileWriter(log.RotateFileConfig{\n\t\t\tFileName:\tlogPath,\n\t\t\tMode:\t\tlog.RotateFileModeDaily,\n\t\t\tMaxDays:\tmaxDays,\n\t\t})\n\t\twriter.Init()\n\t\toptions = append(options, log.WithOutput(writer))\n\t}\n\n\tlevel, err := log.ParseLevel(levelStr)\n\tif err != nil {\n\t\tlevel = log.InfoLevel\n\t}\n\toptions = append(options, log.WithLevel(level))\n\tLogger = Logger.WithOptions(options...)\n}",
+    "funcname": "InitLogger"
+}

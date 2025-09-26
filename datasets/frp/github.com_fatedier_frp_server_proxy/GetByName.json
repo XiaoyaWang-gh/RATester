@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 357,
+    "focalfunc": "func (pm *Manager) GetByName(name string) (pxy Proxy, ok bool)",
+    "funcbody": "func (pm *Manager) GetByName(name string) (pxy Proxy, ok bool) {\n\tpm.mu.RLock()\n\tdefer pm.mu.RUnlock()\n\tpxy, ok = pm.pxys[name]\n\treturn\n}",
+    "funcname": "GetByName"
+}

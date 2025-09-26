@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 239,
+    "focalfunc": "func (p *pageState) MarshalJSON() ([]byte, error)",
+    "funcbody": "func (p *pageState) MarshalJSON() ([]byte, error) {\n\treturn page.MarshalPageToJSON(p)\n}",
+    "funcname": "MarshalJSON"
+}

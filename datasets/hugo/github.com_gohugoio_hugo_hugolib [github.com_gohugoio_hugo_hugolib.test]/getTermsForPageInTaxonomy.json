@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 450,
+    "focalfunc": "func (m *pageMap) getTermsForPageInTaxonomy(path, taxonomy string) page.Pages",
+    "funcbody": "func (m *pageMap) getTermsForPageInTaxonomy(path, taxonomy string) page.Pages {\n\tprefix := paths.AddLeadingSlash(taxonomy)\n\n\ttermPages, err := m.cacheGetTerms.GetOrCreate(prefix, func(string) (map[string]page.Pages, error) {\n\t\tmm := make(map[string]page.Pages)\n\t\terr := m.treeTaxonomyEntries.WalkPrefix(\n\t\t\tdoctree.LockTypeNone,\n\t\t\tpaths.AddTrailingSlash(prefix),\n\t\t\tfunc(s string, n *weightedContentNode) (bool, error) {\n\t\t\t\tmm[n.n.Path()] = append(mm[n.n.Path()], n.term)\n\t\t\t\treturn false, nil\n\t\t\t},\n\t\t)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tfor _, v := range mm {\n\t\t\tpage.SortByDefault(v)\n\t\t}\n\n\t\treturn mm, nil\n\t})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn termPages[path]\n}",
+    "funcname": "getTermsForPageInTaxonomy"
+}

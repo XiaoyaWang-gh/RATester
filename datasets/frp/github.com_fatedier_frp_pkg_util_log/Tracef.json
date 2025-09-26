@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 86,
+    "focalfunc": "func Tracef(format string, v ...interface{})",
+    "funcbody": "func Tracef(format string, v ...interface{}) {\n\tLogger.Tracef(format, v...)\n}",
+    "funcname": "Tracef"
+}

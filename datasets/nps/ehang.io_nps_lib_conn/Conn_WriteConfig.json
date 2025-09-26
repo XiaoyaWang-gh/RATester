@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 306,
+    "focalfunc": "func (s *Conn) WriteConfig() (int, error)",
+    "funcbody": "func (s *Conn) WriteConfig() (int, error) {\n\treturn s.Write([]byte(common.WORK_CONFIG))\n}",
+    "funcname": "WriteConfig"
+}

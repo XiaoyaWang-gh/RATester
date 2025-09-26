@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 122,
+    "focalfunc": "func applyOptions(opts any, cfg *Config) error",
+    "funcbody": "func applyOptions(opts any, cfg *Config) error {\n\tif opts == nil {\n\t\treturn nil\n\t}\n\tswitch vv := opts.(type) {\n\tcase map[string]any:\n\t\treturn applyOptionsFromMap(vv, cfg)\n\tdefault:\n\t\ts, err := cast.ToStringE(opts)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn applyOptionsFromString(s, cfg)\n\t}\n}",
+    "funcname": "applyOptions"
+}

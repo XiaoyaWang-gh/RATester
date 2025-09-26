@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/chain.go",
+    "lineno": 85,
+    "focalfunc": "func (c Chain) Extend(chain Chain) Chain",
+    "funcbody": "func (c Chain) Extend(chain Chain) Chain {\n\treturn c.Append(chain.constructors...)\n}",
+    "funcname": "Extend"
+}

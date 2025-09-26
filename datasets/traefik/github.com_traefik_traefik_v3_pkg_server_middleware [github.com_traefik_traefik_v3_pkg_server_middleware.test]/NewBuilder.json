@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/middlewares.go",
+    "lineno": 61,
+    "focalfunc": "func NewBuilder(configs map[string]*runtime.MiddlewareInfo, serviceBuilder serviceBuilder, pluginBuilder PluginsBuilder) *Builder",
+    "funcbody": "func NewBuilder(configs map[string]*runtime.MiddlewareInfo, serviceBuilder serviceBuilder, pluginBuilder PluginsBuilder) *Builder {\n\treturn &Builder{configs: configs, serviceBuilder: serviceBuilder, pluginBuilder: pluginBuilder}\n}",
+    "funcname": "NewBuilder"
+}

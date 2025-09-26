@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 227,
+    "focalfunc": "func (h *HugoSites) initRebuild(config *BuildCfg) error",
+    "funcbody": "func (h *HugoSites) initRebuild(config *BuildCfg) error {\n\tif !h.Configs.Base.Internal.Watch {\n\t\treturn errors.New(\"rebuild called when not in watch mode\")\n\t}\n\n\th.pageTrees.treePagesResources.WalkPrefixRaw(\"\", func(key string, n contentNodeI) bool {\n\t\tn.resetBuildState()\n\t\treturn false\n\t})\n\n\tfor _, s := range h.Sites {\n\t\ts.resetBuildState(config.WhatChanged.needsPagesAssembly)\n\t}\n\n\th.reset(config)\n\th.resetLogs()\n\n\treturn nil\n}",
+    "funcname": "initRebuild"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 457,
+    "focalfunc": "func (idx *InvertedIndex) search(ctx context.Context, query ...queryElement) ([]Document, error)",
+    "funcbody": "func (idx *InvertedIndex) search(ctx context.Context, query ...queryElement) ([]Document, error) {\n\treturn idx.searchDate(ctx, nil, zeroDate, query...)\n}",
+    "funcname": "search"
+}

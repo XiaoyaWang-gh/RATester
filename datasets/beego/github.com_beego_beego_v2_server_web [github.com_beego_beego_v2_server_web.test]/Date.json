@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 128,
+    "focalfunc": "func Date(t time.Time, format string) string",
+    "funcbody": "func Date(t time.Time, format string) string {\n\treplacer := strings.NewReplacer(datePatterns...)\n\tformat = replacer.Replace(format)\n\treturn t.Format(format)\n}",
+    "funcname": "Date"
+}

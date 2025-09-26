@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/jsconfig/jsconfig.go",
+    "lineno": 60,
+    "focalfunc": "func (b *Builder) AddSourceRoot(root string)",
+    "funcbody": "func (b *Builder) AddSourceRoot(root string) {\n\tb.sourceRootsMu.RLock()\n\tfound := b.sourceRoots[root]\n\tb.sourceRootsMu.RUnlock()\n\n\tif found {\n\t\treturn\n\t}\n\n\tb.sourceRootsMu.Lock()\n\tb.sourceRoots[root] = true\n\tb.sourceRootsMu.Unlock()\n}",
+    "funcname": "AddSourceRoot"
+}

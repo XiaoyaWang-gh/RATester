@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/ingressroute.go",
+    "lineno": 67,
+    "focalfunc": "func newIngressRoutes(c *TraefikV1alpha1Client, namespace string) *ingressRoutes",
+    "funcbody": "func newIngressRoutes(c *TraefikV1alpha1Client, namespace string) *ingressRoutes {\n\treturn &ingressRoutes{\n\t\tclient:\tc.RESTClient(),\n\t\tns:\tnamespace,\n\t}\n}",
+    "funcname": "newIngressRoutes"
+}

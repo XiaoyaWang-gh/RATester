@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 619,
+    "focalfunc": "func (c *nopMarkup) FragmentsHTML(context.Context) template.HTML",
+    "funcbody": "func (c *nopMarkup) FragmentsHTML(context.Context) template.HTML {\n\treturn \"\"\n}",
+    "funcname": "FragmentsHTML"
+}

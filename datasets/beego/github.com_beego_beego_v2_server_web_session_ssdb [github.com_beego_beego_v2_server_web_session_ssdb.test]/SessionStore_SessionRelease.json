@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 207,
+    "focalfunc": "func (s *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter)",
+    "funcbody": "func (s *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter) {\n\ts.lock.RLock()\n\tvalues := s.values\n\ts.lock.RUnlock()\n\tb, err := session.EncodeGob(values)\n\tif err != nil {\n\t\treturn\n\t}\n\ts.client.Do(\"setx\", s.sid, string(b), s.maxLifetime)\n}",
+    "funcname": "SessionRelease"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 606,
+    "focalfunc": "func GetTrimmedParam(param string) string",
+    "funcbody": "func GetTrimmedParam(param string) string {\n\tstart := 0\n\tend := len(param)\n\n\tif end == 0 || param[start] != paramStarterChar {\n\t\treturn param\n\t}\n\tstart++\n\tif param[end-1] == optionalParam {\n\t\tend--\n\t}\n\n\treturn param[start:end]\n}",
+    "funcname": "GetTrimmedParam"
+}

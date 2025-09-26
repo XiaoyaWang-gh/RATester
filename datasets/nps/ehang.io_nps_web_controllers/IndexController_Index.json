@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 15,
+    "focalfunc": "func (s *IndexController) Index()",
+    "funcbody": "func (s *IndexController) Index() {\n\ts.Data[\"web_base_url\"] = beego.AppConfig.String(\"web_base_url\")\n\ts.Data[\"data\"] = server.GetDashboardData()\n\ts.SetInfo(\"dashboard\")\n\ts.display(\"index/index\")\n}",
+    "funcname": "Index"
+}

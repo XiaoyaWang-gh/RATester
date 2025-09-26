@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 34,
+    "focalfunc": "func urlFilter(args ...any) string",
+    "funcbody": "func urlFilter(args ...any) string {\n\ts, t := stringify(args...)\n\tif t == contentTypeURL {\n\t\treturn s\n\t}\n\tif !isSafeURL(s) {\n\t\treturn \"#\" + filterFailsafe\n\t}\n\treturn s\n}",
+    "funcname": "urlFilter"
+}

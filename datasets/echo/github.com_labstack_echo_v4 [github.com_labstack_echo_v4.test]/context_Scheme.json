@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 275,
+    "focalfunc": "func (c *context) Scheme() string",
+    "funcbody": "func (c *context) Scheme() string {\n\n\tif c.IsTLS() {\n\t\treturn \"https\"\n\t}\n\tif scheme := c.request.Header.Get(HeaderXForwardedProto); scheme != \"\" {\n\t\treturn scheme\n\t}\n\tif scheme := c.request.Header.Get(HeaderXForwardedProtocol); scheme != \"\" {\n\t\treturn scheme\n\t}\n\tif ssl := c.request.Header.Get(HeaderXForwardedSsl); ssl == \"on\" {\n\t\treturn \"https\"\n\t}\n\tif scheme := c.request.Header.Get(HeaderXUrlScheme); scheme != \"\" {\n\t\treturn scheme\n\t}\n\treturn \"http\"\n}",
+    "funcname": "Scheme"
+}

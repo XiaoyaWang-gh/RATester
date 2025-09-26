@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 97,
+    "focalfunc": "func (conn *WrapReadWriteCloserConn) SetRemoteAddr(addr net.Addr)",
+    "funcbody": "func (conn *WrapReadWriteCloserConn) SetRemoteAddr(addr net.Addr) {\n\tconn.remoteAddr = addr\n}",
+    "funcname": "SetRemoteAddr"
+}

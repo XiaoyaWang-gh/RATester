@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 156,
+    "focalfunc": "func validateSTCPProxyConfigForClient(c *v1.STCPProxyConfig) error",
+    "funcbody": "func validateSTCPProxyConfigForClient(c *v1.STCPProxyConfig) error {\n\treturn nil\n}",
+    "funcname": "validateSTCPProxyConfigForClient"
+}

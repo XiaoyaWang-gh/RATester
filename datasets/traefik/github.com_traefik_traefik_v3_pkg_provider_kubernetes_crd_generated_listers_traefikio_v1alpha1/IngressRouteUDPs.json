@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/listers/traefikio/v1alpha1/ingressrouteudp.go",
+    "lineno": 66,
+    "focalfunc": "func (s *ingressRouteUDPLister) IngressRouteUDPs(namespace string) IngressRouteUDPNamespaceLister",
+    "funcbody": "func (s *ingressRouteUDPLister) IngressRouteUDPs(namespace string) IngressRouteUDPNamespaceLister {\n\treturn ingressRouteUDPNamespaceLister{indexer: s.indexer, namespace: namespace}\n}",
+    "funcname": "IngressRouteUDPs"
+}

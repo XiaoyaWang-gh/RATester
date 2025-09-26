@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 185,
+    "focalfunc": "func (r *responseWriter) Header() http.Header",
+    "funcbody": "func (r *responseWriter) Header() http.Header {\n\treturn r.rw.Header()\n}",
+    "funcname": "Header"
+}

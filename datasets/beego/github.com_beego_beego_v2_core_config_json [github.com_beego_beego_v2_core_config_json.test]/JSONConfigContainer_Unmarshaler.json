@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 78,
+    "focalfunc": "func (c *JSONConfigContainer) Unmarshaler(prefix string, obj interface{}, opt ...config.DecodeOption) error",
+    "funcbody": "func (c *JSONConfigContainer) Unmarshaler(prefix string, obj interface{}, opt ...config.DecodeOption) error {\n\tsub, err := c.sub(prefix)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn mapstructure.Decode(sub, obj)\n}",
+    "funcname": "Unmarshaler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 80,
+    "focalfunc": "func (c ConfigLanguage) FastRenderMode() bool",
+    "funcbody": "func (c ConfigLanguage) FastRenderMode() bool {\n\treturn c.config.Internal.FastRenderMode\n}",
+    "funcname": "FastRenderMode"
+}

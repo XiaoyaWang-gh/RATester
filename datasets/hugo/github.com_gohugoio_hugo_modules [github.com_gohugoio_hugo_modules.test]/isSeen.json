@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 203,
+    "focalfunc": "func (c *collector) isSeen(path string) bool",
+    "funcbody": "func (c *collector) isSeen(path string) bool {\n\tkey := pathKey(path)\n\tif c.seen[key] {\n\t\treturn true\n\t}\n\tc.seen[key] = true\n\treturn false\n}",
+    "funcname": "isSeen"
+}

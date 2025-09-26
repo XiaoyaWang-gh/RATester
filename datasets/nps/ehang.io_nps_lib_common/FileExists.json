@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 137,
+    "focalfunc": "func FileExists(name string) bool",
+    "funcbody": "func FileExists(name string) bool {\n\tif _, err := os.Stat(name); err != nil {\n\t\tif os.IsNotExist(err) {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "FileExists"
+}

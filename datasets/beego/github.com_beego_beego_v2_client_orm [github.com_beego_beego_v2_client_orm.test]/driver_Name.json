@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 50,
+    "focalfunc": "func (d driver) Name() string",
+    "funcbody": "func (d driver) Name() string {\n\treturn string(d)\n}",
+    "funcname": "Name"
+}

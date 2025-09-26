@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 406,
+    "focalfunc": "func newPaginationURLFactory(d TargetPathDescriptor) paginationURLFactory",
+    "funcbody": "func newPaginationURLFactory(d TargetPathDescriptor) paginationURLFactory {\n\treturn func(pageNumber int) string {\n\t\tpathDescriptor := d\n\t\tvar rel string\n\t\tif pageNumber > 1 {\n\t\t\trel = fmt.Sprintf(\"/%s/%d/\", d.PathSpec.Cfg.Pagination().Path, pageNumber)\n\t\t\tpathDescriptor.Addends = rel\n\t\t}\n\n\t\treturn CreateTargetPaths(pathDescriptor).RelPermalink(d.PathSpec)\n\t}\n}",
+    "funcname": "newPaginationURLFactory"
+}

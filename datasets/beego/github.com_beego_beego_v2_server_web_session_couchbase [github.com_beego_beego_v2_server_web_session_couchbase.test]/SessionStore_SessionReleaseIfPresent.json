@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 122,
+    "focalfunc": "func (cs *SessionStore) SessionReleaseIfPresent(c context.Context, w http.ResponseWriter)",
+    "funcbody": "func (cs *SessionStore) SessionReleaseIfPresent(c context.Context, w http.ResponseWriter) {\n\tcs.SessionRelease(c, w)\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

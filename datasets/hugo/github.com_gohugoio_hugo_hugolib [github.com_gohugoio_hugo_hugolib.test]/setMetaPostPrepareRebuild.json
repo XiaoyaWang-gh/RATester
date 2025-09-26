@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 75,
+    "focalfunc": "func (m *pageMeta) setMetaPostPrepareRebuild()",
+    "funcbody": "func (m *pageMeta) setMetaPostPrepareRebuild() {\n\tparams := xmaps.Clone[map[string]any](m.paramsOriginal)\n\tm.pageMetaParams.pageConfig = &pagemeta.PageConfig{\n\t\tParams: params,\n\t}\n\tm.pageMetaFrontMatter = pageMetaFrontMatter{}\n}",
+    "funcname": "setMetaPostPrepareRebuild"
+}

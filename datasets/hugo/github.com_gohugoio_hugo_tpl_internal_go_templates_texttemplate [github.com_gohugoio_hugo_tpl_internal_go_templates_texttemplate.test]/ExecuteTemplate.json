@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 188,
+    "focalfunc": "func (t *Template) ExecuteTemplate(wr io.Writer, name string, data any) error",
+    "funcbody": "func (t *Template) ExecuteTemplate(wr io.Writer, name string, data any) error {\n\ttmpl := t.Lookup(name)\n\tif tmpl == nil {\n\t\treturn fmt.Errorf(\"template: no template %q associated with template %q\", name, t.name)\n\t}\n\treturn tmpl.Execute(wr, data)\n}",
+    "funcname": "ExecuteTemplate"
+}

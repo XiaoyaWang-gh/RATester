@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 848,
+    "focalfunc": "func dirEntriesToNames(fis []iofs.DirEntry) []string",
+    "funcbody": "func dirEntriesToNames(fis []iofs.DirEntry) []string {\n\tnames := make([]string, len(fis))\n\tfor i, d := range fis {\n\t\tnames[i] = d.Name()\n\t}\n\treturn names\n}",
+    "funcname": "dirEntriesToNames"
+}

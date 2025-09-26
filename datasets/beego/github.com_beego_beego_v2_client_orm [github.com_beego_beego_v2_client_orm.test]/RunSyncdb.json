@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd.go",
+    "lineno": 292,
+    "focalfunc": "func RunSyncdb(name string, force bool, verbose bool) error",
+    "funcbody": "func RunSyncdb(name string, force bool, verbose bool) error {\n\tBootStrap()\n\n\tal := getDbAlias(name)\n\tcmd := new(commandSyncDb)\n\tcmd.al = al\n\tcmd.force = force\n\tcmd.noInfo = !verbose\n\tcmd.verbose = verbose\n\tcmd.rtOnError = true\n\treturn cmd.Run()\n}",
+    "funcname": "RunSyncdb"
+}

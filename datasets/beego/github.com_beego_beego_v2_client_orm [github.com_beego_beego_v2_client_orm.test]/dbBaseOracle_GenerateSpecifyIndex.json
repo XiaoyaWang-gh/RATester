@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 105,
+    "focalfunc": "func (d *dbBaseOracle) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string",
+    "funcbody": "func (d *dbBaseOracle) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string {\n\tvar s []string\n\tQ := d.TableQuote()\n\tfor _, index := range indexes {\n\t\ttmp := fmt.Sprintf(`%s%s%s`, Q, index, Q)\n\t\ts = append(s, tmp)\n\t}\n\n\tvar hint string\n\n\tswitch useIndex {\n\tcase hints.KeyUseIndex, hints.KeyForceIndex:\n\t\thint = `INDEX`\n\tcase hints.KeyIgnoreIndex:\n\t\thint = `NO_INDEX`\n\tdefault:\n\t\tDebugLog.Println(\"[WARN] Not a valid specifying action, so that action is ignored\")\n\t\treturn ``\n\t}\n\n\treturn fmt.Sprintf(` /*+ %s(%s %s)*/ `, hint, tableName, strings.Join(s, `,`))\n}",
+    "funcname": "GenerateSpecifyIndex"
+}

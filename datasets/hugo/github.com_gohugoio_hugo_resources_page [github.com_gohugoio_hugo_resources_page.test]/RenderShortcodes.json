@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 579,
+    "focalfunc": "func (c *nopMarkup) RenderShortcodes(context.Context) (template.HTML, error)",
+    "funcbody": "func (c *nopMarkup) RenderShortcodes(context.Context) (template.HTML, error) {\n\treturn \"\", nil\n}",
+    "funcname": "RenderShortcodes"
+}

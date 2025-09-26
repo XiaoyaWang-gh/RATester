@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 180,
+    "focalfunc": "func (r *PostPublishResource) fieldNotSupported(name string) string",
+    "funcbody": "func (r *PostPublishResource) fieldNotSupported(name string) string {\n\treturn fmt.Sprintf(\"method .%s is currently not supported in post-publish transformations.\", name)\n}",
+    "funcname": "fieldNotSupported"
+}

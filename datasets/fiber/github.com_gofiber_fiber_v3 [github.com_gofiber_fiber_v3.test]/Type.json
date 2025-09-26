@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1750,
+    "focalfunc": "func (c *DefaultCtx) Type(extension string, charset ...string) Ctx",
+    "funcbody": "func (c *DefaultCtx) Type(extension string, charset ...string) Ctx {\n\tif len(charset) > 0 {\n\t\tc.fasthttp.Response.Header.SetContentType(utils.GetMIME(extension) + \"; charset=\" + charset[0])\n\t} else {\n\t\tc.fasthttp.Response.Header.SetContentType(utils.GetMIME(extension))\n\t}\n\treturn c\n}",
+    "funcname": "Type"
+}

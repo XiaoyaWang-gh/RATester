@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 302,
+    "focalfunc": "func (r *hookedRenderer) renderLinkDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderLinkDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tn := node.(*ast.Link)\n\tif entering {\n\t\t_, _ = w.WriteString(\"<a href=\\\"\")\n\t\tif r.Unsafe || !html.IsDangerousURL(n.Destination) {\n\t\t\t_, _ = w.Write(util.EscapeHTML(util.URLEscape(n.Destination, true)))\n\t\t}\n\t\t_ = w.WriteByte('\"')\n\t\tif n.Title != nil {\n\t\t\t_, _ = w.WriteString(` title=\"`)\n\t\t\tr.Writer.Write(w, n.Title)\n\t\t\t_ = w.WriteByte('\"')\n\t\t}\n\t\t_ = w.WriteByte('>')\n\t} else {\n\t\t_, _ = w.WriteString(\"</a>\")\n\t}\n\treturn ast.WalkContinue, nil\n}",
+    "funcname": "renderLinkDefault"
+}

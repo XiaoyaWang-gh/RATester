@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 464,
+    "focalfunc": "func (c *Controller) ServeXML() error",
+    "funcbody": "func (c *Controller) ServeXML() error {\n\thasIndent := BConfig.RunMode != PROD\n\treturn c.Ctx.Output.XML(c.Data[\"xml\"], hasIndent)\n}",
+    "funcname": "ServeXML"
+}

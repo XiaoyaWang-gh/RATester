@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/yaml.go",
+    "lineno": 17,
+    "focalfunc": "func (yamlBinding) Name() string",
+    "funcbody": "func (yamlBinding) Name() string {\n\treturn \"yaml\"\n}",
+    "funcname": "Name"
+}

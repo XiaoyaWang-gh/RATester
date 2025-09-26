@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 247,
+    "focalfunc": "func setCSRFCookie(c fiber.Ctx, cfg Config, token string, expiry time.Duration)",
+    "funcbody": "func setCSRFCookie(c fiber.Ctx, cfg Config, token string, expiry time.Duration) {\n\tcookie := &fiber.Cookie{\n\t\tName:\t\tcfg.CookieName,\n\t\tValue:\t\ttoken,\n\t\tDomain:\t\tcfg.CookieDomain,\n\t\tPath:\t\tcfg.CookiePath,\n\t\tSecure:\t\tcfg.CookieSecure,\n\t\tHTTPOnly:\tcfg.CookieHTTPOnly,\n\t\tSameSite:\tcfg.CookieSameSite,\n\t\tSessionOnly:\tcfg.CookieSessionOnly,\n\t\tExpires:\ttime.Now().Add(expiry),\n\t}\n\n\tc.Cookie(cookie)\n}",
+    "funcname": "setCSRFCookie"
+}

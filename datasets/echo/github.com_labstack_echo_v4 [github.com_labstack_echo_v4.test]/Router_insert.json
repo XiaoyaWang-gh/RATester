@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 214,
+    "focalfunc": "func (r *Router) insert(method, path string, h HandlerFunc)",
+    "funcbody": "func (r *Router) insert(method, path string, h HandlerFunc) {\n\tpath = normalizePathSlash(path)\n\tpnames := []string{}\n\tppath := path\n\n\tif h == nil && r.echo.Logger != nil {\n\n\t\tr.echo.Logger.Errorf(\"Adding route without handler function: %v:%v\", method, path)\n\t}\n\n\tfor i, lcpIndex := 0, len(path); i < lcpIndex; i++ {\n\t\tif path[i] == ':' {\n\t\t\tif i > 0 && path[i-1] == '\\\\' {\n\t\t\t\tpath = path[:i-1] + path[i:]\n\t\t\t\ti--\n\t\t\t\tlcpIndex--\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tj := i + 1\n\n\t\t\tr.insertNode(method, path[:i], staticKind, routeMethod{})\n\t\t\tfor ; i < lcpIndex && path[i] != '/'; i++ {\n\t\t\t}\n\n\t\t\tpnames = append(pnames, path[j:i])\n\t\t\tpath = path[:j] + path[i:]\n\t\t\ti, lcpIndex = j, len(path)\n\n\t\t\tif i == lcpIndex {\n\n\t\t\t\tr.insertNode(method, path[:i], paramKind, routeMethod{ppath: ppath, pnames: pnames, handler: h})\n\t\t\t} else {\n\t\t\t\tr.insertNode(method, path[:i], paramKind, routeMethod{})\n\t\t\t}\n\t\t} else if path[i] == '*' {\n\t\t\tr.insertNode(method, path[:i], staticKind, routeMethod{})\n\t\t\tpnames = append(pnames, \"*\")\n\t\t\tr.insertNode(method, path[:i+1], anyKind, routeMethod{ppath: ppath, pnames: pnames, handler: h})\n\t\t}\n\t}\n\n\tr.insertNode(method, path, staticKind, routeMethod{ppath: ppath, pnames: pnames, handler: h})\n}",
+    "funcname": "insert"
+}

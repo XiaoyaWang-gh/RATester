@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 705,
+    "focalfunc": "func newTrackedConnection(conn tcp.WriteCloser, tracker *connectionTracker) *trackedConnection",
+    "funcbody": "func newTrackedConnection(conn tcp.WriteCloser, tracker *connectionTracker) *trackedConnection {\n\ttracker.AddConnection(conn)\n\treturn &trackedConnection{\n\t\tWriteCloser:\tconn,\n\t\ttracker:\ttracker,\n\t}\n}",
+    "funcname": "newTrackedConnection"
+}

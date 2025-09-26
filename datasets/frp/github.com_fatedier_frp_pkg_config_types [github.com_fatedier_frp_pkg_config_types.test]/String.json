@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 127,
+    "focalfunc": "func (p PortsRangeSlice) String() string",
+    "funcbody": "func (p PortsRangeSlice) String() string {\n\tif len(p) == 0 {\n\t\treturn \"\"\n\t}\n\tstrs := []string{}\n\tfor _, v := range p {\n\t\tif v.Single > 0 {\n\t\t\tstrs = append(strs, strconv.Itoa(v.Single))\n\t\t} else {\n\t\t\tstrs = append(strs, strconv.Itoa(v.Start)+\"-\"+strconv.Itoa(v.End))\n\t\t}\n\t}\n\treturn strings.Join(strs, \",\")\n}",
+    "funcname": "String"
+}

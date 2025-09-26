@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 315,
+    "focalfunc": "func InPath(binaryName string) bool",
+    "funcbody": "func InPath(binaryName string) bool {\n\tif strings.Contains(binaryName, \"/\") {\n\t\tpanic(\"binary name should not contain any slash\")\n\t}\n\t_, err := safeexec.LookPath(binaryName)\n\treturn err == nil\n}",
+    "funcname": "InPath"
+}

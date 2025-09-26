@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/redirect/redirect.go",
+    "lineno": 12,
+    "focalfunc": "func New(config ...Config) fiber.Handler",
+    "funcbody": "func New(config ...Config) fiber.Handler {\n\tcfg := configDefault(config...)\n\n\tcfg.rulesRegex = map[*regexp.Regexp]string{}\n\tfor k, v := range cfg.Rules {\n\t\tk = strings.ReplaceAll(k, \"*\", \"(.*)\")\n\t\tk += \"$\"\n\t\tcfg.rulesRegex[regexp.MustCompile(k)] = v\n\t}\n\n\treturn func(c fiber.Ctx) error {\n\n\t\tif cfg.Next != nil && cfg.Next(c) {\n\t\t\treturn c.Next()\n\t\t}\n\n\t\tfor k, v := range cfg.rulesRegex {\n\t\t\treplacer := captureTokens(k, c.Path())\n\t\t\tif replacer != nil {\n\t\t\t\tqueryString := string(c.Context().QueryArgs().QueryString())\n\t\t\t\tif queryString != \"\" {\n\t\t\t\t\tqueryString = \"?\" + queryString\n\t\t\t\t}\n\t\t\t\treturn c.Redirect().Status(cfg.StatusCode).To(replacer.Replace(v) + queryString)\n\t\t\t}\n\t\t}\n\t\treturn c.Next()\n\t}\n}",
+    "funcname": "New"
+}

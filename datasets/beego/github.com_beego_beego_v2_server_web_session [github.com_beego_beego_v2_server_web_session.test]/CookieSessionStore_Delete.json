@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 56,
+    "focalfunc": "func (st *CookieSessionStore) Delete(ctx context.Context, key interface{}) error",
+    "funcbody": "func (st *CookieSessionStore) Delete(ctx context.Context, key interface{}) error {\n\tst.lock.Lock()\n\tdefer st.lock.Unlock()\n\tdelete(st.values, key)\n\treturn nil\n}",
+    "funcname": "Delete"
+}

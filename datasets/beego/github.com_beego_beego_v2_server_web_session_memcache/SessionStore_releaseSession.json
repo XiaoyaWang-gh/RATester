@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 108,
+    "focalfunc": "func (rs *SessionStore) releaseSession(_ context.Context, _ http.ResponseWriter, requirePresent bool)",
+    "funcbody": "func (rs *SessionStore) releaseSession(_ context.Context, _ http.ResponseWriter, requirePresent bool) {\n\trs.lock.RLock()\n\tvalues := rs.values\n\trs.lock.RUnlock()\n\tb, err := session.EncodeGob(values)\n\tif err != nil {\n\t\treturn\n\t}\n\titem := memcache.Item{Key: rs.sid, Value: b, Expiration: int32(rs.maxlifetime)}\n\tif requirePresent {\n\t\tclient.Replace(&item)\n\t} else {\n\t\tclient.Set(&item)\n\t}\n}",
+    "funcname": "releaseSession"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 334,
+    "focalfunc": "func (p *nopPage) Paginate(seq any, options ...any) (*Pager, error)",
+    "funcbody": "func (p *nopPage) Paginate(seq any, options ...any) (*Pager, error) {\n\treturn nil, nil\n}",
+    "funcname": "Paginate"
+}

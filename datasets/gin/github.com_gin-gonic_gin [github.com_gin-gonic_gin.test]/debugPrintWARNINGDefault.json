@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 79,
+    "focalfunc": "func debugPrintWARNINGDefault()",
+    "funcbody": "func debugPrintWARNINGDefault() {\n\tif v, e := getMinVer(runtime.Version()); e == nil && v < ginSupportMinGoVer {\n\t\tdebugPrint(`[WARNING] Now Gin requires Go 1.21+.\n\n`)\n\t}\n\tdebugPrint(`[WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.\n\n`)\n}",
+    "funcname": "debugPrintWARNINGDefault"
+}

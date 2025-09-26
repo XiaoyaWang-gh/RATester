@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_overview.go",
+    "lineno": 164,
+    "focalfunc": "func getTCPMiddlewareSection(middlewares map[string]*runtime.TCPMiddlewareInfo) *section",
+    "funcbody": "func getTCPMiddlewareSection(middlewares map[string]*runtime.TCPMiddlewareInfo) *section {\n\tvar countErrors int\n\tvar countWarnings int\n\tfor _, mid := range middlewares {\n\t\tswitch mid.Status {\n\t\tcase runtime.StatusDisabled:\n\t\t\tcountErrors++\n\t\tcase runtime.StatusWarning:\n\t\t\tcountWarnings++\n\t\t}\n\t}\n\n\treturn &section{\n\t\tTotal:\t\tlen(middlewares),\n\t\tWarnings:\tcountWarnings,\n\t\tErrors:\t\tcountErrors,\n\t}\n}",
+    "funcname": "getTCPMiddlewareSection"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/udp.go",
+    "lineno": 54,
+    "focalfunc": "func NewUDPProxy(baseProxy *BaseProxy, cfg v1.ProxyConfigurer) Proxy",
+    "funcbody": "func NewUDPProxy(baseProxy *BaseProxy, cfg v1.ProxyConfigurer) Proxy {\n\tunwrapped, ok := cfg.(*v1.UDPProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn &UDPProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t}\n}",
+    "funcname": "NewUDPProxy"
+}

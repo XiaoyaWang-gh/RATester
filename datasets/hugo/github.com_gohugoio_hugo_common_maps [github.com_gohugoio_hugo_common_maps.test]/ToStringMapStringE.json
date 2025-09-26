@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 74,
+    "focalfunc": "func ToStringMapStringE(in any) (map[string]string, error)",
+    "funcbody": "func ToStringMapStringE(in any) (map[string]string, error) {\n\tm, err := ToStringMapE(in)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn cast.ToStringMapStringE(m)\n}",
+    "funcname": "ToStringMapStringE"
+}

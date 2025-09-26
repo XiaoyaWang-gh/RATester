@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 391,
+    "focalfunc": "func nextRequestCount() uint64",
+    "funcbody": "func nextRequestCount() uint64 {\n\treturn atomic.AddUint64(&requestCounter, 1)\n}",
+    "funcname": "nextRequestCount"
+}

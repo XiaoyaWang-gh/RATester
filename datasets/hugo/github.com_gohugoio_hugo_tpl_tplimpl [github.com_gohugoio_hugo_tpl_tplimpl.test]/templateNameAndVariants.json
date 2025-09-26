@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 101,
+    "focalfunc": "func templateNameAndVariants(name string) (string, []string)",
+    "funcbody": "func templateNameAndVariants(name string) (string, []string) {\n\tvariants := make([]string, numTemplateVariants)\n\n\tparts := strings.Split(name, \".\")\n\n\tif len(parts) <= 1 {\n\n\t\treturn name, variants\n\t}\n\n\tname = parts[0]\n\tparts = parts[1:]\n\tlp := len(parts)\n\tstart := len(variants) - lp\n\n\tfor i, j := start, 0; i < len(variants); i, j = i+1, j+1 {\n\t\tvariants[i] = parts[j]\n\t}\n\n\tif lp > 1 && lp < len(variants) {\n\t\tfor i := lp - 1; i > 0; i-- {\n\t\t\tvariants[i-1] = variants[i]\n\t\t}\n\t}\n\n\tif lp == 1 {\n\n\t\tvariants[len(variants)-2] = variants[len(variants)-1]\n\t}\n\n\treturn name, variants\n}",
+    "funcname": "templateNameAndVariants"
+}

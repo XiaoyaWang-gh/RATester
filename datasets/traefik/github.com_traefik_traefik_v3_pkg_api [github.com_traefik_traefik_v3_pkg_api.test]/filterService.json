@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 68,
+    "focalfunc": "func (c *searchCriterion) filterService(name string) bool",
+    "funcbody": "func (c *searchCriterion) filterService(name string) bool {\n\tif c.ServiceName == \"\" {\n\t\treturn true\n\t}\n\n\tif strings.Contains(name, \"@\") {\n\t\treturn c.ServiceName == name\n\t}\n\n\tbefore, _, _ := strings.Cut(c.ServiceName, \"@\")\n\n\treturn before == name\n}",
+    "funcname": "filterService"
+}

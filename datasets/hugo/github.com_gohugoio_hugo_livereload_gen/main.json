@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/gen/main.go",
+    "lineno": 18,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\t// 4.0.2\n\t// To upgrade to a new version, change to the commit hash of the version you want to upgrade to\n\t// then run mage generate from the root.\n\tconst liveReloadCommit = \"d803a41804d2d71e0814c4e9e3233e78991024d9\"\n\tliveReloadSourceURL := fmt.Sprintf(\"https://raw.githubusercontent.com/livereload/livereload-js/%s/dist/livereload.js\", liveReloadCommit)\n\n\tfunc() {\n\t\tresp, err := http.Get(liveReloadSourceURL)\n\t\tmust(err)\n\t\tdefer resp.Body.Close()\n\n\t\tb, err := io.ReadAll(resp.Body)\n\t\tmust(err)\n\n\t\terr = os.WriteFile(\"../livereload.js\", b, 0o644)\n\t\tmust(err)\n\n\t\tresult := api.Build(api.BuildOptions{\n\t\t\tStdin: &api.StdinOptions{\n\t\t\t\tContents: string(b) + livereloadHugoPluginJS,\n\t\t\t},\n\t\t\tOutfile:\t\t\"../livereload.min.js\",\n\t\t\tBundle:\t\t\ttrue,\n\t\t\tTarget:\t\t\tapi.ES2015,\n\t\t\tWrite:\t\t\ttrue,\n\t\t\tMinifyWhitespace:\ttrue,\n\t\t\tMinifyIdentifiers:\ttrue,\n\t\t\tMinifySyntax:\t\ttrue,\n\t\t})\n\n\t\tif len(result.Errors) > 0 {\n\t\t\tlog.Fatal(result.Errors)\n\t\t}\n\t}()\n}",
+    "funcname": "main"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/file/file.go",
+    "lineno": 188,
+    "focalfunc": "func sendConfigToChannel(configurationChan chan<- dynamic.Message, configuration *dynamic.Configuration)",
+    "funcbody": "func sendConfigToChannel(configurationChan chan<- dynamic.Message, configuration *dynamic.Configuration) {\n\tconfigurationChan <- dynamic.Message{\n\t\tProviderName:\t\"file\",\n\t\tConfiguration:\tconfiguration,\n\t}\n}",
+    "funcname": "sendConfigToChannel"
+}

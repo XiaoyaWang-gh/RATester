@@ -1,0 +1,27 @@
+package debug
+
+import (
+	"fmt"
+	"testing"
+)
+
+func TestTestDeprecationWarn_1(t *testing.T) {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered in main", r)
+		}
+	}()
+
+	ns := &Namespace{
+		timers: make(map[string][]*timer),
+	}
+
+	item := "item"
+	alternative := "alternative"
+	expected := ""
+	result := ns.TestDeprecationWarn(item, alternative)
+
+	if result != expected {
+		t.Errorf("Expected '%s', got '%s'", expected, result)
+	}
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 413,
+    "focalfunc": "func (m *pageMap) getPagesWithTerm(q pageMapQueryPagesBelowPath) page.Pages",
+    "funcbody": "func (m *pageMap) getPagesWithTerm(q pageMapQueryPagesBelowPath) page.Pages {\n\tkey := q.Key()\n\n\tv, err := m.cachePages1.GetOrCreate(key, func(string) (page.Pages, error) {\n\t\tvar pas page.Pages\n\t\tinclude := q.Include\n\t\tif include == nil {\n\t\t\tinclude = pagePredicates.ShouldListLocal\n\t\t}\n\n\t\terr := m.treeTaxonomyEntries.WalkPrefix(\n\t\t\tdoctree.LockTypeNone,\n\t\t\tpaths.AddTrailingSlash(q.Path),\n\t\t\tfunc(s string, n *weightedContentNode) (bool, error) {\n\t\t\t\tp := n.n.(*pageState)\n\t\t\t\tif !include(p) {\n\t\t\t\t\treturn false, nil\n\t\t\t\t}\n\t\t\t\tpas = append(pas, pageWithWeight0{n.weight, p})\n\t\t\t\treturn false, nil\n\t\t\t},\n\t\t)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tpage.SortByDefault(pas)\n\n\t\treturn pas, nil\n\t})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn v\n}",
+    "funcname": "getPagesWithTerm"
+}

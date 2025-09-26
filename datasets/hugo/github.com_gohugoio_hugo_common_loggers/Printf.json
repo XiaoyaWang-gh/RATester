@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 277,
+    "focalfunc": "func (l *logAdapter) Printf(format string, v ...any)",
+    "funcbody": "func (l *logAdapter) Printf(format string, v ...any) {\n\n\tif !strings.HasSuffix(format, \"\\n\") {\n\t\tformat += \"\\n\"\n\t}\n\tfmt.Fprintf(l.out, format, v...)\n}",
+    "funcname": "Printf"
+}

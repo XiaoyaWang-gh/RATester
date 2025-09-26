@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 595,
+    "focalfunc": "func (c *Controller) GetInt64(key string, def ...int64) (int64, error)",
+    "funcbody": "func (c *Controller) GetInt64(key string, def ...int64) (int64, error) {\n\tstrv := c.Ctx.Input.Query(key)\n\tif len(strv) == 0 && len(def) > 0 {\n\t\treturn def[0], nil\n\t}\n\treturn strconv.ParseInt(strv, 10, 64)\n}",
+    "funcname": "GetInt64"
+}

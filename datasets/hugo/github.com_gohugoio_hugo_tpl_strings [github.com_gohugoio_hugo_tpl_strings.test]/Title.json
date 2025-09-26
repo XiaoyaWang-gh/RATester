@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 397,
+    "focalfunc": "func (ns *Namespace) Title(s any) (string, error)",
+    "funcbody": "func (ns *Namespace) Title(s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn ns.deps.Conf.CreateTitle(ss), nil\n}",
+    "funcname": "Title"
+}

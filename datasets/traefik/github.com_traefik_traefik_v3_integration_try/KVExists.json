@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 187,
+    "focalfunc": "func KVExists(kv store.Store, key string) DoCondition",
+    "funcbody": "func KVExists(kv store.Store, key string) DoCondition {\n\treturn func() error {\n\t\t_, err := kv.Exists(context.Background(), key, nil)\n\t\treturn err\n\t}\n}",
+    "funcname": "KVExists"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 117,
+    "focalfunc": "func (fs defaultFS) Open(name string) (fs.File, error)",
+    "funcbody": "func (fs defaultFS) Open(name string) (fs.File, error) {\n\tif fs.fs == nil {\n\t\treturn os.Open(name)\n\t}\n\treturn fs.fs.Open(name)\n}",
+    "funcname": "Open"
+}

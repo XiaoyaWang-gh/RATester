@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/websocket.go",
+    "lineno": 66,
+    "focalfunc": "func (p *WebsocketListener) Addr() net.Addr",
+    "funcbody": "func (p *WebsocketListener) Addr() net.Addr {\n\treturn p.ln.Addr()\n}",
+    "funcname": "Addr"
+}

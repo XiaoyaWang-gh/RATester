@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/redirect.go",
+    "lineno": 117,
+    "focalfunc": "func NonWWWRedirect() echo.MiddlewareFunc",
+    "funcbody": "func NonWWWRedirect() echo.MiddlewareFunc {\n\treturn NonWWWRedirectWithConfig(DefaultRedirectConfig)\n}",
+    "funcname": "NonWWWRedirect"
+}

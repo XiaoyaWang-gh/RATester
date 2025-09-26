@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 449,
+    "focalfunc": "func flowSession(m time.Duration)",
+    "funcbody": "func flowSession(m time.Duration) {\n\tticker := time.NewTicker(m)\n\tdefer ticker.Stop()\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\t\tfile.GetDb().JsonDb.StoreHostToJsonFile()\n\t\t\tfile.GetDb().JsonDb.StoreTasksToJsonFile()\n\t\t\tfile.GetDb().JsonDb.StoreClientsToJsonFile()\n\t\t}\n\t}\n}",
+    "funcname": "flowSession"
+}

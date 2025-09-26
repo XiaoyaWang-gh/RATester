@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 549,
+    "focalfunc": "func (t *templateHandler) addFileContext(templ tpl.Template, inerr error) error",
+    "funcbody": "func (t *templateHandler) addFileContext(templ tpl.Template, inerr error) error {\n\tif strings.HasPrefix(templ.Name(), \"_internal\") {\n\t\treturn inerr\n\t}\n\n\tts, ok := templ.(*templateState)\n\tif !ok {\n\t\treturn inerr\n\t}\n\n\tidentifiers := t.extractIdentifiers(inerr.Error())\n\n\tcheckFilename := func(info templateInfo, inErr error) (error, bool) {\n\t\tif info.meta == nil {\n\t\t\treturn inErr, false\n\t\t}\n\n\t\tlineMatcher := func(m herrors.LineMatcher) int {\n\t\t\tif m.Position.LineNumber != m.LineNumber {\n\t\t\t\treturn -1\n\t\t\t}\n\n\t\t\tfor _, id := range identifiers {\n\t\t\t\tif strings.Contains(m.Line, id) {\n\n\t\t\t\t\treturn 0\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn -1\n\t\t}\n\n\t\tf, err := info.meta.Open()\n\t\tif err != nil {\n\t\t\treturn inErr, false\n\t\t}\n\t\tdefer f.Close()\n\n\t\tfe := herrors.NewFileErrorFromName(inErr, info.meta.Filename)\n\t\tfe.UpdateContent(f, lineMatcher)\n\n\t\tif !fe.ErrorContext().Position.IsValid() {\n\t\t\treturn inErr, false\n\t\t}\n\t\treturn fe, true\n\t}\n\n\tinerr = fmt.Errorf(\"execute of template failed: %w\", inerr)\n\n\tif err, ok := checkFilename(ts.info, inerr); ok {\n\t\treturn err\n\t}\n\n\terr, _ := checkFilename(ts.baseInfo, inerr)\n\n\treturn err\n}",
+    "funcname": "addFileContext"
+}

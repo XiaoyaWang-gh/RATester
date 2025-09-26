@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 184,
+    "focalfunc": "func (m *matchersTree) match(req *http.Request) bool",
+    "funcbody": "func (m *matchersTree) match(req *http.Request) bool {\n\tif m == nil {\n\n\t\tlog.Warn().Msg(\"Rule matcher is nil\")\n\t\treturn false\n\t}\n\n\tif m.matcher != nil {\n\t\treturn m.matcher(req)\n\t}\n\n\tswitch m.operator {\n\tcase \"or\":\n\t\treturn m.left.match(req) || m.right.match(req)\n\tcase \"and\":\n\t\treturn m.left.match(req) && m.right.match(req)\n\tdefault:\n\n\t\tlog.Warn().Str(\"operator\", m.operator).Msg(\"Invalid rule operator\")\n\t\treturn false\n\t}\n}",
+    "funcname": "match"
+}

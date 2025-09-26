@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/protobuf.go",
+    "lineno": 21,
+    "focalfunc": "func (b protobufBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (b protobufBinding) Bind(req *http.Request, obj any) error {\n\tbuf, err := io.ReadAll(req.Body)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn b.BindBody(buf, obj)\n}",
+    "funcname": "Bind"
+}

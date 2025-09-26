@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 122,
+    "focalfunc": "func newStmtQueryLog(alias *alias, stmt stmtQuerier, query string) stmtQuerier",
+    "funcbody": "func newStmtQueryLog(alias *alias, stmt stmtQuerier, query string) stmtQuerier {\n\td := new(stmtQueryLog)\n\td.stmt = stmt\n\td.alias = alias\n\td.query = query\n\treturn d\n}",
+    "funcname": "newStmtQueryLog"
+}

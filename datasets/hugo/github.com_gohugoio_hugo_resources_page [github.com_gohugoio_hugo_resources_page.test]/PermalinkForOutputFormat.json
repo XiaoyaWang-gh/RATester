@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 94,
+    "focalfunc": "func (p TargetPaths) PermalinkForOutputFormat(s *helpers.PathSpec, f output.Format) string",
+    "funcbody": "func (p TargetPaths) PermalinkForOutputFormat(s *helpers.PathSpec, f output.Format) string {\n\tvar baseURL urls.BaseURL\n\tvar err error\n\tif f.Protocol != \"\" {\n\t\tbaseURL, err = s.Cfg.BaseURL().WithProtocol(f.Protocol)\n\t\tif err != nil {\n\t\t\treturn \"\"\n\t\t}\n\t} else {\n\t\tbaseURL = s.Cfg.BaseURL()\n\t}\n\tbaseURLstr := baseURL.String()\n\treturn s.PermalinkForBaseURL(p.Link, baseURLstr)\n}",
+    "funcname": "PermalinkForOutputFormat"
+}

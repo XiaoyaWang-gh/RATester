@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 477,
+    "focalfunc": "func executeToString(ctx context.Context, h tpl.TemplateHandler, templ tpl.Template, data any) (string, error)",
+    "funcbody": "func executeToString(ctx context.Context, h tpl.TemplateHandler, templ tpl.Template, data any) (string, error) {\n\tb := bp.GetBuffer()\n\tdefer bp.PutBuffer(b)\n\tif err := h.ExecuteWithContext(ctx, templ, b, data); err != nil {\n\t\treturn \"\", err\n\t}\n\treturn b.String(), nil\n}",
+    "funcname": "executeToString"
+}

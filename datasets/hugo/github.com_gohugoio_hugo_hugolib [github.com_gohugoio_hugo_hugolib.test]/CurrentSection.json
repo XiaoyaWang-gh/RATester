@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 59,
+    "focalfunc": "func (pt pageTree) CurrentSection() page.Page",
+    "funcbody": "func (pt pageTree) CurrentSection() page.Page {\n\tif kinds.IsBranch(pt.p.Kind()) {\n\t\treturn pt.p\n\t}\n\n\tdir := pt.p.m.pathInfo.Dir()\n\tif dir == \"/\" {\n\t\treturn pt.p.s.home\n\t}\n\n\t_, n := pt.p.s.pageMap.treePages.LongestPrefix(dir, true, func(n contentNodeI) bool { return n.isContentNodeBranch() })\n\tif n != nil {\n\t\treturn n.(page.Page)\n\t}\n\n\tpanic(fmt.Sprintf(\"CurrentSection not found for %q in lang %s\", pt.p.Path(), pt.p.Lang()))\n}",
+    "funcname": "CurrentSection"
+}

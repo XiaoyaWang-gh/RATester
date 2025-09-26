@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/plugin.go",
+    "lineno": 85,
+    "focalfunc": "func (l *Listener) PutConn(conn net.Conn) error",
+    "funcbody": "func (l *Listener) PutConn(conn net.Conn) error {\n\terr := errors.PanicToError(func() {\n\t\tl.conns <- conn\n\t})\n\treturn err\n}",
+    "funcname": "PutConn"
+}

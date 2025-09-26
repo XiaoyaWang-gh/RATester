@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 87,
+    "focalfunc": "func (c *Config) HasType(s string) bool",
+    "funcbody": "func (c *Config) HasType(s string) bool {\n\tfor _, i := range c.Indices {\n\t\tif i.Type == s {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "HasType"
+}

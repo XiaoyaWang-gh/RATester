@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 116,
+    "focalfunc": "func (rc *Cache) Incr(ctx context.Context, key string) error",
+    "funcbody": "func (rc *Cache) Incr(ctx context.Context, key string) error {\n\t_, err := rc.conn.Increment(key, 1)\n\treturn berror.Wrapf(err, cache.MemCacheCurdFailed,\n\t\t\"could not increase value for key: %s\", key)\n}",
+    "funcname": "Incr"
+}

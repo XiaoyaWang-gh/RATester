@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/listen.go",
+    "lineno": 284,
+    "focalfunc": "func (app *App) printMessages(cfg ListenConfig, ln net.Listener)",
+    "funcbody": "func (app *App) printMessages(cfg ListenConfig, ln net.Listener) {\n\n\tif !cfg.DisableStartupMessage {\n\t\tapp.startupMessage(ln.Addr().String(), getTLSConfig(ln) != nil, \"\", cfg)\n\t}\n\n\tif cfg.EnablePrintRoutes {\n\t\tapp.printRoutesMessage()\n\t}\n}",
+    "funcname": "printMessages"
+}

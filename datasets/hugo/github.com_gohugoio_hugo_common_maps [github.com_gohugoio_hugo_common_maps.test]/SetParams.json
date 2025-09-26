@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 42,
+    "focalfunc": "func SetParams(dst, src Params)",
+    "funcbody": "func SetParams(dst, src Params) {\n\tfor k, v := range src {\n\t\tvv, found := dst[k]\n\t\tif !found {\n\t\t\tdst[k] = v\n\t\t} else {\n\t\t\tswitch vvv := vv.(type) {\n\t\t\tcase Params:\n\t\t\t\tif pv, ok := v.(Params); ok {\n\t\t\t\t\tSetParams(vvv, pv)\n\t\t\t\t} else {\n\t\t\t\t\tdst[k] = v\n\t\t\t\t}\n\t\t\tdefault:\n\t\t\t\tdst[k] = v\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "SetParams"
+}

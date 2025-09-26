@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_tls.go",
+    "lineno": 40,
+    "focalfunc": "func (c *ChallengeTLSALPN) Present(domain, _, keyAuth string) error",
+    "funcbody": "func (c *ChallengeTLSALPN) Present(domain, _, keyAuth string) error {\n\tlogger := log.With().Str(logs.ProviderName, providerNameALPN).Logger()\n\tlogger.Debug().Msgf(\"TLS Challenge Present temp certificate for %s\", domain)\n\n\tcertPEMBlock, keyPEMBlock, err := tlsalpn01.ChallengeBlocks(domain, keyAuth)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tcert := &Certificate{Certificate: certPEMBlock, Key: keyPEMBlock, Domain: types.Domain{Main: \"TEMP-\" + domain}}\n\n\tc.muChans.Lock()\n\tch := make(chan struct{})\n\tc.chans[string(certPEMBlock)] = ch\n\tc.muChans.Unlock()\n\n\tc.muCerts.Lock()\n\tc.certs[keyAuth] = cert\n\tconf := createMessage(c.certs)\n\tc.muCerts.Unlock()\n\n\tc.configurationChan <- conf\n\n\ttimer := time.NewTimer(time.Minute)\n\tdefer timer.Stop()\n\n\tselect {\n\tcase t := <-timer.C:\n\t\tc.muChans.Lock()\n\t\tc.cleanChan(string(certPEMBlock))\n\t\tc.muChans.Unlock()\n\n\t\terr = c.CleanUp(domain, \"\", keyAuth)\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Msg(\"Failed to clean up TLS challenge\")\n\t\t}\n\n\t\treturn fmt.Errorf(\"timeout %s\", t)\n\tcase <-ch:\n\n\t\treturn nil\n\t}\n}",
+    "funcname": "Present"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/paths/paths.go",
+    "lineno": 44,
+    "focalfunc": "func New(fs *hugofs.Fs, cfg config.AllProvider) (*Paths, error)",
+    "funcbody": "func New(fs *hugofs.Fs, cfg config.AllProvider) (*Paths, error) {\n\tbcfg := cfg.BaseConfig()\n\tpublishDir := bcfg.PublishDir\n\tif publishDir == \"\" {\n\t\tpanic(\"publishDir not set\")\n\t}\n\n\tabsPublishDir := hpaths.AbsPathify(bcfg.WorkingDir, publishDir)\n\tif !strings.HasSuffix(absPublishDir, FilePathSeparator) {\n\t\tabsPublishDir += FilePathSeparator\n\t}\n\n\tif absPublishDir == \"//\" {\n\t\tabsPublishDir = FilePathSeparator\n\t}\n\tabsResourcesDir := hpaths.AbsPathify(bcfg.WorkingDir, cfg.Dirs().ResourceDir)\n\tif !strings.HasSuffix(absResourcesDir, FilePathSeparator) {\n\t\tabsResourcesDir += FilePathSeparator\n\t}\n\tif absResourcesDir == \"//\" {\n\t\tabsResourcesDir = FilePathSeparator\n\t}\n\n\tvar multihostTargetBasePaths []string\n\tif cfg.IsMultihost() && len(cfg.Languages()) > 1 {\n\t\tfor _, l := range cfg.Languages() {\n\t\t\tmultihostTargetBasePaths = append(multihostTargetBasePaths, l.Lang)\n\t\t}\n\t}\n\n\tp := &Paths{\n\t\tFs:\t\t\t\tfs,\n\t\tCfg:\t\t\t\tcfg,\n\t\tAbsResourcesDir:\t\tabsResourcesDir,\n\t\tAbsPublishDir:\t\t\tabsPublishDir,\n\t\tMultihostTargetBasePaths:\tmultihostTargetBasePaths,\n\t}\n\n\treturn p, nil\n}",
+    "funcname": "New"
+}

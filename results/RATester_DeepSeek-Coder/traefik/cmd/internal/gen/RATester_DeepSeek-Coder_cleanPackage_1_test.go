@@ -1,0 +1,52 @@
+package main
+
+import (
+	"fmt"
+	"path"
+	"testing"
+)
+
+func TestCleanPackage_1(t *testing.T) {
+	tests := []struct {
+		name string
+		src  string
+		want string
+	}{
+		{
+			name: "github.com/traefik/paerser/types",
+			src:  "github.com/traefik/paerser/types",
+			want: "",
+		},
+		{
+			name: "github.com/traefik/traefik/v3/pkg/tls",
+			src:  "github.com/traefik/traefik/v3/pkg/tls",
+			want: path.Join(destModuleName, destPkg, "tls"),
+		},
+		{
+			name: "github.com/traefik/traefik/v3/pkg/types",
+			src:  "github.com/traefik/traefik/v3/pkg/types",
+			want: path.Join(destModuleName, destPkg, "types"),
+		},
+		{
+			name: "default",
+			src:  "github.com/traefik/traefik/v3/pkg/foo",
+			want: "github.com/traefik/traefik/v3/pkg/foo",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			got := cleanPackage(tt.src)
+			if got != tt.want {
+				t.Errorf("cleanPackage() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

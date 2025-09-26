@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 57,
+    "focalfunc": "func (c *configContainer) Set(key, val string) error",
+    "funcbody": "func (c *configContainer) Set(key, val string) error {\n\tpath := strings.Split(key, keySeparator)\n\tsub, err := subTree(c.t, path[0:len(path)-1])\n\tif err != nil {\n\t\treturn err\n\t}\n\tsub.Set(path[len(path)-1], val)\n\treturn nil\n}",
+    "funcname": "Set"
+}

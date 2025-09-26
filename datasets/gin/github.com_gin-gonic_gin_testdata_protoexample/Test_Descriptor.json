@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 120,
+    "focalfunc": "func (*Test) Descriptor() ([]byte, []int)",
+    "funcbody": "func (*Test) Descriptor() ([]byte, []int) {\n\treturn file_test_proto_rawDescGZIP(), []int{0}\n}",
+    "funcname": "Descriptor"
+}

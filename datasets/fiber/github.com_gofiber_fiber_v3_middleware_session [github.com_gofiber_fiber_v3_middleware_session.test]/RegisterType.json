@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/store.go",
+    "lineno": 43,
+    "focalfunc": "func (*Store) RegisterType(i any)",
+    "funcbody": "func (*Store) RegisterType(i any) {\n\tgob.Register(i)\n}",
+    "funcname": "RegisterType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/visitor/visitor.go",
+    "lineno": 49,
+    "focalfunc": "func (vm *Manager) Listen(name string, sk string, allowUsers []string) (*netpkg.InternalListener, error)",
+    "funcbody": "func (vm *Manager) Listen(name string, sk string, allowUsers []string) (*netpkg.InternalListener, error) {\n\tvm.mu.Lock()\n\tdefer vm.mu.Unlock()\n\n\tif _, ok := vm.listeners[name]; ok {\n\t\treturn nil, fmt.Errorf(\"custom listener for [%s] is repeated\", name)\n\t}\n\n\tl := netpkg.NewInternalListener()\n\tvm.listeners[name] = &listenerBundle{\n\t\tl:\t\tl,\n\t\tsk:\t\tsk,\n\t\tallowUsers:\tallowUsers,\n\t}\n\treturn l, nil\n}",
+    "funcname": "Listen"
+}

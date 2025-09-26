@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 107,
+    "focalfunc": "func (p *pageMeta) Aliases() []string",
+    "funcbody": "func (p *pageMeta) Aliases() []string {\n\treturn p.pageConfig.Aliases\n}",
+    "funcname": "Aliases"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 381,
+    "focalfunc": "func setArray(vals []string, value reflect.Value, field reflect.StructField) error",
+    "funcbody": "func setArray(vals []string, value reflect.Value, field reflect.StructField) error {\n\tfor i, s := range vals {\n\t\terr := setWithProperType(s, value.Index(i), field)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "setArray"
+}

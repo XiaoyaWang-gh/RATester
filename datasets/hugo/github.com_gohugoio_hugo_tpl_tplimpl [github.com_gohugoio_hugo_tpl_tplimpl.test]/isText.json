@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1129,
+    "focalfunc": "func isText(templ tpl.Template) bool",
+    "funcbody": "func isText(templ tpl.Template) bool {\n\t_, isText := templ.(*texttemplate.Template)\n\treturn isText\n}",
+    "funcname": "isText"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 295,
+    "focalfunc": "func (c *clientWrapper) ListNamespaces(selector labels.Selector) ([]string, error)",
+    "funcbody": "func (c *clientWrapper) ListNamespaces(selector labels.Selector) ([]string, error) {\n\tns, err := c.factoryNamespace.Core().V1().Namespaces().Lister().List(selector)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar namespaces []string\n\tfor _, namespace := range ns {\n\t\tif !c.isWatchedNamespace(namespace.Name) {\n\t\t\tlog.Warn().Msgf(\"Namespace %q is not within %q watched namespaces\", selector, namespace)\n\t\t\tcontinue\n\t\t}\n\t\tnamespaces = append(namespaces, namespace.Name)\n\t}\n\treturn namespaces, nil\n}",
+    "funcname": "ListNamespaces"
+}

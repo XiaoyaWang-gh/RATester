@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 103,
+    "focalfunc": "func (pt pageTree) InSection(other any) bool",
+    "funcbody": "func (pt pageTree) InSection(other any) bool {\n\tif pt.p == nil || types.IsNil(other) {\n\t\treturn false\n\t}\n\n\tp, ok := other.(page.Page)\n\tif !ok {\n\t\treturn false\n\t}\n\n\treturn pt.CurrentSection() == p.CurrentSection()\n}",
+    "funcname": "InSection"
+}

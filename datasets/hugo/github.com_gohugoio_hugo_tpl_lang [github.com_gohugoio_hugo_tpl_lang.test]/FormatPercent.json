@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 78,
+    "focalfunc": "func (ns *Namespace) FormatPercent(precision, number any) (string, error)",
+    "funcbody": "func (ns *Namespace) FormatPercent(precision, number any) (string, error) {\n\tp, n, err := ns.castPrecisionNumber(precision, number)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn ns.translator.FmtPercent(n, p), nil\n}",
+    "funcname": "FormatPercent"
+}

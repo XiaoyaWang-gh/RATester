@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 351,
+    "focalfunc": "func GetLenBytes(buf []byte) (b []byte, err error)",
+    "funcbody": "func GetLenBytes(buf []byte) (b []byte, err error) {\n\traw := bytes.NewBuffer([]byte{})\n\tif err = binary.Write(raw, binary.LittleEndian, int32(len(buf))); err != nil {\n\t\treturn\n\t}\n\tif err = binary.Write(raw, binary.LittleEndian, buf); err != nil {\n\t\treturn\n\t}\n\tb = raw.Bytes()\n\treturn\n}",
+    "funcname": "GetLenBytes"
+}

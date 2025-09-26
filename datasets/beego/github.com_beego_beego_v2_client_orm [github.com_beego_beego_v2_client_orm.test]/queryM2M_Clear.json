@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_querym2m.go",
+    "lineno": 136,
+    "focalfunc": "func (o *queryM2M) Clear() (int64, error)",
+    "funcbody": "func (o *queryM2M) Clear() (int64, error) {\n\treturn o.ClearWithCtx(context.Background())\n}",
+    "funcname": "Clear"
+}

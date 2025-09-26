@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 395,
+    "focalfunc": "func (svr *Service) StatusExporter() StatusExporter",
+    "funcbody": "func (svr *Service) StatusExporter() StatusExporter {\n\treturn &statusExporterImpl{\n\t\tgetProxyStatusFunc: svr.getProxyStatus,\n\t}\n}",
+    "funcname": "StatusExporter"
+}

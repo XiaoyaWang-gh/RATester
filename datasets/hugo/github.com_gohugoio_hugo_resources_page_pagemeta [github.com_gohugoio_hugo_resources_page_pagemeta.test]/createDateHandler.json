@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 702,
+    "focalfunc": "func (f FrontMatterHandler) createDateHandler(identifiers []string, setter func(d *FrontMatterDescriptor, t time.Time)) (frontMatterFieldHandler, error)",
+    "funcbody": "func (f FrontMatterHandler) createDateHandler(identifiers []string, setter func(d *FrontMatterDescriptor, t time.Time)) (frontMatterFieldHandler, error) {\n\tvar h *frontmatterFieldHandlers\n\tvar handlers []frontMatterFieldHandler\n\n\tfor _, identifier := range identifiers {\n\t\tswitch identifier {\n\t\tcase fmFilename:\n\t\t\thandlers = append(handlers, h.newDateFilenameHandler(setter))\n\t\tcase fmModTime:\n\t\t\thandlers = append(handlers, h.newDateModTimeHandler(setter))\n\t\tcase fmGitAuthorDate:\n\t\t\thandlers = append(handlers, h.newDateGitAuthorDateHandler(setter))\n\t\tdefault:\n\t\t\thandlers = append(handlers, h.newDateFieldHandler(identifier, setter))\n\t\t}\n\t}\n\n\treturn f.newChainedFrontMatterFieldHandler(handlers...), nil\n}",
+    "funcname": "createDateHandler"
+}

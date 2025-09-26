@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin.go",
+    "lineno": 75,
+    "focalfunc": "func writeJSON(rw http.ResponseWriter, jsonData []byte)",
+    "funcbody": "func writeJSON(rw http.ResponseWriter, jsonData []byte) {\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\trw.Write(jsonData)\n}",
+    "funcname": "writeJSON"
+}

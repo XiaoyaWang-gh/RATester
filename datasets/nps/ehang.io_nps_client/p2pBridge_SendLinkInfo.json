@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/local.go",
+    "lineno": 35,
+    "focalfunc": "func (p2pBridge *p2pBridge) SendLinkInfo(clientId int, link *conn.Link, t *file.Tunnel) (target net.Conn, err error)",
+    "funcbody": "func (p2pBridge *p2pBridge) SendLinkInfo(clientId int, link *conn.Link, t *file.Tunnel) (target net.Conn, err error) {\n\tfor i := 0; muxSession == nil; i++ {\n\t\tif i >= 20 {\n\t\t\terr = errors.New(\"p2pBridge:too many times to get muxSession\")\n\t\t\tlogs.Error(err)\n\t\t\treturn\n\t\t}\n\t\truntime.Gosched()\n\t}\n\tnowConn, err := muxSession.NewConn()\n\tif err != nil {\n\t\tudpConn = nil\n\t\treturn nil, err\n\t}\n\tif _, err := conn.NewConn(nowConn).SendInfo(link, \"\"); err != nil {\n\t\tudpConnStatus = false\n\t\treturn nil, err\n\t}\n\treturn nowConn, nil\n}",
+    "funcname": "SendLinkInfo"
+}

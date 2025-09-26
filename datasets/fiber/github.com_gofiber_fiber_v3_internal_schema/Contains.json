@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 298,
+    "focalfunc": "func (o tagOptions) Contains(option string) bool",
+    "funcbody": "func (o tagOptions) Contains(option string) bool {\n\tfor _, s := range o {\n\t\tif s == option {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "Contains"
+}

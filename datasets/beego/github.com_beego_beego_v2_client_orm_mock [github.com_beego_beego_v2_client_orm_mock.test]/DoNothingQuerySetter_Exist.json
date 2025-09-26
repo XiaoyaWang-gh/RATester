@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 140,
+    "focalfunc": "func (d *DoNothingQuerySetter) Exist() bool",
+    "funcbody": "func (d *DoNothingQuerySetter) Exist() bool {\n\treturn true\n}",
+    "funcname": "Exist"
+}

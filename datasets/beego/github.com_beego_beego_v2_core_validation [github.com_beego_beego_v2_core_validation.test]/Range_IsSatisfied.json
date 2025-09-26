@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 283,
+    "focalfunc": "func (r Range) IsSatisfied(obj interface{}) bool",
+    "funcbody": "func (r Range) IsSatisfied(obj interface{}) bool {\n\treturn r.Min.IsSatisfied(obj) && r.Max.IsSatisfied(obj)\n}",
+    "funcname": "IsSatisfied"
+}

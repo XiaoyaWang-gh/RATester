@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/kinds/kinds.go",
+    "lineno": 91,
+    "focalfunc": "func GetKindAny(s string) string",
+    "funcbody": "func GetKindAny(s string) string {\n\tif pkind := GetKindMain(s); pkind != \"\" {\n\t\treturn pkind\n\t}\n\treturn kindMapTemporary[strings.ToLower(s)]\n}",
+    "funcname": "GetKindAny"
+}

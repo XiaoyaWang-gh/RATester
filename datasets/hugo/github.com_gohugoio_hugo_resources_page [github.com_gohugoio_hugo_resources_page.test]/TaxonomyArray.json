@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/taxonomy.go",
+    "lineno": 69,
+    "focalfunc": "func (i Taxonomy) TaxonomyArray() OrderedTaxonomy",
+    "funcbody": "func (i Taxonomy) TaxonomyArray() OrderedTaxonomy {\n\ties := make([]OrderedTaxonomyEntry, len(i))\n\tcount := 0\n\tfor k, v := range i {\n\t\ties[count] = OrderedTaxonomyEntry{Name: k, WeightedPages: v}\n\t\tcount++\n\t}\n\treturn ies\n}",
+    "funcname": "TaxonomyArray"
+}

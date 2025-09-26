@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/safe.go",
+    "lineno": 26,
+    "focalfunc": "func (s *Safe) Set(value interface{})",
+    "funcbody": "func (s *Safe) Set(value interface{}) {\n\ts.lock.Lock()\n\tdefer s.lock.Unlock()\n\ts.value = value\n}",
+    "funcname": "Set"
+}

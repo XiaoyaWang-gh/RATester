@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 234,
+    "focalfunc": "func (mhr *MakeHoleRecords) Recommand() (mode, index int)",
+    "funcbody": "func (mhr *MakeHoleRecords) Recommand() (mode, index int) {\n\tmhr.mu.Lock()\n\tdefer mhr.mu.Unlock()\n\n\tif len(mhr.scores) == 0 {\n\t\treturn 0, 0\n\t}\n\tmaxScore := slices.MaxFunc(mhr.scores, func(a, b *BehaviorScore) int {\n\t\treturn cmp.Compare(a.Score, b.Score)\n\t})\n\tmaxScore.Score--\n\tmhr.LastUpdateTime = time.Now()\n\treturn maxScore.Mode, maxScore.Index\n}",
+    "funcname": "Recommand"
+}

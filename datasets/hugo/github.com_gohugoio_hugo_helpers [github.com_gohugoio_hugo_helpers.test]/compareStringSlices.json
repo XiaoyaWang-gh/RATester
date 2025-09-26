@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 222,
+    "focalfunc": "func compareStringSlices(a, b []string) bool",
+    "funcbody": "func compareStringSlices(a, b []string) bool {\n\tif a == nil && b == nil {\n\t\treturn true\n\t}\n\n\tif a == nil || b == nil {\n\t\treturn false\n\t}\n\n\tif len(a) != len(b) {\n\t\treturn false\n\t}\n\n\tfor i := range a {\n\t\tif a[i] != b[i] {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "compareStringSlices"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 42,
+    "focalfunc": "func (fi *File) IsContentAdapter() bool",
+    "funcbody": "func (fi *File) IsContentAdapter() bool {\n\treturn fi.fim.Meta().PathInfo.IsContentData()\n}",
+    "funcname": "IsContentAdapter"
+}

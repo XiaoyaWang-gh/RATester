@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/terminal/colors.go",
+    "lineno": 77,
+    "focalfunc": "func singlePercent(str string) string",
+    "funcbody": "func singlePercent(str string) string {\n\treturn strings.Replace(str, \"%%\", \"%\", -1)\n}",
+    "funcname": "singlePercent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 41,
+    "focalfunc": "func (b *DefaultBinder) BindPathParams(c Context, i interface{}) error",
+    "funcbody": "func (b *DefaultBinder) BindPathParams(c Context, i interface{}) error {\n\tnames := c.ParamNames()\n\tvalues := c.ParamValues()\n\tparams := map[string][]string{}\n\tfor i, name := range names {\n\t\tparams[name] = []string{values[i]}\n\t}\n\tif err := b.bindData(i, params, \"param\"); err != nil {\n\t\treturn NewHTTPError(http.StatusBadRequest, err.Error()).SetInternal(err)\n\t}\n\treturn nil\n}",
+    "funcname": "BindPathParams"
+}

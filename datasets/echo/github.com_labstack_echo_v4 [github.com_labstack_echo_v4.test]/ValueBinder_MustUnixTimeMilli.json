@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 1274,
+    "focalfunc": "func (b *ValueBinder) MustUnixTimeMilli(sourceParam string, dest *time.Time) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) MustUnixTimeMilli(sourceParam string, dest *time.Time) *ValueBinder {\n\treturn b.unixTime(sourceParam, dest, true, time.Millisecond)\n}",
+    "funcname": "MustUnixTimeMilli"
+}

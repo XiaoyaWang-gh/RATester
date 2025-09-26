@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 24,
+    "focalfunc": "func NewSsdbCache() cache.Cache",
+    "funcbody": "func NewSsdbCache() cache.Cache {\n\treturn &Cache{}\n}",
+    "funcname": "NewSsdbCache"
+}

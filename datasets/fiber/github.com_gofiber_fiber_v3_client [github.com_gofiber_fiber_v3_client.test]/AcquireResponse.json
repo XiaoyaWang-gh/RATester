@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 169,
+    "focalfunc": "func AcquireResponse() *Response",
+    "funcbody": "func AcquireResponse() *Response {\n\tresp, ok := responsePool.Get().(*Response)\n\tif !ok {\n\t\tpanic(\"unexpected type from responsePool.Get()\")\n\t}\n\treturn resp\n}",
+    "funcname": "AcquireResponse"
+}

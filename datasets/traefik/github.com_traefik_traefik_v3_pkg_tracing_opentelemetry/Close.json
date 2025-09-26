@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/opentelemetry/opentelemetry.go",
+    "lineno": 155,
+    "focalfunc": "func (t *tpCloser) Close() error",
+    "funcbody": "func (t *tpCloser) Close() error {\n\tif t == nil {\n\t\treturn nil\n\t}\n\n\tctx, cancel := context.WithDeadline(context.Background(), time.Now().Add(5*time.Second))\n\tdefer cancel()\n\n\treturn t.provider.Shutdown(ctx)\n}",
+    "funcname": "Close"
+}

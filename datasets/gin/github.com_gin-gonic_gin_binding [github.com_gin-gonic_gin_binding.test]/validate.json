@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/binding.go",
+    "lineno": 118,
+    "focalfunc": "func validate(obj any) error",
+    "funcbody": "func validate(obj any) error {\n\tif Validator == nil {\n\t\treturn nil\n\t}\n\treturn Validator.ValidateStruct(obj)\n}",
+    "funcname": "validate"
+}

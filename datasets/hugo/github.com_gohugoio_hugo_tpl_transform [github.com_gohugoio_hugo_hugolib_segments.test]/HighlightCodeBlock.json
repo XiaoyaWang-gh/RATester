@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 109,
+    "focalfunc": "func (ns *Namespace) HighlightCodeBlock(ctx hooks.CodeblockContext, opts ...any) (highlight.HighlightResult, error)",
+    "funcbody": "func (ns *Namespace) HighlightCodeBlock(ctx hooks.CodeblockContext, opts ...any) (highlight.HighlightResult, error) {\n\tvar optsv any\n\tif len(opts) > 0 {\n\t\toptsv = opts[0]\n\t}\n\n\thl := ns.deps.ContentSpec.Converters.GetHighlighter()\n\n\treturn hl.HighlightCodeBlock(ctx, optsv)\n}",
+    "funcname": "HighlightCodeBlock"
+}

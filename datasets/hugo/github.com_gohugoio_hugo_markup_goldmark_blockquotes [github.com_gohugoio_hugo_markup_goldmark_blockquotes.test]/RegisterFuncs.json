@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/blockquotes/blockquotes.go",
+    "lineno": 52,
+    "focalfunc": "func (r *htmlRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer)",
+    "funcbody": "func (r *htmlRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer) {\n\treg.Register(ast.KindBlockquote, r.renderBlockquote)\n}",
+    "funcname": "RegisterFuncs"
+}

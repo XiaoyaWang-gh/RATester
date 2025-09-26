@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/passthrough/passthrough.go",
+    "lineno": 160,
+    "focalfunc": "func (p *passthroughContext) Type() string",
+    "funcbody": "func (p *passthroughContext) Type() string {\n\treturn p.typ\n}",
+    "funcname": "Type"
+}

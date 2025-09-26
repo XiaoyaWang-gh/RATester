@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 102,
+    "focalfunc": "func (b *Balancer) Push(x interface{})",
+    "funcbody": "func (b *Balancer) Push(x interface{}) {\n\th, ok := x.(*namedHandler)\n\tif !ok {\n\t\treturn\n\t}\n\n\tb.handlers = append(b.handlers, h)\n}",
+    "funcname": "Push"
+}

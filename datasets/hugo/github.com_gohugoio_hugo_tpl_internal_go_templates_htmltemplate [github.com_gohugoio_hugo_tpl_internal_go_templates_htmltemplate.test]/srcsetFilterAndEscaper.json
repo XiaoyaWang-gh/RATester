@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 143,
+    "focalfunc": "func srcsetFilterAndEscaper(args ...any) string",
+    "funcbody": "func srcsetFilterAndEscaper(args ...any) string {\n\ts, t := stringify(args...)\n\tswitch t {\n\tcase contentTypeSrcset:\n\t\treturn s\n\tcase contentTypeURL:\n\t\t// Normalizing gets rid of all HTML whitespace\n\t\t// which separate the image URL from its metadata.\n\t\tvar b strings.Builder\n\t\tif processURLOnto(s, true, &b) {\n\t\t\ts = b.String()\n\t\t}\n\n\t\treturn strings.ReplaceAll(s, \",\", \"%2c\")\n\t}\n\n\tvar b strings.Builder\n\twritten := 0\n\tfor i := 0; i < len(s); i++ {\n\t\tif s[i] == ',' {\n\t\t\tfilterSrcsetElement(s, written, i, &b)\n\t\t\tb.WriteString(\",\")\n\t\t\twritten = i + 1\n\t\t}\n\t}\n\tfilterSrcsetElement(s, written, len(s), &b)\n\treturn b.String()\n}",
+    "funcname": "srcsetFilterAndEscaper"
+}

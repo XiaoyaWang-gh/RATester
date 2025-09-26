@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/template.go",
+    "lineno": 187,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tContext.GetDependencyManagerInCurrentScope = func(ctx context.Context) identity.Manager {\n\t\tidmsp := Context.DependencyManagerScopedProvider.Get(ctx)\n\t\tif idmsp != nil {\n\t\t\treturn idmsp.GetDependencyManagerForScope(Context.DependencyScope.Get(ctx))\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "init"
+}

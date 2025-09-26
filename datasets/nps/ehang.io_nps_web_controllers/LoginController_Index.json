@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/login.go",
+    "lineno": 26,
+    "focalfunc": "func (self *LoginController) Index()",
+    "funcbody": "func (self *LoginController) Index() {\n\n\twebBaseUrl := beego.AppConfig.String(\"web_base_url\")\n\tif self.doLogin(\"\", \"\", false) {\n\t\tself.Redirect(webBaseUrl+\"/index/index\", 302)\n\t}\n\tself.Data[\"web_base_url\"] = webBaseUrl\n\tself.Data[\"register_allow\"], _ = beego.AppConfig.Bool(\"allow_user_register\")\n\tself.TplName = \"login/index.html\"\n}",
+    "funcname": "Index"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 49,
+    "focalfunc": "func NewFilterChainBuilder(opts ...BuilderOption) *FilterChainBuilder",
+    "funcbody": "func NewFilterChainBuilder(opts ...BuilderOption) *FilterChainBuilder {\n\tres := &FilterChainBuilder{\n\t\tprintableContentTypes:\tdefaultprintableContentTypes,\n\t\tlog:\t\t\tlogs.Debug,\n\t}\n\tfor _, o := range opts {\n\t\to(res)\n\t}\n\n\treturn res\n}",
+    "funcname": "NewFilterChainBuilder"
+}

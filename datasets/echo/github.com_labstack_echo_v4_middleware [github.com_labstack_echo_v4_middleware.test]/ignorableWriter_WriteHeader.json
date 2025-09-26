@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/timeout.go",
+    "lineno": 205,
+    "focalfunc": "func (w *ignorableWriter) WriteHeader(code int)",
+    "funcbody": "func (w *ignorableWriter) WriteHeader(code int) {\n\tw.lock.Lock()\n\tdefer w.lock.Unlock()\n\tif w.ignoreWrites {\n\t\treturn\n\t}\n\tw.ResponseWriter.WriteHeader(code)\n}",
+    "funcname": "WriteHeader"
+}

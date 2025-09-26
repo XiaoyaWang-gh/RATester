@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 614,
+    "focalfunc": "func CtrlDelete(rootpath string, f interface{})",
+    "funcbody": "func CtrlDelete(rootpath string, f interface{}) {\n\tBeeApp.CtrlDelete(rootpath, f)\n}",
+    "funcname": "CtrlDelete"
+}

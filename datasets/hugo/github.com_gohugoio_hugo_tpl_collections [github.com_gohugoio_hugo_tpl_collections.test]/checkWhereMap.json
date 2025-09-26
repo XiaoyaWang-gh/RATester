@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 443,
+    "focalfunc": "func (ns *Namespace) checkWhereMap(ctxv, seqv, kv, mv reflect.Value, path []string, op string) (any, error)",
+    "funcbody": "func (ns *Namespace) checkWhereMap(ctxv, seqv, kv, mv reflect.Value, path []string, op string) (any, error) {\n\trv := reflect.MakeMap(seqv.Type())\n\tkeys := seqv.MapKeys()\n\tfor _, k := range keys {\n\t\telemv := seqv.MapIndex(k)\n\t\tswitch elemv.Kind() {\n\t\tcase reflect.Array, reflect.Slice:\n\t\t\tr, err := ns.checkWhereArray(ctxv, elemv, kv, mv, path, op)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\n\t\t\tswitch rr := reflect.ValueOf(r); rr.Kind() {\n\t\t\tcase reflect.Slice:\n\t\t\t\tif rr.Len() > 0 {\n\t\t\t\t\trv.SetMapIndex(k, elemv)\n\t\t\t\t}\n\t\t\t}\n\t\tcase reflect.Interface:\n\t\t\telemvv, isNil := indirect(elemv)\n\t\t\tif isNil {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tswitch elemvv.Kind() {\n\t\t\tcase reflect.Array, reflect.Slice:\n\t\t\t\tr, err := ns.checkWhereArray(ctxv, elemvv, kv, mv, path, op)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn nil, err\n\t\t\t\t}\n\n\t\t\t\tswitch rr := reflect.ValueOf(r); rr.Kind() {\n\t\t\t\tcase reflect.Slice:\n\t\t\t\t\tif rr.Len() > 0 {\n\t\t\t\t\t\trv.SetMapIndex(k, elemv)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn rv.Interface(), nil\n}",
+    "funcname": "checkWhereMap"
+}

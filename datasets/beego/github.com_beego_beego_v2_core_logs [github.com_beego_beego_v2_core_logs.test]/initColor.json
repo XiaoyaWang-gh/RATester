@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 120,
+    "focalfunc": "func initColor()",
+    "funcbody": "func initColor() {\n\tif runtime.GOOS == \"windows\" {\n\t\tgreen = w32Green\n\t\twhite = w32White\n\t\tyellow = w32Yellow\n\t\tred = w32Red\n\t\tblue = w32Blue\n\t\tmagenta = w32Magenta\n\t\tcyan = w32Cyan\n\t}\n\tcolorMap = map[string]string{\n\n\t\t\"green\":\tgreen,\n\t\t\"white\":\twhite,\n\t\t\"yellow\":\tyellow,\n\t\t\"red\":\t\tred,\n\n\t\t\"GET\":\t\tblue,\n\t\t\"POST\":\t\tcyan,\n\t\t\"PUT\":\t\tyellow,\n\t\t\"DELETE\":\tred,\n\t\t\"PATCH\":\tgreen,\n\t\t\"HEAD\":\t\tmagenta,\n\t\t\"OPTIONS\":\twhite,\n\t}\n}",
+    "funcname": "initColor"
+}

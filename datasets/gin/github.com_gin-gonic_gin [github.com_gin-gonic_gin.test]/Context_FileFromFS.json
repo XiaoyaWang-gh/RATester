@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1101,
+    "focalfunc": "func (c *Context) FileFromFS(filepath string, fs http.FileSystem)",
+    "funcbody": "func (c *Context) FileFromFS(filepath string, fs http.FileSystem) {\n\tdefer func(old string) {\n\t\tc.Request.URL.Path = old\n\t}(c.Request.URL.Path)\n\n\tc.Request.URL.Path = filepath\n\n\thttp.FileServer(fs).ServeHTTP(c.Writer, c.Request)\n}",
+    "funcname": "FileFromFS"
+}

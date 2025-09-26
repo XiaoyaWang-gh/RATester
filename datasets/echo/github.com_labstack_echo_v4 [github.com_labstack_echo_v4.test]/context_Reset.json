@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 647,
+    "focalfunc": "func (c *context) Reset(r *http.Request, w http.ResponseWriter)",
+    "funcbody": "func (c *context) Reset(r *http.Request, w http.ResponseWriter) {\n\tc.request = r\n\tc.response.reset(w)\n\tc.query = nil\n\tc.handler = NotFoundHandler\n\tc.store = nil\n\tc.path = \"\"\n\tc.pnames = nil\n\tc.logger = nil\n\n\tfor i := 0; i < len(c.pvalues); i++ {\n\t\tc.pvalues[i] = \"\"\n\t}\n}",
+    "funcname": "Reset"
+}

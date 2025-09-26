@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 162,
+    "focalfunc": "func (c *core) afterHooks(resp *Response) error",
+    "funcbody": "func (c *core) afterHooks(resp *Response) error {\n\tc.client.mu.Lock()\n\tdefer c.client.mu.Unlock()\n\n\tfor _, f := range c.client.builtinResponseHooks {\n\t\terr := f(c.client, resp, c.req)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tfor _, f := range c.client.userResponseHooks {\n\t\terr := f(c.client, resp, c.req)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "afterHooks"
+}

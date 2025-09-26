@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 78,
+    "focalfunc": "func (e *Event[T]) StopPropagation()",
+    "funcbody": "func (e *Event[T]) StopPropagation() {\n\te.stopPropagation = true\n}",
+    "funcname": "StopPropagation"
+}

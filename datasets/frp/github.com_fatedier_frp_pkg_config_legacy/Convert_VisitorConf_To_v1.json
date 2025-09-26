@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/conversion.go",
+    "lineno": 334,
+    "focalfunc": "func Convert_VisitorConf_To_v1(conf VisitorConf) v1.VisitorConfigurer",
+    "funcbody": "func Convert_VisitorConf_To_v1(conf VisitorConf) v1.VisitorConfigurer {\n\toutBase := Convert_VisitorConf_To_v1_Base(conf)\n\tvar out v1.VisitorConfigurer\n\tswitch v := conf.(type) {\n\tcase *STCPVisitorConf:\n\t\tc := &v1.STCPVisitorConfig{VisitorBaseConfig: *outBase}\n\t\tout = c\n\tcase *SUDPVisitorConf:\n\t\tc := &v1.SUDPVisitorConfig{VisitorBaseConfig: *outBase}\n\t\tout = c\n\tcase *XTCPVisitorConf:\n\t\tc := &v1.XTCPVisitorConfig{VisitorBaseConfig: *outBase}\n\t\tc.Protocol = v.Protocol\n\t\tc.KeepTunnelOpen = v.KeepTunnelOpen\n\t\tc.MaxRetriesAnHour = v.MaxRetriesAnHour\n\t\tc.MinRetryInterval = v.MinRetryInterval\n\t\tc.FallbackTo = v.FallbackTo\n\t\tc.FallbackTimeoutMs = v.FallbackTimeoutMs\n\t\tout = c\n\t}\n\treturn out\n}",
+    "funcname": "Convert_VisitorConf_To_v1"
+}

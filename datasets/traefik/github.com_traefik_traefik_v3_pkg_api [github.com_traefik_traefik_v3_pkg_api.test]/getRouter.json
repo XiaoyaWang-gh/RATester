@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 100,
+    "focalfunc": "func (h Handler) getRouter(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getRouter(rw http.ResponseWriter, request *http.Request) {\n\tscapedRouterID := mux.Vars(request)[\"routerID\"]\n\n\trouterID, err := url.PathUnescape(scapedRouterID)\n\tif err != nil {\n\t\twriteError(rw, fmt.Sprintf(\"unable to decode routerID %q: %s\", scapedRouterID, err), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\trouter, ok := h.runtimeConfiguration.Routers[routerID]\n\tif !ok {\n\t\twriteError(rw, fmt.Sprintf(\"router not found: %s\", routerID), http.StatusNotFound)\n\t\treturn\n\t}\n\n\tresult := newRouterRepresentation(routerID, router)\n\n\terr = json.NewEncoder(rw).Encode(result)\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getRouter"
+}

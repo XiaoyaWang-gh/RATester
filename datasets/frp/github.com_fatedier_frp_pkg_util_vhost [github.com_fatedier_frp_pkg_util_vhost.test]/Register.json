@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 147,
+    "focalfunc": "func (rp *HTTPReverseProxy) Register(routeCfg RouteConfig) error",
+    "funcbody": "func (rp *HTTPReverseProxy) Register(routeCfg RouteConfig) error {\n\terr := rp.vhostRouter.Add(routeCfg.Domain, routeCfg.Location, routeCfg.RouteByHTTPUser, &routeCfg)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "Register"
+}

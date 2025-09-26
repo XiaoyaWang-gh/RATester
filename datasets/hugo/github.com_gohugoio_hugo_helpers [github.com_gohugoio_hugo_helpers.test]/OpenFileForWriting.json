@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 308,
+    "focalfunc": "func OpenFileForWriting(fs afero.Fs, filename string) (afero.File, error)",
+    "funcbody": "func OpenFileForWriting(fs afero.Fs, filename string) (afero.File, error) {\n\tfilename = filepath.Clean(filename)\n\n\tf, err := fs.Create(filename)\n\tif err != nil {\n\t\tif !herrors.IsNotExist(err) {\n\t\t\treturn nil, err\n\t\t}\n\t\tif err = fs.MkdirAll(filepath.Dir(filename), 0o777); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tf, err = fs.Create(filename)\n\t}\n\n\treturn f, err\n}",
+    "funcname": "OpenFileForWriting"
+}

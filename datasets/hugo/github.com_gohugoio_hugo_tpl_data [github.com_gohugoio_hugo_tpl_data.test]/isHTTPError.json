@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/resources.go",
+    "lineno": 126,
+    "focalfunc": "func isHTTPError(res *http.Response) bool",
+    "funcbody": "func isHTTPError(res *http.Response) bool {\n\treturn res.StatusCode < 200 || res.StatusCode > 299\n}",
+    "funcname": "isHTTPError"
+}

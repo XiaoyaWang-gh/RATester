@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 730,
+    "focalfunc": "func assertValueType[V GenericType, T any](result T) V",
+    "funcbody": "func assertValueType[V GenericType, T any](result T) V {\n\tv, ok := any(result).(V)\n\tif !ok {\n\t\tpanic(fmt.Errorf(\"failed to type-assert to %T\", v))\n\t}\n\treturn v\n}",
+    "funcname": "assertValueType"
+}

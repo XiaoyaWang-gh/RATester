@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 21,
+    "focalfunc": "func BodyContains(values ...string) ResponseCondition",
+    "funcbody": "func BodyContains(values ...string) ResponseCondition {\n\treturn func(res *http.Response) error {\n\t\tbody, err := io.ReadAll(res.Body)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"failed to read response body: %w\", err)\n\t\t}\n\n\t\tfor _, value := range values {\n\t\t\tif !strings.Contains(string(body), value) {\n\t\t\t\treturn fmt.Errorf(\"could not find '%s' in body '%s'\", value, string(body))\n\t\t\t}\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "BodyContains"
+}

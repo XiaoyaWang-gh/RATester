@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 258,
+    "focalfunc": "func (c *hookBase) PositionerSourceTarget() []byte",
+    "funcbody": "func (c *hookBase) PositionerSourceTarget() []byte {\n\treturn c.getSourceSample()\n}",
+    "funcname": "PositionerSourceTarget"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 76,
+    "focalfunc": "func AcquireRedirect() *Redirect",
+    "funcbody": "func AcquireRedirect() *Redirect {\n\tredirect, ok := redirectPool.Get().(*Redirect)\n\tif !ok {\n\t\tpanic(errors.New(\"failed to type-assert to *Redirect\"))\n\t}\n\n\treturn redirect\n}",
+    "funcname": "AcquireRedirect"
+}

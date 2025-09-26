@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_sections.go",
+    "lineno": 21,
+    "focalfunc": "func (s *Site) Sections() page.Pages",
+    "funcbody": "func (s *Site) Sections() page.Pages {\n\ts.CheckReady()\n\treturn s.Home().Sections()\n}",
+    "funcname": "Sections"
+}

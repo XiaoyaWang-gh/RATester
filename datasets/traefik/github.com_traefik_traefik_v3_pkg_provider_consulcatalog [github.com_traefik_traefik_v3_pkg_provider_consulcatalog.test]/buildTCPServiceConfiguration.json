@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 143,
+    "focalfunc": "func (p *Provider) buildTCPServiceConfiguration(item itemData, configuration *dynamic.TCPConfiguration) error",
+    "funcbody": "func (p *Provider) buildTCPServiceConfiguration(item itemData, configuration *dynamic.TCPConfiguration) error {\n\tif len(configuration.Services) == 0 {\n\t\tconfiguration.Services = map[string]*dynamic.TCPService{\n\t\t\tgetName(item): {\n\t\t\t\tLoadBalancer: new(dynamic.TCPServersLoadBalancer),\n\t\t\t},\n\t\t}\n\t}\n\n\tfor name, service := range configuration.Services {\n\t\tif err := p.addServerTCP(item, service.LoadBalancer); err != nil {\n\t\t\treturn fmt.Errorf(\"%s: %w\", name, err)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildTCPServiceConfiguration"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 350,
+    "focalfunc": "func (v *Validation) SetError(fieldName string, errMsg string) *Error",
+    "funcbody": "func (v *Validation) SetError(fieldName string, errMsg string) *Error {\n\terr := &Error{Key: fieldName, Field: fieldName, Tmpl: errMsg, Message: errMsg}\n\tv.setError(err)\n\treturn err\n}",
+    "funcname": "SetError"
+}

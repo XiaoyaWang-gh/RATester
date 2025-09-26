@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 153,
+    "focalfunc": "func (pco *pageContentOutput) Content(ctx context.Context) (any, error)",
+    "funcbody": "func (pco *pageContentOutput) Content(ctx context.Context) (any, error) {\n\tr, err := pco.c().Render(ctx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn r.Content(ctx)\n}",
+    "funcname": "Content"
+}

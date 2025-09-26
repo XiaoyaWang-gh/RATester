@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 166,
+    "focalfunc": "func (c *Client) SetTLSConfig(config *tls.Config) *Client",
+    "funcbody": "func (c *Client) SetTLSConfig(config *tls.Config) *Client {\n\tc.fasthttp.TLSConfig = config\n\treturn c\n}",
+    "funcname": "SetTLSConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 102,
+    "focalfunc": "func (s *Session) Destroy() error",
+    "funcbody": "func (s *Session) Destroy() error {\n\n\tif s.data == nil {\n\t\treturn nil\n\t}\n\n\ts.data.Reset()\n\n\ts.mu.RLock()\n\tdefer s.mu.RUnlock()\n\n\tif err := s.config.Storage.Delete(s.id); err != nil {\n\t\treturn err\n\t}\n\n\ts.delSession()\n\treturn nil\n}",
+    "funcname": "Destroy"
+}

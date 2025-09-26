@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 47,
+    "focalfunc": "func NewCondition() *Condition",
+    "funcbody": "func NewCondition() *Condition {\n\tc := &Condition{}\n\treturn c\n}",
+    "funcname": "NewCondition"
+}

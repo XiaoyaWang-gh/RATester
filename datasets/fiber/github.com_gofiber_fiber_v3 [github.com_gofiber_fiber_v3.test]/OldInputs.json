@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 204,
+    "focalfunc": "func (r *Redirect) OldInputs() []OldInputData",
+    "funcbody": "func (r *Redirect) OldInputs() []OldInputData {\n\tinputs := make([]OldInputData, 0)\n\n\tfor _, msg := range r.c.flashMessages {\n\t\tif msg.isOldInput {\n\t\t\tinputs = append(inputs, OldInputData{\n\t\t\t\tKey:\tmsg.key,\n\t\t\t\tValue:\tmsg.value,\n\t\t\t})\n\t\t}\n\t}\n\n\treturn inputs\n}",
+    "funcname": "OldInputs"
+}

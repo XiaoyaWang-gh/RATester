@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock.go",
+    "lineno": 39,
+    "focalfunc": "func InitMockSetting()",
+    "funcbody": "func InitMockSetting() {\n\thttplib.AddDefaultFilter(mockFilter.FilterChain)\n}",
+    "funcname": "InitMockSetting"
+}

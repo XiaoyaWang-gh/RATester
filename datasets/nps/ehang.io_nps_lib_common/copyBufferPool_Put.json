@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 78,
+    "focalfunc": "func (Self *copyBufferPool) Put(x []byte)",
+    "funcbody": "func (Self *copyBufferPool) Put(x []byte) {\n\tif len(x) == PoolSizeCopy {\n\t\tSelf.pool.Put(x)\n\t} else {\n\t\tx = nil\n\t}\n}",
+    "funcname": "Put"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 249,
+    "focalfunc": "func (engine *Engine) Delims(left, right string) *Engine",
+    "funcbody": "func (engine *Engine) Delims(left, right string) *Engine {\n\tengine.delims = render.Delims{Left: left, Right: right}\n\treturn engine\n}",
+    "funcname": "Delims"
+}

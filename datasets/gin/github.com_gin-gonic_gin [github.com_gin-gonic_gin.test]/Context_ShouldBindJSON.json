@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 723,
+    "focalfunc": "func (c *Context) ShouldBindJSON(obj any) error",
+    "funcbody": "func (c *Context) ShouldBindJSON(obj any) error {\n\treturn c.ShouldBindWith(obj, binding.JSON)\n}",
+    "funcname": "ShouldBindJSON"
+}

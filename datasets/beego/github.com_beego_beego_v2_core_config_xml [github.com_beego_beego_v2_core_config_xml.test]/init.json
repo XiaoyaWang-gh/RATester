@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 279,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tconfig.Register(\"xml\", &Config{})\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 222,
+    "focalfunc": "func newMediaTypeWithMimeSuffix(main, sub, mimeSuffix string, suffixes []string) Type",
+    "funcbody": "func newMediaTypeWithMimeSuffix(main, sub, mimeSuffix string, suffixes []string) Type {\n\tmt := newMediaType(main, sub, suffixes)\n\tmt.mimeSuffix = mimeSuffix\n\tmt.init()\n\treturn mt\n}",
+    "funcname": "newMediaTypeWithMimeSuffix"
+}

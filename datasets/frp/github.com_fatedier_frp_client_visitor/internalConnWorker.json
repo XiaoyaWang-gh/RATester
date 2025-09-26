@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 103,
+    "focalfunc": "func (sv *XTCPVisitor) internalConnWorker()",
+    "funcbody": "func (sv *XTCPVisitor) internalConnWorker() {\n\txl := xlog.FromContextSafe(sv.ctx)\n\tfor {\n\t\tconn, err := sv.internalLn.Accept()\n\t\tif err != nil {\n\t\t\txl.Warnf(\"xtcp internal listener closed\")\n\t\t\treturn\n\t\t}\n\t\tgo sv.handleConn(conn)\n\t}\n}",
+    "funcname": "internalConnWorker"
+}

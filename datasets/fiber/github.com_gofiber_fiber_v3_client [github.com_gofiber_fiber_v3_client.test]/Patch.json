@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 527,
+    "focalfunc": "func (r *Request) Patch(url string) (*Response, error)",
+    "funcbody": "func (r *Request) Patch(url string) (*Response, error) {\n\treturn r.SetURL(url).SetMethod(fiber.MethodPatch).Send()\n}",
+    "funcname": "Patch"
+}

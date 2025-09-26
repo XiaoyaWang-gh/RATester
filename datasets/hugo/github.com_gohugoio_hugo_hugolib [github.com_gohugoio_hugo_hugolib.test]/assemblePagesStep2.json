@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 1813,
+    "focalfunc": "func (sa *sitePagesAssembler) assemblePagesStep2() error",
+    "funcbody": "func (sa *sitePagesAssembler) assemblePagesStep2() error {\n\tif err := sa.removeShouldNotBuild(); err != nil {\n\t\treturn err\n\t}\n\tif err := sa.assembleTermsAndTranslations(); err != nil {\n\t\treturn err\n\t}\n\tif err := sa.applyAggregatesToTaxonomiesAndTerms(); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "assemblePagesStep2"
+}

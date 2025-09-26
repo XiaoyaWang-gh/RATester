@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cors/utils.go",
+    "lineno": 69,
+    "focalfunc": "func (s subdomain) match(o string) bool",
+    "funcbody": "func (s subdomain) match(o string) bool {\n\treturn len(o) >= len(s.prefix)+len(s.suffix) && strings.HasPrefix(o, s.prefix) && strings.HasSuffix(o, s.suffix)\n}",
+    "funcname": "match"
+}

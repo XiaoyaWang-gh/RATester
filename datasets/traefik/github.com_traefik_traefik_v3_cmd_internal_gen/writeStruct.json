@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/centrifuge.go",
+    "lineno": 159,
+    "focalfunc": "func (c Centrifuge) writeStruct(name string, obj *types.Struct, rootPkg string, elt *File) string",
+    "funcbody": "func (c Centrifuge) writeStruct(name string, obj *types.Struct, rootPkg string, elt *File) string {\n\tb := strings.Builder{}\n\tb.WriteString(fmt.Sprintf(\"type %s struct {\\n\", name))\n\n\tfor i := range obj.NumFields() {\n\t\tfield := obj.Field(i)\n\n\t\tif !field.Exported() {\n\t\t\tcontinue\n\t\t}\n\n\t\tfPkg := c.PackageCleaner(extractPackage(field.Type()))\n\t\tif fPkg != \"\" && fPkg != rootPkg {\n\t\t\telt.Imports = append(elt.Imports, fPkg)\n\t\t}\n\n\t\tfType := c.TypeCleaner(field.Type(), rootPkg)\n\n\t\tif field.Embedded() {\n\t\t\tb.WriteString(fmt.Sprintf(\"\\t%s\\n\", fType))\n\t\t\tcontinue\n\t\t}\n\n\t\tvalues, ok := lookupTagValue(obj.Tag(i), \"json\")\n\t\tif len(values) > 0 && values[0] == \"-\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tb.WriteString(fmt.Sprintf(\"\\t%s %s\", field.Name(), fType))\n\n\t\tif ok {\n\t\t\tb.WriteString(fmt.Sprintf(\" `json:\\\"%s\\\"`\", strings.Join(values, \",\")))\n\t\t}\n\n\t\tb.WriteString(\"\\n\")\n\t}\n\n\tb.WriteString(\"}\\n\")\n\n\treturn b.String()\n}",
+    "funcname": "writeStruct"
+}

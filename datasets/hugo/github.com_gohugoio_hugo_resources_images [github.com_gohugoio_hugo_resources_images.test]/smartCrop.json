@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/smartcrop.go",
+    "lineno": 57,
+    "focalfunc": "func (p *ImageProcessor) smartCrop(img image.Image, width, height int, filter gift.Resampling) (image.Rectangle, error)",
+    "funcbody": "func (p *ImageProcessor) smartCrop(img image.Image, width, height int, filter gift.Resampling) (image.Rectangle, error) {\n\tif width <= 0 || height <= 0 {\n\t\treturn image.Rectangle{}, nil\n\t}\n\n\tsrcBounds := img.Bounds()\n\tsrcW := srcBounds.Dx()\n\tsrcH := srcBounds.Dy()\n\n\tif srcW <= 0 || srcH <= 0 {\n\t\treturn image.Rectangle{}, nil\n\t}\n\n\tif srcW == width && srcH == height {\n\t\treturn srcBounds, nil\n\t}\n\n\tsmart := p.newSmartCropAnalyzer(filter)\n\n\trect, err := smart.FindBestCrop(img, width, height)\n\tif err != nil {\n\t\treturn image.Rectangle{}, err\n\t}\n\n\treturn img.Bounds().Intersect(rect), nil\n}",
+    "funcname": "smartCrop"
+}

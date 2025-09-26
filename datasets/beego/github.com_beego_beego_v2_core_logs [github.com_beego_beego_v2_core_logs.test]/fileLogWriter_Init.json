@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 122,
+    "focalfunc": "func (w *fileLogWriter) Init(config string) error",
+    "funcbody": "func (w *fileLogWriter) Init(config string) error {\n\terr := json.Unmarshal([]byte(config), w)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif w.Filename == \"\" {\n\t\treturn errors.New(\"jsonconfig must have filename\")\n\t}\n\tw.suffix = filepath.Ext(w.Filename)\n\tw.fileNameOnly = strings.TrimSuffix(w.Filename, w.suffix)\n\tif w.suffix == \"\" {\n\t\tw.suffix = \".log\"\n\t}\n\n\tif len(w.Formatter) > 0 {\n\t\tfmtr, ok := GetFormatter(w.Formatter)\n\t\tif !ok {\n\t\t\treturn fmt.Errorf(\"the formatter with name: %s not found\", w.Formatter)\n\t\t}\n\t\tw.logFormatter = fmtr\n\t}\n\terr = w.startLogger()\n\treturn err\n}",
+    "funcname": "Init"
+}

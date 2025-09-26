@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 213,
+    "focalfunc": "func (rc *Cache) StartAndGC(config string) error",
+    "funcbody": "func (rc *Cache) StartAndGC(config string) error {\n\terr := rc.parseConf(config)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\trc.connectInit()\n\n\tc := rc.p.Get()\n\tdefer func() {\n\t\t_ = c.Close()\n\t}()\n\n\tif err = c.Err(); err != nil {\n\t\treturn berror.Wrapf(err, cache.InvalidConnection,\n\t\t\t\"can not connect to remote redis server, please check the connection info and network state: %s\", config)\n\t}\n\treturn nil\n}",
+    "funcname": "StartAndGC"
+}

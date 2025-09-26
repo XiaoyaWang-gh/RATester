@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_queryM2Mer.go",
+    "lineno": 72,
+    "focalfunc": "func NewQueryM2MerCondition(tableName string, name string) *QueryM2MerCondition",
+    "funcbody": "func NewQueryM2MerCondition(tableName string, name string) *QueryM2MerCondition {\n\treturn &QueryM2MerCondition{\n\t\ttableName:\ttableName,\n\t\tname:\t\tname,\n\t}\n}",
+    "funcname": "NewQueryM2MerCondition"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 426,
+    "focalfunc": "func (t *Tree) breakControl(pos Pos, line int) Node",
+    "funcbody": "func (t *Tree) breakControl(pos Pos, line int) Node {\n\tif token := t.nextNonSpace(); token.typ != itemRightDelim {\n\t\tt.unexpected(token, \"{{break}}\")\n\t}\n\tif t.rangeDepth == 0 {\n\t\tt.errorf(\"{{break}} outside {{range}}\")\n\t}\n\treturn t.newBreak(pos, line)\n}",
+    "funcname": "breakControl"
+}

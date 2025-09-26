@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 264,
+    "focalfunc": "func getSubjectDNInfo(ctx context.Context, options *SubjectDistinguishedNameOptions, cs *pkix.Name) string",
+    "funcbody": "func getSubjectDNInfo(ctx context.Context, options *SubjectDistinguishedNameOptions, cs *pkix.Name) string {\n\tif options == nil {\n\t\treturn \"\"\n\t}\n\n\tcontent := &strings.Builder{}\n\n\tfor _, name := range cs.Names {\n\n\t\tif options.DomainComponent && attributeTypeNames[name.Type.String()] == \"DC\" {\n\t\t\tcontent.WriteString(fmt.Sprintf(\"DC=%s%s\", name.Value, subFieldSeparator))\n\t\t}\n\t}\n\n\tif options.CountryName {\n\t\twriteParts(ctx, content, cs.Country, \"C\")\n\t}\n\n\tif options.StateOrProvinceName {\n\t\twriteParts(ctx, content, cs.Province, \"ST\")\n\t}\n\n\tif options.LocalityName {\n\t\twriteParts(ctx, content, cs.Locality, \"L\")\n\t}\n\n\tif options.OrganizationName {\n\t\twriteParts(ctx, content, cs.Organization, \"O\")\n\t}\n\n\tif options.OrganizationalUnitName {\n\t\twriteParts(ctx, content, cs.OrganizationalUnit, \"OU\")\n\t}\n\n\tif options.SerialNumber {\n\t\twritePart(ctx, content, cs.SerialNumber, \"SN\")\n\t}\n\n\tif options.CommonName {\n\t\twritePart(ctx, content, cs.CommonName, \"CN\")\n\t}\n\n\treturn content.String()\n}",
+    "funcname": "getSubjectDNInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 232,
+    "focalfunc": "func (m *Migration) AddPrimary(primary *Column) *Migration",
+    "funcbody": "func (m *Migration) AddPrimary(primary *Column) *Migration {\n\tm.Primary = append(m.Primary, primary)\n\treturn m\n}",
+    "funcname": "AddPrimary"
+}

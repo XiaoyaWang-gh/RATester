@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 556,
+    "focalfunc": "func (p *Partition[K, V]) adjustMaxSize(newMaxSize int) int",
+    "funcbody": "func (p *Partition[K, V]) adjustMaxSize(newMaxSize int) int {\n\tif newMaxSize < minMaxSize {\n\t\tnewMaxSize = minMaxSize\n\t}\n\toldMaxSize := p.maxSize\n\tif newMaxSize == oldMaxSize {\n\t\treturn 0\n\t}\n\tp.maxSize = newMaxSize\n\n\treturn p.c.Resize(newMaxSize)\n}",
+    "funcname": "adjustMaxSize"
+}

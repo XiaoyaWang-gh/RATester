@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 299,
+    "focalfunc": "func (output *BeegoOutput) Download(file string, filename ...string)",
+    "funcbody": "func (output *BeegoOutput) Download(file string, filename ...string) {\n\n\tif _, err := os.Stat(file); err != nil {\n\t\thttp.ServeFile(output.Context.ResponseWriter, output.Context.Request, file)\n\t\treturn\n\t}\n\n\tvar fName string\n\tif len(filename) > 0 && filename[0] != \"\" {\n\t\tfName = filename[0]\n\t} else {\n\t\tfName = filepath.Base(file)\n\t}\n\n\tfn := url.PathEscape(fName)\n\tif fName == fn {\n\t\tfn = \"filename=\" + fn\n\t} else {\n\n\t\tfn = \"filename=\" + fName + \"; filename*=utf-8''\" + fn\n\t}\n\toutput.Header(\"Content-Disposition\", \"attachment; \"+fn)\n\toutput.Header(\"Content-Description\", \"File Transfer\")\n\toutput.Header(\"Content-Type\", \"application/octet-stream\")\n\toutput.Header(\"Content-Transfer-Encoding\", \"binary\")\n\toutput.Header(\"Expires\", \"0\")\n\toutput.Header(\"Cache-Control\", \"must-revalidate\")\n\toutput.Header(\"Pragma\", \"public\")\n\thttp.ServeFile(output.Context.ResponseWriter, output.Context.Request, file)\n}",
+    "funcname": "Download"
+}

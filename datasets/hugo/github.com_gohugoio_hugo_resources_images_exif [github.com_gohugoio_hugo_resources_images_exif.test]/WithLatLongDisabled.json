@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 82,
+    "focalfunc": "func WithLatLongDisabled(disabled bool) func(*Decoder) error",
+    "funcbody": "func WithLatLongDisabled(disabled bool) func(*Decoder) error {\n\treturn func(d *Decoder) error {\n\t\td.noLatLong = disabled\n\t\treturn nil\n\t}\n}",
+    "funcname": "WithLatLongDisabled"
+}

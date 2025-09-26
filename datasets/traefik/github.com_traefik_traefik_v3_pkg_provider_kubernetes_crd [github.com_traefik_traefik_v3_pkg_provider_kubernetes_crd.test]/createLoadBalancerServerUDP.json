@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_udp.go",
+    "lineno": 81,
+    "focalfunc": "func (p *Provider) createLoadBalancerServerUDP(client Client, parentNamespace string, service traefikv1alpha1.ServiceUDP) (*dynamic.UDPService, error)",
+    "funcbody": "func (p *Provider) createLoadBalancerServerUDP(client Client, parentNamespace string, service traefikv1alpha1.ServiceUDP) (*dynamic.UDPService, error) {\n\tns := parentNamespace\n\tif len(service.Namespace) > 0 {\n\t\tif !isNamespaceAllowed(p.AllowCrossNamespace, parentNamespace, service.Namespace) {\n\t\t\treturn nil, fmt.Errorf(\"udp service %s/%s is not in the parent resource namespace %s\", service.Namespace, service.Name, ns)\n\t\t}\n\n\t\tns = service.Namespace\n\t}\n\n\tservers, err := p.loadUDPServers(client, ns, service)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tudpService := &dynamic.UDPService{\n\t\tLoadBalancer: &dynamic.UDPServersLoadBalancer{\n\t\t\tServers: servers,\n\t\t},\n\t}\n\n\treturn udpService, nil\n}",
+    "funcname": "createLoadBalancerServerUDP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 701,
+    "focalfunc": "func (c *collector) wrapModuleNotFound(err error) error",
+    "funcbody": "func (c *collector) wrapModuleNotFound(err error) error {\n\terr = fmt.Errorf(err.Error()+\": %w\", ErrNotExist)\n\tif c.GoModulesFilename == \"\" {\n\t\treturn err\n\t}\n\n\tbaseMsg := \"we found a go.mod file in your project, but\"\n\n\tswitch c.goBinaryStatus {\n\tcase goBinaryStatusNotFound:\n\t\treturn fmt.Errorf(baseMsg+\" you need to install Go to use it. See https://golang.org/dl/ : %q\", err)\n\tcase goBinaryStatusTooOld:\n\t\treturn fmt.Errorf(baseMsg+\" you need to a newer version of Go to use it. See https://golang.org/dl/ : %w\", err)\n\t}\n\n\treturn err\n}",
+    "funcname": "wrapModuleNotFound"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 70,
+    "focalfunc": "func (rc *Cache) DelMulti(keys []string) error",
+    "funcbody": "func (rc *Cache) DelMulti(keys []string) error {\n\t_, err := rc.conn.Do(\"multi_del\", keys)\n\treturn berror.Wrapf(err, cache.SsdbCacheCurdFailed, \"multi_del failed: %v\", keys)\n}",
+    "funcname": "DelMulti"
+}

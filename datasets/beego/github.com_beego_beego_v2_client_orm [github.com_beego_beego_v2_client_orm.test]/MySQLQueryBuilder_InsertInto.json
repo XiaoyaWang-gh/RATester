@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 161,
+    "focalfunc": "func (qb *MySQLQueryBuilder) InsertInto(table string, fields ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) InsertInto(table string, fields ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"INSERT INTO\", table)\n\tif len(fields) != 0 {\n\t\tfieldsStr := strings.Join(fields, CommaSpace)\n\t\tqb.tokens = append(qb.tokens, \"(\", fieldsStr, \")\")\n\t}\n\treturn qb\n}",
+    "funcname": "InsertInto"
+}

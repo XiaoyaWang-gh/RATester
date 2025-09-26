@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 284,
+    "focalfunc": "func lexEndOfShortcode(l *pageLexer) stateFunc",
+    "funcbody": "func lexEndOfShortcode(l *pageLexer) stateFunc {\n\tl.isInline = false\n\tif l.hasPrefix(l.currentRightShortcodeDelim()) {\n\t\treturn lexShortcodeRightDelim\n\t}\n\tswitch r := l.next(); {\n\tcase isSpace(r):\n\t\tl.ignore()\n\tdefault:\n\t\treturn l.errorf(\"unclosed shortcode\")\n\t}\n\treturn lexEndOfShortcode\n}",
+    "funcname": "lexEndOfShortcode"
+}

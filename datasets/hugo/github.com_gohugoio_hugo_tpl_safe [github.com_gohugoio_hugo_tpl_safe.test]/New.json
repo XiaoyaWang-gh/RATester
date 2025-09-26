@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/safe.go",
+    "lineno": 25,
+    "focalfunc": "func New() *Namespace",
+    "funcbody": "func New() *Namespace {\n\treturn &Namespace{}\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 325,
+    "focalfunc": "func (l *logAdapter) Erroridf(id, format string, v ...any)",
+    "funcbody": "func (l *logAdapter) Erroridf(id, format string, v ...any) {\n\tid = strings.ToLower(id)\n\tformat += l.idfInfoStatement(\"error\", id, format)\n\tl.errorl.WithField(FieldNameStatementID, id).Logf(format, v...)\n}",
+    "funcname": "Erroridf"
+}

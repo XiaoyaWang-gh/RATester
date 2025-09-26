@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 120,
+    "focalfunc": "func (input *BeegoInput) Host() string",
+    "funcbody": "func (input *BeegoInput) Host() string {\n\tif input.Context.Request.Host != \"\" {\n\t\tif hostPart, _, err := net.SplitHostPort(input.Context.Request.Host); err == nil {\n\t\t\treturn hostPart\n\t\t}\n\t\treturn input.Context.Request.Host\n\t}\n\treturn \"localhost\"\n}",
+    "funcname": "Host"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 743,
+    "focalfunc": "func (f *FormData) AddData(key, val string)",
+    "funcbody": "func (f *FormData) AddData(key, val string) {\n\tf.Add(key, val)\n}",
+    "funcname": "AddData"
+}

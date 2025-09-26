@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/readers.go",
+    "lineno": 79,
+    "focalfunc": "func NewReadSeekerNoOpCloserFromBytes(content []byte) readSeekerNopCloser",
+    "funcbody": "func NewReadSeekerNoOpCloserFromBytes(content []byte) readSeekerNopCloser {\n\treturn readSeekerNopCloser{bytes.NewReader(content)}\n}",
+    "funcname": "NewReadSeekerNoOpCloserFromBytes"
+}

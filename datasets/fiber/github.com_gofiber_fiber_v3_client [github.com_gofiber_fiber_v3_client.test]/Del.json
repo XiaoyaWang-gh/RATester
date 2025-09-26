@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 694,
+    "focalfunc": "func (p PathParam) Del(key string)",
+    "funcbody": "func (p PathParam) Del(key string) {\n\tdelete(p, key)\n}",
+    "funcname": "Del"
+}

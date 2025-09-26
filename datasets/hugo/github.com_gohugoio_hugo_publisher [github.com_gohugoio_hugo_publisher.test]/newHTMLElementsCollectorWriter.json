@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 57,
+    "focalfunc": "func newHTMLElementsCollectorWriter(collector *htmlElementsCollector) *htmlElementsCollectorWriter",
+    "funcbody": "func newHTMLElementsCollectorWriter(collector *htmlElementsCollector) *htmlElementsCollectorWriter {\n\tw := &htmlElementsCollectorWriter{\n\t\tcollector:\tcollector,\n\t\tstate:\t\thtmlLexStart,\n\t}\n\n\tw.defaultLexElementInside = w.lexElementInside(htmlLexStart)\n\n\treturn w\n}",
+    "funcname": "newHTMLElementsCollectorWriter"
+}

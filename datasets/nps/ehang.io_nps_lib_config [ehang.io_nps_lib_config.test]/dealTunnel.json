@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 218,
+    "focalfunc": "func dealTunnel(s string) *file.Tunnel",
+    "funcbody": "func dealTunnel(s string) *file.Tunnel {\n\tt := &file.Tunnel{}\n\tt.Target = new(file.Target)\n\tfor _, v := range splitStr(s) {\n\t\titem := strings.Split(v, \"=\")\n\t\tif len(item) == 0 {\n\t\t\tcontinue\n\t\t} else if len(item) == 1 {\n\t\t\titem = append(item, \"\")\n\t\t}\n\t\tswitch strings.TrimSpace(item[0]) {\n\t\tcase \"server_port\":\n\t\t\tt.Ports = item[1]\n\t\tcase \"server_ip\":\n\t\t\tt.ServerIp = item[1]\n\t\tcase \"mode\":\n\t\t\tt.Mode = item[1]\n\t\tcase \"target_addr\":\n\t\t\tt.Target.TargetStr = strings.Replace(item[1], \",\", \"\\n\", -1)\n\t\tcase \"target_port\":\n\t\t\tt.Target.TargetStr = item[1]\n\t\tcase \"target_ip\":\n\t\t\tt.TargetAddr = item[1]\n\t\tcase \"password\":\n\t\t\tt.Password = item[1]\n\t\tcase \"local_path\":\n\t\t\tt.LocalPath = item[1]\n\t\tcase \"strip_pre\":\n\t\t\tt.StripPre = item[1]\n\t\tcase \"multi_account\":\n\t\t\tt.MultiAccount = &file.MultiAccount{}\n\t\t\tif common.FileExists(item[1]) {\n\t\t\t\tif b, err := common.ReadAllFromFile(item[1]); err != nil {\n\t\t\t\t\tpanic(err)\n\t\t\t\t} else {\n\t\t\t\t\tif content, err := common.ParseStr(string(b)); err != nil {\n\t\t\t\t\t\tpanic(err)\n\t\t\t\t\t} else {\n\t\t\t\t\t\tt.MultiAccount.AccountMap = dealMultiUser(content)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn t\n\n}",
+    "funcname": "dealTunnel"
+}

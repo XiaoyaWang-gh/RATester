@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/taxonomy.go",
+    "lineno": 99,
+    "focalfunc": "func (i Taxonomy) ByCount() OrderedTaxonomy",
+    "funcbody": "func (i Taxonomy) ByCount() OrderedTaxonomy {\n\tcount := func(i1, i2 *OrderedTaxonomyEntry) bool {\n\t\tli1 := len(i1.WeightedPages)\n\t\tli2 := len(i2.WeightedPages)\n\n\t\tif li1 == li2 {\n\t\t\treturn compare.LessStrings(i1.Name, i2.Name)\n\t\t}\n\t\treturn li1 > li2\n\t}\n\n\tia := i.TaxonomyArray()\n\toiBy(count).Sort(ia)\n\treturn ia\n}",
+    "funcname": "ByCount"
+}

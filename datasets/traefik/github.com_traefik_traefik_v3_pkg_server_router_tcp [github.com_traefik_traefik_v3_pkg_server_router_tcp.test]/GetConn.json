@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 242,
+    "focalfunc": "func (r *Router) GetConn(conn tcp.WriteCloser, peeked string) tcp.WriteCloser",
+    "funcbody": "func (r *Router) GetConn(conn tcp.WriteCloser, peeked string) tcp.WriteCloser {\n\n\tconn = &Conn{\n\t\tPeeked:\t\t[]byte(peeked),\n\t\tWriteCloser:\tconn,\n\t}\n\n\treturn conn\n}",
+    "funcname": "GetConn"
+}

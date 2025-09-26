@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/dashboard/dashboard.go",
+    "lineno": 62,
+    "focalfunc": "func safePrefix(req *http.Request) string",
+    "funcbody": "func safePrefix(req *http.Request) string {\n\tprefix := req.Header.Get(\"X-Forwarded-Prefix\")\n\tif prefix == \"\" {\n\t\treturn \"\"\n\t}\n\n\tparse, err := url.Parse(prefix)\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\n\tif parse.Host != \"\" {\n\t\treturn \"\"\n\t}\n\n\treturn parse.Path\n}",
+    "funcname": "safePrefix"
+}

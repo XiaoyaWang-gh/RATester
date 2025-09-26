@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 339,
+    "focalfunc": "func (fs *RootMappingFs) ReverseLookup(filename string) ([]ComponentPath, error)",
+    "funcbody": "func (fs *RootMappingFs) ReverseLookup(filename string) ([]ComponentPath, error) {\n\treturn fs.ReverseLookupComponent(\"\", filename)\n}",
+    "funcname": "ReverseLookup"
+}

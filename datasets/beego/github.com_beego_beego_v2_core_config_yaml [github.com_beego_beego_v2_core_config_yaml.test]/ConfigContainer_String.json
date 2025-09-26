@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 234,
+    "focalfunc": "func (c *ConfigContainer) String(key string) (string, error)",
+    "funcbody": "func (c *ConfigContainer) String(key string) (string, error) {\n\tif v, err := c.getData(key); err == nil {\n\t\tif vv, ok := v.(string); ok {\n\t\t\treturn vv, nil\n\t\t}\n\t}\n\treturn \"\", nil\n}",
+    "funcname": "String"
+}

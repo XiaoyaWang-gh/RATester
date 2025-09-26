@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 187,
+    "focalfunc": "func (r *Redirect) Message(key string) FlashMessage",
+    "funcbody": "func (r *Redirect) Message(key string) FlashMessage {\n\tmsgs := r.c.flashMessages\n\n\tfor _, msg := range msgs {\n\t\tif msg.key == key && !msg.isOldInput {\n\t\t\treturn FlashMessage{\n\t\t\t\tKey:\tmsg.key,\n\t\t\t\tValue:\tmsg.value,\n\t\t\t\tLevel:\tmsg.level,\n\t\t\t}\n\t\t}\n\t}\n\n\treturn FlashMessage{}\n}",
+    "funcname": "Message"
+}

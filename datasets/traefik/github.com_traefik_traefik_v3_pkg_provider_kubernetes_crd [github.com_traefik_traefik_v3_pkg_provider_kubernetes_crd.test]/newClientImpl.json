@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 95,
+    "focalfunc": "func newClientImpl(csKube kclientset.Interface, csCrd traefikclientset.Interface) *clientWrapper",
+    "funcbody": "func newClientImpl(csKube kclientset.Interface, csCrd traefikclientset.Interface) *clientWrapper {\n\treturn &clientWrapper{\n\t\tcsCrd:\t\t\tcsCrd,\n\t\tcsKube:\t\t\tcsKube,\n\t\tfactoriesCrd:\t\tmake(map[string]traefikinformers.SharedInformerFactory),\n\t\tfactoriesKube:\t\tmake(map[string]kinformers.SharedInformerFactory),\n\t\tfactoriesSecret:\tmake(map[string]kinformers.SharedInformerFactory),\n\t}\n}",
+    "funcname": "newClientImpl"
+}

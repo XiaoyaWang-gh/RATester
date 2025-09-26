@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 328,
+    "focalfunc": "func isTailscaleDomain(domain string) bool",
+    "funcbody": "func isTailscaleDomain(domain string) bool {\n\n\tlabels := strings.Split(domain, \".\")\n\n\treturn len(labels) == 4 && labels[2] == \"ts\" && labels[3] == \"net\"\n}",
+    "funcname": "isTailscaleDomain"
+}

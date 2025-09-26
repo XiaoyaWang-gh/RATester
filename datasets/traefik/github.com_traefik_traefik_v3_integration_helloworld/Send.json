@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 225,
+    "focalfunc": "func (x *greeterStreamExampleServer) Send(m *StreamExampleReply) error",
+    "funcbody": "func (x *greeterStreamExampleServer) Send(m *StreamExampleReply) error {\n\treturn x.ServerStream.SendMsg(m)\n}",
+    "funcname": "Send"
+}

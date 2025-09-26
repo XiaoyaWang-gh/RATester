@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 1827,
+    "focalfunc": "func (sa *sitePagesAssembler) assemblePagesStepFinal() error",
+    "funcbody": "func (sa *sitePagesAssembler) assemblePagesStepFinal() error {\n\tif err := sa.assembleResources(); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "assemblePagesStepFinal"
+}

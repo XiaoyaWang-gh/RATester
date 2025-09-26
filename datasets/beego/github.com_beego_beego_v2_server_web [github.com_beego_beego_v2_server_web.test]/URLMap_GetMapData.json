@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/statistics.go",
+    "lineno": 121,
+    "focalfunc": "func (m *URLMap) GetMapData() []map[string]interface{}",
+    "funcbody": "func (m *URLMap) GetMapData() []map[string]interface{} {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\n\tvar resultLists []map[string]interface{}\n\n\tfor k, v := range m.urlmap {\n\t\tfor kk, vv := range v {\n\t\t\tresult := map[string]interface{}{\n\t\t\t\t\"request_url\":\tk,\n\t\t\t\t\"method\":\tkk,\n\t\t\t\t\"times\":\tvv.RequestNum,\n\t\t\t\t\"total_time\":\tutils.ToShortTimeFormat(vv.TotalTime),\n\t\t\t\t\"max_time\":\tutils.ToShortTimeFormat(vv.MaxTime),\n\t\t\t\t\"min_time\":\tutils.ToShortTimeFormat(vv.MinTime),\n\t\t\t\t\"avg_time\":\tutils.ToShortTimeFormat(time.Duration(int64(vv.TotalTime) / vv.RequestNum)),\n\t\t\t}\n\t\t\tresultLists = append(resultLists, result)\n\t\t}\n\t}\n\treturn resultLists\n}",
+    "funcname": "GetMapData"
+}

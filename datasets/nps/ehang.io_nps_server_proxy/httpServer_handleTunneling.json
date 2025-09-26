@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/http.go",
+    "lineno": 104,
+    "focalfunc": "func (s *httpServer) handleTunneling(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (s *httpServer) handleTunneling(w http.ResponseWriter, r *http.Request) {\n\thijacker, ok := w.(http.Hijacker)\n\tif !ok {\n\t\thttp.Error(w, \"Hijacking not supported\", http.StatusInternalServerError)\n\t\treturn\n\t}\n\tc, _, err := hijacker.Hijack()\n\tif err != nil {\n\t\thttp.Error(w, err.Error(), http.StatusServiceUnavailable)\n\t}\n\ts.handleHttp(conn.NewConn(c), r)\n}",
+    "funcname": "handleTunneling"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/kv.go",
+    "lineno": 134,
+    "focalfunc": "func (p *Provider) buildConfiguration(ctx context.Context) (*dynamic.Configuration, error)",
+    "funcbody": "func (p *Provider) buildConfiguration(ctx context.Context) (*dynamic.Configuration, error) {\n\tpairs, err := p.kvClient.List(ctx, p.RootKey, nil)\n\tif err != nil {\n\t\tif errors.Is(err, store.ErrKeyNotFound) {\n\n\t\t\treturn &dynamic.Configuration{\n\t\t\t\tHTTP: &dynamic.HTTPConfiguration{\n\t\t\t\t\tRouters: make(map[string]*dynamic.Router),\n\t\t\t\t},\n\t\t\t}, nil\n\t\t}\n\n\t\treturn nil, err\n\t}\n\n\tcfg := &dynamic.Configuration{}\n\terr = kv.Decode(pairs, cfg, p.RootKey)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn cfg, nil\n}",
+    "funcname": "buildConfiguration"
+}

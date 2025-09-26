@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 48,
+    "focalfunc": "func NewContentSpec(cfg config.AllProvider, logger loggers.Logger, contentFs afero.Fs, ex *hexec.Exec) (*ContentSpec, error)",
+    "funcbody": "func NewContentSpec(cfg config.AllProvider, logger loggers.Logger, contentFs afero.Fs, ex *hexec.Exec) (*ContentSpec, error) {\n\tspec := &ContentSpec{\n\t\tCfg: cfg,\n\t}\n\n\tconverterProvider, err := markup.NewConverterProvider(converter.ProviderConfig{\n\t\tConf:\t\tcfg,\n\t\tContentFs:\tcontentFs,\n\t\tLogger:\t\tlogger,\n\t\tExec:\t\tex,\n\t})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tspec.Converters = converterProvider\n\tp := converterProvider.Get(\"markdown\")\n\tconv, err := p.New(converter.DocumentContext{})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif as, ok := conv.(converter.AnchorNameSanitizer); ok {\n\t\tspec.anchorNameSanitizer = as\n\t} else {\n\n\t\tp := converterProvider.Get(\"goldmark\")\n\t\tconv, err := p.New(converter.DocumentContext{})\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tspec.anchorNameSanitizer = conv.(converter.AnchorNameSanitizer)\n\t}\n\n\treturn spec, nil\n}",
+    "funcname": "NewContentSpec"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/replacepathregex/replace_path_regex.go",
+    "lineno": 45,
+    "focalfunc": "func (rp *replacePathRegex) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (rp *replacePathRegex) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn rp.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

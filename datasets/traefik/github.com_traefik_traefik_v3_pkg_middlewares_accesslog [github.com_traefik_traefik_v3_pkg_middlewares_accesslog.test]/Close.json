@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 257,
+    "focalfunc": "func (h *Handler) Close() error",
+    "funcbody": "func (h *Handler) Close() error {\n\tclose(h.logHandlerChan)\n\th.wg.Wait()\n\treturn h.file.Close()\n}",
+    "funcname": "Close"
+}

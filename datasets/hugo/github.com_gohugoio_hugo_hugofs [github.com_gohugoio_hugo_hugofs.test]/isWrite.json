@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 141,
+    "focalfunc": "func isWrite(flag int) bool",
+    "funcbody": "func isWrite(flag int) bool {\n\treturn flag&os.O_RDWR != 0 || flag&os.O_WRONLY != 0\n}",
+    "funcname": "isWrite"
+}

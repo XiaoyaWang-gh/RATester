@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 138,
+    "focalfunc": "func (f *Finder) checkMaxDepth(sid *searchID, level int) FinderResult",
+    "funcbody": "func (f *Finder) checkMaxDepth(sid *searchID, level int) FinderResult {\n\tif sid.maxDepth >= 0 && level > sid.maxDepth {\n\t\treturn FinderNotFound\n\t}\n\tif level > 100 {\n\n\t\tif !f.cfg.Exact {\n\t\t\treturn FinderFound\n\t\t}\n\t\tpanic(\"too many levels\")\n\t}\n\treturn -1\n}",
+    "funcname": "checkMaxDepth"
+}

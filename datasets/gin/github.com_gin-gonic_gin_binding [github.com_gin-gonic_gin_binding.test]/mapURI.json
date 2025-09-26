@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 30,
+    "focalfunc": "func mapURI(ptr any, m map[string][]string) error",
+    "funcbody": "func mapURI(ptr any, m map[string][]string) error {\n\treturn mapFormByTag(ptr, m, \"uri\")\n}",
+    "funcname": "mapURI"
+}

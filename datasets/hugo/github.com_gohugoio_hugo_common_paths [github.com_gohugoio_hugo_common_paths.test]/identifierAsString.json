@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 550,
+    "focalfunc": "func (p *Path) identifierAsString(i int) string",
+    "funcbody": "func (p *Path) identifierAsString(i int) string {\n\ti = p.identifierIndex(i)\n\tif i == -1 {\n\t\treturn \"\"\n\t}\n\n\tid := p.identifiers[i]\n\treturn p.s[id.Low:id.High]\n}",
+    "funcname": "identifierAsString"
+}

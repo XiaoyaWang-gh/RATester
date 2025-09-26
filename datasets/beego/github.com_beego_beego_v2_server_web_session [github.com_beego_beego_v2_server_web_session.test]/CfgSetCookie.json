@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 62,
+    "focalfunc": "func CfgSetCookie(enable bool) ManagerConfigOpt",
+    "funcbody": "func CfgSetCookie(enable bool) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.EnableSetCookie = enable\n\t}\n}",
+    "funcname": "CfgSetCookie"
+}

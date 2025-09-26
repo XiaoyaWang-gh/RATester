@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/hydratation/hydration.go",
+    "lineno": 113,
+    "focalfunc": "func makeKeyName(typ reflect.Type) string",
+    "funcbody": "func makeKeyName(typ reflect.Type) string {\n\tswitch typ.Kind() {\n\tcase reflect.Ptr:\n\t\treturn typ.Elem().Name()\n\tcase reflect.String,\n\t\treflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64,\n\t\treflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64,\n\t\treflect.Bool, reflect.Float32, reflect.Float64, reflect.Interface:\n\t\treturn defaultMapKeyPrefix\n\tdefault:\n\t\treturn typ.Name()\n\t}\n}",
+    "funcname": "makeKeyName"
+}

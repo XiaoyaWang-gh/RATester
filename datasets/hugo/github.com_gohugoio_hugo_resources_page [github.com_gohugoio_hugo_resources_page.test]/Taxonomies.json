@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 451,
+    "focalfunc": "func (t testSite) Taxonomies() TaxonomyList",
+    "funcbody": "func (t testSite) Taxonomies() TaxonomyList {\n\treturn nil\n}",
+    "funcname": "Taxonomies"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 176,
+    "focalfunc": "func (pxy *BaseProxy) startCommonTCPListenersHandler()",
+    "funcbody": "func (pxy *BaseProxy) startCommonTCPListenersHandler() {\n\txl := xlog.FromContextSafe(pxy.ctx)\n\tfor _, listener := range pxy.listeners {\n\t\tgo func(l net.Listener) {\n\t\t\tvar tempDelay time.Duration\t// how long to sleep on accept failure\n\n\t\t\tfor {\n\n\t\t\t\tc, err := l.Accept()\n\t\t\t\tif err != nil {\n\t\t\t\t\tif err, ok := err.(interface{ Temporary() bool }); ok && err.Temporary() {\n\t\t\t\t\t\tif tempDelay == 0 {\n\t\t\t\t\t\t\ttempDelay = 5 * time.Millisecond\n\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\ttempDelay *= 2\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif max := 1 * time.Second; tempDelay > max {\n\t\t\t\t\t\t\ttempDelay = max\n\t\t\t\t\t\t}\n\t\t\t\t\t\txl.Infof(\"met temporary error: %s, sleep for %s ...\", err, tempDelay)\n\t\t\t\t\t\ttime.Sleep(tempDelay)\n\t\t\t\t\t\tcontinue\n\t\t\t\t\t}\n\n\t\t\t\t\txl.Warnf(\"listener is closed: %s\", err)\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\txl.Infof(\"get a user connection [%s]\", c.RemoteAddr().String())\n\t\t\t\tgo pxy.handleUserTCPConnection(c)\n\t\t\t}\n\t\t}(listener)\n\t}\n}",
+    "funcname": "startCommonTCPListenersHandler"
+}

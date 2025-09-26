@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 56,
+    "focalfunc": "func CleanString(s string) string",
+    "funcbody": "func CleanString(s string) string {\n\ts = strings.ToLower(s)\n\ts = strings.Trim(filepath.ToSlash(s), \"/\")\n\treturn \"/\" + path.Clean(s)\n}",
+    "funcname": "CleanString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/ssh/client.go",
+    "lineno": 27,
+    "focalfunc": "func (c *TunnelClient) Start() error",
+    "funcbody": "func (c *TunnelClient) Start() error {\n\tconfig := &ssh.ClientConfig{\n\t\tUser:\t\t\t\"v0\",\n\t\tHostKeyCallback:\tfunc(string, net.Addr, ssh.PublicKey) error { return nil },\n\t}\n\n\tconn, err := ssh.Dial(\"tcp\", c.sshServer, config)\n\tif err != nil {\n\t\treturn err\n\t}\n\tc.sshConn = conn\n\n\tl, err := conn.Listen(\"tcp\", \"0.0.0.0:80\")\n\tif err != nil {\n\t\treturn err\n\t}\n\tc.ln = l\n\tch, req, err := conn.OpenChannel(\"session\", []byte(\"\"))\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer ch.Close()\n\tgo ssh.DiscardRequests(req)\n\n\ttype command struct {\n\t\tCmd string\n\t}\n\t_, err = ch.SendRequest(\"exec\", false, ssh.Marshal(command{Cmd: c.commands}))\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tgo c.serveListener()\n\treturn nil\n}",
+    "funcname": "Start"
+}

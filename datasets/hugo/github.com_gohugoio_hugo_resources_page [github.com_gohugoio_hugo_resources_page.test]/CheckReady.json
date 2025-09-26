@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 494,
+    "focalfunc": "func (s testSite) CheckReady()",
+    "funcbody": "func (s testSite) CheckReady() {\n}",
+    "funcname": "CheckReady"
+}

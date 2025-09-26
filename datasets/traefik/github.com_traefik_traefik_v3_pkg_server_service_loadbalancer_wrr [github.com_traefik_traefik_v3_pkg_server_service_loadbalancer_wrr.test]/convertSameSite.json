@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 31,
+    "focalfunc": "func convertSameSite(sameSite string) http.SameSite",
+    "funcbody": "func convertSameSite(sameSite string) http.SameSite {\n\tswitch sameSite {\n\tcase \"none\":\n\t\treturn http.SameSiteNoneMode\n\tcase \"lax\":\n\t\treturn http.SameSiteLaxMode\n\tcase \"strict\":\n\t\treturn http.SameSiteStrictMode\n\tdefault:\n\t\treturn http.SameSiteDefaultMode\n\t}\n}",
+    "funcname": "convertSameSite"
+}

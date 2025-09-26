@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 557,
+    "focalfunc": "func (m *taskManager) runNextTasks(sortList *MapSorter, effective time.Time)",
+    "funcbody": "func (m *taskManager) runNextTasks(sortList *MapSorter, effective time.Time) {\n\n\ti := 0\n\tfor _, e := range sortList.Vals {\n\t\ti++\n\t\tif e.GetNext(context.Background()) != effective {\n\t\t\tbreak\n\t\t}\n\n\t\tctx := context.Background()\n\t\tm.wait.Add(1)\n\t\tif duration := e.GetTimeout(ctx); duration != 0 {\n\t\t\tgo func(e Tasker) {\n\t\t\t\tdefer m.wait.Done()\n\t\t\t\tctx, cancelFunc := context.WithTimeout(ctx, duration)\n\t\t\t\tdefer cancelFunc()\n\t\t\t\terr := e.Run(ctx)\n\t\t\t\tif err != nil {\n\t\t\t\t\tlog.Printf(\"tasker.run err: %s\\n\", err.Error())\n\t\t\t\t}\n\t\t\t}(e)\n\t\t} else {\n\t\t\tgo func(e Tasker) {\n\t\t\t\tdefer m.wait.Done()\n\t\t\t\terr := e.Run(ctx)\n\t\t\t\tif err != nil {\n\t\t\t\t\tlog.Printf(\"tasker.run err: %s\\n\", err.Error())\n\t\t\t\t}\n\t\t\t}(e)\n\t\t}\n\n\t\te.SetPrev(context.Background(), e.GetNext(context.Background()))\n\t\te.SetNext(context.Background(), effective)\n\t}\n}",
+    "funcname": "runNextTasks"
+}

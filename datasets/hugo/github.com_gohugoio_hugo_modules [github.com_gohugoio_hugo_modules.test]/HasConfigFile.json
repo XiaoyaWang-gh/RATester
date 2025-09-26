@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 118,
+    "focalfunc": "func (m ModulesConfig) HasConfigFile() bool",
+    "funcbody": "func (m ModulesConfig) HasConfigFile() bool {\n\tfor _, mod := range m.AllModules {\n\t\tif len(mod.ConfigFilenames()) > 0 {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "HasConfigFile"
+}

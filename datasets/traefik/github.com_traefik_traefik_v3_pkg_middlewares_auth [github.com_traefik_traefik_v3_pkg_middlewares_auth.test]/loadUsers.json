@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/auth.go",
+    "lineno": 34,
+    "focalfunc": "func loadUsers(fileName string, appendUsers []string) ([]string, error)",
+    "funcbody": "func loadUsers(fileName string, appendUsers []string) ([]string, error) {\n\tvar users []string\n\tvar err error\n\n\tif fileName != \"\" {\n\t\tusers, err = getLinesFromFile(fileName)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\treturn append(users, appendUsers...), nil\n}",
+    "funcname": "loadUsers"
+}

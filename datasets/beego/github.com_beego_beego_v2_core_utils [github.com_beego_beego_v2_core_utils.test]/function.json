@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/debug.go",
+    "lineno": 461,
+    "focalfunc": "func function(pc uintptr) []byte",
+    "funcbody": "func function(pc uintptr) []byte {\n\tfn := runtime.FuncForPC(pc)\n\tif fn == nil {\n\t\treturn dunno\n\t}\n\tname := []byte(fn.Name())\n\n\tif period := bytes.Index(name, dot); period >= 0 {\n\t\tname = name[period+1:]\n\t}\n\tname = bytes.Replace(name, centerDot, dot, -1)\n\treturn name\n}",
+    "funcname": "function"
+}

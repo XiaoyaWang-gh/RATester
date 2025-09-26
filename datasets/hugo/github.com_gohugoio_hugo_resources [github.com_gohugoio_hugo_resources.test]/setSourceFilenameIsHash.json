@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 418,
+    "focalfunc": "func (l *genericResource) setSourceFilenameIsHash(b bool)",
+    "funcbody": "func (l *genericResource) setSourceFilenameIsHash(b bool) {\n\tl.sourceFilenameIsHash = b\n}",
+    "funcname": "setSourceFilenameIsHash"
+}

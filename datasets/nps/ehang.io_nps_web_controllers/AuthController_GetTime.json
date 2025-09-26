@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/auth.go",
+    "lineno": 37,
+    "focalfunc": "func (s *AuthController) GetTime()",
+    "funcbody": "func (s *AuthController) GetTime() {\n\tm := make(map[string]interface{})\n\tm[\"time\"] = time.Now().Unix()\n\ts.Data[\"json\"] = m\n\ts.ServeJSON()\n}",
+    "funcname": "GetTime"
+}

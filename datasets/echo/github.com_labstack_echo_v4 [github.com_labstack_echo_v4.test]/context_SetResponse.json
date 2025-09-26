@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 262,
+    "focalfunc": "func (c *context) SetResponse(r *Response)",
+    "funcbody": "func (c *context) SetResponse(r *Response) {\n\tc.response = r\n}",
+    "funcname": "SetResponse"
+}

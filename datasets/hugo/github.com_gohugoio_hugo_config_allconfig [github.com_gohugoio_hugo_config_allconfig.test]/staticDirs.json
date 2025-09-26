@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 255,
+    "focalfunc": "func (c ConfigLanguage) StaticDirs() []string",
+    "funcbody": "func (c ConfigLanguage) StaticDirs() []string {\n\treturn c.config.staticDirs()\n}",
+    "funcname": "StaticDirs"
+}

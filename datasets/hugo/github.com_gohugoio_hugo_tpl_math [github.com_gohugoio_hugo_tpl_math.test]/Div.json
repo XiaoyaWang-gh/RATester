@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 117,
+    "focalfunc": "func (ns *Namespace) Div(inputs ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Div(inputs ...any) (any, error) {\n\treturn ns.doArithmetic(inputs, '/')\n}",
+    "funcname": "Div"
+}

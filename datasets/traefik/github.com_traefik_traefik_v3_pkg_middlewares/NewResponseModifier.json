@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/response_modifier.go",
+    "lineno": 27,
+    "focalfunc": "func NewResponseModifier(w http.ResponseWriter, r *http.Request, modifier func(*http.Response) error) http.ResponseWriter",
+    "funcbody": "func NewResponseModifier(w http.ResponseWriter, r *http.Request, modifier func(*http.Response) error) http.ResponseWriter {\n\treturn &ResponseModifier{\n\t\treq:\t\tr,\n\t\trw:\t\tw,\n\t\tmodifier:\tmodifier,\n\t\tcode:\t\thttp.StatusOK,\n\t}\n}",
+    "funcname": "NewResponseModifier"
+}

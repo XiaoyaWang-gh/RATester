@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 424,
+    "focalfunc": "func (s *Site) RegisterMediaTypes()",
+    "funcbody": "func (s *Site) RegisterMediaTypes() {\n\tfor _, mt := range s.conf.MediaTypes.Config {\n\t\tfor _, suffix := range mt.Suffixes() {\n\t\t\t_ = mime.AddExtensionType(mt.Delimiter+suffix, mt.Type)\n\t\t}\n\t}\n}",
+    "funcname": "RegisterMediaTypes"
+}

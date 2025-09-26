@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 149,
+    "focalfunc": "func (r JsonpJSON) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r JsonpJSON) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, jsonpContentType)\n}",
+    "funcname": "WriteContentType"
+}

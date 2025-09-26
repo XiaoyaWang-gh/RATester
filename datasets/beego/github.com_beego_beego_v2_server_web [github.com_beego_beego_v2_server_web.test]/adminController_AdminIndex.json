@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 121,
+    "focalfunc": "func (a *adminController) AdminIndex()",
+    "funcbody": "func (a *adminController) AdminIndex() {\n\n\twriteTemplate(a.Ctx.ResponseWriter, map[interface{}]interface{}{}, indexTpl, defaultScriptsTpl)\n}",
+    "funcname": "AdminIndex"
+}

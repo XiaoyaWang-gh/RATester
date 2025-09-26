@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 131,
+    "focalfunc": "func (v Version) NextPatchLevel(level int) Version",
+    "funcbody": "func (v Version) NextPatchLevel(level int) Version {\n\tprev := v.Prev()\n\tprev.PatchLevel = level\n\treturn prev\n}",
+    "funcname": "NextPatchLevel"
+}

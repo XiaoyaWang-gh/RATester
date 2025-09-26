@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 107,
+    "focalfunc": "func convertNumber(v reflect.Value, to reflect.Kind) (reflect.Value, error)",
+    "funcbody": "func convertNumber(v reflect.Value, to reflect.Kind) (reflect.Value, error) {\n\tvar n reflect.Value\n\tif isFloat(to) {\n\t\tf, err := toFloat(v)\n\t\tif err != nil {\n\t\t\treturn n, err\n\t\t}\n\t\tswitch to {\n\t\tcase reflect.Float32:\n\t\t\tn = reflect.ValueOf(float32(f))\n\t\tdefault:\n\t\t\tn = reflect.ValueOf(float64(f))\n\t\t}\n\t} else if isInt(to) {\n\t\ti, err := toInt(v)\n\t\tif err != nil {\n\t\t\treturn n, err\n\t\t}\n\t\tswitch to {\n\t\tcase reflect.Int:\n\t\t\tn = reflect.ValueOf(int(i))\n\t\tcase reflect.Int8:\n\t\t\tn = reflect.ValueOf(int8(i))\n\t\tcase reflect.Int16:\n\t\t\tn = reflect.ValueOf(int16(i))\n\t\tcase reflect.Int32:\n\t\t\tn = reflect.ValueOf(int32(i))\n\t\tcase reflect.Int64:\n\t\t\tn = reflect.ValueOf(int64(i))\n\t\t}\n\t} else if isUint(to) {\n\t\ti, err := toUint(v)\n\t\tif err != nil {\n\t\t\treturn n, err\n\t\t}\n\t\tswitch to {\n\t\tcase reflect.Uint:\n\t\t\tn = reflect.ValueOf(uint(i))\n\t\tcase reflect.Uint8:\n\t\t\tn = reflect.ValueOf(uint8(i))\n\t\tcase reflect.Uint16:\n\t\t\tn = reflect.ValueOf(uint16(i))\n\t\tcase reflect.Uint32:\n\t\t\tn = reflect.ValueOf(uint32(i))\n\t\tcase reflect.Uint64:\n\t\t\tn = reflect.ValueOf(uint64(i))\n\t\t}\n\n\t}\n\n\tif !n.IsValid() {\n\t\treturn n, errors.New(\"invalid values\")\n\t}\n\n\treturn n, nil\n}",
+    "funcname": "convertNumber"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1908,
+    "focalfunc": "func (c *DefaultCtx) getIndexRoute() int",
+    "funcbody": "func (c *DefaultCtx) getIndexRoute() int {\n\treturn c.indexRoute\n}",
+    "funcname": "getIndexRoute"
+}

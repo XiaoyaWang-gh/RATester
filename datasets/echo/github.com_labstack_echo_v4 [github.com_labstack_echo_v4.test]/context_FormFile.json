@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 407,
+    "focalfunc": "func (c *context) FormFile(name string) (*multipart.FileHeader, error)",
+    "funcbody": "func (c *context) FormFile(name string) (*multipart.FileHeader, error) {\n\tf, fh, err := c.request.FormFile(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tf.Close()\n\treturn fh, nil\n}",
+    "funcname": "FormFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 70,
+    "focalfunc": "func (s *SessionProvider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (s *SessionProvider) SessionDestroy(ctx context.Context, sid string) error {\n\ts.Store = nil\n\treturn nil\n}",
+    "funcname": "SessionDestroy"
+}

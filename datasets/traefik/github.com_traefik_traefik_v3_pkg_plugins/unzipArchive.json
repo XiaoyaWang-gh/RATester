@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 251,
+    "focalfunc": "func (c *Client) unzipArchive(pName, pVersion string) error",
+    "funcbody": "func (c *Client) unzipArchive(pName, pVersion string) error {\n\tzipPath := c.buildArchivePath(pName, pVersion)\n\n\tarchive, err := zipa.OpenReader(zipPath)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tdefer func() { _ = archive.Close() }()\n\n\tdest := filepath.Join(c.sources, filepath.FromSlash(pName))\n\n\tfor _, f := range archive.File {\n\t\terr = unzipFile(f, dest)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"unable to unzip %s: %w\", f.Name, err)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "unzipArchive"
+}

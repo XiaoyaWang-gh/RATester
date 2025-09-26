@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 674,
+    "focalfunc": "func createURLRewrite(filter *gatev1.HTTPURLRewriteFilter, pathMatch gatev1.HTTPPathMatch) (*dynamic.Middleware, error)",
+    "funcbody": "func createURLRewrite(filter *gatev1.HTTPURLRewriteFilter, pathMatch gatev1.HTTPPathMatch) (*dynamic.Middleware, error) {\n\tif filter.Path == nil && filter.Hostname == nil {\n\t\treturn nil, errors.New(\"empty configuration\")\n\t}\n\n\tvar host *string\n\tif filter.Hostname != nil {\n\t\thost = ptr.To(string(*filter.Hostname))\n\t}\n\n\tvar path *string\n\tvar pathPrefix *string\n\tif filter.Path != nil {\n\t\tswitch filter.Path.Type {\n\t\tcase gatev1.FullPathHTTPPathModifier:\n\t\t\tpath = filter.Path.ReplaceFullPath\n\t\tcase gatev1.PrefixMatchHTTPPathModifier:\n\t\t\tpath = filter.Path.ReplacePrefixMatch\n\t\t\tpathPrefix = pathMatch.Value\n\t\t}\n\t}\n\n\treturn &dynamic.Middleware{\n\t\tURLRewrite: &dynamic.URLRewrite{\n\t\t\tHostname:\thost,\n\t\t\tPath:\t\tpath,\n\t\t\tPathPrefix:\tpathPrefix,\n\t\t},\n\t}, nil\n}",
+    "funcname": "createURLRewrite"
+}

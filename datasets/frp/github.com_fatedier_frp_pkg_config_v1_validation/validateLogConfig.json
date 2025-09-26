@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/common.go",
+    "lineno": 45,
+    "focalfunc": "func validateLogConfig(c *v1.LogConfig) error",
+    "funcbody": "func validateLogConfig(c *v1.LogConfig) error {\n\tif !slices.Contains(SupportedLogLevels, c.Level) {\n\t\treturn fmt.Errorf(\"invalid log level, optional values are %v\", SupportedLogLevels)\n\t}\n\treturn nil\n}",
+    "funcname": "validateLogConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/failover/failover.go",
+    "lineno": 40,
+    "focalfunc": "func (f *Failover) RegisterStatusUpdater(fn func(up bool)) error",
+    "funcbody": "func (f *Failover) RegisterStatusUpdater(fn func(up bool)) error {\n\tif !f.wantsHealthCheck {\n\t\treturn errors.New(\"healthCheck not enabled in config for this failover service\")\n\t}\n\n\tf.updaters = append(f.updaters, fn)\n\n\treturn nil\n}",
+    "funcname": "RegisterStatusUpdater"
+}

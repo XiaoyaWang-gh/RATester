@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 777,
+    "focalfunc": "func (c *Controller) XSRFToken() string",
+    "funcbody": "func (c *Controller) XSRFToken() string {\n\tif c._xsrfToken == \"\" {\n\t\texpire := int64(BConfig.WebConfig.XSRFExpire)\n\t\tif c.XSRFExpire > 0 {\n\t\t\texpire = int64(c.XSRFExpire)\n\t\t}\n\t\tc._xsrfToken = c.Ctx.XSRFToken(BConfig.WebConfig.XSRFKey, expire)\n\t}\n\treturn c._xsrfToken\n}",
+    "funcname": "XSRFToken"
+}

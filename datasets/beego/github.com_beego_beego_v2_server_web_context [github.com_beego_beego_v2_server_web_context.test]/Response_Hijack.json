@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 368,
+    "focalfunc": "func (r *Response) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (r *Response) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\thj, ok := r.ResponseWriter.(http.Hijacker)\n\tif !ok {\n\t\treturn nil, nil, errors.New(\"webserver doesn't support hijacking\")\n\t}\n\treturn hj.Hijack()\n}",
+    "funcname": "Hijack"
+}

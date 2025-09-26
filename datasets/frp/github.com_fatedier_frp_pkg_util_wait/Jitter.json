@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/wait/backoff.go",
+    "lineno": 159,
+    "focalfunc": "func Jitter(duration time.Duration, maxFactor float64) time.Duration",
+    "funcbody": "func Jitter(duration time.Duration, maxFactor float64) time.Duration {\n\tif maxFactor <= 0.0 {\n\t\tmaxFactor = 1.0\n\t}\n\twait := duration + time.Duration(rand.Float64()*maxFactor*float64(duration))\n\treturn wait\n}",
+    "funcname": "Jitter"
+}

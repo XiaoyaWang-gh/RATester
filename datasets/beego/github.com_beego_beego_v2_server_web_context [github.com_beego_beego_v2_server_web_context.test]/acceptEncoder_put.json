@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 95,
+    "focalfunc": "func (ac acceptEncoder) put(wr resetWriter, level int)",
+    "funcbody": "func (ac acceptEncoder) put(wr resetWriter, level int) {\n\tif ac.customCompressLevelPool == nil || ac.bestCompressionPool == nil {\n\t\treturn\n\t}\n\twr.Reset(nil)\n\n\tswitch level {\n\tcase gzipCompressLevel:\n\t\tac.customCompressLevelPool.Put(wr)\n\tcase flate.BestCompression:\n\t\tac.bestCompressionPool.Put(wr)\n\t}\n}",
+    "funcname": "put"
+}

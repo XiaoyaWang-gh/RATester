@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 271,
+    "focalfunc": "func (s *IntegrationTestBuilder) negate(match string) (string, bool)",
+    "funcbody": "func (s *IntegrationTestBuilder) negate(match string) (string, bool) {\n\tvar negate bool\n\tif strings.HasPrefix(match, \"! \") {\n\t\tnegate = true\n\t\tmatch = strings.TrimPrefix(match, \"! \")\n\t}\n\treturn match, negate\n}",
+    "funcname": "negate"
+}

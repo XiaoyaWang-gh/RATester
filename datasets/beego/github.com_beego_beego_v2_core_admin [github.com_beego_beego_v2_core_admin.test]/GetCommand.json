@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/command.go",
+    "lineno": 76,
+    "focalfunc": "func GetCommand(module string, cmdName string) Command",
+    "funcbody": "func GetCommand(module string, cmdName string) Command {\n\treturn cmdRegistry.Get(module).Get(cmdName)\n}",
+    "funcname": "GetCommand"
+}

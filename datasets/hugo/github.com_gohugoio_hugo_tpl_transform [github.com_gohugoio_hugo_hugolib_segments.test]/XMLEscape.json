@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 148,
+    "focalfunc": "func (ns *Namespace) XMLEscape(s any) (string, error)",
+    "funcbody": "func (ns *Namespace) XMLEscape(s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tcleaned := strings.Map(func(r rune) rune {\n\t\tif r == 0x9 || r == 0xA || r == 0xD ||\n\t\t\t(r >= 0x20 && r <= 0xD7FF) ||\n\t\t\t(r >= 0xE000 && r <= 0xFFFD) ||\n\t\t\t(r >= 0x10000 && r <= 0x10FFFF) {\n\t\t\treturn r\n\t\t}\n\t\treturn -1\n\t}, ss)\n\n\tvar buf bytes.Buffer\n\terr = xml.EscapeText(&buf, []byte(cleaned))\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn buf.String(), nil\n}",
+    "funcname": "XMLEscape"
+}

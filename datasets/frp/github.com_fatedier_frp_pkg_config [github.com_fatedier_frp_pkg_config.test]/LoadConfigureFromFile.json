@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 106,
+    "focalfunc": "func LoadConfigureFromFile(path string, c any, strict bool) error",
+    "funcbody": "func LoadConfigureFromFile(path string, c any, strict bool) error {\n\tcontent, err := LoadFileContentWithTemplate(path, GetValues())\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn LoadConfigure(content, c, strict)\n}",
+    "funcname": "LoadConfigureFromFile"
+}

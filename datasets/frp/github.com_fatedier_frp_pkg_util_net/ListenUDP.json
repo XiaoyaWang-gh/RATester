@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 165,
+    "focalfunc": "func ListenUDP(bindAddr string, bindPort int) (l *UDPListener, err error)",
+    "funcbody": "func ListenUDP(bindAddr string, bindPort int) (l *UDPListener, err error) {\n\tudpAddr, err := net.ResolveUDPAddr(\"udp\", net.JoinHostPort(bindAddr, strconv.Itoa(bindPort)))\n\tif err != nil {\n\t\treturn l, err\n\t}\n\treadConn, err := net.ListenUDP(\"udp\", udpAddr)\n\n\tl = &UDPListener{\n\t\taddr:\t\tudpAddr,\n\t\tacceptCh:\tmake(chan net.Conn),\n\t\twriteCh:\tmake(chan *UDPPacket, 1000),\n\t\tfakeConns:\tmake(map[string]*FakeUDPConn),\n\t}\n\n\tgo func() {\n\t\tfor {\n\t\t\tbuf := pool.GetBuf(1450)\n\t\t\tn, remoteAddr, err := readConn.ReadFromUDP(buf)\n\t\t\tif err != nil {\n\t\t\t\tclose(l.acceptCh)\n\t\t\t\tclose(l.writeCh)\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\tfakeConn, exist := l.fakeConns[remoteAddr.String()]\n\t\t\tif !exist || fakeConn.IsClosed() {\n\t\t\t\tfakeConn = NewFakeUDPConn(l, l.Addr(), remoteAddr)\n\t\t\t\tl.fakeConns[remoteAddr.String()] = fakeConn\n\t\t\t}\n\t\t\tfakeConn.putPacket(buf[:n])\n\n\t\t\tl.acceptCh <- fakeConn\n\t\t}\n\t}()\n\n\tgo func() {\n\t\tfor {\n\t\t\tpacket, ok := <-l.writeCh\n\t\t\tif !ok {\n\t\t\t\treturn\n\t\t\t}\n\n\t\t\tif addr, ok := packet.RemoteAddr.(*net.UDPAddr); ok {\n\t\t\t\t_, _ = readConn.WriteToUDP(packet.Buf, addr)\n\t\t\t}\n\t\t}\n\t}()\n\n\treturn\n}",
+    "funcname": "ListenUDP"
+}

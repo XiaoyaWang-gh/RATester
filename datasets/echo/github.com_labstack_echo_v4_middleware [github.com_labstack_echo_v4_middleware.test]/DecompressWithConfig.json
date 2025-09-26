@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/decompress.go",
+    "lineno": 52,
+    "focalfunc": "func DecompressWithConfig(config DecompressConfig) echo.MiddlewareFunc",
+    "funcbody": "func DecompressWithConfig(config DecompressConfig) echo.MiddlewareFunc {\n\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultGzipConfig.Skipper\n\t}\n\tif config.GzipDecompressPool == nil {\n\t\tconfig.GzipDecompressPool = DefaultDecompressConfig.GzipDecompressPool\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\tpool := config.GzipDecompressPool.gzipDecompressPool()\n\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\tif c.Request().Header.Get(echo.HeaderContentEncoding) != GZIPEncoding {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\ti := pool.Get()\n\t\t\tgr, ok := i.(*gzip.Reader)\n\t\t\tif !ok || gr == nil {\n\t\t\t\treturn echo.NewHTTPError(http.StatusInternalServerError, i.(error).Error())\n\t\t\t}\n\t\t\tdefer pool.Put(gr)\n\n\t\t\tb := c.Request().Body\n\t\t\tdefer b.Close()\n\n\t\t\tif err := gr.Reset(b); err != nil {\n\t\t\t\tif err == io.EOF {\n\t\t\t\t\treturn next(c)\n\t\t\t\t}\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t\tdefer gr.Close()\n\n\t\t\tc.Request().Body = gr\n\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "DecompressWithConfig"
+}

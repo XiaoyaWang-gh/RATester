@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 52,
+    "focalfunc": "func (pp *PathParser) ParseIdentity(c, s string) identity.StringIdentity",
+    "funcbody": "func (pp *PathParser) ParseIdentity(c, s string) identity.StringIdentity {\n\tp := pp.parsePooled(c, s)\n\tdefer putPath(p)\n\treturn identity.StringIdentity(p.IdentifierBase())\n}",
+    "funcname": "ParseIdentity"
+}

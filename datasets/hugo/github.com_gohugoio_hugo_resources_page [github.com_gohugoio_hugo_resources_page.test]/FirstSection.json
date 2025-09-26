@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 190,
+    "focalfunc": "func (p *nopPage) FirstSection() Page",
+    "funcbody": "func (p *nopPage) FirstSection() Page {\n\treturn nil\n}",
+    "funcname": "FirstSection"
+}

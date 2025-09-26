@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 247,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tsession.Register(\"memcache\", mempder)\n}",
+    "funcname": "init"
+}

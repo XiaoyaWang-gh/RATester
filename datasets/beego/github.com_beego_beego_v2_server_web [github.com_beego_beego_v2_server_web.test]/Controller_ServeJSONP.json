@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 458,
+    "focalfunc": "func (c *Controller) ServeJSONP() error",
+    "funcbody": "func (c *Controller) ServeJSONP() error {\n\thasIndent := BConfig.RunMode != PROD\n\treturn c.Ctx.Output.JSONP(c.Data[\"jsonp\"], hasIndent)\n}",
+    "funcname": "ServeJSONP"
+}

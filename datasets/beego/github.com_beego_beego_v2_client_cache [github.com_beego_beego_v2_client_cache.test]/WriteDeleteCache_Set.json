@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/write_delete.go",
+    "lineno": 45,
+    "focalfunc": "func (w *WriteDeleteCache) Set(ctx context.Context, key string, val any) error",
+    "funcbody": "func (w *WriteDeleteCache) Set(ctx context.Context, key string, val any) error {\n\terr := w.storeFunc(ctx, key, val)\n\tif err != nil && !errors.Is(err, context.DeadlineExceeded) {\n\t\treturn berror.Wrap(err, PersistCacheFailed, fmt.Sprintf(\"key: %s, val: %v\", key, val))\n\t}\n\treturn w.Cache.Delete(ctx, key)\n}",
+    "funcname": "Set"
+}

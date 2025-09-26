@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 185,
+    "focalfunc": "func setByForm(value reflect.Value, field reflect.StructField, form map[string][]string, tagValue string, opt setOptions) (isSet bool, err error)",
+    "funcbody": "func setByForm(value reflect.Value, field reflect.StructField, form map[string][]string, tagValue string, opt setOptions) (isSet bool, err error) {\n\tvs, ok := form[tagValue]\n\tif !ok && !opt.isDefaultExists {\n\t\treturn false, nil\n\t}\n\n\tswitch value.Kind() {\n\tcase reflect.Slice:\n\t\tif !ok {\n\t\t\tvs = []string{opt.defaultValue}\n\t\t}\n\n\t\tif ok, err = trySetCustom(vs[0], value); ok {\n\t\t\treturn ok, err\n\t\t}\n\n\t\treturn true, setSlice(vs, value, field)\n\tcase reflect.Array:\n\t\tif !ok {\n\t\t\tvs = []string{opt.defaultValue}\n\t\t}\n\n\t\tif ok, err = trySetCustom(vs[0], value); ok {\n\t\t\treturn ok, err\n\t\t}\n\n\t\tif len(vs) != value.Len() {\n\t\t\treturn false, fmt.Errorf(\"%q is not valid value for %s\", vs, value.Type().String())\n\t\t}\n\n\t\treturn true, setArray(vs, value, field)\n\tdefault:\n\t\tvar val string\n\t\tif !ok {\n\t\t\tval = opt.defaultValue\n\t\t}\n\n\t\tif len(vs) > 0 {\n\t\t\tval = vs[0]\n\t\t}\n\t\tif ok, err := trySetCustom(val, value); ok {\n\t\t\treturn ok, err\n\t\t}\n\t\treturn true, setWithProperType(val, value, field)\n\t}\n}",
+    "funcname": "setByForm"
+}

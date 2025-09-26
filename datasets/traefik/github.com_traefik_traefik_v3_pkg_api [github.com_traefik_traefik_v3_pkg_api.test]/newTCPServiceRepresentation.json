@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_tcp.go",
+    "lineno": 37,
+    "focalfunc": "func newTCPServiceRepresentation(name string, si *runtime.TCPServiceInfo) tcpServiceRepresentation",
+    "funcbody": "func newTCPServiceRepresentation(name string, si *runtime.TCPServiceInfo) tcpServiceRepresentation {\n\treturn tcpServiceRepresentation{\n\t\tTCPServiceInfo:\tsi,\n\t\tName:\t\tname,\n\t\tProvider:\tgetProviderName(name),\n\t\tType:\t\tstrings.ToLower(extractType(si.TCPService)),\n\t}\n}",
+    "funcname": "newTCPServiceRepresentation"
+}

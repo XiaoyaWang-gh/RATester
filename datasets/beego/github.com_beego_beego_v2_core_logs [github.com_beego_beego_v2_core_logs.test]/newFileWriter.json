@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 80,
+    "focalfunc": "func newFileWriter() Logger",
+    "funcbody": "func newFileWriter() Logger {\n\tw := &fileLogWriter{\n\t\tDaily:\t\ttrue,\n\t\tMaxDays:\t7,\n\t\tHourly:\t\tfalse,\n\t\tMaxHours:\t168,\n\t\tRotate:\t\ttrue,\n\t\tRotatePerm:\t\"0440\",\n\t\tLevel:\t\tLevelTrace,\n\t\tPerm:\t\t\"0660\",\n\t\tDirPerm:\t\"0770\",\n\t\tMaxLines:\t10000000,\n\t\tMaxFiles:\t999,\n\t\tMaxSize:\t1 << 28,\n\t}\n\tw.logFormatter = w\n\treturn w\n}",
+    "funcname": "newFileWriter"
+}

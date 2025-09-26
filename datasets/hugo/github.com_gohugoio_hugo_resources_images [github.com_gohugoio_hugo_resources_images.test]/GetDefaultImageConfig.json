@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 332,
+    "focalfunc": "func GetDefaultImageConfig(action string, defaults *config.ConfigNamespace[ImagingConfig, ImagingConfigInternal]) ImageConfig",
+    "funcbody": "func GetDefaultImageConfig(action string, defaults *config.ConfigNamespace[ImagingConfig, ImagingConfigInternal]) ImageConfig {\n\tif defaults == nil {\n\t\tdefaults = defaultImageConfig\n\t}\n\treturn ImageConfig{\n\t\tAction:\t\taction,\n\t\tHint:\t\tdefaults.Config.Hint,\n\t\tQuality:\tdefaults.Config.Imaging.Quality,\n\t}\n}",
+    "funcname": "GetDefaultImageConfig"
+}

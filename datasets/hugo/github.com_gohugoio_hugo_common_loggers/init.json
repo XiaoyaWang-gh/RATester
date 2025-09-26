@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/loggerglobal.go",
+    "lineno": 52,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tInitGlobalLogger(logg.LevelWarn, false)\n}",
+    "funcname": "init"
+}

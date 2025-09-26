@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 96,
+    "focalfunc": "func (c ConfigLanguage) IsLangDisabled(lang string) bool",
+    "funcbody": "func (c ConfigLanguage) IsLangDisabled(lang string) bool {\n\treturn c.config.C.DisabledLanguages[lang]\n}",
+    "funcname": "IsLangDisabled"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 262,
+    "focalfunc": "func (c configBuilder) buildMirroring(ctx context.Context, tService *traefikv1alpha1.TraefikService, id string, conf map[string]*dynamic.Service) error",
+    "funcbody": "func (c configBuilder) buildMirroring(ctx context.Context, tService *traefikv1alpha1.TraefikService, id string, conf map[string]*dynamic.Service) error {\n\tfullNameMain, k8sService, err := c.nameAndService(ctx, tService.Namespace, tService.Spec.Mirroring.LoadBalancerSpec)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif k8sService != nil {\n\t\tconf[fullNameMain] = k8sService\n\t}\n\n\tvar mirrorServices []dynamic.MirrorService\n\tfor _, mirror := range tService.Spec.Mirroring.Mirrors {\n\t\tmirroredName, k8sService, err := c.nameAndService(ctx, tService.Namespace, mirror.LoadBalancerSpec)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tif k8sService != nil {\n\t\t\tconf[mirroredName] = k8sService\n\t\t}\n\n\t\tmirrorServices = append(mirrorServices, dynamic.MirrorService{\n\t\t\tName:\t\tmirroredName,\n\t\t\tPercent:\tmirror.Percent,\n\t\t})\n\t}\n\n\tconf[id] = &dynamic.Service{\n\t\tMirroring: &dynamic.Mirroring{\n\t\t\tService:\tfullNameMain,\n\t\t\tMirrors:\tmirrorServices,\n\t\t\tMirrorBody:\ttService.Spec.Mirroring.MirrorBody,\n\t\t\tMaxBodySize:\ttService.Spec.Mirroring.MaxBodySize,\n\t\t},\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildMirroring"
+}

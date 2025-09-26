@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 147,
+    "focalfunc": "func WriteBody(encoding string, writer io.Writer, content []byte) (bool, string, error)",
+    "funcbody": "func WriteBody(encoding string, writer io.Writer, content []byte) (bool, string, error) {\n\tif encoding == \"\" || len(content) < gzipMinLength {\n\t\t_, err := writer.Write(content)\n\t\treturn false, \"\", err\n\t}\n\treturn writeLevel(encoding, writer, bytes.NewReader(content), gzipCompressLevel)\n}",
+    "funcname": "WriteBody"
+}

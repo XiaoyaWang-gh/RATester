@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 700,
+    "focalfunc": "func (c *Context) MustBindWith(obj any, b binding.Binding) error",
+    "funcbody": "func (c *Context) MustBindWith(obj any, b binding.Binding) error {\n\tif err := c.ShouldBindWith(obj, b); err != nil {\n\t\tc.AbortWithError(http.StatusBadRequest, err).SetType(ErrorTypeBind)\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "MustBindWith"
+}

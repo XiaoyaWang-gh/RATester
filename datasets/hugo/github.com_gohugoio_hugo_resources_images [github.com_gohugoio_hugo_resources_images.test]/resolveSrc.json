@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 278,
+    "focalfunc": "func (p *ImageProcessor) resolveSrc(src image.Image, targetFormat Format) image.Image",
+    "funcbody": "func (p *ImageProcessor) resolveSrc(src image.Image, targetFormat Format) image.Image {\n\tif giph, ok := src.(Giphy); ok {\n\t\tg := giph.GIF()\n\t\tif len(g.Image) < 2 || (targetFormat == 0 || targetFormat != GIF) {\n\t\t\tsrc = g.Image[0]\n\t\t}\n\t}\n\treturn src\n}",
+    "funcname": "resolveSrc"
+}

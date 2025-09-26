@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 270,
+    "focalfunc": "func (l *Listener) Accept() (net.Conn, error)",
+    "funcbody": "func (l *Listener) Accept() (net.Conn, error) {\n\txl := xlog.FromContextSafe(l.ctx)\n\tconn, ok := <-l.accept\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"Listener closed\")\n\t}\n\n\tif l.mux.rewriteHost != nil {\n\t\tsConn, err := l.mux.rewriteHost(conn, l.rewriteHost)\n\t\tif err != nil {\n\t\t\txl.Warnf(\"host header rewrite failed: %v\", err)\n\t\t\treturn nil, fmt.Errorf(\"host header rewrite failed\")\n\t\t}\n\t\txl.Debugf(\"rewrite host to [%s] success\", l.rewriteHost)\n\t\tconn = sConn\n\t}\n\treturn netpkg.NewContextConn(l.ctx, conn), nil\n}",
+    "funcname": "Accept"
+}

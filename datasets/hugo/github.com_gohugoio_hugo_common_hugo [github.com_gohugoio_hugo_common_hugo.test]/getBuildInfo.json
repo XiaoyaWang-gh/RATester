@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 242,
+    "focalfunc": "func getBuildInfo() *buildInfo",
+    "funcbody": "func getBuildInfo() *buildInfo {\n\tbInfoInit.Do(func() {\n\t\tbi, ok := debug.ReadBuildInfo()\n\t\tif !ok {\n\t\t\treturn\n\t\t}\n\n\t\tbInfo = &buildInfo{BuildInfo: bi}\n\n\t\tfor _, s := range bInfo.Settings {\n\t\t\tswitch s.Key {\n\t\t\tcase \"vcs\":\n\t\t\t\tbInfo.VersionControlSystem = s.Value\n\t\t\tcase \"vcs.revision\":\n\t\t\t\tbInfo.Revision = s.Value\n\t\t\tcase \"vcs.time\":\n\t\t\t\tbInfo.RevisionTime = s.Value\n\t\t\tcase \"vcs.modified\":\n\t\t\t\tbInfo.Modified = s.Value == \"true\"\n\t\t\tcase \"GOOS\":\n\t\t\t\tbInfo.GoOS = s.Value\n\t\t\tcase \"GOARCH\":\n\t\t\t\tbInfo.GoArch = s.Value\n\t\t\t}\n\t\t}\n\t})\n\n\treturn bInfo\n}",
+    "funcname": "getBuildInfo"
+}

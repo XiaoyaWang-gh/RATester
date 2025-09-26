@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/discovery.go",
+    "lineno": 67,
+    "focalfunc": "func listen(localAddr string) (*discoverConn, error)",
+    "funcbody": "func listen(localAddr string) (*discoverConn, error) {\n\tvar local *net.UDPAddr\n\tif localAddr != \"\" {\n\t\taddr, err := net.ResolveUDPAddr(\"udp4\", localAddr)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tlocal = addr\n\t}\n\tconn, err := net.ListenUDP(\"udp4\", local)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &discoverConn{\n\t\tconn:\t\tconn,\n\t\tlocalAddr:\tconn.LocalAddr(),\n\t\tmessageChan:\tmake(chan *Message, 10),\n\t}, nil\n}",
+    "funcname": "listen"
+}

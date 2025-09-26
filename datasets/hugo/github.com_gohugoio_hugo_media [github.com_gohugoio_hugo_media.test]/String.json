@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 165,
+    "focalfunc": "func (m Type) String() string",
+    "funcbody": "func (m Type) String() string {\n\treturn m.Type\n}",
+    "funcname": "String"
+}

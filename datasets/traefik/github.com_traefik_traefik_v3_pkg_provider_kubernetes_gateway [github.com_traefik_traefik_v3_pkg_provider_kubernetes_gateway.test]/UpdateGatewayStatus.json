@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 433,
+    "focalfunc": "func (c *clientWrapper) UpdateGatewayStatus(ctx context.Context, gateway ktypes.NamespacedName, status gatev1.GatewayStatus) error",
+    "funcbody": "func (c *clientWrapper) UpdateGatewayStatus(ctx context.Context, gateway ktypes.NamespacedName, status gatev1.GatewayStatus) error {\n\tif !c.isWatchedNamespace(gateway.Namespace) {\n\t\treturn fmt.Errorf(\"cannot update Gateway status %s/%s: namespace is not within watched namespaces\", gateway.Namespace, gateway.Name)\n\t}\n\n\terr := retry.RetryOnConflict(retry.DefaultRetry, func() error {\n\t\tcurrentGateway, err := c.factoriesGateway[c.lookupNamespace(gateway.Namespace)].Gateway().V1().Gateways().Lister().Gateways(gateway.Namespace).Get(gateway.Name)\n\t\tif err != nil {\n\n\t\t\treturn err\n\t\t}\n\n\t\tif gatewayStatusEqual(currentGateway.Status, status) {\n\t\t\treturn nil\n\t\t}\n\n\t\tcurrentGateway = currentGateway.DeepCopy()\n\t\tcurrentGateway.Status = status\n\n\t\tif _, err = c.csGateway.GatewayV1().Gateways(gateway.Namespace).UpdateStatus(ctx, currentGateway, metav1.UpdateOptions{}); err != nil {\n\n\t\t\treturn err\n\t\t}\n\n\t\treturn nil\n\t})\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to update Gateway %q status: %w\", gateway.Name, err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "UpdateGatewayStatus"
+}

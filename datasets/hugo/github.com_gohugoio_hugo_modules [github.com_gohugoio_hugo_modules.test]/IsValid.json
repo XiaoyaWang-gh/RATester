@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/config.go",
+    "lineno": 352,
+    "focalfunc": "func (v HugoVersion) IsValid() bool",
+    "funcbody": "func (v HugoVersion) IsValid() bool {\n\tcurrent := hugo.CurrentVersion.Version()\n\tif v.Extended && !hugo.IsExtended {\n\t\treturn false\n\t}\n\n\tisValid := true\n\n\tif v.Min != \"\" && current.Compare(v.Min) > 0 {\n\t\tisValid = false\n\t}\n\n\tif v.Max != \"\" && current.Compare(v.Max) < 0 {\n\t\tisValid = false\n\t}\n\n\treturn isValid\n}",
+    "funcname": "IsValid"
+}

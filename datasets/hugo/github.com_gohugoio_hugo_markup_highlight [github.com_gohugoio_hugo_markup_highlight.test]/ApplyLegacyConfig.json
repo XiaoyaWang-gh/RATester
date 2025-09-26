@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 163,
+    "focalfunc": "func ApplyLegacyConfig(cfg config.Provider, conf *Config) error",
+    "funcbody": "func ApplyLegacyConfig(cfg config.Provider, conf *Config) error {\n\tif conf.Style == DefaultConfig.Style {\n\t\tif s := cfg.GetString(\"pygmentsStyle\"); s != \"\" {\n\t\t\tconf.Style = s\n\t\t}\n\t}\n\n\tif conf.NoClasses == DefaultConfig.NoClasses && cfg.IsSet(\"pygmentsUseClasses\") {\n\t\tconf.NoClasses = !cfg.GetBool(\"pygmentsUseClasses\")\n\t}\n\n\tif conf.CodeFences == DefaultConfig.CodeFences && cfg.IsSet(\"pygmentsCodeFences\") {\n\t\tconf.CodeFences = cfg.GetBool(\"pygmentsCodeFences\")\n\t}\n\n\tif conf.GuessSyntax == DefaultConfig.GuessSyntax && cfg.IsSet(\"pygmentsCodefencesGuessSyntax\") {\n\t\tconf.GuessSyntax = cfg.GetBool(\"pygmentsCodefencesGuessSyntax\")\n\t}\n\n\tif cfg.IsSet(\"pygmentsOptions\") {\n\t\tif err := applyOptionsFromString(cfg.GetString(\"pygmentsOptions\"), conf); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "ApplyLegacyConfig"
+}

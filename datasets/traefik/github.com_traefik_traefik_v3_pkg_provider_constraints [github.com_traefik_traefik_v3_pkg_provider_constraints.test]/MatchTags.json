@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/constraints/constraints_tags.go",
+    "lineno": 17,
+    "focalfunc": "func MatchTags(tags []string, expr string) (bool, error)",
+    "funcbody": "func MatchTags(tags []string, expr string) (bool, error) {\n\tif expr == \"\" {\n\t\treturn true, nil\n\t}\n\n\tp, err := predicate.NewParser(predicate.Def{\n\t\tOperators: predicate.Operators{\n\t\t\tAND:\tandTagFunc,\n\t\t\tNOT:\tnotTagFunc,\n\t\t\tOR:\torTagFunc,\n\t\t},\n\t\tFunctions: map[string]interface{}{\n\t\t\t\"Tag\":\t\ttagFn,\n\t\t\t\"TagRegex\":\ttagRegexFn,\n\t\t},\n\t})\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tparse, err := p.Parse(expr)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tfn, ok := parse.(constraintTagFunc)\n\tif !ok {\n\t\treturn false, errors.New(\"not a constraintTagFunc\")\n\t}\n\treturn fn(tags), nil\n}",
+    "funcname": "MatchTags"
+}

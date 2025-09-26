@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 842,
+    "focalfunc": "func (d *dbBase) UpdateBatch(ctx context.Context, q dbQuerier, qs *querySet, mi *models.ModelInfo, cond *Condition, params Params, tz *time.Location) (int64, error)",
+    "funcbody": "func (d *dbBase) UpdateBatch(ctx context.Context, q dbQuerier, qs *querySet, mi *models.ModelInfo, cond *Condition, params Params, tz *time.Location) (int64, error) {\n\tcolumns := make([]string, 0, len(params))\n\tvalues := make([]interface{}, 0, len(params))\n\tfor col, val := range params {\n\t\tif fi, ok := mi.Fields.GetByAny(col); !ok || !fi.DBcol {\n\t\t\tpanic(fmt.Errorf(\"wrong field/column name `%s`\", col))\n\t\t} else {\n\t\t\tcolumns = append(columns, fi.Column)\n\t\t\tvalues = append(values, val)\n\t\t}\n\t}\n\n\tif len(columns) == 0 {\n\t\tpanic(fmt.Errorf(\"update params cannot empty\"))\n\t}\n\n\ttables := newDbTables(mi, d.ins)\n\tvar specifyIndexes string\n\tif qs != nil {\n\t\ttables.parseRelated(qs.related, qs.relDepth)\n\t\tspecifyIndexes = tables.getIndexSql(mi.Table, qs.useIndex, qs.indexes)\n\t}\n\n\twhere, args := tables.getCondSQL(cond, false, tz)\n\n\tvalues = append(values, args...)\n\n\tjoin := tables.getJoinSQL()\n\n\tquery := d.UpdateBatchSQL(mi, columns, values, specifyIndexes, join, where)\n\n\tres, err := q.ExecContext(ctx, query, values...)\n\tif err == nil {\n\t\treturn res.RowsAffected()\n\t}\n\treturn 0, err\n}",
+    "funcname": "UpdateBatch"
+}

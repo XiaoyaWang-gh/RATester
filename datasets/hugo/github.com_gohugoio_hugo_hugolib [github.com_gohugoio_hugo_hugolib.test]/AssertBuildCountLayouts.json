@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 249,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertBuildCountLayouts(count int)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertBuildCountLayouts(count int) {\n\ts.Helper()\n\ts.Assert(s.H.init.layouts.InitCount(), qt.Equals, count)\n}",
+    "funcname": "AssertBuildCountLayouts"
+}

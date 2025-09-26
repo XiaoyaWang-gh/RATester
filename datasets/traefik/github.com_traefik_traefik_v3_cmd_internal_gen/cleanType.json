@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/main.go",
+    "lineno": 89,
+    "focalfunc": "func cleanType(typ types.Type, base string) string",
+    "funcbody": "func cleanType(typ types.Type, base string) string {\n\tif typ.String() == \"github.com/traefik/traefik/v3/pkg/types.FileOrContent\" {\n\t\treturn \"string\"\n\t}\n\n\tif typ.String() == \"[]github.com/traefik/traefik/v3/pkg/types.FileOrContent\" {\n\t\treturn \"[]string\"\n\t}\n\n\tif typ.String() == \"github.com/traefik/paerser/types.Duration\" {\n\t\treturn \"string\"\n\t}\n\n\tif strings.Contains(typ.String(), base) {\n\t\treturn strings.ReplaceAll(typ.String(), base+\".\", \"\")\n\t}\n\n\tif strings.Contains(typ.String(), \"github.com/traefik/traefik/v3/pkg/\") {\n\t\treturn strings.ReplaceAll(typ.String(), \"github.com/traefik/traefik/v3/pkg/\", \"\")\n\t}\n\n\treturn typ.String()\n}",
+    "funcname": "cleanType"
+}

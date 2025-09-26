@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 177,
+    "focalfunc": "func DecodeBuildConfig(cfg Provider) BuildConfig",
+    "funcbody": "func DecodeBuildConfig(cfg Provider) BuildConfig {\n\tm := cfg.GetStringMap(\"build\")\n\n\tb := defaultBuild.clone()\n\tif m == nil {\n\t\treturn b\n\t}\n\n\tif writeStats, ok := m[\"writestats\"]; ok {\n\t\tif bb, ok := writeStats.(bool); ok {\n\t\t\tm[\"buildstats\"] = BuildStats{Enable: bb}\n\t\t}\n\t}\n\n\terr := mapstructure.WeakDecode(m, &b)\n\tif err != nil {\n\t\treturn b\n\t}\n\n\tb.UseResourceCacheWhen = strings.ToLower(b.UseResourceCacheWhen)\n\twhen := b.UseResourceCacheWhen\n\tif when != \"never\" && when != \"always\" && when != \"fallback\" {\n\t\tb.UseResourceCacheWhen = \"fallback\"\n\t}\n\n\treturn b\n}",
+    "funcname": "DecodeBuildConfig"
+}

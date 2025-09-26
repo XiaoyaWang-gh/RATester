@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/cmd/npc/npc.go",
+    "lineno": 206,
+    "focalfunc": "func run()",
+    "funcbody": "func run() {\n\tcommon.InitPProfFromArg(*pprofAddr)\n\n\tif *password != \"\" {\n\t\tcommonConfig := new(config.CommonConfig)\n\t\tcommonConfig.Server = *serverAddr\n\t\tcommonConfig.VKey = *verifyKey\n\t\tcommonConfig.Tp = *connType\n\t\tlocalServer := new(config.LocalServer)\n\t\tlocalServer.Type = *localType\n\t\tlocalServer.Password = *password\n\t\tlocalServer.Target = *target\n\t\tlocalServer.Port = *localPort\n\t\tcommonConfig.Client = new(file.Client)\n\t\tcommonConfig.Client.Cnf = new(file.Config)\n\t\tgo client.StartLocalServer(localServer, commonConfig)\n\t\treturn\n\t}\n\tenv := common.GetEnvMap()\n\tif *serverAddr == \"\" {\n\t\t*serverAddr, _ = env[\"NPC_SERVER_ADDR\"]\n\t}\n\tif *verifyKey == \"\" {\n\t\t*verifyKey, _ = env[\"NPC_SERVER_VKEY\"]\n\t}\n\tlogs.Info(\"the version of client is %s, the core version of client is %s\", version.VERSION, version.GetVersion())\n\tif *verifyKey != \"\" && *serverAddr != \"\" && *configPath == \"\" {\n\t\tgo func() {\n\t\t\tfor {\n\t\t\t\tclient.NewRPClient(*serverAddr, *verifyKey, *connType, *proxyUrl, nil, *disconnectTime).Start()\n\t\t\t\tlogs.Info(\"Client closed! It will be reconnected in five seconds\")\n\t\t\t\ttime.Sleep(time.Second * 5)\n\t\t\t}\n\t\t}()\n\t} else {\n\t\tif *configPath == \"\" {\n\t\t\t*configPath = common.GetConfigPath()\n\t\t}\n\t\tgo client.StartFromFile(*configPath)\n\t}\n}",
+    "funcname": "run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 130,
+    "focalfunc": "func (s *Store) MeasureSince(key string, start time.Time)",
+    "funcbody": "func (s *Store) MeasureSince(key string, start time.Time) {\n\ts.mu.Lock()\n\ts.metrics[key] = append(s.metrics[key], time.Since(start))\n\ts.mu.Unlock()\n}",
+    "funcname": "MeasureSince"
+}

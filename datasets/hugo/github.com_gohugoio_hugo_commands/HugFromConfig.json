@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 309,
+    "focalfunc": "func (r *rootCommand) HugFromConfig(conf *commonConfig) (*hugolib.HugoSites, error)",
+    "funcbody": "func (r *rootCommand) HugFromConfig(conf *commonConfig) (*hugolib.HugoSites, error) {\n\th, _, err := r.hugoSites.GetOrCreate(r.configVersionID.Load(), func(key int32) (*hugolib.HugoSites, error) {\n\t\tdepsCfg := r.newDepsConfig(conf)\n\t\treturn hugolib.NewHugoSites(depsCfg)\n\t})\n\treturn h, err\n}",
+    "funcname": "HugFromConfig"
+}

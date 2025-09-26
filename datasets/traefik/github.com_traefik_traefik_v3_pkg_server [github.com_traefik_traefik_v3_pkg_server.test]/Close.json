@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 718,
+    "focalfunc": "func (t *trackedConnection) Close() error",
+    "funcbody": "func (t *trackedConnection) Close() error {\n\tt.tracker.RemoveConnection(t.WriteCloser)\n\treturn t.WriteCloser.Close()\n}",
+    "funcname": "Close"
+}

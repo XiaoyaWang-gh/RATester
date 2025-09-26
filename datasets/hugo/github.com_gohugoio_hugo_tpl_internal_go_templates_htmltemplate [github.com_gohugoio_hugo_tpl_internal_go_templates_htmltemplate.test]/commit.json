@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 916,
+    "focalfunc": "func (e *escaper) commit()",
+    "funcbody": "func (e *escaper) commit() {\n\tfor name := range e.output {\n\t\te.template(name).Funcs(funcMap)\n\t}\n\n\ttmpl := e.arbitraryTemplate()\n\tfor _, t := range e.derived {\n\t\tif _, err := tmpl.text.AddParseTree(t.Name(), t.Tree); err != nil {\n\t\t\tpanic(\"error adding derived template\")\n\t\t}\n\t}\n\tfor n, s := range e.actionNodeEdits {\n\t\tensurePipelineContains(n.Pipe, s)\n\t}\n\tfor n, name := range e.templateNodeEdits {\n\t\tn.Name = name\n\t}\n\tfor n, s := range e.textNodeEdits {\n\t\tn.Text = s\n\t}\n\n\te.called = make(map[string]bool)\n\te.actionNodeEdits = make(map[*parse.ActionNode][]string)\n\te.templateNodeEdits = make(map[*parse.TemplateNode]string)\n\te.textNodeEdits = make(map[*parse.TextNode][]byte)\n}",
+    "funcname": "commit"
+}

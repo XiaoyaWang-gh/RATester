@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_metadata.go",
+    "lineno": 84,
+    "focalfunc": "func (r *metaResource) updateParams(params map[string]any)",
+    "funcbody": "func (r *metaResource) updateParams(params map[string]any) {\n\tif r.params == nil {\n\t\tr.params = make(map[string]interface{})\n\t}\n\tfor k, v := range params {\n\t\tr.params[k] = v\n\t}\n\tr.changed = true\n}",
+    "funcname": "updateParams"
+}

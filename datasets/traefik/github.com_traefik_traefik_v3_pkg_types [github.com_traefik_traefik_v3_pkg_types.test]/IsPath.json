@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/file_or_content.go",
+    "lineno": 14,
+    "focalfunc": "func (f FileOrContent) IsPath() bool",
+    "funcbody": "func (f FileOrContent) IsPath() bool {\n\t_, err := os.Stat(f.String())\n\treturn err == nil\n}",
+    "funcname": "IsPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/message.go",
+    "lineno": 105,
+    "focalfunc": "func (impl *transporterImpl) registerMsgChan(recvCh chan msg.Message, laneKey string, msgType string) (unregister func())",
+    "funcbody": "func (impl *transporterImpl) registerMsgChan(recvCh chan msg.Message, laneKey string, msgType string) (unregister func()) {\n\timpl.mu.Lock()\n\tbyLaneKey, ok := impl.registry[msgType]\n\tif !ok {\n\t\tbyLaneKey = make(map[string]chan msg.Message)\n\t\timpl.registry[msgType] = byLaneKey\n\t}\n\tbyLaneKey[laneKey] = recvCh\n\timpl.mu.Unlock()\n\n\tunregister = func() {\n\t\timpl.mu.Lock()\n\t\tdelete(byLaneKey, laneKey)\n\t\timpl.mu.Unlock()\n\t}\n\treturn\n}",
+    "funcname": "registerMsgChan"
+}

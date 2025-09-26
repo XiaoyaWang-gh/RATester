@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 111,
+    "focalfunc": "func (d *Deployer) openBucket(ctx context.Context) (*blob.Bucket, error)",
+    "funcbody": "func (d *Deployer) openBucket(ctx context.Context) (*blob.Bucket, error) {\n\tif d.bucket != nil {\n\t\treturn d.bucket, nil\n\t}\n\td.logger.Printf(\"Deploying to target %q (%s)\\n\", d.target.Name, d.target.URL)\n\treturn blob.OpenBucket(ctx, d.target.URL)\n}",
+    "funcname": "openBucket"
+}

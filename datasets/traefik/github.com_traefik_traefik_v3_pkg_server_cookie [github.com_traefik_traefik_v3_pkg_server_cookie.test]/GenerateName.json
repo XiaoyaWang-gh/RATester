@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/cookie/cookie.go",
+    "lineno": 23,
+    "focalfunc": "func GenerateName(backendName string) string",
+    "funcbody": "func GenerateName(backendName string) string {\n\tdata := []byte(\"_TRAEFIK_BACKEND_\" + backendName)\n\n\thash := sha1.New()\n\t_, err := hash.Write(data)\n\tif err != nil {\n\n\t\tlog.Error().Err(err).Msg(\"Fail to create cookie name\")\n\t}\n\n\treturn fmt.Sprintf(\"_%x\", hash.Sum(nil))[:cookieNameLength]\n}",
+    "funcname": "GenerateName"
+}

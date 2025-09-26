@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 391,
+    "focalfunc": "func (engine *Engine) prepareTrustedCIDRs() ([]*net.IPNet, error)",
+    "funcbody": "func (engine *Engine) prepareTrustedCIDRs() ([]*net.IPNet, error) {\n\tif engine.trustedProxies == nil {\n\t\treturn nil, nil\n\t}\n\n\tcidr := make([]*net.IPNet, 0, len(engine.trustedProxies))\n\tfor _, trustedProxy := range engine.trustedProxies {\n\t\tif !strings.Contains(trustedProxy, \"/\") {\n\t\t\tip := parseIP(trustedProxy)\n\t\t\tif ip == nil {\n\t\t\t\treturn cidr, &net.ParseError{Type: \"IP address\", Text: trustedProxy}\n\t\t\t}\n\n\t\t\tswitch len(ip) {\n\t\t\tcase net.IPv4len:\n\t\t\t\ttrustedProxy += \"/32\"\n\t\t\tcase net.IPv6len:\n\t\t\t\ttrustedProxy += \"/128\"\n\t\t\t}\n\t\t}\n\t\t_, cidrNet, err := net.ParseCIDR(trustedProxy)\n\t\tif err != nil {\n\t\t\treturn cidr, err\n\t\t}\n\t\tcidr = append(cidr, cidrNet)\n\t}\n\treturn cidr, nil\n}",
+    "funcname": "prepareTrustedCIDRs"
+}

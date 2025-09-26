@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/healthcheck/config.go",
+    "lineno": 30,
+    "focalfunc": "func defaultProbe(fiber.Ctx) bool",
+    "funcbody": "func defaultProbe(fiber.Ctx) bool\t{ return true }",
+    "funcname": "defaultProbe"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 287,
+    "focalfunc": "func setIntField(val string, bitSize int, field reflect.Value) error",
+    "funcbody": "func setIntField(val string, bitSize int, field reflect.Value) error {\n\tif val == \"\" {\n\t\tval = \"0\"\n\t}\n\tintVal, err := strconv.ParseInt(val, 10, bitSize)\n\tif err == nil {\n\t\tfield.SetInt(intVal)\n\t}\n\treturn err\n}",
+    "funcname": "setIntField"
+}

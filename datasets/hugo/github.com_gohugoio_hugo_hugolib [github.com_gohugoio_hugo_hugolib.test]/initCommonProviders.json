@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 431,
+    "focalfunc": "func (ps *pageState) initCommonProviders(pp pagePaths) error",
+    "funcbody": "func (ps *pageState) initCommonProviders(pp pagePaths) error {\n\tif ps.IsPage() {\n\t\tps.posNextPrev = &nextPrev{init: ps.s.init.prevNext}\n\t\tps.posNextPrevSection = &nextPrev{init: ps.s.init.prevNextInSection}\n\t\tps.InSectionPositioner = newPagePositionInSection(ps.posNextPrevSection)\n\t\tps.Positioner = newPagePosition(ps.posNextPrev)\n\t}\n\n\tps.OutputFormatsProvider = pp\n\tps.targetPathDescriptor = pp.targetPathDescriptor\n\tps.RefProvider = newPageRef(ps)\n\tps.SitesProvider = ps.s\n\n\treturn nil\n}",
+    "funcname": "initCommonProviders"
+}

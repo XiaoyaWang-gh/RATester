@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/slack.go",
+    "lineno": 73,
+    "focalfunc": "func (s *SLACKWriter) Flush()",
+    "funcbody": "func (s *SLACKWriter) Flush() {\n}",
+    "funcname": "Flush"
+}

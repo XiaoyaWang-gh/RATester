@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 93,
+    "focalfunc": "func OrderBy(s string) *Hint",
+    "funcbody": "func OrderBy(s string) *Hint {\n\treturn NewHint(KeyOrderBy, s)\n}",
+    "funcname": "OrderBy"
+}

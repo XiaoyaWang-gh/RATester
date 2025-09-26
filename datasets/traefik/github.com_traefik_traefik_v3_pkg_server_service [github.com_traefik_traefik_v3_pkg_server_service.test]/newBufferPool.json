@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/bufferpool.go",
+    "lineno": 7,
+    "focalfunc": "func newBufferPool() *bufferPool",
+    "funcbody": "func newBufferPool() *bufferPool {\n\treturn &bufferPool{\n\t\tpool: sync.Pool{\n\t\t\tNew: func() interface{} {\n\t\t\t\treturn make([]byte, bufferPoolSize)\n\t\t\t},\n\t\t},\n\t}\n}",
+    "funcname": "newBufferPool"
+}

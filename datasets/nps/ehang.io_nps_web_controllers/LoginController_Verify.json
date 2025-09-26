@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/login.go",
+    "lineno": 37,
+    "focalfunc": "func (self *LoginController) Verify()",
+    "funcbody": "func (self *LoginController) Verify() {\n\tusername := self.GetString(\"username\")\n\tpassword := self.GetString(\"password\")\n\tif self.doLogin(username, password, true) {\n\t\tself.Data[\"json\"] = map[string]interface{}{\"status\": 1, \"msg\": \"login success\"}\n\t} else {\n\t\tself.Data[\"json\"] = map[string]interface{}{\"status\": 0, \"msg\": \"username or password incorrect\"}\n\t}\n\tself.ServeJSON()\n}",
+    "funcname": "Verify"
+}

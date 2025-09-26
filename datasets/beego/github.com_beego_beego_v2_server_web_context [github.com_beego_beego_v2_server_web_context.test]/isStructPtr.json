@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 178,
+    "focalfunc": "func isStructPtr(t reflect.Type) bool",
+    "funcbody": "func isStructPtr(t reflect.Type) bool {\n\treturn t.Kind() == reflect.Ptr && t.Elem().Kind() == reflect.Struct\n}",
+    "funcname": "isStructPtr"
+}

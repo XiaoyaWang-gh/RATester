@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 188,
+    "focalfunc": "func (ns *Namespace) Pow(n1, n2 any) (float64, error)",
+    "funcbody": "func (ns *Namespace) Pow(n1, n2 any) (float64, error) {\n\taf, erra := cast.ToFloat64E(n1)\n\tbf, errb := cast.ToFloat64E(n2)\n\n\tif erra != nil || errb != nil {\n\t\treturn 0, errors.New(\"Pow operator can't be used with non-float value\")\n\t}\n\n\treturn math.Pow(af, bf), nil\n}",
+    "funcname": "Pow"
+}

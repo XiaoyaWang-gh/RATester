@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 86,
+    "focalfunc": "func (t *Template) Clone() (*Template, error)",
+    "funcbody": "func (t *Template) Clone() (*Template, error) {\n\tnt := t.copy(nil)\n\tnt.init()\n\tif t.common == nil {\n\t\treturn nt, nil\n\t}\n\tt.muTmpl.RLock()\n\tdefer t.muTmpl.RUnlock()\n\tfor k, v := range t.tmpl {\n\t\tif k == t.name {\n\t\t\tnt.tmpl[t.name] = nt\n\t\t\tcontinue\n\t\t}\n\n\t\ttmpl := v.copy(nt.common)\n\t\tnt.tmpl[k] = tmpl\n\t}\n\tt.muFuncs.RLock()\n\tdefer t.muFuncs.RUnlock()\n\tfor k, v := range t.parseFuncs {\n\t\tnt.parseFuncs[k] = v\n\t}\n\tfor k, v := range t.execFuncs {\n\t\tnt.execFuncs[k] = v\n\t}\n\treturn nt, nil\n}",
+    "funcname": "Clone"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 45,
+    "focalfunc": "func (msg *Error) SetType(flags ErrorType) *Error",
+    "funcbody": "func (msg *Error) SetType(flags ErrorType) *Error {\n\tmsg.Type = flags\n\treturn msg\n}",
+    "funcname": "SetType"
+}

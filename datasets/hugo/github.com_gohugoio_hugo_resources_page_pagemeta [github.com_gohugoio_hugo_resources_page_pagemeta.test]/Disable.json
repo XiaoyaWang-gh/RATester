@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/pagemeta.go",
+    "lineno": 60,
+    "focalfunc": "func (b *BuildConfig) Disable()",
+    "funcbody": "func (b *BuildConfig) Disable() {\n\tb.List = Never\n\tb.Render = Never\n\tb.PublishResources = false\n\tb.set = true\n}",
+    "funcname": "Disable"
+}

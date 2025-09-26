@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 111,
+    "focalfunc": "func CfgSetSessionNameInHTTPHeader(name string) ManagerConfigOpt",
+    "funcbody": "func CfgSetSessionNameInHTTPHeader(name string) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.SessionNameInHTTPHeader = name\n\t}\n}",
+    "funcname": "CfgSetSessionNameInHTTPHeader"
+}

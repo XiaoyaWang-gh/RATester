@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 299,
+    "focalfunc": "func (c *Client) validateFromRemoteArgs(uri string, options fromRemoteOptions) error",
+    "funcbody": "func (c *Client) validateFromRemoteArgs(uri string, options fromRemoteOptions) error {\n\tif err := c.rs.ExecHelper.Sec().CheckAllowedHTTPURL(uri); err != nil {\n\t\treturn err\n\t}\n\n\tif err := c.rs.ExecHelper.Sec().CheckAllowedHTTPMethod(options.Method); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "validateFromRemoteArgs"
+}

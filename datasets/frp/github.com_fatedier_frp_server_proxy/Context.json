@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 85,
+    "focalfunc": "func (pxy *BaseProxy) Context() context.Context",
+    "funcbody": "func (pxy *BaseProxy) Context() context.Context {\n\treturn pxy.ctx\n}",
+    "funcname": "Context"
+}

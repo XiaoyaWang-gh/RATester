@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 38,
+    "focalfunc": "func (c *fakeConfigContainer) Int(key string) (int, error)",
+    "funcbody": "func (c *fakeConfigContainer) Int(key string) (int, error) {\n\treturn strconv.Atoi(c.getData(key))\n}",
+    "funcname": "Int"
+}

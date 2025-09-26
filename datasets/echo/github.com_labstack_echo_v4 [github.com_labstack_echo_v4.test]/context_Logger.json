@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 635,
+    "focalfunc": "func (c *context) Logger() Logger",
+    "funcbody": "func (c *context) Logger() Logger {\n\tres := c.logger\n\tif res != nil {\n\t\treturn res\n\t}\n\treturn c.echo.Logger\n}",
+    "funcname": "Logger"
+}

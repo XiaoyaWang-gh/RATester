@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 108,
+    "focalfunc": "func (c *Client) UpdateConfig(ctx context.Context, content string) error",
+    "funcbody": "func (c *Client) UpdateConfig(ctx context.Context, content string) error {\n\treq, err := http.NewRequestWithContext(ctx, \"PUT\", \"http://\"+c.address+\"/api/config\", strings.NewReader(content))\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = c.do(req)\n\treturn err\n}",
+    "funcname": "UpdateConfig"
+}

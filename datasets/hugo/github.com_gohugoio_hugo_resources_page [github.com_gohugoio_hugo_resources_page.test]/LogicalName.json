@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 298,
+    "focalfunc": "func (p *nopPage) LogicalName() string",
+    "funcbody": "func (p *nopPage) LogicalName() string {\n\treturn \"\"\n}",
+    "funcname": "LogicalName"
+}

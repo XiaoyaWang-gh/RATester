@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 234,
+    "focalfunc": "func (n *Namespace) Conditional(cond bool, v1, v2 any) any",
+    "funcbody": "func (n *Namespace) Conditional(cond bool, v1, v2 any) any {\n\tif cond {\n\t\treturn v1\n\t}\n\treturn v2\n}",
+    "funcname": "Conditional"
+}

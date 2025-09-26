@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 270,
+    "focalfunc": "func (c *context) IsWebSocket() bool",
+    "funcbody": "func (c *context) IsWebSocket() bool {\n\tupgrade := c.request.Header.Get(HeaderUpgrade)\n\treturn strings.EqualFold(upgrade, \"websocket\")\n}",
+    "funcname": "IsWebSocket"
+}

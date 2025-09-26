@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_factory.go",
+    "lineno": 132,
+    "focalfunc": "func NewContentFactory(h *HugoSites) ContentFactory",
+    "funcbody": "func NewContentFactory(h *HugoSites) ContentFactory {\n\treturn ContentFactory{\n\t\th:\th,\n\t\tshortcodeReplacerPre: strings.NewReplacer(\n\t\t\t\"{{<\", \"{x{<\",\n\t\t\t\"{{%\", \"{x{%\",\n\t\t\t\">}}\", \">}x}\",\n\t\t\t\"%}}\", \"%}x}\"),\n\t\tshortcodeReplacerPost: strings.NewReplacer(\n\t\t\t\"{x{<\", \"{{<\",\n\t\t\t\"{x{%\", \"{{%\",\n\t\t\t\">}x}\", \">}}\",\n\t\t\t\"%}x}\", \"%}}\"),\n\t}\n}",
+    "funcname": "NewContentFactory"
+}

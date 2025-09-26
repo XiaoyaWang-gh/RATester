@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 472,
+    "focalfunc": "func (s *state) evalPipeline(dot reflect.Value, pipe *parse.PipeNode) (value reflect.Value)",
+    "funcbody": "func (s *state) evalPipeline(dot reflect.Value, pipe *parse.PipeNode) (value reflect.Value) {\n\tif pipe == nil {\n\t\treturn\n\t}\n\ts.at(pipe)\n\tvalue = missingVal\n\tfor _, cmd := range pipe.Cmds {\n\t\tvalue = s.evalCommand(dot, cmd, value)\n\n\t\tif value.Kind() == reflect.Interface && value.Type().NumMethod() == 0 {\n\t\t\tvalue = value.Elem()\n\t\t}\n\t}\n\tfor _, variable := range pipe.Decl {\n\t\tif pipe.IsAssign {\n\t\t\ts.setVar(variable.Ident[0], value)\n\t\t} else {\n\t\t\ts.push(variable.Ident[0], value)\n\t\t}\n\t}\n\treturn value\n}",
+    "funcname": "evalPipeline"
+}

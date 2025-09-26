@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 231,
+    "focalfunc": "func doReplace(path string, ct transform.FromTo, quotes [][]byte)",
+    "funcbody": "func doReplace(path string, ct transform.FromTo, quotes [][]byte) {\n\tlexer := &absurllexer{\n\t\tcontent:\tct.From().Bytes(),\n\t\tw:\t\tct.To(),\n\t\tpath:\t\t[]byte(path),\n\t\tquotes:\t\tquotes,\n\t}\n\n\tlexer.replace()\n}",
+    "funcname": "doReplace"
+}

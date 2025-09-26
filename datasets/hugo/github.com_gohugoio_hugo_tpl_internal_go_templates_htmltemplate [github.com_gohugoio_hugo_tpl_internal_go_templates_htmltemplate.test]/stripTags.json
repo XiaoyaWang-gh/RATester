@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/hugo_template.go",
+    "lineno": 40,
+    "focalfunc": "func StripTags(html string) string",
+    "funcbody": "func StripTags(html string) string {\n\treturn stripTags(html)\n}",
+    "funcname": "StripTags"
+}

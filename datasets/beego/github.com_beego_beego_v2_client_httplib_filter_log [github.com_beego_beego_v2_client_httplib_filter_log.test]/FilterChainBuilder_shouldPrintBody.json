@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 102,
+    "focalfunc": "func (builder *FilterChainBuilder) shouldPrintBody(contentType string, body io.ReadCloser) bool",
+    "funcbody": "func (builder *FilterChainBuilder) shouldPrintBody(contentType string, body io.ReadCloser) bool {\n\tif contains(builder.printableContentTypes, contentType) {\n\t\treturn true\n\t}\n\tif body != nil {\n\t\tlogs.Warn(\"printableContentTypes do not contain %s, if you want to print request and response body please add it.\", contentType)\n\t}\n\treturn false\n}",
+    "funcname": "shouldPrintBody"
+}

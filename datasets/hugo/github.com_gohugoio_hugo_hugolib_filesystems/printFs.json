@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 805,
+    "focalfunc": "func printFs(fs afero.Fs, path string, w io.Writer)",
+    "funcbody": "func printFs(fs afero.Fs, path string, w io.Writer) {\n\tif fs == nil {\n\t\treturn\n\t}\n\tafero.Walk(fs, path, func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif info.IsDir() {\n\t\t\treturn nil\n\t\t}\n\t\tvar filename string\n\t\tif fim, ok := info.(hugofs.FileMetaInfo); ok {\n\t\t\tfilename = fim.Meta().Filename\n\t\t}\n\t\tfmt.Fprintf(w, \"    %q %q\\n\", path, filename)\n\t\treturn nil\n\t})\n}",
+    "funcname": "printFs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 258,
+    "focalfunc": "func (f *filterOrmDecorator) Insert(md interface{}) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) Insert(md interface{}) (int64, error) {\n\treturn f.InsertWithCtx(context.Background(), md)\n}",
+    "funcname": "Insert"
+}

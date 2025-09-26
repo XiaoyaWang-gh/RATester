@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 48,
+    "focalfunc": "func (q *BandwidthQuantity) Equal(u *BandwidthQuantity) bool",
+    "funcbody": "func (q *BandwidthQuantity) Equal(u *BandwidthQuantity) bool {\n\tif q == nil && u == nil {\n\t\treturn true\n\t}\n\tif q != nil && u != nil {\n\t\treturn q.i == u.i\n\t}\n\treturn false\n}",
+    "funcname": "Equal"
+}

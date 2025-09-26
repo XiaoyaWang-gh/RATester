@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefix/strip_prefix.go",
+    "lineno": 30,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.StripPrefix, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.StripPrefix, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\tif config.ForceSlash != nil {\n\t\tlogger.Warn().Msgf(\"`ForceSlash` option is deprecated, please remove any usage of this option.\")\n\t}\n\n\tforceSlash := config.ForceSlash != nil && *config.ForceSlash\n\n\treturn &stripPrefix{\n\t\tprefixes:\tconfig.Prefixes,\n\t\tnext:\t\tnext,\n\t\tname:\t\tname,\n\t\tforceSlash:\tforceSlash,\n\t}, nil\n}",
+    "funcname": "New"
+}

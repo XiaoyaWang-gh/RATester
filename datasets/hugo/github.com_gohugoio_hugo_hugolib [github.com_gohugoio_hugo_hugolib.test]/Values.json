@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 78,
+    "focalfunc": "func (t taxonomiesConfig) Values() taxonomiesConfigValues",
+    "funcbody": "func (t taxonomiesConfig) Values() taxonomiesConfigValues {\n\tvar views []viewName\n\tfor k, v := range t {\n\t\tviews = append(views, viewName{singular: k, plural: v, pluralTreeKey: cleanTreeKey(v)})\n\t}\n\tsort.Slice(views, func(i, j int) bool {\n\t\treturn views[i].plural < views[j].plural\n\t})\n\n\tviewsByTreeKey := make(map[string]viewName)\n\tfor _, v := range views {\n\t\tviewsByTreeKey[v.pluralTreeKey] = v\n\t}\n\n\treturn taxonomiesConfigValues{\n\t\tviews:\t\tviews,\n\t\tviewsByTreeKey:\tviewsByTreeKey,\n\t}\n}",
+    "funcname": "Values"
+}

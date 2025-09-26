@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/healthcheck.go",
+    "lineno": 40,
+    "focalfunc": "func AddHealthCheck(name string, hc HealthChecker)",
+    "funcbody": "func AddHealthCheck(name string, hc HealthChecker) {\n\tAdminCheckList[name] = hc\n}",
+    "funcname": "AddHealthCheck"
+}

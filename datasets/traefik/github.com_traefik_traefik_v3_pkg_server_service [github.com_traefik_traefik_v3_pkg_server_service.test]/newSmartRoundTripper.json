@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/smart_roundtripper.go",
+    "lineno": 14,
+    "focalfunc": "func newSmartRoundTripper(transport *http.Transport, forwardingTimeouts *dynamic.ForwardingTimeouts) (*smartRoundTripper, error)",
+    "funcbody": "func newSmartRoundTripper(transport *http.Transport, forwardingTimeouts *dynamic.ForwardingTimeouts) (*smartRoundTripper, error) {\n\ttransportHTTP1 := transport.Clone()\n\n\ttransportHTTP2, err := http2.ConfigureTransports(transport)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif forwardingTimeouts != nil {\n\t\ttransportHTTP2.ReadIdleTimeout = time.Duration(forwardingTimeouts.ReadIdleTimeout)\n\t\ttransportHTTP2.PingTimeout = time.Duration(forwardingTimeouts.PingTimeout)\n\t}\n\n\ttransportH2C := &h2cTransportWrapper{\n\t\tTransport: &http2.Transport{\n\t\t\tDialTLS: func(network, addr string, cfg *tls.Config) (net.Conn, error) {\n\t\t\t\treturn net.Dial(network, addr)\n\t\t\t},\n\t\t\tAllowHTTP:\ttrue,\n\t\t},\n\t}\n\n\tif forwardingTimeouts != nil {\n\t\ttransportH2C.ReadIdleTimeout = time.Duration(forwardingTimeouts.ReadIdleTimeout)\n\t\ttransportH2C.PingTimeout = time.Duration(forwardingTimeouts.PingTimeout)\n\t}\n\n\ttransport.RegisterProtocol(\"h2c\", transportH2C)\n\n\treturn &smartRoundTripper{\n\t\thttp2:\ttransport,\n\t\thttp:\ttransportHTTP1,\n\t}, nil\n}",
+    "funcname": "newSmartRoundTripper"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 532,
+    "focalfunc": "func (c *Context) GetPostForm(key string) (string, bool)",
+    "funcbody": "func (c *Context) GetPostForm(key string) (string, bool) {\n\tif values, ok := c.GetPostFormArray(key); ok {\n\t\treturn values[0], ok\n\t}\n\treturn \"\", false\n}",
+    "funcname": "GetPostForm"
+}

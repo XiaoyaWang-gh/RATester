@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 33,
+    "focalfunc": "func (e *Echo) Static(pathPrefix, fsRoot string) *Route",
+    "funcbody": "func (e *Echo) Static(pathPrefix, fsRoot string) *Route {\n\tsubFs := MustSubFS(e.Filesystem, fsRoot)\n\treturn e.Add(\n\t\thttp.MethodGet,\n\t\tpathPrefix+\"*\",\n\t\tStaticDirectoryHandler(subFs, false),\n\t)\n}",
+    "funcname": "Static"
+}

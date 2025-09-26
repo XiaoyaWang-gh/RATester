@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/idempotency/locker.go",
+    "lineno": 18,
+    "focalfunc": "func (l *MemoryLock) Lock(key string) error",
+    "funcbody": "func (l *MemoryLock) Lock(key string) error {\n\tl.mu.Lock()\n\tmu, ok := l.keys[key]\n\tif !ok {\n\t\tmu = new(sync.Mutex)\n\t\tl.keys[key] = mu\n\t}\n\tl.mu.Unlock()\n\n\tmu.Lock()\n\n\treturn nil\n}",
+    "funcname": "Lock"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 168,
+    "focalfunc": "func (c *Column) SetUnsigned(unsign bool) *Column",
+    "funcbody": "func (c *Column) SetUnsigned(unsign bool) *Column {\n\tif unsign {\n\t\tc.Unsign = \"UNSIGNED\"\n\t}\n\treturn c\n}",
+    "funcname": "SetUnsigned"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 241,
+    "focalfunc": "func (group *RouterGroup) combineHandlers(handlers HandlersChain) HandlersChain",
+    "funcbody": "func (group *RouterGroup) combineHandlers(handlers HandlersChain) HandlersChain {\n\tfinalSize := len(group.Handlers) + len(handlers)\n\tassert1(finalSize < int(abortIndex), \"too many handlers\")\n\tmergedHandlers := make(HandlersChain, finalSize)\n\tcopy(mergedHandlers, group.Handlers)\n\tcopy(mergedHandlers[len(group.Handlers):], handlers)\n\treturn mergedHandlers\n}",
+    "funcname": "combineHandlers"
+}

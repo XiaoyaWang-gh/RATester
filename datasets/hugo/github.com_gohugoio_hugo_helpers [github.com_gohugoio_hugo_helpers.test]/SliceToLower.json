@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 245,
+    "focalfunc": "func SliceToLower(s []string) []string",
+    "funcbody": "func SliceToLower(s []string) []string {\n\tif s == nil {\n\t\treturn nil\n\t}\n\n\tl := make([]string, len(s))\n\tfor i, v := range s {\n\t\tl[i] = strings.ToLower(v)\n\t}\n\n\treturn l\n}",
+    "funcname": "SliceToLower"
+}

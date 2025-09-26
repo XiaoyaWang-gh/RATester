@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 625,
+    "focalfunc": "func collect(staticConfiguration *static.Configuration)",
+    "funcbody": "func collect(staticConfiguration *static.Configuration) {\n\tticker := time.Tick(24 * time.Hour)\n\tsafe.Go(func() {\n\t\tfor time.Sleep(10 * time.Minute); ; <-ticker {\n\t\t\tif err := collector.Collect(staticConfiguration); err != nil {\n\t\t\t\tlog.Debug().Err(err).Send()\n\t\t\t}\n\t\t}\n\t})\n}",
+    "funcname": "collect"
+}

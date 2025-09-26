@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 936,
+    "focalfunc": "func (c *Context) SetSameSite(samesite http.SameSite)",
+    "funcbody": "func (c *Context) SetSameSite(samesite http.SameSite) {\n\tc.sameSite = samesite\n}",
+    "funcname": "SetSameSite"
+}

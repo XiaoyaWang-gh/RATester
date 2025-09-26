@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx_interface.go",
+    "lineno": 54,
+    "focalfunc": "func (app *App) AcquireCtx(fctx *fasthttp.RequestCtx) Ctx",
+    "funcbody": "func (app *App) AcquireCtx(fctx *fasthttp.RequestCtx) Ctx {\n\tctx, ok := app.pool.Get().(Ctx)\n\n\tif !ok {\n\t\tpanic(errors.New(\"failed to type-assert to Ctx\"))\n\t}\n\tctx.Reset(fctx)\n\n\treturn ctx\n}",
+    "funcname": "AcquireCtx"
+}

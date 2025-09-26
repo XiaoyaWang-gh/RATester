@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/kinds/kinds.go",
+    "lineno": 51,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tfor k := range kindMapMain {\n\t\tAllKindsInPages = append(AllKindsInPages, k)\n\t\tAllKinds = append(AllKinds, k)\n\t}\n\n\tfor k := range kindMapTemporary {\n\t\tAllKinds = append(AllKinds, k)\n\t}\n\n\tsort.Strings(AllKindsInPages)\n\tsort.Strings(AllKinds)\n}",
+    "funcname": "init"
+}

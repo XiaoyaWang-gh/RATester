@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 203,
+    "focalfunc": "func decodePageMatcher(m any, v *PageMatcher) error",
+    "funcbody": "func decodePageMatcher(m any, v *PageMatcher) error {\n\tif err := mapstructure.WeakDecode(m, v); err != nil {\n\t\treturn err\n\t}\n\n\tv.Kind = strings.ToLower(v.Kind)\n\tif v.Kind != \"\" {\n\t\tg, _ := glob.GetGlob(v.Kind)\n\t\tfound := false\n\t\tfor _, k := range kinds.AllKindsInPages {\n\t\t\tif g.Match(k) {\n\t\t\t\tfound = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif !found {\n\t\t\treturn fmt.Errorf(\"%q did not match a valid Page Kind\", v.Kind)\n\t\t}\n\t}\n\n\tv.Path = filepath.ToSlash(strings.ToLower(v.Path))\n\n\treturn nil\n}",
+    "funcname": "decodePageMatcher"
+}

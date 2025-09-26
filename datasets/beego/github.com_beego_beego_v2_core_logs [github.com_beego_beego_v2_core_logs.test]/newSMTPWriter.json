@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 43,
+    "focalfunc": "func newSMTPWriter() Logger",
+    "funcbody": "func newSMTPWriter() Logger {\n\tres := &SMTPWriter{Level: LevelTrace, InsecureSkipVerify: true}\n\tres.formatter = res\n\treturn res\n}",
+    "funcname": "newSMTPWriter"
+}

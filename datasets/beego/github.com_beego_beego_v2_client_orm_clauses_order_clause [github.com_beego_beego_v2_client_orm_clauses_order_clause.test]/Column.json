@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 76,
+    "focalfunc": "func Column(column string) Option",
+    "funcbody": "func Column(column string) Option {\n\treturn func(order *Order) {\n\t\torder.column = strings.ReplaceAll(column, clauses.ExprSep, clauses.ExprDot)\n\t}\n}",
+    "funcname": "Column"
+}

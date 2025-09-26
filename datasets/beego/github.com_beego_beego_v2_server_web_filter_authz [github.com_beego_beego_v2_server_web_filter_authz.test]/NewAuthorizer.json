@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/authz/authz.go",
+    "lineno": 53,
+    "focalfunc": "func NewAuthorizer(e *casbin.Enforcer) web.FilterFunc",
+    "funcbody": "func NewAuthorizer(e *casbin.Enforcer) web.FilterFunc {\n\treturn func(ctx *context.Context) {\n\t\ta := &BasicAuthorizer{enforcer: e}\n\n\t\tif !a.CheckPermission(ctx.Request) {\n\t\t\ta.RequirePermission(ctx.ResponseWriter)\n\t\t}\n\t}\n}",
+    "funcname": "NewAuthorizer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 594,
+    "focalfunc": "func ConnMaxLifetime(v time.Duration) DBOption",
+    "funcbody": "func ConnMaxLifetime(v time.Duration) DBOption {\n\treturn func(al *alias) {\n\t\tal.SetConnMaxLifetime(v)\n\t}\n}",
+    "funcname": "ConnMaxLifetime"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/envvar/envvar.go",
+    "lineno": 47,
+    "focalfunc": "func newEnvVar(cfg Config) *EnvVar",
+    "funcbody": "func newEnvVar(cfg Config) *EnvVar {\n\tvars := &EnvVar{Vars: make(map[string]string)}\n\n\tif len(cfg.ExportVars) > 0 {\n\t\tfor key, defaultVal := range cfg.ExportVars {\n\t\t\tvars.set(key, defaultVal)\n\t\t\tif envVal, exists := os.LookupEnv(key); exists {\n\t\t\t\tvars.set(key, envVal)\n\t\t\t}\n\t\t}\n\t} else {\n\t\tconst numElems = 2\n\t\tfor _, envVal := range os.Environ() {\n\t\t\tkeyVal := strings.SplitN(envVal, \"=\", numElems)\n\t\t\tif _, exists := cfg.ExcludeVars[keyVal[0]]; !exists {\n\t\t\t\tvars.set(keyVal[0], keyVal[1])\n\t\t\t}\n\t\t}\n\t}\n\n\treturn vars\n}",
+    "funcname": "newEnvVar"
+}

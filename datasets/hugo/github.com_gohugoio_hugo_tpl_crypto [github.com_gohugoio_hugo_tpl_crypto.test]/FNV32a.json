@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/crypto/crypto.go",
+    "lineno": 75,
+    "focalfunc": "func (ns *Namespace) FNV32a(v any) (int, error)",
+    "funcbody": "func (ns *Namespace) FNV32a(v any) (int, error) {\n\thugo.Deprecate(\"crypto.FNV32a\", \"Use hash.FNV32a.\", \"v0.129.0\")\n\tconv, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\talgorithm := fnv.New32a()\n\talgorithm.Write([]byte(conv))\n\treturn int(algorithm.Sum32()), nil\n}",
+    "funcname": "FNV32a"
+}

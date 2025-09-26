@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 469,
+    "focalfunc": "func initTailscaleProviders(cfg *static.Configuration, providerAggregator *aggregator.ProviderAggregator) []*tailscale.Provider",
+    "funcbody": "func initTailscaleProviders(cfg *static.Configuration, providerAggregator *aggregator.ProviderAggregator) []*tailscale.Provider {\n\tvar providers []*tailscale.Provider\n\tfor name, resolver := range cfg.CertificatesResolvers {\n\t\tif resolver.Tailscale == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\ttsProvider := &tailscale.Provider{ResolverName: name}\n\n\t\tif err := providerAggregator.AddProvider(tsProvider); err != nil {\n\t\t\tlog.Error().Err(err).Str(logs.ProviderName, name).Msg(\"Unable to create Tailscale provider\")\n\t\t\tcontinue\n\t\t}\n\n\t\tproviders = append(providers, tsProvider)\n\t}\n\n\treturn providers\n}",
+    "funcname": "initTailscaleProviders"
+}

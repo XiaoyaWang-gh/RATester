@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 833,
+    "focalfunc": "func (c *serverCommand) partialReRender(urls ...string) error",
+    "funcbody": "func (c *serverCommand) partialReRender(urls ...string) error {\n\tdefer func() {\n\t\tc.errState.setWasErr(false)\n\t}()\n\tc.errState.setBuildErr(nil)\n\tvisited := types.NewEvictingStringQueue(len(urls))\n\tfor _, url := range urls {\n\t\tvisited.Add(url)\n\t}\n\n\th, err := c.hugo()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn h.Build(hugolib.BuildCfg{NoBuildLock: false, RecentlyVisited: visited, PartialReRender: true, ErrRecovery: c.errState.wasErr()})\n}",
+    "funcname": "partialReRender"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/config.go",
+    "lineno": 80,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif int(cfg.Expiration.Seconds()) <= 0 {\n\t\tcfg.Expiration = ConfigDefault.Expiration\n\t}\n\tif cfg.KeyLookup == \"\" {\n\t\tcfg.KeyLookup = ConfigDefault.KeyLookup\n\t}\n\tif cfg.KeyGenerator == nil {\n\t\tcfg.KeyGenerator = ConfigDefault.KeyGenerator\n\t}\n\n\tselectors := strings.Split(cfg.KeyLookup, \":\")\n\tconst numSelectors = 2\n\tif len(selectors) != numSelectors {\n\t\tpanic(\"[session] KeyLookup must in the form of <source>:<name>\")\n\t}\n\tswitch Source(selectors[0]) {\n\tcase SourceCookie:\n\t\tcfg.source = SourceCookie\n\tcase SourceHeader:\n\t\tcfg.source = SourceHeader\n\tcase SourceURLQuery:\n\t\tcfg.source = SourceURLQuery\n\tdefault:\n\t\tpanic(\"[session] source is not supported\")\n\t}\n\tcfg.sessionName = selectors[1]\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

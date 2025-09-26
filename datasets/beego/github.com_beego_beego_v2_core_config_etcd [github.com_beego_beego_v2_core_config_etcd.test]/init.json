@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 190,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tconfig.Register(\"etcd\", &EtcdConfigerProvider{})\n}",
+    "funcname": "init"
+}

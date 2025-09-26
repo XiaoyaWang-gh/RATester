@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 410,
+    "focalfunc": "func GetExternalIp() string",
+    "funcbody": "func GetExternalIp() string {\n\tif externalIp != \"\" {\n\t\treturn externalIp\n\t}\n\tresp, err := http.Get(\"http://myexternalip.com/raw\")\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\tdefer resp.Body.Close()\n\tcontent, _ := ioutil.ReadAll(resp.Body)\n\texternalIp = string(content)\n\treturn externalIp\n}",
+    "funcname": "GetExternalIp"
+}

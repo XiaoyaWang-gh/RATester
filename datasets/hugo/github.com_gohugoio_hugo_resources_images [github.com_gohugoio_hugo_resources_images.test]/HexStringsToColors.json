@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 142,
+    "focalfunc": "func HexStringsToColors(s ...string) []Color",
+    "funcbody": "func HexStringsToColors(s ...string) []Color {\n\tvar colors []Color\n\tfor _, v := range s {\n\t\tcolors = append(colors, hexStringToColor(v))\n\t}\n\treturn colors\n}",
+    "funcname": "HexStringsToColors"
+}

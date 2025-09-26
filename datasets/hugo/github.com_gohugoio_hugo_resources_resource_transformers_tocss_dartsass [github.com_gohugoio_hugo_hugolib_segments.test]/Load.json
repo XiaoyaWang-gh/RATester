@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/dartsass/transform.go",
+    "lineno": 209,
+    "focalfunc": "func (t importResolverV1) Load(url string) (godartsassv1.Import, error)",
+    "funcbody": "func (t importResolverV1) Load(url string) (godartsassv1.Import, error) {\n\tres, err := t.ImportResolver.Load(url)\n\treturn godartsassv1.Import{Content: res.Content, SourceSyntax: godartsassv1.SourceSyntax(res.SourceSyntax)}, err\n}",
+    "funcname": "Load"
+}

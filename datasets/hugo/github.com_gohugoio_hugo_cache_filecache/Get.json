@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 475,
+    "focalfunc": "func (h *httpCache) Get(id string) (resp []byte, ok bool)",
+    "funcbody": "func (h *httpCache) Get(id string) (resp []byte, ok bool) {\n\tid = cleanID(id)\n\tb, removed := h.c.getBytesAndRemoveIfExpired(id)\n\n\treturn b, !removed\n}",
+    "funcname": "Get"
+}

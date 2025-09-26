@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 150,
+    "focalfunc": "func WithRetry(times int, delay time.Duration) BeegoHTTPRequestOption",
+    "funcbody": "func WithRetry(times int, delay time.Duration) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\trequest.Retries(times)\n\t\trequest.RetryDelay(delay)\n\t}\n}",
+    "funcname": "WithRetry"
+}

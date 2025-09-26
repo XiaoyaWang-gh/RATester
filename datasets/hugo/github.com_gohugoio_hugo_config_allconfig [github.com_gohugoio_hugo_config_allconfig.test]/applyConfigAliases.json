@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 139,
+    "focalfunc": "func (l configLoader) applyConfigAliases() error",
+    "funcbody": "func (l configLoader) applyConfigAliases() error {\n\taliases := []types.KeyValueStr{\n\t\t{Key: \"indexes\", Value: \"taxonomies\"},\n\t\t{Key: \"logI18nWarnings\", Value: \"printI18nWarnings\"},\n\t\t{Key: \"logPathWarnings\", Value: \"printPathWarnings\"},\n\t\t{Key: \"ignoreErrors\", Value: \"ignoreLogs\"},\n\t}\n\n\tfor _, alias := range aliases {\n\t\tif l.cfg.IsSet(alias.Key) {\n\t\t\tvv := l.cfg.Get(alias.Key)\n\t\t\tl.cfg.Set(alias.Value, vv)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "applyConfigAliases"
+}

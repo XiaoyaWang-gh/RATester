@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 372,
+    "focalfunc": "func (i *Provider) serverTransportTCP(cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) serverTransportTCP(cfg *dynamic.Configuration) {\n\tif i.staticCfg.TCPServersTransport == nil {\n\t\treturn\n\t}\n\n\tst := &dynamic.TCPServersTransport{\n\t\tDialTimeout:\ti.staticCfg.TCPServersTransport.DialTimeout,\n\t\tDialKeepAlive:\ti.staticCfg.TCPServersTransport.DialKeepAlive,\n\t}\n\n\tif i.staticCfg.TCPServersTransport.TLS != nil {\n\t\tst.TLS = &dynamic.TLSClientConfig{\n\t\t\tInsecureSkipVerify:\ti.staticCfg.TCPServersTransport.TLS.InsecureSkipVerify,\n\t\t\tRootCAs:\t\ti.staticCfg.TCPServersTransport.TLS.RootCAs,\n\t\t}\n\n\t\tif i.staticCfg.TCPServersTransport.TLS.Spiffe != nil {\n\t\t\tst.TLS.Spiffe = &dynamic.Spiffe{\n\t\t\t\tIDs:\t\ti.staticCfg.ServersTransport.Spiffe.IDs,\n\t\t\t\tTrustDomain:\ti.staticCfg.ServersTransport.Spiffe.TrustDomain,\n\t\t\t}\n\t\t}\n\t}\n\n\tcfg.TCP.ServersTransports[\"default\"] = st\n}",
+    "funcname": "serverTransportTCP"
+}

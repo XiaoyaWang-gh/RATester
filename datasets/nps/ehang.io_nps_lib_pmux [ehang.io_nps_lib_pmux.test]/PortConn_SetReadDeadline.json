@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pconn.go",
+    "lineno": 65,
+    "focalfunc": "func (pConn *PortConn) SetReadDeadline(t time.Time) error",
+    "funcbody": "func (pConn *PortConn) SetReadDeadline(t time.Time) error {\n\treturn pConn.Conn.SetReadDeadline(t)\n}",
+    "funcname": "SetReadDeadline"
+}

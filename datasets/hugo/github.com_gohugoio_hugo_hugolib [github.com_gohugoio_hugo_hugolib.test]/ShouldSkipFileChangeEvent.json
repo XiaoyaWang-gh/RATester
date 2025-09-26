@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 108,
+    "focalfunc": "func (h *HugoSites) ShouldSkipFileChangeEvent(ev fsnotify.Event) bool",
+    "funcbody": "func (h *HugoSites) ShouldSkipFileChangeEvent(ev fsnotify.Event) bool {\n\th.skipRebuildForFilenamesMu.Lock()\n\tdefer h.skipRebuildForFilenamesMu.Unlock()\n\treturn h.skipRebuildForFilenames[ev.Name]\n}",
+    "funcname": "ShouldSkipFileChangeEvent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/htime/time.go",
+    "lineno": 142,
+    "focalfunc": "func ToTimeInDefaultLocationE(i any, location *time.Location) (tim time.Time, err error)",
+    "funcbody": "func ToTimeInDefaultLocationE(i any, location *time.Location) (tim time.Time, err error) {\n\tswitch vv := i.(type) {\n\tcase AsTimeProvider:\n\t\treturn vv.AsTime(location), nil\n\n\tcase time.Time:\n\t\ti = vv.Format(time.RFC3339)\n\t}\n\treturn cast.ToTimeInDefaultLocationE(i, location)\n}",
+    "funcname": "ToTimeInDefaultLocationE"
+}

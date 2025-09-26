@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/fmtsort/sort.go",
+    "lineno": 49,
+    "focalfunc": "func Sort(mapValue reflect.Value) SortedMap",
+    "funcbody": "func Sort(mapValue reflect.Value) SortedMap {\n\tif mapValue.Type().Kind() != reflect.Map {\n\t\treturn nil\n\t}\n\n\tn := mapValue.Len()\n\tsorted := make(SortedMap, 0, n)\n\titer := mapValue.MapRange()\n\tfor iter.Next() {\n\t\tsorted = append(sorted, KeyValue{iter.Key(), iter.Value()})\n\t}\n\tslices.SortStableFunc(sorted, func(a, b KeyValue) int {\n\t\treturn compare(a.Key, b.Key)\n\t})\n\treturn sorted\n}",
+    "funcname": "Sort"
+}

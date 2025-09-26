@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 101,
+    "focalfunc": "func (c *fakeConfigContainer) Unmarshaler(prefix string, obj interface{}, opt ...DecodeOption) error",
+    "funcbody": "func (c *fakeConfigContainer) Unmarshaler(prefix string, obj interface{}, opt ...DecodeOption) error {\n\treturn errors.New(\"unsupported operation\")\n}",
+    "funcname": "Unmarshaler"
+}

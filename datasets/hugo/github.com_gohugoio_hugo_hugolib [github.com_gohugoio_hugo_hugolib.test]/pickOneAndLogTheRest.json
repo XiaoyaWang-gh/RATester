@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 256,
+    "focalfunc": "func (h *HugoSites) pickOneAndLogTheRest(errors []error) error",
+    "funcbody": "func (h *HugoSites) pickOneAndLogTheRest(errors []error) error {\n\tif len(errors) == 0 {\n\t\treturn nil\n\t}\n\n\tvar i int\n\n\tfor j, err := range errors {\n\n\t\tif herrors.UnwrapFileError(err) != nil {\n\t\t\ti = j\n\t\t\tbreak\n\t\t}\n\t}\n\n\t// Log the rest, but add a threshold to avoid flooding the log.\n\tconst errLogThreshold = 5\n\n\tfor j, err := range errors {\n\t\tif j == i || err == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tif j >= errLogThreshold {\n\t\t\tbreak\n\t\t}\n\n\t\th.Log.Errorln(err)\n\t}\n\n\treturn errors[i]\n}",
+    "funcname": "pickOneAndLogTheRest"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 72,
+    "focalfunc": "func (s *IndexController) All()",
+    "funcbody": "func (s *IndexController) All() {\n\ts.Data[\"menu\"] = \"client\"\n\tclientId := s.getEscapeString(\"client_id\")\n\ts.Data[\"client_id\"] = clientId\n\ts.SetInfo(\"client id:\" + clientId)\n\ts.display(\"index/list\")\n}",
+    "funcname": "All"
+}

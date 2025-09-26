@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_udp.go",
+    "lineno": 115,
+    "focalfunc": "func (ep *UDPEntryPoint) Shutdown(ctx context.Context)",
+    "funcbody": "func (ep *UDPEntryPoint) Shutdown(ctx context.Context) {\n\tlogger := log.Ctx(ctx)\n\n\treqAcceptGraceTimeOut := time.Duration(ep.transportConfiguration.LifeCycle.RequestAcceptGraceTimeout)\n\tif reqAcceptGraceTimeOut > 0 {\n\t\tlogger.Info().Msgf(\"Waiting %s for incoming requests to cease\", reqAcceptGraceTimeOut)\n\t\ttime.Sleep(reqAcceptGraceTimeOut)\n\t}\n\n\tgraceTimeOut := time.Duration(ep.transportConfiguration.LifeCycle.GraceTimeOut)\n\tif err := ep.listener.Shutdown(graceTimeOut); err != nil {\n\t\tlogger.Error().Err(err).Send()\n\t}\n}",
+    "funcname": "Shutdown"
+}

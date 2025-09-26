@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/auth.go",
+    "lineno": 16,
+    "focalfunc": "func getUsers(fileName string, appendUsers []string, parser UserParser) (map[string]string, error)",
+    "funcbody": "func getUsers(fileName string, appendUsers []string, parser UserParser) (map[string]string, error) {\n\tusers, err := loadUsers(fileName, appendUsers)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tuserMap := make(map[string]string)\n\tfor _, user := range users {\n\t\tuserName, userHash, err := parser(user)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tuserMap[userName] = userHash\n\t}\n\n\treturn userMap, nil\n}",
+    "funcname": "getUsers"
+}

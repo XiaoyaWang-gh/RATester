@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/fake/fake_traefikservice.go",
+    "lineno": 62,
+    "focalfunc": "func (c *FakeTraefikServices) List(ctx context.Context, opts v1.ListOptions) (result *v1alpha1.TraefikServiceList, err error)",
+    "funcbody": "func (c *FakeTraefikServices) List(ctx context.Context, opts v1.ListOptions) (result *v1alpha1.TraefikServiceList, err error) {\n\tobj, err := c.Fake.\n\t\tInvokes(testing.NewListAction(traefikservicesResource, traefikservicesKind, c.ns, opts), &v1alpha1.TraefikServiceList{})\n\n\tif obj == nil {\n\t\treturn nil, err\n\t}\n\n\tlabel, _, _ := testing.ExtractFromListOptions(opts)\n\tif label == nil {\n\t\tlabel = labels.Everything()\n\t}\n\tlist := &v1alpha1.TraefikServiceList{ListMeta: obj.(*v1alpha1.TraefikServiceList).ListMeta}\n\tfor _, item := range obj.(*v1alpha1.TraefikServiceList).Items {\n\t\tif label.Matches(labels.Set(item.Labels)) {\n\t\t\tlist.Items = append(list.Items, item)\n\t\t}\n\t}\n\treturn list, err\n}",
+    "funcname": "List"
+}

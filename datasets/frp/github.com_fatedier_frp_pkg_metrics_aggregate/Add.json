@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 43,
+    "focalfunc": "func (m *serverMetrics) Add(sm metrics.ServerMetrics)",
+    "funcbody": "func (m *serverMetrics) Add(sm metrics.ServerMetrics) {\n\tm.ms = append(m.ms, sm)\n}",
+    "funcname": "Add"
+}

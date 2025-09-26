@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 406,
+    "focalfunc": "func (fs *RootMappingFs) getRoots(key string) (string, []RootMapping)",
+    "funcbody": "func (fs *RootMappingFs) getRoots(key string) (string, []RootMapping) {\n\ttree := fs.rootMapToReal\n\tlevels := strings.Count(key, filepathSeparator)\n\tseen := make(map[RootMapping]bool)\n\n\tvar roots []RootMapping\n\tvar s string\n\n\tfor {\n\t\tvar found bool\n\t\tss, vv, found := tree.LongestPrefix(key)\n\n\t\tif !found || (levels < 2 && ss == key) {\n\t\t\tbreak\n\t\t}\n\n\t\tfor _, rm := range vv.([]RootMapping) {\n\t\t\tif !seen[rm] {\n\t\t\t\tseen[rm] = true\n\t\t\t\troots = append(roots, rm)\n\t\t\t}\n\t\t}\n\t\ts = ss\n\n\t\toldKey := key\n\t\tkey = filepath.Dir(key)\n\t\tif key == oldKey {\n\t\t\tbreak\n\t\t}\n\t}\n\n\treturn s, roots\n}",
+    "funcname": "getRoots"
+}

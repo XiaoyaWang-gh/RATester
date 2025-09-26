@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock.go",
+    "lineno": 68,
+    "focalfunc": "func NewMockByPath(path string, resp *http.Response, err error) *Mock",
+    "funcbody": "func NewMockByPath(path string, resp *http.Response, err error) *Mock {\n\treturn NewMock(NewSimpleCondition(path), resp, err)\n}",
+    "funcname": "NewMockByPath"
+}

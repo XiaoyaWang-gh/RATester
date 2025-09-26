@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 244,
+    "focalfunc": "func (m *Migration) AddForeign(foreign *Foreign) *Migration",
+    "funcbody": "func (m *Migration) AddForeign(foreign *Foreign) *Migration {\n\tm.Foreigns = append(m.Foreigns, foreign)\n\treturn m\n}",
+    "funcname": "AddForeign"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/log.go",
+    "lineno": 33,
+    "focalfunc": "func msgFunc(i ...any) func() string",
+    "funcbody": "func msgFunc(i ...any) func() string {\n\treturn func() string { return fmt.Sprint(i...) }\n}",
+    "funcname": "msgFunc"
+}

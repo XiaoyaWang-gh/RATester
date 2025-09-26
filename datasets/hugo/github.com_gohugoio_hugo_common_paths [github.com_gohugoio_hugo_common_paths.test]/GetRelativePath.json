@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 205,
+    "focalfunc": "func GetRelativePath(path, base string) (final string, err error)",
+    "funcbody": "func GetRelativePath(path, base string) (final string, err error) {\n\tif filepath.IsAbs(path) && base == \"\" {\n\t\treturn \"\", errors.New(\"source: missing base directory\")\n\t}\n\tname := filepath.Clean(path)\n\tbase = filepath.Clean(base)\n\n\tname, err = filepath.Rel(base, name)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif strings.HasSuffix(filepath.FromSlash(path), FilePathSeparator) && !strings.HasSuffix(name, FilePathSeparator) {\n\t\tname += FilePathSeparator\n\t}\n\treturn name, nil\n}",
+    "funcname": "GetRelativePath"
+}

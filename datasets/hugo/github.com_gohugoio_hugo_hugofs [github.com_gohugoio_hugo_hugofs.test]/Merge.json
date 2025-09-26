@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 89,
+    "focalfunc": "func (m *FileMeta) Merge(from *FileMeta)",
+    "funcbody": "func (m *FileMeta) Merge(from *FileMeta) {\n\tif m == nil || from == nil {\n\t\treturn\n\t}\n\tdstv := reflect.Indirect(reflect.ValueOf(m))\n\tsrcv := reflect.Indirect(reflect.ValueOf(from))\n\n\tfor i := 0; i < dstv.NumField(); i++ {\n\t\tv := dstv.Field(i)\n\t\tif !v.CanSet() {\n\t\t\tcontinue\n\t\t}\n\t\tif !hreflect.IsTruthfulValue(v) {\n\t\t\tv.Set(srcv.Field(i))\n\t\t}\n\t}\n\n\tif m.InclusionFilter == nil {\n\t\tm.InclusionFilter = from.InclusionFilter\n\t}\n}",
+    "funcname": "Merge"
+}

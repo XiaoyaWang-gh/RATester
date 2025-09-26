@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 156,
+    "focalfunc": "func (pw *Wrapper) Start()",
+    "funcbody": "func (pw *Wrapper) Start() {\n\tgo pw.checkWorker()\n\tif pw.monitor != nil {\n\t\tgo pw.monitor.Start()\n\t}\n}",
+    "funcname": "Start"
+}

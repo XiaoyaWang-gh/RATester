@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 60,
+    "focalfunc": "func IncludeFields(expression string) func(*Decoder) error",
+    "funcbody": "func IncludeFields(expression string) func(*Decoder) error {\n\treturn func(d *Decoder) error {\n\t\tre, err := compileRegexp(expression)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\td.includeFieldsRe = re\n\t\treturn nil\n\t}\n}",
+    "funcname": "IncludeFields"
+}

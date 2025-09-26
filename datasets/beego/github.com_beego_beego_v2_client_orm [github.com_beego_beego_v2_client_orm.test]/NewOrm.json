@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 623,
+    "focalfunc": "func NewOrm() Ormer",
+    "funcbody": "func NewOrm() Ormer {\n\treturn NewOrmUsingDB(`default`)\n}",
+    "funcname": "NewOrm"
+}

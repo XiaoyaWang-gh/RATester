@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 977,
+    "focalfunc": "func (c *DefaultCtx) Location(path string)",
+    "funcbody": "func (c *DefaultCtx) Location(path string) {\n\tc.setCanonical(HeaderLocation, path)\n}",
+    "funcname": "Location"
+}

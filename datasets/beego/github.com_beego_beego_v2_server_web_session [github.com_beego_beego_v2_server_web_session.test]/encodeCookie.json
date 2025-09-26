@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 118,
+    "focalfunc": "func encodeCookie(block cipher.Block, hashKey, name string, value map[interface{}]interface{}) (string, error)",
+    "funcbody": "func encodeCookie(block cipher.Block, hashKey, name string, value map[interface{}]interface{}) (string, error) {\n\tvar err error\n\tvar b []byte\n\n\tif b, err = EncodeGob(value); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif b, err = encrypt(block, b); err != nil {\n\t\treturn \"\", err\n\t}\n\tb = encode(b)\n\n\tb = []byte(fmt.Sprintf(\"%s|%d|%s|\", name, time.Now().UTC().Unix(), b))\n\th := hmac.New(sha256.New, []byte(hashKey))\n\th.Write(b)\n\tsig := h.Sum(nil)\n\n\tb = append(b, sig...)[len(name)+1:]\n\n\tb = encode(b)\n\n\treturn string(b), nil\n}",
+    "funcname": "encodeCookie"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/server.go",
+    "lineno": 94,
+    "focalfunc": "func (s *Server) Run() error",
+    "funcbody": "func (s *Server) Run() error {\n\tln := s.ln\n\tif s.tlsCfg != nil {\n\t\tln = tls.NewListener(ln, s.tlsCfg)\n\t}\n\treturn s.hs.Serve(ln)\n}",
+    "funcname": "Run"
+}

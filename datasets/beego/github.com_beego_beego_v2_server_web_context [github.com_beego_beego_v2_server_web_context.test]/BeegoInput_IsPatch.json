@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 171,
+    "focalfunc": "func (input *BeegoInput) IsPatch() bool",
+    "funcbody": "func (input *BeegoInput) IsPatch() bool {\n\treturn input.Is(\"PATCH\")\n}",
+    "funcname": "IsPatch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 195,
+    "focalfunc": "func newdbBasePostgres() dbBaser",
+    "funcbody": "func newdbBasePostgres() dbBaser {\n\tb := new(dbBasePostgres)\n\tb.ins = b\n\treturn b\n}",
+    "funcname": "newdbBasePostgres"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/observability.go",
+    "lineno": 100,
+    "focalfunc": "func (o *ObservabilityMgr) ShouldAddTracing(resourceName string) bool",
+    "funcbody": "func (o *ObservabilityMgr) ShouldAddTracing(resourceName string) bool {\n\tif o == nil {\n\t\treturn false\n\t}\n\n\treturn o.config.Tracing != nil && (o.config.Tracing.AddInternals || !strings.HasSuffix(resourceName, \"@internal\"))\n}",
+    "funcname": "ShouldAddTracing"
+}

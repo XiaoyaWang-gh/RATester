@@ -1,0 +1,36 @@
+package highlight
+
+import (
+	"fmt"
+	"testing"
+
+	"github.com/gohugoio/hugo/markup/converter/hooks"
+)
+
+func TestApplyOptionsFromCodeBlockContext_1(t *testing.T) {
+	type args struct {
+		ctx hooks.CodeblockContext
+		cfg *Config
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			if err := applyOptionsFromCodeBlockContext(tt.args.ctx, tt.args.cfg); (err != nil) != tt.wantErr {
+				t.Errorf("applyOptionsFromCodeBlockContext() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}

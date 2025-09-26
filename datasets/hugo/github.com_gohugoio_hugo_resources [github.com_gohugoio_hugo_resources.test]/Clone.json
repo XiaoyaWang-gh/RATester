@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 617,
+    "focalfunc": "func (l genericResource) clone() *genericResource",
+    "funcbody": "func (l genericResource) clone() *genericResource {\n\tl.publishInit = &sync.Once{}\n\treturn &l\n}",
+    "funcname": "clone"
+}

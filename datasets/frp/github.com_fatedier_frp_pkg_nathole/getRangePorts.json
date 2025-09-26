@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 369,
+    "focalfunc": "func getRangePorts(addrs []string, difference, maxNumber int) []msg.PortsRange",
+    "funcbody": "func getRangePorts(addrs []string, difference, maxNumber int) []msg.PortsRange {\n\tif maxNumber <= 0 {\n\t\treturn nil\n\t}\n\n\taddr, err := lo.Last(addrs)\n\tif err != nil {\n\t\treturn nil\n\t}\n\tvar ports []msg.PortsRange\n\t_, portStr, err := net.SplitHostPort(addr)\n\tif err != nil {\n\t\treturn nil\n\t}\n\tport, err := strconv.Atoi(portStr)\n\tif err != nil {\n\t\treturn nil\n\t}\n\tports = append(ports, msg.PortsRange{\n\t\tFrom:\tmax(port-difference-5, port-maxNumber, 1),\n\t\tTo:\tmin(port+difference+5, port+maxNumber, 65535),\n\t})\n\treturn ports\n}",
+    "funcname": "getRangePorts"
+}

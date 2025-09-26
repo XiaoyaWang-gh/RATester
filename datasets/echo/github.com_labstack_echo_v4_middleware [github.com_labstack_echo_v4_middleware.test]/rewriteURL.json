@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/middleware.go",
+    "lineno": 52,
+    "focalfunc": "func rewriteURL(rewriteRegex map[*regexp.Regexp]string, req *http.Request) error",
+    "funcbody": "func rewriteURL(rewriteRegex map[*regexp.Regexp]string, req *http.Request) error {\n\tif len(rewriteRegex) == 0 {\n\t\treturn nil\n\t}\n\n\trawURI := req.RequestURI\n\tif rawURI != \"\" && rawURI[0] != '/' {\n\t\tprefix := \"\"\n\t\tif req.URL.Scheme != \"\" {\n\t\t\tprefix = req.URL.Scheme + \"://\"\n\t\t}\n\t\tif req.URL.Host != \"\" {\n\t\t\tprefix += req.URL.Host\n\t\t}\n\t\tif prefix != \"\" {\n\t\t\trawURI = strings.TrimPrefix(rawURI, prefix)\n\t\t}\n\t}\n\n\tfor k, v := range rewriteRegex {\n\t\tif replacer := captureTokens(k, rawURI); replacer != nil {\n\t\t\turl, err := req.URL.Parse(replacer.Replace(v))\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\treq.URL = url\n\n\t\t\treturn nil\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "rewriteURL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 597,
+    "focalfunc": "func (c *collector) mountCommonJSConfig(owner *moduleAdapter, mounts []Mount) ([]Mount, error)",
+    "funcbody": "func (c *collector) mountCommonJSConfig(owner *moduleAdapter, mounts []Mount) ([]Mount, error) {\n\tfor _, m := range mounts {\n\t\tif strings.HasPrefix(m.Target, files.JsConfigFolderMountPrefix) {\n\n\t\t\treturn mounts, nil\n\t\t}\n\t}\n\n\td, err := c.fs.Open(owner.Dir())\n\tif err != nil {\n\t\treturn mounts, fmt.Errorf(\"failed to open dir %q: %q\", owner.Dir(), err)\n\t}\n\tdefer d.Close()\n\tfis, err := d.(fs.ReadDirFile).ReadDir(-1)\n\tif err != nil {\n\t\treturn mounts, fmt.Errorf(\"failed to read dir %q: %q\", owner.Dir(), err)\n\t}\n\n\tfor _, fi := range fis {\n\t\tn := fi.Name()\n\n\t\tshould := n == files.FilenamePackageHugoJSON || n == files.FilenamePackageJSON\n\t\tshould = should || commonJSConfigs.MatchString(n)\n\n\t\tif should {\n\t\t\tmounts = append(mounts, Mount{\n\t\t\t\tSource:\tn,\n\t\t\t\tTarget:\tfilepath.Join(files.ComponentFolderAssets, files.FolderJSConfig, n),\n\t\t\t})\n\t\t}\n\n\t}\n\n\treturn mounts, nil\n}",
+    "funcname": "mountCommonJSConfig"
+}

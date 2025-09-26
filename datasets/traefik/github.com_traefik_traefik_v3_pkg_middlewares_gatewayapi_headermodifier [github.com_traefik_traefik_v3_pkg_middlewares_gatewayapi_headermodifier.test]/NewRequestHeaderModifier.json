@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/headermodifier/request_header_modifier.go",
+    "lineno": 25,
+    "focalfunc": "func NewRequestHeaderModifier(ctx context.Context, next http.Handler, config dynamic.HeaderModifier, name string) http.Handler",
+    "funcbody": "func NewRequestHeaderModifier(ctx context.Context, next http.Handler, config dynamic.HeaderModifier, name string) http.Handler {\n\tlogger := middlewares.GetLogger(ctx, name, requestHeaderModifierTypeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\treturn &requestHeaderModifier{\n\t\tnext:\tnext,\n\t\tname:\tname,\n\t\tset:\tconfig.Set,\n\t\tadd:\tconfig.Add,\n\t\tremove:\tconfig.Remove,\n\t}\n}",
+    "funcname": "NewRequestHeaderModifier"
+}

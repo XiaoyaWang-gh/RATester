@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 385,
+    "focalfunc": "func (o querySet) Aggregate(s string) QuerySeter",
+    "funcbody": "func (o querySet) Aggregate(s string) QuerySeter {\n\to.aggregate = s\n\treturn &o\n}",
+    "funcname": "Aggregate"
+}

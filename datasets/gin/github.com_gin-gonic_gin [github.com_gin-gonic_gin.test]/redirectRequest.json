@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 761,
+    "focalfunc": "func redirectRequest(c *Context)",
+    "funcbody": "func redirectRequest(c *Context) {\n\treq := c.Request\n\trPath := req.URL.Path\n\trURL := req.URL.String()\n\n\tcode := http.StatusMovedPermanently\n\tif req.Method != http.MethodGet {\n\t\tcode = http.StatusTemporaryRedirect\n\t}\n\tdebugPrint(\"redirecting request %d: %s --> %s\", code, rPath, rURL)\n\thttp.Redirect(c.Writer, req, rURL, code)\n\tc.writermem.WriteHeaderNow()\n}",
+    "funcname": "redirectRequest"
+}

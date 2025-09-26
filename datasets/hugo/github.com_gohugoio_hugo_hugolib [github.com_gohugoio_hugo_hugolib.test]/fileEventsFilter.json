@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 432,
+    "focalfunc": "func (h *HugoSites) fileEventsFilter(events []fsnotify.Event) []fsnotify.Event",
+    "funcbody": "func (h *HugoSites) fileEventsFilter(events []fsnotify.Event) []fsnotify.Event {\n\tseen := make(map[fsnotify.Event]bool)\n\n\tn := 0\n\tfor _, ev := range events {\n\n\t\tif seen[ev] {\n\t\t\tcontinue\n\t\t}\n\t\tseen[ev] = true\n\n\t\tif h.SourceSpec.IgnoreFile(ev.Name) {\n\t\t\tcontinue\n\t\t}\n\n\t\tif runtime.GOOS == \"darwin\" {\n\t\t\tev.Name = norm.NFC.String(ev.Name)\n\t\t}\n\n\t\tevents[n] = ev\n\t\tn++\n\t}\n\tevents = events[:n]\n\n\teventOrdinal := func(e fsnotify.Event) int {\n\n\t\tif e.Op.Has(fsnotify.Create) {\n\t\t\treturn 1\n\t\t}\n\t\tif e.Op.Has(fsnotify.Remove) {\n\t\t\treturn 2\n\t\t}\n\t\tif e.Op.Has(fsnotify.Rename) {\n\t\t\treturn 3\n\t\t}\n\t\tif e.Op.Has(fsnotify.Write) {\n\t\t\treturn 4\n\t\t}\n\t\treturn 5\n\t}\n\n\tsort.Slice(events, func(i, j int) bool {\n\n\t\tif eventOrdinal(events[i]) != eventOrdinal(events[j]) {\n\t\t\treturn eventOrdinal(events[i]) < eventOrdinal(events[j])\n\t\t}\n\n\t\treturn events[i].Name < events[j].Name\n\t})\n\n\treturn events\n}",
+    "funcname": "fileEventsFilter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/regexp.go",
+    "lineno": 78,
+    "focalfunc": "func (ns *Namespace) ReplaceRE(pattern, repl, s any, n ...any) (_ string, err error)",
+    "funcbody": "func (ns *Namespace) ReplaceRE(pattern, repl, s any, n ...any) (_ string, err error) {\n\tsp, err := cast.ToStringE(pattern)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tsr, err := cast.ToStringE(repl)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tnn := -1\n\tif len(n) > 0 {\n\t\tnn, err = cast.ToIntE(n[0])\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t}\n\n\tre, err := hstrings.GetOrCompileRegexp(sp)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn re.ReplaceAllStringFunc(ss, func(str string) string {\n\t\tif nn == 0 {\n\t\t\treturn str\n\t\t}\n\n\t\tnn -= 1\n\t\treturn re.ReplaceAllString(str, sr)\n\t}), nil\n}",
+    "funcname": "ReplaceRE"
+}

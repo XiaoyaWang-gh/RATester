@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1045,
+    "focalfunc": "func (s *staticSyncer) isStatic(h *hugolib.HugoSites, filename string) bool",
+    "funcbody": "func (s *staticSyncer) isStatic(h *hugolib.HugoSites, filename string) bool {\n\treturn h.BaseFs.SourceFilesystems.IsStatic(filename)\n}",
+    "funcname": "isStatic"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_cache.go",
+    "lineno": 117,
+    "focalfunc": "func (c *ResourceCache) writeMeta(key string, meta transformedResourceMetadata) (filecache.ItemInfo, io.WriteCloser, error)",
+    "funcbody": "func (c *ResourceCache) writeMeta(key string, meta transformedResourceMetadata) (filecache.ItemInfo, io.WriteCloser, error) {\n\tfilenameMeta, filenameContent := c.getFilenames(key)\n\traw, err := json.Marshal(meta)\n\tif err != nil {\n\t\treturn filecache.ItemInfo{}, nil, err\n\t}\n\n\t_, fm, err := c.fileCache.WriteCloser(filenameMeta)\n\tif err != nil {\n\t\treturn filecache.ItemInfo{}, nil, err\n\t}\n\tdefer fm.Close()\n\n\tif _, err := fm.Write(raw); err != nil {\n\t\treturn filecache.ItemInfo{}, nil, err\n\t}\n\n\tfi, fc, err := c.fileCache.WriteCloser(filenameContent)\n\n\treturn fi, fc, err\n}",
+    "funcname": "writeMeta"
+}

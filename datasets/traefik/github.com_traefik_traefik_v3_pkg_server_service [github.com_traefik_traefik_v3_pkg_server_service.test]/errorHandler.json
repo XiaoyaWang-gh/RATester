@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 96,
+    "focalfunc": "func errorHandler(w http.ResponseWriter, req *http.Request, err error)",
+    "funcbody": "func errorHandler(w http.ResponseWriter, req *http.Request, err error) {\n\tstatusCode := computeStatusCode(err)\n\n\tlogger := log.Ctx(req.Context())\n\tlogger.Debug().Err(err).Msgf(\"%d %s\", statusCode, statusText(statusCode))\n\n\tw.WriteHeader(statusCode)\n\tif _, werr := w.Write([]byte(statusText(statusCode))); werr != nil {\n\t\tlogger.Debug().Err(werr).Msg(\"Error while writing status code\")\n\t}\n}",
+    "funcname": "errorHandler"
+}

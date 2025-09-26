@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 44,
+    "focalfunc": "func (c Color) Luminance() float64",
+    "funcbody": "func (c Color) Luminance() float64 {\n\treturn c.luminance\n}",
+    "funcname": "Luminance"
+}

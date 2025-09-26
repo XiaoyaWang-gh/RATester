@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 37,
+    "focalfunc": "func NewRPClient(svraddr string, vKey string, bridgeConnType string, proxyUrl string, cnf *config.Config, disconnectTime int) *TRPClient",
+    "funcbody": "func NewRPClient(svraddr string, vKey string, bridgeConnType string, proxyUrl string, cnf *config.Config, disconnectTime int) *TRPClient {\n\treturn &TRPClient{\n\t\tsvrAddr:\tsvraddr,\n\t\tp2pAddr:\tmake(map[string]string, 0),\n\t\tvKey:\t\tvKey,\n\t\tbridgeConnType:\tbridgeConnType,\n\t\tproxyUrl:\tproxyUrl,\n\t\tcnf:\t\tcnf,\n\t\tdisconnectTime:\tdisconnectTime,\n\t\tonce:\t\tsync.Once{},\n\t}\n}",
+    "funcname": "NewRPClient"
+}

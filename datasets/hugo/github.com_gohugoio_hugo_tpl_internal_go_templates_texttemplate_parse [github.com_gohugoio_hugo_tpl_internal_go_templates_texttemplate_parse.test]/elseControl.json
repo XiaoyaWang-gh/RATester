@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 611,
+    "focalfunc": "func (t *Tree) elseControl() Node",
+    "funcbody": "func (t *Tree) elseControl() Node {\n\tpeek := t.peekNonSpace()\n\n\tif peek.typ == itemIf || peek.typ == itemWith {\n\t\treturn t.newElse(peek.pos, peek.line)\n\t}\n\ttoken := t.expect(itemRightDelim, \"else\")\n\treturn t.newElse(token.pos, token.line)\n}",
+    "funcname": "elseControl"
+}

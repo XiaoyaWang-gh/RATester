@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd_utils.go",
+    "lineno": 119,
+    "focalfunc": "func getColumnAddQuery(al *alias, fi *models.FieldInfo) string",
+    "funcbody": "func getColumnAddQuery(al *alias, fi *models.FieldInfo) string {\n\tQ := al.DbBaser.TableQuote()\n\ttyp := getColumnTyp(al, fi)\n\n\tif !fi.Null {\n\t\ttyp += \" \" + \"NOT NULL\"\n\t}\n\n\treturn fmt.Sprintf(\"ALTER TABLE %s%s%s ADD COLUMN %s%s%s %s %s\",\n\t\tQ, fi.Mi.Table, Q,\n\t\tQ, fi.Column, Q,\n\t\ttyp, getColumnDefault(fi),\n\t)\n}",
+    "funcname": "getColumnAddQuery"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 684,
+    "focalfunc": "func (c *Controller) SaveToFileWithBuffer(fromFile string, toFile string, buf []byte) error",
+    "funcbody": "func (c *Controller) SaveToFileWithBuffer(fromFile string, toFile string, buf []byte) error {\n\tsrc, _, err := c.Ctx.Request.FormFile(fromFile)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer src.Close()\n\n\tdst, err := os.OpenFile(toFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, filePerm)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer dst.Close()\n\n\t_, err = io.CopyBuffer(onlyWriter{dst}, src, buf)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\terr = c.Ctx.Request.MultipartForm.RemoveAll()\n\treturn err\n}",
+    "funcname": "SaveToFileWithBuffer"
+}

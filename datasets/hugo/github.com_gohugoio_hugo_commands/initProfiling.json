@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 232,
+    "focalfunc": "func (c *hugoBuilder) initProfiling() (func(), error)",
+    "funcbody": "func (c *hugoBuilder) initProfiling() (func(), error) {\n\tstopCPUProf, err := c.initCPUProfile()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tstopMutexProf, err := c.initMutexProfile()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tstopTraceProf, err := c.initTraceProfile()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar stopMemTicker func()\n\tif c.r.printm {\n\t\tstopMemTicker = c.initMemTicker()\n\t}\n\n\treturn func() {\n\t\tc.initMemProfile()\n\n\t\tif stopCPUProf != nil {\n\t\t\tstopCPUProf()\n\t\t}\n\t\tif stopMutexProf != nil {\n\t\t\tstopMutexProf()\n\t\t}\n\n\t\tif stopTraceProf != nil {\n\t\t\tstopTraceProf()\n\t\t}\n\n\t\tif stopMemTicker != nil {\n\t\t\tstopMemTicker()\n\t\t}\n\t}, nil\n}",
+    "funcname": "initProfiling"
+}

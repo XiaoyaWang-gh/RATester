@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 53,
+    "focalfunc": "func (FOO) Type() protoreflect.EnumType",
+    "funcbody": "func (FOO) Type() protoreflect.EnumType {\n\treturn &file_test_proto_enumTypes[0]\n}",
+    "funcname": "Type"
+}

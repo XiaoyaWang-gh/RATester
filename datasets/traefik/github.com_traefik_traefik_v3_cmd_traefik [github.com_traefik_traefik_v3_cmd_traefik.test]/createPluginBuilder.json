@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/plugins.go",
+    "lineno": 12,
+    "focalfunc": "func createPluginBuilder(staticConfiguration *static.Configuration) (*plugins.Builder, error)",
+    "funcbody": "func createPluginBuilder(staticConfiguration *static.Configuration) (*plugins.Builder, error) {\n\tclient, plgs, localPlgs, err := initPlugins(staticConfiguration)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn plugins.NewBuilder(client, plgs, localPlgs)\n}",
+    "funcname": "createPluginBuilder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 432,
+    "focalfunc": "func initACMEProvider(c *static.Configuration, providerAggregator *aggregator.ProviderAggregator, tlsManager *traefiktls.Manager, httpChallengeProvider, tlsChallengeProvider challenge.Provider) []*acme.Provider",
+    "funcbody": "func initACMEProvider(c *static.Configuration, providerAggregator *aggregator.ProviderAggregator, tlsManager *traefiktls.Manager, httpChallengeProvider, tlsChallengeProvider challenge.Provider) []*acme.Provider {\n\tlocalStores := map[string]*acme.LocalStore{}\n\n\tvar resolvers []*acme.Provider\n\tfor name, resolver := range c.CertificatesResolvers {\n\t\tif resolver.ACME == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tif localStores[resolver.ACME.Storage] == nil {\n\t\t\tlocalStores[resolver.ACME.Storage] = acme.NewLocalStore(resolver.ACME.Storage)\n\t\t}\n\n\t\tp := &acme.Provider{\n\t\t\tConfiguration:\t\tresolver.ACME,\n\t\t\tStore:\t\t\tlocalStores[resolver.ACME.Storage],\n\t\t\tResolverName:\t\tname,\n\t\t\tHTTPChallengeProvider:\thttpChallengeProvider,\n\t\t\tTLSChallengeProvider:\ttlsChallengeProvider,\n\t\t}\n\n\t\tif err := providerAggregator.AddProvider(p); err != nil {\n\t\t\tlog.Error().Err(err).Str(\"resolver\", name).Msg(\"The ACME resolve is skipped from the resolvers list\")\n\t\t\tcontinue\n\t\t}\n\n\t\tp.SetTLSManager(tlsManager)\n\n\t\tp.SetConfigListenerChan(make(chan dynamic.Configuration))\n\n\t\tresolvers = append(resolvers, p)\n\t}\n\n\treturn resolvers\n}",
+    "funcname": "initACMEProvider"
+}

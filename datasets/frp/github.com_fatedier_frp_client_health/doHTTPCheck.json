@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 167,
+    "focalfunc": "func (monitor *Monitor) doHTTPCheck(ctx context.Context) error",
+    "funcbody": "func (monitor *Monitor) doHTTPCheck(ctx context.Context) error {\n\treq, err := http.NewRequestWithContext(ctx, \"GET\", monitor.url, nil)\n\tif err != nil {\n\t\treturn err\n\t}\n\treq.Header = monitor.header\n\treq.Host = monitor.header.Get(\"Host\")\n\tresp, err := http.DefaultClient.Do(req)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer resp.Body.Close()\n\t_, _ = io.Copy(io.Discard, resp.Body)\n\n\tif resp.StatusCode/100 != 2 {\n\t\treturn fmt.Errorf(\"do http health check, StatusCode is [%d] not 2xx\", resp.StatusCode)\n\t}\n\treturn nil\n}",
+    "funcname": "doHTTPCheck"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/influxdb2.go",
+    "lineno": 121,
+    "focalfunc": "func StopInfluxDB2()",
+    "funcbody": "func StopInfluxDB2() {\n\tif influxDB2Client != nil {\n\t\tinfluxDB2Client.Close()\n\t}\n\tinfluxDB2Client = nil\n\n\tif influxDB2Ticker != nil {\n\t\tinfluxDB2Ticker.Stop()\n\t}\n\tinfluxDB2Ticker = nil\n\n\tinfluxDB2Store = nil\n}",
+    "funcname": "StopInfluxDB2"
+}

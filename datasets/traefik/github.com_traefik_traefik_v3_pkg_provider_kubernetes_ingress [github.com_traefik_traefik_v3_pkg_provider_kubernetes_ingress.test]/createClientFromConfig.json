@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/client.go",
+    "lineno": 116,
+    "focalfunc": "func createClientFromConfig(c *rest.Config) (*clientWrapper, error)",
+    "funcbody": "func createClientFromConfig(c *rest.Config) (*clientWrapper, error) {\n\tc.UserAgent = fmt.Sprintf(\n\t\t\"%s/%s (%s/%s) kubernetes/ingress\",\n\t\tfilepath.Base(os.Args[0]),\n\t\ttraefikversion.Version,\n\t\truntime.GOOS,\n\t\truntime.GOARCH,\n\t)\n\n\tclientset, err := kclientset.NewForConfig(c)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn newClientImpl(clientset), nil\n}",
+    "funcname": "createClientFromConfig"
+}

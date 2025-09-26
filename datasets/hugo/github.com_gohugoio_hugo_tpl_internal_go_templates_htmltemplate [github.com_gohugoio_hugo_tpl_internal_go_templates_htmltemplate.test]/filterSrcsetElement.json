@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 185,
+    "focalfunc": "func filterSrcsetElement(s string, left int, right int, b *strings.Builder)",
+    "funcbody": "func filterSrcsetElement(s string, left int, right int, b *strings.Builder) {\n\tstart := left\n\tfor start < right && isHTMLSpace(s[start]) {\n\t\tstart++\n\t}\n\tend := right\n\tfor i := start; i < right; i++ {\n\t\tif isHTMLSpace(s[i]) {\n\t\t\tend = i\n\t\t\tbreak\n\t\t}\n\t}\n\tif url := s[start:end]; isSafeURL(url) {\n\n\t\tmetadataOk := true\n\t\tfor i := end; i < right; i++ {\n\t\t\tif !isHTMLSpaceOrASCIIAlnum(s[i]) {\n\t\t\t\tmetadataOk = false\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif metadataOk {\n\t\t\tb.WriteString(s[left:start])\n\t\t\tprocessURLOnto(url, true, b)\n\t\t\tb.WriteString(s[end:right])\n\t\t\treturn\n\t\t}\n\t}\n\tb.WriteString(\"#\")\n\tb.WriteString(filterFailsafe)\n}",
+    "funcname": "filterSrcsetElement"
+}

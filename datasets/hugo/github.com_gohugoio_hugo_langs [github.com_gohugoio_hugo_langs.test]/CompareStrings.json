@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 187,
+    "focalfunc": "func (c *Collator) CompareStrings(a, b string) int",
+    "funcbody": "func (c *Collator) CompareStrings(a, b string) int {\n\treturn c.c.CompareString(a, b)\n}",
+    "funcname": "CompareStrings"
+}

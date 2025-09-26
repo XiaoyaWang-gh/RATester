@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 89,
+    "focalfunc": "func (p *LogFormatterParams) StatusCodeColor() string",
+    "funcbody": "func (p *LogFormatterParams) StatusCodeColor() string {\n\tcode := p.StatusCode\n\n\tswitch {\n\tcase code >= http.StatusContinue && code < http.StatusOK:\n\t\treturn white\n\tcase code >= http.StatusOK && code < http.StatusMultipleChoices:\n\t\treturn green\n\tcase code >= http.StatusMultipleChoices && code < http.StatusBadRequest:\n\t\treturn white\n\tcase code >= http.StatusBadRequest && code < http.StatusInternalServerError:\n\t\treturn yellow\n\tdefault:\n\t\treturn red\n\t}\n}",
+    "funcname": "StatusCodeColor"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 309,
+    "focalfunc": "func itemServersTransportKey(item itemData) string",
+    "funcbody": "func itemServersTransportKey(item itemData) string {\n\treturn provider.Normalize(\"tls-\" + item.Namespace + \"-\" + item.Datacenter + \"-\" + item.Name)\n}",
+    "funcname": "itemServersTransportKey"
+}

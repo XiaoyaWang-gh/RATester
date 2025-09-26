@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 83,
+    "focalfunc": "func (ns *Namespace) Copy(s any, r resource.Resource) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Copy(s any, r resource.Resource) (resource.Resource, error) {\n\ttargetPath, err := cast.ToStringE(s)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn ns.createClient.Copy(r, targetPath)\n}",
+    "funcname": "Copy"
+}

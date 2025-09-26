@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 183,
+    "focalfunc": "func isPrivateIPRange(ip net.IP) bool",
+    "funcbody": "func isPrivateIPRange(ip net.IP) bool {\n\tif ip4 := ip.To4(); ip4 != nil {\n\t\treturn ip4[0] == 10 ||\n\t\t\tip4[0] == 172 && ip4[1]&0xf0 == 16 ||\n\t\t\tip4[0] == 192 && ip4[1] == 168\n\t}\n\treturn len(ip) == net.IPv6len && ip[0]&0xfe == 0xfc\n}",
+    "funcname": "isPrivateIPRange"
+}

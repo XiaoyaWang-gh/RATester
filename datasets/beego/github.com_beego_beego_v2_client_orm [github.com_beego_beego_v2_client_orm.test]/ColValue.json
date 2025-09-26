@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 54,
+    "focalfunc": "func ColValue(opt operator, value interface{}) interface{}",
+    "funcbody": "func ColValue(opt operator, value interface{}) interface{} {\n\tswitch opt {\n\tcase ColAdd, ColMinus, ColMultiply, ColExcept, ColBitAnd, ColBitRShift,\n\t\tColBitLShift, ColBitXOR, ColBitOr:\n\tdefault:\n\t\tpanic(fmt.Errorf(\"orm.ColValue wrong operator\"))\n\t}\n\tv, err := utils.StrTo(utils.ToStr(value)).Int64()\n\tif err != nil {\n\t\tpanic(fmt.Errorf(\"orm.ColValue doesn't support non string/numeric type, %s\", err))\n\t}\n\tvar val colValue\n\tval.value = v\n\tval.opt = opt\n\treturn val\n}",
+    "funcname": "ColValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 65,
+    "focalfunc": "func (p *Provider) SessionRead(ctx context.Context, sid string) (session.Store, error)",
+    "funcbody": "func (p *Provider) SessionRead(ctx context.Context, sid string) (session.Store, error) {\n\tif p.client == nil {\n\t\tif err := p.connectInit(); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\tvar kv map[interface{}]interface{}\n\tvalue, err := p.client.Get(sid)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif value == nil || len(value.(string)) == 0 {\n\t\tkv = make(map[interface{}]interface{})\n\t} else {\n\t\tkv, err = session.DecodeGob([]byte(value.(string)))\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\trs := &SessionStore{sid: sid, values: kv, maxLifetime: p.maxLifetime, client: p.client}\n\treturn rs, nil\n}",
+    "funcname": "SessionRead"
+}

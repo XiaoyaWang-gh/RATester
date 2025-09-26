@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 307,
+    "focalfunc": "func (*Filters) Hue(shift any) gift.Filter",
+    "funcbody": "func (*Filters) Hue(shift any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(shift),\n\t\tFilter:\t\tgift.Hue(cast.ToFloat32(shift)),\n\t}\n}",
+    "funcname": "Hue"
+}

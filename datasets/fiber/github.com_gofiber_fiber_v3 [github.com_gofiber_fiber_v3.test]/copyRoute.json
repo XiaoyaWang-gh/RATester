@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 268,
+    "focalfunc": "func (*App) copyRoute(route *Route) *Route",
+    "funcbody": "func (*App) copyRoute(route *Route) *Route {\n\treturn &Route{\n\n\t\tuse:\troute.use,\n\t\tmount:\troute.mount,\n\t\tstar:\troute.star,\n\t\troot:\troute.root,\n\n\t\tpath:\t\troute.path,\n\t\trouteParser:\troute.routeParser,\n\n\t\tpos:\troute.pos,\n\n\t\tPath:\t\troute.Path,\n\t\tParams:\t\troute.Params,\n\t\tName:\t\troute.Name,\n\t\tMethod:\t\troute.Method,\n\t\tHandlers:\troute.Handlers,\n\t}\n}",
+    "funcname": "copyRoute"
+}

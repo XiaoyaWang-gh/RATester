@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 569,
+    "focalfunc": "func (common) file(path, file string, get func(string, HandlerFunc, ...MiddlewareFunc) *Route,\n\tm ...MiddlewareFunc) *Route",
+    "funcbody": "func (common) file(path, file string, get func(string, HandlerFunc, ...MiddlewareFunc) *Route,\n\tm ...MiddlewareFunc) *Route {\n\treturn get(path, func(c Context) error {\n\t\treturn c.File(file)\n\t}, m...)\n}",
+    "funcname": "file"
+}

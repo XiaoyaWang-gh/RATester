@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 150,
+    "focalfunc": "func (r *Router) Routes() []*Route",
+    "funcbody": "func (r *Router) Routes() []*Route {\n\troutes := make([]*Route, 0, len(r.routes))\n\tfor _, v := range r.routes {\n\t\troutes = append(routes, v)\n\t}\n\treturn routes\n}",
+    "funcname": "Routes"
+}

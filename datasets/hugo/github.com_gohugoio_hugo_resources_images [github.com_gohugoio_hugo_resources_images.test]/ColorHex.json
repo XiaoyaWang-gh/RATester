@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 55,
+    "focalfunc": "func (c Color) ColorHex() string",
+    "funcbody": "func (c Color) ColorHex() string {\n\treturn c.hex\n}",
+    "funcname": "ColorHex"
+}

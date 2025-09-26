@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 308,
+    "focalfunc": "func (rn *contentParseInfo) failMap(source []byte, err error, i pageparser.Item) error",
+    "funcbody": "func (rn *contentParseInfo) failMap(source []byte, err error, i pageparser.Item) error {\n\tif fe, ok := err.(herrors.FileError); ok {\n\t\treturn fe\n\t}\n\n\tpos := posFromInput(\"\", source, i.Pos())\n\n\treturn herrors.NewFileErrorFromPos(err, pos)\n}",
+    "funcname": "failMap"
+}

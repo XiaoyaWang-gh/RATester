@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/error.go",
+    "lineno": 32,
+    "focalfunc": "func Errorf(c Code, format string, a ...interface{}) error",
+    "funcbody": "func Errorf(c Code, format string, a ...interface{}) error {\n\treturn Error(c, fmt.Sprintf(format, a...))\n}",
+    "funcname": "Errorf"
+}

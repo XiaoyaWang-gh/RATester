@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 619,
+    "focalfunc": "func eatAttrName(s []byte, i int) (int, *Error)",
+    "funcbody": "func eatAttrName(s []byte, i int) (int, *Error) {\n\tfor j := i; j < len(s); j++ {\n\t\tswitch s[j] {\n\t\tcase ' ', '\\t', '\\n', '\\f', '\\r', '=', '>':\n\t\t\treturn j, nil\n\t\tcase '\\'', '\"', '<':\n\n\t\t\treturn -1, errorf(ErrBadHTML, nil, 0, \"%q in attribute name: %.32q\", s[j:j+1], s)\n\t\tdefault:\n\n\t\t}\n\t}\n\treturn len(s), nil\n}",
+    "funcname": "eatAttrName"
+}

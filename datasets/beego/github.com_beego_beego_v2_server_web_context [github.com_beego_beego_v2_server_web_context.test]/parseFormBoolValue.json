@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/form.go",
+    "lineno": 147,
+    "focalfunc": "func parseFormBoolValue(value string) (bool, error)",
+    "funcbody": "func parseFormBoolValue(value string) (bool, error) {\n\tif strings.ToLower(value) == \"on\" || strings.ToLower(value) == \"1\" || strings.ToLower(value) == \"yes\" {\n\t\treturn true, nil\n\t}\n\tif strings.ToLower(value) == \"off\" || strings.ToLower(value) == \"0\" || strings.ToLower(value) == \"no\" {\n\t\treturn false, nil\n\t}\n\treturn strconv.ParseBool(value)\n}",
+    "funcname": "parseFormBoolValue"
+}

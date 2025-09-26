@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 215,
+    "focalfunc": "func (v *Validation) IP(obj interface{}, key string) *Result",
+    "funcbody": "func (v *Validation) IP(obj interface{}, key string) *Result {\n\treturn v.apply(IP{Match{Regexp: ipPattern}, key}, obj)\n}",
+    "funcname": "IP"
+}

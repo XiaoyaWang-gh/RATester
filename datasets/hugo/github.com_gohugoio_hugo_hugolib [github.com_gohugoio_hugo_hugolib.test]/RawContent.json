@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 329,
+    "focalfunc": "func (p *pageState) RawContent() string",
+    "funcbody": "func (p *pageState) RawContent() string {\n\tif p.m.content.pi.itemsStep2 == nil {\n\t\treturn \"\"\n\t}\n\tstart := p.m.content.pi.posMainContent\n\tif start == -1 {\n\t\tstart = 0\n\t}\n\tsource, err := p.m.content.pi.contentSource(p.m.content)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn string(source[start:])\n}",
+    "funcname": "RawContent"
+}

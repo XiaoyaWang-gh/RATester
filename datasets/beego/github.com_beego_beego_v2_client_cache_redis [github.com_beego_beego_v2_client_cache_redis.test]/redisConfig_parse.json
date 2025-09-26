@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 278,
+    "focalfunc": "func (cf *redisConfig) parse() error",
+    "funcbody": "func (cf *redisConfig) parse() error {\n\tif cf.Conn == \"\" {\n\t\treturn berror.Error(cache.InvalidRedisCacheCfg, \"config missing conn field\")\n\t}\n\n\tcf.Conn = strings.Replace(cf.Conn, \"redis://\", \"\", 1)\n\tif i := strings.Index(cf.Conn, \"@\"); i > -1 {\n\t\tcf.password = cf.Conn[0:i]\n\t\tcf.Conn = cf.Conn[i+1:]\n\t}\n\n\tif cf.Key == \"\" {\n\t\tcf.Key = DefaultKey\n\t}\n\n\tif cf.DbNum != \"\" {\n\t\tcf.dbNum, _ = strconv.Atoi(cf.DbNum)\n\t}\n\n\tif cf.SkipEmptyPrefix != \"\" {\n\t\tcf.skipEmptyPrefix, _ = strconv.ParseBool(cf.SkipEmptyPrefix)\n\t}\n\n\tif cf.MaxIdle == \"\" {\n\t\tcf.maxIdle = defaultMaxIdle\n\t} else {\n\t\tcf.maxIdle, _ = strconv.Atoi(cf.MaxIdle)\n\t}\n\n\tif v, err := time.ParseDuration(cf.TimeoutStr); err == nil {\n\t\tcf.timeout = v\n\t} else {\n\t\tcf.timeout = defaultTimeout\n\t}\n\n\treturn nil\n}",
+    "funcname": "parse"
+}

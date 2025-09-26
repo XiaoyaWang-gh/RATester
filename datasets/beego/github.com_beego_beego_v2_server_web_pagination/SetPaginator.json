@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/pagination/controller.go",
+    "lineno": 23,
+    "focalfunc": "func SetPaginator(context *context.Context, per int, nums int64) (paginator *pagination.Paginator)",
+    "funcbody": "func SetPaginator(context *context.Context, per int, nums int64) (paginator *pagination.Paginator) {\n\tpaginator = pagination.NewPaginator(context.Request, per, nums)\n\tcontext.Input.SetData(\"paginator\", &paginator)\n\treturn\n}",
+    "funcname": "SetPaginator"
+}

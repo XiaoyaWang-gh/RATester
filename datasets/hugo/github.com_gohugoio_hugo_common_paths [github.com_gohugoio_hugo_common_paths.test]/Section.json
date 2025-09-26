@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 345,
+    "focalfunc": "func (p *Path) Section() string",
+    "funcbody": "func (p *Path) Section() string {\n\tif p.posSectionHigh <= 0 {\n\t\treturn \"\"\n\t}\n\treturn p.norm(p.s[1:p.posSectionHigh])\n}",
+    "funcname": "Section"
+}

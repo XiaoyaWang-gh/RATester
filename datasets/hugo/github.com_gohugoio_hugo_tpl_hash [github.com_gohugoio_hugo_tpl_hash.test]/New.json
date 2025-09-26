@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/hash/hash.go",
+    "lineno": 28,
+    "focalfunc": "func New() *Namespace",
+    "funcbody": "func New() *Namespace {\n\treturn &Namespace{}\n}",
+    "funcname": "New"
+}

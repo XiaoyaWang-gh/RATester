@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 145,
+    "focalfunc": "func (c *Client) Graph(w io.Writer) error",
+    "funcbody": "func (c *Client) Graph(w io.Writer) error {\n\tmc, coll := c.collect(true)\n\tif coll.err != nil {\n\t\treturn coll.err\n\t}\n\tfor _, module := range mc.AllModules {\n\t\tif module.Owner() == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tdep := pathVersion(module.Owner()) + \" \" + pathVersion(module)\n\t\tif replace := module.Replace(); replace != nil {\n\t\t\tif replace.Version() != \"\" {\n\t\t\t\tdep += \" => \" + pathVersion(replace)\n\t\t\t} else {\n\n\t\t\t\tdep += \" => \" + replace.Dir()\n\t\t\t}\n\t\t}\n\t\tfmt.Fprintln(w, dep)\n\t}\n\n\treturn nil\n}",
+    "funcname": "Graph"
+}

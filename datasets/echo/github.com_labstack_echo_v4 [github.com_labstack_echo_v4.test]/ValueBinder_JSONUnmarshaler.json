@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 332,
+    "focalfunc": "func (b *ValueBinder) JSONUnmarshaler(sourceParam string, dest json.Unmarshaler) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) JSONUnmarshaler(sourceParam string, dest json.Unmarshaler) *ValueBinder {\n\tif b.failFast && b.errors != nil {\n\t\treturn b\n\t}\n\n\ttmp := b.ValueFunc(sourceParam)\n\tif tmp == \"\" {\n\t\treturn b\n\t}\n\n\tif err := dest.UnmarshalJSON([]byte(tmp)); err != nil {\n\t\tb.setError(b.ErrorFunc(sourceParam, []string{tmp}, \"failed to bind field value to json.Unmarshaler interface\", err))\n\t}\n\treturn b\n}",
+    "funcname": "JSONUnmarshaler"
+}

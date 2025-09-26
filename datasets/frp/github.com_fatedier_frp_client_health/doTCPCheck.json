@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 152,
+    "focalfunc": "func (monitor *Monitor) doTCPCheck(ctx context.Context) error",
+    "funcbody": "func (monitor *Monitor) doTCPCheck(ctx context.Context) error {\n\n\tif monitor.addr == \"\" {\n\t\treturn nil\n\t}\n\n\tvar d net.Dialer\n\tconn, err := d.DialContext(ctx, \"tcp\", monitor.addr)\n\tif err != nil {\n\t\treturn err\n\t}\n\tconn.Close()\n\treturn nil\n}",
+    "funcname": "doTCPCheck"
+}

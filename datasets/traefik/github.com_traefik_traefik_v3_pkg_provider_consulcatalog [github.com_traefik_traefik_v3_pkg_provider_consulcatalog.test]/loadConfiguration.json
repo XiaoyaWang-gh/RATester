@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/consul_catalog.go",
+    "lineno": 251,
+    "focalfunc": "func (p *Provider) loadConfiguration(ctx context.Context, certInfo *connectCert, configurationChan chan<- dynamic.Message) error",
+    "funcbody": "func (p *Provider) loadConfiguration(ctx context.Context, certInfo *connectCert, configurationChan chan<- dynamic.Message) error {\n\tdata, err := p.getConsulServicesData(ctx)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tconfigurationChan <- dynamic.Message{\n\t\tProviderName:\tp.name,\n\t\tConfiguration:\tp.buildConfiguration(ctx, data, certInfo),\n\t}\n\n\treturn nil\n}",
+    "funcname": "loadConfiguration"
+}

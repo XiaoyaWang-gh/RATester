@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 629,
+    "focalfunc": "func (bl *BeeLogger) flush()",
+    "funcbody": "func (bl *BeeLogger) flush() {\n\tif bl.asynchronous {\n\t\tfor {\n\t\t\tif len(bl.msgChan) > 0 {\n\t\t\t\tbm, ok := <-bl.msgChan\n\t\t\t\tif !ok {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\tbl.writeToLoggers(bm)\n\t\t\t\tlogMsgPool.Put(bm)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tbreak\n\t\t}\n\t}\n\tfor _, l := range bl.outputs {\n\t\tl.Flush()\n\t}\n}",
+    "funcname": "flush"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 740,
+    "focalfunc": "func jsIsSpecial(r rune) bool",
+    "funcbody": "func jsIsSpecial(r rune) bool {\n\tswitch r {\n\tcase '\\\\', '\\'', '\"', '<', '>', '&', '=':\n\t\treturn true\n\t}\n\treturn r < ' ' || utf8.RuneSelf <= r\n}",
+    "funcname": "jsIsSpecial"
+}

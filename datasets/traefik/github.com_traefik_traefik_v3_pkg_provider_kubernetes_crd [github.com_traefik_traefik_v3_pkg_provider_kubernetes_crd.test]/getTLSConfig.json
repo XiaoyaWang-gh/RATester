@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1226,
+    "focalfunc": "func getTLSConfig(tlsConfigs map[string]*tls.CertAndStores) []*tls.CertAndStores",
+    "funcbody": "func getTLSConfig(tlsConfigs map[string]*tls.CertAndStores) []*tls.CertAndStores {\n\tvar secretNames []string\n\tfor secretName := range tlsConfigs {\n\t\tsecretNames = append(secretNames, secretName)\n\t}\n\tsort.Strings(secretNames)\n\n\tvar configs []*tls.CertAndStores\n\tfor _, secretName := range secretNames {\n\t\tconfigs = append(configs, tlsConfigs[secretName])\n\t}\n\n\treturn configs\n}",
+    "funcname": "getTLSConfig"
+}

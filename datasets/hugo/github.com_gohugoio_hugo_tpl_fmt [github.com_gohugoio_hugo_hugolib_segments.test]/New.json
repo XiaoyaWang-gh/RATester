@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/fmt/fmt.go",
+    "lineno": 28,
+    "focalfunc": "func New(d *deps.Deps) *Namespace",
+    "funcbody": "func New(d *deps.Deps) *Namespace {\n\tns := &Namespace{\n\t\tlogger: d.Log,\n\t}\n\n\td.BuildStartListeners.Add(func() {\n\t\tns.logger.Reset()\n\t})\n\n\treturn ns\n}",
+    "funcname": "New"
+}

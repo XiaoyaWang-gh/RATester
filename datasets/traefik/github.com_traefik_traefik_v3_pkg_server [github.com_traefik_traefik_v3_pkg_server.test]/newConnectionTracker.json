@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 501,
+    "focalfunc": "func newConnectionTracker(openConnectionsGauge gokitmetrics.Gauge) *connectionTracker",
+    "funcbody": "func newConnectionTracker(openConnectionsGauge gokitmetrics.Gauge) *connectionTracker {\n\treturn &connectionTracker{\n\t\tconns:\t\t\tmake(map[net.Conn]struct{}),\n\t\topenConnectionsGauge:\topenConnectionsGauge,\n\t}\n}",
+    "funcname": "newConnectionTracker"
+}

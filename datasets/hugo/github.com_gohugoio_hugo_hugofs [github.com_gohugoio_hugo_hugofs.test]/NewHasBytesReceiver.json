@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/hasbytes_fs.go",
+    "lineno": 35,
+    "focalfunc": "func NewHasBytesReceiver(delegate afero.Fs, shouldCheck func(name string) bool, hasBytesCallback func(name string, match []byte), patterns ...[]byte) afero.Fs",
+    "funcbody": "func NewHasBytesReceiver(delegate afero.Fs, shouldCheck func(name string) bool, hasBytesCallback func(name string, match []byte), patterns ...[]byte) afero.Fs {\n\treturn &hasBytesFs{Fs: delegate, shouldCheck: shouldCheck, hasBytesCallback: hasBytesCallback, patterns: patterns}\n}",
+    "funcname": "NewHasBytesReceiver"
+}

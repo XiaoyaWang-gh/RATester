@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 49,
+    "focalfunc": "func ExecuteTemplate(wr io.Writer, name string, data interface{}) error",
+    "funcbody": "func ExecuteTemplate(wr io.Writer, name string, data interface{}) error {\n\treturn ExecuteViewPathTemplate(wr, name, BConfig.WebConfig.ViewsPath, data)\n}",
+    "funcname": "ExecuteTemplate"
+}

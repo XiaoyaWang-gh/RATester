@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 198,
+    "focalfunc": "func (svr *Service) apiGetConfig(w http.ResponseWriter, _ *http.Request)",
+    "funcbody": "func (svr *Service) apiGetConfig(w http.ResponseWriter, _ *http.Request) {\n\tres := GeneralResponse{Code: 200}\n\n\tlog.Infof(\"Http get request [/api/config]\")\n\tdefer func() {\n\t\tlog.Infof(\"Http get response [/api/config], code [%d]\", res.Code)\n\t\tw.WriteHeader(res.Code)\n\t\tif len(res.Msg) > 0 {\n\t\t\t_, _ = w.Write([]byte(res.Msg))\n\t\t}\n\t}()\n\n\tif svr.configFilePath == \"\" {\n\t\tres.Code = 400\n\t\tres.Msg = \"frpc has no config file path\"\n\t\tlog.Warnf(\"%s\", res.Msg)\n\t\treturn\n\t}\n\n\tcontent, err := os.ReadFile(svr.configFilePath)\n\tif err != nil {\n\t\tres.Code = 400\n\t\tres.Msg = err.Error()\n\t\tlog.Warnf(\"load frpc config file error: %s\", res.Msg)\n\t\treturn\n\t}\n\tres.Msg = string(content)\n}",
+    "funcname": "apiGetConfig"
+}

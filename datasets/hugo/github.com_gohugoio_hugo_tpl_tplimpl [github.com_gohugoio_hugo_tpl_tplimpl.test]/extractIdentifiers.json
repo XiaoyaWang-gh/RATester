@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 607,
+    "focalfunc": "func (t *templateHandler) extractIdentifiers(line string) []string",
+    "funcbody": "func (t *templateHandler) extractIdentifiers(line string) []string {\n\tm := identifiersRe.FindAllStringSubmatch(line, -1)\n\tidentifiers := make([]string, len(m))\n\tfor i := 0; i < len(m); i++ {\n\t\tidentifiers[i] = m[i][1]\n\t}\n\treturn identifiers\n}",
+    "funcname": "extractIdentifiers"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 430,
+    "focalfunc": "func exception(errCode string, ctx *context.Context)",
+    "funcbody": "func exception(errCode string, ctx *context.Context) {\n\tatoi := func(code string) int {\n\t\tv, err := strconv.Atoi(code)\n\t\tif err == nil {\n\t\t\treturn v\n\t\t}\n\t\tif ctx.Output.Status == 0 {\n\t\t\treturn 503\n\t\t}\n\t\treturn ctx.Output.Status\n\t}\n\n\tfor _, ec := range []string{errCode, \"503\", \"500\"} {\n\t\tif h, ok := ErrorMaps[ec]; ok {\n\t\t\texecuteError(h, ctx, atoi(ec))\n\t\t\treturn\n\t\t}\n\t}\n\n\tctx.ResponseWriter.WriteHeader(atoi(errCode))\n\tctx.WriteString(errCode)\n}",
+    "funcname": "exception"
+}

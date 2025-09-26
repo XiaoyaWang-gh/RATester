@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 1023,
+    "focalfunc": "func (app *App) serverErrorHandler(fctx *fasthttp.RequestCtx, err error)",
+    "funcbody": "func (app *App) serverErrorHandler(fctx *fasthttp.RequestCtx, err error) {\n\n\tc := app.AcquireCtx(fctx)\n\tdefer app.ReleaseCtx(c)\n\n\tvar (\n\t\terrNetOP\t*net.OpError\n\t\tnetErr\t\tnet.Error\n\t)\n\n\tswitch {\n\tcase errors.As(err, new(*fasthttp.ErrSmallBuffer)):\n\t\terr = ErrRequestHeaderFieldsTooLarge\n\tcase errors.As(err, &errNetOP) && errNetOP.Timeout():\n\t\terr = ErrRequestTimeout\n\tcase errors.As(err, &netErr):\n\t\terr = ErrBadGateway\n\tcase errors.Is(err, fasthttp.ErrBodyTooLarge):\n\t\terr = ErrRequestEntityTooLarge\n\tcase errors.Is(err, fasthttp.ErrGetOnly):\n\t\terr = ErrMethodNotAllowed\n\tcase strings.Contains(err.Error(), \"timeout\"):\n\t\terr = ErrRequestTimeout\n\tdefault:\n\t\terr = NewError(StatusBadRequest, err.Error())\n\t}\n\n\tif catch := app.ErrorHandler(c, err); catch != nil {\n\t\tlog.Errorf(\"serverErrorHandler: failed to call ErrorHandler: %v\", catch)\n\t\t_ = c.SendStatus(StatusInternalServerError)\n\t\treturn\n\t}\n}",
+    "funcname": "serverErrorHandler"
+}

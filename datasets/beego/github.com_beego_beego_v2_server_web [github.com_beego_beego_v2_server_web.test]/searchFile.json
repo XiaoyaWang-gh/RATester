@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/staticfile.go",
+    "lineno": 185,
+    "focalfunc": "func searchFile(ctx *context.Context) (string, os.FileInfo, error)",
+    "funcbody": "func searchFile(ctx *context.Context) (string, os.FileInfo, error) {\n\trequestPath := filepath.ToSlash(filepath.Clean(ctx.Request.URL.Path))\n\n\tif requestPath == \"/favicon.ico\" || requestPath == \"/robots.txt\" {\n\t\tfile := path.Join(\".\", requestPath)\n\t\tif fi, _ := os.Stat(file); fi != nil {\n\t\t\treturn file, fi, nil\n\t\t}\n\t\tfor _, staticDir := range BConfig.WebConfig.StaticDir {\n\t\t\tfilePath := path.Join(staticDir, requestPath)\n\t\t\tif fi, _ := os.Stat(filePath); fi != nil {\n\t\t\t\treturn filePath, fi, nil\n\t\t\t}\n\t\t}\n\t\treturn \"\", nil, errNotStaticRequest\n\t}\n\n\tfor prefix, staticDir := range BConfig.WebConfig.StaticDir {\n\t\tif !strings.Contains(requestPath, prefix) {\n\t\t\tcontinue\n\t\t}\n\t\tif prefix != \"/\" && len(requestPath) > len(prefix) && requestPath[len(prefix)] != '/' {\n\t\t\tcontinue\n\t\t}\n\t\tfilePath := path.Join(staticDir, requestPath[len(prefix):])\n\t\tif fi, err := os.Stat(filePath); fi != nil {\n\t\t\treturn filePath, fi, err\n\t\t}\n\t}\n\treturn \"\", nil, errNotStaticRequest\n}",
+    "funcname": "searchFile"
+}

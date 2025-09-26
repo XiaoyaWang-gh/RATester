@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 170,
+    "focalfunc": "func newRootMappingFsFromFromTo(\n\tbaseDir string,\n\tfs afero.Fs,\n\tfromTo ...string,\n) (*RootMappingFs, error)",
+    "funcbody": "func newRootMappingFsFromFromTo(\n\tbaseDir string,\n\tfs afero.Fs,\n\tfromTo ...string,\n) (*RootMappingFs, error) {\n\trms := make([]RootMapping, len(fromTo)/2)\n\tfor i, j := 0, 0; j < len(fromTo); i, j = i+1, j+2 {\n\t\trms[i] = RootMapping{\n\t\t\tFrom:\tfromTo[j],\n\t\t\tTo:\tfromTo[j+1],\n\t\t\tToBase:\tbaseDir,\n\t\t}\n\t}\n\n\treturn NewRootMappingFs(fs, rms...)\n}",
+    "funcname": "newRootMappingFsFromFromTo"
+}

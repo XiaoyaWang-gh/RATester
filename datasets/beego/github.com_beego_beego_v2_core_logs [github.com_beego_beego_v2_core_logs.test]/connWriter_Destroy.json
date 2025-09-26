@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 99,
+    "focalfunc": "func (c *connWriter) Destroy()",
+    "funcbody": "func (c *connWriter) Destroy() {\n\tif c.innerWriter != nil {\n\t\tc.innerWriter.Close()\n\t}\n}",
+    "funcname": "Destroy"
+}

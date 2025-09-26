@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 137,
+    "focalfunc": "func Run(addr ...string) (err error)",
+    "funcbody": "func Run(addr ...string) (err error) {\n\treturn engine().Run(addr...)\n}",
+    "funcname": "Run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 175,
+    "focalfunc": "func (ini *Init) checkDone()",
+    "funcbody": "func (ini *Init) checkDone() {\n\tif ini.init.Done() {\n\t\tpanic(\"init cannot be added to after it has run\")\n\t}\n}",
+    "funcname": "checkDone"
+}

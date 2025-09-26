@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 758,
+    "focalfunc": "func gatewayStatusEqual(statusA, statusB gatev1.GatewayStatus) bool",
+    "funcbody": "func gatewayStatusEqual(statusA, statusB gatev1.GatewayStatus) bool {\n\treturn reflect.DeepEqual(statusA.Addresses, statusB.Addresses) &&\n\t\tlistenersStatusEqual(statusA.Listeners, statusB.Listeners) &&\n\t\tconditionsEqual(statusA.Conditions, statusB.Conditions)\n}",
+    "funcname": "gatewayStatusEqual"
+}

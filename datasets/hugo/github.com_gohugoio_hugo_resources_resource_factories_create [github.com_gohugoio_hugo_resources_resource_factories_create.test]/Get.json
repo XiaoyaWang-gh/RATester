@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/create.go",
+    "lineno": 129,
+    "focalfunc": "func (c *Client) Get(pathname string) (resource.Resource, error)",
+    "funcbody": "func (c *Client) Get(pathname string) (resource.Resource, error) {\n\tpathname = path.Clean(pathname)\n\tkey := dynacache.CleanKey(pathname) + \"__get\"\n\n\treturn c.rs.ResourceCache.GetOrCreate(key, func() (resource.Resource, error) {\n\n\t\tfilename := filepath.FromSlash(pathname)\n\t\tfi, err := c.rs.BaseFs.Assets.Fs.Stat(filename)\n\t\tif err != nil {\n\t\t\tif os.IsNotExist(err) {\n\t\t\t\treturn nil, nil\n\t\t\t}\n\n\t\t\treturn nil, err\n\t\t}\n\n\t\tpi := fi.(hugofs.FileMetaInfo).Meta().PathInfo\n\n\t\treturn c.rs.NewResource(resources.ResourceSourceDescriptor{\n\t\t\tLazyPublish:\ttrue,\n\t\t\tOpenReadSeekCloser: func() (hugio.ReadSeekCloser, error) {\n\t\t\t\treturn c.rs.BaseFs.Assets.Fs.Open(filename)\n\t\t\t},\n\t\t\tPath:\t\tpi,\n\t\t\tGroupIdentity:\tpi,\n\t\t\tTargetPath:\tpathname,\n\t\t})\n\t})\n}",
+    "funcname": "Get"
+}

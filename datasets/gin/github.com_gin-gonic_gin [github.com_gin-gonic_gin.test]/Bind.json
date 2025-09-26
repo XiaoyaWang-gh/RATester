@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 22,
+    "focalfunc": "func Bind(val any) HandlerFunc",
+    "funcbody": "func Bind(val any) HandlerFunc {\n\tvalue := reflect.ValueOf(val)\n\tif value.Kind() == reflect.Ptr {\n\t\tpanic(`Bind struct can not be a pointer. Example:\n\tUse: gin.Bind(Struct{}) instead of gin.Bind(&Struct{})\n`)\n\t}\n\ttyp := value.Type()\n\n\treturn func(c *Context) {\n\t\tobj := reflect.New(typ).Interface()\n\t\tif c.Bind(obj) == nil {\n\t\t\tc.Set(BindKey, obj)\n\t\t}\n\t}\n}",
+    "funcname": "Bind"
+}

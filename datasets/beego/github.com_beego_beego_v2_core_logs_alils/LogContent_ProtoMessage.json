@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 71,
+    "focalfunc": "func (*LogContent) ProtoMessage()",
+    "funcbody": "func (*LogContent) ProtoMessage()\t{}",
+    "funcname": "ProtoMessage"
+}

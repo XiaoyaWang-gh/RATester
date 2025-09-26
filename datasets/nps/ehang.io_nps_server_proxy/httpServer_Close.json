@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/http.go",
+    "lineno": 91,
+    "focalfunc": "func (s *httpServer) Close() error",
+    "funcbody": "func (s *httpServer) Close() error {\n\tif s.httpsListener != nil {\n\t\ts.httpsListener.Close()\n\t}\n\tif s.httpsServer != nil {\n\t\ts.httpsServer.Close()\n\t}\n\tif s.httpServer != nil {\n\t\ts.httpServer.Close()\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

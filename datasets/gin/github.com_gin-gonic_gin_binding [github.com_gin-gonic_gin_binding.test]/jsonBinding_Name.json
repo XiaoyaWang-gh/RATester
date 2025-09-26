@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/json.go",
+    "lineno": 29,
+    "focalfunc": "func (jsonBinding) Name() string",
+    "funcbody": "func (jsonBinding) Name() string {\n\treturn \"json\"\n}",
+    "funcname": "Name"
+}

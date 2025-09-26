@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 117,
+    "focalfunc": "func WithRule(rule string) func(*dynamic.Router)",
+    "funcbody": "func WithRule(rule string) func(*dynamic.Router) {\n\treturn func(f *dynamic.Router) {\n\t\tf.Rule = rule\n\t}\n}",
+    "funcname": "WithRule"
+}

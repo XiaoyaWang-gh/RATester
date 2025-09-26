@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/aws.go",
+    "lineno": 8,
+    "focalfunc": "func NewAWSWrapper(logger zerolog.Logger) aws.LoggerFunc",
+    "funcbody": "func NewAWSWrapper(logger zerolog.Logger) aws.LoggerFunc {\n\tif logger.GetLevel() > zerolog.DebugLevel {\n\t\treturn func(args ...interface{}) {}\n\t}\n\n\treturn func(args ...interface{}) {\n\t\tlogger.Debug().CallerSkipFrame(2).MsgFunc(msgFunc(args...))\n\t}\n}",
+    "funcname": "NewAWSWrapper"
+}

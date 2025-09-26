@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 341,
+    "focalfunc": "func (r *Request) SetRawBody(v []byte) *Request",
+    "funcbody": "func (r *Request) SetRawBody(v []byte) *Request {\n\tr.body = v\n\tr.bodyType = rawBody\n\treturn r\n}",
+    "funcname": "SetRawBody"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 599,
+    "focalfunc": "func (e *Echo) Add(method, path string, handler HandlerFunc, middleware ...MiddlewareFunc) *Route",
+    "funcbody": "func (e *Echo) Add(method, path string, handler HandlerFunc, middleware ...MiddlewareFunc) *Route {\n\treturn e.add(\"\", method, path, handler, middleware...)\n}",
+    "funcname": "Add"
+}

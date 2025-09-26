@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 440,
+    "focalfunc": "func (bl *BeeLogger) Alert(format string, v ...interface{})",
+    "funcbody": "func (bl *BeeLogger) Alert(format string, v ...interface{}) {\n\tif LevelAlert > bl.level {\n\t\treturn\n\t}\n\n\tlm := &LogMsg{\n\t\tLevel:\tLevelAlert,\n\t\tMsg:\tformat,\n\t\tWhen:\ttime.Now(),\n\t\tArgs:\tv,\n\t}\n\tbl.writeMsg(lm)\n}",
+    "funcname": "Alert"
+}

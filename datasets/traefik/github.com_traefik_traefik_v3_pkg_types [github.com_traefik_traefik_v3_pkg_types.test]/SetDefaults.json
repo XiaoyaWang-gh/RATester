@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/metrics.go",
+    "lineno": 163,
+    "focalfunc": "func (c *OtelHTTP) SetDefaults()",
+    "funcbody": "func (c *OtelHTTP) SetDefaults() {\n\tc.Endpoint = \"https://localhost:4318\"\n}",
+    "funcname": "SetDefaults"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 375,
+    "focalfunc": "func (h *HugoSites) resetLogs()",
+    "funcbody": "func (h *HugoSites) resetLogs() {\n\th.Log.Reset()\n\tfor _, s := range h.Sites {\n\t\ts.Deps.Log.Reset()\n\t}\n}",
+    "funcname": "resetLogs"
+}

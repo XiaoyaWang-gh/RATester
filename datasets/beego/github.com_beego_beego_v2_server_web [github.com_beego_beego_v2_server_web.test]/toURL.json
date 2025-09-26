@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1378,
+    "focalfunc": "func toURL(params map[string]string) string",
+    "funcbody": "func toURL(params map[string]string) string {\n\tif len(params) == 0 {\n\t\treturn \"\"\n\t}\n\tu := \"?\"\n\tfor k, v := range params {\n\t\tu += k + \"=\" + v + \"&\"\n\t}\n\treturn strings.TrimRight(u, \"&\")\n}",
+    "funcname": "toURL"
+}

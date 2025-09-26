@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 257,
+    "focalfunc": "func (c *IniConfigContainer) Int(key string) (int, error)",
+    "funcbody": "func (c *IniConfigContainer) Int(key string) (int, error) {\n\treturn strconv.Atoi(c.getdata(key))\n}",
+    "funcname": "Int"
+}

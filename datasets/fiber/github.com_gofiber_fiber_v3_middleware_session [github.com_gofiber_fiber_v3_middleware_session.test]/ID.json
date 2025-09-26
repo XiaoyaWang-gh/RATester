@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 68,
+    "focalfunc": "func (s *Session) ID() string",
+    "funcbody": "func (s *Session) ID() string {\n\ts.mu.RLock()\n\tdefer s.mu.RUnlock()\n\treturn s.id\n}",
+    "funcname": "ID"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 44,
+    "focalfunc": "func (r *Response) StatusCode() int",
+    "funcbody": "func (r *Response) StatusCode() int {\n\treturn r.RawResponse.StatusCode()\n}",
+    "funcname": "StatusCode"
+}

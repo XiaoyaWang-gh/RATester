@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/inflightreq/inflight_req.go",
+    "lineno": 60,
+    "focalfunc": "func (i *inFlightReq) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (i *inFlightReq) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\ti.handler.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 224,
+    "focalfunc": "func (c *pageFinder) getContentNodeFromRefReverseLookup(ref string, fi hugofs.FileMetaInfo) (contentNodeI, error)",
+    "funcbody": "func (c *pageFinder) getContentNodeFromRefReverseLookup(ref string, fi hugofs.FileMetaInfo) (contentNodeI, error) {\n\ts := c.pageMap.s\n\tmeta := fi.Meta()\n\tdir := meta.Filename\n\tif !fi.IsDir() {\n\t\tdir = filepath.Dir(meta.Filename)\n\t}\n\n\trealFilename := filepath.Join(dir, ref)\n\n\tpcs, err := s.BaseFs.Content.ReverseLookup(realFilename, true)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tfor _, pc := range pcs {\n\t\tpi := s.Conf.PathParser().Parse(pc.Component, pc.Path)\n\t\tif n := c.pageMap.treePages.Get(pi.Base()); n != nil {\n\t\t\treturn n, nil\n\t\t}\n\t}\n\treturn nil, nil\n}",
+    "funcname": "getContentNodeFromRefReverseLookup"
+}

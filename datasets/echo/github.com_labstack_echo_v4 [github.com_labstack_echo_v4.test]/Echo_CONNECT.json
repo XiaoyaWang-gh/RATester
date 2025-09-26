@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 484,
+    "focalfunc": "func (e *Echo) CONNECT(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (e *Echo) CONNECT(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn e.Add(http.MethodConnect, path, h, m...)\n}",
+    "funcname": "CONNECT"
+}

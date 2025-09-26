@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/write_through.go",
+    "lineno": 32,
+    "focalfunc": "func NewWriteThroughCache(cache Cache, fn func(ctx context.Context, key string, val any) error) (*WriteThroughCache, error)",
+    "funcbody": "func NewWriteThroughCache(cache Cache, fn func(ctx context.Context, key string, val any) error) (*WriteThroughCache, error) {\n\tif fn == nil || cache == nil {\n\t\treturn nil, berror.Error(InvalidInitParameters, \"cache or storeFunc can not be nil\")\n\t}\n\n\tw := &WriteThroughCache{\n\t\tCache:\t\tcache,\n\t\tstoreFunc:\tfn,\n\t}\n\treturn w, nil\n}",
+    "funcname": "NewWriteThroughCache"
+}

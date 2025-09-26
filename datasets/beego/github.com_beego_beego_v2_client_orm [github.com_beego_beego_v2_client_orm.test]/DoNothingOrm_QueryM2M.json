@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 64,
+    "focalfunc": "func (d *DoNothingOrm) QueryM2M(md interface{}, name string) QueryM2Mer",
+    "funcbody": "func (d *DoNothingOrm) QueryM2M(md interface{}, name string) QueryM2Mer {\n\treturn nil\n}",
+    "funcname": "QueryM2M"
+}

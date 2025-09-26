@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/configurationwatcher.go",
+    "lineno": 231,
+    "focalfunc": "func isEmptyConfiguration(conf *dynamic.Configuration) bool",
+    "funcbody": "func isEmptyConfiguration(conf *dynamic.Configuration) bool {\n\tif conf.TCP == nil {\n\t\tconf.TCP = &dynamic.TCPConfiguration{}\n\t}\n\tif conf.HTTP == nil {\n\t\tconf.HTTP = &dynamic.HTTPConfiguration{}\n\t}\n\tif conf.UDP == nil {\n\t\tconf.UDP = &dynamic.UDPConfiguration{}\n\t}\n\n\thttpEmpty := conf.HTTP.Routers == nil && conf.HTTP.Services == nil && conf.HTTP.Middlewares == nil\n\ttlsEmpty := conf.TLS == nil || conf.TLS.Certificates == nil && conf.TLS.Stores == nil && conf.TLS.Options == nil\n\ttcpEmpty := conf.TCP.Routers == nil && conf.TCP.Services == nil && conf.TCP.Middlewares == nil\n\tudpEmpty := conf.UDP.Routers == nil && conf.UDP.Services == nil\n\n\treturn httpEmpty && tlsEmpty && tcpEmpty && udpEmpty\n}",
+    "funcname": "isEmptyConfiguration"
+}

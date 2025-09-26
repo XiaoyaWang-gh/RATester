@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/elastic.go",
+    "lineno": 9,
+    "focalfunc": "func NewElasticLogger(logger zerolog.Logger) *ElasticLogger",
+    "funcbody": "func NewElasticLogger(logger zerolog.Logger) *ElasticLogger {\n\treturn &ElasticLogger{logger: logger}\n}",
+    "funcname": "NewElasticLogger"
+}

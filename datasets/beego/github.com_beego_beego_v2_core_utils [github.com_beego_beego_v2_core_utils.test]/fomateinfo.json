@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/debug.go",
+    "lineno": 74,
+    "focalfunc": "func fomateinfo(headlen int, data ...interface{}) []byte",
+    "funcbody": "func fomateinfo(headlen int, data ...interface{}) []byte {\n\tbuf := new(bytes.Buffer)\n\n\tif len(data) > 1 {\n\t\tfmt.Fprint(buf, \"    \")\n\n\t\tfmt.Fprint(buf, \"[\")\n\n\t\tfmt.Fprintln(buf)\n\t}\n\n\tfor k, v := range data {\n\t\tbuf2 := new(bytes.Buffer)\n\t\tvar pointers *pointerInfo\n\t\tinterfaces := make([]reflect.Value, 0, 10)\n\n\t\tprintKeyValue(buf2, reflect.ValueOf(v), &pointers, &interfaces, nil, true, \"    \", 1)\n\n\t\tif k < len(data)-1 {\n\t\t\tfmt.Fprint(buf2, \", \")\n\t\t}\n\n\t\tfmt.Fprintln(buf2)\n\n\t\tbuf.Write(buf2.Bytes())\n\t}\n\n\tif len(data) > 1 {\n\t\tfmt.Fprintln(buf)\n\n\t\tfmt.Fprint(buf, \"    \")\n\n\t\tfmt.Fprint(buf, \"]\")\n\t}\n\n\treturn buf.Bytes()\n}",
+    "funcname": "fomateinfo"
+}

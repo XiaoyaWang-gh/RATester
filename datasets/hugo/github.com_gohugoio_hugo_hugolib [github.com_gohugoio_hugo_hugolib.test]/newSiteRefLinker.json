@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 274,
+    "focalfunc": "func newSiteRefLinker(s *Site) (siteRefLinker, error)",
+    "funcbody": "func newSiteRefLinker(s *Site) (siteRefLinker, error) {\n\tlogger := s.Log.Error()\n\n\tnotFoundURL := s.conf.RefLinksNotFoundURL\n\terrLevel := s.conf.RefLinksErrorLevel\n\tif strings.EqualFold(errLevel, \"warning\") {\n\t\tlogger = s.Log.Warn()\n\t}\n\treturn siteRefLinker{s: s, errorLogger: logger, notFoundURL: notFoundURL}, nil\n}",
+    "funcname": "newSiteRefLinker"
+}

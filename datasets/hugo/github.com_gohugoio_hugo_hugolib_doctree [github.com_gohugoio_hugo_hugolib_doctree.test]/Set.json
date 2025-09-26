@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/dimensions.go",
+    "lineno": 33,
+    "focalfunc": "func (d DimensionFlag) Set(o DimensionFlag) DimensionFlag",
+    "funcbody": "func (d DimensionFlag) Set(o DimensionFlag) DimensionFlag {\n\treturn d | o\n}",
+    "funcname": "Set"
+}

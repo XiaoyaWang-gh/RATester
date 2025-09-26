@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler.go",
+    "lineno": 57,
+    "focalfunc": "func NewBuilder(staticConfig static.Configuration) func(*runtime.Configuration) http.Handler",
+    "funcbody": "func NewBuilder(staticConfig static.Configuration) func(*runtime.Configuration) http.Handler {\n\treturn func(configuration *runtime.Configuration) http.Handler {\n\t\treturn New(staticConfig, configuration).createRouter()\n\t}\n}",
+    "funcname": "NewBuilder"
+}

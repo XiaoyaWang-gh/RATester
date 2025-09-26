@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 689,
+    "focalfunc": "func (c *clientWrapper) ListEndpointSlicesForService(namespace, serviceName string) ([]*discoveryv1.EndpointSlice, error)",
+    "funcbody": "func (c *clientWrapper) ListEndpointSlicesForService(namespace, serviceName string) ([]*discoveryv1.EndpointSlice, error) {\n\tif !c.isWatchedNamespace(namespace) {\n\t\treturn nil, fmt.Errorf(\"failed to get endpointslices for service %s/%s: namespace is not within watched namespaces\", namespace, serviceName)\n\t}\n\n\tserviceLabelRequirement, err := labels.NewRequirement(discoveryv1.LabelServiceName, selection.Equals, []string{serviceName})\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create service label selector requirement: %w\", err)\n\t}\n\tserviceSelector := labels.NewSelector()\n\tserviceSelector = serviceSelector.Add(*serviceLabelRequirement)\n\n\treturn c.factoriesKube[c.lookupNamespace(namespace)].Discovery().V1().EndpointSlices().Lister().EndpointSlices(namespace).List(serviceSelector)\n}",
+    "funcname": "ListEndpointSlicesForService"
+}

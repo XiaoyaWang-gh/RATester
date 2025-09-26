@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form.go",
+    "lineno": 22,
+    "focalfunc": "func (formBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (formBinding) Bind(req *http.Request, obj any) error {\n\tif err := req.ParseForm(); err != nil {\n\t\treturn err\n\t}\n\tif err := req.ParseMultipartForm(defaultMemory); err != nil && !errors.Is(err, http.ErrNotMultipart) {\n\t\treturn err\n\t}\n\tif err := mapForm(obj, req.Form); err != nil {\n\t\treturn err\n\t}\n\treturn validate(obj)\n}",
+    "funcname": "Bind"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/decorators.go",
+    "lineno": 46,
+    "focalfunc": "func NewBaseFileDecorator(fs afero.Fs, callbacks ...func(fi FileMetaInfo)) afero.Fs",
+    "funcbody": "func NewBaseFileDecorator(fs afero.Fs, callbacks ...func(fi FileMetaInfo)) afero.Fs {\n\tffs := &baseFileDecoratorFs{Fs: fs}\n\n\tdecorator := func(fi FileNameIsDir, filename string) (FileNameIsDir, error) {\n\n\t\tmeta := NewFileMeta()\n\t\tmeta.Name = fi.Name()\n\n\t\tif fi.IsDir() {\n\t\t\tmeta.JoinStatFunc = func(name string) (FileMetaInfo, error) {\n\t\t\t\tjoinedFilename := filepath.Join(filename, name)\n\t\t\t\tfi, err := fs.Stat(joinedFilename)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn nil, err\n\t\t\t\t}\n\t\t\t\tfim, err := ffs.decorate(fi, joinedFilename)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn nil, err\n\t\t\t\t}\n\n\t\t\t\treturn fim.(FileMetaInfo), nil\n\t\t\t}\n\t\t}\n\n\t\topener := func() (afero.File, error) {\n\t\t\treturn ffs.open(filename)\n\t\t}\n\n\t\tfim := decorateFileInfo(fi, opener, filename, meta)\n\n\t\tfor _, cb := range callbacks {\n\t\t\tcb(fim)\n\t\t}\n\n\t\treturn fim, nil\n\t}\n\n\tffs.decorate = decorator\n\treturn ffs\n}",
+    "funcname": "NewBaseFileDecorator"
+}

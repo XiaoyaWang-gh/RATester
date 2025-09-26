@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 396,
+    "focalfunc": "func (e *Echo) NewContext(r *http.Request, w http.ResponseWriter) Context",
+    "funcbody": "func (e *Echo) NewContext(r *http.Request, w http.ResponseWriter) Context {\n\treturn &context{\n\t\trequest:\tr,\n\t\tresponse:\tNewResponse(w, e),\n\t\tstore:\t\tmake(Map),\n\t\techo:\t\te,\n\t\tpvalues:\tmake([]string, *e.maxParam),\n\t\thandler:\tNotFoundHandler,\n\t}\n}",
+    "funcname": "NewContext"
+}

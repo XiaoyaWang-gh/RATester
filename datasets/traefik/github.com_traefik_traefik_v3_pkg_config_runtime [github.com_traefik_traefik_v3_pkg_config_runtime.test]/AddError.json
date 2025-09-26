@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/runtime/runtime_udp.go",
+    "lineno": 100,
+    "focalfunc": "func (s *UDPServiceInfo) AddError(err error, critical bool)",
+    "funcbody": "func (s *UDPServiceInfo) AddError(err error, critical bool) {\n\tfor _, value := range s.Err {\n\t\tif value == err.Error() {\n\t\t\treturn\n\t\t}\n\t}\n\n\ts.Err = append(s.Err, err.Error())\n\tif critical {\n\t\ts.Status = StatusDisabled\n\t\treturn\n\t}\n\n\tif s.Status != StatusDisabled {\n\t\ts.Status = StatusWarning\n\t}\n}",
+    "funcname": "AddError"
+}

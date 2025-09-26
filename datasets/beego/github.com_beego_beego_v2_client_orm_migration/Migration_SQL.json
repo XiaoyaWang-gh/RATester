@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 110,
+    "focalfunc": "func (m *Migration) SQL(sql string)",
+    "funcbody": "func (m *Migration) SQL(sql string) {\n\tm.sqls = append(m.sqls, sql)\n}",
+    "funcname": "SQL"
+}

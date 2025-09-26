@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/debug.go",
+    "lineno": 442,
+    "focalfunc": "func Stack(skip int, indent string) []byte",
+    "funcbody": "func Stack(skip int, indent string) []byte {\n\tbuf := new(bytes.Buffer)\n\n\tfor i := skip; ; i++ {\n\t\tpc, file, line, ok := runtime.Caller(i)\n\n\t\tif !ok {\n\t\t\tbreak\n\t\t}\n\n\t\tbuf.WriteString(indent)\n\n\t\tfmt.Fprintf(buf, \"at %s() [%s:%d]\\n\", function(pc), file, line)\n\t}\n\n\treturn buf.Bytes()\n}",
+    "funcname": "Stack"
+}

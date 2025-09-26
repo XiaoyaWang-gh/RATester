@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/log.go",
+    "lineno": 14,
+    "focalfunc": "func log(level string, format string, args ...interface{})",
+    "funcbody": "func log(level string, format string, args ...interface{}) {\n\tfmt.Fprintf(ginkgo.GinkgoWriter, nowStamp()+\": \"+level+\": \"+format+\"\\n\", args...)\n}",
+    "funcname": "log"
+}

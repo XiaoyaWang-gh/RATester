@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 144,
+    "focalfunc": "func (s *SMTPWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (s *SMTPWriter) WriteMsg(lm *LogMsg) error {\n\tif lm.Level > s.Level {\n\t\treturn nil\n\t}\n\n\thp := strings.Split(s.Host, \":\")\n\n\tauth := s.getSMTPAuth(hp[0])\n\n\tmsg := s.Format(lm)\n\n\tcontentType := \"Content-Type: text/plain\" + \"; charset=UTF-8\"\n\tmailmsg := []byte(\"To: \" + strings.Join(s.RecipientAddresses, \";\") + \"\\r\\nFrom: \" + s.FromAddress + \"<\" + s.FromAddress +\n\t\t\">\\r\\nSubject: \" + s.Subject + \"\\r\\n\" + contentType + \"\\r\\n\\r\\n\" + fmt.Sprintf(\".%s\", lm.When.Format(\"2006-01-02 15:04:05\")) + msg)\n\n\treturn s.sendMail(s.Host, auth, s.FromAddress, s.RecipientAddresses, mailmsg)\n}",
+    "funcname": "WriteMsg"
+}

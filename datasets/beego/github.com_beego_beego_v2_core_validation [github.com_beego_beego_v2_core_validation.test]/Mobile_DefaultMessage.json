@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 654,
+    "focalfunc": "func (m Mobile) DefaultMessage() string",
+    "funcbody": "func (m Mobile) DefaultMessage() string {\n\treturn MessageTmpls[\"Mobile\"]\n}",
+    "funcname": "DefaultMessage"
+}

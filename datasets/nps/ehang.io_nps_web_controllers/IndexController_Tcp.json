@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 26,
+    "focalfunc": "func (s *IndexController) Tcp()",
+    "funcbody": "func (s *IndexController) Tcp() {\n\ts.SetInfo(\"tcp\")\n\ts.SetType(\"tcp\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "Tcp"
+}

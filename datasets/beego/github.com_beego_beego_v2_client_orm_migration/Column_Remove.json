@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 139,
+    "focalfunc": "func (c *Column) Remove()",
+    "funcbody": "func (c *Column) Remove() {\n\tc.remove = true\n}",
+    "funcname": "Remove"
+}

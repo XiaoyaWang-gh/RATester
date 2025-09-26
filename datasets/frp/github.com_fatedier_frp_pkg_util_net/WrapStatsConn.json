@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 169,
+    "focalfunc": "func WrapStatsConn(conn net.Conn, statsFunc func(total, totalWrite int64)) *StatsConn",
+    "funcbody": "func WrapStatsConn(conn net.Conn, statsFunc func(total, totalWrite int64)) *StatsConn {\n\treturn &StatsConn{\n\t\tConn:\t\tconn,\n\t\tstatsFunc:\tstatsFunc,\n\t}\n}",
+    "funcname": "WrapStatsConn"
+}

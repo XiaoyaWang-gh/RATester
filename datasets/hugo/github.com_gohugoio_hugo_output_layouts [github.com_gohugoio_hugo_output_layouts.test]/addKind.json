@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 126,
+    "focalfunc": "func (l *layoutBuilder) addKind()",
+    "funcbody": "func (l *layoutBuilder) addKind() {\n\tl.addLayoutVariations(l.d.Kind)\n\tl.addTypeVariations(l.d.Kind)\n}",
+    "funcname": "addKind"
+}

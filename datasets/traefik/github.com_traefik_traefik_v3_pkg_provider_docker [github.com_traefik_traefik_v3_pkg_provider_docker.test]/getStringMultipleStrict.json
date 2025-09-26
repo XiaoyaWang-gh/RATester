@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/shared_labels.go",
+    "lineno": 44,
+    "focalfunc": "func getStringMultipleStrict(labels map[string]string, labelNames ...string) (map[string]string, error)",
+    "funcbody": "func getStringMultipleStrict(labels map[string]string, labelNames ...string) (map[string]string, error) {\n\tfoundLabels := map[string]string{}\n\tfor _, name := range labelNames {\n\t\tvalue := getStringValue(labels, name, \"\")\n\n\t\tif len(value) == 0 {\n\t\t\treturn nil, fmt.Errorf(\"label not found: %s\", name)\n\t\t}\n\t\tfoundLabels[name] = value\n\t}\n\treturn foundLabels, nil\n}",
+    "funcname": "getStringMultipleStrict"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 246,
+    "focalfunc": "func (r *NodeShiftTree[T]) LongestPrefixAll(s string) (string, bool)",
+    "funcbody": "func (r *NodeShiftTree[T]) LongestPrefixAll(s string) (string, bool) {\n\ts, _, found := r.tree.LongestPrefix(s)\n\treturn s, found\n}",
+    "funcname": "LongestPrefixAll"
+}

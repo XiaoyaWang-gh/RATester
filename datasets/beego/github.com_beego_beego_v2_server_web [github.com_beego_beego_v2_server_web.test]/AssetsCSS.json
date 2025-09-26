@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 258,
+    "focalfunc": "func AssetsCSS(text string) template.HTML",
+    "funcbody": "func AssetsCSS(text string) template.HTML {\n\ttext = \"<link href=\\\"\" + text + \"\\\" rel=\\\"stylesheet\\\" />\"\n\n\treturn template.HTML(text)\n}",
+    "funcname": "AssetsCSS"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/errorResource.go",
+    "lineno": 99,
+    "focalfunc": "func (e *errorResource) Width() int",
+    "funcbody": "func (e *errorResource) Width() int {\n\tpanic(e.ResourceError)\n}",
+    "funcname": "Width"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/hooks.go",
+    "lineno": 293,
+    "focalfunc": "func parserResponseCookie(c *Client, resp *Response, req *Request) error",
+    "funcbody": "func parserResponseCookie(c *Client, resp *Response, req *Request) error {\n\tvar err error\n\tresp.RawResponse.Header.VisitAllCookie(func(key, value []byte) {\n\t\tcookie := fasthttp.AcquireCookie()\n\t\terr = cookie.ParseBytes(value)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tcookie.SetKeyBytes(key)\n\n\t\tresp.cookie = append(resp.cookie, cookie)\n\t})\n\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif c.cookieJar != nil {\n\t\tc.cookieJar.parseCookiesFromResp(req.RawRequest.URI().Host(), req.RawRequest.URI().Path(), resp.RawResponse)\n\t}\n\n\treturn nil\n}",
+    "funcname": "parserResponseCookie"
+}

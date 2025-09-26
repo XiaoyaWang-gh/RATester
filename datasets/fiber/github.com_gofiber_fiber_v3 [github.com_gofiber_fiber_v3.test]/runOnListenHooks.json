@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 1071,
+    "focalfunc": "func (app *App) runOnListenHooks(listenData ListenData)",
+    "funcbody": "func (app *App) runOnListenHooks(listenData ListenData) {\n\tif err := app.hooks.executeOnListenHooks(listenData); err != nil {\n\t\tpanic(err)\n\t}\n}",
+    "funcname": "runOnListenHooks"
+}

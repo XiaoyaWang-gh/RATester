@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/ctl.go",
+    "lineno": 42,
+    "focalfunc": "func WriteMsg(c io.Writer, msg interface{}) (err error)",
+    "funcbody": "func WriteMsg(c io.Writer, msg interface{}) (err error) {\n\treturn msgCtl.WriteMsg(c, msg)\n}",
+    "funcname": "WriteMsg"
+}

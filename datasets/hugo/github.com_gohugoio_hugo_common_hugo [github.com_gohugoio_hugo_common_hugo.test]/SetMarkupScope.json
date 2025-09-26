@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 146,
+    "focalfunc": "func SetMarkupScope(ctx context.Context, s string) context.Context",
+    "funcbody": "func SetMarkupScope(ctx context.Context, s string) context.Context {\n\treturn markupScope.Set(ctx, s)\n}",
+    "funcname": "SetMarkupScope"
+}

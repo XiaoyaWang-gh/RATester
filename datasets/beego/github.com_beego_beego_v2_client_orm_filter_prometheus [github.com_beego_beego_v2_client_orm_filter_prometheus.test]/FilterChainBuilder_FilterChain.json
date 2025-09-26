@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/prometheus/filter.go",
+    "lineno": 47,
+    "focalfunc": "func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter",
+    "funcbody": "func (builder *FilterChainBuilder) FilterChain(next orm.Filter) orm.Filter {\n\tinitSummaryVec.Do(func() {\n\t\tsummaryVec = prometheus.NewSummaryVec(prometheus.SummaryOpts{\n\t\t\tName:\t\t\"beego\",\n\t\t\tSubsystem:\t\"orm_operation\",\n\t\t\tConstLabels: map[string]string{\n\t\t\t\t\"server\":\tbuilder.ServerName,\n\t\t\t\t\"env\":\t\tbuilder.RunMode,\n\t\t\t\t\"appname\":\tbuilder.AppName,\n\t\t\t},\n\t\t\tHelp:\t\"The statics info for orm operation\",\n\t\t}, []string{\"method\", \"name\", \"insideTx\", \"txName\"})\n\t\tprometheus.MustRegister(summaryVec)\n\t})\n\n\treturn func(ctx context.Context, inv *orm.Invocation) []interface{} {\n\t\tstartTime := time.Now()\n\t\tres := next(ctx, inv)\n\t\tendTime := time.Now()\n\t\tdur := (endTime.Sub(startTime)) / time.Millisecond\n\n\t\tgo builder.report(ctx, inv, dur)\n\t\treturn res\n\t}\n}",
+    "funcname": "FilterChain"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 985,
+    "focalfunc": "func (t *templateNamespace) getPrototypeHTML() *htmltemplate.Template",
+    "funcbody": "func (t *templateNamespace) getPrototypeHTML() *htmltemplate.Template {\n\tif t.prototypeHTMLClone != nil {\n\t\treturn t.prototypeHTMLClone\n\t}\n\treturn t.prototypeHTML\n}",
+    "funcname": "getPrototypeHTML"
+}

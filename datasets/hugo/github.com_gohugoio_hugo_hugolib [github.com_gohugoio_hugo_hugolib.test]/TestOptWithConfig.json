@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 85,
+    "focalfunc": "func TestOptWithConfig(fn func(c *IntegrationTestConfig)) TestOpt",
+    "funcbody": "func TestOptWithConfig(fn func(c *IntegrationTestConfig)) TestOpt {\n\treturn func(c *IntegrationTestConfig) {\n\t\tfn(c)\n\t}\n}",
+    "funcname": "TestOptWithConfig"
+}

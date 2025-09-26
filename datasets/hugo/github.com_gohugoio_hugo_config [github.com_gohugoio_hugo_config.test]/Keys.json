@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 274,
+    "focalfunc": "func (c *defaultConfigProvider) Keys() []string",
+    "funcbody": "func (c *defaultConfigProvider) Keys() []string {\n\tc.mu.RLock()\n\tdefer c.mu.RUnlock()\n\treturn xmaps.Keys(c.root)\n}",
+    "funcname": "Keys"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 310,
+    "focalfunc": "func (h *HugoSites) PrintProcessingStats(w io.Writer)",
+    "funcbody": "func (h *HugoSites) PrintProcessingStats(w io.Writer) {\n\tstats := make([]*helpers.ProcessingStats, len(h.Sites))\n\tfor i := 0; i < len(h.Sites); i++ {\n\t\tstats[i] = h.Sites[i].PathSpec.ProcessingStats\n\t}\n\thelpers.ProcessingStatsTable(w, stats...)\n}",
+    "funcname": "PrintProcessingStats"
+}

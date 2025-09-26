@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 946,
+    "focalfunc": "func (e *escaper) template(name string) *template.Template",
+    "funcbody": "func (e *escaper) template(name string) *template.Template {\n\n\tt := e.arbitraryTemplate().text.Lookup(name)\n\tif t == nil {\n\t\tt = e.derived[name]\n\t}\n\treturn t\n}",
+    "funcname": "template"
+}

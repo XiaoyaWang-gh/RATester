@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/http.go",
+    "lineno": 66,
+    "focalfunc": "func (gw *HTTPGzipWrapper) ServeHTTP(w http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (gw *HTTPGzipWrapper) ServeHTTP(w http.ResponseWriter, r *http.Request) {\n\tif !strings.Contains(r.Header.Get(\"Accept-Encoding\"), \"gzip\") {\n\t\tgw.h.ServeHTTP(w, r)\n\t\treturn\n\t}\n\tw.Header().Set(\"Content-Encoding\", \"gzip\")\n\tgz := gzip.NewWriter(w)\n\tdefer gz.Close()\n\tgzr := gzipResponseWriter{Writer: gz, ResponseWriter: w}\n\tgw.h.ServeHTTP(gzr, r)\n}",
+    "funcname": "ServeHTTP"
+}

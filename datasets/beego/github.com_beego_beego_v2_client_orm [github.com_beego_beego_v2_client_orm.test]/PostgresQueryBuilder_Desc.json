@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 138,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Desc() QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Desc() QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"DESC\")\n\treturn qb\n}",
+    "funcname": "Desc"
+}

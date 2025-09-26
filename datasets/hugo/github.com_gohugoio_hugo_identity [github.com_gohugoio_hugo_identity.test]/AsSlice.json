@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 199,
+    "focalfunc": "func (ids Identities) AsSlice() []Identity",
+    "funcbody": "func (ids Identities) AsSlice() []Identity {\n\ts := make([]Identity, len(ids))\n\ti := 0\n\tfor v := range ids {\n\t\ts[i] = v\n\t\ti++\n\t}\n\tsort.Slice(s, func(i, j int) bool {\n\t\treturn s[i].IdentifierBase() < s[j].IdentifierBase()\n\t})\n\n\treturn s\n}",
+    "funcname": "AsSlice"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/append.go",
+    "lineno": 112,
+    "focalfunc": "func appendToInterfaceSliceFromValues(slice1, slice2 reflect.Value) ([]any, error)",
+    "funcbody": "func appendToInterfaceSliceFromValues(slice1, slice2 reflect.Value) ([]any, error) {\n\tvar tos []any\n\n\tfor _, slice := range []reflect.Value{slice1, slice2} {\n\t\tif !slice.IsValid() {\n\t\t\ttos = append(tos, nil)\n\t\t\tcontinue\n\t\t}\n\t\tfor i := 0; i < slice.Len(); i++ {\n\t\t\ttos = append(tos, slice.Index(i).Interface())\n\t\t}\n\t}\n\n\treturn tos, nil\n}",
+    "funcname": "appendToInterfaceSliceFromValues"
+}

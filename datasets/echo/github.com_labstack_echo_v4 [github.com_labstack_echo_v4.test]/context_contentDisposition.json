@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 600,
+    "focalfunc": "func (c *context) contentDisposition(file, name, dispositionType string) error",
+    "funcbody": "func (c *context) contentDisposition(file, name, dispositionType string) error {\n\tc.response.Header().Set(HeaderContentDisposition, fmt.Sprintf(`%s; filename=\"%s\"`, dispositionType, quoteEscaper.Replace(name)))\n\treturn c.File(file)\n}",
+    "funcname": "contentDisposition"
+}

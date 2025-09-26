@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 55,
+    "focalfunc": "func WithHandler(h http.Handler) Option",
+    "funcbody": "func WithHandler(h http.Handler) Option {\n\treturn func(s *Server) *Server {\n\t\ts.handler = h\n\t\treturn s\n\t}\n}",
+    "funcname": "WithHandler"
+}

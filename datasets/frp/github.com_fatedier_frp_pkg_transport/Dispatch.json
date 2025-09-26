@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/message.go",
+    "lineno": 100,
+    "focalfunc": "func (impl *transporterImpl) Dispatch(m msg.Message, laneKey string) bool",
+    "funcbody": "func (impl *transporterImpl) Dispatch(m msg.Message, laneKey string) bool {\n\tmsgType := reflect.TypeOf(m).Elem().Name()\n\treturn impl.DispatchWithType(m, msgType, laneKey)\n}",
+    "funcname": "Dispatch"
+}

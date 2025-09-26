@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 182,
+    "focalfunc": "func (p *nopPage) FileInfo() hugofs.FileMetaInfo",
+    "funcbody": "func (p *nopPage) FileInfo() hugofs.FileMetaInfo {\n\treturn nil\n}",
+    "funcname": "FileInfo"
+}

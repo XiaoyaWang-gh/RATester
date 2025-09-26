@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 35,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tmetrics.Register(sm)\n}",
+    "funcname": "init"
+}

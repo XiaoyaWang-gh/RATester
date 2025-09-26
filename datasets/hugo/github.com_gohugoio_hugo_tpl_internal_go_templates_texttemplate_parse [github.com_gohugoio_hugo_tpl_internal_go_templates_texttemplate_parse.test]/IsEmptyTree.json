@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 270,
+    "focalfunc": "func IsEmptyTree(n Node) bool",
+    "funcbody": "func IsEmptyTree(n Node) bool {\n\tswitch n := n.(type) {\n\tcase nil:\n\t\treturn true\n\tcase *ActionNode:\n\tcase *CommentNode:\n\t\treturn true\n\tcase *IfNode:\n\tcase *ListNode:\n\t\tfor _, node := range n.Nodes {\n\t\t\tif !IsEmptyTree(node) {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t\treturn true\n\tcase *RangeNode:\n\tcase *TemplateNode:\n\tcase *TextNode:\n\t\treturn len(bytes.TrimSpace(n.Text)) == 0\n\tcase *WithNode:\n\tdefault:\n\t\tpanic(\"unknown node: \" + n.String())\n\t}\n\treturn false\n}",
+    "funcname": "IsEmptyTree"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/passthrough/passthrough.go",
+    "lineno": 82,
+    "focalfunc": "func newHTMLRenderer() renderer.NodeRenderer",
+    "funcbody": "func newHTMLRenderer() renderer.NodeRenderer {\n\tr := &htmlRenderer{}\n\treturn r\n}",
+    "funcname": "newHTMLRenderer"
+}

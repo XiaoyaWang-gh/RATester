@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 158,
+    "focalfunc": "func (manager *Manager) getSid(r *http.Request) (string, error)",
+    "funcbody": "func (manager *Manager) getSid(r *http.Request) (string, error) {\n\tcookie, errs := r.Cookie(manager.config.CookieName)\n\tif errs != nil || cookie.Value == \"\" {\n\t\tvar sid string\n\t\tif manager.config.EnableSidInURLQuery {\n\t\t\terrs := r.ParseForm()\n\t\t\tif errs != nil {\n\t\t\t\treturn \"\", errs\n\t\t\t}\n\n\t\t\tsid = r.FormValue(manager.config.CookieName)\n\t\t}\n\n\t\tif manager.config.EnableSidInHTTPHeader && sid == \"\" {\n\t\t\tsids, isFound := r.Header[manager.config.SessionNameInHTTPHeader]\n\t\t\tif isFound && len(sids) != 0 {\n\t\t\t\treturn sids[0], nil\n\t\t\t}\n\t\t}\n\n\t\treturn sid, nil\n\t}\n\n\treturn url.QueryUnescape(cookie.Value)\n}",
+    "funcname": "getSid"
+}

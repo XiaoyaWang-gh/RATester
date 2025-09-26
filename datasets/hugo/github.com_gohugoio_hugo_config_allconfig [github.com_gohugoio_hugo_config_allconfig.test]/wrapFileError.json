@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 574,
+    "focalfunc": "func (l configLoader) wrapFileError(err error, filename string) error",
+    "funcbody": "func (l configLoader) wrapFileError(err error, filename string) error {\n\tfe := herrors.UnwrapFileError(err)\n\tif fe != nil {\n\t\tpos := fe.Position()\n\t\tpos.Filename = filename\n\t\tfe.UpdatePosition(pos)\n\t\treturn err\n\t}\n\treturn herrors.NewFileErrorFromFile(err, filename, l.Fs, nil)\n}",
+    "funcname": "wrapFileError"
+}

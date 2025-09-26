@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/pagemenus.go",
+    "lineno": 214,
+    "focalfunc": "func (m nopPageMenus) Menus() PageMenus",
+    "funcbody": "func (m nopPageMenus) Menus() PageMenus {\n\treturn PageMenus{}\n}",
+    "funcname": "Menus"
+}

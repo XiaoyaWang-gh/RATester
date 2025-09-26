@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 145,
+    "focalfunc": "func HasTemplateExt(paths string) bool",
+    "funcbody": "func HasTemplateExt(paths string) bool {\n\tfor _, v := range beeTemplateExt {\n\t\tif strings.HasSuffix(paths, \".\"+v) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "HasTemplateExt"
+}

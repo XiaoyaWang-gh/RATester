@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 237,
+    "focalfunc": "func ParseStructTag(data string) (attrs map[string]bool, tags map[string]string)",
+    "funcbody": "func ParseStructTag(data string) (attrs map[string]bool, tags map[string]string) {\n\tattrs = make(map[string]bool)\n\ttags = make(map[string]string)\n\tfor _, v := range strings.Split(data, defaultStructTagDelim) {\n\t\tif v == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tv = strings.TrimSpace(v)\n\t\tif t := strings.ToLower(v); supportTag[t] == 1 {\n\t\t\tattrs[t] = true\n\t\t} else if i := strings.Index(v, \"(\"); i > 0 && strings.Index(v, \")\") == len(v)-1 {\n\t\t\tname := t[:i]\n\t\t\tif supportTag[name] == 2 {\n\t\t\t\tv = v[i+1 : len(v)-1]\n\t\t\t\ttags[name] = v\n\t\t\t}\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "ParseStructTag"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 476,
+    "focalfunc": "func (c *Context) initQueryCache()",
+    "funcbody": "func (c *Context) initQueryCache() {\n\tif c.queryCache == nil {\n\t\tif c.Request != nil && c.Request.URL != nil {\n\t\t\tc.queryCache = c.Request.URL.Query()\n\t\t} else {\n\t\t\tc.queryCache = url.Values{}\n\t\t}\n\t}\n}",
+    "funcname": "initQueryCache"
+}

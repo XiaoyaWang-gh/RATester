@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 62,
+    "focalfunc": "func WithResponse(resp []byte) Option",
+    "funcbody": "func WithResponse(resp []byte) Option {\n\treturn func(s *Server) *Server {\n\t\ts.handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\t\t_, _ = w.Write(resp)\n\t\t})\n\t\treturn s\n\t}\n}",
+    "funcname": "WithResponse"
+}

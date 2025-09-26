@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/publisher.go",
+    "lineno": 80,
+    "focalfunc": "func NewDestinationPublisher(rs *resources.Spec, outputFormats output.Formats, mediaTypes media.Types) (pub DestinationPublisher, err error)",
+    "funcbody": "func NewDestinationPublisher(rs *resources.Spec, outputFormats output.Formats, mediaTypes media.Types) (pub DestinationPublisher, err error) {\n\tfs := rs.BaseFs.PublishFs\n\tcfg := rs.Cfg\n\tvar classCollector *htmlElementsCollector\n\tif rs.BuildConfig().BuildStats.Enabled() {\n\t\tclassCollector = newHTMLElementsCollector(rs.BuildConfig().BuildStats)\n\t}\n\tpub = DestinationPublisher{fs: fs, htmlElementsCollector: classCollector}\n\tpub.min, err = minifiers.New(mediaTypes, outputFormats, cfg)\n\treturn\n}",
+    "funcname": "NewDestinationPublisher"
+}

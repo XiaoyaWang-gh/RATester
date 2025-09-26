@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 70,
+    "focalfunc": "func (c *connWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (c *connWriter) WriteMsg(lm *LogMsg) error {\n\tif lm.Level > c.Level {\n\t\treturn nil\n\t}\n\tif c.needToConnectOnMsg() {\n\t\terr := c.connect()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tif c.ReconnectOnMsg {\n\t\tdefer c.innerWriter.Close()\n\t}\n\n\tmsg := c.formatter.Format(lm)\n\n\t_, err := c.lg.writeln(msg)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 734,
+    "focalfunc": "func getRange(expr string, r bounds) uint64",
+    "funcbody": "func getRange(expr string, r bounds) uint64 {\n\tvar (\n\t\tstart, end, step\tuint\n\t\trangeAndStep\t\t= strings.Split(expr, \"/\")\n\t\tlowAndHigh\t\t= strings.Split(rangeAndStep[0], \"-\")\n\t\tsingleDigit\t\t= len(lowAndHigh) == 1\n\t)\n\n\tvar extrastar uint64\n\tif lowAndHigh[0] == \"*\" || lowAndHigh[0] == \"?\" {\n\t\tstart = r.min\n\t\tend = r.max\n\t\textrastar = starBit\n\t} else {\n\t\tstart = parseIntOrName(lowAndHigh[0], r.names)\n\t\tswitch len(lowAndHigh) {\n\t\tcase 1:\n\t\t\tend = start\n\t\tcase 2:\n\t\t\tend = parseIntOrName(lowAndHigh[1], r.names)\n\t\tdefault:\n\t\t\tlog.Panicf(\"Too many hyphens: %s\", expr)\n\t\t}\n\t}\n\n\tswitch len(rangeAndStep) {\n\tcase 1:\n\t\tstep = 1\n\tcase 2:\n\t\tstep = mustParseInt(rangeAndStep[1])\n\n\t\tif singleDigit {\n\t\t\tend = r.max\n\t\t}\n\tdefault:\n\t\tlog.Panicf(\"Too many slashes: %s\", expr)\n\t}\n\n\tif start < r.min {\n\t\tlog.Panicf(\"Beginning of range (%d) below minimum (%d): %s\", start, r.min, expr)\n\t}\n\tif end > r.max {\n\t\tlog.Panicf(\"End of range (%d) above maximum (%d): %s\", end, r.max, expr)\n\t}\n\tif start > end {\n\t\tlog.Panicf(\"Beginning of range (%d) beyond end of range (%d): %s\", start, end, expr)\n\t}\n\n\treturn getBits(start, end, step) | extrastar\n}",
+    "funcname": "getRange"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ipallowlist/ip_allowlist.go",
+    "lineno": 72,
+    "focalfunc": "func (al *ipAllowLister) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (al *ipAllowLister) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tlogger := middlewares.GetLogger(req.Context(), al.name, typeName)\n\tctx := logger.WithContext(req.Context())\n\n\tclientIP := al.strategy.GetIP(req)\n\terr := al.allowLister.IsAuthorized(clientIP)\n\tif err != nil {\n\t\tlogger.Debug().Msgf(\"Rejecting IP %s: %v\", clientIP, err)\n\t\tobservability.SetStatusErrorf(req.Context(), \"Rejecting IP %s: %v\", clientIP, err)\n\t\treject(ctx, al.rejectStatusCode, rw)\n\t\treturn\n\t}\n\tlogger.Debug().Msgf(\"Accepting IP %s\", clientIP)\n\n\tal.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

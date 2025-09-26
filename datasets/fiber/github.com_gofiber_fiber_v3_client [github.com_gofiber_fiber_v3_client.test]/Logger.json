@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/hooks.go",
+    "lineno": 319,
+    "focalfunc": "func logger(c *Client, resp *Response, req *Request) error",
+    "funcbody": "func logger(c *Client, resp *Response, req *Request) error {\n\tif !c.debug {\n\t\treturn nil\n\t}\n\n\tc.logger.Debugf(\"%s\\n\", req.RawRequest.String())\n\tc.logger.Debugf(\"%s\\n\", resp.RawResponse.String())\n\n\treturn nil\n}",
+    "funcname": "logger"
+}

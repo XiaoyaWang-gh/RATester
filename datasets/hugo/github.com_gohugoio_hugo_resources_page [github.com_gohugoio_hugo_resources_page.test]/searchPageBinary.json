@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort_search.go",
+    "lineno": 56,
+    "focalfunc": "func searchPageBinary(p Page, pages Pages, less func(p1, p2 Page) bool) int",
+    "funcbody": "func searchPageBinary(p Page, pages Pages, less func(p1, p2 Page) bool) int {\n\tn := len(pages)\n\n\tf := func(i int) bool {\n\t\tc := pages[i]\n\t\tisLess := less(c, p)\n\t\treturn !isLess || c.Eq(p)\n\t}\n\n\ti := sort.Search(n, f)\n\n\tif i == n {\n\t\treturn -1\n\t}\n\n\treturn searchPageLinear(p, pages, i)\n}",
+    "funcname": "searchPageBinary"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 312,
+    "focalfunc": "func (ns *Namespace) toFloatsE(v any) ([]float64, bool, error)",
+    "funcbody": "func (ns *Namespace) toFloatsE(v any) ([]float64, bool, error) {\n\tvv := reflect.ValueOf(v)\n\tswitch vv.Kind() {\n\tcase reflect.Slice, reflect.Array:\n\t\tvar floats []float64\n\t\tfor i := 0; i < vv.Len(); i++ {\n\t\t\tf, err := cast.ToFloat64E(vv.Index(i).Interface())\n\t\t\tif err != nil {\n\t\t\t\treturn nil, true, err\n\t\t\t}\n\t\t\tfloats = append(floats, f)\n\t\t}\n\t\treturn floats, true, nil\n\tdefault:\n\t\tf, err := cast.ToFloat64E(v)\n\t\tif err != nil {\n\t\t\treturn nil, false, err\n\t\t}\n\t\treturn []float64{f}, false, nil\n\t}\n}",
+    "funcname": "toFloatsE"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 491,
+    "focalfunc": "func probablyEq(a, b Identity) bool",
+    "funcbody": "func probablyEq(a, b Identity) bool {\n\tif a == b {\n\t\treturn true\n\t}\n\n\tif a == Anonymous || b == Anonymous {\n\t\treturn false\n\t}\n\n\tif a.IdentifierBase() == b.IdentifierBase() {\n\t\treturn true\n\t}\n\n\tif a2, ok := a.(IsProbablyDependentProvider); ok {\n\t\treturn a2.IsProbablyDependent(b)\n\t}\n\n\treturn false\n}",
+    "funcname": "probablyEq"
+}

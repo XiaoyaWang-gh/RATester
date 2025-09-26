@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 59,
+    "focalfunc": "func (n *Namespace) Cond(cond namespaceCond) *Namespace",
+    "funcbody": "func (n *Namespace) Cond(cond namespaceCond) *Namespace {\n\tfn := func(ctx *beecontext.Context) {\n\t\tif !cond(ctx) {\n\t\t\texception(\"405\", ctx)\n\t\t}\n\t}\n\tif v := n.handlers.filters[BeforeRouter]; len(v) > 0 {\n\t\tmr := new(FilterRouter)\n\t\tmr.tree = NewTree()\n\t\tmr.pattern = \"*\"\n\t\tmr.filterFunc = fn\n\t\tmr.tree.AddRouter(\"*\", true)\n\t\tn.handlers.filters[BeforeRouter] = append([]*FilterRouter{mr}, v...)\n\t} else {\n\t\tn.handlers.InsertFilter(\"*\", BeforeRouter, fn)\n\t}\n\treturn n\n}",
+    "funcname": "Cond"
+}

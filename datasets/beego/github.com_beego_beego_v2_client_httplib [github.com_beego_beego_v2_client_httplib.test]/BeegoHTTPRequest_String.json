@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 568,
+    "focalfunc": "func (b *BeegoHTTPRequest) String() (string, error)",
+    "funcbody": "func (b *BeegoHTTPRequest) String() (string, error) {\n\tdata, err := b.Bytes()\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn string(data), nil\n}",
+    "funcname": "String"
+}

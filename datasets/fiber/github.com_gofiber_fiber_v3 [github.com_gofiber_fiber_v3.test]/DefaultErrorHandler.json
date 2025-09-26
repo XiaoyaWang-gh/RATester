@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 418,
+    "focalfunc": "func DefaultErrorHandler(c Ctx, err error) error",
+    "funcbody": "func DefaultErrorHandler(c Ctx, err error) error {\n\tcode := StatusInternalServerError\n\tvar e *Error\n\tif errors.As(err, &e) {\n\t\tcode = e.Code\n\t}\n\tc.Set(HeaderContentType, MIMETextPlainCharsetUTF8)\n\treturn c.Status(code).SendString(err.Error())\n}",
+    "funcname": "DefaultErrorHandler"
+}

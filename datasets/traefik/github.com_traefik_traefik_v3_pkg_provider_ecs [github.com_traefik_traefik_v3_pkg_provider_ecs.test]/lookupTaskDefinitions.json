@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/ecs.go",
+    "lineno": 539,
+    "focalfunc": "func (p *Provider) lookupTaskDefinitions(ctx context.Context, client *awsClient, taskDefArns map[string]*ecs.Task) (map[string]*ecs.TaskDefinition, error)",
+    "funcbody": "func (p *Provider) lookupTaskDefinitions(ctx context.Context, client *awsClient, taskDefArns map[string]*ecs.Task) (map[string]*ecs.TaskDefinition, error) {\n\tlogger := log.Ctx(ctx)\n\ttaskDef := make(map[string]*ecs.TaskDefinition)\n\n\tfor arn, task := range taskDefArns {\n\t\tif definition, ok := existingTaskDefCache.Get(arn); ok {\n\t\t\ttaskDef[arn] = definition.(*ecs.TaskDefinition)\n\t\t\tlogger.Debug().Msgf(\"Found cached task definition for %s. Skipping the call\", arn)\n\t\t} else {\n\t\t\tresp, err := client.ecs.DescribeTaskDefinitionWithContext(ctx, &ecs.DescribeTaskDefinitionInput{\n\t\t\t\tTaskDefinition: task.TaskDefinitionArn,\n\t\t\t})\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"describing task definition: %w\", err)\n\t\t\t}\n\n\t\t\ttaskDef[arn] = resp.TaskDefinition\n\t\t\texistingTaskDefCache.Set(arn, resp.TaskDefinition, cache.DefaultExpiration)\n\t\t}\n\t}\n\treturn taskDef, nil\n}",
+    "funcname": "lookupTaskDefinitions"
+}

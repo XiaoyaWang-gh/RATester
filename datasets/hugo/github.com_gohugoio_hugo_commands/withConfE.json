@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 81,
+    "focalfunc": "func (c *hugoBuilder) withConfE(fn func(conf *commonConfig) error) error",
+    "funcbody": "func (c *hugoBuilder) withConfE(fn func(conf *commonConfig) error) error {\n\tc.confmu.Lock()\n\tdefer c.confmu.Unlock()\n\tif c.conf == nil {\n\t\treturn errConfigNotSet\n\t}\n\treturn fn(c.conf)\n}",
+    "funcname": "withConfE"
+}

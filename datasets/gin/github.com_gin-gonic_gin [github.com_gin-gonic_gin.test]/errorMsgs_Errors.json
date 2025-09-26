@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 132,
+    "focalfunc": "func (a errorMsgs) Errors() []string",
+    "funcbody": "func (a errorMsgs) Errors() []string {\n\tif len(a) == 0 {\n\t\treturn nil\n\t}\n\terrorStrings := make([]string, len(a))\n\tfor i, err := range a {\n\t\terrorStrings[i] = err.Error()\n\t}\n\treturn errorStrings\n}",
+    "funcname": "Errors"
+}

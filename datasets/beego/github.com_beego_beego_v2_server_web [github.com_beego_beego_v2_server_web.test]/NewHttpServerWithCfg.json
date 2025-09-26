@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 65,
+    "focalfunc": "func NewHttpServerWithCfg(cfg *Config) *HttpServer",
+    "funcbody": "func NewHttpServerWithCfg(cfg *Config) *HttpServer {\n\tcr := NewControllerRegisterWithCfg(cfg)\n\tapp := &HttpServer{\n\t\tHandlers:\tcr,\n\t\tServer:\t\t&http.Server{},\n\t\tCfg:\t\tcfg,\n\t}\n\n\treturn app\n}",
+    "funcname": "NewHttpServerWithCfg"
+}

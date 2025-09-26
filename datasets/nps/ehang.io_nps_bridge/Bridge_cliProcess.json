@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 166,
+    "focalfunc": "func (s *Bridge) cliProcess(c *conn.Conn)",
+    "funcbody": "func (s *Bridge) cliProcess(c *conn.Conn) {\n\n\tif _, err := c.GetShortContent(3); err != nil {\n\t\tlogs.Info(\"The client %s connect error\", c.Conn.RemoteAddr(), err.Error())\n\t\treturn\n\t}\n\n\tif b, err := c.GetShortLenContent(); err != nil || string(b) != version.GetVersion() {\n\t\tlogs.Info(\"The client %s version does not match\", c.Conn.RemoteAddr())\n\t\tc.Close()\n\t\treturn\n\t}\n\t//version get\n\tvar vs []byte\n\tvar err error\n\tif vs, err = c.GetShortLenContent(); err != nil {\n\t\tlogs.Info(\"get client %s version error\", err.Error())\n\t\tc.Close()\n\t\treturn\n\t}\n\n\tc.Write([]byte(crypt.Md5(version.GetVersion())))\n\tc.SetReadDeadlineBySecond(5)\n\tvar buf []byte\n\n\tif buf, err = c.GetShortContent(32); err != nil {\n\t\tc.Close()\n\t\treturn\n\t}\n\n\tid, err := file.GetDb().GetIdByVerifyKey(string(buf), c.Conn.RemoteAddr().String())\n\tif err != nil {\n\t\tlogs.Info(\"Current client connection validation error, close this client:\", c.Conn.RemoteAddr())\n\t\ts.verifyError(c)\n\t\treturn\n\t} else {\n\t\ts.verifySuccess(c)\n\t}\n\tif flag, err := c.ReadFlag(); err == nil {\n\t\ts.typeDeal(flag, c, id, string(vs))\n\t} else {\n\t\tlogs.Warn(err, flag)\n\t}\n\treturn\n}",
+    "funcname": "cliProcess"
+}

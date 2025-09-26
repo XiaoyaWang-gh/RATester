@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 310,
+    "focalfunc": "func PrepareParams(m Params)",
+    "funcbody": "func PrepareParams(m Params) {\n\tfor k, v := range m {\n\t\tvar retyped bool\n\t\tlKey := strings.ToLower(k)\n\t\tif lKey == MergeStrategyKey {\n\t\t\tv = toMergeStrategy(v)\n\t\t\tretyped = true\n\t\t} else {\n\t\t\tswitch vv := v.(type) {\n\t\t\tcase map[any]any:\n\t\t\t\tvar p Params = cast.ToStringMap(v)\n\t\t\t\tv = p\n\t\t\t\tPrepareParams(p)\n\t\t\t\tretyped = true\n\t\t\tcase map[string]any:\n\t\t\t\tvar p Params = v.(map[string]any)\n\t\t\t\tv = p\n\t\t\t\tPrepareParams(p)\n\t\t\t\tretyped = true\n\t\t\tcase map[string]string:\n\t\t\t\tp := make(Params)\n\t\t\t\tfor k, v := range vv {\n\t\t\t\t\tp[k] = v\n\t\t\t\t}\n\t\t\t\tv = p\n\t\t\t\tPrepareParams(p)\n\t\t\t\tretyped = true\n\t\t\t}\n\t\t}\n\n\t\tif retyped || k != lKey {\n\t\t\tdelete(m, k)\n\t\t\tm[lKey] = v\n\t\t}\n\t}\n}",
+    "funcname": "PrepareParams"
+}

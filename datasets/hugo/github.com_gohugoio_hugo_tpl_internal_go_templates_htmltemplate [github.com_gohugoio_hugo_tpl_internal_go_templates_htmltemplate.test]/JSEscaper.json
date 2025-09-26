@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 996,
+    "focalfunc": "func JSEscaper(args ...any) string",
+    "funcbody": "func JSEscaper(args ...any) string {\n\treturn template.JSEscaper(args...)\n}",
+    "funcname": "JSEscaper"
+}

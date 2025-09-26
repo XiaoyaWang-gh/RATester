@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 371,
+    "focalfunc": "func lexRightDelim(l *lexer) stateFn",
+    "funcbody": "func lexRightDelim(l *lexer) stateFn {\n\t_, trimSpace := l.atRightDelim()\n\tif trimSpace {\n\t\tl.pos += trimMarkerLen\n\t\tl.ignore()\n\t}\n\tl.pos += Pos(len(l.rightDelim))\n\ti := l.thisItem(itemRightDelim)\n\tif trimSpace {\n\t\tl.pos += leftTrimLength(l.input[l.pos:])\n\t\tl.ignore()\n\t}\n\tl.insideAction = false\n\treturn l.emitItem(i)\n}",
+    "funcname": "lexRightDelim"
+}

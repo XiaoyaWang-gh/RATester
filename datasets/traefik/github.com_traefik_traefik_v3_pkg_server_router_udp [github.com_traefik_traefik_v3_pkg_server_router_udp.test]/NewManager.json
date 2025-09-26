@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/udp/router.go",
+    "lineno": 17,
+    "focalfunc": "func NewManager(conf *runtime.Configuration,\n\tserviceManager *udpservice.Manager,\n) *Manager",
+    "funcbody": "func NewManager(conf *runtime.Configuration,\n\tserviceManager *udpservice.Manager,\n) *Manager {\n\treturn &Manager{\n\t\tserviceManager:\tserviceManager,\n\t\tconf:\t\tconf,\n\t}\n}",
+    "funcname": "NewManager"
+}

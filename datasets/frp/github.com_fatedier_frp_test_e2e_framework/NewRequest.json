@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 29,
+    "focalfunc": "func NewRequest() *request.Request",
+    "funcbody": "func NewRequest() *request.Request {\n\treturn request.New().\n\t\tTimeout(consts.DefaultTimeout).\n\t\tBody([]byte(consts.TestString))\n}",
+    "funcname": "NewRequest"
+}

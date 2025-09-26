@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 441,
+    "focalfunc": "func (fs *RootMappingFs) getRootsReverse(key string) (string, []RootMapping)",
+    "funcbody": "func (fs *RootMappingFs) getRootsReverse(key string) (string, []RootMapping) {\n\ttree := fs.realMapToRoot\n\ts, v, found := tree.LongestPrefix(key)\n\tif !found {\n\t\treturn \"\", nil\n\t}\n\treturn s, v.([]RootMapping)\n}",
+    "funcname": "getRootsReverse"
+}

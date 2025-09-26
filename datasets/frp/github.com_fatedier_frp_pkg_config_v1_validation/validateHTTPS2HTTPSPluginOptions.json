@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/plugin.go",
+    "lineno": 55,
+    "focalfunc": "func validateHTTPS2HTTPSPluginOptions(c *v1.HTTPS2HTTPSPluginOptions) error",
+    "funcbody": "func validateHTTPS2HTTPSPluginOptions(c *v1.HTTPS2HTTPSPluginOptions) error {\n\tif c.LocalAddr == \"\" {\n\t\treturn errors.New(\"localAddr is required\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateHTTPS2HTTPSPluginOptions"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 40,
+    "focalfunc": "func Builder() string",
+    "funcbody": "func Builder() string {\n\treturn os.Getenv(\"GO_BUILDER_NAME\")\n}",
+    "funcname": "Builder"
+}

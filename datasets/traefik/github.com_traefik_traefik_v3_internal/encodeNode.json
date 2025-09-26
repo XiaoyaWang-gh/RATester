@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/parser.go",
+    "lineno": 11,
+    "focalfunc": "func encodeNode(labels map[string]string, root string, node *parser.Node)",
+    "funcbody": "func encodeNode(labels map[string]string, root string, node *parser.Node) {\n\tfor _, child := range node.Children {\n\t\tif child.Disabled {\n\t\t\tcontinue\n\t\t}\n\n\t\tvar sep string\n\t\tif child.Name[0] != '[' {\n\t\t\tsep = \".\"\n\t\t}\n\n\t\tchildName := root + sep + child.Name\n\n\t\tif child.RawValue != nil {\n\t\t\tencodeRawValue(labels, childName, child.RawValue)\n\t\t\tcontinue\n\t\t}\n\n\t\tif strings.Contains(child.Tag.Get(parser.TagLabel), parser.TagLabelAllowEmpty) {\n\t\t\tlabels[childName] = \"true\"\n\t\t}\n\n\t\tif len(child.Children) > 0 {\n\t\t\tencodeNode(labels, childName, child)\n\t\t} else if len(child.Name) > 0 {\n\t\t\tlabels[childName] = child.Value\n\t\t}\n\t}\n}",
+    "funcname": "encodeNode"
+}

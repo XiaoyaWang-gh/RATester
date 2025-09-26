@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 312,
+    "focalfunc": "func (c *clientWrapper) ListHTTPRoutes() ([]*gatev1.HTTPRoute, error)",
+    "funcbody": "func (c *clientWrapper) ListHTTPRoutes() ([]*gatev1.HTTPRoute, error) {\n\tvar httpRoutes []*gatev1.HTTPRoute\n\tfor _, namespace := range c.watchedNamespaces {\n\t\troutes, err := c.factoriesGateway[c.lookupNamespace(namespace)].Gateway().V1().HTTPRoutes().Lister().HTTPRoutes(namespace).List(labels.Everything())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"listing HTTP routes in namespace %s\", namespace)\n\t\t}\n\n\t\thttpRoutes = append(httpRoutes, routes...)\n\t}\n\n\treturn httpRoutes, nil\n}",
+    "funcname": "ListHTTPRoutes"
+}

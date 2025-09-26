@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/centrifuge.go",
+    "lineno": 216,
+    "focalfunc": "func extractPackage(t types.Type) string",
+    "funcbody": "func extractPackage(t types.Type) string {\n\tswitch tu := t.(type) {\n\tcase *types.Named:\n\t\treturn tu.Obj().Pkg().Path()\n\n\tcase *types.Slice:\n\t\tif v, ok := tu.Elem().(*types.Named); ok {\n\t\t\treturn v.Obj().Pkg().Path()\n\t\t}\n\t\treturn \"\"\n\n\tcase *types.Map:\n\t\tif v, ok := tu.Elem().(*types.Named); ok {\n\t\t\treturn v.Obj().Pkg().Path()\n\t\t}\n\t\treturn \"\"\n\n\tcase *types.Pointer:\n\t\treturn extractPackage(tu.Elem())\n\n\tdefault:\n\t\treturn \"\"\n\t}\n}",
+    "funcname": "extractPackage"
+}

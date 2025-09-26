@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 107,
+    "focalfunc": "func (p *LogFormatterParams) MethodColor() string",
+    "funcbody": "func (p *LogFormatterParams) MethodColor() string {\n\tmethod := p.Method\n\n\tswitch method {\n\tcase http.MethodGet:\n\t\treturn blue\n\tcase http.MethodPost:\n\t\treturn cyan\n\tcase http.MethodPut:\n\t\treturn yellow\n\tcase http.MethodDelete:\n\t\treturn red\n\tcase http.MethodPatch:\n\t\treturn green\n\tcase http.MethodHead:\n\t\treturn magenta\n\tcase http.MethodOptions:\n\t\treturn white\n\tdefault:\n\t\treturn reset\n\t}\n}",
+    "funcname": "MethodColor"
+}

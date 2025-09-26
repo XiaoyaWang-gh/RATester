@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/static/static_config.go",
+    "lineno": 360,
+    "focalfunc": "func getSafeACMECAServer(caServerSrc string) string",
+    "funcbody": "func getSafeACMECAServer(caServerSrc string) string {\n\tif len(caServerSrc) == 0 {\n\t\treturn DefaultAcmeCAServer\n\t}\n\n\tif strings.HasPrefix(caServerSrc, \"https://acme-v01.api.letsencrypt.org\") {\n\t\tcaServer := strings.Replace(caServerSrc, \"v01\", \"v02\", 1)\n\t\tlog.Warn().Msgf(\"The CA server %[1]q refers to a v01 endpoint of the ACME API, please change to %[2]q. Fallback to %[2]q.\", caServerSrc, caServer)\n\t\treturn caServer\n\t}\n\n\tif strings.HasPrefix(caServerSrc, \"https://acme-staging.api.letsencrypt.org\") {\n\t\tcaServer := strings.Replace(caServerSrc, \"https://acme-staging.api.letsencrypt.org\", \"https://acme-staging-v02.api.letsencrypt.org\", 1)\n\t\tlog.Warn().Msgf(\"The CA server %[1]q refers to a v01 endpoint of the ACME API, please change to %[2]q. Fallback to %[2]q.\", caServerSrc, caServer)\n\t\treturn caServer\n\t}\n\n\treturn caServerSrc\n}",
+    "funcname": "getSafeACMECAServer"
+}

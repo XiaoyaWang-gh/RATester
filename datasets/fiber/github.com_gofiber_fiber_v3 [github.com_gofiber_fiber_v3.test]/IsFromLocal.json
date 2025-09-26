@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1845,
+    "focalfunc": "func (c *DefaultCtx) IsFromLocal() bool",
+    "funcbody": "func (c *DefaultCtx) IsFromLocal() bool {\n\treturn c.fasthttp.RemoteIP().IsLoopback()\n}",
+    "funcname": "IsFromLocal"
+}

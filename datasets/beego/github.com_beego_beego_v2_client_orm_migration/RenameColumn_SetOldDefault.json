@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 192,
+    "focalfunc": "func (c *RenameColumn) SetOldDefault(def string) *RenameColumn",
+    "funcbody": "func (c *RenameColumn) SetOldDefault(def string) *RenameColumn {\n\tc.OldDefault = def\n\treturn c\n}",
+    "funcname": "SetOldDefault"
+}

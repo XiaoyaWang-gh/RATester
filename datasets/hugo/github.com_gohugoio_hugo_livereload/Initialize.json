@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 108,
+    "focalfunc": "func Initialize()",
+    "funcbody": "func Initialize() {\n\tgo wsHub.run()\n}",
+    "funcname": "Initialize"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_render.go",
+    "lineno": 51,
+    "focalfunc": "func (s siteRenderContext) shouldRenderStandalonePage(kind string) bool",
+    "funcbody": "func (s siteRenderContext) shouldRenderStandalonePage(kind string) bool {\n\tif s.multihost || kind == kinds.KindSitemap {\n\n\t\treturn s.outIdx == 0\n\t}\n\n\tif kind == kinds.KindStatus404 {\n\n\t\treturn s.outIdx == 0\n\t}\n\n\treturn s.languageIdx == 0 && s.outIdx == 0\n}",
+    "funcname": "shouldRenderStandalonePage"
+}

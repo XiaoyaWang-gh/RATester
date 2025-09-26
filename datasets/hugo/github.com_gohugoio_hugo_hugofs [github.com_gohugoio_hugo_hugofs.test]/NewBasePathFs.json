@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 230,
+    "focalfunc": "func NewBasePathFs(source afero.Fs, path string) afero.Fs",
+    "funcbody": "func NewBasePathFs(source afero.Fs, path string) afero.Fs {\n\treturn WrapFilesystem(afero.NewBasePathFs(source, path), source)\n}",
+    "funcname": "NewBasePathFs"
+}

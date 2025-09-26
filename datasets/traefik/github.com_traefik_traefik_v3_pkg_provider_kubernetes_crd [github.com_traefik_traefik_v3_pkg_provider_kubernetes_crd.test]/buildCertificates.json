@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 1163,
+    "focalfunc": "func buildCertificates(client Client, tlsStore, namespace string, certificates []traefikv1alpha1.Certificate, tlsConfigs map[string]*tls.CertAndStores) error",
+    "funcbody": "func buildCertificates(client Client, tlsStore, namespace string, certificates []traefikv1alpha1.Certificate, tlsConfigs map[string]*tls.CertAndStores) error {\n\tfor _, c := range certificates {\n\t\tconfigKey := namespace + \"/\" + c.SecretName\n\t\tif _, tlsExists := tlsConfigs[configKey]; !tlsExists {\n\t\t\tcertAndStores, err := getTLS(client, c.SecretName, namespace)\n\t\t\tif err != nil {\n\t\t\t\treturn fmt.Errorf(\"unable to read secret %s: %w\", configKey, err)\n\t\t\t}\n\n\t\t\tcertAndStores.Stores = []string{tlsStore}\n\t\t\ttlsConfigs[configKey] = certAndStores\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildCertificates"
+}

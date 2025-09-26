@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 52,
+    "focalfunc": "func (d Decoder) OptionsKey() string",
+    "funcbody": "func (d Decoder) OptionsKey() string {\n\tvar sb strings.Builder\n\tsb.WriteRune(d.Delimiter)\n\tsb.WriteRune(d.Comment)\n\tsb.WriteString(strconv.FormatBool(d.LazyQuotes))\n\treturn sb.String()\n}",
+    "funcname": "OptionsKey"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 102,
+    "focalfunc": "func UniqueStringsSorted(s []string) []string",
+    "funcbody": "func UniqueStringsSorted(s []string) []string {\n\tif len(s) == 0 {\n\t\treturn nil\n\t}\n\tss := sort.StringSlice(s)\n\tss.Sort()\n\ti := 0\n\tfor j := 1; j < len(s); j++ {\n\t\tif !ss.Less(i, j) {\n\t\t\tcontinue\n\t\t}\n\t\ti++\n\t\ts[i] = s[j]\n\t}\n\n\treturn s[:i+1]\n}",
+    "funcname": "UniqueStringsSorted"
+}

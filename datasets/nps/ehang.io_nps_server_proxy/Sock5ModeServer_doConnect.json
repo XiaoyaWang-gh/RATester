@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 109,
+    "focalfunc": "func (s *Sock5ModeServer) doConnect(c net.Conn, command uint8)",
+    "funcbody": "func (s *Sock5ModeServer) doConnect(c net.Conn, command uint8) {\n\taddrType := make([]byte, 1)\n\tc.Read(addrType)\n\tvar host string\n\tswitch addrType[0] {\n\tcase ipV4:\n\t\tipv4 := make(net.IP, net.IPv4len)\n\t\tc.Read(ipv4)\n\t\thost = ipv4.String()\n\tcase ipV6:\n\t\tipv6 := make(net.IP, net.IPv6len)\n\t\tc.Read(ipv6)\n\t\thost = ipv6.String()\n\tcase domainName:\n\t\tvar domainLen uint8\n\t\tbinary.Read(c, binary.BigEndian, &domainLen)\n\t\tdomain := make([]byte, domainLen)\n\t\tc.Read(domain)\n\t\thost = string(domain)\n\tdefault:\n\t\ts.sendReply(c, addrTypeNotSupported)\n\t\treturn\n\t}\n\n\tvar port uint16\n\tbinary.Read(c, binary.BigEndian, &port)\n\n\taddr := net.JoinHostPort(host, strconv.Itoa(int(port)))\n\tvar ltype string\n\tif command == associateMethod {\n\t\tltype = common.CONN_UDP\n\t} else {\n\t\tltype = common.CONN_TCP\n\t}\n\ts.DealClient(conn.NewConn(c), s.task.Client, addr, nil, ltype, func() {\n\t\ts.sendReply(c, succeeded)\n\t}, s.task.Flow, s.task.Target.LocalProxy)\n\treturn\n}",
+    "funcname": "doConnect"
+}

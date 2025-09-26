@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 138,
+    "focalfunc": "func (s *SMTPWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (s *SMTPWriter) Format(lm *LogMsg) string {\n\treturn lm.OldStyleFormat()\n}",
+    "funcname": "Format"
+}

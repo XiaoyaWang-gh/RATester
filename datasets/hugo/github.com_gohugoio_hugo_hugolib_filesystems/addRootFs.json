@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 842,
+    "focalfunc": "func (c *filesystemsCollector) addRootFs(rfs *hugofs.RootMappingFs)",
+    "funcbody": "func (c *filesystemsCollector) addRootFs(rfs *hugofs.RootMappingFs) {\n\tc.rootFss = append(c.rootFss, rfs)\n}",
+    "funcname": "addRootFs"
+}

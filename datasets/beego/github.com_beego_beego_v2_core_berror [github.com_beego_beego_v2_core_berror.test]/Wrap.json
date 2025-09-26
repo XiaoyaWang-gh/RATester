@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/error.go",
+    "lineno": 36,
+    "focalfunc": "func Wrap(err error, c Code, msg string) error",
+    "funcbody": "func Wrap(err error, c Code, msg string) error {\n\tif err == nil {\n\t\treturn nil\n\t}\n\treturn fmt.Errorf(errFmt+\": %w\", c.Code(), msg, err)\n}",
+    "funcname": "Wrap"
+}

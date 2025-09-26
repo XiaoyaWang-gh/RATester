@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 99,
+    "focalfunc": "func readConfig(format metadecoders.Format, data []byte) (map[string]any, error)",
+    "funcbody": "func readConfig(format metadecoders.Format, data []byte) (map[string]any, error) {\n\tm, err := metadecoders.Default.UnmarshalToMap(data, format)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tRenameKeys(m)\n\n\treturn m, nil\n}",
+    "funcname": "readConfig"
+}

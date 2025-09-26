@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 60,
+    "focalfunc": "func NewContextConn(ctx context.Context, c net.Conn) *ContextConn",
+    "funcbody": "func NewContextConn(ctx context.Context, c net.Conn) *ContextConn {\n\treturn &ContextConn{\n\t\tConn:\tc,\n\t\tctx:\tctx,\n\t}\n}",
+    "funcname": "NewContextConn"
+}

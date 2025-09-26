@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 98,
+    "focalfunc": "func (t *templateExecHelper) Init(ctx context.Context, tmpl texttemplate.Preparer)",
+    "funcbody": "func (t *templateExecHelper) Init(ctx context.Context, tmpl texttemplate.Preparer) {\n\tif t.watching {\n\t\t_, ok := tmpl.(identity.IdentityProvider)\n\t\tif ok {\n\t\t\tt.trackDependencies(ctx, tmpl, \"\", reflect.Value{})\n\t\t}\n\n\t}\n}",
+    "funcname": "Init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 170,
+    "focalfunc": "func (c *ContentSpec) TrimShortHTML(input []byte, markup string) []byte",
+    "funcbody": "func (c *ContentSpec) TrimShortHTML(input []byte, markup string) []byte {\n\topeningTag := []byte(\"<p>\")\n\tclosingTag := []byte(\"</p>\")\n\n\tif markup == media.DefaultContentTypes.AsciiDoc.SubType {\n\t\topeningTag = []byte(\"<div class=\\\"paragraph\\\">\\n<p>\")\n\t\tclosingTag = []byte(\"</p>\\n</div>\")\n\t}\n\n\tif bytes.Count(input, openingTag) == 1 {\n\t\tinput = bytes.TrimSpace(input)\n\t\tif bytes.HasPrefix(input, openingTag) && bytes.HasSuffix(input, closingTag) {\n\t\t\tinput = bytes.TrimPrefix(input, openingTag)\n\t\t\tinput = bytes.TrimSuffix(input, closingTag)\n\t\t\tinput = bytes.TrimSpace(input)\n\t\t}\n\t}\n\treturn input\n}",
+    "funcname": "TrimShortHTML"
+}

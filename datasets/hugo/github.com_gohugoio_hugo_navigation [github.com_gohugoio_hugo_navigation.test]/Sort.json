@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 221,
+    "focalfunc": "func (m Menu) Sort() Menu",
+    "funcbody": "func (m Menu) Sort() Menu {\n\tmenuEntryBy(defaultMenuEntrySort).Sort(m)\n\treturn m\n}",
+    "funcname": "Sort"
+}

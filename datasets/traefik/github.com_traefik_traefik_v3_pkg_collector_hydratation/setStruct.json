@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/hydratation/hydration.go",
+    "lineno": 127,
+    "focalfunc": "func setStruct(field reflect.Value) error",
+    "funcbody": "func setStruct(field reflect.Value) error {\n\tfor i := range field.NumField() {\n\t\tfld := field.Field(i)\n\t\tstFld := field.Type().Field(i)\n\n\t\tif !stFld.IsExported() || fld.Kind() == reflect.Func {\n\t\t\tcontinue\n\t\t}\n\n\t\tif err := fill(fld); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "setStruct"
+}

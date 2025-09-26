@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 604,
+    "focalfunc": "func (h *HugoSites) readData(f *source.File) (any, error)",
+    "funcbody": "func (h *HugoSites) readData(f *source.File) (any, error) {\n\tfile, err := f.FileInfo().Meta().Open()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"readData: failed to open data file: %w\", err)\n\t}\n\tdefer file.Close()\n\tcontent := helpers.ReaderToBytes(file)\n\n\tformat := metadecoders.FormatFromString(f.Ext())\n\treturn metadecoders.Default.Unmarshal(content, format)\n}",
+    "funcname": "readData"
+}

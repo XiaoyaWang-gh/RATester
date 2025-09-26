@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 310,
+    "focalfunc": "func (s *IntegrationTestBuilder) AssertPublishDir(matches ...string)",
+    "funcbody": "func (s *IntegrationTestBuilder) AssertPublishDir(matches ...string) {\n\ts.AssertFs(s.fs.PublishDir, matches...)\n}",
+    "funcname": "AssertPublishDir"
+}

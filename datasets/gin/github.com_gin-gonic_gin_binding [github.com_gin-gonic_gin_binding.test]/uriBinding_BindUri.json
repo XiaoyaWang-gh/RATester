@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/uri.go",
+    "lineno": 13,
+    "focalfunc": "func (uriBinding) BindUri(m map[string][]string, obj any) error",
+    "funcbody": "func (uriBinding) BindUri(m map[string][]string, obj any) error {\n\tif err := mapURI(obj, m); err != nil {\n\t\treturn err\n\t}\n\treturn validate(obj)\n}",
+    "funcname": "BindUri"
+}

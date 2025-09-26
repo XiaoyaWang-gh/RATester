@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 109,
+    "focalfunc": "func (pxy *BaseProxy) GetConfigurer() v1.ProxyConfigurer",
+    "funcbody": "func (pxy *BaseProxy) GetConfigurer() v1.ProxyConfigurer {\n\treturn pxy.configurer\n}",
+    "funcname": "GetConfigurer"
+}

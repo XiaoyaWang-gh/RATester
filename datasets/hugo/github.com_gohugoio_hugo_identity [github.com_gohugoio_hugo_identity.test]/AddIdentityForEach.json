@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 383,
+    "focalfunc": "func (m *nopManager) AddIdentityForEach(ids ...ForEeachIdentityProvider)",
+    "funcbody": "func (m *nopManager) AddIdentityForEach(ids ...ForEeachIdentityProvider) {\n}",
+    "funcname": "AddIdentityForEach"
+}

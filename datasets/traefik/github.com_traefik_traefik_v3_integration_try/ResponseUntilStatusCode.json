@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 42,
+    "focalfunc": "func ResponseUntilStatusCode(req *http.Request, timeout time.Duration, statusCode int) (*http.Response, error)",
+    "funcbody": "func ResponseUntilStatusCode(req *http.Request, timeout time.Duration, statusCode int) (*http.Response, error) {\n\treturn doTryRequest(req, timeout, nil, StatusCodeIs(statusCode))\n}",
+    "funcname": "ResponseUntilStatusCode"
+}

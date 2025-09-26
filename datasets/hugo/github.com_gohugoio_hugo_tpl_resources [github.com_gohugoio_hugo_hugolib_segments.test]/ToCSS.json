@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 312,
+    "focalfunc": "func (ns *Namespace) ToCSS(args ...any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) ToCSS(args ...any) (resource.Resource, error) {\n\thugo.Deprecate(\"resources.ToCSS\", \"Use css.Sass instead.\", \"v0.128.0\")\n\treturn ns.cssNs.Sass(args...)\n}",
+    "funcname": "ToCSS"
+}

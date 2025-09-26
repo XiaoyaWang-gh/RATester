@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 133,
+    "focalfunc": "func (m *Migration) addOrUpdateRecord(name, status string) error",
+    "funcbody": "func (m *Migration) addOrUpdateRecord(name, status string) error {\n\to := orm.NewOrm()\n\tif status == \"down\" {\n\t\tstatus = \"rollback\"\n\t\tp, err := o.Raw(\"update migrations set status = ?, rollback_statements = ?, created_at = ? where name = ?\").Prepare()\n\t\tif err != nil {\n\t\t\treturn nil\n\t\t}\n\t\t_, err = p.Exec(status, strings.Join(m.sqls, \"; \"), time.Now().Format(DBDateFormat), name)\n\t\treturn err\n\t}\n\tstatus = \"update\"\n\tp, err := o.Raw(\"insert into migrations(name, created_at, statements, status) values(?,?,?,?)\").Prepare()\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = p.Exec(name, time.Now().Format(DBDateFormat), strings.Join(m.sqls, \"; \"), status)\n\treturn err\n}",
+    "funcname": "addOrUpdateRecord"
+}

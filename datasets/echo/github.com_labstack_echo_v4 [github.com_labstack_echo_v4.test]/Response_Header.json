@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 37,
+    "focalfunc": "func (r *Response) Header() http.Header",
+    "funcbody": "func (r *Response) Header() http.Header {\n\treturn r.Writer.Header()\n}",
+    "funcname": "Header"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 104,
+    "focalfunc": "func (p Pages) RelatedTo(ctx context.Context, args ...types.KeyValues) (Pages, error)",
+    "funcbody": "func (p Pages) RelatedTo(ctx context.Context, args ...types.KeyValues) (Pages, error) {\n\tif len(p) == 0 {\n\t\treturn nil, nil\n\t}\n\n\topts := related.SearchOpts{\n\t\tNamedSlices: args,\n\t}\n\n\treturn p.search(ctx, opts)\n}",
+    "funcname": "RelatedTo"
+}

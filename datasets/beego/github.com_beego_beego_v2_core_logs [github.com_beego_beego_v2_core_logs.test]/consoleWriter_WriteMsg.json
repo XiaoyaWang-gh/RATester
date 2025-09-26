@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/console.go",
+    "lineno": 105,
+    "focalfunc": "func (c *consoleWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (c *consoleWriter) WriteMsg(lm *LogMsg) error {\n\tif lm.Level > c.Level {\n\t\treturn nil\n\t}\n\tmsg := c.formatter.Format(lm)\n\tc.lg.writeln(msg)\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

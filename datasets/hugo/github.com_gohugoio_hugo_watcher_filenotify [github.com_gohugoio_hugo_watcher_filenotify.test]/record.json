@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 189,
+    "focalfunc": "func (r *recording) record(filename string) error",
+    "funcbody": "func (r *recording) record(filename string) error {\n\tr.clear()\n\n\tfi, err := os.Stat(filename)\n\tif err != nil && !herrors.IsNotExist(err) {\n\t\treturn err\n\t}\n\n\tif fi == nil {\n\t\treturn nil\n\t}\n\n\tr.FileInfo = fi\n\n\tif fi.IsDir() {\n\t\tf, err := os.Open(filename)\n\t\tif err != nil {\n\t\t\tif herrors.IsNotExist(err) {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn err\n\t\t}\n\t\tdefer f.Close()\n\n\t\tfis, err := f.Readdir(-1)\n\t\tif err != nil {\n\t\t\tif herrors.IsNotExist(err) {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn err\n\t\t}\n\n\t\tfor _, fi := range fis {\n\t\t\tr.entries[fi.Name()] = fi\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "record"
+}

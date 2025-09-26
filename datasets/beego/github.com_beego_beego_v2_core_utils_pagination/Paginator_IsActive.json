@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 165,
+    "focalfunc": "func (p *Paginator) IsActive(page int) bool",
+    "funcbody": "func (p *Paginator) IsActive(page int) bool {\n\treturn p.Page() == page\n}",
+    "funcname": "IsActive"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 171,
+    "focalfunc": "func (rp *MemProvider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (rp *MemProvider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tif client == nil {\n\t\tif err := rp.connectInit(); err != nil {\n\t\t\treturn false, err\n\t\t}\n\t}\n\tif item, err := client.Get(sid); err != nil || len(item.Value) == 0 {\n\t\treturn false, err\n\t}\n\treturn true, nil\n}",
+    "funcname": "SessionExist"
+}

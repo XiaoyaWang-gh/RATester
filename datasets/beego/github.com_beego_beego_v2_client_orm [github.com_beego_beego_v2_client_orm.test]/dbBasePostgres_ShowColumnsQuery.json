@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 170,
+    "focalfunc": "func (d *dbBasePostgres) ShowColumnsQuery(table string) string",
+    "funcbody": "func (d *dbBasePostgres) ShowColumnsQuery(table string) string {\n\treturn fmt.Sprintf(\"SELECT column_name, data_type, is_nullable FROM information_schema.Columns where table_schema NOT IN ('pg_catalog', 'information_schema') and table_name = '%s'\", table)\n}",
+    "funcname": "ShowColumnsQuery"
+}

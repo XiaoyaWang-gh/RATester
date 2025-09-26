@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 113,
+    "focalfunc": "func (cj *CookieJar) Set(uri *fasthttp.URI, cookies ...*fasthttp.Cookie)",
+    "funcbody": "func (cj *CookieJar) Set(uri *fasthttp.URI, cookies ...*fasthttp.Cookie) {\n\tif uri == nil {\n\t\treturn\n\t}\n\n\tcj.SetByHost(uri.Host(), cookies...)\n}",
+    "funcname": "Set"
+}

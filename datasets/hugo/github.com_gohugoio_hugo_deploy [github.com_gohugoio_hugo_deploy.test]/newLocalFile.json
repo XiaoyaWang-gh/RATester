@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 358,
+    "focalfunc": "func newLocalFile(fs afero.Fs, nativePath, slashpath string, m *deployconfig.Matcher, mt media.Types) (*localFile, error)",
+    "funcbody": "func newLocalFile(fs afero.Fs, nativePath, slashpath string, m *deployconfig.Matcher, mt media.Types) (*localFile, error) {\n\tf, err := fs.Open(nativePath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer f.Close()\n\tlf := &localFile{\n\t\tNativePath:\tnativePath,\n\t\tSlashPath:\tslashpath,\n\t\tfs:\t\tfs,\n\t\tmatcher:\tm,\n\t\tmediaTypes:\tmt,\n\t}\n\tif m != nil && m.Gzip {\n\n\t\tgz := gzip.NewWriter(&lf.gzipped)\n\t\tif _, err := io.Copy(gz, f); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif err := gz.Close(); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tlf.UploadSize = int64(lf.gzipped.Len())\n\t} else {\n\n\t\tinfo, err := f.Stat()\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tlf.UploadSize = info.Size()\n\t}\n\treturn lf, nil\n}",
+    "funcname": "newLocalFile"
+}

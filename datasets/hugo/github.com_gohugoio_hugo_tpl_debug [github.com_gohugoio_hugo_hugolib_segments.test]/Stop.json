@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/debug/debug.go",
+    "lineno": 154,
+    "focalfunc": "func (t *timer) Stop() string",
+    "funcbody": "func (t *timer) Stop() string {\n\tt.stopOnce.Do(func() {\n\t\tt.elapsed = time.Since(t.start)\n\t})\n\n\treturn \"\"\n}",
+    "funcname": "Stop"
+}

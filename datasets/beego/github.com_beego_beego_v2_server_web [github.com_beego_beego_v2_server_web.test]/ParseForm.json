@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 265,
+    "focalfunc": "func ParseForm(form url.Values, obj interface{}) error",
+    "funcbody": "func ParseForm(form url.Values, obj interface{}) error {\n\treturn context.ParseForm(form, obj)\n}",
+    "funcname": "ParseForm"
+}

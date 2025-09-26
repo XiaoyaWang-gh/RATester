@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 107,
+    "focalfunc": "func (r *Request) HTTPPath(path string) *Request",
+    "funcbody": "func (r *Request) HTTPPath(path string) *Request {\n\tr.path = path\n\treturn r\n}",
+    "funcname": "HTTPPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 409,
+    "focalfunc": "func (s *statusExporterImpl) GetProxyStatus(name string) (*proxy.WorkingStatus, bool)",
+    "funcbody": "func (s *statusExporterImpl) GetProxyStatus(name string) (*proxy.WorkingStatus, bool) {\n\treturn s.getProxyStatusFunc(name)\n}",
+    "funcname": "GetProxyStatus"
+}

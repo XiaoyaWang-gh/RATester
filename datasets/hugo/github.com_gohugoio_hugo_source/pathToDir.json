@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 131,
+    "focalfunc": "func (fi *File) pathToDir(s string) string",
+    "funcbody": "func (fi *File) pathToDir(s string) string {\n\tif s == \"\" {\n\t\treturn s\n\t}\n\treturn filepath.FromSlash(s[1:] + \"/\")\n}",
+    "funcname": "pathToDir"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager_msgp.go",
+    "lineno": 174,
+    "focalfunc": "func (z storageManager) Msgsize() (s int)",
+    "funcbody": "func (z storageManager) Msgsize() (s int) {\n\ts = 1\n\treturn\n}",
+    "funcname": "Msgsize"
+}

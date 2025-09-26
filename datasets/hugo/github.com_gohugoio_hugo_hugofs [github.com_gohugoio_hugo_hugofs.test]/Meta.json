@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 180,
+    "focalfunc": "func (fi *dirEntryMeta) Meta() *FileMeta",
+    "funcbody": "func (fi *dirEntryMeta) Meta() *FileMeta {\n\treturn fi.m\n}",
+    "funcname": "Meta"
+}

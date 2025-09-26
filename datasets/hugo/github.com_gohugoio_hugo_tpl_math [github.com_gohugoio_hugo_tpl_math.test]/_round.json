@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/round.go",
+    "lineno": 27,
+    "focalfunc": "func _round(x float64) float64",
+    "funcbody": "func _round(x float64) float64 {\n\t// Round is a faster implementation of:\n\t//\n\t//\tfunc Round(x float64) float64 {\n\t//\t\tt := Trunc(x)\n\t//\t\tif Abs(x-t) >= 0.5 {\n\t//\t\t\treturn t + Copysign(1, x)\n\t//\t\t}\n\t//\t\treturn t\n\t//\t}\n\tconst (\n\t\tsignMask\t= 1 << 63\n\t\tfracMask\t= 1<<shift - 1\n\t\thalf\t\t= 1 << (shift - 1)\n\t\tone\t\t= bias << shift\n\t)\n\n\tbits := math.Float64bits(x)\n\te := uint(bits>>shift) & mask\n\tif e < bias {\n\n\t\tbits &= signMask\n\t\tif e == bias-1 {\n\t\t\tbits |= one\n\t\t}\n\t} else if e < bias+shift {\n\n\t\te -= bias\n\t\tbits += half >> e\n\t\tbits &^= fracMask >> e\n\t}\n\treturn math.Float64frombits(bits)\n}",
+    "funcname": "_round"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/admin.go",
+    "lineno": 115,
+    "focalfunc": "func StopHandler(clientCfg *v1.ClientCommonConfig) error",
+    "funcbody": "func StopHandler(clientCfg *v1.ClientCommonConfig) error {\n\tclient := clientsdk.New(clientCfg.WebServer.Addr, clientCfg.WebServer.Port)\n\tclient.SetAuth(clientCfg.WebServer.User, clientCfg.WebServer.Password)\n\tctx, cancel := context.WithTimeout(context.Background(), adminAPITimeout)\n\tdefer cancel()\n\tif err := client.Stop(ctx); err != nil {\n\t\treturn err\n\t}\n\tfmt.Println(\"stop success\")\n\treturn nil\n}",
+    "funcname": "StopHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_config.go",
+    "lineno": 124,
+    "focalfunc": "func (f Caches) AssetsCache() *Cache",
+    "funcbody": "func (f Caches) AssetsCache() *Cache {\n\treturn f[CacheKeyAssets]\n}",
+    "funcname": "AssetsCache"
+}

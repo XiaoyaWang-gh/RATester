@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/instana.go",
+    "lineno": 11,
+    "focalfunc": "func NewInstanaLogger(logger zerolog.Logger) *InstanaLogger",
+    "funcbody": "func NewInstanaLogger(logger zerolog.Logger) *InstanaLogger {\n\treturn &InstanaLogger{logger: logger}\n}",
+    "funcname": "NewInstanaLogger"
+}

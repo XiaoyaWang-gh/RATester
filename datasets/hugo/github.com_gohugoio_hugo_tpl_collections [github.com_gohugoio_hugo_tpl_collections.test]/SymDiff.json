@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/symdiff.go",
+    "lineno": 23,
+    "focalfunc": "func (ns *Namespace) SymDiff(s2, s1 any) (any, error)",
+    "funcbody": "func (ns *Namespace) SymDiff(s2, s1 any) (any, error) {\n\tids1, err := collectIdentities(s1)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tids2, err := collectIdentities(s2)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar slice reflect.Value\n\tvar sliceElemType reflect.Type\n\n\tfor i, s := range []any{s1, s2} {\n\t\tv := reflect.ValueOf(s)\n\n\t\tswitch v.Kind() {\n\t\tcase reflect.Array, reflect.Slice:\n\t\t\tif i == 0 {\n\t\t\t\tsliceType := v.Type()\n\t\t\t\tsliceElemType = sliceType.Elem()\n\t\t\t\tslice = reflect.MakeSlice(sliceType, 0, 0)\n\t\t\t}\n\n\t\t\tfor i := 0; i < v.Len(); i++ {\n\t\t\t\tev, _ := indirectInterface(v.Index(i))\n\t\t\t\tkey := normalize(ev)\n\n\t\t\t\tif ids1[key] != ids2[key] {\n\t\t\t\t\tv, err := convertValue(ev, sliceElemType)\n\t\t\t\t\tif err != nil {\n\t\t\t\t\t\treturn nil, fmt.Errorf(\"symdiff: failed to convert value: %w\", err)\n\t\t\t\t\t}\n\t\t\t\t\tslice = reflect.Append(slice, v)\n\t\t\t\t}\n\t\t\t}\n\t\tdefault:\n\t\t\treturn nil, fmt.Errorf(\"arguments to symdiff must be slices or arrays\")\n\t\t}\n\t}\n\n\treturn slice.Interface(), nil\n}",
+    "funcname": "SymDiff"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 391,
+    "focalfunc": "func (c *hugoBuilder) build() error",
+    "funcbody": "func (c *hugoBuilder) build() error {\n\tstopProfiling, err := c.initProfiling()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tdefer func() {\n\t\tif stopProfiling != nil {\n\t\t\tstopProfiling()\n\t\t}\n\t}()\n\n\tif err := c.fullBuild(false); err != nil {\n\t\treturn err\n\t}\n\n\tif !c.r.quiet {\n\t\tc.r.Println()\n\t\th, err := c.hugo()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\th.PrintProcessingStats(os.Stdout)\n\t\tc.r.Println()\n\t}\n\n\treturn nil\n}",
+    "funcname": "build"
+}

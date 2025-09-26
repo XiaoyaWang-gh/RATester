@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1113,
+    "focalfunc": "func escapeQuotes(s string) string",
+    "funcbody": "func escapeQuotes(s string) string {\n\treturn quoteEscaper.Replace(s)\n}",
+    "funcname": "escapeQuotes"
+}

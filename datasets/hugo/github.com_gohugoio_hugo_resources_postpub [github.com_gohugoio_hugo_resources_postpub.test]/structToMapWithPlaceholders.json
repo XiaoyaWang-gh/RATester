@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/fields.go",
+    "lineno": 24,
+    "focalfunc": "func structToMapWithPlaceholders(root string, in any, createPlaceholder func(s string) string) map[string]any",
+    "funcbody": "func structToMapWithPlaceholders(root string, in any, createPlaceholder func(s string) string) map[string]any {\n\tm := structToMap(in)\n\tinsertFieldPlaceholders(root, m, createPlaceholder)\n\treturn m\n}",
+    "funcname": "structToMapWithPlaceholders"
+}

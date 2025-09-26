@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 197,
+    "focalfunc": "func (c *Certificates) Set(value string) error",
+    "funcbody": "func (c *Certificates) Set(value string) error {\n\tcertificates := strings.Split(value, \";\")\n\tfor _, certificate := range certificates {\n\t\tfiles := strings.Split(certificate, \",\")\n\t\tif len(files) != 2 {\n\t\t\treturn fmt.Errorf(\"bad certificates format: %s\", value)\n\t\t}\n\t\t*c = append(*c, Certificate{\n\t\t\tCertFile:\ttypes.FileOrContent(files[0]),\n\t\t\tKeyFile:\ttypes.FileOrContent(files[1]),\n\t\t})\n\t}\n\treturn nil\n}",
+    "funcname": "Set"
+}

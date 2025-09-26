@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/recovery/recovery.go",
+    "lineno": 54,
+    "focalfunc": "func shouldLogPanic(panicValue interface{}) bool",
+    "funcbody": "func shouldLogPanic(panicValue interface{}) bool {\n\n\treturn panicValue != nil && panicValue != http.ErrAbortHandler\n}",
+    "funcname": "shouldLogPanic"
+}

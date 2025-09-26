@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 126,
+    "focalfunc": "func (p *Provider) RegisterFilterFuncs(group, kind string, builderFunc BuildFilterFunc)",
+    "funcbody": "func (p *Provider) RegisterFilterFuncs(group, kind string, builderFunc BuildFilterFunc) {\n\tif p.groupKindFilterFuncs == nil {\n\t\tp.groupKindFilterFuncs = map[string]map[string]BuildFilterFunc{}\n\t}\n\n\tif p.groupKindFilterFuncs[group] == nil {\n\t\tp.groupKindFilterFuncs[group] = map[string]BuildFilterFunc{}\n\t}\n\n\tp.groupKindFilterFuncs[group][kind] = builderFunc\n}",
+    "funcname": "RegisterFilterFuncs"
+}

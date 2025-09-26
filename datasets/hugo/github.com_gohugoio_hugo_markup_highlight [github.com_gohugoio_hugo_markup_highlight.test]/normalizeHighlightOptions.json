@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 214,
+    "focalfunc": "func normalizeHighlightOptions(m map[string]any)",
+    "funcbody": "func normalizeHighlightOptions(m map[string]any) {\n\tif m == nil {\n\t\treturn\n\t}\n\n\tfor k, v := range m {\n\t\tdelete(m, k)\n\t\tm[strings.ToLower(k)] = v\n\t}\n\n\tbaseLineNumber := 1\n\tif v, ok := m[linosStartKey]; ok {\n\t\tbaseLineNumber = cast.ToInt(v)\n\t}\n\n\tfor k, v := range m {\n\t\tswitch k {\n\t\tcase noHlKey:\n\t\t\tm[noHlKey] = cast.ToBool(v)\n\t\tcase lineNosKey:\n\t\t\tif v == \"table\" || v == \"inline\" {\n\t\t\t\tm[\"lineNumbersInTable\"] = v == \"table\"\n\t\t\t}\n\t\t\tif vs, ok := v.(string); ok {\n\t\t\t\tm[k] = vs != \"false\"\n\t\t\t}\n\t\tcase hlLinesKey:\n\t\t\tif hlRanges, ok := v.([][2]int); ok {\n\t\t\t\tfor i := range hlRanges {\n\t\t\t\t\thlRanges[i][0] += baseLineNumber\n\t\t\t\t\thlRanges[i][1] += baseLineNumber\n\t\t\t\t}\n\t\t\t\tdelete(m, k)\n\t\t\t\tm[k+\"_parsed\"] = hlRanges\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "normalizeHighlightOptions"
+}

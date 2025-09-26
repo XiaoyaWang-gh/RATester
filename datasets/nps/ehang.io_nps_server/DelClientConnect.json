@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 348,
+    "focalfunc": "func DelClientConnect(clientId int)",
+    "funcbody": "func DelClientConnect(clientId int) {\n\tBridge.DelClient(clientId)\n}",
+    "funcname": "DelClientConnect"
+}

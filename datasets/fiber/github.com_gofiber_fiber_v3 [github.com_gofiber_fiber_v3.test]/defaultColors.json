@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/color.go",
+    "lineno": 69,
+    "focalfunc": "func defaultColors(colors Colors) Colors",
+    "funcbody": "func defaultColors(colors Colors) Colors {\n\tif colors.Black == \"\" {\n\t\tcolors.Black = DefaultColors.Black\n\t}\n\n\tif colors.Red == \"\" {\n\t\tcolors.Red = DefaultColors.Red\n\t}\n\n\tif colors.Green == \"\" {\n\t\tcolors.Green = DefaultColors.Green\n\t}\n\n\tif colors.Yellow == \"\" {\n\t\tcolors.Yellow = DefaultColors.Yellow\n\t}\n\n\tif colors.Blue == \"\" {\n\t\tcolors.Blue = DefaultColors.Blue\n\t}\n\n\tif colors.Magenta == \"\" {\n\t\tcolors.Magenta = DefaultColors.Magenta\n\t}\n\n\tif colors.Cyan == \"\" {\n\t\tcolors.Cyan = DefaultColors.Cyan\n\t}\n\n\tif colors.White == \"\" {\n\t\tcolors.White = DefaultColors.White\n\t}\n\n\tif colors.Reset == \"\" {\n\t\tcolors.Reset = DefaultColors.Reset\n\t}\n\n\treturn colors\n}",
+    "funcname": "defaultColors"
+}

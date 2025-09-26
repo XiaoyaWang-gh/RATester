@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 177,
+    "focalfunc": "func isHTMLSpace(c byte) bool",
+    "funcbody": "func isHTMLSpace(c byte) bool {\n\treturn (c <= 0x20) && 0 != (htmlSpaceAndASCIIAlnumBytes[c>>3]&(1<<uint(c&0x7)))\n}",
+    "funcname": "isHTMLSpace"
+}

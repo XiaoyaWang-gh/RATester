@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 225,
+    "focalfunc": "func (s *Session) Keys() []string",
+    "funcbody": "func (s *Session) Keys() []string {\n\tif s.data == nil {\n\t\treturn []string{}\n\t}\n\treturn s.data.Keys()\n}",
+    "funcname": "Keys"
+}

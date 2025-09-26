@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 83,
+    "focalfunc": "func Limit(d int64) *Hint",
+    "funcbody": "func Limit(d int64) *Hint {\n\treturn NewHint(KeyLimit, d)\n}",
+    "funcname": "Limit"
+}

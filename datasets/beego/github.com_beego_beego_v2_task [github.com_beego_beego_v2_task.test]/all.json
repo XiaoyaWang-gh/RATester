@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 826,
+    "focalfunc": "func all(r bounds) uint64",
+    "funcbody": "func all(r bounds) uint64 {\n\treturn getBits(r.min, r.max, 1) | starBit\n}",
+    "funcname": "all"
+}

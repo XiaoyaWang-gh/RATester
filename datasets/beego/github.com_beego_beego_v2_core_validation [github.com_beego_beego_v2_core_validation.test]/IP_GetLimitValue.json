@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 617,
+    "focalfunc": "func (i IP) GetLimitValue() interface{}",
+    "funcbody": "func (i IP) GetLimitValue() interface{} {\n\treturn nil\n}",
+    "funcname": "GetLimitValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 136,
+    "focalfunc": "func (c *serverCommand) Commands() []simplecobra.Commander",
+    "funcbody": "func (c *serverCommand) Commands() []simplecobra.Commander {\n\treturn c.commands\n}",
+    "funcname": "Commands"
+}

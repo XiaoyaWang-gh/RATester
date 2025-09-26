@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 120,
+    "focalfunc": "func ParseDomains(rule string) ([]string, error)",
+    "funcbody": "func ParseDomains(rule string) ([]string, error) {\n\tvar matchers []string\n\tfor matcher := range httpFuncs {\n\t\tmatchers = append(matchers, matcher)\n\t}\n\tfor matcher := range httpFuncsV2 {\n\t\tmatchers = append(matchers, matcher)\n\t}\n\n\tparser, err := rules.NewParser(matchers)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error while creating parser: %w\", err)\n\t}\n\n\tparse, err := parser.Parse(rule)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error while parsing rule %s: %w\", rule, err)\n\t}\n\n\tbuildTree, ok := parse.(rules.TreeBuilder)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"error while parsing rule %s\", rule)\n\t}\n\n\treturn buildTree().ParseMatchers([]string{\"Host\"}), nil\n}",
+    "funcname": "ParseDomains"
+}

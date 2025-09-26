@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 166,
+    "focalfunc": "func (group *RouterGroup) StaticFile(relativePath, filepath string) IRoutes",
+    "funcbody": "func (group *RouterGroup) StaticFile(relativePath, filepath string) IRoutes {\n\treturn group.staticFileHandler(relativePath, func(c *Context) {\n\t\tc.File(filepath)\n\t})\n}",
+    "funcname": "StaticFile"
+}

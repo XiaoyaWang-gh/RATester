@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/segments/segments.go",
+    "lineno": 128,
+    "focalfunc": "func getGlob(s string) (glob.Glob, error)",
+    "funcbody": "func getGlob(s string) (glob.Glob, error) {\n\tif s == \"\" {\n\t\treturn nil, nil\n\t}\n\tg, err := hglob.GetGlob(s)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to compile Glob %q: %w\", s, err)\n\t}\n\treturn g, nil\n}",
+    "funcname": "getGlob"
+}

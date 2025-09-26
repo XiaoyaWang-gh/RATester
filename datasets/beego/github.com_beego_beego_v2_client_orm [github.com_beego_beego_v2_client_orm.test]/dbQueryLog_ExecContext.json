@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 160,
+    "focalfunc": "func (d *dbQueryLog) ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error)",
+    "funcbody": "func (d *dbQueryLog) ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error) {\n\ta := time.Now()\n\tres, err := d.db.ExecContext(ctx, query, args...)\n\tdebugLogQueies(d.alias, \"db.Exec\", query, a, err, args...)\n\treturn res, err\n}",
+    "funcname": "ExecContext"
+}

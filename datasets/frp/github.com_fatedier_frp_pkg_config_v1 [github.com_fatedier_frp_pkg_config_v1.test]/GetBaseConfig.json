@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/visitor.go",
+    "lineno": 49,
+    "focalfunc": "func (c *VisitorBaseConfig) GetBaseConfig() *VisitorBaseConfig",
+    "funcbody": "func (c *VisitorBaseConfig) GetBaseConfig() *VisitorBaseConfig {\n\treturn c\n}",
+    "funcname": "GetBaseConfig"
+}

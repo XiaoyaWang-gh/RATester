@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 172,
+    "focalfunc": "func NewRandomBalancer(targets []*ProxyTarget) ProxyBalancer",
+    "funcbody": "func NewRandomBalancer(targets []*ProxyTarget) ProxyBalancer {\n\tb := randomBalancer{}\n\tb.targets = targets\n\tb.random = rand.New(rand.NewSource(int64(time.Now().Nanosecond())))\n\treturn &b\n}",
+    "funcname": "NewRandomBalancer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 35,
+    "focalfunc": "func (s *TunnelModeServer) Start() error",
+    "funcbody": "func (s *TunnelModeServer) Start() error {\n\treturn conn.NewTcpListenerAndProcess(s.task.ServerIp+\":\"+strconv.Itoa(s.task.Port), func(c net.Conn) {\n\t\tif err := s.CheckFlowAndConnNum(s.task.Client); err != nil {\n\t\t\tlogs.Warn(\"client id %d, task id %d,error %s, when tcp connection\", s.task.Client.Id, s.task.Id, err.Error())\n\t\t\tc.Close()\n\t\t\treturn\n\t\t}\n\t\tlogs.Trace(\"new tcp connection,local port %d,client %d,remote address %s\", s.task.Port, s.task.Client.Id, c.RemoteAddr())\n\t\ts.process(conn.NewConn(c), s)\n\t\ts.task.Client.AddConn()\n\t}, &s.listener)\n}",
+    "funcname": "Start"
+}

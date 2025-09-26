@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 24,
+    "focalfunc": "func bindataRead(data []byte, name string) ([]byte, error)",
+    "funcbody": "func bindataRead(data []byte, name string) ([]byte, error) {\n\tgz, err := gzip.NewReader(bytes.NewBuffer(data))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"Read %q: %v\", name, err)\n\t}\n\n\tvar buf bytes.Buffer\n\t_, err = io.Copy(&buf, gz)\n\tclErr := gz.Close()\n\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"Read %q: %v\", name, err)\n\t}\n\tif clErr != nil {\n\t\treturn nil, err\n\t}\n\n\treturn buf.Bytes(), nil\n}",
+    "funcname": "bindataRead"
+}

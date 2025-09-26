@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/compare/compare_strings.go",
+    "lineno": 111,
+    "focalfunc": "func LessStrings(s, t string) bool",
+    "funcbody": "func LessStrings(s, t string) bool {\n\treturn Strings(s, t) < 0\n}",
+    "funcname": "LessStrings"
+}

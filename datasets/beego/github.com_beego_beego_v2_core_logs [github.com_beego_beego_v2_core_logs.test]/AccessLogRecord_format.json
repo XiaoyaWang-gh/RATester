@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/access_log.go",
+    "lineno": 75,
+    "focalfunc": "func (r *AccessLogRecord) format(format string) string",
+    "funcbody": "func (r *AccessLogRecord) format(format string) string {\n\tmsg := \"\"\n\tswitch format {\n\tcase apacheFormat:\n\t\ttimeFormatted := r.RequestTime.Format(\"02/Jan/2006 03:04:05\")\n\t\tmsg = fmt.Sprintf(apacheFormatPattern, r.RemoteAddr, timeFormatted, r.Request, r.Status, r.BodyBytesSent,\n\t\t\tr.ElapsedTime.Seconds(), r.HTTPReferrer, r.HTTPUserAgent)\n\tcase jsonFormat:\n\t\tfallthrough\n\tdefault:\n\t\tjsonData, err := r.json()\n\t\tif err != nil {\n\t\t\tmsg = fmt.Sprintf(`{\"Error\": \"%s\"}`, err)\n\t\t} else {\n\t\t\tmsg = string(jsonData)\n\t\t}\n\t}\n\treturn msg\n}",
+    "funcname": "format"
+}

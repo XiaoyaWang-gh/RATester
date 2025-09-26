@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 460,
+    "focalfunc": "func canCompare(v1, v2 reflect.Value) bool",
+    "funcbody": "func canCompare(v1, v2 reflect.Value) bool {\n\tk1 := v1.Kind()\n\tk2 := v2.Kind()\n\tif k1 == k2 {\n\t\treturn true\n\t}\n\n\treturn k1 == reflect.Invalid || k2 == reflect.Invalid\n}",
+    "funcname": "canCompare"
+}

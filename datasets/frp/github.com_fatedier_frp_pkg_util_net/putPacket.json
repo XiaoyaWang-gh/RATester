@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 69,
+    "focalfunc": "func (c *FakeUDPConn) putPacket(content []byte)",
+    "funcbody": "func (c *FakeUDPConn) putPacket(content []byte) {\n\tdefer func() {\n\t\t_ = recover()\n\t}()\n\n\tselect {\n\tcase c.packets <- content:\n\tdefault:\n\t}\n}",
+    "funcname": "putPacket"
+}

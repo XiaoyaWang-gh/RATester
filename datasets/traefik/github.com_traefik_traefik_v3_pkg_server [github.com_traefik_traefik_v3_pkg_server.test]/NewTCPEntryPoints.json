@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 100,
+    "focalfunc": "func NewTCPEntryPoints(entryPointsConfig static.EntryPoints, hostResolverConfig *types.HostResolverConfig, metricsRegistry metrics.Registry) (TCPEntryPoints, error)",
+    "funcbody": "func NewTCPEntryPoints(entryPointsConfig static.EntryPoints, hostResolverConfig *types.HostResolverConfig, metricsRegistry metrics.Registry) (TCPEntryPoints, error) {\n\tif os.Getenv(debugConnectionEnv) != \"\" {\n\t\texpvar.Publish(\"clientConnectionStates\", expvar.Func(func() any {\n\t\t\treturn clientConnectionStates\n\t\t}))\n\t}\n\n\tserverEntryPointsTCP := make(TCPEntryPoints)\n\tfor entryPointName, config := range entryPointsConfig {\n\t\tprotocol, err := config.GetProtocol()\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error while building entryPoint %s: %w\", entryPointName, err)\n\t\t}\n\n\t\tif protocol != \"tcp\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tctx := log.With().Str(logs.EntryPointName, entryPointName).Logger().WithContext(context.Background())\n\n\t\topenConnectionsGauge := metricsRegistry.\n\t\t\tOpenConnectionsGauge().\n\t\t\tWith(\"entrypoint\", entryPointName, \"protocol\", \"TCP\")\n\n\t\tserverEntryPointsTCP[entryPointName], err = NewTCPEntryPoint(ctx, entryPointName, config, hostResolverConfig, openConnectionsGauge)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error while building entryPoint %s: %w\", entryPointName, err)\n\t\t}\n\t}\n\treturn serverEntryPointsTCP, nil\n}",
+    "funcname": "NewTCPEntryPoints"
+}

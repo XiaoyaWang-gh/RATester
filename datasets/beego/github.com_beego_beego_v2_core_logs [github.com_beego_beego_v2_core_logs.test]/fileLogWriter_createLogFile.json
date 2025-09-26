@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 216,
+    "focalfunc": "func (w *fileLogWriter) createLogFile() (*os.File, error)",
+    "funcbody": "func (w *fileLogWriter) createLogFile() (*os.File, error) {\n\n\tperm, err := strconv.ParseInt(w.Perm, 8, 64)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tdirperm, err := strconv.ParseInt(w.DirPerm, 8, 64)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tfilepath := filepath.Dir(w.Filename)\n\tos.MkdirAll(filepath, os.FileMode(dirperm))\n\n\tfd, err := os.OpenFile(w.Filename, os.O_WRONLY|os.O_APPEND|os.O_CREATE, os.FileMode(perm))\n\tif err == nil {\n\n\t\tos.Chmod(w.Filename, os.FileMode(perm))\n\t}\n\treturn fd, err\n}",
+    "funcname": "createLogFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 78,
+    "focalfunc": "func (n *node) addChild(child *node)",
+    "funcbody": "func (n *node) addChild(child *node) {\n\tif n.wildChild && len(n.children) > 0 {\n\t\twildcardChild := n.children[len(n.children)-1]\n\t\tn.children = append(n.children[:len(n.children)-1], child, wildcardChild)\n\t} else {\n\t\tn.children = append(n.children, child)\n\t}\n}",
+    "funcname": "addChild"
+}

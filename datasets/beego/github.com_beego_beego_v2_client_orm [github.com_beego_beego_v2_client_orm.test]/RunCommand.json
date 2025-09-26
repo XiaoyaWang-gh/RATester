@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd.go",
+    "lineno": 53,
+    "focalfunc": "func RunCommand()",
+    "funcbody": "func RunCommand() {\n\tif len(os.Args) < 2 || os.Args[1] != \"orm\" {\n\t\treturn\n\t}\n\n\tBootStrap()\n\n\targs := utils.ArgString(os.Args[2:])\n\tname := args.Get(0)\n\n\tif name == \"help\" {\n\t\tprintHelp()\n\t}\n\n\tif cmd, ok := commands[name]; ok {\n\t\tcmd.Parse(os.Args[3:])\n\t\tcmd.Run()\n\t\tos.Exit(0)\n\t} else {\n\t\tif name == \"\" {\n\t\t\tprintHelp()\n\t\t} else {\n\t\t\tprintHelp(fmt.Sprintf(\"unknown command %s\", name))\n\t\t}\n\t}\n}",
+    "funcname": "RunCommand"
+}

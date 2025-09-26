@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 47,
+    "focalfunc": "func (qb *PostgresQueryBuilder) ForUpdate() QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) ForUpdate() QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"FOR UPDATE\")\n\treturn qb\n}",
+    "funcname": "ForUpdate"
+}

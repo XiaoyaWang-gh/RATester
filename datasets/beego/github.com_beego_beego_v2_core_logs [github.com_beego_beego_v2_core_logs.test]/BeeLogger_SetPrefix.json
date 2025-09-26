@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 375,
+    "focalfunc": "func (bl *BeeLogger) SetPrefix(s string)",
+    "funcbody": "func (bl *BeeLogger) SetPrefix(s string) {\n\tbl.prefix = s\n}",
+    "funcname": "SetPrefix"
+}

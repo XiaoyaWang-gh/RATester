@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/chain.go",
+    "lineno": 67,
+    "focalfunc": "func (ft fromToBuffer) From() BytesReader",
+    "funcbody": "func (ft fromToBuffer) From() BytesReader {\n\treturn ft.from\n}",
+    "funcname": "From"
+}

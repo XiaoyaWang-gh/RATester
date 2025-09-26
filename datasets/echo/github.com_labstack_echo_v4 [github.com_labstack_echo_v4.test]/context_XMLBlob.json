@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 566,
+    "focalfunc": "func (c *context) XMLBlob(code int, b []byte) (err error)",
+    "funcbody": "func (c *context) XMLBlob(code int, b []byte) (err error) {\n\tc.writeContentType(MIMEApplicationXMLCharsetUTF8)\n\tc.response.WriteHeader(code)\n\tif _, err = c.response.Write([]byte(xml.Header)); err != nil {\n\t\treturn\n\t}\n\t_, err = c.response.Write(b)\n\treturn\n}",
+    "funcname": "XMLBlob"
+}

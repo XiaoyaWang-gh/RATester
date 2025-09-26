@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 80,
+    "focalfunc": "func (nopConverter) Convert(ctx RenderContext) (ResultRender, error)",
+    "funcbody": "func (nopConverter) Convert(ctx RenderContext) (ResultRender, error) {\n\treturn &bytes.Buffer{}, nil\n}",
+    "funcname": "Convert"
+}

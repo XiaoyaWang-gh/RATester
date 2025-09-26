@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 145,
+    "focalfunc": "func (d *dbQueryLog) Prepare(query string) (*sql.Stmt, error)",
+    "funcbody": "func (d *dbQueryLog) Prepare(query string) (*sql.Stmt, error) {\n\treturn d.PrepareContext(context.Background(), query)\n}",
+    "funcname": "Prepare"
+}

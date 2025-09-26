@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/server.go",
+    "lineno": 220,
+    "focalfunc": "func UnmarshalServerConfFromIni(source interface{}) (ServerCommonConf, error)",
+    "funcbody": "func UnmarshalServerConfFromIni(source interface{}) (ServerCommonConf, error) {\n\tf, err := ini.LoadSources(ini.LoadOptions{\n\t\tInsensitive:\t\tfalse,\n\t\tInsensitiveSections:\tfalse,\n\t\tInsensitiveKeys:\tfalse,\n\t\tIgnoreInlineComment:\ttrue,\n\t\tAllowBooleanKeys:\ttrue,\n\t}, source)\n\tif err != nil {\n\t\treturn ServerCommonConf{}, err\n\t}\n\n\ts, err := f.GetSection(\"common\")\n\tif err != nil {\n\t\treturn ServerCommonConf{}, err\n\t}\n\n\tcommon := GetDefaultServerConf()\n\terr = s.MapTo(&common)\n\tif err != nil {\n\t\treturn ServerCommonConf{}, err\n\t}\n\n\tallowPortStr := s.Key(\"allow_ports\").String()\n\tif allowPortStr != \"\" {\n\t\tcommon.AllowPortsStr = allowPortStr\n\t}\n\n\tpluginOpts := make(map[string]HTTPPluginOptions)\n\tfor _, section := range f.Sections() {\n\t\tname := section.Name()\n\t\tif !strings.HasPrefix(name, \"plugin.\") {\n\t\t\tcontinue\n\t\t}\n\n\t\topt, err := loadHTTPPluginOpt(section)\n\t\tif err != nil {\n\t\t\treturn ServerCommonConf{}, err\n\t\t}\n\n\t\tpluginOpts[opt.Name] = *opt\n\t}\n\tcommon.HTTPPlugins = pluginOpts\n\n\treturn common, nil\n}",
+    "funcname": "UnmarshalServerConfFromIni"
+}

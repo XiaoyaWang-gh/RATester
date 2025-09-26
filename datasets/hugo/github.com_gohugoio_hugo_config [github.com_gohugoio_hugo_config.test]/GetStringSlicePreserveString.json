@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configProvider.go",
+    "lineno": 109,
+    "focalfunc": "func GetStringSlicePreserveString(cfg Provider, key string) []string",
+    "funcbody": "func GetStringSlicePreserveString(cfg Provider, key string) []string {\n\tsd := cfg.Get(key)\n\treturn types.ToStringSlicePreserveString(sd)\n}",
+    "funcname": "GetStringSlicePreserveString"
+}

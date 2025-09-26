@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 118,
+    "focalfunc": "func CheckRule(rule *Tree) error",
+    "funcbody": "func CheckRule(rule *Tree) error {\n\tif len(rule.Value) == 0 {\n\t\treturn fmt.Errorf(\"no args for matcher %s\", rule.Matcher)\n\t}\n\n\tfor _, v := range rule.Value {\n\t\tif len(v) == 0 {\n\t\t\treturn fmt.Errorf(\"empty args for matcher %s, %v\", rule.Matcher, rule.Value)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "CheckRule"
+}

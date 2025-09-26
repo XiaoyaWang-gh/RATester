@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 149,
+    "focalfunc": "func (c *Cache) ReadOrCreate(id string,\n\tread func(info ItemInfo, r io.ReadSeeker) error,\n\tcreate func(info ItemInfo, w io.WriteCloser) error,\n) (info ItemInfo, err error)",
+    "funcbody": "func (c *Cache) ReadOrCreate(id string,\n\tread func(info ItemInfo, r io.ReadSeeker) error,\n\tcreate func(info ItemInfo, w io.WriteCloser) error,\n) (info ItemInfo, err error) {\n\tif err := c.init(); err != nil {\n\t\treturn ItemInfo{}, err\n\t}\n\n\tid = cleanID(id)\n\n\tc.nlocker.Lock(id)\n\tdefer c.nlocker.Unlock(id)\n\n\tinfo = ItemInfo{Name: id}\n\n\tif r := c.getOrRemove(id); r != nil {\n\t\terr = read(info, r)\n\t\tdefer r.Close()\n\t\tif err == nil || err == ErrFatal {\n\n\t\t\treturn\n\t\t}\n\t}\n\n\tf, err := helpers.OpenFileForWriting(c.Fs, id)\n\tif err != nil {\n\t\treturn\n\t}\n\n\terr = create(info, f)\n\n\treturn\n}",
+    "funcname": "ReadOrCreate"
+}

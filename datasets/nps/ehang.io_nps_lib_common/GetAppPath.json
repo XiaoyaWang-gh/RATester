@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/run.go",
+    "lineno": 32,
+    "focalfunc": "func GetAppPath() string",
+    "funcbody": "func GetAppPath() string {\n\tif path, err := filepath.Abs(filepath.Dir(os.Args[0])); err == nil {\n\t\treturn path\n\t}\n\treturn os.Args[0]\n}",
+    "funcname": "GetAppPath"
+}

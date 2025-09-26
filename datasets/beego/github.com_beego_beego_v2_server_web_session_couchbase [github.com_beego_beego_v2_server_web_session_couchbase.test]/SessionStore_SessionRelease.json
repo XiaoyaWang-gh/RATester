@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 107,
+    "focalfunc": "func (cs *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter)",
+    "funcbody": "func (cs *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter) {\n\tdefer cs.b.Close()\n\tcs.lock.RLock()\n\tvalues := cs.values\n\tcs.lock.RUnlock()\n\tbo, err := session.EncodeGob(values)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tcs.b.Set(cs.sid, int(cs.maxlifetime), bo)\n}",
+    "funcname": "SessionRelease"
+}

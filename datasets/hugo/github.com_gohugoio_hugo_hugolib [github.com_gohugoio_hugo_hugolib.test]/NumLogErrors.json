@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 303,
+    "focalfunc": "func (h *HugoSites) NumLogErrors() int",
+    "funcbody": "func (h *HugoSites) NumLogErrors() int {\n\tif h == nil {\n\t\treturn 0\n\t}\n\treturn h.Log.LoggCount(logg.LevelError)\n}",
+    "funcname": "NumLogErrors"
+}

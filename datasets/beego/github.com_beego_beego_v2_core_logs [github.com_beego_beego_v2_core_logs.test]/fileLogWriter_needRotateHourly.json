@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 166,
+    "focalfunc": "func (w *fileLogWriter) needRotateHourly(hour int) bool",
+    "funcbody": "func (w *fileLogWriter) needRotateHourly(hour int) bool {\n\treturn (w.MaxLines > 0 && w.maxLinesCurLines >= w.MaxLines) ||\n\t\t(w.MaxSize > 0 && w.maxSizeCurSize >= w.MaxSize) ||\n\t\t(w.Hourly && hour != w.hourlyOpenDate)\n}",
+    "funcname": "needRotateHourly"
+}

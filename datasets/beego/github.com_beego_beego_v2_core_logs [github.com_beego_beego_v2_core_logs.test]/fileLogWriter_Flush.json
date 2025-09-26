@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 436,
+    "focalfunc": "func (w *fileLogWriter) Flush()",
+    "funcbody": "func (w *fileLogWriter) Flush() {\n\tw.fileWriter.Sync()\n}",
+    "funcname": "Flush"
+}

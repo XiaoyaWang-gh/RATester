@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup.go",
+    "lineno": 142,
+    "focalfunc": "func ResolveMarkup(s string) string",
+    "funcbody": "func ResolveMarkup(s string) string {\n\ts = strings.ToLower(s)\n\tswitch s {\n\tcase \"goldmark\":\n\t\treturn media.DefaultContentTypes.Markdown.SubType\n\tcase \"asciidocext\":\n\t\treturn media.DefaultContentTypes.AsciiDoc.SubType\n\tdefault:\n\t\treturn s\n\t}\n}",
+    "funcname": "ResolveMarkup"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 53,
+    "focalfunc": "func readClientHello(reader io.Reader) (*tls.ClientHelloInfo, error)",
+    "funcbody": "func readClientHello(reader io.Reader) (*tls.ClientHelloInfo, error) {\n\tvar hello *tls.ClientHelloInfo\n\n\terr := tls.Server(readOnlyConn{reader: reader}, &tls.Config{\n\t\tGetConfigForClient: func(argHello *tls.ClientHelloInfo) (*tls.Config, error) {\n\t\t\thello = &tls.ClientHelloInfo{}\n\t\t\t*hello = *argHello\n\t\t\treturn nil, nil\n\t\t},\n\t}).Handshake()\n\n\tif hello == nil {\n\t\treturn nil, err\n\t}\n\treturn hello, nil\n}",
+    "funcname": "readClientHello"
+}

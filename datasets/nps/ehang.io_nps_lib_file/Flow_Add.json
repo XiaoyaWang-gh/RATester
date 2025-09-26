@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 20,
+    "focalfunc": "func (s *Flow) Add(in, out int64)",
+    "funcbody": "func (s *Flow) Add(in, out int64) {\n\ts.Lock()\n\tdefer s.Unlock()\n\ts.InletFlow += int64(in)\n\ts.ExportFlow += int64(out)\n}",
+    "funcname": "Add"
+}

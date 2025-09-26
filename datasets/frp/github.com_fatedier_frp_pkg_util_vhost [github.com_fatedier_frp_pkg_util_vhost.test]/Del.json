@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/router.go",
+    "lineno": 72,
+    "focalfunc": "func (r *Routers) Del(domain, location, httpUser string)",
+    "funcbody": "func (r *Routers) Del(domain, location, httpUser string) {\n\tdomain = strings.ToLower(domain)\n\n\tr.mutex.Lock()\n\tdefer r.mutex.Unlock()\n\n\troutersByHTTPUser, found := r.indexByDomain[domain]\n\tif !found {\n\t\treturn\n\t}\n\n\tvrs, found := routersByHTTPUser[httpUser]\n\tif !found {\n\t\treturn\n\t}\n\tnewVrs := make([]*Router, 0)\n\tfor _, vr := range vrs {\n\t\tif vr.location != location {\n\t\t\tnewVrs = append(newVrs, vr)\n\t\t}\n\t}\n\troutersByHTTPUser[httpUser] = newVrs\n}",
+    "funcname": "Del"
+}

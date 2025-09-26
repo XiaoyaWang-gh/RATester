@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/stripprefixregex/strip_prefix_regex.go",
+    "lineno": 27,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.StripPrefixRegex, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.StripPrefixRegex, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeName).Debug().Msg(\"Creating middleware\")\n\n\tstripPrefix := stripPrefixRegex{\n\t\tnext:\tnext,\n\t\tname:\tname,\n\t}\n\n\tfor _, exp := range config.Regex {\n\t\treg, err := regexp.Compile(strings.TrimSpace(exp))\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tstripPrefix.expressions = append(stripPrefix.expressions, reg)\n\t}\n\n\treturn &stripPrefix, nil\n}",
+    "funcname": "New"
+}

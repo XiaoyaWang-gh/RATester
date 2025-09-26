@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 193,
+    "focalfunc": "func (hp *HTTPProxy) handleConnectReq(req *http.Request, rwc io.ReadWriteCloser)",
+    "funcbody": "func (hp *HTTPProxy) handleConnectReq(req *http.Request, rwc io.ReadWriteCloser) {\n\tdefer rwc.Close()\n\tif ok := hp.Auth(req); !ok {\n\t\tres := getBadResponse()\n\t\t_ = res.Write(rwc)\n\t\tif res.Body != nil {\n\t\t\tres.Body.Close()\n\t\t}\n\t\treturn\n\t}\n\n\tremote, err := net.Dial(\"tcp\", req.URL.Host)\n\tif err != nil {\n\t\tres := &http.Response{\n\t\t\tStatusCode:\t400,\n\t\t\tProto:\t\t\"HTTP/1.1\",\n\t\t\tProtoMajor:\t1,\n\t\t\tProtoMinor:\t1,\n\t\t}\n\t\t_ = res.Write(rwc)\n\t\treturn\n\t}\n\t_, _ = rwc.Write([]byte(\"HTTP/1.1 200 OK\\r\\n\\r\\n\"))\n\n\tlibio.Join(remote, rwc)\n}",
+    "funcname": "handleConnectReq"
+}

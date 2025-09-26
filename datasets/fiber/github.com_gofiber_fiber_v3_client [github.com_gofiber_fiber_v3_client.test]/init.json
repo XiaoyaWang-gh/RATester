@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 673,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tdefaultClient = New()\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 107,
+    "focalfunc": "func (ns *Namespace) RelRef(p any, args any) (string, error)",
+    "funcbody": "func (ns *Namespace) RelRef(p any, args any) (string, error) {\n\tpp, ok := p.(urls.RefLinker)\n\tif !ok {\n\t\treturn \"\", errors.New(\"invalid Page received in RelRef\")\n\t}\n\targsm, err := ns.refArgsToMap(args)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\ts, err := pp.RelRef(argsm)\n\treturn s, err\n}",
+    "funcname": "RelRef"
+}

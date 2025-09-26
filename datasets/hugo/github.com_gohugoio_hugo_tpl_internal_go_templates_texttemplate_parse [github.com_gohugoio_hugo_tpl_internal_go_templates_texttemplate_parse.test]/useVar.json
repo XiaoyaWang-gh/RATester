@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 822,
+    "focalfunc": "func (t *Tree) useVar(pos Pos, name string) Node",
+    "funcbody": "func (t *Tree) useVar(pos Pos, name string) Node {\n\tv := t.newVariable(pos, name)\n\tfor _, varName := range t.vars {\n\t\tif varName == v.Ident[0] {\n\t\t\treturn v\n\t\t}\n\t}\n\tt.errorf(\"undefined variable %q\", v.Ident[0])\n\treturn nil\n}",
+    "funcname": "useVar"
+}

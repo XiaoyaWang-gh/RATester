@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 50,
+    "focalfunc": "func (e *EtcdConfiger) reader(ctx context.Context, key string) (string, error)",
+    "funcbody": "func (e *EtcdConfiger) reader(ctx context.Context, key string) (string, error) {\n\tresp, err := get(e.client, e.prefix+key)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif resp.Count > 0 {\n\t\treturn string(resp.Kvs[0].Value), nil\n\t}\n\n\treturn \"\", nil\n}",
+    "funcname": "reader"
+}

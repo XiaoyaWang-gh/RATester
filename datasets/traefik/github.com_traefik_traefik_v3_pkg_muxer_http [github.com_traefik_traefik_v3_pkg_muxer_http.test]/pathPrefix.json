@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 166,
+    "focalfunc": "func pathPrefix(tree *matchersTree, paths ...string) error",
+    "funcbody": "func pathPrefix(tree *matchersTree, paths ...string) error {\n\tpath := paths[0]\n\n\tif !strings.HasPrefix(path, \"/\") {\n\t\treturn fmt.Errorf(\"path %q does not start with a '/'\", path)\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn strings.HasPrefix(req.URL.Path, path)\n\t}\n\n\treturn nil\n}",
+    "funcname": "pathPrefix"
+}

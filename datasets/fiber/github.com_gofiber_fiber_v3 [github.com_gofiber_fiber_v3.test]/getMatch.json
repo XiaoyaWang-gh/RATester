@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 497,
+    "focalfunc": "func (routeParser *routeParser) getMatch(detectionPath, path string, params *[maxParams]string, partialCheck bool) bool",
+    "funcbody": "func (routeParser *routeParser) getMatch(detectionPath, path string, params *[maxParams]string, partialCheck bool) bool {\n\tvar i, paramsIterator, partLen int\n\tfor _, segment := range routeParser.segs {\n\t\tpartLen = len(detectionPath)\n\n\t\tif !segment.IsParam {\n\t\t\ti = segment.Length\n\n\t\t\tif segment.HasOptionalSlash && partLen == i-1 && detectionPath == segment.Const[:i-1] {\n\t\t\t\ti--\n\t\t\t} else if !(i <= partLen && detectionPath[:i] == segment.Const) {\n\t\t\t\treturn false\n\t\t\t}\n\t\t} else {\n\n\t\t\ti = findParamLen(detectionPath, segment)\n\t\t\tif !segment.IsOptional && i == 0 {\n\t\t\t\treturn false\n\t\t\t}\n\n\t\t\tparams[paramsIterator] = path[:i]\n\n\t\t\tif !(segment.IsOptional && i == 0) {\n\n\t\t\t\tfor _, c := range segment.Constraints {\n\t\t\t\t\tif matched := c.CheckConstraint(params[paramsIterator]); !matched {\n\t\t\t\t\t\treturn false\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tparamsIterator++\n\t\t}\n\n\t\tif partLen > 0 {\n\t\t\tdetectionPath, path = detectionPath[i:], path[i:]\n\t\t}\n\t}\n\tif detectionPath != \"\" && !partialCheck {\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "getMatch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1191,
+    "focalfunc": "func (c *DefaultCtx) Queries() map[string]string",
+    "funcbody": "func (c *DefaultCtx) Queries() map[string]string {\n\tm := make(map[string]string, c.Context().QueryArgs().Len())\n\tc.Context().QueryArgs().VisitAll(func(key, value []byte) {\n\t\tm[c.app.getString(key)] = c.app.getString(value)\n\t})\n\treturn m\n}",
+    "funcname": "Queries"
+}

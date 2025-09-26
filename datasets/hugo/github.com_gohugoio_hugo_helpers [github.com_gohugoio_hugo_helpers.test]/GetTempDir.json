@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 398,
+    "focalfunc": "func GetTempDir(subPath string, fs afero.Fs) string",
+    "funcbody": "func GetTempDir(subPath string, fs afero.Fs) string {\n\treturn afero.GetTempDir(fs, subPath)\n}",
+    "funcname": "GetTempDir"
+}

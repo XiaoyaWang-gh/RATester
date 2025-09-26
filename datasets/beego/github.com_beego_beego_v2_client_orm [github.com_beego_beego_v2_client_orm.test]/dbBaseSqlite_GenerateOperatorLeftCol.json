@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 93,
+    "focalfunc": "func (d *dbBaseSqlite) GenerateOperatorLeftCol(fi *models.FieldInfo, operator string, leftCol *string)",
+    "funcbody": "func (d *dbBaseSqlite) GenerateOperatorLeftCol(fi *models.FieldInfo, operator string, leftCol *string) {\n\tif fi.FieldType == TypeDateField {\n\t\t*leftCol = fmt.Sprintf(\"DATE(%s)\", *leftCol)\n\t}\n}",
+    "funcname": "GenerateOperatorLeftCol"
+}

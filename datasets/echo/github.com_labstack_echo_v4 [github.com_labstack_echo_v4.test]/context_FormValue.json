@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 390,
+    "focalfunc": "func (c *context) FormValue(name string) string",
+    "funcbody": "func (c *context) FormValue(name string) string {\n\treturn c.request.FormValue(name)\n}",
+    "funcname": "FormValue"
+}

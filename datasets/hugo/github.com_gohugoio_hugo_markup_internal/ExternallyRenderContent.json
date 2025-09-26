@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/external.go",
+    "lineno": 13,
+    "focalfunc": "func ExternallyRenderContent(\n\tcfg converter.ProviderConfig,\n\tctx converter.DocumentContext,\n\tcontent []byte, binaryName string, args []string,\n) ([]byte, error)",
+    "funcbody": "func ExternallyRenderContent(\n\tcfg converter.ProviderConfig,\n\tctx converter.DocumentContext,\n\tcontent []byte, binaryName string, args []string,\n) ([]byte, error) {\n\tlogger := cfg.Logger\n\n\tif strings.Contains(binaryName, \"/\") {\n\t\tpanic(fmt.Sprintf(\"should be no slash in %q\", binaryName))\n\t}\n\n\targsv := collections.StringSliceToInterfaceSlice(args)\n\n\tvar out, cmderr bytes.Buffer\n\targsv = append(argsv, hexec.WithStdout(&out))\n\targsv = append(argsv, hexec.WithStderr(&cmderr))\n\targsv = append(argsv, hexec.WithStdin(bytes.NewReader(content)))\n\n\tcmd, err := cfg.Exec.New(binaryName, argsv...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\terr = cmd.Run()\n\n\tfor _, item := range strings.Split(cmderr.String(), \"\\n\") {\n\t\titem := strings.TrimSpace(item)\n\t\tif item != \"\" {\n\t\t\tif err == nil {\n\t\t\t\tlogger.Warnf(\"%s: %s\", ctx.DocumentName, item)\n\t\t\t} else {\n\t\t\t\tlogger.Errorf(\"%s: %s\", ctx.DocumentName, item)\n\t\t\t}\n\t\t}\n\t}\n\n\tif err != nil {\n\t\tlogger.Errorf(\"%s rendering %s: %v\", binaryName, ctx.DocumentName, err)\n\t}\n\n\treturn normalizeExternalHelperLineFeeds(out.Bytes()), nil\n}",
+    "funcname": "ExternallyRenderContent"
+}

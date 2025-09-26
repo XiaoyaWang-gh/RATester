@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1493,
+    "focalfunc": "func (c *DefaultCtx) Send(body []byte) error",
+    "funcbody": "func (c *DefaultCtx) Send(body []byte) error {\n\n\tc.fasthttp.Response.SetBodyRaw(body)\n\treturn nil\n}",
+    "funcname": "Send"
+}

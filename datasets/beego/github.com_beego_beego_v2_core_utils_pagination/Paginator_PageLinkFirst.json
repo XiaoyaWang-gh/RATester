@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 145,
+    "focalfunc": "func (p *Paginator) PageLinkFirst() (link string)",
+    "funcbody": "func (p *Paginator) PageLinkFirst() (link string) {\n\treturn p.PageLink(1)\n}",
+    "funcname": "PageLinkFirst"
+}

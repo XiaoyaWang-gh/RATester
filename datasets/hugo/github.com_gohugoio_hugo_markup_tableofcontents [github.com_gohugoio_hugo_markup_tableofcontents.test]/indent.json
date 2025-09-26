@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 226,
+    "focalfunc": "func (b *tocBuilder) indent(n int)",
+    "funcbody": "func (b *tocBuilder) indent(n int) {\n\tfor i := 0; i < n; i++ {\n\t\tb.s.WriteString(\"  \")\n\t}\n}",
+    "funcname": "indent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/nathole.go",
+    "lineno": 432,
+    "focalfunc": "func parseIPs(addrs []string) []string",
+    "funcbody": "func parseIPs(addrs []string) []string {\n\tvar ips []string\n\tfor _, addr := range addrs {\n\t\tif ip, _, err := net.SplitHostPort(addr); err == nil {\n\t\t\tips = append(ips, ip)\n\t\t}\n\t}\n\treturn ips\n}",
+    "funcname": "parseIPs"
+}

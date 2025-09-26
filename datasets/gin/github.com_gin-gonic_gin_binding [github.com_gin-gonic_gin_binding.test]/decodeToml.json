@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/toml.go",
+    "lineno": 29,
+    "focalfunc": "func decodeToml(r io.Reader, obj any) error",
+    "funcbody": "func decodeToml(r io.Reader, obj any) error {\n\tdecoder := toml.NewDecoder(r)\n\tif err := decoder.Decode(obj); err != nil {\n\t\treturn err\n\t}\n\treturn decoder.Decode(obj)\n}",
+    "funcname": "decodeToml"
+}

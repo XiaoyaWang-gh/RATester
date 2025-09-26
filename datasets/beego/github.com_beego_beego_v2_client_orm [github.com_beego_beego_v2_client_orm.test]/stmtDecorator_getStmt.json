@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 537,
+    "focalfunc": "func (s *stmtDecorator) getStmt() *sql.Stmt",
+    "funcbody": "func (s *stmtDecorator) getStmt() *sql.Stmt {\n\treturn s.stmt\n}",
+    "funcname": "getStmt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 125,
+    "focalfunc": "func newStandaloneTextTemplate(funcs map[string]any) tpl.TemplateParseFinder",
+    "funcbody": "func newStandaloneTextTemplate(funcs map[string]any) tpl.TemplateParseFinder {\n\treturn &textTemplateWrapperWithLock{\n\t\tRWMutex:\t&sync.RWMutex{},\n\t\tTemplate:\ttexttemplate.New(\"\").Funcs(funcs),\n\t}\n}",
+    "funcname": "newStandaloneTextTemplate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 84,
+    "focalfunc": "func (conn readOnlyConn) Write(_ []byte) (int, error)",
+    "funcbody": "func (conn readOnlyConn) Write(_ []byte) (int, error)\t{ return 0, io.ErrClosedPipe }",
+    "funcname": "Write"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 548,
+    "focalfunc": "func (m *taskManager) markManagerStop()",
+    "funcbody": "func (m *taskManager) markManagerStop() {\n\tm.taskLock.Lock()\n\tif m.started {\n\t\tm.started = false\n\t}\n\tm.taskLock.Unlock()\n}",
+    "funcname": "markManagerStop"
+}

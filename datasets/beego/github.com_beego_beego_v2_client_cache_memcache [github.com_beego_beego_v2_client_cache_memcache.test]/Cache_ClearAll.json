@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 136,
+    "focalfunc": "func (rc *Cache) ClearAll(context.Context) error",
+    "funcbody": "func (rc *Cache) ClearAll(context.Context) error {\n\treturn berror.Wrap(rc.conn.FlushAll(), cache.MemCacheCurdFailed,\n\t\t\"try to clear all key-value pairs failed\")\n}",
+    "funcname": "ClearAll"
+}

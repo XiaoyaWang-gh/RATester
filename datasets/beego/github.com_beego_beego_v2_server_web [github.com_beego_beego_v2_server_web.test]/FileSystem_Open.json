@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/fs.go",
+    "lineno": 11,
+    "focalfunc": "func (d FileSystem) Open(name string) (http.File, error)",
+    "funcbody": "func (d FileSystem) Open(name string) (http.File, error) {\n\treturn os.Open(name)\n}",
+    "funcname": "Open"
+}

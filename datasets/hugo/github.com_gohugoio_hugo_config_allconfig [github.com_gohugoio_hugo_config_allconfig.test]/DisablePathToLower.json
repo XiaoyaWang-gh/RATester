@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 199,
+    "focalfunc": "func (c ConfigLanguage) DisablePathToLower() bool",
+    "funcbody": "func (c ConfigLanguage) DisablePathToLower() bool {\n\treturn c.config.DisablePathToLower\n}",
+    "funcname": "DisablePathToLower"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 475,
+    "focalfunc": "func (c *Controller) ServeFormatted(encoding ...bool) error",
+    "funcbody": "func (c *Controller) ServeFormatted(encoding ...bool) error {\n\thasIndent := BConfig.RunMode != PROD\n\thasEncoding := len(encoding) > 0 && encoding[0]\n\treturn c.Ctx.Output.ServeFormatted(c.Data, hasIndent, hasEncoding)\n}",
+    "funcname": "ServeFormatted"
+}

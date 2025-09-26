@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/cache.go",
+    "lineno": 83,
+    "focalfunc": "func Register(name string, adapter Instance)",
+    "funcbody": "func Register(name string, adapter Instance) {\n\tif adapter == nil {\n\t\tpanic(berror.Error(NilCacheAdapter, \"cache: Register adapter is nil\").Error())\n\t}\n\tif _, ok := adapters[name]; ok {\n\t\tpanic(\"cache: Register called twice for adapter \" + name)\n\t}\n\tadapters[name] = adapter\n}",
+    "funcname": "Register"
+}

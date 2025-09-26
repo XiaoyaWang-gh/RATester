@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 320,
+    "focalfunc": "func MustInternalLinkPIE(t testing.TB)",
+    "funcbody": "func MustInternalLinkPIE(t testing.TB) {\n}",
+    "funcname": "MustInternalLinkPIE"
+}

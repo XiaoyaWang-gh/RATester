@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 541,
+    "focalfunc": "func (p *Path) IsContentData() bool",
+    "funcbody": "func (p *Path) IsContentData() bool {\n\treturn p.bundleType == PathTypeContentData\n}",
+    "funcname": "IsContentData"
+}

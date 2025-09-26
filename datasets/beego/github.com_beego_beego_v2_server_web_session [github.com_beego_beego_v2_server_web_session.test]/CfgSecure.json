@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 132,
+    "focalfunc": "func CfgSecure(Enable bool) ManagerConfigOpt",
+    "funcbody": "func CfgSecure(Enable bool) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.Secure = Enable\n\t}\n}",
+    "funcname": "CfgSecure"
+}

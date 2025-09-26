@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 97,
+    "focalfunc": "func (s *BaseController) getEscapeString(key string) string",
+    "funcbody": "func (s *BaseController) getEscapeString(key string) string {\n\treturn html.EscapeString(s.GetString(key))\n}",
+    "funcname": "getEscapeString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlersmisc.go",
+    "lineno": 54,
+    "focalfunc": "func newSuppressStatementsHandler(statements map[string]bool) *suppressStatementsHandler",
+    "funcbody": "func newSuppressStatementsHandler(statements map[string]bool) *suppressStatementsHandler {\n\treturn &suppressStatementsHandler{\n\t\tstatements: statements,\n\t}\n}",
+    "funcname": "newSuppressStatementsHandler"
+}

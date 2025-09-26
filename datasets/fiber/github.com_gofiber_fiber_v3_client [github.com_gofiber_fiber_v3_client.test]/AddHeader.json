@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 132,
+    "focalfunc": "func (r *Request) AddHeader(key, val string) *Request",
+    "funcbody": "func (r *Request) AddHeader(key, val string) *Request {\n\tr.header.Add(key, val)\n\treturn r\n}",
+    "funcname": "AddHeader"
+}

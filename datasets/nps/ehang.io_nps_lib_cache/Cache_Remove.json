@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 64,
+    "focalfunc": "func (c *Cache) Remove(key Key)",
+    "funcbody": "func (c *Cache) Remove(key Key) {\n\tif ele, hit := c.cache.Load(key); hit {\n\t\tc.removeElement(ele.(*list.Element))\n\t}\n}",
+    "funcname": "Remove"
+}

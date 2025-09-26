@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 433,
+    "focalfunc": "func (c *Context) Query(key string) (value string)",
+    "funcbody": "func (c *Context) Query(key string) (value string) {\n\tvalue, _ = c.GetQuery(key)\n\treturn\n}",
+    "funcname": "Query"
+}

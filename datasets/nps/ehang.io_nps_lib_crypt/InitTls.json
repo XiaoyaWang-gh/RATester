@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/tls.go",
+    "lineno": 23,
+    "focalfunc": "func InitTls()",
+    "funcbody": "func InitTls() {\n\tc, k, err := generateKeyPair(\"NPS Org\")\n\tif err == nil {\n\t\tcert, err = tls.X509KeyPair(c, k)\n\t}\n\tif err != nil {\n\t\tlog.Fatalln(\"Error initializing crypto certs\", err)\n\t}\n}",
+    "funcname": "InitTls"
+}

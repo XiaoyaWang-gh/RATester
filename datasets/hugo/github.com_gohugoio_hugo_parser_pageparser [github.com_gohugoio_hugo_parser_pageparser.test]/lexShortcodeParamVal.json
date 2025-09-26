@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 141,
+    "focalfunc": "func lexShortcodeParamVal(l *pageLexer) stateFunc",
+    "funcbody": "func lexShortcodeParamVal(l *pageLexer) stateFunc {\n\tl.consumeToSpace()\n\tl.emit(tScParamVal)\n\treturn lexInsideShortcode\n}",
+    "funcname": "lexShortcodeParamVal"
+}

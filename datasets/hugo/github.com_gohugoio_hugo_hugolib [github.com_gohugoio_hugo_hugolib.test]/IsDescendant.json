@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 46,
+    "focalfunc": "func (pt pageTree) IsDescendant(other any) bool",
+    "funcbody": "func (pt pageTree) IsDescendant(other any) bool {\n\tn, ok := other.(contentNodeI)\n\tif !ok {\n\t\treturn false\n\t}\n\n\tif n.Path() == pt.p.Path() {\n\t\treturn false\n\t}\n\n\treturn strings.HasPrefix(pt.p.Path(), paths.AddTrailingSlash(n.Path()))\n}",
+    "funcname": "IsDescendant"
+}

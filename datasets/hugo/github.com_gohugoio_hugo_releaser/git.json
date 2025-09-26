@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 224,
+    "focalfunc": "func git(args ...string) (string, error)",
+    "funcbody": "func git(args ...string) (string, error) {\n\tcmd, _ := hexec.SafeCommand(\"git\", args...)\n\tout, err := cmd.CombinedOutput()\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"git failed: %q: %q (%q)\", err, out, args)\n\t}\n\treturn string(out), nil\n}",
+    "funcname": "git"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 387,
+    "focalfunc": "func (d *SourceFilesystem) mounts() []hugofs.FileMetaInfo",
+    "funcbody": "func (d *SourceFilesystem) mounts() []hugofs.FileMetaInfo {\n\tvar m []hugofs.FileMetaInfo\n\thugofs.WalkFilesystems(d.Fs, func(fs afero.Fs) bool {\n\t\tif rfs, ok := fs.(*hugofs.RootMappingFs); ok {\n\t\t\tmounts, err := rfs.Mounts(d.Name)\n\t\t\tif err == nil {\n\t\t\t\tm = append(m, mounts...)\n\t\t\t}\n\t\t}\n\t\treturn false\n\t})\n\n\tn := 0\n\tfor _, mm := range m {\n\t\tif mm.Meta().Component == d.Name {\n\t\t\tm[n] = mm\n\t\t\tn++\n\t\t}\n\t}\n\tm = m[:n]\n\n\treturn m\n}",
+    "funcname": "mounts"
+}

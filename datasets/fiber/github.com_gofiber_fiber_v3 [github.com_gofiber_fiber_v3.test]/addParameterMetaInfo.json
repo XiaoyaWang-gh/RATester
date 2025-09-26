@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 224,
+    "focalfunc": "func addParameterMetaInfo(segs []*routeSegment) []*routeSegment",
+    "funcbody": "func addParameterMetaInfo(segs []*routeSegment) []*routeSegment {\n\tvar comparePart string\n\tsegLen := len(segs)\n\n\tfor i := segLen - 1; i >= 0; i-- {\n\n\t\tif segs[i].IsParam {\n\n\t\t\tsegs[i].ComparePart = RemoveEscapeChar(comparePart)\n\t\t} else {\n\t\t\tcomparePart = segs[i].Const\n\t\t\tif len(comparePart) > 1 {\n\t\t\t\tcomparePart = utils.TrimRight(comparePart, slashDelimiterStr)\n\t\t\t}\n\t\t}\n\t}\n\n\tfor i := 0; i < segLen; i++ {\n\n\t\tif segs[i].IsParam {\n\n\t\t\tif segLen > i+1 && !segs[i].IsGreedy && segs[i+1].IsParam && !segs[i+1].IsGreedy {\n\t\t\t\tsegs[i].Length = 1\n\t\t\t}\n\t\t\tif segs[i].ComparePart == \"\" {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tfor j := i + 1; j <= len(segs)-1; j++ {\n\t\t\t\tif !segs[j].IsParam {\n\n\t\t\t\t\tsegs[i].PartCount += strings.Count(segs[j].Const, segs[i].ComparePart)\n\t\t\t\t}\n\t\t\t}\n\n\t\t} else if segs[i].Const[len(segs[i].Const)-1] == slashDelimiter && (segs[i].IsLast || (segLen > i+1 && segs[i+1].IsOptional)) {\n\t\t\tsegs[i].HasOptionalSlash = true\n\t\t}\n\t}\n\n\treturn segs\n}",
+    "funcname": "addParameterMetaInfo"
+}

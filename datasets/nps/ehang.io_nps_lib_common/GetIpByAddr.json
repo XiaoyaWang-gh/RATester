@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 260,
+    "focalfunc": "func GetIpByAddr(addr string) string",
+    "funcbody": "func GetIpByAddr(addr string) string {\n\tarr := strings.Split(addr, \":\")\n\treturn arr[0]\n}",
+    "funcname": "GetIpByAddr"
+}

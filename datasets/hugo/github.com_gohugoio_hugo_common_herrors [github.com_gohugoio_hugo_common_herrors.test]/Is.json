@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 109,
+    "focalfunc": "func (e *FeatureNotAvailableError) Is(target error) bool",
+    "funcbody": "func (e *FeatureNotAvailableError) Is(target error) bool {\n\t_, ok := target.(*FeatureNotAvailableError)\n\treturn ok\n}",
+    "funcname": "Is"
+}

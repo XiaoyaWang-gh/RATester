@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 435,
+    "focalfunc": "func (al *alias) SetMaxIdleConns(maxIdleConns int)",
+    "funcbody": "func (al *alias) SetMaxIdleConns(maxIdleConns int) {\n\tal.MaxIdleConns = maxIdleConns\n\tal.DB.DB.SetMaxIdleConns(maxIdleConns)\n}",
+    "funcname": "SetMaxIdleConns"
+}

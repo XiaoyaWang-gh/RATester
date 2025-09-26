@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/reader.go",
+    "lineno": 41,
+    "focalfunc": "func (r Reader) writeHeaders(w http.ResponseWriter, headers map[string]string)",
+    "funcbody": "func (r Reader) writeHeaders(w http.ResponseWriter, headers map[string]string) {\n\theader := w.Header()\n\tfor k, v := range headers {\n\t\tif header.Get(k) == \"\" {\n\t\t\theader.Set(k, v)\n\t\t}\n\t}\n}",
+    "funcname": "writeHeaders"
+}

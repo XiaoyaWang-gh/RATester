@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 99,
+    "focalfunc": "func ProcessTunnel(c *conn.Conn, s *TunnelModeServer) error",
+    "funcbody": "func ProcessTunnel(c *conn.Conn, s *TunnelModeServer) error {\n\ttargetAddr, err := s.task.Target.GetRandomTarget()\n\tif err != nil {\n\t\tc.Close()\n\t\tlogs.Warn(\"tcp port %d ,client id %d,task id %d connect error %s\", s.task.Port, s.task.Client.Id, s.task.Id, err.Error())\n\t\treturn err\n\t}\n\treturn s.DealClient(c, s.task.Client, targetAddr, nil, common.CONN_TCP, nil, s.task.Flow, s.task.Target.LocalProxy)\n}",
+    "funcname": "ProcessTunnel"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/docshelper/docs.go",
+    "lineno": 27,
+    "focalfunc": "func AddDocProviderFunc(fn DocProviderFunc)",
+    "funcbody": "func AddDocProviderFunc(fn DocProviderFunc) {\n\tdocProviderFuncs = append(docProviderFuncs, fn)\n}",
+    "funcname": "AddDocProviderFunc"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 164,
+    "focalfunc": "func (d *dbBaseSqlite) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string",
+    "funcbody": "func (d *dbBaseSqlite) GenerateSpecifyIndex(tableName string, useIndex int, indexes []string) string {\n\tvar s []string\n\tQ := d.TableQuote()\n\tfor _, index := range indexes {\n\t\ttmp := fmt.Sprintf(`%s%s%s`, Q, index, Q)\n\t\ts = append(s, tmp)\n\t}\n\n\tswitch useIndex {\n\tcase hints.KeyUseIndex, hints.KeyForceIndex:\n\t\treturn fmt.Sprintf(` INDEXED BY %s `, strings.Join(s, `,`))\n\tdefault:\n\t\tDebugLog.Println(\"[WARN] Not a valid specifying action, so that action is ignored\")\n\t\treturn ``\n\t}\n}",
+    "funcname": "GenerateSpecifyIndex"
+}

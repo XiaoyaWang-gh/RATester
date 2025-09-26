@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 613,
+    "focalfunc": "func (p *QueryParam) AddParams(r map[string][]string)",
+    "funcbody": "func (p *QueryParam) AddParams(r map[string][]string) {\n\tfor k, v := range r {\n\t\tfor _, vv := range v {\n\t\t\tp.Add(k, vv)\n\t\t}\n\t}\n}",
+    "funcname": "AddParams"
+}

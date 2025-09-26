@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 156,
+    "focalfunc": "func (c Config) ToSecurityMap() map[string]any",
+    "funcbody": "func (c Config) ToSecurityMap() map[string]any {\n\n\tasJson, err := json.Marshal(c)\n\therrors.Must(err)\n\tm := make(map[string]any)\n\therrors.Must(json.Unmarshal(asJson, &m))\n\n\tsec := map[string]any{\n\t\t\"security\": m,\n\t}\n\treturn sec\n}",
+    "funcname": "ToSecurityMap"
+}

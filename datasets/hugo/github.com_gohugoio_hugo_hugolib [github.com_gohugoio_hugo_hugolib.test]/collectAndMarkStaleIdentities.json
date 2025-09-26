@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 143,
+    "focalfunc": "func (t *pageTrees) collectAndMarkStaleIdentities(p *paths.Path) []identity.Identity",
+    "funcbody": "func (t *pageTrees) collectAndMarkStaleIdentities(p *paths.Path) []identity.Identity {\n\tkey := p.Base()\n\tvar ids []identity.Identity\n\n\tnCount := 0\n\tcb := func(n contentNodeI) bool {\n\t\tif n == nil {\n\t\t\treturn false\n\t\t}\n\t\tn.MarkStale()\n\t\tif nCount > 0 {\n\t\t\treturn true\n\t\t}\n\t\tnCount++\n\t\tn.ForEeachIdentity(func(id identity.Identity) bool {\n\t\t\tids = append(ids, id)\n\t\t\treturn false\n\t\t})\n\n\t\treturn false\n\t}\n\ttree := t.treePages\n\tnCount = 0\n\ttree.ForEeachInDimension(key, doctree.DimensionLanguage.Index(),\n\t\tcb,\n\t)\n\n\ttree = t.treeResources\n\tnCount = 0\n\ttree.ForEeachInDimension(key, doctree.DimensionLanguage.Index(),\n\t\tcb,\n\t)\n\n\tif p.Component() == files.ComponentFolderContent {\n\n\t\tkey := p.ForBundleType(paths.PathTypeContentResource).Base()\n\t\ttree = t.treeResources\n\t\tnCount = 0\n\t\ttree.ForEeachInDimension(key, doctree.DimensionLanguage.Index(),\n\t\t\tcb,\n\t\t)\n\n\t}\n\treturn ids\n}",
+    "funcname": "collectAndMarkStaleIdentities"
+}

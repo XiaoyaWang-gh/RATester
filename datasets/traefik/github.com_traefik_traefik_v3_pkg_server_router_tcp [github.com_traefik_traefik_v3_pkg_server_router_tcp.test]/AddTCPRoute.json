@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 228,
+    "focalfunc": "func (r *Router) AddTCPRoute(rule string, priority int, target tcp.Handler) error",
+    "funcbody": "func (r *Router) AddTCPRoute(rule string, priority int, target tcp.Handler) error {\n\treturn r.muxerTCP.AddRoute(rule, \"\", priority, target)\n}",
+    "funcname": "AddTCPRoute"
+}

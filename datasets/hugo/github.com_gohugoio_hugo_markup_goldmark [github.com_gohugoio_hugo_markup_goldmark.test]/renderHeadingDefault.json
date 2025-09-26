@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 454,
+    "focalfunc": "func (r *hookedRenderer) renderHeadingDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *hookedRenderer) renderHeadingDefault(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tn := node.(*ast.Heading)\n\tif entering {\n\t\t_, _ = w.WriteString(\"<h\")\n\t\t_ = w.WriteByte(\"0123456\"[n.Level])\n\t\tif n.Attributes() != nil {\n\t\t\tattributes.RenderASTAttributes(w, node.Attributes()...)\n\t\t}\n\t\t_ = w.WriteByte('>')\n\t} else {\n\t\t_, _ = w.WriteString(\"</h\")\n\t\t_ = w.WriteByte(\"0123456\"[n.Level])\n\t\t_, _ = w.WriteString(\">\\n\")\n\t}\n\treturn ast.WalkContinue, nil\n}",
+    "funcname": "renderHeadingDefault"
+}

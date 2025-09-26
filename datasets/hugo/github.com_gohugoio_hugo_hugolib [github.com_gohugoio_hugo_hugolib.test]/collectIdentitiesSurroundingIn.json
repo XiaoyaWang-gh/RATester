@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 196,
+    "focalfunc": "func (t *pageTrees) collectIdentitiesSurroundingIn(key string, maxSamples int, tree *doctree.NodeShiftTree[contentNodeI]) []identity.Identity",
+    "funcbody": "func (t *pageTrees) collectIdentitiesSurroundingIn(key string, maxSamples int, tree *doctree.NodeShiftTree[contentNodeI]) []identity.Identity {\n\tvar ids []identity.Identity\n\tsection, ok := tree.LongestPrefixAll(path.Dir(key))\n\tif ok {\n\t\tcount := 0\n\t\tprefix := section + \"/\"\n\t\tlevel := strings.Count(prefix, \"/\")\n\t\ttree.WalkPrefixRaw(prefix, func(s string, n contentNodeI) bool {\n\t\t\tif level != strings.Count(s, \"/\") {\n\t\t\t\treturn false\n\t\t\t}\n\t\t\tn.ForEeachIdentity(func(id identity.Identity) bool {\n\t\t\t\tids = append(ids, id)\n\t\t\t\treturn false\n\t\t\t})\n\t\t\tcount++\n\t\t\treturn count > maxSamples\n\t\t})\n\t}\n\n\treturn ids\n}",
+    "funcname": "collectIdentitiesSurroundingIn"
+}

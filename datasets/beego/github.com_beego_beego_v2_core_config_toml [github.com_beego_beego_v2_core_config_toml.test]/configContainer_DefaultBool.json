@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 234,
+    "focalfunc": "func (c *configContainer) DefaultBool(key string, defaultVal bool) bool",
+    "funcbody": "func (c *configContainer) DefaultBool(key string, defaultVal bool) bool {\n\tres, err := c.get(key)\n\tif err != nil {\n\t\treturn defaultVal\n\t}\n\tif b, ok := res.(bool); ok {\n\t\treturn b\n\t} else {\n\t\treturn defaultVal\n\t}\n}",
+    "funcname": "DefaultBool"
+}

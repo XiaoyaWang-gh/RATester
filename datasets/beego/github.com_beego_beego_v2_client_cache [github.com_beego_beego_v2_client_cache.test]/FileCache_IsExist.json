@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 269,
+    "focalfunc": "func (fc *FileCache) IsExist(ctx context.Context, key string) (bool, error)",
+    "funcbody": "func (fc *FileCache) IsExist(ctx context.Context, key string) (bool, error) {\n\tfn, err := fc.getCacheFileName(key)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn exists(fn)\n}",
+    "funcname": "IsExist"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/cli/loader_flag.go",
+    "lineno": 15,
+    "focalfunc": "func (*FlagLoader) Load(args []string, cmd *cli.Command) (bool, error)",
+    "funcbody": "func (*FlagLoader) Load(args []string, cmd *cli.Command) (bool, error) {\n\tif len(args) == 0 {\n\t\treturn false, nil\n\t}\n\n\tif err := flag.Decode(args, cmd.Configuration); err != nil {\n\t\treturn false, fmt.Errorf(\"failed to decode configuration from flags: %w\", err)\n\t}\n\n\tlog.Print(\"Configuration loaded from flags\")\n\n\treturn true, nil\n}",
+    "funcname": "Load"
+}

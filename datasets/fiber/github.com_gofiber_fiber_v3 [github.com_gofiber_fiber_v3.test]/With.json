@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 112,
+    "focalfunc": "func (r *Redirect) With(key, value string, level ...uint8) *Redirect",
+    "funcbody": "func (r *Redirect) With(key, value string, level ...uint8) *Redirect {\n\t// Get level\n\tvar msgLevel uint8\n\tif len(level) > 0 {\n\t\tmsgLevel = level[0]\n\t}\n\n\tfor i, msg := range r.messages {\n\t\tif msg.key == key && !msg.isOldInput {\n\t\t\tr.messages[i].value = value\n\t\t\tr.messages[i].level = msgLevel\n\n\t\t\treturn r\n\t\t}\n\t}\n\n\tr.messages = append(r.messages, redirectionMsg{\n\t\tkey:\tkey,\n\t\tvalue:\tvalue,\n\t\tlevel:\tmsgLevel,\n\t})\n\n\treturn r\n}",
+    "funcname": "With"
+}

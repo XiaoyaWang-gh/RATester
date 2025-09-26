@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/hooks.go",
+    "lineno": 15,
+    "focalfunc": "func registerMime() error",
+    "funcbody": "func registerMime() error {\n\tfor k, v := range mimemaps {\n\t\tmime.AddExtensionType(k, v)\n\t}\n\treturn nil\n}",
+    "funcname": "registerMime"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 170,
+    "focalfunc": "func (rp *HTTPReverseProxy) CreateConnection(reqRouteInfo *RequestRouteInfo, byEndpoint bool) (net.Conn, error)",
+    "funcbody": "func (rp *HTTPReverseProxy) CreateConnection(reqRouteInfo *RequestRouteInfo, byEndpoint bool) (net.Conn, error) {\n\thost, _ := httppkg.CanonicalHost(reqRouteInfo.Host)\n\tvr, ok := rp.getVhost(host, reqRouteInfo.URL, reqRouteInfo.HTTPUser)\n\tif ok {\n\t\tif byEndpoint {\n\t\t\tfn := vr.payload.(*RouteConfig).CreateConnByEndpointFn\n\t\t\tif fn != nil {\n\t\t\t\treturn fn(reqRouteInfo.Endpoint, reqRouteInfo.RemoteAddr)\n\t\t\t}\n\t\t}\n\t\tfn := vr.payload.(*RouteConfig).CreateConnFn\n\t\tif fn != nil {\n\t\t\treturn fn(reqRouteInfo.RemoteAddr)\n\t\t}\n\t}\n\treturn nil, fmt.Errorf(\"%v: %s %s %s\", ErrNoRouteFound, host, reqRouteInfo.URL, reqRouteInfo.HTTPUser)\n}",
+    "funcname": "CreateConnection"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group_fs.go",
+    "lineno": 22,
+    "focalfunc": "func (g *Group) StaticFS(pathPrefix string, filesystem fs.FS)",
+    "funcbody": "func (g *Group) StaticFS(pathPrefix string, filesystem fs.FS) {\n\tg.Add(\n\t\thttp.MethodGet,\n\t\tpathPrefix+\"*\",\n\t\tStaticDirectoryHandler(filesystem, false),\n\t)\n}",
+    "funcname": "StaticFS"
+}

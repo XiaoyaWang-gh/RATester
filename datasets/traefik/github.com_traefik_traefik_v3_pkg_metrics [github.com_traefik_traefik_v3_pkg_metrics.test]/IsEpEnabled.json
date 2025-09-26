@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 212,
+    "focalfunc": "func (r *standardRegistry) IsEpEnabled() bool",
+    "funcbody": "func (r *standardRegistry) IsEpEnabled() bool {\n\treturn r.epEnabled\n}",
+    "funcname": "IsEpEnabled"
+}

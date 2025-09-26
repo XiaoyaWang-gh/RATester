@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 380,
+    "focalfunc": "func AddMiddleware(configuration *dynamic.HTTPConfiguration, middlewareName string, middleware *dynamic.Middleware) bool",
+    "funcbody": "func AddMiddleware(configuration *dynamic.HTTPConfiguration, middlewareName string, middleware *dynamic.Middleware) bool {\n\tif _, ok := configuration.Middlewares[middlewareName]; !ok {\n\t\tconfiguration.Middlewares[middlewareName] = middleware\n\t\treturn true\n\t}\n\n\treturn reflect.DeepEqual(configuration.Middlewares[middlewareName], middleware)\n}",
+    "funcname": "AddMiddleware"
+}

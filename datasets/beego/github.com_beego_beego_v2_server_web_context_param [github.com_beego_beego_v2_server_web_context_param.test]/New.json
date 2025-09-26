@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/methodparams.go",
+    "lineno": 26,
+    "focalfunc": "func New(name string, opts ...MethodParamOption) *MethodParam",
+    "funcbody": "func New(name string, opts ...MethodParamOption) *MethodParam {\n\treturn newParam(name, nil, opts)\n}",
+    "funcname": "New"
+}

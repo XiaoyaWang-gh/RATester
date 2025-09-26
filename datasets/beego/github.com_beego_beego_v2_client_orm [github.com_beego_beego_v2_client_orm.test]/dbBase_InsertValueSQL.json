@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 478,
+    "focalfunc": "func (d *dbBase) InsertValueSQL(names []string, values []interface{}, isMulti bool, mi *models.ModelInfo) string",
+    "funcbody": "func (d *dbBase) InsertValueSQL(names []string, values []interface{}, isMulti bool, mi *models.ModelInfo) string {\n\tbuf := buffers.Get()\n\tdefer buffers.Put(buf)\n\n\tQ := d.ins.TableQuote()\n\n\t_, _ = buf.WriteString(\"INSERT INTO \")\n\t_, _ = buf.WriteString(Q)\n\t_, _ = buf.WriteString(mi.Table)\n\t_, _ = buf.WriteString(Q)\n\n\t_, _ = buf.WriteString(\" (\")\n\tfor i, name := range names {\n\t\tif i > 0 {\n\t\t\t_, _ = buf.WriteString(\", \")\n\t\t}\n\t\t_, _ = buf.WriteString(Q)\n\t\t_, _ = buf.WriteString(name)\n\t\t_, _ = buf.WriteString(Q)\n\t}\n\t_, _ = buf.WriteString(\") VALUES (\")\n\n\tmarks := make([]string, len(names))\n\tfor i := range marks {\n\t\tmarks[i] = \"?\"\n\t}\n\tqmarks := strings.Join(marks, \", \")\n\n\t_, _ = buf.WriteString(qmarks)\n\n\tmulti := len(values) / len(names)\n\n\tif isMulti && multi > 1 {\n\t\tfor i := 0; i < multi-1; i++ {\n\t\t\t_, _ = buf.WriteString(\"), (\")\n\t\t\t_, _ = buf.WriteString(qmarks)\n\t\t}\n\t}\n\n\t_ = buf.WriteByte(')')\n\n\tquery := buf.String()\n\td.ins.ReplaceMarks(&query)\n\n\treturn query\n}",
+    "funcname": "InsertValueSQL"
+}

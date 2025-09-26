@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/logger/utils.go",
+    "lineno": 7,
+    "focalfunc": "func methodColor(method string, colors fiber.Colors) string",
+    "funcbody": "func methodColor(method string, colors fiber.Colors) string {\n\tswitch method {\n\tcase fiber.MethodGet:\n\t\treturn colors.Cyan\n\tcase fiber.MethodPost:\n\t\treturn colors.Green\n\tcase fiber.MethodPut:\n\t\treturn colors.Yellow\n\tcase fiber.MethodDelete:\n\t\treturn colors.Red\n\tcase fiber.MethodPatch:\n\t\treturn colors.White\n\tcase fiber.MethodHead:\n\t\treturn colors.Magenta\n\tcase fiber.MethodOptions:\n\t\treturn colors.Blue\n\tdefault:\n\t\treturn colors.Reset\n\t}\n}",
+    "funcname": "methodColor"
+}

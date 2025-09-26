@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/tree.go",
+    "lineno": 201,
+    "focalfunc": "func (t *Tree) AddRouter(pattern string, runObject interface{})",
+    "funcbody": "func (t *Tree) AddRouter(pattern string, runObject interface{}) {\n\tt.addseg(splitPath(pattern), runObject, nil, \"\")\n}",
+    "funcname": "AddRouter"
+}

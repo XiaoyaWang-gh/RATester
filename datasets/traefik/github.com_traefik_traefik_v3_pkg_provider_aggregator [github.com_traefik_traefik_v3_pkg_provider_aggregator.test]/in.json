@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/ring_channel.go",
+    "lineno": 26,
+    "focalfunc": "func (ch *RingChannel) in() chan<- dynamic.Message",
+    "funcbody": "func (ch *RingChannel) in() chan<- dynamic.Message {\n\treturn ch.input\n}",
+    "funcname": "in"
+}

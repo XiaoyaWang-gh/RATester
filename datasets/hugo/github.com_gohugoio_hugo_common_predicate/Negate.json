@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/predicate/predicate.go",
+    "lineno": 50,
+    "focalfunc": "func (p P[T]) Negate() P[T]",
+    "funcbody": "func (p P[T]) Negate() P[T] {\n\treturn func(v T) bool {\n\t\treturn !p(v)\n\t}\n}",
+    "funcname": "Negate"
+}

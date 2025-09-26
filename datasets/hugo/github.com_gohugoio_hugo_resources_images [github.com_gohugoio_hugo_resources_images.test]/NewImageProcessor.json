@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 179,
+    "focalfunc": "func NewImageProcessor(warnl logg.LevelLogger, cfg *config.ConfigNamespace[ImagingConfig, ImagingConfigInternal]) (*ImageProcessor, error)",
+    "funcbody": "func NewImageProcessor(warnl logg.LevelLogger, cfg *config.ConfigNamespace[ImagingConfig, ImagingConfigInternal]) (*ImageProcessor, error) {\n\te := cfg.Config.Imaging.Exif\n\texifDecoder, err := exif.NewDecoder(\n\t\texif.WithDateDisabled(e.DisableDate),\n\t\texif.WithLatLongDisabled(e.DisableLatLong),\n\t\texif.ExcludeFields(e.ExcludeFields),\n\t\texif.IncludeFields(e.IncludeFields),\n\t\texif.WithWarnLogger(warnl),\n\t)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &ImageProcessor{\n\t\tCfg:\t\tcfg,\n\t\texifDecoder:\texifDecoder,\n\t}, nil\n}",
+    "funcname": "NewImageProcessor"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 327,
+    "focalfunc": "func (r *Request) SetJSON(v any) *Request",
+    "funcbody": "func (r *Request) SetJSON(v any) *Request {\n\tr.body = v\n\tr.bodyType = jsonBody\n\treturn r\n}",
+    "funcname": "SetJSON"
+}

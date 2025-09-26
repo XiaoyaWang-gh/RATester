@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 218,
+    "focalfunc": "func containsHeader(req *http.Request, name, value string) bool",
+    "funcbody": "func containsHeader(req *http.Request, name, value string) bool {\n\titems := strings.Split(req.Header.Get(name), \",\")\n\n\treturn slices.ContainsFunc(items, func(item string) bool {\n\t\treturn value == strings.ToLower(strings.TrimSpace(item))\n\t})\n}",
+    "funcname": "containsHeader"
+}

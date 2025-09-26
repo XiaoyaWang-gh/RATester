@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/compare/compare_strings.go",
+    "lineno": 36,
+    "focalfunc": "func compareFold(s, t string) int",
+    "funcbody": "func compareFold(s, t string) int {\n\tfor s != \"\" && t != \"\" {\n\t\tvar sr, tr rune\n\t\tif s[0] < utf8.RuneSelf {\n\t\t\tsr, s = rune(s[0]), s[1:]\n\t\t} else {\n\t\t\tr, size := utf8.DecodeRuneInString(s)\n\t\t\tsr, s = r, s[size:]\n\t\t}\n\t\tif t[0] < utf8.RuneSelf {\n\t\t\ttr, t = rune(t[0]), t[1:]\n\t\t} else {\n\t\t\tr, size := utf8.DecodeRuneInString(t)\n\t\t\ttr, t = r, t[size:]\n\t\t}\n\n\t\tif tr == sr {\n\t\t\tcontinue\n\t\t}\n\n\t\tc := 1\n\t\tif tr < sr {\n\t\t\ttr, sr = sr, tr\n\t\t\tc = -c\n\t\t}\n\n\t\tif tr < utf8.RuneSelf {\n\t\t\tif sr >= 'A' && sr <= 'Z' {\n\t\t\t\tif tr <= 'Z' {\n\n\t\t\t\t\treturn -c\n\t\t\t\t}\n\n\t\t\t\tdiff := tr - (sr + 'a' - 'A')\n\n\t\t\t\tif diff == 0 {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\n\t\t\t\tif diff < 0 {\n\t\t\t\t\treturn c\n\t\t\t\t}\n\n\t\t\t\tif diff > 0 {\n\t\t\t\t\treturn -c\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tr := unicode.SimpleFold(sr)\n\t\tfor r != sr && r < tr {\n\t\t\tr = unicode.SimpleFold(r)\n\t\t}\n\n\t\tif r == tr {\n\t\t\tcontinue\n\t\t}\n\n\t\treturn -c\n\t}\n\n\tif s == \"\" && t == \"\" {\n\t\treturn 0\n\t}\n\n\tif s == \"\" {\n\t\treturn -1\n\t}\n\n\treturn 1\n}",
+    "funcname": "compareFold"
+}

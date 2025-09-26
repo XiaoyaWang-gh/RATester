@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 105,
+    "focalfunc": "func (m *moduleAdapter) Dir() string",
+    "funcbody": "func (m *moduleAdapter) Dir() string {\n\n\tif !m.IsGoMod() || m.dir != \"\" {\n\t\treturn m.dir\n\t}\n\treturn m.gomod.Dir\n}",
+    "funcname": "Dir"
+}

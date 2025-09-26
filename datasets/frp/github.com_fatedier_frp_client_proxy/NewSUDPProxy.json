@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/sudp.go",
+    "lineno": 51,
+    "focalfunc": "func NewSUDPProxy(baseProxy *BaseProxy, cfg v1.ProxyConfigurer) Proxy",
+    "funcbody": "func NewSUDPProxy(baseProxy *BaseProxy, cfg v1.ProxyConfigurer) Proxy {\n\tunwrapped, ok := cfg.(*v1.SUDPProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn &SUDPProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t\tcloseCh:\tmake(chan struct{}),\n\t}\n}",
+    "funcname": "NewSUDPProxy"
+}

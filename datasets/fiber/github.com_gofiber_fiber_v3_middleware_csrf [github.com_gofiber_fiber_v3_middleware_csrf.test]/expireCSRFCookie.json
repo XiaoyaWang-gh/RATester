@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 243,
+    "focalfunc": "func expireCSRFCookie(c fiber.Ctx, cfg Config)",
+    "funcbody": "func expireCSRFCookie(c fiber.Ctx, cfg Config) {\n\tsetCSRFCookie(c, cfg, \"\", -time.Hour)\n}",
+    "funcname": "expireCSRFCookie"
+}

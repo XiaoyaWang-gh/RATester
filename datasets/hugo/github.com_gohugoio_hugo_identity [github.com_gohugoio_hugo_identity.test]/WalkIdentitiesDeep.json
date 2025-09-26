@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 115,
+    "focalfunc": "func WalkIdentitiesDeep(v any, cb func(level int, id Identity) bool)",
+    "funcbody": "func WalkIdentitiesDeep(v any, cb func(level int, id Identity) bool) {\n\tseen := make(map[Identity]bool)\n\twalkIdentities(v, 0, true, seen, cb)\n}",
+    "funcname": "WalkIdentitiesDeep"
+}

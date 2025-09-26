@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 758,
+    "focalfunc": "func (c *Context) ShouldBindUri(obj any) error",
+    "funcbody": "func (c *Context) ShouldBindUri(obj any) error {\n\tm := make(map[string][]string, len(c.Params))\n\tfor _, v := range c.Params {\n\t\tm[v.Key] = []string{v.Value}\n\t}\n\treturn binding.Uri.BindUri(m, obj)\n}",
+    "funcname": "ShouldBindUri"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 143,
+    "focalfunc": "func (s *Conn) SetAlive(tp string)",
+    "funcbody": "func (s *Conn) SetAlive(tp string) {\n\tswitch s.Conn.(type) {\n\tcase *kcp.UDPSession:\n\t\ts.Conn.(*kcp.UDPSession).SetReadDeadline(time.Time{})\n\tcase *net.TCPConn:\n\t\tconn := s.Conn.(*net.TCPConn)\n\t\tconn.SetReadDeadline(time.Time{})\n\n\tcase *pmux.PortConn:\n\t\ts.Conn.(*pmux.PortConn).SetReadDeadline(time.Time{})\n\t}\n}",
+    "funcname": "SetAlive"
+}

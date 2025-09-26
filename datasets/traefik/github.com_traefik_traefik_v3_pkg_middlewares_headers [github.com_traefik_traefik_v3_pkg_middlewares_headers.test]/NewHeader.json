@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/header.go",
+    "lineno": 27,
+    "focalfunc": "func NewHeader(next http.Handler, cfg dynamic.Headers) (*Header, error)",
+    "funcbody": "func NewHeader(next http.Handler, cfg dynamic.Headers) (*Header, error) {\n\thasCustomHeaders := cfg.HasCustomHeadersDefined()\n\thasCorsHeaders := cfg.HasCorsHeadersDefined()\n\n\tregexes := make([]*regexp.Regexp, len(cfg.AccessControlAllowOriginListRegex))\n\tfor i, str := range cfg.AccessControlAllowOriginListRegex {\n\t\treg, err := regexp.Compile(str)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error occurred during origin parsing: %w\", err)\n\t\t}\n\t\tregexes[i] = reg\n\t}\n\n\treturn &Header{\n\t\tnext:\t\t\tnext,\n\t\theaders:\t\t&cfg,\n\t\thasCustomHeaders:\thasCustomHeaders,\n\t\thasCorsHeaders:\t\thasCorsHeaders,\n\t\tallowOriginRegexes:\tregexes,\n\t}, nil\n}",
+    "funcname": "NewHeader"
+}

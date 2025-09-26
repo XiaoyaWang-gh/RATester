@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 87,
+    "focalfunc": "func countParams(path string) uint16",
+    "funcbody": "func countParams(path string) uint16 {\n\tvar n uint16\n\ts := bytesconv.StringToBytes(path)\n\tn += uint16(bytes.Count(s, strColon))\n\tn += uint16(bytes.Count(s, strStar))\n\treturn n\n}",
+    "funcname": "countParams"
+}

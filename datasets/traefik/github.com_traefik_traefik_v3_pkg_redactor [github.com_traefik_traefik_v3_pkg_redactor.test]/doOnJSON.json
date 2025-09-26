@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 68,
+    "focalfunc": "func doOnJSON(input string) string",
+    "funcbody": "func doOnJSON(input string) string {\n\treturn xurls.Relaxed().ReplaceAllString(input, maskLarge)\n}",
+    "funcname": "doOnJSON"
+}

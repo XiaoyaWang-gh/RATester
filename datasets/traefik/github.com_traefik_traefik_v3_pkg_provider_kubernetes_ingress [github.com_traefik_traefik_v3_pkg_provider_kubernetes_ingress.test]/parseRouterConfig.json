@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/annotations.go",
+    "lineno": 58,
+    "focalfunc": "func parseRouterConfig(annotations map[string]string) (*RouterConfig, error)",
+    "funcbody": "func parseRouterConfig(annotations map[string]string) (*RouterConfig, error) {\n\tlabels := convertAnnotations(annotations)\n\tif len(labels) == 0 {\n\t\treturn nil, nil\n\t}\n\n\tcfg := &RouterConfig{}\n\n\terr := label.Decode(labels, cfg, \"traefik.router.\")\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn cfg, nil\n}",
+    "funcname": "parseRouterConfig"
+}

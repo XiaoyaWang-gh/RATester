@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 155,
+    "focalfunc": "func (p *Provider) applyRouterTransform(ctx context.Context, rt *dynamic.Router, route *gatev1.HTTPRoute)",
+    "funcbody": "func (p *Provider) applyRouterTransform(ctx context.Context, rt *dynamic.Router, route *gatev1.HTTPRoute) {\n\tif p.routerTransform == nil {\n\t\treturn\n\t}\n\n\tif err := p.routerTransform.Apply(ctx, rt, route); err != nil {\n\t\tlog.Ctx(ctx).Error().Err(err).Msg(\"Apply router transform\")\n\t}\n}",
+    "funcname": "applyRouterTransform"
+}

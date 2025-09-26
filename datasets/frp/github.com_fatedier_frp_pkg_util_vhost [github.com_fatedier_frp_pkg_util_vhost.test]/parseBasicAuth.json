@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/http.go",
+    "lineno": 271,
+    "focalfunc": "func parseBasicAuth(auth string) (username, password string, ok bool)",
+    "funcbody": "func parseBasicAuth(auth string) (username, password string, ok bool) {\n\tconst prefix = \"Basic \"\n\n\tif len(auth) < len(prefix) || !strings.EqualFold(auth[:len(prefix)], prefix) {\n\t\treturn\n\t}\n\tc, err := base64.StdEncoding.DecodeString(auth[len(prefix):])\n\tif err != nil {\n\t\treturn\n\t}\n\tcs := string(c)\n\ts := strings.IndexByte(cs, ':')\n\tif s < 0 {\n\t\treturn\n\t}\n\treturn cs[:s], cs[s+1:], true\n}",
+    "funcname": "parseBasicAuth"
+}

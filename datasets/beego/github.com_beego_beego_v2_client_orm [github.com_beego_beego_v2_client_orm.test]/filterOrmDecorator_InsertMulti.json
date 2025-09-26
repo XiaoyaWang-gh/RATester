@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 302,
+    "focalfunc": "func (f *filterOrmDecorator) InsertMulti(bulk int, mds interface{}) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) InsertMulti(bulk int, mds interface{}) (int64, error) {\n\treturn f.InsertMultiWithCtx(context.Background(), bulk, mds)\n}",
+    "funcname": "InsertMulti"
+}

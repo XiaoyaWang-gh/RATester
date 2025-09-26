@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/sheap/heap.go",
+    "lineno": 15,
+    "focalfunc": "func (h *IntHeap) Pop() interface{}",
+    "funcbody": "func (h *IntHeap) Pop() interface{} {\n\told := *h\n\tn := len(old)\n\tx := old[n-1]\n\t*h = old[0 : n-1]\n\treturn x\n}",
+    "funcname": "Pop"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 143,
+    "focalfunc": "func (rp *MemProvider) SessionRead(ctx context.Context, sid string) (session.Store, error)",
+    "funcbody": "func (rp *MemProvider) SessionRead(ctx context.Context, sid string) (session.Store, error) {\n\tif client == nil {\n\t\tif err := rp.connectInit(); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\titem, err := client.Get(sid)\n\tif err != nil {\n\t\tif err == memcache.ErrCacheMiss {\n\t\t\trs := &SessionStore{sid: sid, values: make(map[interface{}]interface{}), maxlifetime: rp.maxlifetime}\n\t\t\treturn rs, nil\n\t\t}\n\t\treturn nil, err\n\t}\n\tvar kv map[interface{}]interface{}\n\tif len(item.Value) == 0 {\n\t\tkv = make(map[interface{}]interface{})\n\t} else {\n\t\tkv, err = session.DecodeGob(item.Value)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\trs := &SessionStore{sid: sid, values: kv, maxlifetime: rp.maxlifetime}\n\treturn rs, nil\n}",
+    "funcname": "SessionRead"
+}

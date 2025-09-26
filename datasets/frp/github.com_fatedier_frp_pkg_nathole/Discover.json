@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/discovery.go",
+    "lineno": 33,
+    "focalfunc": "func Discover(stunServers []string, localAddr string) ([]string, net.Addr, error)",
+    "funcbody": "func Discover(stunServers []string, localAddr string) ([]string, net.Addr, error) {\n\n\tdiscoverConn, err := listen(localAddr)\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\tdefer discoverConn.Close()\n\n\tgo discoverConn.readLoop()\n\n\taddresses := make([]string, 0, len(stunServers))\n\tfor _, addr := range stunServers {\n\n\t\texternalAddrs, err := discoverConn.discoverFromStunServer(addr)\n\t\tif err != nil {\n\t\t\treturn nil, nil, err\n\t\t}\n\t\taddresses = append(addresses, externalAddrs...)\n\t}\n\treturn addresses, discoverConn.localAddr, nil\n}",
+    "funcname": "Discover"
+}

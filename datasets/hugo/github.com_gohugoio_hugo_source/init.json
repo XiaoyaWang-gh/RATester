@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 125,
+    "focalfunc": "func (fi *File) init()",
+    "funcbody": "func (fi *File) init() {\n\tfi.lazyInit.Do(func() {\n\t\tfi.uniqueID = hashing.MD5FromStringHexEncoded(filepath.ToSlash(fi.Path()))\n\t})\n}",
+    "funcname": "init"
+}

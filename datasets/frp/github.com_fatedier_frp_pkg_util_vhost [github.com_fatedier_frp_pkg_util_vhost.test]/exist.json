@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/router.go",
+    "lineno": 120,
+    "focalfunc": "func (r *Routers) exist(host, path, httpUser string) (route *Router, exist bool)",
+    "funcbody": "func (r *Routers) exist(host, path, httpUser string) (route *Router, exist bool) {\n\troutersByHTTPUser, found := r.indexByDomain[host]\n\tif !found {\n\t\treturn\n\t}\n\trouters, found := routersByHTTPUser[httpUser]\n\tif !found {\n\t\treturn\n\t}\n\n\tfor _, route = range routers {\n\t\tif path == route.location {\n\t\t\treturn route, true\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "exist"
+}

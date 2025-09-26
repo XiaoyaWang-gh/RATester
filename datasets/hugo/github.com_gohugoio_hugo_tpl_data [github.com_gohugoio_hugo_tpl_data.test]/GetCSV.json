@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 66,
+    "focalfunc": "func (ns *Namespace) GetCSV(sep string, args ...any) (d [][]string, err error)",
+    "funcbody": "func (ns *Namespace) GetCSV(sep string, args ...any) (d [][]string, err error) {\n\thugo.Deprecate(\"data.GetCSV\", \"use resources.Get or resources.GetRemote with transform.Unmarshal.\", \"v0.123.0\")\n\n\turl, headers := toURLAndHeaders(args)\n\tcache := ns.cacheGetCSV\n\n\tunmarshal := func(b []byte) (bool, error) {\n\t\tif d, err = parseCSV(b, sep); err != nil {\n\t\t\terr = fmt.Errorf(\"failed to parse CSV file %s: %w\", url, err)\n\n\t\t\treturn true, err\n\t\t}\n\n\t\treturn false, nil\n\t}\n\n\tvar req *http.Request\n\treq, err = http.NewRequest(\"GET\", url, nil)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create request for getCSV for resource %s: %w\", url, err)\n\t}\n\n\taddUserProvidedHeaders(headers, req)\n\taddDefaultHeaders(req, \"text/csv\", \"text/plain\")\n\n\terr = ns.getResource(cache, unmarshal, req)\n\tif err != nil {\n\t\tif security.IsAccessDenied(err) {\n\t\t\treturn nil, err\n\t\t}\n\t\tns.deps.Log.Erroridf(constants.ErrRemoteGetCSV, \"Failed to get CSV resource %q: %s\", url, err)\n\t\treturn nil, nil\n\t}\n\n\treturn\n}",
+    "funcname": "GetCSV"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 147,
+    "focalfunc": "func (t *NodeShiftTree[T]) Increment(d int) *NodeShiftTree[T]",
+    "funcbody": "func (t *NodeShiftTree[T]) Increment(d int) *NodeShiftTree[T] {\n\treturn t.Shape(d, t.dims[d]+1)\n}",
+    "funcname": "Increment"
+}

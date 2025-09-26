@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 719,
+    "focalfunc": "func SetLogFuncCall(b bool)",
+    "funcbody": "func SetLogFuncCall(b bool) {\n\tbeeLogger.EnableFuncCallDepth(b)\n\tbeeLogger.SetLogFuncCallDepth(3)\n}",
+    "funcname": "SetLogFuncCall"
+}

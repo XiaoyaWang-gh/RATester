@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 114,
+    "focalfunc": "func (c *StandardDateCounter) rotate(now time.Time)",
+    "funcbody": "func (c *StandardDateCounter) rotate(now time.Time) {\n\tnow = time.Date(now.Year(), now.Month(), now.Day(), 0, 0, 0, 0, now.Location())\n\tdays := int(now.Sub(c.lastUpdateDate).Hours() / 24)\n\n\tdefer func() {\n\t\tc.lastUpdateDate = now\n\t}()\n\n\tif days <= 0 {\n\t\treturn\n\t} else if days >= int(c.reserveDays) {\n\t\tc.counts = make([]int64, c.reserveDays)\n\t\treturn\n\t}\n\tnewCounts := make([]int64, c.reserveDays)\n\n\tfor i := days; i < int(c.reserveDays); i++ {\n\t\tnewCounts[i] = c.counts[i-days]\n\t}\n\tc.counts = newCounts\n}",
+    "funcname": "rotate"
+}

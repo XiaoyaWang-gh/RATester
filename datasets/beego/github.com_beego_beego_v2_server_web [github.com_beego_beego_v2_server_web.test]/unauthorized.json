@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 212,
+    "focalfunc": "func unauthorized(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func unauthorized(rw http.ResponseWriter, r *http.Request) {\n\tresponseError(rw, r,\n\t\t401,\n\t\t\"<br>The page you have requested can't be authorized.\"+\n\t\t\t\"<br>Perhaps you are here because:\"+\n\t\t\t\"<br><br><ul>\"+\n\t\t\t\"<br>The credentials you supplied are incorrect\"+\n\t\t\t\"<br>There are errors in the website address\"+\n\t\t\t\"</ul>\",\n\t)\n}",
+    "funcname": "unauthorized"
+}

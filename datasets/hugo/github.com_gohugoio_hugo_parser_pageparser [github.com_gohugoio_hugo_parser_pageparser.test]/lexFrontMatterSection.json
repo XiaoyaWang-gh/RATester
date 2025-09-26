@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_intro.go",
+    "lineno": 125,
+    "focalfunc": "func (l *pageLexer) lexFrontMatterSection(tp ItemType, delimr rune, name string, delim []byte) stateFunc",
+    "funcbody": "func (l *pageLexer) lexFrontMatterSection(tp ItemType, delimr rune, name string, delim []byte) stateFunc {\n\tfor i := 0; i < 2; i++ {\n\t\tif r := l.next(); r != delimr {\n\t\t\treturn l.errorf(\"invalid %s delimiter\", name)\n\t\t}\n\t}\n\n\twasEndOfLine := l.consumeCRLF()\n\n\tl.ignore()\n\n\tvar r rune\n\n\tfor {\n\t\tif !wasEndOfLine {\n\t\t\tr = l.next()\n\t\t\tif r == eof {\n\t\t\t\treturn l.errorf(\"EOF looking for end %s front matter delimiter\", name)\n\t\t\t}\n\t\t}\n\n\t\tif wasEndOfLine || isEndOfLine(r) {\n\t\t\tif l.hasPrefix(delim) {\n\t\t\t\tl.emit(tp)\n\t\t\t\tl.pos += 3\n\t\t\t\tl.consumeCRLF()\n\t\t\t\tl.ignore()\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\twasEndOfLine = false\n\t}\n\n\treturn lexMainSection\n}",
+    "funcname": "lexFrontMatterSection"
+}

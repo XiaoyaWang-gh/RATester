@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/parsers.go",
+    "lineno": 54,
+    "focalfunc": "func (f parserFunc) parse(value string, toType reflect.Type) (interface{}, error)",
+    "funcbody": "func (f parserFunc) parse(value string, toType reflect.Type) (interface{}, error) {\n\treturn f(value, toType)\n}",
+    "funcname": "parse"
+}

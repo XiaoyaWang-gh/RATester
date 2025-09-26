@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/uri.go",
+    "lineno": 9,
+    "focalfunc": "func (uriBinding) Name() string",
+    "funcbody": "func (uriBinding) Name() string {\n\treturn \"uri\"\n}",
+    "funcname": "Name"
+}

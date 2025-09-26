@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/root.go",
+    "lineno": 99,
+    "focalfunc": "func Execute()",
+    "funcbody": "func Execute() {\n\trootCmd.SetGlobalNormalizationFunc(config.WordSepNormalizeFunc)\n\tif err := rootCmd.Execute(); err != nil {\n\t\tos.Exit(1)\n\t}\n}",
+    "funcname": "Execute"
+}

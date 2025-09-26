@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/post_publish.go",
+    "lineno": 26,
+    "focalfunc": "func (spec *Spec) PostProcess(r resource.Resource) (postpub.PostPublishedResource, error)",
+    "funcbody": "func (spec *Spec) PostProcess(r resource.Resource) (postpub.PostPublishedResource, error) {\n\tkey := r.(transformationKeyer).TransformationKey()\n\tspec.postProcessMu.RLock()\n\tresult, found := spec.PostProcessResources[key]\n\tspec.postProcessMu.RUnlock()\n\tif found {\n\t\treturn result, nil\n\t}\n\n\tspec.postProcessMu.Lock()\n\tdefer spec.postProcessMu.Unlock()\n\n\tresult, found = spec.PostProcessResources[key]\n\tif found {\n\t\treturn result, nil\n\t}\n\n\tresult = postpub.NewPostPublishResource(spec.incr.Incr(), r)\n\tif result == nil {\n\t\tpanic(\"got nil result\")\n\t}\n\tspec.PostProcessResources[key] = result\n\n\treturn result, nil\n}",
+    "funcname": "PostProcess"
+}

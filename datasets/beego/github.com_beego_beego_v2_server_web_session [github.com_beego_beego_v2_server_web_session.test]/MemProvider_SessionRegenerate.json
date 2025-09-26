@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_mem.go",
+    "lineno": 127,
+    "focalfunc": "func (pder *MemProvider) SessionRegenerate(ctx context.Context, oldsid, sid string) (Store, error)",
+    "funcbody": "func (pder *MemProvider) SessionRegenerate(ctx context.Context, oldsid, sid string) (Store, error) {\n\tpder.lock.RLock()\n\tif element, ok := pder.sessions[oldsid]; ok {\n\t\tgo pder.SessionUpdate(nil, oldsid)\n\t\tpder.lock.RUnlock()\n\t\tpder.lock.Lock()\n\t\telement.Value.(*MemSessionStore).sid = sid\n\t\tpder.sessions[sid] = element\n\t\tdelete(pder.sessions, oldsid)\n\t\tpder.lock.Unlock()\n\t\treturn element.Value.(*MemSessionStore), nil\n\t}\n\tpder.lock.RUnlock()\n\tpder.lock.Lock()\n\tnewsess := &MemSessionStore{sid: sid, timeAccessed: time.Now(), value: make(map[interface{}]interface{})}\n\telement := pder.list.PushFront(newsess)\n\tpder.sessions[sid] = element\n\tpder.lock.Unlock()\n\treturn newsess, nil\n}",
+    "funcname": "SessionRegenerate"
+}

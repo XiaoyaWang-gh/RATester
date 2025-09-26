@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/invocation.go",
+    "lineno": 55,
+    "focalfunc": "func (inv *Invocation) GetPkFieldName() string",
+    "funcbody": "func (inv *Invocation) GetPkFieldName() string {\n\tif inv.mi.Fields.Pk != nil {\n\t\treturn inv.mi.Fields.Pk.Name\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetPkFieldName"
+}

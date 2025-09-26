@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 966,
+    "focalfunc": "func (s *state) evalFloat(typ reflect.Type, n parse.Node) reflect.Value",
+    "funcbody": "func (s *state) evalFloat(typ reflect.Type, n parse.Node) reflect.Value {\n\ts.at(n)\n\tif n, ok := n.(*parse.NumberNode); ok && n.IsFloat {\n\t\tvalue := reflect.New(typ).Elem()\n\t\tvalue.SetFloat(n.Float64)\n\t\treturn value\n\t}\n\ts.errorf(\"expected float; found %s\", n)\n\tpanic(\"not reached\")\n}",
+    "funcname": "evalFloat"
+}

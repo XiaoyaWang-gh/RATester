@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/writers.go",
+    "lineno": 71,
+    "focalfunc": "func ToReadCloser(r io.Reader) io.ReadCloser",
+    "funcbody": "func ToReadCloser(r io.Reader) io.ReadCloser {\n\tif rc, ok := r.(io.ReadCloser); ok {\n\t\treturn rc\n\t}\n\n\treturn struct {\n\t\tio.Reader\n\t\tio.Closer\n\t}{\n\t\tr,\n\t\tio.NopCloser(nil),\n\t}\n}",
+    "funcname": "ToReadCloser"
+}

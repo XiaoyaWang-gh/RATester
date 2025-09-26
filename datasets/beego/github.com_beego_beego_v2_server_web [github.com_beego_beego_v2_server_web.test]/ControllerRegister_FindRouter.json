@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1337,
+    "focalfunc": "func (p *ControllerRegister) FindRouter(context *beecontext.Context) (routerInfo *ControllerInfo, isFind bool)",
+    "funcbody": "func (p *ControllerRegister) FindRouter(context *beecontext.Context) (routerInfo *ControllerInfo, isFind bool) {\n\turlPath := context.Input.URL()\n\tif !p.cfg.RouterCaseSensitive {\n\t\turlPath = strings.ToLower(urlPath)\n\t}\n\thttpMethod := context.Input.Method()\n\tif t, ok := p.routers[httpMethod]; ok {\n\t\trunObject := t.Match(urlPath, context)\n\t\tif r, ok := runObject.(*ControllerInfo); ok {\n\t\t\treturn r, true\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "FindRouter"
+}

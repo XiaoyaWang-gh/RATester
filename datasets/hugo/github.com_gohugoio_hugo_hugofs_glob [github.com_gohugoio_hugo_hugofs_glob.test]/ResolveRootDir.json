@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 139,
+    "focalfunc": "func ResolveRootDir(p string) string",
+    "funcbody": "func ResolveRootDir(p string) string {\n\tparts := strings.Split(path.Dir(p), \"/\")\n\tvar roots []string\n\tfor _, part := range parts {\n\t\tif HasGlobChar(part) {\n\t\t\tbreak\n\t\t}\n\t\troots = append(roots, part)\n\t}\n\n\tif len(roots) == 0 {\n\t\treturn \"\"\n\t}\n\n\treturn strings.Join(roots, \"/\")\n}",
+    "funcname": "ResolveRootDir"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 157,
+    "focalfunc": "func (s *Sock5ModeServer) sendUdpReply(writeConn net.Conn, c net.Conn, rep uint8, serverIp string)",
+    "funcbody": "func (s *Sock5ModeServer) sendUdpReply(writeConn net.Conn, c net.Conn, rep uint8, serverIp string) {\n\treply := []byte{\n\t\t5,\n\t\trep,\n\t\t0,\n\t\t1,\n\t}\n\tlocalHost, localPort, _ := net.SplitHostPort(c.LocalAddr().String())\n\tlocalHost = serverIp\n\tipBytes := net.ParseIP(localHost).To4()\n\tnPort, _ := strconv.Atoi(localPort)\n\treply = append(reply, ipBytes...)\n\tportBytes := make([]byte, 2)\n\tbinary.BigEndian.PutUint16(portBytes, uint16(nPort))\n\treply = append(reply, portBytes...)\n\twriteConn.Write(reply)\n\n}",
+    "funcname": "sendUdpReply"
+}

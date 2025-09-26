@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 263,
+    "focalfunc": "func (s *Site) Languages() langs.Languages",
+    "funcbody": "func (s *Site) Languages() langs.Languages {\n\treturn s.h.Configs.Languages\n}",
+    "funcname": "Languages"
+}

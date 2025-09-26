@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 89,
+    "focalfunc": "func viewsBlocksBlockTpl() (*asset, error)",
+    "funcbody": "func viewsBlocksBlockTpl() (*asset, error) {\n\tbytes, err := viewsBlocksBlockTplBytes()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tinfo := bindataFileInfo{name: \"views/blocks/block.tpl\", size: 50, mode: os.FileMode(0o664), modTime: time.Unix(1541431067, 0)}\n\ta := &asset{bytes: bytes, info: info}\n\treturn a, nil\n}",
+    "funcname": "viewsBlocksBlockTpl"
+}

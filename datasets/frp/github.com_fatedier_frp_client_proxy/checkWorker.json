@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 184,
+    "focalfunc": "func (pw *Wrapper) checkWorker()",
+    "funcbody": "func (pw *Wrapper) checkWorker() {\n\txl := pw.xl\n\tif pw.monitor != nil {\n\n\t\ttime.Sleep(500 * time.Millisecond)\n\t}\n\tfor {\n\n\t\tnow := time.Now()\n\t\tif atomic.LoadUint32(&pw.health) == 0 {\n\t\t\tpw.mu.Lock()\n\t\t\tif pw.Phase == ProxyPhaseNew ||\n\t\t\t\tpw.Phase == ProxyPhaseCheckFailed ||\n\t\t\t\t(pw.Phase == ProxyPhaseWaitStart && now.After(pw.lastSendStartMsg.Add(waitResponseTimeout))) ||\n\t\t\t\t(pw.Phase == ProxyPhaseStartErr && now.After(pw.lastStartErr.Add(startErrTimeout))) {\n\n\t\t\t\txl.Tracef(\"change status from [%s] to [%s]\", pw.Phase, ProxyPhaseWaitStart)\n\t\t\t\tpw.Phase = ProxyPhaseWaitStart\n\n\t\t\t\tvar newProxyMsg msg.NewProxy\n\t\t\t\tpw.Cfg.MarshalToMsg(&newProxyMsg)\n\t\t\t\tpw.lastSendStartMsg = now\n\t\t\t\t_ = pw.handler(&event.StartProxyPayload{\n\t\t\t\t\tNewProxyMsg: &newProxyMsg,\n\t\t\t\t})\n\t\t\t}\n\t\t\tpw.mu.Unlock()\n\t\t} else {\n\t\t\tpw.mu.Lock()\n\t\t\tif pw.Phase == ProxyPhaseRunning || pw.Phase == ProxyPhaseWaitStart {\n\t\t\t\tpw.close()\n\t\t\t\txl.Tracef(\"change status from [%s] to [%s]\", pw.Phase, ProxyPhaseCheckFailed)\n\t\t\t\tpw.Phase = ProxyPhaseCheckFailed\n\t\t\t}\n\t\t\tpw.mu.Unlock()\n\t\t}\n\n\t\tselect {\n\t\tcase <-pw.closeCh:\n\t\t\treturn\n\t\tcase <-time.After(statusCheckInterval):\n\t\tcase <-pw.healthNotifyCh:\n\t\t}\n\t}\n}",
+    "funcname": "checkWorker"
+}

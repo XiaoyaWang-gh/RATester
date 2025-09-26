@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 313,
+    "focalfunc": "func copyFile(src, dest string) (w int64, err error)",
+    "funcbody": "func copyFile(src, dest string) (w int64, err error) {\n\tsrcFile, err := os.Open(src)\n\tif err != nil {\n\t\treturn\n\t}\n\tdefer srcFile.Close()\n\n\tdestSplitPathDirs := strings.Split(dest, string(filepath.Separator))\n\n\tdestSplitPath := \"\"\n\tfor index, dir := range destSplitPathDirs {\n\t\tif index < len(destSplitPathDirs)-1 {\n\t\t\tdestSplitPath = destSplitPath + dir + string(filepath.Separator)\n\t\t\tb, _ := pathExists(destSplitPath)\n\t\t\tif b == false {\n\t\t\t\tlog.Println(\"mkdir:\" + destSplitPath)\n\n\t\t\t\terr := os.Mkdir(destSplitPath, os.ModePerm)\n\t\t\t\tif err != nil {\n\t\t\t\t\tlog.Fatalln(err)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tdstFile, err := os.Create(dest)\n\tif err != nil {\n\t\treturn\n\t}\n\tdefer dstFile.Close()\n\n\treturn io.Copy(dstFile, srcFile)\n}",
+    "funcname": "copyFile"
+}

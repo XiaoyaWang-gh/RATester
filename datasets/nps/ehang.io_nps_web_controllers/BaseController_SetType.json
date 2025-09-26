@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 169,
+    "focalfunc": "func (s *BaseController) SetType(name string)",
+    "funcbody": "func (s *BaseController) SetType(name string) {\n\ts.Data[\"type\"] = name\n}",
+    "funcname": "SetType"
+}

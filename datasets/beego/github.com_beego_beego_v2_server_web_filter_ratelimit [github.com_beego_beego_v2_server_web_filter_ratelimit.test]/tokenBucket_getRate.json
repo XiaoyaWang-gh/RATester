@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/token_bucket.go",
+    "lineno": 46,
+    "focalfunc": "func (b *tokenBucket) getRate() time.Duration",
+    "funcbody": "func (b *tokenBucket) getRate() time.Duration {\n\tb.RLock()\n\tdefer b.RUnlock()\n\treturn b.rate\n}",
+    "funcname": "getRate"
+}

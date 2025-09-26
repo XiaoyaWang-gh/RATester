@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 96,
+    "focalfunc": "func (l *layoutBuilder) addLayoutVariations(vars ...string)",
+    "funcbody": "func (l *layoutBuilder) addLayoutVariations(vars ...string) {\n\tfor _, layoutVar := range vars {\n\t\tif l.d.Baseof && layoutVar != \"baseof\" {\n\t\t\tl.layoutVariations = append(l.layoutVariations, layoutVar+\"-baseof\")\n\t\t\tcontinue\n\t\t}\n\t\tif !l.d.RenderingHook && !l.d.Baseof && l.d.LayoutOverride && layoutVar != l.d.Layout {\n\t\t\tcontinue\n\t\t}\n\t\tl.layoutVariations = append(l.layoutVariations, layoutVar)\n\t}\n}",
+    "funcname": "addLayoutVariations"
+}

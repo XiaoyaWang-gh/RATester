@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 148,
+    "focalfunc": "func (r udpRouterRepresentation) service() string",
+    "funcbody": "func (r udpRouterRepresentation) service() string {\n\treturn r.Service\n}",
+    "funcname": "service"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 486,
+    "focalfunc": "func (t *dbTables) getIndexSql(tableName string, useIndex int, indexes []string) (clause string)",
+    "funcbody": "func (t *dbTables) getIndexSql(tableName string, useIndex int, indexes []string) (clause string) {\n\tif len(indexes) == 0 {\n\t\treturn\n\t}\n\n\treturn t.base.GenerateSpecifyIndex(tableName, useIndex, indexes)\n}",
+    "funcname": "getIndexSql"
+}

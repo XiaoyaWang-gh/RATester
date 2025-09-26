@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 226,
+    "focalfunc": "func CallMethodByName(cxt context.Context, name string, v reflect.Value) []reflect.Value",
+    "funcbody": "func CallMethodByName(cxt context.Context, name string, v reflect.Value) []reflect.Value {\n\tfn := v.MethodByName(name)\n\tvar args []reflect.Value\n\ttp := fn.Type()\n\tif tp.NumIn() > 0 {\n\t\tif tp.NumIn() > 1 {\n\t\t\tpanic(\"not supported\")\n\t\t}\n\t\tfirst := tp.In(0)\n\t\tif IsContextType(first) {\n\t\t\targs = append(args, reflect.ValueOf(cxt))\n\t\t}\n\t}\n\n\treturn fn.Call(args)\n}",
+    "funcname": "CallMethodByName"
+}

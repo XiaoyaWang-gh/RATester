@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/data.go",
+    "lineno": 186,
+    "focalfunc": "func toURLAndHeaders(urlParts []any) (string, map[string]any)",
+    "funcbody": "func toURLAndHeaders(urlParts []any) (string, map[string]any) {\n\tif len(urlParts) == 0 {\n\t\treturn \"\", nil\n\t}\n\n\theaders, err := maps.ToStringMapE(urlParts[len(urlParts)-1])\n\tif err == nil {\n\t\turlParts = urlParts[:len(urlParts)-1]\n\t} else {\n\t\theaders = nil\n\t}\n\n\treturn strings.Join(cast.ToStringSlice(urlParts), \"\"), headers\n}",
+    "funcname": "toURLAndHeaders"
+}

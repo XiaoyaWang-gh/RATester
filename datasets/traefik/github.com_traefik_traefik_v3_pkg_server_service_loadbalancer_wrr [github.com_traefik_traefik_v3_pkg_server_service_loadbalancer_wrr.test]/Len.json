@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 89,
+    "focalfunc": "func (b *Balancer) Len() int",
+    "funcbody": "func (b *Balancer) Len() int\t{ return len(b.handlers) }",
+    "funcname": "Len"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/providers.go",
+    "lineno": 46,
+    "focalfunc": "func ppSymbols() map[string]map[string]reflect.Value",
+    "funcbody": "func ppSymbols() map[string]map[string]reflect.Value {\n\treturn map[string]map[string]reflect.Value{\n\t\t\"github.com/traefik/traefik/v3/pkg/plugins/plugins\": {\n\t\t\t\"PP\":\treflect.ValueOf((*PP)(nil)),\n\t\t\t\"_PP\":\treflect.ValueOf((*_PP)(nil)),\n\t\t},\n\t}\n}",
+    "funcname": "ppSymbols"
+}

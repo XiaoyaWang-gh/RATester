@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 865,
+    "focalfunc": "func SetFileName(n string) SetFileFunc",
+    "funcbody": "func SetFileName(n string) SetFileFunc {\n\treturn func(f *File) {\n\t\tf.SetName(n)\n\t}\n}",
+    "funcname": "SetFileName"
+}

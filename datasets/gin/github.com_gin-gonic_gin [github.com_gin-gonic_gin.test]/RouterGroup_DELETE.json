@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 121,
+    "focalfunc": "func (group *RouterGroup) DELETE(relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) DELETE(relativePath string, handlers ...HandlerFunc) IRoutes {\n\treturn group.handle(http.MethodDelete, relativePath, handlers)\n}",
+    "funcname": "DELETE"
+}

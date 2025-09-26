@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 180,
+    "focalfunc": "func NewPaginator(req *http.Request, per int, nums interface{}) *Paginator",
+    "funcbody": "func NewPaginator(req *http.Request, per int, nums interface{}) *Paginator {\n\tp := Paginator{}\n\tp.Request = req\n\tif per <= 0 {\n\t\tper = 10\n\t}\n\tp.PerPageNums = per\n\tp.SetNums(nums)\n\treturn &p\n}",
+    "funcname": "NewPaginator"
+}

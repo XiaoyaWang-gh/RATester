@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 175,
+    "focalfunc": "func (c *Context) FullPath() string",
+    "funcbody": "func (c *Context) FullPath() string {\n\treturn c.fullPath\n}",
+    "funcname": "FullPath"
+}

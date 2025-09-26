@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 187,
+    "focalfunc": "func (c *hugoBuilder) initMemTicker() func()",
+    "funcbody": "func (c *hugoBuilder) initMemTicker() func() {\n\tmemticker := time.NewTicker(5 * time.Second)\n\tquit := make(chan struct{})\n\tprintMem := func() {\n\t\tvar m runtime.MemStats\n\t\truntime.ReadMemStats(&m)\n\t\tfmt.Printf(\"\\n\\nAlloc = %v\\nTotalAlloc = %v\\nSys = %v\\nNumGC = %v\\n\\n\", formatByteCount(m.Alloc), formatByteCount(m.TotalAlloc), formatByteCount(m.Sys), m.NumGC)\n\t}\n\n\tgo func() {\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-memticker.C:\n\t\t\t\tprintMem()\n\t\t\tcase <-quit:\n\t\t\t\tmemticker.Stop()\n\t\t\t\tprintMem()\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}()\n\n\treturn func() {\n\t\tclose(quit)\n\t}\n}",
+    "funcname": "initMemTicker"
+}

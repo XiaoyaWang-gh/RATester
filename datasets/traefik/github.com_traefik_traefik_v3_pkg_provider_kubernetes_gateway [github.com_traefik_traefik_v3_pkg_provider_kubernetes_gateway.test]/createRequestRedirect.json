@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 635,
+    "focalfunc": "func createRequestRedirect(filter *gatev1.HTTPRequestRedirectFilter, pathMatch gatev1.HTTPPathMatch) *dynamic.Middleware",
+    "funcbody": "func createRequestRedirect(filter *gatev1.HTTPRequestRedirectFilter, pathMatch gatev1.HTTPPathMatch) *dynamic.Middleware {\n\tvar hostname *string\n\tif filter.Hostname != nil {\n\t\thostname = ptr.To(string(*filter.Hostname))\n\t}\n\n\tvar port *string\n\tfilterScheme := ptr.Deref(filter.Scheme, \"\")\n\tif filterScheme == \"http\" || filterScheme == \"https\" {\n\t\tport = ptr.To(\"\")\n\t}\n\tif filter.Port != nil {\n\t\tport = ptr.To(fmt.Sprintf(\"%d\", *filter.Port))\n\t}\n\n\tvar path *string\n\tvar pathPrefix *string\n\tif filter.Path != nil {\n\t\tswitch filter.Path.Type {\n\t\tcase gatev1.FullPathHTTPPathModifier:\n\t\t\tpath = filter.Path.ReplaceFullPath\n\t\tcase gatev1.PrefixMatchHTTPPathModifier:\n\t\t\tpath = filter.Path.ReplacePrefixMatch\n\t\t\tpathPrefix = pathMatch.Value\n\t\t}\n\t}\n\n\treturn &dynamic.Middleware{\n\t\tRequestRedirect: &dynamic.RequestRedirect{\n\t\t\tScheme:\t\tfilter.Scheme,\n\t\t\tHostname:\thostname,\n\t\t\tPort:\t\tport,\n\t\t\tPath:\t\tpath,\n\t\t\tPathPrefix:\tpathPrefix,\n\t\t\tStatusCode:\tptr.Deref(filter.StatusCode, http.StatusFound),\n\t\t},\n\t}\n}",
+    "funcname": "createRequestRedirect"
+}

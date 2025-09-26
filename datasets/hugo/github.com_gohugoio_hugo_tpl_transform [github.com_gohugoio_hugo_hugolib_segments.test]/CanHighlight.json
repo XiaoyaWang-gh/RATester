@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 121,
+    "focalfunc": "func (ns *Namespace) CanHighlight(language string) bool",
+    "funcbody": "func (ns *Namespace) CanHighlight(language string) bool {\n\treturn chromalexers.Get(language) != nil\n}",
+    "funcname": "CanHighlight"
+}

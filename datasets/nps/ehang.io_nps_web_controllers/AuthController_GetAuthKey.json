@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/auth.go",
+    "lineno": 15,
+    "focalfunc": "func (s *AuthController) GetAuthKey()",
+    "funcbody": "func (s *AuthController) GetAuthKey() {\n\tm := make(map[string]interface{})\n\tdefer func() {\n\t\ts.Data[\"json\"] = m\n\t\ts.ServeJSON()\n\t}()\n\tif cryptKey := beego.AppConfig.String(\"auth_crypt_key\"); len(cryptKey) != 16 {\n\t\tm[\"status\"] = 0\n\t\treturn\n\t} else {\n\t\tb, err := crypt.AesEncrypt([]byte(beego.AppConfig.String(\"auth_key\")), []byte(cryptKey))\n\t\tif err != nil {\n\t\t\tm[\"status\"] = 0\n\t\t\treturn\n\t\t}\n\t\tm[\"status\"] = 1\n\t\tm[\"crypt_auth_key\"] = hex.EncodeToString(b)\n\t\tm[\"crypt_type\"] = \"aes cbc\"\n\t\treturn\n\t}\n}",
+    "funcname": "GetAuthKey"
+}

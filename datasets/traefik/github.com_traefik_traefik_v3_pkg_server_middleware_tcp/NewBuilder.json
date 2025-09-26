@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/middleware/tcp/middlewares.go",
+    "lineno": 30,
+    "focalfunc": "func NewBuilder(configs map[string]*runtime.TCPMiddlewareInfo) *Builder",
+    "funcbody": "func NewBuilder(configs map[string]*runtime.TCPMiddlewareInfo) *Builder {\n\treturn &Builder{configs: configs}\n}",
+    "funcname": "NewBuilder"
+}

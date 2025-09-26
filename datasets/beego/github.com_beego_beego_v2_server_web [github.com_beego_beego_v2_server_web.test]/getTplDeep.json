@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 236,
+    "focalfunc": "func getTplDeep(root string, fs http.FileSystem, file string, parent string, t *template.Template) (*template.Template, [][]string, error)",
+    "funcbody": "func getTplDeep(root string, fs http.FileSystem, file string, parent string, t *template.Template) (*template.Template, [][]string, error) {\n\tvar fileAbsPath string\n\tvar rParent string\n\tvar err error\n\tif strings.HasPrefix(file, \"../\") {\n\t\trParent = filepath.Join(filepath.Dir(parent), file)\n\t\tfileAbsPath = filepath.Join(root, filepath.Dir(parent), file)\n\t} else {\n\t\trParent = file\n\t\tfileAbsPath = filepath.Join(root, file)\n\t}\n\tf, err := fs.Open(fileAbsPath)\n\tif err != nil {\n\t\tpanic(\"can't find template file:\" + file)\n\t}\n\tdefer f.Close()\n\tdata, err := io.ReadAll(f)\n\tif err != nil {\n\t\treturn nil, [][]string{}, err\n\t}\n\tt, err = t.New(file).Parse(string(data))\n\tif err != nil {\n\t\treturn nil, [][]string{}, err\n\t}\n\treg := regexp.MustCompile(BConfig.WebConfig.TemplateLeft + \"[ ]*template[ ]+\\\"([^\\\"]+)\\\"\")\n\tallSub := reg.FindAllStringSubmatch(string(data), -1)\n\tfor _, m := range allSub {\n\t\tif len(m) == 2 {\n\t\t\ttl := t.Lookup(m[1])\n\t\t\tif tl != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif !HasTemplateExt(m[1]) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\t_, _, err = getTplDeep(root, fs, m[1], rParent, t)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, [][]string{}, err\n\t\t\t}\n\t\t}\n\t}\n\treturn t, allSub, nil\n}",
+    "funcname": "getTplDeep"
+}

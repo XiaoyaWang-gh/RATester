@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 32,
+    "focalfunc": "func (s StringEqualFold) EqualFold(s2 string) bool",
+    "funcbody": "func (s StringEqualFold) EqualFold(s2 string) bool {\n\treturn strings.EqualFold(string(s), s2)\n}",
+    "funcname": "EqualFold"
+}

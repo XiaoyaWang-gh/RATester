@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 130,
+    "focalfunc": "func (rc *Cache) IsExist(ctx context.Context, key string) (bool, error)",
+    "funcbody": "func (rc *Cache) IsExist(ctx context.Context, key string) (bool, error) {\n\t_, err := rc.Get(ctx, key)\n\treturn err == nil, err\n}",
+    "funcname": "IsExist"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/healthcheck/config.go",
+    "lineno": 32,
+    "focalfunc": "func defaultConfigV3(config ...Config) Config",
+    "funcbody": "func defaultConfigV3(config ...Config) Config {\n\tif len(config) < 1 {\n\t\treturn Config{\n\t\t\tProbe: defaultProbe,\n\t\t}\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Probe == nil {\n\t\tcfg.Probe = defaultProbe\n\t}\n\n\treturn cfg\n}",
+    "funcname": "defaultConfigV3"
+}

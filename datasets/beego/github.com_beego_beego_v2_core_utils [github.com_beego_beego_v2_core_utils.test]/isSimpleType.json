@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/debug.go",
+    "lineno": 113,
+    "focalfunc": "func isSimpleType(val reflect.Value, kind reflect.Kind, pointers **pointerInfo, interfaces *[]reflect.Value) bool",
+    "funcbody": "func isSimpleType(val reflect.Value, kind reflect.Kind, pointers **pointerInfo, interfaces *[]reflect.Value) bool {\n\tswitch kind {\n\tcase reflect.Bool:\n\t\treturn true\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn true\n\tcase reflect.Uint8, reflect.Uint16, reflect.Uint, reflect.Uint32, reflect.Uint64:\n\t\treturn true\n\tcase reflect.Float32, reflect.Float64:\n\t\treturn true\n\tcase reflect.Complex64, reflect.Complex128:\n\t\treturn true\n\tcase reflect.String:\n\t\treturn true\n\tcase reflect.Chan:\n\t\treturn true\n\tcase reflect.Invalid:\n\t\treturn true\n\tcase reflect.Interface:\n\t\tfor _, in := range *interfaces {\n\t\t\tif reflect.DeepEqual(in, val) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t\treturn false\n\tcase reflect.UnsafePointer:\n\t\tif val.IsNil() {\n\t\t\treturn true\n\t\t}\n\n\t\telem := val.Elem()\n\n\t\tif isSimpleType(elem, elem.Kind(), pointers, interfaces) {\n\t\t\treturn true\n\t\t}\n\n\t\taddr := val.Elem().UnsafeAddr()\n\n\t\tfor p := *pointers; p != nil; p = p.prev {\n\t\t\tif addr == p.addr {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn false\n}",
+    "funcname": "isSimpleType"
+}

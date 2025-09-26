@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 97,
+    "focalfunc": "func (r *Registering) Trace(handler Handler, middleware ...Handler) Register",
+    "funcbody": "func (r *Registering) Trace(handler Handler, middleware ...Handler) Register {\n\treturn r.Add([]string{MethodTrace}, handler, middleware...)\n}",
+    "funcname": "Trace"
+}

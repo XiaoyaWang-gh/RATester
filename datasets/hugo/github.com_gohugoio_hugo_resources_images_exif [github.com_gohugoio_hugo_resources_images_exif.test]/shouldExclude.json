@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 56,
+    "focalfunc": "func (d *Decoder) shouldExclude(s string) bool",
+    "funcbody": "func (d *Decoder) shouldExclude(s string) bool {\n\treturn d.excludeFieldsrRe != nil && d.excludeFieldsrRe.MatchString(s)\n}",
+    "funcname": "shouldExclude"
+}

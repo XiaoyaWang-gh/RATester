@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1347,
+    "focalfunc": "func (c *DefaultCtx) GetRouteURL(routeName string, params Map) (string, error)",
+    "funcbody": "func (c *DefaultCtx) GetRouteURL(routeName string, params Map) (string, error) {\n\treturn c.getLocationFromRoute(c.App().GetRoute(routeName), params)\n}",
+    "funcname": "GetRouteURL"
+}

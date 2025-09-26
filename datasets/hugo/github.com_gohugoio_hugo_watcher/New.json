@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/batcher.go",
+    "lineno": 35,
+    "focalfunc": "func New(intervalBatcher, intervalPoll time.Duration, poll bool) (*Batcher, error)",
+    "funcbody": "func New(intervalBatcher, intervalPoll time.Duration, poll bool) (*Batcher, error) {\n\tvar err error\n\tvar watcher filenotify.FileWatcher\n\n\tif poll {\n\t\twatcher = filenotify.NewPollingWatcher(intervalPoll)\n\t} else {\n\t\twatcher, err = filenotify.New(intervalPoll)\n\t}\n\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tbatcher := &Batcher{}\n\tbatcher.FileWatcher = watcher\n\tbatcher.ticker = time.NewTicker(intervalBatcher)\n\tbatcher.done = make(chan struct{}, 1)\n\tbatcher.Events = make(chan []fsnotify.Event, 1)\n\n\tgo batcher.run()\n\n\treturn batcher, nil\n}",
+    "funcname": "New"
+}

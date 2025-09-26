@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 49,
+    "focalfunc": "func (r *Response) Protocol() string",
+    "funcbody": "func (r *Response) Protocol() string {\n\treturn string(r.RawResponse.Header.Protocol())\n}",
+    "funcname": "Protocol"
+}

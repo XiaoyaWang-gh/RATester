@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 57,
+    "focalfunc": "func (c *StandardDateCounter) TodayCount() int64",
+    "funcbody": "func (c *StandardDateCounter) TodayCount() int64 {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\n\tc.rotate(time.Now())\n\treturn c.counts[0]\n}",
+    "funcname": "TodayCount"
+}

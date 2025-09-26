@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/codeowners.go",
+    "lineno": 28,
+    "focalfunc": "func findCodeOwnersFile(dir string) (io.Reader, error)",
+    "funcbody": "func findCodeOwnersFile(dir string) (io.Reader, error) {\n\tfor _, p := range []string{\".\", \"docs\", \".github\", \".gitlab\"} {\n\t\tf := path.Join(dir, p, \"CODEOWNERS\")\n\n\t\t_, err := afs.Stat(f)\n\t\tif err != nil {\n\t\t\tif herrors.IsNotExist(err) {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\treturn nil, err\n\t\t}\n\n\t\treturn afs.Open(f)\n\t}\n\n\treturn nil, nil\n}",
+    "funcname": "findCodeOwnersFile"
+}

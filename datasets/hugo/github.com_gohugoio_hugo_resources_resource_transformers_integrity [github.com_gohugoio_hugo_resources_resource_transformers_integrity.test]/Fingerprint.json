@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/integrity/integrity.go",
+    "lineno": 104,
+    "focalfunc": "func (c *Client) Fingerprint(res resources.ResourceTransformer, algo string) (resource.Resource, error)",
+    "funcbody": "func (c *Client) Fingerprint(res resources.ResourceTransformer, algo string) (resource.Resource, error) {\n\tif algo == \"\" {\n\t\talgo = defaultHashAlgo\n\t}\n\n\treturn res.Transform(&fingerprintTransformation{algo: algo})\n}",
+    "funcname": "Fingerprint"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 286,
+    "focalfunc": "func (o querySet) AllWithCtx(ctx context.Context, container interface{}, cols ...string) (int64, error)",
+    "funcbody": "func (o querySet) AllWithCtx(ctx context.Context, container interface{}, cols ...string) (int64, error) {\n\treturn o.orm.alias.DbBaser.ReadBatch(ctx, o.orm.db, o, o.mi, o.cond, container, o.orm.alias.TZ, cols)\n}",
+    "funcname": "AllWithCtx"
+}

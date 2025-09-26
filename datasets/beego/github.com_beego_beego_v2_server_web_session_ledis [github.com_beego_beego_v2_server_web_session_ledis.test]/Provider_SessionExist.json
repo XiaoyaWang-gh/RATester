@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 163,
+    "focalfunc": "func (lp *Provider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (lp *Provider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tcount, _ := c.Exists([]byte(sid))\n\treturn count != 0, nil\n}",
+    "funcname": "SessionExist"
+}

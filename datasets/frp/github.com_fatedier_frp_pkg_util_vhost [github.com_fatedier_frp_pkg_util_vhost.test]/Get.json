@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/router.go",
+    "lineno": 96,
+    "focalfunc": "func (r *Routers) Get(host, path, httpUser string) (vr *Router, exist bool)",
+    "funcbody": "func (r *Routers) Get(host, path, httpUser string) (vr *Router, exist bool) {\n\thost = strings.ToLower(host)\n\n\tr.mutex.RLock()\n\tdefer r.mutex.RUnlock()\n\n\troutersByHTTPUser, found := r.indexByDomain[host]\n\tif !found {\n\t\treturn\n\t}\n\n\tvrs, found := routersByHTTPUser[httpUser]\n\tif !found {\n\t\treturn\n\t}\n\n\tfor _, vr = range vrs {\n\t\tif strings.HasPrefix(path, vr.location) {\n\t\t\treturn vr, true\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "Get"
+}

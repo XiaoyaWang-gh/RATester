@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 356,
+    "focalfunc": "func (s testSite) Social() map[string]string",
+    "funcbody": "func (s testSite) Social() map[string]string {\n\treturn make(map[string]string)\n}",
+    "funcname": "Social"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 252,
+    "focalfunc": "func (t *TxDB) Prepare(query string) (*sql.Stmt, error)",
+    "funcbody": "func (t *TxDB) Prepare(query string) (*sql.Stmt, error) {\n\treturn t.PrepareContext(context.Background(), query)\n}",
+    "funcname": "Prepare"
+}

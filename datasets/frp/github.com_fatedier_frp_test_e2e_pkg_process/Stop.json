@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/process/process.go",
+    "lineno": 42,
+    "focalfunc": "func (p *Process) Stop() error",
+    "funcbody": "func (p *Process) Stop() error {\n\tif p.stopped {\n\t\treturn nil\n\t}\n\tdefer func() {\n\t\tp.stopped = true\n\t}()\n\tif p.beforeStopHandler != nil {\n\t\tp.beforeStopHandler()\n\t}\n\tp.cancel()\n\treturn p.cmd.Wait()\n}",
+    "funcname": "Stop"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/generate/generate.go",
+    "lineno": 60,
+    "focalfunc": "func PemCert(privKey *rsa.PrivateKey, domain string, expiration time.Time) ([]byte, error)",
+    "funcbody": "func PemCert(privKey *rsa.PrivateKey, domain string, expiration time.Time) ([]byte, error) {\n\tderBytes, err := derCert(privKey, expiration, domain)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn pem.EncodeToMemory(&pem.Block{Type: \"CERTIFICATE\", Bytes: derBytes}), nil\n}",
+    "funcname": "PemCert"
+}

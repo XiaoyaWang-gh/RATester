@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 169,
+    "focalfunc": "func ForceConsoleColor()",
+    "funcbody": "func ForceConsoleColor() {\n\tconsoleColorMode = forceColor\n}",
+    "funcname": "ForceConsoleColor"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 201,
+    "focalfunc": "func (ctx *Context) Abort(status int, body string)",
+    "funcbody": "func (ctx *Context) Abort(status int, body string) {\n\tctx.Output.SetStatus(status)\n\tpanic(body)\n}",
+    "funcname": "Abort"
+}

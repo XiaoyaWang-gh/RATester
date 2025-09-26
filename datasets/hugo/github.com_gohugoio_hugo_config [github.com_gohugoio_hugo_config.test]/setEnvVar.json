@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/env.go",
+    "lineno": 84,
+    "focalfunc": "func setEnvVar(vars *[]string, key, value string)",
+    "funcbody": "func setEnvVar(vars *[]string, key, value string) {\n\tfor i := range *vars {\n\t\tif strings.HasPrefix((*vars)[i], key+\"=\") {\n\t\t\t(*vars)[i] = key + \"=\" + value\n\t\t\treturn\n\t\t}\n\t}\n\n\t*vars = append(*vars, key+\"=\"+value)\n}",
+    "funcname": "setEnvVar"
+}

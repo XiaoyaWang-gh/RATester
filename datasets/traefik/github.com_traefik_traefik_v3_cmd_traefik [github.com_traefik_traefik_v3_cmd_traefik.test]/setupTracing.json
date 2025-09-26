@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 584,
+    "focalfunc": "func setupTracing(conf *static.Tracing) (*tracing.Tracer, io.Closer)",
+    "funcbody": "func setupTracing(conf *static.Tracing) (*tracing.Tracer, io.Closer) {\n\tif conf == nil {\n\t\treturn nil, nil\n\t}\n\n\ttracer, closer, err := tracing.NewTracing(conf)\n\tif err != nil {\n\t\tlog.Warn().Err(err).Msg(\"Unable to create tracer\")\n\t\treturn nil, nil\n\t}\n\n\treturn tracer, closer\n}",
+    "funcname": "setupTracing"
+}

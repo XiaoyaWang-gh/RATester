@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1054,
+    "focalfunc": "func (c *Context) TOML(code int, obj any)",
+    "funcbody": "func (c *Context) TOML(code int, obj any) {\n\tc.Render(code, render.TOML{Data: obj})\n}",
+    "funcname": "TOML"
+}

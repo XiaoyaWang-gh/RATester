@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 28,
+    "focalfunc": "func (r *Response) setClient(c *Client)",
+    "funcbody": "func (r *Response) setClient(c *Client) {\n\tr.client = c\n}",
+    "funcname": "setClient"
+}

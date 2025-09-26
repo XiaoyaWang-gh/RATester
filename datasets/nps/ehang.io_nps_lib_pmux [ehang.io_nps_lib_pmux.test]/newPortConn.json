@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pconn.go",
+    "lineno": 15,
+    "focalfunc": "func newPortConn(conn net.Conn, rs []byte, readMore bool) *PortConn",
+    "funcbody": "func newPortConn(conn net.Conn, rs []byte, readMore bool) *PortConn {\n\treturn &PortConn{\n\t\tConn:\t\tconn,\n\t\trs:\t\trs,\n\t\treadMore:\treadMore,\n\t}\n}",
+    "funcname": "newPortConn"
+}

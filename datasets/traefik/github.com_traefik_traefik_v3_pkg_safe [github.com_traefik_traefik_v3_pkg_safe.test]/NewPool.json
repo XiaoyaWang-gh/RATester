@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 23,
+    "focalfunc": "func NewPool(parentCtx context.Context) *Pool",
+    "funcbody": "func NewPool(parentCtx context.Context) *Pool {\n\tctx, cancel := context.WithCancel(parentCtx)\n\treturn &Pool{\n\t\tctx:\tctx,\n\t\tcancel:\tcancel,\n\t}\n}",
+    "funcname": "NewPool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/multipart_form_mapping.go",
+    "lineno": 27,
+    "focalfunc": "func (r *multipartRequest) TrySet(value reflect.Value, field reflect.StructField, key string, opt setOptions) (bool, error)",
+    "funcbody": "func (r *multipartRequest) TrySet(value reflect.Value, field reflect.StructField, key string, opt setOptions) (bool, error) {\n\tif files := r.MultipartForm.File[key]; len(files) != 0 {\n\t\treturn setByMultipartFormFile(value, field, files)\n\t}\n\n\treturn setByForm(value, field, r.MultipartForm.Value, key, opt)\n}",
+    "funcname": "TrySet"
+}

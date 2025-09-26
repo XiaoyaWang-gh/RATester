@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 268,
+    "focalfunc": "func (b *BeegoHTTPRequest) Param(key, value string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) Param(key, value string) *BeegoHTTPRequest {\n\tif param, ok := b.params[key]; ok {\n\t\tb.params[key] = append(param, value)\n\t} else {\n\t\tb.params[key] = []string{value}\n\t}\n\treturn b\n}",
+    "funcname": "Param"
+}

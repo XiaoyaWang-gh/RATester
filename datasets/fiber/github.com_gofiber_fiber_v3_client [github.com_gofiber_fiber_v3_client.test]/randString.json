@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/hooks.go",
+    "lineno": 37,
+    "focalfunc": "func randString(n int) string",
+    "funcbody": "func randString(n int) string {\n\tb := make([]byte, n)\n\tlength := len(letterBytes)\n\tsrc := rand.NewSource(time.Now().UnixNano())\n\n\tfor i, cache, remain := n-1, src.Int63(), letterIdxMax; i >= 0; {\n\t\tif remain == 0 {\n\t\t\tcache, remain = src.Int63(), letterIdxMax\n\t\t}\n\n\t\tif idx := int(cache & int64(letterIdxMask)); idx < length {\n\t\t\tb[i] = letterBytes[idx]\n\t\t\ti--\n\t\t}\n\t\tcache >>= int64(letterIdxBits)\n\t\tremain--\n\t}\n\n\treturn utils.UnsafeString(b)\n}",
+    "funcname": "randString"
+}

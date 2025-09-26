@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 99,
+    "focalfunc": "func registerProxyBaseConfigFlags(cmd *cobra.Command, c *v1.ProxyBaseConfig, opts ...RegisterFlagOption)",
+    "funcbody": "func registerProxyBaseConfigFlags(cmd *cobra.Command, c *v1.ProxyBaseConfig, opts ...RegisterFlagOption) {\n\tif c == nil {\n\t\treturn\n\t}\n\toptions := &registerFlagOptions{}\n\tfor _, opt := range opts {\n\t\topt(options)\n\t}\n\n\tcmd.Flags().StringVarP(&c.Name, \"proxy_name\", \"n\", \"\", \"proxy name\")\n\n\tif !options.sshMode {\n\t\tcmd.Flags().StringVarP(&c.LocalIP, \"local_ip\", \"i\", \"127.0.0.1\", \"local ip\")\n\t\tcmd.Flags().IntVarP(&c.LocalPort, \"local_port\", \"l\", 0, \"local port\")\n\t\tcmd.Flags().BoolVarP(&c.Transport.UseEncryption, \"ue\", \"\", false, \"use encryption\")\n\t\tcmd.Flags().BoolVarP(&c.Transport.UseCompression, \"uc\", \"\", false, \"use compression\")\n\t\tcmd.Flags().StringVarP(&c.Transport.BandwidthLimitMode, \"bandwidth_limit_mode\", \"\", types.BandwidthLimitModeClient, \"bandwidth limit mode\")\n\t\tcmd.Flags().VarP(&BandwidthQuantityFlag{V: &c.Transport.BandwidthLimit}, \"bandwidth_limit\", \"\", \"bandwidth limit (e.g. 100KB or 1MB)\")\n\t}\n}",
+    "funcname": "registerProxyBaseConfigFlags"
+}

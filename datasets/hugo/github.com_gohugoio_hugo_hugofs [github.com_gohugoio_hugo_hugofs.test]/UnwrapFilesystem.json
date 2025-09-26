@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/stacktracer_fs.go",
+    "lineno": 51,
+    "focalfunc": "func (fs *stacktracerFs) UnwrapFilesystem() afero.Fs",
+    "funcbody": "func (fs *stacktracerFs) UnwrapFilesystem() afero.Fs {\n\treturn fs.Fs\n}",
+    "funcname": "UnwrapFilesystem"
+}

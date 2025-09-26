@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/openapi/openapi3/openapi3.go",
+    "lineno": 52,
+    "focalfunc": "func (o *OpenAPIDocument) GetIdentityGroup() identity.Identity",
+    "funcbody": "func (o *OpenAPIDocument) GetIdentityGroup() identity.Identity {\n\treturn o.identityGroup\n}",
+    "funcname": "GetIdentityGroup"
+}

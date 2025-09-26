@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/denyrouterrecursion/deny_router_recursion.go",
+    "lineno": 44,
+    "focalfunc": "func (l *DenyRouterRecursion) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (l *DenyRouterRecursion) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tif req.Header.Get(xTraefikRouter) == l.routerNameHash {\n\t\tlogger := log.With().Str(logs.MiddlewareType, \"DenyRouterRecursion\").Logger()\n\t\tlogger.Debug().Msgf(\"Rejecting request in provenance of the same router (%q) to stop potential infinite loop.\", l.routerName)\n\n\t\trw.WriteHeader(http.StatusBadRequest)\n\n\t\treturn\n\t}\n\n\treq.Header.Set(xTraefikRouter, l.routerNameHash)\n\n\tl.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

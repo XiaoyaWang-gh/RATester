@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 275,
+    "focalfunc": "func ExpandValueEnv(value string) (realValue string)",
+    "funcbody": "func ExpandValueEnv(value string) (realValue string) {\n\trealValue = value\n\n\tvLen := len(value)\n\n\tif vLen < 3 {\n\t\treturn\n\t}\n\n\tif value[0] != '$' || value[1] != '{' || value[vLen-1] != '}' {\n\t\treturn\n\t}\n\n\tkey := \"\"\n\tdefaultV := \"\"\n\n\tfor i := 2; i < vLen; i++ {\n\t\tif value[i] == '|' && (i+1 < vLen && value[i+1] == '|') {\n\t\t\tkey = value[2:i]\n\t\t\tdefaultV = value[i+2 : vLen-1]\n\t\t\tbreak\n\t\t} else if value[i] == '}' {\n\t\t\tkey = value[2:i]\n\t\t\tbreak\n\t\t}\n\t}\n\n\trealValue = os.Getenv(key)\n\tif realValue == \"\" {\n\t\trealValue = defaultV\n\t}\n\n\treturn\n}",
+    "funcname": "ExpandValueEnv"
+}

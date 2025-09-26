@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/smart_roundtripper.go",
+    "lineno": 56,
+    "focalfunc": "func (m *smartRoundTripper) Clone() http.RoundTripper",
+    "funcbody": "func (m *smartRoundTripper) Clone() http.RoundTripper {\n\th := m.http.Clone()\n\th2 := m.http2.Clone()\n\treturn &smartRoundTripper{http: h, http2: h2}\n}",
+    "funcname": "Clone"
+}

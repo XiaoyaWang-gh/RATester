@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_render.go",
+    "lineno": 67,
+    "focalfunc": "func (s *Site) renderPages(ctx *siteRenderContext) error",
+    "funcbody": "func (s *Site) renderPages(ctx *siteRenderContext) error {\n\tnumWorkers := config.GetNumWorkerMultiplier()\n\n\tresults := make(chan error)\n\tpages := make(chan *pageState, numWorkers)\n\terrs := make(chan error)\n\n\tgo s.errorCollator(results, errs)\n\n\twg := &sync.WaitGroup{}\n\n\tfor i := 0; i < numWorkers; i++ {\n\t\twg.Add(1)\n\t\tgo pageRenderer(ctx, s, pages, results, wg)\n\t}\n\n\tcfg := ctx.cfg\n\n\tw := &doctree.NodeShiftTreeWalker[contentNodeI]{\n\t\tTree:\ts.pageMap.treePages,\n\t\tHandle: func(key string, n contentNodeI, match doctree.DimensionFlag) (bool, error) {\n\t\t\tif p, ok := n.(*pageState); ok {\n\t\t\t\tif cfg.shouldRender(p) {\n\t\t\t\t\tselect {\n\t\t\t\t\tcase <-s.h.Done():\n\t\t\t\t\t\treturn true, nil\n\t\t\t\t\tdefault:\n\t\t\t\t\t\tpages <- p\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn false, nil\n\t\t},\n\t}\n\n\tif err := w.Walk(context.Background()); err != nil {\n\t\treturn err\n\t}\n\n\tclose(pages)\n\n\twg.Wait()\n\n\tclose(results)\n\n\terr := <-errs\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to render pages: %w\", herrors.ImproveRenderErr(err))\n\t}\n\treturn nil\n}",
+    "funcname": "renderPages"
+}

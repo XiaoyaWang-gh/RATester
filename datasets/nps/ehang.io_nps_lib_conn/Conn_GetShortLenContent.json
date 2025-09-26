@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 94,
+    "focalfunc": "func (s *Conn) GetShortLenContent() (b []byte, err error)",
+    "funcbody": "func (s *Conn) GetShortLenContent() (b []byte, err error) {\n\tvar l int\n\tif l, err = s.GetLen(); err != nil {\n\t\treturn\n\t}\n\tif l < 0 || l > 32<<10 {\n\t\terr = errors.New(\"read length error\")\n\t\treturn\n\t}\n\treturn s.GetShortContent(l)\n}",
+    "funcname": "GetShortLenContent"
+}

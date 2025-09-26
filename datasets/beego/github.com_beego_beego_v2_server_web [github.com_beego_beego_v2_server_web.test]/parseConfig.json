@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 606,
+    "focalfunc": "func parseConfig(appConfigPath string) (err error)",
+    "funcbody": "func parseConfig(appConfigPath string) (err error) {\n\tAppConfig, err = newAppConfig(appConfigProvider, appConfigPath)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn assignConfig(AppConfig)\n}",
+    "funcname": "parseConfig"
+}

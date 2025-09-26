@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 51,
+    "focalfunc": "func WithTransport(transport http.RoundTripper) ClientOption",
+    "funcbody": "func WithTransport(transport http.RoundTripper) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.Transport = transport\n\t}\n}",
+    "funcname": "WithTransport"
+}

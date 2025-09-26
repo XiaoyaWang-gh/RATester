@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 554,
+    "focalfunc": "func (app *App) isEtagStale(etag string, noneMatchBytes []byte) bool",
+    "funcbody": "func (app *App) isEtagStale(etag string, noneMatchBytes []byte) bool {\n\tvar start, end int\n\n\tfor i := range noneMatchBytes {\n\t\tswitch noneMatchBytes[i] {\n\t\tcase 0x20:\n\t\t\tif start == end {\n\t\t\t\tstart = i + 1\n\t\t\t\tend = i + 1\n\t\t\t}\n\t\tcase 0x2c:\n\t\t\tif matchEtag(app.getString(noneMatchBytes[start:end]), etag) {\n\t\t\t\treturn false\n\t\t\t}\n\t\t\tstart = i + 1\n\t\t\tend = i + 1\n\t\tdefault:\n\t\t\tend = i + 1\n\t\t}\n\t}\n\n\treturn !matchEtag(app.getString(noneMatchBytes[start:end]), etag)\n}",
+    "funcname": "isEtagStale"
+}

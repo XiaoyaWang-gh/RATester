@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 50,
+    "focalfunc": "func (c ConfigLanguage) LanguagePrefix() string",
+    "funcbody": "func (c ConfigLanguage) LanguagePrefix() string {\n\tif c.DefaultContentLanguageInSubdir() && c.DefaultContentLanguage() == c.Language().Lang {\n\t\treturn c.Language().Lang\n\t}\n\n\tif !c.IsMultilingual() || c.DefaultContentLanguage() == c.Language().Lang {\n\t\treturn \"\"\n\t}\n\treturn c.Language().Lang\n}",
+    "funcname": "LanguagePrefix"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 170,
+    "focalfunc": "func (m Type) Suffixes() []string",
+    "funcbody": "func (m Type) Suffixes() []string {\n\tif m.SuffixesCSV == \"\" {\n\t\treturn nil\n\t}\n\n\treturn strings.Split(m.SuffixesCSV, \",\")\n}",
+    "funcname": "Suffixes"
+}

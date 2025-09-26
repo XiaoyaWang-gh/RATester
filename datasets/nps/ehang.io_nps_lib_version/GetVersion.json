@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/version/version.go",
+    "lineno": 6,
+    "focalfunc": "func GetVersion() string",
+    "funcbody": "func GetVersion() string {\n\treturn \"0.26.0\"\n}",
+    "funcname": "GetVersion"
+}

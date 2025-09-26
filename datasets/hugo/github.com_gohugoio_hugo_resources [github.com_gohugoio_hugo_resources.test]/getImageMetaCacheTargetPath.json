@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 474,
+    "focalfunc": "func (i *imageResource) getImageMetaCacheTargetPath() string",
+    "funcbody": "func (i *imageResource) getImageMetaCacheTargetPath() string {\n\t// Increment to invalidate the meta cache\n\t// Last increment: v0.130.0 when change to the new imagemeta library for Exif.\n\tconst imageMetaVersionNumber = 2\n\n\tcfgHash := i.getSpec().imaging.Cfg.SourceHash\n\tdf := i.getResourcePaths()\n\tp1, _ := paths.FileAndExt(df.File)\n\th := i.hash()\n\tidStr := hashing.HashString(h, i.size(), imageMetaVersionNumber, cfgHash)\n\tdf.File = fmt.Sprintf(\"%s_%s.json\", p1, idStr)\n\treturn df.TargetPath()\n}",
+    "funcname": "getImageMetaCacheTargetPath"
+}

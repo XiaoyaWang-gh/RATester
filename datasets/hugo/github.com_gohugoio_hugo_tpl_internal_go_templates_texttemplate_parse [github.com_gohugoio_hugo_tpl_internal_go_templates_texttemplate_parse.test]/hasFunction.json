@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 803,
+    "focalfunc": "func (t *Tree) hasFunction(name string) bool",
+    "funcbody": "func (t *Tree) hasFunction(name string) bool {\n\tfor _, funcMap := range t.funcs {\n\t\tif funcMap == nil {\n\t\t\tcontinue\n\t\t}\n\t\tif funcMap[name] != nil {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "hasFunction"
+}

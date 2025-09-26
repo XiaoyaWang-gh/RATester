@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/template.go",
+    "lineno": 152,
+    "focalfunc": "func extractBaseOf(err string) string",
+    "funcbody": "func extractBaseOf(err string) string {\n\tm := baseOfRe.FindStringSubmatch(err)\n\tif len(m) == 2 {\n\t\treturn m[1]\n\t}\n\treturn \"\"\n}",
+    "funcname": "extractBaseOf"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/weighted.go",
+    "lineno": 131,
+    "focalfunc": "func (wp WeightedPages) Count() int",
+    "funcbody": "func (wp WeightedPages) Count() int\t{ return len(wp) }",
+    "funcname": "Count"
+}

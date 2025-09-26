@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_mysql.go",
+    "lineno": 83,
+    "focalfunc": "func (d *dbBaseMysql) DbTypes() map[string]string",
+    "funcbody": "func (d *dbBaseMysql) DbTypes() map[string]string {\n\treturn mysqlTypes\n}",
+    "funcname": "DbTypes"
+}

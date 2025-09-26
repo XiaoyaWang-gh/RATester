@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 329,
+    "focalfunc": "func (c ComponentPath) ComponentPathJoined() string",
+    "funcbody": "func (c ComponentPath) ComponentPathJoined() string {\n\treturn path.Join(c.Component, c.Path)\n}",
+    "funcname": "ComponentPathJoined"
+}

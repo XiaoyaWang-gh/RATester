@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 143,
+    "focalfunc": "func (t MutableTrees) DeleteRaw(key string)",
+    "funcbody": "func (t MutableTrees) DeleteRaw(key string) {\n\tfor _, tree := range t {\n\t\ttree.DeleteRaw(key)\n\t}\n}",
+    "funcname": "DeleteRaw"
+}

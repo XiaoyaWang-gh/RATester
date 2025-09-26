@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 90,
+    "focalfunc": "func (c *hugoBuilder) withConf(fn func(conf *commonConfig))",
+    "funcbody": "func (c *hugoBuilder) withConf(fn func(conf *commonConfig)) {\n\tc.confmu.Lock()\n\tdefer c.confmu.Unlock()\n\tfn(c.conf)\n}",
+    "funcname": "withConf"
+}

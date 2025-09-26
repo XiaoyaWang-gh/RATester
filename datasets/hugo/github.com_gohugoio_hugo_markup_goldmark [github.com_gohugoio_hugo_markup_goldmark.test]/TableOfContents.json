@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 308,
+    "focalfunc": "func (p *parserContext) TableOfContents() *tableofcontents.Fragments",
+    "funcbody": "func (p *parserContext) TableOfContents() *tableofcontents.Fragments {\n\tif v := p.Get(tocResultKey); v != nil {\n\t\treturn v.(*tableofcontents.Fragments)\n\t}\n\treturn nil\n}",
+    "funcname": "TableOfContents"
+}

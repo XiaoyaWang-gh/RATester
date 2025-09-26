@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 958,
+    "focalfunc": "func (e *escaper) arbitraryTemplate() *Template",
+    "funcbody": "func (e *escaper) arbitraryTemplate() *Template {\n\tfor _, t := range e.ns.set {\n\t\treturn t\n\t}\n\tpanic(\"no templates in name space\")\n}",
+    "funcname": "arbitraryTemplate"
+}

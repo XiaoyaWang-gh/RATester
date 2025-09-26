@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_overview.go",
+    "lineno": 253,
+    "focalfunc": "func getMetrics(conf static.Configuration) string",
+    "funcbody": "func getMetrics(conf static.Configuration) string {\n\tif conf.Metrics == nil {\n\t\treturn \"\"\n\t}\n\n\tv := reflect.ValueOf(conf.Metrics).Elem()\n\tfor i := range v.NumField() {\n\t\tfield := v.Field(i)\n\t\tif field.Kind() == reflect.Ptr && field.Elem().Kind() == reflect.Struct {\n\t\t\tif !field.IsNil() {\n\t\t\t\treturn v.Type().Field(i).Name\n\t\t\t}\n\t\t}\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "getMetrics"
+}

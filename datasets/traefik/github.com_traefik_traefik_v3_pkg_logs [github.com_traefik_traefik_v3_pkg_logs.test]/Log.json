@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/wasm.go",
+    "lineno": 30,
+    "focalfunc": "func (w WasmLogger) Log(_ context.Context, level api.LogLevel, message string)",
+    "funcbody": "func (w WasmLogger) Log(_ context.Context, level api.LogLevel, message string) {\n\tw.logger.WithLevel(zerolog.Level(level + 1)).Msg(message)\n}",
+    "funcname": "Log"
+}

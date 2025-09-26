@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/http.go",
+    "lineno": 99,
+    "focalfunc": "func BasicAuth(username, passwd string) string",
+    "funcbody": "func BasicAuth(username, passwd string) string {\n\tauth := username + \":\" + passwd\n\treturn \"Basic \" + base64.StdEncoding.EncodeToString([]byte(auth))\n}",
+    "funcname": "BasicAuth"
+}

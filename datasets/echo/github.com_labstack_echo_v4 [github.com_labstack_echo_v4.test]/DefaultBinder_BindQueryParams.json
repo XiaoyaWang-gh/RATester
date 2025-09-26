@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 55,
+    "focalfunc": "func (b *DefaultBinder) BindQueryParams(c Context, i interface{}) error",
+    "funcbody": "func (b *DefaultBinder) BindQueryParams(c Context, i interface{}) error {\n\tif err := b.bindData(i, c.QueryParams(), \"query\"); err != nil {\n\t\treturn NewHTTPError(http.StatusBadRequest, err.Error()).SetInternal(err)\n\t}\n\treturn nil\n}",
+    "funcname": "BindQueryParams"
+}

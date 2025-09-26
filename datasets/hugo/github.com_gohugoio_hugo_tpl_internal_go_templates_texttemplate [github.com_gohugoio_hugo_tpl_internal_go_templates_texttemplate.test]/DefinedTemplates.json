@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 232,
+    "focalfunc": "func (t *Template) DefinedTemplates() string",
+    "funcbody": "func (t *Template) DefinedTemplates() string {\n\tif t.common == nil {\n\t\treturn \"\"\n\t}\n\tvar b strings.Builder\n\tt.muTmpl.RLock()\n\tdefer t.muTmpl.RUnlock()\n\tfor name, tmpl := range t.tmpl {\n\t\tif tmpl.Tree == nil || tmpl.Root == nil {\n\t\t\tcontinue\n\t\t}\n\t\tif b.Len() == 0 {\n\t\t\tb.WriteString(\"; defined templates are: \")\n\t\t} else {\n\t\t\tb.WriteString(\", \")\n\t\t}\n\t\tfmt.Fprintf(&b, \"%q\", name)\n\t}\n\treturn b.String()\n}",
+    "funcname": "DefinedTemplates"
+}

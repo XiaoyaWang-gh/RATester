@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 147,
+    "focalfunc": "func (ns *Namespace) Min(inputs ...any) (minimum float64, err error)",
+    "funcbody": "func (ns *Namespace) Min(inputs ...any) (minimum float64, err error) {\n\treturn ns.applyOpToScalarsOrSlices(\"Min\", math.Min, inputs...)\n}",
+    "funcname": "Min"
+}

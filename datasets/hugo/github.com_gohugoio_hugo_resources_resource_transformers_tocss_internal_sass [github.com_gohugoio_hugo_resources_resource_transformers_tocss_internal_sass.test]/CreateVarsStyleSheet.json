@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/internal/sass/helpers.go",
+    "lineno": 29,
+    "focalfunc": "func CreateVarsStyleSheet(vars map[string]any) string",
+    "funcbody": "func CreateVarsStyleSheet(vars map[string]any) string {\n\tif vars == nil {\n\t\treturn \"\"\n\t}\n\tvar varsStylesheet string\n\n\tvar varsSlice []string\n\tfor k, v := range vars {\n\t\tvar prefix string\n\t\tif !strings.HasPrefix(k, \"$\") {\n\t\t\tprefix = \"$\"\n\t\t}\n\n\t\tswitch v.(type) {\n\t\tcase css.QuotedString:\n\n\t\t\tvarsSlice = append(varsSlice, fmt.Sprintf(\"%s%s: %q;\", prefix, k, v))\n\t\tdefault:\n\t\t\tif isTypedCSSValue(v) {\n\n\t\t\t\tvarsSlice = append(varsSlice, fmt.Sprintf(\"%s%s: %v;\", prefix, k, v))\n\t\t\t} else {\n\n\t\t\t\tvarsSlice = append(varsSlice, fmt.Sprintf(\"%s%s: unquote(%q);\", prefix, k, v))\n\t\t\t}\n\t\t}\n\t}\n\tsort.Strings(varsSlice)\n\tvarsStylesheet = strings.Join(varsSlice, \"\\n\")\n\treturn varsStylesheet\n}",
+    "funcname": "CreateVarsStyleSheet"
+}

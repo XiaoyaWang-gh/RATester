@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 304,
+    "focalfunc": "func (ns *Namespace) Minify(r resources.ResourceTransformer) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Minify(r resources.ResourceTransformer) (resource.Resource, error) {\n\treturn ns.minifyClient.Minify(r)\n}",
+    "funcname": "Minify"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 99,
+    "focalfunc": "func isMissing(v reflect.Value) bool",
+    "funcbody": "func isMissing(v reflect.Value) bool {\n\treturn v.IsValid() && v.Type() == missingValReflectType\n}",
+    "funcname": "isMissing"
+}

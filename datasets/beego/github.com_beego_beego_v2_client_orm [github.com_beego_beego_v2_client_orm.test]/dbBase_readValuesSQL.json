@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2019,
+    "focalfunc": "func (d *dbBase) readValuesSQL(tables *dbTables, cols []string, qs querySet, mi *models.ModelInfo, cond *Condition, tz *time.Location) (string, []interface{})",
+    "funcbody": "func (d *dbBase) readValuesSQL(tables *dbTables, cols []string, qs querySet, mi *models.ModelInfo, cond *Condition, tz *time.Location) (string, []interface{}) {\n\tbuf := buffers.Get()\n\tdefer buffers.Put(buf)\n\n\targs := d.readSQL(buf, tables, cols, cond, qs, mi, tz)\n\n\tquery := buf.String()\n\n\td.ins.ReplaceMarks(&query)\n\n\treturn query, args\n}",
+    "funcname": "readValuesSQL"
+}

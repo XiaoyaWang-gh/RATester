@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 189,
+    "focalfunc": "func (p pageTree) SectionsEntries() []string",
+    "funcbody": "func (p pageTree) SectionsEntries() []string {\n\tsp := p.SectionsPath()\n\tif sp == \"/\" {\n\t\treturn nil\n\t}\n\tentries := strings.Split(sp[1:], \"/\")\n\tif len(entries) == 0 {\n\t\treturn nil\n\t}\n\treturn entries\n}",
+    "funcname": "SectionsEntries"
+}

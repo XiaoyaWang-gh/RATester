@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 162,
+    "focalfunc": "func MockRollback(err error) *Mock",
+    "funcbody": "func MockRollback(err error) *Mock {\n\treturn NewMock(NewSimpleCondition(\"\", \"Rollback\"), []interface{}{err}, nil)\n}",
+    "funcname": "MockRollback"
+}

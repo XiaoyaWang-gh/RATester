@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 200,
+    "focalfunc": "func (ns *Namespace) Product(inputs ...any) (product float64, err error)",
+    "funcbody": "func (ns *Namespace) Product(inputs ...any) (product float64, err error) {\n\tfn := func(x, y float64) float64 {\n\t\treturn x * y\n\t}\n\treturn ns.applyOpToScalarsOrSlices(\"Product\", fn, inputs...)\n}",
+    "funcname": "Product"
+}

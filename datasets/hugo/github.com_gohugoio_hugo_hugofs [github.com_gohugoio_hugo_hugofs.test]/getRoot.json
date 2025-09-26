@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 397,
+    "focalfunc": "func (fs *RootMappingFs) getRoot(key string) []RootMapping",
+    "funcbody": "func (fs *RootMappingFs) getRoot(key string) []RootMapping {\n\tv, found := fs.rootMapToReal.Get(key)\n\tif !found {\n\t\treturn nil\n\t}\n\n\treturn v.([]RootMapping)\n}",
+    "funcname": "getRoot"
+}

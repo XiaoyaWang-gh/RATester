@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/log/filter.go",
+    "lineno": 112,
+    "focalfunc": "func contains(s []string, e string) bool",
+    "funcbody": "func contains(s []string, e string) bool {\n\tfor _, a := range s {\n\t\tif a == e {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "contains"
+}

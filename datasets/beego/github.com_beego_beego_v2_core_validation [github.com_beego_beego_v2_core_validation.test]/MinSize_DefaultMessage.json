@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 321,
+    "focalfunc": "func (m MinSize) DefaultMessage() string",
+    "funcbody": "func (m MinSize) DefaultMessage() string {\n\treturn fmt.Sprintf(MessageTmpls[\"MinSize\"], m.Min)\n}",
+    "funcname": "DefaultMessage"
+}

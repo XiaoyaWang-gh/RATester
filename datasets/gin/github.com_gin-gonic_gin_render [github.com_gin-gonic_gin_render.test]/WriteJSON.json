@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/json.go",
+    "lineno": 66,
+    "focalfunc": "func WriteJSON(w http.ResponseWriter, obj any) error",
+    "funcbody": "func WriteJSON(w http.ResponseWriter, obj any) error {\n\twriteContentType(w, jsonContentType)\n\tjsonBytes, err := json.Marshal(obj)\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = w.Write(jsonBytes)\n\treturn err\n}",
+    "funcname": "WriteJSON"
+}

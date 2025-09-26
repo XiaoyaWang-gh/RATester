@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 361,
+    "focalfunc": "func htmlLexToEndOfComment(w *htmlElementsCollectorWriter) htmlCollectorStateFunc",
+    "funcbody": "func htmlLexToEndOfComment(w *htmlElementsCollectorWriter) htmlCollectorStateFunc {\n\tw.buff.WriteRune(w.r)\n\n\tif w.r == '>' && bytes.HasSuffix(w.buff.Bytes(), []byte(\"-->\")) {\n\n\t\treturn htmlLexStart\n\t}\n\n\treturn htmlLexToEndOfComment\n}",
+    "funcname": "htmlLexToEndOfComment"
+}

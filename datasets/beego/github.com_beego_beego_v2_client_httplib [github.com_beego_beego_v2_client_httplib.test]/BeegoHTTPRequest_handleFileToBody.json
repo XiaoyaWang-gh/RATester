@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 408,
+    "focalfunc": "func (*BeegoHTTPRequest) handleFileToBody(bodyWriter *multipart.Writer, formname string, filename string)",
+    "funcbody": "func (*BeegoHTTPRequest) handleFileToBody(bodyWriter *multipart.Writer, formname string, filename string) {\n\tfileWriter, err := bodyWriter.CreateFormFile(formname, filename)\n\tconst errFmt = \"Httplib: %+v\"\n\tif err != nil {\n\t\tlogs.Error(errFmt, berror.Wrapf(err, CreateFormFileFailed,\n\t\t\t\"could not create form file, formname: %s, filename: %s\", formname, filename))\n\t}\n\tfh, err := os.Open(filename)\n\tif err != nil {\n\t\tlogs.Error(errFmt, berror.Wrapf(err, ReadFileFailed, \"could not open this file %s\", filename))\n\t}\n\n\t_, err = io.Copy(fileWriter, fh)\n\tif err != nil {\n\t\tlogs.Error(errFmt, berror.Wrapf(err, CopyFileFailed, \"could not copy this file %s\", filename))\n\t}\n\terr = fh.Close()\n\tif err != nil {\n\t\tlogs.Error(errFmt, berror.Wrapf(err, CloseFileFailed, \"could not close this file %s\", filename))\n\t}\n}",
+    "funcname": "handleFileToBody"
+}

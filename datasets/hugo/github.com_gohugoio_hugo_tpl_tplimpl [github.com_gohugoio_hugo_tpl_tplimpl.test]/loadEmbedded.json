@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 777,
+    "focalfunc": "func (t *templateHandler) loadEmbedded() error",
+    "funcbody": "func (t *templateHandler) loadEmbedded() error {\n\treturn fs.WalkDir(embeddedTemplatesFs, \".\", func(path string, d fs.DirEntry, err error) error {\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tif d == nil || d.IsDir() {\n\t\t\treturn nil\n\t\t}\n\n\t\ttemplb, err := embeddedTemplatesFs.ReadFile(path)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\ttempl := string(bytes.ReplaceAll(templb, []byte(\"\\r\\n\"), []byte(\"\\n\")))\n\t\tname := strings.TrimPrefix(filepath.ToSlash(path), \"embedded/templates/\")\n\t\ttemplateName := name\n\n\t\tif !strings.Contains(path, \"_default/_markup\") && !strings.HasPrefix(name, \"_server/\") && !strings.HasPrefix(name, \"partials/_funcs/\") {\n\t\t\ttemplateName = internalPathPrefix + name\n\t\t}\n\n\t\tif _, found := t.Lookup(templateName); !found {\n\t\t\tif err := t.AddTemplate(embeddedPathPrefix+templateName, templ); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\n\t\tif aliases, found := embeddedTemplatesAliases[name]; found {\n\n\t\t\tfor _, alias := range aliases {\n\t\t\t\talias = internalPathPrefix + alias\n\t\t\t\tif err := t.AddTemplate(embeddedPathPrefix+alias, templ); err != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn nil\n\t})\n}",
+    "funcname": "loadEmbedded"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 77,
+    "focalfunc": "func (rc *Cache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error",
+    "funcbody": "func (rc *Cache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error {\n\tv, ok := val.(string)\n\tif !ok {\n\t\treturn berror.Errorf(cache.InvalidSsdbCacheValue, \"value must be string: %v\", val)\n\t}\n\tvar resp []string\n\tvar err error\n\tttl := int(timeout / time.Second)\n\tif ttl < 0 {\n\t\tresp, err = rc.conn.Do(\"set\", key, v)\n\t} else {\n\t\tresp, err = rc.conn.Do(\"setx\", key, v, ttl)\n\t}\n\tif err != nil {\n\t\treturn berror.Wrapf(err, cache.SsdbCacheCurdFailed, \"set or setx failed, key: %s\", key)\n\t}\n\tif len(resp) == 2 && resp[0] == \"ok\" {\n\t\treturn nil\n\t}\n\treturn berror.Errorf(cache.SsdbBadResponse, \"the response from SSDB server is invalid: %v\", resp)\n}",
+    "funcname": "Put"
+}

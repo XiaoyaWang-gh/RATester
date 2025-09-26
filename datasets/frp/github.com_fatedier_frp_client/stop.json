@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 375,
+    "focalfunc": "func (svr *Service) stop()",
+    "funcbody": "func (svr *Service) stop() {\n\tsvr.ctlMu.Lock()\n\tdefer svr.ctlMu.Unlock()\n\tif svr.ctl != nil {\n\t\tsvr.ctl.GracefulClose(svr.gracefulShutdownDuration)\n\t\tsvr.ctl = nil\n\t}\n}",
+    "funcname": "stop"
+}

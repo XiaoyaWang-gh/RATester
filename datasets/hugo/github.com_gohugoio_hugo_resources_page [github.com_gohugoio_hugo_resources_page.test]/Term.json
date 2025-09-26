@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/taxonomy.go",
+    "lineno": 134,
+    "focalfunc": "func (ie OrderedTaxonomyEntry) Term() string",
+    "funcbody": "func (ie OrderedTaxonomyEntry) Term() string {\n\treturn ie.Name\n}",
+    "funcname": "Term"
+}

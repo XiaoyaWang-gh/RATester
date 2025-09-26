@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__ref.go",
+    "lineno": 48,
+    "focalfunc": "func (p pageRef) decodeRefArgs(args map[string]any) (refArgs, *Site, error)",
+    "funcbody": "func (p pageRef) decodeRefArgs(args map[string]any) (refArgs, *Site, error) {\n\tvar ra refArgs\n\terr := mapstructure.WeakDecode(args, &ra)\n\tif err != nil {\n\t\treturn ra, nil, nil\n\t}\n\n\ts := p.p.s\n\n\tif ra.Lang != \"\" && ra.Lang != p.p.s.Language().Lang {\n\n\t\tfound := false\n\t\tfor _, ss := range p.p.s.h.Sites {\n\t\t\tif ss.Lang() == ra.Lang {\n\t\t\t\tfound = true\n\t\t\t\ts = ss\n\t\t\t}\n\t\t}\n\n\t\tif !found {\n\t\t\tp.p.s.siteRefLinker.logNotFound(ra.Path, fmt.Sprintf(\"no site found with lang %q\", ra.Lang), nil, text.Position{})\n\t\t\treturn ra, nil, nil\n\t\t}\n\t}\n\n\treturn ra, s, nil\n}",
+    "funcname": "decodeRefArgs"
+}

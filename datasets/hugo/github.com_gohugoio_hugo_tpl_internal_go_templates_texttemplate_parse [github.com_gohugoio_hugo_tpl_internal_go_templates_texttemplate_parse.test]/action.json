@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 394,
+    "focalfunc": "func (t *Tree) action() (n Node)",
+    "funcbody": "func (t *Tree) action() (n Node) {\n\tswitch token := t.nextNonSpace(); token.typ {\n\tcase itemBlock:\n\t\treturn t.blockControl()\n\tcase itemBreak:\n\t\treturn t.breakControl(token.pos, token.line)\n\tcase itemContinue:\n\t\treturn t.continueControl(token.pos, token.line)\n\tcase itemElse:\n\t\treturn t.elseControl()\n\tcase itemEnd:\n\t\treturn t.endControl()\n\tcase itemIf:\n\t\treturn t.ifControl()\n\tcase itemRange:\n\t\treturn t.rangeControl()\n\tcase itemTemplate:\n\t\treturn t.templateControl()\n\tcase itemWith:\n\t\treturn t.withControl()\n\t}\n\tt.backup()\n\ttoken := t.peek()\n\n\treturn t.newAction(token.pos, token.line, t.pipeline(\"command\", itemRightDelim))\n}",
+    "funcname": "action"
+}

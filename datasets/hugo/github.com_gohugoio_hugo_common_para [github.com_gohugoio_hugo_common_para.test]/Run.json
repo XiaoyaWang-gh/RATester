@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/para/para.go",
+    "lineno": 44,
+    "focalfunc": "func (g *errGroupRunner) Run(fn func() error)",
+    "funcbody": "func (g *errGroupRunner) Run(fn func() error) {\n\tselect {\n\tcase g.w.sem <- struct{}{}:\n\tcase <-g.ctx.Done():\n\t\treturn\n\t}\n\n\tg.Go(func() error {\n\t\terr := fn()\n\t\t<-g.w.sem\n\t\treturn err\n\t})\n}",
+    "funcname": "Run"
+}

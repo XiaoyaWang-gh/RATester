@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 361,
+    "focalfunc": "func (ctl *Control) registerMsgHandlers()",
+    "funcbody": "func (ctl *Control) registerMsgHandlers() {\n\tctl.msgDispatcher.RegisterHandler(&msg.NewProxy{}, ctl.handleNewProxy)\n\tctl.msgDispatcher.RegisterHandler(&msg.Ping{}, ctl.handlePing)\n\tctl.msgDispatcher.RegisterHandler(&msg.NatHoleVisitor{}, msg.AsyncHandler(ctl.handleNatHoleVisitor))\n\tctl.msgDispatcher.RegisterHandler(&msg.NatHoleClient{}, msg.AsyncHandler(ctl.handleNatHoleClient))\n\tctl.msgDispatcher.RegisterHandler(&msg.NatHoleReport{}, msg.AsyncHandler(ctl.handleNatHoleReport))\n\tctl.msgDispatcher.RegisterHandler(&msg.CloseProxy{}, ctl.handleCloseProxy)\n}",
+    "funcname": "registerMsgHandlers"
+}

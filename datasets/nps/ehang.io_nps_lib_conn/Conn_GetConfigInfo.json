@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 210,
+    "focalfunc": "func (s *Conn) GetConfigInfo() (c *file.Client, err error)",
+    "funcbody": "func (s *Conn) GetConfigInfo() (c *file.Client, err error) {\n\terr = s.getInfo(&c)\n\tc.NoStore = true\n\tc.Status = true\n\tif c.Flow == nil {\n\t\tc.Flow = new(file.Flow)\n\t}\n\tc.NoDisplay = false\n\treturn\n}",
+    "funcname": "GetConfigInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 154,
+    "focalfunc": "func (i *Image) initConfig() error",
+    "funcbody": "func (i *Image) initConfig() error {\n\tvar err error\n\ti.configInit.Do(func() {\n\t\tif i.configLoaded {\n\t\t\treturn\n\t\t}\n\n\t\tvar f hugio.ReadSeekCloser\n\n\t\tf, err = i.Spec.ReadSeekCloser()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tdefer f.Close()\n\n\t\ti.config, _, err = image.DecodeConfig(f)\n\t})\n\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to load image config: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "initConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 183,
+    "focalfunc": "func (p *pageMeta) Layout() string",
+    "funcbody": "func (p *pageMeta) Layout() string {\n\treturn p.pageConfig.Layout\n}",
+    "funcname": "Layout"
+}

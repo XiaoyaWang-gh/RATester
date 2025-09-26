@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/hugo_template.go",
+    "lineno": 64,
+    "focalfunc": "func (t *executer) ExecuteWithContext(ctx context.Context, p Preparer, wr io.Writer, data any) error",
+    "funcbody": "func (t *executer) ExecuteWithContext(ctx context.Context, p Preparer, wr io.Writer, data any) error {\n\tif ctx == nil {\n\t\tpanic(\"nil context\")\n\t}\n\n\ttmpl, err := p.Prepare()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tvalue, ok := data.(reflect.Value)\n\tif !ok {\n\t\tvalue = reflect.ValueOf(data)\n\t}\n\n\tstate := &state{\n\t\tctx:\tctx,\n\t\thelper:\tt.helper,\n\t\tprep:\tp,\n\t\ttmpl:\ttmpl,\n\t\twr:\twr,\n\t\tvars:\t[]variable{{\"$\", value}},\n\t}\n\n\tt.helper.Init(ctx, p)\n\n\treturn tmpl.executeWithState(state, value)\n}",
+    "funcname": "ExecuteWithContext"
+}

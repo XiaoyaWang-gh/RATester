@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 471,
+    "focalfunc": "func buildListener(ctx context.Context, name string, config *static.EntryPoint) (net.Listener, error)",
+    "funcbody": "func buildListener(ctx context.Context, name string, config *static.EntryPoint) (net.Listener, error) {\n\tvar listener net.Listener\n\tvar err error\n\n\tif ln, ok := socketActivationListeners[name]; ok {\n\t\tlistener = ln\n\t} else {\n\t\tif len(socketActivationListeners) > 0 {\n\t\t\tlog.Warn().Str(\"name\", name).Msg(\"Unable to find socket activation listener for entryPoint\")\n\t\t}\n\n\t\tlistenConfig := newListenConfig(config)\n\t\tlistener, err = listenConfig.Listen(ctx, \"tcp\", config.GetAddress())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error opening listener: %w\", err)\n\t\t}\n\t}\n\n\tlistener = tcpKeepAliveListener{listener.(*net.TCPListener)}\n\n\tif config.ProxyProtocol != nil {\n\t\tlistener, err = buildProxyProtocolListener(ctx, config, listener)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error creating proxy protocol listener: %w\", err)\n\t\t}\n\t}\n\treturn listener, nil\n}",
+    "funcname": "buildListener"
+}

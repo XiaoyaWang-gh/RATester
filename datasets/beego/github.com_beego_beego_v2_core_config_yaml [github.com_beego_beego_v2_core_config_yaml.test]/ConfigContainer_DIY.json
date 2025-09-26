@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 316,
+    "focalfunc": "func (c *ConfigContainer) DIY(key string) (v interface{}, err error)",
+    "funcbody": "func (c *ConfigContainer) DIY(key string) (v interface{}, err error) {\n\treturn c.getData(key)\n}",
+    "funcname": "DIY"
+}

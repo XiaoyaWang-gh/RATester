@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 149,
+    "focalfunc": "func (pder *CookieProvider) SessionRead(ctx context.Context, sid string) (Store, error)",
+    "funcbody": "func (pder *CookieProvider) SessionRead(ctx context.Context, sid string) (Store, error) {\n\tmaps, _ := decodeCookie(pder.block,\n\t\tpder.config.SecurityKey,\n\t\tpder.config.SecurityName,\n\t\tsid, pder.maxlifetime)\n\tif maps == nil {\n\t\tmaps = make(map[interface{}]interface{})\n\t}\n\trs := &CookieSessionStore{sid: sid, values: maps}\n\treturn rs, nil\n}",
+    "funcname": "SessionRead"
+}

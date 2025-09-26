@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/utils.go",
+    "lineno": 29,
+    "focalfunc": "func EncodeMessage(m msg.Message, key []byte) ([]byte, error)",
+    "funcbody": "func EncodeMessage(m msg.Message, key []byte) ([]byte, error) {\n\tbuffer := bytes.NewBuffer(nil)\n\tif err := msg.WriteMsg(buffer, m); err != nil {\n\t\treturn nil, err\n\t}\n\n\tbuf, err := crypto.Encode(buffer.Bytes(), key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn buf, nil\n}",
+    "funcname": "EncodeMessage"
+}

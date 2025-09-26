@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 283,
+    "focalfunc": "func (l PermalinkExpander) pageToPermalinkTitle(p Page, _ string) (string, error)",
+    "funcbody": "func (l PermalinkExpander) pageToPermalinkTitle(p Page, _ string) (string, error) {\n\treturn l.urlize(p.Title()), nil\n}",
+    "funcname": "pageToPermalinkTitle"
+}

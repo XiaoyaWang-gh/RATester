@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/error.go",
+    "lineno": 50,
+    "focalfunc": "func FromError(err error) (Code, bool)",
+    "funcbody": "func FromError(err error) (Code, bool) {\n\tmsg := err.Error()\n\tcodeSeg := strings.SplitN(msg, \",\", 2)\n\tif strings.HasPrefix(codeSeg[0], \"ERROR-\") {\n\t\tcodeStr := strings.SplitN(codeSeg[0], \"-\", 2)\n\t\tif len(codeStr) < 2 {\n\t\t\treturn Unknown, false\n\t\t}\n\t\tcodeInt, e := strconv.ParseUint(codeStr[1], 10, 32)\n\t\tif e != nil {\n\t\t\treturn Unknown, false\n\t\t}\n\t\tif code, ok := defaultCodeRegistry.Get(uint32(codeInt)); ok {\n\t\t\treturn code, true\n\t\t}\n\t}\n\treturn Unknown, false\n}",
+    "funcname": "FromError"
+}

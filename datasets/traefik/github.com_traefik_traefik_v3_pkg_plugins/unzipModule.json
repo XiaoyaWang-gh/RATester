@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 244,
+    "focalfunc": "func (c *Client) unzipModule(pName, pVersion string) error",
+    "funcbody": "func (c *Client) unzipModule(pName, pVersion string) error {\n\tsrc := c.buildArchivePath(pName, pVersion)\n\tdest := filepath.Join(c.sources, filepath.FromSlash(pName))\n\n\treturn zip.Unzip(dest, module.Version{Path: pName, Version: pVersion}, src)\n}",
+    "funcname": "unzipModule"
+}

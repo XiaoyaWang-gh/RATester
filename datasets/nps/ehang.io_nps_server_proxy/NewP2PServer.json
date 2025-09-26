@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/p2p.go",
+    "lineno": 24,
+    "focalfunc": "func NewP2PServer(p2pPort int) *P2PServer",
+    "funcbody": "func NewP2PServer(p2pPort int) *P2PServer {\n\treturn &P2PServer{\n\t\tp2pPort:\tp2pPort,\n\t\tp2p:\t\tmake(map[string]*p2p),\n\t}\n}",
+    "funcname": "NewP2PServer"
+}

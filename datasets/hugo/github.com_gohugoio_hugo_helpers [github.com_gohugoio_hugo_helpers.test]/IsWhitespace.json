@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 259,
+    "focalfunc": "func IsWhitespace(r rune) bool",
+    "funcbody": "func IsWhitespace(r rune) bool {\n\treturn r == ' ' || r == '\\t' || r == '\\n' || r == '\\r'\n}",
+    "funcname": "IsWhitespace"
+}

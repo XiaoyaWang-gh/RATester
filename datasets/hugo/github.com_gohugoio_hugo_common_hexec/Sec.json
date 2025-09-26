@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 198,
+    "focalfunc": "func (e *Exec) Sec() security.Config",
+    "funcbody": "func (e *Exec) Sec() security.Config {\n\treturn e.sc\n}",
+    "funcname": "Sec"
+}

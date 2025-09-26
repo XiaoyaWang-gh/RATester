@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager.go",
+    "lineno": 55,
+    "focalfunc": "func (m *storageManager) setRaw(key string, raw []byte, exp time.Duration)",
+    "funcbody": "func (m *storageManager) setRaw(key string, raw []byte, exp time.Duration) {\n\tif m.storage != nil {\n\t\t_ = m.storage.Set(key, raw, exp)\n\t} else {\n\n\t\tm.memory.Set(utils.CopyString(key), raw, exp)\n\t}\n}",
+    "funcname": "setRaw"
+}

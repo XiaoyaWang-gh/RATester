@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 440,
+    "focalfunc": "func IsPublicIP(IP net.IP) bool",
+    "funcbody": "func IsPublicIP(IP net.IP) bool {\n\tif IP.IsLoopback() || IP.IsLinkLocalMulticast() || IP.IsLinkLocalUnicast() {\n\t\treturn false\n\t}\n\tif ip4 := IP.To4(); ip4 != nil {\n\t\tswitch true {\n\t\tcase ip4[0] == 10:\n\t\t\treturn false\n\t\tcase ip4[0] == 172 && ip4[1] >= 16 && ip4[1] <= 31:\n\t\t\treturn false\n\t\tcase ip4[0] == 192 && ip4[1] == 168:\n\t\t\treturn false\n\t\tdefault:\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "IsPublicIP"
+}

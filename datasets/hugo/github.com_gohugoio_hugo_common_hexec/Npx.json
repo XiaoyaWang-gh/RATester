@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 192,
+    "focalfunc": "func (e *Exec) npx(name string, arg ...any) (Runner, error)",
+    "funcbody": "func (e *Exec) npx(name string, arg ...any) (Runner, error) {\n\targ = append(arg[:0], append([]any{npxNoInstall, name}, arg[0:]...)...)\n\treturn e.New(npxBinary, arg...)\n}",
+    "funcname": "npx"
+}

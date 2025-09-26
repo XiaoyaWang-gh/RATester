@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 218,
+    "focalfunc": "func (f *Finder) doCheckOne(sid *searchID, v Identity, depth int) FinderResult",
+    "funcbody": "func (f *Finder) doCheckOne(sid *searchID, v Identity, depth int) FinderResult {\n\tid2 := Unwrap(v)\n\tif id2 == Anonymous {\n\t\treturn FinderNotFound\n\t}\n\tid := sid.id\n\tif sid.hasEqer {\n\t\tif sid.eqer.Eq(id2) {\n\t\t\treturn FinderFound\n\t\t}\n\t} else if id == id2 {\n\t\treturn FinderFound\n\t}\n\n\tif f.cfg.Exact {\n\t\treturn FinderNotFound\n\t}\n\n\tif id2 == nil {\n\t\treturn FinderNotFound\n\t}\n\n\tif id2 == GenghisKhan {\n\t\treturn FinderFound\n\t}\n\n\tif id.IdentifierBase() == id2.IdentifierBase() {\n\t\treturn FinderFound\n\t}\n\n\tif sid.isDp && sid.dp.IsProbablyDependent(id2) {\n\t\treturn FinderFound\n\t}\n\n\tif sid.isPeq && sid.peq.ProbablyEq(id2) {\n\t\treturn FinderFound\n\t}\n\n\tif pdep, ok := id2.(IsProbablyDependencyProvider); ok && pdep.IsProbablyDependency(id) {\n\t\treturn FinderFound\n\t}\n\n\tif peq, ok := id2.(compare.ProbablyEqer); ok && peq.ProbablyEq(id) {\n\t\treturn FinderFound\n\t}\n\n\treturn FinderNotFound\n}",
+    "funcname": "doCheckOne"
+}

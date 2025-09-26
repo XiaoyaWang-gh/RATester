@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 53,
+    "focalfunc": "func (sv *XTCPVisitor) Run() (err error)",
+    "funcbody": "func (sv *XTCPVisitor) Run() (err error) {\n\tsv.ctx, sv.cancel = context.WithCancel(sv.ctx)\n\n\tif sv.cfg.Protocol == \"kcp\" {\n\t\tsv.session = NewKCPTunnelSession()\n\t} else {\n\t\tsv.session = NewQUICTunnelSession(sv.clientCfg)\n\t}\n\n\tif sv.cfg.BindPort > 0 {\n\t\tsv.l, err = net.Listen(\"tcp\", net.JoinHostPort(sv.cfg.BindAddr, strconv.Itoa(sv.cfg.BindPort)))\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tgo sv.worker()\n\t}\n\n\tgo sv.internalConnWorker()\n\tgo sv.processTunnelStartEvents()\n\tif sv.cfg.KeepTunnelOpen {\n\t\tsv.retryLimiter = rate.NewLimiter(rate.Every(time.Hour/time.Duration(sv.cfg.MaxRetriesAnHour)), sv.cfg.MaxRetriesAnHour)\n\t\tgo sv.keepTunnelOpenWorker()\n\t}\n\treturn\n}",
+    "funcname": "Run"
+}

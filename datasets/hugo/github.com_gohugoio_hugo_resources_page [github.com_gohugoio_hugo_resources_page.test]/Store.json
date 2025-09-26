@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 450,
+    "focalfunc": "func (p *nopPage) Store() *maps.Scratch",
+    "funcbody": "func (p *nopPage) Store() *maps.Scratch {\n\treturn nil\n}",
+    "funcname": "Store"
+}

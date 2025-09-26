@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 232,
+    "focalfunc": "func NewConfigData(adapterName string, data []byte) (Configer, error)",
+    "funcbody": "func NewConfigData(adapterName string, data []byte) (Configer, error) {\n\tadapter, ok := adapters[adapterName]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"config: unknown adaptername %q (forgotten import?)\", adapterName)\n\t}\n\treturn adapter.ParseData(data)\n}",
+    "funcname": "NewConfigData"
+}

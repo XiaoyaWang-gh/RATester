@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 117,
+    "focalfunc": "func StatusCodeIs(status int) ResponseCondition",
+    "funcbody": "func StatusCodeIs(status int) ResponseCondition {\n\treturn func(res *http.Response) error {\n\t\tif res.StatusCode != status {\n\t\t\treturn fmt.Errorf(\"got status code %d, wanted %d\", res.StatusCode, status)\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "StatusCodeIs"
+}

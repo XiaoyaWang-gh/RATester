@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 583,
+    "focalfunc": "func (c *context) Stream(code int, contentType string, r io.Reader) (err error)",
+    "funcbody": "func (c *context) Stream(code int, contentType string, r io.Reader) (err error) {\n\tc.writeContentType(contentType)\n\tc.response.WriteHeader(code)\n\t_, err = io.Copy(c.response, r)\n\treturn\n}",
+    "funcname": "Stream"
+}

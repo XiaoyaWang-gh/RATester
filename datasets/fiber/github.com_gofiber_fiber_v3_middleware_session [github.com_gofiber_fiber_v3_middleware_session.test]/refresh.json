@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 172,
+    "focalfunc": "func (s *Session) refresh()",
+    "funcbody": "func (s *Session) refresh() {\n\ts.id = s.config.KeyGenerator()\n\ts.fresh = true\n}",
+    "funcname": "refresh"
+}

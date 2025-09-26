@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 156,
+    "focalfunc": "func (ini *Init) add(branch bool, initFn func(context.Context) (any, error)) *Init",
+    "funcbody": "func (ini *Init) add(branch bool, initFn func(context.Context) (any, error)) *Init {\n\tini.mu.Lock()\n\tdefer ini.mu.Unlock()\n\n\tif branch {\n\t\treturn &Init{\n\t\t\tf:\tinitFn,\n\t\t\tprev:\tini,\n\t\t}\n\t}\n\n\tini.checkDone()\n\tini.children = append(ini.children, &Init{\n\t\tf: initFn,\n\t})\n\n\treturn ini\n}",
+    "funcname": "add"
+}

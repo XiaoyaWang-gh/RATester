@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/context.go",
+    "lineno": 24,
+    "focalfunc": "func NewMockContext(req *http.Request) (*beegoCtx.Context, *httptest.ResponseRecorder)",
+    "funcbody": "func NewMockContext(req *http.Request) (*beegoCtx.Context, *httptest.ResponseRecorder) {\n\tctx := beegoCtx.NewContext()\n\tresp := httptest.NewRecorder()\n\tctx.Reset(resp, req)\n\treturn ctx, resp\n}",
+    "funcname": "NewMockContext"
+}

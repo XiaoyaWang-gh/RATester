@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 110,
+    "focalfunc": "func (c *Client) JSONMarshal() utils.JSONMarshal",
+    "funcbody": "func (c *Client) JSONMarshal() utils.JSONMarshal {\n\treturn c.jsonMarshal\n}",
+    "funcname": "JSONMarshal"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/local_store.go",
+    "lineno": 140,
+    "focalfunc": "func (s *LocalStore) SaveAccount(resolverName string, account *Account) error",
+    "funcbody": "func (s *LocalStore) SaveAccount(resolverName string, account *Account) error {\n\tstoredData, err := s.get(resolverName)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tstoredData.Account = account\n\ts.save(resolverName, storedData)\n\n\treturn nil\n}",
+    "funcname": "SaveAccount"
+}

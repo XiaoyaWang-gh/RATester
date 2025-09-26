@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 33,
+    "focalfunc": "func WithRouter(routerName string, opts ...func(*dynamic.Router)) func(*dynamic.Router) string",
+    "funcbody": "func WithRouter(routerName string, opts ...func(*dynamic.Router)) func(*dynamic.Router) string {\n\treturn func(r *dynamic.Router) string {\n\t\tfor _, opt := range opts {\n\t\t\topt(r)\n\t\t}\n\t\treturn routerName\n\t}\n}",
+    "funcname": "WithRouter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 108,
+    "focalfunc": "func (w *responseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (w *responseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\tif w.size < 0 {\n\t\tw.size = 0\n\t}\n\treturn w.ResponseWriter.(http.Hijacker).Hijack()\n}",
+    "funcname": "Hijack"
+}

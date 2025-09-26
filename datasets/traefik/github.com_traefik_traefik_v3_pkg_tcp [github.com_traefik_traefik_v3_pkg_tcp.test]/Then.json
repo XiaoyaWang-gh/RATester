@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/chain.go",
+    "lineno": 30,
+    "focalfunc": "func (c Chain) Then(h Handler) (Handler, error)",
+    "funcbody": "func (c Chain) Then(h Handler) (Handler, error) {\n\tif h == nil {\n\t\treturn nil, errors.New(\"cannot add a nil handler to the chain\")\n\t}\n\n\tfor i := range c.constructors {\n\t\thandler, err := c.constructors[len(c.constructors)-1-i](h)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\th = handler\n\t}\n\n\treturn h, nil\n}",
+    "funcname": "Then"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 377,
+    "focalfunc": "func (f Format) RequiresDefaultQuality() bool",
+    "funcbody": "func (f Format) RequiresDefaultQuality() bool {\n\treturn f == JPEG || f == WEBP\n}",
+    "funcname": "RequiresDefaultQuality"
+}

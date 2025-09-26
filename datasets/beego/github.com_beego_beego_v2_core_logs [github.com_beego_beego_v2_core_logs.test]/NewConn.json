@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 39,
+    "focalfunc": "func NewConn() Logger",
+    "funcbody": "func NewConn() Logger {\n\tconn := new(connWriter)\n\tconn.Level = LevelTrace\n\tconn.formatter = conn\n\treturn conn\n}",
+    "funcname": "NewConn"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 356,
+    "focalfunc": "func (p *pageState) Site() page.Site",
+    "funcbody": "func (p *pageState) Site() page.Site {\n\treturn p.sWrapped\n}",
+    "funcname": "Site"
+}

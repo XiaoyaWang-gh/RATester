@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/daemon/reload.go",
+    "lineno": 15,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\ts := make(chan os.Signal, 1)\n\tsignal.Notify(s, syscall.SIGUSR1)\n\tgo func() {\n\t\tfor {\n\t\t\t<-s\n\t\t\tbeego.LoadAppConfig(\"ini\", filepath.Join(common.GetRunPath(), \"conf\", \"nps.conf\"))\n\t\t}\n\t}()\n}",
+    "funcname": "init"
+}

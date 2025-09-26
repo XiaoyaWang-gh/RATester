@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/formatter.go",
+    "lineno": 39,
+    "focalfunc": "func (p *PatternLogFormatter) getWhenFormatter() string",
+    "funcbody": "func (p *PatternLogFormatter) getWhenFormatter() string {\n\ts := p.WhenFormat\n\tif s == \"\" {\n\t\ts = \"2006/01/02 15:04:05.123\"\n\t}\n\treturn s\n}",
+    "funcname": "getWhenFormatter"
+}

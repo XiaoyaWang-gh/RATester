@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 219,
+    "focalfunc": "func (b *randomBalancer) Next(c echo.Context) *ProxyTarget",
+    "funcbody": "func (b *randomBalancer) Next(c echo.Context) *ProxyTarget {\n\tb.mutex.Lock()\n\tdefer b.mutex.Unlock()\n\tif len(b.targets) == 0 {\n\t\treturn nil\n\t} else if len(b.targets) == 1 {\n\t\treturn b.targets[0]\n\t}\n\treturn b.targets[b.random.Intn(len(b.targets))]\n}",
+    "funcname": "Next"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/babel/babel.go",
+    "lineno": 60,
+    "focalfunc": "func (opts Options) toArgs() []any",
+    "funcbody": "func (opts Options) toArgs() []any {\n\tvar args []any\n\n\tswitch opts.SourceMap {\n\tcase \"external\":\n\t\targs = append(args, \"--source-maps\")\n\tcase \"inline\":\n\t\targs = append(args, \"--source-maps=inline\")\n\t}\n\tif opts.Minified {\n\t\targs = append(args, \"--minified\")\n\t}\n\tif opts.NoComments {\n\t\targs = append(args, \"--no-comments\")\n\t}\n\tif opts.Compact != nil {\n\t\targs = append(args, \"--compact=\"+strconv.FormatBool(*opts.Compact))\n\t}\n\tif opts.Verbose {\n\t\targs = append(args, \"--verbose\")\n\t}\n\tif opts.NoBabelrc {\n\t\targs = append(args, \"--no-babelrc\")\n\t}\n\treturn args\n}",
+    "funcname": "toArgs"
+}

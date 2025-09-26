@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 183,
+    "focalfunc": "func (t *Iterator) PeekWalk(walkFn func(item Item) bool)",
+    "funcbody": "func (t *Iterator) PeekWalk(walkFn func(item Item) bool) {\n\tfor i := t.lastPos + 1; i < len(t.items); i++ {\n\t\titem := t.items[i]\n\t\tif !walkFn(item) {\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "PeekWalk"
+}

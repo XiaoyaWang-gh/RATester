@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 319,
+    "focalfunc": "func (ctl *Control) worker()",
+    "funcbody": "func (ctl *Control) worker() {\n\txl := ctl.xl\n\n\tgo ctl.heartbeatWorker()\n\tgo ctl.msgDispatcher.Run()\n\n\t<-ctl.msgDispatcher.Done()\n\tctl.conn.Close()\n\n\tctl.mu.Lock()\n\tdefer ctl.mu.Unlock()\n\n\tclose(ctl.workConnCh)\n\tfor workConn := range ctl.workConnCh {\n\t\tworkConn.Close()\n\t}\n\n\tfor _, pxy := range ctl.proxies {\n\t\tpxy.Close()\n\t\tctl.pxyManager.Del(pxy.GetName())\n\t\tmetrics.Server.CloseProxy(pxy.GetName(), pxy.GetConfigurer().GetBaseConfig().Type)\n\n\t\tnotifyContent := &plugin.CloseProxyContent{\n\t\t\tUser: plugin.UserInfo{\n\t\t\t\tUser:\tctl.loginMsg.User,\n\t\t\t\tMetas:\tctl.loginMsg.Metas,\n\t\t\t\tRunID:\tctl.loginMsg.RunID,\n\t\t\t},\n\t\t\tCloseProxy: msg.CloseProxy{\n\t\t\t\tProxyName: pxy.GetName(),\n\t\t\t},\n\t\t}\n\t\tgo func() {\n\t\t\t_ = ctl.pluginManager.CloseProxy(notifyContent)\n\t\t}()\n\t}\n\n\tmetrics.Server.CloseClient()\n\txl.Infof(\"client exit success\")\n\tclose(ctl.doneCh)\n}",
+    "funcname": "worker"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 201,
+    "focalfunc": "func NewFileErrorFromFileInErr(err error, fs afero.Fs, linematcher LineMatcherFn) FileError",
+    "funcbody": "func NewFileErrorFromFileInErr(err error, fs afero.Fs, linematcher LineMatcherFn) FileError {\n\tfe := NewFileError(err)\n\tpos := fe.Position()\n\tif pos.Filename == \"\" {\n\t\treturn fe\n\t}\n\n\tf, realFilename, err2 := openFile(pos.Filename, fs)\n\tif err2 != nil {\n\t\treturn fe\n\t}\n\n\tpos.Filename = realFilename\n\tdefer f.Close()\n\treturn fe.UpdateContent(f, linematcher)\n}",
+    "funcname": "NewFileErrorFromFileInErr"
+}

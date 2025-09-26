@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/staticfile.go",
+    "lineno": 164,
+    "focalfunc": "func isOk(s *serveContentHolder, fi os.FileInfo) bool",
+    "funcbody": "func isOk(s *serveContentHolder, fi os.FileInfo) bool {\n\tif s == nil {\n\t\treturn false\n\t} else if s.size > int64(BConfig.WebConfig.StaticCacheFileSize) {\n\t\treturn false\n\t}\n\treturn s.modTime == fi.ModTime() && s.originSize == fi.Size()\n}",
+    "funcname": "isOk"
+}

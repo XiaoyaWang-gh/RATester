@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 157,
+    "focalfunc": "func (c *Controller) Init(ctx *context.Context, controllerName, actionName string, app interface{})",
+    "funcbody": "func (c *Controller) Init(ctx *context.Context, controllerName, actionName string, app interface{}) {\n\tc.Layout = \"\"\n\tc.TplName = \"\"\n\tc.controllerName = controllerName\n\tc.actionName = actionName\n\tc.Ctx = ctx\n\tc.TplExt = \"tpl\"\n\tc.AppController = app\n\tc.EnableRender = true\n\tc.EnableXSRF = true\n\tc.Data = ctx.Input.Data()\n\tc.methodMapping = make(map[string]func())\n}",
+    "funcname": "Init"
+}

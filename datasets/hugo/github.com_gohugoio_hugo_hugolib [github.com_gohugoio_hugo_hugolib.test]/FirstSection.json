@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 77,
+    "focalfunc": "func (pt pageTree) FirstSection() page.Page",
+    "funcbody": "func (pt pageTree) FirstSection() page.Page {\n\ts := pt.p.m.pathInfo.Dir()\n\tif s == \"/\" {\n\t\treturn pt.p.s.home\n\t}\n\n\tfor {\n\t\tk, n := pt.p.s.pageMap.treePages.LongestPrefix(s, true, func(n contentNodeI) bool { return n.isContentNodeBranch() })\n\t\tif n == nil {\n\t\t\treturn nil\n\t\t}\n\n\t\tif strings.Count(k, \"/\") < 2 {\n\t\t\treturn n.(page.Page)\n\t\t}\n\n\t\tif s == \"\" {\n\t\t\treturn nil\n\t\t}\n\n\t\ts = paths.Dir(s)\n\n\t}\n}",
+    "funcname": "FirstSection"
+}

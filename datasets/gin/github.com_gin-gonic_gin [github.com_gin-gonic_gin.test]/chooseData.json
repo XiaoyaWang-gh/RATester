@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 93,
+    "focalfunc": "func chooseData(custom, wildcard any) any",
+    "funcbody": "func chooseData(custom, wildcard any) any {\n\tif custom != nil {\n\t\treturn custom\n\t}\n\tif wildcard != nil {\n\t\treturn wildcard\n\t}\n\tpanic(\"negotiation config is invalid\")\n}",
+    "funcname": "chooseData"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 490,
+    "focalfunc": "func (p *ControllerRegister) CtrlAny(pattern string, f interface{})",
+    "funcbody": "func (p *ControllerRegister) CtrlAny(pattern string, f interface{}) {\n\tp.AddRouterMethod(\"*\", pattern, f)\n}",
+    "funcname": "CtrlAny"
+}

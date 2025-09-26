@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 68,
+    "focalfunc": "func (fc *FileCache) StartAndGC(config string) error",
+    "funcbody": "func (fc *FileCache) StartAndGC(config string) error {\n\tcfg := make(map[string]string)\n\terr := json.Unmarshal([]byte(config), &cfg)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tconst cpKey = \"CachePath\"\n\tconst fsKey = \"FileSuffix\"\n\tconst dlKey = \"DirectoryLevel\"\n\tconst eeKey = \"EmbedExpiry\"\n\n\tif _, ok := cfg[cpKey]; !ok {\n\t\tcfg[cpKey] = FileCachePath\n\t}\n\n\tif _, ok := cfg[fsKey]; !ok {\n\t\tcfg[fsKey] = FileCacheFileSuffix\n\t}\n\n\tif _, ok := cfg[dlKey]; !ok {\n\t\tcfg[dlKey] = strconv.Itoa(FileCacheDirectoryLevel)\n\t}\n\n\tif _, ok := cfg[eeKey]; !ok {\n\t\tcfg[eeKey] = strconv.FormatInt(int64(FileCacheEmbedExpiry.Seconds()), 10)\n\t}\n\tfc.CachePath = cfg[cpKey]\n\tfc.FileSuffix = cfg[fsKey]\n\tfc.DirectoryLevel, err = strconv.Atoi(cfg[dlKey])\n\tif err != nil {\n\t\treturn berror.Wrapf(err, InvalidFileCacheDirectoryLevelCfg,\n\t\t\t\"invalid directory level config, please check your input, it must be integer: %s\", cfg[dlKey])\n\t}\n\tfc.EmbedExpiry, err = strconv.Atoi(cfg[eeKey])\n\tif err != nil {\n\t\treturn berror.Wrapf(err, InvalidFileCacheEmbedExpiryCfg,\n\t\t\t\"invalid embed expiry config, please check your input, it must be integer: %s\", cfg[eeKey])\n\t}\n\treturn fc.Init()\n}",
+    "funcname": "StartAndGC"
+}

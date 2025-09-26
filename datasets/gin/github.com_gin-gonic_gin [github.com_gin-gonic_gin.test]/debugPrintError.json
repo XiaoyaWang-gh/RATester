@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 108,
+    "focalfunc": "func debugPrintError(err error)",
+    "funcbody": "func debugPrintError(err error) {\n\tif err != nil && IsDebugging() {\n\t\tfmt.Fprintf(DefaultErrorWriter, \"[GIN-debug] [ERROR] %v\\n\", err)\n\t}\n}",
+    "funcname": "debugPrintError"
+}

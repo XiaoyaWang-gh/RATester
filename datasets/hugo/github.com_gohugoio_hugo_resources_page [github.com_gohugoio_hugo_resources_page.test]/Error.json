@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 251,
+    "focalfunc": "func (pee *permalinkExpandError) Error() string",
+    "funcbody": "func (pee *permalinkExpandError) Error() string {\n\treturn fmt.Sprintf(\"error expanding %q: %s\", pee.pattern, pee.err)\n}",
+    "funcname": "Error"
+}

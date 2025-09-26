@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 145,
+    "focalfunc": "func CompareNot(a, b interface{}) (equal bool)",
+    "funcbody": "func CompareNot(a, b interface{}) (equal bool) {\n\treturn !Compare(a, b)\n}",
+    "funcname": "CompareNot"
+}

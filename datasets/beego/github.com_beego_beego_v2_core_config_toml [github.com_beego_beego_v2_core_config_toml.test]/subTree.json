@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 333,
+    "focalfunc": "func subTree(t *toml.Tree, path []string) (*toml.Tree, error)",
+    "funcbody": "func subTree(t *toml.Tree, path []string) (*toml.Tree, error) {\n\tres := t\n\tfor i := 0; i < len(path); i++ {\n\t\tif subTree, ok := res.Get(path[i]).(*toml.Tree); ok {\n\t\t\tres = subTree\n\t\t} else {\n\t\t\treturn nil, config.InvalidValueTypeError\n\t\t}\n\t}\n\tif res == nil {\n\t\treturn nil, config.KeyNotFoundError\n\t}\n\treturn res, nil\n}",
+    "funcname": "subTree"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 193,
+    "focalfunc": "func NewBaseContext(rctx *Context, renderer any, n ast.Node, src []byte, getSourceSample func() []byte, ordinal int) hooks.BaseContext",
+    "funcbody": "func NewBaseContext(rctx *Context, renderer any, n ast.Node, src []byte, getSourceSample func() []byte, ordinal int) hooks.BaseContext {\n\tif getSourceSample == nil {\n\t\tgetSourceSample = func() []byte {\n\t\t\treturn extractSourceSample(n, src)\n\t\t}\n\t}\n\tpage, pageInner := GetPageAndPageInner(rctx)\n\tb := &hookBase{\n\t\tpage:\t\tpage,\n\t\tpageInner:\tpageInner,\n\n\t\tgetSourceSample:\tgetSourceSample,\n\t\tordinal:\t\tordinal,\n\t}\n\n\tb.createPos = func() htext.Position {\n\t\tif resolver, ok := renderer.(hooks.ElementPositionResolver); ok {\n\t\t\treturn resolver.ResolvePosition(b)\n\t\t}\n\n\t\treturn htext.Position{\n\t\t\tFilename:\trctx.DocumentContext().Filename,\n\t\t\tLineNumber:\t1,\n\t\t\tColumnNumber:\t1,\n\t\t}\n\t}\n\n\treturn b\n}",
+    "funcname": "NewBaseContext"
+}

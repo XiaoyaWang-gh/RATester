@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 1071,
+    "focalfunc": "func (c *hugoBuilder) printChangeDetected(typ string)",
+    "funcbody": "func (c *hugoBuilder) printChangeDetected(typ string) {\n\tmsg := \"\\nChange\"\n\tif typ != \"\" {\n\t\tmsg += \" of \" + typ\n\t}\n\tmsg += fmt.Sprintf(\" detected, rebuilding site (#%d).\", rebuildCounter.Add(1))\n\n\tc.r.logger.Println(msg)\n\tconst layout = \"2006-01-02 15:04:05.000 -0700\"\n\tc.r.logger.Println(htime.Now().Format(layout))\n}",
+    "funcname": "printChangeDetected"
+}

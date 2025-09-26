@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 340,
+    "focalfunc": "func (c *clientWrapper) ListTCPRoutes() ([]*gatev1alpha2.TCPRoute, error)",
+    "funcbody": "func (c *clientWrapper) ListTCPRoutes() ([]*gatev1alpha2.TCPRoute, error) {\n\tvar tcpRoutes []*gatev1alpha2.TCPRoute\n\tfor _, namespace := range c.watchedNamespaces {\n\t\troutes, err := c.factoriesGateway[c.lookupNamespace(namespace)].Gateway().V1alpha2().TCPRoutes().Lister().TCPRoutes(namespace).List(labels.Everything())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"listing TCP routes in namespace %s\", namespace)\n\t\t}\n\n\t\ttcpRoutes = append(tcpRoutes, routes...)\n\t}\n\n\treturn tcpRoutes, nil\n}",
+    "funcname": "ListTCPRoutes"
+}

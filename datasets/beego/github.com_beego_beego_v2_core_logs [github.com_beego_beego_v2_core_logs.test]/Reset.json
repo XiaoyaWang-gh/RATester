@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 694,
+    "focalfunc": "func Reset()",
+    "funcbody": "func Reset() {\n\tbeeLogger.Reset()\n}",
+    "funcname": "Reset"
+}

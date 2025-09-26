@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 164,
+    "focalfunc": "func (r *PostPublishResource) Name() string",
+    "funcbody": "func (r *PostPublishResource) Name() string {\n\treturn r.field(\"Name\")\n}",
+    "funcname": "Name"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/writers.go",
+    "lineno": 111,
+    "focalfunc": "func (c PipeReadWriteCloser) WriteString(s string) (int, error)",
+    "funcbody": "func (c PipeReadWriteCloser) WriteString(s string) (int, error) {\n\treturn c.PipeWriter.Write([]byte(s))\n}",
+    "funcname": "WriteString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 630,
+    "focalfunc": "func (e *Echo) Reverse(name string, params ...interface{}) string",
+    "funcbody": "func (e *Echo) Reverse(name string, params ...interface{}) string {\n\treturn e.router.Reverse(name, params...)\n}",
+    "funcname": "Reverse"
+}

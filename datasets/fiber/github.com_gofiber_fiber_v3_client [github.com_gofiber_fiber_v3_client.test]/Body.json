@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 64,
+    "focalfunc": "func (r *Response) Body() []byte",
+    "funcbody": "func (r *Response) Body() []byte {\n\treturn r.RawResponse.Body()\n}",
+    "funcname": "Body"
+}

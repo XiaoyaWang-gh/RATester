@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/key.go",
+    "lineno": 30,
+    "focalfunc": "func NewResourceTransformationKey(name string, elements ...any) ResourceTransformationKey",
+    "funcbody": "func NewResourceTransformationKey(name string, elements ...any) ResourceTransformationKey {\n\treturn ResourceTransformationKey{Name: name, elements: elements}\n}",
+    "funcname": "NewResourceTransformationKey"
+}

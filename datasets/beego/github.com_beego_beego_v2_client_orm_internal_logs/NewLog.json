@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/logs/log.go",
+    "lineno": 13,
+    "focalfunc": "func NewLog(out io.Writer) *Log",
+    "funcbody": "func NewLog(out io.Writer) *Log {\n\td := new(Log)\n\td.Logger = log.New(out, \"[ORM]\", log.LstdFlags)\n\treturn d\n}",
+    "funcname": "NewLog"
+}

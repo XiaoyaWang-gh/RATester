@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 352,
+    "focalfunc": "func (r *responseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (r *responseWriter) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\tif hijacker, ok := r.rw.(http.Hijacker); ok {\n\n\t\tr.hijacked = true\n\t\treturn hijacker.Hijack()\n\t}\n\n\treturn nil, nil, fmt.Errorf(\"%T is not a http.Hijacker\", r.rw)\n}",
+    "funcname": "Hijack"
+}

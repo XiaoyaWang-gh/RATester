@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 285,
+    "focalfunc": "func (l *logAdapter) Println(v ...any)",
+    "funcbody": "func (l *logAdapter) Println(v ...any) {\n\tfmt.Fprintln(l.out, v...)\n}",
+    "funcname": "Println"
+}

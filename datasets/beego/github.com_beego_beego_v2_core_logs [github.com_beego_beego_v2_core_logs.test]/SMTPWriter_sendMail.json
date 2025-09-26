@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 90,
+    "focalfunc": "func (s *SMTPWriter) sendMail(hostAddressWithPort string, auth smtp.Auth, fromAddress string, recipients []string, msgContent []byte) error",
+    "funcbody": "func (s *SMTPWriter) sendMail(hostAddressWithPort string, auth smtp.Auth, fromAddress string, recipients []string, msgContent []byte) error {\n\tclient, err := smtp.Dial(hostAddressWithPort)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\thost, _, _ := net.SplitHostPort(hostAddressWithPort)\n\ttlsConn := &tls.Config{\n\t\tInsecureSkipVerify:\ts.InsecureSkipVerify,\n\t\tServerName:\t\thost,\n\t}\n\tif err = client.StartTLS(tlsConn); err != nil {\n\t\treturn err\n\t}\n\n\tif auth != nil {\n\t\tif err = client.Auth(auth); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tif err = client.Mail(fromAddress); err != nil {\n\t\treturn err\n\t}\n\n\tfor _, rec := range recipients {\n\t\tif err = client.Rcpt(rec); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tw, err := client.Data()\n\tif err != nil {\n\t\treturn err\n\t}\n\t_, err = w.Write(msgContent)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\terr = w.Close()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn client.Quit()\n}",
+    "funcname": "sendMail"
+}

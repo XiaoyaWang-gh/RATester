@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/runtime/runtime_http.go",
+    "lineno": 186,
+    "focalfunc": "func (s *ServiceInfo) GetAllStatus() map[string]string",
+    "funcbody": "func (s *ServiceInfo) GetAllStatus() map[string]string {\n\ts.serverStatusMu.RLock()\n\tdefer s.serverStatusMu.RUnlock()\n\n\tif len(s.serverStatus) == 0 {\n\t\treturn nil\n\t}\n\n\tallStatus := make(map[string]string, len(s.serverStatus))\n\tfor k, v := range s.serverStatus {\n\t\tallStatus[k] = v\n\t}\n\treturn allStatus\n}",
+    "funcname": "GetAllStatus"
+}

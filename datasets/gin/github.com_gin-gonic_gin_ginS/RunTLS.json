@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 144,
+    "focalfunc": "func RunTLS(addr, certFile, keyFile string) (err error)",
+    "funcbody": "func RunTLS(addr, certFile, keyFile string) (err error) {\n\treturn engine().RunTLS(addr, certFile, keyFile)\n}",
+    "funcname": "RunTLS"
+}

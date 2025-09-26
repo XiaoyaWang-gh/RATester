@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 190,
+    "focalfunc": "func (c *configContainer) DefaultStrings(key string, defaultVal []string) []string",
+    "funcbody": "func (c *configContainer) DefaultStrings(key string, defaultVal []string) []string {\n\tval, err := c.get(key)\n\tif err != nil {\n\t\treturn defaultVal\n\t}\n\tif arr, ok := val.([]interface{}); ok {\n\t\tres := make([]string, 0, len(arr))\n\t\tfor _, ele := range arr {\n\t\t\tif str, ok := ele.(string); ok {\n\t\t\t\tres = append(res, str)\n\t\t\t} else {\n\t\t\t\treturn defaultVal\n\t\t\t}\n\t\t}\n\t\treturn res\n\t} else {\n\t\treturn defaultVal\n\t}\n}",
+    "funcname": "DefaultStrings"
+}

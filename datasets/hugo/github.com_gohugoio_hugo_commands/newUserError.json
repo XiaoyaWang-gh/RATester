@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/helpers.go",
+    "lineno": 36,
+    "focalfunc": "func newUserError(a ...any) *simplecobra.CommandError",
+    "funcbody": "func newUserError(a ...any) *simplecobra.CommandError {\n\treturn &simplecobra.CommandError{Err: errors.New(fmt.Sprint(a...))}\n}",
+    "funcname": "newUserError"
+}

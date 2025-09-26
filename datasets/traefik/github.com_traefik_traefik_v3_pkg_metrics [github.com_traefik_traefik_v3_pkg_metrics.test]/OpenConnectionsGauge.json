@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 232,
+    "focalfunc": "func (r *standardRegistry) OpenConnectionsGauge() metrics.Gauge",
+    "funcbody": "func (r *standardRegistry) OpenConnectionsGauge() metrics.Gauge {\n\treturn r.openConnectionsGauge\n}",
+    "funcname": "OpenConnectionsGauge"
+}

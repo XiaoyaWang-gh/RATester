@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 310,
+    "focalfunc": "func (p *Path) norm(s string) string",
+    "funcbody": "func (p *Path) norm(s string) string {\n\tif p.trimLeadingSlash {\n\t\ts = strings.TrimPrefix(s, \"/\")\n\t}\n\treturn s\n}",
+    "funcname": "norm"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 541,
+    "focalfunc": "func (c *Context) PostFormArray(key string) (values []string)",
+    "funcbody": "func (c *Context) PostFormArray(key string) (values []string) {\n\tvalues, _ = c.GetPostFormArray(key)\n\treturn\n}",
+    "funcname": "PostFormArray"
+}

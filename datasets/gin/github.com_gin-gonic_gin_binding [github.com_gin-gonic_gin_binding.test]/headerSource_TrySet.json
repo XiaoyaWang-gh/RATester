@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/header.go",
+    "lineno": 36,
+    "focalfunc": "func (hs headerSource) TrySet(value reflect.Value, field reflect.StructField, tagValue string, opt setOptions) (bool, error)",
+    "funcbody": "func (hs headerSource) TrySet(value reflect.Value, field reflect.StructField, tagValue string, opt setOptions) (bool, error) {\n\treturn setByForm(value, field, hs, textproto.CanonicalMIMEHeaderKey(tagValue), opt)\n}",
+    "funcname": "TrySet"
+}

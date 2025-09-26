@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 135,
+    "focalfunc": "func SliceRange(start, end, step int64) (intslice []int64)",
+    "funcbody": "func SliceRange(start, end, step int64) (intslice []int64) {\n\tfor i := start; i <= end; i += step {\n\t\tintslice = append(intslice, i)\n\t}\n\treturn\n}",
+    "funcname": "SliceRange"
+}

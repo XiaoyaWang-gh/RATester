@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 76,
+    "focalfunc": "func (g *Group) TRACE(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) TRACE(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn g.Add(http.MethodTrace, path, h, m...)\n}",
+    "funcname": "TRACE"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 277,
+    "focalfunc": "func (d dataSlice) Less(i, j int) bool",
+    "funcbody": "func (d dataSlice) Less(i, j int) bool {\n\treturn d[i].created < d[j].created\n}",
+    "funcname": "Less"
+}

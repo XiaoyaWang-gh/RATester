@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/label/label.go",
+    "lineno": 34,
+    "focalfunc": "func Decode(labels map[string]string, element interface{}, filters ...string) error",
+    "funcbody": "func Decode(labels map[string]string, element interface{}, filters ...string) error {\n\treturn parser.Decode(labels, element, parser.DefaultRootName, filters...)\n}",
+    "funcname": "Decode"
+}

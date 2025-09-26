@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/utils.go",
+    "lineno": 65,
+    "focalfunc": "func ListAllLocalIPs() ([]net.IP, error)",
+    "funcbody": "func ListAllLocalIPs() ([]net.IP, error) {\n\taddrs, err := net.InterfaceAddrs()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tips := make([]net.IP, 0, len(addrs))\n\tfor _, addr := range addrs {\n\t\tip, _, err := net.ParseCIDR(addr.String())\n\t\tif err != nil {\n\t\t\tcontinue\n\t\t}\n\t\tips = append(ips, ip)\n\t}\n\treturn ips, nil\n}",
+    "funcname": "ListAllLocalIPs"
+}

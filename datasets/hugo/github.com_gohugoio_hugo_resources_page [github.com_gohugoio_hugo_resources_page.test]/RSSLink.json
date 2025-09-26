@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 80,
+    "focalfunc": "func (p *nopPage) RSSLink() template.URL",
+    "funcbody": "func (p *nopPage) RSSLink() template.URL {\n\treturn \"\"\n}",
+    "funcname": "RSSLink"
+}

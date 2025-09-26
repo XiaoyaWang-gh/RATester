@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 71,
+    "focalfunc": "func (c Condition) AndNot(expr string, args ...interface{}) *Condition",
+    "funcbody": "func (c Condition) AndNot(expr string, args ...interface{}) *Condition {\n\tif expr == \"\" || len(args) == 0 {\n\t\tpanic(fmt.Errorf(\"<Condition.AndNot> args cannot empty\"))\n\t}\n\tc.params = append(c.params, condValue{exprs: strings.Split(expr, ExprSep), args: args, isNot: true})\n\treturn &c\n}",
+    "funcname": "AndNot"
+}

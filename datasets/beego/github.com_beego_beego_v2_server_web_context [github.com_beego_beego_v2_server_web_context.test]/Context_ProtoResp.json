@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 133,
+    "focalfunc": "func (ctx *Context) ProtoResp(data proto.Message) error",
+    "funcbody": "func (ctx *Context) ProtoResp(data proto.Message) error {\n\treturn ctx.Output.Proto(data)\n}",
+    "funcname": "ProtoResp"
+}

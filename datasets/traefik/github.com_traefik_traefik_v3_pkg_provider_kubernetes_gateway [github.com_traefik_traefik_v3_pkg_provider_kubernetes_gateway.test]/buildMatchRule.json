@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 488,
+    "focalfunc": "func buildMatchRule(hostnames []gatev1.Hostname, match gatev1.HTTPRouteMatch) (string, int)",
+    "funcbody": "func buildMatchRule(hostnames []gatev1.Hostname, match gatev1.HTTPRouteMatch) (string, int) {\n\tpath := ptr.Deref(match.Path, gatev1.HTTPPathMatch{\n\t\tType:\tptr.To(gatev1.PathMatchPathPrefix),\n\t\tValue:\tptr.To(\"/\"),\n\t})\n\n\tvar priority int\n\tvar matchRules []string\n\n\tpathRule, pathPriority := buildPathRule(path)\n\tmatchRules = append(matchRules, pathRule)\n\tpriority += pathPriority\n\n\tif match.Method != nil {\n\t\tmatchRules = append(matchRules, fmt.Sprintf(\"Method(`%s`)\", *match.Method))\n\t\tpriority += 1000\n\t}\n\n\theaderRules, headersPriority := buildHeaderRules(match.Headers)\n\tmatchRules = append(matchRules, headerRules...)\n\tpriority += headersPriority\n\n\tqueryParamRules, queryParamsPriority := buildQueryParamRules(match.QueryParams)\n\tmatchRules = append(matchRules, queryParamRules...)\n\tpriority += queryParamsPriority\n\n\tmatchRulesStr := strings.Join(matchRules, \" && \")\n\n\thostRule, hostPriority := buildHostRule(hostnames)\n\n\tif hostRule == \"\" {\n\t\treturn matchRulesStr, priority\n\t}\n\n\tpriority += hostPriority\n\treturn hostRule + \" && \" + matchRulesStr, priority\n}",
+    "funcname": "buildMatchRule"
+}

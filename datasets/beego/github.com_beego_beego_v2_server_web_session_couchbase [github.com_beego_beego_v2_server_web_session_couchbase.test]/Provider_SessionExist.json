@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 205,
+    "focalfunc": "func (cp *Provider) SessionExist(ctx context.Context, sid string) (bool, error)",
+    "funcbody": "func (cp *Provider) SessionExist(ctx context.Context, sid string) (bool, error) {\n\tcp.b = cp.getBucket()\n\tdefer cp.b.Close()\n\n\tvar doc []byte\n\n\tif err := cp.b.Get(sid, &doc); err != nil || doc == nil {\n\t\treturn false, err\n\t}\n\treturn true, nil\n}",
+    "funcname": "SessionExist"
+}

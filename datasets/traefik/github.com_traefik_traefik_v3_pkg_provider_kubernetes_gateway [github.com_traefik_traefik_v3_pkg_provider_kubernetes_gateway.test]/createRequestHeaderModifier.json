@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 593,
+    "focalfunc": "func createRequestHeaderModifier(filter *gatev1.HTTPHeaderFilter) *dynamic.Middleware",
+    "funcbody": "func createRequestHeaderModifier(filter *gatev1.HTTPHeaderFilter) *dynamic.Middleware {\n\tsets := map[string]string{}\n\tfor _, header := range filter.Set {\n\t\tsets[string(header.Name)] = header.Value\n\t}\n\n\tadds := map[string]string{}\n\tfor _, header := range filter.Add {\n\t\tadds[string(header.Name)] = header.Value\n\t}\n\n\treturn &dynamic.Middleware{\n\t\tRequestHeaderModifier: &dynamic.HeaderModifier{\n\t\t\tSet:\tsets,\n\t\t\tAdd:\tadds,\n\t\t\tRemove:\tfilter.Remove,\n\t\t},\n\t}\n}",
+    "funcname": "createRequestHeaderModifier"
+}

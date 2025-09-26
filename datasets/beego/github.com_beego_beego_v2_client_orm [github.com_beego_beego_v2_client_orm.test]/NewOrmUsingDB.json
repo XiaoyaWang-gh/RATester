@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 628,
+    "focalfunc": "func NewOrmUsingDB(aliasName string) Ormer",
+    "funcbody": "func NewOrmUsingDB(aliasName string) Ormer {\n\tif al, ok := dataBaseCache.get(aliasName); ok {\n\t\treturn newDBWithAlias(al)\n\t}\n\tpanic(fmt.Errorf(\"<Ormer.Using> unknown db alias name `%s`\", aliasName))\n}",
+    "funcname": "NewOrmUsingDB"
+}

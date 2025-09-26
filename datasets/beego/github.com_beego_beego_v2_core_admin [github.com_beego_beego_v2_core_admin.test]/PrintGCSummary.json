@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 100,
+    "focalfunc": "func PrintGCSummary(w io.Writer)",
+    "funcbody": "func PrintGCSummary(w io.Writer) {\n\tmemStats := &runtime.MemStats{}\n\truntime.ReadMemStats(memStats)\n\tgcstats := &debug.GCStats{PauseQuantiles: make([]time.Duration, 100)}\n\tdebug.ReadGCStats(gcstats)\n\n\tprintGC(memStats, gcstats, w)\n}",
+    "funcname": "PrintGCSummary"
+}

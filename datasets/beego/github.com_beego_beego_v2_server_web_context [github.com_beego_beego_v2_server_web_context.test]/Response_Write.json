@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 350,
+    "focalfunc": "func (r *Response) Write(p []byte) (int, error)",
+    "funcbody": "func (r *Response) Write(p []byte) (int, error) {\n\tr.Started = true\n\treturn r.ResponseWriter.Write(p)\n}",
+    "funcname": "Write"
+}

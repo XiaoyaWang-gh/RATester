@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 69,
+    "focalfunc": "func sortKeys(examplePage Page, v []reflect.Value, order string) []reflect.Value",
+    "funcbody": "func sortKeys(examplePage Page, v []reflect.Value, order string) []reflect.Value {\n\tif len(v) <= 1 {\n\t\treturn v\n\t}\n\n\tswitch v[0].Kind() {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\tif order == \"desc\" {\n\t\t\tsort.Sort(sort.Reverse(mapKeyByInt{v}))\n\t\t} else {\n\t\t\tsort.Sort(mapKeyByInt{v})\n\t\t}\n\tcase reflect.String:\n\t\tstringLess, close := collatorStringLess(examplePage)\n\t\tdefer close()\n\t\tif order == \"desc\" {\n\t\t\tsort.Sort(sort.Reverse(mapKeyByStr{stringLess, v}))\n\t\t} else {\n\t\t\tsort.Sort(mapKeyByStr{stringLess, v})\n\t\t}\n\t}\n\treturn v\n}",
+    "funcname": "sortKeys"
+}

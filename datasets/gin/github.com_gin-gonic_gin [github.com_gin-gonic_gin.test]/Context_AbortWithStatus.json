@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 212,
+    "focalfunc": "func (c *Context) AbortWithStatus(code int)",
+    "funcbody": "func (c *Context) AbortWithStatus(code int) {\n\tc.Status(code)\n\tc.Writer.WriteHeaderNow()\n\tc.Abort()\n}",
+    "funcname": "AbortWithStatus"
+}

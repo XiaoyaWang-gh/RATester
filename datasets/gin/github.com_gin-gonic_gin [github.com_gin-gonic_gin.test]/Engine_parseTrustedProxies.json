@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 439,
+    "focalfunc": "func (engine *Engine) parseTrustedProxies() error",
+    "funcbody": "func (engine *Engine) parseTrustedProxies() error {\n\ttrustedCIDRs, err := engine.prepareTrustedCIDRs()\n\tengine.trustedCIDRs = trustedCIDRs\n\treturn err\n}",
+    "funcname": "parseTrustedProxies"
+}

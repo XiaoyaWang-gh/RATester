@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 819,
+    "focalfunc": "func (e *Echo) ListenerAddr() net.Addr",
+    "funcbody": "func (e *Echo) ListenerAddr() net.Addr {\n\te.startupMutex.RLock()\n\tdefer e.startupMutex.RUnlock()\n\tif e.Listener == nil {\n\t\treturn nil\n\t}\n\treturn e.Listener.Addr()\n}",
+    "funcname": "ListenerAddr"
+}

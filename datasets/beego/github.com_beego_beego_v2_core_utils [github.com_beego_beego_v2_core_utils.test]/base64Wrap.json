@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 335,
+    "focalfunc": "func base64Wrap(w io.Writer, b []byte)",
+    "funcbody": "func base64Wrap(w io.Writer, b []byte) {\n\t// 57 raw bytes per 76-byte base64 line.\n\tconst maxRaw = 57\n\t// Buffer for each line, including trailing CRLF.\n\tvar buffer [maxLineLength + len(\"\\r\\n\")]byte\n\tcopy(buffer[maxLineLength:], \"\\r\\n\")\n\n\tfor len(b) >= maxRaw {\n\t\tbase64.StdEncoding.Encode(buffer[:], b[:maxRaw])\n\t\tw.Write(buffer[:])\n\t\tb = b[maxRaw:]\n\t}\n\n\tif len(b) > 0 {\n\t\tout := buffer[:base64.StdEncoding.EncodedLen(len(b))]\n\t\tbase64.StdEncoding.Encode(out, b)\n\t\tout = append(out, \"\\r\\n\"...)\n\t\tw.Write(out)\n\t}\n}",
+    "funcname": "base64Wrap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/dynamic/plugins.go",
+    "lineno": 34,
+    "focalfunc": "func deepCopyJSON(x map[string]any) map[string]any",
+    "funcbody": "func deepCopyJSON(x map[string]any) map[string]any {\n\treturn deepCopyJSONValue(x).(map[string]any)\n}",
+    "funcname": "deepCopyJSON"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 192,
+    "focalfunc": "func (d *dispatcher[Q, R]) input()",
+    "funcbody": "func (d *dispatcher[Q, R]) input() {\n\tvar inputErr error\n\n\tfor d.inOut.dec.More() {\n\t\tvar r Message[R]\n\t\tif err := d.inOut.dec.Decode(&r); err != nil {\n\t\t\tinputErr = fmt.Errorf(\"decoding response: %w\", err)\n\t\t\tbreak\n\t\t}\n\n\t\td.mu.Lock()\n\t\tcall, found := d.pending[r.GetID()]\n\t\tif !found {\n\t\t\td.mu.Unlock()\n\t\t\tpanic(fmt.Errorf(\"call with ID %d not found\", r.GetID()))\n\t\t}\n\t\tdelete(d.pending, r.GetID())\n\t\td.mu.Unlock()\n\t\tcall.response = r\n\t\tcall.done()\n\t}\n\n\td.shutdown = true\n\tif inputErr != nil {\n\t\tisEOF := inputErr == io.EOF || strings.Contains(inputErr.Error(), \"already closed\")\n\t\tif isEOF {\n\t\t\tif d.closing {\n\t\t\t\tinputErr = ErrShutdown\n\t\t\t} else {\n\t\t\t\tinputErr = io.ErrUnexpectedEOF\n\t\t\t}\n\t\t}\n\t}\n\n\td.mu.Lock()\n\tdefer d.mu.Unlock()\n\tfor _, call := range d.pending {\n\t\tcall.err = inputErr\n\t\tcall.done()\n\t}\n}",
+    "funcname": "input"
+}

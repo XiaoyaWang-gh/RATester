@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/publisher.go",
+    "lineno": 156,
+    "focalfunc": "func (p DestinationPublisher) createTransformerChain(f Descriptor) transform.Chain",
+    "funcbody": "func (p DestinationPublisher) createTransformerChain(f Descriptor) transform.Chain {\n\ttransformers := transform.NewEmpty()\n\n\tisHTML := f.OutputFormat.IsHTML\n\n\tif f.AbsURLPath != \"\" {\n\t\tif isHTML {\n\t\t\ttransformers = append(transformers, urlreplacers.NewAbsURLTransformer(f.AbsURLPath))\n\t\t} else {\n\n\t\t\ttransformers = append(transformers, urlreplacers.NewAbsURLInXMLTransformer(f.AbsURLPath))\n\t\t}\n\t}\n\n\tif isHTML {\n\t\tif f.LiveReloadBaseURL != nil {\n\t\t\ttransformers = append(transformers, livereloadinject.New(f.LiveReloadBaseURL))\n\t\t}\n\n\t\tif f.AddHugoGeneratorTag {\n\t\t\ttransformers = append(transformers, metainject.HugoGenerator)\n\t\t}\n\n\t}\n\n\tif p.min.MinifyOutput {\n\t\tminifyTransformer := p.min.Transformer(f.OutputFormat.MediaType)\n\t\tif minifyTransformer != nil {\n\t\t\ttransformers = append(transformers, minifyTransformer)\n\t\t}\n\t}\n\n\treturn transformers\n}",
+    "funcname": "createTransformerChain"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 224,
+    "focalfunc": "func (e *Email) Send() error",
+    "funcbody": "func (e *Email) Send() error {\n\tif e.Auth == nil {\n\t\te.Auth = smtp.PlainAuth(e.Identity, e.Username, e.Password, e.Host)\n\t}\n\n\tto := make([]string, 0, len(e.To)+len(e.Cc)+len(e.Bcc))\n\tto = append(append(append(to, e.To...), e.Cc...), e.Bcc...)\n\n\tif len(to) == 0 {\n\t\treturn errors.New(\"Must specify at least one To address\")\n\t}\n\n\tif len(e.From) == 0 {\n\t\te.From = e.Username\n\t}\n\n\tfrom, err := mail.ParseAddress(e.From)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\te.Subject = qEncode(\"utf-8\", e.Subject)\n\n\traw, err := e.Bytes()\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn smtp.SendMail(e.Host+\":\"+strconv.Itoa(e.Port), e.Auth, from.Address, to, raw)\n}",
+    "funcname": "Send"
+}

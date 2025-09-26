@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 103,
+    "focalfunc": "func (w *responseWriter) Written() bool",
+    "funcbody": "func (w *responseWriter) Written() bool {\n\treturn w.size != noWritten\n}",
+    "funcname": "Written"
+}

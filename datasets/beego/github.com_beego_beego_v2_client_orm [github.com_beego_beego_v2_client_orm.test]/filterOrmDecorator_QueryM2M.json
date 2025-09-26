@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 168,
+    "focalfunc": "func (f *filterOrmDecorator) QueryM2M(md interface{}, name string) QueryM2Mer",
+    "funcbody": "func (f *filterOrmDecorator) QueryM2M(md interface{}, name string) QueryM2Mer {\n\tmi, _ := defaultModelCache.GetByMd(md)\n\tinv := &Invocation{\n\t\tMethod:\t\t\"QueryM2M\",\n\t\tArgs:\t\t[]interface{}{md, name},\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres := f.ormer.QueryM2M(md, name)\n\t\t\treturn []interface{}{res}\n\t\t},\n\t}\n\tres := f.root(context.Background(), inv)\n\tif res[0] == nil {\n\t\treturn nil\n\t}\n\treturn res[0].(QueryM2Mer)\n}",
+    "funcname": "QueryM2M"
+}

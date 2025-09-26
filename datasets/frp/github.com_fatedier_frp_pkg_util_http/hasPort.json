@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/http.go",
+    "lineno": 70,
+    "focalfunc": "func hasPort(host string) bool",
+    "funcbody": "func hasPort(host string) bool {\n\tcolons := strings.Count(host, \":\")\n\tif colons == 0 {\n\t\treturn false\n\t}\n\tif colons == 1 {\n\t\treturn true\n\t}\n\treturn host[0] == '[' && strings.Contains(host, \"]:\")\n}",
+    "funcname": "hasPort"
+}

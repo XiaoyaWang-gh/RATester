@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 74,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Where(cond string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Where(cond string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"WHERE\", cond)\n\treturn qb\n}",
+    "funcname": "Where"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 65,
+    "focalfunc": "func (Self *copyBufferPool) New()",
+    "funcbody": "func (Self *copyBufferPool) New() {\n\tSelf.pool = sync.Pool{\n\t\tNew: func() interface{} {\n\t\t\treturn make([]byte, PoolSizeCopy, PoolSizeCopy)\n\t\t},\n\t}\n}",
+    "funcname": "New"
+}

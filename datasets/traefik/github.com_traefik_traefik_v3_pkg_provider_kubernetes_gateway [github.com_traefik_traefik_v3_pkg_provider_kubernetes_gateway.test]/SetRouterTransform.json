@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 151,
+    "focalfunc": "func (p *Provider) SetRouterTransform(routerTransform k8s.RouterTransform)",
+    "funcbody": "func (p *Provider) SetRouterTransform(routerTransform k8s.RouterTransform) {\n\tp.routerTransform = routerTransform\n}",
+    "funcname": "SetRouterTransform"
+}

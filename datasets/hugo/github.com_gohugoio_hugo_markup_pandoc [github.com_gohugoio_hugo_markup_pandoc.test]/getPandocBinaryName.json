@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/pandoc/convert.go",
+    "lineno": 72,
+    "focalfunc": "func getPandocBinaryName() string",
+    "funcbody": "func getPandocBinaryName() string {\n\tif hexec.InPath(pandocBinary) {\n\t\treturn pandocBinary\n\t}\n\treturn \"\"\n}",
+    "funcname": "getPandocBinaryName"
+}

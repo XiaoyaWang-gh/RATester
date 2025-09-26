@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 276,
+    "focalfunc": "func constructLayoutPath(typ, layout, variations, extension string) string",
+    "funcbody": "func constructLayoutPath(typ, layout, variations, extension string) string {\n\n\tif extension == \"\" && (layout == \"\" || variations == \"\") {\n\t\treturn \"\"\n\t}\n\n\tvar (\n\t\tp\tstrings.Builder\n\t\tneedDot\tbool\n\t)\n\n\tif typ != \"\" {\n\t\tp.WriteString(typ)\n\t\tp.WriteString(\"/\")\n\t}\n\n\tif layout != \"\" {\n\t\tp.WriteString(layout)\n\t\tneedDot = true\n\t}\n\n\tif variations != \"\" {\n\t\tif needDot {\n\t\t\tp.WriteString(\".\")\n\t\t}\n\t\tp.WriteString(variations)\n\t\tneedDot = true\n\t}\n\n\tif extension != \"\" {\n\t\tif needDot {\n\t\t\tp.WriteString(\".\")\n\t\t}\n\t\tp.WriteString(extension)\n\t}\n\n\treturn p.String()\n}",
+    "funcname": "constructLayoutPath"
+}

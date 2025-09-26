@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 210,
+    "focalfunc": "func (t *Template) execute(wr io.Writer, data any) (err error)",
+    "funcbody": "func (t *Template) execute(wr io.Writer, data any) (err error) {\n\tdefer errRecover(&err)\n\tvalue, ok := data.(reflect.Value)\n\tif !ok {\n\t\tvalue = reflect.ValueOf(data)\n\t}\n\tstate := &state{\n\t\ttmpl:\tt,\n\t\twr:\twr,\n\t\tvars:\t[]variable{{\"$\", value}},\n\t}\n\tif t.Tree == nil || t.Root == nil {\n\t\tstate.errorf(\"%q is an incomplete or empty template\", t.Name())\n\t}\n\tstate.walk(value, t.Root)\n\treturn\n}",
+    "funcname": "execute"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1904,
+    "focalfunc": "func (c *DefaultCtx) getMethodINT() int",
+    "funcbody": "func (c *DefaultCtx) getMethodINT() int {\n\treturn c.methodINT\n}",
+    "funcname": "getMethodINT"
+}

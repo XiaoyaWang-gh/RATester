@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rate_limiter.go",
+    "lineno": 78,
+    "focalfunc": "func RateLimiter(store RateLimiterStore) echo.MiddlewareFunc",
+    "funcbody": "func RateLimiter(store RateLimiterStore) echo.MiddlewareFunc {\n\tconfig := DefaultRateLimiterConfig\n\tconfig.Store = store\n\n\treturn RateLimiterWithConfig(config)\n}",
+    "funcname": "RateLimiter"
+}

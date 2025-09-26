@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 815,
+    "focalfunc": "func (c *Context) ShouldBindBodyWithPlain(obj any) error",
+    "funcbody": "func (c *Context) ShouldBindBodyWithPlain(obj any) error {\n\treturn c.ShouldBindBodyWith(obj, binding.Plain)\n}",
+    "funcname": "ShouldBindBodyWithPlain"
+}

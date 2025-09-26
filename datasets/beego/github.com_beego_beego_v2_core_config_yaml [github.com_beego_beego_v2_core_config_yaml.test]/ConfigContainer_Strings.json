@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 254,
+    "focalfunc": "func (c *ConfigContainer) Strings(key string) ([]string, error)",
+    "funcbody": "func (c *ConfigContainer) Strings(key string) ([]string, error) {\n\tv, err := c.String(key)\n\tif v == \"\" || err != nil {\n\t\treturn nil, err\n\t}\n\treturn strings.Split(v, \";\"), nil\n}",
+    "funcname": "Strings"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/mode.go",
+    "lineno": 56,
+    "focalfunc": "func SetMode(value string)",
+    "funcbody": "func SetMode(value string) {\n\tif value == \"\" {\n\t\tif flag.Lookup(\"test.v\") != nil {\n\t\t\tvalue = TestMode\n\t\t} else {\n\t\t\tvalue = DebugMode\n\t\t}\n\t}\n\n\tswitch value {\n\tcase DebugMode, \"\":\n\t\tatomic.StoreInt32(&ginMode, debugCode)\n\tcase ReleaseMode:\n\t\tatomic.StoreInt32(&ginMode, releaseCode)\n\tcase TestMode:\n\t\tatomic.StoreInt32(&ginMode, testCode)\n\tdefault:\n\t\tpanic(\"gin mode unknown: \" + value + \" (available mode: debug release test)\")\n\t}\n\tmodeName.Store(value)\n}",
+    "funcname": "SetMode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 93,
+    "focalfunc": "func NewBaseConfiger(reader func(ctx context.Context, key string) (string, error)) BaseConfiger",
+    "funcbody": "func NewBaseConfiger(reader func(ctx context.Context, key string) (string, error)) BaseConfiger {\n\treturn BaseConfiger{\n\t\treader: reader,\n\t}\n}",
+    "funcname": "NewBaseConfiger"
+}

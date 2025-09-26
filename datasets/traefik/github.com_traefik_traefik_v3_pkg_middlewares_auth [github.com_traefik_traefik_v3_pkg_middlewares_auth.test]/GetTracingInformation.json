@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/auth/forward.go",
+    "lineno": 120,
+    "focalfunc": "func (fa *forwardAuth) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (fa *forwardAuth) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn fa.name, typeNameForward, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

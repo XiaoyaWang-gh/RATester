@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_utils.go",
+    "lineno": 28,
+    "focalfunc": "func getDbAlias(name string) *alias",
+    "funcbody": "func getDbAlias(name string) *alias {\n\tif al, ok := dataBaseCache.get(name); ok {\n\t\treturn al\n\t}\n\tpanic(fmt.Errorf(\"unknown DataBase alias name %s\", name))\n}",
+    "funcname": "getDbAlias"
+}

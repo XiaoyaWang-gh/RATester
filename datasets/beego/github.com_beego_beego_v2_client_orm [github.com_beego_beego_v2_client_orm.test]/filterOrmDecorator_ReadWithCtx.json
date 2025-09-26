@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 84,
+    "focalfunc": "func (f *filterOrmDecorator) ReadWithCtx(ctx context.Context, md interface{}, cols ...string) error",
+    "funcbody": "func (f *filterOrmDecorator) ReadWithCtx(ctx context.Context, md interface{}, cols ...string) error {\n\tmi, _ := defaultModelCache.GetByMd(md)\n\tinv := &Invocation{\n\t\tMethod:\t\t\"ReadWithCtx\",\n\t\tArgs:\t\t[]interface{}{md, cols},\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\terr := f.ormer.ReadWithCtx(c, md, cols...)\n\t\t\treturn []interface{}{err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn f.convertError(res[0])\n}",
+    "funcname": "ReadWithCtx"
+}

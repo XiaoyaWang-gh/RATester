@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 188,
+    "focalfunc": "func encodeFloat(v reflect.Value, bits int) string",
+    "funcbody": "func encodeFloat(v reflect.Value, bits int) string {\n\treturn strconv.FormatFloat(v.Float(), 'f', 6, bits)\n}",
+    "funcname": "encodeFloat"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/ring_channel.go",
+    "lineno": 17,
+    "focalfunc": "func newRingChannel() *RingChannel",
+    "funcbody": "func newRingChannel() *RingChannel {\n\tch := &RingChannel{\n\t\tinput:\tmake(chan dynamic.Message),\n\t\toutput:\tmake(chan dynamic.Message),\n\t}\n\tgo ch.ringBuffer()\n\treturn ch\n}",
+    "funcname": "newRingChannel"
+}

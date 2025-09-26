@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 433,
+    "focalfunc": "func walkIdentitiesShallow(v any, level int, cb func(level int, id Identity) bool) bool",
+    "funcbody": "func walkIdentitiesShallow(v any, level int, cb func(level int, id Identity) bool) bool {\n\tcb2 := func(level int, id Identity) bool {\n\t\tif id == Anonymous {\n\t\t\treturn false\n\t\t}\n\t\tif id == nil {\n\t\t\treturn false\n\t\t}\n\t\treturn cb(level, id)\n\t}\n\n\tif id, ok := v.(Identity); ok {\n\t\tif cb2(level, id) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tif ipd, ok := v.(IdentityProvider); ok {\n\t\tif cb2(level, ipd.GetIdentity()) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tif ipdgp, ok := v.(IdentityGroupProvider); ok {\n\t\tif cb2(level, ipdgp.GetIdentityGroup()) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "walkIdentitiesShallow"
+}

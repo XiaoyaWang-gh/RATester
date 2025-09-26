@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 411,
+    "focalfunc": "func (c *Controller) StopRun()",
+    "funcbody": "func (c *Controller) StopRun() {\n\tpanic(ErrAbort)\n}",
+    "funcname": "StopRun"
+}

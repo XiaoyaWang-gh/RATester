@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/general_tcp.go",
+    "lineno": 43,
+    "focalfunc": "func NewGeneralTCPProxy(baseProxy *BaseProxy, _ v1.ProxyConfigurer) Proxy",
+    "funcbody": "func NewGeneralTCPProxy(baseProxy *BaseProxy, _ v1.ProxyConfigurer) Proxy {\n\treturn &GeneralTCPProxy{\n\t\tBaseProxy: baseProxy,\n\t}\n}",
+    "funcname": "NewGeneralTCPProxy"
+}

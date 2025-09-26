@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 272,
+    "focalfunc": "func ResolvePagerSize(conf config.AllProvider, options ...any) (int, error)",
+    "funcbody": "func ResolvePagerSize(conf config.AllProvider, options ...any) (int, error) {\n\tif len(options) == 0 {\n\t\treturn conf.Pagination().PagerSize, nil\n\t}\n\n\tif len(options) > 1 {\n\t\treturn -1, errors.New(\"too many arguments, 'pager size' is currently the only option\")\n\t}\n\n\tpas, err := cast.ToIntE(options[0])\n\n\tif err != nil || pas <= 0 {\n\t\treturn -1, errors.New((\"'pager size' must be a positive integer\"))\n\t}\n\n\treturn pas, nil\n}",
+    "funcname": "ResolvePagerSize"
+}

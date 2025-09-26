@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/limit/writer.go",
+    "lineno": 36,
+    "focalfunc": "func (w *Writer) Write(p []byte) (n int, err error)",
+    "funcbody": "func (w *Writer) Write(p []byte) (n int, err error) {\n\tvar nn int\n\tb := w.limiter.Burst()\n\tfor {\n\t\tend := len(p)\n\t\tif end == 0 {\n\t\t\tbreak\n\t\t}\n\t\tif b < len(p) {\n\t\t\tend = b\n\t\t}\n\t\terr = w.limiter.WaitN(context.Background(), end)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\n\t\tnn, err = w.w.Write(p[:end])\n\t\tn += nn\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tp = p[end:]\n\t}\n\treturn\n}",
+    "funcname": "Write"
+}

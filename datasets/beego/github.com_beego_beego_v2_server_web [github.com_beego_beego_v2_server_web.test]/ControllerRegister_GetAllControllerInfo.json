@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1353,
+    "focalfunc": "func (p *ControllerRegister) GetAllControllerInfo() (routerInfos []*ControllerInfo)",
+    "funcbody": "func (p *ControllerRegister) GetAllControllerInfo() (routerInfos []*ControllerInfo) {\n\tfor _, webTree := range p.routers {\n\t\tcomposeControllerInfos(webTree, &routerInfos)\n\t}\n\treturn\n}",
+    "funcname": "GetAllControllerInfo"
+}

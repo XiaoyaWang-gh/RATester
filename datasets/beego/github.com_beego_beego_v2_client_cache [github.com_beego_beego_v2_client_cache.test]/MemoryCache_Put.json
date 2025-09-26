@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 98,
+    "focalfunc": "func (bc *MemoryCache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error",
+    "funcbody": "func (bc *MemoryCache) Put(ctx context.Context, key string, val interface{}, timeout time.Duration) error {\n\tbc.Lock()\n\tdefer bc.Unlock()\n\tbc.items[key] = &MemoryItem{\n\t\tval:\t\tval,\n\t\tcreatedTime:\ttime.Now(),\n\t\tlifespan:\ttimeout,\n\t}\n\treturn nil\n}",
+    "funcname": "Put"
+}

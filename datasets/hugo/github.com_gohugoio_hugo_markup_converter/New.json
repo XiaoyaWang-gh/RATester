@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 68,
+    "focalfunc": "func (n newConverter) New(ctx DocumentContext) (Converter, error)",
+    "funcbody": "func (n newConverter) New(ctx DocumentContext) (Converter, error) {\n\treturn n.create(ctx)\n}",
+    "funcname": "New"
+}

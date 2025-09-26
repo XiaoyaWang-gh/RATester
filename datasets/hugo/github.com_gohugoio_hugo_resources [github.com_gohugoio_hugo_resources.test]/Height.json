@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/errorResource.go",
+    "lineno": 95,
+    "focalfunc": "func (e *errorResource) Height() int",
+    "funcbody": "func (e *errorResource) Height() int {\n\tpanic(e.ResourceError)\n}",
+    "funcname": "Height"
+}

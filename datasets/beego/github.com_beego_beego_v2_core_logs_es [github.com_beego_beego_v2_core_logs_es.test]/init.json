@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 121,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tlogs.Register(logs.AdapterEs, NewES)\n}",
+    "funcname": "init"
+}

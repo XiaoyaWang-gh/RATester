@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 196,
+    "focalfunc": "func InStrArr(arr []string, val string) bool",
+    "funcbody": "func InStrArr(arr []string, val string) bool {\n\tfor _, v := range arr {\n\t\tif v == val {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "InStrArr"
+}

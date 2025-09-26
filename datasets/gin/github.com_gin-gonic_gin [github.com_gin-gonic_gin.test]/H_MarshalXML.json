@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 57,
+    "focalfunc": "func (h H) MarshalXML(e *xml.Encoder, start xml.StartElement) error",
+    "funcbody": "func (h H) MarshalXML(e *xml.Encoder, start xml.StartElement) error {\n\tstart.Name = xml.Name{\n\t\tSpace:\t\"\",\n\t\tLocal:\t\"map\",\n\t}\n\tif err := e.EncodeToken(start); err != nil {\n\t\treturn err\n\t}\n\tfor key, value := range h {\n\t\telem := xml.StartElement{\n\t\t\tName:\txml.Name{Space: \"\", Local: key},\n\t\t\tAttr:\t[]xml.Attr{},\n\t\t}\n\t\tif err := e.EncodeElement(value, elem); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn e.EncodeToken(xml.EndElement{Name: start.Name})\n}",
+    "funcname": "MarshalXML"
+}

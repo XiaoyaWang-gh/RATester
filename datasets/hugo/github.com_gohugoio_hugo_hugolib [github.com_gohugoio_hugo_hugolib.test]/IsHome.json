@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 171,
+    "focalfunc": "func (p *pageMeta) IsHome() bool",
+    "funcbody": "func (p *pageMeta) IsHome() bool {\n\treturn p.Kind() == kinds.KindHome\n}",
+    "funcname": "IsHome"
+}

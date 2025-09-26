@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/plugins.go",
+    "lineno": 100,
+    "focalfunc": "func SetupLocalPlugins(plugins map[string]LocalDescriptor) error",
+    "funcbody": "func SetupLocalPlugins(plugins map[string]LocalDescriptor) error {\n\tif plugins == nil {\n\t\treturn nil\n\t}\n\n\tuniq := make(map[string]struct{})\n\n\tvar errs *multierror.Error\n\tfor pAlias, descriptor := range plugins {\n\t\tif descriptor.ModuleName == \"\" {\n\t\t\terrs = multierror.Append(errs, fmt.Errorf(\"%s: plugin name is missing\", pAlias))\n\t\t}\n\n\t\tif strings.HasPrefix(descriptor.ModuleName, \"/\") || strings.HasSuffix(descriptor.ModuleName, \"/\") {\n\t\t\terrs = multierror.Append(errs, fmt.Errorf(\"%s: plugin name should not start or end with a /\", pAlias))\n\t\t\tcontinue\n\t\t}\n\n\t\tif _, ok := uniq[descriptor.ModuleName]; ok {\n\t\t\terrs = multierror.Append(errs, fmt.Errorf(\"only one version of a plugin is allowed, there is a duplicate of %s\", descriptor.ModuleName))\n\t\t\tcontinue\n\t\t}\n\n\t\tuniq[descriptor.ModuleName] = struct{}{}\n\n\t\terr := checkLocalPluginManifest(descriptor)\n\t\terrs = multierror.Append(errs, err)\n\t}\n\n\treturn errs.ErrorOrNil()\n}",
+    "funcname": "SetupLocalPlugins"
+}

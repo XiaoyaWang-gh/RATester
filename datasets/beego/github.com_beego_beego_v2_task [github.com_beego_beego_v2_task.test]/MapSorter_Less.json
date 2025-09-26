@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 706,
+    "focalfunc": "func (ms *MapSorter) Less(i, j int) bool",
+    "funcbody": "func (ms *MapSorter) Less(i, j int) bool {\n\tif ms.Vals[i].GetNext(context.Background()).IsZero() {\n\t\treturn false\n\t}\n\tif ms.Vals[j].GetNext(context.Background()).IsZero() {\n\t\treturn true\n\t}\n\treturn ms.Vals[i].GetNext(context.Background()).Before(ms.Vals[j].GetNext(context.Background()))\n}",
+    "funcname": "Less"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 446,
+    "focalfunc": "func collectMethodsRecursive(pkg string, f []*ast.Field) []string",
+    "funcbody": "func collectMethodsRecursive(pkg string, f []*ast.Field) []string {\n\tvar methodNames []string\n\tfor _, m := range f {\n\t\tif m.Names != nil {\n\t\t\tmethodNames = append(methodNames, m.Names[0].Name)\n\t\t\tcontinue\n\t\t}\n\n\t\tif ident, ok := m.Type.(*ast.Ident); ok && ident.Obj != nil {\n\t\t\tswitch tt := ident.Obj.Decl.(*ast.TypeSpec).Type.(type) {\n\t\t\tcase *ast.InterfaceType:\n\n\t\t\t\tmethodNames = append(\n\t\t\t\t\tmethodNames,\n\t\t\t\t\tcollectMethodsRecursive(\n\t\t\t\t\t\tpkg,\n\t\t\t\t\t\ttt.Methods.List)...)\n\t\t\t}\n\t\t} else {\n\n\t\t\tname := packageName(m.Type)\n\t\t\tif !strings.Contains(name, \".\") {\n\n\t\t\t\tname = pkg + \".\" + name\n\t\t\t}\n\t\t\tmethodNames = append(methodNames, name)\n\t\t}\n\t}\n\n\treturn methodNames\n}",
+    "funcname": "collectMethodsRecursive"
+}

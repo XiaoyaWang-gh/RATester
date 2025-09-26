@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 147,
+    "focalfunc": "func (s BuildConfig) MatchCacheBuster(logger loggers.Logger, p string) (func(string) bool, error)",
+    "funcbody": "func (s BuildConfig) MatchCacheBuster(logger loggers.Logger, p string) (func(string) bool, error) {\n\tvar matchers []func(string) bool\n\tfor _, cb := range s.CacheBusters {\n\t\tif matcher := cb.compiledSource(p); matcher != nil {\n\t\t\tmatchers = append(matchers, matcher)\n\t\t}\n\t}\n\tif len(matchers) > 0 {\n\t\treturn (func(cacheKey string) bool {\n\t\t\tfor _, m := range matchers {\n\t\t\t\tif m(cacheKey) {\n\t\t\t\t\treturn true\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn false\n\t\t}), nil\n\t}\n\treturn nil, nil\n}",
+    "funcname": "MatchCacheBuster"
+}

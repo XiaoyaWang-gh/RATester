@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/expvar/expvar.go",
+    "lineno": 11,
+    "focalfunc": "func New(config ...Config) fiber.Handler",
+    "funcbody": "func New(config ...Config) fiber.Handler {\n\n\tcfg := configDefault(config...)\n\n\treturn func(c fiber.Ctx) error {\n\n\t\tif cfg.Next != nil && cfg.Next(c) {\n\t\t\treturn c.Next()\n\t\t}\n\n\t\tpath := c.Path()\n\n\t\tif len(path) < 11 || !strings.HasPrefix(path, \"/debug/vars\") {\n\t\t\treturn c.Next()\n\t\t}\n\t\tif path == \"/debug/vars\" {\n\t\t\texpvarhandler.ExpvarHandler(c.Context())\n\t\t\treturn nil\n\t\t}\n\n\t\treturn c.Redirect().To(\"/debug/vars\")\n\t}\n}",
+    "funcname": "New"
+}

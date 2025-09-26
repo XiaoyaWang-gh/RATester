@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/merge.go",
+    "lineno": 87,
+    "focalfunc": "func mergeMap(dst, src reflect.Value) reflect.Value",
+    "funcbody": "func mergeMap(dst, src reflect.Value) reflect.Value {\n\tout := reflect.MakeMap(dst.Type())\n\n\t_, lowerCase := dst.Interface().(maps.Params)\n\n\tfor _, key := range dst.MapKeys() {\n\t\tv := dst.MapIndex(key)\n\t\tout.SetMapIndex(key, v)\n\t}\n\n\tfor _, key := range src.MapKeys() {\n\t\tsv := src.MapIndex(key)\n\t\tdv, found := caseInsensitiveLookup(dst, key)\n\n\t\tif found {\n\n\t\t\tdve := dv.Elem()\n\t\t\tif dve.Kind() == reflect.Map {\n\t\t\t\tsve := sv.Elem()\n\t\t\t\tif sve.Kind() != reflect.Map {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\n\t\t\t\tif dve.Type().Key() == sve.Type().Key() {\n\t\t\t\t\tout.SetMapIndex(key, mergeMap(dve, sve))\n\t\t\t\t}\n\t\t\t}\n\t\t} else {\n\t\t\tif lowerCase && key.Kind() == reflect.String {\n\t\t\t\tkey = reflect.ValueOf(strings.ToLower(key.String()))\n\t\t\t}\n\t\t\tout.SetMapIndex(key, sv)\n\t\t}\n\t}\n\n\treturn out\n}",
+    "funcname": "mergeMap"
+}

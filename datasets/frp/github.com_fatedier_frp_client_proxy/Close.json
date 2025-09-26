@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/udp.go",
+    "lineno": 73,
+    "focalfunc": "func (pxy *UDPProxy) Close()",
+    "funcbody": "func (pxy *UDPProxy) Close() {\n\tpxy.mu.Lock()\n\tdefer pxy.mu.Unlock()\n\n\tif !pxy.closed {\n\t\tpxy.closed = true\n\t\tif pxy.workConn != nil {\n\t\t\tpxy.workConn.Close()\n\t\t}\n\t\tif pxy.readCh != nil {\n\t\t\tclose(pxy.readCh)\n\t\t}\n\t\tif pxy.sendCh != nil {\n\t\t\tclose(pxy.sendCh)\n\t\t}\n\t}\n}",
+    "funcname": "Close"
+}

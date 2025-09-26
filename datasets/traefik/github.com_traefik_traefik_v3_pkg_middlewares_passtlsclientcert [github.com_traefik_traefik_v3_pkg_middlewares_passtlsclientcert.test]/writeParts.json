@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 310,
+    "focalfunc": "func writeParts(ctx context.Context, content io.StringWriter, entries []string, prefix string)",
+    "funcbody": "func writeParts(ctx context.Context, content io.StringWriter, entries []string, prefix string) {\n\tfor _, entry := range entries {\n\t\twritePart(ctx, content, entry, prefix)\n\t}\n}",
+    "funcname": "writeParts"
+}

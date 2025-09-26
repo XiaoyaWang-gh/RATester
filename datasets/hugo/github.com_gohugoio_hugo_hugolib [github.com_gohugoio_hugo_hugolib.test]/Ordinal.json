@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 740,
+    "focalfunc": "func (p pageWithOrdinal) Ordinal() int",
+    "funcbody": "func (p pageWithOrdinal) Ordinal() int {\n\treturn p.ordinal\n}",
+    "funcname": "Ordinal"
+}

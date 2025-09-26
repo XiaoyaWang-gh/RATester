@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 250,
+    "focalfunc": "func (sv *XTCPVisitor) getTunnelConn() (net.Conn, error)",
+    "funcbody": "func (sv *XTCPVisitor) getTunnelConn() (net.Conn, error) {\n\tconn, err := sv.session.OpenConn(sv.ctx)\n\tif err == nil {\n\t\treturn conn, nil\n\t}\n\tsv.session.Close()\n\n\tselect {\n\tcase sv.startTunnelCh <- struct{}{}:\n\tdefault:\n\t}\n\treturn nil, err\n}",
+    "funcname": "getTunnelConn"
+}

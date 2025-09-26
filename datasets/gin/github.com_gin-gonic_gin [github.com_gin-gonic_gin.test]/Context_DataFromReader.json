@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1086,
+    "focalfunc": "func (c *Context) DataFromReader(code int, contentLength int64, contentType string, reader io.Reader, extraHeaders map[string]string)",
+    "funcbody": "func (c *Context) DataFromReader(code int, contentLength int64, contentType string, reader io.Reader, extraHeaders map[string]string) {\n\tc.Render(code, render.Reader{\n\t\tHeaders:\textraHeaders,\n\t\tContentType:\tcontentType,\n\t\tContentLength:\tcontentLength,\n\t\tReader:\t\treader,\n\t})\n}",
+    "funcname": "DataFromReader"
+}

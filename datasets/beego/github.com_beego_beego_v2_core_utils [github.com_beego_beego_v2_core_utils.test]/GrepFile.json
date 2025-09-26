@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/file.go",
+    "lineno": 62,
+    "focalfunc": "func GrepFile(patten string, filename string) (lines []string, err error)",
+    "funcbody": "func GrepFile(patten string, filename string) (lines []string, err error) {\n\tre, err := regexp.Compile(patten)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tfd, err := os.Open(filename)\n\tif err != nil {\n\t\treturn\n\t}\n\tdefer fd.Close()\n\tlines = make([]string, 0)\n\treader := bufio.NewReader(fd)\n\tprefix := \"\"\n\tvar isLongLine bool\n\tfor {\n\t\tbyteLine, isPrefix, er := reader.ReadLine()\n\t\tif er != nil && er != io.EOF {\n\t\t\treturn nil, er\n\t\t}\n\t\tif er == io.EOF {\n\t\t\tbreak\n\t\t}\n\t\tline := string(byteLine)\n\t\tif isPrefix {\n\t\t\tprefix += line\n\t\t\tcontinue\n\t\t} else {\n\t\t\tisLongLine = true\n\t\t}\n\n\t\tline = prefix + line\n\t\tif isLongLine {\n\t\t\tprefix = \"\"\n\t\t}\n\t\tif re.MatchString(line) {\n\t\t\tlines = append(lines, line)\n\t\t}\n\t}\n\treturn lines, nil\n}",
+    "funcname": "GrepFile"
+}

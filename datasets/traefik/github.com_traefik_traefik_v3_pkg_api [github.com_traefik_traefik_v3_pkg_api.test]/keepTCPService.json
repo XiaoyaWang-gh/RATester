@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_tcp.go",
+    "lineno": 244,
+    "focalfunc": "func keepTCPService(name string, item *runtime.TCPServiceInfo, criterion *searchCriterion) bool",
+    "funcbody": "func keepTCPService(name string, item *runtime.TCPServiceInfo, criterion *searchCriterion) bool {\n\tif criterion == nil {\n\t\treturn true\n\t}\n\n\treturn criterion.withStatus(item.Status) && criterion.searchIn(name)\n}",
+    "funcname": "keepTCPService"
+}

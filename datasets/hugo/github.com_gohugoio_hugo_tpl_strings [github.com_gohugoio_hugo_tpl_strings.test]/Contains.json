@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 133,
+    "focalfunc": "func (ns *Namespace) Contains(s, substr any) (bool, error)",
+    "funcbody": "func (ns *Namespace) Contains(s, substr any) (bool, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\tsu, err := cast.ToStringE(substr)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\treturn strings.Contains(ss, su), nil\n}",
+    "funcname": "Contains"
+}

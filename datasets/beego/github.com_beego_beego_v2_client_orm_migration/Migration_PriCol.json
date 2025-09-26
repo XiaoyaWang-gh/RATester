@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 88,
+    "focalfunc": "func (m *Migration) PriCol(name string) *Column",
+    "funcbody": "func (m *Migration) PriCol(name string) *Column {\n\tcol := &Column{Name: name}\n\tm.AddColumns(col)\n\tm.AddPrimary(col)\n\treturn col\n}",
+    "funcname": "PriCol"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/console.go",
+    "lineno": 76,
+    "focalfunc": "func newConsole() *consoleWriter",
+    "funcbody": "func newConsole() *consoleWriter {\n\tcw := &consoleWriter{\n\t\tlg:\t\tnewLogWriter(ansicolor.NewAnsiColorWriter(os.Stdout)),\n\t\tLevel:\t\tLevelDebug,\n\t\tColorful:\ttrue,\n\t}\n\tcw.formatter = cw\n\treturn cw\n}",
+    "funcname": "newConsole"
+}

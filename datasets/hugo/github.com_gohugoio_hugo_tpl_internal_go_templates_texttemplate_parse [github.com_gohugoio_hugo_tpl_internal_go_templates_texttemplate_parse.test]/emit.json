@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 179,
+    "focalfunc": "func (l *lexer) emit(t itemType) stateFn",
+    "funcbody": "func (l *lexer) emit(t itemType) stateFn {\n\treturn l.emitItem(l.thisItem(t))\n}",
+    "funcname": "emit"
+}

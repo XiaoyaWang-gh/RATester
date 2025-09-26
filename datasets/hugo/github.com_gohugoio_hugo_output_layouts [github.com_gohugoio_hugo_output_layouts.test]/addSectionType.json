@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 120,
+    "focalfunc": "func (l *layoutBuilder) addSectionType()",
+    "funcbody": "func (l *layoutBuilder) addSectionType() {\n\tif l.d.Section != \"\" {\n\t\tl.addTypeVariations(l.d.Section)\n\t}\n}",
+    "funcname": "addSectionType"
+}

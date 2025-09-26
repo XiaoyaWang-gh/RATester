@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/addprefix/add_prefix.go",
+    "lineno": 42,
+    "focalfunc": "func (a *addPrefix) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (a *addPrefix) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn a.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

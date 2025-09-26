@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 625,
+    "focalfunc": "func (*testConn) RemoteAddr() net.Addr",
+    "funcbody": "func (*testConn) RemoteAddr() net.Addr\t{ return &net.TCPAddr{Port: 0, Zone: \"\", IP: net.IPv4zero} }",
+    "funcname": "RemoteAddr"
+}

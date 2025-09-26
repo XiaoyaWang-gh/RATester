@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 318,
+    "focalfunc": "func (rn *contentParseInfo) mapFrontMatter(source []byte) error",
+    "funcbody": "func (rn *contentParseInfo) mapFrontMatter(source []byte) error {\n\tif len(rn.itemsStep1) == 0 {\n\t\treturn nil\n\t}\n\titer := pageparser.NewIterator(rn.itemsStep1)\n\nLoop:\n\tfor {\n\t\tit := iter.Next()\n\t\tswitch {\n\t\tcase it.IsFrontMatter():\n\t\t\tif err := rn.parseFrontMatter(it, iter, source); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tnext := iter.Peek()\n\t\t\tif !next.IsDone() {\n\t\t\t\trn.posMainContent = next.Pos()\n\t\t\t}\n\n\t\t\tbreak Loop\n\t\tcase it.IsEOF():\n\t\t\tbreak Loop\n\t\tcase it.IsError():\n\t\t\treturn rn.failMap(source, it.Err, it)\n\t\tdefault:\n\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "mapFrontMatter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/i18n.go",
+    "lineno": 184,
+    "focalfunc": "func toPluralCountValue(in any) any",
+    "funcbody": "func toPluralCountValue(in any) any {\n\tk := reflect.TypeOf(in).Kind()\n\tswitch {\n\tcase hreflect.IsFloat(k):\n\t\tf := cast.ToString(in)\n\t\tif !strings.Contains(f, \".\") {\n\t\t\tf += \".0\"\n\t\t}\n\t\treturn f\n\tcase k == reflect.String:\n\t\tif _, err := cast.ToFloat64E(in); err == nil {\n\t\t\treturn in\n\t\t}\n\n\t\treturn nil\n\tdefault:\n\t\tif i, err := cast.ToIntE(in); err == nil {\n\t\t\treturn i\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "toPluralCountValue"
+}

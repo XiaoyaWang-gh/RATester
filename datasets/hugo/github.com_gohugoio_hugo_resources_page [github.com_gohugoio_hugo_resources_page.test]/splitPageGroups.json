@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 229,
+    "focalfunc": "func splitPageGroups(pageGroups PagesGroup, size int) []paginatedElement",
+    "funcbody": "func splitPageGroups(pageGroups PagesGroup, size int) []paginatedElement {\n\ttype keyPage struct {\n\t\tkey\tany\n\t\tpage\tPage\n\t}\n\n\tvar (\n\t\tsplit\t\t[]paginatedElement\n\t\tflattened\t[]keyPage\n\t)\n\n\tfor _, g := range pageGroups {\n\t\tfor _, p := range g.Pages {\n\t\t\tflattened = append(flattened, keyPage{g.Key, p})\n\t\t}\n\t}\n\n\tnumPages := len(flattened)\n\n\tfor low, j := 0, numPages; low < j; low += size {\n\t\thigh := int(math.Min(float64(low+size), float64(numPages)))\n\n\t\tvar (\n\t\t\tpg\t\tPagesGroup\n\t\t\tkey\t\tany\n\t\t\tgroupIndex\t= -1\n\t\t)\n\n\t\tfor k := low; k < high; k++ {\n\t\t\tkp := flattened[k]\n\t\t\tif key == nil || key != kp.key {\n\t\t\t\tkey = kp.key\n\t\t\t\tpg = append(pg, PageGroup{Key: key})\n\t\t\t\tgroupIndex++\n\t\t\t}\n\t\t\tpg[groupIndex].Pages = append(pg[groupIndex].Pages, kp.page)\n\t\t}\n\t\tsplit = append(split, pg)\n\t}\n\n\treturn split\n}",
+    "funcname": "splitPageGroups"
+}

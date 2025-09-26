@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 43,
+    "focalfunc": "func (el *esLogger) Format(lm *logs.LogMsg) string",
+    "funcbody": "func (el *esLogger) Format(lm *logs.LogMsg) string {\n\tmsg := lm.OldStyleFormat()\n\tidx := LogDocument{\n\t\tTimestamp:\tlm.When.Format(time.RFC3339),\n\t\tMsg:\t\tmsg,\n\t}\n\tbody, err := json.Marshal(idx)\n\tif err != nil {\n\t\treturn msg\n\t}\n\treturn string(body)\n}",
+    "funcname": "Format"
+}

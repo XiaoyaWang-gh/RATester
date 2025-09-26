@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/value.go",
+    "lineno": 65,
+    "focalfunc": "func GetRenderedConfFromFile(path string) (out []byte, err error)",
+    "funcbody": "func GetRenderedConfFromFile(path string) (out []byte, err error) {\n\tvar b []byte\n\tb, err = os.ReadFile(path)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tout, err = RenderContent(b)\n\treturn\n}",
+    "funcname": "GetRenderedConfFromFile"
+}

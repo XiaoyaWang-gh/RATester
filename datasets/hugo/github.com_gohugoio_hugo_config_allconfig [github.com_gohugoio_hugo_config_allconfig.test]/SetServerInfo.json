@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 473,
+    "focalfunc": "func (c *ConfigCompiled) SetServerInfo(baseURL, baseURLLiveReload urls.BaseURL, serverInterface string)",
+    "funcbody": "func (c *ConfigCompiled) SetServerInfo(baseURL, baseURLLiveReload urls.BaseURL, serverInterface string) {\n\tc.BaseURL = baseURL\n\tc.BaseURLLiveReload = baseURLLiveReload\n\tc.ServerInterface = serverInterface\n}",
+    "funcname": "SetServerInfo"
+}

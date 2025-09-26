@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 32,
+    "focalfunc": "func NewTreeShiftTree[T comparable](d, length int) *TreeShiftTree[T]",
+    "funcbody": "func NewTreeShiftTree[T comparable](d, length int) *TreeShiftTree[T] {\n\tif length <= 0 {\n\t\tpanic(\"length must be > 0\")\n\t}\n\ttrees := make([]*SimpleTree[T], length)\n\tfor i := 0; i < length; i++ {\n\t\ttrees[i] = NewSimpleTree[T]()\n\t}\n\treturn &TreeShiftTree[T]{d: d, trees: trees}\n}",
+    "funcname": "NewTreeShiftTree"
+}

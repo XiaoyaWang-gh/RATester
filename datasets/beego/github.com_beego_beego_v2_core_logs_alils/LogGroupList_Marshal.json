@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 298,
+    "focalfunc": "func (m *LogGroupList) Marshal() (data []byte, err error)",
+    "funcbody": "func (m *LogGroupList) Marshal() (data []byte, err error) {\n\tsize := m.Size()\n\tdata = make([]byte, size)\n\tn, err := m.MarshalTo(data)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn data[:n], nil\n}",
+    "funcname": "Marshal"
+}

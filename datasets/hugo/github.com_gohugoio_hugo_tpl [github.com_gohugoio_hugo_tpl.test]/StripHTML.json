@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/template.go",
+    "lineno": 215,
+    "focalfunc": "func StripHTML(s string) string",
+    "funcbody": "func StripHTML(s string) string {\n\n\tif !strings.ContainsAny(s, \"<>\") {\n\t\treturn s\n\t}\n\n\tpre := stripHTMLReplacerPre.Replace(s)\n\tpreReplaced := pre != s\n\n\ts = htmltemplate.StripTags(pre)\n\n\tif preReplaced {\n\t\ts = strings.ReplaceAll(s, hugoNewLinePlaceholder, \"\\n\")\n\t}\n\n\tvar wasSpace bool\n\tb := bp.GetBuffer()\n\tdefer bp.PutBuffer(b)\n\tfor _, r := range s {\n\t\tisSpace := unicode.IsSpace(r)\n\t\tif !(isSpace && wasSpace) {\n\t\t\tb.WriteRune(r)\n\t\t}\n\t\twasSpace = isSpace\n\t}\n\n\tif b.Len() > 0 {\n\t\ts = b.String()\n\t}\n\n\treturn s\n}",
+    "funcname": "StripHTML"
+}

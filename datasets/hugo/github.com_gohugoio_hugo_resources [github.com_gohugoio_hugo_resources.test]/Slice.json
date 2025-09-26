@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 281,
+    "focalfunc": "func (commonResource) Slice(in any) (any, error)",
+    "funcbody": "func (commonResource) Slice(in any) (any, error) {\n\tswitch items := in.(type) {\n\tcase resource.Resources:\n\t\treturn items, nil\n\tcase []any:\n\t\tgroups := make(resource.Resources, len(items))\n\t\tfor i, v := range items {\n\t\t\tg, ok := v.(resource.Resource)\n\t\t\tif !ok {\n\t\t\t\treturn nil, fmt.Errorf(\"type %T is not a Resource\", v)\n\t\t\t}\n\t\t\tgroups[i] = g\n\t\t\t{\n\t\t\t}\n\t\t}\n\t\treturn groups, nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"invalid slice type %T\", items)\n\t}\n}",
+    "funcname": "Slice"
+}

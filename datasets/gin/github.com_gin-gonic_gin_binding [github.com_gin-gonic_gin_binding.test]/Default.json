@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/binding.go",
+    "lineno": 93,
+    "focalfunc": "func Default(method, contentType string) Binding",
+    "funcbody": "func Default(method, contentType string) Binding {\n\tif method == http.MethodGet {\n\t\treturn Form\n\t}\n\n\tswitch contentType {\n\tcase MIMEJSON:\n\t\treturn JSON\n\tcase MIMEXML, MIMEXML2:\n\t\treturn XML\n\tcase MIMEPROTOBUF:\n\t\treturn ProtoBuf\n\tcase MIMEMSGPACK, MIMEMSGPACK2:\n\t\treturn MsgPack\n\tcase MIMEYAML, MIMEYAML2:\n\t\treturn YAML\n\tcase MIMETOML:\n\t\treturn TOML\n\tcase MIMEMultipartPOSTForm:\n\t\treturn FormMultipart\n\tdefault:\n\t\treturn Form\n\t}\n}",
+    "funcname": "Default"
+}

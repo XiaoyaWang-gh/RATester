@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 51,
+    "focalfunc": "func (fi *File) Path() string",
+    "funcbody": "func (fi *File) Path() string\t{ return filepath.Join(fi.p().Dir()[1:], fi.p().Name()) }",
+    "funcname": "Path"
+}

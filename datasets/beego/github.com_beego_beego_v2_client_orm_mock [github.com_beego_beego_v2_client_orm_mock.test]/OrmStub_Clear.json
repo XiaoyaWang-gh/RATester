@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock.go",
+    "lineno": 52,
+    "focalfunc": "func (o *OrmStub) Clear()",
+    "funcbody": "func (o *OrmStub) Clear() {\n\to.ms = make([]*Mock, 0, 4)\n}",
+    "funcname": "Clear"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 65,
+    "focalfunc": "func (p *pagesFromDataTemplateContext) toPathMap(v any) (string, map[string]any, error)",
+    "funcbody": "func (p *pagesFromDataTemplateContext) toPathMap(v any) (string, map[string]any, error) {\n\tm, err := maps.ToStringMapE(v)\n\tif err != nil {\n\t\treturn \"\", nil, err\n\t}\n\tpathv, ok := m[\"path\"]\n\tif !ok {\n\t\treturn \"\", nil, fmt.Errorf(\"path not set\")\n\t}\n\tpath, err := cast.ToStringE(pathv)\n\tif err != nil || path == \"\" {\n\t\treturn \"\", nil, fmt.Errorf(\"invalid path %q\", path)\n\t}\n\treturn path, m, nil\n}",
+    "funcname": "toPathMap"
+}

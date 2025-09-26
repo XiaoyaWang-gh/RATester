@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 148,
+    "focalfunc": "func (ctx *RenderContextDataHolder) RenderContext() converter.RenderContext",
+    "funcbody": "func (ctx *RenderContextDataHolder) RenderContext() converter.RenderContext {\n\treturn ctx.Rctx\n}",
+    "funcname": "RenderContext"
+}

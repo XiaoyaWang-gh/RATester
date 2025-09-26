@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/nomad.go",
+    "lineno": 226,
+    "focalfunc": "func (p *Provider) loadConfiguration(ctx context.Context, configurationC chan<- dynamic.Message) error",
+    "funcbody": "func (p *Provider) loadConfiguration(ctx context.Context, configurationC chan<- dynamic.Message) error {\n\tvar items []item\n\tvar err error\n\tif p.AllowEmptyServices {\n\t\titems, err = p.getNomadServiceDataWithEmptyServices(ctx)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t} else {\n\t\titems, err = p.getNomadServiceData(ctx)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tconfigurationC <- dynamic.Message{\n\t\tProviderName:\tp.name,\n\t\tConfiguration:\tp.buildConfig(ctx, items),\n\t}\n\n\treturn nil\n}",
+    "funcname": "loadConfiguration"
+}

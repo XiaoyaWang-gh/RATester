@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 103,
+    "focalfunc": "func (https *HttpsServer) handleHttps(c net.Conn)",
+    "funcbody": "func (https *HttpsServer) handleHttps(c net.Conn) {\n\thostName, rb := GetServerNameFromClientHello(c)\n\tvar targetAddr string\n\tr := buildHttpsRequest(hostName)\n\tvar host *file.Host\n\tvar err error\n\tif host, err = file.GetDb().GetInfoByHost(hostName, r); err != nil {\n\t\tc.Close()\n\t\tlogs.Notice(\"the url %s can't be parsed!\", hostName)\n\t\treturn\n\t}\n\tif err := https.CheckFlowAndConnNum(host.Client); err != nil {\n\t\tlogs.Warn(\"client id %d, host id %d, error %s, when https connection\", host.Client.Id, host.Id, err.Error())\n\t\tc.Close()\n\t\treturn\n\t}\n\tdefer host.Client.AddConn()\n\tif err = https.auth(r, conn.NewConn(c), host.Client.Cnf.U, host.Client.Cnf.P); err != nil {\n\t\tlogs.Warn(\"auth error\", err, r.RemoteAddr)\n\t\treturn\n\t}\n\tif targetAddr, err = host.Target.GetRandomTarget(); err != nil {\n\t\tlogs.Warn(err.Error())\n\t}\n\tlogs.Trace(\"new https connection,clientId %d,host %s,remote address %s\", host.Client.Id, r.Host, c.RemoteAddr().String())\n\thttps.DealClient(conn.NewConn(c), host.Client, targetAddr, rb, common.CONN_TCP, nil, host.Flow, host.Target.LocalProxy)\n}",
+    "funcname": "handleHttps"
+}

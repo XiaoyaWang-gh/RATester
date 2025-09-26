@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/simpletree.go",
+    "lineno": 31,
+    "focalfunc": "func NewSimpleTree[T comparable]() *SimpleTree[T]",
+    "funcbody": "func NewSimpleTree[T comparable]() *SimpleTree[T] {\n\treturn &SimpleTree[T]{tree: radix.New()}\n}",
+    "funcname": "NewSimpleTree"
+}

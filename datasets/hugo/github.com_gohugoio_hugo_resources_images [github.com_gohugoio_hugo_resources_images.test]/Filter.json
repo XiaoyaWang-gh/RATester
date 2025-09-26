@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 274,
+    "focalfunc": "func (p *ImageProcessor) Filter(src image.Image, filters ...gift.Filter) (image.Image, error)",
+    "funcbody": "func (p *ImageProcessor) Filter(src image.Image, filters ...gift.Filter) (image.Image, error) {\n\treturn p.doFilter(src, 0, filters...)\n}",
+    "funcname": "Filter"
+}

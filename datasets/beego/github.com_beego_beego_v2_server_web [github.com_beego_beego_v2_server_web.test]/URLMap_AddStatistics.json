@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/statistics.go",
+    "lineno": 45,
+    "focalfunc": "func (m *URLMap) AddStatistics(requestMethod, requestURL, requestController string, requesttime time.Duration)",
+    "funcbody": "func (m *URLMap) AddStatistics(requestMethod, requestURL, requestController string, requesttime time.Duration) {\n\tm.lock.Lock()\n\tdefer m.lock.Unlock()\n\tif method, ok := m.urlmap[requestURL]; ok {\n\t\tif s, ok := method[requestMethod]; ok {\n\t\t\ts.RequestNum++\n\t\t\tif s.MaxTime < requesttime {\n\t\t\t\ts.MaxTime = requesttime\n\t\t\t}\n\t\t\tif s.MinTime > requesttime {\n\t\t\t\ts.MinTime = requesttime\n\t\t\t}\n\t\t\ts.TotalTime += requesttime\n\t\t} else {\n\t\t\tnb := &Statistics{\n\t\t\t\tRequestURL:\t\trequestURL,\n\t\t\t\tRequestController:\trequestController,\n\t\t\t\tRequestNum:\t\t1,\n\t\t\t\tMinTime:\t\trequesttime,\n\t\t\t\tMaxTime:\t\trequesttime,\n\t\t\t\tTotalTime:\t\trequesttime,\n\t\t\t}\n\t\t\tm.urlmap[requestURL][requestMethod] = nb\n\t\t}\n\t} else {\n\t\tif m.LengthLimit > 0 && m.LengthLimit <= len(m.urlmap) {\n\t\t\treturn\n\t\t}\n\t\tmethodmap := make(map[string]*Statistics)\n\t\tnb := &Statistics{\n\t\t\tRequestURL:\t\trequestURL,\n\t\t\tRequestController:\trequestController,\n\t\t\tRequestNum:\t\t1,\n\t\t\tMinTime:\t\trequesttime,\n\t\t\tMaxTime:\t\trequesttime,\n\t\t\tTotalTime:\t\trequesttime,\n\t\t}\n\t\tmethodmap[requestMethod] = nb\n\t\tm.urlmap[requestURL] = methodmap\n\t}\n}",
+    "funcname": "AddStatistics"
+}

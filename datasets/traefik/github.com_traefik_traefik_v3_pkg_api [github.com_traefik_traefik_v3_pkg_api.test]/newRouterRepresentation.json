@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 23,
+    "focalfunc": "func newRouterRepresentation(name string, rt *runtime.RouterInfo) routerRepresentation",
+    "funcbody": "func newRouterRepresentation(name string, rt *runtime.RouterInfo) routerRepresentation {\n\tif rt.TLS != nil && rt.TLS.Options == \"\" {\n\t\trt.TLS.Options = tls.DefaultTLSConfigName\n\t}\n\n\treturn routerRepresentation{\n\t\tRouterInfo:\trt,\n\t\tName:\t\tname,\n\t\tProvider:\tgetProviderName(name),\n\t}\n}",
+    "funcname": "newRouterRepresentation"
+}

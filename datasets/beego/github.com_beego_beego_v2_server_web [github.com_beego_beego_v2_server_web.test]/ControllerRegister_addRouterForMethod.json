@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 261,
+    "focalfunc": "func (p *ControllerRegister) addRouterForMethod(route *ControllerInfo)",
+    "funcbody": "func (p *ControllerRegister) addRouterForMethod(route *ControllerInfo) {\n\tif len(route.methods) == 0 {\n\t\tfor m := range HTTPMETHOD {\n\t\t\tp.addToRouter(m, route.pattern, route)\n\t\t}\n\t\treturn\n\t}\n\tfor k := range route.methods {\n\t\tif k != \"*\" {\n\t\t\tp.addToRouter(k, route.pattern, route)\n\t\t\tcontinue\n\t\t}\n\t\tfor m := range HTTPMETHOD {\n\t\t\tp.addToRouter(m, route.pattern, route)\n\t\t}\n\t}\n}",
+    "funcname": "addRouterForMethod"
+}

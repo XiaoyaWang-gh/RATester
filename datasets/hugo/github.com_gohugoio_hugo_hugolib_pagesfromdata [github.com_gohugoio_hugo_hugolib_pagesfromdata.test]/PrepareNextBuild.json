@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 257,
+    "focalfunc": "func (b *BuildState) PrepareNextBuild()",
+    "funcbody": "func (b *BuildState) PrepareNextBuild() {\n\tb.sourceInfosPrevious = b.sourceInfosCurrent\n\tb.sourceInfosCurrent = maps.NewCache[string, *sourceInfo]()\n\tb.StaleVersion = 0\n\tb.DeletedPaths = nil\n\tb.ChangedIdentities = nil\n\tb.NumPagesAdded = 0\n\tb.NumResourcesAdded = 0\n}",
+    "funcname": "PrepareNextBuild"
+}

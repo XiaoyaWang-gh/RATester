@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 292,
+    "focalfunc": "func parseTag(tag string) (string, tagOptions)",
+    "funcbody": "func parseTag(tag string) (string, tagOptions) {\n\ts := strings.Split(tag, \",\")\n\treturn s[0], s[1:]\n}",
+    "funcname": "parseTag"
+}

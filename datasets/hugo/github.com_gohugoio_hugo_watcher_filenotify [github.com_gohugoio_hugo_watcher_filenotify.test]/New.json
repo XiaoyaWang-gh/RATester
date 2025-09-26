@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/filenotify.go",
+    "lineno": 25,
+    "focalfunc": "func New(interval time.Duration) (FileWatcher, error)",
+    "funcbody": "func New(interval time.Duration) (FileWatcher, error) {\n\tif watcher, err := NewEventWatcher(); err == nil {\n\t\treturn watcher, nil\n\t}\n\treturn NewPollingWatcher(interval), nil\n}",
+    "funcname": "New"
+}

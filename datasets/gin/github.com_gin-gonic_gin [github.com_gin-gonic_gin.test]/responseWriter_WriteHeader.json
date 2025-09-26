@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 64,
+    "focalfunc": "func (w *responseWriter) WriteHeader(code int)",
+    "funcbody": "func (w *responseWriter) WriteHeader(code int) {\n\tif code > 0 && w.status != code {\n\t\tif w.Written() {\n\t\t\tdebugPrint(\"[WARNING] Headers were already written. Wanted to override status code %d with %d\", w.status, code)\n\t\t\treturn\n\t\t}\n\t\tw.status = code\n\t}\n}",
+    "funcname": "WriteHeader"
+}

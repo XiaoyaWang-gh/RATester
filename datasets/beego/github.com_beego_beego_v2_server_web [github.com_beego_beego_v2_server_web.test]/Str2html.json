@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 193,
+    "focalfunc": "func Str2html(raw string) template.HTML",
+    "funcbody": "func Str2html(raw string) template.HTML {\n\treturn template.HTML(raw)\n}",
+    "funcname": "Str2html"
+}

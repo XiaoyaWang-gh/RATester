@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/headermodifier/response_header_modifier.go",
+    "lineno": 38,
+    "focalfunc": "func (r *responseHeaderModifier) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (r *responseHeaderModifier) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn r.name, responseHeaderModifierTypeName, trace.SpanKindUnspecified\n}",
+    "funcname": "GetTracingInformation"
+}

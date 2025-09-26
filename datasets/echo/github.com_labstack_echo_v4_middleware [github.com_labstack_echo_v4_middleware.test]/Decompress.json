@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/decompress.go",
+    "lineno": 47,
+    "focalfunc": "func Decompress() echo.MiddlewareFunc",
+    "funcbody": "func Decompress() echo.MiddlewareFunc {\n\treturn DecompressWithConfig(DefaultDecompressConfig)\n}",
+    "funcname": "Decompress"
+}

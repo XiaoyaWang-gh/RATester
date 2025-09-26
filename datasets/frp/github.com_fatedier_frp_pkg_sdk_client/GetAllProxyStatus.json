@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 58,
+    "focalfunc": "func (c *Client) GetAllProxyStatus(ctx context.Context) (client.StatusResp, error)",
+    "funcbody": "func (c *Client) GetAllProxyStatus(ctx context.Context) (client.StatusResp, error) {\n\treq, err := http.NewRequestWithContext(ctx, \"GET\", \"http://\"+c.address+\"/api/status\", nil)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tcontent, err := c.do(req)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tallStatus := make(client.StatusResp)\n\tif err = json.Unmarshal([]byte(content), &allStatus); err != nil {\n\t\treturn nil, fmt.Errorf(\"unmarshal http response error: %s\", strings.TrimSpace(content))\n\t}\n\treturn allStatus, nil\n}",
+    "funcname": "GetAllProxyStatus"
+}

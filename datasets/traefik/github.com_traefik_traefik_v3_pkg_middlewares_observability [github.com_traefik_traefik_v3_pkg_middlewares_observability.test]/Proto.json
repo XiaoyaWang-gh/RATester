@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/observability.go",
+    "lineno": 18,
+    "focalfunc": "func Proto(proto string) string",
+    "funcbody": "func Proto(proto string) string {\n\tswitch proto {\n\tcase \"HTTP/1.0\":\n\t\treturn \"1.0\"\n\tcase \"HTTP/1.1\":\n\t\treturn \"1.1\"\n\tcase \"HTTP/2\":\n\t\treturn \"2\"\n\tcase \"HTTP/3\":\n\t\treturn \"3\"\n\tdefault:\n\t\treturn proto\n\t}\n}",
+    "funcname": "Proto"
+}

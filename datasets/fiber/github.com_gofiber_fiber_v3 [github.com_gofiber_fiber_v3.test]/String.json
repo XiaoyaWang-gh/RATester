@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1713,
+    "focalfunc": "func (c *DefaultCtx) String() string",
+    "funcbody": "func (c *DefaultCtx) String() string {\n\n\tbuf := bytebufferpool.Get()\n\n\tbuf.WriteByte('#')\n\n\tid := strconv.FormatUint(c.fasthttp.ID(), 16)\n\n\tfor i := 0; i < (16 - len(id)); i++ {\n\t\tbuf.WriteByte('0')\n\t}\n\tbuf.WriteString(id)\n\tbuf.WriteString(\" - \")\n\n\tbuf.WriteString(c.fasthttp.LocalAddr().String())\n\tbuf.WriteString(\" <-> \")\n\tbuf.WriteString(c.fasthttp.RemoteAddr().String())\n\tbuf.WriteString(\" - \")\n\n\tbuf.Write(c.fasthttp.Request.Header.Method())\n\tbuf.WriteByte(' ')\n\tbuf.Write(c.fasthttp.URI().FullURI())\n\n\tstr := buf.String()\n\n\tbuf.Reset()\n\tbytebufferpool.Put(buf)\n\n\treturn str\n}",
+    "funcname": "String"
+}

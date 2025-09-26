@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 346,
+    "focalfunc": "func extractCertificate(ctx context.Context, cert *x509.Certificate) string",
+    "funcbody": "func extractCertificate(ctx context.Context, cert *x509.Certificate) string {\n\tcertPEM := pem.EncodeToMemory(&pem.Block{Type: \"CERTIFICATE\", Bytes: cert.Raw})\n\tif certPEM == nil {\n\t\tlog.Ctx(ctx).Error().Msg(\"Cannot extract the certificate content\")\n\t\treturn \"\"\n\t}\n\n\treturn sanitize(certPEM)\n}",
+    "funcname": "extractCertificate"
+}

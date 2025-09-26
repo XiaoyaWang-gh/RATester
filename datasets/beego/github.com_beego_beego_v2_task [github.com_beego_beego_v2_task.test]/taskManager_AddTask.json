@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 613,
+    "focalfunc": "func (m *taskManager) AddTask(taskname string, t Tasker)",
+    "funcbody": "func (m *taskManager) AddTask(taskname string, t Tasker) {\n\tisChanged := false\n\tm.taskLock.Lock()\n\tt.SetNext(nil, time.Now().Local())\n\tm.adminTaskList[taskname] = t\n\tif m.started {\n\t\tisChanged = true\n\t}\n\tm.taskLock.Unlock()\n\n\tif isChanged {\n\t\tgo func() {\n\t\t\tm.changed <- true\n\t\t}()\n\t}\n}",
+    "funcname": "AddTask"
+}

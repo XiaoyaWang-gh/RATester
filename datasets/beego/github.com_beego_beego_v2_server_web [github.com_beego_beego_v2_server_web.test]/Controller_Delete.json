@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 188,
+    "focalfunc": "func (c *Controller) Delete()",
+    "funcbody": "func (c *Controller) Delete() {\n\thttp.Error(c.Ctx.ResponseWriter, \"Method Not Allowed\", http.StatusMethodNotAllowed)\n}",
+    "funcname": "Delete"
+}

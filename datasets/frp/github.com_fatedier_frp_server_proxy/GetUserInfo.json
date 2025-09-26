@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 97,
+    "focalfunc": "func (pxy *BaseProxy) GetUserInfo() plugin.UserInfo",
+    "funcbody": "func (pxy *BaseProxy) GetUserInfo() plugin.UserInfo {\n\treturn pxy.userInfo\n}",
+    "funcname": "GetUserInfo"
+}

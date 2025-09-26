@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 170,
+    "focalfunc": "func (b blackHoleResponseWriter) Flush()",
+    "funcbody": "func (b blackHoleResponseWriter) Flush()\t{}",
+    "funcname": "Flush"
+}

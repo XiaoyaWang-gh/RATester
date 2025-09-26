@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 53,
+    "focalfunc": "func FirstUpper(s string) string",
+    "funcbody": "func FirstUpper(s string) string {\n\tif s == \"\" {\n\t\treturn \"\"\n\t}\n\tr, n := utf8.DecodeRuneInString(s)\n\treturn string(unicode.ToUpper(r)) + s[n:]\n}",
+    "funcname": "FirstUpper"
+}

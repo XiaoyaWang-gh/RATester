@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 242,
+    "focalfunc": "func (o querySet) ExistWithCtx(ctx context.Context) bool",
+    "funcbody": "func (o querySet) ExistWithCtx(ctx context.Context) bool {\n\tcnt, _ := o.orm.alias.DbBaser.Count(ctx, o.orm.db, o, o.mi, o.cond, o.orm.alias.TZ)\n\treturn cnt > 0\n}",
+    "funcname": "ExistWithCtx"
+}

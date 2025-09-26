@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 87,
+    "focalfunc": "func (t *Tree) backup2(t1 item)",
+    "funcbody": "func (t *Tree) backup2(t1 item) {\n\tt.token[1] = t1\n\tt.peekCount = 2\n}",
+    "funcname": "backup2"
+}

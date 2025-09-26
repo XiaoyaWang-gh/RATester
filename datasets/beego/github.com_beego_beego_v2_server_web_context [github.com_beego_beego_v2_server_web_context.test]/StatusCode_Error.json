@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/response.go",
+    "lineno": 19,
+    "focalfunc": "func (s StatusCode) Error() string",
+    "funcbody": "func (s StatusCode) Error() string {\n\treturn strconv.Itoa(int(s))\n}",
+    "funcname": "Error"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 337,
+    "focalfunc": "func (l *logAdapter) idfInfoStatement(what, id, format string) string",
+    "funcbody": "func (l *logAdapter) idfInfoStatement(what, id, format string) string {\n\treturn fmt.Sprintf(\"\\nYou can suppress this %s by adding the following to your site configuration:\\nignoreLogs = ['%s']\", what, id)\n}",
+    "funcname": "idfInfoStatement"
+}

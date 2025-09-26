@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 738,
+    "focalfunc": "func (j *JSONField) RawValue() interface{}",
+    "funcbody": "func (j *JSONField) RawValue() interface{} {\n\treturn j.Value()\n}",
+    "funcname": "RawValue"
+}

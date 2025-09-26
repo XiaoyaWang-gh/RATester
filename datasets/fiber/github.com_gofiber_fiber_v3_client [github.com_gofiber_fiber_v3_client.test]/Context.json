@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 109,
+    "focalfunc": "func (r *Request) Context() context.Context",
+    "funcbody": "func (r *Request) Context() context.Context {\n\tif r.ctx == nil {\n\t\treturn context.Background()\n\t}\n\treturn r.ctx\n}",
+    "funcname": "Context"
+}

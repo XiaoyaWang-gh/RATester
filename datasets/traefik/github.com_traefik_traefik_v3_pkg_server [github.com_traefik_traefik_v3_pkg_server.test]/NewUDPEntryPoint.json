@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_udp.go",
+    "lineno": 88,
+    "focalfunc": "func NewUDPEntryPoint(cfg *static.EntryPoint) (*UDPEntryPoint, error)",
+    "funcbody": "func NewUDPEntryPoint(cfg *static.EntryPoint) (*UDPEntryPoint, error) {\n\tlistenConfig := newListenConfig(cfg)\n\tlistener, err := udp.Listen(listenConfig, \"udp\", cfg.GetAddress(), time.Duration(cfg.UDP.Timeout))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &UDPEntryPoint{listener: listener, switcher: &udp.HandlerSwitcher{}, transportConfiguration: cfg.Transport}, nil\n}",
+    "funcname": "NewUDPEntryPoint"
+}

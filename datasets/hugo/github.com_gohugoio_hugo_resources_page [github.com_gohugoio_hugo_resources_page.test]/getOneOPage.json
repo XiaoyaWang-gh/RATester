@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/taxonomy.go",
+    "lineno": 46,
+    "focalfunc": "func (t OrderedTaxonomy) getOneOPage() Page",
+    "funcbody": "func (t OrderedTaxonomy) getOneOPage() Page {\n\tif len(t) == 0 {\n\t\treturn nil\n\t}\n\treturn t[0].Pages()[0]\n}",
+    "funcname": "getOneOPage"
+}

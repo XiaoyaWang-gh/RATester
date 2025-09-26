@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 90,
+    "focalfunc": "func (i HugoInfo) IsDevelopment() bool",
+    "funcbody": "func (i HugoInfo) IsDevelopment() bool {\n\treturn i.Environment == EnvironmentDevelopment\n}",
+    "funcname": "IsDevelopment"
+}

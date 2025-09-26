@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 100,
+    "focalfunc": "func Raw() Option",
+    "funcbody": "func Raw() Option {\n\treturn func(order *Order) {\n\t\torder.isRaw = true\n\t}\n}",
+    "funcname": "Raw"
+}

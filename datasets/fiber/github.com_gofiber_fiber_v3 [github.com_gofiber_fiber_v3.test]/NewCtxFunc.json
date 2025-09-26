@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 548,
+    "focalfunc": "func (app *App) NewCtxFunc(function func(app *App) CustomCtx)",
+    "funcbody": "func (app *App) NewCtxFunc(function func(app *App) CustomCtx) {\n\tapp.newCtxFunc = function\n}",
+    "funcname": "NewCtxFunc"
+}

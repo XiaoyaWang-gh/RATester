@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 464,
+    "focalfunc": "func (l *pageLexer) printCurrentInput()",
+    "funcbody": "func (l *pageLexer) printCurrentInput() {\n\tfmt.Printf(\"input[%d:]: %q\", l.pos, string(l.input[l.pos:]))\n}",
+    "funcname": "printCurrentInput"
+}

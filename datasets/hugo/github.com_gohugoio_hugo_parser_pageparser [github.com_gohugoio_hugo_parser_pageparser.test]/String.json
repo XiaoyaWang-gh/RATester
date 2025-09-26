@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/itemtype_string.go",
+    "lineno": 37,
+    "focalfunc": "func (i ItemType) String() string",
+    "funcbody": "func (i ItemType) String() string {\n\tif i < 0 || i >= ItemType(len(_ItemType_index)-1) {\n\t\treturn \"ItemType(\" + strconv.FormatInt(int64(i), 10) + \")\"\n\t}\n\treturn _ItemType_name[_ItemType_index[i]:_ItemType_index[i+1]]\n}",
+    "funcname": "String"
+}

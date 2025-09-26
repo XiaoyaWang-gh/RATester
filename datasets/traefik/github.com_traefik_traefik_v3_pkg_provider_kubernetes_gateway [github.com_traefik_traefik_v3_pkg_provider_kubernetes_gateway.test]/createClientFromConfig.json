@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 92,
+    "focalfunc": "func createClientFromConfig(c *rest.Config) (*clientWrapper, error)",
+    "funcbody": "func createClientFromConfig(c *rest.Config) (*clientWrapper, error) {\n\tcsGateway, err := gateclientset.NewForConfig(c)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tcsKube, err := kclientset.NewForConfig(c)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn newClientImpl(csKube, csGateway), nil\n}",
+    "funcname": "createClientFromConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 64,
+    "focalfunc": "func Debugf(format string, v ...any)",
+    "funcbody": "func Debugf(format string, v ...any) {\n\tlogger.Debugf(format, v...)\n}",
+    "funcname": "Debugf"
+}

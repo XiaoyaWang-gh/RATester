@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/filename_filter.go",
+    "lineno": 88,
+    "focalfunc": "func MustNewFilenameFilter(inclusions, exclusions []string) *FilenameFilter",
+    "funcbody": "func MustNewFilenameFilter(inclusions, exclusions []string) *FilenameFilter {\n\tfilter, err := NewFilenameFilter(inclusions, exclusions)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn filter\n}",
+    "funcname": "MustNewFilenameFilter"
+}

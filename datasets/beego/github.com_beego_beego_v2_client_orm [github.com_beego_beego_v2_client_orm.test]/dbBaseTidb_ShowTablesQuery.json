@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tidb.go",
+    "lineno": 40,
+    "focalfunc": "func (d *dbBaseTidb) ShowTablesQuery() string",
+    "funcbody": "func (d *dbBaseTidb) ShowTablesQuery() string {\n\treturn \"SELECT table_name FROM information_schema.tables WHERE table_type = 'BASE TABLE' AND table_schema = DATABASE()\"\n}",
+    "funcname": "ShowTablesQuery"
+}

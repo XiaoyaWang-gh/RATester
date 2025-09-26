@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 262,
+    "focalfunc": "func newCodeModifier(rw http.ResponseWriter, code int) *codeModifier",
+    "funcbody": "func newCodeModifier(rw http.ResponseWriter, code int) *codeModifier {\n\treturn &codeModifier{\n\t\theaderMap:\tmake(http.Header),\n\t\tcode:\t\tcode,\n\t\tresponseWriter:\trw,\n\t}\n}",
+    "funcname": "newCodeModifier"
+}

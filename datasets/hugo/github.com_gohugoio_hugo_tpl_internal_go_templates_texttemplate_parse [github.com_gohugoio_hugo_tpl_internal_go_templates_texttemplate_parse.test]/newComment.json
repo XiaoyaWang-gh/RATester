@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 163,
+    "focalfunc": "func (t *Tree) newComment(pos Pos, text string) *CommentNode",
+    "funcbody": "func (t *Tree) newComment(pos Pos, text string) *CommentNode {\n\treturn &CommentNode{tr: t, NodeType: NodeComment, Pos: pos, Text: text}\n}",
+    "funcname": "newComment"
+}

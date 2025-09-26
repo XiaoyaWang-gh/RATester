@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/file.go",
+    "lineno": 27,
+    "focalfunc": "func SelfPath() string",
+    "funcbody": "func SelfPath() string {\n\tpath, _ := filepath.Abs(os.Args[0])\n\treturn path\n}",
+    "funcname": "SelfPath"
+}

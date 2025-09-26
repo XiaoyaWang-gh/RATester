@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 278,
+    "focalfunc": "func (fc *FileCache) ClearAll(context.Context) error",
+    "funcbody": "func (fc *FileCache) ClearAll(context.Context) error {\n\treturn nil\n}",
+    "funcname": "ClearAll"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 470,
+    "focalfunc": "func (c *serverCommand) Run(ctx context.Context, cd *simplecobra.Commandeer, args []string) error",
+    "funcbody": "func (c *serverCommand) Run(ctx context.Context, cd *simplecobra.Commandeer, args []string) error {\n\tif c.pprof {\n\t\tgo func() {\n\t\t\thttp.ListenAndServe(\"localhost:8080\", nil)\n\t\t}()\n\t}\n\n\tif c.serverWatch {\n\n\t\twatchDirs, err := c.getDirList()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\twatchGroups := helpers.ExtractAndGroupRootPaths(watchDirs)\n\n\t\tfor _, group := range watchGroups {\n\t\t\tc.r.Printf(\"Watching for changes in %s\\n\", group)\n\t\t}\n\t\twatcher, err := c.newWatcher(c.r.poll, watchDirs...)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tdefer watcher.Close()\n\n\t}\n\n\terr := func() error {\n\t\tdefer c.r.timeTrack(time.Now(), \"Built\")\n\t\treturn c.build()\n\t}()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn c.serve()\n}",
+    "funcname": "Run"
+}

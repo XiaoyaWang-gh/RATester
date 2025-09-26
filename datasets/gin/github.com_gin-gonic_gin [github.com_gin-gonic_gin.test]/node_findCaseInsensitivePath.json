@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 681,
+    "focalfunc": "func (n *node) findCaseInsensitivePath(path string, fixTrailingSlash bool) ([]byte, bool)",
+    "funcbody": "func (n *node) findCaseInsensitivePath(path string, fixTrailingSlash bool) ([]byte, bool) {\n\tconst stackBufSize = 128\n\n\tbuf := make([]byte, 0, stackBufSize)\n\tif length := len(path) + 1; length > stackBufSize {\n\t\tbuf = make([]byte, 0, length)\n\t}\n\n\tciPath := n.findCaseInsensitivePathRec(\n\t\tpath,\n\t\tbuf,\n\t\t[4]byte{},\n\t\tfixTrailingSlash,\n\t)\n\n\treturn ciPath, ciPath != nil\n}",
+    "funcname": "findCaseInsensitivePath"
+}

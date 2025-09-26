@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/server.go",
+    "lineno": 186,
+    "focalfunc": "func (s *TunnelServer) writeToClient(data string)",
+    "funcbody": "func (s *TunnelServer) writeToClient(data string) {\n\tif s.firstChannel == nil {\n\t\treturn\n\t}\n\t_, _ = s.firstChannel.Write([]byte(data + \"\\n\"))\n}",
+    "funcname": "writeToClient"
+}

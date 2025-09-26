@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1216,
+    "focalfunc": "func templates(in tpl.Template) []tpl.Template",
+    "funcbody": "func templates(in tpl.Template) []tpl.Template {\n\tvar templs []tpl.Template\n\tin = unwrap(in)\n\tif textt, ok := in.(*texttemplate.Template); ok {\n\t\tfor _, t := range textt.Templates() {\n\t\t\ttempls = append(templs, t)\n\t\t}\n\t}\n\n\tif htmlt, ok := in.(*htmltemplate.Template); ok {\n\t\tfor _, t := range htmlt.Templates() {\n\t\t\ttempls = append(templs, t)\n\t\t}\n\t}\n\n\treturn templs\n}",
+    "funcname": "templates"
+}

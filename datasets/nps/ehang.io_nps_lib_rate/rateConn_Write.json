@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/conn.go",
+    "lineno": 27,
+    "focalfunc": "func (s *rateConn) Write(b []byte) (n int, err error)",
+    "funcbody": "func (s *rateConn) Write(b []byte) (n int, err error) {\n\tn, err = s.conn.Write(b)\n\tif s.rate != nil {\n\t\ts.rate.Get(int64(n))\n\t}\n\treturn\n}",
+    "funcname": "Write"
+}

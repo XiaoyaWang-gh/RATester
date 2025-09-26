@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/unix_domain_socket.go",
+    "lineno": 73,
+    "focalfunc": "func (uds *UnixDomainSocketPlugin) Close() error",
+    "funcbody": "func (uds *UnixDomainSocketPlugin) Close() error {\n\treturn nil\n}",
+    "funcname": "Close"
+}

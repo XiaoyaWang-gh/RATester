@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 723,
+    "focalfunc": "func (c *Controller) GetSession(name interface{}) interface{}",
+    "funcbody": "func (c *Controller) GetSession(name interface{}) interface{} {\n\tif c.CruSession == nil {\n\t\tc.StartSession()\n\t}\n\treturn c.CruSession.Get(context2.Background(), name)\n}",
+    "funcname": "GetSession"
+}

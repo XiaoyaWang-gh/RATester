@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/converter.go",
+    "lineno": 50,
+    "focalfunc": "func convertBool(value string) reflect.Value",
+    "funcbody": "func convertBool(value string) reflect.Value {\n\tif value == \"on\" {\n\t\treturn reflect.ValueOf(true)\n\t} else if v, err := strconv.ParseBool(value); err == nil {\n\t\treturn reflect.ValueOf(v)\n\t}\n\treturn invalidValue\n}",
+    "funcname": "convertBool"
+}

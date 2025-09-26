@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 441,
+    "focalfunc": "func (al *alias) SetMaxOpenConns(maxOpenConns int)",
+    "funcbody": "func (al *alias) SetMaxOpenConns(maxOpenConns int) {\n\tal.MaxOpenConns = maxOpenConns\n\tal.DB.DB.SetMaxOpenConns(maxOpenConns)\n}",
+    "funcname": "SetMaxOpenConns"
+}

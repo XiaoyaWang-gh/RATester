@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 48,
+    "focalfunc": "func newRawPreparer(rs *rawSet) (RawPreparer, error)",
+    "funcbody": "func newRawPreparer(rs *rawSet) (RawPreparer, error) {\n\to := new(rawPrepare)\n\to.rs = rs\n\n\tquery := rs.query\n\trs.orm.alias.DbBaser.ReplaceMarks(&query)\n\n\tst, err := rs.orm.db.Prepare(query)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif Debug {\n\t\to.stmt = newStmtQueryLog(rs.orm.alias, st, query)\n\t} else {\n\t\to.stmt = st\n\t}\n\treturn o, nil\n}",
+    "funcname": "newRawPreparer"
+}

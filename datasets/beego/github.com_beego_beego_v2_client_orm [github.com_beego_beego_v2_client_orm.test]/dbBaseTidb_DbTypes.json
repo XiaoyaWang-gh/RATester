@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tidb.go",
+    "lineno": 35,
+    "focalfunc": "func (d *dbBaseTidb) DbTypes() map[string]string",
+    "funcbody": "func (d *dbBaseTidb) DbTypes() map[string]string {\n\treturn mysqlTypes\n}",
+    "funcname": "DbTypes"
+}

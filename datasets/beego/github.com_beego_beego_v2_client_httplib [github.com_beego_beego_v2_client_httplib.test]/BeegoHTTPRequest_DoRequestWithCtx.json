@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 454,
+    "focalfunc": "func (b *BeegoHTTPRequest) DoRequestWithCtx(ctx context.Context) (resp *http.Response, err error)",
+    "funcbody": "func (b *BeegoHTTPRequest) DoRequestWithCtx(ctx context.Context) (resp *http.Response, err error) {\n\troot := doRequestFilter\n\tif len(b.setting.FilterChains) > 0 {\n\t\tfor i := len(b.setting.FilterChains) - 1; i >= 0; i-- {\n\t\t\troot = b.setting.FilterChains[i](root)\n\t\t}\n\t}\n\treturn root(ctx, b)\n}",
+    "funcname": "DoRequestWithCtx"
+}

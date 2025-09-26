@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 195,
+    "focalfunc": "func (ns *Namespace) EchoParam(c, k any) any",
+    "funcbody": "func (ns *Namespace) EchoParam(c, k any) any {\n\thugo.Deprecate(\"collections.EchoParam\", \"Use the index function instead.\", \"v0.120.0\")\n\tav, isNil := indirect(reflect.ValueOf(c))\n\tif isNil {\n\t\treturn \"\"\n\t}\n\n\tvar avv reflect.Value\n\tswitch av.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\tindex, ok := k.(int)\n\t\tif ok && av.Len() > index {\n\t\t\tavv = av.Index(index)\n\t\t}\n\tcase reflect.Map:\n\t\tkv := reflect.ValueOf(k)\n\t\tif kv.Type().AssignableTo(av.Type().Key()) {\n\t\t\tavv = av.MapIndex(kv)\n\t\t}\n\t}\n\n\tavv, isNil = indirect(avv)\n\n\tif isNil {\n\t\treturn \"\"\n\t}\n\n\tif avv.IsValid() {\n\t\tswitch avv.Kind() {\n\t\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\t\treturn avv.Int()\n\t\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:\n\t\t\treturn avv.Uint()\n\t\tcase reflect.Float32, reflect.Float64:\n\t\t\treturn avv.Float()\n\t\tcase reflect.String:\n\t\t\treturn avv.String()\n\t\tcase reflect.Bool:\n\t\t\treturn avv.Bool()\n\t\t}\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "EchoParam"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/request_decorator.go",
+    "lineno": 68,
+    "focalfunc": "func GetCanonizedHost(ctx context.Context) string",
+    "funcbody": "func GetCanonizedHost(ctx context.Context) string {\n\tif val, ok := ctx.Value(canonicalKey).(string); ok {\n\t\treturn val\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "GetCanonizedHost"
+}

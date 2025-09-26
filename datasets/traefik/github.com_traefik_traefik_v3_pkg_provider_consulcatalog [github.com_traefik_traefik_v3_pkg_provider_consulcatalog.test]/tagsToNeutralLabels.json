@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/convert_types.go",
+    "lineno": 7,
+    "focalfunc": "func tagsToNeutralLabels(tags []string, prefix string) map[string]string",
+    "funcbody": "func tagsToNeutralLabels(tags []string, prefix string) map[string]string {\n\tvar labels map[string]string\n\n\tfor _, tag := range tags {\n\t\tif strings.HasPrefix(tag, prefix) {\n\t\t\tparts := strings.SplitN(tag, \"=\", 2)\n\t\t\tif len(parts) == 2 {\n\t\t\t\tif labels == nil {\n\t\t\t\t\tlabels = make(map[string]string)\n\t\t\t\t}\n\n\t\t\t\tkey := \"traefik.\" + strings.TrimPrefix(parts[0], prefix+\".\")\n\t\t\t\tlabels[key] = parts[1]\n\t\t\t}\n\t\t}\n\t}\n\n\treturn labels\n}",
+    "funcname": "tagsToNeutralLabels"
+}

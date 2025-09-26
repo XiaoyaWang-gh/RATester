@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 65,
+    "focalfunc": "func (*Filters) Text(text string, options ...any) gift.Filter",
+    "funcbody": "func (*Filters) Text(text string, options ...any) gift.Filter {\n\ttf := textFilter{\n\t\ttext:\t\ttext,\n\t\tcolor:\t\tcolor.White,\n\t\tsize:\t\t20,\n\t\tx:\t\t10,\n\t\ty:\t\t10,\n\t\tlinespacing:\t2,\n\t}\n\n\tvar opt maps.Params\n\tif len(options) > 0 {\n\t\topt = maps.MustToParamsAndPrepare(options[0])\n\t\tfor option, v := range opt {\n\t\t\tswitch option {\n\t\t\tcase \"color\":\n\t\t\t\tif color, ok, _ := toColorGo(v); ok {\n\t\t\t\t\ttf.color = color\n\t\t\t\t}\n\t\t\tcase \"size\":\n\t\t\t\ttf.size = cast.ToFloat64(v)\n\t\t\tcase \"x\":\n\t\t\t\ttf.x = cast.ToInt(v)\n\t\t\tcase \"y\":\n\t\t\t\ttf.y = cast.ToInt(v)\n\t\t\tcase \"linespacing\":\n\t\t\t\ttf.linespacing = cast.ToInt(v)\n\t\t\tcase \"font\":\n\t\t\t\tif err, ok := v.(error); ok {\n\t\t\t\t\tpanic(fmt.Sprintf(\"invalid font source: %s\", err))\n\t\t\t\t}\n\t\t\t\tfontSource, ok1 := v.(hugio.ReadSeekCloserProvider)\n\t\t\t\tidentifier, ok2 := v.(resource.Identifier)\n\n\t\t\t\tif !(ok1 && ok2) {\n\t\t\t\t\tpanic(fmt.Sprintf(\"invalid text font source: %T\", v))\n\t\t\t\t}\n\n\t\t\t\ttf.fontSource = fontSource\n\n\t\t\t\topt[\"font\"] = identifier.Key()\n\n\t\t\t}\n\t\t}\n\t}\n\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(text, opt),\n\t\tFilter:\t\ttf,\n\t}\n}",
+    "funcname": "Text"
+}

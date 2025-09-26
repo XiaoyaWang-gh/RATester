@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 328,
+    "focalfunc": "func (input *BeegoInput) Query(key string) string",
+    "funcbody": "func (input *BeegoInput) Query(key string) string {\n\tif val := input.Param(key); val != \"\" {\n\t\treturn val\n\t}\n\tif input.Context.Request.Form == nil {\n\t\tinput.dataLock.Lock()\n\t\tif input.Context.Request.Form == nil {\n\t\t\tinput.Context.Request.ParseForm()\n\t\t}\n\t\tinput.dataLock.Unlock()\n\t}\n\tinput.dataLock.RLock()\n\tdefer input.dataLock.RUnlock()\n\treturn input.Context.Request.Form.Get(key)\n}",
+    "funcname": "Query"
+}

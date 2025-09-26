@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1273,
+    "focalfunc": "func (c *Context) Value(key any) any",
+    "funcbody": "func (c *Context) Value(key any) any {\n\tif key == ContextRequestKey {\n\t\treturn c.Request\n\t}\n\tif key == ContextKey {\n\t\treturn c\n\t}\n\tif keyAsString, ok := key.(string); ok {\n\t\tif val, exists := c.Get(keyAsString); exists {\n\t\t\treturn val\n\t\t}\n\t}\n\tif !c.hasRequestContext() {\n\t\treturn nil\n\t}\n\treturn c.Request.Context().Value(key)\n}",
+    "funcname": "Value"
+}

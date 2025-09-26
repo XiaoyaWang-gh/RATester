@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 129,
+    "focalfunc": "func (s *BaseController) AjaxErr(str string)",
+    "funcbody": "func (s *BaseController) AjaxErr(str string) {\n\ts.Data[\"json\"] = ajax(str, 0)\n\ts.ServeJSON()\n\ts.StopRun()\n}",
+    "funcname": "AjaxErr"
+}

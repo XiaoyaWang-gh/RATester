@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 78,
+    "focalfunc": "func (h VersionString) Eq(other any) bool",
+    "funcbody": "func (h VersionString) Eq(other any) bool {\n\ts, err := cast.ToStringE(other)\n\tif err != nil {\n\t\treturn false\n\t}\n\treturn s == h.String()\n}",
+    "funcname": "Eq"
+}

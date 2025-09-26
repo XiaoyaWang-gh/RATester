@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 548,
+    "focalfunc": "func (n NoMatch) GetLimitValue() interface{}",
+    "funcbody": "func (n NoMatch) GetLimitValue() interface{} {\n\treturn n.Regexp.String()\n}",
+    "funcname": "GetLimitValue"
+}

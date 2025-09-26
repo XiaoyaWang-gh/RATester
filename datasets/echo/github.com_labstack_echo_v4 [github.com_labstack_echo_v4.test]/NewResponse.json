@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 27,
+    "focalfunc": "func NewResponse(w http.ResponseWriter, e *Echo) (r *Response)",
+    "funcbody": "func NewResponse(w http.ResponseWriter, e *Echo) (r *Response) {\n\treturn &Response{Writer: w, echo: e}\n}",
+    "funcname": "NewResponse"
+}

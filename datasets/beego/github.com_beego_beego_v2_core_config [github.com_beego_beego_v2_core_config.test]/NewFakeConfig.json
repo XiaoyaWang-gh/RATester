@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 108,
+    "focalfunc": "func NewFakeConfig() Configer",
+    "funcbody": "func NewFakeConfig() Configer {\n\tres := &fakeConfigContainer{\n\t\tdata: make(map[string]string),\n\t}\n\tres.BaseConfiger = NewBaseConfiger(func(ctx context.Context, key string) (string, error) {\n\t\treturn res.getData(key), nil\n\t})\n\treturn res\n}",
+    "funcname": "NewFakeConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 234,
+    "focalfunc": "func (rc *Cache) parseConf(config string) error",
+    "funcbody": "func (rc *Cache) parseConf(config string) error {\n\tvar cf redisConfig\n\terr := json.Unmarshal([]byte(config), &cf)\n\tif err != nil {\n\t\treturn berror.Wrapf(err, cache.InvalidRedisCacheCfg, \"could not unmarshal the config: %s\", config)\n\t}\n\n\terr = cf.parse()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\trc.dbNum = cf.dbNum\n\trc.key = cf.Key\n\trc.conninfo = cf.Conn\n\trc.password = cf.password\n\trc.maxIdle = cf.maxIdle\n\trc.timeout = cf.timeout\n\trc.skipEmptyPrefix = cf.skipEmptyPrefix\n\n\treturn nil\n}",
+    "funcname": "parseConf"
+}

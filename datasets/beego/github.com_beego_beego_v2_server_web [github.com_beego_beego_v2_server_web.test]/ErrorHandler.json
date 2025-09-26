@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 392,
+    "focalfunc": "func ErrorHandler(code string, h http.HandlerFunc) *HttpServer",
+    "funcbody": "func ErrorHandler(code string, h http.HandlerFunc) *HttpServer {\n\tErrorMaps[code] = &errorInfo{\n\t\terrorType:\terrorTypeHandler,\n\t\thandler:\th,\n\t\tmethod:\t\tcode,\n\t}\n\treturn BeeApp\n}",
+    "funcname": "ErrorHandler"
+}

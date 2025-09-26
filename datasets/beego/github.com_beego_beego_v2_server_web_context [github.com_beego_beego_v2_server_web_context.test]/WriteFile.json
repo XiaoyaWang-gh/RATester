@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 142,
+    "focalfunc": "func WriteFile(encoding string, writer io.Writer, file *os.File) (bool, string, error)",
+    "funcbody": "func WriteFile(encoding string, writer io.Writer, file *os.File) (bool, string, error) {\n\treturn writeLevel(encoding, writer, file, flate.BestCompression)\n}",
+    "funcname": "WriteFile"
+}

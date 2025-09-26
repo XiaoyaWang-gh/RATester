@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__paths.go",
+    "lineno": 106,
+    "focalfunc": "func (l pagePaths) OutputFormats() page.OutputFormats",
+    "funcbody": "func (l pagePaths) OutputFormats() page.OutputFormats {\n\treturn l.outputFormats\n}",
+    "funcname": "OutputFormats"
+}

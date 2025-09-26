@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/exec.go",
+    "lineno": 87,
+    "focalfunc": "func MustHaveExecPath(t testing.TB, path string)",
+    "funcbody": "func MustHaveExecPath(t testing.TB, path string) {\n\tMustHaveExec(t)\n\n\terr, found := execPaths.Load(path)\n\tif !found {\n\t\t_, err = exec.LookPath(path)\n\t\terr, _ = execPaths.LoadOrStore(path, err)\n\t}\n\tif err != nil {\n\t\tt.Skipf(\"skipping test: %s: %s\", path, err)\n\t}\n}",
+    "funcname": "MustHaveExecPath"
+}

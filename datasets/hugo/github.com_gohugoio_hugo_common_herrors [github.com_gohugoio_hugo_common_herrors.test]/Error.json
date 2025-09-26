@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 420,
+    "focalfunc": "func (e TextSegmentError) Error() string",
+    "funcbody": "func (e TextSegmentError) Error() string {\n\treturn e.Err.Error()\n}",
+    "funcname": "Error"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 73,
+    "focalfunc": "func (d Dates) IsAllDatesZero() bool",
+    "funcbody": "func (d Dates) IsAllDatesZero() bool {\n\treturn d.Date.IsZero() && d.Lastmod.IsZero() && d.PublishDate.IsZero() && d.ExpiryDate.IsZero()\n}",
+    "funcname": "IsAllDatesZero"
+}

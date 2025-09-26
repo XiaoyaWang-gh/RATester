@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/tableofcontents/tableofcontents.go",
+    "lineno": 114,
+    "focalfunc": "func (toc *Fragments) addAt(h *Heading, row, level int)",
+    "funcbody": "func (toc *Fragments) addAt(h *Heading, row, level int) {\n\tfor i := len(toc.Headings); i <= row; i++ {\n\t\ttoc.Headings = append(toc.Headings, &Heading{})\n\t}\n\n\tif level == 0 {\n\t\ttoc.Headings[row] = h\n\t\treturn\n\t}\n\n\theading := toc.Headings[row]\n\n\tfor i := 1; i < level; i++ {\n\t\tif len(heading.Headings) == 0 {\n\t\t\theading.Headings = append(heading.Headings, &Heading{})\n\t\t}\n\t\theading = heading.Headings[len(heading.Headings)-1]\n\t}\n\theading.Headings = append(heading.Headings, h)\n}",
+    "funcname": "addAt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 124,
+    "focalfunc": "func (app *App) generateAppListKeys()",
+    "funcbody": "func (app *App) generateAppListKeys() {\n\tfor key := range app.mountFields.appList {\n\t\tapp.mountFields.appListKeys = append(app.mountFields.appListKeys, key)\n\t}\n\n\tsort.Slice(app.mountFields.appListKeys, func(i, j int) bool {\n\t\treturn len(app.mountFields.appListKeys[i]) < len(app.mountFields.appListKeys[j])\n\t})\n}",
+    "funcname": "generateAppListKeys"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 50,
+    "focalfunc": "func (ini *IniConfig) Parse(name string) (Configer, error)",
+    "funcbody": "func (ini *IniConfig) Parse(name string) (Configer, error) {\n\treturn ini.parseFile(name)\n}",
+    "funcname": "Parse"
+}

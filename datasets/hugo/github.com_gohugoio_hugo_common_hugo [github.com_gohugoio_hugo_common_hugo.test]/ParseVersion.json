@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 241,
+    "focalfunc": "func parseVersion(s string) (int, int, int)",
+    "funcbody": "func parseVersion(s string) (int, int, int) {\n\tvar major, minor, patch int\n\tparts := strings.Split(s, \".\")\n\tif len(parts) > 0 {\n\t\tmajor, _ = strconv.Atoi(parts[0])\n\t}\n\tif len(parts) > 1 {\n\t\tminor, _ = strconv.Atoi(parts[1])\n\t}\n\tif len(parts) > 2 {\n\t\tpatch, _ = strconv.Atoi(parts[2])\n\t}\n\n\treturn major, minor, patch\n}",
+    "funcname": "parseVersion"
+}

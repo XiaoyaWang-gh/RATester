@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 31,
+    "focalfunc": "func WordSepNormalizeFunc(f *pflag.FlagSet, name string) pflag.NormalizedName",
+    "funcbody": "func WordSepNormalizeFunc(f *pflag.FlagSet, name string) pflag.NormalizedName {\n\tif strings.Contains(name, \"_\") {\n\t\treturn pflag.NormalizedName(strings.ReplaceAll(name, \"_\", \"-\"))\n\t}\n\treturn pflag.NormalizedName(name)\n}",
+    "funcname": "WordSepNormalizeFunc"
+}

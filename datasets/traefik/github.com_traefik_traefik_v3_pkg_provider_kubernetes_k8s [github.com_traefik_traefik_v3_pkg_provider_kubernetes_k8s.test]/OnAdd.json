@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/event_handler.go",
+    "lineno": 14,
+    "focalfunc": "func (reh *ResourceEventHandler) OnAdd(obj interface{}, isInInitialList bool)",
+    "funcbody": "func (reh *ResourceEventHandler) OnAdd(obj interface{}, isInInitialList bool) {\n\teventHandlerFunc(reh.Ev, obj)\n}",
+    "funcname": "OnAdd"
+}

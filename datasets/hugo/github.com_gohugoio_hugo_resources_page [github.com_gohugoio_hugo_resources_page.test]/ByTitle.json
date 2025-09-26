@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 236,
+    "focalfunc": "func (p Pages) ByTitle() Pages",
+    "funcbody": "func (p Pages) ByTitle() Pages {\n\tconst key = \"pageSort.ByTitle\"\n\n\tpages, _ := spc.get(key, collatorStringSort(func(p Page) string { return p.Title() }), p)\n\n\treturn pages\n}",
+    "funcname": "ByTitle"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 60,
+    "focalfunc": "func (d *Dates) UpdateDateAndLastmodAndPublishDateIfAfter(in Dates)",
+    "funcbody": "func (d *Dates) UpdateDateAndLastmodAndPublishDateIfAfter(in Dates) {\n\tif in.Date.After(d.Date) {\n\t\td.Date = in.Date\n\t}\n\tif in.Lastmod.After(d.Lastmod) {\n\t\td.Lastmod = in.Lastmod\n\t}\n\n\tif in.PublishDate.After(d.PublishDate) && in.PublishDate.Before(htime.Now()) {\n\t\td.PublishDate = in.PublishDate\n\t}\n}",
+    "funcname": "UpdateDateAndLastmodAndPublishDateIfAfter"
+}

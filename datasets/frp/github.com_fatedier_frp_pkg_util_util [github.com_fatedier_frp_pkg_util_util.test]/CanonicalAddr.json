@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/util.go",
+    "lineno": 58,
+    "focalfunc": "func CanonicalAddr(host string, port int) (addr string)",
+    "funcbody": "func CanonicalAddr(host string, port int) (addr string) {\n\tif port == 80 || port == 443 {\n\t\taddr = host\n\t} else {\n\t\taddr = net.JoinHostPort(host, strconv.Itoa(port))\n\t}\n\treturn\n}",
+    "funcname": "CanonicalAddr"
+}

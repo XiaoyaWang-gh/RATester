@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 447,
+    "focalfunc": "func (p *pageState) getLayoutDescriptor() layouts.LayoutDescriptor",
+    "funcbody": "func (p *pageState) getLayoutDescriptor() layouts.LayoutDescriptor {\n\tp.layoutDescriptorInit.Do(func() {\n\t\tvar section string\n\t\tsections := p.SectionsEntries()\n\n\t\tswitch p.Kind() {\n\t\tcase kinds.KindSection:\n\t\t\tif len(sections) > 0 {\n\t\t\t\tsection = sections[0]\n\t\t\t}\n\t\tcase kinds.KindTaxonomy, kinds.KindTerm:\n\n\t\t\tif p.m.singular != \"\" {\n\t\t\t\tsection = p.m.singular\n\t\t\t} else if len(sections) > 0 {\n\t\t\t\tsection = sections[0]\n\t\t\t}\n\t\tdefault:\n\t\t}\n\n\t\tp.layoutDescriptor = layouts.LayoutDescriptor{\n\t\t\tKind:\t\tp.Kind(),\n\t\t\tType:\t\tp.Type(),\n\t\t\tLang:\t\tp.Language().Lang,\n\t\t\tLayout:\t\tp.Layout(),\n\t\t\tSection:\tsection,\n\t\t}\n\t})\n\n\treturn p.layoutDescriptor\n}",
+    "funcname": "getLayoutDescriptor"
+}

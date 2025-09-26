@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 568,
+    "focalfunc": "func HasExt(p string) bool",
+    "funcbody": "func HasExt(p string) bool {\n\tfor i := len(p) - 1; i >= 0; i-- {\n\t\tif p[i] == '.' {\n\t\t\treturn true\n\t\t}\n\t\tif p[i] == '/' {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "HasExt"
+}

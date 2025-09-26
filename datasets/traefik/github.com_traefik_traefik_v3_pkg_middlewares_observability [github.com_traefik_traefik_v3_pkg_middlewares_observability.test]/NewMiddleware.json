@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/middleware.go",
+    "lineno": 41,
+    "focalfunc": "func NewMiddleware(next http.Handler, name string, typeName string, spanKind trace.SpanKind) http.Handler",
+    "funcbody": "func NewMiddleware(next http.Handler, name string, typeName string, spanKind trace.SpanKind) http.Handler {\n\treturn &middlewareTracing{\n\t\tnext:\t\tnext,\n\t\tname:\t\tname,\n\t\ttypeName:\ttypeName,\n\t\tspanKind:\tspanKind,\n\t}\n}",
+    "funcname": "NewMiddleware"
+}

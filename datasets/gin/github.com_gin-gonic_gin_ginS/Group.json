@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 52,
+    "focalfunc": "func Group(relativePath string, handlers ...gin.HandlerFunc) *gin.RouterGroup",
+    "funcbody": "func Group(relativePath string, handlers ...gin.HandlerFunc) *gin.RouterGroup {\n\treturn engine().Group(relativePath, handlers...)\n}",
+    "funcname": "Group"
+}

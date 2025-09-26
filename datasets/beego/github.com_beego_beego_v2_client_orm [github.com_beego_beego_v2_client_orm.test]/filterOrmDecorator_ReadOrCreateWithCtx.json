@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 128,
+    "focalfunc": "func (f *filterOrmDecorator) ReadOrCreateWithCtx(ctx context.Context, md interface{}, col1 string, cols ...string) (bool, int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) ReadOrCreateWithCtx(ctx context.Context, md interface{}, col1 string, cols ...string) (bool, int64, error) {\n\tmi, _ := defaultModelCache.GetByMd(md)\n\tinv := &Invocation{\n\t\tMethod:\t\t\"ReadOrCreateWithCtx\",\n\t\tArgs:\t\t[]interface{}{md, col1, cols},\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tok, res, err := f.ormer.ReadOrCreateWithCtx(c, md, col1, cols...)\n\t\t\treturn []interface{}{ok, res, err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn res[0].(bool), res[1].(int64), f.convertError(res[2])\n}",
+    "funcname": "ReadOrCreateWithCtx"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 74,
+    "focalfunc": "func (m *LogContent) GetKey() string",
+    "funcbody": "func (m *LogContent) GetKey() string {\n\tif m != nil && m.Key != nil {\n\t\treturn *m.Key\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetKey"
+}

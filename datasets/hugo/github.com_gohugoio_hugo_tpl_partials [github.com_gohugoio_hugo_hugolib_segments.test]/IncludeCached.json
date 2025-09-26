@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 224,
+    "focalfunc": "func (ns *Namespace) IncludeCached(ctx context.Context, name string, context any, variants ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) IncludeCached(ctx context.Context, name string, context any, variants ...any) (any, error) {\n\tstart := time.Now()\n\tkey := partialCacheKey{\n\t\tName:\t\tname,\n\t\tVariants:\tvariants,\n\t}\n\tdepsManagerIn := tpl.Context.GetDependencyManagerInCurrentScope(ctx)\n\n\tr, found, err := ns.cachedPartials.cache.GetOrCreate(key.Key(), func(string) (includeResult, error) {\n\t\tvar depsManagerShared identity.Manager\n\t\tif ns.deps.Conf.Watching() {\n\n\t\t\tdepsManagerShared = identity.NewManager(\"partials\")\n\t\t\tctx = tpl.Context.DependencyManagerScopedProvider.Set(ctx, depsManagerShared.(identity.DependencyManagerScopedProvider))\n\t\t}\n\t\tr := ns.includWithTimeout(ctx, key.Name, context)\n\t\tif ns.deps.Conf.Watching() {\n\t\t\tr.mangager = depsManagerShared\n\t\t}\n\t\treturn r, r.err\n\t})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif ns.deps.Metrics != nil {\n\t\tif found {\n\n\t\t\tns.deps.Metrics.MeasureSince(key.templateName(), start)\n\t\t}\n\t\tns.deps.Metrics.TrackValue(key.templateName(), r.result, found)\n\t}\n\n\tif r.mangager != nil && depsManagerIn != nil {\n\t\tdepsManagerIn.AddIdentity(r.mangager)\n\t}\n\n\treturn r.result, nil\n}",
+    "funcname": "IncludeCached"
+}

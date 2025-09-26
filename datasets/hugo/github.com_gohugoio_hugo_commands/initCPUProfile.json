@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 153,
+    "focalfunc": "func (c *hugoBuilder) initCPUProfile() (func(), error)",
+    "funcbody": "func (c *hugoBuilder) initCPUProfile() (func(), error) {\n\tif c.r.cpuprofile == \"\" {\n\t\treturn nil, nil\n\t}\n\n\tf, err := os.Create(c.r.cpuprofile)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create CPU profile: %w\", err)\n\t}\n\tif err := pprof.StartCPUProfile(f); err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to start CPU profile: %w\", err)\n\t}\n\treturn func() {\n\t\tpprof.StopCPUProfile()\n\t\tf.Close()\n\t}, nil\n}",
+    "funcname": "initCPUProfile"
+}

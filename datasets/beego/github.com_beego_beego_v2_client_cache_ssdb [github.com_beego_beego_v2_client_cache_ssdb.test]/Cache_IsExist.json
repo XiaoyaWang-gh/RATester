@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 118,
+    "focalfunc": "func (rc *Cache) IsExist(ctx context.Context, key string) (bool, error)",
+    "funcbody": "func (rc *Cache) IsExist(ctx context.Context, key string) (bool, error) {\n\tresp, err := rc.conn.Do(\"exists\", key)\n\tif err != nil {\n\t\treturn false, berror.Wrapf(err, cache.SsdbCacheCurdFailed, \"exists failed: %s\", key)\n\t}\n\tif len(resp) == 2 && resp[1] == \"1\" {\n\t\treturn true, nil\n\t}\n\treturn false, nil\n}",
+    "funcname": "IsExist"
+}

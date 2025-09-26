@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_cache.go",
+    "lineno": 68,
+    "focalfunc": "func (c *ResourceCache) cleanKey(key string) string",
+    "funcbody": "func (c *ResourceCache) cleanKey(key string) string {\n\treturn strings.TrimPrefix(path.Clean(strings.ToLower(filepath.ToSlash(key))), \"/\")\n}",
+    "funcname": "cleanKey"
+}

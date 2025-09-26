@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/visitor.go",
+    "lineno": 127,
+    "focalfunc": "func NewVisitorConfigurerByType(t VisitorType) VisitorConfigurer",
+    "funcbody": "func NewVisitorConfigurerByType(t VisitorType) VisitorConfigurer {\n\tv, ok := visitorConfigTypeMap[t]\n\tif !ok {\n\t\treturn nil\n\t}\n\tvc := reflect.New(v).Interface().(VisitorConfigurer)\n\tvc.GetBaseConfig().Type = string(t)\n\treturn vc\n}",
+    "funcname": "NewVisitorConfigurerByType"
+}

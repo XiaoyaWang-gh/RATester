@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/inflightreq/inflight_req.go",
+    "lineno": 56,
+    "focalfunc": "func (i *inFlightReq) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (i *inFlightReq) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn i.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

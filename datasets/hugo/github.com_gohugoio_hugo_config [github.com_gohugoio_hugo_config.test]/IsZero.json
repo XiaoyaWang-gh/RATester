@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 371,
+    "focalfunc": "func (r Redirect) IsZero() bool",
+    "funcbody": "func (r Redirect) IsZero() bool {\n\treturn r.From == \"\"\n}",
+    "funcname": "IsZero"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 292,
+    "focalfunc": "func (o querySet) One(container interface{}, cols ...string) error",
+    "funcbody": "func (o querySet) One(container interface{}, cols ...string) error {\n\treturn o.OneWithCtx(context.Background(), container, cols...)\n}",
+    "funcname": "One"
+}

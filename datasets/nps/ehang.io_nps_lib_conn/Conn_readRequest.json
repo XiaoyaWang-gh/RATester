@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 38,
+    "focalfunc": "func (s *Conn) readRequest(buf []byte) (n int, err error)",
+    "funcbody": "func (s *Conn) readRequest(buf []byte) (n int, err error) {\n\tvar rd int\n\tfor {\n\t\trd, err = s.Read(buf[n:])\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tn += rd\n\t\tif n < 4 {\n\t\t\tcontinue\n\t\t}\n\t\tif string(buf[n-4:n]) == \"\\r\\n\\r\\n\" {\n\t\t\treturn\n\t\t}\n\n\t\tif n == cap(buf) {\n\t\t\terr = io.ErrUnexpectedEOF\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "readRequest"
+}

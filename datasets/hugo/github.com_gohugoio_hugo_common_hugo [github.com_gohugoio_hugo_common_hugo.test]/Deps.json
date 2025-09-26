@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 115,
+    "focalfunc": "func (i HugoInfo) Deps() []*Dependency",
+    "funcbody": "func (i HugoInfo) Deps() []*Dependency {\n\treturn i.deps\n}",
+    "funcname": "Deps"
+}

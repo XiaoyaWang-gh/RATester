@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 642,
+    "focalfunc": "func mapLegacyArgs(args []string) []string",
+    "funcbody": "func mapLegacyArgs(args []string) []string {\n\tif len(args) > 1 && args[0] == \"new\" && !hstrings.EqualAny(args[1], \"site\", \"theme\", \"content\") {\n\n\t\targs = append(args[:1], append([]string{\"content\"}, args[1:]...)...)\n\t}\n\treturn args\n}",
+    "funcname": "mapLegacyArgs"
+}

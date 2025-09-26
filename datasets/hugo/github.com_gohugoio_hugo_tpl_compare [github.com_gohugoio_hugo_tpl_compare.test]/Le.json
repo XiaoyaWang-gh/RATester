@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 194,
+    "focalfunc": "func (n *Namespace) Le(first any, others ...any) bool",
+    "funcbody": "func (n *Namespace) Le(first any, others ...any) bool {\n\tn.checkComparisonArgCount(1, others...)\n\tfor _, other := range others {\n\t\tleft, right := n.compareGet(first, other)\n\t\tif !(left <= right) {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "Le"
+}

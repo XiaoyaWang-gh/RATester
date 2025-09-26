@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 101,
+    "focalfunc": "func (s *Storage) Close() error",
+    "funcbody": "func (s *Storage) Close() error {\n\ts.done <- struct{}{}\n\treturn nil\n}",
+    "funcname": "Close"
+}

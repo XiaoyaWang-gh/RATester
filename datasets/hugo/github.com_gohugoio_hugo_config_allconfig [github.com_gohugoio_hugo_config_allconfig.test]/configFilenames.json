@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 121,
+    "focalfunc": "func (d ConfigSourceDescriptor) configFilenames() []string",
+    "funcbody": "func (d ConfigSourceDescriptor) configFilenames() []string {\n\tif d.Filename == \"\" {\n\t\treturn nil\n\t}\n\treturn strings.Split(d.Filename, \",\")\n}",
+    "funcname": "configFilenames"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 88,
+    "focalfunc": "func (c *Cache) Len() int",
+    "funcbody": "func (c *Cache) Len() int {\n\treturn c.ll.Len()\n}",
+    "funcname": "Len"
+}

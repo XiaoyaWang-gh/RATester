@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 608,
+    "focalfunc": "func MaxStmtCacheSize(v int) DBOption",
+    "funcbody": "func MaxStmtCacheSize(v int) DBOption {\n\treturn func(al *alias) {\n\t\tal.StmtCacheSize = v\n\t}\n}",
+    "funcname": "MaxStmtCacheSize"
+}

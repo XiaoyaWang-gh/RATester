@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/recover.go",
+    "lineno": 64,
+    "focalfunc": "func Recover() echo.MiddlewareFunc",
+    "funcbody": "func Recover() echo.MiddlewareFunc {\n\treturn RecoverWithConfig(DefaultRecoverConfig)\n}",
+    "funcname": "Recover"
+}

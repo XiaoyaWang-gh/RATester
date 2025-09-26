@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 157,
+    "focalfunc": "func writeLevel(encoding string, writer io.Writer, reader io.Reader, level int) (bool, string, error)",
+    "funcbody": "func writeLevel(encoding string, writer io.Writer, reader io.Reader, level int) (bool, string, error) {\n\tvar outputWriter resetWriter\n\tvar err error\n\tce := noneCompressEncoder\n\n\tif cf, ok := encoderMap[encoding]; ok {\n\t\tce = cf\n\t}\n\tencoding = ce.name\n\toutputWriter = ce.encode(writer, level)\n\tdefer ce.put(outputWriter, level)\n\n\t_, err = io.Copy(outputWriter, reader)\n\tif err != nil {\n\t\treturn false, \"\", err\n\t}\n\n\tswitch outputWriter.(type) {\n\tcase io.WriteCloser:\n\t\toutputWriter.(io.WriteCloser).Close()\n\t}\n\treturn encoding != \"\", encoding, nil\n}",
+    "funcname": "writeLevel"
+}

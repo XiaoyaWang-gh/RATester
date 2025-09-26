@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 206,
+    "focalfunc": "func (v *visitorHelperImpl) RunID() string",
+    "funcbody": "func (v *visitorHelperImpl) RunID() string {\n\treturn v.runID\n}",
+    "funcname": "RunID"
+}

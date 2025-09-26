@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 33,
+    "focalfunc": "func New(loc *time.Location, caseInsensitive bool) *Namespace",
+    "funcbody": "func New(loc *time.Location, caseInsensitive bool) *Namespace {\n\treturn &Namespace{loc: loc, caseInsensitive: caseInsensitive}\n}",
+    "funcname": "New"
+}

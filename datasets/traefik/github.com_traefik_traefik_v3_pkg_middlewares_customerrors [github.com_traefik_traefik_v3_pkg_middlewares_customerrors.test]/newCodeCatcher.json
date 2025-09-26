@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 137,
+    "focalfunc": "func newCodeCatcher(rw http.ResponseWriter, httpCodeRanges types.HTTPCodeRanges) *codeCatcher",
+    "funcbody": "func newCodeCatcher(rw http.ResponseWriter, httpCodeRanges types.HTTPCodeRanges) *codeCatcher {\n\treturn &codeCatcher{\n\t\theaderMap:\tmake(http.Header),\n\t\tcode:\t\thttp.StatusOK,\n\t\tresponseWriter:\trw,\n\t\thttpCodeRanges:\thttpCodeRanges,\n\t}\n}",
+    "funcname": "newCodeCatcher"
+}

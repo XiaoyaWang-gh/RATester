@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 176,
+    "focalfunc": "func (t *Task) Run(ctx context.Context) error",
+    "funcbody": "func (t *Task) Run(ctx context.Context) error {\n\terr := t.DoFunc(ctx)\n\tif err != nil {\n\t\tindex := t.errCnt % t.ErrLimit\n\t\tt.Errlist[index] = &taskerr{t: t.Next, errinfo: err.Error()}\n\t\tt.errCnt++\n\t}\n\treturn err\n}",
+    "funcname": "Run"
+}

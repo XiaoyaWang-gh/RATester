@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 73,
+    "focalfunc": "func NewEMail(config string) *Email",
+    "funcbody": "func NewEMail(config string) *Email {\n\te := new(Email)\n\te.Headers = textproto.MIMEHeader{}\n\terr := json.Unmarshal([]byte(config), e)\n\tif err != nil {\n\t\treturn nil\n\t}\n\treturn e\n}",
+    "funcname": "NewEMail"
+}

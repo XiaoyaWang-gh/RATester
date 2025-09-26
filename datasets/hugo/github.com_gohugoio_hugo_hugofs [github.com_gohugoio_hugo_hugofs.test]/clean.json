@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 208,
+    "focalfunc": "func (rm *RootMapping) clean()",
+    "funcbody": "func (rm *RootMapping) clean() {\n\trm.From = strings.Trim(filepath.Clean(rm.From), filepathSeparator)\n\trm.To = filepath.Clean(rm.To)\n}",
+    "funcname": "clean"
+}

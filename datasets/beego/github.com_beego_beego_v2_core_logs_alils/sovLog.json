@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 443,
+    "focalfunc": "func sovLog(x uint64) (n int)",
+    "funcbody": "func sovLog(x uint64) (n int) {\n\tfor {\n\t\tn++\n\t\tx >>= 7\n\t\tif x == 0 {\n\t\t\tbreak\n\t\t}\n\t}\n\treturn n\n}",
+    "funcname": "sovLog"
+}

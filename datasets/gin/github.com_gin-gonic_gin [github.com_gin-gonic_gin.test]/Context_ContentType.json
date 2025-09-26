@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 871,
+    "focalfunc": "func (c *Context) ContentType() string",
+    "funcbody": "func (c *Context) ContentType() string {\n\treturn filterFlags(c.requestHeader(\"Content-Type\"))\n}",
+    "funcname": "ContentType"
+}

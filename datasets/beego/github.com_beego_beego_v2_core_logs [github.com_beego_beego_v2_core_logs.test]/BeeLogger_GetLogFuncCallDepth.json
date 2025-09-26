@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 365,
+    "focalfunc": "func (bl *BeeLogger) GetLogFuncCallDepth() int",
+    "funcbody": "func (bl *BeeLogger) GetLogFuncCallDepth() int {\n\treturn bl.loggerFuncCallDepth\n}",
+    "funcname": "GetLogFuncCallDepth"
+}

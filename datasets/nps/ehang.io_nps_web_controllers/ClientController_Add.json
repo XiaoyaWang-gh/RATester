@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/client.go",
+    "lineno": 40,
+    "focalfunc": "func (s *ClientController) Add()",
+    "funcbody": "func (s *ClientController) Add() {\n\tif s.Ctx.Request.Method == \"GET\" {\n\t\ts.Data[\"menu\"] = \"client\"\n\t\ts.SetInfo(\"add client\")\n\t\ts.display()\n\t} else {\n\t\tt := &file.Client{\n\t\t\tVerifyKey:\ts.getEscapeString(\"vkey\"),\n\t\t\tId:\t\tint(file.GetDb().JsonDb.GetClientId()),\n\t\t\tStatus:\t\ttrue,\n\t\t\tRemark:\t\ts.getEscapeString(\"remark\"),\n\t\t\tCnf: &file.Config{\n\t\t\t\tU:\t\ts.getEscapeString(\"u\"),\n\t\t\t\tP:\t\ts.getEscapeString(\"p\"),\n\t\t\t\tCompress:\tcommon.GetBoolByStr(s.getEscapeString(\"compress\")),\n\t\t\t\tCrypt:\t\ts.GetBoolNoErr(\"crypt\"),\n\t\t\t},\n\t\t\tConfigConnAllow:\ts.GetBoolNoErr(\"config_conn_allow\"),\n\t\t\tRateLimit:\t\ts.GetIntNoErr(\"rate_limit\"),\n\t\t\tMaxConn:\t\ts.GetIntNoErr(\"max_conn\"),\n\t\t\tWebUserName:\t\ts.getEscapeString(\"web_username\"),\n\t\t\tWebPassword:\t\ts.getEscapeString(\"web_password\"),\n\t\t\tMaxTunnelNum:\t\ts.GetIntNoErr(\"max_tunnel\"),\n\t\t\tFlow: &file.Flow{\n\t\t\t\tExportFlow:\t0,\n\t\t\t\tInletFlow:\t0,\n\t\t\t\tFlowLimit:\tint64(s.GetIntNoErr(\"flow_limit\")),\n\t\t\t},\n\t\t}\n\t\tif err := file.GetDb().NewClient(t); err != nil {\n\t\t\ts.AjaxErr(err.Error())\n\t\t}\n\t\ts.AjaxOk(\"add success\")\n\t}\n}",
+    "funcname": "Add"
+}

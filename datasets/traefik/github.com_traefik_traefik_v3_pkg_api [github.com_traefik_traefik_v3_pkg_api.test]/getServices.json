@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 126,
+    "focalfunc": "func (h Handler) getServices(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getServices(rw http.ResponseWriter, request *http.Request) {\n\tresults := make([]serviceRepresentation, 0, len(h.runtimeConfiguration.Services))\n\n\tquery := request.URL.Query()\n\tcriterion := newSearchCriterion(query)\n\n\tfor name, si := range h.runtimeConfiguration.Services {\n\t\tif keepService(name, si, criterion) {\n\t\t\tresults = append(results, newServiceRepresentation(name, si))\n\t\t}\n\t}\n\n\tsortServices(query, results)\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\tpageInfo, err := pagination(request, len(results))\n\tif err != nil {\n\t\twriteError(rw, err.Error(), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\trw.Header().Set(nextPageHeader, strconv.Itoa(pageInfo.nextPage))\n\n\terr = json.NewEncoder(rw).Encode(results[pageInfo.startIndex:pageInfo.endIndex])\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getServices"
+}

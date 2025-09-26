@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 34,
+    "focalfunc": "func (o *Order) GetColumn() string",
+    "funcbody": "func (o *Order) GetColumn() string {\n\treturn o.column\n}",
+    "funcname": "GetColumn"
+}

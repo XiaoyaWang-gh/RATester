@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/keyauth/config.go",
+    "lineno": 64,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.SuccessHandler == nil {\n\t\tcfg.SuccessHandler = ConfigDefault.SuccessHandler\n\t}\n\tif cfg.ErrorHandler == nil {\n\t\tcfg.ErrorHandler = ConfigDefault.ErrorHandler\n\t}\n\tif cfg.KeyLookup == \"\" {\n\t\tcfg.KeyLookup = ConfigDefault.KeyLookup\n\n\t\tif cfg.AuthScheme == \"\" {\n\t\t\tcfg.AuthScheme = ConfigDefault.AuthScheme\n\t\t}\n\t}\n\tif cfg.Validator == nil {\n\t\tpanic(\"fiber: keyauth middleware requires a validator function\")\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

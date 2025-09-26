@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/passthrough/passthrough.go",
+    "lineno": 164,
+    "focalfunc": "func (p *passthroughContext) Inner() string",
+    "funcbody": "func (p *passthroughContext) Inner() string {\n\treturn p.inner\n}",
+    "funcname": "Inner"
+}

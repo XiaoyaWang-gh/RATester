@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 253,
+    "focalfunc": "func (c *Controller) HandleClient(m *msg.NatHoleClient, transporter transport.MessageTransporter)",
+    "funcbody": "func (c *Controller) HandleClient(m *msg.NatHoleClient, transporter transport.MessageTransporter) {\n\tc.mu.RLock()\n\tsession, ok := c.sessions[m.Sid]\n\tc.mu.RUnlock()\n\tif !ok {\n\t\treturn\n\t}\n\tlog.Tracef(\"handle client message, sid [%s], server name: %s\", session.sid, m.ProxyName)\n\tsession.clientMsg = m\n\tsession.clientTransporter = transporter\n\tselect {\n\tcase session.notifyCh <- struct{}{}:\n\tdefault:\n\t}\n}",
+    "funcname": "HandleClient"
+}

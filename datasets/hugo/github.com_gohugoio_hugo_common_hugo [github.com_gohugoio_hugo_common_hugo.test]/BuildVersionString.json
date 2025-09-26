@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 139,
+    "focalfunc": "func BuildVersionString() string",
+    "funcbody": "func BuildVersionString() string {\n\n\tprogram := \"hugo\"\n\n\tversion := \"v\" + CurrentVersion.String()\n\n\tbi := getBuildInfo()\n\tif bi == nil {\n\t\treturn version\n\t}\n\tif bi.Revision != \"\" {\n\t\tversion += \"-\" + bi.Revision\n\t}\n\tif IsExtended {\n\t\tversion += \"+extended\"\n\t}\n\n\tosArch := bi.GoOS + \"/\" + bi.GoArch\n\n\tdate := bi.RevisionTime\n\tif date == \"\" {\n\n\t\tdate = buildDate\n\t}\n\tif date == \"\" {\n\t\tdate = \"unknown\"\n\t}\n\n\tversionString := fmt.Sprintf(\"%s %s %s BuildDate=%s\",\n\t\tprogram, version, osArch, date)\n\n\tif vendorInfo != \"\" {\n\t\tversionString += \" VendorInfo=\" + vendorInfo\n\t}\n\n\treturn versionString\n}",
+    "funcname": "BuildVersionString"
+}

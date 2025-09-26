@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 394,
+    "focalfunc": "func (l *genericResource) ReadSeekCloser() (hugio.ReadSeekCloser, error)",
+    "funcbody": "func (l *genericResource) ReadSeekCloser() (hugio.ReadSeekCloser, error) {\n\treturn l.sd.OpenReadSeekCloser()\n}",
+    "funcname": "ReadSeekCloser"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 373,
+    "focalfunc": "func (c *DefaultCtx) ClearCookie(key ...string)",
+    "funcbody": "func (c *DefaultCtx) ClearCookie(key ...string) {\n\tif len(key) > 0 {\n\t\tfor i := range key {\n\t\t\tc.fasthttp.Response.Header.DelClientCookie(key[i])\n\t\t}\n\t\treturn\n\t}\n\tc.fasthttp.Request.Header.VisitAllCookie(func(k, _ []byte) {\n\t\tc.fasthttp.Response.Header.DelClientCookieBytes(k)\n\t})\n}",
+    "funcname": "ClearCookie"
+}

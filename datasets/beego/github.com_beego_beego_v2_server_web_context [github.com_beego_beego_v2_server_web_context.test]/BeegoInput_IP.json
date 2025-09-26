@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 218,
+    "focalfunc": "func (input *BeegoInput) IP() string",
+    "funcbody": "func (input *BeegoInput) IP() string {\n\tips := input.Proxy()\n\tif len(ips) > 0 && ips[0] != \"\" {\n\t\trip, _, err := net.SplitHostPort(ips[0])\n\t\tif err != nil {\n\t\t\trip = ips[0]\n\t\t}\n\t\treturn rip\n\t}\n\tif ip, _, err := net.SplitHostPort(input.Context.Request.RemoteAddr); err == nil {\n\t\treturn ip\n\t}\n\treturn input.Context.Request.RemoteAddr\n}",
+    "funcname": "IP"
+}

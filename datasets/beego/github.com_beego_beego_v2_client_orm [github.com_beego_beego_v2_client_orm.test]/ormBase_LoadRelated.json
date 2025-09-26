@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 331,
+    "focalfunc": "func (o *ormBase) LoadRelated(md interface{}, name string, args ...utils.KV) (int64, error)",
+    "funcbody": "func (o *ormBase) LoadRelated(md interface{}, name string, args ...utils.KV) (int64, error) {\n\treturn o.LoadRelatedWithCtx(context.Background(), md, name, args...)\n}",
+    "funcname": "LoadRelated"
+}

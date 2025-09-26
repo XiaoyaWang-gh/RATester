@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/clientset.go",
+    "lineno": 88,
+    "focalfunc": "func NewForConfigAndClient(c *rest.Config, httpClient *http.Client) (*Clientset, error)",
+    "funcbody": "func NewForConfigAndClient(c *rest.Config, httpClient *http.Client) (*Clientset, error) {\n\tconfigShallowCopy := *c\n\tif configShallowCopy.RateLimiter == nil && configShallowCopy.QPS > 0 {\n\t\tif configShallowCopy.Burst <= 0 {\n\t\t\treturn nil, fmt.Errorf(\"burst is required to be greater than 0 when RateLimiter is not set and QPS is set to greater than 0\")\n\t\t}\n\t\tconfigShallowCopy.RateLimiter = flowcontrol.NewTokenBucketRateLimiter(configShallowCopy.QPS, configShallowCopy.Burst)\n\t}\n\n\tvar cs Clientset\n\tvar err error\n\tcs.traefikV1alpha1, err = traefikv1alpha1.NewForConfigAndClient(&configShallowCopy, httpClient)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tcs.DiscoveryClient, err = discovery.NewDiscoveryClientForConfigAndClient(&configShallowCopy, httpClient)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &cs, nil\n}",
+    "funcname": "NewForConfigAndClient"
+}

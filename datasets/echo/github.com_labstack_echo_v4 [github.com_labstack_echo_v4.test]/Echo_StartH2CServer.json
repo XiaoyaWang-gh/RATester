@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 839,
+    "focalfunc": "func (e *Echo) StartH2CServer(address string, h2s *http2.Server) error",
+    "funcbody": "func (e *Echo) StartH2CServer(address string, h2s *http2.Server) error {\n\te.startupMutex.Lock()\n\n\ts := e.Server\n\ts.Addr = address\n\te.colorer.SetOutput(e.Logger.Output())\n\ts.ErrorLog = e.StdLogger\n\ts.Handler = h2c.NewHandler(e, h2s)\n\tif e.Debug {\n\t\te.Logger.SetLevel(log.DEBUG)\n\t}\n\n\tif !e.HideBanner {\n\t\te.colorer.Printf(banner, e.colorer.Red(\"v\"+Version), e.colorer.Blue(website))\n\t}\n\n\tif e.Listener == nil {\n\t\tl, err := newListener(s.Addr, e.ListenerNetwork)\n\t\tif err != nil {\n\t\t\te.startupMutex.Unlock()\n\t\t\treturn err\n\t\t}\n\t\te.Listener = l\n\t}\n\tif !e.HidePort {\n\t\te.colorer.Printf(\"\u21e8 http server started on %s\\n\", e.colorer.Green(e.Listener.Addr()))\n\t}\n\te.startupMutex.Unlock()\n\treturn s.Serve(e.Listener)\n}",
+    "funcname": "StartH2CServer"
+}

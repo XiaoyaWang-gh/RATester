@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 729,
+    "focalfunc": "func (z ZipCode) DefaultMessage() string",
+    "funcbody": "func (z ZipCode) DefaultMessage() string {\n\treturn MessageTmpls[\"ZipCode\"]\n}",
+    "funcname": "DefaultMessage"
+}

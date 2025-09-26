@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 161,
+    "focalfunc": "func TestUdpPort(port int) bool",
+    "funcbody": "func TestUdpPort(port int) bool {\n\tl, err := net.ListenUDP(\"udp\", &net.UDPAddr{net.ParseIP(\"0.0.0.0\"), port, \"\"})\n\tdefer func() {\n\t\tif l != nil {\n\t\t\tl.Close()\n\t\t}\n\t}()\n\tif err != nil {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "TestUdpPort"
+}

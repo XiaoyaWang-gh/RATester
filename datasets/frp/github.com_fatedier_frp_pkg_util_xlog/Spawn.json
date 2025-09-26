@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 90,
+    "focalfunc": "func (l *Logger) Spawn() *Logger",
+    "funcbody": "func (l *Logger) Spawn() *Logger {\n\tnl := New()\n\tnl.prefixes = append(nl.prefixes, l.prefixes...)\n\tnl.renderPrefixString()\n\treturn nl\n}",
+    "funcname": "Spawn"
+}

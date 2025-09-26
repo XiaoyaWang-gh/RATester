@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 290,
+    "focalfunc": "func (p *Path) reset()",
+    "funcbody": "func (p *Path) reset() {\n\tp.s = \"\"\n\tp.posContainerLow = -1\n\tp.posContainerHigh = -1\n\tp.posSectionHigh = -1\n\tp.component = \"\"\n\tp.bundleType = 0\n\tp.identifiers = p.identifiers[:0]\n\tp.posIdentifierLanguage = -1\n\tp.disabled = false\n\tp.trimLeadingSlash = false\n\tp.unnormalized = nil\n}",
+    "funcname": "reset"
+}

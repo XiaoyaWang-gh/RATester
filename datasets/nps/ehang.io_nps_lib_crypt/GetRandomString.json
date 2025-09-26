@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/crypt.go",
+    "lineno": 67,
+    "focalfunc": "func GetRandomString(l int) string",
+    "funcbody": "func GetRandomString(l int) string {\n\tstr := \"0123456789abcdefghijklmnopqrstuvwxyz\"\n\tbytes := []byte(str)\n\tresult := []byte{}\n\tr := rand.New(rand.NewSource(time.Now().UnixNano()))\n\tfor i := 0; i < l; i++ {\n\t\tresult = append(result, bytes[r.Intn(len(bytes))])\n\t}\n\treturn string(result)\n}",
+    "funcname": "GetRandomString"
+}

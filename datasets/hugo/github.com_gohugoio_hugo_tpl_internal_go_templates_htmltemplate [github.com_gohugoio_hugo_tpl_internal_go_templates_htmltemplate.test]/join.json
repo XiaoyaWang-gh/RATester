@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 456,
+    "focalfunc": "func join(a, b context, node parse.Node, nodeName string) context",
+    "funcbody": "func join(a, b context, node parse.Node, nodeName string) context {\n\tif a.state == stateError {\n\t\treturn a\n\t}\n\tif b.state == stateError {\n\t\treturn b\n\t}\n\tif a.state == stateDead {\n\t\treturn b\n\t}\n\tif b.state == stateDead {\n\t\treturn a\n\t}\n\tif a.eq(b) {\n\t\treturn a\n\t}\n\n\tc := a\n\tc.urlPart = b.urlPart\n\tif c.eq(b) {\n\n\t\tc.urlPart = urlPartUnknown\n\t\treturn c\n\t}\n\n\tc = a\n\tc.jsCtx = b.jsCtx\n\tif c.eq(b) {\n\n\t\tc.jsCtx = jsCtxUnknown\n\t\treturn c\n\t}\n\n\tif c, d := nudge(a), nudge(b); !(c.eq(a) && d.eq(b)) {\n\t\tif e := join(c, d, node, nodeName); e.state != stateError {\n\t\t\treturn e\n\t\t}\n\t}\n\n\treturn context{\n\t\tstate:\tstateError,\n\t\terr:\terrorf(ErrBranchEnd, node, 0, \"{{%s}} branches end in different contexts: %v, %v\", nodeName, a, b),\n\t}\n}",
+    "funcname": "join"
+}

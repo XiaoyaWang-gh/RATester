@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 634,
+    "focalfunc": "func getBytesImmutable(s string) []byte",
+    "funcbody": "func getBytesImmutable(s string) []byte {\n\treturn []byte(s)\n}",
+    "funcname": "getBytesImmutable"
+}

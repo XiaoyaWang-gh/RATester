@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 152,
+    "focalfunc": "func (c *Column) SetNullable(null bool) *Column",
+    "funcbody": "func (c *Column) SetNullable(null bool) *Column {\n\tif null {\n\t\tc.Null = \"\"\n\t} else {\n\t\tc.Null = \"NOT NULL\"\n\t}\n\treturn c\n}",
+    "funcname": "SetNullable"
+}

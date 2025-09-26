@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 542,
+    "focalfunc": "func (c *Client) rewriteGoMod(name string, isGoMod map[string]bool) error",
+    "funcbody": "func (c *Client) rewriteGoMod(name string, isGoMod map[string]bool) error {\n\tdata, err := c.rewriteGoModRewrite(name, isGoMod)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif data != nil {\n\t\tif err := afero.WriteFile(c.fs, filepath.Join(c.ccfg.WorkingDir, name), data, 0o666); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "rewriteGoMod"
+}

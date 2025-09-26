@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 80,
+    "focalfunc": "func (d *Dispatcher) Send(m Message) error",
+    "funcbody": "func (d *Dispatcher) Send(m Message) error {\n\tselect {\n\tcase <-d.doneCh:\n\t\treturn io.EOF\n\tcase d.sendCh <- m:\n\t\treturn nil\n\t}\n}",
+    "funcname": "Send"
+}

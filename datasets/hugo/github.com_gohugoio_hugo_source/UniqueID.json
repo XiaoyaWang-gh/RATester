@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 102,
+    "focalfunc": "func (fi *File) UniqueID() string",
+    "funcbody": "func (fi *File) UniqueID() string {\n\tfi.init()\n\treturn fi.uniqueID\n}",
+    "funcname": "UniqueID"
+}

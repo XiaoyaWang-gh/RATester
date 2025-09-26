@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 540,
+    "focalfunc": "func (c *Client) SetDial(dial fasthttp.DialFunc) *Client",
+    "funcbody": "func (c *Client) SetDial(dial fasthttp.DialFunc) *Client {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\n\tc.fasthttp.Dial = dial\n\treturn c\n}",
+    "funcname": "SetDial"
+}

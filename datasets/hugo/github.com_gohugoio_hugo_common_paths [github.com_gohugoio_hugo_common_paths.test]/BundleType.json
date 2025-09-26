@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 525,
+    "focalfunc": "func (p *Path) BundleType() PathType",
+    "funcbody": "func (p *Path) BundleType() PathType {\n\treturn p.bundleType\n}",
+    "funcname": "BundleType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 424,
+    "focalfunc": "func GetIntranetIp() (error, string)",
+    "funcbody": "func GetIntranetIp() (error, string) {\n\taddrs, err := net.InterfaceAddrs()\n\tif err != nil {\n\t\treturn nil, \"\"\n\t}\n\tfor _, address := range addrs {\n\n\t\tif ipnet, ok := address.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {\n\t\t\tif ipnet.IP.To4() != nil {\n\t\t\t\treturn nil, ipnet.IP.To4().String()\n\t\t\t}\n\t\t}\n\t}\n\treturn errors.New(\"get intranet ip error\"), \"\"\n}",
+    "funcname": "GetIntranetIp"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 858,
+    "focalfunc": "func (app *App) Server() *fasthttp.Server",
+    "funcbody": "func (app *App) Server() *fasthttp.Server {\n\treturn app.server\n}",
+    "funcname": "Server"
+}

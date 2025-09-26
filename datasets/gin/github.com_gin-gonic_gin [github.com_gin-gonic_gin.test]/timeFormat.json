@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/recovery.go",
+    "lineno": 172,
+    "focalfunc": "func timeFormat(t time.Time) string",
+    "funcbody": "func timeFormat(t time.Time) string {\n\treturn t.Format(\"2006/01/02 - 15:04:05\")\n}",
+    "funcname": "timeFormat"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 174,
+    "focalfunc": "func ErrorLogger() HandlerFunc",
+    "funcbody": "func ErrorLogger() HandlerFunc {\n\treturn ErrorLoggerT(ErrorTypeAny)\n}",
+    "funcname": "ErrorLogger"
+}

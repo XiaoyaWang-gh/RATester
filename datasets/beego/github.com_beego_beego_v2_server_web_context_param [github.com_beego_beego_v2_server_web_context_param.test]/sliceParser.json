@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/parsers.go",
+    "lineno": 111,
+    "focalfunc": "func sliceParser(elemParser paramParser) paramParser",
+    "funcbody": "func sliceParser(elemParser paramParser) paramParser {\n\treturn parserFunc(func(value string, toType reflect.Type) (interface{}, error) {\n\t\tvalues := strings.Split(value, \",\")\n\t\tresult := reflect.MakeSlice(toType, 0, len(values))\n\t\telemType := toType.Elem()\n\t\tfor _, v := range values {\n\t\t\tparsedValue, err := elemParser.parse(v, elemType)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t\tresult = reflect.Append(result, reflect.ValueOf(parsedValue))\n\t\t}\n\t\treturn result.Interface(), nil\n\t})\n}",
+    "funcname": "sliceParser"
+}

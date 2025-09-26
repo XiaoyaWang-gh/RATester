@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/redirect/redirect_scheme.go",
+    "lineno": 53,
+    "focalfunc": "func (r *redirectScheme) clientRequestURL(req *http.Request) string",
+    "funcbody": "func (r *redirectScheme) clientRequestURL(req *http.Request) string {\n\tscheme := schemeHTTP\n\thost, port, err := net.SplitHostPort(req.Host)\n\tif err != nil {\n\t\thost = req.Host\n\t} else {\n\t\tport = \":\" + port\n\t}\n\turi := req.RequestURI\n\n\tif match := uriRegexp.FindStringSubmatch(req.RequestURI); len(match) > 0 {\n\t\tscheme = match[1]\n\n\t\tif len(match[2]) > 0 {\n\t\t\thost = match[2]\n\t\t}\n\n\t\tif len(match[3]) > 0 {\n\t\t\tport = match[3]\n\t\t}\n\n\t\turi = match[4]\n\t}\n\n\tif req.TLS != nil {\n\t\tscheme = schemeHTTPS\n\t}\n\n\tif xProto := req.Header.Get(xForwardedProto); xProto != \"\" {\n\n\t\tswitch {\n\t\tcase strings.EqualFold(xProto, schemeHTTP), strings.EqualFold(xProto, \"ws\"):\n\t\t\tscheme = schemeHTTP\n\t\tcase strings.EqualFold(xProto, schemeHTTPS), strings.EqualFold(xProto, \"wss\"):\n\t\t\tscheme = schemeHTTPS\n\t\tdefault:\n\t\t\tmiddlewares.GetLogger(req.Context(), r.name, typeSchemeName).Debug().Msgf(\"Invalid X-Forwarded-Proto: %s\", xProto)\n\t\t}\n\t}\n\n\tif scheme == schemeHTTP && port == \":80\" || scheme == schemeHTTPS && port == \":443\" {\n\t\tport = \"\"\n\t}\n\n\treturn strings.Join([]string{scheme, \"://\", host, port, uri}, \"\")\n}",
+    "funcname": "clientRequestURL"
+}

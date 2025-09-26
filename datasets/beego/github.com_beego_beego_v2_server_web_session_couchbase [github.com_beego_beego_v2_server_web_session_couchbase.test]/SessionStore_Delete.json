@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 86,
+    "focalfunc": "func (cs *SessionStore) Delete(ctx context.Context, key interface{}) error",
+    "funcbody": "func (cs *SessionStore) Delete(ctx context.Context, key interface{}) error {\n\tcs.lock.Lock()\n\tdefer cs.lock.Unlock()\n\tdelete(cs.values, key)\n\treturn nil\n}",
+    "funcname": "Delete"
+}

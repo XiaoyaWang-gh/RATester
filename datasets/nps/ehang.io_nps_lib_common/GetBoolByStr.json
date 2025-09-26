@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 75,
+    "focalfunc": "func GetBoolByStr(s string) bool",
+    "funcbody": "func GetBoolByStr(s string) bool {\n\tswitch s {\n\tcase \"1\", \"true\":\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "GetBoolByStr"
+}

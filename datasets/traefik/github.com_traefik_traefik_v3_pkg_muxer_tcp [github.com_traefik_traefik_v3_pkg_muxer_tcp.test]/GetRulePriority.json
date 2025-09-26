@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/mux.go",
+    "lineno": 92,
+    "focalfunc": "func GetRulePriority(rule string) int",
+    "funcbody": "func GetRulePriority(rule string) int {\n\tcatchAllParser, err := rules.NewParser([]string{\"HostSNI\"})\n\tif err != nil {\n\t\treturn len(rule)\n\t}\n\n\tparse, err := catchAllParser.Parse(rule)\n\tif err != nil {\n\t\treturn len(rule)\n\t}\n\n\tbuildTree, ok := parse.(rules.TreeBuilder)\n\tif !ok {\n\t\treturn len(rule)\n\t}\n\n\truleTree := buildTree()\n\n\tif ruleTree.RuleLeft == nil && ruleTree.RuleRight == nil && len(ruleTree.Value) == 1 &&\n\t\truleTree.Value[0] == \"*\" && strings.EqualFold(ruleTree.Matcher, \"HostSNI\") {\n\t\treturn -1\n\t}\n\n\treturn len(rule)\n}",
+    "funcname": "GetRulePriority"
+}

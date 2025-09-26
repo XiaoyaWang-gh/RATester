@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 209,
+    "focalfunc": "func (c *DefaultCtx) AcceptsCharsets(offers ...string) string",
+    "funcbody": "func (c *DefaultCtx) AcceptsCharsets(offers ...string) string {\n\treturn getOffer(c.fasthttp.Request.Header.Peek(HeaderAcceptCharset), acceptsOffer, offers...)\n}",
+    "funcname": "AcceptsCharsets"
+}

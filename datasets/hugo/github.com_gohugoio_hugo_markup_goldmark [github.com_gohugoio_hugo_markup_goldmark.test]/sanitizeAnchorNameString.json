@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/autoid.go",
+    "lineno": 35,
+    "focalfunc": "func sanitizeAnchorNameString(s string, idType string) string",
+    "funcbody": "func sanitizeAnchorNameString(s string, idType string) string {\n\treturn string(sanitizeAnchorName([]byte(s), idType))\n}",
+    "funcname": "sanitizeAnchorNameString"
+}

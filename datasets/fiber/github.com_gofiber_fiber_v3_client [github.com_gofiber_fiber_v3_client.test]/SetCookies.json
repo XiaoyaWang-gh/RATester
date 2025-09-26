@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 653,
+    "focalfunc": "func (c Cookie) SetCookies(m map[string]string)",
+    "funcbody": "func (c Cookie) SetCookies(m map[string]string) {\n\tfor k, v := range m {\n\t\tc[k] = v\n\t}\n}",
+    "funcname": "SetCookies"
+}

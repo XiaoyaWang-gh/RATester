@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 642,
+    "focalfunc": "func (c *hugoBuilder) handleBuildErr(err error, msg string)",
+    "funcbody": "func (c *hugoBuilder) handleBuildErr(err error, msg string) {\n\tc.errState.setBuildErr(err)\n\tc.r.logger.Errorln(msg + \": \" + cleanErrorLog(err.Error()))\n}",
+    "funcname": "handleBuildErr"
+}

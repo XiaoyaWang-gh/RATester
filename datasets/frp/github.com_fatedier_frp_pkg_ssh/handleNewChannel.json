@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/server.go",
+    "lineno": 295,
+    "focalfunc": "func (s *TunnelServer) handleNewChannel(channel ssh.NewChannel, extraPayloadCh chan string)",
+    "funcbody": "func (s *TunnelServer) handleNewChannel(channel ssh.NewChannel, extraPayloadCh chan string) {\n\tch, reqs, err := channel.Accept()\n\tif err != nil {\n\t\treturn\n\t}\n\tif s.firstChannel == nil {\n\t\ts.firstChannel = ch\n\t}\n\tgo s.keepAlive(ch)\n\n\tfor req := range reqs {\n\t\tif req.WantReply {\n\t\t\t_ = req.Reply(true, nil)\n\t\t}\n\t\tif req.Type != \"exec\" || len(req.Payload) <= 4 {\n\t\t\tcontinue\n\t\t}\n\t\tend := 4 + binary.BigEndian.Uint32(req.Payload[:4])\n\t\tif len(req.Payload) < int(end) {\n\t\t\tcontinue\n\t\t}\n\t\textraPayload := string(req.Payload[4:end])\n\t\tselect {\n\t\tcase extraPayloadCh <- extraPayload:\n\t\tdefault:\n\t\t}\n\t}\n}",
+    "funcname": "handleNewChannel"
+}

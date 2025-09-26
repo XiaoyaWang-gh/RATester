@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 89,
+    "focalfunc": "func (cj *CookieJar) getCookiesByHost(host string) []*fasthttp.Cookie",
+    "funcbody": "func (cj *CookieJar) getCookiesByHost(host string) []*fasthttp.Cookie {\n\tcj.mu.Lock()\n\tdefer cj.mu.Unlock()\n\n\tnow := time.Now()\n\tcookies := cj.hostCookies[host]\n\n\tfor i := 0; i < len(cookies); i++ {\n\t\tc := cookies[i]\n\t\tif !c.Expire().Equal(fasthttp.CookieExpireUnlimited) && c.Expire().Before(now) {\n\t\t\tcookies = append(cookies[:i], cookies[i+1:]...)\n\t\t\tfasthttp.ReleaseCookie(c)\n\t\t\ti--\n\t\t}\n\t}\n\n\treturn cookies\n}",
+    "funcname": "getCookiesByHost"
+}

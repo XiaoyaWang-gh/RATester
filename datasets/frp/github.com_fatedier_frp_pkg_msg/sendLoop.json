@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 53,
+    "focalfunc": "func (d *Dispatcher) sendLoop()",
+    "funcbody": "func (d *Dispatcher) sendLoop() {\n\tfor {\n\t\tselect {\n\t\tcase <-d.doneCh:\n\t\t\treturn\n\t\tcase m := <-d.sendCh:\n\t\t\t_ = WriteMsg(d.rw, m)\n\t\t}\n\t}\n}",
+    "funcname": "sendLoop"
+}

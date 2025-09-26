@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 367,
+    "focalfunc": "func (engine *Engine) Routes() (routes RoutesInfo)",
+    "funcbody": "func (engine *Engine) Routes() (routes RoutesInfo) {\n\tfor _, tree := range engine.trees {\n\t\troutes = iterate(\"\", tree.method, routes, tree.root)\n\t}\n\treturn routes\n}",
+    "funcname": "Routes"
+}

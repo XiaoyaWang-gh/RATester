@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/cert/selfsigned.go",
+    "lineno": 89,
+    "focalfunc": "func (cp *SelfSignedCertGenerator) validCACert() (bool, *rsa.PrivateKey, *x509.Certificate)",
+    "funcbody": "func (cp *SelfSignedCertGenerator) validCACert() (bool, *rsa.PrivateKey, *x509.Certificate) {\n\tif !ValidCACert(cp.caKey, cp.caCert, cp.caCert, \"\",\n\t\ttime.Now().AddDate(1, 0, 0)) {\n\t\treturn false, nil, nil\n\t}\n\n\tvar ok bool\n\tkey, err := keyutil.ParsePrivateKeyPEM(cp.caKey)\n\tif err != nil {\n\t\treturn false, nil, nil\n\t}\n\tprivateKey, ok := key.(*rsa.PrivateKey)\n\tif !ok {\n\t\treturn false, nil, nil\n\t}\n\n\tcerts, err := cert.ParseCertsPEM(cp.caCert)\n\tif err != nil {\n\t\treturn false, nil, nil\n\t}\n\tif len(certs) != 1 {\n\t\treturn false, nil, nil\n\t}\n\treturn true, privateKey, certs[0]\n}",
+    "funcname": "validCACert"
+}

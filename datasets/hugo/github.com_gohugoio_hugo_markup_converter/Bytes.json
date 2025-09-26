@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 132,
+    "focalfunc": "func (b Bytes) Bytes() []byte",
+    "funcbody": "func (b Bytes) Bytes() []byte {\n\treturn b\n}",
+    "funcname": "Bytes"
+}

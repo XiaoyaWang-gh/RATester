@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 82,
+    "focalfunc": "func (fs *FileSessionStore) SessionRelease(ctx context.Context, w http.ResponseWriter)",
+    "funcbody": "func (fs *FileSessionStore) SessionRelease(ctx context.Context, w http.ResponseWriter) {\n\tfs.releaseSession(ctx, w, true)\n}",
+    "funcname": "SessionRelease"
+}

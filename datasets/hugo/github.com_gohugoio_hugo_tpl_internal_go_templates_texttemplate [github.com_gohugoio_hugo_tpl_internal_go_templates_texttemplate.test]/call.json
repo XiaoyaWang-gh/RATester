@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 321,
+    "focalfunc": "func call(name string, fn reflect.Value, args ...reflect.Value) (reflect.Value, error)",
+    "funcbody": "func call(name string, fn reflect.Value, args ...reflect.Value) (reflect.Value, error) {\n\tfn = indirectInterface(fn)\n\tif !fn.IsValid() {\n\t\treturn reflect.Value{}, fmt.Errorf(\"call of nil\")\n\t}\n\ttyp := fn.Type()\n\tif typ.Kind() != reflect.Func {\n\t\treturn reflect.Value{}, fmt.Errorf(\"non-function %s of type %s\", name, typ)\n\t}\n\n\tif err := goodFunc(name, typ); err != nil {\n\t\treturn reflect.Value{}, err\n\t}\n\tnumIn := typ.NumIn()\n\tvar dddType reflect.Type\n\tif typ.IsVariadic() {\n\t\tif len(args) < numIn-1 {\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"wrong number of args for %s: got %d want at least %d\", name, len(args), numIn-1)\n\t\t}\n\t\tdddType = typ.In(numIn - 1).Elem()\n\t} else {\n\t\tif len(args) != numIn {\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"wrong number of args for %s: got %d want %d\", name, len(args), numIn)\n\t\t}\n\t}\n\targv := make([]reflect.Value, len(args))\n\tfor i, arg := range args {\n\t\targ = indirectInterface(arg)\n\n\t\targType := dddType\n\t\tif !typ.IsVariadic() || i < numIn-1 {\n\t\t\targType = typ.In(i)\n\t\t}\n\n\t\tvar err error\n\t\tif argv[i], err = prepareArg(arg, argType); err != nil {\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"arg %d: %w\", i, err)\n\t\t}\n\t}\n\treturn safeCall(fn, argv)\n}",
+    "funcname": "call"
+}

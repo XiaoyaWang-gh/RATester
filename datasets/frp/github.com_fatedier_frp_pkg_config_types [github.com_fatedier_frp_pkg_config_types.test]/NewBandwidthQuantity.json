@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 39,
+    "focalfunc": "func NewBandwidthQuantity(s string) (BandwidthQuantity, error)",
+    "funcbody": "func NewBandwidthQuantity(s string) (BandwidthQuantity, error) {\n\tq := BandwidthQuantity{}\n\terr := q.UnmarshalString(s)\n\tif err != nil {\n\t\treturn q, err\n\t}\n\treturn q, nil\n}",
+    "funcname": "NewBandwidthQuantity"
+}

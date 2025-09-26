@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 221,
+    "focalfunc": "func validateHTTPSProxyConfigForServer(c *v1.HTTPSProxyConfig, s *v1.ServerConfig) error",
+    "funcbody": "func validateHTTPSProxyConfigForServer(c *v1.HTTPSProxyConfig, s *v1.ServerConfig) error {\n\tif s.VhostHTTPSPort == 0 {\n\t\treturn fmt.Errorf(\"type [https] not supported when vhost https port is not set\")\n\t}\n\n\treturn validateDomainConfigForServer(&c.DomainConfig, s)\n}",
+    "funcname": "validateHTTPSProxyConfigForServer"
+}

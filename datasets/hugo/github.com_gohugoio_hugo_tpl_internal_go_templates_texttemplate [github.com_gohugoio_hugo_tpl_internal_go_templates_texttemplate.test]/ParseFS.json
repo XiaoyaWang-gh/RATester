@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/helper.go",
+    "lineno": 151,
+    "focalfunc": "func parseFS(t *Template, fsys fs.FS, patterns []string) (*Template, error)",
+    "funcbody": "func parseFS(t *Template, fsys fs.FS, patterns []string) (*Template, error) {\n\tvar filenames []string\n\tfor _, pattern := range patterns {\n\t\tlist, err := fs.Glob(fsys, pattern)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif len(list) == 0 {\n\t\t\treturn nil, fmt.Errorf(\"template: pattern matches no files: %#q\", pattern)\n\t\t}\n\t\tfilenames = append(filenames, list...)\n\t}\n\treturn parseFiles(t, readFileFS(fsys), filenames...)\n}",
+    "funcname": "parseFS"
+}

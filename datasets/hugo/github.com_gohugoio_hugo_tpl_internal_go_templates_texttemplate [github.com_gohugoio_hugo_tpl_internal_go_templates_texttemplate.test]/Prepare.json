@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/hugo_template.go",
+    "lineno": 94,
+    "focalfunc": "func (t *Template) Prepare() (*Template, error)",
+    "funcbody": "func (t *Template) Prepare() (*Template, error) {\n\treturn t, nil\n}",
+    "funcname": "Prepare"
+}

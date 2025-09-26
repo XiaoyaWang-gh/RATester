@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 286,
+    "focalfunc": "func (p *PagesFromTemplate) GetDependencyManagerForScope(scope int) identity.Manager",
+    "funcbody": "func (p *PagesFromTemplate) GetDependencyManagerForScope(scope int) identity.Manager {\n\treturn p.DependencyManager\n}",
+    "funcname": "GetDependencyManagerForScope"
+}

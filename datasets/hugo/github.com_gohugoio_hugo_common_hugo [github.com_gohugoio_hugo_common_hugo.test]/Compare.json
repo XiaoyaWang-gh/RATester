@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 69,
+    "focalfunc": "func (h VersionString) Compare(other any) int",
+    "funcbody": "func (h VersionString) Compare(other any) int {\n\treturn compareVersions(h.Version(), other)\n}",
+    "funcname": "Compare"
+}

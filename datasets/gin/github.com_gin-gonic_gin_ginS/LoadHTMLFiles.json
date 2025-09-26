@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 31,
+    "focalfunc": "func LoadHTMLFiles(files ...string)",
+    "funcbody": "func LoadHTMLFiles(files ...string) {\n\tengine().LoadHTMLFiles(files...)\n}",
+    "funcname": "LoadHTMLFiles"
+}

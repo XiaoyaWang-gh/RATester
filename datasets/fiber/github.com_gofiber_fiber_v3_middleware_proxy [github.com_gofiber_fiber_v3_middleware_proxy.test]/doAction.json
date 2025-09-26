@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 158,
+    "focalfunc": "func doAction(\n\tc fiber.Ctx,\n\taddr string,\n\taction func(cli *fasthttp.Client, req *fasthttp.Request, resp *fasthttp.Response) error,\n\tclients ...*fasthttp.Client,\n) error",
+    "funcbody": "func doAction(\n\tc fiber.Ctx,\n\taddr string,\n\taction func(cli *fasthttp.Client, req *fasthttp.Request, resp *fasthttp.Response) error,\n\tclients ...*fasthttp.Client,\n) error {\n\tvar cli *fasthttp.Client\n\n\tif len(clients) != 0 {\n\t\tcli = clients[0]\n\t} else {\n\t\tlock.RLock()\n\t\tcli = client\n\t\tlock.RUnlock()\n\t}\n\n\treq := c.Request()\n\tres := c.Response()\n\toriginalURL := utils.CopyString(c.OriginalURL())\n\tdefer req.SetRequestURI(originalURL)\n\n\tcopiedURL := utils.CopyString(addr)\n\treq.SetRequestURI(copiedURL)\n\n\tif scheme := getScheme(utils.UnsafeBytes(copiedURL)); len(scheme) > 0 {\n\t\treq.URI().SetSchemeBytes(scheme)\n\t}\n\n\treq.Header.Del(fiber.HeaderConnection)\n\tif err := action(cli, req, res); err != nil {\n\t\treturn err\n\t}\n\tres.Header.Del(fiber.HeaderConnection)\n\treturn nil\n}",
+    "funcname": "doAction"
+}

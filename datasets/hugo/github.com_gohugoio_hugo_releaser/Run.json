@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 88,
+    "focalfunc": "func (r *ReleaseHandler) Run() error",
+    "funcbody": "func (r *ReleaseHandler) Run() error {\n\tnewVersion, finalVersion := r.calculateVersions()\n\tversion := newVersion.String()\n\ttag := \"v\" + version\n\tmainVersion := newVersion\n\tmainVersion.PatchLevel = 0\n\n\tr.gitPull()\n\n\tdefer r.gitPush()\n\n\tif r.step == 1 {\n\t\tif err := r.bumpVersions(newVersion); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tif _, err := r.git(\"commit\", \"-a\", \"-m\", fmt.Sprintf(\"%s Bump versions for release of %s\\n\\n[ci skip]\", commitPrefix, newVersion)); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tsha, err := git(\"rev-parse\", \"HEAD\")\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tif err := r.replaceInFile(\"hugoreleaser.env\",\n\t\t\t`HUGORELEASER_TAG=(\\S*)`, \"HUGORELEASER_TAG=\"+tag,\n\t\t\t`HUGORELEASER_COMMITISH=(\\S*)`, \"HUGORELEASER_COMMITISH=\"+sha,\n\t\t); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tlogf(\"HUGORELEASER_TAG=%s\\n\", tag)\n\t\tlogf(\"HUGORELEASER_COMMITISH=%s\\n\", sha)\n\n\t\treturn nil\n\t}\n\n\tif err := r.bumpVersions(finalVersion); err != nil {\n\t\treturn err\n\t}\n\n\tif _, err := r.git(\"commit\", \"-a\", \"-m\", fmt.Sprintf(\"%s Prepare repository for %s\\n\\n[ci skip]\", commitPrefix, finalVersion)); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "Run"
+}

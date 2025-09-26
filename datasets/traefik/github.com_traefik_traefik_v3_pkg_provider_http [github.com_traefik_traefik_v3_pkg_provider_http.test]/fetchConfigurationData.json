@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/http/http.go",
+    "lineno": 145,
+    "focalfunc": "func (p *Provider) fetchConfigurationData() ([]byte, error)",
+    "funcbody": "func (p *Provider) fetchConfigurationData() ([]byte, error) {\n\treq, err := http.NewRequest(http.MethodGet, p.Endpoint, http.NoBody)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"create fetch request: %w\", err)\n\t}\n\n\tfor k, v := range p.Headers {\n\t\treq.Header.Set(k, v)\n\t}\n\n\tres, err := p.httpClient.Do(req)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"do fetch request: %w\", err)\n\t}\n\n\tdefer res.Body.Close()\n\n\tif res.StatusCode != http.StatusOK {\n\t\treturn nil, fmt.Errorf(\"received non-ok response code: %d\", res.StatusCode)\n\t}\n\n\treturn io.ReadAll(res.Body)\n}",
+    "funcname": "fetchConfigurationData"
+}

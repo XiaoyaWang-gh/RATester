@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 56,
+    "focalfunc": "func (cj *CookieJar) getByHostAndPath(host, path []byte) []*fasthttp.Cookie",
+    "funcbody": "func (cj *CookieJar) getByHostAndPath(host, path []byte) []*fasthttp.Cookie {\n\tif cj.hostCookies == nil {\n\t\treturn nil\n\t}\n\n\tvar (\n\t\terr\terror\n\t\tcookies\t[]*fasthttp.Cookie\n\t\thostStr\t= utils.UnsafeString(host)\n\t)\n\n\thostStr, _, err = net.SplitHostPort(hostStr)\n\tif err != nil {\n\t\thostStr = utils.UnsafeString(host)\n\t}\n\n\tcookies = cj.getCookiesByHost(hostStr)\n\n\tnewCookies := make([]*fasthttp.Cookie, 0, len(cookies))\n\tfor i := 0; i < len(cookies); i++ {\n\t\tcookie := cookies[i]\n\t\tif len(path) > 1 && len(cookie.Path()) > 1 && !bytes.HasPrefix(cookie.Path(), path) {\n\t\t\tcontinue\n\t\t}\n\t\tnewCookies = append(newCookies, cookie)\n\t}\n\n\treturn newCookies\n}",
+    "funcname": "getByHostAndPath"
+}

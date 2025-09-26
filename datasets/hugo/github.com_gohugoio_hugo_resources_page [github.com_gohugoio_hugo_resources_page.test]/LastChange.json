@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 369,
+    "focalfunc": "func (testSite) LastChange() (t time.Time)",
+    "funcbody": "func (testSite) LastChange() (t time.Time) {\n\treturn\n}",
+    "funcname": "LastChange"
+}

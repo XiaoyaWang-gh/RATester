@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/inflect/inflect.go",
+    "lineno": 68,
+    "focalfunc": "func (ns *Namespace) Singularize(v any) (string, error)",
+    "funcbody": "func (ns *Namespace) Singularize(v any) (string, error) {\n\tword, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn _inflect.Singularize(word), nil\n}",
+    "funcname": "Singularize"
+}

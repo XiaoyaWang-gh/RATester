@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 311,
+    "focalfunc": "func getAllMigrations() (map[string]string, error)",
+    "funcbody": "func getAllMigrations() (map[string]string, error) {\n\to := orm.NewOrm()\n\tvar maps []orm.Params\n\tmigs := make(map[string]string)\n\tnum, err := o.Raw(\"select * from migrations order by id_migration desc\").Values(&maps)\n\tif err != nil {\n\t\tlogs.Info(\"get name has error\", err)\n\t\treturn migs, err\n\t}\n\tif num > 0 {\n\t\tfor _, v := range maps {\n\t\t\tname := v[\"name\"].(string)\n\t\t\tmigs[name] = v[\"status\"].(string)\n\t\t}\n\t}\n\treturn migs, nil\n}",
+    "funcname": "getAllMigrations"
+}

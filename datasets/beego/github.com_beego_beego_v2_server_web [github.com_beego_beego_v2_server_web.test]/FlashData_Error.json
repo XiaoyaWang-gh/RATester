@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/flash.go",
+    "lineno": 72,
+    "focalfunc": "func (fd *FlashData) Error(msg string, args ...interface{})",
+    "funcbody": "func (fd *FlashData) Error(msg string, args ...interface{}) {\n\tif len(args) == 0 {\n\t\tfd.Data[\"error\"] = msg\n\t} else {\n\t\tfd.Data[\"error\"] = fmt.Sprintf(msg, args...)\n\t}\n}",
+    "funcname": "Error"
+}

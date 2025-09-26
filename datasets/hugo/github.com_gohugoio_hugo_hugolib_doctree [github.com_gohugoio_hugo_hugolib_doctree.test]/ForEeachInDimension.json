@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 283,
+    "focalfunc": "func (r *NodeShiftTree[T]) ForEeachInDimension(s string, d int, f func(T) bool)",
+    "funcbody": "func (r *NodeShiftTree[T]) ForEeachInDimension(s string, d int, f func(T) bool) {\n\ts = cleanKey(s)\n\tv, ok := r.tree.Get(s)\n\tif !ok {\n\t\treturn\n\t}\n\tr.shifter.ForEeachInDimension(v.(T), d, f)\n}",
+    "funcname": "ForEeachInDimension"
+}

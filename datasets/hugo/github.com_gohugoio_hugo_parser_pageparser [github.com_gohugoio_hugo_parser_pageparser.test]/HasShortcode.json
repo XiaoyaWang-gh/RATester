@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 255,
+    "focalfunc": "func HasShortcode(s string) bool",
+    "funcbody": "func HasShortcode(s string) bool {\n\n\tif !strings.Contains(s, \"{{\") {\n\t\treturn false\n\t}\n\treturn hasShortcodeRe.MatchString(s)\n}",
+    "funcname": "HasShortcode"
+}

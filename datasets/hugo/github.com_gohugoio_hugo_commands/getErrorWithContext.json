@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 650,
+    "focalfunc": "func (c *serverCommand) getErrorWithContext() any",
+    "funcbody": "func (c *serverCommand) getErrorWithContext() any {\n\terrCount := c.errCount()\n\n\tif errCount == 0 {\n\t\treturn nil\n\t}\n\n\tm := make(map[string]any)\n\n\tm[\"Error\"] = cleanErrorLog(c.r.logger.Errors())\n\n\tm[\"Version\"] = hugo.BuildVersionString()\n\tferrors := herrors.UnwrapFileErrorsWithErrorContext(c.errState.buildErr())\n\tm[\"Files\"] = ferrors\n\n\treturn m\n}",
+    "funcname": "getErrorWithContext"
+}

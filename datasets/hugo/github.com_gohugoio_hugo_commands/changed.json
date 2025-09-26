@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 198,
+    "focalfunc": "func (f *fileChangeDetector) changed() []string",
+    "funcbody": "func (f *fileChangeDetector) changed() []string {\n\tif f == nil {\n\t\treturn nil\n\t}\n\tf.Lock()\n\tdefer f.Unlock()\n\tvar c []string\n\tfor k, v := range f.current {\n\t\tvv, found := f.prev[k]\n\t\tif !found || v != vv {\n\t\t\tc = append(c, k)\n\t\t}\n\t}\n\n\treturn f.filterIrrelevant(c)\n}",
+    "funcname": "changed"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/dial.go",
+    "lineno": 12,
+    "focalfunc": "func DialHookCustomTLSHeadByte(enableTLS bool, disableCustomTLSHeadByte bool) libnet.AfterHookFunc",
+    "funcbody": "func DialHookCustomTLSHeadByte(enableTLS bool, disableCustomTLSHeadByte bool) libnet.AfterHookFunc {\n\treturn func(ctx context.Context, c net.Conn, addr string) (context.Context, net.Conn, error) {\n\t\tif enableTLS && !disableCustomTLSHeadByte {\n\t\t\t_, err := c.Write([]byte{byte(FRPTLSHeadByte)})\n\t\t\tif err != nil {\n\t\t\t\treturn nil, nil, err\n\t\t\t}\n\t\t}\n\t\treturn ctx, c, nil\n\t}\n}",
+    "funcname": "DialHookCustomTLSHeadByte"
+}

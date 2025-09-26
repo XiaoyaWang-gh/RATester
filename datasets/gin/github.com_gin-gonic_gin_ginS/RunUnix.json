@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 151,
+    "focalfunc": "func RunUnix(file string) (err error)",
+    "funcbody": "func RunUnix(file string) (err error) {\n\treturn engine().RunUnix(file)\n}",
+    "funcname": "RunUnix"
+}

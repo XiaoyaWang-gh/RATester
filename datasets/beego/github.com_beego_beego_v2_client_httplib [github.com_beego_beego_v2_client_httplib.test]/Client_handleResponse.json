@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 81,
+    "focalfunc": "func (c *Client) handleResponse(value interface{}, req *BeegoHTTPRequest) error",
+    "funcbody": "func (c *Client) handleResponse(value interface{}, req *BeegoHTTPRequest) error {\n\n\t_, err := req.Bytes()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\terr = c.handleCarrier(value, req)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn req.ToValue(value)\n}",
+    "funcname": "handleResponse"
+}

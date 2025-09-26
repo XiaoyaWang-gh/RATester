@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 43,
+    "focalfunc": "func (s *JLWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (s *JLWriter) Format(lm *LogMsg) string {\n\tmsg := lm.OldStyleFormat()\n\tmsg = fmt.Sprintf(\"%s %s\", lm.When.Format(\"2006-01-02 15:04:05\"), msg)\n\treturn msg\n}",
+    "funcname": "Format"
+}

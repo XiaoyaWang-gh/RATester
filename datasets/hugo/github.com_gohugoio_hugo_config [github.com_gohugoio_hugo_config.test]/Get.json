@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 89,
+    "focalfunc": "func (c *defaultConfigProvider) Get(k string) any",
+    "funcbody": "func (c *defaultConfigProvider) Get(k string) any {\n\tif k == \"\" {\n\t\treturn c.root\n\t}\n\tc.mu.RLock()\n\tkey, m := c.getNestedKeyAndMap(strings.ToLower(k), false)\n\tif m == nil {\n\t\tc.mu.RUnlock()\n\t\treturn nil\n\t}\n\tv := m[key]\n\tc.mu.RUnlock()\n\treturn v\n}",
+    "funcname": "Get"
+}

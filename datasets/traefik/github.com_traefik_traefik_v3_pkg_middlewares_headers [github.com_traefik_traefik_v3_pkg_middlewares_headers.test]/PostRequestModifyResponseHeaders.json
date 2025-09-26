@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/header.go",
+    "lineno": 90,
+    "focalfunc": "func (s *Header) PostRequestModifyResponseHeaders(res *http.Response) error",
+    "funcbody": "func (s *Header) PostRequestModifyResponseHeaders(res *http.Response) error {\n\n\tfor header, value := range s.headers.CustomResponseHeaders {\n\t\tif value == \"\" {\n\t\t\tres.Header.Del(header)\n\t\t} else {\n\t\t\tres.Header.Set(header, value)\n\t\t}\n\t}\n\n\tif res != nil && res.Request != nil {\n\t\toriginHeader := res.Request.Header.Get(\"Origin\")\n\t\tallowed, match := s.isOriginAllowed(originHeader)\n\n\t\tif allowed {\n\t\t\tres.Header.Set(\"Access-Control-Allow-Origin\", match)\n\t\t}\n\t}\n\n\tif s.headers.AccessControlAllowCredentials {\n\t\tres.Header.Set(\"Access-Control-Allow-Credentials\", \"true\")\n\t}\n\n\tif len(s.headers.AccessControlExposeHeaders) > 0 {\n\t\texposeHeaders := strings.Join(s.headers.AccessControlExposeHeaders, \",\")\n\t\tres.Header.Set(\"Access-Control-Expose-Headers\", exposeHeaders)\n\t}\n\n\tif !s.headers.AddVaryHeader {\n\t\treturn nil\n\t}\n\n\tvaryHeader := res.Header.Get(\"Vary\")\n\tif varyHeader == \"Origin\" {\n\t\treturn nil\n\t}\n\n\tif varyHeader != \"\" {\n\t\tvaryHeader += \",\"\n\t}\n\tvaryHeader += \"Origin\"\n\n\tres.Header.Set(\"Vary\", varyHeader)\n\treturn nil\n}",
+    "funcname": "PostRequestModifyResponseHeaders"
+}

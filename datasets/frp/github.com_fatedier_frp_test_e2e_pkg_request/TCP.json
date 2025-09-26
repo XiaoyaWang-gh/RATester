@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 59,
+    "focalfunc": "func (r *Request) TCP() *Request",
+    "funcbody": "func (r *Request) TCP() *Request {\n\tr.protocol = \"tcp\"\n\treturn r\n}",
+    "funcname": "TCP"
+}

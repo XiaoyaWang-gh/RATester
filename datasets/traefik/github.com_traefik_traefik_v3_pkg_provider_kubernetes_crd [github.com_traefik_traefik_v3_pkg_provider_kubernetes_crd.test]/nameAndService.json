@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 542,
+    "focalfunc": "func (c configBuilder) nameAndService(ctx context.Context, parentNamespace string, service traefikv1alpha1.LoadBalancerSpec) (string, *dynamic.Service, error)",
+    "funcbody": "func (c configBuilder) nameAndService(ctx context.Context, parentNamespace string, service traefikv1alpha1.LoadBalancerSpec) (string, *dynamic.Service, error) {\n\tsvcCtx := log.Ctx(ctx).With().Str(logs.ServiceName, service.Name).Logger().WithContext(ctx)\n\n\tnamespace := namespaceOrFallback(service, parentNamespace)\n\n\tif !isNamespaceAllowed(c.allowCrossNamespace, parentNamespace, namespace) {\n\t\treturn \"\", nil, fmt.Errorf(\"service %s/%s not in the parent resource namespace %s\", service.Namespace, service.Name, parentNamespace)\n\t}\n\n\tswitch {\n\tcase service.Kind == \"\" || service.Kind == \"Service\":\n\t\tserversLB, err := c.buildServersLB(namespace, service)\n\t\tif err != nil {\n\t\t\treturn \"\", nil, err\n\t\t}\n\n\t\tfullName := fullServiceName(svcCtx, namespace, service, service.Port)\n\n\t\treturn fullName, serversLB, nil\n\tcase service.Kind == \"TraefikService\":\n\t\treturn fullServiceName(svcCtx, namespace, service, intstr.FromInt(0)), nil, nil\n\tdefault:\n\t\treturn \"\", nil, fmt.Errorf(\"unsupported service kind %s\", service.Kind)\n\t}\n}",
+    "funcname": "nameAndService"
+}

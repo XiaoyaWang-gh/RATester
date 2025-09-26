@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 127,
+    "focalfunc": "func (r *Request) Timeout(timeout time.Duration) *Request",
+    "funcbody": "func (r *Request) Timeout(timeout time.Duration) *Request {\n\tr.timeout = timeout\n\treturn r\n}",
+    "funcname": "Timeout"
+}

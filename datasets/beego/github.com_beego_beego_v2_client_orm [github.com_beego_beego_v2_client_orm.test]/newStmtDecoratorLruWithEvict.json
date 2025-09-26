@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 567,
+    "focalfunc": "func newStmtDecoratorLruWithEvict(cacheSize int) (*lru.Cache, error)",
+    "funcbody": "func newStmtDecoratorLruWithEvict(cacheSize int) (*lru.Cache, error) {\n\tcache, err := lru.NewWithEvict(cacheSize, func(key interface{}, value interface{}) {\n\t\tvalue.(*stmtDecorator).destroy()\n\t})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn cache, nil\n}",
+    "funcname": "newStmtDecoratorLruWithEvict"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 49,
+    "focalfunc": "func (m PageMatcher) Matches(p Page) bool",
+    "funcbody": "func (m PageMatcher) Matches(p Page) bool {\n\tif m.Kind != \"\" {\n\t\tg, err := glob.GetGlob(m.Kind)\n\t\tif err == nil && !g.Match(p.Kind()) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tif m.Lang != \"\" {\n\t\tg, err := glob.GetGlob(m.Lang)\n\t\tif err == nil && !g.Match(p.Lang()) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tif m.Path != \"\" {\n\t\tg, err := glob.GetGlob(m.Path)\n\n\t\tp := strings.ToLower(filepath.ToSlash(p.Path()))\n\t\tif !(strings.HasPrefix(p, \"/\")) {\n\t\t\tp = \"/\" + p\n\t\t}\n\t\tif err == nil && !g.Match(p) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tif m.Environment != \"\" {\n\t\tg, err := glob.GetGlob(m.Environment)\n\t\tif err == nil && !g.Match(p.Site().Hugo().Environment) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "Matches"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 302,
+    "focalfunc": "func (o *ormBase) QueryM2M(md interface{}, name string) QueryM2Mer",
+    "funcbody": "func (o *ormBase) QueryM2M(md interface{}, name string) QueryM2Mer {\n\tmi, ind := o.getPtrMiInd(md)\n\tfi := o.getFieldInfo(mi, name)\n\n\tswitch {\n\tcase fi.FieldType == RelManyToMany:\n\tcase fi.FieldType == RelReverseMany && fi.ReverseFieldInfo.Mi.IsThrough:\n\tdefault:\n\t\tpanic(fmt.Errorf(\"<Ormer.QueryM2M> model `%s` . name `%s` is not a m2m field\", fi.Name, mi.FullName))\n\t}\n\n\treturn newQueryM2M(md, o, mi, fi, ind)\n}",
+    "funcname": "QueryM2M"
+}

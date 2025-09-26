@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/console.go",
+    "lineno": 58,
+    "focalfunc": "func (c *consoleWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (c *consoleWriter) Format(lm *LogMsg) string {\n\tmsg := lm.OldStyleFormat()\n\tif c.Colorful {\n\t\tmsg = strings.Replace(msg, levelPrefix[lm.Level], colors[lm.Level](levelPrefix[lm.Level]), 1)\n\t}\n\th, _, _ := formatTimeHeader(lm.When)\n\treturn string(append(h, msg...))\n}",
+    "funcname": "Format"
+}

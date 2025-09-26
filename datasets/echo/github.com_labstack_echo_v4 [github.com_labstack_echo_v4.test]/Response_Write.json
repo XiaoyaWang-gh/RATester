@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 70,
+    "focalfunc": "func (r *Response) Write(b []byte) (n int, err error)",
+    "funcbody": "func (r *Response) Write(b []byte) (n int, err error) {\n\tif !r.Committed {\n\t\tif r.Status == 0 {\n\t\t\tr.Status = http.StatusOK\n\t\t}\n\t\tr.WriteHeader(r.Status)\n\t}\n\tn, err = r.Writer.Write(b)\n\tr.Size += int64(n)\n\tfor _, fn := range r.afterFuncs {\n\t\tfn()\n\t}\n\treturn\n}",
+    "funcname": "Write"
+}

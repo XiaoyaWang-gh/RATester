@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 764,
+    "focalfunc": "func routeParentStatusesEqual(routeParentStatusesA, routeParentStatusesB []gatev1alpha2.RouteParentStatus) bool",
+    "funcbody": "func routeParentStatusesEqual(routeParentStatusesA, routeParentStatusesB []gatev1alpha2.RouteParentStatus) bool {\n\tif len(routeParentStatusesA) != len(routeParentStatusesB) {\n\t\treturn false\n\t}\n\n\tfor _, sA := range routeParentStatusesA {\n\t\tif !slices.ContainsFunc(routeParentStatusesB, func(sB gatev1alpha2.RouteParentStatus) bool {\n\t\t\treturn routeParentStatusEqual(sB, sA)\n\t\t}) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tfor _, sB := range routeParentStatusesB {\n\t\tif !slices.ContainsFunc(routeParentStatusesA, func(sA gatev1alpha2.RouteParentStatus) bool {\n\t\t\treturn routeParentStatusEqual(sA, sB)\n\t\t}) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "routeParentStatusesEqual"
+}

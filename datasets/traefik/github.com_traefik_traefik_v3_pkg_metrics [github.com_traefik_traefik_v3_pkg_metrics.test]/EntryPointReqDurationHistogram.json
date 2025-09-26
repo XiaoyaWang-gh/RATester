@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 248,
+    "focalfunc": "func (r *standardRegistry) EntryPointReqDurationHistogram() ScalableHistogram",
+    "funcbody": "func (r *standardRegistry) EntryPointReqDurationHistogram() ScalableHistogram {\n\treturn r.entryPointReqDurationHistogram\n}",
+    "funcname": "EntryPointReqDurationHistogram"
+}

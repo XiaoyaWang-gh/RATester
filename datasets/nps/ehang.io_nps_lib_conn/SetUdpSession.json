@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 364,
+    "focalfunc": "func SetUdpSession(sess *kcp.UDPSession)",
+    "funcbody": "func SetUdpSession(sess *kcp.UDPSession) {\n\tsess.SetStreamMode(true)\n\tsess.SetWindowSize(1024, 1024)\n\tsess.SetReadBuffer(64 * 1024)\n\tsess.SetWriteBuffer(64 * 1024)\n\tsess.SetNoDelay(1, 10, 2, 1)\n\tsess.SetMtu(1600)\n\tsess.SetACKNoDelay(true)\n\tsess.SetWriteDelay(false)\n}",
+    "funcname": "SetUdpSession"
+}

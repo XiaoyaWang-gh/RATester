@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_output.go",
+    "lineno": 25,
+    "focalfunc": "func createDefaultOutputFormats(allFormats output.Formats) map[string]output.Formats",
+    "funcbody": "func createDefaultOutputFormats(allFormats output.Formats) map[string]output.Formats {\n\trssOut, rssFound := allFormats.GetByName(output.RSSFormat.Name)\n\thtmlOut, _ := allFormats.GetByName(output.HTMLFormat.Name)\n\trobotsOut, _ := allFormats.GetByName(output.RobotsTxtFormat.Name)\n\tsitemapOut, _ := allFormats.GetByName(output.SitemapFormat.Name)\n\n\tdefaultListTypes := output.Formats{htmlOut}\n\tif rssFound {\n\t\tdefaultListTypes = append(defaultListTypes, rssOut)\n\t}\n\n\tm := map[string]output.Formats{\n\t\tkinds.KindPage:\t\t{htmlOut},\n\t\tkinds.KindHome:\t\tdefaultListTypes,\n\t\tkinds.KindSection:\tdefaultListTypes,\n\t\tkinds.KindTerm:\t\tdefaultListTypes,\n\t\tkinds.KindTaxonomy:\tdefaultListTypes,\n\n\t\tkinds.KindSitemap:\t{sitemapOut},\n\t\tkinds.KindRobotsTXT:\t{robotsOut},\n\t\tkinds.KindStatus404:\t{htmlOut},\n\t}\n\n\tif rssFound {\n\t\tm[kinds.KindRSS] = output.Formats{rssOut}\n\t}\n\n\treturn m\n}",
+    "funcname": "createDefaultOutputFormats"
+}

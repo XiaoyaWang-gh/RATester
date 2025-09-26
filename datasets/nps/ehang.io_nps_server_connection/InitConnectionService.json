@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/connection/connection.go",
+    "lineno": 19,
+    "focalfunc": "func InitConnectionService()",
+    "funcbody": "func InitConnectionService() {\n\tbridgePort = beego.AppConfig.String(\"bridge_port\")\n\thttpsPort = beego.AppConfig.String(\"https_proxy_port\")\n\thttpPort = beego.AppConfig.String(\"http_proxy_port\")\n\twebPort = beego.AppConfig.String(\"web_port\")\n\n\tif httpPort == bridgePort || httpsPort == bridgePort || webPort == bridgePort {\n\t\tport, err := strconv.Atoi(bridgePort)\n\t\tif err != nil {\n\t\t\tlogs.Error(err)\n\t\t\tos.Exit(0)\n\t\t}\n\t\tpMux = pmux.NewPortMux(port, beego.AppConfig.String(\"web_host\"))\n\t}\n}",
+    "funcname": "InitConnectionService"
+}

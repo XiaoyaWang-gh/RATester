@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 460,
+    "focalfunc": "func (fs *RootMappingFs) getAncestors(prefix string) []keyRootMappings",
+    "funcbody": "func (fs *RootMappingFs) getAncestors(prefix string) []keyRootMappings {\n\tvar roots []keyRootMappings\n\tfs.rootMapToReal.WalkPath(prefix, func(s string, v any) bool {\n\t\tif strings.HasPrefix(prefix, s+filepathSeparator) {\n\t\t\troots = append(roots, keyRootMappings{\n\t\t\t\tkey:\ts,\n\t\t\t\troots:\tv.([]RootMapping),\n\t\t\t})\n\t\t}\n\t\treturn false\n\t})\n\n\treturn roots\n}",
+    "funcname": "getAncestors"
+}

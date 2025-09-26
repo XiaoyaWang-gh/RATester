@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 181,
+    "focalfunc": "func jsonRenderer(value interface{}) Renderer",
+    "funcbody": "func jsonRenderer(value interface{}) Renderer {\n\treturn rendererFunc(func(ctx *Context) {\n\t\tctx.Output.JSON(value, false, false)\n\t})\n}",
+    "funcname": "jsonRenderer"
+}

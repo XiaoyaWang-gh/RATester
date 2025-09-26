@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 568,
+    "focalfunc": "func (c *Context) PostFormMap(key string) (dicts map[string]string)",
+    "funcbody": "func (c *Context) PostFormMap(key string) (dicts map[string]string) {\n\tdicts, _ = c.GetPostFormMap(key)\n\treturn\n}",
+    "funcname": "PostFormMap"
+}

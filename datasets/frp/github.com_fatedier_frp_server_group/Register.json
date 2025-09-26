@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/http.go",
+    "lineno": 84,
+    "focalfunc": "func (g *HTTPGroup) Register(\n\tproxyName, group, groupKey string,\n\trouteConfig vhost.RouteConfig,\n) (err error)",
+    "funcbody": "func (g *HTTPGroup) Register(\n\tproxyName, group, groupKey string,\n\trouteConfig vhost.RouteConfig,\n) (err error) {\n\tg.mu.Lock()\n\tdefer g.mu.Unlock()\n\tif len(g.createFuncs) == 0 {\n\n\t\ttmp := routeConfig\n\t\ttmp.CreateConnFn = g.createConn\n\t\ttmp.ChooseEndpointFn = g.chooseEndpoint\n\t\ttmp.CreateConnByEndpointFn = g.createConnByEndpoint\n\t\terr = g.ctl.vhostRouter.Add(routeConfig.Domain, routeConfig.Location, routeConfig.RouteByHTTPUser, &tmp)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\n\t\tg.group = group\n\t\tg.groupKey = groupKey\n\t\tg.domain = routeConfig.Domain\n\t\tg.location = routeConfig.Location\n\t\tg.routeByHTTPUser = routeConfig.RouteByHTTPUser\n\t} else {\n\t\tif g.group != group || g.domain != routeConfig.Domain ||\n\t\t\tg.location != routeConfig.Location || g.routeByHTTPUser != routeConfig.RouteByHTTPUser {\n\t\t\terr = ErrGroupParamsInvalid\n\t\t\treturn\n\t\t}\n\t\tif g.groupKey != groupKey {\n\t\t\terr = ErrGroupAuthFailed\n\t\t\treturn\n\t\t}\n\t}\n\tif _, ok := g.createFuncs[proxyName]; ok {\n\t\terr = ErrProxyRepeated\n\t\treturn\n\t}\n\tg.createFuncs[proxyName] = routeConfig.CreateConnFn\n\tg.pxyNames = append(g.pxyNames, proxyName)\n\treturn nil\n}",
+    "funcname": "Register"
+}

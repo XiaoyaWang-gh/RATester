@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 529,
+    "focalfunc": "func (l *genericResource) Permalink() string",
+    "funcbody": "func (l *genericResource) Permalink() string {\n\treturn l.spec.Cfg.BaseURL().WithPathNoTrailingSlash + paths.PathEscape(l.paths.TargetPath())\n}",
+    "funcname": "Permalink"
+}

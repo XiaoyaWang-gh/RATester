@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/filename_filter_fs.go",
+    "lineno": 29,
+    "focalfunc": "func newFilenameFilterFs(fs afero.Fs, base string, filter *glob.FilenameFilter) afero.Fs",
+    "funcbody": "func newFilenameFilterFs(fs afero.Fs, base string, filter *glob.FilenameFilter) afero.Fs {\n\treturn &filenameFilterFs{\n\t\tfs:\tfs,\n\t\tbase:\tbase,\n\t\tfilter:\tfilter,\n\t}\n}",
+    "funcname": "newFilenameFilterFs"
+}

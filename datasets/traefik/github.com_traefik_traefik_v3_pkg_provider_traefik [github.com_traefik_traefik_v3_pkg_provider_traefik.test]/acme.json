@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 93,
+    "focalfunc": "func (i *Provider) acme(cfg *dynamic.Configuration)",
+    "funcbody": "func (i *Provider) acme(cfg *dynamic.Configuration) {\n\tvar eps []string\n\n\tuniq := map[string]struct{}{}\n\tfor _, resolver := range i.staticCfg.CertificatesResolvers {\n\t\tif resolver.ACME != nil && resolver.ACME.HTTPChallenge != nil && resolver.ACME.HTTPChallenge.EntryPoint != \"\" {\n\t\t\tif _, ok := uniq[resolver.ACME.HTTPChallenge.EntryPoint]; !ok {\n\t\t\t\teps = append(eps, resolver.ACME.HTTPChallenge.EntryPoint)\n\t\t\t\tuniq[resolver.ACME.HTTPChallenge.EntryPoint] = struct{}{}\n\t\t\t}\n\t\t}\n\t}\n\n\tif len(eps) > 0 {\n\t\trt := &dynamic.Router{\n\t\t\tRule:\t\t\"PathPrefix(`/.well-known/acme-challenge/`)\",\n\t\t\tRuleSyntax:\t\"v3\",\n\t\t\tEntryPoints:\teps,\n\t\t\tService:\t\"acme-http@internal\",\n\t\t\tPriority:\tmath.MaxInt,\n\t\t}\n\n\t\tcfg.HTTP.Routers[\"acme-http\"] = rt\n\t\tcfg.HTTP.Services[\"acme-http\"] = &dynamic.Service{}\n\t}\n}",
+    "funcname": "acme"
+}

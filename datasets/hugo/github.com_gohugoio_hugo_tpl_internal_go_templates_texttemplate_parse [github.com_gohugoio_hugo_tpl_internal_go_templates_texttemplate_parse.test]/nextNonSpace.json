@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 111,
+    "focalfunc": "func (t *Tree) nextNonSpace() (token item)",
+    "funcbody": "func (t *Tree) nextNonSpace() (token item) {\n\tfor {\n\t\ttoken = t.next()\n\t\tif token.typ != itemSpace {\n\t\t\tbreak\n\t\t}\n\t}\n\treturn token\n}",
+    "funcname": "nextNonSpace"
+}

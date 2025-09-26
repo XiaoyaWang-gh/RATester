@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 39,
+    "focalfunc": "func (reh *resourceEventHandler) OnAdd(obj interface{}, _ bool)",
+    "funcbody": "func (reh *resourceEventHandler) OnAdd(obj interface{}, _ bool) {\n\teventHandlerFunc(reh.ev, obj)\n}",
+    "funcname": "OnAdd"
+}

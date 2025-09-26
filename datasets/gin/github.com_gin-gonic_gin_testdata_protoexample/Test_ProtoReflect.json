@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 107,
+    "focalfunc": "func (x *Test) ProtoReflect() protoreflect.Message",
+    "funcbody": "func (x *Test) ProtoReflect() protoreflect.Message {\n\tmi := &file_test_proto_msgTypes[0]\n\tif protoimpl.UnsafeEnabled && x != nil {\n\t\tms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))\n\t\tif ms.LoadMessageInfo() == nil {\n\t\t\tms.StoreMessageInfo(mi)\n\t\t}\n\t\treturn ms\n\t}\n\treturn mi.MessageOf(x)\n}",
+    "funcname": "ProtoReflect"
+}

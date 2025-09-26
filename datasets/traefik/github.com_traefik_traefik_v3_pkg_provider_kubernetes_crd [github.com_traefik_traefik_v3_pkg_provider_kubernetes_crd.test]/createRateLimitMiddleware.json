@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 689,
+    "focalfunc": "func createRateLimitMiddleware(rateLimit *traefikv1alpha1.RateLimit) (*dynamic.RateLimit, error)",
+    "funcbody": "func createRateLimitMiddleware(rateLimit *traefikv1alpha1.RateLimit) (*dynamic.RateLimit, error) {\n\tif rateLimit == nil {\n\t\treturn nil, nil\n\t}\n\n\trl := &dynamic.RateLimit{}\n\trl.SetDefaults()\n\n\tif rateLimit.Average != nil {\n\t\trl.Average = *rateLimit.Average\n\t}\n\n\tif rateLimit.Burst != nil {\n\t\trl.Burst = *rateLimit.Burst\n\t}\n\n\tif rateLimit.Period != nil {\n\t\terr := rl.Period.Set(rateLimit.Period.String())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tif rateLimit.SourceCriterion != nil {\n\t\trl.SourceCriterion = rateLimit.SourceCriterion\n\t}\n\n\treturn rl, nil\n}",
+    "funcname": "createRateLimitMiddleware"
+}

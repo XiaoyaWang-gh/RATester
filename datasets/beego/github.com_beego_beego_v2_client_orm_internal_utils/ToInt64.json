@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 187,
+    "focalfunc": "func ToInt64(value interface{}) (d int64)",
+    "funcbody": "func ToInt64(value interface{}) (d int64) {\n\tval := reflect.ValueOf(value)\n\tswitch value.(type) {\n\tcase int, int8, int16, int32, int64:\n\t\td = val.Int()\n\tcase uint, uint8, uint16, uint32, uint64:\n\t\td = int64(val.Uint())\n\tdefault:\n\t\tpanic(fmt.Errorf(\"ToInt64 need numeric not `%T`\", value))\n\t}\n\treturn\n}",
+    "funcname": "ToInt64"
+}

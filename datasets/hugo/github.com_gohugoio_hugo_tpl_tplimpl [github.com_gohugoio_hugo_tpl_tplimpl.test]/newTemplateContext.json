@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 74,
+    "focalfunc": "func newTemplateContext(\n\tt *templateState,\n\tlookupFn func(name string) *templateState,\n) *templateContext",
+    "funcbody": "func newTemplateContext(\n\tt *templateState,\n\tlookupFn func(name string) *templateState,\n) *templateContext {\n\treturn &templateContext{\n\t\tt:\t\t\tt,\n\t\tlookupFn:\t\tlookupFn,\n\t\tvisited:\t\tmake(map[string]bool),\n\t\ttemplateNotFound:\tmake(map[string]bool),\n\t\tdeferNodes:\t\tmake(map[string]*parse.ListNode),\n\t}\n}",
+    "funcname": "newTemplateContext"
+}

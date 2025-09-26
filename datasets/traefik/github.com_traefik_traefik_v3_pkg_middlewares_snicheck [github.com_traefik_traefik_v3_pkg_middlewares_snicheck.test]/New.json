@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/snicheck/snicheck.go",
+    "lineno": 20,
+    "focalfunc": "func New(tlsOptionsForHost map[string]string, next http.Handler) *SNICheck",
+    "funcbody": "func New(tlsOptionsForHost map[string]string, next http.Handler) *SNICheck {\n\treturn &SNICheck{next: next, tlsOptionsForHost: tlsOptionsForHost}\n}",
+    "funcname": "New"
+}

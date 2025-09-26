@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 44,
+    "focalfunc": "func MockMethod(method string, resp ...interface{}) *Mock",
+    "funcbody": "func MockMethod(method string, resp ...interface{}) *Mock {\n\treturn NewMock(NewSimpleCondition(\"\", method), resp, nil)\n}",
+    "funcname": "MockMethod"
+}

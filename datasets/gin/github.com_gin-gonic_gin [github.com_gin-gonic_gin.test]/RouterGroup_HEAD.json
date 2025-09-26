@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 141,
+    "focalfunc": "func (group *RouterGroup) HEAD(relativePath string, handlers ...HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) HEAD(relativePath string, handlers ...HandlerFunc) IRoutes {\n\treturn group.handle(http.MethodHead, relativePath, handlers)\n}",
+    "funcname": "HEAD"
+}

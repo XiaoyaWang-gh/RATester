@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher_v2.go",
+    "lineno": 172,
+    "focalfunc": "func headersV2(tree *matchersTree, headers ...string) error",
+    "funcbody": "func headersV2(tree *matchersTree, headers ...string) error {\n\troute := mux.NewRouter().NewRoute()\n\troute.Headers(headers...)\n\tif err := route.GetError(); err != nil {\n\t\treturn err\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn route.Match(req, &mux.RouteMatch{})\n\t}\n\n\treturn nil\n}",
+    "funcname": "headersV2"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 32,
+    "focalfunc": "func (d *DoNothingOrm) Read(md interface{}, cols ...string) error",
+    "funcbody": "func (d *DoNothingOrm) Read(md interface{}, cols ...string) error {\n\treturn nil\n}",
+    "funcname": "Read"
+}

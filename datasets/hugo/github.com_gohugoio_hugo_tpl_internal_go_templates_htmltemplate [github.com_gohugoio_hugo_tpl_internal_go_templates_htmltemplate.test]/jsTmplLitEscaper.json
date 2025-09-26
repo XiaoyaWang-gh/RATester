@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 260,
+    "focalfunc": "func jsTmplLitEscaper(args ...any) string",
+    "funcbody": "func jsTmplLitEscaper(args ...any) string {\n\ts, _ := stringify(args...)\n\treturn replace(s, jsBqStrReplacementTable)\n}",
+    "funcname": "jsTmplLitEscaper"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 81,
+    "focalfunc": "func MergeParamsWithStrategy(strategy string, dst, src Params)",
+    "funcbody": "func MergeParamsWithStrategy(strategy string, dst, src Params) {\n\tdst.merge(ParamsMergeStrategy(strategy), src)\n}",
+    "funcname": "MergeParamsWithStrategy"
+}

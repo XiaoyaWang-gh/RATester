@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 207,
+    "focalfunc": "func isExported(f reflect.StructField) bool",
+    "funcbody": "func isExported(f reflect.StructField) bool {\n\tif f.PkgPath != \"\" && !f.Anonymous {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "isExported"
+}

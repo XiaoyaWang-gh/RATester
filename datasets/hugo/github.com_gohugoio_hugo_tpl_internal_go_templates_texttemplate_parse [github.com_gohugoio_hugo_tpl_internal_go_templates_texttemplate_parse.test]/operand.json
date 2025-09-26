@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 725,
+    "focalfunc": "func (t *Tree) operand() Node",
+    "funcbody": "func (t *Tree) operand() Node {\n\tnode := t.term()\n\tif node == nil {\n\t\treturn nil\n\t}\n\tif t.peek().typ == itemField {\n\t\tchain := t.newChain(t.peek().pos, node)\n\t\tfor t.peek().typ == itemField {\n\t\t\tchain.Add(t.next().val)\n\t\t}\n\n\t\tswitch node.Type() {\n\t\tcase NodeField:\n\t\t\tnode = t.newField(chain.Position(), chain.String())\n\t\tcase NodeVariable:\n\t\t\tnode = t.newVariable(chain.Position(), chain.String())\n\t\tcase NodeBool, NodeString, NodeNumber, NodeNil, NodeDot:\n\t\t\tt.errorf(\"unexpected . after term %q\", node.String())\n\t\tdefault:\n\t\t\tnode = chain\n\t\t}\n\t}\n\treturn node\n}",
+    "funcname": "operand"
+}

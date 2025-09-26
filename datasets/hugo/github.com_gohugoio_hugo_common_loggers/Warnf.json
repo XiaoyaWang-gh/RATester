@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 297,
+    "focalfunc": "func (l *logAdapter) Warnf(format string, v ...any)",
+    "funcbody": "func (l *logAdapter) Warnf(format string, v ...any) {\n\tl.warnl.Logf(format, v...)\n}",
+    "funcname": "Warnf"
+}

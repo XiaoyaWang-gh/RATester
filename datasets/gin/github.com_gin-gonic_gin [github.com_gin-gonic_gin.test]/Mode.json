@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/mode.go",
+    "lineno": 96,
+    "focalfunc": "func Mode() string",
+    "funcbody": "func Mode() string {\n\treturn modeName.Load().(string)\n}",
+    "funcname": "Mode"
+}

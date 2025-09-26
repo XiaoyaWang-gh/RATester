@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 432,
+    "focalfunc": "func (qs *QUICTunnelSession) OpenConn(ctx context.Context) (net.Conn, error)",
+    "funcbody": "func (qs *QUICTunnelSession) OpenConn(ctx context.Context) (net.Conn, error) {\n\tqs.mu.RLock()\n\tdefer qs.mu.RUnlock()\n\tsession := qs.session\n\tif session == nil {\n\t\treturn nil, ErrNoTunnelSession\n\t}\n\tstream, err := session.OpenStreamSync(ctx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn netpkg.QuicStreamToNetConn(stream, session), nil\n}",
+    "funcname": "OpenConn"
+}

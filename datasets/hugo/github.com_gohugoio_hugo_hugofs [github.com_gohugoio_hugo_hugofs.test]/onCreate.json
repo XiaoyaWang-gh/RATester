@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/stacktracer_fs.go",
+    "lineno": 55,
+    "focalfunc": "func (fs *stacktracerFs) onCreate(filename string)",
+    "funcbody": "func (fs *stacktracerFs) onCreate(filename string) {\n\tif fs.re.MatchString(filename) {\n\t\ttrace := make([]byte, 1500)\n\t\truntime.Stack(trace, true)\n\t\tfmt.Printf(\"\\n===========\\n%q:\\n%s\\n\", filename, trace)\n\t}\n}",
+    "funcname": "onCreate"
+}

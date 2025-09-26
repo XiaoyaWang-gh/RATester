@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/port.go",
+    "lineno": 104,
+    "focalfunc": "func (pa *Allocator) Release(port int)",
+    "funcbody": "func (pa *Allocator) Release(port int) {\n\tif port <= 0 {\n\t\treturn\n\t}\n\n\tpa.mu.Lock()\n\tdefer pa.mu.Unlock()\n\n\tif pa.used.Has(port) {\n\t\tpa.used.Delete(port)\n\t\tpa.reserved.Insert(port)\n\t}\n}",
+    "funcname": "Release"
+}

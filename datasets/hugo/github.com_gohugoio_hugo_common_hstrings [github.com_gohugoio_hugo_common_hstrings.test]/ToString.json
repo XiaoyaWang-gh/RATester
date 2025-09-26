@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 130,
+    "focalfunc": "func ToString(v any) (string, bool)",
+    "funcbody": "func ToString(v any) (string, bool) {\n\tswitch vv := v.(type) {\n\tcase string:\n\t\treturn vv, true\n\tcase fmt.Stringer:\n\t\treturn vv.String(), true\n\t}\n\treturn \"\", false\n}",
+    "funcname": "ToString"
+}

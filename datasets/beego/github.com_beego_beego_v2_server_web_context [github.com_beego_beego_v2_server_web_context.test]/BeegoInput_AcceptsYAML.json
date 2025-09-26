@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 211,
+    "focalfunc": "func (input *BeegoInput) AcceptsYAML() bool",
+    "funcbody": "func (input *BeegoInput) AcceptsYAML() bool {\n\treturn acceptsYAMLRegex.MatchString(input.Header(\"Accept\"))\n}",
+    "funcname": "AcceptsYAML"
+}

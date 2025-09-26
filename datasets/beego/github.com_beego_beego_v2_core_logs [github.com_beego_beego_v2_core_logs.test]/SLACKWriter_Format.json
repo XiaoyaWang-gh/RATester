@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/slack.go",
+    "lineno": 25,
+    "focalfunc": "func (s *SLACKWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (s *SLACKWriter) Format(lm *LogMsg) string {\n\n\treturn lm.When.Format(\"2006-01-02 15:04:05\") + \" \" + lm.OldStyleFormat()\n}",
+    "funcname": "Format"
+}

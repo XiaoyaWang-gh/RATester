@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 313,
+    "focalfunc": "func GobEncode(data interface{}) ([]byte, error)",
+    "funcbody": "func GobEncode(data interface{}) ([]byte, error) {\n\tbuf := bytes.NewBuffer(nil)\n\tenc := gob.NewEncoder(buf)\n\terr := enc.Encode(data)\n\tif err != nil {\n\t\treturn nil, berror.Wrap(err, GobEncodeDataFailed, \"could not encode this data\")\n\t}\n\treturn buf.Bytes(), nil\n}",
+    "funcname": "GobEncode"
+}

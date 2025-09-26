@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/merge.go",
+    "lineno": 49,
+    "focalfunc": "func (ns *Namespace) merge(src, dst any) (any, error)",
+    "funcbody": "func (ns *Namespace) merge(src, dst any) (any, error) {\n\tvdst, vsrc := reflect.ValueOf(dst), reflect.ValueOf(src)\n\n\tif vdst.Kind() != reflect.Map {\n\t\treturn nil, fmt.Errorf(\"destination must be a map, got %T\", dst)\n\t}\n\n\tif !hreflect.IsTruthfulValue(vsrc) {\n\t\treturn dst, nil\n\t}\n\n\tif vsrc.Kind() != reflect.Map {\n\t\treturn nil, fmt.Errorf(\"source must be a map, got %T\", src)\n\t}\n\n\tif vsrc.Type().Key() != vdst.Type().Key() {\n\t\treturn nil, fmt.Errorf(\"incompatible map types, got %T to %T\", src, dst)\n\t}\n\n\treturn mergeMap(vdst, vsrc).Interface(), nil\n}",
+    "funcname": "merge"
+}

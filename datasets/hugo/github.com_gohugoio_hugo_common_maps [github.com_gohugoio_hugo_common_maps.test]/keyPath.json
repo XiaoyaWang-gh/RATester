@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 186,
+    "focalfunc": "func (KeyRenamer) keyPath(k1, k2 string) string",
+    "funcbody": "func (KeyRenamer) keyPath(k1, k2 string) string {\n\tk1, k2 = strings.ToLower(k1), strings.ToLower(k2)\n\tif k1 == \"\" {\n\t\treturn k2\n\t}\n\treturn k1 + \"/\" + k2\n}",
+    "funcname": "keyPath"
+}

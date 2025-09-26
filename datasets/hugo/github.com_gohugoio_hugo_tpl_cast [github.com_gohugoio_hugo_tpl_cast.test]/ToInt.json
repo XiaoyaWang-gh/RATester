@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/cast/cast.go",
+    "lineno": 32,
+    "focalfunc": "func (ns *Namespace) ToInt(v any) (int, error)",
+    "funcbody": "func (ns *Namespace) ToInt(v any) (int, error) {\n\tv = convertTemplateToString(v)\n\treturn _cast.ToIntE(v)\n}",
+    "funcname": "ToInt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 877,
+    "focalfunc": "func (c *Context) IsWebsocket() bool",
+    "funcbody": "func (c *Context) IsWebsocket() bool {\n\tif strings.Contains(strings.ToLower(c.requestHeader(\"Connection\")), \"upgrade\") &&\n\t\tstrings.EqualFold(c.requestHeader(\"Upgrade\"), \"websocket\") {\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "IsWebsocket"
+}

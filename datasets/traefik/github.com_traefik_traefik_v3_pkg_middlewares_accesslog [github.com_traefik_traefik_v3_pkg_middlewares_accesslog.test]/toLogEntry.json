@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger_formatters.go",
+    "lineno": 76,
+    "focalfunc": "func toLogEntry(s, defaultValue string, quote bool) string",
+    "funcbody": "func toLogEntry(s, defaultValue string, quote bool) string {\n\tif len(s) == 0 {\n\t\treturn defaultValue\n\t}\n\n\tif quote {\n\t\treturn `\"` + s + `\"`\n\t}\n\treturn s\n}",
+    "funcname": "toLogEntry"
+}

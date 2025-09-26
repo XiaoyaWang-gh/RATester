@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memcache/memcache.go",
+    "lineno": 159,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tcache.Register(\"memcache\", NewMemCache)\n}",
+    "funcname": "init"
+}

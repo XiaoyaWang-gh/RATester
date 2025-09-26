@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/tcpmux/httpconnect.go",
+    "lineno": 49,
+    "focalfunc": "func (muxer *HTTPConnectTCPMuxer) readHTTPConnectRequest(rd io.Reader) (host, httpUser, httpPwd string, err error)",
+    "funcbody": "func (muxer *HTTPConnectTCPMuxer) readHTTPConnectRequest(rd io.Reader) (host, httpUser, httpPwd string, err error) {\n\tbufioReader := bufio.NewReader(rd)\n\n\treq, err := http.ReadRequest(bufioReader)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif req.Method != \"CONNECT\" {\n\t\terr = fmt.Errorf(\"connections to tcp vhost must be of method CONNECT\")\n\t\treturn\n\t}\n\n\thost, _ = httppkg.CanonicalHost(req.Host)\n\tproxyAuth := req.Header.Get(\"Proxy-Authorization\")\n\tif proxyAuth != \"\" {\n\t\thttpUser, httpPwd, _ = httppkg.ParseBasicAuth(proxyAuth)\n\t}\n\treturn\n}",
+    "funcname": "readHTTPConnectRequest"
+}

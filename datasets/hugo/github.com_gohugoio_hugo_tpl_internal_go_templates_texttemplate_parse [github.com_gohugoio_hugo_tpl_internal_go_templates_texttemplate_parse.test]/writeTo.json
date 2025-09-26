@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 995,
+    "focalfunc": "func (t *TemplateNode) writeTo(sb *strings.Builder)",
+    "funcbody": "func (t *TemplateNode) writeTo(sb *strings.Builder) {\n\tsb.WriteString(\"{{template \")\n\tsb.WriteString(strconv.Quote(t.Name))\n\tif t.Pipe != nil {\n\t\tsb.WriteByte(' ')\n\t\tt.Pipe.writeTo(sb)\n\t}\n\tsb.WriteString(\"}}\")\n}",
+    "funcname": "writeTo"
+}

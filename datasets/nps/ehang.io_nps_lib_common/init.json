@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 93,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tonce.Do(newPool)\n}",
+    "funcname": "init"
+}

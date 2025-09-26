@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 198,
+    "focalfunc": "func (c *Controller) Head()",
+    "funcbody": "func (c *Controller) Head() {\n\thttp.Error(c.Ctx.ResponseWriter, \"Method Not Allowed\", http.StatusMethodNotAllowed)\n}",
+    "funcname": "Head"
+}

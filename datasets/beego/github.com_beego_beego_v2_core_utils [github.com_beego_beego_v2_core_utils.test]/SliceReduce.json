@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 68,
+    "focalfunc": "func SliceReduce(slice []interface{}, a reducetype) (dslice []interface{})",
+    "funcbody": "func SliceReduce(slice []interface{}, a reducetype) (dslice []interface{}) {\n\tfor _, v := range slice {\n\t\tdslice = append(dslice, a(v))\n\t}\n\treturn\n}",
+    "funcname": "SliceReduce"
+}

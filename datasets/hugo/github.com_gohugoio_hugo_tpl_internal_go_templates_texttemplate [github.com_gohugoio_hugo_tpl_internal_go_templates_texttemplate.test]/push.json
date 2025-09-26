@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 49,
+    "focalfunc": "func (s *state) push(name string, value reflect.Value)",
+    "funcbody": "func (s *state) push(name string, value reflect.Value) {\n\ts.vars = append(s.vars, variable{name, value})\n}",
+    "funcname": "push"
+}

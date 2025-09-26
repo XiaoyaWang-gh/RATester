@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 591,
+    "focalfunc": "func (c *hugoBuilder) fullRebuild(changeType string)",
+    "funcbody": "func (c *hugoBuilder) fullRebuild(changeType string) {\n\tif changeType == configChangeGoMod {\n\n\t\tif !c.fullRebuildSem.TryAcquire(1) {\n\t\t\treturn\n\t\t}\n\t\tc.fullRebuildSem.Release(1)\n\t}\n\n\tc.fullRebuildSem.Acquire(context.Background(), 1)\n\n\tgo func() {\n\t\tdefer c.fullRebuildSem.Release(1)\n\n\t\tc.printChangeDetected(changeType)\n\n\t\tdefer func() {\n\n\t\t\ttime.Sleep(2 * time.Second)\n\t\t}()\n\n\t\tdefer c.postBuild(\"Rebuilt\", time.Now())\n\n\t\terr := c.reloadConfig()\n\t\tif err != nil {\n\n\t\t\tc.errState.setPaused(true)\n\t\t\tc.handleBuildErr(err, \"Failed to reload config\")\n\t\t} else {\n\t\t\tc.errState.setPaused(false)\n\t\t}\n\n\t\tif !c.errState.isPaused() {\n\t\t\t_, err := c.copyStatic()\n\t\t\tif err != nil {\n\t\t\t\tc.r.logger.Errorln(err)\n\t\t\t\treturn\n\t\t\t}\n\t\t\terr = c.buildSites(false)\n\t\t\tif err != nil {\n\t\t\t\tc.r.logger.Errorln(err)\n\t\t\t} else if c.s != nil && c.s.doLiveReload {\n\t\t\t\tlivereload.ForceRefresh()\n\t\t\t}\n\t\t}\n\t}()\n}",
+    "funcname": "fullRebuild"
+}

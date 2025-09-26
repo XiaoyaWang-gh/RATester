@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 289,
+    "focalfunc": "func (srv *Server) signalHooks(ppFlag int, sig os.Signal)",
+    "funcbody": "func (srv *Server) signalHooks(ppFlag int, sig os.Signal) {\n\tif _, notSet := srv.SignalHooks[ppFlag][sig]; !notSet {\n\t\treturn\n\t}\n\tfor _, f := range srv.SignalHooks[ppFlag][sig] {\n\t\tf()\n\t}\n}",
+    "funcname": "signalHooks"
+}

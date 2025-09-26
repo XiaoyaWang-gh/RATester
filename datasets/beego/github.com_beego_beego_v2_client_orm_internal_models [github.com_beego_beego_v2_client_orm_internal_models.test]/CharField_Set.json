@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 121,
+    "focalfunc": "func (e *CharField) Set(d string)",
+    "funcbody": "func (e *CharField) Set(d string) {\n\t*e = CharField(d)\n}",
+    "funcname": "Set"
+}

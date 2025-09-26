@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 249,
+    "focalfunc": "func file_test_proto_init()",
+    "funcbody": "func file_test_proto_init() {\n\tif File_test_proto != nil {\n\t\treturn\n\t}\n\tif !protoimpl.UnsafeEnabled {\n\t\tfile_test_proto_msgTypes[0].Exporter = func(v any, i int) any {\n\t\t\tswitch v := v.(*Test); i {\n\t\t\tcase 0:\n\t\t\t\treturn &v.state\n\t\t\tcase 1:\n\t\t\t\treturn &v.sizeCache\n\t\t\tcase 2:\n\t\t\t\treturn &v.unknownFields\n\t\t\tdefault:\n\t\t\t\treturn nil\n\t\t\t}\n\t\t}\n\t\tfile_test_proto_msgTypes[1].Exporter = func(v any, i int) any {\n\t\t\tswitch v := v.(*Test_OptionalGroup); i {\n\t\t\tcase 0:\n\t\t\t\treturn &v.state\n\t\t\tcase 1:\n\t\t\t\treturn &v.sizeCache\n\t\t\tcase 2:\n\t\t\t\treturn &v.unknownFields\n\t\t\tdefault:\n\t\t\t\treturn nil\n\t\t\t}\n\t\t}\n\t}\n\ttype x struct{}\n\tout := protoimpl.TypeBuilder{\n\t\tFile: protoimpl.DescBuilder{\n\t\t\tGoPackagePath:\treflect.TypeOf(x{}).PkgPath(),\n\t\t\tRawDescriptor:\tfile_test_proto_rawDesc,\n\t\t\tNumEnums:\t1,\n\t\t\tNumMessages:\t2,\n\t\t\tNumExtensions:\t0,\n\t\t\tNumServices:\t0,\n\t\t},\n\t\tGoTypes:\t\tfile_test_proto_goTypes,\n\t\tDependencyIndexes:\tfile_test_proto_depIdxs,\n\t\tEnumInfos:\t\tfile_test_proto_enumTypes,\n\t\tMessageInfos:\t\tfile_test_proto_msgTypes,\n\t}.Build()\n\tFile_test_proto = out.File\n\tfile_test_proto_rawDesc = nil\n\tfile_test_proto_goTypes = nil\n\tfile_test_proto_depIdxs = nil\n}",
+    "funcname": "file_test_proto_init"
+}

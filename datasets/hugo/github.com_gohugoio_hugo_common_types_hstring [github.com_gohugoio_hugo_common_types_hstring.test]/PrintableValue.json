@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/hstring/stringtypes.go",
+    "lineno": 34,
+    "focalfunc": "func (s HTML) PrintableValue() any",
+    "funcbody": "func (s HTML) PrintableValue() any {\n\treturn template.HTML(s)\n}",
+    "funcname": "PrintableValue"
+}

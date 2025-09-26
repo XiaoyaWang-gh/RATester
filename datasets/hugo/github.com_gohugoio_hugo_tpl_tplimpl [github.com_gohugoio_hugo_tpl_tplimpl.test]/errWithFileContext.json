@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_errors.go",
+    "lineno": 55,
+    "focalfunc": "func (info templateInfo) errWithFileContext(what string, err error) error",
+    "funcbody": "func (info templateInfo) errWithFileContext(what string, err error) error {\n\terr = fmt.Errorf(what+\": %w\", err)\n\tfe := herrors.NewFileErrorFromName(err, info.meta.Filename)\n\tf, err := info.meta.Open()\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\treturn fe.UpdateContent(f, nil)\n}",
+    "funcname": "errWithFileContext"
+}

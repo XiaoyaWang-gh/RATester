@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/helpers.go",
+    "lineno": 115,
+    "focalfunc": "func mkdir(x ...string)",
+    "funcbody": "func mkdir(x ...string) {\n\tp := filepath.Join(x...)\n\terr := os.MkdirAll(p, 0o777)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n}",
+    "funcname": "mkdir"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 305,
+    "focalfunc": "func (p Path) TrimLeadingSlash() *Path",
+    "funcbody": "func (p Path) TrimLeadingSlash() *Path {\n\tp.trimLeadingSlash = true\n\treturn &p\n}",
+    "funcname": "TrimLeadingSlash"
+}

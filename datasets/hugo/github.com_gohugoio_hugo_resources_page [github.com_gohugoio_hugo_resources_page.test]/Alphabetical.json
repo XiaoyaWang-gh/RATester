@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/taxonomy.go",
+    "lineno": 80,
+    "focalfunc": "func (i Taxonomy) Alphabetical() OrderedTaxonomy",
+    "funcbody": "func (i Taxonomy) Alphabetical() OrderedTaxonomy {\n\tia := i.TaxonomyArray()\n\tp := ia.getOneOPage()\n\tif p == nil {\n\t\treturn ia\n\t}\n\tcurrentSite := p.Site().Current()\n\tcoll := langs.GetCollator1(currentSite.Language())\n\tcoll.Lock()\n\tdefer coll.Unlock()\n\tname := func(i1, i2 *OrderedTaxonomyEntry) bool {\n\t\treturn coll.CompareStrings(i1.Name, i2.Name) < 0\n\t}\n\toiBy(name).Sort(ia)\n\treturn ia\n}",
+    "funcname": "Alphabetical"
+}

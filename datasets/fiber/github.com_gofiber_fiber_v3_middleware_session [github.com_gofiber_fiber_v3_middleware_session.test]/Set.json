@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 84,
+    "focalfunc": "func (s *Session) Set(key string, val any)",
+    "funcbody": "func (s *Session) Set(key string, val any) {\n\n\tif s.data == nil {\n\t\treturn\n\t}\n\ts.data.Set(key, val)\n}",
+    "funcname": "Set"
+}

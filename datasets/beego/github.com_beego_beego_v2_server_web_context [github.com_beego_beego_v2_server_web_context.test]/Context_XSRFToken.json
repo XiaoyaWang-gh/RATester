@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 265,
+    "focalfunc": "func (ctx *Context) XSRFToken(key string, expire int64) string",
+    "funcbody": "func (ctx *Context) XSRFToken(key string, expire int64) string {\n\tif ctx._xsrfToken == \"\" {\n\t\ttoken, ok := ctx.GetSecureCookie(key, \"_xsrf\")\n\t\tif !ok {\n\t\t\ttoken = string(utils.RandomCreateBytes(32))\n\n\t\t\tctx.SetSecureCookie(key, \"_xsrf\", token, expire, \"/\", \"\", true, true)\n\t\t}\n\t\tctx._xsrfToken = token\n\t}\n\treturn ctx._xsrfToken\n}",
+    "funcname": "XSRFToken"
+}

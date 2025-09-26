@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 741,
+    "focalfunc": "func containsSpecialScriptTag(s []byte) bool",
+    "funcbody": "func containsSpecialScriptTag(s []byte) bool {\n\treturn specialScriptTagRE.Match(s)\n}",
+    "funcname": "containsSpecialScriptTag"
+}

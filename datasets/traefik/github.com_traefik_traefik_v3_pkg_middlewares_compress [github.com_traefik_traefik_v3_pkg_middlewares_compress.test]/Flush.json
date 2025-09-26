@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 299,
+    "focalfunc": "func (r *responseWriter) Flush()",
+    "funcbody": "func (r *responseWriter) Flush() {\n\tif !r.seenData {\n\n\t\treturn\n\t}\n\n\tif r.compressionDisabled {\n\t\tif rw, ok := r.rw.(http.Flusher); ok {\n\t\t\trw.Flush()\n\t\t}\n\n\t\treturn\n\t}\n\n\tif !r.compressionStarted {\n\t\treturn\n\t}\n\n\tdefer func() {\n\n\t\t_ = r.compressionWriter.Flush()\n\n\t\tif rw, ok := r.rw.(http.Flusher); ok {\n\t\t\trw.Flush()\n\t\t}\n\t}()\n\n\tn, err := r.compressionWriter.Write(r.buf)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif n < len(r.buf) {\n\t\tr.buf = r.buf[n:]\n\t\treturn\n\t}\n\n\tr.buf = r.buf[:0]\n}",
+    "funcname": "Flush"
+}

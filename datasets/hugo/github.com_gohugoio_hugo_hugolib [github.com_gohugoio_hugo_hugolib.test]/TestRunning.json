@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 111,
+    "focalfunc": "func TestRunning(t testing.TB, files string, opts ...TestOpt) *IntegrationTestBuilder",
+    "funcbody": "func TestRunning(t testing.TB, files string, opts ...TestOpt) *IntegrationTestBuilder {\n\tcfg := IntegrationTestConfig{T: t, TxtarString: files, Running: true}\n\tfor _, o := range opts {\n\t\to(&cfg)\n\t}\n\treturn NewIntegrationTestBuilder(cfg).Build()\n}",
+    "funcname": "TestRunning"
+}

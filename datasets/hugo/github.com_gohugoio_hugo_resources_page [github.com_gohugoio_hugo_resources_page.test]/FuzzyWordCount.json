@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 595,
+    "focalfunc": "func (c *nopContent) FuzzyWordCount(context.Context) int",
+    "funcbody": "func (c *nopContent) FuzzyWordCount(context.Context) int {\n\treturn 0\n}",
+    "funcname": "FuzzyWordCount"
+}

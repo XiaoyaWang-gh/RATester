@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 251,
+    "focalfunc": "func AssetsJs(text string) template.HTML",
+    "funcbody": "func AssetsJs(text string) template.HTML {\n\ttext = \"<script src=\\\"\" + text + \"\\\"></script>\"\n\n\treturn template.HTML(text)\n}",
+    "funcname": "AssetsJs"
+}

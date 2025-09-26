@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 108,
+    "focalfunc": "func (t *TreeShiftTree[T]) DeletePrefix(prefix string) int",
+    "funcbody": "func (t *TreeShiftTree[T]) DeletePrefix(prefix string) int {\n\tvar count int\n\tfor _, tt := range t.trees {\n\t\tcount += tt.tree.DeletePrefix(prefix)\n\t}\n\treturn count\n}",
+    "funcname": "DeletePrefix"
+}

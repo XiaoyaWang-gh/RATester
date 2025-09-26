@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 162,
+    "focalfunc": "func (o *ormBase) ReadForUpdateWithCtx(ctx context.Context, md interface{}, cols ...string) error",
+    "funcbody": "func (o *ormBase) ReadForUpdateWithCtx(ctx context.Context, md interface{}, cols ...string) error {\n\tmi, ind := o.getPtrMiInd(md)\n\treturn o.alias.DbBaser.Read(ctx, o.db, mi, ind, o.alias.TZ, cols, true)\n}",
+    "funcname": "ReadForUpdateWithCtx"
+}

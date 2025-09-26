@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 148,
+    "focalfunc": "func (c *templateContext) wrapInPartialReturnWrapper(n *parse.ListNode) *parse.ListNode",
+    "funcbody": "func (c *templateContext) wrapInPartialReturnWrapper(n *parse.ListNode) *parse.ListNode {\n\twrapper := partialReturnWrapper.CopyList()\n\trangeNode := wrapper.Nodes[2].(*parse.RangeNode)\n\tretn := rangeNode.List.Nodes[0]\n\tsetCmd := retn.(*parse.ActionNode).Pipe.Cmds[0]\n\tsetPipe := setCmd.Args[1].(*parse.PipeNode)\n\n\tsetPipe.Cmds = []*parse.CommandNode{c.returnNode}\n\trangeNode.List.Nodes = append(n.Nodes, retn)\n\n\treturn wrapper\n}",
+    "funcname": "wrapInPartialReturnWrapper"
+}

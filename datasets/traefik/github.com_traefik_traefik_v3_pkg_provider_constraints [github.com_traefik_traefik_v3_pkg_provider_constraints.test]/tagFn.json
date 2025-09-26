@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/constraints/constraints_tags.go",
+    "lineno": 49,
+    "focalfunc": "func tagFn(name string) constraintTagFunc",
+    "funcbody": "func tagFn(name string) constraintTagFunc {\n\treturn func(tags []string) bool {\n\t\treturn slices.Contains(tags, name)\n\t}\n}",
+    "funcname": "tagFn"
+}

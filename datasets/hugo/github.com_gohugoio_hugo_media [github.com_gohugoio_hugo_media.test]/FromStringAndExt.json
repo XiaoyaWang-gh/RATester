@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 121,
+    "focalfunc": "func FromStringAndExt(t string, ext ...string) (Type, error)",
+    "funcbody": "func FromStringAndExt(t string, ext ...string) (Type, error) {\n\ttp, err := FromString(t)\n\tif err != nil {\n\t\treturn tp, err\n\t}\n\tfor i, e := range ext {\n\t\text[i] = strings.TrimPrefix(e, \".\")\n\t}\n\ttp.SuffixesCSV = strings.Join(ext, \",\")\n\ttp.Delimiter = DefaultDelimiter\n\ttp.init()\n\treturn tp, nil\n}",
+    "funcname": "FromStringAndExt"
+}

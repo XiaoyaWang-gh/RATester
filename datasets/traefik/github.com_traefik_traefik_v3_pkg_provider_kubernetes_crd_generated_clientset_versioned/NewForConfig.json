@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/clientset.go",
+    "lineno": 68,
+    "focalfunc": "func NewForConfig(c *rest.Config) (*Clientset, error)",
+    "funcbody": "func NewForConfig(c *rest.Config) (*Clientset, error) {\n\tconfigShallowCopy := *c\n\n\tif configShallowCopy.UserAgent == \"\" {\n\t\tconfigShallowCopy.UserAgent = rest.DefaultKubernetesUserAgent()\n\t}\n\n\thttpClient, err := rest.HTTPClientFor(&configShallowCopy)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn NewForConfigAndClient(&configShallowCopy, httpClient)\n}",
+    "funcname": "NewForConfig"
+}

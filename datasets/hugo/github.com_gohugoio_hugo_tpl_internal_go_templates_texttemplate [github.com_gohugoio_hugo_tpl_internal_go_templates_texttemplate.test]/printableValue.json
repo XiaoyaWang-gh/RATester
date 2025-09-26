@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 1056,
+    "focalfunc": "func printableValue(v reflect.Value) (any, bool)",
+    "funcbody": "func printableValue(v reflect.Value) (any, bool) {\n\tif v.Kind() == reflect.Pointer {\n\t\tv, _ = indirect(v)\n\t}\n\tif !v.IsValid() {\n\t\treturn \"<no value>\", true\n\t}\n\n\tif !v.Type().Implements(errorType) && !v.Type().Implements(fmtStringerType) {\n\t\tif v.CanAddr() && (reflect.PointerTo(v.Type()).Implements(errorType) || reflect.PointerTo(v.Type()).Implements(fmtStringerType)) {\n\t\t\tv = v.Addr()\n\t\t} else {\n\t\t\tswitch v.Kind() {\n\t\t\tcase reflect.Chan, reflect.Func:\n\t\t\t\treturn nil, false\n\t\t\t}\n\t\t}\n\t}\n\treturn v.Interface(), true\n}",
+    "funcname": "printableValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 387,
+    "focalfunc": "func (e *SmallIntegerField) String() string",
+    "funcbody": "func (e *SmallIntegerField) String() string {\n\treturn utils.ToStr(e.Value())\n}",
+    "funcname": "String"
+}

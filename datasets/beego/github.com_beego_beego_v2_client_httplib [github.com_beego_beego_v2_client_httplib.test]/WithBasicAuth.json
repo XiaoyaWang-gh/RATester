@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 118,
+    "focalfunc": "func WithBasicAuth(basicAuth func() (string, string)) BeegoHTTPRequestOption",
+    "funcbody": "func WithBasicAuth(basicAuth func() (string, string)) BeegoHTTPRequestOption {\n\treturn func(request *BeegoHTTPRequest) {\n\t\tusername, password := basicAuth()\n\t\trequest.SetBasicAuth(username, password)\n\t}\n}",
+    "funcname": "WithBasicAuth"
+}

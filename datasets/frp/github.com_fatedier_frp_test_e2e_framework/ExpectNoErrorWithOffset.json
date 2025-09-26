@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 42,
+    "focalfunc": "func ExpectNoErrorWithOffset(offset int, err error, explain ...interface{})",
+    "funcbody": "func ExpectNoErrorWithOffset(offset int, err error, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1+offset, err).NotTo(gomega.HaveOccurred(), explain...)\n}",
+    "funcname": "ExpectNoErrorWithOffset"
+}

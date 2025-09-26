@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/dynamic/middlewares.go",
+    "lineno": 373,
+    "focalfunc": "func (h *Headers) HasSecureHeadersDefined() bool",
+    "funcbody": "func (h *Headers) HasSecureHeadersDefined() bool {\n\treturn h != nil && (len(h.AllowedHosts) != 0 ||\n\t\tlen(h.HostsProxyHeaders) != 0 ||\n\t\t(h.SSLRedirect != nil && *h.SSLRedirect) ||\n\t\t(h.SSLTemporaryRedirect != nil && *h.SSLTemporaryRedirect) ||\n\t\t(h.SSLForceHost != nil && *h.SSLForceHost) ||\n\t\t(h.SSLHost != nil && *h.SSLHost != \"\") ||\n\t\tlen(h.SSLProxyHeaders) != 0 ||\n\t\th.STSSeconds != 0 ||\n\t\th.STSIncludeSubdomains ||\n\t\th.STSPreload ||\n\t\th.ForceSTSHeader ||\n\t\th.FrameDeny ||\n\t\th.CustomFrameOptionsValue != \"\" ||\n\t\th.ContentTypeNosniff ||\n\t\th.BrowserXSSFilter ||\n\t\th.CustomBrowserXSSValue != \"\" ||\n\t\th.ContentSecurityPolicy != \"\" ||\n\t\th.ContentSecurityPolicyReportOnly != \"\" ||\n\t\th.PublicKey != \"\" ||\n\t\th.ReferrerPolicy != \"\" ||\n\t\t(h.FeaturePolicy != nil && *h.FeaturePolicy != \"\") ||\n\t\th.PermissionsPolicy != \"\" ||\n\t\th.IsDevelopment)\n}",
+    "funcname": "HasSecureHeadersDefined"
+}

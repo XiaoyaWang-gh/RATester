@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1642,
+    "focalfunc": "func (c *DefaultCtx) SendStatus(status int) error",
+    "funcbody": "func (c *DefaultCtx) SendStatus(status int) error {\n\tc.Status(status)\n\n\tif len(c.fasthttp.Response.Body()) == 0 {\n\t\treturn c.SendString(utils.StatusMessage(status))\n\t}\n\n\treturn nil\n}",
+    "funcname": "SendStatus"
+}

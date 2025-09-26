@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 281,
+    "focalfunc": "func (p PagesFromTemplate) CloneForGoTmpl(fi hugofs.FileMetaInfo) *PagesFromTemplate",
+    "funcbody": "func (p PagesFromTemplate) CloneForGoTmpl(fi hugofs.FileMetaInfo) *PagesFromTemplate {\n\tp.PagesFromTemplateOptions.GoTmplFi = fi\n\treturn &p\n}",
+    "funcname": "CloneForGoTmpl"
+}

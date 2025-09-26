@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 398,
+    "focalfunc": "func IsDartSassV2() bool",
+    "funcbody": "func IsDartSassV2() bool {\n\treturn !strings.Contains(DartSassBinaryName, \"embedded\")\n}",
+    "funcname": "IsDartSassV2"
+}

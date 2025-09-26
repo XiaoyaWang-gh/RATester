@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 129,
+    "focalfunc": "func (b *BeegoHTTPRequest) GetRequest() *http.Request",
+    "funcbody": "func (b *BeegoHTTPRequest) GetRequest() *http.Request {\n\treturn b.req\n}",
+    "funcname": "GetRequest"
+}

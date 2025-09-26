@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathtype_string.go",
+    "lineno": 22,
+    "focalfunc": "func (i PathType) String() string",
+    "funcbody": "func (i PathType) String() string {\n\tif i < 0 || i >= PathType(len(_PathType_index)-1) {\n\t\treturn \"PathType(\" + strconv.FormatInt(int64(i), 10) + \")\"\n\t}\n\treturn _PathType_name[_PathType_index[i]:_PathType_index[i+1]]\n}",
+    "funcname": "String"
+}

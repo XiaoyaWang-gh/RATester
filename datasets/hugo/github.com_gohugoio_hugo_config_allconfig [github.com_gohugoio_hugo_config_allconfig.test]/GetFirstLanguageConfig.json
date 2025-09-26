@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 847,
+    "focalfunc": "func (c Configs) GetFirstLanguageConfig() config.AllProvider",
+    "funcbody": "func (c Configs) GetFirstLanguageConfig() config.AllProvider {\n\treturn c.configLangs[0]\n}",
+    "funcname": "GetFirstLanguageConfig"
+}

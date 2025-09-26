@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 303,
+    "focalfunc": "func (c *configContainer) OnChange(key string, fn func(value string))",
+    "funcbody": "func (c *configContainer) OnChange(key string, fn func(value string)) {\n\n}",
+    "funcname": "OnChange"
+}

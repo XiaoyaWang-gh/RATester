@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 101,
+    "focalfunc": "func (p ControllerCommentsSlice) Less(i, j int) bool",
+    "funcbody": "func (p ControllerCommentsSlice) Less(i, j int) bool\t{ return p[i].Router < p[j].Router }",
+    "funcname": "Less"
+}

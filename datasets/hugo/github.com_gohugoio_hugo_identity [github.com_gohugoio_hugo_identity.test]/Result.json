@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/question.go",
+    "lineno": 43,
+    "focalfunc": "func (q *Question[T]) Result() (any, bool)",
+    "funcbody": "func (q *Question[T]) Result() (any, bool) {\n\tq.mu.RLock()\n\tdefer q.mu.RUnlock()\n\n\treturn q.fasit, q.answered\n}",
+    "funcname": "Result"
+}

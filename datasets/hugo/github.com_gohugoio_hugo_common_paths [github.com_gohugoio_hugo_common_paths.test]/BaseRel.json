@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 449,
+    "focalfunc": "func (p *Path) BaseRel(owner *Path) string",
+    "funcbody": "func (p *Path) BaseRel(owner *Path) string {\n\tob := owner.Base()\n\tif ob == \"/\" {\n\t\tob = \"\"\n\t}\n\treturn p.Base()[len(ob)+1:]\n}",
+    "funcname": "BaseRel"
+}

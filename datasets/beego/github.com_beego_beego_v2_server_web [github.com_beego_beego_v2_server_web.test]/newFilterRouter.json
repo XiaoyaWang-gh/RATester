@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter.go",
+    "lineno": 48,
+    "focalfunc": "func newFilterRouter(pattern string, filter FilterFunc, opts ...FilterOpt) *FilterRouter",
+    "funcbody": "func newFilterRouter(pattern string, filter FilterFunc, opts ...FilterOpt) *FilterRouter {\n\tmr := &FilterRouter{\n\t\ttree:\t\tNewTree(),\n\t\tpattern:\tpattern,\n\t\tfilterFunc:\tfilter,\n\t}\n\n\tfos := &filterOpts{\n\t\treturnOnOutput: true,\n\t}\n\n\tfor _, o := range opts {\n\t\to(fos)\n\t}\n\n\tif !fos.routerCaseSensitive {\n\t\tmr.pattern = strings.ToLower(pattern)\n\t}\n\n\tmr.returnOnOutput = fos.returnOnOutput\n\tmr.resetParams = fos.resetParams\n\tmr.tree.AddRouter(pattern, true)\n\treturn mr\n}",
+    "funcname": "newFilterRouter"
+}

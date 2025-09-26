@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 301,
+    "focalfunc": "func (ctx *Context) RenderMethodResult(result interface{})",
+    "funcbody": "func (ctx *Context) RenderMethodResult(result interface{}) {\n\tif result != nil {\n\t\trenderer, ok := result.(Renderer)\n\t\tif !ok {\n\t\t\terr, ok := result.(error)\n\t\t\tif ok {\n\t\t\t\trenderer = errorRenderer(err)\n\t\t\t} else {\n\t\t\t\trenderer = jsonRenderer(result)\n\t\t\t}\n\t\t}\n\t\trenderer.Render(ctx)\n\t}\n}",
+    "funcname": "RenderMethodResult"
+}

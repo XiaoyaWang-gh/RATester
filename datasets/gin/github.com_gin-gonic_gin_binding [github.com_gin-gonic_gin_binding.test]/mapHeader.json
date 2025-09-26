@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/header.go",
+    "lineno": 28,
+    "focalfunc": "func mapHeader(ptr any, h map[string][]string) error",
+    "funcbody": "func mapHeader(ptr any, h map[string][]string) error {\n\treturn mappingByPtr(ptr, headerSource(h), \"header\")\n}",
+    "funcname": "mapHeader"
+}

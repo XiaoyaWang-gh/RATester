@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 309,
+    "focalfunc": "func (s *DbUtils) GetHostById(id int) (h *Host, err error)",
+    "funcbody": "func (s *DbUtils) GetHostById(id int) (h *Host, err error) {\n\tif v, ok := s.JsonDb.Hosts.Load(id); ok {\n\t\th = v.(*Host)\n\t\treturn\n\t}\n\terr = errors.New(\"The host could not be parsed\")\n\treturn\n}",
+    "funcname": "GetHostById"
+}

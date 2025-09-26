@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/create.go",
+    "lineno": 174,
+    "focalfunc": "func (c *Client) GetMatch(pattern string) (resource.Resource, error)",
+    "funcbody": "func (c *Client) GetMatch(pattern string) (resource.Resource, error) {\n\tres, err := c.match(\"__get-match\", pattern, nil, true)\n\tif err != nil || len(res) == 0 {\n\t\treturn nil, err\n\t}\n\treturn res[0], err\n}",
+    "funcname": "GetMatch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 778,
+    "focalfunc": "func (b *beegoAppConfig) String(key string) (string, error)",
+    "funcbody": "func (b *beegoAppConfig) String(key string) (string, error) {\n\tif v, err := b.innerConfig.String(BConfig.RunMode + \"::\" + key); v != \"\" && err == nil {\n\t\treturn v, nil\n\t}\n\treturn b.innerConfig.String(key)\n}",
+    "funcname": "String"
+}

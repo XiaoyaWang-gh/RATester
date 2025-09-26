@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/auth.go",
+    "lineno": 91,
+    "focalfunc": "func authorizationHeader(user, password string) string",
+    "funcbody": "func authorizationHeader(user, password string) string {\n\tbase := user + \":\" + password\n\treturn \"Basic \" + base64.StdEncoding.EncodeToString(bytesconv.StringToBytes(base))\n}",
+    "funcname": "authorizationHeader"
+}

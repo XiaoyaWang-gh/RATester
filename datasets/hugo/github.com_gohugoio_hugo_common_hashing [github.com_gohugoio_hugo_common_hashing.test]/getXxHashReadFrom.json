@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 159,
+    "focalfunc": "func getXxHashReadFrom() *xxhashReadFrom",
+    "funcbody": "func getXxHashReadFrom() *xxhashReadFrom {\n\treturn xXhashReadFromPool.Get().(*xxhashReadFrom)\n}",
+    "funcname": "getXxHashReadFrom"
+}

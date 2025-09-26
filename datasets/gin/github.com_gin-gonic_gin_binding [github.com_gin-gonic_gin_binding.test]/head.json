@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 410,
+    "focalfunc": "func head(str, sep string) (head string, tail string)",
+    "funcbody": "func head(str, sep string) (head string, tail string) {\n\thead, tail, _ = strings.Cut(str, sep)\n\treturn head, tail\n}",
+    "funcname": "head"
+}

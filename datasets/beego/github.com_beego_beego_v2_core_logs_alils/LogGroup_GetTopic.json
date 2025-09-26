@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 126,
+    "focalfunc": "func (m *LogGroup) GetTopic() string",
+    "funcbody": "func (m *LogGroup) GetTopic() string {\n\tif m != nil && m.Topic != nil {\n\t\treturn *m.Topic\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetTopic"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/diagrams/goat.go",
+    "lineno": 53,
+    "focalfunc": "func (d *Namespace) Goat(v any) SVGDiagram",
+    "funcbody": "func (d *Namespace) Goat(v any) SVGDiagram {\n\tvar r io.Reader\n\n\tswitch vv := v.(type) {\n\tcase io.Reader:\n\t\tr = vv\n\tcase []byte:\n\t\tr = bytes.NewReader(vv)\n\tdefault:\n\t\tr = strings.NewReader(cast.ToString(v))\n\t}\n\n\treturn goatDiagram{\n\t\td: goat.BuildSVG(r),\n\t}\n}",
+    "funcname": "Goat"
+}

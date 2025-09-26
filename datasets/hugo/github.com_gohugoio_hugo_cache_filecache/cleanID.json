@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 460,
+    "focalfunc": "func cleanID(name string) string",
+    "funcbody": "func cleanID(name string) string {\n\treturn strings.TrimPrefix(filepath.Clean(name), helpers.FilePathSeparator)\n}",
+    "funcname": "cleanID"
+}

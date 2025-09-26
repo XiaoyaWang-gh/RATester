@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/flash.go",
+    "lineno": 92,
+    "focalfunc": "func ReadFromRequest(c *Controller) *FlashData",
+    "funcbody": "func ReadFromRequest(c *Controller) *FlashData {\n\tflash := NewFlash()\n\tif cookie, err := c.Ctx.Request.Cookie(BConfig.WebConfig.FlashName); err == nil {\n\t\tv, _ := url.QueryUnescape(cookie.Value)\n\t\tvals := strings.Split(v, \"\\x00\")\n\t\tfor _, v := range vals {\n\t\t\tif len(v) > 0 {\n\t\t\t\tkv := strings.Split(v, \"\\x23\"+BConfig.WebConfig.FlashSeparator+\"\\x23\")\n\t\t\t\tif len(kv) == 2 {\n\t\t\t\t\tflash.Data[kv[0]] = kv[1]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tc.Ctx.SetCookie(BConfig.WebConfig.FlashName, \"\", -1, \"/\")\n\t}\n\tc.Data[\"flash\"] = flash.Data\n\treturn flash\n}",
+    "funcname": "ReadFromRequest"
+}

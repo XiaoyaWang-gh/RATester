@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 126,
+    "focalfunc": "func (foreign *Foreign) SetOnDelete(del string) *Foreign",
+    "funcbody": "func (foreign *Foreign) SetOnDelete(del string) *Foreign {\n\tforeign.OnDelete = \"ON DELETE\" + del\n\treturn foreign\n}",
+    "funcname": "SetOnDelete"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 248,
+    "focalfunc": "func (f *Framework) RunServer(portName string, s server.Server)",
+    "funcbody": "func (f *Framework) RunServer(portName string, s server.Server) {\n\tf.servers = append(f.servers, s)\n\tif s.BindPort() > 0 && portName != \"\" {\n\t\tf.usedPorts[portName] = s.BindPort()\n\t}\n\terr := s.Run()\n\tExpectNoError(err, \"RunServer: with PortName %s\", portName)\n}",
+    "funcname": "RunServer"
+}

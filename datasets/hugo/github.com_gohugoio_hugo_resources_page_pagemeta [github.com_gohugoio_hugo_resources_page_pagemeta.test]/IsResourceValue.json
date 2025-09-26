@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 283,
+    "focalfunc": "func (s Source) IsResourceValue() bool",
+    "funcbody": "func (s Source) IsResourceValue() bool {\n\t_, ok := s.Value.(resource.Resource)\n\treturn ok\n}",
+    "funcname": "IsResourceValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 115,
+    "focalfunc": "func (m *Migration) Reset()",
+    "funcbody": "func (m *Migration) Reset() {\n\tm.sqls = make([]string, 0)\n}",
+    "funcname": "Reset"
+}

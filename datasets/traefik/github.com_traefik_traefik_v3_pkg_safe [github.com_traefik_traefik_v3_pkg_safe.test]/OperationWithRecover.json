@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 69,
+    "focalfunc": "func OperationWithRecover(operation backoff.Operation) backoff.Operation",
+    "funcbody": "func OperationWithRecover(operation backoff.Operation) backoff.Operation {\n\treturn func() (err error) {\n\t\tdefer func() {\n\t\t\tif res := recover(); res != nil {\n\t\t\t\tdefaultRecoverGoroutine(res)\n\t\t\t\terr = fmt.Errorf(\"panic in operation: %w\", err)\n\t\t\t}\n\t\t}()\n\t\treturn operation()\n\t}\n}",
+    "funcname": "OperationWithRecover"
+}

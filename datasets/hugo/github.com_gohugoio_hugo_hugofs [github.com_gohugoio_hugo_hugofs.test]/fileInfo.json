@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 189,
+    "focalfunc": "func (fi *dirEntryMeta) fileInfo() fs.FileInfo",
+    "funcbody": "func (fi *dirEntryMeta) fileInfo() fs.FileInfo {\n\tvar err error\n\tfi.fiInit.Do(func() {\n\t\tfi.fi, err = fi.DirEntry.Info()\n\t})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn fi.fi\n}",
+    "funcname": "fileInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 512,
+    "focalfunc": "func translateNotFoundError(err error) (bool, error)",
+    "funcbody": "func translateNotFoundError(err error) (bool, error) {\n\tif kerror.IsNotFound(err) {\n\t\treturn false, nil\n\t}\n\treturn err == nil, err\n}",
+    "funcname": "translateNotFoundError"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 67,
+    "focalfunc": "func (n nopResetWriter) Reset(w io.Writer)",
+    "funcbody": "func (n nopResetWriter) Reset(w io.Writer) {\n\n}",
+    "funcname": "Reset"
+}

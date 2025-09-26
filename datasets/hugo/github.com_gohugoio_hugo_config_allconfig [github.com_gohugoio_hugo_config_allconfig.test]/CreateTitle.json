@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 247,
+    "focalfunc": "func (c ConfigLanguage) CreateTitle(s string) string",
+    "funcbody": "func (c ConfigLanguage) CreateTitle(s string) string {\n\treturn c.config.C.CreateTitle(s)\n}",
+    "funcname": "CreateTitle"
+}

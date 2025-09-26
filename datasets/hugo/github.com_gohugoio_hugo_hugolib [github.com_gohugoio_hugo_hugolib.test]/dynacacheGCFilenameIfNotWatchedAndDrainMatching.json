@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 1051,
+    "focalfunc": "func (h *HugoSites) dynacacheGCFilenameIfNotWatchedAndDrainMatching(filename string)",
+    "funcbody": "func (h *HugoSites) dynacacheGCFilenameIfNotWatchedAndDrainMatching(filename string) {\n\tcpss := h.BaseFs.ResolvePaths(filename)\n\tif len(cpss) == 0 {\n\t\treturn\n\t}\n\t// Compile cache busters.\n\tvar cacheBusters []func(string) bool\n\tfor _, cps := range cpss {\n\t\tif cps.Watch {\n\t\t\tcontinue\n\t\t}\n\t\tnp := glob.NormalizePath(path.Join(cps.Component, cps.Path))\n\t\tg, err := h.ResourceSpec.BuildConfig().MatchCacheBuster(h.Log, np)\n\t\tif err == nil && g != nil {\n\t\t\tcacheBusters = append(cacheBusters, g)\n\t\t}\n\t}\n\tif len(cacheBusters) == 0 {\n\t\treturn\n\t}\n\tcacheBusterOr := func(s string) bool {\n\t\tfor _, cb := range cacheBusters {\n\t\t\tif cb(s) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t\treturn false\n\t}\n\n\th.dynacacheGCCacheBuster(cacheBusterOr)\n\n\t_ = h.MemCache.DrainEvictedIdentitiesMatching(func(ki dynacache.KeyIdentity) bool {\n\t\treturn cacheBusterOr(ki.Key.(string))\n\t})\n}",
+    "funcname": "dynacacheGCFilenameIfNotWatchedAndDrainMatching"
+}

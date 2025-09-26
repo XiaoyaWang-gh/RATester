@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 149,
+    "focalfunc": "func (m *LogGroupList) Reset()",
+    "funcbody": "func (m *LogGroupList) Reset()\t{ *m = LogGroupList{} }",
+    "funcname": "Reset"
+}

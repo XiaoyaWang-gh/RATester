@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 80,
+    "focalfunc": "func (c *FakeUDPConn) Read(b []byte) (n int, err error)",
+    "funcbody": "func (c *FakeUDPConn) Read(b []byte) (n int, err error) {\n\tcontent, ok := <-c.packets\n\tif !ok {\n\t\treturn 0, io.EOF\n\t}\n\tc.mu.Lock()\n\tc.lastActive = time.Now()\n\tc.mu.Unlock()\n\n\tif len(b) < len(content) {\n\t\tn = len(b)\n\t} else {\n\t\tn = len(content)\n\t}\n\tcopy(b, content)\n\treturn n, nil\n}",
+    "funcname": "Read"
+}

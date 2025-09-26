@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/tables/tables.go",
+    "lineno": 169,
+    "focalfunc": "func (c *tableContext) THead() []hooks.TableRow",
+    "funcbody": "func (c *tableContext) THead() []hooks.TableRow {\n\treturn c.tHead\n}",
+    "funcname": "THead"
+}

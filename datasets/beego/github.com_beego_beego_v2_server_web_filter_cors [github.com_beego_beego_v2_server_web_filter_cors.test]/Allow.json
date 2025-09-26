@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/cors/cors.go",
+    "lineno": 192,
+    "focalfunc": "func Allow(opts *Options) web.FilterFunc",
+    "funcbody": "func Allow(opts *Options) web.FilterFunc {\n\n\tif len(opts.AllowHeaders) == 0 {\n\t\topts.AllowHeaders = defaultAllowHeaders\n\t}\n\n\tfor _, origin := range opts.AllowOrigins {\n\t\tpattern := regexp.QuoteMeta(origin)\n\t\tpattern = strings.Replace(pattern, \"\\\\*\", \".*\", -1)\n\t\tpattern = strings.Replace(pattern, \"\\\\?\", \".\", -1)\n\t\tallowOriginPatterns = append(allowOriginPatterns, \"^\"+pattern+\"$\")\n\t}\n\n\treturn func(ctx *context.Context) {\n\t\tvar (\n\t\t\torigin\t\t\t= ctx.Input.Header(headerOrigin)\n\t\t\trequestedMethod\t\t= ctx.Input.Header(headerRequestMethod)\n\t\t\trequestedHeaders\t= ctx.Input.Header(headerRequestHeaders)\n\t\t\t// additional headers to be added\n\t\t\t// to the response.\n\t\t\theaders\tmap[string]string\n\t\t)\n\n\t\tif ctx.Input.Method() == \"OPTIONS\" &&\n\t\t\t(requestedMethod != \"\" || requestedHeaders != \"\") {\n\t\t\theaders = opts.PreflightHeader(origin, requestedMethod, requestedHeaders)\n\t\t\tfor key, value := range headers {\n\t\t\t\tctx.Output.Header(key, value)\n\t\t\t}\n\t\t\tctx.ResponseWriter.WriteHeader(http.StatusOK)\n\t\t\treturn\n\t\t}\n\t\theaders = opts.Header(origin)\n\n\t\tfor key, value := range headers {\n\t\t\tctx.Output.Header(key, value)\n\t\t}\n\t}\n}",
+    "funcname": "Allow"
+}

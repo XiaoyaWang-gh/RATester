@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 99,
+    "focalfunc": "func (p *Provider) renewCertificates(ctx context.Context)",
+    "funcbody": "func (p *Provider) renewCertificates(ctx context.Context) {\n\tticker := time.NewTicker(24 * time.Hour)\n\tdefer ticker.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\n\t\tcase <-ticker.C:\n\t\t\tp.certByDomainMu.RLock()\n\t\t\tvar domainsToRenew []string\n\t\t\tfor domain, cert := range p.certByDomain {\n\t\t\t\ttlsCert, err := cert.GetCertificateFromBytes()\n\t\t\t\tif err != nil {\n\t\t\t\t\tlog.Ctx(ctx).\n\t\t\t\t\t\tErr(err).\n\t\t\t\t\t\tMsgf(\"Unable to get certificate for domain %s\", domain)\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\n\t\t\t\tif isValidCert(tlsCert, domain, time.Now().AddDate(0, 0, 14)) {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\n\t\t\t\tdomainsToRenew = append(domainsToRenew, domain)\n\t\t\t}\n\t\t\tp.certByDomainMu.RUnlock()\n\n\t\t\tif len(domainsToRenew) == 0 {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tp.fetchCerts(ctx, domainsToRenew)\n\t\t\tp.sendDynamicConfig()\n\t\t}\n\t}\n}",
+    "funcname": "renewCertificates"
+}

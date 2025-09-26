@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 196,
+    "focalfunc": "func LoggerWithFormatter(f LogFormatter) HandlerFunc",
+    "funcbody": "func LoggerWithFormatter(f LogFormatter) HandlerFunc {\n\treturn LoggerWithConfig(LoggerConfig{\n\t\tFormatter: f,\n\t})\n}",
+    "funcname": "LoggerWithFormatter"
+}

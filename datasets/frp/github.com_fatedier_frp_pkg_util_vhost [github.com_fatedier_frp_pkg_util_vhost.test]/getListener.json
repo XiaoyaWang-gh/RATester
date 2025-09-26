@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 146,
+    "focalfunc": "func (v *Muxer) getListener(name, path, httpUser string) (*Listener, bool)",
+    "funcbody": "func (v *Muxer) getListener(name, path, httpUser string) (*Listener, bool) {\n\tfindRouter := func(inName, inPath, inHTTPUser string) (*Listener, bool) {\n\t\tvr, ok := v.registryRouter.Get(inName, inPath, inHTTPUser)\n\t\tif ok {\n\t\t\treturn vr.payload.(*Listener), true\n\t\t}\n\n\t\tvr, ok = v.registryRouter.Get(inName, inPath, \"\")\n\t\tif ok {\n\t\t\treturn vr.payload.(*Listener), true\n\t\t}\n\t\treturn nil, false\n\t}\n\n\tl, ok := findRouter(name, path, httpUser)\n\tif ok {\n\t\treturn l, true\n\t}\n\n\tdomainSplit := strings.Split(name, \".\")\n\tfor {\n\t\tif len(domainSplit) < 3 {\n\t\t\tbreak\n\t\t}\n\n\t\tdomainSplit[0] = \"*\"\n\t\tname = strings.Join(domainSplit, \".\")\n\n\t\tl, ok = findRouter(name, path, httpUser)\n\t\tif ok {\n\t\t\treturn l, true\n\t\t}\n\t\tdomainSplit = domainSplit[1:]\n\t}\n\n\tl, ok = findRouter(\"*\", path, httpUser)\n\tif ok {\n\t\treturn l, true\n\t}\n\treturn nil, false\n}",
+    "funcname": "getListener"
+}

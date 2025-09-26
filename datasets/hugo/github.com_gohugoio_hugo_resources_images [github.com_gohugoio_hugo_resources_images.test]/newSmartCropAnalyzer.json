@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/smartcrop.go",
+    "lineno": 34,
+    "focalfunc": "func (p *ImageProcessor) newSmartCropAnalyzer(filter gift.Resampling) smartcrop.Analyzer",
+    "funcbody": "func (p *ImageProcessor) newSmartCropAnalyzer(filter gift.Resampling) smartcrop.Analyzer {\n\treturn smartcrop.NewAnalyzer(imagingResizer{p: p, filter: filter})\n}",
+    "funcname": "newSmartCropAnalyzer"
+}

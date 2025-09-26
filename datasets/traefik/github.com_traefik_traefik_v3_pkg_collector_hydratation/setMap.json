@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/hydratation/hydration.go",
+    "lineno": 93,
+    "focalfunc": "func setMap(field reflect.Value) error",
+    "funcbody": "func setMap(field reflect.Value) error {\n\tfield.Set(reflect.MakeMap(field.Type()))\n\n\tfor i := range mapItemNumber {\n\t\tbaseKeyName := makeKeyName(field.Type().Elem())\n\t\tkey := reflect.ValueOf(fmt.Sprintf(\"%s%d\", baseKeyName, i))\n\n\t\tptrType := reflect.PointerTo(field.Type().Elem())\n\t\tptrValue := reflect.New(ptrType)\n\t\tif err := fill(ptrValue); err != nil {\n\t\t\treturn err\n\t\t}\n\t\tvalue := ptrValue.Elem().Elem()\n\n\t\tfield.SetMapIndex(key, value)\n\t}\n\treturn nil\n}",
+    "funcname": "setMap"
+}

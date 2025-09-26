@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 82,
+    "focalfunc": "func InjectContextIntoCarrier(req *http.Request)",
+    "funcbody": "func InjectContextIntoCarrier(req *http.Request) {\n\tpropagator := otel.GetTextMapPropagator()\n\tpropagator.Inject(req.Context(), propagation.HeaderCarrier(req.Header))\n}",
+    "funcname": "InjectContextIntoCarrier"
+}

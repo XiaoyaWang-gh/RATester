@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 745,
+    "focalfunc": "func pathKey(p string) string",
+    "funcbody": "func pathKey(p string) string {\n\tprefix, _, _ := module.SplitPathVersion(p)\n\n\treturn strings.ToLower(prefix)\n}",
+    "funcname": "pathKey"
+}

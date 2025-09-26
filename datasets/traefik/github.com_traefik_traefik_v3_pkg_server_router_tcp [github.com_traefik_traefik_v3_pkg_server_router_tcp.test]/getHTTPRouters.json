@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/manager.go",
+    "lineno": 66,
+    "focalfunc": "func (m *Manager) getHTTPRouters(ctx context.Context, entryPoints []string, tls bool) map[string]map[string]*runtime.RouterInfo",
+    "funcbody": "func (m *Manager) getHTTPRouters(ctx context.Context, entryPoints []string, tls bool) map[string]map[string]*runtime.RouterInfo {\n\tif m.conf != nil {\n\t\treturn m.conf.GetRoutersByEntryPoints(ctx, entryPoints, tls)\n\t}\n\n\treturn make(map[string]map[string]*runtime.RouterInfo)\n}",
+    "funcname": "getHTTPRouters"
+}

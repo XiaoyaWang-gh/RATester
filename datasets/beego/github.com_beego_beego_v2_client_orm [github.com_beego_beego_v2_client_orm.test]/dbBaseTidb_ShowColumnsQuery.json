@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tidb.go",
+    "lineno": 45,
+    "focalfunc": "func (d *dbBaseTidb) ShowColumnsQuery(table string) string",
+    "funcbody": "func (d *dbBaseTidb) ShowColumnsQuery(table string) string {\n\treturn fmt.Sprintf(\"SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE FROM information_schema.Columns \"+\n\t\t\"WHERE table_schema = DATABASE() AND table_name = '%s'\", table)\n}",
+    "funcname": "ShowColumnsQuery"
+}

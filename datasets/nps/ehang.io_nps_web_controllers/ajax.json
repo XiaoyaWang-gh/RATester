@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 136,
+    "focalfunc": "func ajax(str string, status int) map[string]interface{}",
+    "funcbody": "func ajax(str string, status int) map[string]interface{} {\n\tjson := make(map[string]interface{})\n\tjson[\"status\"] = status\n\tjson[\"msg\"] = str\n\treturn json\n}",
+    "funcname": "ajax"
+}

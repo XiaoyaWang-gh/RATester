@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 55,
+    "focalfunc": "func (p *Paginator) SetNums(nums interface{})",
+    "funcbody": "func (p *Paginator) SetNums(nums interface{}) {\n\tp.nums, _ = toInt64(nums)\n}",
+    "funcname": "SetNums"
+}

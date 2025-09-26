@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 165,
+    "focalfunc": "func (d *dbBasePostgres) ShowTablesQuery() string",
+    "funcbody": "func (d *dbBasePostgres) ShowTablesQuery() string {\n\treturn \"SELECT table_name FROM information_schema.tables WHERE table_type = 'BASE TABLE' AND table_schema NOT IN ('pg_catalog', 'information_schema')\"\n}",
+    "funcname": "ShowTablesQuery"
+}

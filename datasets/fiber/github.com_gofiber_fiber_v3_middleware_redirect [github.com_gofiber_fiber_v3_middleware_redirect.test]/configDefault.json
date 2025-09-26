@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/redirect/config.go",
+    "lineno": 38,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.StatusCode == 0 {\n\t\tcfg.StatusCode = ConfigDefault.StatusCode\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

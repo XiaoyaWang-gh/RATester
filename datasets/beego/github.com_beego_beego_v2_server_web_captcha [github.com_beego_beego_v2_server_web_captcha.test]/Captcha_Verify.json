@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 204,
+    "focalfunc": "func (c *Captcha) Verify(id string, challenge string) (success bool)",
+    "funcbody": "func (c *Captcha) Verify(id string, challenge string) (success bool) {\n\tif challenge == \"\" || id == \"\" {\n\t\treturn\n\t}\n\n\tvar chars []byte\n\n\tkey := c.key(id)\n\tval, _ := c.store.Get(context2.Background(), key)\n\tif v, ok := val.([]byte); ok {\n\t\tchars = v\n\t} else {\n\t\treturn\n\t}\n\n\tdefer func() {\n\n\t\tc.store.Delete(context2.Background(), key)\n\t}()\n\n\tif len(chars) != len(challenge) {\n\t\treturn\n\t}\n\n\tfor i, c := range chars {\n\t\tif c != challenge[i]-48 {\n\t\t\treturn\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "Verify"
+}

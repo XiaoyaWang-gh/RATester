@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/client.go",
+    "lineno": 153,
+    "focalfunc": "func (s *ClientController) ChangeStatus()",
+    "funcbody": "func (s *ClientController) ChangeStatus() {\n\tid := s.GetIntNoErr(\"id\")\n\tif client, err := file.GetDb().GetClient(id); err == nil {\n\t\tclient.Status = s.GetBoolNoErr(\"status\")\n\t\tif client.Status == false {\n\t\t\tserver.DelClientConnect(client.Id)\n\t\t}\n\t\ts.AjaxOk(\"modified success\")\n\t}\n\ts.AjaxErr(\"modified fail\")\n}",
+    "funcname": "ChangeStatus"
+}

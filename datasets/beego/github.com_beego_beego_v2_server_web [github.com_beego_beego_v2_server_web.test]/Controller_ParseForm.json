@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 493,
+    "focalfunc": "func (c *Controller) ParseForm(obj interface{}) error",
+    "funcbody": "func (c *Controller) ParseForm(obj interface{}) error {\n\treturn c.Ctx.BindForm(obj)\n}",
+    "funcname": "ParseForm"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 98,
+    "focalfunc": "func NewHint(key interface{}, value interface{}) *Hint",
+    "funcbody": "func NewHint(key interface{}, value interface{}) *Hint {\n\treturn &Hint{\n\t\tkey:\tkey,\n\t\tvalue:\tvalue,\n\t}\n}",
+    "funcname": "NewHint"
+}

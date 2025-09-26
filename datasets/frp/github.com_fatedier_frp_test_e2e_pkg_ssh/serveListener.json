@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/ssh/client.go",
+    "lineno": 72,
+    "focalfunc": "func (c *TunnelClient) serveListener()",
+    "funcbody": "func (c *TunnelClient) serveListener() {\n\tfor {\n\t\tconn, err := c.ln.Accept()\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tgo c.hanldeConn(conn)\n\t}\n}",
+    "funcname": "serveListener"
+}

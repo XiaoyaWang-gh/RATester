@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context_fs.go",
+    "lineno": 27,
+    "focalfunc": "func fsFile(c Context, file string, filesystem fs.FS) error",
+    "funcbody": "func fsFile(c Context, file string, filesystem fs.FS) error {\n\tf, err := filesystem.Open(file)\n\tif err != nil {\n\t\treturn ErrNotFound\n\t}\n\tdefer f.Close()\n\n\tfi, _ := f.Stat()\n\tif fi.IsDir() {\n\t\tfile = filepath.ToSlash(filepath.Join(file, indexPage))\n\t\tf, err = filesystem.Open(file)\n\t\tif err != nil {\n\t\t\treturn ErrNotFound\n\t\t}\n\t\tdefer f.Close()\n\t\tif fi, err = f.Stat(); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\tff, ok := f.(io.ReadSeeker)\n\tif !ok {\n\t\treturn errors.New(\"file does not implement io.ReadSeeker\")\n\t}\n\thttp.ServeContent(c.Response(), c.Request(), fi.Name(), fi.ModTime(), ff)\n\treturn nil\n}",
+    "funcname": "fsFile"
+}

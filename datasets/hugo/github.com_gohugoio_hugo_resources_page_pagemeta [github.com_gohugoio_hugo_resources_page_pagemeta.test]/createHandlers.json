@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 573,
+    "focalfunc": "func (f *FrontMatterHandler) createHandlers() error",
+    "funcbody": "func (f *FrontMatterHandler) createHandlers() error {\n\tvar err error\n\n\tif f.contentAdapterDatesHandler, err = f.createContentAdapterDatesHandler(f.fmConfig); err != nil {\n\t\treturn err\n\t}\n\n\tif f.dateHandler, err = f.createDateHandler(f.fmConfig.Date,\n\t\tfunc(d *FrontMatterDescriptor, t time.Time) {\n\t\t\td.PageConfig.Dates.Date = t\n\t\t\tsetParamIfNotSet(fmDate, t, d)\n\t\t}); err != nil {\n\t\treturn err\n\t}\n\n\tif f.lastModHandler, err = f.createDateHandler(f.fmConfig.Lastmod,\n\t\tfunc(d *FrontMatterDescriptor, t time.Time) {\n\t\t\tsetParamIfNotSet(fmLastmod, t, d)\n\t\t\td.PageConfig.Dates.Lastmod = t\n\t\t}); err != nil {\n\t\treturn err\n\t}\n\n\tif f.publishDateHandler, err = f.createDateHandler(f.fmConfig.PublishDate,\n\t\tfunc(d *FrontMatterDescriptor, t time.Time) {\n\t\t\tsetParamIfNotSet(fmPubDate, t, d)\n\t\t\td.PageConfig.Dates.PublishDate = t\n\t\t}); err != nil {\n\t\treturn err\n\t}\n\n\tif f.expiryDateHandler, err = f.createDateHandler(f.fmConfig.ExpiryDate,\n\t\tfunc(d *FrontMatterDescriptor, t time.Time) {\n\t\t\tsetParamIfNotSet(fmExpiryDate, t, d)\n\t\t\td.PageConfig.Dates.ExpiryDate = t\n\t\t}); err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "createHandlers"
+}

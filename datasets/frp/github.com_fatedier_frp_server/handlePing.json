@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 405,
+    "focalfunc": "func (ctl *Control) handlePing(m msg.Message)",
+    "funcbody": "func (ctl *Control) handlePing(m msg.Message) {\n\txl := ctl.xl\n\tinMsg := m.(*msg.Ping)\n\n\tcontent := &plugin.PingContent{\n\t\tUser: plugin.UserInfo{\n\t\t\tUser:\tctl.loginMsg.User,\n\t\t\tMetas:\tctl.loginMsg.Metas,\n\t\t\tRunID:\tctl.loginMsg.RunID,\n\t\t},\n\t\tPing:\t*inMsg,\n\t}\n\tretContent, err := ctl.pluginManager.Ping(content)\n\tif err == nil {\n\t\tinMsg = &retContent.Ping\n\t\terr = ctl.authVerifier.VerifyPing(inMsg)\n\t}\n\tif err != nil {\n\t\txl.Warnf(\"received invalid ping: %v\", err)\n\t\t_ = ctl.msgDispatcher.Send(&msg.Pong{\n\t\t\tError: util.GenerateResponseErrorString(\"invalid ping\", err, lo.FromPtr(ctl.serverCfg.DetailedErrorsToClient)),\n\t\t})\n\t\treturn\n\t}\n\tctl.lastPing.Store(time.Now())\n\txl.Debugf(\"receive heartbeat\")\n\t_ = ctl.msgDispatcher.Send(&msg.Pong{})\n}",
+    "funcname": "handlePing"
+}

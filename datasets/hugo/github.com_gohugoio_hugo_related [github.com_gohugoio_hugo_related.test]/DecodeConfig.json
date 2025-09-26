@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 560,
+    "focalfunc": "func DecodeConfig(m maps.Params) (Config, error)",
+    "funcbody": "func DecodeConfig(m maps.Params) (Config, error) {\n\tif m == nil {\n\t\treturn Config{}, errors.New(\"no related config provided\")\n\t}\n\n\tif len(m) == 0 {\n\t\treturn Config{}, errors.New(\"empty related config provided\")\n\t}\n\n\tvar c Config\n\n\tif err := mapstructure.WeakDecode(m, &c); err != nil {\n\t\treturn c, err\n\t}\n\n\tif c.Threshold < 0 || c.Threshold > 100 {\n\t\treturn Config{}, errors.New(\"related threshold must be between 0 and 100\")\n\t}\n\n\tif c.ToLower {\n\t\tfor i := range c.Indices {\n\t\t\tc.Indices[i].ToLower = true\n\t\t}\n\t}\n\tfor i := range c.Indices {\n\t\ticfg := c.Indices[i]\n\t\tif icfg.Type == \"\" {\n\t\t\tc.Indices[i].Type = TypeBasic\n\t\t}\n\t\tif !validTypes[c.Indices[i].Type] {\n\t\t\treturn c, fmt.Errorf(\"invalid index type %q. Must be one of %v\", c.Indices[i].Type, xmaps.Keys(validTypes))\n\t\t}\n\t\tif icfg.CardinalityThreshold < 0 || icfg.CardinalityThreshold > 100 {\n\t\t\treturn Config{}, errors.New(\"cardinalityThreshold threshold must be between 0 and 100\")\n\t\t}\n\t}\n\n\treturn c, nil\n}",
+    "funcname": "DecodeConfig"
+}

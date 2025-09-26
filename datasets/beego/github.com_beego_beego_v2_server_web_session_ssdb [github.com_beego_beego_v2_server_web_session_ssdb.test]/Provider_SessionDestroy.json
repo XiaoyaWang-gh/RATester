@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 139,
+    "focalfunc": "func (p *Provider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (p *Provider) SessionDestroy(ctx context.Context, sid string) error {\n\tif p.client == nil {\n\t\tif err := p.connectInit(); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\t_, err := p.client.Del(sid)\n\treturn err\n}",
+    "funcname": "SessionDestroy"
+}

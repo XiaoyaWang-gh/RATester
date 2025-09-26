@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 802,
+    "focalfunc": "func (p *ControllerRegister) InsertFilter(pattern string, pos int, filter FilterFunc, opts ...FilterOpt) error",
+    "funcbody": "func (p *ControllerRegister) InsertFilter(pattern string, pos int, filter FilterFunc, opts ...FilterOpt) error {\n\topts = append(opts, WithCaseSensitive(p.cfg.RouterCaseSensitive))\n\tmr := newFilterRouter(pattern, filter, opts...)\n\treturn p.insertFilterRouter(pos, mr)\n}",
+    "funcname": "InsertFilter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/legacy/legacy.go",
+    "lineno": 31,
+    "focalfunc": "func getDefaultBaseConf() BaseConfig",
+    "funcbody": "func getDefaultBaseConf() BaseConfig {\n\treturn BaseConfig{\n\t\tAuthenticationMethod:\t\t\"token\",\n\t\tAuthenticateHeartBeats:\t\tfalse,\n\t\tAuthenticateNewWorkConns:\tfalse,\n\t}\n}",
+    "funcname": "getDefaultBaseConf"
+}

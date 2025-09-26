@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/e2e.go",
+    "lineno": 64,
+    "focalfunc": "func setupSuitePerGinkgoNode()",
+    "funcbody": "func setupSuitePerGinkgoNode() {\n\n}",
+    "funcname": "setupSuitePerGinkgoNode"
+}

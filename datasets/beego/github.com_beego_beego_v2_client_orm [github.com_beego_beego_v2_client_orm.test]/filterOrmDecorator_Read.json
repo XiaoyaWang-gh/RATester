@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 80,
+    "focalfunc": "func (f *filterOrmDecorator) Read(md interface{}, cols ...string) error",
+    "funcbody": "func (f *filterOrmDecorator) Read(md interface{}, cols ...string) error {\n\treturn f.ReadWithCtx(context.Background(), md, cols...)\n}",
+    "funcname": "Read"
+}

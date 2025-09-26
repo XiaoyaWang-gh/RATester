@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/visitor.go",
+    "lineno": 95,
+    "focalfunc": "func (c *TypedVisitorConfig) UnmarshalJSON(b []byte) error",
+    "funcbody": "func (c *TypedVisitorConfig) UnmarshalJSON(b []byte) error {\n\tif len(b) == 4 && string(b) == \"null\" {\n\t\treturn errors.New(\"type is required\")\n\t}\n\n\ttypeStruct := struct {\n\t\tType string `json:\"type\"`\n\t}{}\n\tif err := json.Unmarshal(b, &typeStruct); err != nil {\n\t\treturn err\n\t}\n\n\tc.Type = typeStruct.Type\n\tconfigurer := NewVisitorConfigurerByType(VisitorType(typeStruct.Type))\n\tif configurer == nil {\n\t\treturn fmt.Errorf(\"unknown visitor type: %s\", typeStruct.Type)\n\t}\n\tdecoder := json.NewDecoder(bytes.NewBuffer(b))\n\tif DisallowUnknownFields {\n\t\tdecoder.DisallowUnknownFields()\n\t}\n\tif err := decoder.Decode(configurer); err != nil {\n\t\treturn fmt.Errorf(\"unmarshal VisitorConfig error: %v\", err)\n\t}\n\tc.VisitorConfigurer = configurer\n\treturn nil\n}",
+    "funcname": "UnmarshalJSON"
+}

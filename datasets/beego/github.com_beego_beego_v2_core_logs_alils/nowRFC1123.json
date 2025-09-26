@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/signature.go",
+    "lineno": 19,
+    "focalfunc": "func nowRFC1123() string",
+    "funcbody": "func nowRFC1123() string {\n\treturn time.Now().In(gmtLoc).Format(time.RFC1123)\n}",
+    "funcname": "nowRFC1123"
+}

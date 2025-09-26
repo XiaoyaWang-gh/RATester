@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/dialer.go",
+    "lineno": 160,
+    "focalfunc": "func createRootCACertPool(rootCAs []types.FileOrContent) *x509.CertPool",
+    "funcbody": "func createRootCACertPool(rootCAs []types.FileOrContent) *x509.CertPool {\n\tif len(rootCAs) == 0 {\n\t\treturn nil\n\t}\n\n\troots := x509.NewCertPool()\n\n\tfor _, cert := range rootCAs {\n\t\tcertContent, err := cert.Read()\n\t\tif err != nil {\n\t\t\tlog.Err(err).Msg(\"Error while read RootCAs\")\n\t\t\tcontinue\n\t\t}\n\n\t\troots.AppendCertsFromPEM(certContent)\n\t}\n\n\treturn roots\n}",
+    "funcname": "createRootCACertPool"
+}

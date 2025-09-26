@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 69,
+    "focalfunc": "func (fe *fileError) UpdatePosition(pos text.Position) FileError",
+    "funcbody": "func (fe *fileError) UpdatePosition(pos text.Position) FileError {\n\toldFilename := fe.Position().Filename\n\tif pos.Filename != \"\" && fe.fileType == \"\" {\n\t\t_, fe.fileType = paths.FileAndExtNoDelimiter(filepath.Clean(pos.Filename))\n\t}\n\tif pos.Filename == \"\" {\n\t\tpos.Filename = oldFilename\n\t}\n\tfe.position = pos\n\treturn fe\n}",
+    "funcname": "UpdatePosition"
+}

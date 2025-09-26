@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 128,
+    "focalfunc": "func (p *pageMeta) BundleType() string",
+    "funcbody": "func (p *pageMeta) BundleType() string {\n\tswitch p.pathInfo.BundleType() {\n\tcase paths.PathTypeLeaf:\n\t\treturn \"leaf\"\n\tcase paths.PathTypeBranch:\n\t\treturn \"branch\"\n\tdefault:\n\t\treturn \"\"\n\t}\n}",
+    "funcname": "BundleType"
+}

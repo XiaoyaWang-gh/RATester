@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 100,
+    "focalfunc": "func (m *pageMetaParams) init(preserveOringal bool)",
+    "funcbody": "func (m *pageMetaParams) init(preserveOringal bool) {\n\tif preserveOringal {\n\t\tm.paramsOriginal = xmaps.Clone[maps.Params](m.pageConfig.Params)\n\t\tm.cascadeOriginal = xmaps.Clone[map[page.PageMatcher]maps.Params](m.pageConfig.CascadeCompiled)\n\t}\n}",
+    "funcname": "init"
+}

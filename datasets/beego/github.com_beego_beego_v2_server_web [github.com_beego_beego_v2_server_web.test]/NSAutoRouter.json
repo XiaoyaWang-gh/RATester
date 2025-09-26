@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 479,
+    "focalfunc": "func NSAutoRouter(c ControllerInterface) LinkNamespace",
+    "funcbody": "func NSAutoRouter(c ControllerInterface) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.AutoRouter(c)\n\t}\n}",
+    "funcname": "NSAutoRouter"
+}

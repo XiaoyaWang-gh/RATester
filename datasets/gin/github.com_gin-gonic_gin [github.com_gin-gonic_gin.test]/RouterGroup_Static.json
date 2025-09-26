@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 197,
+    "focalfunc": "func (group *RouterGroup) Static(relativePath, root string) IRoutes",
+    "funcbody": "func (group *RouterGroup) Static(relativePath, root string) IRoutes {\n\treturn group.StaticFS(relativePath, Dir(root, false))\n}",
+    "funcname": "Static"
+}

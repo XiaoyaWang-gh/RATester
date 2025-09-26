@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 740,
+    "focalfunc": "func (e *Echo) StartAutoTLS(address string) error",
+    "funcbody": "func (e *Echo) StartAutoTLS(address string) error {\n\te.startupMutex.Lock()\n\ts := e.TLSServer\n\ts.TLSConfig = new(tls.Config)\n\ts.TLSConfig.GetCertificate = e.AutoTLSManager.GetCertificate\n\ts.TLSConfig.NextProtos = append(s.TLSConfig.NextProtos, acme.ALPNProto)\n\n\te.configureTLS(address)\n\tif err := e.configureServer(s); err != nil {\n\t\te.startupMutex.Unlock()\n\t\treturn err\n\t}\n\te.startupMutex.Unlock()\n\treturn s.Serve(e.TLSListener)\n}",
+    "funcname": "StartAutoTLS"
+}

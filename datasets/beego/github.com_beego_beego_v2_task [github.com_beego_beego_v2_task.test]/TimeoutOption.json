@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 225,
+    "focalfunc": "func TimeoutOption(timeout time.Duration) Option",
+    "funcbody": "func TimeoutOption(timeout time.Duration) Option {\n\treturn optionFunc(func(t *Task) {\n\t\tt.Timeout = timeout\n\t})\n}",
+    "funcname": "TimeoutOption"
+}

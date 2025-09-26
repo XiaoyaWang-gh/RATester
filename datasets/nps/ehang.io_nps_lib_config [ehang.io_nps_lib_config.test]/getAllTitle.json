@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 303,
+    "focalfunc": "func getAllTitle(content string) (arr []string, err error)",
+    "funcbody": "func getAllTitle(content string) (arr []string, err error) {\n\tvar re *regexp.Regexp\n\tre, err = regexp.Compile(`(?m)^\\[[^\\[\\]\\r\\n]+\\]`)\n\tif err != nil {\n\t\treturn\n\t}\n\tarr = re.FindAllString(content, -1)\n\tm := make(map[string]bool)\n\tfor _, v := range arr {\n\t\tif _, ok := m[v]; ok {\n\t\t\terr = errors.New(fmt.Sprintf(\"Item names %s are not allowed to be duplicated\", v))\n\t\t\treturn\n\t\t}\n\t\tm[v] = true\n\t}\n\treturn\n}",
+    "funcname": "getAllTitle"
+}

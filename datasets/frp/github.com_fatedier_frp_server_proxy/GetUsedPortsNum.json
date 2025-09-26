@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 89,
+    "focalfunc": "func (pxy *BaseProxy) GetUsedPortsNum() int",
+    "funcbody": "func (pxy *BaseProxy) GetUsedPortsNum() int {\n\treturn pxy.usedPortsNum\n}",
+    "funcname": "GetUsedPortsNum"
+}

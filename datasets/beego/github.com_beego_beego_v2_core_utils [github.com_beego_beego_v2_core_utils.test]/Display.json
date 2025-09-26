@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/debug.go",
+    "lineno": 49,
+    "focalfunc": "func display(displayed bool, data ...interface{}) string",
+    "funcbody": "func display(displayed bool, data ...interface{}) string {\n\tpc, file, line, ok := runtime.Caller(2)\n\n\tif !ok {\n\t\treturn \"\"\n\t}\n\n\tbuf := new(bytes.Buffer)\n\n\tfmt.Fprintf(buf, \"[Debug] at %s() [%s:%d]\\n\", function(pc), file, line)\n\n\tfmt.Fprintf(buf, \"\\n[Variables]\\n\")\n\n\tfor i := 0; i < len(data); i += 2 {\n\t\toutput := fomateinfo(len(data[i].(string))+3, data[i+1])\n\t\tfmt.Fprintf(buf, \"%s = %s\", data[i], output)\n\t}\n\n\tif displayed {\n\t\tlog.Print(buf)\n\t}\n\treturn buf.String()\n}",
+    "funcname": "display"
+}

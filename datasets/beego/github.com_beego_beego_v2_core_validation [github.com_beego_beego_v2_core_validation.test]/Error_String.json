@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 67,
+    "focalfunc": "func (e *Error) String() string",
+    "funcbody": "func (e *Error) String() string {\n\tif e == nil {\n\t\treturn \"\"\n\t}\n\treturn e.Message\n}",
+    "funcname": "String"
+}

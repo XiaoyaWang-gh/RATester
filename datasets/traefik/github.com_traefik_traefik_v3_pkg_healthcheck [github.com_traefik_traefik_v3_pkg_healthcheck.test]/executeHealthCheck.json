@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/healthcheck/healthcheck.go",
+    "lineno": 148,
+    "focalfunc": "func (shc *ServiceHealthChecker) executeHealthCheck(ctx context.Context, config *dynamic.ServerHealthCheck, target *url.URL) error",
+    "funcbody": "func (shc *ServiceHealthChecker) executeHealthCheck(ctx context.Context, config *dynamic.ServerHealthCheck, target *url.URL) error {\n\tctx, cancel := context.WithDeadline(ctx, time.Now().Add(shc.timeout))\n\tdefer cancel()\n\n\tif config.Mode == modeGRPC {\n\t\treturn shc.checkHealthGRPC(ctx, target)\n\t}\n\treturn shc.checkHealthHTTP(ctx, target)\n}",
+    "funcname": "executeHealthCheck"
+}

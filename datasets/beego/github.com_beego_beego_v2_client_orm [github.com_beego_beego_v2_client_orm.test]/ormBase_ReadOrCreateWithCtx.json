@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 172,
+    "focalfunc": "func (o *ormBase) ReadOrCreateWithCtx(ctx context.Context, md interface{}, col1 string, cols ...string) (bool, int64, error)",
+    "funcbody": "func (o *ormBase) ReadOrCreateWithCtx(ctx context.Context, md interface{}, col1 string, cols ...string) (bool, int64, error) {\n\tcols = append([]string{col1}, cols...)\n\tmi, ind := o.getPtrMiInd(md)\n\terr := o.alias.DbBaser.Read(ctx, o.db, mi, ind, o.alias.TZ, cols, false)\n\tif err == ErrNoRows {\n\n\t\tid, err := o.InsertWithCtx(ctx, md)\n\t\treturn err == nil, id, err\n\t}\n\n\tid, vid := int64(0), ind.FieldByIndex(mi.Fields.Pk.FieldIndex)\n\tif mi.Fields.Pk.FieldType&IsPositiveIntegerField > 0 {\n\t\tid = int64(vid.Uint())\n\t} else if mi.Fields.Pk.Rel {\n\t\treturn o.ReadOrCreateWithCtx(ctx, vid.Interface(), mi.Fields.Pk.RelModelInfo.Fields.Pk.Name)\n\t} else {\n\t\tid = vid.Int()\n\t}\n\n\treturn false, id, err\n}",
+    "funcname": "ReadOrCreateWithCtx"
+}

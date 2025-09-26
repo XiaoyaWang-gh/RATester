@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate_store.go",
+    "lineno": 61,
+    "focalfunc": "func (c CertificateStore) GetAllDomains() []string",
+    "funcbody": "func (c CertificateStore) GetAllDomains() []string {\n\tallDomains := c.getDefaultCertificateDomains()\n\n\tif c.DynamicCerts != nil && c.DynamicCerts.Get() != nil {\n\t\tfor domain := range c.DynamicCerts.Get().(map[string]*tls.Certificate) {\n\t\t\tallDomains = append(allDomains, domain)\n\t\t}\n\t}\n\n\treturn allDomains\n}",
+    "funcname": "GetAllDomains"
+}

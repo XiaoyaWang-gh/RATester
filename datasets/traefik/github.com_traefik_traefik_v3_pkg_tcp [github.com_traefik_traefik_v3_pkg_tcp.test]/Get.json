@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/dialer.go",
+    "lineno": 79,
+    "focalfunc": "func (d *DialerManager) Get(name string, tls bool) (Dialer, error)",
+    "funcbody": "func (d *DialerManager) Get(name string, tls bool) (Dialer, error) {\n\tif len(name) == 0 {\n\t\tname = \"default@internal\"\n\t}\n\n\td.rtLock.RLock()\n\tdefer d.rtLock.RUnlock()\n\n\tif tls {\n\t\tif rt, ok := d.dialersTLS[name]; ok {\n\t\t\treturn rt, nil\n\t\t}\n\n\t\treturn nil, fmt.Errorf(\"TCP dialer not found %s\", name)\n\t}\n\n\tif rt, ok := d.dialers[name]; ok {\n\t\treturn rt, nil\n\t}\n\n\treturn nil, fmt.Errorf(\"TCP dialer not found %s\", name)\n}",
+    "funcname": "Get"
+}

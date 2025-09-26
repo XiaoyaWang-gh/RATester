@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 86,
+    "focalfunc": "func (conn readOnlyConn) LocalAddr() net.Addr",
+    "funcbody": "func (conn readOnlyConn) LocalAddr() net.Addr\t{ return nil }",
+    "funcname": "LocalAddr"
+}

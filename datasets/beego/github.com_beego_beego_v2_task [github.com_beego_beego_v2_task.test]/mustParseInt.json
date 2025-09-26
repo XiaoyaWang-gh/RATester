@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 797,
+    "focalfunc": "func mustParseInt(expr string) uint",
+    "funcbody": "func mustParseInt(expr string) uint {\n\tnum, err := strconv.Atoi(expr)\n\tif err != nil {\n\t\tlog.Panicf(\"Failed to parse int from %s: %s\", expr, err)\n\t}\n\tif num < 0 {\n\t\tlog.Panicf(\"Negative number (%d) not allowed: %s\", num, expr)\n\t}\n\n\treturn uint(num)\n}",
+    "funcname": "mustParseInt"
+}

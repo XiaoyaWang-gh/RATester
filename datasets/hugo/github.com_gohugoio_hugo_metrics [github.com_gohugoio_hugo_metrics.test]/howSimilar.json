@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 209,
+    "focalfunc": "func howSimilar(a, b any) int",
+    "funcbody": "func howSimilar(a, b any) int {\n\tt1, t2 := reflect.TypeOf(a), reflect.TypeOf(b)\n\tif t1 != t2 {\n\t\treturn 0\n\t}\n\n\tif t1.Comparable() && t2.Comparable() {\n\t\tif a == b {\n\t\t\treturn 100\n\t\t}\n\t}\n\n\tas, ok1 := types.TypeToString(a)\n\tbs, ok2 := types.TypeToString(b)\n\n\tif ok1 && ok2 {\n\t\treturn howSimilarStrings(as, bs)\n\t}\n\n\tif ok1 != ok2 {\n\t\treturn 0\n\t}\n\n\te1, ok1 := a.(compare.Eqer)\n\te2, ok2 := b.(compare.Eqer)\n\tif ok1 && ok2 && e1.Eq(e2) {\n\t\treturn 100\n\t}\n\n\tpe1, pok1 := a.(compare.ProbablyEqer)\n\tpe2, pok2 := b.(compare.ProbablyEqer)\n\tif pok1 && pok2 && pe1.ProbablyEq(pe2) {\n\t\treturn 90\n\t}\n\n\th1, h2 := hashing.HashString(a), hashing.HashString(b)\n\tif h1 == h2 {\n\t\treturn 100\n\t}\n\treturn 0\n}",
+    "funcname": "howSimilar"
+}

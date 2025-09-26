@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 173,
+    "focalfunc": "func (s *BaseController) CheckUserAuth()",
+    "funcbody": "func (s *BaseController) CheckUserAuth() {\n\tif s.controllerName == \"client\" {\n\t\tif s.actionName == \"add\" {\n\t\t\ts.StopRun()\n\t\t\treturn\n\t\t}\n\t\tif id := s.GetIntNoErr(\"id\"); id != 0 {\n\t\t\tif id != s.GetSession(\"clientId\").(int) {\n\t\t\t\ts.StopRun()\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t}\n\tif s.controllerName == \"index\" {\n\t\tif id := s.GetIntNoErr(\"id\"); id != 0 {\n\t\t\tbelong := false\n\t\t\tif strings.Contains(s.actionName, \"h\") {\n\t\t\t\tif v, ok := file.GetDb().JsonDb.Hosts.Load(id); ok {\n\t\t\t\t\tif v.(*file.Host).Client.Id == s.GetSession(\"clientId\").(int) {\n\t\t\t\t\t\tbelong = true\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tif v, ok := file.GetDb().JsonDb.Tasks.Load(id); ok {\n\t\t\t\t\tif v.(*file.Tunnel).Client.Id == s.GetSession(\"clientId\").(int) {\n\t\t\t\t\t\tbelong = true\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tif !belong {\n\t\t\t\ts.StopRun()\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "CheckUserAuth"
+}

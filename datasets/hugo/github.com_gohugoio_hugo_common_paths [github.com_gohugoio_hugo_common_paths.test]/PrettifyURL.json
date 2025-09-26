@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 107,
+    "focalfunc": "func PrettifyURL(in string) string",
+    "funcbody": "func PrettifyURL(in string) string {\n\tx := PrettifyURLPath(in)\n\n\tif path.Base(x) == \"index.html\" {\n\t\treturn path.Dir(x)\n\t}\n\n\tif in == \"\" {\n\t\treturn \"/\"\n\t}\n\n\treturn x\n}",
+    "funcname": "PrettifyURL"
+}

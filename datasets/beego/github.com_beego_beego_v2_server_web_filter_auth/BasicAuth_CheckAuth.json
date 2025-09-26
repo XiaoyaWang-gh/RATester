@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/auth/basic.go",
+    "lineno": 80,
+    "focalfunc": "func (a *BasicAuth) CheckAuth(r *http.Request) string",
+    "funcbody": "func (a *BasicAuth) CheckAuth(r *http.Request) string {\n\ts := strings.SplitN(r.Header.Get(\"Authorization\"), \" \", 2)\n\tif len(s) != 2 || s[0] != \"Basic\" {\n\t\treturn \"\"\n\t}\n\n\tb, err := base64.StdEncoding.DecodeString(s[1])\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\tpair := strings.SplitN(string(b), \":\", 2)\n\tif len(pair) != 2 {\n\t\treturn \"\"\n\t}\n\n\tif a.Secrets(pair[0], pair[1]) {\n\t\treturn pair[0]\n\t}\n\treturn \"\"\n}",
+    "funcname": "CheckAuth"
+}

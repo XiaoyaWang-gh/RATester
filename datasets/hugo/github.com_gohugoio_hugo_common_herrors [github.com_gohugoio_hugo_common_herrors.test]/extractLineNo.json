@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/line_number_extractors.go",
+    "lineno": 40,
+    "focalfunc": "func extractLineNo(re *regexp.Regexp) lineNumberExtractor",
+    "funcbody": "func extractLineNo(re *regexp.Regexp) lineNumberExtractor {\n\treturn func(e error) (int, int) {\n\t\tif e == nil {\n\t\t\tpanic(\"no error\")\n\t\t}\n\t\tcol := 1\n\t\ts := e.Error()\n\t\tm := re.FindStringSubmatch(s)\n\t\tif len(m) >= 2 {\n\t\t\tlno, _ := strconv.Atoi(m[1])\n\t\t\tif len(m) > 2 {\n\t\t\t\tcol, _ = strconv.Atoi(m[2])\n\t\t\t}\n\n\t\t\tif col <= 0 {\n\t\t\t\tcol = 1\n\t\t\t}\n\n\t\t\treturn lno, col\n\t\t}\n\n\t\treturn 0, col\n\t}\n}",
+    "funcname": "extractLineNo"
+}

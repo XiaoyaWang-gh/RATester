@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 185,
+    "focalfunc": "func (pco *pageContentOutput) fail(err error)",
+    "funcbody": "func (pco *pageContentOutput) fail(err error) {\n\tpco.po.p.s.h.FatalError(pco.po.p.wrapError(err))\n}",
+    "funcname": "fail"
+}

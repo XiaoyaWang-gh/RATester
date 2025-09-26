@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 449,
+    "focalfunc": "func (t *templateHandler) HasTemplate(name string) bool",
+    "funcbody": "func (t *templateHandler) HasTemplate(name string) bool {\n\tif _, found := t.baseof[name]; found {\n\t\treturn true\n\t}\n\n\tif _, found := t.needsBaseof[name]; found {\n\t\treturn true\n\t}\n\n\t_, found := t.Lookup(name)\n\treturn found\n}",
+    "funcname": "HasTemplate"
+}

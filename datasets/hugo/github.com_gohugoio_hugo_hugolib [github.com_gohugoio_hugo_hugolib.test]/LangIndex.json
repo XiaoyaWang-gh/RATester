@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 72,
+    "focalfunc": "func (r *resourceSource) LangIndex() int",
+    "funcbody": "func (r *resourceSource) LangIndex() int {\n\treturn r.langIndex\n}",
+    "funcname": "LangIndex"
+}

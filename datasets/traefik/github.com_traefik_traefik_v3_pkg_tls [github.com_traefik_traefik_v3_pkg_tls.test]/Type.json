@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 213,
+    "focalfunc": "func (c *Certificates) Type() string",
+    "funcbody": "func (c *Certificates) Type() string {\n\treturn \"certificates\"\n}",
+    "funcname": "Type"
+}

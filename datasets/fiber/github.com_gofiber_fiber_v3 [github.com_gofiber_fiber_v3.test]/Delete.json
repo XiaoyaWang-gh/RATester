@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 79,
+    "focalfunc": "func (r *Registering) Delete(handler Handler, middleware ...Handler) Register",
+    "funcbody": "func (r *Registering) Delete(handler Handler, middleware ...Handler) Register {\n\treturn r.Add([]string{MethodDelete}, handler, middleware...)\n}",
+    "funcname": "Delete"
+}

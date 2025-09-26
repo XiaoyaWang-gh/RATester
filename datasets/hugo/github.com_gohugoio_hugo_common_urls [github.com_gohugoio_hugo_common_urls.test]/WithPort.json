@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 78,
+    "focalfunc": "func (b BaseURL) WithPort(port int) (BaseURL, error)",
+    "funcbody": "func (b BaseURL) WithPort(port int) (BaseURL, error) {\n\tu := b.URL()\n\tu.Host = u.Hostname() + \":\" + strconv.Itoa(port)\n\treturn newBaseURLFromURL(u)\n}",
+    "funcname": "WithPort"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 421,
+    "focalfunc": "func (c *hugoBuilder) buildSites(noBuildLock bool) (err error)",
+    "funcbody": "func (c *hugoBuilder) buildSites(noBuildLock bool) (err error) {\n\th, err := c.hugo()\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn h.Build(hugolib.BuildCfg{NoBuildLock: noBuildLock})\n}",
+    "funcname": "buildSites"
+}

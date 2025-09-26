@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager.go",
+    "lineno": 60,
+    "focalfunc": "func (m *manager) get(key string) *item",
+    "funcbody": "func (m *manager) get(key string) *item {\n\tvar it *item\n\tif m.storage != nil {\n\t\tit = m.acquire()\n\t\traw, err := m.storage.Get(key)\n\t\tif err != nil {\n\t\t\treturn it\n\t\t}\n\t\tif raw != nil {\n\t\t\tif _, err := it.UnmarshalMsg(raw); err != nil {\n\t\t\t\treturn it\n\t\t\t}\n\t\t}\n\t\treturn it\n\t}\n\tif it, _ = m.memory.Get(key).(*item); it == nil {\n\t\tit = m.acquire()\n\t\treturn it\n\t}\n\treturn it\n}",
+    "funcname": "get"
+}

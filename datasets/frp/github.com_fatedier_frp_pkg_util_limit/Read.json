@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/limit/reader.go",
+    "lineno": 36,
+    "focalfunc": "func (r *Reader) Read(p []byte) (n int, err error)",
+    "funcbody": "func (r *Reader) Read(p []byte) (n int, err error) {\n\tb := r.limiter.Burst()\n\tif b < len(p) {\n\t\tp = p[:b]\n\t}\n\tn, err = r.r.Read(p)\n\tif err != nil {\n\t\treturn\n\t}\n\n\terr = r.limiter.WaitN(context.Background(), n)\n\tif err != nil {\n\t\treturn\n\t}\n\treturn\n}",
+    "funcname": "Read"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 230,
+    "focalfunc": "func parseMappingMethods(c ControllerInterface, mappingMethods []string) map[string]string",
+    "funcbody": "func parseMappingMethods(c ControllerInterface, mappingMethods []string) map[string]string {\n\treflectVal := reflect.ValueOf(c)\n\tt := reflect.Indirect(reflectVal).Type()\n\tmethods := make(map[string]string)\n\n\tif len(mappingMethods) == 0 {\n\t\treturn methods\n\t}\n\n\tsemi := strings.Split(mappingMethods[0], \";\")\n\tfor _, v := range semi {\n\t\tcolon := strings.Split(v, \":\")\n\t\tif len(colon) != 2 {\n\t\t\tpanic(\"method mapping format is invalid\")\n\t\t}\n\t\tcomma := strings.Split(colon[0], \",\")\n\t\tfor _, m := range comma {\n\t\t\tif m != \"*\" && !HTTPMETHOD[strings.ToUpper(m)] {\n\t\t\t\tpanic(v + \" is an invalid method mapping. Method doesn't exist \" + m)\n\t\t\t}\n\t\t\tif val := reflectVal.MethodByName(colon[1]); val.IsValid() {\n\t\t\t\tmethods[strings.ToUpper(m)] = colon[1]\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tpanic(\"'\" + colon[1] + \"' method doesn't exist in the controller \" + t.Name())\n\t\t}\n\t}\n\n\treturn methods\n}",
+    "funcname": "parseMappingMethods"
+}

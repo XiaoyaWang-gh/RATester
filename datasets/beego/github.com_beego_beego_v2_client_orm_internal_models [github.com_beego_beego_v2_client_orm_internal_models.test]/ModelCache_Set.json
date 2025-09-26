@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 84,
+    "focalfunc": "func (mc *ModelCache) Set(table string, mi *ModelInfo) *ModelInfo",
+    "funcbody": "func (mc *ModelCache) Set(table string, mi *ModelInfo) *ModelInfo {\n\tmii := mc.cache[table]\n\tmc.cache[table] = mi\n\tmc.cacheByFullName[mi.FullName] = mi\n\tif mii == nil {\n\t\tmc.orders = append(mc.orders, table)\n\t}\n\treturn mii\n}",
+    "funcname": "Set"
+}

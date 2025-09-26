@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 400,
+    "focalfunc": "func (cp *pageContentOutput) ParseAndRenderContent(ctx context.Context, content []byte, renderTOC bool) (converter.ResultRender, error)",
+    "funcbody": "func (cp *pageContentOutput) ParseAndRenderContent(ctx context.Context, content []byte, renderTOC bool) (converter.ResultRender, error) {\n\tc, err := cp.getContentConverter()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn cp.renderContentWithConverter(ctx, c, content, renderTOC)\n}",
+    "funcname": "ParseAndRenderContent"
+}

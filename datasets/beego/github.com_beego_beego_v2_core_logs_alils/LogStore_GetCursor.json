@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_store.go",
+    "lineno": 124,
+    "focalfunc": "func (s *LogStore) GetCursor(shardID int, from string) (cursor string, err error)",
+    "funcbody": "func (s *LogStore) GetCursor(shardID int, from string) (cursor string, err error) {\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\": \"0\",\n\t}\n\n\turi := fmt.Sprintf(\"/logstores/%v/shards/%v?type=cursor&from=%v\",\n\t\ts.Name, shardID, from)\n\n\tr, err := request(s.project, \"GET\", uri, h, nil)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbuf, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(buf, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to get cursor\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Println(dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\ttype Body struct {\n\t\tCursor string\n\t}\n\tbody := &Body{}\n\n\terr = json.Unmarshal(buf, body)\n\tif err != nil {\n\t\treturn\n\t}\n\tcursor = body.Cursor\n\treturn\n}",
+    "funcname": "GetCursor"
+}

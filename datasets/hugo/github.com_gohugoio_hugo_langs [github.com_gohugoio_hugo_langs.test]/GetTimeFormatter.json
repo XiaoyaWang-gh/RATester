@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 158,
+    "focalfunc": "func GetTimeFormatter(l *Language) htime.TimeFormatter",
+    "funcbody": "func GetTimeFormatter(l *Language) htime.TimeFormatter {\n\treturn l.timeFormatter\n}",
+    "funcname": "GetTimeFormatter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 795,
+    "focalfunc": "func (c *DefaultCtx) extractIPFromHeader(header string) string",
+    "funcbody": "func (c *DefaultCtx) extractIPFromHeader(header string) string {\n\tif c.app.config.EnableIPValidation {\n\t\theaderValue := c.Get(header)\n\n\t\ti := 0\n\t\tj := -1\n\n\tiploop:\n\t\tfor {\n\t\t\tvar v4, v6 bool\n\n\t\t\ti, j = j+1, j+2\n\n\t\t\tif j > len(headerValue) {\n\t\t\t\tbreak\n\t\t\t}\n\n\t\t\tfor j < len(headerValue) && headerValue[j] != ',' {\n\t\t\t\tif headerValue[j] == ':' {\n\t\t\t\t\tv6 = true\n\t\t\t\t} else if headerValue[j] == '.' {\n\t\t\t\t\tv4 = true\n\t\t\t\t}\n\t\t\t\tj++\n\t\t\t}\n\n\t\t\tfor i < j && headerValue[i] == ' ' {\n\t\t\t\ti++\n\t\t\t}\n\n\t\t\ts := utils.TrimRight(headerValue[i:j], ' ')\n\n\t\t\tif c.app.config.EnableIPValidation {\n\t\t\t\tif (!v6 && !v4) || (v6 && !utils.IsIPv6(s)) || (v4 && !utils.IsIPv4(s)) {\n\t\t\t\t\tcontinue iploop\n\t\t\t\t}\n\t\t\t}\n\n\t\t\treturn s\n\t\t}\n\n\t\treturn c.fasthttp.RemoteIP().String()\n\t}\n\n\treturn c.Get(c.app.config.ProxyHeader)\n}",
+    "funcname": "extractIPFromHeader"
+}

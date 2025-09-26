@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 577,
+    "focalfunc": "func (e *Echo) File(path, file string, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (e *Echo) File(path, file string, m ...MiddlewareFunc) *Route {\n\treturn e.file(path, file, e.GET, m...)\n}",
+    "funcname": "File"
+}

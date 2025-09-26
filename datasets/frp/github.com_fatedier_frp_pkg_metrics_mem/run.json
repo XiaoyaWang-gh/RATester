@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 59,
+    "focalfunc": "func (m *serverMetrics) run()",
+    "funcbody": "func (m *serverMetrics) run() {\n\tgo func() {\n\t\tfor {\n\t\t\ttime.Sleep(12 * time.Hour)\n\t\t\tstart := time.Now()\n\t\t\tcount, total := m.clearUselessInfo(time.Duration(7*24) * time.Hour)\n\t\t\tlog.Debugf(\"clear useless proxy statistics data count %d/%d, cost %v\", count, total, time.Since(start))\n\t\t}\n\t}()\n}",
+    "funcname": "run"
+}

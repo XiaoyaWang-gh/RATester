@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/rest/rest.go",
+    "lineno": 64,
+    "focalfunc": "func (p *Provider) Provide(configurationChan chan<- dynamic.Message, pool *safe.Pool) error",
+    "funcbody": "func (p *Provider) Provide(configurationChan chan<- dynamic.Message, pool *safe.Pool) error {\n\tp.configurationChan = configurationChan\n\treturn nil\n}",
+    "funcname": "Provide"
+}

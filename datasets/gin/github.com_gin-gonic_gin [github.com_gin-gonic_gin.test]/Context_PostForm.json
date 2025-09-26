@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 509,
+    "focalfunc": "func (c *Context) PostForm(key string) (value string)",
+    "funcbody": "func (c *Context) PostForm(key string) (value string) {\n\tvalue, _ = c.GetPostForm(key)\n\treturn\n}",
+    "funcname": "PostForm"
+}

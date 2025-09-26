@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 458,
+    "focalfunc": "func NSCtrlAny(rootpath string, f interface{}) LinkNamespace",
+    "funcbody": "func NSCtrlAny(rootpath string, f interface{}) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.CtrlAny(rootpath, f)\n\t}\n}",
+    "funcname": "NSCtrlAny"
+}

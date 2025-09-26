@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 148,
+    "focalfunc": "func (o *ormBase) Read(md interface{}, cols ...string) error",
+    "funcbody": "func (o *ormBase) Read(md interface{}, cols ...string) error {\n\treturn o.ReadWithCtx(context.Background(), md, cols...)\n}",
+    "funcname": "Read"
+}

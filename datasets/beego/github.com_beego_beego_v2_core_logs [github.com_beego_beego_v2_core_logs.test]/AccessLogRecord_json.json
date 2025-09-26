@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/access_log.go",
+    "lineno": 47,
+    "focalfunc": "func (r *AccessLogRecord) json() ([]byte, error)",
+    "funcbody": "func (r *AccessLogRecord) json() ([]byte, error) {\n\tbuffer := &bytes.Buffer{}\n\tencoder := json.NewEncoder(buffer)\n\tdisableEscapeHTML(encoder)\n\n\terr := encoder.Encode(r)\n\treturn buffer.Bytes(), err\n}",
+    "funcname": "json"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 258,
+    "focalfunc": "func (au *absURLReplacer) replaceInXML(path string, ct transform.FromTo)",
+    "funcbody": "func (au *absURLReplacer) replaceInXML(path string, ct transform.FromTo) {\n\tdoReplace(path, ct, au.xmlQuotes)\n}",
+    "funcname": "replaceInXML"
+}

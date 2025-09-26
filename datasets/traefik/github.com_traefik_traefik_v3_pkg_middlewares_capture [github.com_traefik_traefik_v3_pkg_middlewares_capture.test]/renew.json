@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 99,
+    "focalfunc": "func (c *Capture) renew(rw http.ResponseWriter, req *http.Request) (http.ResponseWriter, *http.Request)",
+    "funcbody": "func (c *Capture) renew(rw http.ResponseWriter, req *http.Request) (http.ResponseWriter, *http.Request) {\n\tctx := context.WithValue(req.Context(), capturedData, c)\n\tnewReq := req.WithContext(ctx)\n\n\tif newReq.Body != nil {\n\t\treadCounter := &readCounter{source: newReq.Body}\n\t\tc.rr = readCounter\n\t\tnewReq.Body = readCounter\n\t}\n\tc.crw = &captureResponseWriter{rw: rw}\n\n\treturn c.crw, newReq\n}",
+    "funcname": "renew"
+}

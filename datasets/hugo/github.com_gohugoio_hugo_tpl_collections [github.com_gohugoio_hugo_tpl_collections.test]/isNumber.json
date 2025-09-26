@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 181,
+    "focalfunc": "func isNumber(kind reflect.Kind) bool",
+    "funcbody": "func isNumber(kind reflect.Kind) bool {\n\treturn isInt(kind) || isUint(kind) || isFloat(kind)\n}",
+    "funcname": "isNumber"
+}

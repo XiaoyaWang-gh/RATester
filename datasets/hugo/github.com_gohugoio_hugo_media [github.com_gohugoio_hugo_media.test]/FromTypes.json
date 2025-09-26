@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/config.go",
+    "lineno": 139,
+    "focalfunc": "func (t ContentTypes) FromTypes(types Types) ContentTypes",
+    "funcbody": "func (t ContentTypes) FromTypes(types Types) ContentTypes {\n\tif tt, ok := types.GetByType(t.HTML.Type); ok {\n\t\tt.HTML = tt\n\t}\n\tif tt, ok := types.GetByType(t.Markdown.Type); ok {\n\t\tt.Markdown = tt\n\t}\n\tif tt, ok := types.GetByType(t.AsciiDoc.Type); ok {\n\t\tt.AsciiDoc = tt\n\t}\n\tif tt, ok := types.GetByType(t.Pandoc.Type); ok {\n\t\tt.Pandoc = tt\n\t}\n\tif tt, ok := types.GetByType(t.ReStructuredText.Type); ok {\n\t\tt.ReStructuredText = tt\n\t}\n\tif tt, ok := types.GetByType(t.EmacsOrgMode.Type); ok {\n\t\tt.EmacsOrgMode = tt\n\t}\n\n\tt.init()\n\n\treturn t\n}",
+    "funcname": "FromTypes"
+}

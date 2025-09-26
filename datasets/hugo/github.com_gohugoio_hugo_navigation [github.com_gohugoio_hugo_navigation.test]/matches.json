@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu_cache.go",
+    "lineno": 25,
+    "focalfunc": "func (entry menuCacheEntry) matches(menuList []Menu) bool",
+    "funcbody": "func (entry menuCacheEntry) matches(menuList []Menu) bool {\n\tif len(entry.in) != len(menuList) {\n\t\treturn false\n\t}\n\tfor i, m := range menuList {\n\t\tif !menuEqual(m, entry.in[i]) {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "matches"
+}

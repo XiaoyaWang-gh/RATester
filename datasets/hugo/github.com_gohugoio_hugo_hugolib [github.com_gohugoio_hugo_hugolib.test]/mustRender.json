@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 177,
+    "focalfunc": "func (pco *pageContentOutput) mustRender(ctx context.Context) page.Content",
+    "funcbody": "func (pco *pageContentOutput) mustRender(ctx context.Context) page.Content {\n\tc, err := pco.c().Render(ctx)\n\tif err != nil {\n\t\tpco.fail(err)\n\t}\n\treturn c\n}",
+    "funcname": "mustRender"
+}

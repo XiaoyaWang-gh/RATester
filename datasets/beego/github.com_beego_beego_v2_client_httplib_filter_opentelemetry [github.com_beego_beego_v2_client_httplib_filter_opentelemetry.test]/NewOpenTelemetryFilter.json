@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/opentelemetry/filter.go",
+    "lineno": 38,
+    "focalfunc": "func NewOpenTelemetryFilter(tagURL bool, spanFunc CustomSpanFunc) *OtelFilterChainBuilder",
+    "funcbody": "func NewOpenTelemetryFilter(tagURL bool, spanFunc CustomSpanFunc) *OtelFilterChainBuilder {\n\treturn &OtelFilterChainBuilder{\n\t\ttagURL:\t\ttagURL,\n\t\tcustomSpanFunc:\tspanFunc,\n\t}\n}",
+    "funcname": "NewOpenTelemetryFilter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/tag_auto_wire_bean_factory.go",
+    "lineno": 215,
+    "focalfunc": "func (t *TagAutoWireBeanFactory) getConfig(beanValue reflect.Value) *BeanMetadata",
+    "funcbody": "func (t *TagAutoWireBeanFactory) getConfig(beanValue reflect.Value) *BeanMetadata {\n\tfms := make(map[string]*FieldMetadata, beanValue.NumField())\n\tfor i := 0; i < beanValue.NumField(); i++ {\n\n\t\tf := beanValue.Type().Field(i)\n\t\tfms[f.Name] = t.FieldTagParser(f)\n\t}\n\treturn &BeanMetadata{\n\t\tFields: fms,\n\t}\n}",
+    "funcname": "getConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1011,
+    "focalfunc": "func (t *templateNamespace) newTemplateLookup(in *templateState) func(name string) *templateState",
+    "funcbody": "func (t *templateNamespace) newTemplateLookup(in *templateState) func(name string) *templateState {\n\treturn func(name string) *templateState {\n\t\tif templ, found := t.templates[name]; found {\n\t\t\tif templ.isText() != in.isText() {\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn templ\n\t\t}\n\t\tif templ, found := findTemplateIn(name, in); found {\n\t\t\treturn newTemplateState(nil, templ, templateInfo{name: templ.Name()}, nil)\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "newTemplateLookup"
+}

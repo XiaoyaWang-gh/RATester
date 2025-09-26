@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 394,
+    "focalfunc": "func (c *context) FormParams() (url.Values, error)",
+    "funcbody": "func (c *context) FormParams() (url.Values, error) {\n\tif strings.HasPrefix(c.request.Header.Get(HeaderContentType), MIMEMultipartForm) {\n\t\tif err := c.request.ParseMultipartForm(defaultMemory); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t} else {\n\t\tif err := c.request.ParseForm(); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn c.request.Form, nil\n}",
+    "funcname": "FormParams"
+}

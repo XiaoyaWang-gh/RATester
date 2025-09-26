@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 943,
+    "focalfunc": "func (*disableLogger) Printf(string, ...any)",
+    "funcbody": "func (*disableLogger) Printf(string, ...any) {\n}",
+    "funcname": "Printf"
+}

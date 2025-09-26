@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 148,
+    "focalfunc": "func openAccessLogFile(filePath string) (*os.File, error)",
+    "funcbody": "func openAccessLogFile(filePath string) (*os.File, error) {\n\tdir := filepath.Dir(filePath)\n\n\tif err := os.MkdirAll(dir, 0o755); err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create log path %s: %w\", dir, err)\n\t}\n\n\tfile, err := os.OpenFile(filePath, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0o664)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error opening file %s: %w\", filePath, err)\n\t}\n\n\treturn file, nil\n}",
+    "funcname": "openAccessLogFile"
+}

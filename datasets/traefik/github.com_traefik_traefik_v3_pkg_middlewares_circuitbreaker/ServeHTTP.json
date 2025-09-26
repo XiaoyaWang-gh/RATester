@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/circuitbreaker/circuit_breaker.go",
+    "lineno": 75,
+    "focalfunc": "func (c *circuitBreaker) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (c *circuitBreaker) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tc.circuitBreaker.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

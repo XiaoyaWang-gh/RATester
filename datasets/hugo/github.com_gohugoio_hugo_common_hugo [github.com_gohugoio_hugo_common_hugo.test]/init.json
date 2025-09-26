@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 376,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tDartSassBinaryName = os.Getenv(\"DART_SASS_BINARY\")\n\tif DartSassBinaryName == \"\" {\n\t\tfor _, name := range dartSassBinaryNamesV2 {\n\t\t\tif hexec.InPath(name) {\n\t\t\t\tDartSassBinaryName = name\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif DartSassBinaryName == \"\" {\n\t\t\tif hexec.InPath(dartSassBinaryNameV1) {\n\t\t\t\tDartSassBinaryName = dartSassBinaryNameV1\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/debug.go",
+    "lineno": 18,
+    "focalfunc": "func goroutines() interface{}",
+    "funcbody": "func goroutines() interface{} {\n\treturn runtime.NumGoroutine()\n}",
+    "funcname": "goroutines"
+}

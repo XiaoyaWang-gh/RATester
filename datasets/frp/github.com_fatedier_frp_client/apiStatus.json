@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/admin_api.go",
+    "lineno": 162,
+    "focalfunc": "func (svr *Service) apiStatus(w http.ResponseWriter, _ *http.Request)",
+    "funcbody": "func (svr *Service) apiStatus(w http.ResponseWriter, _ *http.Request) {\n\tvar (\n\t\tbuf\t[]byte\n\t\tres\tStatusResp\t= make(map[string][]ProxyStatusResp)\n\t)\n\n\tlog.Infof(\"Http request [/api/status]\")\n\tdefer func() {\n\t\tlog.Infof(\"Http response [/api/status]\")\n\t\tbuf, _ = json.Marshal(&res)\n\t\t_, _ = w.Write(buf)\n\t}()\n\n\tsvr.ctlMu.RLock()\n\tctl := svr.ctl\n\tsvr.ctlMu.RUnlock()\n\tif ctl == nil {\n\t\treturn\n\t}\n\n\tps := ctl.pm.GetAllProxyStatus()\n\tfor _, status := range ps {\n\t\tres[status.Type] = append(res[status.Type], NewProxyStatusResp(status, svr.common.ServerAddr))\n\t}\n\n\tfor _, arrs := range res {\n\t\tif len(arrs) <= 1 {\n\t\t\tcontinue\n\t\t}\n\t\tslices.SortFunc(arrs, func(a, b ProxyStatusResp) int {\n\t\t\treturn cmp.Compare(a.Name, b.Name)\n\t\t})\n\t}\n}",
+    "funcname": "apiStatus"
+}

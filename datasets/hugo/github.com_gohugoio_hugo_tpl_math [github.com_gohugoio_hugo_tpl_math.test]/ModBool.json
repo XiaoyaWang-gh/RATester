@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 168,
+    "focalfunc": "func (ns *Namespace) ModBool(n1, n2 any) (bool, error)",
+    "funcbody": "func (ns *Namespace) ModBool(n1, n2 any) (bool, error) {\n\tres, err := ns.Mod(n1, n2)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\n\treturn res == int64(0), nil\n}",
+    "funcname": "ModBool"
+}

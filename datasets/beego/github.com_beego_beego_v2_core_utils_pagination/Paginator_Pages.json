@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 86,
+    "focalfunc": "func (p *Paginator) Pages() []int",
+    "funcbody": "func (p *Paginator) Pages() []int {\n\tif p.pageRange == nil && p.nums > 0 {\n\t\tvar pages []int\n\t\tpageNums := p.PageNums()\n\t\tpage := p.Page()\n\t\tswitch {\n\t\tcase page >= pageNums-4 && pageNums > 9:\n\t\t\tstart := pageNums - 9 + 1\n\t\t\tpages = make([]int, 9)\n\t\t\tfor i := range pages {\n\t\t\t\tpages[i] = start + i\n\t\t\t}\n\t\tcase page >= 5 && pageNums > 9:\n\t\t\tstart := page - 5 + 1\n\t\t\tpages = make([]int, int(math.Min(9, float64(page+4+1))))\n\t\t\tfor i := range pages {\n\t\t\t\tpages[i] = start + i\n\t\t\t}\n\t\tdefault:\n\t\t\tpages = make([]int, int(math.Min(9, float64(pageNums))))\n\t\t\tfor i := range pages {\n\t\t\t\tpages[i] = i + 1\n\t\t\t}\n\t\t}\n\t\tp.pageRange = pages\n\t}\n\treturn p.pageRange\n}",
+    "funcname": "Pages"
+}

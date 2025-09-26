@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/command.go",
+    "lineno": 47,
+    "focalfunc": "func (m moduleCommands) Get(name string) Command",
+    "funcbody": "func (m moduleCommands) Get(name string) Command {\n\tc, ok := m[name]\n\tif ok {\n\t\treturn c\n\t}\n\treturn &doNothingCommand{}\n}",
+    "funcname": "Get"
+}

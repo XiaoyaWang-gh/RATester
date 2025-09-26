@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/skeletons/skeletons.go",
+    "lineno": 82,
+    "focalfunc": "func copyFiles(createpath string, sourceFs afero.Fs, skeleton embed.FS) error",
+    "funcbody": "func copyFiles(createpath string, sourceFs afero.Fs, skeleton embed.FS) error {\n\treturn fs.WalkDir(skeleton, \".\", func(path string, d fs.DirEntry, err error) error {\n\t\t_, slug, _ := strings.Cut(path, \"/\")\n\t\tif d.IsDir() {\n\t\t\treturn sourceFs.MkdirAll(filepath.Join(createpath, slug), 0o777)\n\t\t} else {\n\t\t\tif filepath.Base(path) != \".gitkeep\" {\n\t\t\t\tdata, _ := fs.ReadFile(skeleton, path)\n\t\t\t\treturn helpers.WriteToDisk(filepath.Join(createpath, slug), bytes.NewReader(data), sourceFs)\n\t\t\t}\n\t\t\treturn nil\n\t\t}\n\t})\n}",
+    "funcname": "copyFiles"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/inflightreq/inflight_req.go",
+    "lineno": 27,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.InFlightReq, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.InFlightReq, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\tctxLog := logger.WithContext(ctx)\n\n\tif config.SourceCriterion == nil ||\n\t\tconfig.SourceCriterion.IPStrategy == nil &&\n\t\t\tconfig.SourceCriterion.RequestHeaderName == \"\" && !config.SourceCriterion.RequestHost {\n\t\tconfig.SourceCriterion = &dynamic.SourceCriterion{\n\t\t\tRequestHost: true,\n\t\t}\n\t}\n\n\tsourceMatcher, err := middlewares.GetSourceExtractor(ctxLog, config.SourceCriterion)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error creating requests limiter: %w\", err)\n\t}\n\n\thandler, err := connlimit.New(next, sourceMatcher, config.Amount,\n\t\tconnlimit.Logger(logs.NewOxyWrapper(*logger)),\n\t\tconnlimit.Verbose(logger.GetLevel() == zerolog.TraceLevel))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error creating connection limit: %w\", err)\n\t}\n\n\treturn &inFlightReq{handler: handler, name: name}, nil\n}",
+    "funcname": "New"
+}

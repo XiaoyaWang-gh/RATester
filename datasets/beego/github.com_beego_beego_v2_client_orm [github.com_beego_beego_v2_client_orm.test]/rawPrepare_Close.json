@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_raw.go",
+    "lineno": 43,
+    "focalfunc": "func (o *rawPrepare) Close() error",
+    "funcbody": "func (o *rawPrepare) Close() error {\n\to.closed = true\n\treturn o.stmt.Close()\n}",
+    "funcname": "Close"
+}

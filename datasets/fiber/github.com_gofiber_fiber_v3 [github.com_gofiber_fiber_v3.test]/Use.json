@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/group.go",
+    "lineno": 69,
+    "focalfunc": "func (grp *Group) Use(args ...any) Router",
+    "funcbody": "func (grp *Group) Use(args ...any) Router {\n\tvar subApp *App\n\tvar prefix string\n\tvar prefixes []string\n\tvar handlers []Handler\n\n\tfor i := 0; i < len(args); i++ {\n\t\tswitch arg := args[i].(type) {\n\t\tcase string:\n\t\t\tprefix = arg\n\t\tcase *App:\n\t\t\tsubApp = arg\n\t\tcase []string:\n\t\t\tprefixes = arg\n\t\tcase Handler:\n\t\t\thandlers = append(handlers, arg)\n\t\tdefault:\n\t\t\tpanic(fmt.Sprintf(\"use: invalid handler %v\\n\", reflect.TypeOf(arg)))\n\t\t}\n\t}\n\n\tif len(prefixes) == 0 {\n\t\tprefixes = append(prefixes, prefix)\n\t}\n\n\tfor _, prefix := range prefixes {\n\t\tif subApp != nil {\n\t\t\tgrp.mount(prefix, subApp)\n\t\t\treturn grp\n\t\t}\n\n\t\tgrp.app.register([]string{methodUse}, getGroupPath(grp.Prefix, prefix), grp, nil, handlers...)\n\t}\n\n\tif !grp.anyRouteDefined {\n\t\tgrp.anyRouteDefined = true\n\t}\n\n\treturn grp\n}",
+    "funcname": "Use"
+}

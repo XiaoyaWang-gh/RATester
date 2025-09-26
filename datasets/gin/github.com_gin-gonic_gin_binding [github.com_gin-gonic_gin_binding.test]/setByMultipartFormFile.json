@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/multipart_form_mapping.go",
+    "lineno": 35,
+    "focalfunc": "func setByMultipartFormFile(value reflect.Value, field reflect.StructField, files []*multipart.FileHeader) (isSet bool, err error)",
+    "funcbody": "func setByMultipartFormFile(value reflect.Value, field reflect.StructField, files []*multipart.FileHeader) (isSet bool, err error) {\n\tswitch value.Kind() {\n\tcase reflect.Ptr:\n\t\tswitch value.Interface().(type) {\n\t\tcase *multipart.FileHeader:\n\t\t\tvalue.Set(reflect.ValueOf(files[0]))\n\t\t\treturn true, nil\n\t\t}\n\tcase reflect.Struct:\n\t\tswitch value.Interface().(type) {\n\t\tcase multipart.FileHeader:\n\t\t\tvalue.Set(reflect.ValueOf(*files[0]))\n\t\t\treturn true, nil\n\t\t}\n\tcase reflect.Slice:\n\t\tslice := reflect.MakeSlice(value.Type(), len(files), len(files))\n\t\tisSet, err = setArrayOfMultipartFormFiles(slice, field, files)\n\t\tif err != nil || !isSet {\n\t\t\treturn isSet, err\n\t\t}\n\t\tvalue.Set(slice)\n\t\treturn true, nil\n\tcase reflect.Array:\n\t\treturn setArrayOfMultipartFormFiles(value, field, files)\n\t}\n\treturn false, ErrMultiFileHeader\n}",
+    "funcname": "setByMultipartFormFile"
+}

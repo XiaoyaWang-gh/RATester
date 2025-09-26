@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 115,
+    "focalfunc": "func (sv *XTCPVisitor) processTunnelStartEvents()",
+    "funcbody": "func (sv *XTCPVisitor) processTunnelStartEvents() {\n\tfor {\n\t\tselect {\n\t\tcase <-sv.ctx.Done():\n\t\t\treturn\n\t\tcase <-sv.startTunnelCh:\n\t\t\tstart := time.Now()\n\t\t\tsv.makeNatHole()\n\t\t\tduration := time.Since(start)\n\n\t\t\tif duration < 10*time.Second {\n\t\t\t\ttime.Sleep(10*time.Second - duration)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "processTunnelStartEvents"
+}

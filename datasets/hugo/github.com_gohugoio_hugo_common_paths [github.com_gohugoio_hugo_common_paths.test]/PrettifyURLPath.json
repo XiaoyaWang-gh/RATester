@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 127,
+    "focalfunc": "func PrettifyURLPath(in string) string",
+    "funcbody": "func PrettifyURLPath(in string) string {\n\treturn prettifyPath(in, pb)\n}",
+    "funcname": "PrettifyURLPath"
+}

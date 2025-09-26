@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/proto/udp/udp.go",
+    "lineno": 42,
+    "focalfunc": "func ForwardUserConn(udpConn *net.UDPConn, readCh <-chan *msg.UDPPacket, sendCh chan<- *msg.UDPPacket, bufSize int)",
+    "funcbody": "func ForwardUserConn(udpConn *net.UDPConn, readCh <-chan *msg.UDPPacket, sendCh chan<- *msg.UDPPacket, bufSize int) {\n\n\tgo func() {\n\t\tfor udpMsg := range readCh {\n\t\t\tbuf, err := GetContent(udpMsg)\n\t\t\tif err != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\t_, _ = udpConn.WriteToUDP(buf, udpMsg.RemoteAddr)\n\t\t}\n\t}()\n\n\tbuf := pool.GetBuf(bufSize)\n\tdefer pool.PutBuf(buf)\n\tfor {\n\t\tn, remoteAddr, err := udpConn.ReadFromUDP(buf)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\n\t\tudpMsg := NewUDPPacket(buf[:n], nil, remoteAddr)\n\n\t\tselect {\n\t\tcase sendCh <- udpMsg:\n\t\tdefault:\n\t\t}\n\t}\n}",
+    "funcname": "ForwardUserConn"
+}

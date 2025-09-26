@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/template.go",
+    "lineno": 28,
+    "focalfunc": "func parseNumberRangePair(firstRangeStr, secondRangeStr string) ([]NumberPair, error)",
+    "funcbody": "func parseNumberRangePair(firstRangeStr, secondRangeStr string) ([]NumberPair, error) {\n\tfirstRangeNumbers, err := util.ParseRangeNumbers(firstRangeStr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tsecondRangeNumbers, err := util.ParseRangeNumbers(secondRangeStr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif len(firstRangeNumbers) != len(secondRangeNumbers) {\n\t\treturn nil, fmt.Errorf(\"first and second range numbers are not in pairs\")\n\t}\n\tpairs := make([]NumberPair, 0, len(firstRangeNumbers))\n\tfor i := 0; i < len(firstRangeNumbers); i++ {\n\t\tpairs = append(pairs, NumberPair{\n\t\t\tFirst:\tfirstRangeNumbers[i],\n\t\t\tSecond:\tsecondRangeNumbers[i],\n\t\t})\n\t}\n\treturn pairs, nil\n}",
+    "funcname": "parseNumberRangePair"
+}

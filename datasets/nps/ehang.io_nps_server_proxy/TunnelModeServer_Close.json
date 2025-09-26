@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 49,
+    "focalfunc": "func (s *TunnelModeServer) Close() error",
+    "funcbody": "func (s *TunnelModeServer) Close() error {\n\treturn s.listener.Close()\n}",
+    "funcname": "Close"
+}

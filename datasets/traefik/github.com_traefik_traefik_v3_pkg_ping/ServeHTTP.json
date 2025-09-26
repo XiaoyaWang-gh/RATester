@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ping/ping.go",
+    "lineno": 31,
+    "focalfunc": "func (h *Handler) ServeHTTP(response http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h *Handler) ServeHTTP(response http.ResponseWriter, request *http.Request) {\n\tstatusCode := http.StatusOK\n\tif h.terminating {\n\t\tstatusCode = h.TerminatingStatusCode\n\t}\n\tresponse.WriteHeader(statusCode)\n\tfmt.Fprint(response, http.StatusText(statusCode))\n}",
+    "funcname": "ServeHTTP"
+}

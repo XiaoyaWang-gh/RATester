@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/healthcheck/healthcheck.go",
+    "lineno": 49,
+    "focalfunc": "func Do(staticConfiguration static.Configuration) (*http.Response, error)",
+    "funcbody": "func Do(staticConfiguration static.Configuration) (*http.Response, error) {\n\tif staticConfiguration.Ping == nil {\n\t\treturn nil, errors.New(\"please enable `ping` to use health check\")\n\t}\n\n\tep := staticConfiguration.Ping.EntryPoint\n\tif ep == \"\" {\n\t\tep = \"traefik\"\n\t}\n\n\tpingEntryPoint, ok := staticConfiguration.EntryPoints[ep]\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"ping: missing %s entry point\", ep)\n\t}\n\n\tclient := &http.Client{Timeout: 5 * time.Second}\n\tprotocol := \"http\"\n\n\tpath := \"/\"\n\n\treturn client.Head(protocol + \"://\" + pingEntryPoint.GetAddress() + path + \"ping\")\n}",
+    "funcname": "Do"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 134,
+    "focalfunc": "func (r udpRouterRepresentation) priority() int",
+    "funcbody": "func (r udpRouterRepresentation) priority() int {\n\n\treturn 0\n}",
+    "funcname": "priority"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/message.go",
+    "lineno": 79,
+    "focalfunc": "func (impl *transporterImpl) DispatchWithType(m msg.Message, msgType, laneKey string) bool",
+    "funcbody": "func (impl *transporterImpl) DispatchWithType(m msg.Message, msgType, laneKey string) bool {\n\tvar ch chan msg.Message\n\timpl.mu.RLock()\n\tbyLaneKey, ok := impl.registry[msgType]\n\tif ok {\n\t\tch = byLaneKey[laneKey]\n\t}\n\timpl.mu.RUnlock()\n\n\tif ch == nil {\n\t\treturn false\n\t}\n\n\tif err := errors.PanicToError(func() {\n\t\tch <- m\n\t}); err != nil {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "DispatchWithType"
+}

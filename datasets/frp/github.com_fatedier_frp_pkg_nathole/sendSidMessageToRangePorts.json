@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/nathole.go",
+    "lineno": 375,
+    "focalfunc": "func sendSidMessageToRangePorts(\n\tctx context.Context, conn *net.UDPConn, addrs []string, ports []msg.PortsRange,\n\tsendFunc func(*net.UDPConn, string) error,\n)",
+    "funcbody": "func sendSidMessageToRangePorts(\n\tctx context.Context, conn *net.UDPConn, addrs []string, ports []msg.PortsRange,\n\tsendFunc func(*net.UDPConn, string) error,\n) {\n\txl := xlog.FromContextSafe(ctx)\n\tfor _, ip := range slices.Compact(parseIPs(addrs)) {\n\t\tfor _, portsRange := range ports {\n\t\t\tfor i := portsRange.From; i <= portsRange.To; i++ {\n\t\t\t\tdetectAddr := net.JoinHostPort(ip, strconv.Itoa(i))\n\t\t\t\tif err := sendFunc(conn, detectAddr); err != nil {\n\t\t\t\t\txl.Tracef(\"send sid message from %s to %s error: %v\", conn.LocalAddr(), detectAddr, err)\n\t\t\t\t}\n\t\t\t\ttime.Sleep(2 * time.Millisecond)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "sendSidMessageToRangePorts"
+}

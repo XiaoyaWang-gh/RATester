@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 214,
+    "focalfunc": "func (h Handler) getMiddleware(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getMiddleware(rw http.ResponseWriter, request *http.Request) {\n\tscapedMiddlewareID := mux.Vars(request)[\"middlewareID\"]\n\n\tmiddlewareID, err := url.PathUnescape(scapedMiddlewareID)\n\tif err != nil {\n\t\twriteError(rw, fmt.Sprintf(\"unable to decode middlewareID %q: %s\", scapedMiddlewareID, err), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\tmiddleware, ok := h.runtimeConfiguration.Middlewares[middlewareID]\n\tif !ok {\n\t\twriteError(rw, fmt.Sprintf(\"middleware not found: %s\", middlewareID), http.StatusNotFound)\n\t\treturn\n\t}\n\n\tresult := newMiddlewareRepresentation(middlewareID, middleware)\n\n\terr = json.NewEncoder(rw).Encode(result)\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getMiddleware"
+}

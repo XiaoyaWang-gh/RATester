@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/writers.go",
+    "lineno": 55,
+    "focalfunc": "func ToWriteCloser(w io.Writer) io.WriteCloser",
+    "funcbody": "func ToWriteCloser(w io.Writer) io.WriteCloser {\n\tif rw, ok := w.(io.WriteCloser); ok {\n\t\treturn rw\n\t}\n\n\treturn struct {\n\t\tio.Writer\n\t\tio.Closer\n\t}{\n\t\tw,\n\t\tio.NopCloser(nil),\n\t}\n}",
+    "funcname": "ToWriteCloser"
+}

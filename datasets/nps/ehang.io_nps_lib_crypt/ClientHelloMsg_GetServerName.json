@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/clientHello.go",
+    "lineno": 46,
+    "focalfunc": "func (m *ClientHelloMsg) GetServerName() string",
+    "funcbody": "func (m *ClientHelloMsg) GetServerName() string {\n\treturn m.serverName\n}",
+    "funcname": "GetServerName"
+}

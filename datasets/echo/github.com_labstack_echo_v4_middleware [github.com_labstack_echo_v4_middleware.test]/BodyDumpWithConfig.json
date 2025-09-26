@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 52,
+    "focalfunc": "func BodyDumpWithConfig(config BodyDumpConfig) echo.MiddlewareFunc",
+    "funcbody": "func BodyDumpWithConfig(config BodyDumpConfig) echo.MiddlewareFunc {\n\n\tif config.Handler == nil {\n\t\tpanic(\"echo: body-dump middleware requires a handler function\")\n\t}\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultBodyDumpConfig.Skipper\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) (err error) {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\treqBody := []byte{}\n\t\t\tif c.Request().Body != nil {\n\t\t\t\treqBody, _ = io.ReadAll(c.Request().Body)\n\t\t\t}\n\t\t\tc.Request().Body = io.NopCloser(bytes.NewBuffer(reqBody))\n\n\t\t\tresBody := new(bytes.Buffer)\n\t\t\tmw := io.MultiWriter(c.Response().Writer, resBody)\n\t\t\twriter := &bodyDumpResponseWriter{Writer: mw, ResponseWriter: c.Response().Writer}\n\t\t\tc.Response().Writer = writer\n\n\t\t\tif err = next(c); err != nil {\n\t\t\t\tc.Error(err)\n\t\t\t}\n\n\t\t\tconfig.Handler(c, reqBody, resBody.Bytes())\n\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "BodyDumpWithConfig"
+}

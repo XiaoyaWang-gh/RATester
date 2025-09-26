@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 984,
+    "focalfunc": "func (c *DefaultCtx) Method(override ...string) string",
+    "funcbody": "func (c *DefaultCtx) Method(override ...string) string {\n\tif len(override) == 0 {\n\n\t\treturn c.method\n\t}\n\n\tmethod := utils.ToUpper(override[0])\n\tmINT := c.app.methodInt(method)\n\tif mINT == -1 {\n\n\t\treturn c.method\n\t}\n\n\tc.method = method\n\tc.methodINT = mINT\n\treturn c.method\n}",
+    "funcname": "Method"
+}

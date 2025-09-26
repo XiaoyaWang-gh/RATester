@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/setting.go",
+    "lineno": 80,
+    "focalfunc": "func AddDefaultFilter(fc FilterChain)",
+    "funcbody": "func AddDefaultFilter(fc FilterChain) {\n\tsettingMutex.Lock()\n\tdefer settingMutex.Unlock()\n\tif defaultSetting.FilterChains == nil {\n\t\tdefaultSetting.FilterChains = make([]FilterChain, 0, 4)\n\t}\n\tdefaultSetting.FilterChains = append(defaultSetting.FilterChains, fc)\n}",
+    "funcname": "AddDefaultFilter"
+}

@@ -1,0 +1,42 @@
+package template
+
+import (
+	"fmt"
+	"reflect"
+	"testing"
+)
+
+func Testcall_1(t *testing.T) {
+	type args struct {
+		name string
+		fn   reflect.Value
+		args []reflect.Value
+	}
+	tests := []struct {
+		name    string
+		args    args
+		want    reflect.Value
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			got, err := call(tt.args.name, tt.args.fn, tt.args.args...)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("call() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("call() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

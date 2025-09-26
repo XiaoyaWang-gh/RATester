@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 226,
+    "focalfunc": "func (l *lexer) nextItem() item",
+    "funcbody": "func (l *lexer) nextItem() item {\n\tl.item = item{itemEOF, l.pos, \"EOF\", l.startLine}\n\tstate := lexText\n\tif l.insideAction {\n\t\tstate = lexInsideAction\n\t}\n\tfor {\n\t\tstate = state(l)\n\t\tif state == nil {\n\t\t\treturn l.item\n\t\t}\n\t}\n}",
+    "funcname": "nextItem"
+}

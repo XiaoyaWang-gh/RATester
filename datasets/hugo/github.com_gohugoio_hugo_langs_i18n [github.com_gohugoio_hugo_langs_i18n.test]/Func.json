@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/i18n.go",
+    "lineno": 50,
+    "focalfunc": "func (t Translator) Func(lang string) translateFunc",
+    "funcbody": "func (t Translator) Func(lang string) translateFunc {\n\tif f, ok := t.translateFuncs[lang]; ok {\n\t\treturn f\n\t}\n\tt.logger.Infof(\"Translation func for language %v not found, use default.\", lang)\n\tif f, ok := t.translateFuncs[t.cfg.DefaultContentLanguage()]; ok {\n\t\treturn f\n\t}\n\n\tt.logger.Infoln(\"i18n not initialized; if you need string translations, check that you have a bundle in /i18n that matches the site language or the default language.\")\n\treturn func(ctx context.Context, translationID string, args any) string {\n\t\treturn \"\"\n\t}\n}",
+    "funcname": "Func"
+}

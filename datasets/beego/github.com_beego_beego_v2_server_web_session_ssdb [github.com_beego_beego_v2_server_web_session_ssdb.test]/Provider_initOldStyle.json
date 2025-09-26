@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 55,
+    "focalfunc": "func (p *Provider) initOldStyle(savePath string) error",
+    "funcbody": "func (p *Provider) initOldStyle(savePath string) error {\n\taddress := strings.Split(savePath, \":\")\n\tp.Host = address[0]\n\n\tvar err error\n\tp.Port, err = strconv.Atoi(address[1])\n\treturn err\n}",
+    "funcname": "initOldStyle"
+}

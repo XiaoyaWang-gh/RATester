@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 362,
+    "focalfunc": "func escFnsEq(a, b string) bool",
+    "funcbody": "func escFnsEq(a, b string) bool {\n\treturn normalizeEscFn(a) == normalizeEscFn(b)\n}",
+    "funcname": "escFnsEq"
+}

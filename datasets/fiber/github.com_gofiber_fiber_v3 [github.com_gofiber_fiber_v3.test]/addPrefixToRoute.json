@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 247,
+    "focalfunc": "func (app *App) addPrefixToRoute(prefix string, route *Route) *Route",
+    "funcbody": "func (app *App) addPrefixToRoute(prefix string, route *Route) *Route {\n\tprefixedPath := getGroupPath(prefix, route.Path)\n\tprettyPath := prefixedPath\n\n\tif !app.config.CaseSensitive {\n\t\tprettyPath = utils.ToLower(prettyPath)\n\t}\n\n\tif !app.config.StrictRouting && len(prettyPath) > 1 {\n\t\tprettyPath = utils.TrimRight(prettyPath, '/')\n\t}\n\n\troute.Path = prefixedPath\n\troute.path = RemoveEscapeChar(prettyPath)\n\troute.routeParser = parseRoute(prettyPath, app.customConstraints...)\n\troute.root = false\n\troute.star = false\n\n\treturn route\n}",
+    "funcname": "addPrefixToRoute"
+}

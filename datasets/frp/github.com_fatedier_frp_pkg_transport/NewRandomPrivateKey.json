@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/tls.go",
+    "lineno": 132,
+    "focalfunc": "func NewRandomPrivateKey() ([]byte, error)",
+    "funcbody": "func NewRandomPrivateKey() ([]byte, error) {\n\tkey, err := rsa.GenerateKey(rand.Reader, 2048)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tkeyPEM := pem.EncodeToMemory(&pem.Block{\n\t\tType:\t\"RSA PRIVATE KEY\",\n\t\tBytes:\tx509.MarshalPKCS1PrivateKey(key),\n\t})\n\treturn keyPEM, nil\n}",
+    "funcname": "NewRandomPrivateKey"
+}

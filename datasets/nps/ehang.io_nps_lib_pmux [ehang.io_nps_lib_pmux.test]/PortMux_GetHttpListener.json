@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pmux.go",
+    "lineno": 156,
+    "focalfunc": "func (pMux *PortMux) GetHttpListener() net.Listener",
+    "funcbody": "func (pMux *PortMux) GetHttpListener() net.Listener {\n\treturn NewPortListener(pMux.httpConn, pMux.Listener.Addr())\n}",
+    "funcname": "GetHttpListener"
+}

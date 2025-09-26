@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/conversion.go",
+    "lineno": 318,
+    "focalfunc": "func Convert_VisitorConf_To_v1_Base(conf VisitorConf) *v1.VisitorBaseConfig",
+    "funcbody": "func Convert_VisitorConf_To_v1_Base(conf VisitorConf) *v1.VisitorBaseConfig {\n\tout := &v1.VisitorBaseConfig{}\n\tbase := conf.GetBaseConfig()\n\n\tout.Name = base.ProxyName\n\tout.Type = base.ProxyType\n\tout.Transport.UseEncryption = base.UseEncryption\n\tout.Transport.UseCompression = base.UseCompression\n\tout.SecretKey = base.Sk\n\tout.ServerUser = base.ServerUser\n\tout.ServerName = base.ServerName\n\tout.BindAddr = base.BindAddr\n\tout.BindPort = base.BindPort\n\treturn out\n}",
+    "funcname": "Convert_VisitorConf_To_v1_Base"
+}

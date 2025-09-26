@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 841,
+    "focalfunc": "func AcquireRequest() *Request",
+    "funcbody": "func AcquireRequest() *Request {\n\treq, ok := requestPool.Get().(*Request)\n\tif !ok {\n\t\tpanic(errors.New(\"failed to type-assert to *Request\"))\n\t}\n\n\treturn req\n}",
+    "funcname": "AcquireRequest"
+}

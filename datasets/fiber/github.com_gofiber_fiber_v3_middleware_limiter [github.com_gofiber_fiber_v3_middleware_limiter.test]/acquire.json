@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager.go",
+    "lineno": 47,
+    "focalfunc": "func (m *manager) acquire() *item",
+    "funcbody": "func (m *manager) acquire() *item {\n\treturn m.pool.Get().(*item)\n}",
+    "funcname": "acquire"
+}

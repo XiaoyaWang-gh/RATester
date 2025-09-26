@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 140,
+    "focalfunc": "func resolveAddress(addr []string) string",
+    "funcbody": "func resolveAddress(addr []string) string {\n\tswitch len(addr) {\n\tcase 0:\n\t\tif port := os.Getenv(\"PORT\"); port != \"\" {\n\t\t\tdebugPrint(\"Environment variable PORT=\\\"%s\\\"\", port)\n\t\t\treturn \":\" + port\n\t\t}\n\t\tdebugPrint(\"Environment variable PORT is undefined. Using port :8080 by default\")\n\t\treturn \":8080\"\n\tcase 1:\n\t\treturn addr[0]\n\tdefault:\n\t\tpanic(\"too many parameters\")\n\t}\n}",
+    "funcname": "resolveAddress"
+}

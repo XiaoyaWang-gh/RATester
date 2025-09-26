@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/evictingqueue.go",
+    "lineno": 99,
+    "focalfunc": "func (q *EvictingStringQueue) PeekAllSet() map[string]bool",
+    "funcbody": "func (q *EvictingStringQueue) PeekAllSet() map[string]bool {\n\tall := q.PeekAll()\n\tset := make(map[string]bool)\n\tfor _, v := range all {\n\t\tset[v] = true\n\t}\n\n\treturn set\n}",
+    "funcname": "PeekAllSet"
+}

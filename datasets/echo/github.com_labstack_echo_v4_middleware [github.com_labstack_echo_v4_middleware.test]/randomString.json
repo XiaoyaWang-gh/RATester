@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/util.go",
+    "lineno": 72,
+    "focalfunc": "func randomString(length uint8) string",
+    "funcbody": "func randomString(length uint8) string {\n\treader := randomReaderPool.Get().(*bufio.Reader)\n\tdefer randomReaderPool.Put(reader)\n\n\tb := make([]byte, length)\n\tr := make([]byte, length+(length/4))\n\tvar i uint8 = 0\n\n\tfor {\n\t\t_, err := io.ReadFull(reader, r)\n\t\tif err != nil {\n\t\t\tpanic(\"unexpected error happened when reading from bufio.NewReader(crypto/rand.Reader)\")\n\t\t}\n\t\tfor _, rb := range r {\n\t\t\tif rb > randomStringMaxByte {\n\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tb[i] = randomStringCharset[rb%randomStringCharsetLen]\n\t\t\ti++\n\t\t\tif i == length {\n\t\t\t\treturn string(b)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "randomString"
+}

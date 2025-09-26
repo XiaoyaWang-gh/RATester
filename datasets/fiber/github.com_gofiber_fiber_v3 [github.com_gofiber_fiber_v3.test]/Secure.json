@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1487,
+    "focalfunc": "func (c *DefaultCtx) Secure() bool",
+    "funcbody": "func (c *DefaultCtx) Secure() bool {\n\treturn c.Protocol() == schemeHTTPS\n}",
+    "funcname": "Secure"
+}

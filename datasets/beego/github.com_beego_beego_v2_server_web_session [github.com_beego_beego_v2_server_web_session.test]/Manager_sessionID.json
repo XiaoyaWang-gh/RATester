@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 345,
+    "focalfunc": "func (manager *Manager) sessionID() (string, error)",
+    "funcbody": "func (manager *Manager) sessionID() (string, error) {\n\tb := make([]byte, manager.config.SessionIDLength)\n\tn, err := rand.Read(b)\n\tif n != len(b) || err != nil {\n\t\treturn \"\", fmt.Errorf(\"Could not successfully read from the system CSPRNG\")\n\t}\n\treturn manager.config.SessionIDPrefix + hex.EncodeToString(b), nil\n}",
+    "funcname": "sessionID"
+}

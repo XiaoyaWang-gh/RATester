@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 30,
+    "focalfunc": "func New(staticCfg static.Configuration) *Provider",
+    "funcbody": "func New(staticCfg static.Configuration) *Provider {\n\treturn &Provider{staticCfg: staticCfg}\n}",
+    "funcname": "New"
+}

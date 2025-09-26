@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 247,
+    "focalfunc": "func Refresh() error",
+    "funcbody": "func Refresh() error {\n\terr := Reset()\n\tif err != nil {\n\t\tlogs.Error(\"execute error:\", err)\n\t\ttime.Sleep(2 * time.Second)\n\t\treturn err\n\t}\n\terr = Upgrade(0)\n\treturn err\n}",
+    "funcname": "Refresh"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 233,
+    "focalfunc": "func (ctx *WalkContext[T]) HandleEventsAndHooks() error",
+    "funcbody": "func (ctx *WalkContext[T]) HandleEventsAndHooks() error {\n\tif err := ctx.HandleEvents(); err != nil {\n\t\treturn err\n\t}\n\n\tfor _, hook := range ctx.HooksPost {\n\t\tif err := hook(); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "HandleEventsAndHooks"
+}

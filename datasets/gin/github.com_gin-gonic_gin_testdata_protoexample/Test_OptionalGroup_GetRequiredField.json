@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 192,
+    "focalfunc": "func (x *Test_OptionalGroup) GetRequiredField() string",
+    "funcbody": "func (x *Test_OptionalGroup) GetRequiredField() string {\n\tif x != nil && x.RequiredField != nil {\n\t\treturn *x.RequiredField\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetRequiredField"
+}

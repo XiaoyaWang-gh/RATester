@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/gen/main.go",
+    "lineno": 42,
+    "focalfunc": "func buildJSBundle(filename string) error",
+    "funcbody": "func buildJSBundle(filename string) error {\n\tminify := true\n\tresult := api.Build(\n\t\tapi.BuildOptions{\n\t\t\tEntryPoints:\t\t[]string{filename},\n\t\t\tBundle:\t\t\ttrue,\n\t\t\tMinifyWhitespace:\tminify,\n\t\t\tMinifyIdentifiers:\tminify,\n\t\t\tMinifySyntax:\t\tminify,\n\t\t\tTarget:\t\t\tapi.ES2020,\n\t\t\tOutfile:\t\tstrings.Replace(filename, \".js\", \".bundle.js\", 1),\n\t\t\tSourceRoot:\t\t\"../js\",\n\t\t})\n\n\tif len(result.Errors) > 0 {\n\t\treturn fmt.Errorf(\"build failed: %v\", result.Errors)\n\t}\n\tif len(result.OutputFiles) != 1 {\n\t\treturn fmt.Errorf(\"expected 1 output file, got %d\", len(result.OutputFiles))\n\t}\n\n\tof := result.OutputFiles[0]\n\tif err := os.WriteFile(filepath.FromSlash(of.Path), of.Contents, 0o644); err != nil {\n\t\treturn fmt.Errorf(\"write file failed: %v\", err)\n\t}\n\treturn nil\n}",
+    "funcname": "buildJSBundle"
+}

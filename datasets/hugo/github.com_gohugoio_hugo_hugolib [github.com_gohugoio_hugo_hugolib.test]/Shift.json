@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 727,
+    "focalfunc": "func (s *contentNodeShifter) Shift(n contentNodeI, dimension doctree.Dimension, exact bool) (contentNodeI, bool, doctree.DimensionFlag)",
+    "funcbody": "func (s *contentNodeShifter) Shift(n contentNodeI, dimension doctree.Dimension, exact bool) (contentNodeI, bool, doctree.DimensionFlag) {\n\tlidx := dimension[0]\n\n\taccuracy := doctree.DimensionLanguage\n\tswitch v := n.(type) {\n\tcase contentNodeIs:\n\t\tif len(v) == 0 {\n\t\t\tpanic(\"empty contentNodeIs\")\n\t\t}\n\t\tvv := v[lidx]\n\t\tif vv != nil {\n\t\t\treturn vv, true, accuracy\n\t\t}\n\t\treturn nil, false, 0\n\tcase resourceSources:\n\t\tvv := v[lidx]\n\t\tif vv != nil {\n\t\t\treturn vv, true, doctree.DimensionLanguage\n\t\t}\n\t\tif exact {\n\t\t\treturn nil, false, 0\n\t\t}\n\n\t\tfor _, vv := range v {\n\t\t\tif vv != nil {\n\t\t\t\tif vv.isPage() {\n\t\t\t\t\treturn nil, false, 0\n\t\t\t\t}\n\t\t\t\treturn vv, true, 0\n\t\t\t}\n\t\t}\n\tcase *resourceSource:\n\t\tif v.LangIndex() == lidx {\n\t\t\treturn v, true, doctree.DimensionLanguage\n\t\t}\n\t\tif !v.isPage() && !exact {\n\t\t\treturn v, true, 0\n\t\t}\n\tcase *pageState:\n\t\tif v.s.languagei == lidx {\n\t\t\treturn n, true, doctree.DimensionLanguage\n\t\t}\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"unknown type %T\", n))\n\t}\n\treturn nil, false, 0\n}",
+    "funcname": "Shift"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 984,
+    "focalfunc": "func (p *ControllerRegister) execFilter(context *beecontext.Context, urlPath string, pos int) (started bool)",
+    "funcbody": "func (p *ControllerRegister) execFilter(context *beecontext.Context, urlPath string, pos int) (started bool) {\n\tvar preFilterParams map[string]string\n\tfor _, filterR := range p.filters[pos] {\n\t\tb, done := filterR.filter(context, urlPath, preFilterParams)\n\t\tif done {\n\t\t\treturn b\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "execFilter"
+}

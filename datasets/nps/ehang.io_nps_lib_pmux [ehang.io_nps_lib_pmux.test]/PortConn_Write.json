@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pconn.go",
+    "lineno": 45,
+    "focalfunc": "func (pConn *PortConn) Write(b []byte) (n int, err error)",
+    "funcbody": "func (pConn *PortConn) Write(b []byte) (n int, err error) {\n\treturn pConn.Conn.Write(b)\n}",
+    "funcname": "Write"
+}

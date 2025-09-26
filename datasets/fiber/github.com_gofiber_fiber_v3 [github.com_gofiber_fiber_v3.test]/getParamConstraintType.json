@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 629,
+    "focalfunc": "func getParamConstraintType(constraintPart string) TypeConstraint",
+    "funcbody": "func getParamConstraintType(constraintPart string) TypeConstraint {\n\tswitch constraintPart {\n\tcase ConstraintInt:\n\t\treturn intConstraint\n\tcase ConstraintBool:\n\t\treturn boolConstraint\n\tcase ConstraintFloat:\n\t\treturn floatConstraint\n\tcase ConstraintAlpha:\n\t\treturn alphaConstraint\n\tcase ConstraintGUID:\n\t\treturn guidConstraint\n\tcase ConstraintMinLen, ConstraintMinLenLower:\n\t\treturn minLenConstraint\n\tcase ConstraintMaxLen, ConstraintMaxLenLower:\n\t\treturn maxLenConstraint\n\tcase ConstraintLen:\n\t\treturn lenConstraint\n\tcase ConstraintBetweenLen, ConstraintBetweenLenLower:\n\t\treturn betweenLenConstraint\n\tcase ConstraintMin:\n\t\treturn minConstraint\n\tcase ConstraintMax:\n\t\treturn maxConstraint\n\tcase ConstraintRange:\n\t\treturn rangeConstraint\n\tcase ConstraintDatetime:\n\t\treturn datetimeConstraint\n\tcase ConstraintRegex:\n\t\treturn regexConstraint\n\tdefault:\n\t\treturn noConstraint\n\t}\n}",
+    "funcname": "getParamConstraintType"
+}

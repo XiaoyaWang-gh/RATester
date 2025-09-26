@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 137,
+    "focalfunc": "func (r *readCounter) Read(p []byte) (int, error)",
+    "funcbody": "func (r *readCounter) Read(p []byte) (int, error) {\n\tn, err := r.source.Read(p)\n\tr.size += int64(n)\n\treturn n, err\n}",
+    "funcname": "Read"
+}

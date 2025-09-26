@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 137,
+    "focalfunc": "func FromString(t string) (Type, error)",
+    "funcbody": "func FromString(t string) (Type, error) {\n\tt = strings.ToLower(t)\n\tparts := strings.Split(t, \"/\")\n\tif len(parts) != 2 {\n\t\treturn Type{}, fmt.Errorf(\"cannot parse %q as a media type\", t)\n\t}\n\tmainType := parts[0]\n\tsubParts := strings.Split(parts[1], \"+\")\n\n\tsubType := strings.Split(subParts[0], \";\")[0]\n\n\tvar suffix string\n\n\tif len(subParts) > 1 {\n\t\tsuffix = subParts[1]\n\t}\n\n\tvar typ string\n\tif suffix != \"\" {\n\t\ttyp = mainType + \"/\" + subType + \"+\" + suffix\n\t} else {\n\t\ttyp = mainType + \"/\" + subType\n\t}\n\n\treturn Type{Type: typ, MainType: mainType, SubType: subType, mimeSuffix: suffix}, nil\n}",
+    "funcname": "FromString"
+}

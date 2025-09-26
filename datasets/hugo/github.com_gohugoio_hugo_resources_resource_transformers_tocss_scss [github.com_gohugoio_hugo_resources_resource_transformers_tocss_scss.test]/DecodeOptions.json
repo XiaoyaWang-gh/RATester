@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/tocss/scss/client.go",
+    "lineno": 68,
+    "focalfunc": "func DecodeOptions(m map[string]any) (opts Options, err error)",
+    "funcbody": "func DecodeOptions(m map[string]any) (opts Options, err error) {\n\tif m == nil {\n\t\treturn\n\t}\n\terr = mapstructure.WeakDecode(m, &opts)\n\n\tif opts.TargetPath != \"\" {\n\t\topts.TargetPath = paths.ToSlashTrimLeading(opts.TargetPath)\n\t}\n\n\treturn\n}",
+    "funcname": "DecodeOptions"
+}

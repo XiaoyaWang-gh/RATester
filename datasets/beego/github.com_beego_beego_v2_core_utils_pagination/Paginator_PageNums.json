@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 37,
+    "focalfunc": "func (p *Paginator) PageNums() int",
+    "funcbody": "func (p *Paginator) PageNums() int {\n\tif p.pageNums != 0 {\n\t\treturn p.pageNums\n\t}\n\tpageNums := math.Ceil(float64(p.nums) / float64(p.PerPageNums))\n\tif p.MaxPages > 0 {\n\t\tpageNums = math.Min(pageNums, float64(p.MaxPages))\n\t}\n\tp.pageNums = int(pageNums)\n\treturn p.pageNums\n}",
+    "funcname": "PageNums"
+}

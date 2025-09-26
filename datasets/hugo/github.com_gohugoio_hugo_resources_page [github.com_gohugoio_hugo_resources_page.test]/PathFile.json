@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 419,
+    "focalfunc": "func (p *pagePathBuilder) PathFile() string",
+    "funcbody": "func (p *pagePathBuilder) PathFile() string {\n\tdir := p.Path(0)\n\tif p.prefixPath != \"\" {\n\t\tdir = \"/\" + p.prefixPath + dir\n\t}\n\treturn dir\n}",
+    "funcname": "PathFile"
+}

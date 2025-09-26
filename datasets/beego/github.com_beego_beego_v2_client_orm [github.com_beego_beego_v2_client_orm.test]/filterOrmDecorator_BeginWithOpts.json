@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 429,
+    "focalfunc": "func (f *filterOrmDecorator) BeginWithOpts(opts *sql.TxOptions) (TxOrmer, error)",
+    "funcbody": "func (f *filterOrmDecorator) BeginWithOpts(opts *sql.TxOptions) (TxOrmer, error) {\n\treturn f.BeginWithCtxAndOpts(context.Background(), opts)\n}",
+    "funcname": "BeginWithOpts"
+}

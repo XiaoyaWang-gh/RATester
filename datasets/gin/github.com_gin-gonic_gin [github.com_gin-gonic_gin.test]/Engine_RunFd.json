@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 573,
+    "focalfunc": "func (engine *Engine) RunFd(fd int) (err error)",
+    "funcbody": "func (engine *Engine) RunFd(fd int) (err error) {\n\tdebugPrint(\"Listening and serving HTTP on fd@%d\", fd)\n\tdefer func() { debugPrintError(err) }()\n\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://github.com/gin-gonic/gin/blob/master/docs/doc.md#dont-trust-all-proxies for details.\")\n\t}\n\n\tf := os.NewFile(uintptr(fd), fmt.Sprintf(\"fd@%d\", fd))\n\tlistener, err := net.FileListener(f)\n\tif err != nil {\n\t\treturn\n\t}\n\tdefer listener.Close()\n\terr = engine.RunListener(listener)\n\treturn\n}",
+    "funcname": "RunFd"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 229,
+    "focalfunc": "func Copy(r resource.Resource, targetPath string) resource.Resource",
+    "funcbody": "func Copy(r resource.Resource, targetPath string) resource.Resource {\n\tif r.Err() != nil {\n\t\tpanic(fmt.Sprintf(\"Resource has an .Err: %s\", r.Err()))\n\t}\n\treturn r.(resourceCopier).cloneTo(targetPath)\n}",
+    "funcname": "Copy"
+}

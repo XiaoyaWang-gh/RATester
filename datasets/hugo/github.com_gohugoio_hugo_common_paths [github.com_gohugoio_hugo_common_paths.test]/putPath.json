@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 285,
+    "focalfunc": "func putPath(p *Path)",
+    "funcbody": "func putPath(p *Path) {\n\tp.reset()\n\tpathPool.Put(p)\n}",
+    "funcname": "putPath"
+}

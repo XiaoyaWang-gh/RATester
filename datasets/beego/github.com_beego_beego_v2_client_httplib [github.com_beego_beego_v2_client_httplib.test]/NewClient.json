@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 59,
+    "focalfunc": "func NewClient(name string, endpoint string, opts ...ClientOption) (*Client, error)",
+    "funcbody": "func NewClient(name string, endpoint string, opts ...ClientOption) (*Client, error) {\n\tres := &Client{\n\t\tName:\t\tname,\n\t\tEndpoint:\tendpoint,\n\t}\n\tsetting := GetDefaultSetting()\n\tres.Setting = setting\n\tfor _, o := range opts {\n\t\to(res)\n\t}\n\treturn res, nil\n}",
+    "funcname": "NewClient"
+}

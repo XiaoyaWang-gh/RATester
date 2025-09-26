@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_generate/generate_page_wrappers.go",
+    "lineno": 49,
+    "focalfunc": "func Generate(c *codegen.Inspector) error",
+    "funcbody": "func Generate(c *codegen.Inspector) error {\n\tif err := generateMarshalJSON(c); err != nil {\n\t\treturn fmt.Errorf(\"failed to generate JSON marshaler: %w\", err)\n\t}\n\n\treturn nil\n}",
+    "funcname": "Generate"
+}

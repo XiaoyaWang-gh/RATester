@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 101,
+    "focalfunc": "func (scp *ShortcodeWithPage) Position() text.Position",
+    "funcbody": "func (scp *ShortcodeWithPage) Position() text.Position {\n\tscp.posInit.Do(func() {\n\t\tif p, ok := mustUnwrapPage(scp.Page).(pageContext); ok {\n\t\t\tscp.pos = p.posOffset(scp.posOffset)\n\t\t}\n\t})\n\treturn scp.pos\n}",
+    "funcname": "Position"
+}

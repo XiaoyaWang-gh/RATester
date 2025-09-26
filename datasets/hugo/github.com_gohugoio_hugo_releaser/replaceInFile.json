@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 198,
+    "focalfunc": "func (r *ReleaseHandler) replaceInFile(filename string, oldNew ...string) error",
+    "funcbody": "func (r *ReleaseHandler) replaceInFile(filename string, oldNew ...string) error {\n\tfilename = filepath.FromSlash(filename)\n\tfi, err := os.Stat(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif r.try {\n\t\tlogf(\"Replace in %q: %q\\n\", filename, oldNew)\n\t\treturn nil\n\t}\n\n\tb, err := os.ReadFile(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tnewContent := string(b)\n\n\tfor i := 0; i < len(oldNew); i += 2 {\n\t\tre := regexp.MustCompile(oldNew[i])\n\t\tnewContent = re.ReplaceAllString(newContent, oldNew[i+1])\n\t}\n\n\treturn os.WriteFile(filename, []byte(newContent), fi.Mode())\n}",
+    "funcname": "replaceInFile"
+}

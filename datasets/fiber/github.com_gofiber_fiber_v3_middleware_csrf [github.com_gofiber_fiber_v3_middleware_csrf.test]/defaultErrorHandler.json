@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/config.go",
+    "lineno": 138,
+    "focalfunc": "func defaultErrorHandler(_ fiber.Ctx, _ error) error",
+    "funcbody": "func defaultErrorHandler(_ fiber.Ctx, _ error) error {\n\treturn fiber.ErrForbidden\n}",
+    "funcname": "defaultErrorHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/csrf.go",
+    "lineno": 216,
+    "focalfunc": "func validateCSRFToken(token, clientToken string) bool",
+    "funcbody": "func validateCSRFToken(token, clientToken string) bool {\n\treturn subtle.ConstantTimeCompare([]byte(token), []byte(clientToken)) == 1\n}",
+    "funcname": "validateCSRFToken"
+}

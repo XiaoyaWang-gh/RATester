@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 537,
+    "focalfunc": "func (c *collector) collectModulesTXT(owner Module) error",
+    "funcbody": "func (c *collector) collectModulesTXT(owner Module) error {\n\tvendorDir := filepath.Join(owner.Dir(), vendord)\n\tfilename := filepath.Join(vendorDir, vendorModulesFilename)\n\n\tf, err := c.fs.Open(filename)\n\tif err != nil {\n\t\tif herrors.IsNotExist(err) {\n\t\t\treturn nil\n\t\t}\n\n\t\treturn err\n\t}\n\n\tdefer f.Close()\n\n\tscanner := bufio.NewScanner(f)\n\n\tfor scanner.Scan() {\n\n\t\tline := scanner.Text()\n\t\tline = strings.Trim(line, \"# \")\n\t\tline = strings.TrimSpace(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) != 2 {\n\t\t\treturn fmt.Errorf(\"invalid modules list: %q\", filename)\n\t\t}\n\t\tpath := parts[0]\n\n\t\tshouldAdd := c.Client.moduleConfig.VendorClosest\n\n\t\tif !shouldAdd {\n\t\t\tif _, found := c.vendored[path]; !found {\n\t\t\t\tshouldAdd = true\n\t\t\t}\n\t\t}\n\n\t\tif shouldAdd {\n\t\t\tc.vendored[path] = vendoredModule{\n\t\t\t\tOwner:\t\towner,\n\t\t\t\tDir:\t\tfilepath.Join(vendorDir, path),\n\t\t\t\tVersion:\tparts[1],\n\t\t\t}\n\t\t}\n\n\t}\n\treturn nil\n}",
+    "funcname": "collectModulesTXT"
+}

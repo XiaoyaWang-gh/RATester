@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 188,
+    "focalfunc": "func (n *Namespace) Include(cList ...ControllerInterface) *Namespace",
+    "funcbody": "func (n *Namespace) Include(cList ...ControllerInterface) *Namespace {\n\tn.handlers.Include(cList...)\n\treturn n\n}",
+    "funcname": "Include"
+}

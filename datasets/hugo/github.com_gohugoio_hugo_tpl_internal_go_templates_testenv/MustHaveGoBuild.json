@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 59,
+    "focalfunc": "func MustHaveGoBuild(t testing.TB)",
+    "funcbody": "func MustHaveGoBuild(t testing.TB) {\n\tif os.Getenv(\"GO_GCFLAGS\") != \"\" {\n\t\tt.Helper()\n\t\tt.Skipf(\"skipping test: 'go build' not compatible with setting $GO_GCFLAGS\")\n\t}\n\tif !HasGoBuild() {\n\t\tt.Helper()\n\t\tt.Skipf(\"skipping test: 'go build' unavailable: %v\", goBuildErr)\n\t}\n}",
+    "funcname": "MustHaveGoBuild"
+}

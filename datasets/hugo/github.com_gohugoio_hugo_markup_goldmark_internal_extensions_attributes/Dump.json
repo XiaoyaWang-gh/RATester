@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 78,
+    "focalfunc": "func (a *attributesBlock) Dump(source []byte, level int)",
+    "funcbody": "func (a *attributesBlock) Dump(source []byte, level int) {\n\tattrs := a.Attributes()\n\tlist := make(map[string]string, len(attrs))\n\tfor _, attr := range attrs {\n\t\tvar (\n\t\t\tname\t= util.BytesToReadOnlyString(attr.Name)\n\t\t\tvalue\t= util.BytesToReadOnlyString(util.EscapeHTML(attr.Value.([]byte)))\n\t\t)\n\t\tlist[name] = value\n\t}\n\tast.DumpHelper(a, source, level, list, nil)\n}",
+    "funcname": "Dump"
+}

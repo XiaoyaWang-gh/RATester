@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 116,
+    "focalfunc": "func (m *MenuEntry) hopefullyUniqueID() string",
+    "funcbody": "func (m *MenuEntry) hopefullyUniqueID() string {\n\tif m.Identifier != \"\" {\n\t\treturn m.Identifier\n\t} else if m.URL() != \"\" {\n\t\treturn m.URL()\n\t} else {\n\t\treturn m.Name\n\t}\n}",
+    "funcname": "hopefullyUniqueID"
+}

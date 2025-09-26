@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/manager_msgp.go",
+    "lineno": 321,
+    "focalfunc": "func (z *item) Msgsize() (s int)",
+    "funcbody": "func (z *item) Msgsize() (s int) {\n\ts = 1 + 8 + msgp.MapHeaderSize\n\tif z.headers != nil {\n\t\tfor za0001, za0002 := range z.headers {\n\t\t\t_ = za0002\n\t\t\ts += msgp.StringPrefixSize + len(za0001) + msgp.BytesPrefixSize + len(za0002)\n\t\t}\n\t}\n\ts += 5 + msgp.BytesPrefixSize + len(z.body) + 6 + msgp.BytesPrefixSize + len(z.ctype) + 10 + msgp.BytesPrefixSize + len(z.cencoding) + 7 + msgp.IntSize + 4 + msgp.Uint64Size + 8 + msgp.IntSize\n\treturn\n}",
+    "funcname": "Msgsize"
+}

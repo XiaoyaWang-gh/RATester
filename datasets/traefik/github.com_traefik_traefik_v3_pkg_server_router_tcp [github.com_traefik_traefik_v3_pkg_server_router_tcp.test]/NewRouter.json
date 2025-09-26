@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 50,
+    "focalfunc": "func NewRouter() (*Router, error)",
+    "funcbody": "func NewRouter() (*Router, error) {\n\tmuxTCP, err := tcpmuxer.NewMuxer()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tmuxTCPTLS, err := tcpmuxer.NewMuxer()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tmuxHTTPS, err := tcpmuxer.NewMuxer()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &Router{\n\t\tmuxerTCP:\t*muxTCP,\n\t\tmuxerTCPTLS:\t*muxTCPTLS,\n\t\tmuxerHTTPS:\t*muxHTTPS,\n\t}, nil\n}",
+    "funcname": "NewRouter"
+}

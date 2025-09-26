@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 417,
+    "focalfunc": "func (cfg IndexConfig) stringToKeyword(s string) Keyword",
+    "funcbody": "func (cfg IndexConfig) stringToKeyword(s string) Keyword {\n\tif cfg.ToLower {\n\t\ts = strings.ToLower(s)\n\t}\n\tif cfg.Type == TypeFragments {\n\t\treturn FragmentKeyword(s)\n\t}\n\treturn StringKeyword(s)\n}",
+    "funcname": "stringToKeyword"
+}

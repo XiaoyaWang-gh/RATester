@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 44,
+    "focalfunc": "func (s *IndexController) Http()",
+    "funcbody": "func (s *IndexController) Http() {\n\ts.SetInfo(\"http proxy\")\n\ts.SetType(\"httpProxy\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "Http"
+}

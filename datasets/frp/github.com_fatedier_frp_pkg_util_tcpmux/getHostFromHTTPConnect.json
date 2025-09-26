@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/tcpmux/httpconnect.go",
+    "lineno": 105,
+    "focalfunc": "func (muxer *HTTPConnectTCPMuxer) getHostFromHTTPConnect(c net.Conn) (net.Conn, map[string]string, error)",
+    "funcbody": "func (muxer *HTTPConnectTCPMuxer) getHostFromHTTPConnect(c net.Conn) (net.Conn, map[string]string, error) {\n\treqInfoMap := make(map[string]string, 0)\n\tsc, rd := libnet.NewSharedConn(c)\n\n\thost, httpUser, httpPwd, err := muxer.readHTTPConnectRequest(rd)\n\tif err != nil {\n\t\treturn nil, reqInfoMap, err\n\t}\n\n\treqInfoMap[\"Host\"] = host\n\treqInfoMap[\"Scheme\"] = \"tcp\"\n\treqInfoMap[\"HTTPUser\"] = httpUser\n\treqInfoMap[\"HTTPPwd\"] = httpPwd\n\n\toutConn := c\n\tif muxer.passthrough {\n\t\toutConn = sc\n\t}\n\treturn outConn, reqInfoMap, nil\n}",
+    "funcname": "getHostFromHTTPConnect"
+}

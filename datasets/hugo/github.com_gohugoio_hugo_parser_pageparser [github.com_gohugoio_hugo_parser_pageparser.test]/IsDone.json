@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 154,
+    "focalfunc": "func (i Item) IsDone() bool",
+    "funcbody": "func (i Item) IsDone() bool {\n\treturn i.Type == tError || i.Type == tEOF\n}",
+    "funcname": "IsDone"
+}

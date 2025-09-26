@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/pandoc/convert.go",
+    "lineno": 80,
+    "focalfunc": "func Supports() bool",
+    "funcbody": "func Supports() bool {\n\thasBin := getPandocBinaryName() != \"\"\n\tif htesting.SupportsAll() {\n\t\tif !hasBin {\n\t\t\tpanic(\"pandoc not installed\")\n\t\t}\n\t\treturn true\n\t}\n\treturn hasBin\n}",
+    "funcname": "Supports"
+}

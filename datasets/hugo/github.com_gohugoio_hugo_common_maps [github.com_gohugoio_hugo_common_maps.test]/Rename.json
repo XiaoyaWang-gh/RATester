@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 182,
+    "focalfunc": "func (r KeyRenamer) Rename(m map[string]any)",
+    "funcbody": "func (r KeyRenamer) Rename(m map[string]any) {\n\tr.renamePath(\"\", m)\n}",
+    "funcname": "Rename"
+}

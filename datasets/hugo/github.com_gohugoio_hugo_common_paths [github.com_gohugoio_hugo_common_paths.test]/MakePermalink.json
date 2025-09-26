@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 58,
+    "focalfunc": "func MakePermalink(host, plink string) *url.URL",
+    "funcbody": "func MakePermalink(host, plink string) *url.URL {\n\tbase, err := url.Parse(host)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tp, err := url.Parse(plink)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tif p.Host != \"\" {\n\t\tpanic(fmt.Errorf(\"can't make permalink from absolute link %q\", plink))\n\t}\n\n\tbase.Path = path.Join(base.Path, p.Path)\n\tbase.Fragment = p.Fragment\n\tbase.RawQuery = p.RawQuery\n\n\thadTrailingSlash := (plink == \"\" && strings.HasSuffix(host, \"/\")) || strings.HasSuffix(p.Path, \"/\")\n\tif hadTrailingSlash && !strings.HasSuffix(base.Path, \"/\") {\n\t\tbase.Path = base.Path + \"/\"\n\t}\n\n\treturn base\n}",
+    "funcname": "MakePermalink"
+}

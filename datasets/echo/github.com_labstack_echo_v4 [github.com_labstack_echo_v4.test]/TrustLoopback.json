@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/ip.go",
+    "lineno": 147,
+    "focalfunc": "func TrustLoopback(v bool) TrustOption",
+    "funcbody": "func TrustLoopback(v bool) TrustOption {\n\treturn func(c *ipChecker) {\n\t\tc.trustLoopback = v\n\t}\n}",
+    "funcname": "TrustLoopback"
+}

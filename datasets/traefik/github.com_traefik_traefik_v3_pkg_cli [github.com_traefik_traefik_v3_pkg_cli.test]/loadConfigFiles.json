@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/cli/loader_file.go",
+    "lineno": 65,
+    "focalfunc": "func loadConfigFiles(configFile string, element interface{}) (string, error)",
+    "funcbody": "func loadConfigFiles(configFile string, element interface{}) (string, error) {\n\tfinder := cli.Finder{\n\t\tBasePaths:\t[]string{\"/etc/traefik/traefik\", \"$XDG_CONFIG_HOME/traefik\", \"$HOME/.config/traefik\", \"./traefik\"},\n\t\tExtensions:\t[]string{\"toml\", \"yaml\", \"yml\"},\n\t}\n\n\tfilePath, err := finder.Find(configFile)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif len(filePath) == 0 {\n\t\treturn \"\", nil\n\t}\n\n\tif err := file.Decode(filePath, element); err != nil {\n\t\treturn \"\", err\n\t}\n\treturn filePath, nil\n}",
+    "funcname": "loadConfigFiles"
+}

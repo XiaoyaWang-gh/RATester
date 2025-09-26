@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 799,
+    "focalfunc": "func (f *File) SetFieldName(n string)",
+    "funcbody": "func (f *File) SetFieldName(n string) {\n\tf.fieldName = n\n}",
+    "funcname": "SetFieldName"
+}

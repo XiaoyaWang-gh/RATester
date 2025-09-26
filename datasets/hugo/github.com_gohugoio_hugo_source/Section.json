@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 97,
+    "focalfunc": "func (fi *File) Section() string",
+    "funcbody": "func (fi *File) Section() string {\n\treturn fi.p().Section()\n}",
+    "funcname": "Section"
+}

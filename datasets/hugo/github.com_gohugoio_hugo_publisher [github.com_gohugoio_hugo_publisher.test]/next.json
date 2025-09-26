@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 277,
+    "focalfunc": "func (l *htmlElementsCollectorWriter) next() rune",
+    "funcbody": "func (l *htmlElementsCollectorWriter) next() rune {\n\tif l.pos >= len(l.input) {\n\t\tl.width = 0\n\t\treturn eof\n\t}\n\n\truneValue, runeWidth := utf8.DecodeRune(l.input[l.pos:])\n\n\tl.width = runeWidth\n\tl.pos += l.width\n\treturn runeValue\n}",
+    "funcname": "next"
+}

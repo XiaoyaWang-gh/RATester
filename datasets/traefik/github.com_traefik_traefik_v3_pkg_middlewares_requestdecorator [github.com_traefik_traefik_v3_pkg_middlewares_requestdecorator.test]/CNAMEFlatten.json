@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/requestdecorator/hostresolver.go",
+    "lineno": 37,
+    "focalfunc": "func (hr *Resolver) CNAMEFlatten(ctx context.Context, host string) string",
+    "funcbody": "func (hr *Resolver) CNAMEFlatten(ctx context.Context, host string) string {\n\tif hr.cache == nil {\n\t\thr.cache = cache.New(30*time.Minute, 5*time.Minute)\n\t}\n\n\tresult := host\n\trequest := host\n\n\tvalue, found := hr.cache.Get(host)\n\tif found {\n\t\treturn value.(string)\n\t}\n\n\tlogger := log.Ctx(ctx)\n\tcacheDuration := 0 * time.Second\n\tfor depth := range hr.ResolvDepth {\n\t\tresolv, err := cnameResolve(ctx, request, hr.ResolvConfig)\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tbreak\n\t\t}\n\t\tif resolv == nil {\n\t\t\tbreak\n\t\t}\n\n\t\tresult = resolv.Record\n\t\tif depth == 0 {\n\t\t\tcacheDuration = resolv.TTL\n\t\t}\n\t\trequest = resolv.Record\n\t}\n\n\thr.cache.Set(host, result, cacheDuration)\n\n\treturn result\n}",
+    "funcname": "CNAMEFlatten"
+}

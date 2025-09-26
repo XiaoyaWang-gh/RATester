@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 49,
+    "focalfunc": "func (ns *Namespace) Translate(ctx context.Context, id any, args ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) Translate(ctx context.Context, id any, args ...any) (string, error) {\n\tvar templateData any\n\n\tif len(args) > 0 {\n\t\tif len(args) > 1 {\n\t\t\treturn \"\", fmt.Errorf(\"wrong number of arguments, expecting at most 2, got %d\", len(args)+1)\n\t\t}\n\t\ttemplateData = args[0]\n\t}\n\n\tsid, err := cast.ToStringE(id)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn ns.deps.Translate(ctx, sid, templateData), nil\n}",
+    "funcname": "Translate"
+}

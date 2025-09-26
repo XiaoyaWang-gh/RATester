@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 53,
+    "focalfunc": "func (p PermalinkExpander) callback(attr string) (pageToPermaAttribute, bool)",
+    "funcbody": "func (p PermalinkExpander) callback(attr string) (pageToPermaAttribute, bool) {\n\tif callback, ok := p.knownPermalinkAttributes[attr]; ok {\n\t\treturn callback, true\n\t}\n\n\tif strings.HasPrefix(attr, \"sections[\") {\n\t\tfn := p.toSliceFunc(strings.TrimPrefix(attr, \"sections\"))\n\t\treturn func(p Page, s string) (string, error) {\n\t\t\treturn path.Join(fn(p.CurrentSection().SectionsEntries())...), nil\n\t\t}, true\n\t}\n\n\tif referenceTime.Format(attr) != attr {\n\t\treturn p.pageToPermalinkDate, true\n\t}\n\n\treturn nil, false\n}",
+    "funcname": "callback"
+}

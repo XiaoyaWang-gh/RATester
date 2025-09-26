@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/stacktracer_fs.go",
+    "lineno": 48,
+    "focalfunc": "func (fs *stacktracerFs) DevOnly()",
+    "funcbody": "func (fs *stacktracerFs) DevOnly() {\n}",
+    "funcname": "DevOnly"
+}

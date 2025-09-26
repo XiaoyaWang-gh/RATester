@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 250,
+    "focalfunc": "func (c *DefaultCtx) Attachment(filename ...string)",
+    "funcbody": "func (c *DefaultCtx) Attachment(filename ...string) {\n\tif len(filename) > 0 {\n\t\tfname := filepath.Base(filename[0])\n\t\tc.Type(filepath.Ext(fname))\n\n\t\tc.setCanonical(HeaderContentDisposition, `attachment; filename=\"`+c.app.quoteString(fname)+`\"`)\n\t\treturn\n\t}\n\tc.setCanonical(HeaderContentDisposition, \"attachment\")\n}",
+    "funcname": "Attachment"
+}

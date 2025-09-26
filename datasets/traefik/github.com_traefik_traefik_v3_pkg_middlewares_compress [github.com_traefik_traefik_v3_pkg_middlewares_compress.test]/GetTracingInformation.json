@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compress.go",
+    "lineno": 166,
+    "focalfunc": "func (c *compress) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (c *compress) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn c.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

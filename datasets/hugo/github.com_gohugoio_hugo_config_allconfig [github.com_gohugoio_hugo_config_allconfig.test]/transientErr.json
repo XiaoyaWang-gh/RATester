@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 733,
+    "focalfunc": "func (c *Configs) transientErr() error",
+    "funcbody": "func (c *Configs) transientErr() error {\n\tfor _, l := range c.LanguageConfigSlice {\n\t\tif l.C.transientErr != nil {\n\t\t\treturn l.C.transientErr\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "transientErr"
+}

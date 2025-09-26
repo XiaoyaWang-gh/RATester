@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/run.go",
+    "lineno": 12,
+    "focalfunc": "func GetRunPath() string",
+    "funcbody": "func GetRunPath() string {\n\tvar path string\n\tif path = GetInstallPath(); !FileExists(path) {\n\t\treturn GetAppPath()\n\t}\n\treturn path\n}",
+    "funcname": "GetRunPath"
+}

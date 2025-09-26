@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 136,
+    "focalfunc": "func (c *ConfigContainer) Bool(key string) (bool, error)",
+    "funcbody": "func (c *ConfigContainer) Bool(key string) (bool, error) {\n\tif v := c.data[key]; v != nil {\n\t\treturn config.ParseBool(v)\n\t}\n\treturn false, fmt.Errorf(\"not exist key: %q\", key)\n}",
+    "funcname": "Bool"
+}

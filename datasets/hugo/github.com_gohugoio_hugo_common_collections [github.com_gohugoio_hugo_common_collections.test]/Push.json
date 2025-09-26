@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 29,
+    "focalfunc": "func (s *Stack[T]) Push(item T)",
+    "funcbody": "func (s *Stack[T]) Push(item T) {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\ts.items = append(s.items, item)\n}",
+    "funcname": "Push"
+}

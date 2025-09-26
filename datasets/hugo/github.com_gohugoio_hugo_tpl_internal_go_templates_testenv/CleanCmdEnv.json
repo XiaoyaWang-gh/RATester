@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/exec.go",
+    "lineno": 106,
+    "focalfunc": "func CleanCmdEnv(cmd *exec.Cmd) *exec.Cmd",
+    "funcbody": "func CleanCmdEnv(cmd *exec.Cmd) *exec.Cmd {\n\tif cmd.Env != nil {\n\t\tpanic(\"environment already set\")\n\t}\n\tfor _, env := range cmd.Environ() {\n\n\t\tif strings.HasPrefix(env, \"GODEBUG=\") {\n\t\t\tcontinue\n\t\t}\n\n\t\tif strings.HasPrefix(env, \"GOTRACEBACK=\") {\n\t\t\tcontinue\n\t\t}\n\t\tcmd.Env = append(cmd.Env, env)\n\t}\n\treturn cmd\n}",
+    "funcname": "CleanCmdEnv"
+}

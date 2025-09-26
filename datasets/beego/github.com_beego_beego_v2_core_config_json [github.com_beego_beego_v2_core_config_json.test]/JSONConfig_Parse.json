@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 37,
+    "focalfunc": "func (js *JSONConfig) Parse(filename string) (config.Configer, error)",
+    "funcbody": "func (js *JSONConfig) Parse(filename string) (config.Configer, error) {\n\tfile, err := os.Open(filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer file.Close()\n\tcontent, err := io.ReadAll(file)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn js.ParseData(content)\n}",
+    "funcname": "Parse"
+}

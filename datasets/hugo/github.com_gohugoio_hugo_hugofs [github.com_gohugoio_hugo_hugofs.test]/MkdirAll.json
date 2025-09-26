@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 43,
+    "focalfunc": "func (fs noOpFs) MkdirAll(path string, perm os.FileMode) error",
+    "funcbody": "func (fs noOpFs) MkdirAll(path string, perm os.FileMode) error {\n\treturn nil\n}",
+    "funcname": "MkdirAll"
+}

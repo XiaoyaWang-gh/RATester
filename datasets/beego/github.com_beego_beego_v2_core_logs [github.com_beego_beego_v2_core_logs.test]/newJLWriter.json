@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 24,
+    "focalfunc": "func newJLWriter() Logger",
+    "funcbody": "func newJLWriter() Logger {\n\tres := &JLWriter{Level: LevelTrace}\n\tres.formatter = res\n\treturn res\n}",
+    "funcname": "newJLWriter"
+}

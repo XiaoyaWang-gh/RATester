@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 199,
+    "focalfunc": "func (c *ConfigContainer) String(key string) (string, error)",
+    "funcbody": "func (c *ConfigContainer) String(key string) (string, error) {\n\tif v, ok := c.data[key].(string); ok {\n\t\treturn v, nil\n\t}\n\treturn \"\", nil\n}",
+    "funcname": "String"
+}

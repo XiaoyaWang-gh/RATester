@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1001,
+    "focalfunc": "func (c *Context) IndentedJSON(code int, obj any)",
+    "funcbody": "func (c *Context) IndentedJSON(code int, obj any) {\n\tc.Render(code, render.IndentedJSON{Data: obj})\n}",
+    "funcname": "IndentedJSON"
+}

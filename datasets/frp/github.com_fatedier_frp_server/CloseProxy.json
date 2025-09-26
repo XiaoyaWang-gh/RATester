@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 532,
+    "focalfunc": "func (ctl *Control) CloseProxy(closeMsg *msg.CloseProxy) (err error)",
+    "funcbody": "func (ctl *Control) CloseProxy(closeMsg *msg.CloseProxy) (err error) {\n\tctl.mu.Lock()\n\tpxy, ok := ctl.proxies[closeMsg.ProxyName]\n\tif !ok {\n\t\tctl.mu.Unlock()\n\t\treturn\n\t}\n\n\tif ctl.serverCfg.MaxPortsPerClient > 0 {\n\t\tctl.portsUsedNum -= pxy.GetUsedPortsNum()\n\t}\n\tpxy.Close()\n\tctl.pxyManager.Del(pxy.GetName())\n\tdelete(ctl.proxies, closeMsg.ProxyName)\n\tctl.mu.Unlock()\n\n\tmetrics.Server.CloseProxy(pxy.GetName(), pxy.GetConfigurer().GetBaseConfig().Type)\n\n\tnotifyContent := &plugin.CloseProxyContent{\n\t\tUser: plugin.UserInfo{\n\t\t\tUser:\tctl.loginMsg.User,\n\t\t\tMetas:\tctl.loginMsg.Metas,\n\t\t\tRunID:\tctl.loginMsg.RunID,\n\t\t},\n\t\tCloseProxy: msg.CloseProxy{\n\t\t\tProxyName: pxy.GetName(),\n\t\t},\n\t}\n\tgo func() {\n\t\t_ = ctl.pluginManager.CloseProxy(notifyContent)\n\t}()\n\treturn\n}",
+    "funcname": "CloseProxy"
+}

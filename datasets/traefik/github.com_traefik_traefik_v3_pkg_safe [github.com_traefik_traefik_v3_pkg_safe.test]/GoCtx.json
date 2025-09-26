@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 32,
+    "focalfunc": "func (p *Pool) GoCtx(goroutine routineCtx)",
+    "funcbody": "func (p *Pool) GoCtx(goroutine routineCtx) {\n\tp.waitGroup.Add(1)\n\tGo(func() {\n\t\tdefer p.waitGroup.Done()\n\t\tgoroutine(p.ctx)\n\t})\n}",
+    "funcname": "GoCtx"
+}

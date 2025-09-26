@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 274,
+    "focalfunc": "func Proxy(balancer ProxyBalancer) echo.MiddlewareFunc",
+    "funcbody": "func Proxy(balancer ProxyBalancer) echo.MiddlewareFunc {\n\tc := DefaultProxyConfig\n\tc.Balancer = balancer\n\treturn ProxyWithConfig(c)\n}",
+    "funcname": "Proxy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/https.go",
+    "lineno": 30,
+    "focalfunc": "func NewHTTPSMuxer(listener net.Listener, timeout time.Duration) (*HTTPSMuxer, error)",
+    "funcbody": "func NewHTTPSMuxer(listener net.Listener, timeout time.Duration) (*HTTPSMuxer, error) {\n\tmux, err := NewMuxer(listener, GetHTTPSHostname, timeout)\n\tmux.SetFailHookFunc(vhostFailed)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &HTTPSMuxer{mux}, err\n}",
+    "funcname": "NewHTTPSMuxer"
+}

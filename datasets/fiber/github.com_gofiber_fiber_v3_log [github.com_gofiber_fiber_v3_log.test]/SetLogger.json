@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 127,
+    "focalfunc": "func SetLogger(v AllLogger)",
+    "funcbody": "func SetLogger(v AllLogger) {\n\tlogger = v\n}",
+    "funcname": "SetLogger"
+}

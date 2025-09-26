@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 262,
+    "focalfunc": "func (c *DefaultCtx) BaseURL() string",
+    "funcbody": "func (c *DefaultCtx) BaseURL() string {\n\n\tif c.baseURI != \"\" {\n\t\treturn c.baseURI\n\t}\n\tc.baseURI = c.Scheme() + \"://\" + c.Host()\n\treturn c.baseURI\n}",
+    "funcname": "BaseURL"
+}

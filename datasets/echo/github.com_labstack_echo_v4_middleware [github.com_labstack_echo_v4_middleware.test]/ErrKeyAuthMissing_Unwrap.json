@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/key_auth.go",
+    "lineno": 77,
+    "focalfunc": "func (e *ErrKeyAuthMissing) Unwrap() error",
+    "funcbody": "func (e *ErrKeyAuthMissing) Unwrap() error {\n\treturn e.Err\n}",
+    "funcname": "Unwrap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 938,
+    "focalfunc": "func WrapMiddleware(m func(http.Handler) http.Handler) MiddlewareFunc",
+    "funcbody": "func WrapMiddleware(m func(http.Handler) http.Handler) MiddlewareFunc {\n\treturn func(next HandlerFunc) HandlerFunc {\n\t\treturn func(c Context) (err error) {\n\t\t\tm(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\t\t\tc.SetRequest(r)\n\t\t\t\tc.SetResponse(NewResponse(w, c.Echo()))\n\t\t\t\terr = next(c)\n\t\t\t})).ServeHTTP(c.Response(), c.Request())\n\t\t\treturn\n\t\t}\n\t}\n}",
+    "funcname": "WrapMiddleware"
+}

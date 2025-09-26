@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/cast/cast.go",
+    "lineno": 43,
+    "focalfunc": "func (ns *Namespace) ToFloat(v any) (float64, error)",
+    "funcbody": "func (ns *Namespace) ToFloat(v any) (float64, error) {\n\tv = convertTemplateToString(v)\n\treturn _cast.ToFloat64E(v)\n}",
+    "funcname": "ToFloat"
+}

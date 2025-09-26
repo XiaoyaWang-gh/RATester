@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 140,
+    "focalfunc": "func (f StrTo) String() string",
+    "funcbody": "func (f StrTo) String() string {\n\tif f.Exist() {\n\t\treturn string(f)\n\t}\n\treturn \"\"\n}",
+    "funcname": "String"
+}

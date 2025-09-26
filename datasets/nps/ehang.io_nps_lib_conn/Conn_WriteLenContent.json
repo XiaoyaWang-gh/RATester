@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 128,
+    "focalfunc": "func (s *Conn) WriteLenContent(buf []byte) (err error)",
+    "funcbody": "func (s *Conn) WriteLenContent(buf []byte) (err error) {\n\tvar b []byte\n\tif b, err = GetLenBytes(buf); err != nil {\n\t\treturn\n\t}\n\treturn binary.Write(s.Conn, binary.LittleEndian, b)\n}",
+    "funcname": "WriteLenContent"
+}

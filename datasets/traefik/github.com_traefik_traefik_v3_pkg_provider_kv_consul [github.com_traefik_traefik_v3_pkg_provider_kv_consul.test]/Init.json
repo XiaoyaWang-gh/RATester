@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/consul/consul.go",
+    "lineno": 72,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\n\tif p.namespace == \"*\" {\n\t\treturn errors.New(\"wildcard namespace is not supported\")\n\t}\n\n\tif p.name == \"\" {\n\t\tp.name = providerName\n\t}\n\n\tconfig := &consul.Config{\n\t\tConnectionTimeout:\t3 * time.Second,\n\t\tToken:\t\t\tp.token,\n\t\tNamespace:\t\tp.namespace,\n\t}\n\n\tif p.tls != nil {\n\t\tvar err error\n\t\tconfig.TLS, err = p.tls.CreateTLSConfig(context.Background())\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"unable to create client TLS configuration: %w\", err)\n\t\t}\n\t}\n\n\treturn p.Provider.Init(consul.StoreName, p.name, config)\n}",
+    "funcname": "Init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 143,
+    "focalfunc": "func (c *importCommand) getJekyllDirInfo(fs afero.Fs, jekyllRoot string) (map[string]bool, bool)",
+    "funcbody": "func (c *importCommand) getJekyllDirInfo(fs afero.Fs, jekyllRoot string) (map[string]bool, bool) {\n\tpostDirs := make(map[string]bool)\n\thasAnyPost := false\n\tif entries, err := os.ReadDir(jekyllRoot); err == nil {\n\t\tfor _, entry := range entries {\n\t\t\tif entry.IsDir() {\n\t\t\t\tsubDir := filepath.Join(jekyllRoot, entry.Name())\n\t\t\t\tif isPostDir, hasAnyPostInDir := c.retrieveJekyllPostDir(fs, subDir); isPostDir {\n\t\t\t\t\tpostDirs[entry.Name()] = hasAnyPostInDir\n\t\t\t\t\tif hasAnyPostInDir {\n\t\t\t\t\t\thasAnyPost = true\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\treturn postDirs, hasAnyPost\n}",
+    "funcname": "getJekyllDirInfo"
+}

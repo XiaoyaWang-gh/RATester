@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/auth.go",
+    "lineno": 48,
+    "focalfunc": "func BasicAuthForRealm(accounts Accounts, realm string) HandlerFunc",
+    "funcbody": "func BasicAuthForRealm(accounts Accounts, realm string) HandlerFunc {\n\tif realm == \"\" {\n\t\trealm = \"Authorization Required\"\n\t}\n\trealm = \"Basic realm=\" + strconv.Quote(realm)\n\tpairs := processAccounts(accounts)\n\treturn func(c *Context) {\n\n\t\tuser, found := pairs.searchCredential(c.requestHeader(\"Authorization\"))\n\t\tif !found {\n\n\t\t\tc.Header(\"WWW-Authenticate\", realm)\n\t\t\tc.AbortWithStatus(http.StatusUnauthorized)\n\t\t\treturn\n\t\t}\n\n\t\tc.Set(AuthUserKey, user)\n\t}\n}",
+    "funcname": "BasicAuthForRealm"
+}

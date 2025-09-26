@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 206,
+    "focalfunc": "func (c *Context) Abort()",
+    "funcbody": "func (c *Context) Abort() {\n\tc.index = abortIndex\n}",
+    "funcname": "Abort"
+}

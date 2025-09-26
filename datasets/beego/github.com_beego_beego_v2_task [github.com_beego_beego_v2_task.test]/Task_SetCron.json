@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 268,
+    "focalfunc": "func (t *Task) SetCron(spec string)",
+    "funcbody": "func (t *Task) SetCron(spec string) {\n\tt.Spec = t.parse(spec)\n}",
+    "funcname": "SetCron"
+}

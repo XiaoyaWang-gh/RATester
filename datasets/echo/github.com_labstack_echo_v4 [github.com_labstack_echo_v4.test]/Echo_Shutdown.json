@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 883,
+    "focalfunc": "func (e *Echo) Shutdown(ctx stdContext.Context) error",
+    "funcbody": "func (e *Echo) Shutdown(ctx stdContext.Context) error {\n\te.startupMutex.Lock()\n\tdefer e.startupMutex.Unlock()\n\tif err := e.TLSServer.Shutdown(ctx); err != nil {\n\t\treturn err\n\t}\n\treturn e.Server.Shutdown(ctx)\n}",
+    "funcname": "Shutdown"
+}

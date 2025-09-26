@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 158,
+    "focalfunc": "func (f *fatalErrorHandler) FatalError(err error)",
+    "funcbody": "func (f *fatalErrorHandler) FatalError(err error) {\n\tf.mu.Lock()\n\tdefer f.mu.Unlock()\n\tif !f.done {\n\t\tf.done = true\n\t\tclose(f.donec)\n\t}\n\tf.err = err\n}",
+    "funcname": "FatalError"
+}

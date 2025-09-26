@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__paginator.go",
+    "lineno": 23,
+    "focalfunc": "func newPagePaginator(source *pageState) *pagePaginator",
+    "funcbody": "func newPagePaginator(source *pageState) *pagePaginator {\n\treturn &pagePaginator{\n\t\tsource:\t\t\tsource,\n\t\tpagePaginatorInit:\t&pagePaginatorInit{},\n\t}\n}",
+    "funcname": "newPagePaginator"
+}

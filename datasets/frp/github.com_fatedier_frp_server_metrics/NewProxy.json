@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/metrics/metrics.go",
+    "lineno": 32,
+    "focalfunc": "func (noopServerMetrics) NewProxy(string, string)",
+    "funcbody": "func (noopServerMetrics) NewProxy(string, string)\t{}",
+    "funcname": "NewProxy"
+}

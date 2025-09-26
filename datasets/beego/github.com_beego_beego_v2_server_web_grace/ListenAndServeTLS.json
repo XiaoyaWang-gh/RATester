@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/grace.go",
+    "lineno": 178,
+    "focalfunc": "func ListenAndServeTLS(addr string, certFile string, keyFile string, handler http.Handler) error",
+    "funcbody": "func ListenAndServeTLS(addr string, certFile string, keyFile string, handler http.Handler) error {\n\tserver := NewServer(addr, handler)\n\treturn server.ListenAndServeTLS(certFile, keyFile)\n}",
+    "funcname": "ListenAndServeTLS"
+}

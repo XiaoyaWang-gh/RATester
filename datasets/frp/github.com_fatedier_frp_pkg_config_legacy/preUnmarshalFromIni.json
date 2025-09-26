@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/proxy.go",
+    "lineno": 375,
+    "focalfunc": "func preUnmarshalFromIni(cfg ProxyConf, prefix string, name string, section *ini.Section) error",
+    "funcbody": "func preUnmarshalFromIni(cfg ProxyConf, prefix string, name string, section *ini.Section) error {\n\terr := section.MapTo(cfg)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\terr = cfg.GetBaseConfig().decorate(prefix, name, section)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "preUnmarshalFromIni"
+}

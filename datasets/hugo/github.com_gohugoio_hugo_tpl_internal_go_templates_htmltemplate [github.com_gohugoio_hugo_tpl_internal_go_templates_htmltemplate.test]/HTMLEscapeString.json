@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 974,
+    "focalfunc": "func HTMLEscapeString(s string) string",
+    "funcbody": "func HTMLEscapeString(s string) string {\n\treturn template.HTMLEscapeString(s)\n}",
+    "funcname": "HTMLEscapeString"
+}

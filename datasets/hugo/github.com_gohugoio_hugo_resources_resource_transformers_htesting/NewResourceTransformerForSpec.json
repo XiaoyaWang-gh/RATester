@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/htesting/testhelpers.go",
+    "lineno": 25,
+    "focalfunc": "func NewResourceTransformerForSpec(spec *resources.Spec, filename, content string) (resources.ResourceTransformer, error)",
+    "funcbody": "func NewResourceTransformerForSpec(spec *resources.Spec, filename, content string) (resources.ResourceTransformer, error) {\n\tfilename = filepath.FromSlash(filename)\n\n\tfs := spec.Fs.Source\n\tif err := afero.WriteFile(fs, filename, []byte(content), 0o777); err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar open hugio.OpenReadSeekCloser = func() (hugio.ReadSeekCloser, error) {\n\t\treturn fs.Open(filename)\n\t}\n\n\tr, err := spec.NewResource(resources.ResourceSourceDescriptor{TargetPath: filepath.FromSlash(filename), OpenReadSeekCloser: open, GroupIdentity: identity.Anonymous})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn r.(resources.ResourceTransformer), nil\n}",
+    "funcname": "NewResourceTransformerForSpec"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 134,
+    "focalfunc": "func (c *Scratch) DeleteInMap(key string, mapKey string) string",
+    "funcbody": "func (c *Scratch) DeleteInMap(key string, mapKey string) string {\n\tc.mu.Lock()\n\t_, found := c.values[key]\n\tif found {\n\t\tdelete(c.values[key].(map[string]any), mapKey)\n\t}\n\tc.mu.Unlock()\n\treturn \"\"\n}",
+    "funcname": "DeleteInMap"
+}

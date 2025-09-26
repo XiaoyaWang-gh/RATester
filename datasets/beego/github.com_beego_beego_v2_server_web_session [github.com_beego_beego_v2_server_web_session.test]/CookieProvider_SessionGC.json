@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 177,
+    "focalfunc": "func (pder *CookieProvider) SessionGC(context.Context)",
+    "funcbody": "func (pder *CookieProvider) SessionGC(context.Context) {\n}",
+    "funcname": "SessionGC"
+}

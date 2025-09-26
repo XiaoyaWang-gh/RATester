@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 457,
+    "focalfunc": "func AddAliasWthDB(aliasName, driverName string, db *sql.DB, params ...DBOption) error",
+    "funcbody": "func AddAliasWthDB(aliasName, driverName string, db *sql.DB, params ...DBOption) error {\n\t_, err := addAliasWthDB(aliasName, driverName, db, params...)\n\treturn err\n}",
+    "funcname": "AddAliasWthDB"
+}

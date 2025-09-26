@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 580,
+    "focalfunc": "func (s *state) evalChainNode(dot reflect.Value, chain *parse.ChainNode, args []parse.Node, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalChainNode(dot reflect.Value, chain *parse.ChainNode, args []parse.Node, final reflect.Value) reflect.Value {\n\ts.at(chain)\n\tif len(chain.Field) == 0 {\n\t\ts.errorf(\"internal error: no fields in evalChainNode\")\n\t}\n\tif chain.Node.Type() == parse.NodeNil {\n\t\ts.errorf(\"indirection through explicit nil in %s\", chain)\n\t}\n\n\tpipe := s.evalArg(dot, nil, chain.Node)\n\treturn s.evalFieldChain(dot, pipe, chain, chain.Field, args, final)\n}",
+    "funcname": "evalChainNode"
+}

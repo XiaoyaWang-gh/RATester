@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 384,
+    "focalfunc": "func findAndRemoveTree(paths []string, entryPointTree *Tree, method string)",
+    "funcbody": "func findAndRemoveTree(paths []string, entryPointTree *Tree, method string) {\n\tfor i := range entryPointTree.fixrouters {\n\t\tif entryPointTree.fixrouters[i].prefix == paths[0] {\n\t\t\tif len(paths) == 1 {\n\t\t\t\tif len(entryPointTree.fixrouters[i].fixrouters) > 0 {\n\n\t\t\t\t\tif len(entryPointTree.fixrouters[i].leaves) > 0 {\n\t\t\t\t\t\tentryPointTree.fixrouters[i].leaves[0] = nil\n\t\t\t\t\t\tentryPointTree.fixrouters[i].leaves = entryPointTree.fixrouters[i].leaves[1:]\n\t\t\t\t\t}\n\t\t\t\t} else {\n\n\t\t\t\t\tentryPointTree.fixrouters[i] = nil\n\n\t\t\t\t\tif i == len(entryPointTree.fixrouters)-1 {\n\t\t\t\t\t\tentryPointTree.fixrouters = entryPointTree.fixrouters[:i]\n\t\t\t\t\t} else {\n\t\t\t\t\t\tentryPointTree.fixrouters = append(entryPointTree.fixrouters[:i], entryPointTree.fixrouters[i+1:len(entryPointTree.fixrouters)]...)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn\n\t\t\t}\n\t\t\tfindAndRemoveTree(paths[1:], entryPointTree.fixrouters[i], method)\n\t\t}\n\t}\n}",
+    "funcname": "findAndRemoveTree"
+}

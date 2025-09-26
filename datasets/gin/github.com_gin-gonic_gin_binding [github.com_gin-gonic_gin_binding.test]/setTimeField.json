@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 331,
+    "focalfunc": "func setTimeField(val string, structField reflect.StructField, value reflect.Value) error",
+    "funcbody": "func setTimeField(val string, structField reflect.StructField, value reflect.Value) error {\n\ttimeFormat := structField.Tag.Get(\"time_format\")\n\tif timeFormat == \"\" {\n\t\ttimeFormat = time.RFC3339\n\t}\n\n\tswitch tf := strings.ToLower(timeFormat); tf {\n\tcase \"unix\", \"unixnano\":\n\t\ttv, err := strconv.ParseInt(val, 10, 64)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\td := time.Duration(1)\n\t\tif tf == \"unixnano\" {\n\t\t\td = time.Second\n\t\t}\n\n\t\tt := time.Unix(tv/int64(d), tv%int64(d))\n\t\tvalue.Set(reflect.ValueOf(t))\n\t\treturn nil\n\t}\n\n\tif val == \"\" {\n\t\tvalue.Set(reflect.ValueOf(time.Time{}))\n\t\treturn nil\n\t}\n\n\tl := time.Local\n\tif isUTC, _ := strconv.ParseBool(structField.Tag.Get(\"time_utc\")); isUTC {\n\t\tl = time.UTC\n\t}\n\n\tif locTag := structField.Tag.Get(\"time_location\"); locTag != \"\" {\n\t\tloc, err := time.LoadLocation(locTag)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tl = loc\n\t}\n\n\tt, err := time.ParseInLocation(timeFormat, val, l)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tvalue.Set(reflect.ValueOf(t))\n\treturn nil\n}",
+    "funcname": "setTimeField"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/suites.go",
+    "lineno": 7,
+    "focalfunc": "func CleanupSuite()",
+    "funcbody": "func CleanupSuite() {\n\n}",
+    "funcname": "CleanupSuite"
+}

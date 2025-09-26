@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/msgpack.go",
+    "lineno": 19,
+    "focalfunc": "func (msgpackBinding) Name() string",
+    "funcbody": "func (msgpackBinding) Name() string {\n\treturn \"msgpack\"\n}",
+    "funcname": "Name"
+}

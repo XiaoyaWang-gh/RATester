@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 238,
+    "focalfunc": "func (m *Migration) AddUnique(unique *Unique) *Migration",
+    "funcbody": "func (m *Migration) AddUnique(unique *Unique) *Migration {\n\tm.Uniques = append(m.Uniques, unique)\n\treturn m\n}",
+    "funcname": "AddUnique"
+}

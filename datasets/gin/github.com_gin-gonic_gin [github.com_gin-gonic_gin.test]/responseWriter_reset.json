@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 58,
+    "focalfunc": "func (w *responseWriter) reset(writer http.ResponseWriter)",
+    "funcbody": "func (w *responseWriter) reset(writer http.ResponseWriter) {\n\tw.ResponseWriter = writer\n\tw.size = noWritten\n\tw.status = defaultStatus\n}",
+    "funcname": "reset"
+}

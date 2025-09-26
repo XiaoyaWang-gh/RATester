@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 352,
+    "focalfunc": "func (v *Tags) UnmarshalJSON(b []byte) error",
+    "funcbody": "func (v *Tags) UnmarshalJSON(b []byte) error {\n\tvv := make(map[string]any)\n\tif err := tcodec.Unmarshal(b, &vv); err != nil {\n\t\treturn err\n\t}\n\n\t*v = vv\n\n\treturn nil\n}",
+    "funcname": "UnmarshalJSON"
+}

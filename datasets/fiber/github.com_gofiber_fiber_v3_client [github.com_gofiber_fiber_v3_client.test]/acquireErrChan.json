@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 242,
+    "focalfunc": "func acquireErrChan() chan error",
+    "funcbody": "func acquireErrChan() chan error {\n\tch, ok := errChanPool.Get().(chan error)\n\tif !ok {\n\t\tpanic(errors.New(\"failed to type-assert to chan error\"))\n\t}\n\n\treturn ch\n}",
+    "funcname": "acquireErrChan"
+}

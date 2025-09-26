@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 97,
+    "focalfunc": "func (c *Client) handleCarrier(value interface{}, req *BeegoHTTPRequest) error",
+    "funcbody": "func (c *Client) handleCarrier(value interface{}, req *BeegoHTTPRequest) error {\n\tif value == nil {\n\t\treturn nil\n\t}\n\n\tif carrier, ok := value.(HTTPResponseCarrier); ok {\n\t\tb, err := req.Bytes()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treq.resp.Body = io.NopCloser(bytes.NewReader(b))\n\t\tcarrier.SetHTTPResponse(req.resp)\n\t}\n\tif carrier, ok := value.(HTTPBodyCarrier); ok {\n\t\tb, err := req.Bytes()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treader := io.NopCloser(bytes.NewReader(b))\n\t\tcarrier.SetReader(reader)\n\t}\n\tif carrier, ok := value.(HTTPBytesCarrier); ok {\n\t\tb, err := req.Bytes()\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tcarrier.SetBytes(b)\n\t}\n\tif carrier, ok := value.(HTTPStatusCarrier); ok {\n\t\tcarrier.SetStatusCode(req.resp.StatusCode)\n\t}\n\tif carrier, ok := value.(HTTPHeadersCarrier); ok {\n\t\tcarrier.SetHeader(req.resp.Header)\n\t}\n\treturn nil\n}",
+    "funcname": "handleCarrier"
+}

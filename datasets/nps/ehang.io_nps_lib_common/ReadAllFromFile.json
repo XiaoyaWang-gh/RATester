@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 127,
+    "focalfunc": "func ReadAllFromFile(filePath string) ([]byte, error)",
+    "funcbody": "func ReadAllFromFile(filePath string) ([]byte, error) {\n\tf, err := os.Open(filePath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer f.Close()\n\treturn ioutil.ReadAll(f)\n}",
+    "funcname": "ReadAllFromFile"
+}

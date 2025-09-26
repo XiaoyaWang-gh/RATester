@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 452,
+    "focalfunc": "func eq(arg1 interface{}, arg2 ...interface{}) (bool, error)",
+    "funcbody": "func eq(arg1 interface{}, arg2 ...interface{}) (bool, error) {\n\tv1 := reflect.ValueOf(arg1)\n\tk1, err := basicKind(v1)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\tif len(arg2) == 0 {\n\t\treturn false, errNoComparison\n\t}\n\tfor _, arg := range arg2 {\n\t\tv2 := reflect.ValueOf(arg)\n\t\tk2, err := basicKind(v2)\n\t\tif err != nil {\n\t\t\treturn false, err\n\t\t}\n\t\ttruth := false\n\t\tif k1 != k2 {\n\n\t\t\tswitch {\n\t\t\tcase k1 == intKind && k2 == uintKind:\n\t\t\t\ttruth = v1.Int() >= 0 && uint64(v1.Int()) == v2.Uint()\n\t\t\tcase k1 == uintKind && k2 == intKind:\n\t\t\t\ttruth = v2.Int() >= 0 && v1.Uint() == uint64(v2.Int())\n\t\t\tdefault:\n\t\t\t\treturn false, errBadComparison\n\t\t\t}\n\t\t\tif truth {\n\t\t\t\treturn true, nil\n\t\t\t} else {\n\t\t\t\treturn false, nil\n\t\t\t}\n\t\t}\n\t\tswitch k1 {\n\t\tcase boolKind:\n\t\t\ttruth = v1.Bool() == v2.Bool()\n\t\tcase complexKind:\n\t\t\ttruth = v1.Complex() == v2.Complex()\n\t\tcase floatKind:\n\t\t\ttruth = v1.Float() == v2.Float()\n\t\tcase intKind:\n\t\t\ttruth = v1.Int() == v2.Int()\n\t\tcase stringKind:\n\t\t\ttruth = v1.String() == v2.String()\n\t\tcase uintKind:\n\t\t\ttruth = v1.Uint() == v2.Uint()\n\t\tdefault:\n\t\t\tpanic(\"invalid kind\")\n\t\t}\n\t\tif truth {\n\t\t\treturn true, nil\n\t\t}\n\t}\n\treturn false, nil\n}",
+    "funcname": "eq"
+}

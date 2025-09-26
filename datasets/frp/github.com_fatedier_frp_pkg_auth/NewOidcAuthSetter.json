@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/oidc.go",
+    "lineno": 35,
+    "focalfunc": "func NewOidcAuthSetter(additionalAuthScopes []v1.AuthScope, cfg v1.AuthOIDCClientConfig) *OidcAuthProvider",
+    "funcbody": "func NewOidcAuthSetter(additionalAuthScopes []v1.AuthScope, cfg v1.AuthOIDCClientConfig) *OidcAuthProvider {\n\teps := make(map[string][]string)\n\tfor k, v := range cfg.AdditionalEndpointParams {\n\t\teps[k] = []string{v}\n\t}\n\n\tif cfg.Audience != \"\" {\n\t\teps[\"audience\"] = []string{cfg.Audience}\n\t}\n\n\ttokenGenerator := &clientcredentials.Config{\n\t\tClientID:\tcfg.ClientID,\n\t\tClientSecret:\tcfg.ClientSecret,\n\t\tScopes:\t\t[]string{cfg.Scope},\n\t\tTokenURL:\tcfg.TokenEndpointURL,\n\t\tEndpointParams:\teps,\n\t}\n\n\treturn &OidcAuthProvider{\n\t\tadditionalAuthScopes:\tadditionalAuthScopes,\n\t\ttokenGenerator:\t\ttokenGenerator,\n\t}\n}",
+    "funcname": "NewOidcAuthSetter"
+}

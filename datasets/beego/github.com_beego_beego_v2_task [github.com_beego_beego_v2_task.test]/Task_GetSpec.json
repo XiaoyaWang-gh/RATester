@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 159,
+    "focalfunc": "func (t *Task) GetSpec(context.Context) string",
+    "funcbody": "func (t *Task) GetSpec(context.Context) string {\n\treturn t.SpecStr\n}",
+    "funcname": "GetSpec"
+}

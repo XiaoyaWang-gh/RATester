@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 22,
+    "focalfunc": "func ExpectNotEqual(actual interface{}, extra interface{}, explain ...interface{})",
+    "funcbody": "func ExpectNotEqual(actual interface{}, extra interface{}, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1, actual).NotTo(gomega.Equal(extra), explain...)\n}",
+    "funcname": "ExpectNotEqual"
+}

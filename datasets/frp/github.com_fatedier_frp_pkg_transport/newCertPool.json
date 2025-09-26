@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/tls.go",
+    "lineno": 61,
+    "focalfunc": "func newCertPool(caPath string) (*x509.CertPool, error)",
+    "funcbody": "func newCertPool(caPath string) (*x509.CertPool, error) {\n\tpool := x509.NewCertPool()\n\n\tcaCrt, err := os.ReadFile(caPath)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tpool.AppendCertsFromPEM(caCrt)\n\n\treturn pool, nil\n}",
+    "funcname": "newCertPool"
+}

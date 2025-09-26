@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/datadog.go",
+    "lineno": 117,
+    "focalfunc": "func parseDatadogAddress(address string) (string, string)",
+    "funcbody": "func parseDatadogAddress(address string) (string, string) {\n\tnetwork := \"udp\"\n\n\tvar addr string\n\tswitch {\n\tcase strings.HasPrefix(address, unixAddressPrefix):\n\t\tnetwork = \"unix\"\n\t\taddr = address[len(unixAddressPrefix):]\n\tcase address != \"\":\n\t\taddr = address\n\tdefault:\n\t\taddr = \"localhost:8125\"\n\t}\n\n\treturn network, addr\n}",
+    "funcname": "parseDatadogAddress"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 88,
+    "focalfunc": "func (v *Muxer) SetSuccessHookFunc(f successHookFunc) *Muxer",
+    "funcbody": "func (v *Muxer) SetSuccessHookFunc(f successHookFunc) *Muxer {\n\tv.successHook = f\n\treturn v\n}",
+    "funcname": "SetSuccessHookFunc"
+}

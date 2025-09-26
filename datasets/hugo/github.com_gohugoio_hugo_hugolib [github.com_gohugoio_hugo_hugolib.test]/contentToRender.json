@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 226,
+    "focalfunc": "func (pi *contentParseInfo) contentToRender(ctx context.Context, source []byte, renderedShortcodes map[string]shortcodeRenderer) ([]byte, bool, error)",
+    "funcbody": "func (pi *contentParseInfo) contentToRender(ctx context.Context, source []byte, renderedShortcodes map[string]shortcodeRenderer) ([]byte, bool, error) {\n\tvar hasVariants bool\n\tc := make([]byte, 0, len(source)+(len(source)/10))\n\n\tfor _, it := range pi.itemsStep2 {\n\t\tswitch v := it.(type) {\n\t\tcase pageparser.Item:\n\t\t\tc = append(c, source[v.Pos():v.Pos()+len(v.Val(source))]...)\n\t\tcase pageContentReplacement:\n\t\t\tc = append(c, v.val...)\n\t\tcase *shortcode:\n\t\t\tif !v.insertPlaceholder() {\n\n\t\t\t\trenderedShortcode, found := renderedShortcodes[v.placeholder]\n\t\t\t\tif !found {\n\n\t\t\t\t\tpanic(fmt.Sprintf(\"rendered shortcode %q not found\", v.placeholder))\n\t\t\t\t}\n\n\t\t\t\tb, more, err := renderedShortcode.renderShortcode(ctx)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn nil, false, fmt.Errorf(\"failed to render shortcode: %w\", err)\n\t\t\t\t}\n\t\t\t\thasVariants = hasVariants || more\n\t\t\t\tc = append(c, []byte(b)...)\n\n\t\t\t} else {\n\n\t\t\t\tc = append(c, []byte(v.placeholder)...)\n\t\t\t}\n\t\tdefault:\n\t\t\tpanic(fmt.Sprintf(\"unknown item type %T\", it))\n\t\t}\n\t}\n\n\treturn c, hasVariants, nil\n}",
+    "funcname": "contentToRender"
+}

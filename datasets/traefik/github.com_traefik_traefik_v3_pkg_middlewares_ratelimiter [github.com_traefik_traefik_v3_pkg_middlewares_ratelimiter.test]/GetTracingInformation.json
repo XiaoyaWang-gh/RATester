@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ratelimiter/rate_limiter.go",
+    "lineno": 125,
+    "focalfunc": "func (rl *rateLimiter) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (rl *rateLimiter) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn rl.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

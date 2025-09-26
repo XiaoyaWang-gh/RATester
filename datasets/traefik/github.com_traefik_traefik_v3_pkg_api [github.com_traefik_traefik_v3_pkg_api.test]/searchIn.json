@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 58,
+    "focalfunc": "func (c *searchCriterion) searchIn(values ...string) bool",
+    "funcbody": "func (c *searchCriterion) searchIn(values ...string) bool {\n\tif c.Search == \"\" {\n\t\treturn true\n\t}\n\n\treturn slices.ContainsFunc(values, func(v string) bool {\n\t\treturn strings.Contains(strings.ToLower(v), strings.ToLower(c.Search))\n\t})\n}",
+    "funcname": "searchIn"
+}

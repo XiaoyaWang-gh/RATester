@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 98,
+    "focalfunc": "func (sc *SimpleCondition) matchHeader(ctx context.Context, req *httplib.BeegoHTTPRequest) bool",
+    "funcbody": "func (sc *SimpleCondition) matchHeader(ctx context.Context, req *httplib.BeegoHTTPRequest) bool {\n\theaders := req.GetRequest().Header\n\tfor k, v := range sc.header {\n\t\tif uv, ok := headers[k]; !ok || uv[0] != v {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "matchHeader"
+}

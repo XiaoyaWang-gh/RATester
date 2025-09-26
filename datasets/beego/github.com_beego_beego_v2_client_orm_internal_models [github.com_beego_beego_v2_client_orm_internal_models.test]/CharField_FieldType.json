@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 131,
+    "focalfunc": "func (e *CharField) FieldType() int",
+    "funcbody": "func (e *CharField) FieldType() int {\n\treturn TypeVarCharField\n}",
+    "funcname": "FieldType"
+}

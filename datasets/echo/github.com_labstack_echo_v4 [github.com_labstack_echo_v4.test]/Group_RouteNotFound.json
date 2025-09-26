@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 116,
+    "focalfunc": "func (g *Group) RouteNotFound(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) RouteNotFound(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn g.Add(RouteNotFound, path, h, m...)\n}",
+    "funcname": "RouteNotFound"
+}

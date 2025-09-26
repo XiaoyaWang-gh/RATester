@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/postgres.go",
+    "lineno": 22,
+    "focalfunc": "func isPostgres(br *bufio.Reader) (bool, error)",
+    "funcbody": "func isPostgres(br *bufio.Reader) (bool, error) {\n\n\tfor i := 1; i < len(PostgresStartTLSMsg)+1; i++ {\n\t\tpeeked, err := br.Peek(i)\n\t\tif err != nil {\n\t\t\tvar opErr *net.OpError\n\t\t\tif !errors.Is(err, io.EOF) && (!errors.As(err, &opErr) || opErr.Timeout()) {\n\t\t\t\tlog.Error().Err(err).Msg(\"Error while Peeking first byte\")\n\t\t\t}\n\t\t\treturn false, err\n\t\t}\n\n\t\tif !bytes.Equal(peeked, PostgresStartTLSMsg[:i]) {\n\t\t\treturn false, nil\n\t\t}\n\t}\n\treturn true, nil\n}",
+    "funcname": "isPostgres"
+}

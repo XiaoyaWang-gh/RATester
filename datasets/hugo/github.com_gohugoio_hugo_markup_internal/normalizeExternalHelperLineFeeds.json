@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/external.go",
+    "lineno": 59,
+    "focalfunc": "func normalizeExternalHelperLineFeeds(content []byte) []byte",
+    "funcbody": "func normalizeExternalHelperLineFeeds(content []byte) []byte {\n\treturn bytes.Replace(content, []byte(\"\\r\"), []byte(\"\"), -1)\n}",
+    "funcname": "normalizeExternalHelperLineFeeds"
+}

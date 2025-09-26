@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/sourceSpec.go",
+    "lineno": 39,
+    "focalfunc": "func NewSourceSpec(ps *helpers.PathSpec, inclusionFilter *glob.FilenameFilter, fs afero.Fs) *SourceSpec",
+    "funcbody": "func NewSourceSpec(ps *helpers.PathSpec, inclusionFilter *glob.FilenameFilter, fs afero.Fs) *SourceSpec {\n\tshouldInclude := func(filename string) bool {\n\t\tif !inclusionFilter.Match(filename, false) {\n\t\t\treturn false\n\t\t}\n\t\tif ps.Cfg.IgnoreFile(filename) {\n\t\t\treturn false\n\t\t}\n\n\t\treturn true\n\t}\n\n\treturn &SourceSpec{shouldInclude: shouldInclude, PathSpec: ps, SourceFs: fs}\n}",
+    "funcname": "NewSourceSpec"
+}

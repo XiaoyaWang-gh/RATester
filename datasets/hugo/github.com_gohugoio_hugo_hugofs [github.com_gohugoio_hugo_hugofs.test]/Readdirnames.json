@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 840,
+    "focalfunc": "func (f *rootMappingDir) Readdirnames(count int) ([]string, error)",
+    "funcbody": "func (f *rootMappingDir) Readdirnames(count int) ([]string, error) {\n\tdirs, err := f.ReadDir(count)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn dirEntriesToNames(dirs), nil\n}",
+    "funcname": "Readdirnames"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 102,
+    "focalfunc": "func (r *Redirect) Status(code int) *Redirect",
+    "funcbody": "func (r *Redirect) Status(code int) *Redirect {\n\tr.status = code\n\n\treturn r\n}",
+    "funcname": "Status"
+}

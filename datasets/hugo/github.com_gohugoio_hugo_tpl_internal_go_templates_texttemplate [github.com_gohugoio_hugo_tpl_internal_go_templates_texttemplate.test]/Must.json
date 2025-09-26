@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/helper.go",
+    "lineno": 24,
+    "focalfunc": "func Must(t *Template, err error) *Template",
+    "funcbody": "func Must(t *Template, err error) *Template {\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn t\n}",
+    "funcname": "Must"
+}

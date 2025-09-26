@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_config.go",
+    "lineno": 109,
+    "focalfunc": "func (f Caches) GetCSVCache() *Cache",
+    "funcbody": "func (f Caches) GetCSVCache() *Cache {\n\treturn f[CacheKeyGetCSV]\n}",
+    "funcname": "GetCSVCache"
+}

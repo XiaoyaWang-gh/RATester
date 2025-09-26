@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/nomad.go",
+    "lineno": 399,
+    "focalfunc": "func (p *Provider) getExtraConf(tags []string) configuration",
+    "funcbody": "func (p *Provider) getExtraConf(tags []string) configuration {\n\tlabels := tagsToLabels(tags, p.Prefix)\n\n\tenabled := p.ExposedByDefault\n\tif v, exists := labels[\"traefik.enable\"]; exists {\n\t\tenabled = strings.EqualFold(v, \"true\")\n\t}\n\n\tvar canary bool\n\tif v, exists := labels[\"traefik.nomad.canary\"]; exists {\n\t\tcanary = strings.EqualFold(v, \"true\")\n\t}\n\n\treturn configuration{Enable: enabled, Canary: canary}\n}",
+    "funcname": "getExtraConf"
+}

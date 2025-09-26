@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tls.go",
+    "lineno": 34,
+    "focalfunc": "func (o *Options) SetDefaults()",
+    "funcbody": "func (o *Options) SetDefaults() {\n\n\to.ALPNProtocols = DefaultTLSOptions.ALPNProtocols\n\to.CipherSuites = DefaultTLSOptions.CipherSuites\n}",
+    "funcname": "SetDefaults"
+}

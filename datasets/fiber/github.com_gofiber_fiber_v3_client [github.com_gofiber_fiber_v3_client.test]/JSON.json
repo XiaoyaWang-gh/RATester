@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 74,
+    "focalfunc": "func (r *Response) JSON(v any) error",
+    "funcbody": "func (r *Response) JSON(v any) error {\n\treturn r.client.jsonUnmarshal(r.Body(), v)\n}",
+    "funcname": "JSON"
+}

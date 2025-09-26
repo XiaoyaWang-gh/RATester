@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 553,
+    "focalfunc": "func buildHeaderRules(headers []gatev1.HTTPHeaderMatch) ([]string, int)",
+    "funcbody": "func buildHeaderRules(headers []gatev1.HTTPHeaderMatch) ([]string, int) {\n\tvar (\n\t\trules\t\t[]string\n\t\tpriority\tint\n\t)\n\tfor _, header := range headers {\n\t\ttyp := ptr.Deref(header.Type, gatev1.HeaderMatchExact)\n\t\tswitch typ {\n\t\tcase gatev1.HeaderMatchExact:\n\t\t\trules = append(rules, fmt.Sprintf(\"Header(`%s`,`%s`)\", header.Name, header.Value))\n\t\tcase gatev1.HeaderMatchRegularExpression:\n\t\t\trules = append(rules, fmt.Sprintf(\"HeaderRegexp(`%s`,`%s`)\", header.Name, header.Value))\n\t\t}\n\t\tpriority += 100\n\t}\n\n\treturn rules, priority\n}",
+    "funcname": "buildHeaderRules"
+}

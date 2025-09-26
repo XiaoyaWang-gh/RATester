@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 244,
+    "focalfunc": "func (p *Provider) fetchCerts(ctx context.Context, domains []string)",
+    "funcbody": "func (p *Provider) fetchCerts(ctx context.Context, domains []string) {\n\tlogger := log.Ctx(ctx)\n\n\tfor _, domain := range domains {\n\t\tcert, key, err := tscert.CertPair(ctx, domain)\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Msgf(\"Unable to fetch certificate for domain %q\", domain)\n\t\t\tcontinue\n\t\t}\n\n\t\tlogger.Debug().Msgf(\"Fetched certificate for domain %q\", domain)\n\n\t\tp.certByDomainMu.Lock()\n\t\tp.certByDomain[domain] = traefiktls.Certificate{\n\t\t\tCertFile:\ttypes.FileOrContent(cert),\n\t\t\tKeyFile:\ttypes.FileOrContent(key),\n\t\t}\n\t\tp.certByDomainMu.Unlock()\n\t}\n}",
+    "funcname": "fetchCerts"
+}

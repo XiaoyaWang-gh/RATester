@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 156,
+    "focalfunc": "func Filename(in string) (name string)",
+    "funcbody": "func Filename(in string) (name string) {\n\tname, _ = fileAndExt(in, fpb)\n\treturn\n}",
+    "funcname": "Filename"
+}

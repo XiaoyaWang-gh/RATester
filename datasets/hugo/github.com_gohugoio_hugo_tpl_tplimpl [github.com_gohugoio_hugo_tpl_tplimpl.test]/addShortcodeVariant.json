@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 616,
+    "focalfunc": "func (t *templateHandler) addShortcodeVariant(ts *templateState)",
+    "funcbody": "func (t *templateHandler) addShortcodeVariant(ts *templateState) {\n\tname := ts.Name()\n\tbase := templateBaseName(templateShortcode, name)\n\n\tshortcodename, variants := templateNameAndVariants(base)\n\n\ttempls, found := t.shortcodes[shortcodename]\n\tif !found {\n\t\ttempls = &shortcodeTemplates{}\n\t\tt.shortcodes[shortcodename] = templs\n\t}\n\n\tsv := shortcodeVariant{variants: variants, ts: ts}\n\n\ti := templs.indexOf(variants)\n\n\tif i != -1 {\n\n\t\tif !isInternal(name) {\n\t\t\ttempls.variants[i] = sv\n\t\t}\n\t} else {\n\t\ttempls.variants = append(templs.variants, sv)\n\t}\n}",
+    "funcname": "addShortcodeVariant"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 32,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Select(fields ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Select(fields ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"SELECT\", strings.Join(fields, CommaSpace))\n\treturn qb\n}",
+    "funcname": "Select"
+}

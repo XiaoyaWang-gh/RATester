@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/port.go",
+    "lineno": 35,
+    "focalfunc": "func (pa *Allocator) Get() int",
+    "funcbody": "func (pa *Allocator) Get() int {\n\treturn pa.GetByName(\"\")\n}",
+    "funcname": "Get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/healthcheck/healthcheck.go",
+    "lineno": 10,
+    "focalfunc": "func NewHealthChecker(config ...Config) fiber.Handler",
+    "funcbody": "func NewHealthChecker(config ...Config) fiber.Handler {\n\tcfg := defaultConfigV3(config...)\n\n\treturn func(c fiber.Ctx) error {\n\n\t\tif cfg.Next != nil && cfg.Next(c) {\n\t\t\treturn c.Next()\n\t\t}\n\n\t\tif c.Method() != fiber.MethodGet {\n\t\t\treturn c.Next()\n\t\t}\n\n\t\tif cfg.Probe(c) {\n\t\t\treturn c.SendStatus(fiber.StatusOK)\n\t\t}\n\n\t\treturn c.SendStatus(fiber.StatusServiceUnavailable)\n\t}\n}",
+    "funcname": "NewHealthChecker"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/assets/assets.go",
+    "lineno": 34,
+    "focalfunc": "func Load(path string)",
+    "funcbody": "func Load(path string) {\n\tprefixPath = path\n\tif prefixPath != \"\" {\n\t\tFileSystem = http.Dir(prefixPath)\n\t} else {\n\t\tFileSystem = http.FS(content)\n\t}\n}",
+    "funcname": "Load"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 475,
+    "focalfunc": "func (c *context) HTMLBlob(code int, b []byte) (err error)",
+    "funcbody": "func (c *context) HTMLBlob(code int, b []byte) (err error) {\n\treturn c.Blob(code, MIMETextHTMLCharsetUTF8, b)\n}",
+    "funcname": "HTMLBlob"
+}

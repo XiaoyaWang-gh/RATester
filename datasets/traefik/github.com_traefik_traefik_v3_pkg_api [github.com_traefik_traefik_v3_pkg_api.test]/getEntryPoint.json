@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_entrypoint.go",
+    "lineno": 52,
+    "focalfunc": "func (h Handler) getEntryPoint(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getEntryPoint(rw http.ResponseWriter, request *http.Request) {\n\tscapedEntryPointID := mux.Vars(request)[\"entryPointID\"]\n\n\tentryPointID, err := url.PathUnescape(scapedEntryPointID)\n\tif err != nil {\n\t\twriteError(rw, fmt.Sprintf(\"unable to decode entryPointID %q: %s\", scapedEntryPointID, err), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\trw.Header().Set(\"Content-Type\", \"application/json\")\n\n\tep, ok := h.staticConfig.EntryPoints[entryPointID]\n\tif !ok {\n\t\twriteError(rw, fmt.Sprintf(\"entry point not found: %s\", entryPointID), http.StatusNotFound)\n\t\treturn\n\t}\n\n\tresult := entryPointRepresentation{\n\t\tEntryPoint:\tep,\n\t\tName:\t\tentryPointID,\n\t}\n\n\terr = json.NewEncoder(rw).Encode(result)\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getEntryPoint"
+}

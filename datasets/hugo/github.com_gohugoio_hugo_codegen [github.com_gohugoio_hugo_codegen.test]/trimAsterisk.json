@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 501,
+    "focalfunc": "func trimAsterisk(name string) string",
+    "funcbody": "func trimAsterisk(name string) string {\n\treturn strings.TrimPrefix(name, \"*\")\n}",
+    "funcname": "trimAsterisk"
+}

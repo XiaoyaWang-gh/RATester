@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 213,
+    "focalfunc": "func (r RootMapping) filename(name string) string",
+    "funcbody": "func (r RootMapping) filename(name string) string {\n\tif name == \"\" {\n\t\treturn r.To\n\t}\n\treturn filepath.Join(r.To, strings.TrimPrefix(name, r.From))\n}",
+    "funcname": "filename"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 148,
+    "focalfunc": "func ToStr(value interface{}, args ...int) (s string)",
+    "funcbody": "func ToStr(value interface{}, args ...int) (s string) {\n\tswitch v := value.(type) {\n\tcase bool:\n\t\ts = strconv.FormatBool(v)\n\tcase float32:\n\t\ts = strconv.FormatFloat(float64(v), 'f', ArgInt(args).Get(0, -1), ArgInt(args).Get(1, 32))\n\tcase float64:\n\t\ts = strconv.FormatFloat(v, 'f', ArgInt(args).Get(0, -1), ArgInt(args).Get(1, 64))\n\tcase int:\n\t\ts = strconv.FormatInt(int64(v), ArgInt(args).Get(0, 10))\n\tcase int8:\n\t\ts = strconv.FormatInt(int64(v), ArgInt(args).Get(0, 10))\n\tcase int16:\n\t\ts = strconv.FormatInt(int64(v), ArgInt(args).Get(0, 10))\n\tcase int32:\n\t\ts = strconv.FormatInt(int64(v), ArgInt(args).Get(0, 10))\n\tcase int64:\n\t\ts = strconv.FormatInt(v, ArgInt(args).Get(0, 10))\n\tcase uint:\n\t\ts = strconv.FormatUint(uint64(v), ArgInt(args).Get(0, 10))\n\tcase uint8:\n\t\ts = strconv.FormatUint(uint64(v), ArgInt(args).Get(0, 10))\n\tcase uint16:\n\t\ts = strconv.FormatUint(uint64(v), ArgInt(args).Get(0, 10))\n\tcase uint32:\n\t\ts = strconv.FormatUint(uint64(v), ArgInt(args).Get(0, 10))\n\tcase uint64:\n\t\ts = strconv.FormatUint(v, ArgInt(args).Get(0, 10))\n\tcase string:\n\t\ts = v\n\tcase []byte:\n\t\ts = string(v)\n\tdefault:\n\t\ts = fmt.Sprintf(\"%v\", v)\n\t}\n\treturn s\n}",
+    "funcname": "ToStr"
+}

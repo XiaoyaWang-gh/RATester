@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/idempotency/locker.go",
+    "lineno": 46,
+    "focalfunc": "func NewMemoryLock() *MemoryLock",
+    "funcbody": "func NewMemoryLock() *MemoryLock {\n\treturn &MemoryLock{\n\t\tkeys: make(map[string]*sync.Mutex),\n\t}\n}",
+    "funcname": "NewMemoryLock"
+}

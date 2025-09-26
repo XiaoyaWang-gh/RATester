@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/exif/exif.go",
+    "lineno": 96,
+    "focalfunc": "func WithWarnLogger(warnl logg.LevelLogger) func(*Decoder) error",
+    "funcbody": "func WithWarnLogger(warnl logg.LevelLogger) func(*Decoder) error {\n\treturn func(d *Decoder) error {\n\t\td.warnl = warnl\n\t\treturn nil\n\t}\n}",
+    "funcname": "WithWarnLogger"
+}

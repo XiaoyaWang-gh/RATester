@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_overview.go",
+    "lineno": 245,
+    "focalfunc": "func getFeatures(conf static.Configuration) features",
+    "funcbody": "func getFeatures(conf static.Configuration) features {\n\treturn features{\n\t\tTracing:\tgetTracing(conf),\n\t\tMetrics:\tgetMetrics(conf),\n\t\tAccessLog:\tconf.AccessLog != nil,\n\t}\n}",
+    "funcname": "getFeatures"
+}

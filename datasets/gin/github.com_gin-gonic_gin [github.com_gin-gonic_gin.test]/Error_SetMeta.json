@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/errors.go",
+    "lineno": 51,
+    "focalfunc": "func (msg *Error) SetMeta(data any) *Error",
+    "funcbody": "func (msg *Error) SetMeta(data any) *Error {\n\tmsg.Meta = data\n\treturn msg\n}",
+    "funcname": "SetMeta"
+}

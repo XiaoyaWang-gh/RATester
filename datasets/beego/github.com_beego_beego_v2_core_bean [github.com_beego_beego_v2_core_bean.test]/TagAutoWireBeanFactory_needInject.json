@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/tag_auto_wire_bean_factory.go",
+    "lineno": 210,
+    "focalfunc": "func (t *TagAutoWireBeanFactory) needInject(fValue reflect.Value) bool",
+    "funcbody": "func (t *TagAutoWireBeanFactory) needInject(fValue reflect.Value) bool {\n\treturn fValue.IsZero()\n}",
+    "funcname": "needInject"
+}

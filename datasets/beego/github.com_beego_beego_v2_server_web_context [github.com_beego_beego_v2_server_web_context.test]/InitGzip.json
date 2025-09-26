@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/acceptencoder.go",
+    "lineno": 43,
+    "focalfunc": "func InitGzip(minLength, compressLevel int, methods []string)",
+    "funcbody": "func InitGzip(minLength, compressLevel int, methods []string) {\n\tif minLength >= 0 {\n\t\tgzipMinLength = minLength\n\t}\n\tgzipCompressLevel = compressLevel\n\tif gzipCompressLevel < flate.NoCompression || gzipCompressLevel > flate.BestCompression {\n\t\tgzipCompressLevel = flate.BestSpeed\n\t}\n\tgetMethodOnly = (len(methods) == 0) || (len(methods) == 1 && strings.ToUpper(methods[0]) == \"GET\")\n\tincludedMethods = make(map[string]bool, len(methods))\n\tfor _, v := range methods {\n\t\tincludedMethods[strings.ToUpper(v)] = true\n\t}\n}",
+    "funcname": "InitGzip"
+}

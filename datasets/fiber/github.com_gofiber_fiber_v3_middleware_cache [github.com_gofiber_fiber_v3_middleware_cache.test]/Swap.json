@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 37,
+    "focalfunc": "func (h indexedHeap) Swap(i, j int)",
+    "funcbody": "func (h indexedHeap) Swap(i, j int) {\n\th.entries[i], h.entries[j] = h.entries[j], h.entries[i]\n\th.indices[h.entries[i].idx] = i\n\th.indices[h.entries[j].idx] = j\n}",
+    "funcname": "Swap"
+}

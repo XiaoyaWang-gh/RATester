@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/http/http.go",
+    "lineno": 112,
+    "focalfunc": "func (p *Provider) updateConfiguration(configurationChan chan<- dynamic.Message) error",
+    "funcbody": "func (p *Provider) updateConfiguration(configurationChan chan<- dynamic.Message) error {\n\tconfigData, err := p.fetchConfigurationData()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"cannot fetch configuration data: %w\", err)\n\t}\n\n\tfnvHasher := fnv.New64()\n\n\tif _, err = fnvHasher.Write(configData); err != nil {\n\t\treturn fmt.Errorf(\"cannot hash configuration data: %w\", err)\n\t}\n\n\thash := fnvHasher.Sum64()\n\tif hash == p.lastConfigurationHash {\n\t\treturn nil\n\t}\n\n\tp.lastConfigurationHash = hash\n\n\tconfiguration, err := decodeConfiguration(configData)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"cannot decode configuration data: %w\", err)\n\t}\n\n\tconfigurationChan <- dynamic.Message{\n\t\tProviderName:\t\"http\",\n\t\tConfiguration:\tconfiguration,\n\t}\n\n\treturn nil\n}",
+    "funcname": "updateConfiguration"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 89,
+    "focalfunc": "func ReleaseRedirect(r *Redirect)",
+    "funcbody": "func ReleaseRedirect(r *Redirect) {\n\tr.release()\n\tredirectPool.Put(r)\n}",
+    "funcname": "ReleaseRedirect"
+}

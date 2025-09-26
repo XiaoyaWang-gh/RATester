@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 218,
+    "focalfunc": "func (l *UDPListener) writeUDPPacket(packet *UDPPacket) (err error)",
+    "funcbody": "func (l *UDPListener) writeUDPPacket(packet *UDPPacket) (err error) {\n\tdefer func() {\n\t\tif errRet := recover(); errRet != nil {\n\t\t\terr = fmt.Errorf(\"udp write closed listener\")\n\t\t}\n\t}()\n\tl.writeCh <- packet\n\treturn\n}",
+    "funcname": "writeUDPPacket"
+}

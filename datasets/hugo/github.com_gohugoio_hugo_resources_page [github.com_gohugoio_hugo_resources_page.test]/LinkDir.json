@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 367,
+    "focalfunc": "func (p *pagePathBuilder) LinkDir() string",
+    "funcbody": "func (p *pagePathBuilder) LinkDir() string {\n\tif p.noSubResources {\n\t\treturn \"\"\n\t}\n\n\tpathDir := p.PathDirBase()\n\n\tif p.prefixLink != \"\" {\n\t\tpathDir = \"/\" + p.prefixLink + pathDir\n\t}\n\n\treturn pathDir\n}",
+    "funcname": "LinkDir"
+}

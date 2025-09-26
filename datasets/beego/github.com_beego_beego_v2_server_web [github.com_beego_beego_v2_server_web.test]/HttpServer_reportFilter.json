@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 952,
+    "focalfunc": "func (app *HttpServer) reportFilter() M",
+    "funcbody": "func (app *HttpServer) reportFilter() M {\n\tfilterTypeData := make(M)\n\n\tif app.Handlers.enableFilter {\n\n\t\tfor k, fr := range map[int]string{\n\t\t\tBeforeStatic:\t\"Before Static\",\n\t\t\tBeforeRouter:\t\"Before Router\",\n\t\t\tBeforeExec:\t\"Before Exec\",\n\t\t\tAfterExec:\t\"After Exec\",\n\t\t\tFinishRouter:\t\"Finish Router\",\n\t\t} {\n\t\t\tif bf := app.Handlers.filters[k]; len(bf) > 0 {\n\t\t\t\tresultList := new([][]string)\n\t\t\t\tfor _, f := range bf {\n\t\t\t\t\tresult := []string{\n\n\t\t\t\t\t\ttemplate.HTMLEscapeString(f.pattern),\n\t\t\t\t\t\ttemplate.HTMLEscapeString(utils.GetFuncName(f.filterFunc)),\n\t\t\t\t\t}\n\t\t\t\t\t*resultList = append(*resultList, result)\n\t\t\t\t}\n\t\t\t\tfilterTypeData[fr] = resultList\n\t\t\t}\n\t\t}\n\t}\n\n\treturn filterTypeData\n}",
+    "funcname": "reportFilter"
+}

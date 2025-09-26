@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/request.go",
+    "lineno": 68,
+    "focalfunc": "func (e *RequestExpect) Protocol(protocol string) *RequestExpect",
+    "funcbody": "func (e *RequestExpect) Protocol(protocol string) *RequestExpect {\n\te.req.Protocol(protocol)\n\treturn e\n}",
+    "funcname": "Protocol"
+}

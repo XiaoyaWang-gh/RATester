@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/error_locator.go",
+    "lineno": 65,
+    "focalfunc": "func ContainsMatcher(text string) func(m LineMatcher) int",
+    "funcbody": "func ContainsMatcher(text string) func(m LineMatcher) int {\n\treturn func(m LineMatcher) int {\n\t\tif idx := strings.Index(m.Line, text); idx != -1 {\n\t\t\treturn idx + 1\n\t\t}\n\t\treturn -1\n\t}\n}",
+    "funcname": "ContainsMatcher"
+}

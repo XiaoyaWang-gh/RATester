@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 435,
+    "focalfunc": "func ToFilters(in any) []gift.Filter",
+    "funcbody": "func ToFilters(in any) []gift.Filter {\n\tswitch v := in.(type) {\n\tcase []gift.Filter:\n\t\treturn v\n\tcase []filter:\n\t\tvv := make([]gift.Filter, len(v))\n\t\tfor i, f := range v {\n\t\t\tvv[i] = f\n\t\t}\n\t\treturn vv\n\tcase gift.Filter:\n\t\treturn []gift.Filter{v}\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"%T is not an image filter\", in))\n\t}\n}",
+    "funcname": "ToFilters"
+}

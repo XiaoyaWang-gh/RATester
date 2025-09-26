@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 548,
+    "focalfunc": "func (b *BeegoHTTPRequest) buildParamBody() string",
+    "funcbody": "func (b *BeegoHTTPRequest) buildParamBody() string {\n\tvar paramBody string\n\tif len(b.params) > 0 {\n\t\tvar buf bytes.Buffer\n\t\tfor k, v := range b.params {\n\t\t\tfor _, vv := range v {\n\t\t\t\tbuf.WriteString(url.QueryEscape(k))\n\t\t\t\tbuf.WriteByte('=')\n\t\t\t\tbuf.WriteString(url.QueryEscape(vv))\n\t\t\t\tbuf.WriteByte('&')\n\t\t\t}\n\t\t}\n\t\tparamBody = buf.String()\n\t\tparamBody = paramBody[0 : len(paramBody)-1]\n\t}\n\treturn paramBody\n}",
+    "funcname": "buildParamBody"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 478,
+    "focalfunc": "func (r *rootCommand) Reset()",
+    "funcbody": "func (r *rootCommand) Reset() {\n\tr.logger.Reset()\n\tloggers.Log().Reset()\n}",
+    "funcname": "Reset"
+}

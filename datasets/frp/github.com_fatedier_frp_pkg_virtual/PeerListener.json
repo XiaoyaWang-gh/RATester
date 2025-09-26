@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 65,
+    "focalfunc": "func (c *Client) PeerListener() net.Listener",
+    "funcbody": "func (c *Client) PeerListener() net.Listener {\n\treturn c.l\n}",
+    "funcname": "PeerListener"
+}

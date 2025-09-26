@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 60,
+    "focalfunc": "func (p *Paginator) Page() int",
+    "funcbody": "func (p *Paginator) Page() int {\n\tif p.page != 0 {\n\t\treturn p.page\n\t}\n\tif p.Request.Form == nil {\n\t\tp.Request.ParseForm()\n\t}\n\tp.page, _ = strconv.Atoi(p.Request.Form.Get(\"p\"))\n\tif p.page > p.PageNums() {\n\t\tp.page = p.PageNums()\n\t}\n\tif p.page <= 0 {\n\t\tp.page = 1\n\t}\n\treturn p.page\n}",
+    "funcname": "Page"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_metadata.go",
+    "lineno": 79,
+    "focalfunc": "func (r *metaResource) setName(name string)",
+    "funcbody": "func (r *metaResource) setName(name string) {\n\tr.name = name\n\tr.changed = true\n}",
+    "funcname": "setName"
+}

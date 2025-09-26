@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 522,
+    "focalfunc": "func (b *BeegoHTTPRequest) buildTrans() http.RoundTripper",
+    "funcbody": "func (b *BeegoHTTPRequest) buildTrans() http.RoundTripper {\n\ttrans := b.setting.Transport\n\n\tif trans == nil {\n\n\t\ttrans = &http.Transport{\n\t\t\tTLSClientConfig:\tb.setting.TLSClientConfig,\n\t\t\tProxy:\t\t\tb.setting.Proxy,\n\t\t\tDialContext:\t\tTimeoutDialerCtx(b.setting.ConnectTimeout, b.setting.ReadWriteTimeout),\n\t\t\tMaxIdleConnsPerHost:\t100,\n\t\t}\n\t} else if t, ok := trans.(*http.Transport); ok {\n\n\t\tif t.TLSClientConfig == nil {\n\t\t\tt.TLSClientConfig = b.setting.TLSClientConfig\n\t\t}\n\t\tif t.Proxy == nil {\n\t\t\tt.Proxy = b.setting.Proxy\n\t\t}\n\t\tif t.DialContext == nil {\n\t\t\tt.DialContext = TimeoutDialerCtx(b.setting.ConnectTimeout, b.setting.ReadWriteTimeout)\n\t\t}\n\t}\n\treturn trans\n}",
+    "funcname": "buildTrans"
+}

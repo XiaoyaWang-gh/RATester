@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/tcpmux.go",
+    "lineno": 74,
+    "focalfunc": "func (pxy *TCPMuxProxy) httpConnectRun() (remoteAddr string, err error)",
+    "funcbody": "func (pxy *TCPMuxProxy) httpConnectRun() (remoteAddr string, err error) {\n\taddrs := make([]string, 0)\n\tfor _, domain := range pxy.cfg.CustomDomains {\n\t\tif domain == \"\" {\n\t\t\tcontinue\n\t\t}\n\n\t\taddrs, err = pxy.httpConnectListen(domain, pxy.cfg.RouteByHTTPUser, pxy.cfg.HTTPUser, pxy.cfg.HTTPPassword, addrs)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\tif pxy.cfg.SubDomain != \"\" {\n\t\taddrs, err = pxy.httpConnectListen(pxy.cfg.SubDomain+\".\"+pxy.serverCfg.SubDomainHost,\n\t\t\tpxy.cfg.RouteByHTTPUser, pxy.cfg.HTTPUser, pxy.cfg.HTTPPassword, addrs)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\tpxy.startCommonTCPListenersHandler()\n\tremoteAddr = strings.Join(addrs, \",\")\n\treturn remoteAddr, err\n}",
+    "funcname": "httpConnectRun"
+}

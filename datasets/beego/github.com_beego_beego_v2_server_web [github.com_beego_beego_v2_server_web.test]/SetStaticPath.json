@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 374,
+    "focalfunc": "func SetStaticPath(url string, path string) *HttpServer",
+    "funcbody": "func SetStaticPath(url string, path string) *HttpServer {\n\tif !strings.HasPrefix(url, \"/\") {\n\t\turl = \"/\" + url\n\t}\n\tif url != \"/\" {\n\t\turl = strings.TrimRight(url, \"/\")\n\t}\n\tBConfig.WebConfig.StaticDir[url] = path\n\treturn BeeApp\n}",
+    "funcname": "SetStaticPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 157,
+    "focalfunc": "func copyGoPackage(dst, src string)",
+    "funcbody": "func copyGoPackage(dst, src string) {\n\tfrom := filepath.Join(goSource, src)\n\tto := filepath.Join(forkRoot, dst)\n\tfmt.Println(\"Copy\", from, \"to\", to)\n\tmust(hugio.CopyDir(fs, from, to, func(s string) bool { return true }))\n}",
+    "funcname": "copyGoPackage"
+}

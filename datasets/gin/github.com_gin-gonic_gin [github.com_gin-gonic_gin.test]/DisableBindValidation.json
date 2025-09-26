@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/mode.go",
+    "lineno": 79,
+    "focalfunc": "func DisableBindValidation()",
+    "funcbody": "func DisableBindValidation() {\n\tbinding.Validator = nil\n}",
+    "funcname": "DisableBindValidation"
+}

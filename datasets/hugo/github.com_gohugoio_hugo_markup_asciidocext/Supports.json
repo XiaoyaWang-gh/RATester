@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/convert.go",
+    "lineno": 40,
+    "focalfunc": "func Supports() bool",
+    "funcbody": "func Supports() bool {\n\thasBin := internal.HasAsciiDoc()\n\tif htesting.SupportsAll() {\n\t\tif !hasBin {\n\t\t\tpanic(\"asciidoctor not installed\")\n\t\t}\n\t\treturn true\n\t}\n\treturn hasBin\n}",
+    "funcname": "Supports"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/shared.go",
+    "lineno": 39,
+    "focalfunc": "func inspectContainers(ctx context.Context, dockerClient client.ContainerAPIClient, containerID string) dockerData",
+    "funcbody": "func inspectContainers(ctx context.Context, dockerClient client.ContainerAPIClient, containerID string) dockerData {\n\tcontainerInspected, err := dockerClient.ContainerInspect(ctx, containerID)\n\tif err != nil {\n\t\tlog.Ctx(ctx).Warn().Err(err).Msgf(\"Failed to inspect container %s\", containerID)\n\t\treturn dockerData{}\n\t}\n\n\tif containerInspected.ContainerJSONBase != nil && containerInspected.ContainerJSONBase.State != nil && containerInspected.ContainerJSONBase.State.Running {\n\t\treturn parseContainer(containerInspected)\n\t}\n\n\treturn dockerData{}\n}",
+    "funcname": "inspectContainers"
+}

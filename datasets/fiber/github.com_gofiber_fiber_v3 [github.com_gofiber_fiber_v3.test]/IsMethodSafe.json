@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 679,
+    "focalfunc": "func IsMethodSafe(m string) bool",
+    "funcbody": "func IsMethodSafe(m string) bool {\n\tswitch m {\n\tcase MethodGet,\n\t\tMethodHead,\n\t\tMethodOptions,\n\t\tMethodTrace:\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "IsMethodSafe"
+}

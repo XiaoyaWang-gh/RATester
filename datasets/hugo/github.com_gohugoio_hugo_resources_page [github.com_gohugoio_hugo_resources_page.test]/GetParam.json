@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 202,
+    "focalfunc": "func (p *nopPage) GetParam(key string) any",
+    "funcbody": "func (p *nopPage) GetParam(key string) any {\n\treturn nil\n}",
+    "funcname": "GetParam"
+}

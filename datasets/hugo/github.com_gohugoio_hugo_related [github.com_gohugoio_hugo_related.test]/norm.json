@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 552,
+    "focalfunc": "func norm(num, min, max int) int",
+    "funcbody": "func norm(num, min, max int) int {\n\tif min > max {\n\t\tpanic(\"min > max\")\n\t}\n\treturn int(math.Floor((float64(num-min) / float64(max-min) * 100) + 0.5))\n}",
+    "funcname": "norm"
+}

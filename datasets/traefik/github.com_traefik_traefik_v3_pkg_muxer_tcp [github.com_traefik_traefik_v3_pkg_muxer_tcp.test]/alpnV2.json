@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher_v2.go",
+    "lineno": 46,
+    "focalfunc": "func alpnV2(tree *matchersTree, protos ...string) error",
+    "funcbody": "func alpnV2(tree *matchersTree, protos ...string) error {\n\tif len(protos) == 0 {\n\t\treturn errors.New(\"empty value for \\\"ALPN\\\" matcher is not allowed\")\n\t}\n\n\tfor _, proto := range protos {\n\t\tif proto == tlsalpn01.ACMETLS1Protocol {\n\t\t\treturn fmt.Errorf(\"invalid protocol value for \\\"ALPN\\\" matcher, %q is not allowed\", proto)\n\t\t}\n\t}\n\n\ttree.matcher = func(meta ConnData) bool {\n\t\tfor _, proto := range meta.alpnProtos {\n\t\t\tfor _, filter := range protos {\n\t\t\t\tif proto == filter {\n\t\t\t\t\treturn true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn nil\n}",
+    "funcname": "alpnV2"
+}

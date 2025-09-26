@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 221,
+    "focalfunc": "func (d *dbQueryLog) SetDB(db dbQuerier)",
+    "funcbody": "func (d *dbQueryLog) SetDB(db dbQuerier) {\n\td.db = db\n}",
+    "funcname": "SetDB"
+}

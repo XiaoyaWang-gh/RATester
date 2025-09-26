@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 161,
+    "focalfunc": "func GetServerNameFromClientHello(c net.Conn) (string, []byte)",
+    "funcbody": "func GetServerNameFromClientHello(c net.Conn) (string, []byte) {\n\tbuf := make([]byte, 4096)\n\tdata := make([]byte, 4096)\n\tn, err := c.Read(buf)\n\tif err != nil {\n\t\treturn \"\", nil\n\t}\n\tif n < 42 {\n\t\treturn \"\", nil\n\t}\n\tcopy(data, buf[:n])\n\tclientHello := new(crypt.ClientHelloMsg)\n\tclientHello.Unmarshal(data[5:n])\n\treturn clientHello.GetServerName(), buf[:n]\n}",
+    "funcname": "GetServerNameFromClientHello"
+}

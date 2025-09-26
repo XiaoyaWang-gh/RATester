@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 106,
+    "focalfunc": "func (s *Storage) gc()",
+    "funcbody": "func (s *Storage) gc() {\n\tticker := time.NewTicker(s.gcInterval)\n\tdefer ticker.Stop()\n\tvar expired []string\n\n\tfor {\n\t\tselect {\n\t\tcase <-s.done:\n\t\t\treturn\n\t\tcase <-ticker.C:\n\t\t\tts := utils.Timestamp()\n\t\t\texpired = expired[:0]\n\t\t\ts.mux.RLock()\n\t\t\tfor id, v := range s.db {\n\t\t\t\tif v.expiry != 0 && v.expiry < ts {\n\t\t\t\t\texpired = append(expired, id)\n\t\t\t\t}\n\t\t\t}\n\t\t\ts.mux.RUnlock()\n\t\t\ts.mux.Lock()\n\n\t\t\tfor i := range expired {\n\t\t\t\tv := s.db[expired[i]]\n\t\t\t\tif v.expiry != 0 && v.expiry <= ts {\n\t\t\t\t\tdelete(s.db, expired[i])\n\t\t\t\t}\n\t\t\t}\n\t\t\ts.mux.Unlock()\n\t\t}\n\t}\n}",
+    "funcname": "gc"
+}

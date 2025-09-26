@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/health.go",
+    "lineno": 68,
+    "focalfunc": "func check(t *file.Health)",
+    "funcbody": "func check(t *file.Health) {\n\tarr := strings.Split(t.HealthCheckTarget, \",\")\n\tvar err error\n\tvar rs *http.Response\n\tfor _, v := range arr {\n\t\tif t.HealthCheckType == \"tcp\" {\n\t\t\tvar c net.Conn\n\t\t\tc, err = net.DialTimeout(\"tcp\", v, time.Duration(t.HealthCheckTimeout)*time.Second)\n\t\t\tif err == nil {\n\t\t\t\tc.Close()\n\t\t\t}\n\t\t} else {\n\t\t\tclient := &http.Client{}\n\t\t\tclient.Timeout = time.Duration(t.HealthCheckTimeout) * time.Second\n\t\t\trs, err = client.Get(\"http://\" + v + t.HttpHealthUrl)\n\t\t\tif err == nil && rs.StatusCode != 200 {\n\t\t\t\terr = errors.New(\"status code is not match\")\n\t\t\t}\n\t\t}\n\t\tt.Lock()\n\t\tif err != nil {\n\t\t\tt.HealthMap[v] += 1\n\t\t} else if t.HealthMap[v] >= t.HealthMaxFail {\n\n\t\t\tserverConn.SendHealthInfo(v, \"1\")\n\t\t\tt.HealthMap[v] = 0\n\t\t}\n\n\t\tif t.HealthMap[v] > 0 && t.HealthMap[v]%t.HealthMaxFail == 0 {\n\n\t\t\tserverConn.SendHealthInfo(v, \"0\")\n\t\t}\n\t\tt.Unlock()\n\t}\n}",
+    "funcname": "check"
+}

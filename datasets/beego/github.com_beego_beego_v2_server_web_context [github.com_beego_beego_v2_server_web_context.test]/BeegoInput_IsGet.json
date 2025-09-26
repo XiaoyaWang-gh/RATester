@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 141,
+    "focalfunc": "func (input *BeegoInput) IsGet() bool",
+    "funcbody": "func (input *BeegoInput) IsGet() bool {\n\treturn input.Is(\"GET\")\n}",
+    "funcname": "IsGet"
+}

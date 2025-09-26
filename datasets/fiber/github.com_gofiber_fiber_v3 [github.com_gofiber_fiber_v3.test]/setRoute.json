@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1944,
+    "focalfunc": "func (c *DefaultCtx) setRoute(route *Route)",
+    "funcbody": "func (c *DefaultCtx) setRoute(route *Route) {\n\tc.route = route\n}",
+    "funcname": "setRoute"
+}

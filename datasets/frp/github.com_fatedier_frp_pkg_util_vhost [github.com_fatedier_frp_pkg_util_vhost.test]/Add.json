@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/router.go",
+    "lineno": 36,
+    "focalfunc": "func (r *Routers) Add(domain, location, httpUser string, payload interface{}) error",
+    "funcbody": "func (r *Routers) Add(domain, location, httpUser string, payload interface{}) error {\n\tdomain = strings.ToLower(domain)\n\n\tr.mutex.Lock()\n\tdefer r.mutex.Unlock()\n\n\tif _, exist := r.exist(domain, location, httpUser); exist {\n\t\treturn ErrRouterConfigConflict\n\t}\n\n\troutersByHTTPUser, found := r.indexByDomain[domain]\n\tif !found {\n\t\troutersByHTTPUser = make(map[string][]*Router)\n\t}\n\tvrs, found := routersByHTTPUser[httpUser]\n\tif !found {\n\t\tvrs = make([]*Router, 0, 1)\n\t}\n\n\tvr := &Router{\n\t\tdomain:\t\tdomain,\n\t\tlocation:\tlocation,\n\t\thttpUser:\thttpUser,\n\t\tpayload:\tpayload,\n\t}\n\tvrs = append(vrs, vr)\n\n\tslices.SortFunc(vrs, func(a, b *Router) int {\n\t\treturn -cmp.Compare(a.location, b.location)\n\t})\n\n\troutersByHTTPUser[httpUser] = vrs\n\tr.indexByDomain[domain] = routersByHTTPUser\n\treturn nil\n}",
+    "funcname": "Add"
+}

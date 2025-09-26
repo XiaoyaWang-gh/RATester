@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1154,
+    "focalfunc": "func cleanErrorLog(content string) string",
+    "funcbody": "func cleanErrorLog(content string) string {\n\tcontent = strings.ReplaceAll(content, \"\\n\", \" \")\n\tcontent = logReplacer.Replace(content)\n\tcontent = logDuplicateTemplateExecuteRe.ReplaceAllString(content, \"\")\n\tcontent = logDuplicateTemplateParseRe.ReplaceAllString(content, \"\")\n\tseen := make(map[string]bool)\n\tparts := strings.Split(content, \": \")\n\tkeep := make([]string, 0, len(parts))\n\tfor _, part := range parts {\n\t\tif seen[part] {\n\t\t\tcontinue\n\t\t}\n\t\tseen[part] = true\n\t\tkeep = append(keep, part)\n\t}\n\treturn strings.Join(keep, \": \")\n}",
+    "funcname": "cleanErrorLog"
+}

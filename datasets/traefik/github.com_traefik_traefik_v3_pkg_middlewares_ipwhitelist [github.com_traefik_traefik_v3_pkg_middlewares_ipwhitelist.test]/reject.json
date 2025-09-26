@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/ipwhitelist/ip_whitelist.go",
+    "lineno": 79,
+    "focalfunc": "func reject(ctx context.Context, rw http.ResponseWriter)",
+    "funcbody": "func reject(ctx context.Context, rw http.ResponseWriter) {\n\tstatusCode := http.StatusForbidden\n\n\trw.WriteHeader(statusCode)\n\t_, err := rw.Write([]byte(http.StatusText(statusCode)))\n\tif err != nil {\n\t\tlog.Ctx(ctx).Error().Err(err).Send()\n\t}\n}",
+    "funcname": "reject"
+}

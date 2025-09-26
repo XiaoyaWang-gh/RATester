@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/safe/routine.go",
+    "lineno": 63,
+    "focalfunc": "func defaultRecoverGoroutine(err interface{})",
+    "funcbody": "func defaultRecoverGoroutine(err interface{}) {\n\tlog.Error().Interface(\"error\", err).Msg(\"Error in Go routine\")\n\tlog.Error().Msgf(\"Stack: %s\", debug.Stack())\n}",
+    "funcname": "defaultRecoverGoroutine"
+}

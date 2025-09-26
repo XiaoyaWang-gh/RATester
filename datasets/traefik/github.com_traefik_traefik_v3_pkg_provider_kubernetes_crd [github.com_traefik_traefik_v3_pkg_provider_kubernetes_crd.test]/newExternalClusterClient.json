@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 131,
+    "focalfunc": "func newExternalClusterClient(endpoint, caFilePath string, token types.FileOrContent) (*clientWrapper, error)",
+    "funcbody": "func newExternalClusterClient(endpoint, caFilePath string, token types.FileOrContent) (*clientWrapper, error) {\n\tif endpoint == \"\" {\n\t\treturn nil, errors.New(\"endpoint missing for external cluster client\")\n\t}\n\n\ttokenData, err := token.Read()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"read token: %w\", err)\n\t}\n\n\tconfig := &rest.Config{\n\t\tHost:\t\tendpoint,\n\t\tBearerToken:\tstring(tokenData),\n\t}\n\n\tif caFilePath != \"\" {\n\t\tcaData, err := os.ReadFile(caFilePath)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to read CA file %s: %w\", caFilePath, err)\n\t\t}\n\n\t\tconfig.TLSClientConfig = rest.TLSClientConfig{CAData: caData}\n\t}\n\n\treturn createClientFromConfig(config)\n}",
+    "funcname": "newExternalClusterClient"
+}

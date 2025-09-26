@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 235,
+    "focalfunc": "func (c *Client) Unzip(pName, pVersion string) error",
+    "funcbody": "func (c *Client) Unzip(pName, pVersion string) error {\n\terr := c.unzipModule(pName, pVersion)\n\tif err == nil {\n\t\treturn nil\n\t}\n\n\treturn c.unzipArchive(pName, pVersion)\n}",
+    "funcname": "Unzip"
+}

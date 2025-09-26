@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 36,
+    "focalfunc": "func (a *AsciidocConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error)",
+    "funcbody": "func (a *AsciidocConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error) {\n\tb, err := a.GetAsciidocContent(ctx.Src, a.Ctx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tcontent, toc, err := a.extractTOC(b)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn AsciidocResult{\n\t\tResultRender:\tconverter.Bytes(content),\n\t\ttoc:\t\ttoc,\n\t}, nil\n}",
+    "funcname": "Convert"
+}

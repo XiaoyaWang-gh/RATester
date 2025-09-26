@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/csrf.go",
+    "lineno": 280,
+    "focalfunc": "func isFromCookie(extractor any) bool",
+    "funcbody": "func isFromCookie(extractor any) bool {\n\treturn reflect.ValueOf(extractor).Pointer() == reflect.ValueOf(FromCookie).Pointer()\n}",
+    "funcname": "isFromCookie"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 109,
+    "focalfunc": "func newRequest(baseURL string) (*http.Request, error)",
+    "funcbody": "func newRequest(baseURL string) (*http.Request, error) {\n\tu, err := url.Parse(baseURL)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error pages: error when parse URL: %w\", err)\n\t}\n\n\treq, err := http.NewRequest(http.MethodGet, u.String(), nil)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error pages: error when create query: %w\", err)\n\t}\n\n\treq.RequestURI = u.RequestURI()\n\treturn req, nil\n}",
+    "funcname": "newRequest"
+}

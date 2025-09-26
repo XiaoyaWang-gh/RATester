@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 59,
+    "focalfunc": "func formatTimeHeader(when time.Time) ([]byte, int, int)",
+    "funcbody": "func formatTimeHeader(when time.Time) ([]byte, int, int) {\n\ty, mo, d := when.Date()\n\th, mi, s := when.Clock()\n\tns := when.Nanosecond() / 1000000\n\t// len(\"2006/01/02 15:04:05.123 \")==24\n\tvar buf [24]byte\n\n\tbuf[0] = y1[y/1000%10]\n\tbuf[1] = y2[y/100]\n\tbuf[2] = y3[y-y/100*100]\n\tbuf[3] = y4[y-y/100*100]\n\tbuf[4] = '/'\n\tbuf[5] = mo1[mo-1]\n\tbuf[6] = mo2[mo-1]\n\tbuf[7] = '/'\n\tbuf[8] = d1[d-1]\n\tbuf[9] = d2[d-1]\n\tbuf[10] = ' '\n\tbuf[11] = h1[h]\n\tbuf[12] = h2[h]\n\tbuf[13] = ':'\n\tbuf[14] = mi1[mi]\n\tbuf[15] = mi2[mi]\n\tbuf[16] = ':'\n\tbuf[17] = s1[s]\n\tbuf[18] = s2[s]\n\tbuf[19] = '.'\n\tbuf[20] = ns1[ns/100]\n\tbuf[21] = ns1[ns%100/10]\n\tbuf[22] = ns1[ns%10]\n\n\tbuf[23] = ' '\n\n\treturn buf[0:], d, h\n}",
+    "funcname": "formatTimeHeader"
+}

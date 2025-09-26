@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 394,
+    "focalfunc": "func writeCloser(conn net.Conn) (tcp.WriteCloser, error)",
+    "funcbody": "func writeCloser(conn net.Conn) (tcp.WriteCloser, error) {\n\tswitch typedConn := conn.(type) {\n\tcase *proxyproto.Conn:\n\t\tunderlying, ok := typedConn.TCPConn()\n\t\tif !ok {\n\t\t\treturn nil, errors.New(\"underlying connection is not a tcp connection\")\n\t\t}\n\t\treturn &writeCloserWrapper{writeCloser: underlying, Conn: typedConn}, nil\n\tcase *net.TCPConn:\n\t\treturn typedConn, nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"unknown connection type %T\", typedConn)\n\t}\n}",
+    "funcname": "writeCloser"
+}

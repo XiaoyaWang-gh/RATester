@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 125,
+    "focalfunc": "func (o querySet) Limit(limit interface{}, args ...interface{}) QuerySeter",
+    "funcbody": "func (o querySet) Limit(limit interface{}, args ...interface{}) QuerySeter {\n\to.limit = utils.ToInt64(limit)\n\tif len(args) > 0 {\n\t\to.setOffset(args[0])\n\t}\n\treturn &o\n}",
+    "funcname": "Limit"
+}

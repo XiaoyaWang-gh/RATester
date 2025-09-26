@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/retry/retry.go",
+    "lineno": 204,
+    "focalfunc": "func (r *responseWriter) Write(buf []byte) (int, error)",
+    "funcbody": "func (r *responseWriter) Write(buf []byte) (int, error) {\n\tif r.ShouldRetry() {\n\t\treturn len(buf), nil\n\t}\n\treturn r.responseWriter.Write(buf)\n}",
+    "funcname": "Write"
+}

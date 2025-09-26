@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/replacepathregex/replace_path_regex.go",
+    "lineno": 49,
+    "focalfunc": "func (rp *replacePathRegex) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (rp *replacePathRegex) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tcurrentPath := req.URL.RawPath\n\tif currentPath == \"\" {\n\t\tcurrentPath = req.URL.EscapedPath()\n\t}\n\n\tif rp.regexp != nil && rp.regexp.MatchString(currentPath) {\n\t\treq.Header.Add(replacepath.ReplacedPathHeader, currentPath)\n\t\treq.URL.RawPath = rp.regexp.ReplaceAllString(currentPath, rp.replacement)\n\n\t\t// as replacement can introduce escaped characters\n\t\t// Path must remain an unescaped version of RawPath\n\t\t// Doesn't handle multiple times encoded replacement (`/` => `%2F` => `%252F` => ...)\n\t\tvar err error\n\t\treq.URL.Path, err = url.PathUnescape(req.URL.RawPath)\n\t\tif err != nil {\n\t\t\tmiddlewares.GetLogger(context.Background(), rp.name, typeName).Error().Msgf(\"Unable to unescape url raw path %q: %v\", req.URL.RawPath, err)\n\t\t\tobservability.SetStatusErrorf(req.Context(), \"Unable to unescape url raw path %q: %v\", req.URL.RawPath, err)\n\t\t\thttp.Error(rw, err.Error(), http.StatusInternalServerError)\n\t\t\treturn\n\t\t}\n\n\t\treq.RequestURI = req.URL.RequestURI()\n\t}\n\n\trp.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

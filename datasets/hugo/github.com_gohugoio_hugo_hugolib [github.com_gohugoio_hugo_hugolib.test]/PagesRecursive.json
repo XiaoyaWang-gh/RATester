@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 260,
+    "focalfunc": "func (p *pageState) PagesRecursive() page.Pages",
+    "funcbody": "func (p *pageState) PagesRecursive() page.Pages {\n\treturn nil\n}",
+    "funcname": "PagesRecursive"
+}

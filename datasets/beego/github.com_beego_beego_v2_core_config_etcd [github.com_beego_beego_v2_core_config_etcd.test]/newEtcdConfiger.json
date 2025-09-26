@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 39,
+    "focalfunc": "func newEtcdConfiger(client *clientv3.Client, prefix string) *EtcdConfiger",
+    "funcbody": "func newEtcdConfiger(client *clientv3.Client, prefix string) *EtcdConfiger {\n\tres := &EtcdConfiger{\n\t\tclient:\tclient,\n\t\tprefix:\tprefix,\n\t}\n\n\tres.BaseConfiger = config.NewBaseConfiger(res.reader)\n\treturn res\n}",
+    "funcname": "newEtcdConfiger"
+}

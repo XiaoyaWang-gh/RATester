@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 64,
+    "focalfunc": "func NewDefaultFramework() *Framework",
+    "funcbody": "func NewDefaultFramework() *Framework {\n\tsuiteConfig, _ := ginkgo.GinkgoConfiguration()\n\toptions := Options{\n\t\tTotalParallelNode:\tsuiteConfig.ParallelTotal,\n\t\tCurrentNodeIndex:\tsuiteConfig.ParallelProcess,\n\t\tFromPortIndex:\t\t10000,\n\t\tToPortIndex:\t\t30000,\n\t}\n\treturn NewFramework(options)\n}",
+    "funcname": "NewDefaultFramework"
+}

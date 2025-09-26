@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 185,
+    "focalfunc": "func (a *adminController) QpsIndex()",
+    "funcbody": "func (a *adminController) QpsIndex() {\n\tdata := make(map[interface{}]interface{})\n\tdata[\"Content\"] = StatisticsMap.GetMap()\n\n\tif content, ok := (data[\"Content\"]).(M); ok {\n\t\tif resultLists, ok := (content[\"Data\"]).([][]string); ok {\n\t\t\tfor i := range resultLists {\n\t\t\t\tif len(resultLists[i]) > 0 {\n\t\t\t\t\tresultLists[i][0] = template.HTMLEscapeString(resultLists[i][0])\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\twriteTemplate(a.Ctx.ResponseWriter, data, qpsTpl, defaultScriptsTpl)\n}",
+    "funcname": "QpsIndex"
+}

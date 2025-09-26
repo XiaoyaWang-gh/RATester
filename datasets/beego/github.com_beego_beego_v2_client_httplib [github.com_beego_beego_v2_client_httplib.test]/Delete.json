@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 105,
+    "focalfunc": "func Delete(url string) *BeegoHTTPRequest",
+    "funcbody": "func Delete(url string) *BeegoHTTPRequest {\n\treturn NewBeegoRequest(url, \"DELETE\")\n}",
+    "funcname": "Delete"
+}

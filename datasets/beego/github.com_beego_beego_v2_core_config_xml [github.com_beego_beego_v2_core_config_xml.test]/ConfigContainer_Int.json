@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/xml/xml.go",
+    "lineno": 154,
+    "focalfunc": "func (c *ConfigContainer) Int(key string) (int, error)",
+    "funcbody": "func (c *ConfigContainer) Int(key string) (int, error) {\n\treturn strconv.Atoi(c.data[key].(string))\n}",
+    "funcname": "Int"
+}

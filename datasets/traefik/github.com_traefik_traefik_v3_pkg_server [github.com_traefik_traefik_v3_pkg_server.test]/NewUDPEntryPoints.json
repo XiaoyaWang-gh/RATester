@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_udp.go",
+    "lineno": 19,
+    "focalfunc": "func NewUDPEntryPoints(cfg static.EntryPoints) (UDPEntryPoints, error)",
+    "funcbody": "func NewUDPEntryPoints(cfg static.EntryPoints) (UDPEntryPoints, error) {\n\tentryPoints := make(UDPEntryPoints)\n\tfor entryPointName, entryPoint := range cfg {\n\t\tprotocol, err := entryPoint.GetProtocol()\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error while building entryPoint %s: %w\", entryPointName, err)\n\t\t}\n\n\t\tif protocol != \"udp\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tep, err := NewUDPEntryPoint(entryPoint)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"error while building entryPoint %s: %w\", entryPointName, err)\n\t\t}\n\t\tentryPoints[entryPointName] = ep\n\t}\n\treturn entryPoints, nil\n}",
+    "funcname": "NewUDPEntryPoints"
+}

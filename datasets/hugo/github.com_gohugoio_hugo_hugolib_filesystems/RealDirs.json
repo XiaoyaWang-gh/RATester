@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 440,
+    "focalfunc": "func (d *SourceFilesystem) RealDirs(from string) []string",
+    "funcbody": "func (d *SourceFilesystem) RealDirs(from string) []string {\n\tvar dirnames []string\n\tfor _, m := range d.mounts() {\n\t\tif !m.IsDir() {\n\t\t\tcontinue\n\t\t}\n\t\tdirname := filepath.Join(m.Meta().Filename, from)\n\t\tif _, err := d.SourceFs.Stat(dirname); err == nil {\n\t\t\tdirnames = append(dirnames, dirname)\n\t\t}\n\t}\n\treturn dirnames\n}",
+    "funcname": "RealDirs"
+}

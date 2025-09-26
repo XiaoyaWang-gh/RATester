@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 43,
+    "focalfunc": "func newTaskManager() *taskManager",
+    "funcbody": "func newTaskManager() *taskManager {\n\treturn &taskManager{\n\t\tadminTaskList:\tmake(map[string]Tasker),\n\t\ttaskLock:\tsync.RWMutex{},\n\t\tstop:\t\tmake(chan bool),\n\t\tchanged:\tmake(chan bool),\n\t\tstarted:\tfalse,\n\t}\n}",
+    "funcname": "newTaskManager"
+}

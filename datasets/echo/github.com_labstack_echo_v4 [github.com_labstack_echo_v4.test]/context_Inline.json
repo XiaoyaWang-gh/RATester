@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 594,
+    "focalfunc": "func (c *context) Inline(file, name string) error",
+    "funcbody": "func (c *context) Inline(file, name string) error {\n\treturn c.contentDisposition(file, name, \"inline\")\n}",
+    "funcname": "Inline"
+}

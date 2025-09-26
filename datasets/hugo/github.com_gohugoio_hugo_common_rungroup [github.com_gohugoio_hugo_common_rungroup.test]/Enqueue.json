@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/rungroup/rungroup.go",
+    "lineno": 80,
+    "focalfunc": "func (r *runGroup[T]) Enqueue(t T) error",
+    "funcbody": "func (r *runGroup[T]) Enqueue(t T) error {\n\tselect {\n\tcase <-r.ctx.Done():\n\t\treturn nil\n\tcase r.ch <- t:\n\t}\n\treturn nil\n}",
+    "funcname": "Enqueue"
+}

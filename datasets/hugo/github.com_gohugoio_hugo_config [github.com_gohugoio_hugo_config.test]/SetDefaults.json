@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 194,
+    "focalfunc": "func (c *defaultConfigProvider) SetDefaults(params maps.Params)",
+    "funcbody": "func (c *defaultConfigProvider) SetDefaults(params maps.Params) {\n\tmaps.PrepareParams(params)\n\tfor k, v := range params {\n\t\tif _, found := c.root[k]; !found {\n\t\t\tc.root[k] = v\n\t\t}\n\t}\n}",
+    "funcname": "SetDefaults"
+}

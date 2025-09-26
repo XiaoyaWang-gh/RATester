@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 77,
+    "focalfunc": "func (bc *MemoryCache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error)",
+    "funcbody": "func (bc *MemoryCache) GetMulti(ctx context.Context, keys []string) ([]interface{}, error) {\n\trc := make([]interface{}, len(keys))\n\tkeysErr := make([]string, 0)\n\n\tfor i, ki := range keys {\n\t\tval, err := bc.Get(context.Background(), ki)\n\t\tif err != nil {\n\t\t\tkeysErr = append(keysErr, fmt.Sprintf(\"key [%s] error: %s\", ki, err.Error()))\n\t\t\tcontinue\n\t\t}\n\t\trc[i] = val\n\t}\n\n\tif len(keysErr) == 0 {\n\t\treturn rc, nil\n\t}\n\treturn rc, berror.Error(MultiGetFailed, strings.Join(keysErr, \"; \"))\n}",
+    "funcname": "GetMulti"
+}

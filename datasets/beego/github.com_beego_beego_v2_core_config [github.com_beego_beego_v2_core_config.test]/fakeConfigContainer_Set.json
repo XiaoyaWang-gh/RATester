@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 33,
+    "focalfunc": "func (c *fakeConfigContainer) Set(key, val string) error",
+    "funcbody": "func (c *fakeConfigContainer) Set(key, val string) error {\n\tc.data[strings.ToLower(key)] = val\n\treturn nil\n}",
+    "funcname": "Set"
+}

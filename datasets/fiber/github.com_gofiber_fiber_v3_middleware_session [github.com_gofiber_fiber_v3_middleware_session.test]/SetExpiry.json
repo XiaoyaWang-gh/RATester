@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 233,
+    "focalfunc": "func (s *Session) SetExpiry(exp time.Duration)",
+    "funcbody": "func (s *Session) SetExpiry(exp time.Duration) {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\ts.exp = exp\n}",
+    "funcname": "SetExpiry"
+}

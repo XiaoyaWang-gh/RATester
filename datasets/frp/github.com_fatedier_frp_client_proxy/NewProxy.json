@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy.go",
+    "lineno": 56,
+    "focalfunc": "func NewProxy(\n\tctx context.Context,\n\tpxyConf v1.ProxyConfigurer,\n\tclientCfg *v1.ClientCommonConfig,\n\tmsgTransporter transport.MessageTransporter,\n) (pxy Proxy)",
+    "funcbody": "func NewProxy(\n\tctx context.Context,\n\tpxyConf v1.ProxyConfigurer,\n\tclientCfg *v1.ClientCommonConfig,\n\tmsgTransporter transport.MessageTransporter,\n) (pxy Proxy) {\n\tvar limiter *rate.Limiter\n\tlimitBytes := pxyConf.GetBaseConfig().Transport.BandwidthLimit.Bytes()\n\tif limitBytes > 0 && pxyConf.GetBaseConfig().Transport.BandwidthLimitMode == types.BandwidthLimitModeClient {\n\t\tlimiter = rate.NewLimiter(rate.Limit(float64(limitBytes)), int(limitBytes))\n\t}\n\n\tbaseProxy := BaseProxy{\n\t\tbaseCfg:\tpxyConf.GetBaseConfig(),\n\t\tclientCfg:\tclientCfg,\n\t\tlimiter:\tlimiter,\n\t\tmsgTransporter:\tmsgTransporter,\n\t\txl:\t\txlog.FromContextSafe(ctx),\n\t\tctx:\t\tctx,\n\t}\n\n\tfactory := proxyFactoryRegistry[reflect.TypeOf(pxyConf)]\n\tif factory == nil {\n\t\treturn nil\n\t}\n\treturn factory(&baseProxy, pxyConf)\n}",
+    "funcname": "NewProxy"
+}

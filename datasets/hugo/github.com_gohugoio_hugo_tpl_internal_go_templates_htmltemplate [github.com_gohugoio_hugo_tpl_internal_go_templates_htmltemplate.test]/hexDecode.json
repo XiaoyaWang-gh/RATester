@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 109,
+    "focalfunc": "func hexDecode(s []byte) rune",
+    "funcbody": "func hexDecode(s []byte) rune {\n\tn := '\\x00'\n\tfor _, c := range s {\n\t\tn <<= 4\n\t\tswitch {\n\t\tcase '0' <= c && c <= '9':\n\t\t\tn |= rune(c - '0')\n\t\tcase 'a' <= c && c <= 'f':\n\t\t\tn |= rune(c-'a') + 10\n\t\tcase 'A' <= c && c <= 'F':\n\t\t\tn |= rune(c-'A') + 10\n\t\tdefault:\n\t\t\tpanic(fmt.Sprintf(\"Bad hex digit in %q\", s))\n\t\t}\n\t}\n\treturn n\n}",
+    "funcname": "hexDecode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 70,
+    "focalfunc": "func WrapHandler(handler *Handler) alice.Constructor",
+    "funcbody": "func WrapHandler(handler *Handler) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\treturn http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {\n\t\t\thandler.ServeHTTP(rw, req, next)\n\t\t}), nil\n\t}\n}",
+    "funcname": "WrapHandler"
+}

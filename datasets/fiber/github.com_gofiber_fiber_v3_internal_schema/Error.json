@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 511,
+    "focalfunc": "func (e MultiError) Error() string",
+    "funcbody": "func (e MultiError) Error() string {\n\ts := \"\"\n\tfor _, err := range e {\n\t\ts = err.Error()\n\t\tbreak\n\t}\n\tswitch len(e) {\n\tcase 0:\n\t\treturn \"(0 errors)\"\n\tcase 1:\n\t\treturn s\n\tcase 2:\n\t\treturn s + \" (and 1 other error)\"\n\t}\n\treturn fmt.Sprintf(\"%s (and %d other errors)\", s, len(e)-1)\n}",
+    "funcname": "Error"
+}

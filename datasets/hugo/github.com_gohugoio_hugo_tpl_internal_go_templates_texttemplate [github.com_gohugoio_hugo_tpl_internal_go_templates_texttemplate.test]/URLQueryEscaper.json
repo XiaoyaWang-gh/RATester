@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 756,
+    "focalfunc": "func URLQueryEscaper(args ...any) string",
+    "funcbody": "func URLQueryEscaper(args ...any) string {\n\treturn url.QueryEscape(evalArgs(args))\n}",
+    "funcname": "URLQueryEscaper"
+}

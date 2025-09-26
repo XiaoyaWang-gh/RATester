@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 38,
+    "focalfunc": "func (mi *MemoryItem) isExpire() bool",
+    "funcbody": "func (mi *MemoryItem) isExpire() bool {\n\n\tif mi.lifespan == 0 {\n\t\treturn false\n\t}\n\treturn time.Since(mi.createdTime) > mi.lifespan\n}",
+    "funcname": "isExpire"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 225,
+    "focalfunc": "func (t templateExec) Clone(d *deps.Deps) *templateExec",
+    "funcbody": "func (t templateExec) Clone(d *deps.Deps) *templateExec {\n\texec, funcs := newTemplateExecuter(d)\n\tt.executor = exec\n\tt.funcs = funcs\n\tt.d = d\n\treturn &t\n}",
+    "funcname": "Clone"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 411,
+    "focalfunc": "func (c *Context) Param(key string) string",
+    "funcbody": "func (c *Context) Param(key string) string {\n\treturn c.Params.ByName(key)\n}",
+    "funcname": "Param"
+}

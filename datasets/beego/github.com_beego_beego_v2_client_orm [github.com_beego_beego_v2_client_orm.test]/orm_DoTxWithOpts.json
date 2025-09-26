@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 570,
+    "focalfunc": "func (o *orm) DoTxWithOpts(opts *sql.TxOptions, task func(ctx context.Context, txOrm TxOrmer) error) error",
+    "funcbody": "func (o *orm) DoTxWithOpts(opts *sql.TxOptions, task func(ctx context.Context, txOrm TxOrmer) error) error {\n\treturn o.DoTxWithCtxAndOpts(context.Background(), opts, task)\n}",
+    "funcname": "DoTxWithOpts"
+}

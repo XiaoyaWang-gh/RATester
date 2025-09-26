@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/once.go",
+    "lineno": 64,
+    "focalfunc": "func (t *onceMore) ResetWithLock() *sync.Mutex",
+    "funcbody": "func (t *onceMore) ResetWithLock() *sync.Mutex {\n\tt.mu.Lock()\n\tdefer atomic.StoreUint32(&t.done, 0)\n\treturn &t.mu\n}",
+    "funcname": "ResetWithLock"
+}

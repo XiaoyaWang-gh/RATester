@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 77,
+    "focalfunc": "func (s *JsonDb) LoadHostFromJsonFile()",
+    "funcbody": "func (s *JsonDb) LoadHostFromJsonFile() {\n\tloadSyncMapFromFile(s.HostFilePath, func(v string) {\n\t\tvar err error\n\t\tpost := new(Host)\n\t\tif json.Unmarshal([]byte(v), &post) != nil {\n\t\t\treturn\n\t\t}\n\t\tif post.Client, err = s.GetClient(post.Client.Id); err != nil {\n\t\t\treturn\n\t\t}\n\t\ts.Hosts.Store(post.Id, post)\n\t\tif post.Id > int(s.HostIncreaseId) {\n\t\t\ts.HostIncreaseId = int32(post.Id)\n\t\t}\n\t})\n}",
+    "funcname": "LoadHostFromJsonFile"
+}

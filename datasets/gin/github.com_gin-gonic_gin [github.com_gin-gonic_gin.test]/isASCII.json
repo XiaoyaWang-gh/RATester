@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 157,
+    "focalfunc": "func isASCII(s string) bool",
+    "funcbody": "func isASCII(s string) bool {\n\tfor i := 0; i < len(s); i++ {\n\t\tif s[i] > unicode.MaxASCII {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "isASCII"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 520,
+    "focalfunc": "func (c *context) JSONBlob(code int, b []byte) (err error)",
+    "funcbody": "func (c *context) JSONBlob(code int, b []byte) (err error) {\n\treturn c.Blob(code, MIMEApplicationJSON, b)\n}",
+    "funcname": "JSONBlob"
+}

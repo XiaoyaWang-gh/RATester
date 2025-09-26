@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/denyrouterrecursion/deny_router_recursion.go",
+    "lineno": 31,
+    "focalfunc": "func New(routerName string, next http.Handler) (*DenyRouterRecursion, error)",
+    "funcbody": "func New(routerName string, next http.Handler) (*DenyRouterRecursion, error) {\n\tif routerName == \"\" {\n\t\treturn nil, errors.New(\"routerName cannot be empty\")\n\t}\n\n\treturn &DenyRouterRecursion{\n\t\trouterName:\trouterName,\n\t\trouterNameHash:\tmakeHash(routerName),\n\t\tnext:\t\tnext,\n\t}, nil\n}",
+    "funcname": "New"
+}

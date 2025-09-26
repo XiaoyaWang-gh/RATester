@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_config.go",
+    "lineno": 129,
+    "focalfunc": "func (f Caches) MiscCache() *Cache",
+    "funcbody": "func (f Caches) MiscCache() *Cache {\n\treturn f[CacheKeyMisc]\n}",
+    "funcname": "MiscCache"
+}

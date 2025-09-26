@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 649,
+    "focalfunc": "func (m *taskManager) ClearTask()",
+    "funcbody": "func (m *taskManager) ClearTask() {\n\tisChanged := false\n\n\tm.taskLock.Lock()\n\tm.adminTaskList = make(map[string]Tasker)\n\tif m.started {\n\t\tisChanged = true\n\t}\n\tm.taskLock.Unlock()\n\n\tif isChanged {\n\t\tgo func() {\n\t\t\tm.changed <- true\n\t\t}()\n\t}\n}",
+    "funcname": "ClearTask"
+}

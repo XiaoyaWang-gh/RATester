@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/templates/execute_as_template.go",
+    "lineno": 69,
+    "focalfunc": "func (c *Client) ExecuteAsTemplate(ctx context.Context, res resources.ResourceTransformer, targetPath string, data any) (resource.Resource, error)",
+    "funcbody": "func (c *Client) ExecuteAsTemplate(ctx context.Context, res resources.ResourceTransformer, targetPath string, data any) (resource.Resource, error) {\n\treturn res.TransformWithContext(ctx, &executeAsTemplateTransform{\n\t\trs:\t\tc.rs,\n\t\ttargetPath:\tpaths.ToSlashTrimLeading(targetPath),\n\t\tt:\t\tc.t,\n\t\tdata:\t\tdata,\n\t})\n}",
+    "funcname": "ExecuteAsTemplate"
+}

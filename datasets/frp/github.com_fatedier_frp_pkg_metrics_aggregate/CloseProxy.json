@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 65,
+    "focalfunc": "func (m *serverMetrics) CloseProxy(name string, proxyType string)",
+    "funcbody": "func (m *serverMetrics) CloseProxy(name string, proxyType string) {\n\tfor _, v := range m.ms {\n\t\tv.CloseProxy(name, proxyType)\n\t}\n}",
+    "funcname": "CloseProxy"
+}

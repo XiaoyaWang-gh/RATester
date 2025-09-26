@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/helpers.go",
+    "lineno": 9,
+    "focalfunc": "func compareTokens(a, b []byte) bool",
+    "funcbody": "func compareTokens(a, b []byte) bool {\n\treturn subtle.ConstantTimeCompare(a, b) == 1\n}",
+    "funcname": "compareTokens"
+}

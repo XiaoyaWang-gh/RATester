@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler.go",
+    "lineno": 65,
+    "focalfunc": "func New(staticConfig static.Configuration, runtimeConfig *runtime.Configuration) *Handler",
+    "funcbody": "func New(staticConfig static.Configuration, runtimeConfig *runtime.Configuration) *Handler {\n\trConfig := runtimeConfig\n\tif rConfig == nil {\n\t\trConfig = &runtime.Configuration{}\n\t}\n\n\treturn &Handler{\n\t\truntimeConfiguration:\trConfig,\n\t\tstaticConfig:\t\tstaticConfig,\n\t}\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/terminal/colors.go",
+    "lineno": 34,
+    "focalfunc": "func PrintANSIColors(f *os.File) bool",
+    "funcbody": "func PrintANSIColors(f *os.File) bool {\n\tif os.Getenv(\"NO_COLOR\") != \"\" {\n\t\treturn false\n\t}\n\treturn IsTerminal(f)\n}",
+    "funcname": "PrintANSIColors"
+}

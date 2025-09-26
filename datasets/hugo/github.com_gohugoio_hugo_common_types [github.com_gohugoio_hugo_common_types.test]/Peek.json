@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/evictingqueue.go",
+    "lineno": 74,
+    "focalfunc": "func (q *EvictingStringQueue) Peek() string",
+    "funcbody": "func (q *EvictingStringQueue) Peek() string {\n\tq.mu.Lock()\n\tl := len(q.vals)\n\tif l == 0 {\n\t\tq.mu.Unlock()\n\t\treturn \"\"\n\t}\n\telem := q.vals[l-1]\n\tq.mu.Unlock()\n\treturn elem\n}",
+    "funcname": "Peek"
+}

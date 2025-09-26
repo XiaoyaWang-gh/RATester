@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 223,
+    "focalfunc": "func (c ConfigLanguage) BuildFuture() bool",
+    "funcbody": "func (c ConfigLanguage) BuildFuture() bool {\n\treturn c.config.BuildFuture\n}",
+    "funcname": "BuildFuture"
+}

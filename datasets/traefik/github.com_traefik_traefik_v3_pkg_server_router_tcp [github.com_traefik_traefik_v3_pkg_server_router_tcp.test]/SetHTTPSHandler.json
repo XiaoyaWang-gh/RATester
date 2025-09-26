@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 315,
+    "focalfunc": "func (r *Router) SetHTTPSHandler(handler http.Handler, config *tls.Config)",
+    "funcbody": "func (r *Router) SetHTTPSHandler(handler http.Handler, config *tls.Config) {\n\tr.httpsHandler = handler\n\tr.httpsTLSConfig = config\n}",
+    "funcname": "SetHTTPSHandler"
+}

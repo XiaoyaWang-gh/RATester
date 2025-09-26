@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 328,
+    "focalfunc": "func (i *imageResource) processActionOptions(action string, options []string) (images.ImageResource, error)",
+    "funcbody": "func (i *imageResource) processActionOptions(action string, options []string) (images.ImageResource, error) {\n\tconf, err := images.DecodeImageConfig(action, options, i.Proc.Cfg, i.Format)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\timg, err := i.doWithImageConfig(conf, func(src image.Image) (image.Image, error) {\n\t\treturn i.Proc.ApplyFiltersFromConfig(src, conf)\n\t})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif action == images.ActionFill {\n\t\tif conf.Anchor == 0 && img.Width() == 0 || img.Height() == 0 {\n\n\t\t\tconf.Anchor = gift.CenterAnchor\n\t\t\tconf.AnchorStr = \"center\"\n\t\t\treturn i.doWithImageConfig(conf, func(src image.Image) (image.Image, error) {\n\t\t\t\treturn i.Proc.ApplyFiltersFromConfig(src, conf)\n\t\t\t})\n\t\t}\n\t}\n\n\treturn img, nil\n}",
+    "funcname": "processActionOptions"
+}

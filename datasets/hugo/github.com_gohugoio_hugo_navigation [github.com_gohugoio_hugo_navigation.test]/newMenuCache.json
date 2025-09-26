@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu_cache.go",
+    "lineno": 39,
+    "focalfunc": "func newMenuCache() *menuCache",
+    "funcbody": "func newMenuCache() *menuCache {\n\treturn &menuCache{m: make(map[string][]menuCacheEntry)}\n}",
+    "funcname": "newMenuCache"
+}

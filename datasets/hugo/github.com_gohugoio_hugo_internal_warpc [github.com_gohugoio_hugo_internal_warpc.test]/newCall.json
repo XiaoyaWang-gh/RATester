@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 156,
+    "focalfunc": "func (d *dispatcher[Q, R]) newCall(q Message[Q]) (*call[Q, R], error)",
+    "funcbody": "func (d *dispatcher[Q, R]) newCall(q Message[Q]) (*call[Q, R], error) {\n\tcall := &call[Q, R]{\n\t\tdonec:\t\tmake(chan *call[Q, R], 1),\n\t\trequest:\tq,\n\t}\n\n\tif d.shutdown || d.closing {\n\t\tcall.err = ErrShutdown\n\t\tcall.done()\n\t\treturn call, nil\n\t}\n\n\td.mu.Lock()\n\td.pending[q.GetID()] = call\n\td.mu.Unlock()\n\n\treturn call, nil\n}",
+    "funcname": "newCall"
+}

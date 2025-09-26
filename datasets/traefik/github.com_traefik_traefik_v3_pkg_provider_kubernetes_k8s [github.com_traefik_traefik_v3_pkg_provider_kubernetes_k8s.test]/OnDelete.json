@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/event_handler.go",
+    "lineno": 27,
+    "focalfunc": "func (reh *ResourceEventHandler) OnDelete(obj interface{})",
+    "funcbody": "func (reh *ResourceEventHandler) OnDelete(obj interface{}) {\n\teventHandlerFunc(reh.Ev, obj)\n}",
+    "funcname": "OnDelete"
+}

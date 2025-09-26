@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 227,
+    "focalfunc": "func (t *Template) associate(new *Template, tree *parse.Tree) bool",
+    "funcbody": "func (t *Template) associate(new *Template, tree *parse.Tree) bool {\n\tif new.common != t.common {\n\t\tpanic(\"internal error: associate not common\")\n\t}\n\tif old := t.tmpl[new.name]; old != nil && parse.IsEmptyTree(tree.Root) && old.Tree != nil {\n\n\t\treturn false\n\t}\n\tt.tmpl[new.name] = new\n\treturn true\n}",
+    "funcname": "associate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/encoding/encoding.go",
+    "lineno": 64,
+    "focalfunc": "func (ns *Namespace) Jsonify(args ...any) (template.HTML, error)",
+    "funcbody": "func (ns *Namespace) Jsonify(args ...any) (template.HTML, error) {\n\tvar (\n\t\tb\t[]byte\n\t\terr\terror\n\t\tobj\tany\n\t\topts\tjsonifyOpts\n\t)\n\n\tswitch len(args) {\n\tcase 0:\n\t\treturn \"\", nil\n\tcase 1:\n\t\tobj = args[0]\n\tcase 2:\n\t\tvar m map[string]any\n\t\tm, err = maps.ToStringMapE(args[0])\n\t\tif err != nil {\n\t\t\tbreak\n\t\t}\n\t\tif err = mapstructure.WeakDecode(m, &opts); err != nil {\n\t\t\tbreak\n\t\t}\n\t\tobj = args[1]\n\tdefault:\n\t\terr = errors.New(\"too many arguments to jsonify\")\n\t}\n\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tbuff := bp.GetBuffer()\n\tdefer bp.PutBuffer(buff)\n\te := json.NewEncoder(buff)\n\te.SetEscapeHTML(!opts.NoHTMLEscape)\n\te.SetIndent(opts.Prefix, opts.Indent)\n\tif err = e.Encode(obj); err != nil {\n\t\treturn \"\", err\n\t}\n\tb = buff.Bytes()\n\n\tb = b[:len(b)-1]\n\n\treturn template.HTML(b), nil\n}",
+    "funcname": "Jsonify"
+}

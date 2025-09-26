@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 186,
+    "focalfunc": "func (w *htmlElementsCollectorWriter) consumeBuffUntil(condition func() bool, resolve htmlCollectorStateFunc) htmlCollectorStateFunc",
+    "funcbody": "func (w *htmlElementsCollectorWriter) consumeBuffUntil(condition func() bool, resolve htmlCollectorStateFunc) htmlCollectorStateFunc {\n\tvar s htmlCollectorStateFunc\n\ts = func(*htmlElementsCollectorWriter) htmlCollectorStateFunc {\n\t\tw.buff.WriteRune(w.r)\n\t\tif condition() {\n\t\t\tw.buff.Reset()\n\t\t\treturn resolve\n\t\t}\n\t\treturn s\n\t}\n\treturn s\n}",
+    "funcname": "consumeBuffUntil"
+}

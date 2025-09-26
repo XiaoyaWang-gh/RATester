@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 590,
+    "focalfunc": "func findGreedyParamLen(s string, searchCount int, segment *routeSegment) int",
+    "funcbody": "func findGreedyParamLen(s string, searchCount int, segment *routeSegment) int {\n\n\tfor i := segment.PartCount; i > 0 && searchCount > 0; i-- {\n\t\tsearchCount--\n\n\t\tconstPosition := strings.LastIndex(s, segment.ComparePart)\n\t\tif constPosition == -1 {\n\t\t\tbreak\n\t\t}\n\t\ts = s[:constPosition]\n\t}\n\n\treturn len(s)\n}",
+    "funcname": "findGreedyParamLen"
+}

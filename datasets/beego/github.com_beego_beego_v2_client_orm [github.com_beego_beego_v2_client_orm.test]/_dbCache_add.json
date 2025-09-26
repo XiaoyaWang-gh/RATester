@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 84,
+    "focalfunc": "func (ac *_dbCache) add(name string, al *alias) (added bool)",
+    "funcbody": "func (ac *_dbCache) add(name string, al *alias) (added bool) {\n\tac.mux.Lock()\n\tdefer ac.mux.Unlock()\n\tif _, ok := ac.cache[name]; !ok {\n\t\tac.cache[name] = al\n\t\tadded = true\n\t}\n\treturn\n}",
+    "funcname": "add"
+}

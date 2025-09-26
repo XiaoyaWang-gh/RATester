@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/sort.go",
+    "lineno": 180,
+    "focalfunc": "func (p pairList) sort() any",
+    "funcbody": "func (p pairList) sort() any {\n\tif p.SortAsc {\n\t\tsort.Stable(p)\n\t} else {\n\t\tsort.Stable(sort.Reverse(p))\n\t}\n\tsorted := reflect.MakeSlice(p.SliceType, len(p.Pairs), len(p.Pairs))\n\tfor i, v := range p.Pairs {\n\t\tsorted.Index(i).Set(v.Value)\n\t}\n\n\treturn sorted.Interface()\n}",
+    "funcname": "sort"
+}

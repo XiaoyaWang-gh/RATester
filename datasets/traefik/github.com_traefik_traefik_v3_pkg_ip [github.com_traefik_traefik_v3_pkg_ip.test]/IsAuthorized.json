@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ip/checker.go",
+    "lineno": 42,
+    "focalfunc": "func (ip *Checker) IsAuthorized(addr string) error",
+    "funcbody": "func (ip *Checker) IsAuthorized(addr string) error {\n\tvar invalidMatches []string\n\n\thost, _, err := net.SplitHostPort(addr)\n\tif err != nil {\n\t\thost = addr\n\t}\n\n\tok, err := ip.Contains(host)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif !ok {\n\t\tinvalidMatches = append(invalidMatches, addr)\n\t\treturn fmt.Errorf(\"%q matched none of the trusted IPs\", strings.Join(invalidMatches, \", \"))\n\t}\n\n\treturn nil\n}",
+    "funcname": "IsAuthorized"
+}

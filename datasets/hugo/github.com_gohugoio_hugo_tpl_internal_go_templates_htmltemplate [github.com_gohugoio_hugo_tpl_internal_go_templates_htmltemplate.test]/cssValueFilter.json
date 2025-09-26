@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 221,
+    "focalfunc": "func cssValueFilter(args ...any) string",
+    "funcbody": "func cssValueFilter(args ...any) string {\n\ts, t := stringify(args...)\n\tif t == contentTypeCSS {\n\t\treturn s\n\t}\n\tb, id := decodeCSS([]byte(s)), make([]byte, 0, 64)\n\n\tfor i, c := range b {\n\t\tswitch c {\n\t\tcase 0, '\"', '\\'', '(', ')', '/', ';', '@', '[', '\\\\', ']', '`', '{', '}', '<', '>':\n\t\t\treturn filterFailsafe\n\t\tcase '-':\n\n\t\t\tif i != 0 && b[i-1] == '-' {\n\t\t\t\treturn filterFailsafe\n\t\t\t}\n\t\tdefault:\n\t\t\tif c < utf8.RuneSelf && isCSSNmchar(rune(c)) {\n\t\t\t\tid = append(id, c)\n\t\t\t}\n\t\t}\n\t}\n\tid = bytes.ToLower(id)\n\tif bytes.Contains(id, expressionBytes) || bytes.Contains(id, mozBindingBytes) {\n\t\treturn filterFailsafe\n\t}\n\treturn string(b)\n}",
+    "funcname": "cssValueFilter"
+}

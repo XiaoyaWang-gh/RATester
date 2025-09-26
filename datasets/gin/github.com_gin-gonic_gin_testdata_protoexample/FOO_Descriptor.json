@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 49,
+    "focalfunc": "func (FOO) Descriptor() protoreflect.EnumDescriptor",
+    "funcbody": "func (FOO) Descriptor() protoreflect.EnumDescriptor {\n\treturn file_test_proto_enumTypes[0].Descriptor()\n}",
+    "funcname": "Descriptor"
+}

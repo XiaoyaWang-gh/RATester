@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 81,
+    "focalfunc": "func NewProvider(calculateHints bool) Provider",
+    "funcbody": "func NewProvider(calculateHints bool) Provider {\n\treturn &Store{\n\t\tcalculateHints:\tcalculateHints,\n\t\tmetrics:\tmake(map[string][]time.Duration),\n\t\tdiffs:\t\tmake(map[string]*diff),\n\t\tcached:\t\tmake(map[string]int),\n\t}\n}",
+    "funcname": "NewProvider"
+}

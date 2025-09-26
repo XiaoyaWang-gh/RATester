@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 207,
+    "focalfunc": "func (d *dbQueryLog) Rollback() error",
+    "funcbody": "func (d *dbQueryLog) Rollback() error {\n\ta := time.Now()\n\terr := d.db.(txEnder).Rollback()\n\tdebugLogQueies(d.alias, \"tx.Rollback\", \"ROLLBACK\", a, err)\n\treturn err\n}",
+    "funcname": "Rollback"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 38,
+    "focalfunc": "func (pathBridge) Ext(in string) string",
+    "funcbody": "func (pathBridge) Ext(in string) string {\n\treturn path.Ext(in)\n}",
+    "funcname": "Ext"
+}

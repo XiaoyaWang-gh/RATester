@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/parsers.go",
+    "lineno": 78,
+    "focalfunc": "func (p floatParser) parse(value string, toType reflect.Type) (interface{}, error)",
+    "funcbody": "func (p floatParser) parse(value string, toType reflect.Type) (interface{}, error) {\n\tif toType.Kind() == reflect.Float32 {\n\t\tres, err := strconv.ParseFloat(value, 32)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\treturn float32(res), nil\n\t}\n\treturn strconv.ParseFloat(value, 64)\n}",
+    "funcname": "parse"
+}

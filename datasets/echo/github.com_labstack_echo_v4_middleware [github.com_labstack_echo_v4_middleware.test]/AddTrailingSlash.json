@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/slash.go",
+    "lineno": 31,
+    "focalfunc": "func AddTrailingSlash() echo.MiddlewareFunc",
+    "funcbody": "func AddTrailingSlash() echo.MiddlewareFunc {\n\treturn AddTrailingSlashWithConfig(DefaultTrailingSlashConfig)\n}",
+    "funcname": "AddTrailingSlash"
+}

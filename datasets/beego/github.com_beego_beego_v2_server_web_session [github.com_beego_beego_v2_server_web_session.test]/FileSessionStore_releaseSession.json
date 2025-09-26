@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_file.go",
+    "lineno": 91,
+    "focalfunc": "func (fs *FileSessionStore) releaseSession(_ context.Context, _ http.ResponseWriter, createIfNotExist bool)",
+    "funcbody": "func (fs *FileSessionStore) releaseSession(_ context.Context, _ http.ResponseWriter, createIfNotExist bool) {\n\tfilepder.lock.Lock()\n\tdefer filepder.lock.Unlock()\n\tb, err := EncodeGob(fs.values)\n\tif err != nil {\n\t\tSLogger.Println(err)\n\t\treturn\n\t}\n\t_, err = os.Stat(filepath.Join(filepder.savePath, string(fs.sid[0]), string(fs.sid[1]), fs.sid))\n\tvar f *os.File\n\tif err == nil {\n\t\tf, err = os.OpenFile(filepath.Join(filepder.savePath, string(fs.sid[0]), string(fs.sid[1]), fs.sid), os.O_RDWR, 0o777)\n\t\tif err != nil {\n\t\t\tSLogger.Println(err)\n\t\t\treturn\n\t\t}\n\t} else if os.IsNotExist(err) && createIfNotExist {\n\t\tf, err = os.Create(filepath.Join(filepder.savePath, string(fs.sid[0]), string(fs.sid[1]), fs.sid))\n\t\tif err != nil {\n\t\t\tSLogger.Println(err)\n\t\t\treturn\n\t\t}\n\t} else {\n\t\treturn\n\t}\n\tf.Truncate(0)\n\tf.Seek(0, 0)\n\tf.Write(b)\n\tf.Close()\n}",
+    "funcname": "releaseSession"
+}

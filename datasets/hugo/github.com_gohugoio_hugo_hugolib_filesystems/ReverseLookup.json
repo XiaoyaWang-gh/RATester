@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 364,
+    "focalfunc": "func (d *SourceFilesystem) ReverseLookup(filename string, checkExists bool) ([]hugofs.ComponentPath, error)",
+    "funcbody": "func (d *SourceFilesystem) ReverseLookup(filename string, checkExists bool) ([]hugofs.ComponentPath, error) {\n\tvar cps []hugofs.ComponentPath\n\thugofs.WalkFilesystems(d.Fs, func(fs afero.Fs) bool {\n\t\tif rfs, ok := fs.(hugofs.ReverseLookupProvder); ok {\n\t\t\tif c, err := rfs.ReverseLookupComponent(d.Name, filename); err == nil {\n\t\t\t\tif checkExists {\n\t\t\t\t\tn := 0\n\t\t\t\t\tfor _, cp := range c {\n\t\t\t\t\t\tif _, err := d.Fs.Stat(filepath.FromSlash(cp.Path)); err == nil {\n\t\t\t\t\t\t\tc[n] = cp\n\t\t\t\t\t\t\tn++\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tc = c[:n]\n\t\t\t\t}\n\t\t\t\tcps = append(cps, c...)\n\t\t\t}\n\t\t}\n\t\treturn false\n\t})\n\treturn cps, nil\n}",
+    "funcname": "ReverseLookup"
+}

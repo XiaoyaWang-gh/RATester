@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 182,
+    "focalfunc": "func (c *RenameColumn) SetOldNullable(null bool) *RenameColumn",
+    "funcbody": "func (c *RenameColumn) SetOldNullable(null bool) *RenameColumn {\n\tif null {\n\t\tc.OldNull = \"\"\n\t} else {\n\t\tc.OldNull = \"NOT NULL\"\n\t}\n\treturn c\n}",
+    "funcname": "SetOldNullable"
+}

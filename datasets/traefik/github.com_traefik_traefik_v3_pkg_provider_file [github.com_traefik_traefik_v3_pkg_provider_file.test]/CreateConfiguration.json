@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/file/file.go",
+    "lineno": 543,
+    "focalfunc": "func (p *Provider) CreateConfiguration(ctx context.Context, filename string, funcMap template.FuncMap, templateObjects interface{}) (*dynamic.Configuration, error)",
+    "funcbody": "func (p *Provider) CreateConfiguration(ctx context.Context, filename string, funcMap template.FuncMap, templateObjects interface{}) (*dynamic.Configuration, error) {\n\ttmplContent, err := readFile(filename)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"error reading configuration file: %s - %w\", filename, err)\n\t}\n\n\tdefaultFuncMap := sprig.TxtFuncMap()\n\tdefaultFuncMap[\"normalize\"] = provider.Normalize\n\tdefaultFuncMap[\"split\"] = strings.Split\n\tfor funcID, funcElement := range funcMap {\n\t\tdefaultFuncMap[funcID] = funcElement\n\t}\n\n\ttmpl := template.New(p.Filename).Funcs(defaultFuncMap)\n\n\t_, err = tmpl.Parse(tmplContent)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar buffer bytes.Buffer\n\terr = tmpl.Execute(&buffer, templateObjects)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\trenderedTemplate := buffer.String()\n\tif p.DebugLogGeneratedTemplate {\n\t\tlogger := log.Ctx(ctx)\n\t\tlogger.Debug().Msgf(\"Template content: %s\", tmplContent)\n\t\tlogger.Debug().Msgf(\"Rendering results: %s\", renderedTemplate)\n\t}\n\n\treturn p.decodeConfiguration(filename, renderedTemplate)\n}",
+    "funcname": "CreateConfiguration"
+}

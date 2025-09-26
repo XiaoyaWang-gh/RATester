@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 107,
+    "focalfunc": "func (c *ConfigContainer) Sub(key string) (config.Configer, error)",
+    "funcbody": "func (c *ConfigContainer) Sub(key string) (config.Configer, error) {\n\tsub, err := c.subMap(key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &ConfigContainer{\n\t\tdata: sub,\n\t}, nil\n}",
+    "funcname": "Sub"
+}

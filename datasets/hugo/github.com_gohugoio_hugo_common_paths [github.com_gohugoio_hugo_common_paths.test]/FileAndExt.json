@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 177,
+    "focalfunc": "func fileAndExt(in string, b filepathPathBridge) (name string, ext string)",
+    "funcbody": "func fileAndExt(in string, b filepathPathBridge) (name string, ext string) {\n\text = b.Ext(in)\n\tbase := b.Base(in)\n\n\treturn extractFilename(in, ext, base, b.Separator()), ext\n}",
+    "funcname": "fileAndExt"
+}

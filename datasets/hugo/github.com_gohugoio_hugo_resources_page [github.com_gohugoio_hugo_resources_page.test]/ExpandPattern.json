@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 111,
+    "focalfunc": "func (l PermalinkExpander) ExpandPattern(pattern string, p Page) (string, error)",
+    "funcbody": "func (l PermalinkExpander) ExpandPattern(pattern string, p Page) (string, error) {\n\texpander, err := l.getOrParsePattern(pattern)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn expander(p)\n}",
+    "funcname": "ExpandPattern"
+}

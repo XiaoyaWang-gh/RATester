@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 188,
+    "focalfunc": "func (cj *CookieJar) parseCookiesFromResp(host, path []byte, resp *fasthttp.Response)",
+    "funcbody": "func (cj *CookieJar) parseCookiesFromResp(host, path []byte, resp *fasthttp.Response) {\n\thostStr := utils.UnsafeString(host)\n\n\tcj.mu.Lock()\n\tdefer cj.mu.Unlock()\n\n\tif cj.hostCookies == nil {\n\t\tcj.hostCookies = make(map[string][]*fasthttp.Cookie)\n\t}\n\tcookies, ok := cj.hostCookies[hostStr]\n\tif !ok {\n\n\t\thostStr = string(host)\n\t}\n\n\tnow := time.Now()\n\tresp.Header.VisitAllCookie(func(key, value []byte) {\n\t\tisCreated := false\n\t\tc := searchCookieByKeyAndPath(key, path, cookies)\n\t\tif c == nil {\n\t\t\tc, isCreated = fasthttp.AcquireCookie(), true\n\t\t}\n\n\t\t_ = c.ParseBytes(value)\n\t\tif c.Expire().Equal(fasthttp.CookieExpireUnlimited) || c.Expire().After(now) {\n\t\t\tcookies = append(cookies, c)\n\t\t} else if isCreated {\n\t\t\tfasthttp.ReleaseCookie(c)\n\t\t}\n\t})\n\tcj.hostCookies[hostStr] = cookies\n}",
+    "funcname": "parseCookiesFromResp"
+}

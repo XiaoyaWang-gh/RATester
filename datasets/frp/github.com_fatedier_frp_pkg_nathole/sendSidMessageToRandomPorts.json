@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/nathole.go",
+    "lineno": 393,
+    "focalfunc": "func sendSidMessageToRandomPorts(\n\tctx context.Context, conn *net.UDPConn, addrs []string, count int,\n\tsendFunc func(*net.UDPConn, string) error,\n)",
+    "funcbody": "func sendSidMessageToRandomPorts(\n\tctx context.Context, conn *net.UDPConn, addrs []string, count int,\n\tsendFunc func(*net.UDPConn, string) error,\n) {\n\txl := xlog.FromContextSafe(ctx)\n\tused := sets.New[int]()\n\tgetUnusedPort := func() int {\n\t\tfor i := 0; i < 10; i++ {\n\t\t\tport := rand.IntN(65535-1024) + 1024\n\t\t\tif !used.Has(port) {\n\t\t\t\tused.Insert(port)\n\t\t\t\treturn port\n\t\t\t}\n\t\t}\n\t\treturn 0\n\t}\n\n\tfor i := 0; i < count; i++ {\n\t\tselect {\n\t\tcase <-ctx.Done():\n\t\t\treturn\n\t\tdefault:\n\t\t}\n\n\t\tport := getUnusedPort()\n\t\tif port == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\tfor _, ip := range slices.Compact(parseIPs(addrs)) {\n\t\t\tdetectAddr := net.JoinHostPort(ip, strconv.Itoa(port))\n\t\t\tif err := sendFunc(conn, detectAddr); err != nil {\n\t\t\t\txl.Tracef(\"send sid message from %s to %s error: %v\", conn.LocalAddr(), detectAddr, err)\n\t\t\t}\n\t\t\ttime.Sleep(time.Millisecond * 15)\n\t\t}\n\t}\n}",
+    "funcname": "sendSidMessageToRandomPorts"
+}

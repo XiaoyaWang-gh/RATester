@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 962,
+    "focalfunc": "func Locals[V any](c Ctx, key any, value ...V) V",
+    "funcbody": "func Locals[V any](c Ctx, key any, value ...V) V {\n\tvar v V\n\tvar ok bool\n\tif len(value) == 0 {\n\t\tv, ok = c.Locals(key).(V)\n\t} else {\n\t\tv, ok = c.Locals(key, value[0]).(V)\n\t}\n\tif !ok {\n\t\treturn v\n\t}\n\treturn v\n}",
+    "funcname": "Locals"
+}

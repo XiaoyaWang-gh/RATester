@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 171,
+    "focalfunc": "func (c *hugoBuilder) initMemProfile()",
+    "funcbody": "func (c *hugoBuilder) initMemProfile() {\n\tif c.r.memprofile == \"\" {\n\t\treturn\n\t}\n\n\tf, err := os.Create(c.r.memprofile)\n\tif err != nil {\n\t\tc.r.logger.Errorf(\"could not create memory profile: \", err)\n\t}\n\tdefer f.Close()\n\truntime.GC()\n\tif err := pprof.WriteHeapProfile(f); err != nil {\n\t\tc.r.logger.Errorf(\"could not write memory profile: \", err)\n\t}\n}",
+    "funcname": "initMemProfile"
+}

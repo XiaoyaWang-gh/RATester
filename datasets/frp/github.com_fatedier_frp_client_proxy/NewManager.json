@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_manager.go",
+    "lineno": 46,
+    "focalfunc": "func NewManager(\n\tctx context.Context,\n\tclientCfg *v1.ClientCommonConfig,\n\tmsgTransporter transport.MessageTransporter,\n) *Manager",
+    "funcbody": "func NewManager(\n\tctx context.Context,\n\tclientCfg *v1.ClientCommonConfig,\n\tmsgTransporter transport.MessageTransporter,\n) *Manager {\n\treturn &Manager{\n\t\tproxies:\tmake(map[string]*Wrapper),\n\t\tmsgTransporter:\tmsgTransporter,\n\t\tclosed:\t\tfalse,\n\t\tclientCfg:\tclientCfg,\n\t\tctx:\t\tctx,\n\t}\n}",
+    "funcname": "NewManager"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 128,
+    "focalfunc": "func (m *pageMeta) newCachedContent(h *HugoSites, pi *contentParseInfo) (*cachedContent, error)",
+    "funcbody": "func (m *pageMeta) newCachedContent(h *HugoSites, pi *contentParseInfo) (*cachedContent, error) {\n\tvar filename string\n\tif m.f != nil {\n\t\tfilename = m.f.Filename()\n\t}\n\n\tc := &cachedContent{\n\t\tpm:\t\tm.s.pageMap,\n\t\tStaleInfo:\tm,\n\t\tshortcodeState:\tnewShortcodeHandler(filename, m.s),\n\t\tpi:\t\tpi,\n\t\tenableEmoji:\tm.s.conf.EnableEmoji,\n\t\tscopes:\t\tmaps.NewCache[string, *cachedContentScope](),\n\t}\n\n\tsource, err := c.pi.contentSource(m)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif err := c.parseContentFile(source); err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn c, nil\n}",
+    "funcname": "newCachedContent"
+}

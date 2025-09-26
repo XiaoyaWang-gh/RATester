@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 214,
+    "focalfunc": "func marshal(anomConfig interface{}, indent bool) ([]byte, error)",
+    "funcbody": "func marshal(anomConfig interface{}, indent bool) ([]byte, error) {\n\tif indent {\n\t\treturn json.MarshalIndent(anomConfig, \"\", \"  \")\n\t}\n\treturn json.Marshal(anomConfig)\n}",
+    "funcname": "marshal"
+}

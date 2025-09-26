@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 166,
+    "focalfunc": "func (p *nopPage) ExpiryDate() (t time.Time)",
+    "funcbody": "func (p *nopPage) ExpiryDate() (t time.Time) {\n\treturn\n}",
+    "funcname": "ExpiryDate"
+}

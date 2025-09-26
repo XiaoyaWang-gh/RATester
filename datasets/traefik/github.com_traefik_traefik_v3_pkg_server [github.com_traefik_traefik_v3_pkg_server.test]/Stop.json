@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_udp.go",
+    "lineno": 49,
+    "focalfunc": "func (eps UDPEntryPoints) Stop()",
+    "funcbody": "func (eps UDPEntryPoints) Stop() {\n\tvar wg sync.WaitGroup\n\n\tfor epn, ep := range eps {\n\t\twg.Add(1)\n\n\t\tgo func(entryPointName string, entryPoint *UDPEntryPoint) {\n\t\t\tdefer wg.Done()\n\n\t\t\tlogger := log.With().Str(logs.EntryPointName, entryPointName).Logger()\n\t\t\tentryPoint.Shutdown(logger.WithContext(context.Background()))\n\n\t\t\tlogger.Debug().Msg(\"Entry point closed\")\n\t\t}(epn, ep)\n\t}\n\n\twg.Wait()\n}",
+    "funcname": "Stop"
+}

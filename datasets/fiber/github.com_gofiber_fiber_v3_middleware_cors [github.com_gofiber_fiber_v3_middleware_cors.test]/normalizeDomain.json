@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cors/utils.go",
+    "lineno": 16,
+    "focalfunc": "func normalizeDomain(input string) string",
+    "funcbody": "func normalizeDomain(input string) string {\n\n\tinput = strings.TrimPrefix(strings.TrimPrefix(input, \"http://\"), \"https://\")\n\n\tif len(input) > 0 && input[0] != '[' {\n\t\tif portIndex := strings.Index(input, \":\"); portIndex != -1 {\n\t\t\tinput = input[:portIndex]\n\t\t}\n\t}\n\n\treturn input\n}",
+    "funcname": "normalizeDomain"
+}

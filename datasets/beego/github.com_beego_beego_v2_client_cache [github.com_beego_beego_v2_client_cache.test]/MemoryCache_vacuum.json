@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/memory.go",
+    "lineno": 189,
+    "focalfunc": "func (bc *MemoryCache) vacuum()",
+    "funcbody": "func (bc *MemoryCache) vacuum() {\n\tbc.RLock()\n\tevery := bc.Every\n\tbc.RUnlock()\n\n\tif every < 1 {\n\t\treturn\n\t}\n\tfor {\n\t\t<-time.After(bc.dur)\n\t\tbc.RLock()\n\t\tif bc.items == nil {\n\t\t\tbc.RUnlock()\n\t\t\treturn\n\t\t}\n\t\tbc.RUnlock()\n\t\tif keys := bc.expiredKeys(); len(keys) != 0 {\n\t\t\tbc.clearItems(keys)\n\t\t}\n\t}\n}",
+    "funcname": "vacuum"
+}

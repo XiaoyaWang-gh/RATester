@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 72,
+    "focalfunc": "func builtinFuncs() map[string]reflect.Value",
+    "funcbody": "func builtinFuncs() map[string]reflect.Value {\n\tbuiltinFuncsOnce.Do(func() {\n\t\tbuiltinFuncsOnce.v = createValueFuncs(builtins())\n\t})\n\treturn builtinFuncsOnce.v\n}",
+    "funcname": "builtinFuncs"
+}

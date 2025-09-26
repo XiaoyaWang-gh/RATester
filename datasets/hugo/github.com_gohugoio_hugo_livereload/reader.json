@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/connection.go",
+    "lineno": 41,
+    "focalfunc": "func (c *connection) reader()",
+    "funcbody": "func (c *connection) reader() {\n\tfor {\n\t\t_, message, err := c.ws.ReadMessage()\n\t\tif err != nil {\n\t\t\tbreak\n\t\t}\n\t\tif bytes.Contains(message, []byte(`\"command\":\"hello\"`)) {\n\t\t\tc.send <- []byte(`{\n\t\t\t\t\"command\": \"hello\",\n\t\t\t\t\"protocols\": [ \"http://livereload.com/protocols/official-7\" ],\n\t\t\t\t\"serverName\": \"Hugo\"\n\t\t\t}`)\n\t\t}\n\t}\n\tc.ws.Close()\n}",
+    "funcname": "reader"
+}

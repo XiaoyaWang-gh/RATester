@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 184,
+    "focalfunc": "func (p Pages) GroupByParam(key string, order ...string) (PagesGroup, error)",
+    "funcbody": "func (p Pages) GroupByParam(key string, order ...string) (PagesGroup, error) {\n\tif len(p) < 1 {\n\t\treturn nil, nil\n\t}\n\n\tdirection := \"asc\"\n\n\tif len(order) > 0 && (strings.ToLower(order[0]) == \"desc\" || strings.ToLower(order[0]) == \"rev\" || strings.ToLower(order[0]) == \"reverse\") {\n\t\tdirection = \"desc\"\n\t}\n\n\tvar tmp reflect.Value\n\tvar keyt reflect.Type\n\tfor _, e := range p {\n\t\tparam := resource.GetParamToLower(e, key)\n\t\tif param != nil {\n\t\t\tif _, ok := param.([]string); !ok {\n\t\t\t\tkeyt = reflect.TypeOf(param)\n\t\t\t\ttmp = reflect.MakeMap(reflect.MapOf(keyt, pagesType))\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\tif !tmp.IsValid() {\n\t\treturn nil, nil\n\t}\n\n\tfor _, e := range p {\n\t\tparam := resource.GetParam(e, key)\n\n\t\tif param == nil || reflect.TypeOf(param) != keyt {\n\t\t\tcontinue\n\t\t}\n\t\tv := reflect.ValueOf(param)\n\t\tif !tmp.MapIndex(v).IsValid() {\n\t\t\ttmp.SetMapIndex(v, reflect.MakeSlice(pagesType, 0, 0))\n\t\t}\n\t\ttmp.SetMapIndex(v, reflect.Append(tmp.MapIndex(v), reflect.ValueOf(e)))\n\t}\n\n\tvar r []PageGroup\n\tfor _, k := range sortKeys(p[0], tmp.MapKeys(), direction) {\n\t\tr = append(r, PageGroup{Key: k.Interface(), Pages: tmp.MapIndex(k).Interface().(Pages)})\n\t}\n\n\treturn r, nil\n}",
+    "funcname": "GroupByParam"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/file_or_content.go",
+    "lineno": 9,
+    "focalfunc": "func (f FileOrContent) String() string",
+    "funcbody": "func (f FileOrContent) String() string {\n\treturn string(f)\n}",
+    "funcname": "String"
+}

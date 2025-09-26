@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/rest/rest.go",
+    "lineno": 41,
+    "focalfunc": "func (p *Provider) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (p *Provider) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tvars := mux.Vars(req)\n\tif vars[\"provider\"] != \"rest\" {\n\t\thttp.Error(rw, \"Only 'rest' provider can be updated through the REST API\", http.StatusBadRequest)\n\t\treturn\n\t}\n\n\tconfiguration := new(dynamic.Configuration)\n\n\tif err := json.NewDecoder(req.Body).Decode(configuration); err != nil {\n\t\tlog.Error().Err(err).Msg(\"Error parsing configuration\")\n\t\thttp.Error(rw, fmt.Sprintf(\"%+v\", err), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\tp.configurationChan <- dynamic.Message{ProviderName: \"rest\", Configuration: configuration}\n\tif err := templatesRenderer.JSON(rw, http.StatusOK, configuration); err != nil {\n\t\tlog.Error().Err(err).Send()\n\t}\n}",
+    "funcname": "ServeHTTP"
+}

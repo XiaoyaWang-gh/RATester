@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 550,
+    "focalfunc": "func (l *genericResource) getSpec() *Spec",
+    "funcbody": "func (l *genericResource) getSpec() *Spec {\n\treturn l.spec\n}",
+    "funcname": "getSpec"
+}

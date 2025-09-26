@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 54,
+    "focalfunc": "func NewMonitor(ctx context.Context, cfg v1.HealthCheckConfig, addr string,\n\tstatusNormalFn func(), statusFailedFn func(),\n) *Monitor",
+    "funcbody": "func NewMonitor(ctx context.Context, cfg v1.HealthCheckConfig, addr string,\n\tstatusNormalFn func(), statusFailedFn func(),\n) *Monitor {\n\tif cfg.IntervalSeconds <= 0 {\n\t\tcfg.IntervalSeconds = 10\n\t}\n\tif cfg.TimeoutSeconds <= 0 {\n\t\tcfg.TimeoutSeconds = 3\n\t}\n\tif cfg.MaxFailed <= 0 {\n\t\tcfg.MaxFailed = 1\n\t}\n\tnewctx, cancel := context.WithCancel(ctx)\n\n\tvar url string\n\tif cfg.Type == \"http\" && cfg.Path != \"\" {\n\t\ts := \"http://\" + addr\n\t\tif !strings.HasPrefix(cfg.Path, \"/\") {\n\t\t\ts += \"/\"\n\t\t}\n\t\turl = s + cfg.Path\n\t}\n\theader := make(http.Header)\n\tfor _, h := range cfg.HTTPHeaders {\n\t\theader.Set(h.Name, h.Value)\n\t}\n\n\treturn &Monitor{\n\t\tcheckType:\tcfg.Type,\n\t\tinterval:\ttime.Duration(cfg.IntervalSeconds) * time.Second,\n\t\ttimeout:\ttime.Duration(cfg.TimeoutSeconds) * time.Second,\n\t\tmaxFailedTimes:\tcfg.MaxFailed,\n\t\taddr:\t\taddr,\n\t\turl:\t\turl,\n\t\theader:\t\theader,\n\t\tstatusOK:\tfalse,\n\t\tstatusNormalFn:\tstatusNormalFn,\n\t\tstatusFailedFn:\tstatusFailedFn,\n\t\tctx:\t\tnewctx,\n\t\tcancel:\t\tcancel,\n\t}\n}",
+    "funcname": "NewMonitor"
+}

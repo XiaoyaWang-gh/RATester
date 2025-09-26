@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 50,
+    "focalfunc": "func WithServiceName(serviceName string) func(*dynamic.Router)",
+    "funcbody": "func WithServiceName(serviceName string) func(*dynamic.Router) {\n\treturn func(r *dynamic.Router) {\n\t\tr.Service = serviceName\n\t}\n}",
+    "funcname": "WithServiceName"
+}

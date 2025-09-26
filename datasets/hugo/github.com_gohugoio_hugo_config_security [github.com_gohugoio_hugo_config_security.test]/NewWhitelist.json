@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/whitelist.go",
+    "lineno": 48,
+    "focalfunc": "func NewWhitelist(patterns ...string) (Whitelist, error)",
+    "funcbody": "func NewWhitelist(patterns ...string) (Whitelist, error) {\n\tif len(patterns) == 0 {\n\t\treturn Whitelist{acceptNone: true}, nil\n\t}\n\n\tvar acceptSome bool\n\tvar patternsStrings []string\n\n\tfor _, p := range patterns {\n\t\tif p == acceptNoneKeyword {\n\t\t\tacceptSome = false\n\t\t\tbreak\n\t\t}\n\n\t\tif ps := strings.TrimSpace(p); ps != \"\" {\n\t\t\tacceptSome = true\n\t\t\tpatternsStrings = append(patternsStrings, ps)\n\t\t}\n\t}\n\n\tif !acceptSome {\n\t\treturn Whitelist{\n\t\t\tacceptNone: true,\n\t\t}, nil\n\t}\n\n\tvar patternsr []*regexp.Regexp\n\n\tfor i := 0; i < len(patterns); i++ {\n\t\tp := strings.TrimSpace(patterns[i])\n\t\tif p == \"\" {\n\t\t\tcontinue\n\t\t}\n\t\tre, err := regexp.Compile(p)\n\t\tif err != nil {\n\t\t\treturn Whitelist{}, fmt.Errorf(\"failed to compile whitelist pattern %q: %w\", p, err)\n\t\t}\n\t\tpatternsr = append(patternsr, re)\n\t}\n\n\treturn Whitelist{patterns: patternsr, patternsStrings: patternsStrings}, nil\n}",
+    "funcname": "NewWhitelist"
+}

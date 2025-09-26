@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 278,
+    "focalfunc": "func (manager *Manager) GC()",
+    "funcbody": "func (manager *Manager) GC() {\n\tmanager.provider.SessionGC(nil)\n\ttime.AfterFunc(time.Duration(manager.config.Gclifetime)*time.Second, func() { manager.GC() })\n}",
+    "funcname": "GC"
+}

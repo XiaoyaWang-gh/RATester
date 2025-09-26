@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 992,
+    "focalfunc": "func (c *Context) HTML(code int, name string, obj any)",
+    "funcbody": "func (c *Context) HTML(code int, name string, obj any) {\n\tinstance := c.engine.HTMLRender.Instance(name, obj)\n\tc.Render(code, instance)\n}",
+    "funcname": "HTML"
+}

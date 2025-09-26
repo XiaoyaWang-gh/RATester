@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/limiter/manager.go",
+    "lineno": 52,
+    "focalfunc": "func (m *manager) release(e *item)",
+    "funcbody": "func (m *manager) release(e *item) {\n\te.prevHits = 0\n\te.currHits = 0\n\te.exp = 0\n\tm.pool.Put(e)\n}",
+    "funcname": "release"
+}

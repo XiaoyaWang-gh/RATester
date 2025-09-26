@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 298,
+    "focalfunc": "func (r Range) GetLimitValue() interface{}",
+    "funcbody": "func (r Range) GetLimitValue() interface{} {\n\treturn []int{r.Min.Min, r.Max.Max}\n}",
+    "funcname": "GetLimitValue"
+}

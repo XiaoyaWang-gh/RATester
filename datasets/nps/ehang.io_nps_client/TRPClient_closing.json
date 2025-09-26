@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 299,
+    "focalfunc": "func (s *TRPClient) closing()",
+    "funcbody": "func (s *TRPClient) closing() {\n\tCloseClient = true\n\tNowStatus = 0\n\tif s.tunnel != nil {\n\t\t_ = s.tunnel.Close()\n\t}\n\tif s.signal != nil {\n\t\t_ = s.signal.Close()\n\t}\n\tif s.ticker != nil {\n\t\ts.ticker.Stop()\n\t}\n}",
+    "funcname": "closing"
+}

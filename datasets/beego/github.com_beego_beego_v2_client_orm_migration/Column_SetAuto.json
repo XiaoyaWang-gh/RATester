@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 144,
+    "focalfunc": "func (c *Column) SetAuto(inc bool) *Column",
+    "funcbody": "func (c *Column) SetAuto(inc bool) *Column {\n\tif inc {\n\t\tc.Inc = \"auto_increment\"\n\t}\n\treturn c\n}",
+    "funcname": "SetAuto"
+}

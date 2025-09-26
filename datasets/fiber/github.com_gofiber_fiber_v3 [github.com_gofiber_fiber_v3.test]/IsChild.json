@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/prefork.go",
+    "lineno": 33,
+    "focalfunc": "func IsChild() bool",
+    "funcbody": "func IsChild() bool {\n\treturn os.Getenv(envPreforkChildKey) == envPreforkChildVal\n}",
+    "funcname": "IsChild"
+}

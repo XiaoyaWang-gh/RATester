@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/html.go",
+    "lineno": 268,
+    "focalfunc": "func commentEscaper(args ...any) string",
+    "funcbody": "func commentEscaper(args ...any) string {\n\treturn \"\"\n}",
+    "funcname": "commentEscaper"
+}

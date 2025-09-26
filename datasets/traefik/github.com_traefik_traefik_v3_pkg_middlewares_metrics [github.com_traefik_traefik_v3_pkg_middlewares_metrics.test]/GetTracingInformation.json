@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 117,
+    "focalfunc": "func (m *metricsMiddleware) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (m *metricsMiddleware) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn m.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

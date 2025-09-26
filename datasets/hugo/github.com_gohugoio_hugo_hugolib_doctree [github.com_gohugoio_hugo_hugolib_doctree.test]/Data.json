@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/support.go",
+    "lineno": 63,
+    "focalfunc": "func (ctx *WalkContext[T]) Data() *SimpleTree[any]",
+    "funcbody": "func (ctx *WalkContext[T]) Data() *SimpleTree[any] {\n\tctx.dataInit.Do(func() {\n\t\tctx.data = &SimpleTree[any]{\n\t\t\ttree: radix.New(),\n\t\t}\n\t})\n\treturn ctx.data\n}",
+    "funcname": "Data"
+}

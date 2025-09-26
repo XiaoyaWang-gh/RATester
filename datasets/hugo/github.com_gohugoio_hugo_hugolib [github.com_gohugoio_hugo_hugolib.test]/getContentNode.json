@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 118,
+    "focalfunc": "func (c *pageFinder) getContentNode(context page.Page, isReflink bool, ref string) (contentNodeI, error)",
+    "funcbody": "func (c *pageFinder) getContentNode(context page.Page, isReflink bool, ref string) (contentNodeI, error) {\n\tref = paths.ToSlashTrimTrailing(ref)\n\tinRef := ref\n\tif ref == \"\" {\n\t\tref = \"/\"\n\t}\n\n\tif paths.HasExt(ref) {\n\t\treturn c.getContentNodeForRef(context, isReflink, true, inRef, ref)\n\t}\n\n\tif ref == \"/\" {\n\t\tif n, err := c.getContentNodeForRef(context, isReflink, false, inRef, \"/_index\"+defaultContentExt); n != nil || err != nil {\n\t\t\treturn n, err\n\t\t}\n\t} else if strings.HasSuffix(ref, \"/index\") {\n\t\tif n, err := c.getContentNodeForRef(context, isReflink, false, inRef, ref+\"/index\"+defaultContentExt); n != nil || err != nil {\n\t\t\treturn n, err\n\t\t}\n\t\tif n, err := c.getContentNodeForRef(context, isReflink, false, inRef, ref+defaultContentExt); n != nil || err != nil {\n\t\t\treturn n, err\n\t\t}\n\t} else {\n\t\tif n, err := c.getContentNodeForRef(context, isReflink, false, inRef, ref+defaultContentExt); n != nil || err != nil {\n\t\t\treturn n, err\n\t\t}\n\t}\n\n\treturn nil, nil\n}",
+    "funcname": "getContentNode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 206,
+    "focalfunc": "func (c *RenameColumn) SetOldDataType(dataType string) *RenameColumn",
+    "funcbody": "func (c *RenameColumn) SetOldDataType(dataType string) *RenameColumn {\n\tc.OldDataType = dataType\n\treturn c\n}",
+    "funcname": "SetOldDataType"
+}

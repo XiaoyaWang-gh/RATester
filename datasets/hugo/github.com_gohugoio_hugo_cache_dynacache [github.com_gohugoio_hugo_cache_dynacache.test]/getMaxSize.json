@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 569,
+    "focalfunc": "func (p *Partition[K, V]) getMaxSize() int",
+    "funcbody": "func (p *Partition[K, V]) getMaxSize() int {\n\treturn p.maxSize\n}",
+    "funcname": "getMaxSize"
+}

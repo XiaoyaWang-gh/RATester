@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 38,
+    "focalfunc": "func NewClient(options ClientOptions) (*Client, error)",
+    "funcbody": "func NewClient(options ClientOptions) (*Client, error) {\n\tif options.Common != nil {\n\t\toptions.Common.Complete()\n\t}\n\n\tln := netpkg.NewInternalListener()\n\n\tserviceOptions := client.ServiceOptions{\n\t\tCommon:\t\toptions.Common,\n\t\tClientSpec:\toptions.Spec,\n\t\tConnectorCreator: func(context.Context, *v1.ClientCommonConfig) client.Connector {\n\t\t\treturn &pipeConnector{\n\t\t\t\tpeerListener: ln,\n\t\t\t}\n\t\t},\n\t\tHandleWorkConnCb:\toptions.HandleWorkConnCb,\n\t}\n\tsvr, err := client.NewService(serviceOptions)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &Client{\n\t\tl:\tln,\n\t\tsvr:\tsvr,\n\t}, nil\n}",
+    "funcname": "NewClient"
+}

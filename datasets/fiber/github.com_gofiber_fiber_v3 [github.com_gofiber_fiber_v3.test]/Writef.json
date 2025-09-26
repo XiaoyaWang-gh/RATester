@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1772,
+    "focalfunc": "func (c *DefaultCtx) Writef(f string, a ...any) (int, error)",
+    "funcbody": "func (c *DefaultCtx) Writef(f string, a ...any) (int, error) {\n\n\treturn fmt.Fprintf(c.fasthttp.Response.BodyWriter(), f, a...)\n}",
+    "funcname": "Writef"
+}

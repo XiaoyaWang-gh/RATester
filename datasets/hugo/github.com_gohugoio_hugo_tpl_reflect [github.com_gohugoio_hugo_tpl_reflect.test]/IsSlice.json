@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/reflect/reflect.go",
+    "lineno": 34,
+    "focalfunc": "func (ns *Namespace) IsSlice(v any) bool",
+    "funcbody": "func (ns *Namespace) IsSlice(v any) bool {\n\treturn reflect.ValueOf(v).Kind() == reflect.Slice\n}",
+    "funcname": "IsSlice"
+}

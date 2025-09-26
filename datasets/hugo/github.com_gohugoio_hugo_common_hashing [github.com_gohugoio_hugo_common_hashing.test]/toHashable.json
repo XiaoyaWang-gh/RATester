@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 122,
+    "focalfunc": "func toHashable(v any) any",
+    "funcbody": "func toHashable(v any) any {\n\tswitch t := v.(type) {\n\tcase keyer:\n\t\treturn t.Key()\n\tcase identity.IdentityProvider:\n\t\treturn t.GetIdentity()\n\tdefault:\n\t\treturn v\n\t}\n}",
+    "funcname": "toHashable"
+}

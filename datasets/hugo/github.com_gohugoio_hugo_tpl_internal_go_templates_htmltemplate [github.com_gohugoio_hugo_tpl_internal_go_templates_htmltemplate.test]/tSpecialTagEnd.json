@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 215,
+    "focalfunc": "func tSpecialTagEnd(c context, s []byte) (context, int)",
+    "funcbody": "func tSpecialTagEnd(c context, s []byte) (context, int) {\n\tif c.element != elementNone {\n\n\t\tif c.element == elementScript && (isInScriptLiteral(c.state) || isComment(c.state)) {\n\t\t\treturn c, len(s)\n\t\t}\n\t\tif i := indexTagEnd(s, specialTagEndMarkers[c.element]); i != -1 {\n\t\t\treturn context{}, i\n\t\t}\n\t}\n\treturn c, len(s)\n}",
+    "funcname": "tSpecialTagEnd"
+}

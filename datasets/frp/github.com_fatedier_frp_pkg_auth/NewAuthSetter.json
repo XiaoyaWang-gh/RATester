@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/auth.go",
+    "lineno": 30,
+    "focalfunc": "func NewAuthSetter(cfg v1.AuthClientConfig) (authProvider Setter)",
+    "funcbody": "func NewAuthSetter(cfg v1.AuthClientConfig) (authProvider Setter) {\n\tswitch cfg.Method {\n\tcase v1.AuthMethodToken:\n\t\tauthProvider = NewTokenAuth(cfg.AdditionalScopes, cfg.Token)\n\tcase v1.AuthMethodOIDC:\n\t\tauthProvider = NewOidcAuthSetter(cfg.AdditionalScopes, cfg.OIDC)\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"wrong method: '%s'\", cfg.Method))\n\t}\n\treturn authProvider\n}",
+    "funcname": "NewAuthSetter"
+}

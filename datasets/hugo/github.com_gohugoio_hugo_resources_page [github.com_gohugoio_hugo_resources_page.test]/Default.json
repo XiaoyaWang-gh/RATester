@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 156,
+    "focalfunc": "func (s Sites) Default() Site",
+    "funcbody": "func (s Sites) Default() Site {\n\tif len(s) == 0 {\n\t\treturn nil\n\t}\n\treturn s[0]\n}",
+    "funcname": "Default"
+}

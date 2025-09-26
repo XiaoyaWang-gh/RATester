@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 387,
+    "focalfunc": "func (fs *RootMappingFs) hasPrefix(prefix string) bool",
+    "funcbody": "func (fs *RootMappingFs) hasPrefix(prefix string) bool {\n\thasPrefix := false\n\tfs.rootMapToReal.WalkPrefix(prefix, func(b string, v any) bool {\n\t\thasPrefix = true\n\t\treturn true\n\t})\n\n\treturn hasPrefix\n}",
+    "funcname": "hasPrefix"
+}

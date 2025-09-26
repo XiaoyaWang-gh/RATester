@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/default_validator.go",
+    "lineno": 24,
+    "focalfunc": "func (err SliceValidationError) Error() string",
+    "funcbody": "func (err SliceValidationError) Error() string {\n\tif len(err) == 0 {\n\t\treturn \"\"\n\t}\n\n\tvar b strings.Builder\n\tfor i := 0; i < len(err); i++ {\n\t\tif err[i] != nil {\n\t\t\tif b.Len() > 0 {\n\t\t\t\tb.WriteString(\"\\n\")\n\t\t\t}\n\t\t\tb.WriteString(\"[\" + strconv.Itoa(i) + \"]: \" + err[i].Error())\n\t\t}\n\t}\n\treturn b.String()\n}",
+    "funcname": "Error"
+}

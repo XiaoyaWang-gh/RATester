@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/connectionheader/connectionheader.go",
+    "lineno": 43,
+    "focalfunc": "func removeConnectionHeaders(h http.Header)",
+    "funcbody": "func removeConnectionHeaders(h http.Header) {\n\tfor _, f := range h[connectionHeader] {\n\t\tfor _, sf := range strings.Split(f, \",\") {\n\t\t\tif sf = textproto.TrimString(sf); sf != \"\" {\n\t\t\t\th.Del(sf)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "removeConnectionHeaders"
+}

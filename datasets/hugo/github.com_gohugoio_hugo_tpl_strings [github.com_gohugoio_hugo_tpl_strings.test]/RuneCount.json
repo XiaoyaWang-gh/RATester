@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 65,
+    "focalfunc": "func (ns *Namespace) RuneCount(s any) (int, error)",
+    "funcbody": "func (ns *Namespace) RuneCount(s any) (int, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn 0, fmt.Errorf(\"failed to convert content to string: %w\", err)\n\t}\n\treturn utf8.RuneCountInString(ss), nil\n}",
+    "funcname": "RuneCount"
+}

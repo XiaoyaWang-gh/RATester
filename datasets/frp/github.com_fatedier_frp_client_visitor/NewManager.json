@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 47,
+    "focalfunc": "func NewManager(\n\tctx context.Context,\n\trunID string,\n\tclientCfg *v1.ClientCommonConfig,\n\tconnectServer func() (net.Conn, error),\n\tmsgTransporter transport.MessageTransporter,\n) *Manager",
+    "funcbody": "func NewManager(\n\tctx context.Context,\n\trunID string,\n\tclientCfg *v1.ClientCommonConfig,\n\tconnectServer func() (net.Conn, error),\n\tmsgTransporter transport.MessageTransporter,\n) *Manager {\n\tm := &Manager{\n\t\tclientCfg:\tclientCfg,\n\t\tcfgs:\t\tmake(map[string]v1.VisitorConfigurer),\n\t\tvisitors:\tmake(map[string]Visitor),\n\t\tcheckInterval:\t10 * time.Second,\n\t\tctx:\t\tctx,\n\t\tstopCh:\t\tmake(chan struct{}),\n\t}\n\tm.helper = &visitorHelperImpl{\n\t\tconnectServerFn:\tconnectServer,\n\t\tmsgTransporter:\t\tmsgTransporter,\n\t\ttransferConnFn:\t\tm.TransferConn,\n\t\trunID:\t\t\trunID,\n\t}\n\treturn m\n}",
+    "funcname": "NewManager"
+}

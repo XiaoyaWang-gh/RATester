@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/logger/default_logger.go",
+    "lineno": 141,
+    "focalfunc": "func beforeHandlerFunc(cfg Config)",
+    "funcbody": "func beforeHandlerFunc(cfg Config) {\n\n\tif cfg.enableColors {\n\t\tcfg.Output = colorable.NewColorableStdout()\n\t\tif os.Getenv(\"TERM\") == \"dumb\" || os.Getenv(\"NO_COLOR\") == \"1\" || (!isatty.IsTerminal(os.Stdout.Fd()) && !isatty.IsCygwinTerminal(os.Stdout.Fd())) {\n\t\t\tcfg.Output = colorable.NewNonColorable(os.Stdout)\n\t\t}\n\t}\n}",
+    "funcname": "beforeHandlerFunc"
+}

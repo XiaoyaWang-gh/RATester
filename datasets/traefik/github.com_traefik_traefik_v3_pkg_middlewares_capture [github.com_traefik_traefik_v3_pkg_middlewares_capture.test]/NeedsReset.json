@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 85,
+    "focalfunc": "func (c *Capture) NeedsReset(rw http.ResponseWriter) bool",
+    "funcbody": "func (c *Capture) NeedsReset(rw http.ResponseWriter) bool {\n\n\treturn c.crw != rw\n}",
+    "funcname": "NeedsReset"
+}

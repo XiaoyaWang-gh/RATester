@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 76,
+    "focalfunc": "func (i Item) ValTyped(source []byte) any",
+    "funcbody": "func (i Item) ValTyped(source []byte) any {\n\tstr := i.ValStr(source)\n\tif i.isString {\n\n\t\treturn str\n\t}\n\n\tif boolRe.MatchString(str) {\n\t\treturn str == \"true\"\n\t}\n\n\tif intRe.MatchString(str) {\n\t\tnum, err := strconv.Atoi(str)\n\t\tif err != nil {\n\t\t\treturn str\n\t\t}\n\t\treturn num\n\t}\n\n\tif floatRe.MatchString(str) {\n\t\tnum, err := strconv.ParseFloat(str, 64)\n\t\tif err != nil {\n\t\t\treturn str\n\t\t}\n\t\treturn num\n\t}\n\n\treturn str\n}",
+    "funcname": "ValTyped"
+}

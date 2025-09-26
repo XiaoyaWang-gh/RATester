@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/ping/ping.go",
+    "lineno": 24,
+    "focalfunc": "func (h *Handler) WithContext(ctx context.Context)",
+    "funcbody": "func (h *Handler) WithContext(ctx context.Context) {\n\tgo func() {\n\t\t<-ctx.Done()\n\t\th.terminating = true\n\t}()\n}",
+    "funcname": "WithContext"
+}

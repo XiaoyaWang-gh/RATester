@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/inline_imports.go",
+    "lineno": 186,
+    "focalfunc": "func (imp *importResolver) shouldImport(s string) bool",
+    "funcbody": "func (imp *importResolver) shouldImport(s string) bool {\n\tif !strings.HasPrefix(s, importIdentifier) {\n\t\treturn false\n\t}\n\tif strings.Contains(s, \"url(\") {\n\t\treturn false\n\t}\n\n\tm := shouldImportRe.FindStringSubmatch(s)\n\tif m == nil {\n\t\treturn false\n\t}\n\n\tif len(m) != 3 {\n\t\treturn false\n\t}\n\n\tif tailwindImportExclude(m[1]) {\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "shouldImport"
+}

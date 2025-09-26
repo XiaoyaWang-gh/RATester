@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 17,
+    "focalfunc": "func ExpectEqualValuesWithOffset(offset int, actual interface{}, extra interface{}, explain ...interface{})",
+    "funcbody": "func ExpectEqualValuesWithOffset(offset int, actual interface{}, extra interface{}, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1+offset, actual).To(gomega.BeEquivalentTo(extra), explain...)\n}",
+    "funcname": "ExpectEqualValuesWithOffset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 109,
+    "focalfunc": "func IsCI() bool",
+    "funcbody": "func IsCI() bool {\n\treturn (os.Getenv(\"CI\") != \"\" || os.Getenv(\"CI_LOCAL\") != \"\") && os.Getenv(\"CIRCLE_BRANCH\") == \"\"\n}",
+    "funcname": "IsCI"
+}

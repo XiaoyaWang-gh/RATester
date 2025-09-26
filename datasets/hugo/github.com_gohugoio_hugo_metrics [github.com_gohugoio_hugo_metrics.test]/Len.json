@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 203,
+    "focalfunc": "func (b bySum) Len() int",
+    "funcbody": "func (b bySum) Len() int\t{ return len(b) }",
+    "funcname": "Len"
+}

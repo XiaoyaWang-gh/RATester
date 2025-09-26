@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 427,
+    "focalfunc": "func getPeeked(br *bufio.Reader) string",
+    "funcbody": "func getPeeked(br *bufio.Reader) string {\n\tpeeked, err := br.Peek(br.Buffered())\n\tif err != nil {\n\t\tlog.Error().Err(err).Msg(\"Could not get anything\")\n\t\treturn \"\"\n\t}\n\treturn string(peeked)\n}",
+    "funcname": "getPeeked"
+}

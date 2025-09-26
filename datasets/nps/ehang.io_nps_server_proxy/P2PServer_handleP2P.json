@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/p2p.go",
+    "lineno": 52,
+    "focalfunc": "func (s *P2PServer) handleP2P(addr *net.UDPAddr, str string)",
+    "funcbody": "func (s *P2PServer) handleP2P(addr *net.UDPAddr, str string) {\n\tvar (\n\t\tv\t*p2p\n\t\tok\tbool\n\t)\n\tarr := strings.Split(str, common.CONN_DATA_SEQ)\n\tif len(arr) < 2 {\n\t\treturn\n\t}\n\tif v, ok = s.p2p[arr[0]]; !ok {\n\t\tv = new(p2p)\n\t\ts.p2p[arr[0]] = v\n\t}\n\tlogs.Trace(\"new p2p connection ,role %s , password %s ,local address %s\", arr[1], arr[0], addr.String())\n\tif arr[1] == common.WORK_P2P_VISITOR {\n\t\tv.visitorAddr = addr\n\t\tfor i := 20; i > 0; i-- {\n\t\t\tif v.providerAddr != nil {\n\t\t\t\ts.listener.WriteTo([]byte(v.providerAddr.String()), v.visitorAddr)\n\t\t\t\ts.listener.WriteTo([]byte(v.visitorAddr.String()), v.providerAddr)\n\t\t\t\tbreak\n\t\t\t}\n\t\t\ttime.Sleep(time.Second)\n\t\t}\n\t\tdelete(s.p2p, arr[0])\n\t} else {\n\t\tv.providerAddr = addr\n\t}\n}",
+    "funcname": "handleP2P"
+}

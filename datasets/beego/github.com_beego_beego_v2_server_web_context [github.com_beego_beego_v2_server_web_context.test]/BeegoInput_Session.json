@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 362,
+    "focalfunc": "func (input *BeegoInput) Session(key interface{}) interface{}",
+    "funcbody": "func (input *BeegoInput) Session(key interface{}) interface{} {\n\treturn input.CruSession.Get(nil, key)\n}",
+    "funcname": "Session"
+}

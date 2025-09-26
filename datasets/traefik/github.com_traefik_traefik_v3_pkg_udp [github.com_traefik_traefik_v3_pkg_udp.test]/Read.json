@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 264,
+    "focalfunc": "func (c *Conn) Read(p []byte) (int, error)",
+    "funcbody": "func (c *Conn) Read(p []byte) (int, error) {\n\tselect {\n\tcase c.readCh <- p:\n\t\tn := <-c.sizeCh\n\t\tc.muActivity.Lock()\n\t\tc.lastActivity = time.Now()\n\t\tc.muActivity.Unlock()\n\t\treturn n, nil\n\n\tcase <-c.doneCh:\n\t\treturn 0, io.EOF\n\t}\n}",
+    "funcname": "Read"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 143,
+    "focalfunc": "func (w *filePoller) watch(item *itemToWatch)",
+    "funcbody": "func (w *filePoller) watch(item *itemToWatch) {\n\tticker := time.NewTicker(w.interval)\n\tdefer ticker.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-ticker.C:\n\t\tcase <-w.done:\n\t\t\treturn\n\t\t}\n\n\t\tevs, err := item.checkForChanges()\n\t\tif err != nil {\n\t\t\tif err := w.sendErr(err); err != nil {\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\n\t\titem.left, item.right = item.right, item.left\n\n\t\tfor _, ev := range evs {\n\t\t\tif err := w.sendEvent(ev); err != nil {\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\n\t}\n}",
+    "funcname": "watch"
+}

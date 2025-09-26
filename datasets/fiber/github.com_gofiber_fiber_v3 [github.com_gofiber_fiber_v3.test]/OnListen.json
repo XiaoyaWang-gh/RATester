@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 93,
+    "focalfunc": "func (h *Hooks) OnListen(handler ...OnListenHandler)",
+    "funcbody": "func (h *Hooks) OnListen(handler ...OnListenHandler) {\n\th.app.mutex.Lock()\n\th.onListen = append(h.onListen, handler...)\n\th.app.mutex.Unlock()\n}",
+    "funcname": "OnListen"
+}

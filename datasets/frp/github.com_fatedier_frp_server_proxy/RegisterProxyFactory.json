@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/proxy.go",
+    "lineno": 43,
+    "focalfunc": "func RegisterProxyFactory(proxyConfType reflect.Type, factory func(*BaseProxy) Proxy)",
+    "funcbody": "func RegisterProxyFactory(proxyConfType reflect.Type, factory func(*BaseProxy) Proxy) {\n\tproxyFactoryRegistry[proxyConfType] = factory\n}",
+    "funcname": "RegisterProxyFactory"
+}

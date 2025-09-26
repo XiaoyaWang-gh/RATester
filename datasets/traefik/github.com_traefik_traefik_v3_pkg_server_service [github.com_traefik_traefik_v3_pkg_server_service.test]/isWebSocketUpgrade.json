@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 91,
+    "focalfunc": "func isWebSocketUpgrade(req *http.Request) bool",
+    "funcbody": "func isWebSocketUpgrade(req *http.Request) bool {\n\treturn httpguts.HeaderValuesContainsToken(req.Header[\"Connection\"], \"Upgrade\") &&\n\t\tstrings.EqualFold(req.Header.Get(\"Upgrade\"), \"websocket\")\n}",
+    "funcname": "isWebSocketUpgrade"
+}

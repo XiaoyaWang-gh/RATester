@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/log.go",
+    "lineno": 19,
+    "focalfunc": "func Logf(format string, args ...interface{})",
+    "funcbody": "func Logf(format string, args ...interface{}) {\n\tlog(\"INFO\", format, args...)\n}",
+    "funcname": "Logf"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 326,
+    "focalfunc": "func (s *SourceFilesystems) ResolvePaths(filename string) []hugofs.ComponentPath",
+    "funcbody": "func (s *SourceFilesystems) ResolvePaths(filename string) []hugofs.ComponentPath {\n\tvar cpss []hugofs.ComponentPath\n\tfor _, rfs := range s.RootFss {\n\t\tcps, err := rfs.ReverseLookup(filename)\n\t\tif err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t\tcpss = append(cpss, cps...)\n\t}\n\treturn cpss\n}",
+    "funcname": "ResolvePaths"
+}

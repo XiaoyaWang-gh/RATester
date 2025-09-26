@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 170,
+    "focalfunc": "func GetCollator1(l *Language) *Collator",
+    "funcbody": "func GetCollator1(l *Language) *Collator {\n\treturn l.collator1\n}",
+    "funcname": "GetCollator1"
+}

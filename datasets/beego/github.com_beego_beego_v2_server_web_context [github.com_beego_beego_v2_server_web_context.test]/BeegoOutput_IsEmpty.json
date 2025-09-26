@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 361,
+    "focalfunc": "func (output *BeegoOutput) IsEmpty() bool",
+    "funcbody": "func (output *BeegoOutput) IsEmpty() bool {\n\treturn output.Status == 201 || output.Status == 204 || output.Status == 304\n}",
+    "funcname": "IsEmpty"
+}

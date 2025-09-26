@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/handlersmisc.go",
+    "lineno": 41,
+    "focalfunc": "func newLogOnceHandler(threshold logg.Level) *logOnceHandler",
+    "funcbody": "func newLogOnceHandler(threshold logg.Level) *logOnceHandler {\n\treturn &logOnceHandler{\n\t\tthreshold:\tthreshold,\n\t\tseen:\t\tmake(map[uint64]bool),\n\t}\n}",
+    "funcname": "newLogOnceHandler"
+}

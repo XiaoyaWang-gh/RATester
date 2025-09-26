@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 195,
+    "focalfunc": "func (*BaseConfiger) OnChange(_ string, _ func(value string))",
+    "funcbody": "func (*BaseConfiger) OnChange(_ string, _ func(value string)) {\n\n}",
+    "funcname": "OnChange"
+}

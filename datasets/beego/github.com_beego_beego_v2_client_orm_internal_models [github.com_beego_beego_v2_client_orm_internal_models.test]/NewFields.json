@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_info_f.go",
+    "lineno": 95,
+    "focalfunc": "func NewFields() *Fields",
+    "funcbody": "func NewFields() *Fields {\n\tf := new(Fields)\n\tf.Fields = make(map[string]*FieldInfo)\n\tf.FieldsLow = make(map[string]*FieldInfo)\n\tf.Columns = make(map[string]*FieldInfo)\n\tf.FieldsByType = make(map[int][]*FieldInfo)\n\treturn f\n}",
+    "funcname": "NewFields"
+}

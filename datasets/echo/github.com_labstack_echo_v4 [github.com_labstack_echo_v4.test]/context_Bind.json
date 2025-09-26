@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 449,
+    "focalfunc": "func (c *context) Bind(i interface{}) error",
+    "funcbody": "func (c *context) Bind(i interface{}) error {\n\treturn c.echo.Binder.Bind(i, c)\n}",
+    "funcname": "Bind"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 173,
+    "focalfunc": "func (w *fileLogWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (w *fileLogWriter) WriteMsg(lm *LogMsg) error {\n\tif lm.Level > w.Level {\n\t\treturn nil\n\t}\n\n\t_, d, h := formatTimeHeader(lm.When)\n\n\tmsg := w.logFormatter.Format(lm)\n\tif w.Rotate {\n\t\tw.RLock()\n\t\tif w.needRotateHourly(h) {\n\t\t\tw.RUnlock()\n\t\t\tw.Lock()\n\t\t\tif w.needRotateHourly(h) {\n\t\t\t\tif err := w.doRotate(lm.When); err != nil {\n\t\t\t\t\tfmt.Fprintf(os.Stderr, \"FileLogWriter(%q): %s\\n\", w.Filename, err)\n\t\t\t\t}\n\t\t\t}\n\t\t\tw.Unlock()\n\t\t} else if w.needRotateDaily(d) {\n\t\t\tw.RUnlock()\n\t\t\tw.Lock()\n\t\t\tif w.needRotateDaily(d) {\n\t\t\t\tif err := w.doRotate(lm.When); err != nil {\n\t\t\t\t\tfmt.Fprintf(os.Stderr, \"FileLogWriter(%q): %s\\n\", w.Filename, err)\n\t\t\t\t}\n\t\t\t}\n\t\t\tw.Unlock()\n\t\t} else {\n\t\t\tw.RUnlock()\n\t\t}\n\t}\n\n\tw.Lock()\n\t_, err := w.fileWriter.Write([]byte(msg))\n\tif err == nil {\n\t\tw.maxLinesCurLines++\n\t\tw.maxSizeCurSize += len(msg)\n\t}\n\tw.Unlock()\n\treturn err\n}",
+    "funcname": "WriteMsg"
+}

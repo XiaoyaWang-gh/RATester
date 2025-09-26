@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 427,
+    "focalfunc": "func (s *IntegrationTestBuilder) LogString() string",
+    "funcbody": "func (s *IntegrationTestBuilder) LogString() string {\n\treturn s.lastBuildLog\n}",
+    "funcname": "LogString"
+}

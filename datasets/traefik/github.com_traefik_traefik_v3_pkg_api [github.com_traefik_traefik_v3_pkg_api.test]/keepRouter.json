@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 240,
+    "focalfunc": "func keepRouter(name string, item *runtime.RouterInfo, criterion *searchCriterion) bool",
+    "funcbody": "func keepRouter(name string, item *runtime.RouterInfo, criterion *searchCriterion) bool {\n\tif criterion == nil {\n\t\treturn true\n\t}\n\n\treturn criterion.withStatus(item.Status) &&\n\t\tcriterion.searchIn(item.Rule, name) &&\n\t\tcriterion.filterService(item.Service) &&\n\t\tcriterion.filterMiddleware(item.Middlewares)\n}",
+    "funcname": "keepRouter"
+}

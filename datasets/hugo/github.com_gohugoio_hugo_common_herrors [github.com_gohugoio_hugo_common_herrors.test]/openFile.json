@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 244,
+    "focalfunc": "func openFile(filename string, fs afero.Fs) (afero.File, string, error)",
+    "funcbody": "func openFile(filename string, fs afero.Fs) (afero.File, string, error) {\n\trealFilename := filename\n\n\tfi, err2 := fs.Stat(filename)\n\tif err2 == nil {\n\t\tif s, ok := fi.(interface {\n\t\t\tFilename() string\n\t\t}); ok {\n\t\t\trealFilename = s.Filename()\n\t\t}\n\t}\n\n\tf, err2 := fs.Open(filename)\n\tif err2 != nil {\n\t\treturn nil, realFilename, err2\n\t}\n\n\treturn f, realFilename, nil\n}",
+    "funcname": "openFile"
+}

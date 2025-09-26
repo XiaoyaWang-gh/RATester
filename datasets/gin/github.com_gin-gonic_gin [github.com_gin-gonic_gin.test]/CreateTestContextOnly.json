@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/test_helpers.go",
+    "lineno": 19,
+    "focalfunc": "func CreateTestContextOnly(w http.ResponseWriter, r *Engine) (c *Context)",
+    "funcbody": "func CreateTestContextOnly(w http.ResponseWriter, r *Engine) (c *Context) {\n\tc = r.allocateContext(r.maxParams)\n\tc.reset()\n\tc.writermem.reset(w)\n\treturn\n}",
+    "funcname": "CreateTestContextOnly"
+}

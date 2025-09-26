@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/wrr_load_balancer.go",
+    "lineno": 52,
+    "focalfunc": "func (b *WRRLoadBalancer) AddWeightedServer(serverHandler Handler, weight *int)",
+    "funcbody": "func (b *WRRLoadBalancer) AddWeightedServer(serverHandler Handler, weight *int) {\n\tb.lock.Lock()\n\tdefer b.lock.Unlock()\n\n\tw := 1\n\tif weight != nil {\n\t\tw = *weight\n\t}\n\tb.servers = append(b.servers, server{Handler: serverHandler, weight: w})\n}",
+    "funcname": "AddWeightedServer"
+}

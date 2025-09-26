@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/mount.go",
+    "lineno": 71,
+    "focalfunc": "func (grp *Group) mount(prefix string, subApp *App) Router",
+    "funcbody": "func (grp *Group) mount(prefix string, subApp *App) Router {\n\tgroupPath := getGroupPath(grp.Prefix, prefix)\n\tgroupPath = utils.TrimRight(groupPath, '/')\n\tif groupPath == \"\" {\n\t\tgroupPath = \"/\"\n\t}\n\n\tfor mountedPrefixes, subApp := range subApp.mountFields.appList {\n\t\tpath := getGroupPath(groupPath, mountedPrefixes)\n\n\t\tsubApp.mountFields.mountPath = path\n\t\tgrp.app.mountFields.appList[path] = subApp\n\t}\n\n\tmountGroup := &Group{Prefix: groupPath, app: subApp}\n\tgrp.app.register([]string{methodUse}, groupPath, mountGroup, nil)\n\n\tif err := subApp.hooks.executeOnMountHooks(grp.app); err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn grp\n}",
+    "funcname": "mount"
+}

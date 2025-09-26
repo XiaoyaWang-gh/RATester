@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 355,
+    "focalfunc": "func (manager *Manager) isSecure(req *http.Request) bool",
+    "funcbody": "func (manager *Manager) isSecure(req *http.Request) bool {\n\tif !manager.config.Secure {\n\t\treturn false\n\t}\n\tif req.URL.Scheme != \"\" {\n\t\treturn req.URL.Scheme == \"https\"\n\t}\n\tif req.TLS == nil {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "isSecure"
+}

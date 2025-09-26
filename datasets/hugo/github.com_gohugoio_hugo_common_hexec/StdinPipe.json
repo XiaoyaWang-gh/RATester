@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 243,
+    "focalfunc": "func (c *cmdWrapper) StdinPipe() (io.WriteCloser, error)",
+    "funcbody": "func (c *cmdWrapper) StdinPipe() (io.WriteCloser, error) {\n\treturn c.c.StdinPipe()\n}",
+    "funcname": "StdinPipe"
+}

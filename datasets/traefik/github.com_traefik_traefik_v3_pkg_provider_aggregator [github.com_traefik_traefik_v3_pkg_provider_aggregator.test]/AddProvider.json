@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/aggregator.go",
+    "lineno": 152,
+    "focalfunc": "func (p *ProviderAggregator) AddProvider(provider provider.Provider) error",
+    "funcbody": "func (p *ProviderAggregator) AddProvider(provider provider.Provider) error {\n\terr := provider.Init()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tswitch provider.(type) {\n\tcase *file.Provider:\n\t\tp.fileProvider = provider\n\tcase *traefik.Provider:\n\t\tp.internalProvider = provider\n\tdefault:\n\t\tp.providers = append(p.providers, provider)\n\t}\n\n\treturn nil\n}",
+    "funcname": "AddProvider"
+}

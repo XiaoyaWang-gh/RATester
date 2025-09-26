@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 631,
+    "focalfunc": "func (c *context) SetHandler(h HandlerFunc)",
+    "funcbody": "func (c *context) SetHandler(h HandlerFunc) {\n\tc.handler = h\n}",
+    "funcname": "SetHandler"
+}

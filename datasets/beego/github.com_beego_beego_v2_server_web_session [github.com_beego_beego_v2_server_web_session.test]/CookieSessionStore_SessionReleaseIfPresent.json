@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 98,
+    "focalfunc": "func (st *CookieSessionStore) SessionReleaseIfPresent(ctx context.Context, w http.ResponseWriter)",
+    "funcbody": "func (st *CookieSessionStore) SessionReleaseIfPresent(ctx context.Context, w http.ResponseWriter) {\n\tst.SessionRelease(ctx, w)\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

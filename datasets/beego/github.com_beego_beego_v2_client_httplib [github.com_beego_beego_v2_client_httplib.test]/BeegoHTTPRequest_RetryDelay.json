@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 167,
+    "focalfunc": "func (b *BeegoHTTPRequest) RetryDelay(delay time.Duration) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) RetryDelay(delay time.Duration) *BeegoHTTPRequest {\n\tb.setting.RetryDelay = delay\n\treturn b\n}",
+    "funcname": "RetryDelay"
+}

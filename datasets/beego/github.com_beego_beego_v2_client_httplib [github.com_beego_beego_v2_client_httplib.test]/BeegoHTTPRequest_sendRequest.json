@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 495,
+    "focalfunc": "func (b *BeegoHTTPRequest) sendRequest(client *http.Client) (resp *http.Response, err error)",
+    "funcbody": "func (b *BeegoHTTPRequest) sendRequest(client *http.Client) (resp *http.Response, err error) {\n\n\tfor i := 0; b.setting.Retries == -1 || i <= b.setting.Retries; i++ {\n\t\tresp, err = client.Do(b.req)\n\t\tif err == nil {\n\t\t\treturn\n\t\t}\n\t\ttime.Sleep(b.setting.RetryDelay)\n\t\tb.req.Body = b.copyBody()\n\t}\n\treturn nil, berror.Wrap(err, SendRequestFailed, \"sending request fail\")\n}",
+    "funcname": "sendRequest"
+}

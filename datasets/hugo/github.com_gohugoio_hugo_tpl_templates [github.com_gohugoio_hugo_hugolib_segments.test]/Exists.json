@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/templates/templates.go",
+    "lineno": 46,
+    "focalfunc": "func (ns *Namespace) Exists(name string) bool",
+    "funcbody": "func (ns *Namespace) Exists(name string) bool {\n\treturn ns.deps.Tmpl().HasTemplate(name)\n}",
+    "funcname": "Exists"
+}

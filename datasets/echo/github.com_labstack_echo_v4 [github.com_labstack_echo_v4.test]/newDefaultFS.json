@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 109,
+    "focalfunc": "func newDefaultFS() *defaultFS",
+    "funcbody": "func newDefaultFS() *defaultFS {\n\tdir, _ := os.Getwd()\n\treturn &defaultFS{\n\t\tprefix:\tdir,\n\t\tfs:\tnil,\n\t}\n}",
+    "funcname": "newDefaultFS"
+}

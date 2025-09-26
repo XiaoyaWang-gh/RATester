@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/tables/tables.go",
+    "lineno": 38,
+    "focalfunc": "func (e *ext) Extend(m goldmark.Markdown)",
+    "funcbody": "func (e *ext) Extend(m goldmark.Markdown) {\n\tm.Renderer().AddOptions(renderer.WithNodeRenderers(\n\t\tutil.Prioritized(newHTMLRenderer(), 100),\n\t))\n}",
+    "funcname": "Extend"
+}

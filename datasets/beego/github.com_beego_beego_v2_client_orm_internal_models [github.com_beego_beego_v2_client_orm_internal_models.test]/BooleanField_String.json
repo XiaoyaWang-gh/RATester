@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 75,
+    "focalfunc": "func (e *BooleanField) String() string",
+    "funcbody": "func (e *BooleanField) String() string {\n\treturn strconv.FormatBool(e.Value())\n}",
+    "funcname": "String"
+}

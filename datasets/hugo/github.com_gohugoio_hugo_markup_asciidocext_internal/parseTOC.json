@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 223,
+    "focalfunc": "func parseTOC(doc *html.Node) *tableofcontents.Fragments",
+    "funcbody": "func parseTOC(doc *html.Node) *tableofcontents.Fragments {\n\tvar (\n\t\ttoc\ttableofcontents.Builder\n\t\tf\tfunc(*html.Node, int, int)\n\t)\n\tf = func(n *html.Node, row, level int) {\n\t\tif n.Type == html.ElementNode {\n\t\t\tswitch n.Data {\n\t\t\tcase \"ul\":\n\t\t\t\tif level == 0 {\n\t\t\t\t\trow++\n\t\t\t\t}\n\t\t\t\tlevel++\n\t\t\t\tf(n.FirstChild, row, level)\n\t\t\tcase \"li\":\n\t\t\t\tfor c := n.FirstChild; c != nil; c = c.NextSibling {\n\t\t\t\t\tif c.Type != html.ElementNode || c.Data != \"a\" {\n\t\t\t\t\t\tcontinue\n\t\t\t\t\t}\n\t\t\t\t\thref := attr(c, \"href\")[1:]\n\t\t\t\t\ttoc.AddAt(&tableofcontents.Heading{\n\t\t\t\t\t\tTitle:\tnodeContent(c),\n\t\t\t\t\t\tID:\thref,\n\t\t\t\t\t\tLevel:\tlevel + 1,\n\t\t\t\t\t}, row, level)\n\t\t\t\t}\n\t\t\t\tf(n.FirstChild, row, level)\n\t\t\t}\n\t\t}\n\t\tif n.NextSibling != nil {\n\t\t\tf(n.NextSibling, row, level)\n\t\t}\n\t}\n\tf(doc.FirstChild, -1, 0)\n\treturn toc.Build()\n}",
+    "funcname": "parseTOC"
+}

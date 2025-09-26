@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 136,
+    "focalfunc": "func GetMethodByName(v reflect.Value, name string) reflect.Value",
+    "funcbody": "func GetMethodByName(v reflect.Value, name string) reflect.Value {\n\tindex := GetMethodIndexByName(v.Type(), name)\n\n\tif index == -1 {\n\t\treturn reflect.Value{}\n\t}\n\n\treturn v.Method(index)\n}",
+    "funcname": "GetMethodByName"
+}

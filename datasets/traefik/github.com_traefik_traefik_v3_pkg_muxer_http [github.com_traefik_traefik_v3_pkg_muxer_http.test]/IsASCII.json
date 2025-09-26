@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 266,
+    "focalfunc": "func IsASCII(s string) bool",
+    "funcbody": "func IsASCII(s string) bool {\n\tfor i := range len(s) {\n\t\tif s[i] >= utf8.RuneSelf {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "IsASCII"
+}

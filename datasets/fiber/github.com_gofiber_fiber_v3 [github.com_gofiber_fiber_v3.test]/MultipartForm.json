@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1004,
+    "focalfunc": "func (c *DefaultCtx) MultipartForm() (*multipart.Form, error)",
+    "funcbody": "func (c *DefaultCtx) MultipartForm() (*multipart.Form, error) {\n\treturn c.fasthttp.MultipartForm()\n}",
+    "funcname": "MultipartForm"
+}

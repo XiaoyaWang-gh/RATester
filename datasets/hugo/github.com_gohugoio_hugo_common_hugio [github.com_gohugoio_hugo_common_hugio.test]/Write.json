@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/hasBytesWriter.go",
+    "lineno": 42,
+    "focalfunc": "func (h *HasBytesWriter) Write(p []byte) (n int, err error)",
+    "funcbody": "func (h *HasBytesWriter) Write(p []byte) (n int, err error) {\n\tif h.done {\n\t\treturn len(p), nil\n\t}\n\n\tif len(h.buff) == 0 {\n\t\th.buff = make([]byte, h.patternLen()*2)\n\t}\n\n\tfor i := range p {\n\t\th.buff[h.i] = p[i]\n\t\th.i++\n\t\tif h.i == len(h.buff) {\n\n\t\t\tcopy(h.buff, h.buff[len(h.buff)/2:])\n\t\t\th.i = len(h.buff) / 2\n\t\t}\n\n\t\tfor _, pp := range h.Patterns {\n\t\t\tif bytes.Contains(h.buff, pp.Pattern) {\n\t\t\t\tpp.Match = true\n\t\t\t\tdone := true\n\t\t\t\tfor _, ppp := range h.Patterns {\n\t\t\t\t\tif !ppp.Match {\n\t\t\t\t\t\tdone = false\n\t\t\t\t\t\tbreak\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tif done {\n\t\t\t\t\th.done = true\n\t\t\t\t}\n\t\t\t\treturn len(p), nil\n\t\t\t}\n\t\t}\n\n\t}\n\n\treturn len(p), nil\n}",
+    "funcname": "Write"
+}

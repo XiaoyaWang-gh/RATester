@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 411,
+    "focalfunc": "func WriteImportcfg(t testing.TB, dstPath string, packageFiles map[string]string, pkgs ...string)",
+    "funcbody": "func WriteImportcfg(t testing.TB, dstPath string, packageFiles map[string]string, pkgs ...string) {\n\tt.Helper()\n\n\ticfg := new(bytes.Buffer)\n\ticfg.WriteString(\"# import config\\n\")\n\tfor k, v := range packageFiles {\n\t\tfmt.Fprintf(icfg, \"packagefile %s=%s\\n\", k, v)\n\t}\n\n\tif len(pkgs) > 0 {\n\n\t\tcmd := Command(t, GoToolPath(t), \"list\", \"-export\", \"-deps\", \"-f\", `{{if ne .ImportPath \"command-line-arguments\"}}{{if .Export}}{{.ImportPath}}={{.Export}}{{end}}{{end}}`)\n\t\tcmd.Args = append(cmd.Args, pkgs...)\n\t\tcmd.Stderr = new(strings.Builder)\n\t\tout, err := cmd.Output()\n\t\tif err != nil {\n\t\t\tt.Fatalf(\"%v: %v\\n%s\", cmd, err, cmd.Stderr)\n\t\t}\n\n\t\tfor _, line := range strings.Split(string(out), \"\\n\") {\n\t\t\tif line == \"\" {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\timportPath, export, ok := strings.Cut(line, \"=\")\n\t\t\tif !ok {\n\t\t\t\tt.Fatalf(\"invalid line in output from %v:\\n%s\", cmd, line)\n\t\t\t}\n\t\t\tif packageFiles[importPath] == \"\" {\n\t\t\t\tfmt.Fprintf(icfg, \"packagefile %s=%s\\n\", importPath, export)\n\t\t\t}\n\t\t}\n\t}\n\n\tif err := os.WriteFile(dstPath, icfg.Bytes(), 0o666); err != nil {\n\t\tt.Fatal(err)\n\t}\n}",
+    "funcname": "WriteImportcfg"
+}

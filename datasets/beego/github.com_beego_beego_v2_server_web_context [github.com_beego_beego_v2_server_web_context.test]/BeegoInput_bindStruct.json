@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 636,
+    "focalfunc": "func (input *BeegoInput) bindStruct(params *url.Values, key string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindStruct(params *url.Values, key string, typ reflect.Type) reflect.Value {\n\tresult := reflect.New(typ).Elem()\n\tfieldValues := make(map[string]reflect.Value)\n\tfor reqKey, val := range *params {\n\t\tvar fieldName string\n\t\tif strings.HasPrefix(reqKey, key+\".\") {\n\t\t\tfieldName = reqKey[len(key)+1:]\n\t\t} else if strings.HasPrefix(reqKey, key+\"[\") && reqKey[len(reqKey)-1] == ']' {\n\t\t\tfieldName = reqKey[len(key)+1 : len(reqKey)-1]\n\t\t} else {\n\t\t\tcontinue\n\t\t}\n\n\t\tif _, ok := fieldValues[fieldName]; !ok {\n\n\t\t\tfieldValue := result.FieldByName(fieldName)\n\t\t\tif !fieldValue.IsValid() {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif !fieldValue.CanSet() {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tboundVal := input.bindValue(val[0], fieldValue.Type())\n\t\t\tfieldValue.Set(boundVal)\n\t\t\tfieldValues[fieldName] = boundVal\n\t\t}\n\t}\n\n\treturn result\n}",
+    "funcname": "bindStruct"
+}

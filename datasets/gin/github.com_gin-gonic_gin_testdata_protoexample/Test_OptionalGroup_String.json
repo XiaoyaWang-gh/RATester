@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 169,
+    "focalfunc": "func (x *Test_OptionalGroup) String() string",
+    "funcbody": "func (x *Test_OptionalGroup) String() string {\n\treturn protoimpl.X.MessageStringOf(x)\n}",
+    "funcname": "String"
+}

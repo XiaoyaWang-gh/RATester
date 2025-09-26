@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 190,
+    "focalfunc": "func _Greeter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error)",
+    "funcbody": "func _Greeter_SayHello_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {\n\tin := new(HelloRequest)\n\tif err := dec(in); err != nil {\n\t\treturn nil, err\n\t}\n\tif interceptor == nil {\n\t\treturn srv.(GreeterServer).SayHello(ctx, in)\n\t}\n\tinfo := &grpc.UnaryServerInfo{\n\t\tServer:\t\tsrv,\n\t\tFullMethod:\t\"/helloworld.Greeter/SayHello\",\n\t}\n\thandler := func(ctx context.Context, req interface{}) (interface{}, error) {\n\t\treturn srv.(GreeterServer).SayHello(ctx, req.(*HelloRequest))\n\t}\n\treturn interceptor(ctx, in, info, handler)\n}",
+    "funcname": "_Greeter_SayHello_Handler"
+}

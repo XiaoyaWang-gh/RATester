@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/msgpack.go",
+    "lineno": 23,
+    "focalfunc": "func (msgpackBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (msgpackBinding) Bind(req *http.Request, obj any) error {\n\treturn decodeMsgPack(req.Body, obj)\n}",
+    "funcname": "Bind"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/prometheus/server.go",
+    "lineno": 28,
+    "focalfunc": "func (m *serverMetrics) CloseClient()",
+    "funcbody": "func (m *serverMetrics) CloseClient() {\n\tm.clientCount.Dec()\n}",
+    "funcname": "CloseClient"
+}

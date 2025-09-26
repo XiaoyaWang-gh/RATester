@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 176,
+    "focalfunc": "func encodeBool(v reflect.Value) string",
+    "funcbody": "func encodeBool(v reflect.Value) string {\n\treturn strconv.FormatBool(v.Bool())\n}",
+    "funcname": "encodeBool"
+}

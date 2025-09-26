@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/segments/segments.go",
+    "lineno": 68,
+    "focalfunc": "func (f segmentFilter) ShouldExcludeCoarse(field SegmentMatcherFields) bool",
+    "funcbody": "func (f segmentFilter) ShouldExcludeCoarse(field SegmentMatcherFields) bool {\n\treturn f.coarse(field)\n}",
+    "funcname": "ShouldExcludeCoarse"
+}

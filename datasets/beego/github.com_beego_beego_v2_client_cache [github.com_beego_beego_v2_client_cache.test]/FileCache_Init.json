@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 111,
+    "focalfunc": "func (fc *FileCache) Init() error",
+    "funcbody": "func (fc *FileCache) Init() error {\n\tok, err := exists(fc.CachePath)\n\tif err != nil || ok {\n\t\treturn err\n\t}\n\terr = os.MkdirAll(fc.CachePath, os.ModePerm)\n\tif err != nil {\n\t\treturn berror.Wrapf(err, CreateFileCacheDirFailed,\n\t\t\t\"could not create directory, please check the config [%s] and file mode.\", fc.CachePath)\n\t}\n\treturn nil\n}",
+    "funcname": "Init"
+}

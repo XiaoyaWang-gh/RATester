@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 106,
+    "focalfunc": "func (ctx *Context) PushValue(k ast.NodeKind, v any)",
+    "funcbody": "func (ctx *Context) PushValue(k ast.NodeKind, v any) {\n\tif ctx.values == nil {\n\t\tctx.values = make(map[ast.NodeKind][]any)\n\t}\n\tctx.values[k] = append(ctx.values[k], v)\n}",
+    "funcname": "PushValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/postgres/sess_postgresql.go",
+    "lineno": 235,
+    "focalfunc": "func (mp *Provider) SessionGC(context.Context)",
+    "funcbody": "func (mp *Provider) SessionGC(context.Context) {\n\tc := mp.connectInit()\n\tc.Exec(\"DELETE from session where EXTRACT(EPOCH FROM (current_timestamp - session_expiry)) > $1\", mp.maxlifetime)\n\tc.Close()\n}",
+    "funcname": "SessionGC"
+}

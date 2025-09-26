@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 737,
+    "focalfunc": "func loadRouter(rule netv1.IngressRule, pa netv1.HTTPIngressPath, rtConfig *RouterConfig, serviceName string) *dynamic.Router",
+    "funcbody": "func loadRouter(rule netv1.IngressRule, pa netv1.HTTPIngressPath, rtConfig *RouterConfig, serviceName string) *dynamic.Router {\n\tvar rules []string\n\tif len(rule.Host) > 0 {\n\t\trules = []string{buildHostRule(rule.Host)}\n\t}\n\n\tif len(pa.Path) > 0 {\n\t\tmatcher := defaultPathMatcher\n\n\t\tif pa.PathType == nil || *pa.PathType == \"\" || *pa.PathType == netv1.PathTypeImplementationSpecific {\n\t\t\tif rtConfig != nil && rtConfig.Router != nil && rtConfig.Router.PathMatcher != \"\" {\n\t\t\t\tmatcher = rtConfig.Router.PathMatcher\n\t\t\t}\n\t\t} else if *pa.PathType == netv1.PathTypeExact {\n\t\t\tmatcher = \"Path\"\n\t\t}\n\n\t\trules = append(rules, fmt.Sprintf(\"%s(`%s`)\", matcher, pa.Path))\n\t}\n\n\trt := &dynamic.Router{\n\t\tRule:\t\tstrings.Join(rules, \" && \"),\n\t\tService:\tserviceName,\n\t}\n\n\tif rtConfig != nil && rtConfig.Router != nil {\n\t\trt.RuleSyntax = rtConfig.Router.RuleSyntax\n\t\trt.Priority = rtConfig.Router.Priority\n\t\trt.EntryPoints = rtConfig.Router.EntryPoints\n\t\trt.Middlewares = rtConfig.Router.Middlewares\n\n\t\tif rtConfig.Router.TLS != nil {\n\t\t\trt.TLS = rtConfig.Router.TLS\n\t\t}\n\t}\n\n\treturn rt\n}",
+    "funcname": "loadRouter"
+}

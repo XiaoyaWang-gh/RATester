@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 537,
+    "focalfunc": "func (r *Request) Send() (*Response, error)",
+    "funcbody": "func (r *Request) Send() (*Response, error) {\n\tr.checkClient()\n\n\treturn newCore().execute(r.Context(), r.Client(), r)\n}",
+    "funcname": "Send"
+}

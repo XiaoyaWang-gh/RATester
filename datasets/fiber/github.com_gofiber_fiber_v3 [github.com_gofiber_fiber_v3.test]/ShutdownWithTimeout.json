@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 832,
+    "focalfunc": "func (app *App) ShutdownWithTimeout(timeout time.Duration) error",
+    "funcbody": "func (app *App) ShutdownWithTimeout(timeout time.Duration) error {\n\tctx, cancelFunc := context.WithTimeout(context.Background(), timeout)\n\tdefer cancelFunc()\n\treturn app.ShutdownWithContext(ctx)\n}",
+    "funcname": "ShutdownWithTimeout"
+}

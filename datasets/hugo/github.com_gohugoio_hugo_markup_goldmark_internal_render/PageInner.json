@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 242,
+    "focalfunc": "func (c *hookBase) PageInner() any",
+    "funcbody": "func (c *hookBase) PageInner() any {\n\treturn c.pageInner\n}",
+    "funcname": "PageInner"
+}

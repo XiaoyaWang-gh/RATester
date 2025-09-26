@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 222,
+    "focalfunc": "func (e *AccessDeniedError) Error() string",
+    "funcbody": "func (e *AccessDeniedError) Error() string {\n\treturn fmt.Sprintf(\"access denied: %q is not whitelisted in policy %q; the current security configuration is:\\n\\n%s\\n\\n\", e.name, e.path, e.policies)\n}",
+    "funcname": "Error"
+}

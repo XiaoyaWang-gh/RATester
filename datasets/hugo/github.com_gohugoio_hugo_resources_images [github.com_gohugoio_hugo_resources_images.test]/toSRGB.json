@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 80,
+    "focalfunc": "func (c Color) toSRGB(i uint8) float64",
+    "funcbody": "func (c Color) toSRGB(i uint8) float64 {\n\tv := float64(i) / 255\n\tif v <= 0.04045 {\n\t\treturn v / 12.92\n\t} else {\n\t\treturn math.Pow((v+0.055)/1.055, 2.4)\n\t}\n}",
+    "funcname": "toSRGB"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 763,
+    "focalfunc": "func (e Enum) DefaultMessage() string",
+    "funcbody": "func (e Enum) DefaultMessage() string {\n\treturn fmt.Sprintf(MessageTmpls[\"Enum\"], e.Rules)\n}",
+    "funcname": "DefaultMessage"
+}

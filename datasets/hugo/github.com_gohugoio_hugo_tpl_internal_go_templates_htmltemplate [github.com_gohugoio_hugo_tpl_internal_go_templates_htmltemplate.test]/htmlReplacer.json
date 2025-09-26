@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/html.go",
+    "lineno": 144,
+    "focalfunc": "func htmlReplacer(s string, replacementTable []string, badRunes bool) string",
+    "funcbody": "func htmlReplacer(s string, replacementTable []string, badRunes bool) string {\n\twritten, b := 0, new(strings.Builder)\n\tr, w := rune(0), 0\n\tfor i := 0; i < len(s); i += w {\n\n\t\tr, w = utf8.DecodeRuneInString(s[i:])\n\t\tif int(r) < len(replacementTable) {\n\t\t\tif repl := replacementTable[r]; len(repl) != 0 {\n\t\t\t\tif written == 0 {\n\t\t\t\t\tb.Grow(len(s))\n\t\t\t\t}\n\t\t\t\tb.WriteString(s[written:i])\n\t\t\t\tb.WriteString(repl)\n\t\t\t\twritten = i + w\n\t\t\t}\n\t\t} else if badRunes {\n\n\t\t} else if 0xfdd0 <= r && r <= 0xfdef || 0xfff0 <= r && r <= 0xffff {\n\t\t\tif written == 0 {\n\t\t\t\tb.Grow(len(s))\n\t\t\t}\n\t\t\tfmt.Fprintf(b, \"%s&#x%x;\", s[written:i], r)\n\t\t\twritten = i + w\n\t\t}\n\t}\n\tif written == 0 {\n\t\treturn s\n\t}\n\tb.WriteString(s[written:])\n\treturn b.String()\n}",
+    "funcname": "htmlReplacer"
+}

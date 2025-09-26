@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 69,
+    "focalfunc": "func ExpectEmpty(actual interface{}, explain ...interface{})",
+    "funcbody": "func ExpectEmpty(actual interface{}, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1, actual).To(gomega.BeEmpty(), explain...)\n}",
+    "funcname": "ExpectEmpty"
+}

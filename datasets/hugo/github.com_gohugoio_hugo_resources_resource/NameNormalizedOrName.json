@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resourcetypes.go",
+    "lineno": 303,
+    "focalfunc": "func NameNormalizedOrName(r Resource) string",
+    "funcbody": "func NameNormalizedOrName(r Resource) string {\n\tif nn, ok := r.(NameNormalizedProvider); ok {\n\t\treturn nn.NameNormalized()\n\t}\n\treturn r.Name()\n}",
+    "funcname": "NameNormalizedOrName"
+}

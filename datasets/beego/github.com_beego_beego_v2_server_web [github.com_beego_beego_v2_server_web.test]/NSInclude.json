@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 353,
+    "focalfunc": "func NSInclude(cList ...ControllerInterface) LinkNamespace",
+    "funcbody": "func NSInclude(cList ...ControllerInterface) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Include(cList...)\n\t}\n}",
+    "funcname": "NSInclude"
+}

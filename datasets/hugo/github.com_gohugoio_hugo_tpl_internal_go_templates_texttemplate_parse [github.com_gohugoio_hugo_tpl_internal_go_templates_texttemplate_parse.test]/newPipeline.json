@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 198,
+    "focalfunc": "func (t *Tree) newPipeline(pos Pos, line int, vars []*VariableNode) *PipeNode",
+    "funcbody": "func (t *Tree) newPipeline(pos Pos, line int, vars []*VariableNode) *PipeNode {\n\treturn &PipeNode{tr: t, NodeType: NodePipe, Pos: pos, Line: line, Decl: vars}\n}",
+    "funcname": "newPipeline"
+}

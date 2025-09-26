@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 450,
+    "focalfunc": "func (l *genericResource) Key() string",
+    "funcbody": "func (l *genericResource) Key() string {\n\tbasePath := l.spec.Cfg.BaseURL().BasePathNoTrailingSlash\n\tvar key string\n\tif basePath == \"\" {\n\t\tkey = l.RelPermalink()\n\t} else {\n\t\tkey = strings.TrimPrefix(l.RelPermalink(), basePath)\n\t}\n\n\tif l.spec.Cfg.IsMultihost() {\n\t\tkey = l.spec.Lang() + key\n\t}\n\n\treturn key\n}",
+    "funcname": "Key"
+}

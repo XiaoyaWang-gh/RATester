@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 162,
+    "focalfunc": "func (svr *Service) Run(ctx context.Context) error",
+    "funcbody": "func (svr *Service) Run(ctx context.Context) error {\n\tctx, cancel := context.WithCancelCause(ctx)\n\tsvr.ctx = xlog.NewContext(ctx, xlog.FromContextSafe(ctx))\n\tsvr.cancel = cancel\n\n\tif svr.common.DNSServer != \"\" {\n\t\tnetpkg.SetDefaultDNSAddress(svr.common.DNSServer)\n\t}\n\n\tif svr.webServer != nil {\n\t\tgo func() {\n\t\t\tlog.Infof(\"admin server listen on %s\", svr.webServer.Address())\n\t\t\tif err := svr.webServer.Run(); err != nil {\n\t\t\t\tlog.Warnf(\"admin server exit with error: %v\", err)\n\t\t\t}\n\t\t}()\n\t}\n\n\tsvr.loopLoginUntilSuccess(10*time.Second, lo.FromPtr(svr.common.LoginFailExit))\n\tif svr.ctl == nil {\n\t\tcancelCause := cancelErr{}\n\t\t_ = errors.As(context.Cause(svr.ctx), &cancelCause)\n\t\treturn fmt.Errorf(\"login to the server failed: %v. With loginFailExit enabled, no additional retries will be attempted\", cancelCause.Err)\n\t}\n\n\tgo svr.keepControllerWorking()\n\n\t<-svr.ctx.Done()\n\tsvr.stop()\n\treturn nil\n}",
+    "funcname": "Run"
+}

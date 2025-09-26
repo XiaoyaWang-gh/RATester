@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 274,
+    "focalfunc": "func (t *templateExec) UnusedTemplates() []tpl.FileInfo",
+    "funcbody": "func (t *templateExec) UnusedTemplates() []tpl.FileInfo {\n\tif t.templateUsageTracker == nil {\n\t\treturn nil\n\t}\n\tvar unused []tpl.FileInfo\n\n\tfor _, ti := range t.needsBaseof {\n\t\tif _, found := t.templateUsageTracker[ti.name]; !found {\n\t\t\tunused = append(unused, ti)\n\t\t}\n\t}\n\n\tfor _, ti := range t.baseof {\n\t\tif _, found := t.templateUsageTracker[ti.name]; !found {\n\t\t\tunused = append(unused, ti)\n\t\t}\n\t}\n\n\tfor _, ts := range t.main.templates {\n\t\tti := ts.info\n\t\tif strings.HasPrefix(ti.name, \"_internal/\") || ti.meta == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tif _, found := t.templateUsageTracker[ti.name]; !found {\n\t\t\tunused = append(unused, ti)\n\t\t}\n\t}\n\n\tsort.Slice(unused, func(i, j int) bool {\n\t\treturn unused[i].Name() < unused[j].Name()\n\t})\n\n\treturn unused\n}",
+    "funcname": "UnusedTemplates"
+}

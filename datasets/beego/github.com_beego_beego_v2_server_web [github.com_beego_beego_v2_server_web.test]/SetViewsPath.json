@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 367,
+    "focalfunc": "func SetViewsPath(path string) *HttpServer",
+    "funcbody": "func SetViewsPath(path string) *HttpServer {\n\tBConfig.WebConfig.ViewsPath = path\n\treturn BeeApp\n}",
+    "funcname": "SetViewsPath"
+}

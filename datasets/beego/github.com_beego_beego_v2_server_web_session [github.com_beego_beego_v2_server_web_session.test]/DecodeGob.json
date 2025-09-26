@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 61,
+    "focalfunc": "func DecodeGob(encoded []byte) (map[interface{}]interface{}, error)",
+    "funcbody": "func DecodeGob(encoded []byte) (map[interface{}]interface{}, error) {\n\tbuf := bytes.NewBuffer(encoded)\n\tdec := gob.NewDecoder(buf)\n\tvar out map[interface{}]interface{}\n\terr := dec.Decode(&out)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn out, nil\n}",
+    "funcname": "DecodeGob"
+}

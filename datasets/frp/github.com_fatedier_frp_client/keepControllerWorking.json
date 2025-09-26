@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 196,
+    "focalfunc": "func (svr *Service) keepControllerWorking()",
+    "funcbody": "func (svr *Service) keepControllerWorking() {\n\t<-svr.ctl.Done()\n\n\twait.BackoffUntil(func() (bool, error) {\n\n\t\tsvr.loopLoginUntilSuccess(20*time.Second, false)\n\t\tif svr.ctl != nil {\n\t\t\t<-svr.ctl.Done()\n\t\t\treturn false, errors.New(\"control is closed and try another loop\")\n\t\t}\n\n\t\treturn false, nil\n\t}, wait.NewFastBackoffManager(\n\t\twait.FastBackoffOptions{\n\t\t\tDuration:\t\ttime.Second,\n\t\t\tFactor:\t\t\t2,\n\t\t\tJitter:\t\t\t0.1,\n\t\t\tMaxDuration:\t\t20 * time.Second,\n\t\t\tFastRetryCount:\t\t3,\n\t\t\tFastRetryDelay:\t\t200 * time.Millisecond,\n\t\t\tFastRetryWindow:\ttime.Minute,\n\t\t\tFastRetryJitter:\t0.5,\n\t\t},\n\t), true, svr.ctx.Done())\n}",
+    "funcname": "keepControllerWorking"
+}

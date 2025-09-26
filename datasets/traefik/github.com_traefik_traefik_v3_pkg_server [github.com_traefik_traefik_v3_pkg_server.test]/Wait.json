@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server.go",
+    "lineno": 64,
+    "focalfunc": "func (s *Server) Wait()",
+    "funcbody": "func (s *Server) Wait() {\n\t<-s.stopChan\n}",
+    "funcname": "Wait"
+}

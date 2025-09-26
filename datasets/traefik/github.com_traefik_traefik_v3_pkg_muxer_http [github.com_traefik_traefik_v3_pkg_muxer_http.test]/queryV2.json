@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher_v2.go",
+    "lineno": 186,
+    "focalfunc": "func queryV2(tree *matchersTree, query ...string) error",
+    "funcbody": "func queryV2(tree *matchersTree, query ...string) error {\n\tvar queries []string\n\tfor _, elem := range query {\n\t\tqueries = append(queries, strings.SplitN(elem, \"=\", 2)...)\n\t}\n\n\troute := mux.NewRouter().NewRoute()\n\troute.Queries(queries...)\n\tif err := route.GetError(); err != nil {\n\t\treturn err\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn route.Match(req, &mux.RouteMatch{})\n\t}\n\n\treturn nil\n}",
+    "funcname": "queryV2"
+}

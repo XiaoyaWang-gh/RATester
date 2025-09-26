@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 303,
+    "focalfunc": "func (c *Context) GetBool(key string) (b bool)",
+    "funcbody": "func (c *Context) GetBool(key string) (b bool) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\tb, _ = val.(bool)\n\t}\n\treturn\n}",
+    "funcname": "GetBool"
+}

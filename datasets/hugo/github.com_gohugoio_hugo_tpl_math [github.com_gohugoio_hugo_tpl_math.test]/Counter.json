@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 356,
+    "focalfunc": "func (ns *Namespace) Counter() uint64",
+    "funcbody": "func (ns *Namespace) Counter() uint64 {\n\treturn atomic.AddUint64(&counter, uint64(1))\n}",
+    "funcname": "Counter"
+}

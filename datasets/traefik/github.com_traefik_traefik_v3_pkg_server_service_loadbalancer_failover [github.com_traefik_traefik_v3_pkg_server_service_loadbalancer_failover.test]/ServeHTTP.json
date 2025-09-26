@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/failover/failover.go",
+    "lineno": 50,
+    "focalfunc": "func (f *Failover) ServeHTTP(w http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (f *Failover) ServeHTTP(w http.ResponseWriter, req *http.Request) {\n\tf.handlerStatusMu.RLock()\n\thandlerStatus := f.handlerStatus\n\tf.handlerStatusMu.RUnlock()\n\n\tif handlerStatus {\n\t\tf.handler.ServeHTTP(w, req)\n\t\treturn\n\t}\n\n\tf.fallbackStatusMu.RLock()\n\tfallbackStatus := f.fallbackStatus\n\tf.fallbackStatusMu.RUnlock()\n\n\tif fallbackStatus {\n\t\tf.fallbackHandler.ServeHTTP(w, req)\n\t\treturn\n\t}\n\n\thttp.Error(w, http.StatusText(http.StatusServiceUnavailable), http.StatusServiceUnavailable)\n}",
+    "funcname": "ServeHTTP"
+}

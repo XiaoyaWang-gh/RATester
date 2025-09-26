@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/hooks.go",
+    "lineno": 90,
+    "focalfunc": "func registerGzip() error",
+    "funcbody": "func registerGzip() error {\n\tif BConfig.EnableGzip {\n\t\tcontext.InitGzip(\n\t\t\tAppConfig.DefaultInt(\"gzipMinLength\", -1),\n\t\t\tAppConfig.DefaultInt(\"gzipCompressLevel\", -1),\n\t\t\tAppConfig.DefaultStrings(\"includedMethods\", []string{\"GET\"}),\n\t\t)\n\t}\n\treturn nil\n}",
+    "funcname": "registerGzip"
+}

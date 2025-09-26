@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 2040,
+    "focalfunc": "func (sa *sitePagesAssembler) addMissingTaxonomies() error",
+    "funcbody": "func (sa *sitePagesAssembler) addMissingTaxonomies() error {\n\tif sa.pageMap.cfg.taxonomyDisabled && sa.pageMap.cfg.taxonomyTermDisabled {\n\t\treturn nil\n\t}\n\n\ttree := sa.pageMap.treePages\n\n\tcommit := tree.Lock(true)\n\tdefer commit()\n\n\tfor _, viewName := range sa.pageMap.cfg.taxonomyConfig.views {\n\t\tkey := viewName.pluralTreeKey\n\t\tif v := tree.Get(key); v == nil {\n\t\t\tm := &pageMeta{\n\t\t\t\ts:\t\tsa.Site,\n\t\t\t\tpathInfo:\tsa.Conf.PathParser().Parse(files.ComponentFolderContent, key+\"/_index.md\"),\n\t\t\t\tpageMetaParams: &pageMetaParams{\n\t\t\t\t\tpageConfig: &pagemeta.PageConfig{\n\t\t\t\t\t\tKind: kinds.KindTaxonomy,\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\tsingular:\tviewName.singular,\n\t\t\t}\n\t\t\tp, _, _ := sa.h.newPage(m)\n\t\t\ttree.InsertIntoValuesDimension(key, p)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "addMissingTaxonomies"
+}

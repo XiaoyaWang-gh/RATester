@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tidb.go",
+    "lineno": 51,
+    "focalfunc": "func (d *dbBaseTidb) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool",
+    "funcbody": "func (d *dbBaseTidb) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool {\n\trow := db.QueryRowContext(ctx, \"SELECT count(*) FROM information_schema.statistics \"+\n\t\t\"WHERE table_schema = DATABASE() AND table_name = ? AND index_name = ?\", table, name)\n\tvar cnt int\n\trow.Scan(&cnt)\n\treturn cnt > 0\n}",
+    "funcname": "IndexExists"
+}

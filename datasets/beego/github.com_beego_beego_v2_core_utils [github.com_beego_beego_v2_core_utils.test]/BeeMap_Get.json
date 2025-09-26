@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 36,
+    "focalfunc": "func (m *BeeMap) Get(k interface{}) interface{}",
+    "funcbody": "func (m *BeeMap) Get(k interface{}) interface{} {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\tif val, ok := m.bm[k]; ok {\n\t\treturn val\n\t}\n\treturn nil\n}",
+    "funcname": "Get"
+}

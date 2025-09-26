@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 51,
+    "focalfunc": "func NewPostPublishResource(id int, r resource.Resource) PostPublishedResource",
+    "funcbody": "func NewPostPublishResource(id int, r resource.Resource) PostPublishedResource {\n\treturn &PostPublishResource{\n\t\tprefix:\t\tPostProcessPrefix + \"_\" + strconv.Itoa(id) + \"_\",\n\t\tdelegate:\tr,\n\t}\n}",
+    "funcname": "NewPostPublishResource"
+}

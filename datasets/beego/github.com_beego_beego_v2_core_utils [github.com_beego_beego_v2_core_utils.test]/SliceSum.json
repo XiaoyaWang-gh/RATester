@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 83,
+    "focalfunc": "func SliceSum(intslice []int64) (sum int64)",
+    "funcbody": "func SliceSum(intslice []int64) (sum int64) {\n\tfor _, v := range intslice {\n\t\tsum += v\n\t}\n\treturn\n}",
+    "funcname": "SliceSum"
+}

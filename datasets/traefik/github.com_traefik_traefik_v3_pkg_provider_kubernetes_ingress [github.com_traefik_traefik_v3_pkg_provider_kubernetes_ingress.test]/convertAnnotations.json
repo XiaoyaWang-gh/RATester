@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/annotations.go",
+    "lineno": 90,
+    "focalfunc": "func convertAnnotations(annotations map[string]string) map[string]string",
+    "funcbody": "func convertAnnotations(annotations map[string]string) map[string]string {\n\tif len(annotations) == 0 {\n\t\treturn nil\n\t}\n\n\tresult := make(map[string]string)\n\n\tfor key, value := range annotations {\n\t\tif !strings.HasPrefix(key, annotationsPrefix) {\n\t\t\tcontinue\n\t\t}\n\n\t\tnewKey := strings.ReplaceAll(key, \"ingress.kubernetes.io/\", \"\")\n\n\t\tif annotationsRegex.MatchString(newKey) {\n\t\t\tnewKey = annotationsRegex.ReplaceAllString(newKey, \"$1.$2[$3].$4\")\n\t\t}\n\n\t\tresult[newKey] = value\n\t}\n\n\treturn result\n}",
+    "funcname": "convertAnnotations"
+}

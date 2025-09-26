@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 172,
+    "focalfunc": "func (d *DB) ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error)",
+    "funcbody": "func (d *DB) ExecContext(ctx context.Context, query string, args ...interface{}) (sql.Result, error) {\n\tif d.stmtDecorators == nil {\n\t\treturn d.DB.ExecContext(ctx, query, args...)\n\t}\n\n\tsd, err := d.getStmtDecorator(query)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tstmt := sd.getStmt()\n\tdefer sd.release()\n\treturn stmt.ExecContext(ctx, args...)\n}",
+    "funcname": "ExecContext"
+}

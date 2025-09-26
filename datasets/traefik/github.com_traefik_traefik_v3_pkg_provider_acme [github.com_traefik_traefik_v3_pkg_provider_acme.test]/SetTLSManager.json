@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 118,
+    "focalfunc": "func (p *Provider) SetTLSManager(tlsManager *traefiktls.Manager)",
+    "funcbody": "func (p *Provider) SetTLSManager(tlsManager *traefiktls.Manager) {\n\tp.tlsManager = tlsManager\n}",
+    "funcname": "SetTLSManager"
+}

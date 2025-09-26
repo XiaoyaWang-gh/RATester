@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 55,
+    "focalfunc": "func (s *Sock5ModeServer) handleRequest(c net.Conn)",
+    "funcbody": "func (s *Sock5ModeServer) handleRequest(c net.Conn) {\n\n\theader := make([]byte, 3)\n\n\t_, err := io.ReadFull(c, header)\n\n\tif err != nil {\n\t\tlogs.Warn(\"illegal request\", err)\n\t\tc.Close()\n\t\treturn\n\t}\n\n\tswitch header[1] {\n\tcase connectMethod:\n\t\ts.handleConnect(c)\n\tcase bindMethod:\n\t\ts.handleBind(c)\n\tcase associateMethod:\n\t\ts.handleUDP(c)\n\tdefault:\n\t\ts.sendReply(c, commandNotSupported)\n\t\tc.Close()\n\t}\n}",
+    "funcname": "handleRequest"
+}

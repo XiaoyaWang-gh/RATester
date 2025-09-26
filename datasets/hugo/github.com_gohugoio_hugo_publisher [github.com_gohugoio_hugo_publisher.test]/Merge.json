@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 75,
+    "focalfunc": "func (h *HTMLElements) Merge(other HTMLElements)",
+    "funcbody": "func (h *HTMLElements) Merge(other HTMLElements) {\n\th.Tags = append(h.Tags, other.Tags...)\n\th.Classes = append(h.Classes, other.Classes...)\n\th.IDs = append(h.IDs, other.IDs...)\n\n\th.Tags = helpers.UniqueStringsReuse(h.Tags)\n\th.Classes = helpers.UniqueStringsReuse(h.Classes)\n\th.IDs = helpers.UniqueStringsReuse(h.IDs)\n}",
+    "funcname": "Merge"
+}

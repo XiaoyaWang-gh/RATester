@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/netpackager.go",
+    "lineno": 48,
+    "focalfunc": "func (addr *Addr) Decode(b []byte) error",
+    "funcbody": "func (addr *Addr) Decode(b []byte) error {\n\taddr.Type = b[0]\n\tpos := 1\n\tswitch addr.Type {\n\tcase ipV4:\n\t\taddr.Host = net.IP(b[pos : pos+net.IPv4len]).String()\n\t\tpos += net.IPv4len\n\tcase ipV6:\n\t\taddr.Host = net.IP(b[pos : pos+net.IPv6len]).String()\n\t\tpos += net.IPv6len\n\tcase domainName:\n\t\taddrlen := int(b[pos])\n\t\tpos++\n\t\taddr.Host = string(b[pos : pos+addrlen])\n\t\tpos += addrlen\n\tdefault:\n\t\treturn errors.New(\"decode error\")\n\t}\n\n\taddr.Port = binary.BigEndian.Uint16(b[pos:])\n\n\treturn nil\n}",
+    "funcname": "Decode"
+}

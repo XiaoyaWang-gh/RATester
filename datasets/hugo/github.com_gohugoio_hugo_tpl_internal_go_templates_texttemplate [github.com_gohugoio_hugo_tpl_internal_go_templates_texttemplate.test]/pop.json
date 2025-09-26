@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 59,
+    "focalfunc": "func (s *state) pop(mark int)",
+    "funcbody": "func (s *state) pop(mark int) {\n\ts.vars = s.vars[0:mark]\n}",
+    "funcname": "pop"
+}

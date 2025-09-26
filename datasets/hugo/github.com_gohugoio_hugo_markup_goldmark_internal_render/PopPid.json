@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 96,
+    "focalfunc": "func (ctx *Context) PopPid() uint64",
+    "funcbody": "func (ctx *Context) PopPid() uint64 {\n\tif len(ctx.pids) == 0 {\n\t\treturn 0\n\t}\n\ti := len(ctx.pids) - 1\n\tp := ctx.pids[i]\n\tctx.pids = ctx.pids[:i]\n\treturn p\n}",
+    "funcname": "PopPid"
+}

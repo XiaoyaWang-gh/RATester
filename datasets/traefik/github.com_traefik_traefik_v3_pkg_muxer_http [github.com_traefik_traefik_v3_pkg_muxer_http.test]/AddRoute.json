@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 75,
+    "focalfunc": "func (m *Muxer) AddRoute(rule string, syntax string, priority int, handler http.Handler) error",
+    "funcbody": "func (m *Muxer) AddRoute(rule string, syntax string, priority int, handler http.Handler) error {\n\tvar parse interface{}\n\tvar err error\n\tvar matcherFuncs map[string]func(*matchersTree, ...string) error\n\n\tswitch syntax {\n\tcase \"v2\":\n\t\tparse, err = m.parserV2.Parse(rule)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"error while parsing rule %s: %w\", rule, err)\n\t\t}\n\n\t\tmatcherFuncs = httpFuncsV2\n\tdefault:\n\t\tparse, err = m.parser.Parse(rule)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"error while parsing rule %s: %w\", rule, err)\n\t\t}\n\n\t\tmatcherFuncs = httpFuncs\n\t}\n\n\tbuildTree, ok := parse.(rules.TreeBuilder)\n\tif !ok {\n\t\treturn fmt.Errorf(\"error while parsing rule %s\", rule)\n\t}\n\n\tvar matchers matchersTree\n\terr = matchers.addRule(buildTree(), matcherFuncs)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"error while adding rule %s: %w\", rule, err)\n\t}\n\n\tm.routes = append(m.routes, &route{\n\t\thandler:\thandler,\n\t\tmatchers:\tmatchers,\n\t\tpriority:\tpriority,\n\t})\n\n\tsort.Sort(m.routes)\n\n\treturn nil\n}",
+    "funcname": "AddRoute"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/tcp.go",
+    "lineno": 59,
+    "focalfunc": "func (s *WebServer) Start() error",
+    "funcbody": "func (s *WebServer) Start() error {\n\tp, _ := beego.AppConfig.Int(\"web_port\")\n\tif p == 0 {\n\t\tstop := make(chan struct{})\n\t\t<-stop\n\t}\n\tbeego.BConfig.WebConfig.Session.SessionOn = true\n\tbeego.SetStaticPath(beego.AppConfig.String(\"web_base_url\")+\"/static\", filepath.Join(common.GetRunPath(), \"web\", \"static\"))\n\tbeego.SetViewsPath(filepath.Join(common.GetRunPath(), \"web\", \"views\"))\n\terr := errors.New(\"Web management startup failure \")\n\tvar l net.Listener\n\tif l, err = connection.GetWebManagerListener(); err == nil {\n\t\tbeego.InitBeforeHTTPRun()\n\t\tif beego.AppConfig.String(\"web_open_ssl\") == \"true\" {\n\t\t\tkeyPath := beego.AppConfig.String(\"web_key_file\")\n\t\t\tcertPath := beego.AppConfig.String(\"web_cert_file\")\n\t\t\terr = http.ServeTLS(l, beego.BeeApp.Handlers, certPath, keyPath)\n\t\t} else {\n\t\t\terr = http.Serve(l, beego.BeeApp.Handlers)\n\t\t}\n\t} else {\n\t\tlogs.Error(err)\n\t}\n\treturn err\n}",
+    "funcname": "Start"
+}

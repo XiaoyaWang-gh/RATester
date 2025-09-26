@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 152,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetUserAgent(useragent string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetUserAgent(useragent string) *BeegoHTTPRequest {\n\tb.setting.UserAgent = useragent\n\treturn b\n}",
+    "funcname": "SetUserAgent"
+}

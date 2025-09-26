@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http2https.go",
+    "lineno": 46,
+    "focalfunc": "func NewHTTP2HTTPSPlugin(options v1.ClientPluginOptions) (Plugin, error)",
+    "funcbody": "func NewHTTP2HTTPSPlugin(options v1.ClientPluginOptions) (Plugin, error) {\n\topts := options.(*v1.HTTP2HTTPSPluginOptions)\n\n\tlistener := NewProxyListener()\n\n\tp := &HTTP2HTTPSPlugin{\n\t\topts:\topts,\n\t\tl:\tlistener,\n\t}\n\n\ttr := &http.Transport{\n\t\tTLSClientConfig: &tls.Config{InsecureSkipVerify: true},\n\t}\n\n\trp := &httputil.ReverseProxy{\n\t\tRewrite: func(r *httputil.ProxyRequest) {\n\t\t\tr.Out.Header[\"X-Forwarded-For\"] = r.In.Header[\"X-Forwarded-For\"]\n\t\t\tr.Out.Header[\"X-Forwarded-Host\"] = r.In.Header[\"X-Forwarded-Host\"]\n\t\t\tr.Out.Header[\"X-Forwarded-Proto\"] = r.In.Header[\"X-Forwarded-Proto\"]\n\t\t\treq := r.Out\n\t\t\treq.URL.Scheme = \"https\"\n\t\t\treq.URL.Host = p.opts.LocalAddr\n\t\t\tif p.opts.HostHeaderRewrite != \"\" {\n\t\t\t\treq.Host = p.opts.HostHeaderRewrite\n\t\t\t}\n\t\t\tfor k, v := range p.opts.RequestHeaders.Set {\n\t\t\t\treq.Header.Set(k, v)\n\t\t\t}\n\t\t},\n\t\tTransport:\ttr,\n\t\tBufferPool:\tpool.NewBuffer(32 * 1024),\n\t\tErrorLog:\tstdlog.New(log.NewWriteLogger(log.WarnLevel, 2), \"\", 0),\n\t}\n\n\tp.s = &http.Server{\n\t\tHandler:\t\trp,\n\t\tReadHeaderTimeout:\t0,\n\t}\n\n\tgo func() {\n\t\t_ = p.s.Serve(listener)\n\t}()\n\n\treturn p, nil\n}",
+    "funcname": "NewHTTP2HTTPSPlugin"
+}

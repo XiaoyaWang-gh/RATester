@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/capture/capture.go",
+    "lineno": 165,
+    "focalfunc": "func (crw *captureResponseWriter) Status() int",
+    "funcbody": "func (crw *captureResponseWriter) Status() int {\n\treturn crw.status\n}",
+    "funcname": "Status"
+}

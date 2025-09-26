@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/bundler/bundler.go",
+    "lineno": 75,
+    "focalfunc": "func (r *multiReadSeekCloser) Close() error",
+    "funcbody": "func (r *multiReadSeekCloser) Close() error {\n\tfor _, s := range r.sources {\n\t\ts.Close()\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

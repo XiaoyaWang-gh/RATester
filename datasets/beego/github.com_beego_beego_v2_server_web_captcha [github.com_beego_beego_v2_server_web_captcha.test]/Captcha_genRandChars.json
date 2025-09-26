@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 126,
+    "focalfunc": "func (c *Captcha) genRandChars() []byte",
+    "funcbody": "func (c *Captcha) genRandChars() []byte {\n\treturn utils.RandomCreateBytes(c.ChallengeNums, defaultChars...)\n}",
+    "funcname": "genRandChars"
+}

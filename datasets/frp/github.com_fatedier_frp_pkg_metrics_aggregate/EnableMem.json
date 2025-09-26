@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 24,
+    "focalfunc": "func EnableMem()",
+    "funcbody": "func EnableMem() {\n\tsm.Add(mem.ServerMetrics)\n}",
+    "funcname": "EnableMem"
+}

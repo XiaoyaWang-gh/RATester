@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 76,
+    "focalfunc": "func ExtractCarrierIntoContext(ctx context.Context, headers http.Header) context.Context",
+    "funcbody": "func ExtractCarrierIntoContext(ctx context.Context, headers http.Header) context.Context {\n\tpropagator := otel.GetTextMapPropagator()\n\treturn propagator.Extract(ctx, propagation.HeaderCarrier(headers))\n}",
+    "funcname": "ExtractCarrierIntoContext"
+}

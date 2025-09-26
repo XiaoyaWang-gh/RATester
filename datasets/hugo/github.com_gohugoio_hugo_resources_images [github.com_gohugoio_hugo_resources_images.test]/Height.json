@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 118,
+    "focalfunc": "func (i *Image) Height() int",
+    "funcbody": "func (i *Image) Height() int {\n\ti.initConfig()\n\treturn i.config.Height\n}",
+    "funcname": "Height"
+}

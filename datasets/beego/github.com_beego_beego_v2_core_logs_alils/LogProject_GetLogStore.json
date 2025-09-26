@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log_project.go",
+    "lineno": 89,
+    "focalfunc": "func (p *LogProject) GetLogStore(name string) (s *LogStore, err error)",
+    "funcbody": "func (p *LogProject) GetLogStore(name string) (s *LogStore, err error) {\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\": \"0\",\n\t}\n\n\tr, err := request(p, \"GET\", \"/logstores/\"+name, h, nil)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbuf, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(buf, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to get logstore\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Printf(\"%s\\n\", dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\ts = &LogStore{}\n\terr = json.Unmarshal(buf, s)\n\tif err != nil {\n\t\treturn\n\t}\n\ts.project = p\n\treturn\n}",
+    "funcname": "GetLogStore"
+}

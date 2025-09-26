@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tlsmanager.go",
+    "lineno": 285,
+    "focalfunc": "func (m *Manager) GetStore(storeName string) *CertificateStore",
+    "funcbody": "func (m *Manager) GetStore(storeName string) *CertificateStore {\n\tm.lock.RLock()\n\tdefer m.lock.RUnlock()\n\n\treturn m.getStore(storeName)\n}",
+    "funcname": "GetStore"
+}

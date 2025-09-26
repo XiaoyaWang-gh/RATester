@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 478,
+    "focalfunc": "func (r *Request) MaxRedirects() int",
+    "funcbody": "func (r *Request) MaxRedirects() int {\n\treturn r.maxRedirects\n}",
+    "funcname": "MaxRedirects"
+}

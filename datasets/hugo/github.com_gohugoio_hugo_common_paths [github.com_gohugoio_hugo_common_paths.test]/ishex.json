@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 339,
+    "focalfunc": "func ishex(c byte) bool",
+    "funcbody": "func ishex(c byte) bool {\n\tswitch {\n\tcase '0' <= c && c <= '9':\n\t\treturn true\n\tcase 'a' <= c && c <= 'f':\n\t\treturn true\n\tcase 'A' <= c && c <= 'F':\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "ishex"
+}

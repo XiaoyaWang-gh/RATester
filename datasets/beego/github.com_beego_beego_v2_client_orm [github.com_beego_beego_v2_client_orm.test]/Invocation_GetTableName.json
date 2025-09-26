@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/invocation.go",
+    "lineno": 42,
+    "focalfunc": "func (inv *Invocation) GetTableName() string",
+    "funcbody": "func (inv *Invocation) GetTableName() string {\n\tif inv.mi != nil {\n\t\treturn inv.mi.Table\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetTableName"
+}

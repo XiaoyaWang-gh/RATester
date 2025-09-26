@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 439,
+    "focalfunc": "func (c *context) Set(key string, val interface{})",
+    "funcbody": "func (c *context) Set(key string, val interface{}) {\n\tc.lock.Lock()\n\tdefer c.lock.Unlock()\n\n\tif c.store == nil {\n\t\tc.store = make(Map)\n\t}\n\tc.store[key] = val\n}",
+    "funcname": "Set"
+}

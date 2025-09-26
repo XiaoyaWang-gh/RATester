@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/proxy.go",
+    "lineno": 195,
+    "focalfunc": "func (cfg *BaseProxyConf) decorate(_ string, name string, section *ini.Section) error",
+    "funcbody": "func (cfg *BaseProxyConf) decorate(_ string, name string, section *ini.Section) error {\n\tcfg.ProxyName = name\n\n\tcfg.Metas = GetMapWithoutPrefix(section.KeysHash(), \"meta_\")\n\n\tif bandwidth, err := section.GetKey(\"bandwidth_limit\"); err == nil {\n\t\tcfg.BandwidthLimit, err = types.NewBandwidthQuantity(bandwidth.String())\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tcfg.LocalSvrConf.PluginParams = GetMapByPrefix(section.KeysHash(), \"plugin_\")\n\treturn nil\n}",
+    "funcname": "decorate"
+}

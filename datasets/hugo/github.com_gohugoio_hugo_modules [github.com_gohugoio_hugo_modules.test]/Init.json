@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 377,
+    "focalfunc": "func (c *Client) Init(path string) error",
+    "funcbody": "func (c *Client) Init(path string) error {\n\terr := c.runGo(context.Background(), c.logger.Out(), \"mod\", \"init\", path)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to init modules: %w\", err)\n\t}\n\n\tc.GoModulesFilename = filepath.Join(c.ccfg.WorkingDir, goModFilename)\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

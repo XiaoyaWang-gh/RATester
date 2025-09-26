@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 868,
+    "focalfunc": "func (t *templateHandler) noBaseNeeded(name string) bool",
+    "funcbody": "func (t *templateHandler) noBaseNeeded(name string) bool {\n\tif strings.HasPrefix(name, \"shortcodes/\") || strings.HasPrefix(name, \"partials/\") {\n\t\treturn true\n\t}\n\treturn strings.Contains(name, \"_markup/\")\n}",
+    "funcname": "noBaseNeeded"
+}

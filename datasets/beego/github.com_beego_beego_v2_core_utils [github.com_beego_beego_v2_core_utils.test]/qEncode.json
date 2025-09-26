@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 360,
+    "focalfunc": "func qEncode(charset, s string) string",
+    "funcbody": "func qEncode(charset, s string) string {\n\tif !needsEncoding(s) {\n\t\treturn s\n\t}\n\treturn encodeWord(charset, s)\n}",
+    "funcname": "qEncode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compression_handler.go",
+    "lineno": 189,
+    "focalfunc": "func (r *responseWriter) WriteHeader(statusCode int)",
+    "funcbody": "func (r *responseWriter) WriteHeader(statusCode int) {\n\tif r.statusCodeSet {\n\t\treturn\n\t}\n\n\tr.statusCode = statusCode\n\tr.statusCodeSet = true\n}",
+    "funcname": "WriteHeader"
+}

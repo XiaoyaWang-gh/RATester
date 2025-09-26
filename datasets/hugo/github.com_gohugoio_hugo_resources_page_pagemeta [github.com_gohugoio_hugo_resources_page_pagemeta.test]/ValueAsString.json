@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 288,
+    "focalfunc": "func (s Source) ValueAsString() string",
+    "funcbody": "func (s Source) ValueAsString() string {\n\tif s.Value == nil {\n\t\treturn \"\"\n\t}\n\tss, err := cast.ToStringE(s.Value)\n\tif err != nil {\n\t\tpanic(fmt.Errorf(\"content source: failed to convert %T to string: %s\", s.Value, err))\n\t}\n\treturn ss\n}",
+    "funcname": "ValueAsString"
+}

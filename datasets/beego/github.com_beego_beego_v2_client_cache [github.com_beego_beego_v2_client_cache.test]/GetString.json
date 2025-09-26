@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/conv.go",
+    "lineno": 23,
+    "focalfunc": "func GetString(v interface{}) string",
+    "funcbody": "func GetString(v interface{}) string {\n\tswitch result := v.(type) {\n\tcase string:\n\t\treturn result\n\tcase []byte:\n\t\treturn string(result)\n\tdefault:\n\t\tif v != nil {\n\t\t\treturn fmt.Sprint(result)\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetString"
+}

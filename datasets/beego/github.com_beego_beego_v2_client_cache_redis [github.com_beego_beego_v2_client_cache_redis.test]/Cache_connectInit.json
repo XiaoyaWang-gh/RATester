@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 318,
+    "focalfunc": "func (rc *Cache) connectInit()",
+    "funcbody": "func (rc *Cache) connectInit() {\n\tdialFunc := func() (c redis.Conn, err error) {\n\t\tc, err = redis.Dial(\"tcp\", rc.conninfo)\n\t\tif err != nil {\n\t\t\treturn nil, berror.Wrapf(err, cache.DialFailed,\n\t\t\t\t\"could not dial to remote server: %s \", rc.conninfo)\n\t\t}\n\n\t\tif rc.password != \"\" {\n\t\t\tif _, err = c.Do(\"AUTH\", rc.password); err != nil {\n\t\t\t\t_ = c.Close()\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t}\n\n\t\t_, selecterr := c.Do(\"SELECT\", rc.dbNum)\n\t\tif selecterr != nil {\n\t\t\t_ = c.Close()\n\t\t\treturn nil, selecterr\n\t\t}\n\t\treturn\n\t}\n\n\trc.p = &redis.Pool{\n\t\tMaxIdle:\trc.maxIdle,\n\t\tIdleTimeout:\trc.timeout,\n\t\tDial:\t\tdialFunc,\n\t}\n}",
+    "funcname": "connectInit"
+}

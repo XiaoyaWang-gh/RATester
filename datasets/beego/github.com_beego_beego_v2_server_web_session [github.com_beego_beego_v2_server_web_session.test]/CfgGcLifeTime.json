@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 69,
+    "focalfunc": "func CfgGcLifeTime(lifeTime int64) ManagerConfigOpt",
+    "funcbody": "func CfgGcLifeTime(lifeTime int64) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.Gclifetime = lifeTime\n\t}\n}",
+    "funcname": "CfgGcLifeTime"
+}

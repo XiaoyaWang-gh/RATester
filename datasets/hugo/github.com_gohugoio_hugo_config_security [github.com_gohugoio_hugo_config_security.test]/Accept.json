@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/whitelist.go",
+    "lineno": 101,
+    "focalfunc": "func (w Whitelist) Accept(name string) bool",
+    "funcbody": "func (w Whitelist) Accept(name string) bool {\n\tif w.acceptNone {\n\t\treturn false\n\t}\n\n\tfor _, p := range w.patterns {\n\t\tif p.MatchString(name) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "Accept"
+}

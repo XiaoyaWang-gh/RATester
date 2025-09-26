@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 137,
+    "focalfunc": "func validateTCPMuxProxyConfigForClient(c *v1.TCPMuxProxyConfig) error",
+    "funcbody": "func validateTCPMuxProxyConfigForClient(c *v1.TCPMuxProxyConfig) error {\n\tif err := validateDomainConfigForClient(&c.DomainConfig); err != nil {\n\t\treturn err\n\t}\n\n\tif !slices.Contains([]string{string(v1.TCPMultiplexerHTTPConnect)}, c.Multiplexer) {\n\t\treturn fmt.Errorf(\"not support multiplexer: %s\", c.Multiplexer)\n\t}\n\treturn nil\n}",
+    "funcname": "validateTCPMuxProxyConfigForClient"
+}

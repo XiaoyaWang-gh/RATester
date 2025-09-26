@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 299,
+    "focalfunc": "func (t *Tree) parse()",
+    "funcbody": "func (t *Tree) parse() {\n\tt.Root = t.newList(t.peek().pos)\n\tfor t.peek().typ != itemEOF {\n\t\tif t.peek().typ == itemLeftDelim {\n\t\t\tdelim := t.next()\n\t\t\tif t.nextNonSpace().typ == itemDefine {\n\t\t\t\tnewT := New(\"definition\")\n\t\t\t\tnewT.text = t.text\n\t\t\t\tnewT.Mode = t.Mode\n\t\t\t\tnewT.ParseName = t.ParseName\n\t\t\t\tnewT.startParse(t.funcs, t.lex, t.treeSet)\n\t\t\t\tnewT.parseDefinition()\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tt.backup2(delim)\n\t\t}\n\t\tswitch n := t.textOrAction(); n.Type() {\n\t\tcase nodeEnd, nodeElse:\n\t\t\tt.errorf(\"unexpected %s\", n)\n\t\tdefault:\n\t\t\tt.Root.append(n)\n\t\t}\n\t}\n}",
+    "funcname": "parse"
+}

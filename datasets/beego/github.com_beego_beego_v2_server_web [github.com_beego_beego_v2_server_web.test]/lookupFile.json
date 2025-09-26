@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/staticfile.go",
+    "lineno": 220,
+    "focalfunc": "func lookupFile(ctx *context.Context) (bool, string, os.FileInfo, error)",
+    "funcbody": "func lookupFile(ctx *context.Context) (bool, string, os.FileInfo, error) {\n\tfp, fi, err := searchFile(ctx)\n\tif fp == \"\" || fi == nil {\n\t\treturn false, \"\", nil, err\n\t}\n\tif !fi.IsDir() {\n\t\treturn false, fp, fi, err\n\t}\n\tif requestURL := ctx.Input.URL(); requestURL[len(requestURL)-1] == '/' {\n\t\tifp := filepath.Join(fp, \"index.html\")\n\t\tif ifi, _ := os.Stat(ifp); ifi != nil && ifi.Mode().IsRegular() {\n\t\t\treturn false, ifp, ifi, err\n\t\t}\n\t}\n\treturn !BConfig.WebConfig.DirectoryIndex, fp, fi, err\n}",
+    "funcname": "lookupFile"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/tailwindcss.go",
+    "lineno": 59,
+    "focalfunc": "func (t *tailwindcssTransformation) Key() internal.ResourceTransformationKey",
+    "funcbody": "func (t *tailwindcssTransformation) Key() internal.ResourceTransformationKey {\n\treturn internal.NewResourceTransformationKey(\"tailwindcss\", t.optionsm)\n}",
+    "funcname": "Key"
+}

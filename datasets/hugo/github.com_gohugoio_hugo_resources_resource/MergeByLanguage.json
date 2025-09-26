@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resources.go",
+    "lineno": 164,
+    "focalfunc": "func (r Resources) MergeByLanguage(r2 Resources) Resources",
+    "funcbody": "func (r Resources) MergeByLanguage(r2 Resources) Resources {\n\tresult := append(Resources(nil), r...)\n\tm := make(map[string]bool)\n\tfor _, rr := range r {\n\t\tif translated, ok := rr.(translatedResource); ok {\n\t\t\tm[translated.TranslationKey()] = true\n\t\t}\n\t}\n\n\tfor _, rr := range r2 {\n\t\tif translated, ok := rr.(translatedResource); ok {\n\t\t\tif _, found := m[translated.TranslationKey()]; !found {\n\t\t\t\tresult = append(result, rr)\n\t\t\t}\n\t\t}\n\t}\n\treturn result\n}",
+    "funcname": "MergeByLanguage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 177,
+    "focalfunc": "func get(client *clientv3.Client, key string) (*clientv3.GetResponse, error)",
+    "funcbody": "func get(client *clientv3.Client, key string) (*clientv3.GetResponse, error) {\n\tvar (\n\t\tresp\t*clientv3.GetResponse\n\t\terr\terror\n\t)\n\tresp, err = client.Get(context.Background(), key)\n\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"read config from etcd with key %s failed: %w\", key, err)\n\t}\n\treturn resp, err\n}",
+    "funcname": "get"
+}

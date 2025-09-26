@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 595,
+    "focalfunc": "func (engine *Engine) RunQUIC(addr, certFile, keyFile string) (err error)",
+    "funcbody": "func (engine *Engine) RunQUIC(addr, certFile, keyFile string) (err error) {\n\tdebugPrint(\"Listening and serving QUIC on %s\\n\", addr)\n\tdefer func() { debugPrintError(err) }()\n\n\tif engine.isUnsafeTrustedProxies() {\n\t\tdebugPrint(\"[WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.\\n\" +\n\t\t\t\"Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.\")\n\t}\n\n\terr = http3.ListenAndServeQUIC(addr, certFile, keyFile, engine.Handler())\n\treturn\n}",
+    "funcname": "RunQUIC"
+}

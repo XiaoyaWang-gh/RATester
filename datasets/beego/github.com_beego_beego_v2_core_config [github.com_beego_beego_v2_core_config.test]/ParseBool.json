@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 315,
+    "focalfunc": "func ParseBool(val interface{}) (value bool, err error)",
+    "funcbody": "func ParseBool(val interface{}) (value bool, err error) {\n\tif val != nil {\n\t\tswitch v := val.(type) {\n\t\tcase bool:\n\t\t\treturn v, nil\n\t\tcase string:\n\t\t\tswitch v {\n\t\t\tcase \"1\", \"t\", \"T\", \"true\", \"TRUE\", \"True\", \"YES\", \"yes\", \"Yes\", \"Y\", \"y\", \"ON\", \"on\", \"On\":\n\t\t\t\treturn true, nil\n\t\t\tcase \"0\", \"f\", \"F\", \"false\", \"FALSE\", \"False\", \"NO\", \"no\", \"No\", \"N\", \"n\", \"OFF\", \"off\", \"Off\":\n\t\t\t\treturn false, nil\n\t\t\t}\n\t\tcase int8, int32, int64:\n\t\t\tstrV := fmt.Sprintf(\"%d\", v)\n\t\t\tif strV == \"1\" {\n\t\t\t\treturn true, nil\n\t\t\t} else if strV == \"0\" {\n\t\t\t\treturn false, nil\n\t\t\t}\n\t\tcase float64:\n\t\t\tif v == 1.0 {\n\t\t\t\treturn true, nil\n\t\t\t} else if v == 0.0 {\n\t\t\t\treturn false, nil\n\t\t\t}\n\t\t}\n\t\treturn false, fmt.Errorf(\"parsing %q: invalid syntax\", val)\n\t}\n\treturn false, fmt.Errorf(\"parsing <nil>: invalid syntax\")\n}",
+    "funcname": "ParseBool"
+}

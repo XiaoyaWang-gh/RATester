@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__ref.go",
+    "lineno": 36,
+    "focalfunc": "func (p pageRef) RefFrom(argsm map[string]any, source any) (string, error)",
+    "funcbody": "func (p pageRef) RefFrom(argsm map[string]any, source any) (string, error) {\n\treturn p.ref(argsm, source)\n}",
+    "funcname": "RefFrom"
+}

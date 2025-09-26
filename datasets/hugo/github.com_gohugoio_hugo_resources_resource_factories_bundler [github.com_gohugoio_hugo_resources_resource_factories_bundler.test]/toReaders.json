@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/bundler/bundler.go",
+    "lineno": 45,
+    "focalfunc": "func toReaders(sources []hugio.ReadSeekCloser) []io.Reader",
+    "funcbody": "func toReaders(sources []hugio.ReadSeekCloser) []io.Reader {\n\treaders := make([]io.Reader, len(sources))\n\tfor i, r := range sources {\n\t\treaders[i] = r\n\t}\n\treturn readers\n}",
+    "funcname": "toReaders"
+}

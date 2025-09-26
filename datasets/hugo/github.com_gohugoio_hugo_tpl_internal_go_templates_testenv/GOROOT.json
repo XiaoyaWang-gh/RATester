@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 206,
+    "focalfunc": "func GOROOT(t testing.TB) string",
+    "funcbody": "func GOROOT(t testing.TB) string {\n\tpath, err := findGOROOT()\n\tif err != nil {\n\t\tif t == nil {\n\t\t\tpanic(err)\n\t\t}\n\t\tt.Helper()\n\t\tt.Skip(err)\n\t}\n\treturn path\n}",
+    "funcname": "GOROOT"
+}

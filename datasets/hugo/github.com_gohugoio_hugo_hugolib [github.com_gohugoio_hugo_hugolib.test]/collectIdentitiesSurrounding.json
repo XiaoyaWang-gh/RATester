@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 190,
+    "focalfunc": "func (t *pageTrees) collectIdentitiesSurrounding(key string, maxSamplesPerTree int) []identity.Identity",
+    "funcbody": "func (t *pageTrees) collectIdentitiesSurrounding(key string, maxSamplesPerTree int) []identity.Identity {\n\tids := t.collectIdentitiesSurroundingIn(key, maxSamplesPerTree, t.treePages)\n\tids = append(ids, t.collectIdentitiesSurroundingIn(key, maxSamplesPerTree, t.treeResources)...)\n\treturn ids\n}",
+    "funcname": "collectIdentitiesSurrounding"
+}

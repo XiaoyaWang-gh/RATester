@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 157,
+    "focalfunc": "func (ctx *ResourceTransformationCtx) ReplaceOutPathExtension(newExt string)",
+    "funcbody": "func (ctx *ResourceTransformationCtx) ReplaceOutPathExtension(newExt string) {\n\tdir, file := path.Split(ctx.InPath)\n\tbase, _ := paths.PathAndExt(file)\n\tctx.OutPath = path.Join(dir, (base + newExt))\n}",
+    "funcname": "ReplaceOutPathExtension"
+}

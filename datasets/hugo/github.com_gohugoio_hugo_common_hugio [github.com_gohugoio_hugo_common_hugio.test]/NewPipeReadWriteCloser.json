@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/writers.go",
+    "lineno": 98,
+    "focalfunc": "func NewPipeReadWriteCloser() PipeReadWriteCloser",
+    "funcbody": "func NewPipeReadWriteCloser() PipeReadWriteCloser {\n\tpr, pw := io.Pipe()\n\treturn PipeReadWriteCloser{pr, pw}\n}",
+    "funcname": "NewPipeReadWriteCloser"
+}

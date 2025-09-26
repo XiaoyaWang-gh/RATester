@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 124,
+    "focalfunc": "func (i *Image) Width() int",
+    "funcbody": "func (i *Image) Width() int {\n\ti.initConfig()\n\treturn i.config.Width\n}",
+    "funcname": "Width"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 427,
+    "focalfunc": "func (p *pagePathBuilder) Prepend(el ...string)",
+    "funcbody": "func (p *pagePathBuilder) Prepend(el ...string) {\n\tp.els = append(p.els[:0], append(el, p.els[0:]...)...)\n}",
+    "funcname": "Prepend"
+}

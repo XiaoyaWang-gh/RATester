@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/command.go",
+    "lineno": 82,
+    "focalfunc": "func (d *doNothingCommand) Execute(params ...interface{}) *Result",
+    "funcbody": "func (d *doNothingCommand) Execute(params ...interface{}) *Result {\n\treturn &Result{\n\t\tStatus:\t404,\n\t\tError:\tCommandNotFound,\n\t}\n}",
+    "funcname": "Execute"
+}

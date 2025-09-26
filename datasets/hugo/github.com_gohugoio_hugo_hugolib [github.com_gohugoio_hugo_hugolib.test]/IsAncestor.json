@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 33,
+    "focalfunc": "func (pt pageTree) IsAncestor(other any) bool",
+    "funcbody": "func (pt pageTree) IsAncestor(other any) bool {\n\tn, ok := other.(contentNodeI)\n\tif !ok {\n\t\treturn false\n\t}\n\n\tif n.Path() == pt.p.Path() {\n\t\treturn false\n\t}\n\n\treturn strings.HasPrefix(n.Path(), paths.AddTrailingSlash(pt.p.Path()))\n}",
+    "funcname": "IsAncestor"
+}

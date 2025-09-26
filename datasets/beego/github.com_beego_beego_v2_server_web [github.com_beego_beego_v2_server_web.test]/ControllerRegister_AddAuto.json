@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 755,
+    "focalfunc": "func (p *ControllerRegister) AddAuto(c ControllerInterface)",
+    "funcbody": "func (p *ControllerRegister) AddAuto(c ControllerInterface) {\n\tp.AddAutoPrefix(\"/\", c)\n}",
+    "funcname": "AddAuto"
+}

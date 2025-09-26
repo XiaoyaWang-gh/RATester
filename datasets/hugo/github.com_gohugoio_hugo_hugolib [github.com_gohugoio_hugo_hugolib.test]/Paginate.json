@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__paginator.go",
+    "lineno": 45,
+    "focalfunc": "func (p *pagePaginator) Paginate(seq any, options ...any) (*page.Pager, error)",
+    "funcbody": "func (p *pagePaginator) Paginate(seq any, options ...any) (*page.Pager, error) {\n\tvar initErr error\n\tp.init.Do(func() {\n\t\tpagerSize, err := page.ResolvePagerSize(p.source.s.Conf, options...)\n\t\tif err != nil {\n\t\t\tinitErr = err\n\t\t\treturn\n\t\t}\n\n\t\tpd := p.source.targetPathDescriptor\n\t\tpd.Type = p.source.outputFormat()\n\t\tpaginator, err := page.Paginate(pd, seq, pagerSize)\n\t\tif err != nil {\n\t\t\tinitErr = err\n\t\t\treturn\n\t\t}\n\n\t\tp.current = paginator.Pagers()[0]\n\t})\n\n\tif initErr != nil {\n\t\treturn nil, initErr\n\t}\n\n\treturn p.current, nil\n}",
+    "funcname": "Paginate"
+}

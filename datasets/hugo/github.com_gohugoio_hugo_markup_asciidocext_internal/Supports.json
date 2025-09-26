@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 51,
+    "focalfunc": "func (a *AsciidocConverter) Supports(_ identity.Identity) bool",
+    "funcbody": "func (a *AsciidocConverter) Supports(_ identity.Identity) bool {\n\treturn false\n}",
+    "funcname": "Supports"
+}

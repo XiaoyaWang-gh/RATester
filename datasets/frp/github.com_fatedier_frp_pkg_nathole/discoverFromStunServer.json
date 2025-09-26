@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/discovery.go",
+    "lineno": 160,
+    "focalfunc": "func (c *discoverConn) discoverFromStunServer(addr string) ([]string, error)",
+    "funcbody": "func (c *discoverConn) discoverFromStunServer(addr string) ([]string, error) {\n\tresp, err := c.doSTUNRequest(addr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif resp.externalAddr == \"\" {\n\t\treturn nil, fmt.Errorf(\"no external address found\")\n\t}\n\n\texternalAddrs := make([]string, 0, 2)\n\texternalAddrs = append(externalAddrs, resp.externalAddr)\n\n\tif resp.otherAddr == \"\" {\n\t\treturn externalAddrs, nil\n\t}\n\n\tresp, err = c.doSTUNRequest(resp.otherAddr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif resp.externalAddr != \"\" {\n\t\texternalAddrs = append(externalAddrs, resp.externalAddr)\n\t}\n\treturn externalAddrs, nil\n}",
+    "funcname": "discoverFromStunServer"
+}

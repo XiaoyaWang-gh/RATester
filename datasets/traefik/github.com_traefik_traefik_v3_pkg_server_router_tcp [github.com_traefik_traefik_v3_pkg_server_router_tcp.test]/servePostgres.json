@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/postgres.go",
+    "lineno": 46,
+    "focalfunc": "func (r *Router) servePostgres(conn tcp.WriteCloser)",
+    "funcbody": "func (r *Router) servePostgres(conn tcp.WriteCloser) {\n\t_, err := conn.Write(PostgresStartTLSReply)\n\tif err != nil {\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tbr := bufio.NewReader(conn)\n\n\tb := make([]byte, len(PostgresStartTLSMsg))\n\t_, err = br.Read(b)\n\tif err != nil {\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\thello, err := clientHelloInfo(br)\n\tif err != nil {\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tif !hello.isTLS {\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tconnData, err := tcpmuxer.NewConnData(hello.serverName, conn, hello.protos)\n\tif err != nil {\n\t\tlog.Error().Err(err).Msg(\"Error while reading TCP connection data\")\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\thandlerTCPTLS, _ := r.muxerTCPTLS.Match(connData)\n\tif handlerTCPTLS == nil {\n\t\tconn.Close()\n\t\treturn\n\t}\n\n\tproxiedConn := r.GetConn(conn, hello.peeked)\n\tif _, ok := handlerTCPTLS.(*tcp.TLSHandler); !ok {\n\t\tproxiedConn = &postgresConn{WriteCloser: proxiedConn}\n\t}\n\n\thandlerTCPTLS.ServeTCP(proxiedConn)\n}",
+    "funcname": "servePostgres"
+}

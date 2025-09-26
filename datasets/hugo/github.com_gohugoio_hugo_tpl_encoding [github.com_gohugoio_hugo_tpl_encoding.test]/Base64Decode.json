@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/encoding/encoding.go",
+    "lineno": 39,
+    "focalfunc": "func (ns *Namespace) Base64Decode(content any) (string, error)",
+    "funcbody": "func (ns *Namespace) Base64Decode(content any) (string, error) {\n\tconv, err := cast.ToStringE(content)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tdec, err := base64.StdEncoding.DecodeString(conv)\n\treturn string(dec), err\n}",
+    "funcname": "Base64Decode"
+}

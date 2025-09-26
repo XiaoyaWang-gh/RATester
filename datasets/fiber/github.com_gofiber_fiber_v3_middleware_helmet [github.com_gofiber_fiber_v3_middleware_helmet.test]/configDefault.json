@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/helmet/config.go",
+    "lineno": 99,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.XSSProtection == \"\" {\n\t\tcfg.XSSProtection = ConfigDefault.XSSProtection\n\t}\n\n\tif cfg.ContentTypeNosniff == \"\" {\n\t\tcfg.ContentTypeNosniff = ConfigDefault.ContentTypeNosniff\n\t}\n\n\tif cfg.XFrameOptions == \"\" {\n\t\tcfg.XFrameOptions = ConfigDefault.XFrameOptions\n\t}\n\n\tif cfg.ReferrerPolicy == \"\" {\n\t\tcfg.ReferrerPolicy = ConfigDefault.ReferrerPolicy\n\t}\n\n\tif cfg.CrossOriginEmbedderPolicy == \"\" {\n\t\tcfg.CrossOriginEmbedderPolicy = ConfigDefault.CrossOriginEmbedderPolicy\n\t}\n\n\tif cfg.CrossOriginOpenerPolicy == \"\" {\n\t\tcfg.CrossOriginOpenerPolicy = ConfigDefault.CrossOriginOpenerPolicy\n\t}\n\n\tif cfg.CrossOriginResourcePolicy == \"\" {\n\t\tcfg.CrossOriginResourcePolicy = ConfigDefault.CrossOriginResourcePolicy\n\t}\n\n\tif cfg.OriginAgentCluster == \"\" {\n\t\tcfg.OriginAgentCluster = ConfigDefault.OriginAgentCluster\n\t}\n\n\tif cfg.XDNSPrefetchControl == \"\" {\n\t\tcfg.XDNSPrefetchControl = ConfigDefault.XDNSPrefetchControl\n\t}\n\n\tif cfg.XDownloadOptions == \"\" {\n\t\tcfg.XDownloadOptions = ConfigDefault.XDownloadOptions\n\t}\n\n\tif cfg.XPermittedCrossDomain == \"\" {\n\t\tcfg.XPermittedCrossDomain = ConfigDefault.XPermittedCrossDomain\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

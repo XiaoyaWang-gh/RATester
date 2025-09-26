@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 240,
+    "focalfunc": "func newHTTPExporter(ctx context.Context, config *types.OtelHTTP) (sdkmetric.Exporter, error)",
+    "funcbody": "func newHTTPExporter(ctx context.Context, config *types.OtelHTTP) (sdkmetric.Exporter, error) {\n\tendpoint, err := url.Parse(config.Endpoint)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"invalid collector endpoint %q: %w\", config.Endpoint, err)\n\t}\n\n\topts := []otlpmetrichttp.Option{\n\t\totlpmetrichttp.WithEndpoint(endpoint.Host),\n\t\totlpmetrichttp.WithHeaders(config.Headers),\n\t\totlpmetrichttp.WithCompression(otlpmetrichttp.GzipCompression),\n\t}\n\n\tif endpoint.Scheme == \"http\" {\n\t\topts = append(opts, otlpmetrichttp.WithInsecure())\n\t}\n\n\tif endpoint.Path != \"\" {\n\t\topts = append(opts, otlpmetrichttp.WithURLPath(endpoint.Path))\n\t}\n\n\tif config.TLS != nil {\n\t\ttlsConfig, err := config.TLS.CreateTLSConfig(ctx)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"creating TLS client config: %w\", err)\n\t\t}\n\n\t\topts = append(opts, otlpmetrichttp.WithTLSClientConfig(tlsConfig))\n\t}\n\n\treturn otlpmetrichttp.New(ctx, opts...)\n}",
+    "funcname": "newHTTPExporter"
+}

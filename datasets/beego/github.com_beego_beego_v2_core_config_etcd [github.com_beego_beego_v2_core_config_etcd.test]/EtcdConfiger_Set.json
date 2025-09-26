@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 65,
+    "focalfunc": "func (e *EtcdConfiger) Set(key, val string) error",
+    "funcbody": "func (e *EtcdConfiger) Set(key, val string) error {\n\treturn errors.New(\"Unsupported operation\")\n}",
+    "funcname": "Set"
+}

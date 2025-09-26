@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 109,
+    "focalfunc": "func (g *Group) File(path, file string)",
+    "funcbody": "func (g *Group) File(path, file string) {\n\tg.file(path, file, g.GET)\n}",
+    "funcname": "File"
+}

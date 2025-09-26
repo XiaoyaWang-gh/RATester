@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 217,
+    "focalfunc": "func (srv *Server) getListener(laddr string) (l net.Listener, err error)",
+    "funcbody": "func (srv *Server) getListener(laddr string) (l net.Listener, err error) {\n\tif srv.isChild {\n\t\tvar ptrOffset uint\n\t\tif len(socketPtrOffsetMap) > 0 {\n\t\t\tptrOffset = socketPtrOffsetMap[laddr]\n\t\t\tlog.Println(\"laddr\", laddr, \"ptr offset\", socketPtrOffsetMap[laddr])\n\t\t}\n\n\t\tf := os.NewFile(uintptr(3+ptrOffset), \"\")\n\t\tl, err = net.FileListener(f)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"net.FileListener error: %v\", err)\n\t\t\treturn\n\t\t}\n\t} else {\n\t\tl, err = net.Listen(srv.Network, laddr)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"net.Listen error: %v\", err)\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "getListener"
+}

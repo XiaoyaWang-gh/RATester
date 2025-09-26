@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 27,
+    "focalfunc": "func InSlice(v string, sl []string) bool",
+    "funcbody": "func InSlice(v string, sl []string) bool {\n\tfor _, vv := range sl {\n\t\tif vv == v {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "InSlice"
+}

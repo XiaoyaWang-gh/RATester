@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/conn.go",
+    "lineno": 12,
+    "focalfunc": "func NewRateConn(conn io.ReadWriteCloser, rate *Rate) io.ReadWriteCloser",
+    "funcbody": "func NewRateConn(conn io.ReadWriteCloser, rate *Rate) io.ReadWriteCloser {\n\treturn &rateConn{\n\t\tconn:\tconn,\n\t\trate:\trate,\n\t}\n}",
+    "funcname": "NewRateConn"
+}

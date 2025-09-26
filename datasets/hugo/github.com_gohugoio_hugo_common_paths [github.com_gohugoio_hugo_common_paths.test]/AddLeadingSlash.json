@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 90,
+    "focalfunc": "func AddLeadingSlash(path string) string",
+    "funcbody": "func AddLeadingSlash(path string) string {\n\tif !strings.HasPrefix(path, \"/\") {\n\t\tpath = \"/\" + path\n\t}\n\treturn path\n}",
+    "funcname": "AddLeadingSlash"
+}

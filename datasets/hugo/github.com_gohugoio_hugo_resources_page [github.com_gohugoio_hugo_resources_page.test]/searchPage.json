@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort_search.go",
+    "lineno": 27,
+    "focalfunc": "func searchPage(p Page, pages Pages) int",
+    "funcbody": "func searchPage(p Page, pages Pages) int {\n\tif len(pages) < 1000 {\n\n\t\treturn searchPageLinear(p, pages, 0)\n\t}\n\n\tless := isPagesProbablySorted(pages, pageLessFunctions...)\n\tif less == nil {\n\t\treturn searchPageLinear(p, pages, 0)\n\t}\n\n\ti := searchPageBinary(p, pages, less)\n\tif i != -1 {\n\t\treturn i\n\t}\n\n\treturn searchPageLinear(p, pages, 0)\n}",
+    "funcname": "searchPage"
+}

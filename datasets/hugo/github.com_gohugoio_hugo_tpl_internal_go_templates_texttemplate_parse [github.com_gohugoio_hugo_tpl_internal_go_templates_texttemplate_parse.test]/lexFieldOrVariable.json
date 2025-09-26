@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 525,
+    "focalfunc": "func lexFieldOrVariable(l *lexer, typ itemType) stateFn",
+    "funcbody": "func lexFieldOrVariable(l *lexer, typ itemType) stateFn {\n\tif l.atTerminator() {\n\t\tif typ == itemVariable {\n\t\t\treturn l.emit(itemVariable)\n\t\t}\n\t\treturn l.emit(itemDot)\n\t}\n\tvar r rune\n\tfor {\n\t\tr = l.next()\n\t\tif !isAlphaNumeric(r) {\n\t\t\tl.backup()\n\t\t\tbreak\n\t\t}\n\t}\n\tif !l.atTerminator() {\n\t\treturn l.errorf(\"bad character %#U\", r)\n\t}\n\treturn l.emit(typ)\n}",
+    "funcname": "lexFieldOrVariable"
+}

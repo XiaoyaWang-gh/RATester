@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 378,
+    "focalfunc": "func (app *App) addRoute(method string, route *Route, isMounted ...bool)",
+    "funcbody": "func (app *App) addRoute(method string, route *Route, isMounted ...bool) {\n\tapp.mutex.Lock()\n\tdefer app.mutex.Unlock()\n\n\t// Check mounted routes\n\tvar mounted bool\n\tif len(isMounted) > 0 {\n\t\tmounted = isMounted[0]\n\t}\n\n\tm := app.methodInt(method)\n\n\tl := len(app.stack[m])\n\tif l > 0 && app.stack[m][l-1].Path == route.Path && route.use == app.stack[m][l-1].use && !route.mount && !app.stack[m][l-1].mount {\n\t\tpreRoute := app.stack[m][l-1]\n\t\tpreRoute.Handlers = append(preRoute.Handlers, route.Handlers...)\n\t} else {\n\n\t\troute.pos = atomic.AddUint32(&app.routesCount, 1)\n\t\troute.Method = method\n\n\t\tapp.stack[m] = append(app.stack[m], route)\n\t\tapp.routesRefreshed = true\n\t}\n\n\tif !mounted {\n\t\tapp.latestRoute = route\n\t\tif err := app.hooks.executeOnRouteHooks(*route); err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t}\n}",
+    "funcname": "addRoute"
+}

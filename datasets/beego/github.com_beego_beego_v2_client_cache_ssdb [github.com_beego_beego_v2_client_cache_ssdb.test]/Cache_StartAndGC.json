@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/ssdb/ssdb.go",
+    "lineno": 165,
+    "focalfunc": "func (rc *Cache) StartAndGC(config string) error",
+    "funcbody": "func (rc *Cache) StartAndGC(config string) error {\n\tvar cf map[string]string\n\terr := json.Unmarshal([]byte(config), &cf)\n\tif err != nil {\n\t\treturn berror.Wrapf(err, cache.InvalidSsdbCacheCfg,\n\t\t\t\"unmarshal this config failed, it must be a valid json string: %s\", config)\n\t}\n\tif _, ok := cf[\"conn\"]; !ok {\n\t\treturn berror.Wrapf(err, cache.InvalidSsdbCacheCfg,\n\t\t\t\"Missing conn field: %s\", config)\n\t}\n\trc.conninfo = strings.Split(cf[\"conn\"], \";\")\n\treturn rc.connectInit()\n}",
+    "funcname": "StartAndGC"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 254,
+    "focalfunc": "func (ns *Namespace) Merge(p2, p1 any) (any, error)",
+    "funcbody": "func (ns *Namespace) Merge(p2, p1 any) (any, error) {\n\tif !hreflect.IsTruthful(p1) {\n\t\treturn p2, nil\n\t}\n\tif !hreflect.IsTruthful(p2) {\n\t\treturn p1, nil\n\t}\n\tmerger, ok := p1.(pagesLanguageMerger)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"language merge not supported for %T\", p1)\n\t}\n\treturn merger.MergeByLanguageInterface(p2)\n}",
+    "funcname": "Merge"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 912,
+    "focalfunc": "func (c *DefaultCtx) XML(data any) error",
+    "funcbody": "func (c *DefaultCtx) XML(data any) error {\n\traw, err := c.app.config.XMLEncoder(data)\n\tif err != nil {\n\t\treturn err\n\t}\n\tc.fasthttp.Response.SetBodyRaw(raw)\n\tc.fasthttp.Response.Header.SetContentType(MIMEApplicationXML)\n\treturn nil\n}",
+    "funcname": "XML"
+}

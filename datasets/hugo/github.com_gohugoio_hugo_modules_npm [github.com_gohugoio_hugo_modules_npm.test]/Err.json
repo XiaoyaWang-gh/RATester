@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/npm/package_builder.go",
+    "lineno": 245,
+    "focalfunc": "func (b *packageBuilder) Err() error",
+    "funcbody": "func (b *packageBuilder) Err() error {\n\treturn b.err\n}",
+    "funcname": "Err"
+}

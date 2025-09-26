@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 140,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Update(tables ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Update(tables ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"UPDATE\", strings.Join(tables, CommaSpace))\n\treturn qb\n}",
+    "funcname": "Update"
+}

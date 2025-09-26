@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/recovery.go",
+    "lineno": 106,
+    "focalfunc": "func defaultHandleRecovery(c *Context, _ any)",
+    "funcbody": "func defaultHandleRecovery(c *Context, _ any) {\n\tc.AbortWithStatus(http.StatusInternalServerError)\n}",
+    "funcname": "defaultHandleRecovery"
+}

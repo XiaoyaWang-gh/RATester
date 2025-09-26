@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/server.go",
+    "lineno": 76,
+    "focalfunc": "func NewTunnelServer(conn net.Conn, sc *ssh.ServerConfig, peerServerListener *netpkg.InternalListener) (*TunnelServer, error)",
+    "funcbody": "func NewTunnelServer(conn net.Conn, sc *ssh.ServerConfig, peerServerListener *netpkg.InternalListener) (*TunnelServer, error) {\n\ts := &TunnelServer{\n\t\tunderlyingConn:\t\tconn,\n\t\tsc:\t\t\tsc,\n\t\tpeerServerListener:\tpeerServerListener,\n\t\tdoneCh:\t\t\tmake(chan struct{}),\n\t}\n\treturn s, nil\n}",
+    "funcname": "NewTunnelServer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/prefork.go",
+    "lineno": 183,
+    "focalfunc": "func dummyCmd() *exec.Cmd",
+    "funcbody": "func dummyCmd() *exec.Cmd {\n\tcommand := \"go\"\n\tif storeCommand := dummyChildCmd.Load(); storeCommand != nil && storeCommand != \"\" {\n\t\tcommand = storeCommand.(string)\n\t}\n\tif runtime.GOOS == \"windows\" {\n\t\treturn exec.Command(\"cmd\", \"/C\", command, \"version\")\n\t}\n\treturn exec.Command(command, \"version\")\n}",
+    "funcname": "dummyCmd"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 138,
+    "focalfunc": "func (h *Hooks) executeOnNameHooks(route Route) error",
+    "funcbody": "func (h *Hooks) executeOnNameHooks(route Route) error {\n\n\tif h.app.mountFields.mountPath != \"\" {\n\t\troute.path = h.app.mountFields.mountPath + route.path\n\t\troute.Path = route.path\n\t}\n\n\tfor _, v := range h.onName {\n\t\tif err := v(route); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "executeOnNameHooks"
+}

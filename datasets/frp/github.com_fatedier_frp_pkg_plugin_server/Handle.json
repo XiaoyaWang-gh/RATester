@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/http.go",
+    "lineno": 75,
+    "focalfunc": "func (p *httpPlugin) Handle(ctx context.Context, op string, content interface{}) (*Response, interface{}, error)",
+    "funcbody": "func (p *httpPlugin) Handle(ctx context.Context, op string, content interface{}) (*Response, interface{}, error) {\n\tr := &Request{\n\t\tVersion:\tAPIVersion,\n\t\tOp:\t\top,\n\t\tContent:\tcontent,\n\t}\n\tvar res Response\n\tres.Content = reflect.New(reflect.TypeOf(content)).Interface()\n\tif err := p.do(ctx, r, &res); err != nil {\n\t\treturn nil, nil, err\n\t}\n\treturn &res, res.Content, nil\n}",
+    "funcname": "Handle"
+}

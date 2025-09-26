@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 123,
+    "focalfunc": "func (c *Client) do(req *http.Request) (string, error)",
+    "funcbody": "func (c *Client) do(req *http.Request) (string, error) {\n\tc.setAuthHeader(req)\n\n\tresp, err := http.DefaultClient.Do(req)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tdefer resp.Body.Close()\n\n\tif resp.StatusCode != 200 {\n\t\treturn \"\", fmt.Errorf(\"api status code [%d]\", resp.StatusCode)\n\t}\n\tbuf, err := io.ReadAll(resp.Body)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn string(buf), nil\n}",
+    "funcname": "do"
+}

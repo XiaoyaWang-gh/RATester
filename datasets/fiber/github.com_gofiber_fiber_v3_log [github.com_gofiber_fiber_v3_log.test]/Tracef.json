@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 69,
+    "focalfunc": "func Tracef(format string, v ...any)",
+    "funcbody": "func Tracef(format string, v ...any) {\n\tlogger.Tracef(format, v...)\n}",
+    "funcname": "Tracef"
+}

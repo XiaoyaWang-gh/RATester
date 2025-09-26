@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/hydratation/hydration.go",
+    "lineno": 21,
+    "focalfunc": "func Hydrate(element interface{}) error",
+    "funcbody": "func Hydrate(element interface{}) error {\n\tfield := reflect.ValueOf(element)\n\treturn fill(field)\n}",
+    "funcname": "Hydrate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 145,
+    "focalfunc": "func typeEncoder(t reflect.Type, reg map[reflect.Type]encoderFunc) encoderFunc",
+    "funcbody": "func typeEncoder(t reflect.Type, reg map[reflect.Type]encoderFunc) encoderFunc {\n\tif f, ok := reg[t]; ok {\n\t\treturn f\n\t}\n\n\tswitch t.Kind() {\n\tcase reflect.Bool:\n\t\treturn encodeBool\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn encodeInt\n\tcase reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:\n\t\treturn encodeUint\n\tcase reflect.Float32:\n\t\treturn encodeFloat32\n\tcase reflect.Float64:\n\t\treturn encodeFloat64\n\tcase reflect.Ptr:\n\t\tf := typeEncoder(t.Elem(), reg)\n\t\treturn func(v reflect.Value) string {\n\t\t\tif v.IsNil() {\n\t\t\t\treturn \"null\"\n\t\t\t}\n\t\t\treturn f(v.Elem())\n\t\t}\n\tcase reflect.String:\n\t\treturn encodeString\n\tdefault:\n\t\treturn nil\n\t}\n}",
+    "funcname": "typeEncoder"
+}

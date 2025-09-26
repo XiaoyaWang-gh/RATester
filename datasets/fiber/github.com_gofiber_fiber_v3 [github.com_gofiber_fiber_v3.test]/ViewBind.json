@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1309,
+    "focalfunc": "func (c *DefaultCtx) ViewBind(vars Map) error",
+    "funcbody": "func (c *DefaultCtx) ViewBind(vars Map) error {\n\n\tfor k, v := range vars {\n\t\tc.viewBindMap.Store(k, v)\n\t}\n\treturn nil\n}",
+    "funcname": "ViewBind"
+}

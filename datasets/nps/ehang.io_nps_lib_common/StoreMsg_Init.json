@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/logs.go",
+    "lineno": 25,
+    "focalfunc": "func (lg *StoreMsg) Init(config string) error",
+    "funcbody": "func (lg *StoreMsg) Init(config string) error {\n\treturn nil\n}",
+    "funcname": "Init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/shared.go",
+    "lineno": 208,
+    "focalfunc": "func getServiceName(container dockerData) string",
+    "funcbody": "func getServiceName(container dockerData) string {\n\tserviceName := container.ServiceName\n\n\tif values, err := getStringMultipleStrict(container.Labels, labelDockerComposeProject, labelDockerComposeService); err == nil {\n\t\tserviceName = values[labelDockerComposeService] + \"_\" + values[labelDockerComposeProject]\n\t}\n\n\treturn provider.Normalize(serviceName)\n}",
+    "funcname": "getServiceName"
+}

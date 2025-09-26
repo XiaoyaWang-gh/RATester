@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 231,
+    "focalfunc": "func (p *siprng) Int63() int64",
+    "funcbody": "func (p *siprng) Int63() int64 {\n\treturn int64(p.Uint64() & 0x7fffffffffffffff)\n}",
+    "funcname": "Int63"
+}

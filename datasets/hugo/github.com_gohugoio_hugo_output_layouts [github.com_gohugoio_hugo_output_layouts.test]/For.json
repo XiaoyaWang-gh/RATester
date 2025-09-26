@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 69,
+    "focalfunc": "func (l *LayoutHandler) For(d LayoutDescriptor) ([]string, error)",
+    "funcbody": "func (l *LayoutHandler) For(d LayoutDescriptor) ([]string, error) {\n\n\tl.mu.RLock()\n\tif cacheVal, found := l.cache[d]; found {\n\t\tl.mu.RUnlock()\n\t\treturn cacheVal, nil\n\t}\n\tl.mu.RUnlock()\n\n\tlayouts := resolvePageTemplate(d)\n\n\tlayouts = uniqueStringsReuse(layouts)\n\n\tl.mu.Lock()\n\tl.cache[d] = layouts\n\tl.mu.Unlock()\n\n\treturn layouts, nil\n}",
+    "funcname": "For"
+}

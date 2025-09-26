@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 240,
+    "focalfunc": "func (l *logAdapter) Infof(format string, v ...any)",
+    "funcbody": "func (l *logAdapter) Infof(format string, v ...any) {\n\tl.infol.Logf(format, v...)\n}",
+    "funcname": "Infof"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 124,
+    "focalfunc": "func (f *filterOrmDecorator) ReadOrCreate(md interface{}, col1 string, cols ...string) (bool, int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) ReadOrCreate(md interface{}, col1 string, cols ...string) (bool, int64, error) {\n\treturn f.ReadOrCreateWithCtx(context.Background(), md, col1, cols...)\n}",
+    "funcname": "ReadOrCreate"
+}

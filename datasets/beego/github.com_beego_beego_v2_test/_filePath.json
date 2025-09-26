@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 291,
+    "focalfunc": "func _filePath(dir, name string) string",
+    "funcbody": "func _filePath(dir, name string) string {\n\tcannonicalName := strings.Replace(name, \"\\\\\", \"/\", -1)\n\treturn filepath.Join(append([]string{dir}, strings.Split(cannonicalName, \"/\")...)...)\n}",
+    "funcname": "_filePath"
+}

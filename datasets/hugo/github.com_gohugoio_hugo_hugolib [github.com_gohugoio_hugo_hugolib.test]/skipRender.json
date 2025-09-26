@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 157,
+    "focalfunc": "func (p *pageState) skipRender() bool",
+    "funcbody": "func (p *pageState) skipRender() bool {\n\tb := p.s.conf.C.SegmentFilter.ShouldExcludeFine(\n\t\tsegments.SegmentMatcherFields{\n\t\t\tPath:\tp.Path(),\n\t\t\tKind:\tp.Kind(),\n\t\t\tLang:\tp.Lang(),\n\t\t\tOutput:\tp.pageOutput.f.Name,\n\t\t},\n\t)\n\n\treturn b\n}",
+    "funcname": "skipRender"
+}

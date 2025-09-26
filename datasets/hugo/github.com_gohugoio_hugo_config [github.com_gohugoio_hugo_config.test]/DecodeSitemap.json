@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 218,
+    "focalfunc": "func DecodeSitemap(prototype SitemapConfig, input map[string]any) (SitemapConfig, error)",
+    "funcbody": "func DecodeSitemap(prototype SitemapConfig, input map[string]any) (SitemapConfig, error) {\n\terr := mapstructure.WeakDecode(input, &prototype)\n\treturn prototype, err\n}",
+    "funcname": "DecodeSitemap"
+}

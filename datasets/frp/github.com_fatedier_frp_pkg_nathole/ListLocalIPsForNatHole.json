@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/utils.go",
+    "lineno": 81,
+    "focalfunc": "func ListLocalIPsForNatHole(max int) ([]string, error)",
+    "funcbody": "func ListLocalIPsForNatHole(max int) ([]string, error) {\n\tif max <= 0 {\n\t\treturn nil, fmt.Errorf(\"max must be greater than 0\")\n\t}\n\n\tips, err := ListAllLocalIPs()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tfiltered := make([]string, 0, max)\n\tfor _, ip := range ips {\n\t\tif len(filtered) >= max {\n\t\t\tbreak\n\t\t}\n\n\t\tif ip.To4() == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tif ip.IsLoopback() || ip.IsLinkLocalUnicast() || ip.IsLinkLocalMulticast() {\n\t\t\tcontinue\n\t\t}\n\n\t\tfiltered = append(filtered, ip.String())\n\t}\n\treturn filtered, nil\n}",
+    "funcname": "ListLocalIPsForNatHole"
+}

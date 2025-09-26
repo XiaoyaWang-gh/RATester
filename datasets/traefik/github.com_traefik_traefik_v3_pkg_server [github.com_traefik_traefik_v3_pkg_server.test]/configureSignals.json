@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_signals.go",
+    "lineno": 14,
+    "focalfunc": "func (s *Server) configureSignals()",
+    "funcbody": "func (s *Server) configureSignals() {\n\tsignal.Notify(s.signals, syscall.SIGUSR1)\n}",
+    "funcname": "configureSignals"
+}

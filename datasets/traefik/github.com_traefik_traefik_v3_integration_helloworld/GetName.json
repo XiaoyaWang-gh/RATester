@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 54,
+    "focalfunc": "func (m *HelloRequest) GetName() string",
+    "funcbody": "func (m *HelloRequest) GetName() string {\n\tif m != nil {\n\t\treturn m.Name\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetName"
+}

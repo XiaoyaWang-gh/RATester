@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 143,
+    "focalfunc": "func (p *pageMeta) PublishDate() time.Time",
+    "funcbody": "func (p *pageMeta) PublishDate() time.Time {\n\treturn p.pageConfig.Dates.PublishDate\n}",
+    "funcname": "PublishDate"
+}

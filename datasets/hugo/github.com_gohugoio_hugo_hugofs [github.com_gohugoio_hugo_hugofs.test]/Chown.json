@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 83,
+    "focalfunc": "func (fs *noOpFs) Chown(name string, uid int, gid int) error",
+    "funcbody": "func (fs *noOpFs) Chown(name string, uid int, gid int) error {\n\tpanic(errNoOp)\n}",
+    "funcname": "Chown"
+}

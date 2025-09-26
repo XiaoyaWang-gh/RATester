@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/ecs.go",
+    "lineno": 204,
+    "focalfunc": "func (p *Provider) loadConfiguration(ctx context.Context, client *awsClient, configurationChan chan<- dynamic.Message) error",
+    "funcbody": "func (p *Provider) loadConfiguration(ctx context.Context, client *awsClient, configurationChan chan<- dynamic.Message) error {\n\tinstances, err := p.listInstances(ctx, client)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tconfigurationChan <- dynamic.Message{\n\t\tProviderName:\t\"ecs\",\n\t\tConfiguration:\tp.buildConfiguration(ctx, instances),\n\t}\n\n\treturn nil\n}",
+    "funcname": "loadConfiguration"
+}

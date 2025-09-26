@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 254,
+    "focalfunc": "func howSimilarStrings(a, b string) int",
+    "funcbody": "func howSimilarStrings(a, b string) int {\n\tif a == b {\n\t\treturn 100\n\t}\n\n\t// Give some weight to the word positions.\n\tconst partitionSize = 4\n\n\taf, bf := strings.Fields(a), strings.Fields(b)\n\tif len(bf) > len(af) {\n\t\taf, bf = bf, af\n\t}\n\n\tm1 := make(map[string]bool)\n\tfor i, x := range bf {\n\t\tpartition := partition(i, partitionSize)\n\t\tkey := x + \"/\" + strconv.Itoa(partition)\n\t\tm1[key] = true\n\t}\n\n\tcommon := 0\n\tfor i, x := range af {\n\t\tpartition := partition(i, partitionSize)\n\t\tkey := x + \"/\" + strconv.Itoa(partition)\n\t\tif m1[key] {\n\t\t\tcommon++\n\t\t}\n\t}\n\n\tif common == 0 && common == len(af) {\n\t\treturn 100\n\t}\n\n\treturn int(math.Floor((float64(common) / float64(len(af)) * 100)))\n}",
+    "funcname": "howSimilarStrings"
+}

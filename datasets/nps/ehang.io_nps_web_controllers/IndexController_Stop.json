@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 184,
+    "focalfunc": "func (s *IndexController) Stop()",
+    "funcbody": "func (s *IndexController) Stop() {\n\tid := s.GetIntNoErr(\"id\")\n\tif err := server.StopServer(id); err != nil {\n\t\ts.AjaxErr(\"stop error\")\n\t}\n\ts.AjaxOk(\"stop success\")\n}",
+    "funcname": "Stop"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 481,
+    "focalfunc": "func min3(x, y, z uint8) (m uint8)",
+    "funcbody": "func min3(x, y, z uint8) (m uint8) {\n\tm = x\n\tif y < m {\n\t\tm = y\n\t}\n\tif z < m {\n\t\tm = z\n\t}\n\treturn\n}",
+    "funcname": "min3"
+}

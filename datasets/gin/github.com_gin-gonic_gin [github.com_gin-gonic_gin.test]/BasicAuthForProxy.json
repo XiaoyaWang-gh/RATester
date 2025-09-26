@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/auth.go",
+    "lineno": 98,
+    "focalfunc": "func BasicAuthForProxy(accounts Accounts, realm string) HandlerFunc",
+    "funcbody": "func BasicAuthForProxy(accounts Accounts, realm string) HandlerFunc {\n\tif realm == \"\" {\n\t\trealm = \"Proxy Authorization Required\"\n\t}\n\trealm = \"Basic realm=\" + strconv.Quote(realm)\n\tpairs := processAccounts(accounts)\n\treturn func(c *Context) {\n\t\tproxyUser, found := pairs.searchCredential(c.requestHeader(\"Proxy-Authorization\"))\n\t\tif !found {\n\n\t\t\tc.Header(\"Proxy-Authenticate\", realm)\n\t\t\tc.AbortWithStatus(http.StatusProxyAuthRequired)\n\t\t\treturn\n\t\t}\n\n\t\tc.Set(AuthProxyUserKey, proxyUser)\n\t}\n}",
+    "funcname": "BasicAuthForProxy"
+}

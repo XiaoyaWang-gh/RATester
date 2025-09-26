@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/evictingqueue.go",
+    "lineno": 87,
+    "focalfunc": "func (q *EvictingStringQueue) PeekAll() []string",
+    "funcbody": "func (q *EvictingStringQueue) PeekAll() []string {\n\tq.mu.Lock()\n\tvals := make([]string, len(q.vals))\n\tcopy(vals, q.vals)\n\tq.mu.Unlock()\n\tfor i, j := 0, len(vals)-1; i < j; i, j = i+1, j-1 {\n\t\tvals[i], vals[j] = vals[j], vals[i]\n\t}\n\treturn vals\n}",
+    "funcname": "PeekAll"
+}

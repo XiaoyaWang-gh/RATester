@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 281,
+    "focalfunc": "func (fs RootMappingFs) Filter(f func(m RootMapping) bool) *RootMappingFs",
+    "funcbody": "func (fs RootMappingFs) Filter(f func(m RootMapping) bool) *RootMappingFs {\n\trootMapToReal := radix.New()\n\tfs.rootMapToReal.Walk(func(b string, v any) bool {\n\t\trms := v.([]RootMapping)\n\t\tvar nrms []RootMapping\n\t\tfor _, rm := range rms {\n\t\t\tif f(rm) {\n\t\t\t\tnrms = append(nrms, rm)\n\t\t\t}\n\t\t}\n\t\tif len(nrms) != 0 {\n\t\t\trootMapToReal.Insert(b, nrms)\n\t\t}\n\t\treturn false\n\t})\n\n\tfs.rootMapToReal = rootMapToReal\n\n\treturn &fs\n}",
+    "funcname": "Filter"
+}

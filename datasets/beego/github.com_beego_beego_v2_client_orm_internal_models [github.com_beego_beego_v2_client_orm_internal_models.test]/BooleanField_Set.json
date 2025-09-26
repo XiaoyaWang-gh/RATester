@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 70,
+    "focalfunc": "func (e *BooleanField) Set(d bool)",
+    "funcbody": "func (e *BooleanField) Set(d bool) {\n\t*e = BooleanField(d)\n}",
+    "funcname": "Set"
+}

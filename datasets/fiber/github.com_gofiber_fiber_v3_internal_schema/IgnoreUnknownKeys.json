@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 53,
+    "focalfunc": "func (d *Decoder) IgnoreUnknownKeys(i bool)",
+    "funcbody": "func (d *Decoder) IgnoreUnknownKeys(i bool) {\n\td.ignoreUnknownKeys = i\n}",
+    "funcname": "IgnoreUnknownKeys"
+}

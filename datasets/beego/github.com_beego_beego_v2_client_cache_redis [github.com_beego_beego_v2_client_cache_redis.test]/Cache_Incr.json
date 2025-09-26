@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 149,
+    "focalfunc": "func (rc *Cache) Incr(ctx context.Context, key string) error",
+    "funcbody": "func (rc *Cache) Incr(ctx context.Context, key string) error {\n\t_, err := redis.Bool(rc.do(\"INCRBY\", key, 1))\n\treturn err\n}",
+    "funcname": "Incr"
+}

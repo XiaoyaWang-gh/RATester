@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/kv.go",
+    "lineno": 55,
+    "focalfunc": "func (kvs *SimpleKVs) GetValueOr(key interface{}, defValue interface{}) interface{}",
+    "funcbody": "func (kvs *SimpleKVs) GetValueOr(key interface{}, defValue interface{}) interface{} {\n\tv, ok := kvs.kvs[key]\n\tif ok {\n\t\treturn v\n\t}\n\treturn defValue\n}",
+    "funcname": "GetValueOr"
+}

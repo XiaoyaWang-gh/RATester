@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 301,
+    "focalfunc": "func (s *Conn) WriteMain() (int, error)",
+    "funcbody": "func (s *Conn) WriteMain() (int, error) {\n\treturn s.Write([]byte(common.WORK_MAIN))\n}",
+    "funcname": "WriteMain"
+}

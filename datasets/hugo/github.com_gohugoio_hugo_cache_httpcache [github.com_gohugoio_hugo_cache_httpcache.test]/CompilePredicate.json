@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 157,
+    "focalfunc": "func (gm *GlobMatcher) CompilePredicate() (func(string) bool, error)",
+    "funcbody": "func (gm *GlobMatcher) CompilePredicate() (func(string) bool, error) {\n\tvar p predicate.P[string]\n\tfor _, include := range gm.Includes {\n\t\tg, err := glob.Compile(include, '/')\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfn := func(s string) bool {\n\t\t\treturn g.Match(s)\n\t\t}\n\t\tp = p.Or(fn)\n\t}\n\n\tfor _, exclude := range gm.Excludes {\n\t\tg, err := glob.Compile(exclude, '/')\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfn := func(s string) bool {\n\t\t\treturn !g.Match(s)\n\t\t}\n\t\tp = p.And(fn)\n\t}\n\n\treturn p, nil\n}",
+    "funcname": "CompilePredicate"
+}

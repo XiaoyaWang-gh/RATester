@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 110,
+    "focalfunc": "func (o querySet) Exclude(expr string, args ...interface{}) QuerySeter",
+    "funcbody": "func (o querySet) Exclude(expr string, args ...interface{}) QuerySeter {\n\tif o.cond == nil {\n\t\to.cond = NewCondition()\n\t}\n\to.cond = o.cond.AndNot(expr, args...)\n\treturn &o\n}",
+    "funcname": "Exclude"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect.go",
+    "lineno": 282,
+    "focalfunc": "func (r *Redirect) Back(fallback ...string) error",
+    "funcbody": "func (r *Redirect) Back(fallback ...string) error {\n\tlocation := r.c.Get(HeaderReferer)\n\tif location == \"\" {\n\n\t\tif len(fallback) == 0 {\n\t\t\terr := ErrRedirectBackNoFallback\n\t\t\tr.c.Status(err.Code)\n\n\t\t\treturn err\n\t\t}\n\t\tlocation = fallback[0]\n\t}\n\n\treturn r.To(location)\n}",
+    "funcname": "Back"
+}

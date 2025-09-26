@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/init.go",
+    "lineno": 25,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tctx := New(d)\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tnamespaceName,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.Include,\n\t\t\t[]string{\"partial\"},\n\t\t\t[][2]string{\n\t\t\t\t{`{{ partial \"header.html\" . }}`, `<title>Hugo Rocks!</title>`},\n\t\t\t},\n\t\t)\n\n\t\tns.AddMethodMapping(func() string { return \"\" },\n\t\t\t[]string{\"return\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.IncludeCached,\n\t\t\t[]string{\"partialCached\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

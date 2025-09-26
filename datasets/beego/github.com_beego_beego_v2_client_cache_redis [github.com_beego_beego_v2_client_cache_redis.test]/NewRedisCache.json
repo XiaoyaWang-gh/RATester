@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 76,
+    "focalfunc": "func NewRedisCache() cache.Cache",
+    "funcbody": "func NewRedisCache() cache.Cache {\n\treturn &Cache{key: DefaultKey}\n}",
+    "funcname": "NewRedisCache"
+}

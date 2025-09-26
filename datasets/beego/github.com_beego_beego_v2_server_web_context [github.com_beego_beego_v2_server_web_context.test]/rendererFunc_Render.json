@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/renderer.go",
+    "lineno": 10,
+    "focalfunc": "func (f rendererFunc) Render(ctx *Context)",
+    "funcbody": "func (f rendererFunc) Render(ctx *Context) {\n\tf(ctx)\n}",
+    "funcname": "Render"
+}

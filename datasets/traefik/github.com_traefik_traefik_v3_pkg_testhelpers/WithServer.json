@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/testhelpers/config.go",
+    "lineno": 135,
+    "focalfunc": "func WithServer(url string, opts ...func(*dynamic.Server)) func(*dynamic.Server)",
+    "funcbody": "func WithServer(url string, opts ...func(*dynamic.Server)) func(*dynamic.Server) {\n\treturn func(s *dynamic.Server) {\n\t\tfor _, opt := range opts {\n\t\t\topt(s)\n\t\t}\n\t\ts.URL = url\n\t}\n}",
+    "funcname": "WithServer"
+}

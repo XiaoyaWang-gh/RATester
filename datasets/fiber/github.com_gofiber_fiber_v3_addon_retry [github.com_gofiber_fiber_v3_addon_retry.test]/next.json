@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/addon/retry/exponential_backoff.go",
+    "lineno": 60,
+    "focalfunc": "func (e *ExponentialBackoff) next() time.Duration",
+    "funcbody": "func (e *ExponentialBackoff) next() time.Duration {\n\n\tn, err := rand.Int(rand.Reader, big.NewInt(1000))\n\tif err != nil {\n\t\treturn e.MaxBackoffTime\n\t}\n\tt := e.currentInterval + (time.Duration(n.Int64()) * time.Millisecond)\n\te.currentInterval = time.Duration(float64(e.currentInterval) * e.Multiplier)\n\tif t >= e.MaxBackoffTime {\n\t\te.currentInterval = e.MaxBackoffTime\n\t\treturn e.MaxBackoffTime\n\t}\n\treturn t\n}",
+    "funcname": "next"
+}

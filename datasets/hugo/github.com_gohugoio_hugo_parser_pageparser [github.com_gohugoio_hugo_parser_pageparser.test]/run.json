@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 92,
+    "focalfunc": "func (l *pageLexer) run() *pageLexer",
+    "funcbody": "func (l *pageLexer) run() *pageLexer {\n\tfor l.state = l.stateStart; l.state != nil; {\n\t\tl.state = l.state(l)\n\t}\n\treturn l\n}",
+    "funcname": "run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 340,
+    "focalfunc": "func (s SourceFilesystems) MakeStaticPathRelative(filename string) string",
+    "funcbody": "func (s SourceFilesystems) MakeStaticPathRelative(filename string) string {\n\tfor _, staticFs := range s.Static {\n\t\trel, _ := staticFs.MakePathRelative(filename, true)\n\t\tif rel != \"\" {\n\t\t\treturn rel\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "MakeStaticPathRelative"
+}

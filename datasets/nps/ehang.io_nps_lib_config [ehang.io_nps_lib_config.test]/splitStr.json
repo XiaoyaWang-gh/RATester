@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/config/config.go",
+    "lineno": 321,
+    "focalfunc": "func splitStr(s string) (configDataArr []string)",
+    "funcbody": "func splitStr(s string) (configDataArr []string) {\n\tif common.IsWindows() {\n\t\tconfigDataArr = strings.Split(s, \"\\r\\n\")\n\t}\n\tif len(configDataArr) < 3 {\n\t\tconfigDataArr = strings.Split(s, \"\\n\")\n\t}\n\treturn\n}",
+    "funcname": "splitStr"
+}

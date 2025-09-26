@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/ecs.go",
+    "lineno": 564,
+    "focalfunc": "func (p *Provider) chunkIDs(ids []*string) [][]*string",
+    "funcbody": "func (p *Provider) chunkIDs(ids []*string) [][]*string {\n\tvar chunked [][]*string\n\tfor i := 0; i < len(ids); i += 100 {\n\t\tvar sliceEnd int\n\t\tif i+100 < len(ids) {\n\t\t\tsliceEnd = i + 100\n\t\t} else {\n\t\t\tsliceEnd = len(ids)\n\t\t}\n\t\tchunked = append(chunked, ids[i:sliceEnd])\n\t}\n\treturn chunked\n}",
+    "funcname": "chunkIDs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 72,
+    "focalfunc": "func FromContent(types Types, extensionHints []string, content []byte) Type",
+    "funcbody": "func FromContent(types Types, extensionHints []string, content []byte) Type {\n\tt := strings.Split(http.DetectContentType(content), \";\")[0]\n\tif t == \"application/octet-stream\" {\n\t\treturn zero\n\t}\n\n\tvar found bool\n\tm, found := types.GetByType(t)\n\tif !found {\n\t\tif t == \"text/xml\" {\n\n\t\t\tm, found = types.GetByType(\"application/xml\")\n\t\t}\n\t}\n\n\tif !found {\n\t\treturn zero\n\t}\n\n\tvar mm Type\n\n\tfor _, extension := range extensionHints {\n\t\textension = strings.TrimPrefix(extension, \".\")\n\t\tmm, _, found = types.GetFirstBySuffix(extension)\n\t\tif found {\n\t\t\tbreak\n\t\t}\n\t}\n\n\tif found {\n\t\tif m == mm {\n\t\t\treturn m\n\t\t}\n\n\t\tif m.IsText() && mm.IsText() {\n\n\t\t\treturn mm\n\t\t}\n\n\t\treturn zero\n\t}\n\n\treturn m\n}",
+    "funcname": "FromContent"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/resourcepaths.go",
+    "lineno": 86,
+    "focalfunc": "func (d ResourcePaths) TargetFilenames() []string",
+    "funcbody": "func (d ResourcePaths) TargetFilenames() []string {\n\tfilenames := d.TargetPaths()\n\tfor i, p := range filenames {\n\t\tfilenames[i] = filepath.FromSlash(p)\n\t}\n\treturn filenames\n}",
+    "funcname": "TargetFilenames"
+}

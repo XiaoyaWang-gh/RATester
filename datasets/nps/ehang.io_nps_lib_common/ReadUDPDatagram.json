@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/netpackager.go",
+    "lineno": 125,
+    "focalfunc": "func ReadUDPDatagram(r io.Reader) (*UDPDatagram, error)",
+    "funcbody": "func ReadUDPDatagram(r io.Reader) (*UDPDatagram, error) {\n\tb := BufPoolUdp.Get().([]byte)\n\tdefer BufPoolUdp.Put(b)\n\n\tn, err := io.ReadFull(r, b[:5])\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\theader := &UDPHeader{\n\t\tRsv:\tbinary.BigEndian.Uint16(b[:2]),\n\t\tFrag:\tb[2],\n\t}\n\n\tatype := b[3]\n\thlen := 0\n\tswitch atype {\n\tcase ipV4:\n\t\thlen = 10\n\tcase ipV6:\n\t\thlen = 22\n\tcase domainName:\n\t\thlen = 7 + int(b[4])\n\tdefault:\n\t\treturn nil, errors.New(\"addr not support\")\n\t}\n\tdlen := int(header.Rsv)\n\tif dlen == 0 {\n\t\textra, err := ioutil.ReadAll(r)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tcopy(b[n:], extra)\n\t\tn += len(extra)\n\t\tdlen = n - hlen\n\t} else {\n\t\tif _, err := io.ReadFull(r, b[n:hlen+dlen]); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tn = hlen + dlen\n\t}\n\theader.Addr = new(Addr)\n\tif err := header.Addr.Decode(b[3:hlen]); err != nil {\n\t\treturn nil, err\n\t}\n\tdata := make([]byte, dlen)\n\tcopy(data, b[hlen:n])\n\td := &UDPDatagram{\n\t\tHeader:\theader,\n\t\tData:\tdata,\n\t}\n\treturn d, nil\n}",
+    "funcname": "ReadUDPDatagram"
+}

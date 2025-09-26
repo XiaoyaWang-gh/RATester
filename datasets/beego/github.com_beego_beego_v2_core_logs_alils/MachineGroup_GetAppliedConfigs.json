@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/machine_group.go",
+    "lineno": 88,
+    "focalfunc": "func (m *MachineGroup) GetAppliedConfigs() (confNames []string, err error)",
+    "funcbody": "func (m *MachineGroup) GetAppliedConfigs() (confNames []string, err error) {\n\tconfNames, err = m.project.GetAppliedConfigs(m.Name)\n\treturn\n}",
+    "funcname": "GetAppliedConfigs"
+}

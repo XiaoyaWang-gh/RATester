@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect_msgp.go",
+    "lineno": 188,
+    "focalfunc": "func (z *redirectionMsgs) DecodeMsg(dc *msgp.Reader) (err error)",
+    "funcbody": "func (z *redirectionMsgs) DecodeMsg(dc *msgp.Reader) (err error) {\n\tvar zb0002 uint32\n\tzb0002, err = dc.ReadArrayHeader()\n\tif err != nil {\n\t\terr = msgp.WrapError(err)\n\t\treturn\n\t}\n\tif cap((*z)) >= int(zb0002) {\n\t\t(*z) = (*z)[:zb0002]\n\t} else {\n\t\t(*z) = make(redirectionMsgs, zb0002)\n\t}\n\tfor zb0001 := range *z {\n\t\terr = (*z)[zb0001].DecodeMsg(dc)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err, zb0001)\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "DecodeMsg"
+}

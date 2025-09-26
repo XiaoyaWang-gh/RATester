@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/visitor.go",
+    "lineno": 25,
+    "focalfunc": "func ValidateVisitorConfigurer(c v1.VisitorConfigurer) error",
+    "funcbody": "func ValidateVisitorConfigurer(c v1.VisitorConfigurer) error {\n\tbase := c.GetBaseConfig()\n\tif err := validateVisitorBaseConfig(base); err != nil {\n\t\treturn err\n\t}\n\n\tswitch v := c.(type) {\n\tcase *v1.STCPVisitorConfig:\n\tcase *v1.SUDPVisitorConfig:\n\tcase *v1.XTCPVisitorConfig:\n\t\treturn validateXTCPVisitorConfig(v)\n\tdefault:\n\t\treturn errors.New(\"unknown visitor config type\")\n\t}\n\treturn nil\n}",
+    "funcname": "ValidateVisitorConfigurer"
+}

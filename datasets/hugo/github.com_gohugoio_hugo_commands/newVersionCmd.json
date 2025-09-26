@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/env.go",
+    "lineno": 57,
+    "focalfunc": "func newVersionCmd() simplecobra.Commander",
+    "funcbody": "func newVersionCmd() simplecobra.Commander {\n\treturn &simpleCommand{\n\t\tname:\t\"version\",\n\t\trun: func(ctx context.Context, cd *simplecobra.Commandeer, r *rootCommand, args []string) error {\n\t\t\tr.Println(hugo.BuildVersionString())\n\t\t\treturn nil\n\t\t},\n\t\tshort:\t\"Print Hugo version and environment info\",\n\t\tlong:\t\"Print Hugo version and environment info. This is useful in Hugo bug reports.\",\n\t\twithc: func(cmd *cobra.Command, r *rootCommand) {\n\t\t\tcmd.ValidArgsFunction = cobra.NoFileCompletions\n\t\t},\n\t}\n}",
+    "funcname": "newVersionCmd"
+}

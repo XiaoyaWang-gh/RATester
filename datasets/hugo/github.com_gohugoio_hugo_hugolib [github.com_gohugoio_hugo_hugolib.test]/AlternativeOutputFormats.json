@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 536,
+    "focalfunc": "func (p *pageState) AlternativeOutputFormats() page.OutputFormats",
+    "funcbody": "func (p *pageState) AlternativeOutputFormats() page.OutputFormats {\n\tf := p.outputFormat()\n\tvar o page.OutputFormats\n\tfor _, of := range p.OutputFormats() {\n\t\tif of.Format.NotAlternative || of.Format.Name == f.Name {\n\t\t\tcontinue\n\t\t}\n\n\t\to = append(o, of)\n\t}\n\treturn o\n}",
+    "funcname": "AlternativeOutputFormats"
+}

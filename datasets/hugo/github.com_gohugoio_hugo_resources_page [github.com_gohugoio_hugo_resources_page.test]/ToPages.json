@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages.go",
+    "lineno": 53,
+    "focalfunc": "func ToPages(seq any) (Pages, error)",
+    "funcbody": "func ToPages(seq any) (Pages, error) {\n\tif seq == nil {\n\t\treturn Pages{}, nil\n\t}\n\n\tswitch v := seq.(type) {\n\tcase Pages:\n\t\treturn v, nil\n\tcase *Pages:\n\t\treturn *(v), nil\n\tcase WeightedPages:\n\t\treturn v.Pages(), nil\n\tcase PageGroup:\n\t\treturn v.Pages, nil\n\tcase []Page:\n\t\tpages := make(Pages, len(v))\n\t\tcopy(pages, v)\n\t\treturn pages, nil\n\tcase []any:\n\t\tpages := make(Pages, len(v))\n\t\tsuccess := true\n\t\tfor i, vv := range v {\n\t\t\tp, ok := vv.(Page)\n\t\t\tif !ok {\n\t\t\t\tsuccess = false\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tpages[i] = p\n\t\t}\n\t\tif success {\n\t\t\treturn pages, nil\n\t\t}\n\t}\n\n\treturn nil, fmt.Errorf(\"cannot convert type %T to Pages\", seq)\n}",
+    "funcname": "ToPages"
+}

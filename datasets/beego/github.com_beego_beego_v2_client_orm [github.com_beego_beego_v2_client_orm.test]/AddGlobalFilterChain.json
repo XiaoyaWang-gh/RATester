@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter.go",
+    "lineno": 38,
+    "focalfunc": "func AddGlobalFilterChain(filterChain ...FilterChain)",
+    "funcbody": "func AddGlobalFilterChain(filterChain ...FilterChain) {\n\tglobalFilterChains = append(globalFilterChains, filterChain...)\n}",
+    "funcname": "AddGlobalFilterChain"
+}

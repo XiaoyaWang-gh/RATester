@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 93,
+    "focalfunc": "func (m *moduleAdapter) Cfg() config.Provider",
+    "funcbody": "func (m *moduleAdapter) Cfg() config.Provider {\n\treturn m.cfg\n}",
+    "funcname": "Cfg"
+}

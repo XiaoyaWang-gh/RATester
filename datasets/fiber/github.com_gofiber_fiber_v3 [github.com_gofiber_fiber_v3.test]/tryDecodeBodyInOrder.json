@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 279,
+    "focalfunc": "func (c *DefaultCtx) tryDecodeBodyInOrder(\n\toriginalBody *[]byte,\n\tencodings []string,\n) ([]byte, uint8, error)",
+    "funcbody": "func (c *DefaultCtx) tryDecodeBodyInOrder(\n\toriginalBody *[]byte,\n\tencodings []string,\n) ([]byte, uint8, error) {\n\tvar (\n\t\terr\t\terror\n\t\tbody\t\t[]byte\n\t\tdecodesRealized\tuint8\n\t)\n\n\tfor index, encoding := range encodings {\n\t\tdecodesRealized++\n\t\tswitch encoding {\n\t\tcase StrGzip:\n\t\t\tbody, err = c.fasthttp.Request.BodyGunzip()\n\t\tcase StrBr, StrBrotli:\n\t\t\tbody, err = c.fasthttp.Request.BodyUnbrotli()\n\t\tcase StrDeflate:\n\t\t\tbody, err = c.fasthttp.Request.BodyInflate()\n\t\tcase StrZstd:\n\t\t\tbody, err = c.fasthttp.Request.BodyUnzstd()\n\t\tdefault:\n\t\t\tdecodesRealized--\n\t\t\tif len(encodings) == 1 {\n\t\t\t\tbody = c.fasthttp.Request.Body()\n\t\t\t}\n\t\t\treturn body, decodesRealized, nil\n\t\t}\n\n\t\tif err != nil {\n\t\t\treturn nil, decodesRealized, err\n\t\t}\n\n\t\tif index < len(encodings)-1 && decodesRealized > 0 {\n\t\t\tif index == 0 {\n\t\t\t\ttempBody := c.fasthttp.Request.Body()\n\t\t\t\t*originalBody = make([]byte, len(tempBody))\n\t\t\t\tcopy(*originalBody, tempBody)\n\t\t\t}\n\t\t\tc.fasthttp.Request.SetBodyRaw(body)\n\t\t}\n\t}\n\n\treturn body, decodesRealized, nil\n}",
+    "funcname": "tryDecodeBodyInOrder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 456,
+    "focalfunc": "func lexSpace(l *lexer) stateFn",
+    "funcbody": "func lexSpace(l *lexer) stateFn {\n\tvar r rune\n\tvar numSpaces int\n\tfor {\n\t\tr = l.peek()\n\t\tif !isSpace(r) {\n\t\t\tbreak\n\t\t}\n\t\tl.next()\n\t\tnumSpaces++\n\t}\n\n\tif hasRightTrimMarker(l.input[l.pos-1:]) && strings.HasPrefix(l.input[l.pos-1+trimMarkerLen:], l.rightDelim) {\n\t\tl.backup()\n\t\tif numSpaces == 1 {\n\t\t\treturn lexRightDelim\n\t\t}\n\t}\n\treturn l.emit(itemSpace)\n}",
+    "funcname": "lexSpace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 434,
+    "focalfunc": "func (ps *prometheusState) DeletePartialMatch(labels stdprometheus.Labels) int",
+    "funcbody": "func (ps *prometheusState) DeletePartialMatch(labels stdprometheus.Labels) int {\n\tvar count int\n\tfor _, elem := range ps.vectors {\n\t\tcount += elem.DeletePartialMatch(labels)\n\t}\n\treturn count\n}",
+    "funcname": "DeletePartialMatch"
+}

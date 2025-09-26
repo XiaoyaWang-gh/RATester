@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/formatter.go",
+    "lineno": 55,
+    "focalfunc": "func RegisterFormatter(name string, fmtr LogFormatter)",
+    "funcbody": "func RegisterFormatter(name string, fmtr LogFormatter) {\n\tformatterMap[name] = fmtr\n}",
+    "funcname": "RegisterFormatter"
+}

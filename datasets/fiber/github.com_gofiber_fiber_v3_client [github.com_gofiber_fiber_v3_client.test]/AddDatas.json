@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 753,
+    "focalfunc": "func (f *FormData) AddDatas(m map[string][]string)",
+    "funcbody": "func (f *FormData) AddDatas(m map[string][]string) {\n\tfor k, v := range m {\n\t\tfor _, vv := range v {\n\t\t\tf.Add(k, vv)\n\t\t}\n\t}\n}",
+    "funcname": "AddDatas"
+}

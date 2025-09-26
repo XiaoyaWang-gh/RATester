@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 36,
+    "focalfunc": "func (ps Params) Get(name string) (string, bool)",
+    "funcbody": "func (ps Params) Get(name string) (string, bool) {\n\tfor _, entry := range ps {\n\t\tif entry.Key == name {\n\t\t\treturn entry.Value, true\n\t\t}\n\t}\n\treturn \"\", false\n}",
+    "funcname": "Get"
+}

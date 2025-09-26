@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 107,
+    "focalfunc": "func (c *BaseConfiger) Int64(key string) (int64, error)",
+    "funcbody": "func (c *BaseConfiger) Int64(key string) (int64, error) {\n\tres, err := c.reader(context.TODO(), key)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\treturn strconv.ParseInt(res, 10, 64)\n}",
+    "funcname": "Int64"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/evictingqueue.go",
+    "lineno": 57,
+    "focalfunc": "func (q *EvictingStringQueue) Len() int",
+    "funcbody": "func (q *EvictingStringQueue) Len() int {\n\tif q == nil {\n\t\treturn 0\n\t}\n\tq.mu.Lock()\n\tdefer q.mu.Unlock()\n\treturn len(q.vals)\n}",
+    "funcname": "Len"
+}

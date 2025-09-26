@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 449,
+    "focalfunc": "func (c *DefaultCtx) Cookies(key string, defaultValue ...string) string",
+    "funcbody": "func (c *DefaultCtx) Cookies(key string, defaultValue ...string) string {\n\treturn defaultString(c.app.getString(c.fasthttp.Request.Header.Cookie(key)), defaultValue)\n}",
+    "funcname": "Cookies"
+}

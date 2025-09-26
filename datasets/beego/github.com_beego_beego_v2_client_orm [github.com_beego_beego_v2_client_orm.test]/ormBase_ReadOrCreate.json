@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 168,
+    "focalfunc": "func (o *ormBase) ReadOrCreate(md interface{}, col1 string, cols ...string) (bool, int64, error)",
+    "funcbody": "func (o *ormBase) ReadOrCreate(md interface{}, col1 string, cols ...string) (bool, int64, error) {\n\treturn o.ReadOrCreateWithCtx(context.Background(), md, col1, cols...)\n}",
+    "funcname": "ReadOrCreate"
+}

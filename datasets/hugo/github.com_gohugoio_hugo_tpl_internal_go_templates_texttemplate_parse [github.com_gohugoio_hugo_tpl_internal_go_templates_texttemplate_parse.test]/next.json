@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 71,
+    "focalfunc": "func (t *Tree) next() item",
+    "funcbody": "func (t *Tree) next() item {\n\tif t.peekCount > 0 {\n\t\tt.peekCount--\n\t} else {\n\t\tt.token[0] = t.lex.nextItem()\n\t}\n\treturn t.token[t.peekCount]\n}",
+    "funcname": "next"
+}

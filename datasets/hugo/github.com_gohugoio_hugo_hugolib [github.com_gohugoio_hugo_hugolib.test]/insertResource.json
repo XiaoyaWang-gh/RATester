@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map.go",
+    "lineno": 193,
+    "focalfunc": "func (m *pageMap) insertResource(s string, r contentNodeI) (contentNodeI, contentNodeI, bool)",
+    "funcbody": "func (m *pageMap) insertResource(s string, r contentNodeI) (contentNodeI, contentNodeI, bool) {\n\tu, n, replaced := m.treeResources.InsertIntoValuesDimension(s, r)\n\tif replaced {\n\t\tm.handleDuplicateResourcePath(s, r, n)\n\t}\n\treturn u, n, replaced\n}",
+    "funcname": "insertResource"
+}

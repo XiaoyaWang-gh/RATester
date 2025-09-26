@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 312,
+    "focalfunc": "func (t *Template) new(name string) *Template",
+    "funcbody": "func (t *Template) new(name string) *Template {\n\ttmpl := &Template{\n\t\tnil,\n\t\tt.text.New(name),\n\t\tnil,\n\t\tt.nameSpace,\n\t}\n\tif existing, ok := tmpl.set[name]; ok {\n\t\temptyTmpl := New(existing.Name())\n\t\t*existing = *emptyTmpl\n\t}\n\ttmpl.set[name] = tmpl\n\treturn tmpl\n}",
+    "funcname": "new"
+}

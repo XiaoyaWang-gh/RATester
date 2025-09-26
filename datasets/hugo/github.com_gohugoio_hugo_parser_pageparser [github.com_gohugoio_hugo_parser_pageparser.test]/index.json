@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 470,
+    "focalfunc": "func (l *pageLexer) index(sep []byte) int",
+    "funcbody": "func (l *pageLexer) index(sep []byte) int {\n\treturn bytes.Index(l.input[l.pos:], sep)\n}",
+    "funcname": "index"
+}

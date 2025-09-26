@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 145,
+    "focalfunc": "func (x *Test) GetOptionalgroup() *Test_OptionalGroup",
+    "funcbody": "func (x *Test) GetOptionalgroup() *Test_OptionalGroup {\n\tif x != nil {\n\t\treturn x.Optionalgroup\n\t}\n\treturn nil\n}",
+    "funcname": "GetOptionalgroup"
+}

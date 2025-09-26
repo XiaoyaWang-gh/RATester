@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 276,
+    "focalfunc": "func (ns *Namespace) In(l any, v any) (bool, error)",
+    "funcbody": "func (ns *Namespace) In(l any, v any) (bool, error) {\n\tif l == nil || v == nil {\n\t\treturn false, nil\n\t}\n\n\tlv := reflect.ValueOf(l)\n\tvv := reflect.ValueOf(v)\n\n\tvvk := normalize(vv)\n\n\tswitch lv.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\tfor i := 0; i < lv.Len(); i++ {\n\t\t\tlvv, isNil := indirectInterface(lv.Index(i))\n\t\t\tif isNil {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tlvvk := normalize(lvv)\n\n\t\t\tif lvvk == vvk {\n\t\t\t\treturn true, nil\n\t\t\t}\n\t\t}\n\t}\n\tss, err := cast.ToStringE(l)\n\tif err != nil {\n\t\treturn false, nil\n\t}\n\n\tsu, err := cast.ToStringE(v)\n\tif err != nil {\n\t\treturn false, nil\n\t}\n\treturn strings.Contains(ss, su), nil\n}",
+    "funcname": "In"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 453,
+    "focalfunc": "func (c *context) Validate(i interface{}) error",
+    "funcbody": "func (c *context) Validate(i interface{}) error {\n\tif c.echo.Validator == nil {\n\t\treturn ErrValidatorNotRegistered\n\t}\n\treturn c.echo.Validator.Validate(i)\n}",
+    "funcname": "Validate"
+}

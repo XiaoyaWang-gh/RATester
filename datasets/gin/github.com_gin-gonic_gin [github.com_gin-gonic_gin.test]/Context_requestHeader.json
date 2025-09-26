@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 885,
+    "focalfunc": "func (c *Context) requestHeader(key string) string",
+    "funcbody": "func (c *Context) requestHeader(key string) string {\n\treturn c.Request.Header.Get(key)\n}",
+    "funcname": "requestHeader"
+}

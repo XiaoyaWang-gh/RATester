@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages.go",
+    "lineno": 107,
+    "focalfunc": "func (pages Pages) ProbablyEq(other any) bool",
+    "funcbody": "func (pages Pages) ProbablyEq(other any) bool {\n\totherPages, ok := other.(Pages)\n\tif !ok {\n\t\treturn false\n\t}\n\n\tif len(pages) != len(otherPages) {\n\t\treturn false\n\t}\n\n\tstep := 1\n\n\tfor i := 0; i < len(pages); i += step {\n\t\tif !pages[i].Eq(otherPages[i]) {\n\t\t\treturn false\n\t\t}\n\n\t\tif i > 50 {\n\n\t\t\tstep = 50\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "ProbablyEq"
+}

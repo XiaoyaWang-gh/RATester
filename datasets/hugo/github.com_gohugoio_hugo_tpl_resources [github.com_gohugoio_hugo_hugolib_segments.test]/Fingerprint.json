@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 273,
+    "focalfunc": "func (ns *Namespace) Fingerprint(args ...any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Fingerprint(args ...any) (resource.Resource, error) {\n\tif len(args) < 1 {\n\t\treturn nil, errors.New(\"must provide a Resource object\")\n\t}\n\n\tif len(args) > 2 {\n\t\treturn nil, errors.New(\"must not provide more arguments than Resource and hash algorithm\")\n\t}\n\n\tvar algo string\n\tresIdx := 0\n\n\tif len(args) == 2 {\n\t\tresIdx = 1\n\t\tvar err error\n\t\talgo, err = cast.ToStringE(args[0])\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tr, ok := args[resIdx].(resources.ResourceTransformer)\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"%T can not be transformed\", args[resIdx])\n\t}\n\n\treturn ns.integrityClient.Fingerprint(r, algo)\n}",
+    "funcname": "Fingerprint"
+}

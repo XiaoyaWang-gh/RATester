@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/dns.go",
+    "lineno": 22,
+    "focalfunc": "func SetDefaultDNSAddress(dnsAddress string)",
+    "funcbody": "func SetDefaultDNSAddress(dnsAddress string) {\n\tif _, _, err := net.SplitHostPort(dnsAddress); err != nil {\n\t\tdnsAddress = net.JoinHostPort(dnsAddress, \"53\")\n\t}\n\n\tnet.DefaultResolver = &net.Resolver{\n\t\tPreferGo:\ttrue,\n\t\tDial: func(ctx context.Context, network, _ string) (net.Conn, error) {\n\t\t\treturn net.Dial(network, dnsAddress)\n\t\t},\n\t}\n}",
+    "funcname": "SetDefaultDNSAddress"
+}

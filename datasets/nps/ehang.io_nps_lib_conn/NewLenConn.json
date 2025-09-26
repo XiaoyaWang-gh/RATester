@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 424,
+    "focalfunc": "func NewLenConn(conn io.Writer) *LenConn",
+    "funcbody": "func NewLenConn(conn io.Writer) *LenConn {\n\treturn &LenConn{conn: conn}\n}",
+    "funcname": "NewLenConn"
+}

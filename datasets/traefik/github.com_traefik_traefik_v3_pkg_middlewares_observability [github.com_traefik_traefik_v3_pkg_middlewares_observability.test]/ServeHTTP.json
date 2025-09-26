@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/service.go",
+    "lineno": 34,
+    "focalfunc": "func (t *serviceTracing) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (t *serviceTracing) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tif tracer := tracing.TracerFromContext(req.Context()); tracer != nil {\n\t\ttracingCtx, span := tracer.Start(req.Context(), \"Service\", trace.WithSpanKind(trace.SpanKindInternal))\n\t\tdefer span.End()\n\n\t\treq = req.WithContext(tracingCtx)\n\n\t\tspan.SetAttributes(attribute.String(\"traefik.service.name\", t.service))\n\t}\n\n\tt.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

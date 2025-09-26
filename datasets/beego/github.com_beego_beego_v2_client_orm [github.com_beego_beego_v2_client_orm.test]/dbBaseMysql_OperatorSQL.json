@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_mysql.go",
+    "lineno": 78,
+    "focalfunc": "func (d *dbBaseMysql) OperatorSQL(operator string) string",
+    "funcbody": "func (d *dbBaseMysql) OperatorSQL(operator string) string {\n\treturn mysqlOperators[operator]\n}",
+    "funcname": "OperatorSQL"
+}

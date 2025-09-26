@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 62,
+    "focalfunc": "func (ns *Namespace) Add(inputs ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Add(inputs ...any) (any, error) {\n\treturn ns.doArithmetic(inputs, '+')\n}",
+    "funcname": "Add"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 280,
+    "focalfunc": "func SnakeString(s string) string",
+    "funcbody": "func SnakeString(s string) string {\n\tdata := make([]byte, 0, len(s)*2)\n\tj := false\n\tnum := len(s)\n\tfor i := 0; i < num; i++ {\n\t\td := s[i]\n\t\tif i > 0 && d >= 'A' && d <= 'Z' && j {\n\t\t\tdata = append(data, '_')\n\t\t}\n\t\tif d != '_' {\n\t\t\tj = true\n\t\t}\n\t\tdata = append(data, d)\n\t}\n\treturn strings.ToLower(string(data))\n}",
+    "funcname": "SnakeString"
+}

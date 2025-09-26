@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 233,
+    "focalfunc": "func (d dirEntry) Info() (fs.FileInfo, error)",
+    "funcbody": "func (d dirEntry) Info() (fs.FileInfo, error)\t{ return d.FileInfo, nil }",
+    "funcname": "Info"
+}

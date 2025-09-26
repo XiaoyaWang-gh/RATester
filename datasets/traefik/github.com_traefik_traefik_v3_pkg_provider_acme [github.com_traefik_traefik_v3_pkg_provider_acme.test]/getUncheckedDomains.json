@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 852,
+    "focalfunc": "func (p *Provider) getUncheckedDomains(ctx context.Context, domainsToCheck []string, tlsStore string) []string",
+    "funcbody": "func (p *Provider) getUncheckedDomains(ctx context.Context, domainsToCheck []string, tlsStore string) []string {\n\tlog.Ctx(ctx).Debug().Msgf(\"Looking for provided certificate(s) to validate %q...\", domainsToCheck)\n\n\tvar allDomains []string\n\tstore := p.tlsManager.GetStore(tlsStore)\n\tif store != nil {\n\t\tallDomains = append(allDomains, store.GetAllDomains()...)\n\t}\n\n\tp.certificatesMu.RLock()\n\tfor _, cert := range p.certificates {\n\t\tallDomains = append(allDomains, strings.Join(cert.Domain.ToStrArray(), \",\"))\n\t}\n\tp.certificatesMu.RUnlock()\n\n\tp.resolvingDomainsMutex.Lock()\n\tdefer p.resolvingDomainsMutex.Unlock()\n\n\tfor domain := range p.resolvingDomains {\n\t\tallDomains = append(allDomains, domain)\n\t}\n\n\tuncheckedDomains := searchUncheckedDomains(ctx, domainsToCheck, allDomains)\n\n\tfor _, domain := range uncheckedDomains {\n\t\tp.resolvingDomains[domain] = struct{}{}\n\t}\n\n\treturn uncheckedDomains\n}",
+    "funcname": "getUncheckedDomains"
+}

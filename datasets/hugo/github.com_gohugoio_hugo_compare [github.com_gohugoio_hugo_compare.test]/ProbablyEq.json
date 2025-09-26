@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/compare/compare.go",
+    "lineno": 57,
+    "focalfunc": "func ProbablyEq(v1, v2 any) bool",
+    "funcbody": "func ProbablyEq(v1, v2 any) bool {\n\tif Eq(v1, v2) {\n\t\treturn true\n\t}\n\n\tif peqer, ok := v1.(ProbablyEqer); ok {\n\t\treturn peqer.ProbablyEq(v2)\n\t}\n\n\treturn false\n}",
+    "funcname": "ProbablyEq"
+}

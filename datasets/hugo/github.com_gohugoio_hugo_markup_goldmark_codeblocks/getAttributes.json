@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/codeblocks/render.go",
+    "lineno": 147,
+    "focalfunc": "func getAttributes(node *ast.FencedCodeBlock, infostr []byte) ([]ast.Attribute, string, error)",
+    "funcbody": "func getAttributes(node *ast.FencedCodeBlock, infostr []byte) ([]ast.Attribute, string, error) {\n\tif node.Attributes() != nil {\n\t\treturn node.Attributes(), \"\", nil\n\t}\n\tif infostr != nil {\n\t\tattrStartIdx := -1\n\t\tattrEndIdx := -1\n\n\t\tfor idx, char := range infostr {\n\t\t\tif attrEndIdx == -1 && char == '{' {\n\t\t\t\tattrStartIdx = idx\n\t\t\t}\n\t\t\tif attrStartIdx != -1 && char == '}' {\n\t\t\t\tattrEndIdx = idx\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\n\t\tif attrStartIdx != -1 && attrEndIdx != -1 {\n\t\t\tn := ast.NewTextBlock()\n\t\t\tattrStr := infostr[attrStartIdx : attrEndIdx+1]\n\t\t\tif attrs, hasAttr := parser.ParseAttributes(text.NewReader(attrStr)); hasAttr {\n\t\t\t\tfor _, attr := range attrs {\n\t\t\t\t\tn.SetAttribute(attr.Name, attr.Value)\n\t\t\t\t}\n\t\t\t\treturn n.Attributes(), \"\", nil\n\t\t\t} else {\n\t\t\t\treturn nil, string(attrStr), errors.New(\"failed to parse Markdown attributes; you may need to quote the values\")\n\t\t\t}\n\t\t}\n\t}\n\treturn nil, \"\", nil\n}",
+    "funcname": "getAttributes"
+}

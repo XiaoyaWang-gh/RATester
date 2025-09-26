@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/message.go",
+    "lineno": 55,
+    "focalfunc": "func (impl *transporterImpl) Send(m msg.Message) error",
+    "funcbody": "func (impl *transporterImpl) Send(m msg.Message) error {\n\treturn errors.PanicToError(func() {\n\t\timpl.sendCh <- m\n\t})\n}",
+    "funcname": "Send"
+}

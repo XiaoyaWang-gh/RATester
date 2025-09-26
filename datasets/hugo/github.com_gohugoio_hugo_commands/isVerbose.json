@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 143,
+    "focalfunc": "func (r *rootCommand) isVerbose() bool",
+    "funcbody": "func (r *rootCommand) isVerbose() bool {\n\treturn r.logger.Level() <= logg.LevelInfo\n}",
+    "funcname": "isVerbose"
+}

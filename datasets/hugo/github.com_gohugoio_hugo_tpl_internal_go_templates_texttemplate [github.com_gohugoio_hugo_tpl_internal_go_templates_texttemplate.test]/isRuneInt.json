@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 567,
+    "focalfunc": "func isRuneInt(s string) bool",
+    "funcbody": "func isRuneInt(s string) bool {\n\treturn len(s) > 0 && s[0] == '\\''\n}",
+    "funcname": "isRuneInt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 269,
+    "focalfunc": "func nodeContent(node *html.Node) string",
+    "funcbody": "func nodeContent(node *html.Node) string {\n\tvar buf bytes.Buffer\n\tfor c := node.FirstChild; c != nil; c = c.NextSibling {\n\t\thtml.Render(&buf, c)\n\t}\n\treturn buf.String()\n}",
+    "funcname": "nodeContent"
+}

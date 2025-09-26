@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 264,
+    "focalfunc": "func (*Filters) Colorize(hue, saturation, percentage any) gift.Filter",
+    "funcbody": "func (*Filters) Colorize(hue, saturation, percentage any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(hue, saturation, percentage),\n\t\tFilter:\t\tgift.Colorize(cast.ToFloat32(hue), cast.ToFloat32(saturation), cast.ToFloat32(percentage)),\n\t}\n}",
+    "funcname": "Colorize"
+}

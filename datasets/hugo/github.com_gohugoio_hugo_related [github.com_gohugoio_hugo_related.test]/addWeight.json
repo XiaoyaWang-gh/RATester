@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 289,
+    "focalfunc": "func (r *rank) addWeight(w int)",
+    "funcbody": "func (r *rank) addWeight(w int) {\n\tr.Weight += w\n\tr.Matches++\n}",
+    "funcname": "addWeight"
+}

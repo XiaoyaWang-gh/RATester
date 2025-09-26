@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/log.go",
+    "lineno": 9,
+    "focalfunc": "func NoLevel(logger zerolog.Logger, level zerolog.Level) zerolog.Logger",
+    "funcbody": "func NoLevel(logger zerolog.Logger, level zerolog.Level) zerolog.Logger {\n\treturn logger.Hook(NewNoLevelHook(logger.GetLevel(), level))\n}",
+    "funcname": "NoLevel"
+}

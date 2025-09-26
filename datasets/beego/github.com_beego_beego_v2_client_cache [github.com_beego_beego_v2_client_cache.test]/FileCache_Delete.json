@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 222,
+    "focalfunc": "func (fc *FileCache) Delete(ctx context.Context, key string) error",
+    "funcbody": "func (fc *FileCache) Delete(ctx context.Context, key string) error {\n\tfilename, err := fc.getCacheFileName(key)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif ok, _ := exists(filename); ok {\n\t\terr = os.Remove(filename)\n\t\tif err != nil {\n\t\t\treturn berror.Wrapf(err, DeleteFileCacheItemFailed,\n\t\t\t\t\"can not delete this file cache key-value, key is %s and file name is %s\", key, filename)\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "Delete"
+}

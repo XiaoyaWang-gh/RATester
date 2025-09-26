@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 476,
+    "focalfunc": "func (c *importCommand) loadJekyllConfig(fs afero.Fs, jekyllRoot string) map[string]any",
+    "funcbody": "func (c *importCommand) loadJekyllConfig(fs afero.Fs, jekyllRoot string) map[string]any {\n\tpath := filepath.Join(jekyllRoot, \"_config.yml\")\n\n\texists, err := helpers.Exists(path, fs)\n\n\tif err != nil || !exists {\n\t\tc.r.Println(\"_config.yaml not found: Is the specified Jekyll root correct?\")\n\t\treturn nil\n\t}\n\n\tf, err := fs.Open(path)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\tdefer f.Close()\n\n\tb, err := io.ReadAll(f)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\tm, err := metadecoders.Default.UnmarshalToMap(b, metadecoders.YAML)\n\tif err != nil {\n\t\treturn nil\n\t}\n\n\treturn m\n}",
+    "funcname": "loadJekyllConfig"
+}

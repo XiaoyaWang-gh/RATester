@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/dialer.go",
+    "lineno": 62,
+    "focalfunc": "func (d *DialerManager) Update(configs map[string]*dynamic.TCPServersTransport)",
+    "funcbody": "func (d *DialerManager) Update(configs map[string]*dynamic.TCPServersTransport) {\n\td.rtLock.Lock()\n\tdefer d.rtLock.Unlock()\n\n\td.dialers = make(map[string]Dialer)\n\td.dialersTLS = make(map[string]Dialer)\n\tfor configName, config := range configs {\n\t\tif err := d.createDialers(configName, config); err != nil {\n\t\t\tlog.Debug().\n\t\t\t\tStr(\"dialer\", configName).\n\t\t\t\tErr(err).\n\t\t\t\tMsg(\"Create TCP Dialer\")\n\t\t}\n\t}\n}",
+    "funcname": "Update"
+}

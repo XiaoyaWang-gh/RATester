@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 289,
+    "focalfunc": "func AddNamespace(nl ...*Namespace)",
+    "funcbody": "func AddNamespace(nl ...*Namespace) {\n\tfor _, n := range nl {\n\t\tfor k, v := range n.handlers.routers {\n\t\t\tif _, ok := BeeApp.Handlers.routers[k]; ok {\n\t\t\t\taddPrefix(v, n.prefix)\n\t\t\t\tBeeApp.Handlers.routers[k].AddTree(n.prefix, v)\n\t\t\t} else {\n\t\t\t\tt := NewTree()\n\t\t\t\tt.AddTree(n.prefix, v)\n\t\t\t\taddPrefix(t, n.prefix)\n\t\t\t\tBeeApp.Handlers.routers[k] = t\n\t\t\t}\n\t\t}\n\t\tif n.handlers.enableFilter {\n\t\t\tfor pos, filterList := range n.handlers.filters {\n\t\t\t\tfor _, mr := range filterList {\n\t\t\t\t\tt := NewTree()\n\t\t\t\t\tt.AddTree(n.prefix, mr.tree)\n\t\t\t\t\tmr.tree = t\n\t\t\t\t\tBeeApp.Handlers.insertFilterRouter(pos, mr)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "AddNamespace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 753,
+    "focalfunc": "func (c *Context) ShouldBindHeader(obj any) error",
+    "funcbody": "func (c *Context) ShouldBindHeader(obj any) error {\n\treturn c.ShouldBindWith(obj, binding.Header)\n}",
+    "funcname": "ShouldBindHeader"
+}

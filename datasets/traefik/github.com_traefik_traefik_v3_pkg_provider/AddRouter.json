@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 360,
+    "focalfunc": "func AddRouter(configuration *dynamic.HTTPConfiguration, routerName string, router *dynamic.Router) bool",
+    "funcbody": "func AddRouter(configuration *dynamic.HTTPConfiguration, routerName string, router *dynamic.Router) bool {\n\tif _, ok := configuration.Routers[routerName]; !ok {\n\t\tconfiguration.Routers[routerName] = router\n\t\treturn true\n\t}\n\n\treturn reflect.DeepEqual(configuration.Routers[routerName], router)\n}",
+    "funcname": "AddRouter"
+}

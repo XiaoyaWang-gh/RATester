@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 448,
+    "focalfunc": "func (c *Controller) ServeJSON(encoding ...bool) error",
+    "funcbody": "func (c *Controller) ServeJSON(encoding ...bool) error {\n\tvar (\n\t\thasIndent\t= BConfig.RunMode != PROD\n\t\thasEncoding\t= len(encoding) > 0 && encoding[0]\n\t)\n\n\treturn c.Ctx.Output.JSON(c.Data[\"json\"], hasIndent, hasEncoding)\n}",
+    "funcname": "ServeJSON"
+}

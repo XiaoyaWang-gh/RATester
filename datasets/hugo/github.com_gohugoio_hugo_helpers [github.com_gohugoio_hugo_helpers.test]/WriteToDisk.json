@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 285,
+    "focalfunc": "func WriteToDisk(inpath string, r io.Reader, fs afero.Fs) (err error)",
+    "funcbody": "func WriteToDisk(inpath string, r io.Reader, fs afero.Fs) (err error) {\n\treturn afero.WriteReader(fs, inpath, r)\n}",
+    "funcname": "WriteToDisk"
+}

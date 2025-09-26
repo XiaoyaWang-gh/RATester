@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 397,
+    "focalfunc": "func (lf *localFile) Reader() (io.ReadCloser, error)",
+    "funcbody": "func (lf *localFile) Reader() (io.ReadCloser, error) {\n\tif lf.matcher != nil && lf.matcher.Gzip {\n\n\t\treturn io.NopCloser(bytes.NewReader(lf.gzipped.Bytes())), nil\n\t}\n\n\treturn lf.fs.Open(lf.NativePath)\n}",
+    "funcname": "Reader"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/stack.go",
+    "lineno": 61,
+    "focalfunc": "func (s *Stack[T]) Drain() []T",
+    "funcbody": "func (s *Stack[T]) Drain() []T {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\titems := s.items\n\ts.items = nil\n\treturn items\n}",
+    "funcname": "Drain"
+}

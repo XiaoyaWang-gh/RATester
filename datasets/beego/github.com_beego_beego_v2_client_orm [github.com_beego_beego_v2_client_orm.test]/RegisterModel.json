@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/models_boot.go",
+    "lineno": 27,
+    "focalfunc": "func RegisterModel(models ...interface{})",
+    "funcbody": "func RegisterModel(models ...interface{}) {\n\tRegisterModelWithPrefix(\"\", models...)\n}",
+    "funcname": "RegisterModel"
+}

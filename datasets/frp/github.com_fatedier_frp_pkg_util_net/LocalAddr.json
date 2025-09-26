@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 135,
+    "focalfunc": "func (c *FakeUDPConn) LocalAddr() net.Addr",
+    "funcbody": "func (c *FakeUDPConn) LocalAddr() net.Addr {\n\treturn c.localAddr\n}",
+    "funcname": "LocalAddr"
+}

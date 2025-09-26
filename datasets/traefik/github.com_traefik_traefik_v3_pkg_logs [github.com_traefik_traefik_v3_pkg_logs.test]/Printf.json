@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/logrus.go",
+    "lineno": 19,
+    "focalfunc": "func (l LogrusStdWrapper) Printf(s string, args ...interface{})",
+    "funcbody": "func (l LogrusStdWrapper) Printf(s string, args ...interface{}) {\n\tl.logger.Debug().CallerSkipFrame(1).Msgf(s, args...)\n}",
+    "funcname": "Printf"
+}

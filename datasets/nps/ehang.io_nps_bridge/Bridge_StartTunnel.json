@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 71,
+    "focalfunc": "func (s *Bridge) StartTunnel() error",
+    "funcbody": "func (s *Bridge) StartTunnel() error {\n\tgo s.ping()\n\tif s.tunnelType == \"kcp\" {\n\t\tlogs.Info(\"server start, the bridge type is %s, the bridge port is %d\", s.tunnelType, s.TunnelPort)\n\t\treturn conn.NewKcpListenerAndProcess(beego.AppConfig.String(\"bridge_ip\")+\":\"+beego.AppConfig.String(\"bridge_port\"), func(c net.Conn) {\n\t\t\ts.cliProcess(conn.NewConn(c))\n\t\t})\n\t} else {\n\t\tlistener, err := connection.GetBridgeListener(s.tunnelType)\n\t\tif err != nil {\n\t\t\tlogs.Error(err)\n\t\t\tos.Exit(0)\n\t\t\treturn err\n\t\t}\n\t\tconn.Accept(listener, func(c net.Conn) {\n\t\t\ts.cliProcess(conn.NewConn(c))\n\t\t})\n\t}\n\treturn nil\n}",
+    "funcname": "StartTunnel"
+}

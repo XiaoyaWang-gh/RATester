@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/npm/package_builder.go",
+    "lineno": 188,
+    "focalfunc": "func (b *packageBuilder) Add(source string, r io.Reader) *packageBuilder",
+    "funcbody": "func (b *packageBuilder) Add(source string, r io.Reader) *packageBuilder {\n\tif b.err != nil {\n\t\treturn b\n\t}\n\n\tm := b.unmarshal(r)\n\tif b.err != nil {\n\t\treturn b\n\t}\n\n\tb.addm(source, m)\n\n\treturn b\n}",
+    "funcname": "Add"
+}

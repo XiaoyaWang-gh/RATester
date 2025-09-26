@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 849,
+    "focalfunc": "func (app *HttpServer) initAddr(addr string)",
+    "funcbody": "func (app *HttpServer) initAddr(addr string) {\n\tstrs := strings.Split(addr, \":\")\n\tif len(strs) > 0 && strs[0] != \"\" {\n\t\tapp.Cfg.Listen.HTTPAddr = strs[0]\n\t\tapp.Cfg.Listen.Domains = []string{strs[0]}\n\t}\n\tif len(strs) > 1 && strs[1] != \"\" {\n\t\tapp.Cfg.Listen.HTTPPort, _ = strconv.Atoi(strs[1])\n\t}\n}",
+    "funcname": "initAddr"
+}

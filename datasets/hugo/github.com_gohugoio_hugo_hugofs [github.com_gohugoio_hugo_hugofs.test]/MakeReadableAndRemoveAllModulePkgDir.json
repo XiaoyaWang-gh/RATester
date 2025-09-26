@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 148,
+    "focalfunc": "func MakeReadableAndRemoveAllModulePkgDir(fs afero.Fs, dir string) (int, error)",
+    "funcbody": "func MakeReadableAndRemoveAllModulePkgDir(fs afero.Fs, dir string) (int, error) {\n\n\tif !strings.Contains(dir, \"pkg\") && !strings.Contains(dir, \"gomod\") {\n\t\tpanic(fmt.Sprint(\"invalid dir:\", dir))\n\t}\n\n\tcounter := 0\n\tafero.Walk(fs, dir, func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\treturn nil\n\t\t}\n\t\tif info.IsDir() {\n\t\t\tcounter++\n\t\t\tfs.Chmod(path, 0o777)\n\t\t}\n\t\treturn nil\n\t})\n\n\treturn counter, fs.RemoveAll(dir)\n}",
+    "funcname": "MakeReadableAndRemoveAllModulePkgDir"
+}

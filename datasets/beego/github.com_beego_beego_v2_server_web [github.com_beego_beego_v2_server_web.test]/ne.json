@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 508,
+    "focalfunc": "func ne(arg1, arg2 interface{}) (bool, error)",
+    "funcbody": "func ne(arg1, arg2 interface{}) (bool, error) {\n\n\tequal, err := eq(arg1, arg2)\n\treturn !equal, err\n}",
+    "funcname": "ne"
+}

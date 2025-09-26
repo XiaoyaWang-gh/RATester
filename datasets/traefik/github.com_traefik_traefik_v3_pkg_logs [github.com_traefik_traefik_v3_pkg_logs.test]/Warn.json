@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/oxy.go",
+    "lineno": 21,
+    "focalfunc": "func (l OxyWrapper) Warn(s string, i ...interface{})",
+    "funcbody": "func (l OxyWrapper) Warn(s string, i ...interface{}) {\n\tl.logger.Warn().CallerSkipFrame(1).Msgf(s, i...)\n}",
+    "funcname": "Warn"
+}

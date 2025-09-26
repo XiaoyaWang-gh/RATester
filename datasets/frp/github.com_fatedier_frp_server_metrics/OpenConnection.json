@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/metrics/metrics.go",
+    "lineno": 34,
+    "focalfunc": "func (noopServerMetrics) OpenConnection(string, string)",
+    "funcbody": "func (noopServerMetrics) OpenConnection(string, string)\t{}",
+    "funcname": "OpenConnection"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 489,
+    "focalfunc": "func (m *taskManager) StartTask()",
+    "funcbody": "func (m *taskManager) StartTask() {\n\tm.taskLock.Lock()\n\tdefer m.taskLock.Unlock()\n\tif m.started {\n\n\t\treturn\n\t}\n\tm.started = true\n\n\tregisterCommands()\n\tgo m.run()\n}",
+    "funcname": "StartTask"
+}

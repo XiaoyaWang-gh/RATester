@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/visitor.go",
+    "lineno": 91,
+    "focalfunc": "func preVisitorUnmarshalFromIni(cfg VisitorConf, prefix string, name string, section *ini.Section) error",
+    "funcbody": "func preVisitorUnmarshalFromIni(cfg VisitorConf, prefix string, name string, section *ini.Section) error {\n\terr := section.MapTo(cfg)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\terr = cfg.GetBaseConfig().unmarshalFromIni(prefix, name, section)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "preVisitorUnmarshalFromIni"
+}

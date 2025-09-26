@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 398,
+    "focalfunc": "func AddTemplateEngine(extension string, fn templatePreProcessor) *HttpServer",
+    "funcbody": "func AddTemplateEngine(extension string, fn templatePreProcessor) *HttpServer {\n\tAddTemplateExt(extension)\n\tbeeTemplateEngines[extension] = fn\n\treturn BeeApp\n}",
+    "funcname": "AddTemplateEngine"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 269,
+    "focalfunc": "func toFileError(f Format, data []byte, err error) error",
+    "funcbody": "func toFileError(f Format, data []byte, err error) error {\n\treturn herrors.NewFileErrorFromName(err, fmt.Sprintf(\"_stream.%s\", f)).UpdateContent(bytes.NewReader(data), nil)\n}",
+    "funcname": "toFileError"
+}

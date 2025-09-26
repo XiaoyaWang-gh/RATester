@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 118,
+    "focalfunc": "func (f *FileMeta) ReadAll() ([]byte, error)",
+    "funcbody": "func (f *FileMeta) ReadAll() ([]byte, error) {\n\tfile, err := f.Open()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer file.Close()\n\treturn io.ReadAll(file)\n}",
+    "funcname": "ReadAll"
+}

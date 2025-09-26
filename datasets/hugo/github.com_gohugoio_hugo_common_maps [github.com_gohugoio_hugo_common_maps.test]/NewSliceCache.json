@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/cache.go",
+    "lineno": 106,
+    "focalfunc": "func NewSliceCache[T any]() *SliceCache[T]",
+    "funcbody": "func NewSliceCache[T any]() *SliceCache[T] {\n\treturn &SliceCache[T]{m: make(map[string][]T)}\n}",
+    "funcname": "NewSliceCache"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 142,
+    "focalfunc": "func NewFileInfoFrom(path, filename string) *File",
+    "funcbody": "func NewFileInfoFrom(path, filename string) *File {\n\tmeta := &hugofs.FileMeta{\n\t\tFilename:\tfilename,\n\t\tPathInfo:\tmedia.DefaultPathParser.Parse(\"\", filepath.ToSlash(path)),\n\t}\n\n\treturn NewFileInfo(hugofs.NewFileMetaInfo(nil, meta))\n}",
+    "funcname": "NewFileInfoFrom"
+}

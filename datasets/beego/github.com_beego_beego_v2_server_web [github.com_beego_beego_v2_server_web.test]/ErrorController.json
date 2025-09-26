@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 405,
+    "focalfunc": "func ErrorController(c ControllerInterface) *HttpServer",
+    "funcbody": "func ErrorController(c ControllerInterface) *HttpServer {\n\treflectVal := reflect.ValueOf(c)\n\trt := reflectVal.Type()\n\tct := reflect.Indirect(reflectVal).Type()\n\tfor i := 0; i < rt.NumMethod(); i++ {\n\t\tmethodName := rt.Method(i).Name\n\t\tif !utils.InSlice(methodName, exceptMethod) && strings.HasPrefix(methodName, \"Error\") {\n\t\t\terrName := strings.TrimPrefix(methodName, \"Error\")\n\t\t\tErrorMaps[errName] = &errorInfo{\n\t\t\t\terrorType:\terrorTypeController,\n\t\t\t\tcontrollerType:\tct,\n\t\t\t\tmethod:\t\tmethodName,\n\t\t\t}\n\t\t}\n\t}\n\treturn BeeApp\n}",
+    "funcname": "ErrorController"
+}

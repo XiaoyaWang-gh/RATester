@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/sort.go",
+    "lineno": 364,
+    "focalfunc": "func sortByFunc[T orderedWithName, U constraints.Ordered](direction string, results []T, fn func(int) U)",
+    "funcbody": "func sortByFunc[T orderedWithName, U constraints.Ordered](direction string, results []T, fn func(int) U) {\n\n\tif direction == ascendantSorting {\n\t\tsort.Slice(results, func(i, j int) bool {\n\t\t\tif fn(i) == fn(j) {\n\t\t\t\treturn results[i].name() < results[j].name()\n\t\t\t}\n\n\t\t\treturn fn(i) < fn(j)\n\t\t})\n\n\t\treturn\n\t}\n\n\tsort.Slice(results, func(i, j int) bool {\n\t\tif fn(i) == fn(j) {\n\t\t\treturn results[i].name() > results[j].name()\n\t\t}\n\n\t\treturn fn(i) > fn(j)\n\t})\n}",
+    "funcname": "sortByFunc"
+}

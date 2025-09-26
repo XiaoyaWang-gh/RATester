@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/types.go",
+    "lineno": 17,
+    "focalfunc": "func EmptyOr[T comparable](v T, fallback T) T",
+    "funcbody": "func EmptyOr[T comparable](v T, fallback T) T {\n\tvar zero T\n\tif zero == v {\n\t\treturn fallback\n\t}\n\treturn v\n}",
+    "funcname": "EmptyOr"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 203,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tlogs.Register(logs.AdapterAliLS, NewAliLS)\n}",
+    "funcname": "init"
+}

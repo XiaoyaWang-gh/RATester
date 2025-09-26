@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 463,
+    "focalfunc": "func (t *dbTables) getLimitSQL(mi *models.ModelInfo, offset int64, limit int64) (limits string)",
+    "funcbody": "func (t *dbTables) getLimitSQL(mi *models.ModelInfo, offset int64, limit int64) (limits string) {\n\tif limit == 0 {\n\t\tlimit = int64(DefaultRowsLimit)\n\t}\n\tif limit < 0 {\n\n\t\tif offset > 0 {\n\t\t\tmaxLimit := t.base.MaxLimit()\n\t\t\tif maxLimit == 0 {\n\t\t\t\tlimits = fmt.Sprintf(\"OFFSET %d\", offset)\n\t\t\t} else {\n\t\t\t\tlimits = fmt.Sprintf(\"LIMIT %d OFFSET %d\", maxLimit, offset)\n\t\t\t}\n\t\t}\n\t} else if offset <= 0 {\n\t\tlimits = fmt.Sprintf(\"LIMIT %d\", limit)\n\t} else {\n\t\tlimits = fmt.Sprintf(\"LIMIT %d OFFSET %d\", limit, offset)\n\t}\n\treturn\n}",
+    "funcname": "getLimitSQL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 220,
+    "focalfunc": "func (s *SessionStore) SessionReleaseIfPresent(c context.Context, w http.ResponseWriter)",
+    "funcbody": "func (s *SessionStore) SessionReleaseIfPresent(c context.Context, w http.ResponseWriter) {\n\ts.SessionRelease(c, w)\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

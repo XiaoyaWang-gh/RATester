@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 719,
+    "focalfunc": "func TimeoutDialer(cTimeout time.Duration, rwTimeout time.Duration) func(net, addr string) (c net.Conn, err error)",
+    "funcbody": "func TimeoutDialer(cTimeout time.Duration, rwTimeout time.Duration) func(net, addr string) (c net.Conn, err error) {\n\treturn func(netw, addr string) (net.Conn, error) {\n\t\treturn TimeoutDialerCtx(cTimeout, rwTimeout)(context.Background(), netw, addr)\n\t}\n}",
+    "funcname": "TimeoutDialer"
+}

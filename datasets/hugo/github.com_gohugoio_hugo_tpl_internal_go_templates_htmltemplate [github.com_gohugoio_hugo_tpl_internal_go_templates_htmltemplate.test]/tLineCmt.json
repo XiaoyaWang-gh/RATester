@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 465,
+    "focalfunc": "func tLineCmt(c context, s []byte) (context, int)",
+    "funcbody": "func tLineCmt(c context, s []byte) (context, int) {\n\tvar lineTerminators string\n\tvar endState state\n\tswitch c.state {\n\tcase stateJSLineCmt, stateJSHTMLOpenCmt, stateJSHTMLCloseCmt:\n\t\tlineTerminators, endState = \"\\n\\r\\u2028\\u2029\", stateJS\n\tcase stateCSSLineCmt:\n\t\tlineTerminators, endState = \"\\n\\f\\r\", stateCSS\n\n\tdefault:\n\t\tpanic(c.state.String())\n\t}\n\n\ti := bytes.IndexAny(s, lineTerminators)\n\tif i == -1 {\n\t\treturn c, len(s)\n\t}\n\tc.state = endState\n\n\treturn c, i\n}",
+    "funcname": "tLineCmt"
+}

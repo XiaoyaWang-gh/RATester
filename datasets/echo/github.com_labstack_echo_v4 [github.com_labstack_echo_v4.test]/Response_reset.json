@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 109,
+    "focalfunc": "func (r *Response) reset(w http.ResponseWriter)",
+    "funcbody": "func (r *Response) reset(w http.ResponseWriter) {\n\tr.beforeFuncs = nil\n\tr.afterFuncs = nil\n\tr.Writer = w\n\tr.Size = 0\n\tr.Status = http.StatusOK\n\tr.Committed = false\n}",
+    "funcname": "reset"
+}

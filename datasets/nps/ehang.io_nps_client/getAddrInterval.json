@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/control.go",
+    "lineno": 477,
+    "focalfunc": "func getAddrInterval(addr1, addr2, addr3 string) (int, error)",
+    "funcbody": "func getAddrInterval(addr1, addr2, addr3 string) (int, error) {\n\tarr1 := strings.Split(addr1, \":\")\n\tif len(arr1) != 2 {\n\t\treturn 0, errors.New(fmt.Sprintf(\"the format of %s incorrect\", addr1))\n\t}\n\tarr2 := strings.Split(addr2, \":\")\n\tif len(arr2) != 2 {\n\t\treturn 0, errors.New(fmt.Sprintf(\"the format of %s incorrect\", addr2))\n\t}\n\tarr3 := strings.Split(addr3, \":\")\n\tif len(arr3) != 2 {\n\t\treturn 0, errors.New(fmt.Sprintf(\"the format of %s incorrect\", addr3))\n\t}\n\tp1, err := strconv.Atoi(arr1[1])\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tp2, err := strconv.Atoi(arr2[1])\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tp3, err := strconv.Atoi(arr3[1])\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tinterVal := int(math.Floor(math.Min(math.Abs(float64(p3-p2)), math.Abs(float64(p2-p1)))))\n\tif p3-p1 < 0 {\n\t\treturn -interVal, nil\n\t}\n\treturn interVal, nil\n}",
+    "funcname": "getAddrInterval"
+}

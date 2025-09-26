@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pages_capture.go",
+    "lineno": 359,
+    "focalfunc": "func (c *pagesCollector) handleBundleLeaf(dir, bundle hugofs.FileMetaInfo, inPath string, readdir []hugofs.FileMetaInfo) error",
+    "funcbody": "func (c *pagesCollector) handleBundleLeaf(dir, bundle hugofs.FileMetaInfo, inPath string, readdir []hugofs.FileMetaInfo) error {\n\tbundlePi := bundle.Meta().PathInfo\n\tseen := map[hstrings.Tuple]bool{}\n\n\twalk := func(path string, info hugofs.FileMetaInfo) error {\n\t\tif info.IsDir() {\n\t\t\treturn nil\n\t\t}\n\n\t\tpi := info.Meta().PathInfo\n\n\t\tif info != bundle {\n\n\t\t\tif !pi.IsLeafBundle() || pi.Dir() != bundlePi.Dir() {\n\t\t\t\tpaths.ModifyPathBundleTypeResource(pi)\n\t\t\t}\n\t\t}\n\n\t\tbaseLang := hstrings.Tuple{First: pi.Base(), Second: info.Meta().Lang}\n\t\tif seen[baseLang] {\n\t\t\treturn nil\n\t\t}\n\t\tseen[baseLang] = true\n\n\t\treturn c.g.Enqueue(info)\n\t}\n\n\tw := hugofs.NewWalkway(\n\t\thugofs.WalkwayConfig{\n\t\t\tRoot:\t\tinPath,\n\t\t\tFs:\t\tc.fs,\n\t\t\tLogger:\t\tc.logger,\n\t\t\tInfo:\t\tdir,\n\t\t\tDirEntries:\treaddir,\n\t\t\tIgnoreFile:\tc.h.SourceSpec.IgnoreFile,\n\t\t\tPathParser:\tc.h.Conf.PathParser(),\n\t\t\tWalkFn:\t\twalk,\n\t\t})\n\n\treturn w.Walk()\n}",
+    "funcname": "handleBundleLeaf"
+}

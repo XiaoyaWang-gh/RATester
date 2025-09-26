@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 40,
+    "focalfunc": "func (i *Provider) Provide(configurationChan chan<- dynamic.Message, _ *safe.Pool) error",
+    "funcbody": "func (i *Provider) Provide(configurationChan chan<- dynamic.Message, _ *safe.Pool) error {\n\tctx := log.With().Str(logs.ProviderName, \"internal\").Logger().WithContext(context.Background())\n\n\tconfigurationChan <- dynamic.Message{\n\t\tProviderName:\t\"internal\",\n\t\tConfiguration:\ti.createConfiguration(ctx),\n\t}\n\n\treturn nil\n}",
+    "funcname": "Provide"
+}

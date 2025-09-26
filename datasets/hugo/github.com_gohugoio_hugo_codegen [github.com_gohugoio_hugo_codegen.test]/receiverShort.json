@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 497,
+    "focalfunc": "func receiverShort(receiver string) string",
+    "funcbody": "func receiverShort(receiver string) string {\n\treturn strings.ToLower(trimAsterisk(receiver))[:1]\n}",
+    "funcname": "receiverShort"
+}

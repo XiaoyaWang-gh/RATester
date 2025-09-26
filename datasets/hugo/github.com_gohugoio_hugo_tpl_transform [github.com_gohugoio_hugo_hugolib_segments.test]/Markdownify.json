@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 175,
+    "focalfunc": "func (ns *Namespace) Markdownify(ctx context.Context, s any) (template.HTML, error)",
+    "funcbody": "func (ns *Namespace) Markdownify(ctx context.Context, s any) (template.HTML, error) {\n\thome := ns.deps.Site.Home()\n\tif home == nil {\n\t\tpanic(\"home must not be nil\")\n\t}\n\tss, err := home.RenderString(ctx, s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tbb := ns.deps.ContentSpec.TrimShortHTML([]byte(ss), \"markdown\")\n\n\treturn helpers.BytesToHTML(bb), nil\n}",
+    "funcname": "Markdownify"
+}

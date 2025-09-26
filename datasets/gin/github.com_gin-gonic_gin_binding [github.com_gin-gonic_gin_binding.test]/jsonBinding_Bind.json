@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/json.go",
+    "lineno": 33,
+    "focalfunc": "func (jsonBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (jsonBinding) Bind(req *http.Request, obj any) error {\n\tif req == nil || req.Body == nil {\n\t\treturn errors.New(\"invalid request\")\n\t}\n\treturn decodeJSON(req.Body, obj)\n}",
+    "funcname": "Bind"
+}

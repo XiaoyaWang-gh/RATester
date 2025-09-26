@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 315,
+    "focalfunc": "func addPrefix(t *Tree, prefix string)",
+    "funcbody": "func addPrefix(t *Tree, prefix string) {\n\tfor _, v := range t.fixrouters {\n\t\taddPrefix(v, prefix)\n\t}\n\tif t.wildcard != nil {\n\t\taddPrefix(t.wildcard, prefix)\n\t}\n\tfor _, l := range t.leaves {\n\t\tif c, ok := l.runObject.(*ControllerInfo); ok {\n\t\t\tif !strings.HasPrefix(c.pattern, prefix) {\n\t\t\t\tc.pattern = prefix + c.pattern\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "addPrefix"
+}

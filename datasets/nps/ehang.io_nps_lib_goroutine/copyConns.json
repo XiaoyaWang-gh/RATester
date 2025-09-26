@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/goroutine/pool.go",
+    "lineno": 59,
+    "focalfunc": "func copyConns(group interface{})",
+    "funcbody": "func copyConns(group interface{}) {\n\tconns := group.(Conns)\n\twg := new(sync.WaitGroup)\n\twg.Add(2)\n\tvar in, out int64\n\t_ = connCopyPool.Invoke(newConnGroup(conns.conn1, conns.conn2, wg, &in))\n\n\t_ = connCopyPool.Invoke(newConnGroup(conns.conn2, conns.conn1, wg, &out))\n\n\twg.Wait()\n\tif conns.flow != nil {\n\t\tconns.flow.Add(in, out)\n\t}\n\tconns.wg.Done()\n}",
+    "funcname": "copyConns"
+}

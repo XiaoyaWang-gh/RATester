@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 112,
+    "focalfunc": "func (s *Conn) ReadLen(cLen int, buf []byte) (int, error)",
+    "funcbody": "func (s *Conn) ReadLen(cLen int, buf []byte) (int, error) {\n\tif cLen > len(buf) || cLen <= 0 {\n\t\treturn 0, errors.New(\"\u957f\u5ea6\u9519\u8bef\" + strconv.Itoa(cLen))\n\t}\n\tif n, err := io.ReadFull(s, buf[:cLen]); err != nil || n != cLen {\n\t\treturn n, errors.New(\"Error reading specified length \" + err.Error())\n\t}\n\treturn cLen, nil\n}",
+    "funcname": "ReadLen"
+}

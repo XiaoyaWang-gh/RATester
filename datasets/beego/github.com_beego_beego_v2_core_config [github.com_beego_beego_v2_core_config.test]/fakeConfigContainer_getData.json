@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 29,
+    "focalfunc": "func (c *fakeConfigContainer) getData(key string) string",
+    "funcbody": "func (c *fakeConfigContainer) getData(key string) string {\n\treturn c.data[strings.ToLower(key)]\n}",
+    "funcname": "getData"
+}

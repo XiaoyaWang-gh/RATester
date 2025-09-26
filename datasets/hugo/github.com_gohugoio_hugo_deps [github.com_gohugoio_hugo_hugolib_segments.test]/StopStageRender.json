@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 424,
+    "focalfunc": "func (b *BuildState) StopStageRender(stage tpl.RenderingContext)",
+    "funcbody": "func (b *BuildState) StopStageRender(stage tpl.RenderingContext) {\n\tb.DeferredExecutionsGroupedByRenderingContext[stage] = b.DeferredExecutions\n\tb.DeferredExecutions = &DeferredExecutions{\n\t\tExecutions:\t\t\tmaps.NewCache[string, *tpl.DeferredExecution](),\n\t\tFilenamesWithPostPrefix:\tmaps.NewCache[string, bool](),\n\t}\n}",
+    "funcname": "StopStageRender"
+}

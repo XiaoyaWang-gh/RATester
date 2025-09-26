@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 313,
+    "focalfunc": "func (a *Analyzer) Clean() (int, int)",
+    "funcbody": "func (a *Analyzer) Clean() (int, int) {\n\tnow := time.Now()\n\ttotal := 0\n\tcount := 0\n\n\ta.mu.Lock()\n\tdefer a.mu.Unlock()\n\ttotal = len(a.records)\n\n\tfor key, records := range a.records {\n\t\tif now.Sub(records.LastUpdateTime) > a.dataReserveDuration {\n\t\t\tdelete(a.records, key)\n\t\t\tcount++\n\t\t}\n\t}\n\treturn count, total\n}",
+    "funcname": "Clean"
+}

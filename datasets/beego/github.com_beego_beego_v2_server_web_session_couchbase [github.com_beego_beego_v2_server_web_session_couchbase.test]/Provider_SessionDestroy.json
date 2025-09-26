@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 251,
+    "focalfunc": "func (cp *Provider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (cp *Provider) SessionDestroy(ctx context.Context, sid string) error {\n\tcp.b = cp.getBucket()\n\tdefer cp.b.Close()\n\n\tcp.b.Delete(sid)\n\treturn nil\n}",
+    "funcname": "SessionDestroy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 757,
+    "focalfunc": "func Options(rootpath string, f HandleFunc) *HttpServer",
+    "funcbody": "func Options(rootpath string, f HandleFunc) *HttpServer {\n\tBeeApp.Handlers.Options(rootpath, f)\n\treturn BeeApp\n}",
+    "funcname": "Options"
+}

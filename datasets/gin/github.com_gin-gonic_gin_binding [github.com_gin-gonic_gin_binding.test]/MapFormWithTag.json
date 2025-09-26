@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 38,
+    "focalfunc": "func MapFormWithTag(ptr any, form map[string][]string, tag string) error",
+    "funcbody": "func MapFormWithTag(ptr any, form map[string][]string, tag string) error {\n\treturn mapFormByTag(ptr, form, tag)\n}",
+    "funcname": "MapFormWithTag"
+}

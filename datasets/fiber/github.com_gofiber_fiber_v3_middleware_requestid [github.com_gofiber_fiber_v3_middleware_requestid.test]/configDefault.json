@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/requestid/config.go",
+    "lineno": 37,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Header == \"\" {\n\t\tcfg.Header = ConfigDefault.Header\n\t}\n\tif cfg.Generator == nil {\n\t\tcfg.Generator = ConfigDefault.Generator\n\t}\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

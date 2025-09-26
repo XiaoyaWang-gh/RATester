@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cache/heap.go",
+    "lineno": 85,
+    "focalfunc": "func (h *indexedHeap) remove(idx int) (string, uint)",
+    "funcbody": "func (h *indexedHeap) remove(idx int) (string, uint) {\n\treturn h.removeInternal(h.indices[idx])\n}",
+    "funcname": "remove"
+}

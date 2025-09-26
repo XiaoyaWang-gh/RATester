@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 427,
+    "focalfunc": "func (output *BeegoOutput) Session(name interface{}, value interface{})",
+    "funcbody": "func (output *BeegoOutput) Session(name interface{}, value interface{}) {\n\toutput.Context.Input.CruSession.Set(nil, name, value)\n}",
+    "funcname": "Session"
+}

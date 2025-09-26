@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 95,
+    "focalfunc": "func (ac *_dbCache) get(name string) (al *alias, ok bool)",
+    "funcbody": "func (ac *_dbCache) get(name string) (al *alias, ok bool) {\n\tac.mux.RLock()\n\tdefer ac.mux.RUnlock()\n\tal, ok = ac.cache[name]\n\treturn\n}",
+    "funcname": "get"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/logger/utils.go",
+    "lineno": 28,
+    "focalfunc": "func statusColor(code int, colors fiber.Colors) string",
+    "funcbody": "func statusColor(code int, colors fiber.Colors) string {\n\tswitch {\n\tcase code >= fiber.StatusOK && code < fiber.StatusMultipleChoices:\n\t\treturn colors.Green\n\tcase code >= fiber.StatusMultipleChoices && code < fiber.StatusBadRequest:\n\t\treturn colors.Blue\n\tcase code >= fiber.StatusBadRequest && code < fiber.StatusInternalServerError:\n\t\treturn colors.Yellow\n\tdefault:\n\t\treturn colors.Red\n\t}\n}",
+    "funcname": "statusColor"
+}

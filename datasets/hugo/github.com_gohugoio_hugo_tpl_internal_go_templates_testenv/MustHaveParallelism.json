@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 97,
+    "focalfunc": "func MustHaveParallelism(t testing.TB)",
+    "funcbody": "func MustHaveParallelism(t testing.TB) {\n\tif !HasParallelism() {\n\t\tt.Skipf(\"skipping test: no parallelism available on %s/%s\", runtime.GOOS, runtime.GOARCH)\n\t}\n}",
+    "funcname": "MustHaveParallelism"
+}

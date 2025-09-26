@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 182,
+    "focalfunc": "func (bl *BeeLogger) AsyncNonBlockWrite() *BeeLogger",
+    "funcbody": "func (bl *BeeLogger) AsyncNonBlockWrite() *BeeLogger {\n\tif !bl.asynchronous {\n\t\treturn bl\n\t}\n\tbl.logWithNonBlocking = true\n\treturn bl\n}",
+    "funcname": "AsyncNonBlockWrite"
+}

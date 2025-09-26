@@ -1,0 +1,34 @@
+package metrics
+
+import (
+	"fmt"
+	"reflect"
+	"testing"
+)
+
+func TestNewMultiRegistry_1(t *testing.T) {
+	type args struct {
+		registries []Registry
+	}
+	tests := []struct {
+		name string
+		args args
+		want Registry
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			if got := NewMultiRegistry(tt.args.registries); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("NewMultiRegistry() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

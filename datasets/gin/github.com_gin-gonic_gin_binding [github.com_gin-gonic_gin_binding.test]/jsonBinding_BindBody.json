@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/json.go",
+    "lineno": 40,
+    "focalfunc": "func (jsonBinding) BindBody(body []byte, obj any) error",
+    "funcbody": "func (jsonBinding) BindBody(body []byte, obj any) error {\n\treturn decodeJSON(bytes.NewReader(body), obj)\n}",
+    "funcname": "BindBody"
+}

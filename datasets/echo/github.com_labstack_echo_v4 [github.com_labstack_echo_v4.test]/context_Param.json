@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 328,
+    "focalfunc": "func (c *context) Param(name string) string",
+    "funcbody": "func (c *context) Param(name string) string {\n\tfor i, n := range c.pnames {\n\t\tif i < len(c.pvalues) {\n\t\t\tif n == name {\n\t\t\t\treturn c.pvalues[i]\n\t\t\t}\n\t\t}\n\t}\n\treturn \"\"\n}",
+    "funcname": "Param"
+}

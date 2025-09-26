@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 184,
+    "focalfunc": "func extractFilename(in, ext, base, pathSeparator string) (name string)",
+    "funcbody": "func extractFilename(in, ext, base, pathSeparator string) (name string) {\n\n\tif (strings.LastIndex(in, pathSeparator) == len(in)-1) || base == \"\" || base == \".\" || base == \"..\" || base == pathSeparator {\n\t\tname = \"\"\n\t} else if ext != \"\" {\n\n\t\tname = base[:strings.LastIndex(base, \".\")]\n\t} else {\n\n\t\tname = base\n\t}\n\treturn\n}",
+    "funcname": "extractFilename"
+}

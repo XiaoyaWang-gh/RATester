@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/bind.go",
+    "lineno": 354,
+    "focalfunc": "func setIntField(value string, bitSize int, field reflect.Value) error",
+    "funcbody": "func setIntField(value string, bitSize int, field reflect.Value) error {\n\tif value == \"\" {\n\t\tvalue = \"0\"\n\t}\n\tintVal, err := strconv.ParseInt(value, 10, bitSize)\n\tif err == nil {\n\t\tfield.SetInt(intVal)\n\t}\n\treturn err\n}",
+    "funcname": "setIntField"
+}

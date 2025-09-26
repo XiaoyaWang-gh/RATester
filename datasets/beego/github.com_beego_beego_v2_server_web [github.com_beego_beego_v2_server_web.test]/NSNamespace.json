@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 493,
+    "focalfunc": "func NSNamespace(prefix string, params ...LinkNamespace) LinkNamespace",
+    "funcbody": "func NSNamespace(prefix string, params ...LinkNamespace) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tn := NewNamespace(prefix, params...)\n\t\tns.Namespace(n)\n\t}\n}",
+    "funcname": "NSNamespace"
+}

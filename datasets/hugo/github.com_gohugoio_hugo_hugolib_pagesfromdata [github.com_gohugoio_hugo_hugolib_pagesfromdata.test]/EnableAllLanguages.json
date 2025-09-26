@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 139,
+    "focalfunc": "func (p *pagesFromDataTemplateContext) EnableAllLanguages() string",
+    "funcbody": "func (p *pagesFromDataTemplateContext) EnableAllLanguages() string {\n\tp.p.buildState.EnableAllLanguages = true\n\treturn \"\"\n}",
+    "funcname": "EnableAllLanguages"
+}

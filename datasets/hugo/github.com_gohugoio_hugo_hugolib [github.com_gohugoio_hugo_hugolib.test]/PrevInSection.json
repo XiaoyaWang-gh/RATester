@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__position.go",
+    "lineno": 80,
+    "focalfunc": "func (p pagePositionInSection) PrevInSection() page.Page",
+    "funcbody": "func (p pagePositionInSection) PrevInSection() page.Page {\n\treturn p.prev()\n}",
+    "funcname": "PrevInSection"
+}

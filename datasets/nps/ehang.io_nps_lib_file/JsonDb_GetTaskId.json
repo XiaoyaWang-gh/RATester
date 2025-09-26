@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/file.go",
+    "lineno": 131,
+    "focalfunc": "func (s *JsonDb) GetTaskId() int32",
+    "funcbody": "func (s *JsonDb) GetTaskId() int32 {\n\treturn atomic.AddInt32(&s.TaskIncreaseId, 1)\n}",
+    "funcname": "GetTaskId"
+}

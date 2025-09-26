@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 376,
+    "focalfunc": "func (ns *Namespace) IsSet(c any, key any) (bool, error)",
+    "funcbody": "func (ns *Namespace) IsSet(c any, key any) (bool, error) {\n\tav := reflect.ValueOf(c)\n\tkv := reflect.ValueOf(key)\n\n\tswitch av.Kind() {\n\tcase reflect.Array, reflect.Chan, reflect.Slice:\n\t\tk, err := cast.ToIntE(key)\n\t\tif err != nil {\n\t\t\treturn false, fmt.Errorf(\"isset unable to use key of type %T as index\", key)\n\t\t}\n\t\tif av.Len() > k {\n\t\t\treturn true, nil\n\t\t}\n\tcase reflect.Map:\n\t\tif kv.Type() == av.Type().Key() {\n\t\t\treturn av.MapIndex(kv).IsValid(), nil\n\t\t}\n\tdefault:\n\t\tns.deps.Log.Warnf(\"calling IsSet with unsupported type %q (%T) will always return false.\\n\", av.Kind(), c)\n\t}\n\n\treturn false, nil\n}",
+    "funcname": "IsSet"
+}

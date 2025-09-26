@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/helpers.go",
+    "lineno": 68,
+    "focalfunc": "func flagsToCfg(cd *simplecobra.Commandeer, cfg config.Provider) config.Provider",
+    "funcbody": "func flagsToCfg(cd *simplecobra.Commandeer, cfg config.Provider) config.Provider {\n\treturn flagsToCfgWithAdditionalConfigBase(cd, cfg, \"\")\n}",
+    "funcname": "flagsToCfg"
+}

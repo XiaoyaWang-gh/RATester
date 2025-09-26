@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 152,
+    "focalfunc": "func (d *DoNothingQuerySetter) PrepareInsert() (orm.Inserter, error)",
+    "funcbody": "func (d *DoNothingQuerySetter) PrepareInsert() (orm.Inserter, error) {\n\treturn nil, nil\n}",
+    "funcname": "PrepareInsert"
+}

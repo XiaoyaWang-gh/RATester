@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/source/fileInfo.go",
+    "lineno": 77,
+    "focalfunc": "func (fi *File) LogicalName() string",
+    "funcbody": "func (fi *File) LogicalName() string {\n\treturn fi.p().Name()\n}",
+    "funcname": "LogicalName"
+}

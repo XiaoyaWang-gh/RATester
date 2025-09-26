@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/ssh/server.go",
+    "lineno": 341,
+    "focalfunc": "func (s *TunnelServer) openConn(addr *tcpipForward) (net.Conn, error)",
+    "funcbody": "func (s *TunnelServer) openConn(addr *tcpipForward) (net.Conn, error) {\n\tpayload := forwardedTCPPayload{\n\t\tAddr:\taddr.Host,\n\t\tPort:\taddr.Port,\n\n\t\tOriginAddr:\taddr.Host,\n\t\tOriginPort:\taddr.Port,\n\t}\n\tchannel, reqs, err := s.sshConn.OpenChannel(ChannelTypeServerOpenChannel, ssh.Marshal(&payload))\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"open ssh channel error: %v\", err)\n\t}\n\tgo ssh.DiscardRequests(reqs)\n\n\tconn := netpkg.WrapReadWriteCloserToConn(channel, s.underlyingConn)\n\treturn conn, nil\n}",
+    "funcname": "openConn"
+}

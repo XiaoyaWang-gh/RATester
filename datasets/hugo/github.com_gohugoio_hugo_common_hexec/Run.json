@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 226,
+    "focalfunc": "func (c *cmdWrapper) Run() error",
+    "funcbody": "func (c *cmdWrapper) Run() error {\n\terr := c.c.Run()\n\tif err == nil {\n\t\treturn nil\n\t}\n\tname := c.name\n\tmethod := \"in PATH\"\n\tif name == npxBinary {\n\t\tname = c.c.Args[2]\n\t\tmethod = \"using npx\"\n\t}\n\tif notFoundRe.MatchString(c.outerr.String()) {\n\t\treturn &NotFoundError{name: name, method: method}\n\t}\n\treturn fmt.Errorf(\"failed to execute binary %q with args %v: %s\", c.name, c.c.Args[1:], c.outerr.String())\n}",
+    "funcname": "Run"
+}

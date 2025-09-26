@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 214,
+    "focalfunc": "func (h unsafeHeader) Del(key string)",
+    "funcbody": "func (h unsafeHeader) Del(key string) {\n\tdelete(h, key)\n}",
+    "funcname": "Del"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 48,
+    "focalfunc": "func (d *Dispatcher) Run()",
+    "funcbody": "func (d *Dispatcher) Run() {\n\tgo d.sendLoop()\n\tgo d.readLoop()\n}",
+    "funcname": "Run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/govenor_command.go",
+    "lineno": 28,
+    "focalfunc": "func (l *listTaskCommand) Execute(params ...interface{}) *admin.Result",
+    "funcbody": "func (l *listTaskCommand) Execute(params ...interface{}) *admin.Result {\n\tresultList := make([][]string, 0, len(globalTaskManager.adminTaskList))\n\tfor tname, tk := range globalTaskManager.adminTaskList {\n\t\tresult := []string{\n\t\t\ttemplate.HTMLEscapeString(tname),\n\t\t\ttemplate.HTMLEscapeString(tk.GetSpec(nil)),\n\t\t\ttemplate.HTMLEscapeString(tk.GetStatus(nil)),\n\t\t\ttemplate.HTMLEscapeString(tk.GetPrev(context.Background()).String()),\n\t\t}\n\t\tresultList = append(resultList, result)\n\t}\n\n\treturn &admin.Result{\n\t\tStatus:\t\t200,\n\t\tContent:\tresultList,\n\t}\n}",
+    "funcname": "Execute"
+}

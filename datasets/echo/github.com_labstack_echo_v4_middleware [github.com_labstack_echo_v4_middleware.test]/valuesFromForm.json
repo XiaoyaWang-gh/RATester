@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/extractor.go",
+    "lineno": 192,
+    "focalfunc": "func valuesFromForm(name string) ValuesExtractor",
+    "funcbody": "func valuesFromForm(name string) ValuesExtractor {\n\treturn func(c echo.Context) ([]string, error) {\n\t\tif c.Request().Form == nil {\n\t\t\t_ = c.Request().ParseMultipartForm(32 << 20)\n\t\t}\n\t\tvalues := c.Request().Form[name]\n\t\tif len(values) == 0 {\n\t\t\treturn nil, errFormExtractorValueMissing\n\t\t}\n\t\tif len(values) > extractorLimit-1 {\n\t\t\tvalues = values[:extractorLimit]\n\t\t}\n\t\tresult := append([]string{}, values...)\n\t\treturn result, nil\n\t}\n}",
+    "funcname": "valuesFromForm"
+}

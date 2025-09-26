@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/listener.go",
+    "lineno": 81,
+    "focalfunc": "func (ia *InternalAddr) String() string",
+    "funcbody": "func (ia *InternalAddr) String() string {\n\treturn \"internal\"\n}",
+    "funcname": "String"
+}

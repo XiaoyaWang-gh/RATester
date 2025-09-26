@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/request_id.go",
+    "lineno": 73,
+    "focalfunc": "func generator() string",
+    "funcbody": "func generator() string {\n\treturn randomString(32)\n}",
+    "funcname": "generator"
+}

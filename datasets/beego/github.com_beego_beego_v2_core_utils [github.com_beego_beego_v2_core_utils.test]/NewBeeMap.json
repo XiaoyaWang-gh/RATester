@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 28,
+    "focalfunc": "func NewBeeMap() *BeeMap",
+    "funcbody": "func NewBeeMap() *BeeMap {\n\treturn &BeeMap{\n\t\tlock:\tnew(sync.RWMutex),\n\t\tbm:\tmake(map[interface{}]interface{}),\n\t}\n}",
+    "funcname": "NewBeeMap"
+}

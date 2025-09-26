@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 152,
+    "focalfunc": "func (b *BaseFs) mountsForComponent(component string) []hugofs.FileMetaInfo",
+    "funcbody": "func (b *BaseFs) mountsForComponent(component string) []hugofs.FileMetaInfo {\n\tvar result []hugofs.FileMetaInfo\n\tfor _, rfs := range b.RootFss {\n\t\tdirs, err := rfs.Mounts(component)\n\t\tif err == nil {\n\t\t\tresult = append(result, dirs...)\n\t\t}\n\t}\n\treturn result\n}",
+    "funcname": "mountsForComponent"
+}

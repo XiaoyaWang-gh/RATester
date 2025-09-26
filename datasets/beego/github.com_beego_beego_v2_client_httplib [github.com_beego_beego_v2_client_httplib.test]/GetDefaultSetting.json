@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/setting.go",
+    "lineno": 60,
+    "focalfunc": "func GetDefaultSetting() BeegoHTTPSettings",
+    "funcbody": "func GetDefaultSetting() BeegoHTTPSettings {\n\treturn defaultSetting\n}",
+    "funcname": "GetDefaultSetting"
+}

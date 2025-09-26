@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 218,
+    "focalfunc": "func (n *Namespace) CtrlHead(rootpath string, f interface{}) *Namespace",
+    "funcbody": "func (n *Namespace) CtrlHead(rootpath string, f interface{}) *Namespace {\n\tn.handlers.CtrlHead(rootpath, f)\n\treturn n\n}",
+    "funcname": "CtrlHead"
+}

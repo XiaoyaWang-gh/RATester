@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 762,
+    "focalfunc": "func (f *FormData) SetDatas(m map[string]string)",
+    "funcbody": "func (f *FormData) SetDatas(m map[string]string) {\n\tfor k, v := range m {\n\t\tf.Set(k, v)\n\t}\n}",
+    "funcname": "SetDatas"
+}

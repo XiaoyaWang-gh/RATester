@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 298,
+    "focalfunc": "func mergeParam(v *Validation, obj interface{}, params []interface{}) []interface{}",
+    "funcbody": "func mergeParam(v *Validation, obj interface{}, params []interface{}) []interface{} {\n\treturn append([]interface{}{v, obj}, params...)\n}",
+    "funcname": "mergeParam"
+}

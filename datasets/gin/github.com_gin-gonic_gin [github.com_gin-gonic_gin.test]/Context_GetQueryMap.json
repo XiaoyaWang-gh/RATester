@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 502,
+    "focalfunc": "func (c *Context) GetQueryMap(key string) (map[string]string, bool)",
+    "funcbody": "func (c *Context) GetQueryMap(key string) (map[string]string, bool) {\n\tc.initQueryCache()\n\treturn c.get(c.queryCache, key)\n}",
+    "funcname": "GetQueryMap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 175,
+    "focalfunc": "func (p *pageMeta) Keywords() []string",
+    "funcbody": "func (p *pageMeta) Keywords() []string {\n\treturn p.pageConfig.Keywords\n}",
+    "funcname": "Keywords"
+}

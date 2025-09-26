@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 233,
+    "focalfunc": "func (rp *MemProvider) connectInit() error",
+    "funcbody": "func (rp *MemProvider) connectInit() error {\n\tclient = memcache.New(rp.conninfo...)\n\treturn nil\n}",
+    "funcname": "connectInit"
+}

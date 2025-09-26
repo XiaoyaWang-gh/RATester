@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/extractor.go",
+    "lineno": 148,
+    "focalfunc": "func valuesFromParam(param string) ValuesExtractor",
+    "funcbody": "func valuesFromParam(param string) ValuesExtractor {\n\treturn func(c echo.Context) ([]string, error) {\n\t\tresult := make([]string, 0)\n\t\tparamVales := c.ParamValues()\n\t\tfor i, p := range c.ParamNames() {\n\t\t\tif param == p {\n\t\t\t\tresult = append(result, paramVales[i])\n\t\t\t\tif i >= extractorLimit-1 {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif len(result) == 0 {\n\t\t\treturn nil, errParamExtractorValueMissing\n\t\t}\n\t\treturn result, nil\n\t}\n}",
+    "funcname": "valuesFromParam"
+}

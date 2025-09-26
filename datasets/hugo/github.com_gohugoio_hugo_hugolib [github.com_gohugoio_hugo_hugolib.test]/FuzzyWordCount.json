@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 205,
+    "focalfunc": "func (pco *pageContentOutput) FuzzyWordCount(ctx context.Context) int",
+    "funcbody": "func (pco *pageContentOutput) FuzzyWordCount(ctx context.Context) int {\n\treturn pco.mustRender(ctx).FuzzyWordCount(ctx)\n}",
+    "funcname": "FuzzyWordCount"
+}

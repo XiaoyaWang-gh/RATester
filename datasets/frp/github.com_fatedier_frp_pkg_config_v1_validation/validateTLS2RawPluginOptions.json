@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/plugin.go",
+    "lineno": 76,
+    "focalfunc": "func validateTLS2RawPluginOptions(c *v1.TLS2RawPluginOptions) error",
+    "funcbody": "func validateTLS2RawPluginOptions(c *v1.TLS2RawPluginOptions) error {\n\tif c.LocalAddr == \"\" {\n\t\treturn errors.New(\"localAddr is required\")\n\t}\n\treturn nil\n}",
+    "funcname": "validateTLS2RawPluginOptions"
+}

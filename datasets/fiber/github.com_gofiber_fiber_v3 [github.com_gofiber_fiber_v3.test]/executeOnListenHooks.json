@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 184,
+    "focalfunc": "func (h *Hooks) executeOnListenHooks(listenData ListenData) error",
+    "funcbody": "func (h *Hooks) executeOnListenHooks(listenData ListenData) error {\n\tfor _, v := range h.onListen {\n\t\tif err := v(listenData); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "executeOnListenHooks"
+}

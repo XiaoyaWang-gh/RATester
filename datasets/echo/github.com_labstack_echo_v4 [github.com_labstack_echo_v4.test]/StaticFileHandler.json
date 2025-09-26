@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo_fs.go",
+    "lineno": 91,
+    "focalfunc": "func StaticFileHandler(file string, filesystem fs.FS) HandlerFunc",
+    "funcbody": "func StaticFileHandler(file string, filesystem fs.FS) HandlerFunc {\n\treturn func(c Context) error {\n\t\treturn fsFile(c, file, filesystem)\n\t}\n}",
+    "funcname": "StaticFileHandler"
+}

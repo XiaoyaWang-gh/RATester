@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 39,
+    "focalfunc": "func (r *Response) Status() string",
+    "funcbody": "func (r *Response) Status() string {\n\treturn string(r.RawResponse.Header.StatusMessage())\n}",
+    "funcname": "Status"
+}

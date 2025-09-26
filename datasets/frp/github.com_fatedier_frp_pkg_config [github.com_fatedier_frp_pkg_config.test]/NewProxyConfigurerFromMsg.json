@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 144,
+    "focalfunc": "func NewProxyConfigurerFromMsg(m *msg.NewProxy, serverCfg *v1.ServerConfig) (v1.ProxyConfigurer, error)",
+    "funcbody": "func NewProxyConfigurerFromMsg(m *msg.NewProxy, serverCfg *v1.ServerConfig) (v1.ProxyConfigurer, error) {\n\tm.ProxyType = util.EmptyOr(m.ProxyType, string(v1.ProxyTypeTCP))\n\n\tconfigurer := v1.NewProxyConfigurerByType(v1.ProxyType(m.ProxyType))\n\tif configurer == nil {\n\t\treturn nil, fmt.Errorf(\"unknown proxy type: %s\", m.ProxyType)\n\t}\n\n\tconfigurer.UnmarshalFromMsg(m)\n\tconfigurer.Complete(\"\")\n\n\tif err := validation.ValidateProxyConfigurerForServer(configurer, serverCfg); err != nil {\n\t\treturn nil, err\n\t}\n\treturn configurer, nil\n}",
+    "funcname": "NewProxyConfigurerFromMsg"
+}

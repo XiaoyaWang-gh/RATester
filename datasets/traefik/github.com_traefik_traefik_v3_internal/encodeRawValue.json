@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/parser.go",
+    "lineno": 41,
+    "focalfunc": "func encodeRawValue(labels map[string]string, root string, rawValue interface{})",
+    "funcbody": "func encodeRawValue(labels map[string]string, root string, rawValue interface{}) {\n\tif rawValue == nil {\n\t\treturn\n\t}\n\n\ttValue := reflect.TypeOf(rawValue)\n\n\tif tValue.Kind() == reflect.Map && tValue.Elem().Kind() == reflect.Interface {\n\t\tr := reflect.ValueOf(rawValue).\n\t\t\tConvert(reflect.TypeOf((map[string]interface{})(nil))).\n\t\t\tInterface().(map[string]interface{})\n\n\t\tfor k, v := range r {\n\t\t\tswitch tv := v.(type) {\n\t\t\tcase string:\n\t\t\t\tlabels[root+\".\"+k] = tv\n\t\t\tcase []interface{}:\n\t\t\t\tfor i, e := range tv {\n\t\t\t\t\tencodeRawValue(labels, fmt.Sprintf(\"%s.%s[%d]\", root, k, i), e)\n\t\t\t\t}\n\t\t\tdefault:\n\t\t\t\tencodeRawValue(labels, root+\".\"+k, v)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "encodeRawValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 265,
+    "focalfunc": "func Walk(fs afero.Fs, root string, walker hugofs.WalkFunc) error",
+    "funcbody": "func Walk(fs afero.Fs, root string, walker hugofs.WalkFunc) error {\n\tif _, isOs := fs.(*afero.OsFs); isOs {\n\t\tfs = hugofs.NewBaseFileDecorator(fs)\n\t}\n\tw := hugofs.NewWalkway(hugofs.WalkwayConfig{\n\t\tFs:\tfs,\n\t\tRoot:\troot,\n\t\tWalkFn:\twalker,\n\t})\n\n\treturn w.Walk()\n}",
+    "funcname": "Walk"
+}

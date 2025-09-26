@@ -1,0 +1,34 @@
+package fiber
+
+import (
+	"fmt"
+	"reflect"
+	"testing"
+)
+
+func TestaddParameterMetaInfo_1(t *testing.T) {
+	type args struct {
+		segs []*routeSegment
+	}
+	tests := []struct {
+		name string
+		args args
+		want []*routeSegment
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			if got := addParameterMetaInfo(tt.args.segs); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("addParameterMetaInfo() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

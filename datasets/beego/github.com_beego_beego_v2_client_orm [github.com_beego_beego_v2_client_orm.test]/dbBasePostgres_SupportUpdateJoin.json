@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 91,
+    "focalfunc": "func (d *dbBasePostgres) SupportUpdateJoin() bool",
+    "funcbody": "func (d *dbBasePostgres) SupportUpdateJoin() bool {\n\treturn false\n}",
+    "funcname": "SupportUpdateJoin"
+}

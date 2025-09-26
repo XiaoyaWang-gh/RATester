@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 19,
+    "focalfunc": "func NewEncoder() *Encoder",
+    "funcbody": "func NewEncoder() *Encoder {\n\treturn &Encoder{cache: newCache(), regenc: make(map[reflect.Type]encoderFunc)}\n}",
+    "funcname": "NewEncoder"
+}

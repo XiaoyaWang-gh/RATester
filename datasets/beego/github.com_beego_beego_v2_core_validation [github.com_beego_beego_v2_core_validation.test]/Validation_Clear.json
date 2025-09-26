@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 117,
+    "focalfunc": "func (v *Validation) Clear()",
+    "funcbody": "func (v *Validation) Clear() {\n\tv.Errors = []*Error{}\n\tv.ErrorsMap = nil\n}",
+    "funcname": "Clear"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 374,
+    "focalfunc": "func extractLineNumberAndColumnNumber(e error) (int, int)",
+    "funcbody": "func extractLineNumberAndColumnNumber(e error) (int, int) {\n\tswitch v := e.(type) {\n\tcase *parse.Error:\n\t\treturn v.Line, v.Column\n\tcase *toml.DecodeError:\n\t\treturn v.Position()\n\n\t}\n\n\treturn -1, -1\n}",
+    "funcname": "extractLineNumberAndColumnNumber"
+}

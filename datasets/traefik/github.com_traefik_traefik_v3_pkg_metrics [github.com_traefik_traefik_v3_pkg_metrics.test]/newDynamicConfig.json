@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 442,
+    "focalfunc": "func newDynamicConfig() *dynamicConfig",
+    "funcbody": "func newDynamicConfig() *dynamicConfig {\n\treturn &dynamicConfig{\n\t\tentryPoints:\tmake(map[string]bool),\n\t\trouters:\tmake(map[string]bool),\n\t\tservices:\tmake(map[string]map[string]bool),\n\t}\n}",
+    "funcname": "newDynamicConfig"
+}

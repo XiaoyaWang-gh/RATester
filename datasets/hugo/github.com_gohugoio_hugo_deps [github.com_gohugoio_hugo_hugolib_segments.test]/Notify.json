@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 325,
+    "focalfunc": "func (b *Listeners) Notify()",
+    "funcbody": "func (b *Listeners) Notify() {\n\tb.Lock()\n\tdefer b.Unlock()\n\tfor _, notify := range b.listeners {\n\t\tnotify()\n\t}\n}",
+    "funcname": "Notify"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/listener.go",
+    "lineno": 47,
+    "focalfunc": "func (l *InternalListener) PutConn(conn net.Conn) error",
+    "funcbody": "func (l *InternalListener) PutConn(conn net.Conn) error {\n\terr := errors.PanicToError(func() {\n\t\tselect {\n\t\tcase l.acceptCh <- conn:\n\t\tdefault:\n\t\t\tconn.Close()\n\t\t}\n\t})\n\tif err != nil {\n\t\treturn fmt.Errorf(\"put conn error: listener is closed\")\n\t}\n\treturn nil\n}",
+    "funcname": "PutConn"
+}

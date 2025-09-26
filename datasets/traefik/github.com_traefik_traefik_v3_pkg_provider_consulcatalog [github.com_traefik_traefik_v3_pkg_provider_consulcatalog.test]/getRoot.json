@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/connect_tls.go",
+    "lineno": 17,
+    "focalfunc": "func (c *connectCert) getRoot() []types.FileOrContent",
+    "funcbody": "func (c *connectCert) getRoot() []types.FileOrContent {\n\tvar result []types.FileOrContent\n\tfor _, r := range c.root {\n\t\tresult = append(result, types.FileOrContent(r))\n\t}\n\treturn result\n}",
+    "funcname": "getRoot"
+}

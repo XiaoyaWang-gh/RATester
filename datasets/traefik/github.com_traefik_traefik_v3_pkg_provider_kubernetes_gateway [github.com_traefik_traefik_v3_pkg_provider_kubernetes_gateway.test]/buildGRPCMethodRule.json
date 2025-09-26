@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/grpcroute.go",
+    "lineno": 409,
+    "focalfunc": "func buildGRPCMethodRule(method *gatev1.GRPCMethodMatch) string",
+    "funcbody": "func buildGRPCMethodRule(method *gatev1.GRPCMethodMatch) string {\n\tif method == nil {\n\t\treturn \"PathPrefix(`/`)\"\n\t}\n\n\tsExpr := \"[^/]+\"\n\tif s := ptr.Deref(method.Service, \"\"); s != \"\" {\n\t\tsExpr = s\n\t}\n\n\tmExpr := \"[^/]+\"\n\tif m := ptr.Deref(method.Method, \"\"); m != \"\" {\n\t\tmExpr = m\n\t}\n\n\treturn fmt.Sprintf(\"PathRegexp(`/%s/%s`)\", sExpr, mExpr)\n}",
+    "funcname": "buildGRPCMethodRule"
+}

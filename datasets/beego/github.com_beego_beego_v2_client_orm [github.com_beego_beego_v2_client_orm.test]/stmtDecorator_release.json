@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 549,
+    "focalfunc": "func (s *stmtDecorator) release()",
+    "funcbody": "func (s *stmtDecorator) release() {\n\ts.wg.Done()\n}",
+    "funcname": "release"
+}

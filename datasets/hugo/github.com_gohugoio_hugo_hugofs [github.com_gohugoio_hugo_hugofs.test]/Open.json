@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 303,
+    "focalfunc": "func (fs *RootMappingFs) Open(name string) (afero.File, error)",
+    "funcbody": "func (fs *RootMappingFs) Open(name string) (afero.File, error) {\n\tfis, err := fs.doStat(name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn fs.newUnionFile(fis...)\n}",
+    "funcname": "Open"
+}

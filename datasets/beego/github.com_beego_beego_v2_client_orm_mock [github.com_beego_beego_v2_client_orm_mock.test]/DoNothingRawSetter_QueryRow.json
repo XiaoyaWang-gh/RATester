@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_rawSetter.go",
+    "lineno": 29,
+    "focalfunc": "func (d *DoNothingRawSetter) QueryRow(containers ...interface{}) error",
+    "funcbody": "func (d *DoNothingRawSetter) QueryRow(containers ...interface{}) error {\n\treturn nil\n}",
+    "funcname": "QueryRow"
+}

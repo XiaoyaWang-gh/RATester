@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 108,
+    "focalfunc": "func (d *DoNothingQuerySetter) OrderBy(exprs ...string) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) OrderBy(exprs ...string) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "OrderBy"
+}

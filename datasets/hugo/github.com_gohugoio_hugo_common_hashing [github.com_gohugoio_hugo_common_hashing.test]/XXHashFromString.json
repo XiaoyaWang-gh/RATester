@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 42,
+    "focalfunc": "func XXHashFromString(s string) (uint64, error)",
+    "funcbody": "func XXHashFromString(s string) (uint64, error) {\n\th := xxhash.New()\n\th.WriteString(s)\n\treturn h.Sum64(), nil\n}",
+    "funcname": "XXHashFromString"
+}

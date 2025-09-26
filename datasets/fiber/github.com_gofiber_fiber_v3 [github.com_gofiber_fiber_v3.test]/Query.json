@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1220,
+    "focalfunc": "func Query[V GenericType](c Ctx, key string, defaultValue ...V) V",
+    "funcbody": "func Query[V GenericType](c Ctx, key string, defaultValue ...V) V {\n\tvar v V\n\tq := c.App().getString(c.Context().QueryArgs().Peek(key))\n\n\treturn genericParseType[V](q, v, defaultValue...)\n}",
+    "funcname": "Query"
+}

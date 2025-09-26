@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2042,
+    "focalfunc": "func (d *dbBase) TableQuote() string",
+    "funcbody": "func (d *dbBase) TableQuote() string {\n\treturn \"`\"\n}",
+    "funcname": "TableQuote"
+}

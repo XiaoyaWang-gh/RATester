@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 369,
+    "focalfunc": "func RemoveArrVal(arr []string, val string) []string",
+    "funcbody": "func RemoveArrVal(arr []string, val string) []string {\n\tfor k, v := range arr {\n\t\tif v == val {\n\t\t\tarr = append(arr[:k], arr[k+1:]...)\n\t\t\treturn arr\n\t\t}\n\t}\n\treturn arr\n}",
+    "funcname": "RemoveArrVal"
+}

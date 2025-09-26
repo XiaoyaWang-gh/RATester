@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 49,
+    "focalfunc": "func TestOptWatching() TestOpt",
+    "funcbody": "func TestOptWatching() TestOpt {\n\treturn func(c *IntegrationTestConfig) {\n\t\tc.Watching = true\n\t}\n}",
+    "funcname": "TestOptWatching"
+}

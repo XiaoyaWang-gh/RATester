@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 1484,
+    "focalfunc": "func (d *dbBase) setColsValues(mi *models.ModelInfo, ind *reflect.Value, cols []string, values []interface{}, tz *time.Location)",
+    "funcbody": "func (d *dbBase) setColsValues(mi *models.ModelInfo, ind *reflect.Value, cols []string, values []interface{}, tz *time.Location) {\n\tfor i, column := range cols {\n\t\tval := reflect.Indirect(reflect.ValueOf(values[i])).Interface()\n\n\t\tfi := mi.Fields.GetByColumn(column)\n\n\t\tfield := ind.FieldByIndex(fi.FieldIndex)\n\n\t\tvalue, err := d.convertValueFromDB(fi, val, tz)\n\t\tif err != nil {\n\t\t\tpanic(fmt.Errorf(\"Raw value: `%v` %s\", val, err.Error()))\n\t\t}\n\n\t\t_, err = d.setFieldValue(fi, value, field)\n\n\t\tif err != nil {\n\t\t\tpanic(fmt.Errorf(\"Raw value: `%v` %s\", val, err.Error()))\n\t\t}\n\t}\n}",
+    "funcname": "setColsValues"
+}

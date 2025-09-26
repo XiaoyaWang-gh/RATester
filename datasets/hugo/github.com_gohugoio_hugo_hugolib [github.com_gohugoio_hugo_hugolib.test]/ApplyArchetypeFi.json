@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_factory.go",
+    "lineno": 46,
+    "focalfunc": "func (f ContentFactory) ApplyArchetypeFi(w io.Writer, p page.Page, archetypeKind string, fi hugofs.FileMetaInfo) error",
+    "funcbody": "func (f ContentFactory) ApplyArchetypeFi(w io.Writer, p page.Page, archetypeKind string, fi hugofs.FileMetaInfo) error {\n\tif fi.IsDir() {\n\t\treturn fmt.Errorf(\"archetype directory (%q) not supported\", fi.Meta().Filename)\n\t}\n\n\ttemplateSource, err := fi.Meta().ReadAll()\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to read archetype file %q: %s: %w\", fi.Meta().Filename, err, err)\n\t}\n\n\treturn f.ApplyArchetypeTemplate(w, p, archetypeKind, string(templateSource))\n}",
+    "funcname": "ApplyArchetypeFi"
+}

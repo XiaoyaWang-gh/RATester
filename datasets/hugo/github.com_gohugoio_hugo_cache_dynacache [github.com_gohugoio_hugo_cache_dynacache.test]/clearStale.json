@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 538,
+    "focalfunc": "func (p *Partition[K, V]) clearStale()",
+    "funcbody": "func (p *Partition[K, V]) clearStale() {\n\tp.c.DeleteFunc(func(key K, v V) bool {\n\t\tstaleVersion := resource.StaleVersion(v)\n\t\tif staleVersion > 0 {\n\t\t\tp.trace.Log(\n\t\t\t\tlogg.StringFunc(\n\t\t\t\t\tfunc() string {\n\t\t\t\t\t\treturn fmt.Sprintf(\"second pass: clearing cache key %v\", key)\n\t\t\t\t\t},\n\t\t\t\t),\n\t\t\t)\n\t\t}\n\n\t\treturn staleVersion > 0\n\t})\n}",
+    "funcname": "clearStale"
+}

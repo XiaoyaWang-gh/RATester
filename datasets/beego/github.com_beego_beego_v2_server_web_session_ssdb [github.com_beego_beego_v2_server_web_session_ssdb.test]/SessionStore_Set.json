@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 168,
+    "focalfunc": "func (s *SessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (s *SessionStore) Set(ctx context.Context, key, value interface{}) error {\n\ts.lock.Lock()\n\tdefer s.lock.Unlock()\n\ts.values[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

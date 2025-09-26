@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 338,
+    "focalfunc": "func (r *NodeShiftTreeWalker[T]) SkipPrefix(prefix ...string)",
+    "funcbody": "func (r *NodeShiftTreeWalker[T]) SkipPrefix(prefix ...string) {\n\tr.skipPrefixes = append(r.skipPrefixes, prefix...)\n}",
+    "funcname": "SkipPrefix"
+}

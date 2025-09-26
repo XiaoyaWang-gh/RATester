@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/util/util.go",
+    "lineno": 113,
+    "focalfunc": "func GenerateResponseErrorString(summary string, err error, detailed bool) string",
+    "funcbody": "func GenerateResponseErrorString(summary string, err error, detailed bool) string {\n\tif detailed {\n\t\treturn err.Error()\n\t}\n\treturn summary\n}",
+    "funcname": "GenerateResponseErrorString"
+}

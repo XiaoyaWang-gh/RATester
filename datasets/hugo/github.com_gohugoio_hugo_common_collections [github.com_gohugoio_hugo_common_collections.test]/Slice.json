@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/slice.go",
+    "lineno": 29,
+    "focalfunc": "func Slice(args ...any) any",
+    "funcbody": "func Slice(args ...any) any {\n\tif len(args) == 0 {\n\t\treturn args\n\t}\n\n\tfirst := args[0]\n\tfirstType := reflect.TypeOf(first)\n\n\tif firstType == nil {\n\t\treturn args\n\t}\n\n\tif g, ok := first.(Slicer); ok {\n\t\tv, err := g.Slice(args)\n\t\tif err == nil {\n\t\t\treturn v\n\t\t}\n\n\t\treturn args\n\t}\n\n\tif len(args) > 1 {\n\n\t\tfor i := 1; i < len(args); i++ {\n\t\t\tif firstType != reflect.TypeOf(args[i]) {\n\n\t\t\t\treturn args\n\t\t\t}\n\t\t}\n\t}\n\n\tslice := reflect.MakeSlice(reflect.SliceOf(firstType), len(args), len(args))\n\tfor i, arg := range args {\n\t\tslice.Index(i).Set(reflect.ValueOf(arg))\n\t}\n\treturn slice.Interface()\n}",
+    "funcname": "Slice"
+}

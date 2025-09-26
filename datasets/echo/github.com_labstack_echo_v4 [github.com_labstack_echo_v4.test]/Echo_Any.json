@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 551,
+    "focalfunc": "func (e *Echo) Any(path string, handler HandlerFunc, middleware ...MiddlewareFunc) []*Route",
+    "funcbody": "func (e *Echo) Any(path string, handler HandlerFunc, middleware ...MiddlewareFunc) []*Route {\n\troutes := make([]*Route, len(methods))\n\tfor i, m := range methods {\n\t\troutes[i] = e.Add(m, path, handler, middleware...)\n\t}\n\treturn routes\n}",
+    "funcname": "Any"
+}

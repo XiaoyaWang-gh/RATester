@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 770,
+    "focalfunc": "func (s *Site) getLanguageTargetPathLang(alwaysInSubDir bool) string",
+    "funcbody": "func (s *Site) getLanguageTargetPathLang(alwaysInSubDir bool) string {\n\tif s.h.Conf.IsMultihost() {\n\t\treturn s.Language().Lang\n\t}\n\n\treturn s.getLanguagePermalinkLang(alwaysInSubDir)\n}",
+    "funcname": "getLanguageTargetPathLang"
+}

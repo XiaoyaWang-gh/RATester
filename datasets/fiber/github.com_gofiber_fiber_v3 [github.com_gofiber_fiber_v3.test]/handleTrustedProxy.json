@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 533,
+    "focalfunc": "func (app *App) handleTrustedProxy(ipAddress string)",
+    "funcbody": "func (app *App) handleTrustedProxy(ipAddress string) {\n\tif strings.Contains(ipAddress, \"/\") {\n\t\t_, ipNet, err := net.ParseCIDR(ipAddress)\n\t\tif err != nil {\n\t\t\tlog.Warnf(\"IP range %q could not be parsed: %v\", ipAddress, err)\n\t\t} else {\n\t\t\tapp.config.trustedProxyRanges = append(app.config.trustedProxyRanges, ipNet)\n\t\t}\n\t} else {\n\t\tapp.config.trustedProxiesMap[ipAddress] = struct{}{}\n\t}\n}",
+    "funcname": "handleTrustedProxy"
+}

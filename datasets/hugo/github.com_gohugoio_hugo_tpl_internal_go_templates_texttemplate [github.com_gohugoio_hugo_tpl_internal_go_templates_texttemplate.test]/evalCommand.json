@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 501,
+    "focalfunc": "func (s *state) evalCommand(dot reflect.Value, cmd *parse.CommandNode, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalCommand(dot reflect.Value, cmd *parse.CommandNode, final reflect.Value) reflect.Value {\n\tfirstWord := cmd.Args[0]\n\tswitch n := firstWord.(type) {\n\tcase *parse.FieldNode:\n\t\treturn s.evalFieldNode(dot, n, cmd.Args, final)\n\tcase *parse.ChainNode:\n\t\treturn s.evalChainNode(dot, n, cmd.Args, final)\n\tcase *parse.IdentifierNode:\n\n\t\treturn s.evalFunction(dot, n, cmd, cmd.Args, final)\n\tcase *parse.PipeNode:\n\n\t\ts.notAFunction(cmd.Args, final)\n\t\treturn s.evalPipeline(dot, n)\n\tcase *parse.VariableNode:\n\t\treturn s.evalVariableNode(dot, n, cmd.Args, final)\n\t}\n\ts.at(firstWord)\n\ts.notAFunction(cmd.Args, final)\n\tswitch word := firstWord.(type) {\n\tcase *parse.BoolNode:\n\t\treturn reflect.ValueOf(word.True)\n\tcase *parse.DotNode:\n\t\treturn dot\n\tcase *parse.NilNode:\n\t\ts.errorf(\"nil is not a command\")\n\tcase *parse.NumberNode:\n\t\treturn s.idealConstant(word)\n\tcase *parse.StringNode:\n\t\treturn reflect.ValueOf(word.Text)\n\t}\n\ts.errorf(\"can't evaluate command %q\", firstWord)\n\tpanic(\"not reached\")\n}",
+    "funcname": "evalCommand"
+}

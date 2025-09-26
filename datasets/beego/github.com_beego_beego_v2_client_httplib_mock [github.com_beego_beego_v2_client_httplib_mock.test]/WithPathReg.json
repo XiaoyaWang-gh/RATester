@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 148,
+    "focalfunc": "func WithPathReg(pathReg string) simpleConditionOption",
+    "funcbody": "func WithPathReg(pathReg string) simpleConditionOption {\n\treturn func(sc *SimpleCondition) {\n\t\tsc.pathReg = pathReg\n\t}\n}",
+    "funcname": "WithPathReg"
+}

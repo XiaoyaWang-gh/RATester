@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_spec.go",
+    "lineno": 168,
+    "focalfunc": "func (r *Spec) NewResource(rd ResourceSourceDescriptor) (resource.Resource, error)",
+    "funcbody": "func (r *Spec) NewResource(rd ResourceSourceDescriptor) (resource.Resource, error) {\n\tif err := rd.init(r); err != nil {\n\t\treturn nil, err\n\t}\n\n\tdir, name := path.Split(rd.TargetPath)\n\tdir = paths.ToSlashPreserveLeading(dir)\n\tif dir == \"/\" {\n\t\tdir = \"\"\n\t}\n\trp := internal.ResourcePaths{\n\t\tFile:\t\t\tname,\n\t\tDir:\t\t\tdir,\n\t\tBaseDirTarget:\t\trd.BasePathTargetPath,\n\t\tBaseDirLink:\t\trd.BasePathRelPermalink,\n\t\tTargetBasePaths:\trd.TargetBasePaths,\n\t}\n\n\tgr := &genericResource{\n\t\tStaler:\t\t&AtomicStaler{},\n\t\th:\t\t&resourceHash{},\n\t\tpublishInit:\t&sync.Once{},\n\t\tpaths:\t\trp,\n\t\tspec:\t\tr,\n\t\tsd:\t\trd,\n\t\tparams:\t\trd.Params,\n\t\tname:\t\trd.NameOriginal,\n\t\ttitle:\t\trd.Title,\n\t}\n\n\tif rd.MediaType.MainType == \"image\" {\n\t\timgFormat, ok := images.ImageFormatFromMediaSubType(rd.MediaType.SubType)\n\t\tif ok {\n\t\t\tir := &imageResource{\n\t\t\t\tImage:\t\timages.NewImage(imgFormat, r.imaging, nil, gr),\n\t\t\t\tbaseResource:\tgr,\n\t\t\t}\n\t\t\tir.root = ir\n\t\t\treturn newResourceAdapter(gr.spec, rd.LazyPublish, ir), nil\n\t\t}\n\n\t}\n\n\treturn newResourceAdapter(gr.spec, rd.LazyPublish, gr), nil\n}",
+    "funcname": "NewResource"
+}

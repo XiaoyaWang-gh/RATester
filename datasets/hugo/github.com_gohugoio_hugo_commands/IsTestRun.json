@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 484,
+    "focalfunc": "func (r *rootCommand) IsTestRun() bool",
+    "funcbody": "func (r *rootCommand) IsTestRun() bool {\n\treturn os.Getenv(\"HUGO_TESTRUN\") != \"\"\n}",
+    "funcname": "IsTestRun"
+}

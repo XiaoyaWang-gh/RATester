@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/internal/external.go",
+    "lineno": 65,
+    "focalfunc": "func GetPythonBinaryAndExecPath() (string, string)",
+    "funcbody": "func GetPythonBinaryAndExecPath() (string, string) {\n\tfor _, p := range pythonBinaryCandidates {\n\t\tif pth := hexec.LookPath(p); pth != \"\" {\n\t\t\treturn p, pth\n\t\t}\n\t}\n\treturn \"\", \"\"\n}",
+    "funcname": "GetPythonBinaryAndExecPath"
+}

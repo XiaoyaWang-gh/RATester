@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 200,
+    "focalfunc": "func (s *IndexController) Start()",
+    "funcbody": "func (s *IndexController) Start() {\n\tid := s.GetIntNoErr(\"id\")\n\tif err := server.StartTask(id); err != nil {\n\t\ts.AjaxErr(\"start error\")\n\t}\n\ts.AjaxOk(\"start success\")\n}",
+    "funcname": "Start"
+}

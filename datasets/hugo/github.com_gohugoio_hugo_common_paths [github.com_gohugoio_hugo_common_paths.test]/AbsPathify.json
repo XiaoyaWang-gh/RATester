@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 72,
+    "focalfunc": "func AbsPathify(workingDir, inPath string) string",
+    "funcbody": "func AbsPathify(workingDir, inPath string) string {\n\tif filepath.IsAbs(inPath) {\n\t\treturn filepath.Clean(inPath)\n\t}\n\treturn filepath.Join(workingDir, inPath)\n}",
+    "funcname": "AbsPathify"
+}

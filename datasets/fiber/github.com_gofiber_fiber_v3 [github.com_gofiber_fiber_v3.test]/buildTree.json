@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/router.go",
+    "lineno": 430,
+    "focalfunc": "func (app *App) buildTree() *App",
+    "funcbody": "func (app *App) buildTree() *App {\n\tif !app.routesRefreshed {\n\t\treturn app\n\t}\n\n\tfor m := range app.config.RequestMethods {\n\t\ttsMap := make(map[string][]*Route)\n\t\tfor _, route := range app.stack[m] {\n\t\t\ttreePath := \"\"\n\t\t\tif len(route.routeParser.segs) > 0 && len(route.routeParser.segs[0].Const) >= 3 {\n\t\t\t\ttreePath = route.routeParser.segs[0].Const[:3]\n\t\t\t}\n\n\t\t\ttsMap[treePath] = append(tsMap[treePath], route)\n\t\t}\n\t\tapp.treeStack[m] = tsMap\n\t}\n\n\tfor m := range app.config.RequestMethods {\n\t\ttsMap := app.treeStack[m]\n\t\tfor treePart := range tsMap {\n\t\t\tif treePart != \"\" {\n\n\t\t\t\ttsMap[treePart] = uniqueRouteStack(append(tsMap[treePart], tsMap[\"\"]...))\n\t\t\t}\n\n\t\t\tslc := tsMap[treePart]\n\t\t\tsort.Slice(slc, func(i, j int) bool { return slc[i].pos < slc[j].pos })\n\t\t}\n\t}\n\tapp.routesRefreshed = false\n\n\treturn app\n}",
+    "funcname": "buildTree"
+}

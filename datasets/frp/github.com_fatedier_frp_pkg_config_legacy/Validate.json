@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/client.go",
+    "lineno": 365,
+    "focalfunc": "func (cfg *ClientCommonConf) Validate() error",
+    "funcbody": "func (cfg *ClientCommonConf) Validate() error {\n\tif cfg.HeartbeatTimeout > 0 && cfg.HeartbeatInterval > 0 {\n\t\tif cfg.HeartbeatTimeout < cfg.HeartbeatInterval {\n\t\t\treturn fmt.Errorf(\"invalid heartbeat_timeout, heartbeat_timeout is less than heartbeat_interval\")\n\t\t}\n\t}\n\n\tif !cfg.TLSEnable {\n\t\tif cfg.TLSCertFile != \"\" {\n\t\t\tfmt.Println(\"WARNING! tls_cert_file is invalid when tls_enable is false\")\n\t\t}\n\n\t\tif cfg.TLSKeyFile != \"\" {\n\t\t\tfmt.Println(\"WARNING! tls_key_file is invalid when tls_enable is false\")\n\t\t}\n\n\t\tif cfg.TLSTrustedCaFile != \"\" {\n\t\t\tfmt.Println(\"WARNING! tls_trusted_ca_file is invalid when tls_enable is false\")\n\t\t}\n\t}\n\n\tif !slices.Contains([]string{\"tcp\", \"kcp\", \"quic\", \"websocket\", \"wss\"}, cfg.Protocol) {\n\t\treturn fmt.Errorf(\"invalid protocol\")\n\t}\n\n\tfor _, f := range cfg.IncludeConfigFiles {\n\t\tabsDir, err := filepath.Abs(filepath.Dir(f))\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"include: parse directory of %s failed: %v\", f, err)\n\t\t}\n\t\tif _, err := os.Stat(absDir); os.IsNotExist(err) {\n\t\t\treturn fmt.Errorf(\"include: directory of %s not exist\", f)\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "Validate"
+}

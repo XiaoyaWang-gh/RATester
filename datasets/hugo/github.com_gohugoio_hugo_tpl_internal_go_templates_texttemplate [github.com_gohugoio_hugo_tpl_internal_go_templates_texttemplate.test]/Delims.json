@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 164,
+    "focalfunc": "func (t *Template) Delims(left, right string) *Template",
+    "funcbody": "func (t *Template) Delims(left, right string) *Template {\n\tt.init()\n\tt.leftDelim = left\n\tt.rightDelim = right\n\treturn t\n}",
+    "funcname": "Delims"
+}

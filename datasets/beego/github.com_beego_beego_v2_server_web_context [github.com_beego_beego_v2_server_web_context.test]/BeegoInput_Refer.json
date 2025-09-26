@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 247,
+    "focalfunc": "func (input *BeegoInput) Refer() string",
+    "funcbody": "func (input *BeegoInput) Refer() string {\n\treturn input.Referer()\n}",
+    "funcname": "Refer"
+}

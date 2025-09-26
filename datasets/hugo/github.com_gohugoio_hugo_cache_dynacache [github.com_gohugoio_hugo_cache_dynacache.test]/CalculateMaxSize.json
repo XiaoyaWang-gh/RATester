@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 121,
+    "focalfunc": "func (o OptionsPartition) CalculateMaxSize(maxSizePerPartition int) int",
+    "funcbody": "func (o OptionsPartition) CalculateMaxSize(maxSizePerPartition int) int {\n\treturn int(math.Floor(float64(maxSizePerPartition) * o.WeightFraction()))\n}",
+    "funcname": "CalculateMaxSize"
+}

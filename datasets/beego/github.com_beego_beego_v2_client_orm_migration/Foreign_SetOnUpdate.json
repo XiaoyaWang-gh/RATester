@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 132,
+    "focalfunc": "func (foreign *Foreign) SetOnUpdate(update string) *Foreign",
+    "funcbody": "func (foreign *Foreign) SetOnUpdate(update string) *Foreign {\n\tforeign.OnUpdate = \"ON UPDATE\" + update\n\treturn foreign\n}",
+    "funcname": "SetOnUpdate"
+}

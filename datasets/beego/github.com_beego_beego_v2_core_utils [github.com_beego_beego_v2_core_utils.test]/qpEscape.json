@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 307,
+    "focalfunc": "func qpEscape(dest []byte, c byte)",
+    "funcbody": "func qpEscape(dest []byte, c byte) {\n\tconst nums = \"0123456789ABCDEF\"\n\tdest[0] = '='\n\tdest[1] = nums[(c&0xf0)>>4]\n\tdest[2] = nums[(c & 0xf)]\n}",
+    "funcname": "qpEscape"
+}

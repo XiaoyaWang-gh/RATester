@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 161,
+    "focalfunc": "func (t *Tree) errorf(format string, args ...any)",
+    "funcbody": "func (t *Tree) errorf(format string, args ...any) {\n\tt.Root = nil\n\tformat = fmt.Sprintf(\"template: %s:%d: %s\", t.ParseName, t.token[0].line, format)\n\tpanic(fmt.Errorf(format, args...))\n}",
+    "funcname": "errorf"
+}

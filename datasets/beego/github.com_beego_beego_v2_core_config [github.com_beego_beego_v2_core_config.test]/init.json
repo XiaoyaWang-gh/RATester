@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 516,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tRegister(\"ini\", &IniConfig{})\n\n\terr := InitGlobalInstance(\"ini\", \"conf/app.conf\")\n\tif err != nil {\n\t\t_, _ = fmt.Fprintln(os.Stderr, \"init global config instance failed. If you do not use this, just ignore it. \", err)\n\t}\n}",
+    "funcname": "init"
+}

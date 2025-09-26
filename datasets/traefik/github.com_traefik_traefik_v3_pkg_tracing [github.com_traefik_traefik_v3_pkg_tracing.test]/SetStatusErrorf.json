@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 88,
+    "focalfunc": "func SetStatusErrorf(ctx context.Context, format string, args ...interface{})",
+    "funcbody": "func SetStatusErrorf(ctx context.Context, format string, args ...interface{}) {\n\tif span := trace.SpanFromContext(ctx); span != nil {\n\t\tspan.SetStatus(codes.Error, fmt.Sprintf(format, args...))\n\t}\n}",
+    "funcname": "SetStatusErrorf"
+}

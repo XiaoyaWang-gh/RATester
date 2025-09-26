@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 311,
+    "focalfunc": "func (s SourceFilesystems) IsStatic(filename string) bool",
+    "funcbody": "func (s SourceFilesystems) IsStatic(filename string) bool {\n\tfor _, staticFs := range s.Static {\n\t\tif staticFs.Contains(filename) {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "IsStatic"
+}

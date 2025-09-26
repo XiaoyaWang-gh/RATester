@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/proxy.go",
+    "lineno": 24,
+    "focalfunc": "func NewProxy(address string, proxyProtocol *dynamic.ProxyProtocol, dialer Dialer) (*Proxy, error)",
+    "funcbody": "func NewProxy(address string, proxyProtocol *dynamic.ProxyProtocol, dialer Dialer) (*Proxy, error) {\n\tif proxyProtocol != nil && (proxyProtocol.Version < 1 || proxyProtocol.Version > 2) {\n\t\treturn nil, fmt.Errorf(\"unknown proxyProtocol version: %d\", proxyProtocol.Version)\n\t}\n\n\treturn &Proxy{\n\t\taddress:\taddress,\n\t\tproxyProtocol:\tproxyProtocol,\n\t\tdialer:\t\tdialer,\n\t}, nil\n}",
+    "funcname": "NewProxy"
+}

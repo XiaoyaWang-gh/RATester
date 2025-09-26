@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 517,
+    "focalfunc": "func isAlphaNumericOrHyphen(r rune) bool",
+    "funcbody": "func isAlphaNumericOrHyphen(r rune) bool {\n\n\treturn isAlphaNumeric(r) || r == '-'\n}",
+    "funcname": "isAlphaNumericOrHyphen"
+}

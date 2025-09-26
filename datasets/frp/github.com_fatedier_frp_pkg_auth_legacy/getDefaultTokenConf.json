@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/legacy/legacy.go",
+    "lineno": 141,
+    "focalfunc": "func getDefaultTokenConf() TokenConfig",
+    "funcbody": "func getDefaultTokenConf() TokenConfig {\n\treturn TokenConfig{\n\t\tToken: \"\",\n\t}\n}",
+    "funcname": "getDefaultTokenConf"
+}

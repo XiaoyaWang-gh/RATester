@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 703,
+    "focalfunc": "func (app *HttpServer) Post(rootpath string, f HandleFunc) *HttpServer",
+    "funcbody": "func (app *HttpServer) Post(rootpath string, f HandleFunc) *HttpServer {\n\tapp.Handlers.Post(rootpath, f)\n\treturn app\n}",
+    "funcname": "Post"
+}

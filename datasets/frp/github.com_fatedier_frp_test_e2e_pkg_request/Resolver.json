@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 137,
+    "focalfunc": "func (r *Request) Resolver(resolver *net.Resolver) *Request",
+    "funcbody": "func (r *Request) Resolver(resolver *net.Resolver) *Request {\n\tr.resolver = resolver\n\treturn r\n}",
+    "funcname": "Resolver"
+}

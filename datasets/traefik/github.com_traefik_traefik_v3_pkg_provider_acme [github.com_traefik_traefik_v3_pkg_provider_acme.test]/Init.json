@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 133,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\tlogger := log.With().Str(logs.ProviderName, p.ResolverName+resolverSuffix).Logger()\n\n\tif len(p.Configuration.Storage) == 0 {\n\t\treturn errors.New(\"unable to initialize ACME provider with no storage location for the certificates\")\n\t}\n\n\tif p.CertificatesDuration < 1 {\n\t\treturn errors.New(\"cannot manage certificates with duration lower than 1 hour\")\n\t}\n\n\tvar err error\n\tp.account, err = p.Store.GetAccount(p.ResolverName)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to get ACME account: %w\", err)\n\t}\n\n\tif p.account != nil && p.account.Registration != nil && !isAccountMatchingCaServer(logger.WithContext(context.Background()), p.account.Registration.URI, p.CAServer) {\n\t\tlogger.Info().Msg(\"Account URI does not match the current CAServer. The account will be reset.\")\n\t\tp.account = nil\n\t}\n\n\tp.certificatesMu.Lock()\n\tp.certificates, err = p.Store.GetCertificates(p.ResolverName)\n\tp.certificatesMu.Unlock()\n\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to get ACME certificates : %w\", err)\n\t}\n\n\tp.resolvingDomains = make(map[string]struct{})\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

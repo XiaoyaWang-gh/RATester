@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 199,
+    "focalfunc": "func stringSliceToWhitelistHook() mapstructure.DecodeHookFuncType",
+    "funcbody": "func stringSliceToWhitelistHook() mapstructure.DecodeHookFuncType {\n\treturn func(\n\t\tf reflect.Type,\n\t\tt reflect.Type,\n\t\tdata any,\n\t) (any, error) {\n\t\tif t != reflect.TypeOf(Whitelist{}) {\n\t\t\treturn data, nil\n\t\t}\n\n\t\twl := types.ToStringSlicePreserveString(data)\n\n\t\treturn NewWhitelist(wl...)\n\t}\n}",
+    "funcname": "stringSliceToWhitelistHook"
+}

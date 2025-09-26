@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 167,
+    "focalfunc": "func (c *Captcha) CreateCaptchaHTML() template.HTML",
+    "funcbody": "func (c *Captcha) CreateCaptchaHTML() template.HTML {\n\tvalue, err := c.CreateCaptcha()\n\tif err != nil {\n\t\tlogs.Error(\"Create Captcha Error:\", err)\n\t\treturn \"\"\n\t}\n\n\treturn template.HTML(fmt.Sprintf(`<input type=\"hidden\" name=\"%s\" value=\"%s\">`+\n\t\t`<a class=\"captcha\" href=\"javascript:\">`+\n\t\t`<img onclick=\"this.src=('%s%s.png?reload='+(new Date()).getTime())\" class=\"captcha-img\" src=\"%s%s.png\">`+\n\t\t`</a>`, c.FieldIDName, value, c.URLPrefix, value, c.URLPrefix, value))\n}",
+    "funcname": "CreateCaptchaHTML"
+}

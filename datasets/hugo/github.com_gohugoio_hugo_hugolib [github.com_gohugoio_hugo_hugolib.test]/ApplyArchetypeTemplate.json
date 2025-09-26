@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_factory.go",
+    "lineno": 60,
+    "focalfunc": "func (f ContentFactory) ApplyArchetypeTemplate(w io.Writer, p page.Page, archetypeKind, templateSource string) error",
+    "funcbody": "func (f ContentFactory) ApplyArchetypeTemplate(w io.Writer, p page.Page, archetypeKind, templateSource string) error {\n\tps := p.(*pageState)\n\tif archetypeKind == \"\" {\n\t\tarchetypeKind = p.Type()\n\t}\n\n\td := &archetypeFileData{\n\t\tType:\tarchetypeKind,\n\t\tDate:\thtime.Now().Format(time.RFC3339),\n\t\tPage:\tp,\n\t\tFile:\tp.File(),\n\t}\n\n\ttemplateSource = f.shortcodeReplacerPre.Replace(templateSource)\n\n\ttempl, err := ps.s.TextTmpl().Parse(\"archetype.md\", string(templateSource))\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to parse archetype template: %s: %w\", err, err)\n\t}\n\n\tresult, err := executeToString(context.Background(), ps.s.Tmpl(), templ, d)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to execute archetype template: %s: %w\", err, err)\n\t}\n\n\t_, err = io.WriteString(w, f.shortcodeReplacerPost.Replace(result))\n\n\treturn err\n}",
+    "funcname": "ApplyArchetypeTemplate"
+}

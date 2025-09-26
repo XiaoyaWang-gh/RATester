@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 239,
+    "focalfunc": "func (t *TxDB) RollbackUnlessCommit() error",
+    "funcbody": "func (t *TxDB) RollbackUnlessCommit() error {\n\terr := t.tx.Rollback()\n\tif err != sql.ErrTxDone {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "RollbackUnlessCommit"
+}

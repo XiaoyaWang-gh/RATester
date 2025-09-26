@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 136,
+    "focalfunc": "func (c ConfigLanguage) Watching() bool",
+    "funcbody": "func (c ConfigLanguage) Watching() bool {\n\treturn c.m.Base.Internal.Watch\n}",
+    "funcname": "Watching"
+}

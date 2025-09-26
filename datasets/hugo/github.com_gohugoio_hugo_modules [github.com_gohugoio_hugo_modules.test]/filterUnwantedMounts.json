@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 145,
+    "focalfunc": "func filterUnwantedMounts(mounts []Mount) []Mount",
+    "funcbody": "func filterUnwantedMounts(mounts []Mount) []Mount {\n\n\tseen := make(map[string]bool)\n\ttmp := mounts[:0]\n\tfor _, m := range mounts {\n\t\tif !seen[m.key()] {\n\t\t\ttmp = append(tmp, m)\n\t\t}\n\t\tseen[m.key()] = true\n\t}\n\treturn tmp\n}",
+    "funcname": "filterUnwantedMounts"
+}

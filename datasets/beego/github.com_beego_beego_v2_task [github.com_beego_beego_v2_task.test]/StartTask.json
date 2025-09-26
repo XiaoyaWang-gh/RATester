@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 454,
+    "focalfunc": "func StartTask()",
+    "funcbody": "func StartTask() {\n\tglobalTaskManager.StartTask()\n}",
+    "funcname": "StartTask"
+}

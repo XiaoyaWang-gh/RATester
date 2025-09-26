@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 160,
+    "focalfunc": "func (r *Request) Param(key string) []string",
+    "funcbody": "func (r *Request) Param(key string) []string {\n\tvar res []string\n\ttmp := r.params.PeekMulti(key)\n\tfor _, v := range tmp {\n\t\tres = append(res, utils.UnsafeString(v))\n\t}\n\n\treturn res\n}",
+    "funcname": "Param"
+}

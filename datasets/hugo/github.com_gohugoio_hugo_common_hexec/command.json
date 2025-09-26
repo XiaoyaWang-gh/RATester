@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 259,
+    "focalfunc": "func (c *commandeer) command(arg ...any) (*cmdWrapper, error)",
+    "funcbody": "func (c *commandeer) command(arg ...any) (*cmdWrapper, error) {\n\tif c == nil {\n\t\treturn nil, nil\n\t}\n\n\tvar args []string\n\tfor _, a := range arg {\n\t\tswitch v := a.(type) {\n\t\tcase string:\n\t\t\targs = append(args, v)\n\t\tcase func(*commandeer):\n\t\t\tv(c)\n\t\tdefault:\n\t\t\treturn nil, fmt.Errorf(\"invalid argument to command: %T\", a)\n\t\t}\n\t}\n\n\tvar bin string\n\tif c.fullyQualifiedName != \"\" {\n\t\tbin = c.fullyQualifiedName\n\t} else {\n\t\tvar err error\n\t\tbin, err = safeexec.LookPath(c.name)\n\t\tif err != nil {\n\t\t\treturn nil, &NotFoundError{\n\t\t\t\tname:\tc.name,\n\t\t\t\tmethod:\t\"in PATH\",\n\t\t\t}\n\t\t}\n\t}\n\n\touterr := &bytes.Buffer{}\n\tif c.stderr == nil {\n\t\tc.stderr = outerr\n\t} else {\n\t\tc.stderr = io.MultiWriter(c.stderr, outerr)\n\t}\n\n\tvar cmd *exec.Cmd\n\n\tif c.ctx != nil {\n\t\tcmd = exec.CommandContext(c.ctx, bin, args...)\n\t} else {\n\t\tcmd = exec.Command(bin, args...)\n\t}\n\n\tcmd.Stdin = c.stdin\n\tcmd.Stderr = c.stderr\n\tcmd.Stdout = c.stdout\n\tcmd.Env = c.env\n\tcmd.Dir = c.dir\n\n\treturn &cmdWrapper{outerr: outerr, c: cmd, name: c.name}, nil\n}",
+    "funcname": "command"
+}

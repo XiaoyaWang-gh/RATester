@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/html.go",
+    "lineno": 59,
+    "focalfunc": "func (r HTMLDebug) Instance(name string, data any) Render",
+    "funcbody": "func (r HTMLDebug) Instance(name string, data any) Render {\n\treturn HTML{\n\t\tTemplate:\tr.loadTemplate(),\n\t\tName:\t\tname,\n\t\tData:\t\tdata,\n\t}\n}",
+    "funcname": "Instance"
+}

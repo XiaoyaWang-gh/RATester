@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 139,
+    "focalfunc": "func (c *hugoBuilder) errCount() int",
+    "funcbody": "func (c *hugoBuilder) errCount() int {\n\treturn c.r.logger.LoggCount(logg.LevelError) + loggers.Log().LoggCount(logg.LevelError)\n}",
+    "funcname": "errCount"
+}

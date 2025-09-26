@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 246,
+    "focalfunc": "func (c *Cache) Stop()",
+    "funcbody": "func (c *Cache) Stop() {\n\tc.stopOnce.Do(func() {\n\t\tc.stop()\n\t})\n}",
+    "funcname": "Stop"
+}

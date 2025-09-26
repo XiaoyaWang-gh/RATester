@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 31,
+    "focalfunc": "func NewDateCounter(reserveDays int64) DateCounter",
+    "funcbody": "func NewDateCounter(reserveDays int64) DateCounter {\n\tif reserveDays <= 0 {\n\t\treserveDays = 1\n\t}\n\treturn newStandardDateCounter(reserveDays)\n}",
+    "funcname": "NewDateCounter"
+}

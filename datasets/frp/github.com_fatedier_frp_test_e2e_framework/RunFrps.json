@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/process.go",
+    "lineno": 71,
+    "focalfunc": "func (f *Framework) RunFrps(args ...string) (*process.Process, string, error)",
+    "funcbody": "func (f *Framework) RunFrps(args ...string) (*process.Process, string, error) {\n\tp := process.NewWithEnvs(TestContext.FRPServerPath, args, f.osEnvs)\n\tf.serverProcesses = append(f.serverProcesses, p)\n\terr := p.Start()\n\tif err != nil {\n\t\treturn p, p.StdOutput(), err\n\t}\n\n\ttime.Sleep(2 * time.Second)\n\treturn p, p.StdOutput(), nil\n}",
+    "funcname": "RunFrps"
+}

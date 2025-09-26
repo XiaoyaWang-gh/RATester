@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 33,
+    "focalfunc": "func RegisterMockDB(name string)",
+    "funcbody": "func RegisterMockDB(name string) {\n\tsource := filepath.Join(os.TempDir(), name+\".db\")\n\t_ = orm.RegisterDataBase(name, \"sqlite3\", source)\n}",
+    "funcname": "RegisterMockDB"
+}

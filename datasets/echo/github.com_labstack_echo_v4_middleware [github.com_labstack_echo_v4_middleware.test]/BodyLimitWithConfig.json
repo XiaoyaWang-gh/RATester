@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_limit.go",
+    "lineno": 53,
+    "focalfunc": "func BodyLimitWithConfig(config BodyLimitConfig) echo.MiddlewareFunc",
+    "funcbody": "func BodyLimitWithConfig(config BodyLimitConfig) echo.MiddlewareFunc {\n\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultBodyLimitConfig.Skipper\n\t}\n\n\tlimit, err := bytes.Parse(config.Limit)\n\tif err != nil {\n\t\tpanic(fmt.Errorf(\"echo: invalid body-limit=%s\", config.Limit))\n\t}\n\tconfig.limit = limit\n\tpool := limitedReaderPool(config)\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\treq := c.Request()\n\n\t\t\tif req.ContentLength > config.limit {\n\t\t\t\treturn echo.ErrStatusRequestEntityTooLarge\n\t\t\t}\n\n\t\t\tr := pool.Get().(*limitedReader)\n\t\t\tr.Reset(req.Body)\n\t\t\tdefer pool.Put(r)\n\t\t\treq.Body = r\n\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "BodyLimitWithConfig"
+}

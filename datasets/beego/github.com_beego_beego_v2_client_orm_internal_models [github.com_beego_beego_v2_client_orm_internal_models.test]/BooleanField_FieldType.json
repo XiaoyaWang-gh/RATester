@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 80,
+    "focalfunc": "func (e *BooleanField) FieldType() int",
+    "funcbody": "func (e *BooleanField) FieldType() int {\n\treturn TypeBooleanField\n}",
+    "funcname": "FieldType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 32,
+    "focalfunc": "func ReleaseCookieJar(c *CookieJar)",
+    "funcbody": "func ReleaseCookieJar(c *CookieJar) {\n\tc.Release()\n\tcookieJarPool.Put(c)\n}",
+    "funcname": "ReleaseCookieJar"
+}

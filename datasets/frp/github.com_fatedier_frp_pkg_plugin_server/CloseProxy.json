@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/manager.go",
+    "lineno": 136,
+    "focalfunc": "func (m *Manager) CloseProxy(content *CloseProxyContent) error",
+    "funcbody": "func (m *Manager) CloseProxy(content *CloseProxyContent) error {\n\tif len(m.closeProxyPlugins) == 0 {\n\t\treturn nil\n\t}\n\n\terrs := make([]string, 0)\n\treqid, _ := util.RandID()\n\txl := xlog.New().AppendPrefix(\"reqid: \" + reqid)\n\tctx := xlog.NewContext(context.Background(), xl)\n\tctx = NewReqidContext(ctx, reqid)\n\n\tfor _, p := range m.closeProxyPlugins {\n\t\t_, _, err := p.Handle(ctx, OpCloseProxy, *content)\n\t\tif err != nil {\n\t\t\txl.Warnf(\"send CloseProxy request to plugin [%s] error: %v\", p.Name(), err)\n\t\t\terrs = append(errs, fmt.Sprintf(\"[%s]: %v\", p.Name(), err))\n\t\t}\n\t}\n\n\tif len(errs) > 0 {\n\t\treturn fmt.Errorf(\"send CloseProxy request to plugin errors: %s\", strings.Join(errs, \"; \"))\n\t}\n\treturn nil\n}",
+    "funcname": "CloseProxy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/shortcodes.go",
+    "lineno": 81,
+    "focalfunc": "func (s *shortcodeTemplates) compareVariants(a, b []string) int",
+    "funcbody": "func (s *shortcodeTemplates) compareVariants(a, b []string) int {\n\tweight := 0\n\tk := len(a)\n\tfor i, av := range a {\n\t\tbv := b[i]\n\t\tif av == bv {\n\n\t\t\tweight = weight + k - i\n\t\t} else {\n\t\t\tweight--\n\t\t}\n\t}\n\treturn weight\n}",
+    "funcname": "compareVariants"
+}

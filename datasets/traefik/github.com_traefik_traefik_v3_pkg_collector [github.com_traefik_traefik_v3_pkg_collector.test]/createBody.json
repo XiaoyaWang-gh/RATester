@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/collector.go",
+    "lineno": 46,
+    "focalfunc": "func createBody(staticConfiguration *static.Configuration) (*bytes.Buffer, error)",
+    "funcbody": "func createBody(staticConfiguration *static.Configuration) (*bytes.Buffer, error) {\n\tanonConfig, err := redactor.Anonymize(staticConfiguration)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tlog.Debug().Msgf(\"Anonymous stats sent to %s: %s\", collectorURL, anonConfig)\n\n\thashConf, err := hashstructure.Hash(staticConfiguration, nil)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tdata := &data{\n\t\tVersion:\tversion.Version,\n\t\tCodename:\tversion.Codename,\n\t\tBuildDate:\tversion.BuildDate,\n\t\tHash:\t\tstrconv.FormatUint(hashConf, 10),\n\t\tConfiguration:\tbase64.StdEncoding.EncodeToString([]byte(anonConfig)),\n\t}\n\n\tbuf := new(bytes.Buffer)\n\terr = json.NewEncoder(buf).Encode(data)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn buf, err\n}",
+    "funcname": "createBody"
+}

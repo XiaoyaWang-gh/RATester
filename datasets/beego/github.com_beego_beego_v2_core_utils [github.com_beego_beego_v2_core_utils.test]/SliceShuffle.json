@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 164,
+    "focalfunc": "func SliceShuffle(slice []interface{}) []interface{}",
+    "funcbody": "func SliceShuffle(slice []interface{}) []interface{} {\n\tfor i := 0; i < len(slice); i++ {\n\t\ta := rand.Intn(len(slice))\n\t\tb := rand.Intn(len(slice))\n\t\tslice[a], slice[b] = slice[b], slice[a]\n\t}\n\treturn slice\n}",
+    "funcname": "SliceShuffle"
+}

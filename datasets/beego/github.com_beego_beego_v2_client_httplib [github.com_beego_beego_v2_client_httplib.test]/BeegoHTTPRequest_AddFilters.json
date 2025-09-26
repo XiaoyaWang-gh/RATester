@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 255,
+    "focalfunc": "func (b *BeegoHTTPRequest) AddFilters(fcs ...FilterChain) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) AddFilters(fcs ...FilterChain) *BeegoHTTPRequest {\n\tb.setting.FilterChains = append(b.setting.FilterChains, fcs...)\n\treturn b\n}",
+    "funcname": "AddFilters"
+}

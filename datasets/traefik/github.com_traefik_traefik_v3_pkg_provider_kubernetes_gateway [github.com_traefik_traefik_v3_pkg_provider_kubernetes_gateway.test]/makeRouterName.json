@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1035,
+    "focalfunc": "func makeRouterName(rule, name string) string",
+    "funcbody": "func makeRouterName(rule, name string) string {\n\th := sha256.New()\n\n\th.Write([]byte(rule))\n\n\treturn fmt.Sprintf(\"%s-%.10x\", name, h.Sum(nil))\n}",
+    "funcname": "makeRouterName"
+}

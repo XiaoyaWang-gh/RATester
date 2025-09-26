@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 64,
+    "focalfunc": "func (d *Dispatcher) readLoop()",
+    "funcbody": "func (d *Dispatcher) readLoop() {\n\tfor {\n\t\tm, err := ReadMsg(d.rw)\n\t\tif err != nil {\n\t\t\tclose(d.doneCh)\n\t\t\treturn\n\t\t}\n\n\t\tif handler, ok := d.msgHandlers[reflect.TypeOf(m)]; ok {\n\t\t\thandler(m)\n\t\t} else if d.defaultHandler != nil {\n\t\t\td.defaultHandler(m)\n\t\t}\n\t}\n}",
+    "funcname": "readLoop"
+}

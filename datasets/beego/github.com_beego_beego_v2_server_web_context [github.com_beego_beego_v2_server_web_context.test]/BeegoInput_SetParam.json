@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 308,
+    "focalfunc": "func (input *BeegoInput) SetParam(key, val string)",
+    "funcbody": "func (input *BeegoInput) SetParam(key, val string) {\n\n\tfor i, v := range input.pnames {\n\t\tif v == key && i <= len(input.pvalues) {\n\t\t\tinput.pvalues[i] = val\n\t\t\treturn\n\t\t}\n\t}\n\tinput.pvalues = append(input.pvalues, val)\n\tinput.pnames = append(input.pnames, key)\n}",
+    "funcname": "SetParam"
+}

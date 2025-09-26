@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 72,
+    "focalfunc": "func (group *RouterGroup) Group(relativePath string, handlers ...HandlerFunc) *RouterGroup",
+    "funcbody": "func (group *RouterGroup) Group(relativePath string, handlers ...HandlerFunc) *RouterGroup {\n\treturn &RouterGroup{\n\t\tHandlers:\tgroup.combineHandlers(handlers),\n\t\tbasePath:\tgroup.calculateAbsolutePath(relativePath),\n\t\tengine:\t\tgroup.engine,\n\t}\n}",
+    "funcname": "Group"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 412,
+    "focalfunc": "func TrimTrailing(s string) string",
+    "funcbody": "func TrimTrailing(s string) string {\n\treturn strings.TrimSuffix(s, \"/\")\n}",
+    "funcname": "TrimTrailing"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/tool/utils.go",
+    "lineno": 28,
+    "focalfunc": "func InitAllowPort()",
+    "funcbody": "func InitAllowPort() {\n\tp := beego.AppConfig.String(\"allow_ports\")\n\tports = common.GetPorts(p)\n}",
+    "funcname": "InitAllowPort"
+}

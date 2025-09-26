@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/prometheus/server.go",
+    "lineno": 36,
+    "focalfunc": "func (m *serverMetrics) CloseProxy(_ string, proxyType string)",
+    "funcbody": "func (m *serverMetrics) CloseProxy(_ string, proxyType string) {\n\tm.proxyCount.WithLabelValues(proxyType).Dec()\n}",
+    "funcname": "CloseProxy"
+}

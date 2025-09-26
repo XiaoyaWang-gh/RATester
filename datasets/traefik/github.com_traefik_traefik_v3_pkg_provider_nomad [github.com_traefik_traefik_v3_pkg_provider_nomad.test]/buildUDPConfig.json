@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/config.go",
+    "lineno": 111,
+    "focalfunc": "func (p *Provider) buildUDPConfig(i item, configuration *dynamic.UDPConfiguration) error",
+    "funcbody": "func (p *Provider) buildUDPConfig(i item, configuration *dynamic.UDPConfiguration) error {\n\tif len(configuration.Services) == 0 {\n\t\tconfiguration.Services = make(map[string]*dynamic.UDPService)\n\n\t\tconfiguration.Services[getName(i)] = &dynamic.UDPService{\n\t\t\tLoadBalancer: new(dynamic.UDPServersLoadBalancer),\n\t\t}\n\t}\n\n\tfor _, service := range configuration.Services {\n\n\t\tif !(i.Address == \"\" && p.AllowEmptyServices) {\n\t\t\tif err := p.addServerUDP(i, service.LoadBalancer); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildUDPConfig"
+}

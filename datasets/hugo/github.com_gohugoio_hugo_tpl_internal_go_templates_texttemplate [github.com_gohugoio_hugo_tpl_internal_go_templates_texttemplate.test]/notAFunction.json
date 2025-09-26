@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 495,
+    "focalfunc": "func (s *state) notAFunction(args []parse.Node, final reflect.Value)",
+    "funcbody": "func (s *state) notAFunction(args []parse.Node, final reflect.Value) {\n\tif len(args) > 1 || !isMissing(final) {\n\t\ts.errorf(\"can't give argument to non-function %s\", args[0])\n\t}\n}",
+    "funcname": "notAFunction"
+}

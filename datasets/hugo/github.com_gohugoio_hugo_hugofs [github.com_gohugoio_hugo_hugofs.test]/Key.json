@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 272,
+    "focalfunc": "func (fs *RootMappingFs) Key() string",
+    "funcbody": "func (fs *RootMappingFs) Key() string {\n\treturn fs.id\n}",
+    "funcname": "Key"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages.go",
+    "lineno": 35,
+    "focalfunc": "func (ps Pages) shuffle()",
+    "funcbody": "func (ps Pages) shuffle() {\n\tfor i := range ps {\n\t\tj := rand.Intn(i + 1)\n\t\tps[i], ps[j] = ps[j], ps[i]\n\t}\n}",
+    "funcname": "shuffle"
+}

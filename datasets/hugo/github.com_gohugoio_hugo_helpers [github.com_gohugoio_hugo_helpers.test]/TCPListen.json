@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 39,
+    "focalfunc": "func TCPListen() (net.Listener, *net.TCPAddr, error)",
+    "funcbody": "func TCPListen() (net.Listener, *net.TCPAddr, error) {\n\tl, err := net.Listen(\"tcp\", \":0\")\n\tif err != nil {\n\t\treturn nil, nil, err\n\t}\n\taddr := l.Addr()\n\tif a, ok := addr.(*net.TCPAddr); ok {\n\t\treturn l, a, nil\n\t}\n\tl.Close()\n\treturn nil, nil, fmt.Errorf(\"unable to obtain a valid tcp port: %v\", addr)\n}",
+    "funcname": "TCPListen"
+}

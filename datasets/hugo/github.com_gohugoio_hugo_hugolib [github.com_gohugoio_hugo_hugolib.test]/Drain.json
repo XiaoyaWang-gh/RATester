@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 414,
+    "focalfunc": "func (w *WhatChanged) Drain() []identity.Identity",
+    "funcbody": "func (w *WhatChanged) Drain() []identity.Identity {\n\tw.mu.Lock()\n\tdefer w.mu.Unlock()\n\tids := w.identitySet.AsSlice()\n\tw.clear()\n\treturn ids\n}",
+    "funcname": "Drain"
+}

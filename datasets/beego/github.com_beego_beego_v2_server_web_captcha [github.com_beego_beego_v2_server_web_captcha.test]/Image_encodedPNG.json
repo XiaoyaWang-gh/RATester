@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 320,
+    "focalfunc": "func (m *Image) encodedPNG() []byte",
+    "funcbody": "func (m *Image) encodedPNG() []byte {\n\tvar buf bytes.Buffer\n\tif err := png.Encode(&buf, m.Paletted); err != nil {\n\t\tpanic(err.Error())\n\t}\n\treturn buf.Bytes()\n}",
+    "funcname": "encodedPNG"
+}

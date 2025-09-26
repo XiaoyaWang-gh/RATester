@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 1179,
+    "focalfunc": "func (c *cachedContentScope) mustContentRendered(ctx context.Context) contentSummary",
+    "funcbody": "func (c *cachedContentScope) mustContentRendered(ctx context.Context) contentSummary {\n\tr, err := c.contentRendered(ctx)\n\tif err != nil {\n\t\tc.pco.fail(err)\n\t}\n\treturn r\n}",
+    "funcname": "mustContentRendered"
+}

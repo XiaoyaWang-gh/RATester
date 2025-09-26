@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_generate/generate_page_wrappers.go",
+    "lineno": 57,
+    "focalfunc": "func generateMarshalJSON(c *codegen.Inspector) error",
+    "funcbody": "func generateMarshalJSON(c *codegen.Inspector) error {\n\tfilename := filepath.Join(c.ProjectRootDir, packageDir, \"page_marshaljson.autogen.go\")\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\n\tincludes := []reflect.Type{pageInterface}\n\n\texcludes := []reflect.Type{}\n\n\tmethods := c.MethodsFromTypes(\n\t\tincludes,\n\t\texcludes)\n\n\tif len(methods) == 0 {\n\t\treturn errors.New(\"no methods found\")\n\t}\n\n\tmarshalJSON, pkgImports := methods.ToMarshalJSON(\n\t\t\"Page\",\n\t\t\"github.com/gohugoio/hugo/resources/page\",\n\n\t\t`\\bPage\\b`,\n\t)\n\n\tfmt.Fprintf(f, `%s\n\npackage page\n\n%s\n\n\n%s\n\n\n`, header, importsString(pkgImports), marshalJSON)\n\n\treturn nil\n}",
+    "funcname": "generateMarshalJSON"
+}

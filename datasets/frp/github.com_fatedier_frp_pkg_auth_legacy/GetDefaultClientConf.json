@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/auth/legacy/legacy.go",
+    "lineno": 45,
+    "focalfunc": "func GetDefaultClientConf() ClientConfig",
+    "funcbody": "func GetDefaultClientConf() ClientConfig {\n\treturn ClientConfig{\n\t\tBaseConfig:\t\tgetDefaultBaseConf(),\n\t\tOidcClientConfig:\tgetDefaultOidcClientConf(),\n\t\tTokenConfig:\t\tgetDefaultTokenConf(),\n\t}\n}",
+    "funcname": "GetDefaultClientConf"
+}

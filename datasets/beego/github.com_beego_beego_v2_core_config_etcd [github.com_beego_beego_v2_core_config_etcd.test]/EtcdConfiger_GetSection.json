@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 76,
+    "focalfunc": "func (e *EtcdConfiger) GetSection(section string) (map[string]string, error)",
+    "funcbody": "func (e *EtcdConfiger) GetSection(section string) (map[string]string, error) {\n\tvar (\n\t\tresp\t*clientv3.GetResponse\n\t\terr\terror\n\t)\n\n\tresp, err = e.client.Get(context.TODO(), e.prefix+section, clientv3.WithPrefix())\n\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"GetSection failed: %w\", err)\n\t}\n\tres := make(map[string]string, len(resp.Kvs))\n\tfor _, kv := range resp.Kvs {\n\t\tres[string(kv.Key)] = string(kv.Value)\n\t}\n\treturn res, nil\n}",
+    "funcname": "GetSection"
+}

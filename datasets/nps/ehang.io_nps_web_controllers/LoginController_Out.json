@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/login.go",
+    "lineno": 140,
+    "focalfunc": "func (self *LoginController) Out()",
+    "funcbody": "func (self *LoginController) Out() {\n\tself.SetSession(\"auth\", false)\n\tself.Redirect(beego.AppConfig.String(\"web_base_url\")+\"/login/index\", 302)\n}",
+    "funcname": "Out"
+}

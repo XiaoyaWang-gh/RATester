@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 192,
+    "focalfunc": "func (l *lexer) ignore()",
+    "funcbody": "func (l *lexer) ignore() {\n\tl.line += strings.Count(l.input[l.start:l.pos], \"\\n\")\n\tl.start = l.pos\n\tl.startLine = l.line\n}",
+    "funcname": "ignore"
+}

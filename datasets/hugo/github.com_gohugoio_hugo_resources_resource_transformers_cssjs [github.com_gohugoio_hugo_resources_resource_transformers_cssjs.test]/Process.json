@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/tailwindcss.go",
+    "lineno": 50,
+    "focalfunc": "func (c *TailwindCSSClient) Process(res resources.ResourceTransformer, options map[string]any) (resource.Resource, error)",
+    "funcbody": "func (c *TailwindCSSClient) Process(res resources.ResourceTransformer, options map[string]any) (resource.Resource, error) {\n\treturn res.Transform(&tailwindcssTransformation{rs: c.rs, optionsm: options})\n}",
+    "funcname": "Process"
+}

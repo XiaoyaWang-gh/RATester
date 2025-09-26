@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/client.go",
+    "lineno": 341,
+    "focalfunc": "func copySection(source, target *ini.Section)",
+    "funcbody": "func copySection(source, target *ini.Section) {\n\tfor key, value := range source.KeysHash() {\n\t\t_, _ = target.NewKey(key, value)\n\t}\n}",
+    "funcname": "copySection"
+}

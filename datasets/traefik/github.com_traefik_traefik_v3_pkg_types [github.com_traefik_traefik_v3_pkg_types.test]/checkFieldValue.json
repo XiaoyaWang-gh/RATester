@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/logs.go",
+    "lineno": 114,
+    "focalfunc": "func checkFieldValue(value string, defaultKeep bool) bool",
+    "funcbody": "func checkFieldValue(value string, defaultKeep bool) bool {\n\tswitch value {\n\tcase AccessLogKeep:\n\t\treturn true\n\tcase AccessLogDrop:\n\t\treturn false\n\tdefault:\n\t\treturn defaultKeep\n\t}\n}",
+    "funcname": "checkFieldValue"
+}

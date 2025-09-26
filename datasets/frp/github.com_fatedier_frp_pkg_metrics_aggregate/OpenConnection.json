@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 71,
+    "focalfunc": "func (m *serverMetrics) OpenConnection(name string, proxyType string)",
+    "funcbody": "func (m *serverMetrics) OpenConnection(name string, proxyType string) {\n\tfor _, v := range m.ms {\n\t\tv.OpenConnection(name, proxyType)\n\t}\n}",
+    "funcname": "OpenConnection"
+}

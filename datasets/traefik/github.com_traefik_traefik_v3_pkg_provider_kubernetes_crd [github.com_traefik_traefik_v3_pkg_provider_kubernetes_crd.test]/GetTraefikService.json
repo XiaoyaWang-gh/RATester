@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 358,
+    "focalfunc": "func (c *clientWrapper) GetTraefikService(namespace, name string) (*traefikv1alpha1.TraefikService, bool, error)",
+    "funcbody": "func (c *clientWrapper) GetTraefikService(namespace, name string) (*traefikv1alpha1.TraefikService, bool, error) {\n\tif !c.isWatchedNamespace(namespace) {\n\t\treturn nil, false, fmt.Errorf(\"failed to get service %s/%s: namespace is not within watched namespaces\", namespace, name)\n\t}\n\n\tservice, err := c.factoriesCrd[c.lookupNamespace(namespace)].Traefik().V1alpha1().TraefikServices().Lister().TraefikServices(namespace).Get(name)\n\texist, err := translateNotFoundError(err)\n\n\treturn service, exist, err\n}",
+    "funcname": "GetTraefikService"
+}

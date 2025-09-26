@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 187,
+    "focalfunc": "func createShortcodePlaceholder(sid string, id uint64, ordinal int) string",
+    "funcbody": "func createShortcodePlaceholder(sid string, id uint64, ordinal int) string {\n\treturn shortcodePlaceholderPrefix + strconv.FormatUint(id, 10) + sid + strconv.Itoa(ordinal) + \"HBHB\"\n}",
+    "funcname": "createShortcodePlaceholder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 231,
+    "focalfunc": "func acceptsOffer(spec, offer string, _ headerParams) bool",
+    "funcbody": "func acceptsOffer(spec, offer string, _ headerParams) bool {\n\tif len(spec) >= 1 && spec[len(spec)-1] == '*' {\n\t\treturn true\n\t} else if strings.HasPrefix(spec, offer) {\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "acceptsOffer"
+}

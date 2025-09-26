@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 308,
+    "focalfunc": "func (c *IniConfigContainer) DefaultString(key string, defaultVal string) string",
+    "funcbody": "func (c *IniConfigContainer) DefaultString(key string, defaultVal string) string {\n\tv, err := c.String(key)\n\tif v == \"\" || err != nil {\n\t\treturn defaultVal\n\t}\n\treturn v\n}",
+    "funcname": "DefaultString"
+}

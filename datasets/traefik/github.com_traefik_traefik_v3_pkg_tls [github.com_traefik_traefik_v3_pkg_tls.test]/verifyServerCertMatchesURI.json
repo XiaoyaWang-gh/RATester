@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate.go",
+    "lineno": 234,
+    "focalfunc": "func verifyServerCertMatchesURI(uri string, cert *x509.Certificate) error",
+    "funcbody": "func verifyServerCertMatchesURI(uri string, cert *x509.Certificate) error {\n\tif cert == nil {\n\t\treturn errors.New(\"peer certificate mismatch: no peer certificate presented\")\n\t}\n\n\tif len(cert.URIs) < 1 {\n\t\treturn errors.New(\"peer certificate mismatch: peer certificate invalid\")\n\t}\n\n\tgotURI := cert.URIs[0]\n\n\texpectURI := &url.URL{}\n\tid, err := url.Parse(uri)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"%q is not a valid URI\", uri)\n\t}\n\t*expectURI = *id\n\texpectURI.Host = gotURI.Host\n\n\tif strings.EqualFold(gotURI.String(), expectURI.String()) {\n\t\treturn nil\n\t}\n\n\treturn fmt.Errorf(\"peer certificate mismatch got %s, want %s\", gotURI, uri)\n}",
+    "funcname": "verifyServerCertMatchesURI"
+}

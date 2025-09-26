@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/apply.go",
+    "lineno": 28,
+    "focalfunc": "func (ns *Namespace) Apply(ctx context.Context, c any, fname string, args ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Apply(ctx context.Context, c any, fname string, args ...any) (any, error) {\n\tif c == nil {\n\t\treturn make([]any, 0), nil\n\t}\n\n\tif fname == \"apply\" {\n\t\treturn nil, errors.New(\"can't apply myself (no turtles allowed)\")\n\t}\n\n\tseqv := reflect.ValueOf(c)\n\tseqv, isNil := indirect(seqv)\n\tif isNil {\n\t\treturn nil, errors.New(\"can't iterate over a nil value\")\n\t}\n\n\tfnv, found := ns.lookupFunc(ctx, fname)\n\tif !found {\n\t\treturn nil, errors.New(\"can't find function \" + fname)\n\t}\n\n\tswitch seqv.Kind() {\n\tcase reflect.Array, reflect.Slice:\n\t\tr := make([]any, seqv.Len())\n\t\tfor i := 0; i < seqv.Len(); i++ {\n\t\t\tvv := seqv.Index(i)\n\n\t\t\tvvv, err := applyFnToThis(ctx, fnv, vv, args...)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\n\t\t\tr[i] = vvv.Interface()\n\t\t}\n\n\t\treturn r, nil\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"can't apply over %v\", c)\n\t}\n}",
+    "funcname": "Apply"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 347,
+    "focalfunc": "func (d *Deps) Close() error",
+    "funcbody": "func (d *Deps) Close() error {\n\tif d.MemCache != nil {\n\t\td.MemCache.Stop()\n\t}\n\tif d.WasmDispatchers != nil {\n\t\td.WasmDispatchers.Close()\n\t}\n\treturn d.BuildClosers.Close()\n}",
+    "funcname": "Close"
+}

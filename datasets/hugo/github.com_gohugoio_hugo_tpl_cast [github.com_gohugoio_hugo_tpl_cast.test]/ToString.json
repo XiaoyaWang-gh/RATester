@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/cast/cast.go",
+    "lineno": 38,
+    "focalfunc": "func (ns *Namespace) ToString(v any) (string, error)",
+    "funcbody": "func (ns *Namespace) ToString(v any) (string, error) {\n\treturn _cast.ToStringE(v)\n}",
+    "funcname": "ToString"
+}

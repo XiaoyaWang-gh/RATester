@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 220,
+    "focalfunc": "func (p Pages) ByWeight() Pages",
+    "funcbody": "func (p Pages) ByWeight() Pages {\n\tconst key = \"pageSort.ByWeight\"\n\tpages, _ := spc.get(key, pageBy(DefaultPageSort).Sort, p)\n\treturn pages\n}",
+    "funcname": "ByWeight"
+}

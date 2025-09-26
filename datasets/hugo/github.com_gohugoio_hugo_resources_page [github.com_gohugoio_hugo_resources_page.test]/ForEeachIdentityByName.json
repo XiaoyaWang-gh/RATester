@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 331,
+    "focalfunc": "func (s *siteWrapper) ForEeachIdentityByName(name string, f func(identity.Identity) bool)",
+    "funcbody": "func (s *siteWrapper) ForEeachIdentityByName(name string, f func(identity.Identity) bool) {\n\ts.s.(identity.ForEeachIdentityByNameProvider).ForEeachIdentityByName(name, f)\n}",
+    "funcname": "ForEeachIdentityByName"
+}

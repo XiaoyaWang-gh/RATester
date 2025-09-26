@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/convert.go",
+    "lineno": 28,
+    "focalfunc": "func ToDuration(v any) time.Duration",
+    "funcbody": "func ToDuration(v any) time.Duration {\n\td, _ := ToDurationE(v)\n\treturn d\n}",
+    "funcname": "ToDuration"
+}

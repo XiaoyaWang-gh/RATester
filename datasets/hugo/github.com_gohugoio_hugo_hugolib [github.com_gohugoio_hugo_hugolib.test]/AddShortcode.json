@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 218,
+    "focalfunc": "func (p *contentParseInfo) AddShortcode(s *shortcode)",
+    "funcbody": "func (p *contentParseInfo) AddShortcode(s *shortcode) {\n\tp.itemsStep2 = append(p.itemsStep2, s)\n\tif s.insertPlaceholder() {\n\t\tp.hasNonMarkdownShortcode = true\n\t}\n}",
+    "funcname": "AddShortcode"
+}

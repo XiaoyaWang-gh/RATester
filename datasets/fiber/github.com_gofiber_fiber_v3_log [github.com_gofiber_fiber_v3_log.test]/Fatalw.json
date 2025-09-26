@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 110,
+    "focalfunc": "func Fatalw(msg string, keysAndValues ...any)",
+    "funcbody": "func Fatalw(msg string, keysAndValues ...any) {\n\tlogger.Fatalw(msg, keysAndValues...)\n}",
+    "funcname": "Fatalw"
+}

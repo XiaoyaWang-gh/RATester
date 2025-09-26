@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/crypt.go",
+    "lineno": 50,
+    "focalfunc": "func PKCS5UnPadding(origData []byte) (error, []byte)",
+    "funcbody": "func PKCS5UnPadding(origData []byte) (error, []byte) {\n\tlength := len(origData)\n\tunpadding := int(origData[length-1])\n\tif (length - unpadding) < 0 {\n\t\treturn errors.New(\"len error\"), nil\n\t}\n\treturn nil, origData[:(length - unpadding)]\n}",
+    "funcname": "PKCS5UnPadding"
+}

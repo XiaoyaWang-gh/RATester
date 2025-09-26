@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 42,
+    "focalfunc": "func ProcessInput(input string, w io.Writer)",
+    "funcbody": "func ProcessInput(input string, w io.Writer) {\n\tswitch input {\n\tcase \"lookup goroutine\":\n\t\tp := pprof.Lookup(\"goroutine\")\n\t\tp.WriteTo(w, 2)\n\tcase \"lookup heap\":\n\t\tp := pprof.Lookup(\"heap\")\n\t\tp.WriteTo(w, 2)\n\tcase \"lookup threadcreate\":\n\t\tp := pprof.Lookup(\"threadcreate\")\n\t\tp.WriteTo(w, 2)\n\tcase \"lookup block\":\n\t\tp := pprof.Lookup(\"block\")\n\t\tp.WriteTo(w, 2)\n\tcase \"get cpuprof\":\n\t\tGetCPUProfile(w)\n\tcase \"get memprof\":\n\t\tMemProf(w)\n\tcase \"gc summary\":\n\t\tPrintGCSummary(w)\n\t}\n}",
+    "funcname": "ProcessInput"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 142,
+    "focalfunc": "func WithRouterMethods(ctrlInterface ControllerInterface, mappingMethod ...string) ControllerOption",
+    "funcbody": "func WithRouterMethods(ctrlInterface ControllerInterface, mappingMethod ...string) ControllerOption {\n\treturn func(c *ControllerInfo) {\n\t\tc.methods = parseMappingMethods(ctrlInterface, mappingMethod)\n\t}\n}",
+    "funcname": "WithRouterMethods"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 117,
+    "focalfunc": "func (ctl *Control) SetInWorkConnCallback(cb func(*v1.ProxyBaseConfig, net.Conn, *msg.StartWorkConn) bool)",
+    "funcbody": "func (ctl *Control) SetInWorkConnCallback(cb func(*v1.ProxyBaseConfig, net.Conn, *msg.StartWorkConn) bool) {\n\tctl.pm.SetInWorkConnCallback(cb)\n}",
+    "funcname": "SetInWorkConnCallback"
+}

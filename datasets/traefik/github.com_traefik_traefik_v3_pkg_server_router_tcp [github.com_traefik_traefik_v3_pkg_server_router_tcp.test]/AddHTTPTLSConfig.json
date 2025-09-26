@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/tcp/router.go",
+    "lineno": 233,
+    "focalfunc": "func (r *Router) AddHTTPTLSConfig(sniHost string, config *tls.Config)",
+    "funcbody": "func (r *Router) AddHTTPTLSConfig(sniHost string, config *tls.Config) {\n\tif r.hostHTTPTLSConfig == nil {\n\t\tr.hostHTTPTLSConfig = map[string]*tls.Config{}\n\t}\n\n\tr.hostHTTPTLSConfig[sniHost] = config\n}",
+    "funcname": "AddHTTPTLSConfig"
+}

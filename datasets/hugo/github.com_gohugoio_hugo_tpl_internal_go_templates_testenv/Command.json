@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/exec.go",
+    "lineno": 219,
+    "focalfunc": "func Command(t testing.TB, name string, args ...string) *exec.Cmd",
+    "funcbody": "func Command(t testing.TB, name string, args ...string) *exec.Cmd {\n\tt.Helper()\n\treturn CommandContext(t, context.Background(), name, args...)\n}",
+    "funcname": "Command"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 59,
+    "focalfunc": "func (trees methodTrees) get(method string) *node",
+    "funcbody": "func (trees methodTrees) get(method string) *node {\n\tfor _, tree := range trees {\n\t\tif tree.method == method {\n\t\t\treturn tree.root\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "get"
+}

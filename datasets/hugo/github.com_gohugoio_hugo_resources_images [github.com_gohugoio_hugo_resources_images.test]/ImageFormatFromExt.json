@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/config.go",
+    "lineno": 116,
+    "focalfunc": "func ImageFormatFromExt(ext string) (Format, bool)",
+    "funcbody": "func ImageFormatFromExt(ext string) (Format, bool) {\n\tf, found := imageFormats[ext]\n\treturn f, found\n}",
+    "funcname": "ImageFormatFromExt"
+}

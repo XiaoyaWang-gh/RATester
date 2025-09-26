@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 212,
+    "focalfunc": "func (r *Request) UserAgent() string",
+    "funcbody": "func (r *Request) UserAgent() string {\n\treturn r.userAgent\n}",
+    "funcname": "UserAgent"
+}

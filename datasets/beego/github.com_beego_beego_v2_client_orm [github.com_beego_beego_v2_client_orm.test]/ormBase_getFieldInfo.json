@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm.go",
+    "lineno": 139,
+    "focalfunc": "func (*ormBase) getFieldInfo(mi *models.ModelInfo, name string) *models.FieldInfo",
+    "funcbody": "func (*ormBase) getFieldInfo(mi *models.ModelInfo, name string) *models.FieldInfo {\n\tfi, ok := mi.Fields.GetByAny(name)\n\tif !ok {\n\t\tpanic(fmt.Errorf(\"<Ormer> cannot find field `%s` for model `%s`\", name, mi.FullName))\n\t}\n\treturn fi\n}",
+    "funcname": "getFieldInfo"
+}

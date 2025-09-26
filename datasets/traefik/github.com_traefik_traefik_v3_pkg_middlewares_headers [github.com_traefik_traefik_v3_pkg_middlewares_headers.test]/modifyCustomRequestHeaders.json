@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/headers/header.go",
+    "lineno": 67,
+    "focalfunc": "func (s *Header) modifyCustomRequestHeaders(req *http.Request)",
+    "funcbody": "func (s *Header) modifyCustomRequestHeaders(req *http.Request) {\n\n\tfor header, value := range s.headers.CustomRequestHeaders {\n\t\tswitch {\n\n\t\tcase value == \"\" && header == forward.XForwardedFor:\n\t\t\treq.Header[header] = nil\n\n\t\tcase value == \"\":\n\t\t\treq.Header.Del(header)\n\n\t\tcase strings.EqualFold(header, \"Host\"):\n\t\t\treq.Host = value\n\n\t\tdefault:\n\t\t\treq.Header.Set(header, value)\n\t\t}\n\t}\n}",
+    "funcname": "modifyCustomRequestHeaders"
+}

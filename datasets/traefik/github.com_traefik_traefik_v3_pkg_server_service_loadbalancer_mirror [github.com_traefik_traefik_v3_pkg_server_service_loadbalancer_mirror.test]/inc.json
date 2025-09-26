@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 48,
+    "focalfunc": "func (m *Mirroring) inc() uint64",
+    "funcbody": "func (m *Mirroring) inc() uint64 {\n\tm.lock.Lock()\n\tdefer m.lock.Unlock()\n\tm.total++\n\treturn m.total\n}",
+    "funcname": "inc"
+}

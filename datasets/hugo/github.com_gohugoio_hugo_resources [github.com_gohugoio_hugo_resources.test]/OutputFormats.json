@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_spec.go",
+    "lineno": 218,
+    "focalfunc": "func (r *Spec) OutputFormats() output.Formats",
+    "funcbody": "func (r *Spec) OutputFormats() output.Formats {\n\treturn r.Cfg.GetConfigSection(\"outputFormats\").(output.Formats)\n}",
+    "funcname": "OutputFormats"
+}

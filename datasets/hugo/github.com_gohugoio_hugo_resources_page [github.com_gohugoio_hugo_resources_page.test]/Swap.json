@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/weighted.go",
+    "lineno": 125,
+    "focalfunc": "func (wp WeightedPages) Swap(i, j int)",
+    "funcbody": "func (wp WeightedPages) Swap(i, j int)\t{ wp[i], wp[j] = wp[j], wp[i] }",
+    "funcname": "Swap"
+}

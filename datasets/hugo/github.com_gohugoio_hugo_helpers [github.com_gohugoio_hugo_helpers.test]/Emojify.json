@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/emoji.go",
+    "lineno": 36,
+    "focalfunc": "func Emojify(source []byte) []byte",
+    "funcbody": "func Emojify(source []byte) []byte {\n\temojiInit.Do(initEmoji)\n\n\tstart := 0\n\tk := bytes.Index(source[start:], emojiDelim)\n\n\tfor k != -1 {\n\n\t\tj := start + k\n\n\t\tupper := j + emojiMaxSize\n\n\t\tif upper > len(source) {\n\t\t\tupper = len(source)\n\t\t}\n\n\t\tendEmoji := bytes.Index(source[j+1:upper], emojiDelim)\n\t\tnextWordDelim := bytes.Index(source[j:upper], emojiWordDelim)\n\n\t\tif endEmoji < 0 {\n\t\t\tstart++\n\t\t} else if endEmoji == 0 || (nextWordDelim != -1 && nextWordDelim < endEmoji) {\n\t\t\tstart += endEmoji + 1\n\t\t} else {\n\t\t\tendKey := endEmoji + j + 2\n\t\t\temojiKey := source[j:endKey]\n\n\t\t\tif emoji, ok := emojis[string(emojiKey)]; ok {\n\t\t\t\tsource = append(source[:j], append(emoji, source[endKey:]...)...)\n\t\t\t}\n\n\t\t\tstart += endEmoji\n\t\t}\n\n\t\tif start >= len(source) {\n\t\t\tbreak\n\t\t}\n\n\t\tk = bytes.Index(source[start:], emojiDelim)\n\t}\n\n\treturn source\n}",
+    "funcname": "Emojify"
+}

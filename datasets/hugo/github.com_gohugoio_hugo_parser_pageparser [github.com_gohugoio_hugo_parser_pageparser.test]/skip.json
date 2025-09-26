@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 418,
+    "focalfunc": "func (s *sectionHandler) skip() int",
+    "funcbody": "func (s *sectionHandler) skip() int {\n\tif s.skipAll {\n\t\treturn -1\n\t}\n\n\tidx := s.skipFunc(s.l)\n\tif idx == -1 {\n\t\ts.skipAll = true\n\t}\n\treturn idx\n}",
+    "funcname": "skip"
+}

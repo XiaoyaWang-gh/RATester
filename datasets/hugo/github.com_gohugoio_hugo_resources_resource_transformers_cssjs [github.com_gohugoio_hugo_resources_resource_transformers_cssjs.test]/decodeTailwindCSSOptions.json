@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/tailwindcss.go",
+    "lineno": 155,
+    "focalfunc": "func decodeTailwindCSSOptions(m map[string]any) (opts TailwindCSSOptions, err error)",
+    "funcbody": "func decodeTailwindCSSOptions(m map[string]any) (opts TailwindCSSOptions, err error) {\n\tif m == nil {\n\t\treturn\n\t}\n\terr = mapstructure.WeakDecode(m, &opts)\n\treturn\n}",
+    "funcname": "decodeTailwindCSSOptions"
+}

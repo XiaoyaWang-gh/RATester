@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/process.go",
+    "lineno": 41,
+    "focalfunc": "func (f processFilter) ImageProcessSpec() string",
+    "funcbody": "func (f processFilter) ImageProcessSpec() string {\n\treturn f.spec\n}",
+    "funcname": "ImageProcessSpec"
+}

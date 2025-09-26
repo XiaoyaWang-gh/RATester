@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_intro.go",
+    "lineno": 44,
+    "focalfunc": "func lexFrontMatterJSON(l *pageLexer) stateFunc",
+    "funcbody": "func lexFrontMatterJSON(l *pageLexer) stateFunc {\n\n\tl.backup()\n\n\tvar (\n\t\tinQuote\tbool\n\t\tlevel\tint\n\t)\n\n\tfor {\n\n\t\tr := l.next()\n\n\t\tswitch {\n\t\tcase r == eof:\n\t\t\treturn l.errorf(\"unexpected EOF parsing JSON front matter\")\n\t\tcase r == '{':\n\t\t\tif !inQuote {\n\t\t\t\tlevel++\n\t\t\t}\n\t\tcase r == '}':\n\t\t\tif !inQuote {\n\t\t\t\tlevel--\n\t\t\t}\n\t\tcase r == '\"':\n\t\t\tinQuote = !inQuote\n\t\tcase r == '\\\\':\n\n\t\t\tl.next()\n\t\t}\n\n\t\tif level == 0 {\n\t\t\tbreak\n\t\t}\n\t}\n\n\tl.consumeCRLF()\n\tl.emit(TypeFrontMatterJSON)\n\n\treturn lexMainSection\n}",
+    "funcname": "lexFrontMatterJSON"
+}

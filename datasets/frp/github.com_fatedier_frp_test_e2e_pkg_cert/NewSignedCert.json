@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/cert/selfsigned.go",
+    "lineno": 121,
+    "focalfunc": "func NewSignedCert(cfg cert.Config, key crypto.Signer, caCert *x509.Certificate, caKey crypto.Signer) (*x509.Certificate, error)",
+    "funcbody": "func NewSignedCert(cfg cert.Config, key crypto.Signer, caCert *x509.Certificate, caKey crypto.Signer) (*x509.Certificate, error) {\n\tserial, err := rand.Int(rand.Reader, new(big.Int).SetInt64(math.MaxInt64))\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif len(cfg.CommonName) == 0 {\n\t\treturn nil, errors.New(\"must specify a CommonName\")\n\t}\n\tif len(cfg.Usages) == 0 {\n\t\treturn nil, errors.New(\"must specify at least one ExtKeyUsage\")\n\t}\n\n\tcertTmpl := x509.Certificate{\n\t\tSubject: pkix.Name{\n\t\t\tCommonName:\tcfg.CommonName,\n\t\t\tOrganization:\tcfg.Organization,\n\t\t},\n\t\tDNSNames:\tcfg.AltNames.DNSNames,\n\t\tIPAddresses:\tcfg.AltNames.IPs,\n\t\tSerialNumber:\tserial,\n\t\tNotBefore:\tcaCert.NotBefore,\n\t\tNotAfter:\ttime.Now().Add(time.Hour * 24 * 365 * 10).UTC(),\n\t\tKeyUsage:\tx509.KeyUsageKeyEncipherment | x509.KeyUsageDigitalSignature,\n\t\tExtKeyUsage:\tcfg.Usages,\n\t}\n\tcertDERBytes, err := x509.CreateCertificate(rand.Reader, &certTmpl, caCert, key.Public(), caKey)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn x509.ParseCertificate(certDERBytes)\n}",
+    "funcname": "NewSignedCert"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 440,
+    "focalfunc": "func (p *Path) PathRel(owner *Path) string",
+    "funcbody": "func (p *Path) PathRel(owner *Path) string {\n\tob := owner.Base()\n\tif !strings.HasSuffix(ob, \"/\") {\n\t\tob += \"/\"\n\t}\n\treturn strings.TrimPrefix(p.Path(), ob)\n}",
+    "funcname": "PathRel"
+}

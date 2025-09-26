@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 461,
+    "focalfunc": "func (f *filterOrmDecorator) DoTxWithCtxAndOpts(ctx context.Context, opts *sql.TxOptions, task func(ctx context.Context, txOrm TxOrmer) error) error",
+    "funcbody": "func (f *filterOrmDecorator) DoTxWithCtxAndOpts(ctx context.Context, opts *sql.TxOptions, task func(ctx context.Context, txOrm TxOrmer) error) error {\n\tinv := &Invocation{\n\t\tMethod:\t\t\"DoTxWithCtxAndOpts\",\n\t\tArgs:\t\t[]interface{}{opts, task},\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tTxName:\t\tgetTxNameFromCtx(ctx),\n\t\tf: func(c context.Context) []interface{} {\n\t\t\terr := doTxTemplate(c, f, opts, task)\n\t\t\treturn []interface{}{err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn f.convertError(res[0])\n}",
+    "funcname": "DoTxWithCtxAndOpts"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 183,
+    "focalfunc": "func (b *PagesFromTemplate) AddChange(id identity.Identity)",
+    "funcbody": "func (b *PagesFromTemplate) AddChange(id identity.Identity) {\n\tb.buildState.ChangedIdentities = append(b.buildState.ChangedIdentities, id)\n}",
+    "funcname": "AddChange"
+}

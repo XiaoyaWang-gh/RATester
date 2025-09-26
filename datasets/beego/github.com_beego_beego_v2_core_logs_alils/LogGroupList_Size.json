@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 428,
+    "focalfunc": "func (m *LogGroupList) Size() (n int)",
+    "funcbody": "func (m *LogGroupList) Size() (n int) {\n\tvar l int\n\t_ = l\n\tif len(m.LogGroups) > 0 {\n\t\tfor _, e := range m.LogGroups {\n\t\t\tl = e.Size()\n\t\t\tn += 1 + l + sovLog(uint64(l))\n\t\t}\n\t}\n\tif m.XXXUnrecognized != nil {\n\t\tn += len(m.XXXUnrecognized)\n\t}\n\treturn n\n}",
+    "funcname": "Size"
+}

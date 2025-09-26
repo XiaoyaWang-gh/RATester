@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/tables/tables.go",
+    "lineno": 108,
+    "focalfunc": "func (r *htmlRenderer) renderCell(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error)",
+    "funcbody": "func (r *htmlRenderer) renderCell(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {\n\tctx := w.(*render.Context)\n\n\tif entering {\n\n\t\tctx.PushPos(ctx.Buffer.Len())\n\t\treturn ast.WalkContinue, nil\n\t}\n\n\tn := node.(*gast.TableCell)\n\n\ttext := ctx.PopRenderedString()\n\n\ttable := r.peekTable(ctx)\n\n\tvar alignment string\n\tswitch n.Alignment {\n\tcase gast.AlignLeft:\n\t\talignment = \"left\"\n\tcase gast.AlignRight:\n\t\talignment = \"right\"\n\tcase gast.AlignCenter:\n\t\talignment = \"center\"\n\tdefault:\n\t\talignment = \"left\"\n\t}\n\n\tcell := hooks.TableCell{Text: hstring.HTML(text), Alignment: alignment}\n\n\tif node.Parent().Kind() == gast.KindTableHeader {\n\t\ttable.THead[len(table.THead)-1] = append(table.THead[len(table.THead)-1], cell)\n\t} else {\n\t\ttable.TBody[len(table.TBody)-1] = append(table.TBody[len(table.TBody)-1], cell)\n\t}\n\n\treturn ast.WalkContinue, nil\n}",
+    "funcname": "renderCell"
+}

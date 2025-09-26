@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 104,
+    "focalfunc": "func (pc *pipeConnector) Close() error",
+    "funcbody": "func (pc *pipeConnector) Close() error {\n\tpc.peerListener.Close()\n\treturn nil\n}",
+    "funcname": "Close"
+}

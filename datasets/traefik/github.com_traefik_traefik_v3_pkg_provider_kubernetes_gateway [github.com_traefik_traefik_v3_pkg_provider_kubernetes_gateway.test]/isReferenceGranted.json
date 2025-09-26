@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 792,
+    "focalfunc": "func (p *Provider) isReferenceGranted(fromKind, fromNamespace, toGroup, toKind, toName, toNamespace string) error",
+    "funcbody": "func (p *Provider) isReferenceGranted(fromKind, fromNamespace, toGroup, toKind, toName, toNamespace string) error {\n\tif toNamespace == fromNamespace {\n\t\treturn nil\n\t}\n\n\trefGrants, err := p.client.ListReferenceGrants(toNamespace)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"listing ReferenceGrant: %w\", err)\n\t}\n\n\trefGrants = filterReferenceGrantsFrom(refGrants, groupGateway, fromKind, fromNamespace)\n\trefGrants = filterReferenceGrantsTo(refGrants, toGroup, toKind, toName)\n\tif len(refGrants) == 0 {\n\t\treturn errors.New(\"missing ReferenceGrant\")\n\t}\n\n\treturn nil\n}",
+    "funcname": "isReferenceGranted"
+}

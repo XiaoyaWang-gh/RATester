@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 344,
+    "focalfunc": "func (p *pageState) Resources() resource.Resources",
+    "funcbody": "func (p *pageState) Resources() resource.Resources {\n\treturn p.s.pageMap.getOrCreateResourcesForPage(p)\n}",
+    "funcname": "Resources"
+}

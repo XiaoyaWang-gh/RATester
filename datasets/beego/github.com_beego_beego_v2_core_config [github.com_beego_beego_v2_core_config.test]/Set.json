@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 32,
+    "focalfunc": "func Set(key, val string) error",
+    "funcbody": "func Set(key, val string) error {\n\treturn globalInstance.Set(key, val)\n}",
+    "funcname": "Set"
+}

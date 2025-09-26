@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 373,
+    "focalfunc": "func (output *BeegoOutput) IsSuccessful() bool",
+    "funcbody": "func (output *BeegoOutput) IsSuccessful() bool {\n\treturn output.Status >= 200 && output.Status < 300\n}",
+    "funcname": "IsSuccessful"
+}

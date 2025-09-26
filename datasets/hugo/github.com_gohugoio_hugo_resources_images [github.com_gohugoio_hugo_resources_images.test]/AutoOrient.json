@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 236,
+    "focalfunc": "func (*Filters) AutoOrient() gift.Filter",
+    "funcbody": "func (*Filters) AutoOrient() gift.Filter {\n\treturn filter{\n\t\tFilter: autoOrientFilter{},\n\t}\n}",
+    "funcname": "AutoOrient"
+}

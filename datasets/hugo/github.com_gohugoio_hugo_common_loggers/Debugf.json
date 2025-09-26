@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 224,
+    "focalfunc": "func (l *logAdapter) Debugf(format string, v ...any)",
+    "funcbody": "func (l *logAdapter) Debugf(format string, v ...any) {\n\tl.debugl.Logf(format, v...)\n}",
+    "funcname": "Debugf"
+}

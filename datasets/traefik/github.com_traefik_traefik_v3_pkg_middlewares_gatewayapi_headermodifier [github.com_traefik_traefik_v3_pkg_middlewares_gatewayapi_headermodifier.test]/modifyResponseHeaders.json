@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/gatewayapi/headermodifier/response_header_modifier.go",
+    "lineno": 46,
+    "focalfunc": "func (r *responseHeaderModifier) modifyResponseHeaders(res *http.Response) error",
+    "funcbody": "func (r *responseHeaderModifier) modifyResponseHeaders(res *http.Response) error {\n\tfor headerName, headerValue := range r.set {\n\t\tres.Header.Set(headerName, headerValue)\n\t}\n\n\tfor headerName, headerValue := range r.add {\n\t\tres.Header.Add(headerName, headerValue)\n\t}\n\n\tfor _, headerName := range r.remove {\n\t\tres.Header.Del(headerName)\n\t}\n\n\treturn nil\n}",
+    "funcname": "modifyResponseHeaders"
+}

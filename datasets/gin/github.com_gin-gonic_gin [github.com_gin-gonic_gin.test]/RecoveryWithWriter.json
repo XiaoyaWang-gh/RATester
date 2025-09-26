@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/recovery.go",
+    "lineno": 43,
+    "focalfunc": "func RecoveryWithWriter(out io.Writer, recovery ...RecoveryFunc) HandlerFunc",
+    "funcbody": "func RecoveryWithWriter(out io.Writer, recovery ...RecoveryFunc) HandlerFunc {\n\tif len(recovery) > 0 {\n\t\treturn CustomRecoveryWithWriter(out, recovery[0])\n\t}\n\treturn CustomRecoveryWithWriter(out, defaultHandleRecovery)\n}",
+    "funcname": "RecoveryWithWriter"
+}

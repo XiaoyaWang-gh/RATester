@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 202,
+    "focalfunc": "func (h *Hooks) executeOnForkHooks(pid int)",
+    "funcbody": "func (h *Hooks) executeOnForkHooks(pid int) {\n\tfor _, v := range h.onFork {\n\t\tif err := v(pid); err != nil {\n\t\t\tlog.Errorf(\"failed to call fork hook: %v\", err)\n\t\t}\n\t}\n}",
+    "funcname": "executeOnForkHooks"
+}

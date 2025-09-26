@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 254,
+    "focalfunc": "func releaseErrChan(ch chan error)",
+    "funcbody": "func releaseErrChan(ch chan error) {\n\terrChanPool.Put(ch)\n}",
+    "funcname": "releaseErrChan"
+}

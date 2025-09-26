@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rate_limiter.go",
+    "lineno": 111,
+    "focalfunc": "func RateLimiterWithConfig(config RateLimiterConfig) echo.MiddlewareFunc",
+    "funcbody": "func RateLimiterWithConfig(config RateLimiterConfig) echo.MiddlewareFunc {\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultRateLimiterConfig.Skipper\n\t}\n\tif config.IdentifierExtractor == nil {\n\t\tconfig.IdentifierExtractor = DefaultRateLimiterConfig.IdentifierExtractor\n\t}\n\tif config.ErrorHandler == nil {\n\t\tconfig.ErrorHandler = DefaultRateLimiterConfig.ErrorHandler\n\t}\n\tif config.DenyHandler == nil {\n\t\tconfig.DenyHandler = DefaultRateLimiterConfig.DenyHandler\n\t}\n\tif config.Store == nil {\n\t\tpanic(\"Store configuration must be provided\")\n\t}\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\t\t\tif config.BeforeFunc != nil {\n\t\t\t\tconfig.BeforeFunc(c)\n\t\t\t}\n\n\t\t\tidentifier, err := config.IdentifierExtractor(c)\n\t\t\tif err != nil {\n\t\t\t\tc.Error(config.ErrorHandler(c, err))\n\t\t\t\treturn nil\n\t\t\t}\n\n\t\t\tif allow, err := config.Store.Allow(identifier); !allow {\n\t\t\t\tc.Error(config.DenyHandler(c, identifier, err))\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "RateLimiterWithConfig"
+}

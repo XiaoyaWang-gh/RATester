@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 401,
+    "focalfunc": "func (r *NodeShiftTreeWalker[T]) toT(tree *NodeShiftTree[T], v any) (t T, ok bool, exact DimensionFlag)",
+    "funcbody": "func (r *NodeShiftTreeWalker[T]) toT(tree *NodeShiftTree[T], v any) (t T, ok bool, exact DimensionFlag) {\n\tif r.NoShift {\n\t\tt = v.(T)\n\t\tok = true\n\t} else {\n\t\tt, ok, exact = tree.shift(v.(T), r.Exact)\n\t}\n\treturn\n}",
+    "funcname": "toT"
+}

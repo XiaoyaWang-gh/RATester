@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 389,
+    "focalfunc": "func (c *Controller) Abort(code string)",
+    "funcbody": "func (c *Controller) Abort(code string) {\n\tstatus, err := strconv.Atoi(code)\n\tif err != nil {\n\t\tstatus = 200\n\t}\n\tc.CustomAbort(status, code)\n}",
+    "funcname": "Abort"
+}

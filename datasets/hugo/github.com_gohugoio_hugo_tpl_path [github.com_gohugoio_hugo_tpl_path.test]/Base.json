@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/path/path.go",
+    "lineno": 78,
+    "focalfunc": "func (ns *Namespace) Base(path any) (string, error)",
+    "funcbody": "func (ns *Namespace) Base(path any) (string, error) {\n\tspath, err := cast.ToStringE(path)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tspath = filepath.ToSlash(spath)\n\treturn _path.Base(spath), nil\n}",
+    "funcname": "Base"
+}

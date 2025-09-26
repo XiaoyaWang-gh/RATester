@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 126,
+    "focalfunc": "func (c *Client) SetJSONUnmarshal(f utils.JSONUnmarshal) *Client",
+    "funcbody": "func (c *Client) SetJSONUnmarshal(f utils.JSONUnmarshal) *Client {\n\tc.jsonUnmarshal = f\n\treturn c\n}",
+    "funcname": "SetJSONUnmarshal"
+}

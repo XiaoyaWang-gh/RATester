@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 156,
+    "focalfunc": "func (o querySet) OrderClauses(orders ...*order_clause.Order) QuerySeter",
+    "funcbody": "func (o querySet) OrderClauses(orders ...*order_clause.Order) QuerySeter {\n\tif len(orders) <= 0 {\n\t\treturn &o\n\t}\n\to.orders = orders\n\treturn &o\n}",
+    "funcname": "OrderClauses"
+}

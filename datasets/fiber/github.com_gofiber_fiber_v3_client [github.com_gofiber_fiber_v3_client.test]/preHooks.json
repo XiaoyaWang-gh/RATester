@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 140,
+    "focalfunc": "func (c *core) preHooks() error",
+    "funcbody": "func (c *core) preHooks() error {\n\tc.client.mu.Lock()\n\tdefer c.client.mu.Unlock()\n\n\tfor _, f := range c.client.userRequestHooks {\n\t\terr := f(c.client, c.req)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tfor _, f := range c.client.builtinRequestHooks {\n\t\terr := f(c.client, c.req)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "preHooks"
+}

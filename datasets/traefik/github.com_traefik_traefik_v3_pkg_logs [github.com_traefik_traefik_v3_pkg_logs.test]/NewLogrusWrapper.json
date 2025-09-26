@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/logrus.go",
+    "lineno": 11,
+    "focalfunc": "func NewLogrusWrapper(logger zerolog.Logger) *LogrusStdWrapper",
+    "funcbody": "func NewLogrusWrapper(logger zerolog.Logger) *LogrusStdWrapper {\n\treturn &LogrusStdWrapper{logger: logger}\n}",
+    "funcname": "NewLogrusWrapper"
+}

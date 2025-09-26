@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter.go",
+    "lineno": 120,
+    "focalfunc": "func WithReturnOnOutput(ret bool) FilterOpt",
+    "funcbody": "func WithReturnOnOutput(ret bool) FilterOpt {\n\treturn func(opts *filterOpts) {\n\t\topts.returnOnOutput = ret\n\t}\n}",
+    "funcname": "WithReturnOnOutput"
+}

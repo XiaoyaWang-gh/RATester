@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/condition.go",
+    "lineno": 53,
+    "focalfunc": "func (s *SimpleCondition) Match(ctx context.Context, inv *orm.Invocation) bool",
+    "funcbody": "func (s *SimpleCondition) Match(ctx context.Context, inv *orm.Invocation) bool {\n\tres := true\n\tif len(s.tableName) != 0 {\n\t\tres = res && (s.tableName == inv.GetTableName())\n\t}\n\n\tif len(s.method) != 0 {\n\t\tres = res && (s.method == inv.Method)\n\t}\n\treturn res\n}",
+    "funcname": "Match"
+}

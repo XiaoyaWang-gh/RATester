@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 155,
+    "focalfunc": "func (s *Sock5ModeServer) handleBind(c net.Conn)",
+    "funcbody": "func (s *Sock5ModeServer) handleBind(c net.Conn) {\n}",
+    "funcname": "handleBind"
+}

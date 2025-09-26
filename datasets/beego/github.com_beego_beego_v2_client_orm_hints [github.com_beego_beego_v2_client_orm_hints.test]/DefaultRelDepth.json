@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 73,
+    "focalfunc": "func DefaultRelDepth() *Hint",
+    "funcbody": "func DefaultRelDepth() *Hint {\n\treturn NewHint(KeyRelDepth, true)\n}",
+    "funcname": "DefaultRelDepth"
+}

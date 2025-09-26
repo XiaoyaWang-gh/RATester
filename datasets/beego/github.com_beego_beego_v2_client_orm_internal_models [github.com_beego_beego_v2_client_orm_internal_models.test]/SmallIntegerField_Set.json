@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 382,
+    "focalfunc": "func (e *SmallIntegerField) Set(d int16)",
+    "funcbody": "func (e *SmallIntegerField) Set(d int16) {\n\t*e = SmallIntegerField(d)\n}",
+    "funcname": "Set"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server.go",
+    "lineno": 30,
+    "focalfunc": "func NewServer(routinesPool *safe.Pool, entryPoints TCPEntryPoints, entryPointsUDP UDPEntryPoints, watcher *ConfigurationWatcher, observabilityMgr *middleware.ObservabilityMgr) *Server",
+    "funcbody": "func NewServer(routinesPool *safe.Pool, entryPoints TCPEntryPoints, entryPointsUDP UDPEntryPoints, watcher *ConfigurationWatcher, observabilityMgr *middleware.ObservabilityMgr) *Server {\n\tsrv := &Server{\n\t\twatcher:\t\twatcher,\n\t\ttcpEntryPoints:\t\tentryPoints,\n\t\tobservabilityMgr:\tobservabilityMgr,\n\t\tsignals:\t\tmake(chan os.Signal, 1),\n\t\tstopChan:\t\tmake(chan bool, 1),\n\t\troutinesPool:\t\troutinesPool,\n\t\tudpEntryPoints:\t\tentryPointsUDP,\n\t}\n\n\tsrv.configureSignals()\n\n\treturn srv\n}",
+    "funcname": "NewServer"
+}

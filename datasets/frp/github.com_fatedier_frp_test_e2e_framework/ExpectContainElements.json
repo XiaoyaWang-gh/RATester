@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 55,
+    "focalfunc": "func ExpectContainElements(actual interface{}, extra interface{}, explain ...interface{})",
+    "funcbody": "func ExpectContainElements(actual interface{}, extra interface{}, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1, actual).To(gomega.ContainElements(extra), explain...)\n}",
+    "funcname": "ExpectContainElements"
+}

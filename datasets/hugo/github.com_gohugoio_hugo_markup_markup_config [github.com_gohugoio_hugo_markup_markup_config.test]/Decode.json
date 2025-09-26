@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup_config/config.go",
+    "lineno": 44,
+    "focalfunc": "func Decode(cfg config.Provider) (conf Config, err error)",
+    "funcbody": "func Decode(cfg config.Provider) (conf Config, err error) {\n\tconf = Default\n\n\tm := cfg.GetStringMap(\"markup\")\n\tif m == nil {\n\t\treturn\n\t}\n\tm = maps.CleanConfigStringMap(m)\n\n\tnormalizeConfig(m)\n\n\terr = mapstructure.WeakDecode(m, &conf)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif err = highlight.ApplyLegacyConfig(cfg, &conf.Highlight); err != nil {\n\t\treturn\n\t}\n\n\treturn\n}",
+    "funcname": "Decode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 126,
+    "focalfunc": "func RefreshPath(s string)",
+    "funcbody": "func RefreshPath(s string) {\n\trefreshPathForPort(s, -1)\n}",
+    "funcname": "RefreshPath"
+}

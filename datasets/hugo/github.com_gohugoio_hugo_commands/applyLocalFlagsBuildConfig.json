@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 537,
+    "focalfunc": "func applyLocalFlagsBuildConfig(cmd *cobra.Command, r *rootCommand)",
+    "funcbody": "func applyLocalFlagsBuildConfig(cmd *cobra.Command, r *rootCommand) {\n\tcmd.Flags().StringSliceP(\"theme\", \"t\", []string{}, \"themes to use (located in /themes/THEMENAME/)\")\n\t_ = cmd.MarkFlagDirname(\"theme\")\n\tcmd.Flags().StringVarP(&r.baseURL, \"baseURL\", \"b\", \"\", \"hostname (and path) to the root, e.g. https://spf13.com/\")\n\tcmd.Flags().StringP(\"cacheDir\", \"\", \"\", \"filesystem path to cache directory\")\n\t_ = cmd.MarkFlagDirname(\"cacheDir\")\n\tcmd.Flags().StringP(\"contentDir\", \"c\", \"\", \"filesystem path to content directory\")\n\tcmd.Flags().StringSliceP(\"renderSegments\", \"\", []string{}, \"named segments to render (configured in the segments config)\")\n}",
+    "funcname": "applyLocalFlagsBuildConfig"
+}

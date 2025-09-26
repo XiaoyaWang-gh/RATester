@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 90,
+    "focalfunc": "func Do(timeout time.Duration, operation DoCondition) error",
+    "funcbody": "func Do(timeout time.Duration, operation DoCondition) error {\n\tif timeout <= 0 {\n\t\tpanic(\"timeout must be larger than zero\")\n\t}\n\n\tinterval := time.Duration(math.Ceil(float64(timeout) / 15.0))\n\tif interval > maxInterval {\n\t\tinterval = maxInterval\n\t}\n\n\ttimeout = applyCIMultiplier(timeout)\n\n\tvar err error\n\tif err = operation(); err == nil {\n\t\tfmt.Println(\"+\")\n\t\treturn nil\n\t}\n\tfmt.Print(\"*\")\n\n\tstopTimer := time.NewTimer(timeout)\n\tdefer stopTimer.Stop()\n\tretryTick := time.NewTicker(interval)\n\tdefer retryTick.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-stopTimer.C:\n\t\t\tfmt.Println(\"-\")\n\t\t\treturn fmt.Errorf(\"try operation failed: %w\", err)\n\t\tcase <-retryTick.C:\n\t\t\tfmt.Print(\"*\")\n\t\t\tif err = operation(); err == nil {\n\t\t\t\tfmt.Println(\"+\")\n\t\t\t\treturn nil\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "Do"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 136,
+    "focalfunc": "func Compare(a, b interface{}) (equal bool)",
+    "funcbody": "func Compare(a, b interface{}) (equal bool) {\n\tequal = false\n\tif strings.TrimSpace(fmt.Sprintf(\"%v\", a)) == strings.TrimSpace(fmt.Sprintf(\"%v\", b)) {\n\t\tequal = true\n\t}\n\treturn\n}",
+    "funcname": "Compare"
+}

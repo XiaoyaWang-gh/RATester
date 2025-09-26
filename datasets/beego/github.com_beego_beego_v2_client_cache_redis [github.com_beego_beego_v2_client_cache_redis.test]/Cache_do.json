@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/redis/redis.go",
+    "lineno": 81,
+    "focalfunc": "func (rc *Cache) do(commandName string, args ...interface{}) (interface{}, error)",
+    "funcbody": "func (rc *Cache) do(commandName string, args ...interface{}) (interface{}, error) {\n\targs[0] = rc.associate(args[0])\n\tc := rc.p.Get()\n\tdefer func() {\n\t\t_ = c.Close()\n\t}()\n\n\treply, err := c.Do(commandName, args...)\n\tif err != nil {\n\t\treturn nil, berror.Wrapf(err, cache.RedisCacheCurdFailed,\n\t\t\t\"could not execute this command: %s\", commandName)\n\t}\n\n\treturn reply, nil\n}",
+    "funcname": "do"
+}

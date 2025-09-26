@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_config.go",
+    "lineno": 134,
+    "focalfunc": "func (f Caches) GetResourceCache() *Cache",
+    "funcbody": "func (f Caches) GetResourceCache() *Cache {\n\treturn f[CacheKeyGetResource]\n}",
+    "funcname": "GetResourceCache"
+}

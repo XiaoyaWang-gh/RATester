@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 269,
+    "focalfunc": "func (c *cachedContent) parseContentFile(source []byte) error",
+    "funcbody": "func (c *cachedContent) parseContentFile(source []byte) error {\n\tif source == nil || c.pi.openSource == nil {\n\t\treturn nil\n\t}\n\n\treturn c.pi.mapItemsAfterFrontMatter(source, c.shortcodeState)\n}",
+    "funcname": "parseContentFile"
+}

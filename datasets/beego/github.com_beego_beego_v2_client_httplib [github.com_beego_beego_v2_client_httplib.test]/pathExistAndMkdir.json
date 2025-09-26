@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 628,
+    "focalfunc": "func pathExistAndMkdir(filename string) (err error)",
+    "funcbody": "func pathExistAndMkdir(filename string) (err error) {\n\tfilename = filepath.Dir(filename)\n\t_, err = os.Stat(filename)\n\tif err == nil {\n\t\treturn nil\n\t}\n\tif os.IsNotExist(err) {\n\t\terr = os.MkdirAll(filename, os.ModePerm)\n\t\tif err == nil {\n\t\t\treturn nil\n\t\t}\n\t}\n\treturn berror.Wrapf(err, CreateFileIfNotExistFailed, \"try to create(if not exist) failed: %s\", filename)\n}",
+    "funcname": "pathExistAndMkdir"
+}

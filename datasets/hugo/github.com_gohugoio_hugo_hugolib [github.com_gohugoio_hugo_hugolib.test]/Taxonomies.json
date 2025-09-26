@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 64,
+    "focalfunc": "func (s *Site) Taxonomies() page.TaxonomyList",
+    "funcbody": "func (s *Site) Taxonomies() page.TaxonomyList {\n\ts.CheckReady()\n\ts.init.taxonomies.Do(context.Background())\n\treturn s.taxonomies\n}",
+    "funcname": "Taxonomies"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/classify.go",
+    "lineno": 110,
+    "focalfunc": "func ClassifyFeatureCount(features []*NatFeature) (int, int, int)",
+    "funcbody": "func ClassifyFeatureCount(features []*NatFeature) (int, int, int) {\n\teasyCount := 0\n\thardCount := 0\n\n\tportsChangedRegularCount := 0\n\tfor _, feature := range features {\n\t\tif feature.NatType == EasyNAT {\n\t\t\teasyCount++\n\t\t\tcontinue\n\t\t}\n\n\t\thardCount++\n\t\tif feature.RegularPortsChange {\n\t\t\tportsChangedRegularCount++\n\t\t}\n\t}\n\treturn easyCount, hardCount, portsChangedRegularCount\n}",
+    "funcname": "ClassifyFeatureCount"
+}

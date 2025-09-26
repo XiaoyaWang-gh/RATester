@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/sdk/client/client.go",
+    "lineno": 117,
+    "focalfunc": "func (c *Client) setAuthHeader(req *http.Request)",
+    "funcbody": "func (c *Client) setAuthHeader(req *http.Request) {\n\tif c.authUser != \"\" || c.authPwd != \"\" {\n\t\treq.Header.Set(\"Authorization\", httppkg.BasicAuth(c.authUser, c.authPwd))\n\t}\n}",
+    "funcname": "setAuthHeader"
+}

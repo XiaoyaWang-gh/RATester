@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/codes.go",
+    "lineno": 77,
+    "focalfunc": "func (c *codeDefinition) Code() uint32",
+    "funcbody": "func (c *codeDefinition) Code() uint32 {\n\treturn c.code\n}",
+    "funcname": "Code"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/securityConfig.go",
+    "lineno": 171,
+    "focalfunc": "func DecodeConfig(cfg config.Provider) (Config, error)",
+    "funcbody": "func DecodeConfig(cfg config.Provider) (Config, error) {\n\tsc := DefaultConfig\n\tif cfg.IsSet(securityConfigKey) {\n\t\tm := cfg.GetStringMap(securityConfigKey)\n\t\tdec, err := mapstructure.NewDecoder(\n\t\t\t&mapstructure.DecoderConfig{\n\t\t\t\tWeaklyTypedInput:\ttrue,\n\t\t\t\tResult:\t\t\t&sc,\n\t\t\t\tDecodeHook:\t\tstringSliceToWhitelistHook(),\n\t\t\t},\n\t\t)\n\t\tif err != nil {\n\t\t\treturn sc, err\n\t\t}\n\n\t\tif err = dec.Decode(m); err != nil {\n\t\t\treturn sc, err\n\t\t}\n\t}\n\n\tif !sc.EnableInlineShortcodes {\n\n\t\tsc.EnableInlineShortcodes = cfg.GetBool(\"enableInlineShortcodes\")\n\t}\n\n\treturn sc, nil\n}",
+    "funcname": "DecodeConfig"
+}

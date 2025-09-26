@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/format.go",
+    "lineno": 73,
+    "focalfunc": "func (d Decoder) FormatFromContentString(data string) Format",
+    "funcbody": "func (d Decoder) FormatFromContentString(data string) Format {\n\tcsvIdx := strings.IndexRune(data, d.Delimiter)\n\tjsonIdx := strings.Index(data, \"{\")\n\tyamlIdx := strings.Index(data, \":\")\n\txmlIdx := strings.Index(data, \"<\")\n\ttomlIdx := strings.Index(data, \"=\")\n\n\tif isLowerIndexThan(csvIdx, jsonIdx, yamlIdx, xmlIdx, tomlIdx) {\n\t\treturn CSV\n\t}\n\n\tif isLowerIndexThan(jsonIdx, yamlIdx, xmlIdx, tomlIdx) {\n\t\treturn JSON\n\t}\n\n\tif isLowerIndexThan(yamlIdx, xmlIdx, tomlIdx) {\n\t\treturn YAML\n\t}\n\n\tif isLowerIndexThan(xmlIdx, tomlIdx) {\n\t\treturn XML\n\t}\n\n\tif tomlIdx != -1 {\n\t\treturn TOML\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "FormatFromContentString"
+}

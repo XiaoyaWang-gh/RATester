@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 77,
+    "focalfunc": "func (f *Finder) Contains(id, in Identity, maxDepth int) FinderResult",
+    "funcbody": "func (f *Finder) Contains(id, in Identity, maxDepth int) FinderResult {\n\tif id == Anonymous || in == Anonymous {\n\t\treturn FinderNotFound\n\t}\n\n\tif id == GenghisKhan && in == GenghisKhan {\n\t\treturn FinderNotFound\n\t}\n\n\tif id == GenghisKhan {\n\t\treturn FinderFound\n\t}\n\n\tif id == in {\n\t\treturn FinderFound\n\t}\n\n\tif id == nil || in == nil {\n\t\treturn FinderNotFound\n\t}\n\n\tvar (\n\t\tisDp\tbool\n\t\tisPeq\tbool\n\n\t\tdp\tIsProbablyDependentProvider\n\t\tpeq\tcompare.ProbablyEqer\n\t)\n\n\tif !f.cfg.Exact {\n\t\tdp, isDp = id.(IsProbablyDependentProvider)\n\t\tpeq, isPeq = id.(compare.ProbablyEqer)\n\t}\n\n\teqer, hasEqer := id.(compare.Eqer)\n\n\tsid := getSearchID()\n\tsid.id = id\n\tsid.isDp = isDp\n\tsid.isPeq = isPeq\n\tsid.hasEqer = hasEqer\n\tsid.dp = dp\n\tsid.peq = peq\n\tsid.eqer = eqer\n\tsid.maxDepth = maxDepth\n\n\tdefer putSearchID(sid)\n\n\tif r := f.checkOne(sid, in, 0); r > 0 {\n\t\treturn r\n\t}\n\n\tm := GetDependencyManager(in)\n\tif m != nil {\n\t\tif r := f.checkManager(sid, m, 0); r > 0 {\n\t\t\treturn r\n\t\t}\n\t}\n\treturn FinderNotFound\n}",
+    "funcname": "Contains"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 1005,
+    "focalfunc": "func (t *TemplateNode) tree() *Tree",
+    "funcbody": "func (t *TemplateNode) tree() *Tree {\n\treturn t.tr\n}",
+    "funcname": "tree"
+}

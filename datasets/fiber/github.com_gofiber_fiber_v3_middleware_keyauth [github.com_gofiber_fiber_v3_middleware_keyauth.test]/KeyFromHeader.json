@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/keyauth/keyauth.go",
+    "lineno": 125,
+    "focalfunc": "func KeyFromHeader(header, authScheme string) KeyLookupFunc",
+    "funcbody": "func KeyFromHeader(header, authScheme string) KeyLookupFunc {\n\treturn func(c fiber.Ctx) (string, error) {\n\t\tauth := c.Get(header)\n\t\tl := len(authScheme)\n\t\tif len(auth) > 0 && l == 0 {\n\t\t\treturn auth, nil\n\t\t}\n\t\tif len(auth) > l+1 && auth[:l] == authScheme {\n\t\t\treturn auth[l+1:], nil\n\t\t}\n\t\treturn \"\", ErrMissingOrMalformedAPIKey\n\t}\n}",
+    "funcname": "KeyFromHeader"
+}

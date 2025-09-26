@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 725,
+    "focalfunc": "func (c *Configs) Validate(logger loggers.Logger) error",
+    "funcbody": "func (c *Configs) Validate(logger loggers.Logger) error {\n\tfor p := range c.Base.Cascade.Config {\n\t\tpage.CheckCascadePattern(logger, p)\n\t}\n\treturn nil\n}",
+    "funcname": "Validate"
+}

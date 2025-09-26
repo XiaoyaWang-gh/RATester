@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 152,
+    "focalfunc": "func (p *Pager) NumberOfElements() int",
+    "funcbody": "func (p *Pager) NumberOfElements() int {\n\treturn p.element().Len()\n}",
+    "funcname": "NumberOfElements"
+}

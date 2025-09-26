@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 427,
+    "focalfunc": "func UnwrapFilter(in gift.Filter) gift.Filter",
+    "funcbody": "func UnwrapFilter(in gift.Filter) gift.Filter {\n\tif f, ok := in.(filter); ok {\n\t\treturn f.Filter\n\t}\n\treturn in\n}",
+    "funcname": "UnwrapFilter"
+}

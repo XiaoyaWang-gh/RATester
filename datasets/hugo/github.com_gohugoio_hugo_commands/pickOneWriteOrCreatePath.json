@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 1191,
+    "focalfunc": "func pickOneWriteOrCreatePath(contentTypes config.ContentTypesProvider, events []fsnotify.Event) string",
+    "funcbody": "func pickOneWriteOrCreatePath(contentTypes config.ContentTypesProvider, events []fsnotify.Event) string {\n\tname := \"\"\n\n\tfor _, ev := range events {\n\t\tif ev.Op&fsnotify.Write == fsnotify.Write || ev.Op&fsnotify.Create == fsnotify.Create {\n\t\t\tif contentTypes.IsIndexContentFile(ev.Name) {\n\t\t\t\treturn ev.Name\n\t\t\t}\n\n\t\t\tif contentTypes.IsContentFile(ev.Name) {\n\t\t\t\tname = ev.Name\n\t\t\t}\n\n\t\t}\n\t}\n\n\treturn name\n}",
+    "funcname": "pickOneWriteOrCreatePath"
+}

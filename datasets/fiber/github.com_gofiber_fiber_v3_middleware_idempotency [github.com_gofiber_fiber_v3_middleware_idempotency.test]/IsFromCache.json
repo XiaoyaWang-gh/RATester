@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/idempotency/idempotency.go",
+    "lineno": 24,
+    "focalfunc": "func IsFromCache(c fiber.Ctx) bool",
+    "funcbody": "func IsFromCache(c fiber.Ctx) bool {\n\treturn c.Locals(localsKeyIsFromCache) != nil\n}",
+    "funcname": "IsFromCache"
+}

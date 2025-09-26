@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 445,
+    "focalfunc": "func (b *BuildState) GetFilenamesWithPostPrefix() []string",
+    "funcbody": "func (b *BuildState) GetFilenamesWithPostPrefix() []string {\n\tb.mu.Lock()\n\tdefer b.mu.Unlock()\n\tvar filenames []string\n\tfor filename := range b.filenamesWithPostPrefix {\n\t\tfilenames = append(filenames, filename)\n\t}\n\tsort.Strings(filenames)\n\treturn filenames\n}",
+    "funcname": "GetFilenamesWithPostPrefix"
+}

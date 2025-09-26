@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/traefikio/v1alpha1/register.go",
+    "lineno": 34,
+    "focalfunc": "func addKnownTypes(scheme *runtime.Scheme) error",
+    "funcbody": "func addKnownTypes(scheme *runtime.Scheme) error {\n\tscheme.AddKnownTypes(SchemeGroupVersion,\n\t\t&IngressRoute{},\n\t\t&IngressRouteList{},\n\t\t&IngressRouteTCP{},\n\t\t&IngressRouteTCPList{},\n\t\t&IngressRouteUDP{},\n\t\t&IngressRouteUDPList{},\n\t\t&Middleware{},\n\t\t&MiddlewareList{},\n\t\t&MiddlewareTCP{},\n\t\t&MiddlewareTCPList{},\n\t\t&TLSOption{},\n\t\t&TLSOptionList{},\n\t\t&TLSStore{},\n\t\t&TLSStoreList{},\n\t\t&TraefikService{},\n\t\t&TraefikServiceList{},\n\t\t&ServersTransport{},\n\t\t&ServersTransportList{},\n\t\t&ServersTransportTCP{},\n\t\t&ServersTransportTCPList{},\n\t)\n\tmetav1.AddToGroupVersion(scheme, SchemeGroupVersion)\n\treturn nil\n}",
+    "funcname": "addKnownTypes"
+}

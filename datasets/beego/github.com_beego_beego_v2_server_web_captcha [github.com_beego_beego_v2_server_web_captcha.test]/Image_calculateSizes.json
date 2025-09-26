@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 334,
+    "focalfunc": "func (m *Image) calculateSizes(width, height, ncount int)",
+    "funcbody": "func (m *Image) calculateSizes(width, height, ncount int) {\n\t// Goal: fit all digits inside the image.\n\tvar border int\n\tif width > height {\n\t\tborder = height / 4\n\t} else {\n\t\tborder = width / 4\n\t}\n\n\tw := float64(width - border*2)\n\th := float64(height - border*2)\n\n\tfw := float64(fontWidth + 1)\n\tfh := float64(fontHeight)\n\tnc := float64(ncount)\n\n\tnw := w / nc\n\n\tnh := nw * fh / fw\n\n\tif nh > h {\n\n\t\tnh = h\n\t\tnw = fw / fh * nh\n\t}\n\n\tm.dotSize = int(nh / fh)\n\tif m.dotSize < 1 {\n\t\tm.dotSize = 1\n\t}\n\n\tm.numWidth = int(nw) - m.dotSize\n\tm.numHeight = int(nh)\n}",
+    "funcname": "calculateSizes"
+}

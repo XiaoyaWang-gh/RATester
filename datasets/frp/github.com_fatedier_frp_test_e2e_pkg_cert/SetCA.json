@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/cert/selfsigned.go",
+    "lineno": 29,
+    "focalfunc": "func (cp *SelfSignedCertGenerator) SetCA(caKey, caCert []byte)",
+    "funcbody": "func (cp *SelfSignedCertGenerator) SetCA(caKey, caCert []byte) {\n\tcp.caKey = caKey\n\tcp.caCert = caCert\n}",
+    "funcname": "SetCA"
+}

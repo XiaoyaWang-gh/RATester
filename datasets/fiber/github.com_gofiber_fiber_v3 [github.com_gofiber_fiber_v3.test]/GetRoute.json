@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 598,
+    "focalfunc": "func (app *App) GetRoute(name string) Route",
+    "funcbody": "func (app *App) GetRoute(name string) Route {\n\tfor _, routes := range app.stack {\n\t\tfor _, route := range routes {\n\t\t\tif route.Name == name {\n\t\t\t\treturn *route\n\t\t\t}\n\t\t}\n\t}\n\n\treturn Route{}\n}",
+    "funcname": "GetRoute"
+}

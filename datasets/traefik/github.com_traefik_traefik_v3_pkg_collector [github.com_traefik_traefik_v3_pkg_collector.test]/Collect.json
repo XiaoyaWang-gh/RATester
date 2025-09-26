@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/collector/collector.go",
+    "lineno": 32,
+    "focalfunc": "func Collect(staticConfiguration *static.Configuration) error",
+    "funcbody": "func Collect(staticConfiguration *static.Configuration) error {\n\tbuf, err := createBody(staticConfiguration)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tresp, err := makeHTTPClient().Post(collectorURL, \"application/json; charset=utf-8\", buf)\n\tif resp != nil {\n\t\t_ = resp.Body.Close()\n\t}\n\n\treturn err\n}",
+    "funcname": "Collect"
+}

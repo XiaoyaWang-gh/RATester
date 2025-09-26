@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/client.go",
+    "lineno": 15,
+    "focalfunc": "func (s *ClientController) List()",
+    "funcbody": "func (s *ClientController) List() {\n\tif s.Ctx.Request.Method == \"GET\" {\n\t\ts.Data[\"menu\"] = \"client\"\n\t\ts.SetInfo(\"client\")\n\t\ts.display(\"client/list\")\n\t\treturn\n\t}\n\tstart, length := s.GetAjaxParams()\n\tclientIdSession := s.GetSession(\"clientId\")\n\tvar clientId int\n\tif clientIdSession == nil {\n\t\tclientId = 0\n\t} else {\n\t\tclientId = clientIdSession.(int)\n\t}\n\tlist, cnt := server.GetClientList(start, length, s.getEscapeString(\"search\"), s.getEscapeString(\"sort\"), s.getEscapeString(\"order\"), clientId)\n\tcmd := make(map[string]interface{})\n\tip := s.Ctx.Request.Host\n\tcmd[\"ip\"] = common.GetIpByAddr(ip)\n\tcmd[\"bridgeType\"] = beego.AppConfig.String(\"bridge_type\")\n\tcmd[\"bridgePort\"] = server.Bridge.TunnelPort\n\ts.AjaxTable(list, cnt, cnt, cmd)\n}",
+    "funcname": "List"
+}

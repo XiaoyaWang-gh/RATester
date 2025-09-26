@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 325,
+    "focalfunc": "func DirEntriesToFileMetaInfos(fis []fs.DirEntry) []FileMetaInfo",
+    "funcbody": "func DirEntriesToFileMetaInfos(fis []fs.DirEntry) []FileMetaInfo {\n\tfims := make([]FileMetaInfo, len(fis))\n\tfor i, v := range fis {\n\t\tfim := v.(FileMetaInfo)\n\t\tfims[i] = fim\n\t}\n\treturn fims\n}",
+    "funcname": "DirEntriesToFileMetaInfos"
+}

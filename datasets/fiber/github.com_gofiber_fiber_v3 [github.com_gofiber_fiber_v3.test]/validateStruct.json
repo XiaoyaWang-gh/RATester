@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 53,
+    "focalfunc": "func (b *Bind) validateStruct(out any) error",
+    "funcbody": "func (b *Bind) validateStruct(out any) error {\n\tvalidator := b.ctx.App().config.StructValidator\n\tif validator != nil {\n\t\treturn validator.Validate(out)\n\t}\n\n\treturn nil\n}",
+    "funcname": "validateStruct"
+}

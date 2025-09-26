@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 174,
+    "focalfunc": "func tBeforeValue(c context, s []byte) (context, int)",
+    "funcbody": "func tBeforeValue(c context, s []byte) (context, int) {\n\ti := eatWhiteSpace(s, 0)\n\tif i == len(s) {\n\t\treturn c, len(s)\n\t}\n\n\tdelim := delimSpaceOrTagEnd\n\tswitch s[i] {\n\tcase '\\'':\n\t\tdelim, i = delimSingleQuote, i+1\n\tcase '\"':\n\t\tdelim, i = delimDoubleQuote, i+1\n\t}\n\tc.state, c.delim = attrStartStates[c.attr], delim\n\treturn c, i\n}",
+    "funcname": "tBeforeValue"
+}

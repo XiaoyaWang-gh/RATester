@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 50,
+    "focalfunc": "func newHTMLElementsCollector(conf config.BuildStats) *htmlElementsCollector",
+    "funcbody": "func newHTMLElementsCollector(conf config.BuildStats) *htmlElementsCollector {\n\treturn &htmlElementsCollector{\n\t\tconf:\t\tconf,\n\t\telementSet:\tmake(map[string]bool),\n\t}\n}",
+    "funcname": "newHTMLElementsCollector"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 267,
+    "focalfunc": "func (d dataSlice) Len() int",
+    "funcbody": "func (d dataSlice) Len() int {\n\treturn len(d)\n}",
+    "funcname": "Len"
+}

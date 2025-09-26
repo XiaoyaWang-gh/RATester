@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/buffering/buffering.go",
+    "lineno": 25,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.Buffering, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.Buffering, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\tlogger.Debug().Msgf(\"Setting up buffering: request limits: %d (mem), %d (max), response limits: %d (mem), %d (max) with retry: '%s'\",\n\t\tconfig.MemRequestBodyBytes, config.MaxRequestBodyBytes, config.MemResponseBodyBytes, config.MaxResponseBodyBytes, config.RetryExpression)\n\n\toxyBuffer, err := oxybuffer.New(\n\t\tnext,\n\t\toxybuffer.MemRequestBodyBytes(config.MemRequestBodyBytes),\n\t\toxybuffer.MaxRequestBodyBytes(config.MaxRequestBodyBytes),\n\t\toxybuffer.MemResponseBodyBytes(config.MemResponseBodyBytes),\n\t\toxybuffer.MaxResponseBodyBytes(config.MaxResponseBodyBytes),\n\t\toxybuffer.Logger(logs.NewOxyWrapper(*logger)),\n\t\toxybuffer.Verbose(logger.GetLevel() == zerolog.TraceLevel),\n\t\toxybuffer.Cond(len(config.RetryExpression) > 0, oxybuffer.Retry(config.RetryExpression)),\n\t)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &buffer{\n\t\tname:\tname,\n\t\tbuffer:\toxyBuffer,\n\t}, nil\n}",
+    "funcname": "New"
+}

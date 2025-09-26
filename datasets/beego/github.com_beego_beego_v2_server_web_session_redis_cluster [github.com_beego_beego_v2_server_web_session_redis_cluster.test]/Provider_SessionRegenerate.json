@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_cluster/redis_cluster.go",
+    "lineno": 259,
+    "focalfunc": "func (rp *Provider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error)",
+    "funcbody": "func (rp *Provider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error) {\n\tc := rp.poollist\n\n\tif existed, err := c.Exists(ctx, oldsid).Result(); err != nil || existed == 0 {\n\n\t\tc.Set(ctx, sid, \"\", time.Duration(rp.maxlifetime)*time.Second)\n\t} else {\n\t\tc.Rename(ctx, oldsid, sid)\n\t\tc.Expire(ctx, sid, time.Duration(rp.maxlifetime)*time.Second)\n\t}\n\treturn rp.SessionRead(ctx, sid)\n}",
+    "funcname": "SessionRegenerate"
+}

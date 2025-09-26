@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 278,
+    "focalfunc": "func (c *Controller) Mapping(method string, fn func())",
+    "funcbody": "func (c *Controller) Mapping(method string, fn func()) {\n\tc.methodMapping[method] = fn\n}",
+    "funcname": "Mapping"
+}

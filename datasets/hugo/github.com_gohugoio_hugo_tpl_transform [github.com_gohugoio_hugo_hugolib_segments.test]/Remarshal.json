@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/remarshal.go",
+    "lineno": 19,
+    "focalfunc": "func (ns *Namespace) Remarshal(format string, data any) (string, error)",
+    "funcbody": "func (ns *Namespace) Remarshal(format string, data any) (string, error) {\n\tvar meta map[string]any\n\n\tformat = strings.TrimSpace(strings.ToLower(format))\n\n\tmark, err := toFormatMark(format)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif m, ok := data.(map[string]any); ok {\n\t\tmeta = m\n\t} else {\n\t\tfrom, err := cast.ToStringE(data)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\n\t\tfrom = strings.TrimSpace(from)\n\t\tif from == \"\" {\n\t\t\treturn \"\", nil\n\t\t}\n\n\t\tfromFormat := metadecoders.Default.FormatFromContentString(from)\n\t\tif fromFormat == \"\" {\n\t\t\treturn \"\", errors.New(\"failed to detect format from content\")\n\t\t}\n\n\t\tmeta, err = metadecoders.Default.UnmarshalToMap([]byte(from), fromFormat)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\tapplyMarshalTypes(meta)\n\n\tvar result bytes.Buffer\n\tif err := parser.InterfaceToConfig(meta, mark, &result); err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn result.String(), nil\n}",
+    "funcname": "Remarshal"
+}

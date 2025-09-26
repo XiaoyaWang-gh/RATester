@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 92,
+    "focalfunc": "func PrintIdentityInfo(v any)",
+    "funcbody": "func PrintIdentityInfo(v any) {\n\tWalkIdentitiesDeep(v, func(level int, id Identity) bool {\n\t\tvar s string\n\t\tif idm, ok := id.(*identityManager); ok {\n\t\t\ts = \" \" + idm.name\n\t\t}\n\t\tfmt.Printf(\"%s%s (%T)%s\\n\", strings.Repeat(\"  \", level), id.IdentifierBase(), id, s)\n\t\treturn false\n\t})\n}",
+    "funcname": "PrintIdentityInfo"
+}

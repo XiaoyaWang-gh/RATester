@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 623,
+    "focalfunc": "func (c *context) Echo() *Echo",
+    "funcbody": "func (c *context) Echo() *Echo {\n\treturn c.echo\n}",
+    "funcname": "Echo"
+}

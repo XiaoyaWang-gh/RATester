@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 287,
+    "focalfunc": "func (bl *BeeLogger) writeMsg(lm *LogMsg) error",
+    "funcbody": "func (bl *BeeLogger) writeMsg(lm *LogMsg) error {\n\tif !bl.init {\n\t\tbl.lock.Lock()\n\t\tbl.setLogger(AdapterConsole)\n\t\tbl.lock.Unlock()\n\t}\n\n\tvar (\n\t\tfile\tstring\n\t\tline\tint\n\t\tok\tbool\n\t)\n\n\t_, file, line, ok = runtime.Caller(bl.loggerFuncCallDepth)\n\tif !ok {\n\t\tfile = \"???\"\n\t\tline = 0\n\t}\n\tlm.FilePath = file\n\tlm.LineNumber = line\n\tlm.Prefix = bl.prefix\n\n\tlm.enableFullFilePath = bl.enableFullFilePath\n\tlm.enableFuncCallDepth = bl.enableFuncCallDepth\n\n\tif lm.Level == levelLoggerImpl {\n\n\t\tlm.Level = LevelEmergency\n\t}\n\n\tif bl.asynchronous {\n\t\tlogM := logMsgPool.Get().(*LogMsg)\n\t\tlogM.Level = lm.Level\n\t\tlogM.Msg = lm.Msg\n\t\tlogM.When = lm.When\n\t\tlogM.Args = lm.Args\n\t\tlogM.FilePath = lm.FilePath\n\t\tlogM.LineNumber = lm.LineNumber\n\t\tlogM.Prefix = lm.Prefix\n\n\t\tif bl.outputs != nil {\n\t\t\tif bl.logWithNonBlocking {\n\t\t\t\tselect {\n\t\t\t\tcase bl.msgChan <- lm:\n\n\t\t\t\tdefault:\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tbl.msgChan <- lm\n\t\t\t}\n\t\t} else {\n\t\t\tlogMsgPool.Put(lm)\n\t\t}\n\t} else {\n\t\tbl.writeToLoggers(lm)\n\t}\n\treturn nil\n}",
+    "funcname": "writeMsg"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/blackfriday/anchors.go",
+    "lineno": 23,
+    "focalfunc": "func SanitizedAnchorName(text string) string",
+    "funcbody": "func SanitizedAnchorName(text string) string {\n\tvar anchorName []rune\n\tfutureDash := false\n\tfor _, r := range text {\n\t\tswitch {\n\t\tcase unicode.IsLetter(r) || unicode.IsNumber(r):\n\t\t\tif futureDash && len(anchorName) > 0 {\n\t\t\t\tanchorName = append(anchorName, '-')\n\t\t\t}\n\t\t\tfutureDash = false\n\t\t\tanchorName = append(anchorName, unicode.ToLower(r))\n\t\tdefault:\n\t\t\tfutureDash = true\n\t\t}\n\t}\n\treturn string(anchorName)\n}",
+    "funcname": "SanitizedAnchorName"
+}

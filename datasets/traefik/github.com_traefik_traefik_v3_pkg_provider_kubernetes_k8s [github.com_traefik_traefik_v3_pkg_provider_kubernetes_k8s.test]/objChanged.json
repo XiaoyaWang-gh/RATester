@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/k8s/event_handler.go",
+    "lineno": 41,
+    "focalfunc": "func objChanged(oldObj, newObj interface{}) bool",
+    "funcbody": "func objChanged(oldObj, newObj interface{}) bool {\n\tif oldObj == nil || newObj == nil {\n\t\treturn true\n\t}\n\n\tif oldObj.(metav1.Object).GetResourceVersion() == newObj.(metav1.Object).GetResourceVersion() {\n\t\treturn false\n\t}\n\n\tif _, ok := oldObj.(*discoveryv1.EndpointSlice); ok {\n\t\treturn endpointSliceChanged(oldObj.(*discoveryv1.EndpointSlice), newObj.(*discoveryv1.EndpointSlice))\n\t}\n\n\treturn true\n}",
+    "funcname": "objChanged"
+}

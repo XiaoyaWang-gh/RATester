@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/error.go",
+    "lineno": 247,
+    "focalfunc": "func errorf(k ErrorCode, node parse.Node, line int, f string, args ...any) *Error",
+    "funcbody": "func errorf(k ErrorCode, node parse.Node, line int, f string, args ...any) *Error {\n\treturn &Error{k, node, \"\", line, fmt.Sprintf(f, args...)}\n}",
+    "funcname": "errorf"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 369,
+    "focalfunc": "func (i *IdentifierNode) SetTree(t *Tree) *IdentifierNode",
+    "funcbody": "func (i *IdentifierNode) SetTree(t *Tree) *IdentifierNode {\n\ti.tr = t\n\treturn i\n}",
+    "funcname": "SetTree"
+}

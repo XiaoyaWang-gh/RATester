@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 295,
+    "focalfunc": "func (c *Context) GetString(key string) (s string)",
+    "funcbody": "func (c *Context) GetString(key string) (s string) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\ts, _ = val.(string)\n\t}\n\treturn\n}",
+    "funcname": "GetString"
+}

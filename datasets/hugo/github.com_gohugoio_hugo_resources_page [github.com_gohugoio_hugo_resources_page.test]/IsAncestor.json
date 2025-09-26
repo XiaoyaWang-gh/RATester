@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 234,
+    "focalfunc": "func (p *nopPage) IsAncestor(other any) bool",
+    "funcbody": "func (p *nopPage) IsAncestor(other any) bool {\n\treturn false\n}",
+    "funcname": "IsAncestor"
+}

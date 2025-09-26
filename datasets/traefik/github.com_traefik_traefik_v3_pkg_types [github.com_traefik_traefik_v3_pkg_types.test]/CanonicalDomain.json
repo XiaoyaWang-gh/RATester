@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/domains.go",
+    "lineno": 56,
+    "focalfunc": "func CanonicalDomain(domain string) string",
+    "funcbody": "func CanonicalDomain(domain string) string {\n\treturn strings.ToLower(strings.TrimSpace(domain))\n}",
+    "funcname": "CanonicalDomain"
+}

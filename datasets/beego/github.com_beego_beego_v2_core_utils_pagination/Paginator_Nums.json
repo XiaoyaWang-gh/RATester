@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/pagination/paginator.go",
+    "lineno": 50,
+    "focalfunc": "func (p *Paginator) Nums() int64",
+    "funcbody": "func (p *Paginator) Nums() int64 {\n\treturn p.nums\n}",
+    "funcname": "Nums"
+}

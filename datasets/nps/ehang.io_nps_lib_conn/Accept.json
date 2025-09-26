@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/listener.go",
+    "lineno": 39,
+    "focalfunc": "func Accept(l net.Listener, f func(c net.Conn))",
+    "funcbody": "func Accept(l net.Listener, f func(c net.Conn)) {\n\tfor {\n\t\tc, err := l.Accept()\n\t\tif err != nil {\n\t\t\tif strings.Contains(err.Error(), \"use of closed network connection\") {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tif strings.Contains(err.Error(), \"the mux has closed\") {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tlogs.Warn(err)\n\t\t\tcontinue\n\t\t}\n\t\tif c == nil {\n\t\t\tlogs.Warn(\"nil connection\")\n\t\t\tbreak\n\t\t}\n\t\tgo f(c)\n\t}\n}",
+    "funcname": "Accept"
+}

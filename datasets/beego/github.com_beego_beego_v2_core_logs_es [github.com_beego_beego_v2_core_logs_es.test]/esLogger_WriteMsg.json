@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/es.go",
+    "lineno": 92,
+    "focalfunc": "func (el *esLogger) WriteMsg(lm *logs.LogMsg) error",
+    "funcbody": "func (el *esLogger) WriteMsg(lm *logs.LogMsg) error {\n\tif lm.Level > el.Level {\n\t\treturn nil\n\t}\n\n\tmsg := el.formatter.Format(lm)\n\n\treq := esapi.IndexRequest{\n\t\tIndex:\t\tindexNaming.IndexName(lm),\n\t\tDocumentType:\t\"logs\",\n\t\tBody:\t\tstrings.NewReader(msg),\n\t}\n\t_, err := req.Do(context.Background(), el.Client)\n\treturn err\n}",
+    "funcname": "WriteMsg"
+}

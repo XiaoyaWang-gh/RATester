@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 57,
+    "focalfunc": "func (*Filters) Opacity(opacity any) gift.Filter",
+    "funcbody": "func (*Filters) Opacity(opacity any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(opacity),\n\t\tFilter:\t\topacityFilter{opacity: cast.ToFloat32(opacity)},\n\t}\n}",
+    "funcname": "Opacity"
+}

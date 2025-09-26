@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 719,
+    "focalfunc": "func createRetryMiddleware(retry *traefikv1alpha1.Retry) (*dynamic.Retry, error)",
+    "funcbody": "func createRetryMiddleware(retry *traefikv1alpha1.Retry) (*dynamic.Retry, error) {\n\tif retry == nil {\n\t\treturn nil, nil\n\t}\n\n\tr := &dynamic.Retry{Attempts: retry.Attempts}\n\n\terr := r.InitialInterval.Set(retry.InitialInterval.String())\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn r, nil\n}",
+    "funcname": "createRetryMiddleware"
+}

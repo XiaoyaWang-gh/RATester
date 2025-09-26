@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_markup.go",
+    "lineno": 101,
+    "focalfunc": "func (s HtmlSummary) trimSpace(ss string) string",
+    "funcbody": "func (s HtmlSummary) trimSpace(ss string) string {\n\treturn strings.TrimSpace(ss)\n}",
+    "funcname": "trimSpace"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 170,
+    "focalfunc": "func (p *Pager) HasNext() bool",
+    "funcbody": "func (p *Pager) HasNext() bool {\n\treturn p.PageNumber() < len(p.paginatedElements)\n}",
+    "funcname": "HasNext"
+}

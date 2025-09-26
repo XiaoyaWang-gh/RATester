@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 498,
+    "focalfunc": "func tCSS(c context, s []byte) (context, int)",
+    "funcbody": "func tCSS(c context, s []byte) (context, int) {\n\n\tk := 0\n\tfor {\n\t\ti := k + bytes.IndexAny(s[k:], `(\"'/`)\n\t\tif i < k {\n\t\t\treturn c, len(s)\n\t\t}\n\t\tswitch s[i] {\n\t\tcase '(':\n\n\t\t\tp := bytes.TrimRight(s[:i], \"\\t\\n\\f\\r \")\n\t\t\tif endsWithCSSKeyword(p, \"url\") {\n\t\t\t\tj := len(s) - len(bytes.TrimLeft(s[i+1:], \"\\t\\n\\f\\r \"))\n\t\t\t\tswitch {\n\t\t\t\tcase j != len(s) && s[j] == '\"':\n\t\t\t\t\tc.state, j = stateCSSDqURL, j+1\n\t\t\t\tcase j != len(s) && s[j] == '\\'':\n\t\t\t\t\tc.state, j = stateCSSSqURL, j+1\n\t\t\t\tdefault:\n\t\t\t\t\tc.state = stateCSSURL\n\t\t\t\t}\n\t\t\t\treturn c, j\n\t\t\t}\n\t\tcase '/':\n\t\t\tif i+1 < len(s) {\n\t\t\t\tswitch s[i+1] {\n\t\t\t\tcase '/':\n\t\t\t\t\tc.state = stateCSSLineCmt\n\t\t\t\t\treturn c, i + 2\n\t\t\t\tcase '*':\n\t\t\t\t\tc.state = stateCSSBlockCmt\n\t\t\t\t\treturn c, i + 2\n\t\t\t\t}\n\t\t\t}\n\t\tcase '\"':\n\t\t\tc.state = stateCSSDqStr\n\t\t\treturn c, i + 1\n\t\tcase '\\'':\n\t\t\tc.state = stateCSSSqStr\n\t\t\treturn c, i + 1\n\t\t}\n\t\tk = i + 1\n\t}\n}",
+    "funcname": "tCSS"
+}

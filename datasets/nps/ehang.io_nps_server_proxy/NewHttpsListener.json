@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 137,
+    "focalfunc": "func NewHttpsListener(l net.Listener) *HttpsListener",
+    "funcbody": "func NewHttpsListener(l net.Listener) *HttpsListener {\n\treturn &HttpsListener{parentListener: l, acceptConn: make(chan *conn.Conn)}\n}",
+    "funcname": "NewHttpsListener"
+}

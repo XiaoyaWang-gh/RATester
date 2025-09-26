@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_related.go",
+    "lineno": 174,
+    "focalfunc": "func (s *RelatedDocsHandler) Clone() *RelatedDocsHandler",
+    "funcbody": "func (s *RelatedDocsHandler) Clone() *RelatedDocsHandler {\n\treturn NewRelatedDocsHandler(s.cfg)\n}",
+    "funcname": "Clone"
+}

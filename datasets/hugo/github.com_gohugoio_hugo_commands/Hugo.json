@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 993,
+    "focalfunc": "func (c *hugoBuilder) hugo() (*hugolib.HugoSites, error)",
+    "funcbody": "func (c *hugoBuilder) hugo() (*hugolib.HugoSites, error) {\n\tvar h *hugolib.HugoSites\n\tif err := c.withConfE(func(conf *commonConfig) error {\n\t\tvar err error\n\t\th, err = c.r.HugFromConfig(conf)\n\t\treturn err\n\t}); err != nil {\n\t\treturn nil, err\n\t}\n\n\tif c.s != nil {\n\n\t\tfor _, s := range h.Sites {\n\t\t\ts.RegisterMediaTypes()\n\t\t}\n\t}\n\treturn h, nil\n}",
+    "funcname": "hugo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 42,
+    "focalfunc": "func debugPrintLoadTemplate(tmpl *template.Template)",
+    "funcbody": "func debugPrintLoadTemplate(tmpl *template.Template) {\n\tif IsDebugging() {\n\t\tvar buf strings.Builder\n\t\tfor _, tmpl := range tmpl.Templates() {\n\t\t\tbuf.WriteString(\"\\t- \")\n\t\t\tbuf.WriteString(tmpl.Name())\n\t\t\tbuf.WriteString(\"\\n\")\n\t\t}\n\t\tdebugPrint(\"Loaded HTML Templates (%d): \\n%s\\n\", len(tmpl.Templates()), buf.String())\n\t}\n}",
+    "funcname": "debugPrintLoadTemplate"
+}

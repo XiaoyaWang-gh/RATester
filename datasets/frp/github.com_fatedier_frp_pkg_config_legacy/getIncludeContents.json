@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/parse.go",
+    "lineno": 68,
+    "focalfunc": "func getIncludeContents(paths []string) ([]byte, error)",
+    "funcbody": "func getIncludeContents(paths []string) ([]byte, error) {\n\tout := bytes.NewBuffer(nil)\n\tfor _, path := range paths {\n\t\tabsDir, err := filepath.Abs(filepath.Dir(path))\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif _, err := os.Stat(absDir); os.IsNotExist(err) {\n\t\t\treturn nil, err\n\t\t}\n\t\tfiles, err := os.ReadDir(absDir)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tfor _, fi := range files {\n\t\t\tif fi.IsDir() {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tabsFile := filepath.Join(absDir, fi.Name())\n\t\t\tif matched, _ := filepath.Match(filepath.Join(absDir, filepath.Base(path)), absFile); matched {\n\t\t\t\ttmpContent, err := GetRenderedConfFromFile(absFile)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn nil, fmt.Errorf(\"render extra config %s error: %v\", absFile, err)\n\t\t\t\t}\n\t\t\t\tout.Write(tmpContent)\n\t\t\t\tout.WriteString(\"\\n\")\n\t\t\t}\n\t\t}\n\t}\n\treturn out.Bytes(), nil\n}",
+    "funcname": "getIncludeContents"
+}

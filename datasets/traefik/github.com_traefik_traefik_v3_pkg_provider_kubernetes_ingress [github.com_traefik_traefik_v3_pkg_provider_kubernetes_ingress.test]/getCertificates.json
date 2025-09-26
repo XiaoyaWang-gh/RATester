@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 444,
+    "focalfunc": "func getCertificates(ctx context.Context, ingress *netv1.Ingress, k8sClient Client, tlsConfigs map[string]*tls.CertAndStores) error",
+    "funcbody": "func getCertificates(ctx context.Context, ingress *netv1.Ingress, k8sClient Client, tlsConfigs map[string]*tls.CertAndStores) error {\n\tfor _, t := range ingress.Spec.TLS {\n\t\tif t.SecretName == \"\" {\n\t\t\tlog.Ctx(ctx).Debug().Msg(\"Skipping TLS sub-section: No secret name provided\")\n\t\t\tcontinue\n\t\t}\n\n\t\tconfigKey := ingress.Namespace + \"-\" + t.SecretName\n\t\tif _, tlsExists := tlsConfigs[configKey]; !tlsExists {\n\t\t\tsecret, exists, err := k8sClient.GetSecret(ingress.Namespace, t.SecretName)\n\t\t\tif err != nil {\n\t\t\t\treturn fmt.Errorf(\"failed to fetch secret %s/%s: %w\", ingress.Namespace, t.SecretName, err)\n\t\t\t}\n\t\t\tif !exists {\n\t\t\t\treturn fmt.Errorf(\"secret %s/%s does not exist\", ingress.Namespace, t.SecretName)\n\t\t\t}\n\n\t\t\tcert, key, err := getCertificateBlocks(secret, ingress.Namespace, t.SecretName)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t\ttlsConfigs[configKey] = &tls.CertAndStores{\n\t\t\t\tCertificate: tls.Certificate{\n\t\t\t\t\tCertFile:\ttypes.FileOrContent(cert),\n\t\t\t\t\tKeyFile:\ttypes.FileOrContent(key),\n\t\t\t\t},\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "getCertificates"
+}

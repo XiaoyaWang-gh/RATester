@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/debug.go",
+    "lineno": 45,
+    "focalfunc": "func GetDisplayString(data ...interface{}) string",
+    "funcbody": "func GetDisplayString(data ...interface{}) string {\n\treturn display(false, data...)\n}",
+    "funcname": "GetDisplayString"
+}

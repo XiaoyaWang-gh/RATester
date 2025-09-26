@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 143,
+    "focalfunc": "func (c *ConfigContainer) Bool(key string) (bool, error)",
+    "funcbody": "func (c *ConfigContainer) Bool(key string) (bool, error) {\n\tv, err := c.getData(key)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn config.ParseBool(v)\n}",
+    "funcname": "Bool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/udp.go",
+    "lineno": 46,
+    "focalfunc": "func NewFakeUDPConn(l *UDPListener, laddr, raddr net.Addr) *FakeUDPConn",
+    "funcbody": "func NewFakeUDPConn(l *UDPListener, laddr, raddr net.Addr) *FakeUDPConn {\n\tfc := &FakeUDPConn{\n\t\tl:\t\tl,\n\t\tlocalAddr:\tladdr,\n\t\tremoteAddr:\traddr,\n\t\tpackets:\tmake(chan []byte, 20),\n\t}\n\n\tgo func() {\n\t\tfor {\n\t\t\ttime.Sleep(5 * time.Second)\n\t\t\tfc.mu.RLock()\n\t\t\tif time.Since(fc.lastActive) > 10*time.Second {\n\t\t\t\tfc.mu.RUnlock()\n\t\t\t\tfc.Close()\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tfc.mu.RUnlock()\n\t\t}\n\t}()\n\treturn fc\n}",
+    "funcname": "NewFakeUDPConn"
+}

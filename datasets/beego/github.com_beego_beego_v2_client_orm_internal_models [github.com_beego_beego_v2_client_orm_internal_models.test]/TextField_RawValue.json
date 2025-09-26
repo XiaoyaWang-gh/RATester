@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 696,
+    "focalfunc": "func (e *TextField) RawValue() interface{}",
+    "funcbody": "func (e *TextField) RawValue() interface{} {\n\treturn e.Value()\n}",
+    "funcname": "RawValue"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/es/index.go",
+    "lineno": 37,
+    "focalfunc": "func (d *defaultIndexNaming) IndexName(lm *logs.LogMsg) string",
+    "funcbody": "func (d *defaultIndexNaming) IndexName(lm *logs.LogMsg) string {\n\treturn fmt.Sprintf(\"%04d.%02d.%02d\", lm.When.Year(), lm.When.Month(), lm.When.Day())\n}",
+    "funcname": "IndexName"
+}

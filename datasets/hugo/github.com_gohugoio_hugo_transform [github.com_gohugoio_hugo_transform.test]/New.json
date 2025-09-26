@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/chain.go",
+    "lineno": 51,
+    "focalfunc": "func New(trs ...Transformer) Chain",
+    "funcbody": "func New(trs ...Transformer) Chain {\n\treturn trs\n}",
+    "funcname": "New"
+}

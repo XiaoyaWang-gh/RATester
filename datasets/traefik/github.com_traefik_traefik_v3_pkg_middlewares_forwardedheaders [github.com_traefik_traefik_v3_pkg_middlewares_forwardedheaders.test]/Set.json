@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/forwardedheaders/forwarded_header.go",
+    "lineno": 199,
+    "focalfunc": "func (h unsafeHeader) Set(key, value string)",
+    "funcbody": "func (h unsafeHeader) Set(key, value string) {\n\th[key] = []string{value}\n}",
+    "funcname": "Set"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 345,
+    "focalfunc": "func TrimArr(arr []string) []string",
+    "funcbody": "func TrimArr(arr []string) []string {\n\tnewArr := make([]string, 0)\n\tfor _, v := range arr {\n\t\tif v != \"\" {\n\t\t\tnewArr = append(newArr, v)\n\t\t}\n\t}\n\treturn newArr\n}",
+    "funcname": "TrimArr"
+}

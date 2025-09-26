@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 269,
+    "focalfunc": "func (s *Server) MatchRedirect(pattern string) Redirect",
+    "funcbody": "func (s *Server) MatchRedirect(pattern string) Redirect {\n\tif s.compiledRedirects == nil {\n\t\treturn Redirect{}\n\t}\n\n\tpattern = strings.TrimSuffix(pattern, \"index.html\")\n\n\tfor i, g := range s.compiledRedirects {\n\t\tredir := s.Redirects[i]\n\n\t\tif redir.To == pattern {\n\t\t\treturn Redirect{}\n\t\t}\n\n\t\tif g.Match(pattern) {\n\t\t\treturn redir\n\t\t}\n\t}\n\n\treturn Redirect{}\n}",
+    "funcname": "MatchRedirect"
+}

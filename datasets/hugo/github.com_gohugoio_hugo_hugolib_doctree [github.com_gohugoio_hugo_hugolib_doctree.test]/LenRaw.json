@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 94,
+    "focalfunc": "func (t *TreeShiftTree[T]) LenRaw() int",
+    "funcbody": "func (t *TreeShiftTree[T]) LenRaw() int {\n\tvar count int\n\tfor _, tt := range t.trees {\n\t\tcount += tt.tree.Len()\n\t}\n\treturn count\n}",
+    "funcname": "LenRaw"
+}

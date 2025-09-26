@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher_v2.go",
+    "lineno": 164,
+    "focalfunc": "func preparePattern(template string) (string, error)",
+    "funcbody": "func preparePattern(template string) (string, error) {\n\n\tidxs, errBraces := braceIndices(template)\n\tif errBraces != nil {\n\t\treturn \"\", errBraces\n\t}\n\n\tdefaultPattern := \"[^.]+\"\n\tpattern := bytes.NewBufferString(\"\")\n\n\t_, _ = fmt.Fprint(pattern, \"(?i)\")\n\n\tpattern.WriteByte('^')\n\tvar end int\n\tfor i := 0; i < len(idxs); i += 2 {\n\n\t\traw := template[end:idxs[i]]\n\t\tend = idxs[i+1]\n\t\tparts := strings.SplitN(template[idxs[i]+1:end-1], \":\", 2)\n\t\tname := parts[0]\n\n\t\tpatt := defaultPattern\n\t\tif len(parts) == 2 {\n\t\t\tpatt = parts[1]\n\t\t}\n\n\t\tif name == \"\" || patt == \"\" {\n\t\t\treturn \"\", fmt.Errorf(\"mux: missing name or pattern in %q\",\n\t\t\t\ttemplate[idxs[i]:end])\n\t\t}\n\n\t\t_, _ = fmt.Fprintf(pattern, \"%s(?P<%s>%s)\", regexp.QuoteMeta(raw), varGroupName(i/2), patt)\n\t}\n\n\traw := template[end:]\n\tpattern.WriteString(regexp.QuoteMeta(raw))\n\tpattern.WriteByte('$')\n\n\treturn pattern.String(), nil\n}",
+    "funcname": "preparePattern"
+}

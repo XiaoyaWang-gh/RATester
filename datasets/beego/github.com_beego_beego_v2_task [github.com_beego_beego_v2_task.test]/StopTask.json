@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 459,
+    "focalfunc": "func StopTask()",
+    "funcbody": "func StopTask() {\n\tglobalTaskManager.StopTask()\n}",
+    "funcname": "StopTask"
+}

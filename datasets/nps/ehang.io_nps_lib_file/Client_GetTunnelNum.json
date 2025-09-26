@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 103,
+    "focalfunc": "func (s *Client) GetTunnelNum() (num int)",
+    "funcbody": "func (s *Client) GetTunnelNum() (num int) {\n\tGetDb().JsonDb.Tasks.Range(func(key, value interface{}) bool {\n\t\tv := value.(*Tunnel)\n\t\tif v.Client.Id == s.Id {\n\t\t\tnum++\n\t\t}\n\t\treturn true\n\t})\n\treturn\n}",
+    "funcname": "GetTunnelNum"
+}

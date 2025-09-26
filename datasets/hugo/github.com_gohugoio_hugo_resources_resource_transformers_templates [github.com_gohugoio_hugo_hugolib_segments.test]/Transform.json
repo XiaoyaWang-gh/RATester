@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/templates/execute_as_template.go",
+    "lineno": 57,
+    "focalfunc": "func (t *executeAsTemplateTransform) Transform(ctx *resources.ResourceTransformationCtx) error",
+    "funcbody": "func (t *executeAsTemplateTransform) Transform(ctx *resources.ResourceTransformationCtx) error {\n\ttplStr := helpers.ReaderToString(ctx.From)\n\ttempl, err := t.t.TextTmpl().Parse(ctx.InPath, tplStr)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to parse Resource %q as Template:: %w\", ctx.InPath, err)\n\t}\n\n\tctx.OutPath = t.targetPath\n\n\treturn t.t.Tmpl().ExecuteWithContext(ctx.Ctx, templ, ctx.To, t.data)\n}",
+    "funcname": "Transform"
+}

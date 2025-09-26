@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 351,
+    "focalfunc": "func (d *SourceFilesystem) MakePathRelative(filename string, checkExists bool) (string, bool)",
+    "funcbody": "func (d *SourceFilesystem) MakePathRelative(filename string, checkExists bool) (string, bool) {\n\tcps, err := d.ReverseLookup(filename, checkExists)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tif len(cps) == 0 {\n\t\treturn \"\", false\n\t}\n\n\treturn filepath.FromSlash(cps[0].Path), true\n}",
+    "funcname": "MakePathRelative"
+}

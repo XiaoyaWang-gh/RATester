@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 60,
+    "focalfunc": "func (ctx linkContext) Destination() string",
+    "funcbody": "func (ctx linkContext) Destination() string {\n\treturn ctx.destination\n}",
+    "funcname": "Destination"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/wasip.go",
+    "lineno": 20,
+    "focalfunc": "func InstantiateHost(ctx context.Context, runtime wazero.Runtime, mod wazero.CompiledModule, settings Settings) (ContextApplier, error)",
+    "funcbody": "func InstantiateHost(ctx context.Context, runtime wazero.Runtime, mod wazero.CompiledModule, settings Settings) (ContextApplier, error) {\n\tif extension := imports.DetectSocketsExtension(mod); extension != nil {\n\t\tenvs := []string{}\n\t\tfor _, env := range settings.Envs {\n\t\t\tenvs = append(envs, fmt.Sprintf(\"%s=%s\", env, os.Getenv(env)))\n\t\t}\n\n\t\tbuilder := imports.NewBuilder().WithSocketsExtension(\"auto\", mod)\n\t\tif len(envs) > 0 {\n\t\t\tbuilder.WithEnv(envs...)\n\t\t}\n\n\t\tif len(settings.Mounts) > 0 {\n\t\t\tbuilder.WithDirs(settings.Mounts...)\n\t\t}\n\n\t\tctx, sys, err := builder.Instantiate(ctx, runtime)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tinst, err := wazergo.Instantiate(ctx, runtime, wazergo_wasip1.NewHostModule(*extension), wazergo_wasip1.WithWASI(sys))\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"wazergo instantiation: %w\", err)\n\t\t}\n\n\t\treturn func(ctx context.Context) context.Context {\n\t\t\treturn wazergo.WithModuleInstance(ctx, inst)\n\t\t}, nil\n\t}\n\n\t_, err := wazero_wasip1.Instantiate(ctx, runtime)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"wazero instantiation: %w\", err)\n\t}\n\n\treturn func(ctx context.Context) context.Context {\n\t\treturn ctx\n\t}, nil\n}",
+    "funcname": "InstantiateHost"
+}

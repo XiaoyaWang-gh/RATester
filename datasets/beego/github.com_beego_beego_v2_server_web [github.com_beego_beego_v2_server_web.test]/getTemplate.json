@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 280,
+    "focalfunc": "func getTemplate(root string, fs http.FileSystem, file string, others ...string) (t *template.Template, err error)",
+    "funcbody": "func getTemplate(root string, fs http.FileSystem, file string, others ...string) (t *template.Template, err error) {\n\tt = template.New(file).Delims(BConfig.WebConfig.TemplateLeft, BConfig.WebConfig.TemplateRight).Funcs(beegoTplFuncMap)\n\tvar subMods [][]string\n\tt, subMods, err = getTplDeep(root, fs, file, \"\", t)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tt, err = _getTemplate(t, root, fs, subMods, others...)\n\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn\n}",
+    "funcname": "getTemplate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 121,
+    "focalfunc": "func (e *EtcdConfiger) OnChange(key string, fn func(value string))",
+    "funcbody": "func (e *EtcdConfiger) OnChange(key string, fn func(value string)) {\n\tbuildOptsFunc := func() []clientv3.OpOption {\n\t\treturn []clientv3.OpOption{}\n\t}\n\n\trch := e.client.Watch(context.Background(), e.prefix+key, buildOptsFunc()...)\n\tgo func() {\n\t\tfor {\n\t\t\tfor resp := range rch {\n\t\t\t\tif err := resp.Err(); err != nil {\n\t\t\t\t\tlogs.Error(\"listen to key but got error callback\", err)\n\t\t\t\t\tbreak\n\t\t\t\t}\n\n\t\t\t\tfor _, e := range resp.Events {\n\t\t\t\t\tif e.Kv == nil {\n\t\t\t\t\t\tcontinue\n\t\t\t\t\t}\n\t\t\t\t\tfn(string(e.Kv.Value))\n\t\t\t\t}\n\t\t\t}\n\t\t\ttime.Sleep(time.Second)\n\t\t\trch = e.client.Watch(context.Background(), e.prefix+key, buildOptsFunc()...)\n\t\t}\n\t}()\n}",
+    "funcname": "OnChange"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 515,
+    "focalfunc": "func lt(arg1, arg2 interface{}) (bool, error)",
+    "funcbody": "func lt(arg1, arg2 interface{}) (bool, error) {\n\tv1 := reflect.ValueOf(arg1)\n\tk1, err := basicKind(v1)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\tv2 := reflect.ValueOf(arg2)\n\tk2, err := basicKind(v2)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\ttruth := false\n\tif k1 != k2 {\n\n\t\tswitch {\n\t\tcase k1 == intKind && k2 == uintKind:\n\t\t\ttruth = v1.Int() < 0 || uint64(v1.Int()) < v2.Uint()\n\t\tcase k1 == uintKind && k2 == intKind:\n\t\t\ttruth = v2.Int() >= 0 && v1.Uint() < uint64(v2.Int())\n\t\tdefault:\n\t\t\treturn false, errBadComparison\n\t\t}\n\t} else {\n\t\tswitch k1 {\n\t\tcase boolKind, complexKind:\n\t\t\treturn false, errBadComparisonType\n\t\tcase floatKind:\n\t\t\ttruth = v1.Float() < v2.Float()\n\t\tcase intKind:\n\t\t\ttruth = v1.Int() < v2.Int()\n\t\tcase stringKind:\n\t\t\ttruth = v1.String() < v2.String()\n\t\tcase uintKind:\n\t\t\ttruth = v1.Uint() < v2.Uint()\n\t\tdefault:\n\t\t\treturn false, errBadComparisonType\n\t\t}\n\t}\n\treturn truth, nil\n}",
+    "funcname": "lt"
+}

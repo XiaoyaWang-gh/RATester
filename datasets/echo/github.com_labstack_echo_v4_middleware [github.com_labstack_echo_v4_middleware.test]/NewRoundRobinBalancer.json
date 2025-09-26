@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/proxy.go",
+    "lineno": 180,
+    "focalfunc": "func NewRoundRobinBalancer(targets []*ProxyTarget) ProxyBalancer",
+    "funcbody": "func NewRoundRobinBalancer(targets []*ProxyTarget) ProxyBalancer {\n\tb := roundRobinBalancer{}\n\tb.targets = targets\n\treturn &b\n}",
+    "funcname": "NewRoundRobinBalancer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 246,
+    "focalfunc": "func (c *hookBase) Ordinal() int",
+    "funcbody": "func (c *hookBase) Ordinal() int {\n\treturn c.ordinal\n}",
+    "funcname": "Ordinal"
+}

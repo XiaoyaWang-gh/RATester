@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/dashboard_api.go",
+    "lineno": 92,
+    "focalfunc": "func (svr *Service) healthz(w http.ResponseWriter, _ *http.Request)",
+    "funcbody": "func (svr *Service) healthz(w http.ResponseWriter, _ *http.Request) {\n\tw.WriteHeader(200)\n}",
+    "funcname": "healthz"
+}

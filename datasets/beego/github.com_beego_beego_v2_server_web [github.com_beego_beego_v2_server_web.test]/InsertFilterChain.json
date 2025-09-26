@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 836,
+    "focalfunc": "func InsertFilterChain(pattern string, filterChain FilterChain, opts ...FilterOpt) *HttpServer",
+    "funcbody": "func InsertFilterChain(pattern string, filterChain FilterChain, opts ...FilterOpt) *HttpServer {\n\treturn BeeApp.InsertFilterChain(pattern, filterChain, opts...)\n}",
+    "funcname": "InsertFilterChain"
+}

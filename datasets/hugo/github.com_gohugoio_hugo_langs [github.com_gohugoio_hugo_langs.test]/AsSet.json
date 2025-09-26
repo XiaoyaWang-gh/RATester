@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 132,
+    "focalfunc": "func (l Languages) AsSet() map[string]bool",
+    "funcbody": "func (l Languages) AsSet() map[string]bool {\n\tm := make(map[string]bool)\n\tfor _, lang := range l {\n\t\tm[lang.Lang] = true\n\t}\n\n\treturn m\n}",
+    "funcname": "AsSet"
+}

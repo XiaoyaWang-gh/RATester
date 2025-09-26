@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 1307,
+    "focalfunc": "func (d *dbBase) preProcCols(cols []string) []string",
+    "funcbody": "func (d *dbBase) preProcCols(cols []string) []string {\n\tres := make([]string, len(cols))\n\n\tquote := d.ins.TableQuote()\n\tfor i, col := range cols {\n\t\tres[i] = fmt.Sprintf(\"T0.%s%s%s\", quote, col, quote)\n\t}\n\n\treturn res\n}",
+    "funcname": "preProcCols"
+}

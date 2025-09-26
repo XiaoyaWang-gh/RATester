@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/gui/npc/npc.go",
+    "lineno": 50,
+    "focalfunc": "func makeMainTab() *fyne.Container",
+    "funcbody": "func makeMainTab() *fyne.Container {\n\tserverPort := widget.NewEntry()\n\tserverPort.SetPlaceHolder(\"Server:Port\")\n\n\tvKey := widget.NewEntry()\n\tvKey.SetPlaceHolder(\"Vkey\")\n\tradio := widget.NewRadioGroup([]string{\"tcp\", \"kcp\"}, func(s string) { connType = s })\n\tradio.Horizontal = true\n\n\tbutton := widget.NewButton(status, func() {\n\t\tonclick(serverPort.Text, vKey.Text, connType)\n\t})\n\tgo func() {\n\t\tfor {\n\t\t\t<-refreshCh\n\t\t\tbutton.SetText(status)\n\t\t}\n\t}()\n\n\tlo := widget.NewMultiLineEntry()\n\tlo.Disable()\n\tlo.Resize(fyne.NewSize(910, 250))\n\tslo := container.NewScroll(lo)\n\tslo.Resize(fyne.NewSize(910, 250))\n\tgo func() {\n\t\tfor {\n\t\t\ttime.Sleep(time.Second)\n\t\t\tlo.SetText(common.GetLogMsg())\n\t\t\tslo.Resize(fyne.NewSize(910, 250))\n\t\t}\n\t}()\n\n\tsp, vk, ct := loadConfig()\n\tif sp != \"\" && vk != \"\" && ct != \"\" {\n\t\tserverPort.SetText(sp)\n\t\tvKey.SetText(vk)\n\t\tconnType = ct\n\t\tradio.SetSelected(ct)\n\t\tonclick(sp, vk, ct)\n\t}\n\n\treturn container.NewVBox(\n\t\twidget.NewLabel(\"Npc \"+version.VERSION),\n\t\tserverPort,\n\t\tvKey,\n\t\tradio,\n\t\tbutton,\n\t\tslo,\n\t)\n}",
+    "funcname": "makeMainTab"
+}

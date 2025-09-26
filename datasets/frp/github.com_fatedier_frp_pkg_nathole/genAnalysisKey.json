@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/controller.go",
+    "lineno": 74,
+    "focalfunc": "func (s *Session) genAnalysisKey()",
+    "funcbody": "func (s *Session) genAnalysisKey() {\n\thash := md5.New()\n\tvIPs := slices.Compact(parseIPs(s.visitorMsg.MappedAddrs))\n\tif len(vIPs) > 0 {\n\t\thash.Write([]byte(vIPs[0]))\n\t}\n\thash.Write([]byte(s.vNatFeature.NatType))\n\thash.Write([]byte(s.vNatFeature.Behavior))\n\thash.Write([]byte(strconv.FormatBool(s.vNatFeature.RegularPortsChange)))\n\n\tcIPs := slices.Compact(parseIPs(s.clientMsg.MappedAddrs))\n\tif len(cIPs) > 0 {\n\t\thash.Write([]byte(cIPs[0]))\n\t}\n\thash.Write([]byte(s.cNatFeature.NatType))\n\thash.Write([]byte(s.cNatFeature.Behavior))\n\thash.Write([]byte(strconv.FormatBool(s.cNatFeature.RegularPortsChange)))\n\ts.analysisKey = hex.EncodeToString(hash.Sum(nil))\n}",
+    "funcname": "genAnalysisKey"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 1083,
+    "focalfunc": "func (c *hugoBuilder) rebuildSites(events []fsnotify.Event) error",
+    "funcbody": "func (c *hugoBuilder) rebuildSites(events []fsnotify.Event) error {\n\tif err := c.errState.buildErr(); err != nil {\n\t\tferrs := herrors.UnwrapFileErrorsWithErrorContext(err)\n\t\tfor _, err := range ferrs {\n\t\t\tevents = append(events, fsnotify.Event{Name: err.Position().Filename, Op: fsnotify.Write})\n\t\t}\n\t}\n\tc.errState.setBuildErr(nil)\n\th, err := c.hugo()\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn h.Build(hugolib.BuildCfg{NoBuildLock: true, RecentlyVisited: c.visitedURLs, ErrRecovery: c.errState.wasErr()}, events...)\n}",
+    "funcname": "rebuildSites"
+}

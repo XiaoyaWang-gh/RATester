@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 94,
+    "focalfunc": "func (p *nopPage) AllTranslations() Pages",
+    "funcbody": "func (p *nopPage) AllTranslations() Pages {\n\treturn nil\n}",
+    "funcname": "AllTranslations"
+}

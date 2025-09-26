@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/opentelemetry.go",
+    "lineno": 388,
+    "focalfunc": "func newOTLPGaugeFrom(meter metric.Meter, name, desc string, unit string) *otelGauge",
+    "funcbody": "func newOTLPGaugeFrom(meter metric.Meter, name, desc string, unit string) *otelGauge {\n\topenTelemetryGaugeCollector.values[name] = make(map[string]gaugeValue)\n\n\tc, _ := meter.Float64ObservableGauge(name,\n\t\tmetric.WithDescription(desc),\n\t\tmetric.WithUnit(unit),\n\t)\n\n\t_, err := meter.RegisterCallback(func(ctx context.Context, observer metric.Observer) error {\n\t\topenTelemetryGaugeCollector.mu.Lock()\n\t\tdefer openTelemetryGaugeCollector.mu.Unlock()\n\n\t\tvalues, exists := openTelemetryGaugeCollector.values[name]\n\t\tif !exists {\n\t\t\treturn nil\n\t\t}\n\n\t\tfor _, value := range values {\n\t\t\tobserver.ObserveFloat64(c, value.value, metric.WithAttributes(value.attributes.ToLabels()...))\n\t\t}\n\n\t\treturn nil\n\t}, c)\n\tif err != nil {\n\t\tlog.Err(err).Msg(\"Unable to register OpenTelemetry meter callback\")\n\t}\n\n\treturn &otelGauge{\n\t\tip:\tc,\n\t\tname:\tname,\n\t}\n}",
+    "funcname": "newOTLPGaugeFrom"
+}

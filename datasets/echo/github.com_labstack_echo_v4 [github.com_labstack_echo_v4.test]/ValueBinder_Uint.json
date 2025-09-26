@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 747,
+    "focalfunc": "func (b *ValueBinder) uint(sourceParam string, value string, dest interface{}, bitSize int) *ValueBinder",
+    "funcbody": "func (b *ValueBinder) uint(sourceParam string, value string, dest interface{}, bitSize int) *ValueBinder {\n\tn, err := strconv.ParseUint(value, 10, bitSize)\n\tif err != nil {\n\t\tif bitSize == 0 {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{value}, \"failed to bind field value to uint\", err))\n\t\t} else {\n\t\t\tb.setError(b.ErrorFunc(sourceParam, []string{value}, fmt.Sprintf(\"failed to bind field value to uint%v\", bitSize), err))\n\t\t}\n\t\treturn b\n\t}\n\n\tswitch d := dest.(type) {\n\tcase *uint64:\n\t\t*d = n\n\tcase *uint32:\n\t\t*d = uint32(n)\n\tcase *uint16:\n\t\t*d = uint16(n)\n\tcase *uint8:\n\t\t*d = uint8(n)\n\tcase *uint:\n\t\t*d = uint(n)\n\t}\n\treturn b\n}",
+    "funcname": "uint"
+}

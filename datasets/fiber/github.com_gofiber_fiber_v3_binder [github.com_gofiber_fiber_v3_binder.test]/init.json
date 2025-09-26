@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 59,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tfor _, tag := range tags {\n\t\tdecoderPoolMap[tag] = &sync.Pool{New: func() any {\n\t\t\treturn decoderBuilder(ParserConfig{\n\t\t\t\tIgnoreUnknownKeys:\ttrue,\n\t\t\t\tZeroEmpty:\t\ttrue,\n\t\t\t})\n\t\t}}\n\t}\n}",
+    "funcname": "init"
+}

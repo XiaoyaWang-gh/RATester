@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 428,
+    "focalfunc": "func IsSameFilePath(s1, s2 string) bool",
+    "funcbody": "func IsSameFilePath(s1, s2 string) bool {\n\treturn path.Clean(ToSlashTrim(s1)) == path.Clean(ToSlashTrim(s2))\n}",
+    "funcname": "IsSameFilePath"
+}

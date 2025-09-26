@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/text/position.go",
+    "lineno": 54,
+    "focalfunc": "func createPositionStringFormatter(formatStr string) func(p Position) string",
+    "funcbody": "func createPositionStringFormatter(formatStr string) func(p Position) string {\n\tif formatStr == \"\" {\n\t\tformatStr = \"\\\":file::line::col\\\"\"\n\t}\n\n\tidentifiers := []string{\":file\", \":line\", \":col\"}\n\tvar identifiersFound []string\n\n\tfor i := range formatStr {\n\t\tfor _, id := range identifiers {\n\t\t\tif strings.HasPrefix(formatStr[i:], id) {\n\t\t\t\tidentifiersFound = append(identifiersFound, id)\n\t\t\t}\n\t\t}\n\t}\n\n\treplacer := strings.NewReplacer(\":file\", \"%s\", \":line\", \"%d\", \":col\", \"%d\")\n\tformat := replacer.Replace(formatStr)\n\n\tf := func(pos Position) string {\n\t\targs := make([]any, len(identifiersFound))\n\t\tfor i, id := range identifiersFound {\n\t\t\tswitch id {\n\t\t\tcase \":file\":\n\t\t\t\targs[i] = pos.Filename\n\t\t\tcase \":line\":\n\t\t\t\targs[i] = pos.LineNumber\n\t\t\tcase \":col\":\n\t\t\t\targs[i] = pos.ColumnNumber\n\t\t\t}\n\t\t}\n\n\t\tmsg := fmt.Sprintf(format, args...)\n\n\t\tif terminal.PrintANSIColors(os.Stdout) {\n\t\t\treturn terminal.Notice(msg)\n\t\t}\n\n\t\treturn msg\n\t}\n\n\treturn f\n}",
+    "funcname": "createPositionStringFormatter"
+}

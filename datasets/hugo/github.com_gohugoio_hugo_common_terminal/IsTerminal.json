@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/terminal/colors.go",
+    "lineno": 43,
+    "focalfunc": "func IsTerminal(f *os.File) bool",
+    "funcbody": "func IsTerminal(f *os.File) bool {\n\tif runtime.GOOS == \"windows\" {\n\t\treturn false\n\t}\n\n\tfd := f.Fd()\n\treturn os.Getenv(\"TERM\") != \"dumb\" && (isatty.IsTerminal(fd) || isatty.IsCygwinTerminal(fd))\n}",
+    "funcname": "IsTerminal"
+}

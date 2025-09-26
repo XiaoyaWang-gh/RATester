@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/htime/time.go",
+    "lineno": 158,
+    "focalfunc": "func Now() time.Time",
+    "funcbody": "func Now() time.Time {\n\treturn Clock.Now()\n}",
+    "funcname": "Now"
+}

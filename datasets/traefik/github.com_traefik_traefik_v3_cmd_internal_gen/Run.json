@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/main.go",
+    "lineno": 53,
+    "focalfunc": "func run(dest string) error",
+    "funcbody": "func run(dest string) error {\n\tcentrifuge, err := NewCentrifuge(rootPkg)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tcentrifuge.IncludedImports = []string{\n\t\t\"github.com/traefik/traefik/v3/pkg/tls\",\n\t\t\"github.com/traefik/traefik/v3/pkg/types\",\n\t}\n\n\tcentrifuge.ExcludedTypes = []string{\n\n\t\t\"CertificateStore\", \"Manager\",\n\n\t\t\"Message\", \"Configurations\",\n\n\t\t\"HTTPCodeRanges\", \"HostResolverConfig\",\n\t}\n\n\tcentrifuge.ExcludedFiles = []string{\n\t\t\"github.com/traefik/traefik/v3/pkg/types/logs.go\",\n\t\t\"github.com/traefik/traefik/v3/pkg/types/metrics.go\",\n\t}\n\n\tcentrifuge.TypeCleaner = cleanType\n\tcentrifuge.PackageCleaner = cleanPackage\n\n\terr = centrifuge.Run(dest, destPkg)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn os.WriteFile(filepath.Join(dest, \"marshaler.go\"), []byte(fmt.Sprintf(marsh, destPkg)), 0o666)\n}",
+    "funcname": "run"
+}

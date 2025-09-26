@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 277,
+    "focalfunc": "func (t Types) BySuffix(suffix string) []Type",
+    "funcbody": "func (t Types) BySuffix(suffix string) []Type {\n\tsuffix = strings.ToLower(suffix)\n\tvar types []Type\n\tfor _, tt := range t {\n\t\tif tt.hasSuffix(suffix) {\n\t\t\ttypes = append(types, tt)\n\t\t}\n\t}\n\treturn types\n}",
+    "funcname": "BySuffix"
+}

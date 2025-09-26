@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 238,
+    "focalfunc": "func (o querySet) Exist() bool",
+    "funcbody": "func (o querySet) Exist() bool {\n\treturn o.ExistWithCtx(context.Background())\n}",
+    "funcname": "Exist"
+}

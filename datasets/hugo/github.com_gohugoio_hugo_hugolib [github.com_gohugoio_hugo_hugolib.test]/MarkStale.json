@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 671,
+    "focalfunc": "func (n contentNodeIs) MarkStale()",
+    "funcbody": "func (n contentNodeIs) MarkStale() {\n\tfor _, nn := range n {\n\t\tresource.MarkStale(nn)\n\t}\n}",
+    "funcname": "MarkStale"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 956,
+    "focalfunc": "func (p *Provider) certExists(validDomains []string) bool",
+    "funcbody": "func (p *Provider) certExists(validDomains []string) bool {\n\tp.certificatesMu.RLock()\n\tdefer p.certificatesMu.RUnlock()\n\n\tsort.Strings(validDomains)\n\n\tfor _, cert := range p.certificates {\n\t\tdomains := cert.Certificate.Domain.ToStrArray()\n\t\tsort.Strings(domains)\n\t\tif reflect.DeepEqual(domains, validDomains) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\treturn false\n}",
+    "funcname": "certExists"
+}

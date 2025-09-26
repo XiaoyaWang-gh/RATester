@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_cache.go",
+    "lineno": 72,
+    "focalfunc": "func (c *ResourceCache) Get(ctx context.Context, key string) (resource.Resource, bool)",
+    "funcbody": "func (c *ResourceCache) Get(ctx context.Context, key string) (resource.Resource, bool) {\n\treturn c.cacheResource.Get(ctx, key)\n}",
+    "funcname": "Get"
+}

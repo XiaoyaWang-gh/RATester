@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 416,
+    "focalfunc": "func (r *Request) File(name string) *File",
+    "funcbody": "func (r *Request) File(name string) *File {\n\tfor _, v := range r.files {\n\t\tif v.name == \"\" {\n\t\t\tif filepath.Base(v.path) == name {\n\t\t\t\treturn v\n\t\t\t}\n\t\t} else if v.name == name {\n\t\t\treturn v\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "File"
+}

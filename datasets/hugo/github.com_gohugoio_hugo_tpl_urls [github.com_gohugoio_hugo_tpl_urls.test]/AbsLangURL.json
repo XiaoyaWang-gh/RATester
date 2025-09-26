@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/urls/urls.go",
+    "lineno": 179,
+    "focalfunc": "func (ns *Namespace) AbsLangURL(s any) (string, error)",
+    "funcbody": "func (ns *Namespace) AbsLangURL(s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn ns.deps.PathSpec.AbsURL(ss, !ns.multihost), nil\n}",
+    "funcname": "AbsLangURL"
+}

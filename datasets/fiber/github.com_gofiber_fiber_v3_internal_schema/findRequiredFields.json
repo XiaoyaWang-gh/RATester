@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 115,
+    "focalfunc": "func (d *Decoder) findRequiredFields(t reflect.Type, canonicalPrefix, searchPrefix string) (map[string][]fieldWithPrefix, MultiError)",
+    "funcbody": "func (d *Decoder) findRequiredFields(t reflect.Type, canonicalPrefix, searchPrefix string) (map[string][]fieldWithPrefix, MultiError) {\n\tstruc := d.cache.get(t)\n\tif struc == nil {\n\n\t\treturn nil, MultiError{canonicalPrefix + \"*\": errors.New(\"cache fail\")}\n\t}\n\n\tm := map[string][]fieldWithPrefix{}\n\terrs := MultiError{}\n\tfor _, f := range struc.fields {\n\t\tif f.typ.Kind() == reflect.Struct {\n\t\t\tfcprefix := canonicalPrefix + f.canonicalAlias + \".\"\n\t\t\tfor _, fspath := range f.paths(searchPrefix) {\n\t\t\t\tfm, ferrs := d.findRequiredFields(f.typ, fcprefix, fspath+\".\")\n\t\t\t\tfor key, fields := range fm {\n\t\t\t\t\tm[key] = append(m[key], fields...)\n\t\t\t\t}\n\t\t\t\terrs.merge(ferrs)\n\t\t\t}\n\t\t}\n\t\tif f.isRequired {\n\t\t\tkey := canonicalPrefix + f.canonicalAlias\n\t\t\tm[key] = append(m[key], fieldWithPrefix{\n\t\t\t\tfieldInfo:\tf,\n\t\t\t\tprefix:\t\tsearchPrefix,\n\t\t\t})\n\t\t}\n\t}\n\treturn m, errs\n}",
+    "funcname": "findRequiredFields"
+}

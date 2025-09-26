@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 474,
+    "focalfunc": "func (app *HttpServer) RESTRouter(rootpath string, c ControllerInterface) *HttpServer",
+    "funcbody": "func (app *HttpServer) RESTRouter(rootpath string, c ControllerInterface) *HttpServer {\n\tapp.Router(rootpath, c)\n\tapp.Router(path.Join(rootpath, \":objectId\"), c)\n\treturn app\n}",
+    "funcname": "RESTRouter"
+}

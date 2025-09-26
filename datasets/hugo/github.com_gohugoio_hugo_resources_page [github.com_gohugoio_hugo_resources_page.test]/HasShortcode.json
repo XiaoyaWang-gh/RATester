@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 222,
+    "focalfunc": "func (p *nopPage) HasShortcode(name string) bool",
+    "funcbody": "func (p *nopPage) HasShortcode(name string) bool {\n\treturn false\n}",
+    "funcname": "HasShortcode"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 321,
+    "focalfunc": "func (s *Sock5ModeServer) Auth(c net.Conn) error",
+    "funcbody": "func (s *Sock5ModeServer) Auth(c net.Conn) error {\n\theader := []byte{0, 0}\n\tif _, err := io.ReadAtLeast(c, header, 2); err != nil {\n\t\treturn err\n\t}\n\tif header[0] != userAuthVersion {\n\t\treturn errors.New(\"\u9a8c\u8bc1\u65b9\u5f0f\u4e0d\u88ab\u652f\u6301\")\n\t}\n\tuserLen := int(header[1])\n\tuser := make([]byte, userLen)\n\tif _, err := io.ReadAtLeast(c, user, userLen); err != nil {\n\t\treturn err\n\t}\n\tif _, err := c.Read(header[:1]); err != nil {\n\t\treturn errors.New(\"\u5bc6\u7801\u957f\u5ea6\u83b7\u53d6\u9519\u8bef\")\n\t}\n\tpassLen := int(header[0])\n\tpass := make([]byte, passLen)\n\tif _, err := io.ReadAtLeast(c, pass, passLen); err != nil {\n\t\treturn err\n\t}\n\n\tvar U, P string\n\tif s.task.MultiAccount != nil {\n\n\t\tU = string(user)\n\t\tvar ok bool\n\t\tP, ok = s.task.MultiAccount.AccountMap[U]\n\t\tif !ok {\n\t\t\treturn errors.New(\"\u9a8c\u8bc1\u4e0d\u901a\u8fc7\")\n\t\t}\n\t} else {\n\t\tU = s.task.Client.Cnf.U\n\t\tP = s.task.Client.Cnf.P\n\t}\n\n\tif string(user) == U && string(pass) == P {\n\t\tif _, err := c.Write([]byte{userAuthVersion, authSuccess}); err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t} else {\n\t\tif _, err := c.Write([]byte{userAuthVersion, authFailure}); err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn errors.New(\"\u9a8c\u8bc1\u4e0d\u901a\u8fc7\")\n\t}\n}",
+    "funcname": "Auth"
+}

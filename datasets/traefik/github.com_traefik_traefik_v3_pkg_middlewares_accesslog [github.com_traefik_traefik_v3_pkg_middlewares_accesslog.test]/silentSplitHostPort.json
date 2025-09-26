@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 284,
+    "focalfunc": "func silentSplitHostPort(value string) (host, port string)",
+    "funcbody": "func silentSplitHostPort(value string) (host, port string) {\n\thost, port, err := net.SplitHostPort(value)\n\tif err != nil {\n\t\treturn value, \"-\"\n\t}\n\treturn host, port\n}",
+    "funcname": "silentSplitHostPort"
+}

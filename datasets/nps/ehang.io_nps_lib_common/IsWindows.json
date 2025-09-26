@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/run.go",
+    "lineno": 40,
+    "focalfunc": "func IsWindows() bool",
+    "funcbody": "func IsWindows() bool {\n\tif runtime.GOOS == \"windows\" {\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "IsWindows"
+}

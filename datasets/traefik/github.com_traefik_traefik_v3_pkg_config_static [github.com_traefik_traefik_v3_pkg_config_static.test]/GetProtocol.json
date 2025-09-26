@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/static/entrypoints.go",
+    "lineno": 35,
+    "focalfunc": "func (ep EntryPoint) GetProtocol() (string, error)",
+    "funcbody": "func (ep EntryPoint) GetProtocol() (string, error) {\n\tsplitN := strings.SplitN(ep.Address, \"/\", 2)\n\tif len(splitN) < 2 {\n\t\treturn \"tcp\", nil\n\t}\n\n\tprotocol := strings.ToLower(splitN[1])\n\tif protocol == \"tcp\" || protocol == \"udp\" {\n\t\treturn protocol, nil\n\t}\n\n\treturn \"\", fmt.Errorf(\"invalid protocol: %s\", splitN[1])\n}",
+    "funcname": "GetProtocol"
+}

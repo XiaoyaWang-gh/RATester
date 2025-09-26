@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/import.go",
+    "lineno": 506,
+    "focalfunc": "func (c *importCommand) parseJekyllFilename(filename string) (time.Time, string, error)",
+    "funcbody": "func (c *importCommand) parseJekyllFilename(filename string) (time.Time, string, error) {\n\tre := regexp.MustCompile(`(\\d+-\\d+-\\d+)-(.+)\\..*`)\n\tr := re.FindAllStringSubmatch(filename, -1)\n\tif len(r) == 0 {\n\t\treturn htime.Now(), \"\", errors.New(\"filename not match\")\n\t}\n\n\tpostDate, err := time.Parse(\"2006-1-2\", r[0][1])\n\tif err != nil {\n\t\treturn htime.Now(), \"\", err\n\t}\n\n\tpostName := r[0][2]\n\n\treturn postDate, postName, nil\n}",
+    "funcname": "parseJekyllFilename"
+}

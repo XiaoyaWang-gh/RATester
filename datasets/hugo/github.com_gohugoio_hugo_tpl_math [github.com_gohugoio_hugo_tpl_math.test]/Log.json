@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/math/math.go",
+    "lineno": 132,
+    "focalfunc": "func (ns *Namespace) Log(n any) (float64, error)",
+    "funcbody": "func (ns *Namespace) Log(n any) (float64, error) {\n\taf, err := cast.ToFloat64E(n)\n\tif err != nil {\n\t\treturn 0, errors.New(\"Log operator can't be used with non integer or float value\")\n\t}\n\n\treturn math.Log(af), nil\n}",
+    "funcname": "Log"
+}

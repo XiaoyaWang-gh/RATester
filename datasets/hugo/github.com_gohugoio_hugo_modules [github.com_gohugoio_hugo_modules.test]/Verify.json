@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 393,
+    "focalfunc": "func (c *Client) Verify(clean bool) error",
+    "funcbody": "func (c *Client) Verify(clean bool) error {\n\n\terr := c.runVerify()\n\tif err != nil {\n\t\tif clean {\n\t\t\tm := verifyErrorDirRe.FindAllStringSubmatch(err.Error(), -1)\n\t\t\tif m != nil {\n\t\t\t\tfor i := 0; i < len(m); i++ {\n\t\t\t\t\tc, err := hugofs.MakeReadableAndRemoveAllModulePkgDir(c.fs, m[i][1])\n\t\t\t\t\tif err != nil {\n\t\t\t\t\t\treturn err\n\t\t\t\t\t}\n\t\t\t\t\tfmt.Println(\"Cleaned\", c)\n\t\t\t\t}\n\t\t\t}\n\n\t\t\terr = c.runVerify()\n\t\t}\n\t}\n\treturn err\n}",
+    "funcname": "Verify"
+}

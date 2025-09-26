@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 104,
+    "focalfunc": "func isHex(c byte) bool",
+    "funcbody": "func isHex(c byte) bool {\n\treturn '0' <= c && c <= '9' || 'a' <= c && c <= 'f' || 'A' <= c && c <= 'F'\n}",
+    "funcname": "isHex"
+}

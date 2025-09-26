@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/path.go",
+    "lineno": 286,
+    "focalfunc": "func (*routeParser) analyseConstantPart(pattern string, nextParamPosition int) (string, *routeSegment)",
+    "funcbody": "func (*routeParser) analyseConstantPart(pattern string, nextParamPosition int) (string, *routeSegment) {\n\n\tprocessedPart := pattern\n\tif nextParamPosition != -1 {\n\n\t\tprocessedPart = pattern[:nextParamPosition]\n\t}\n\tconstPart := RemoveEscapeChar(processedPart)\n\treturn processedPart, &routeSegment{\n\t\tConst:\tconstPart,\n\t\tLength:\tlen(constPart),\n\t}\n}",
+    "funcname": "analyseConstantPart"
+}

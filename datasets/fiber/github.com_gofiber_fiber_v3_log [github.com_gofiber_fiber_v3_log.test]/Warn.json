@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 19,
+    "focalfunc": "func Warn(v ...any)",
+    "funcbody": "func Warn(v ...any) {\n\tlogger.Warn(v...)\n}",
+    "funcname": "Warn"
+}

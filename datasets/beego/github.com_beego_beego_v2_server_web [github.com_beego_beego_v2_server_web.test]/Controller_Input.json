@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 482,
+    "focalfunc": "func (c *Controller) Input() (url.Values, error)",
+    "funcbody": "func (c *Controller) Input() (url.Values, error) {\n\tif c.Ctx.Request.Form == nil {\n\t\terr := c.Ctx.Request.ParseForm()\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn c.Ctx.Request.Form, nil\n}",
+    "funcname": "Input"
+}

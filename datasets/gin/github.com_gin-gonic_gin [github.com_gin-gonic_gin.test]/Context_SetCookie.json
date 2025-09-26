@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 943,
+    "focalfunc": "func (c *Context) SetCookie(name, value string, maxAge int, path, domain string, secure, httpOnly bool)",
+    "funcbody": "func (c *Context) SetCookie(name, value string, maxAge int, path, domain string, secure, httpOnly bool) {\n\tif path == \"\" {\n\t\tpath = \"/\"\n\t}\n\thttp.SetCookie(c.Writer, &http.Cookie{\n\t\tName:\t\tname,\n\t\tValue:\t\turl.QueryEscape(value),\n\t\tMaxAge:\t\tmaxAge,\n\t\tPath:\t\tpath,\n\t\tDomain:\t\tdomain,\n\t\tSameSite:\tc.sameSite,\n\t\tSecure:\t\tsecure,\n\t\tHttpOnly:\thttpOnly,\n\t})\n}",
+    "funcname": "SetCookie"
+}

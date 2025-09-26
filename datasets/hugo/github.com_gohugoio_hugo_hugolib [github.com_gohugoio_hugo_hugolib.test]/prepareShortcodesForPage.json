@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 521,
+    "focalfunc": "func (s *shortcodeHandler) prepareShortcodesForPage(ctx context.Context, p *pageState, f output.Format, isRenderString bool) (map[string]shortcodeRenderer, error)",
+    "funcbody": "func (s *shortcodeHandler) prepareShortcodesForPage(ctx context.Context, p *pageState, f output.Format, isRenderString bool) (map[string]shortcodeRenderer, error) {\n\trendered := make(map[string]shortcodeRenderer)\n\n\ttplVariants := tpl.TemplateVariants{\n\t\tLanguage:\tp.Language().Lang,\n\t\tOutputFormat:\tf,\n\t}\n\n\tfor _, v := range s.shortcodes {\n\t\ts, err := prepareShortcode(ctx, 0, s.s, tplVariants, v, nil, p, isRenderString)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\trendered[v.placeholder] = s\n\n\t}\n\n\treturn rendered, nil\n}",
+    "funcname": "prepareShortcodesForPage"
+}

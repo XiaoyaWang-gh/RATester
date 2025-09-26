@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/compare/compare.go",
+    "lineno": 241,
+    "focalfunc": "func (ns *Namespace) compareGet(a any, b any) (float64, float64)",
+    "funcbody": "func (ns *Namespace) compareGet(a any, b any) (float64, float64) {\n\treturn ns.compareGetWithCollator(nil, a, b)\n}",
+    "funcname": "compareGet"
+}

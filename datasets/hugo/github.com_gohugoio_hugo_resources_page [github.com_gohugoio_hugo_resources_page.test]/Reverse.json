@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/taxonomy.go",
+    "lineno": 139,
+    "focalfunc": "func (t OrderedTaxonomy) Reverse() OrderedTaxonomy",
+    "funcbody": "func (t OrderedTaxonomy) Reverse() OrderedTaxonomy {\n\tfor i, j := 0, len(t)-1; i < j; i, j = i+1, j-1 {\n\t\tt[i], t[j] = t[j], t[i]\n\t}\n\n\treturn t\n}",
+    "funcname": "Reverse"
+}

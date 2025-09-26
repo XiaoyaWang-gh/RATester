@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/errors.go",
+    "lineno": 123,
+    "focalfunc": "func IsNotExist(err error) bool",
+    "funcbody": "func IsNotExist(err error) bool {\n\tif os.IsNotExist(err) {\n\t\treturn true\n\t}\n\n\tif os.IsNotExist(errors.Unwrap(err)) {\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "IsNotExist"
+}

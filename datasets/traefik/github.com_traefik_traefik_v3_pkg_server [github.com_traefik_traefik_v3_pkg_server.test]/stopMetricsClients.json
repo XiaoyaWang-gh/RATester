@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server.go",
+    "lineno": 105,
+    "focalfunc": "func stopMetricsClients()",
+    "funcbody": "func stopMetricsClients() {\n\tmetrics.StopDatadog()\n\tmetrics.StopStatsd()\n\tmetrics.StopInfluxDB2()\n\tmetrics.StopOpenTelemetry()\n}",
+    "funcname": "stopMetricsClients"
+}

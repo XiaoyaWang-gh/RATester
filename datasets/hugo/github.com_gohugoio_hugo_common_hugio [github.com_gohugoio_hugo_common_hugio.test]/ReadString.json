@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/readers.go",
+    "lineno": 97,
+    "focalfunc": "func ReadString(r io.Reader) (string, error)",
+    "funcbody": "func ReadString(r io.Reader) (string, error) {\n\tif sr, ok := r.(StringReader); ok {\n\t\treturn sr.ReadString(), nil\n\t}\n\tb, err := io.ReadAll(r)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn string(b), nil\n}",
+    "funcname": "ReadString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 41,
+    "focalfunc": "func (c *Cache) Add(key Key, value interface{})",
+    "funcbody": "func (c *Cache) Add(key Key, value interface{}) {\n\tif ee, ok := c.cache.Load(key); ok {\n\t\tc.ll.MoveToFront(ee.(*list.Element))\n\t\tee.(*list.Element).Value.(*entry).value = value\n\t\treturn\n\t}\n\tele := c.ll.PushFront(&entry{key, value})\n\tc.cache.Store(key, ele)\n\tif c.MaxEntries != 0 && c.ll.Len() > c.MaxEntries {\n\t\tc.RemoveOldest()\n\t}\n}",
+    "funcname": "Add"
+}

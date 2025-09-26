@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 184,
+    "focalfunc": "func DecodeConfig(bcfg config.BaseConfig, m map[string]any) (Config, error)",
+    "funcbody": "func DecodeConfig(bcfg config.BaseConfig, m map[string]any) (Config, error) {\n\tif len(m) == 0 {\n\t\treturn DefaultConfig, nil\n\t}\n\n\tvar c Config\n\n\tdc := &mapstructure.DecoderConfig{\n\t\tResult:\t\t\t&c,\n\t\tDecodeHook:\t\tmapstructure.StringToTimeDurationHookFunc(),\n\t\tWeaklyTypedInput:\ttrue,\n\t}\n\n\tdecoder, err := mapstructure.NewDecoder(dc)\n\tif err != nil {\n\t\treturn c, err\n\t}\n\n\tif err := decoder.Decode(m); err != nil {\n\t\treturn c, err\n\t}\n\n\treturn c, nil\n}",
+    "funcname": "DecodeConfig"
+}

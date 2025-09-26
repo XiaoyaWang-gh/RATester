@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 271,
+    "focalfunc": "func (manager *Manager) GetSessionStore(sid string) (sessions Store, err error)",
+    "funcbody": "func (manager *Manager) GetSessionStore(sid string) (sessions Store, err error) {\n\tsessions, err = manager.provider.SessionRead(context.Background(), sid)\n\treturn\n}",
+    "funcname": "GetSessionStore"
+}

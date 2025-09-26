@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 207,
+    "focalfunc": "func (e *NotFoundError) Error() string",
+    "funcbody": "func (e *NotFoundError) Error() string {\n\treturn fmt.Sprintf(\"binary with name %q not found %s\", e.name, e.method)\n}",
+    "funcname": "Error"
+}

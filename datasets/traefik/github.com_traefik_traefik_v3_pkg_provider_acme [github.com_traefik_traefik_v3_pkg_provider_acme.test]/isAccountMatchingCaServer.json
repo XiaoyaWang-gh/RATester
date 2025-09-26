@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 170,
+    "focalfunc": "func isAccountMatchingCaServer(ctx context.Context, accountURI, serverURI string) bool",
+    "funcbody": "func isAccountMatchingCaServer(ctx context.Context, accountURI, serverURI string) bool {\n\tlogger := log.Ctx(ctx)\n\n\taru, err := url.Parse(accountURI)\n\tif err != nil {\n\t\tlogger.Info().Err(err).Str(\"registrationURL\", accountURI).Msg(\"Unable to parse account.Registration URL\")\n\t\treturn false\n\t}\n\n\tcau, err := url.Parse(serverURI)\n\tif err != nil {\n\t\tlogger.Info().Err(err).Str(\"caServerURL\", serverURI).Msg(\"Unable to parse CAServer URL\")\n\t\treturn false\n\t}\n\n\treturn cau.Hostname() == aru.Hostname()\n}",
+    "funcname": "isAccountMatchingCaServer"
+}

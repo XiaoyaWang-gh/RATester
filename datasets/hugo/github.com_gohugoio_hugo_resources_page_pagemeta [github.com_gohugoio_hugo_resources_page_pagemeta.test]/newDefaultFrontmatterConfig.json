@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 466,
+    "focalfunc": "func newDefaultFrontmatterConfig() FrontmatterConfig",
+    "funcbody": "func newDefaultFrontmatterConfig() FrontmatterConfig {\n\treturn FrontmatterConfig{\n\t\tDate:\t\t[]string{fmDate, fmPubDate, fmLastmod},\n\t\tLastmod:\t[]string{fmGitAuthorDate, fmLastmod, fmDate, fmPubDate},\n\t\tPublishDate:\t[]string{fmPubDate, fmDate},\n\t\tExpiryDate:\t[]string{fmExpiryDate},\n\t}\n}",
+    "funcname": "newDefaultFrontmatterConfig"
+}

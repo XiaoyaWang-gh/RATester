@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 34,
+    "focalfunc": "func NewBaseServer(bridge *bridge.Bridge, task *file.Tunnel) *BaseServer",
+    "funcbody": "func NewBaseServer(bridge *bridge.Bridge, task *file.Tunnel) *BaseServer {\n\treturn &BaseServer{\n\t\tbridge:\t\tbridge,\n\t\ttask:\t\ttask,\n\t\terrorContent:\tnil,\n\t\tMutex:\t\tsync.Mutex{},\n\t}\n}",
+    "funcname": "NewBaseServer"
+}

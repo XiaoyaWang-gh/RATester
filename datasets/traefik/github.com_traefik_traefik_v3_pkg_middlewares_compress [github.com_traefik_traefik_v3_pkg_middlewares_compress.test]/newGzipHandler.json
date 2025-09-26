@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compress.go",
+    "lineno": 170,
+    "focalfunc": "func (c *compress) newGzipHandler() (http.Handler, error)",
+    "funcbody": "func (c *compress) newGzipHandler() (http.Handler, error) {\n\tvar wrapper func(http.Handler) http.HandlerFunc\n\tvar err error\n\n\tif len(c.includes) > 0 {\n\t\twrapper, err = gzhttp.NewWrapper(\n\t\t\tgzhttp.ContentTypes(c.includes),\n\t\t\tgzhttp.MinSize(c.minSize),\n\t\t)\n\t} else {\n\t\twrapper, err = gzhttp.NewWrapper(\n\t\t\tgzhttp.ExceptContentTypes(c.excludes),\n\t\t\tgzhttp.MinSize(c.minSize),\n\t\t)\n\t}\n\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"new gzip wrapper: %w\", err)\n\t}\n\n\treturn wrapper(c.next), nil\n}",
+    "funcname": "newGzipHandler"
+}

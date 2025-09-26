@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 478,
+    "focalfunc": "func (c *contentParseInfo) readSourceAll() ([]byte, error)",
+    "funcbody": "func (c *contentParseInfo) readSourceAll() ([]byte, error) {\n\tif c.openSource == nil {\n\t\treturn []byte{}, nil\n\t}\n\tr, err := c.openSource()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer r.Close()\n\n\treturn io.ReadAll(r)\n}",
+    "funcname": "readSourceAll"
+}

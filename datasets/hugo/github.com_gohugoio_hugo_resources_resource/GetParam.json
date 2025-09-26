@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resource_helpers.go",
+    "lineno": 39,
+    "focalfunc": "func getParam(r Resource, key string, stringToLower bool) any",
+    "funcbody": "func getParam(r Resource, key string, stringToLower bool) any {\n\tv, err := maps.GetNestedParam(key, \".\", r.Params())\n\n\tif v == nil || err != nil {\n\t\treturn nil\n\t}\n\n\tswitch val := v.(type) {\n\tcase bool:\n\t\treturn val\n\tcase string:\n\t\tif stringToLower {\n\t\t\treturn strings.ToLower(val)\n\t\t}\n\t\treturn val\n\tcase int64, int32, int16, int8, int:\n\t\treturn cast.ToInt(v)\n\tcase float64, float32:\n\t\treturn cast.ToFloat64(v)\n\tcase time.Time:\n\t\treturn val\n\tcase toml.LocalDate:\n\t\treturn val.AsTime(time.UTC)\n\tcase toml.LocalDateTime:\n\t\treturn val.AsTime(time.UTC)\n\tcase []string:\n\t\tif stringToLower {\n\t\t\treturn helpers.SliceToLower(val)\n\t\t}\n\t\treturn v\n\tcase map[string]any:\n\t\treturn v\n\tcase map[any]any:\n\t\treturn v\n\t}\n\treturn nil\n}",
+    "funcname": "getParam"
+}

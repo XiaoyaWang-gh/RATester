@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/transform.go",
+    "lineno": 275,
+    "focalfunc": "func (ns *Namespace) Reset()",
+    "funcbody": "func (ns *Namespace) Reset() {\n\tns.cacheUnmarshal.Clear()\n}",
+    "funcname": "Reset"
+}

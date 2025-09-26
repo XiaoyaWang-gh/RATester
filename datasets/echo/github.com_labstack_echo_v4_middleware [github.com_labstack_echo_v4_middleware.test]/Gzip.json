@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 66,
+    "focalfunc": "func Gzip() echo.MiddlewareFunc",
+    "funcbody": "func Gzip() echo.MiddlewareFunc {\n\treturn GzipWithConfig(DefaultGzipConfig)\n}",
+    "funcname": "Gzip"
+}

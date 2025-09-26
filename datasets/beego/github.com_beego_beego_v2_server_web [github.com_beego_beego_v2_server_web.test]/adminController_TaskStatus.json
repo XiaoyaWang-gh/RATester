@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/admin_controller.go",
+    "lineno": 81,
+    "focalfunc": "func (a *adminController) TaskStatus()",
+    "funcbody": "func (a *adminController) TaskStatus() {\n\trw, req := a.Ctx.ResponseWriter, a.Ctx.Request\n\n\tdata := make(map[interface{}]interface{})\n\n\treq.ParseForm()\n\ttaskname := req.Form.Get(\"taskname\")\n\tif taskname != \"\" {\n\t\tcmd := admin.GetCommand(\"task\", \"run\")\n\t\tres := cmd.Execute(taskname)\n\t\tif res.IsSuccess() {\n\t\t\tdata[\"Message\"] = []string{\n\t\t\t\t\"success\",\n\t\t\t\ttemplate.HTMLEscapeString(fmt.Sprintf(\"%s run success,Now the Status is <br>%s\",\n\t\t\t\t\ttaskname, res.Content.(string))),\n\t\t\t}\n\t\t} else {\n\t\t\tdata[\"Message\"] = []string{\"error\", template.HTMLEscapeString(fmt.Sprintf(\"%s\", res.Error))}\n\t\t}\n\t}\n\n\tcontent := make(M)\n\tresultList := admin.GetCommand(\"task\", \"list\").Execute().Content.([][]string)\n\tfields := []string{\n\t\t\"Task Name\",\n\t\t\"Task Spec\",\n\t\t\"Task Status\",\n\t\t\"Last Time\",\n\t\t\"\",\n\t}\n\n\tcontent[\"Fields\"] = fields\n\tcontent[\"Data\"] = resultList\n\tdata[\"Content\"] = content\n\tdata[\"Title\"] = \"Tasks\"\n\twriteTemplate(rw, data, tasksTpl, defaultScriptsTpl)\n}",
+    "funcname": "TaskStatus"
+}

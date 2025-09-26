@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/bridge/bridge.go",
+    "lineno": 307,
+    "focalfunc": "func (s *Bridge) register(c *conn.Conn)",
+    "funcbody": "func (s *Bridge) register(c *conn.Conn) {\n\tvar hour int32\n\tif err := binary.Read(c, binary.LittleEndian, &hour); err == nil {\n\t\ts.Register.Store(common.GetIpByAddr(c.Conn.RemoteAddr().String()), time.Now().Add(time.Hour*time.Duration(hour)))\n\t}\n}",
+    "funcname": "register"
+}

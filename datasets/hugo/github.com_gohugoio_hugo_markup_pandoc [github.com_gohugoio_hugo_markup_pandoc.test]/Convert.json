@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/pandoc/convert.go",
+    "lineno": 45,
+    "focalfunc": "func (c *pandocConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error)",
+    "funcbody": "func (c *pandocConverter) Convert(ctx converter.RenderContext) (converter.ResultRender, error) {\n\tb, err := c.getPandocContent(ctx.Src, c.ctx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn converter.Bytes(b), nil\n}",
+    "funcname": "Convert"
+}

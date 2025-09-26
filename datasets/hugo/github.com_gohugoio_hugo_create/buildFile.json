@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/content.go",
+    "lineno": 218,
+    "focalfunc": "func (b *contentBuilder) buildFile() (string, error)",
+    "funcbody": "func (b *contentBuilder) buildFile() (string, error) {\n\tcontentPlaceholderAbsFilename, err := b.cf.CreateContentPlaceHolder(b.targetPath, b.force)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tusesSite, err := b.usesSiteVar(b.archetypeFi)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tvar contentInclusionFilter *glob.FilenameFilter\n\tif !usesSite {\n\n\t\tcontentInclusionFilter = glob.NewFilenameFilterForInclusionFunc(func(filename string) bool {\n\t\t\tfilename = strings.TrimPrefix(filename, string(os.PathSeparator))\n\t\t\treturn strings.Contains(contentPlaceholderAbsFilename, filename)\n\t\t})\n\t}\n\n\tif err := b.h.Build(hugolib.BuildCfg{NoBuildLock: true, SkipRender: true, ContentInclusionFilter: contentInclusionFilter}); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif err := b.applyArcheType(contentPlaceholderAbsFilename, b.archetypeFi); err != nil {\n\t\treturn \"\", err\n\t}\n\n\tb.h.Log.Printf(\"Content %q created\", contentPlaceholderAbsFilename)\n\n\treturn contentPlaceholderAbsFilename, nil\n}",
+    "funcname": "buildFile"
+}

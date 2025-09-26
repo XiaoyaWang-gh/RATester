@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 137,
+    "focalfunc": "func (c *ContentSpec) ResolveMarkup(in string) string",
+    "funcbody": "func (c *ContentSpec) ResolveMarkup(in string) string {\n\tin = strings.ToLower(in)\n\n\tif mediaType, found := c.Cfg.ContentTypes().(media.ContentTypes).Types().GetBestMatch(markup.ResolveMarkup(in)); found {\n\t\treturn mediaType.SubType\n\t}\n\n\tif conv := c.Converters.Get(in); conv != nil {\n\t\treturn markup.ResolveMarkup(conv.Name())\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "ResolveMarkup"
+}

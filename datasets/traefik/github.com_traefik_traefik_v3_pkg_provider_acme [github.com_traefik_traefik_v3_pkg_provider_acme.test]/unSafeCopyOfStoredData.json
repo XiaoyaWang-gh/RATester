@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/local_store.go",
+    "lineno": 121,
+    "focalfunc": "func (s *LocalStore) unSafeCopyOfStoredData() map[string]*StoredData",
+    "funcbody": "func (s *LocalStore) unSafeCopyOfStoredData() map[string]*StoredData {\n\tresult := map[string]*StoredData{}\n\tfor k, v := range s.storedData {\n\t\tresult[k] = v\n\t}\n\treturn result\n}",
+    "funcname": "unSafeCopyOfStoredData"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 38,
+    "focalfunc": "func (f *StrTo) Clear()",
+    "funcbody": "func (f *StrTo) Clear() {\n\t*f = StrTo(rune(0x1E))\n}",
+    "funcname": "Clear"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/time/time.go",
+    "lineno": 60,
+    "focalfunc": "func (ns *Namespace) Format(layout string, v any) (string, error)",
+    "funcbody": "func (ns *Namespace) Format(layout string, v any) (string, error) {\n\tt, err := htime.ToTimeInDefaultLocationE(v, ns.location)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn ns.timeFormatter.Format(t, layout), nil\n}",
+    "funcname": "Format"
+}

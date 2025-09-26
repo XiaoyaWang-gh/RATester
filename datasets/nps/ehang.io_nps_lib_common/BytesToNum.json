@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 380,
+    "focalfunc": "func BytesToNum(b []byte) int",
+    "funcbody": "func BytesToNum(b []byte) int {\n\tvar str string\n\tfor i := 0; i < len(b); i++ {\n\t\tstr += strconv.Itoa(int(b[i]))\n\t}\n\tx, _ := strconv.Atoi(str)\n\treturn int(x)\n}",
+    "funcname": "BytesToNum"
+}

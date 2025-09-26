@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 70,
+    "focalfunc": "func (c *pageFinder) getPageOldVersion(kind string, sections ...string) page.Page",
+    "funcbody": "func (c *pageFinder) getPageOldVersion(kind string, sections ...string) page.Page {\n\trefs := append([]string{kind}, path.Join(sections...))\n\tp, _ := c.getPageForRefs(refs...)\n\treturn p\n}",
+    "funcname": "getPageOldVersion"
+}

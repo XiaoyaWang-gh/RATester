@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 133,
+    "focalfunc": "func NewTracer(tracer trace.Tracer, capturedRequestHeaders, capturedResponseHeaders, safeQueryParams []string) *Tracer",
+    "funcbody": "func NewTracer(tracer trace.Tracer, capturedRequestHeaders, capturedResponseHeaders, safeQueryParams []string) *Tracer {\n\treturn &Tracer{\n\t\tTracer:\t\t\t\ttracer,\n\t\tsafeQueryParams:\t\tsafeQueryParams,\n\t\tcapturedRequestHeaders:\t\tcapturedRequestHeaders,\n\t\tcapturedResponseHeaders:\tcapturedResponseHeaders,\n\t}\n}",
+    "funcname": "NewTracer"
+}

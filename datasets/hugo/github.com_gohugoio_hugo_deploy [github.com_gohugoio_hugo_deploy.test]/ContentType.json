@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 436,
+    "focalfunc": "func (lf *localFile) ContentType() string",
+    "funcbody": "func (lf *localFile) ContentType() string {\n\tif lf.matcher != nil && lf.matcher.ContentType != \"\" {\n\t\treturn lf.matcher.ContentType\n\t}\n\n\text := filepath.Ext(lf.NativePath)\n\tif mimeType, _, found := lf.mediaTypes.GetFirstBySuffix(strings.TrimPrefix(ext, \".\")); found {\n\t\treturn mimeType.Type\n\t}\n\n\treturn mime.TypeByExtension(ext)\n}",
+    "funcname": "ContentType"
+}

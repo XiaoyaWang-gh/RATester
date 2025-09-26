@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 300,
+    "focalfunc": "func (c *defaultConfigProvider) determineMergeStrategy(params ...maps.KeyParams) maps.ParamsMergeStrategy",
+    "funcbody": "func (c *defaultConfigProvider) determineMergeStrategy(params ...maps.KeyParams) maps.ParamsMergeStrategy {\n\tif len(params) == 0 {\n\t\treturn maps.ParamsMergeStrategyNone\n\t}\n\n\tvar (\n\t\tstrategy\tmaps.ParamsMergeStrategy\n\t\tprevIsRoot\tbool\n\t\tcurr\t\t= params[len(params)-1]\n\t)\n\n\tif len(params) > 1 {\n\t\tprev := params[len(params)-2]\n\t\tprevIsRoot = prev.Key == \"\"\n\n\t\ts, found := prev.Params.GetMergeStrategy()\n\t\tif !prevIsRoot && !found {\n\t\t\tpanic(\"invalid state, merge strategy not set on parent\")\n\t\t}\n\t\tif found || !prevIsRoot {\n\t\t\tstrategy = s\n\t\t}\n\t}\n\n\tswitch curr.Key {\n\tcase \"\":\n\n\tcase \"params\":\n\t\tstrategy = maps.ParamsMergeStrategyDeep\n\tcase \"outputformats\", \"mediatypes\":\n\t\tif prevIsRoot {\n\t\t\tstrategy = maps.ParamsMergeStrategyShallow\n\t\t}\n\tcase \"menus\":\n\t\tisMenuKey := prevIsRoot\n\t\tif !isMenuKey {\n\n\t\t\tif len(params) == 4 && params[1].Key == \"languages\" {\n\t\t\t\tisMenuKey = true\n\t\t\t}\n\t\t}\n\t\tif isMenuKey {\n\t\t\tstrategy = maps.ParamsMergeStrategyShallow\n\t\t}\n\tdefault:\n\t\tif strategy == \"\" {\n\t\t\tstrategy = maps.ParamsMergeStrategyNone\n\t\t}\n\t}\n\n\treturn strategy\n}",
+    "funcname": "determineMergeStrategy"
+}

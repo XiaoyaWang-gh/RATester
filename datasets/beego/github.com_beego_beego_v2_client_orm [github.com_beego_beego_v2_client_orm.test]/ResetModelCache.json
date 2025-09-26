@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/models_boot.go",
+    "lineno": 63,
+    "focalfunc": "func ResetModelCache()",
+    "funcbody": "func ResetModelCache() {\n\tdefaultModelCache.Clean()\n}",
+    "funcname": "ResetModelCache"
+}

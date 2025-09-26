@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/error_locator.go",
+    "lineno": 93,
+    "focalfunc": "func chromaLexerFromType(fileType string) string",
+    "funcbody": "func chromaLexerFromType(fileType string) string {\n\tswitch fileType {\n\tcase \"html\", \"htm\":\n\t\treturn \"go-html-template\"\n\t}\n\treturn fileType\n}",
+    "funcname": "chromaLexerFromType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 157,
+    "focalfunc": "func (ctx *Context) BindProtobuf(obj proto.Message) error",
+    "funcbody": "func (ctx *Context) BindProtobuf(obj proto.Message) error {\n\treturn proto.Unmarshal(ctx.Input.RequestBody, obj)\n}",
+    "funcname": "BindProtobuf"
+}

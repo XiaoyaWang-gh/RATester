@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/urlreplacers/absurlreplacer.go",
+    "lineno": 48,
+    "focalfunc": "func (p *prefix) find(bs []byte, start int) bool",
+    "funcbody": "func (p *prefix) find(bs []byte, start int) bool {\n\tif p.disabled {\n\t\treturn false\n\t}\n\n\tif p.nextPos == -1 {\n\t\tidx := bytes.Index(bs[start:], p.b)\n\n\t\tif idx == -1 {\n\t\t\tp.disabled = true\n\n\t\t\treturn false\n\t\t}\n\n\t\tp.nextPos = start + idx + len(p.b)\n\t}\n\n\treturn true\n}",
+    "funcname": "find"
+}

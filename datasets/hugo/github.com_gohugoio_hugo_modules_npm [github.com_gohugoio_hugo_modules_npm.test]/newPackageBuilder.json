@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/npm/package_builder.go",
+    "lineno": 157,
+    "focalfunc": "func newPackageBuilder(source string, first io.Reader) *packageBuilder",
+    "funcbody": "func newPackageBuilder(source string, first io.Reader) *packageBuilder {\n\tb := &packageBuilder{\n\t\tdevDependencies:\t\tmake(map[string]any),\n\t\tdevDependenciesComments:\tmake(map[string]any),\n\t\tdependencies:\t\t\tmake(map[string]any),\n\t\tdependenciesComments:\t\tmake(map[string]any),\n\t}\n\n\tm := b.unmarshal(first)\n\tif b.err != nil {\n\t\treturn b\n\t}\n\n\tb.addm(source, m)\n\tb.originalPackageJSON = m\n\n\treturn b\n}",
+    "funcname": "newPackageBuilder"
+}

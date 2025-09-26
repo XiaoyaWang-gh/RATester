@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/diagrams/goat.go",
+    "lineno": 35,
+    "focalfunc": "func (d goatDiagram) Wrapped() template.HTML",
+    "funcbody": "func (d goatDiagram) Wrapped() template.HTML {\n\treturn template.HTML(d.d.String())\n}",
+    "funcname": "Wrapped"
+}

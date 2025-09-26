@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/daemon/daemon.go",
+    "lineno": 69,
+    "focalfunc": "func status(f string, pidPath string) bool",
+    "funcbody": "func status(f string, pidPath string) bool {\n\tvar cmd *exec.Cmd\n\tb, err := ioutil.ReadFile(filepath.Join(pidPath, f+\".pid\"))\n\tif err == nil {\n\t\tif !common.IsWindows() {\n\t\t\tcmd = exec.Command(\"/bin/sh\", \"-c\", \"ps -ax | awk '{ print $1 }' | grep \"+string(b))\n\t\t} else {\n\t\t\tcmd = exec.Command(\"tasklist\")\n\t\t}\n\t\tout, _ := cmd.Output()\n\t\tif strings.Index(string(out), string(b)) > -1 {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "status"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 770,
+    "focalfunc": "func (ns *Namespace) KeyVals(key any, values ...any) (types.KeyValues, error)",
+    "funcbody": "func (ns *Namespace) KeyVals(key any, values ...any) (types.KeyValues, error) {\n\treturn types.KeyValues{Key: key, Values: values}, nil\n}",
+    "funcname": "KeyVals"
+}

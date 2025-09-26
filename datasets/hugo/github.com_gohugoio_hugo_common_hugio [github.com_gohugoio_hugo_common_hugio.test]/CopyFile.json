@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugio/copy.go",
+    "lineno": 26,
+    "focalfunc": "func CopyFile(fs afero.Fs, from, to string) error",
+    "funcbody": "func CopyFile(fs afero.Fs, from, to string) error {\n\tsf, err := fs.Open(from)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer sf.Close()\n\tdf, err := fs.Create(to)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer df.Close()\n\t_, err = io.Copy(df, sf)\n\tif err != nil {\n\t\treturn err\n\t}\n\tsi, err := fs.Stat(from)\n\tif err != nil {\n\t\terr = fs.Chmod(to, si.Mode())\n\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "CopyFile"
+}

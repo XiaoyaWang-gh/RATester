@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathtype_string.go",
+    "lineno": 7,
+    "focalfunc": "func _()",
+    "funcbody": "func _() {\n\t// An \"invalid array index\" compiler error signifies that the constant values have changed.\n\t// Re-run the stringer command to generate them again.\n\tvar x [1]struct{}\n\t_ = x[PathTypeFile-0]\n\t_ = x[PathTypeContentResource-1]\n\t_ = x[PathTypeContentSingle-2]\n\t_ = x[PathTypeLeaf-3]\n\t_ = x[PathTypeBranch-4]\n}",
+    "funcname": "_"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/apiauth/apiauth.go",
+    "lineno": 76,
+    "focalfunc": "func APIBasicAuth(appid, appkey string) web.FilterFunc",
+    "funcbody": "func APIBasicAuth(appid, appkey string) web.FilterFunc {\n\tft := func(aid string) string {\n\t\tif aid == appid {\n\t\t\treturn appkey\n\t\t}\n\t\treturn \"\"\n\t}\n\treturn APISecretAuth(ft, 300)\n}",
+    "funcname": "APIBasicAuth"
+}

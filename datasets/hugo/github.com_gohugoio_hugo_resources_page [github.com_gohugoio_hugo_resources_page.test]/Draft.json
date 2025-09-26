@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 158,
+    "focalfunc": "func (p *nopPage) Draft() bool",
+    "funcbody": "func (p *nopPage) Draft() bool {\n\treturn false\n}",
+    "funcname": "Draft"
+}

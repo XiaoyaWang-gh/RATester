@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/etcd/config.go",
+    "lineno": 157,
+    "focalfunc": "func (provider *EtcdConfigerProvider) ParseData(data []byte) (config.Configer, error)",
+    "funcbody": "func (provider *EtcdConfigerProvider) ParseData(data []byte) (config.Configer, error) {\n\tcfg := &clientv3.Config{}\n\terr := json.Unmarshal(data, cfg)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"parse data to etcd config failed, please check your input: %w\", err)\n\t}\n\n\tcfg.DialOptions = []grpc.DialOption{\n\t\tgrpc.WithBlock(),\n\t\tgrpc.WithUnaryInterceptor(grpc_prometheus.UnaryClientInterceptor),\n\t\tgrpc.WithStreamInterceptor(grpc_prometheus.StreamClientInterceptor),\n\t}\n\tclient, err := clientv3.New(*cfg)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"create etcd client failed: %w\", err)\n\t}\n\n\treturn newEtcdConfiger(client, \"\"), nil\n}",
+    "funcname": "ParseData"
+}

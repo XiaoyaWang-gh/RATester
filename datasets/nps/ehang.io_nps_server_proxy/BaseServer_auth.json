@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/base.go",
+    "lineno": 66,
+    "focalfunc": "func (s *BaseServer) auth(r *http.Request, c *conn.Conn, u, p string) error",
+    "funcbody": "func (s *BaseServer) auth(r *http.Request, c *conn.Conn, u, p string) error {\n\tif u != \"\" && p != \"\" && !common.CheckAuth(r, u, p) {\n\t\tc.Write([]byte(common.UnauthorizedBytes))\n\t\tc.Close()\n\t\treturn errors.New(\"401 Unauthorized\")\n\t}\n\treturn nil\n}",
+    "funcname": "auth"
+}

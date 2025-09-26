@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 45,
+    "focalfunc": "func (a *attrParser) CanInterruptParagraph() bool",
+    "funcbody": "func (a *attrParser) CanInterruptParagraph() bool {\n\treturn true\n}",
+    "funcname": "CanInterruptParagraph"
+}

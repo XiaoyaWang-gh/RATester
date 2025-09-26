@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_conds.go",
+    "lineno": 94,
+    "focalfunc": "func (c *Condition) AndNotCond(cond *Condition) *Condition",
+    "funcbody": "func (c *Condition) AndNotCond(cond *Condition) *Condition {\n\tc = c.clone()\n\tif c == cond {\n\t\tpanic(fmt.Errorf(\"<Condition.AndNotCond> cannot use self as sub cond\"))\n\t}\n\n\tif cond != nil {\n\t\tc.params = append(c.params, condValue{cond: cond, isCond: true, isNot: true})\n\t}\n\treturn c\n}",
+    "funcname": "AndNotCond"
+}

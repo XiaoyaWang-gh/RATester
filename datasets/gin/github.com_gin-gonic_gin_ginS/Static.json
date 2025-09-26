@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 113,
+    "focalfunc": "func Static(relativePath, root string) gin.IRoutes",
+    "funcbody": "func Static(relativePath, root string) gin.IRoutes {\n\treturn engine().Static(relativePath, root)\n}",
+    "funcname": "Static"
+}

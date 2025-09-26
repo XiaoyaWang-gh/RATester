@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 319,
+    "focalfunc": "func (r *codeModifier) Hijack() (net.Conn, *bufio.ReadWriter, error)",
+    "funcbody": "func (r *codeModifier) Hijack() (net.Conn, *bufio.ReadWriter, error) {\n\thijacker, ok := r.responseWriter.(http.Hijacker)\n\tif !ok {\n\t\treturn nil, nil, fmt.Errorf(\"%T is not a http.Hijacker\", r.responseWriter)\n\t}\n\treturn hijacker.Hijack()\n}",
+    "funcname": "Hijack"
+}

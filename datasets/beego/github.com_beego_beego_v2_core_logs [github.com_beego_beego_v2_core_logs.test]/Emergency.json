@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 735,
+    "focalfunc": "func Emergency(f interface{}, v ...interface{})",
+    "funcbody": "func Emergency(f interface{}, v ...interface{}) {\n\tbeeLogger.Emergency(formatPattern(f, v...), v...)\n}",
+    "funcname": "Emergency"
+}

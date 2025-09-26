@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 53,
+    "focalfunc": "func CheckAuth(r *http.Request, user, passwd string) bool",
+    "funcbody": "func CheckAuth(r *http.Request, user, passwd string) bool {\n\ts := strings.SplitN(r.Header.Get(\"Authorization\"), \" \", 2)\n\tif len(s) != 2 {\n\t\ts = strings.SplitN(r.Header.Get(\"Proxy-Authorization\"), \" \", 2)\n\t\tif len(s) != 2 {\n\t\t\treturn false\n\t\t}\n\t}\n\n\tb, err := base64.StdEncoding.DecodeString(s[1])\n\tif err != nil {\n\t\treturn false\n\t}\n\n\tpair := strings.SplitN(string(b), \":\", 2)\n\tif len(pair) != 2 {\n\t\treturn false\n\t}\n\treturn pair[0] == user && pair[1] == passwd\n}",
+    "funcname": "CheckAuth"
+}

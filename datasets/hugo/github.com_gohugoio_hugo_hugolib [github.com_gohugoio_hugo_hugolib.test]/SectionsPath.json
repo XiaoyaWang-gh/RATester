@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__tree.go",
+    "lineno": 201,
+    "focalfunc": "func (p pageTree) SectionsPath() string",
+    "funcbody": "func (p pageTree) SectionsPath() string {\n\treturn p.CurrentSection().Path()\n}",
+    "funcname": "SectionsPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 44,
+    "focalfunc": "func newServerMetrics() *serverMetrics",
+    "funcbody": "func newServerMetrics() *serverMetrics {\n\treturn &serverMetrics{\n\t\tinfo: &ServerStatistics{\n\t\t\tTotalTrafficIn:\t\tmetric.NewDateCounter(ReserveDays),\n\t\t\tTotalTrafficOut:\tmetric.NewDateCounter(ReserveDays),\n\t\t\tCurConns:\t\tmetric.NewCounter(),\n\n\t\t\tClientCounts:\t\tmetric.NewCounter(),\n\t\t\tProxyTypeCounts:\tmake(map[string]metric.Counter),\n\n\t\t\tProxyStatistics:\tmake(map[string]*ProxyStatistics),\n\t\t},\n\t}\n}",
+    "funcname": "newServerMetrics"
+}

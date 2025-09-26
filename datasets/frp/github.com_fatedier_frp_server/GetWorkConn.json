@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 255,
+    "focalfunc": "func (ctl *Control) GetWorkConn() (workConn net.Conn, err error)",
+    "funcbody": "func (ctl *Control) GetWorkConn() (workConn net.Conn, err error) {\n\txl := ctl.xl\n\tdefer func() {\n\t\tif err := recover(); err != nil {\n\t\t\txl.Errorf(\"panic error: %v\", err)\n\t\t\txl.Errorf(string(debug.Stack()))\n\t\t}\n\t}()\n\n\tvar ok bool\n\n\tselect {\n\tcase workConn, ok = <-ctl.workConnCh:\n\t\tif !ok {\n\t\t\terr = pkgerr.ErrCtlClosed\n\t\t\treturn\n\t\t}\n\t\txl.Debugf(\"get work connection from pool\")\n\tdefault:\n\n\t\tif err := ctl.msgDispatcher.Send(&msg.ReqWorkConn{}); err != nil {\n\t\t\treturn nil, fmt.Errorf(\"control is already closed\")\n\t\t}\n\n\t\tselect {\n\t\tcase workConn, ok = <-ctl.workConnCh:\n\t\t\tif !ok {\n\t\t\t\terr = pkgerr.ErrCtlClosed\n\t\t\t\txl.Warnf(\"no work connections available, %v\", err)\n\t\t\t\treturn\n\t\t\t}\n\n\t\tcase <-time.After(time.Duration(ctl.serverCfg.UserConnTimeout) * time.Second):\n\t\t\terr = fmt.Errorf(\"timeout trying to get work connection\")\n\t\t\txl.Warnf(\"%v\", err)\n\t\t\treturn\n\t\t}\n\t}\n\n\t_ = ctl.msgDispatcher.Send(&msg.ReqWorkConn{})\n\treturn\n}",
+    "funcname": "GetWorkConn"
+}

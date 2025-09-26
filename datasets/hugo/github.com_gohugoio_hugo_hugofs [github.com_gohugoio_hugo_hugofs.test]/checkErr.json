@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/walk.go",
+    "lineno": 106,
+    "focalfunc": "func (w *Walkway) checkErr(filename string, err error) bool",
+    "funcbody": "func (w *Walkway) checkErr(filename string, err error) bool {\n\tif herrors.IsNotExist(err) && !w.cfg.FailOnNotExist {\n\n\t\tw.logger.Warnf(\"File %q not found, skipping.\", filename)\n\t\treturn true\n\t}\n\n\treturn false\n}",
+    "funcname": "checkErr"
+}

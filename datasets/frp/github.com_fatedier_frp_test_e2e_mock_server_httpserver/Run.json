@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 71,
+    "focalfunc": "func (s *Server) Run() error",
+    "funcbody": "func (s *Server) Run() error {\n\tif err := s.initListener(); err != nil {\n\t\treturn err\n\t}\n\n\taddr := net.JoinHostPort(s.bindAddr, strconv.Itoa(s.bindPort))\n\ths := &http.Server{\n\t\tAddr:\t\t\taddr,\n\t\tHandler:\t\ts.handler,\n\t\tTLSConfig:\t\ts.tlsConfig,\n\t\tReadHeaderTimeout:\ttime.Minute,\n\t}\n\n\ts.hs = hs\n\tif s.tlsConfig == nil {\n\t\tgo func() {\n\t\t\t_ = hs.Serve(s.l)\n\t\t}()\n\t} else {\n\t\tgo func() {\n\t\t\t_ = hs.ServeTLS(s.l, \"\", \"\")\n\t\t}()\n\t}\n\treturn nil\n}",
+    "funcname": "Run"
+}

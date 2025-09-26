@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 658,
+    "focalfunc": "func createCompressMiddleware(compress *traefikv1alpha1.Compress) *dynamic.Compress",
+    "funcbody": "func createCompressMiddleware(compress *traefikv1alpha1.Compress) *dynamic.Compress {\n\tif compress == nil {\n\t\treturn nil\n\t}\n\n\tc := &dynamic.Compress{}\n\tc.SetDefaults()\n\n\tif compress.ExcludedContentTypes != nil {\n\t\tc.ExcludedContentTypes = compress.ExcludedContentTypes\n\t}\n\n\tif compress.IncludedContentTypes != nil {\n\t\tc.IncludedContentTypes = compress.IncludedContentTypes\n\t}\n\n\tif compress.MinResponseBodyBytes != nil {\n\t\tc.MinResponseBodyBytes = *compress.MinResponseBodyBytes\n\t}\n\n\tif compress.Encodings != nil {\n\t\tc.Encodings = compress.Encodings\n\t}\n\n\tif compress.DefaultEncoding != nil {\n\t\tc.DefaultEncoding = *compress.DefaultEncoding\n\t}\n\n\treturn c\n}",
+    "funcname": "createCompressMiddleware"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 235,
+    "focalfunc": "func (l *pageLexer) consumeCRLF() bool",
+    "funcbody": "func (l *pageLexer) consumeCRLF() bool {\n\tvar consumed bool\n\tfor _, r := range crLf {\n\t\tif l.next() != r {\n\t\t\tl.backup()\n\t\t} else {\n\t\t\tconsumed = true\n\t\t}\n\t}\n\treturn consumed\n}",
+    "funcname": "consumeCRLF"
+}

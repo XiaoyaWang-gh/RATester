@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/toc.go",
+    "lineno": 129,
+    "focalfunc": "func (e *tocExtension) Extend(m goldmark.Markdown)",
+    "funcbody": "func (e *tocExtension) Extend(m goldmark.Markdown) {\n\tr := goldmark.DefaultRenderer()\n\tr.AddOptions(e.options...)\n\tm.Parser().AddOptions(parser.WithASTTransformers(util.Prioritized(&tocTransformer{\n\t\tr: r,\n\t}, 10)))\n}",
+    "funcname": "Extend"
+}

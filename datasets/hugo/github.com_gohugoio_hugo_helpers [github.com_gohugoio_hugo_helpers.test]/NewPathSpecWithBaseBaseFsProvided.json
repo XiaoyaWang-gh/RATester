@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/pathspec.go",
+    "lineno": 47,
+    "focalfunc": "func NewPathSpecWithBaseBaseFsProvided(fs *hugofs.Fs, cfg config.AllProvider, logger loggers.Logger, baseBaseFs *filesystems.BaseFs) (*PathSpec, error)",
+    "funcbody": "func NewPathSpecWithBaseBaseFsProvided(fs *hugofs.Fs, cfg config.AllProvider, logger loggers.Logger, baseBaseFs *filesystems.BaseFs) (*PathSpec, error) {\n\tp, err := paths.New(fs, cfg)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar options []func(*filesystems.BaseFs) error\n\tif baseBaseFs != nil {\n\t\toptions = []func(*filesystems.BaseFs) error{\n\t\t\tfilesystems.WithBaseFs(baseBaseFs),\n\t\t}\n\t}\n\tbfs, err := filesystems.NewBase(p, logger, options...)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tps := &PathSpec{\n\t\tPaths:\t\t\tp,\n\t\tBaseFs:\t\t\tbfs,\n\t\tFs:\t\t\tfs,\n\t\tCfg:\t\t\tcfg,\n\t\tProcessingStats:\tNewProcessingStats(p.Lang()),\n\t}\n\n\treturn ps, nil\n}",
+    "funcname": "NewPathSpecWithBaseBaseFsProvided"
+}

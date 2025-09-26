@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/where.go",
+    "lineno": 522,
+    "focalfunc": "func toString(v reflect.Value) (string, error)",
+    "funcbody": "func toString(v reflect.Value) (string, error) {\n\tswitch v.Kind() {\n\tcase reflect.String:\n\t\treturn v.String(), nil\n\tcase reflect.Interface:\n\t\treturn toString(v.Elem())\n\t}\n\treturn \"\", errors.New(\"unable to convert value to string\")\n}",
+    "funcname": "toString"
+}

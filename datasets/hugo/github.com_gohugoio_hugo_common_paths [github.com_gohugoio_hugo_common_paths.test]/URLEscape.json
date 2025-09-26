@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 188,
+    "focalfunc": "func URLEscape(uri string) string",
+    "funcbody": "func URLEscape(uri string) string {\n\n\tu, err := url.Parse(uri)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn u.String()\n}",
+    "funcname": "URLEscape"
+}

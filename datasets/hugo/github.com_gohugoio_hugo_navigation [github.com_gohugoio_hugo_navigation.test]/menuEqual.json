@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu_cache.go",
+    "lineno": 49,
+    "focalfunc": "func menuEqual(m1, m2 Menu) bool",
+    "funcbody": "func menuEqual(m1, m2 Menu) bool {\n\tif len(m1) != len(m2) {\n\t\treturn false\n\t}\n\n\tfor i := range m1 {\n\t\tif m1[i] != m2[i] {\n\t\t\treturn false\n\t\t}\n\t}\n\n\treturn true\n}",
+    "funcname": "menuEqual"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 402,
+    "focalfunc": "func isTextUnmarshaler(v reflect.Value) unmarshaler",
+    "funcbody": "func isTextUnmarshaler(v reflect.Value) unmarshaler {\n\n\tm := unmarshaler{}\n\tif m.Unmarshaler, m.IsValid = v.Interface().(encoding.TextUnmarshaler); m.IsValid {\n\t\treturn m\n\t}\n\n\tif m.Unmarshaler, m.IsValid = reflect.New(v.Type()).Interface().(encoding.TextUnmarshaler); m.IsValid {\n\t\tm.IsPtr = true\n\t\treturn m\n\t}\n\n\tt := v.Type()\n\tif t.Kind() == reflect.Ptr {\n\t\tt = t.Elem()\n\t}\n\tif t.Kind() == reflect.Slice {\n\n\t\tif m.Unmarshaler, m.IsValid = v.Interface().(encoding.TextUnmarshaler); m.IsValid {\n\t\t\treturn m\n\t\t}\n\n\t\tm.IsSliceElement = true\n\t\tif t = t.Elem(); t.Kind() == reflect.Ptr {\n\t\t\tt = reflect.PtrTo(t.Elem())\n\t\t\tv = reflect.Zero(t)\n\t\t\tm.IsSliceElementPtr = true\n\t\t\tm.Unmarshaler, m.IsValid = v.Interface().(encoding.TextUnmarshaler)\n\t\t\treturn m\n\t\t}\n\t}\n\n\tv = reflect.New(t)\n\tm.Unmarshaler, m.IsValid = v.Interface().(encoding.TextUnmarshaler)\n\treturn m\n}",
+    "funcname": "isTextUnmarshaler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 284,
+    "focalfunc": "func replace(s string, replacementTable []string) string",
+    "funcbody": "func replace(s string, replacementTable []string) string {\n\tvar b strings.Builder\n\tr, w, written := rune(0), 0, 0\n\tfor i := 0; i < len(s); i += w {\n\n\t\tr, w = utf8.DecodeRuneInString(s[i:])\n\t\tvar repl string\n\t\tswitch {\n\t\tcase int(r) < len(lowUnicodeReplacementTable):\n\t\t\trepl = lowUnicodeReplacementTable[r]\n\t\tcase int(r) < len(replacementTable) && replacementTable[r] != \"\":\n\t\t\trepl = replacementTable[r]\n\t\tcase r == '\\u2028':\n\t\t\trepl = `\\u2028`\n\t\tcase r == '\\u2029':\n\t\t\trepl = `\\u2029`\n\t\tdefault:\n\t\t\tcontinue\n\t\t}\n\t\tif written == 0 {\n\t\t\tb.Grow(len(s))\n\t\t}\n\t\tb.WriteString(s[written:i])\n\t\tb.WriteString(repl)\n\t\twritten = i + w\n\t}\n\tif written == 0 {\n\t\treturn s\n\t}\n\tb.WriteString(s[written:])\n\treturn b.String()\n}",
+    "funcname": "replace"
+}

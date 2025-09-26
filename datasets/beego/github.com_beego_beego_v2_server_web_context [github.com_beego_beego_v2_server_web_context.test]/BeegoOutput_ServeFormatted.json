@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 285,
+    "focalfunc": "func (output *BeegoOutput) ServeFormatted(data interface{}, hasIndent bool, hasEncode ...bool) error",
+    "funcbody": "func (output *BeegoOutput) ServeFormatted(data interface{}, hasIndent bool, hasEncode ...bool) error {\n\taccept := output.Context.Input.Header(\"Accept\")\n\tswitch accept {\n\tcase ApplicationYAML:\n\t\treturn output.YAML(data)\n\tcase ApplicationXML, TextXML:\n\t\treturn output.XML(data, hasIndent)\n\tdefault:\n\t\treturn output.JSON(data, hasIndent, len(hasEncode) > 0 && hasEncode[0])\n\t}\n}",
+    "funcname": "ServeFormatted"
+}

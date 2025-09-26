@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 752,
+    "focalfunc": "func (f *frontmatterFieldHandlers) newDateFilenameHandler(setter func(d *FrontMatterDescriptor, t time.Time)) frontMatterFieldHandler",
+    "funcbody": "func (f *frontmatterFieldHandlers) newDateFilenameHandler(setter func(d *FrontMatterDescriptor, t time.Time)) frontMatterFieldHandler {\n\treturn func(d *FrontMatterDescriptor) (bool, error) {\n\t\tdate, slug := dateAndSlugFromBaseFilename(d.Location, d.BaseFilename)\n\t\tif date.IsZero() {\n\t\t\treturn false, nil\n\t\t}\n\n\t\tsetter(d, date)\n\n\t\tif _, found := d.PageConfig.Params[\"slug\"]; !found {\n\n\t\t\td.PageConfig.Slug = slug\n\t\t}\n\n\t\treturn true, nil\n\t}\n}",
+    "funcname": "newDateFilenameHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 552,
+    "focalfunc": "func (h *HugoSites) fileEventsTrim(events []fsnotify.Event) []fsnotify.Event",
+    "funcbody": "func (h *HugoSites) fileEventsTrim(events []fsnotify.Event) []fsnotify.Event {\n\tseen := make(map[string]bool)\n\tn := 0\n\tfor _, ev := range events {\n\t\tif seen[ev.Name] {\n\t\t\tcontinue\n\t\t}\n\t\tseen[ev.Name] = true\n\t\tevents[n] = ev\n\t\tn++\n\t}\n\treturn events\n}",
+    "funcname": "fileEventsTrim"
+}

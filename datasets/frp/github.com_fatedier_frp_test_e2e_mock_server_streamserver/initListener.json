@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 100,
+    "focalfunc": "func (s *Server) initListener() (err error)",
+    "funcbody": "func (s *Server) initListener() (err error) {\n\tswitch s.netType {\n\tcase TCP:\n\t\ts.l, err = net.Listen(\"tcp\", net.JoinHostPort(s.bindAddr, strconv.Itoa(s.bindPort)))\n\tcase UDP:\n\t\ts.l, err = libnet.ListenUDP(s.bindAddr, s.bindPort)\n\tcase Unix:\n\t\ts.l, err = net.Listen(\"unix\", s.bindAddr)\n\tdefault:\n\t\treturn fmt.Errorf(\"unknown server type: %s\", s.netType)\n\t}\n\treturn err\n}",
+    "funcname": "initListener"
+}

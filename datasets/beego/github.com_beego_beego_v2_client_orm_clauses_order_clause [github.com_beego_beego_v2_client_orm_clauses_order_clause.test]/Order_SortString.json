@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/clauses/order_clause/order.go",
+    "lineno": 42,
+    "focalfunc": "func (o *Order) SortString() string",
+    "funcbody": "func (o *Order) SortString() string {\n\tswitch o.GetSort() {\n\tcase Ascending:\n\t\treturn \"ASC\"\n\tcase Descending:\n\t\treturn \"DESC\"\n\t}\n\n\treturn ``\n}",
+    "funcname": "SortString"
+}

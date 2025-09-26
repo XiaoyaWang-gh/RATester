@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/types/types.go",
+    "lineno": 97,
+    "focalfunc": "func (q *BandwidthQuantity) UnmarshalJSON(b []byte) error",
+    "funcbody": "func (q *BandwidthQuantity) UnmarshalJSON(b []byte) error {\n\tif len(b) == 4 && string(b) == \"null\" {\n\t\treturn nil\n\t}\n\n\tvar str string\n\terr := json.Unmarshal(b, &str)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn q.UnmarshalString(str)\n}",
+    "funcname": "UnmarshalJSON"
+}

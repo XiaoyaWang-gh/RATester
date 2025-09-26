@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 117,
+    "focalfunc": "func (r *Request) HTTPAuth(user, password string) *Request",
+    "funcbody": "func (r *Request) HTTPAuth(user, password string) *Request {\n\tr.authValue = httppkg.BasicAuth(user, password)\n\treturn r\n}",
+    "funcname": "HTTPAuth"
+}

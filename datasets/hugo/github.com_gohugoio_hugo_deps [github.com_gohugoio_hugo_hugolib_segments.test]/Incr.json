@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 456,
+    "focalfunc": "func (b *BuildState) Incr() int",
+    "funcbody": "func (b *BuildState) Incr() int {\n\treturn int(atomic.AddUint64(&b.counter, uint64(1)))\n}",
+    "funcname": "Incr"
+}

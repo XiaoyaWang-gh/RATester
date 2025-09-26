@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/htesting/test_helpers.go",
+    "lineno": 155,
+    "focalfunc": "func NewPinnedRunner(t testing.TB, pinnedTestRe string) *PinnedRunner",
+    "funcbody": "func NewPinnedRunner(t testing.TB, pinnedTestRe string) *PinnedRunner {\n\tif pinnedTestRe == \"\" {\n\t\tpinnedTestRe = \".*\"\n\t}\n\tpinnedTestRe = strings.ReplaceAll(pinnedTestRe, \"_\", \" \")\n\tre := regexp.MustCompile(\"(?i)\" + pinnedTestRe)\n\treturn &PinnedRunner{\n\t\tc:\tqt.New(t),\n\t\tre:\tre,\n\t}\n}",
+    "funcname": "NewPinnedRunner"
+}

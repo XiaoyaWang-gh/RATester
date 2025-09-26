@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_querym2m.go",
+    "lineno": 125,
+    "focalfunc": "func (o *queryM2M) Exist(md interface{}) bool",
+    "funcbody": "func (o *queryM2M) Exist(md interface{}) bool {\n\treturn o.ExistWithCtx(context.Background(), md)\n}",
+    "funcname": "Exist"
+}

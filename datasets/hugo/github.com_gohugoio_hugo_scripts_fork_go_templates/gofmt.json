@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 226,
+    "focalfunc": "func gofmt(dir string)",
+    "funcbody": "func gofmt(dir string) {\n\tcmf, _ := hexec.SafeCommand(\"gofmt\", \"-w\", dir)\n\tout, err := cmf.CombinedOutput()\n\tif err != nil {\n\t\tlog.Fatal(\"gofmt failed:\", string(out))\n\t}\n}",
+    "funcname": "gofmt"
+}

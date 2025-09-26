@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 91,
+    "focalfunc": "func (a *attributesBlock) Kind() ast.NodeKind",
+    "funcbody": "func (a *attributesBlock) Kind() ast.NodeKind {\n\treturn kindAttributesBlock\n}",
+    "funcname": "Kind"
+}

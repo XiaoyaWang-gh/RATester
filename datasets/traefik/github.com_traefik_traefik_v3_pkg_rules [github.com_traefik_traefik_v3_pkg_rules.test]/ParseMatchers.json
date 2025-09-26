@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/rules/parser.go",
+    "lineno": 102,
+    "focalfunc": "func (tree *Tree) ParseMatchers(matchers []string) []string",
+    "funcbody": "func (tree *Tree) ParseMatchers(matchers []string) []string {\n\tswitch tree.Matcher {\n\tcase and, or:\n\t\treturn append(tree.RuleLeft.ParseMatchers(matchers), tree.RuleRight.ParseMatchers(matchers)...)\n\tdefault:\n\t\tfor _, matcher := range matchers {\n\t\t\tif tree.Matcher == matcher {\n\t\t\t\treturn lower(tree.Value)\n\t\t\t}\n\t\t}\n\n\t\treturn nil\n\t}\n}",
+    "funcname": "ParseMatchers"
+}

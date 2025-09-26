@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 95,
+    "focalfunc": "func (m *StreamExampleReply) GetData() string",
+    "funcbody": "func (m *StreamExampleReply) GetData() string {\n\tif m != nil {\n\t\treturn m.Data\n\t}\n\treturn \"\"\n}",
+    "funcname": "GetData"
+}

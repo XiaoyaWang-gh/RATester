@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/tcp/inflightconn/inflight_conn.go",
+    "lineno": 65,
+    "focalfunc": "func (i *inFlightConn) increment(ip string) error",
+    "funcbody": "func (i *inFlightConn) increment(ip string) error {\n\ti.mu.Lock()\n\tdefer i.mu.Unlock()\n\n\tif i.connections[ip] >= i.maxConnections {\n\t\treturn fmt.Errorf(\"max number of connections reached for %s\", ip)\n\t}\n\n\ti.connections[ip]++\n\n\treturn nil\n}",
+    "funcname": "increment"
+}

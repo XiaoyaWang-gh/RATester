@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 109,
+    "focalfunc": "func printGC(memStats *runtime.MemStats, gcstats *debug.GCStats, w io.Writer)",
+    "funcbody": "func printGC(memStats *runtime.MemStats, gcstats *debug.GCStats, w io.Writer) {\n\tif gcstats.NumGC > 0 {\n\t\tlastPause := gcstats.Pause[0]\n\t\telapsed := time.Since(startTime)\n\t\toverhead := float64(gcstats.PauseTotal) / float64(elapsed) * 100\n\t\tallocatedRate := float64(memStats.TotalAlloc) / elapsed.Seconds()\n\n\t\tfmt.Fprintf(w, \"NumGC:%d Pause:%s Pause(Avg):%s Overhead:%3.2f%% Alloc:%s Sys:%s Alloc(Rate):%s/s Histogram:%s %s %s \\n\",\n\t\t\tgcstats.NumGC,\n\t\t\tutils.ToShortTimeFormat(lastPause),\n\t\t\tutils.ToShortTimeFormat(avg(gcstats.Pause)),\n\t\t\toverhead,\n\t\t\ttoH(memStats.Alloc),\n\t\t\ttoH(memStats.Sys),\n\t\t\ttoH(uint64(allocatedRate)),\n\t\t\tutils.ToShortTimeFormat(gcstats.PauseQuantiles[94]),\n\t\t\tutils.ToShortTimeFormat(gcstats.PauseQuantiles[98]),\n\t\t\tutils.ToShortTimeFormat(gcstats.PauseQuantiles[99]))\n\t} else {\n\n\t\telapsed := time.Since(startTime)\n\t\tallocatedRate := float64(memStats.TotalAlloc) / elapsed.Seconds()\n\n\t\tfmt.Fprintf(w, \"Alloc:%s Sys:%s Alloc(Rate):%s/s\\n\",\n\t\t\ttoH(memStats.Alloc),\n\t\t\ttoH(memStats.Sys),\n\t\t\ttoH(uint64(allocatedRate)))\n\t}\n}",
+    "funcname": "printGC"
+}

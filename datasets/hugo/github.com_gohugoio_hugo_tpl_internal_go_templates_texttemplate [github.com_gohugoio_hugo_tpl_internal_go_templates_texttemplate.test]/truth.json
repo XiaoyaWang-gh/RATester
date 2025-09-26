@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 384,
+    "focalfunc": "func truth(arg reflect.Value) bool",
+    "funcbody": "func truth(arg reflect.Value) bool {\n\tt, _ := isTrue(indirectInterface(arg))\n\treturn t\n}",
+    "funcname": "truth"
+}

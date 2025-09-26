@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 180,
+    "focalfunc": "func (d *dbBasePostgres) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool",
+    "funcbody": "func (d *dbBasePostgres) IndexExists(ctx context.Context, db dbQuerier, table string, name string) bool {\n\tquery := fmt.Sprintf(\"SELECT COUNT(*) FROM pg_indexes WHERE tablename = '%s' AND indexname = '%s'\", table, name)\n\trow := db.QueryRowContext(ctx, query)\n\tvar cnt int\n\trow.Scan(&cnt)\n\treturn cnt > 0\n}",
+    "funcname": "IndexExists"
+}

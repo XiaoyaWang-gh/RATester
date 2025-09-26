@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 755,
+    "focalfunc": "func (h *HugoSites) processPartialRebuildChanges(ctx context.Context, l logg.LevelLogger, config *BuildCfg) error",
+    "funcbody": "func (h *HugoSites) processPartialRebuildChanges(ctx context.Context, l logg.LevelLogger, config *BuildCfg) error {\n\tif err := h.resolveAndClearStateForIdentities(ctx, l, nil, config.WhatChanged.Drain()); err != nil {\n\t\treturn err\n\t}\n\n\tif err := h.processContentAdaptersOnRebuild(ctx, config); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "processPartialRebuildChanges"
+}

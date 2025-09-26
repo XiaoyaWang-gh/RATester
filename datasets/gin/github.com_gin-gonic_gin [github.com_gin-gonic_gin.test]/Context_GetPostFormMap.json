@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 575,
+    "focalfunc": "func (c *Context) GetPostFormMap(key string) (map[string]string, bool)",
+    "funcbody": "func (c *Context) GetPostFormMap(key string) (map[string]string, bool) {\n\tc.initFormCache()\n\treturn c.get(c.formCache, key)\n}",
+    "funcname": "GetPostFormMap"
+}

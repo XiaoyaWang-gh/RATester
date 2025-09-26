@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/testconfig/testconfig.go",
+    "lineno": 73,
+    "focalfunc": "func GetTestConfigSectionFromStruct(section string, v any) config.AllProvider",
+    "funcbody": "func GetTestConfigSectionFromStruct(section string, v any) config.AllProvider {\n\tdata, err := toml.Marshal(v)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\tp := maps.Params{\n\t\tsection: config.FromTOMLConfigString(string(data)).Get(\"\"),\n\t}\n\tcfg := config.NewFrom(p)\n\treturn GetTestConfig(nil, cfg)\n}",
+    "funcname": "GetTestConfigSectionFromStruct"
+}

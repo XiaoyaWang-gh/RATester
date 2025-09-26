@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 18,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\n\tfmt.Println(\"Forking ...\")\n\tdefer fmt.Println(\"Done ...\")\n\n\tcleanFork()\n\n\thtmlRoot := filepath.Join(forkRoot, \"htmltemplate\")\n\n\tfor _, pkg := range goPackages {\n\t\tcopyGoPackage(pkg.dstPkg, pkg.srcPkg)\n\t}\n\n\tfor _, pkg := range goPackages {\n\t\tdoWithGoFiles(pkg.dstPkg, pkg.rewriter, pkg.replacer)\n\t}\n\n\tgoimports(htmlRoot)\n\tgofmt(forkRoot)\n}",
+    "funcname": "main"
+}

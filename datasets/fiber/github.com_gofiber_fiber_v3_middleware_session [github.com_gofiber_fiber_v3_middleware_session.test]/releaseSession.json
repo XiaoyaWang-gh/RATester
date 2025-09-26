@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/session.go",
+    "lineno": 44,
+    "focalfunc": "func releaseSession(s *Session)",
+    "funcbody": "func releaseSession(s *Session) {\n\ts.mu.Lock()\n\ts.id = \"\"\n\ts.exp = 0\n\ts.ctx = nil\n\ts.config = nil\n\tif s.data != nil {\n\t\ts.data.Reset()\n\t}\n\tif s.byteBuffer != nil {\n\t\ts.byteBuffer.Reset()\n\t}\n\ts.mu.Unlock()\n\tsessionPool.Put(s)\n}",
+    "funcname": "releaseSession"
+}

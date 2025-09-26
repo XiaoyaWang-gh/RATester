@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/client_option.go",
+    "lineno": 30,
+    "focalfunc": "func WithEnableCookie(enable bool) ClientOption",
+    "funcbody": "func WithEnableCookie(enable bool) ClientOption {\n\treturn func(client *Client) {\n\t\tclient.Setting.EnableCookie = enable\n\t}\n}",
+    "funcname": "WithEnableCookie"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/config.go",
+    "lineno": 232,
+    "focalfunc": "func (p *DynConfBuilder) addServerUDP(ctx context.Context, container dockerData, loadBalancer *dynamic.UDPServersLoadBalancer) error",
+    "funcbody": "func (p *DynConfBuilder) addServerUDP(ctx context.Context, container dockerData, loadBalancer *dynamic.UDPServersLoadBalancer) error {\n\tif loadBalancer == nil {\n\t\treturn errors.New(\"load-balancer is not defined\")\n\t}\n\n\tif len(loadBalancer.Servers) == 0 {\n\t\tloadBalancer.Servers = []dynamic.UDPServer{{}}\n\t}\n\n\tserverPort := loadBalancer.Servers[0].Port\n\tloadBalancer.Servers[0].Port = \"\"\n\n\tip, port, err := p.getIPPort(ctx, container, serverPort)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif port == \"\" {\n\t\treturn errors.New(\"port is missing\")\n\t}\n\n\tloadBalancer.Servers[0].Address = net.JoinHostPort(ip, port)\n\n\treturn nil\n}",
+    "funcname": "addServerUDP"
+}

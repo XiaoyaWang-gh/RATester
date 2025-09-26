@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1791,
+    "focalfunc": "func (c *DefaultCtx) configDependentPaths()",
+    "funcbody": "func (c *DefaultCtx) configDependentPaths() {\n\tc.pathBuffer = append(c.pathBuffer[0:0], c.pathOriginal...)\n\n\tif c.app.config.UnescapePath {\n\t\tc.pathBuffer = fasthttp.AppendUnquotedArg(c.pathBuffer[:0], c.pathBuffer)\n\t}\n\tc.path = c.app.getString(c.pathBuffer)\n\n\tc.detectionPathBuffer = append(c.detectionPathBuffer[0:0], c.pathBuffer...)\n\n\tif !c.app.config.CaseSensitive {\n\t\tc.detectionPathBuffer = utils.ToLowerBytes(c.detectionPathBuffer)\n\t}\n\n\tif !c.app.config.StrictRouting && len(c.detectionPathBuffer) > 1 && c.detectionPathBuffer[len(c.detectionPathBuffer)-1] == '/' {\n\t\tc.detectionPathBuffer = utils.TrimRight(c.detectionPathBuffer, '/')\n\t}\n\tc.detectionPath = c.app.getString(c.detectionPathBuffer)\n\n\tc.treePath = c.treePath[0:0]\n\tconst maxDetectionPaths = 3\n\tif len(c.detectionPath) >= maxDetectionPaths {\n\t\tc.treePath = c.detectionPath[:maxDetectionPaths]\n\t}\n}",
+    "funcname": "configDependentPaths"
+}

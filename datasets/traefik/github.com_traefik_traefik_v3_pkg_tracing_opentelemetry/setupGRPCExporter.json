@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/opentelemetry/opentelemetry.go",
+    "lineno": 122,
+    "focalfunc": "func (c *Config) setupGRPCExporter() (*otlptrace.Exporter, error)",
+    "funcbody": "func (c *Config) setupGRPCExporter() (*otlptrace.Exporter, error) {\n\thost, port, err := net.SplitHostPort(c.GRPC.Endpoint)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"invalid collector endpoint %q: %w\", c.GRPC.Endpoint, err)\n\t}\n\n\topts := []otlptracegrpc.Option{\n\t\totlptracegrpc.WithEndpoint(fmt.Sprintf(\"%s:%s\", host, port)),\n\t\totlptracegrpc.WithHeaders(c.GRPC.Headers),\n\t\totlptracegrpc.WithCompressor(gzip.Name),\n\t}\n\n\tif c.GRPC.Insecure {\n\t\topts = append(opts, otlptracegrpc.WithInsecure())\n\t}\n\n\tif c.GRPC.TLS != nil {\n\t\ttlsConfig, err := c.GRPC.TLS.CreateTLSConfig(context.Background())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"creating TLS client config: %w\", err)\n\t\t}\n\n\t\topts = append(opts, otlptracegrpc.WithTLSCredentials(credentials.NewTLS(tlsConfig)))\n\t}\n\n\treturn otlptrace.New(context.Background(), otlptracegrpc.NewClient(opts...))\n}",
+    "funcname": "setupGRPCExporter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 320,
+    "focalfunc": "func (h *HugoSites) GetContentPage(filename string) page.Page",
+    "funcbody": "func (h *HugoSites) GetContentPage(filename string) page.Page {\n\tvar p page.Page\n\n\th.withPage(func(s string, p2 *pageState) bool {\n\t\tif p2.File() == nil {\n\t\t\treturn false\n\t\t}\n\n\t\tif p2.File().FileInfo().Meta().Filename == filename {\n\t\t\tp = p2\n\t\t\treturn true\n\t\t}\n\n\t\tfor _, r := range p2.Resources().ByType(pageResourceType) {\n\t\t\tp3 := r.(page.Page)\n\t\t\tif p3.File() != nil && p3.File().FileInfo().Meta().Filename == filename {\n\t\t\t\tp = p3\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t})\n\n\treturn p\n}",
+    "funcname": "GetContentPage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 889,
+    "focalfunc": "func getParamToLower(m resource.ResourceParamsProvider, key string) any",
+    "funcbody": "func getParamToLower(m resource.ResourceParamsProvider, key string) any {\n\treturn getParam(m, key, true)\n}",
+    "funcname": "getParamToLower"
+}

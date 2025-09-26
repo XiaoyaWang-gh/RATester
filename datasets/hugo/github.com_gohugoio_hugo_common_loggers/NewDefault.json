@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 152,
+    "focalfunc": "func NewDefault() Logger",
+    "funcbody": "func NewDefault() Logger {\n\topts := Options{\n\t\tDistinctLevel:\tlogg.LevelWarn,\n\t\tLevel:\t\tlogg.LevelWarn,\n\t\tStdout:\t\tos.Stdout,\n\t\tStderr:\t\tos.Stdout,\n\t}\n\treturn New(opts)\n}",
+    "funcname": "NewDefault"
+}

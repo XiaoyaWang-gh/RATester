@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 223,
+    "focalfunc": "func prettifyPath(in string, b filepathPathBridge) string",
+    "funcbody": "func prettifyPath(in string, b filepathPathBridge) string {\n\tif filepath.Ext(in) == \"\" {\n\n\t\tif len(in) < 2 {\n\t\t\treturn b.Separator()\n\t\t}\n\t\treturn b.Join(in, \"index.html\")\n\t}\n\tname, ext := fileAndExt(in, b)\n\tif name == \"index\" {\n\n\t\treturn b.Clean(in)\n\t}\n\n\treturn b.Join(b.Dir(in), name, \"index\"+ext)\n}",
+    "funcname": "prettifyPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 146,
+    "focalfunc": "func (m *moduleAdapter) Version() string",
+    "funcbody": "func (m *moduleAdapter) Version() string {\n\tif !m.IsGoMod() || m.version != \"\" {\n\t\treturn m.version\n\t}\n\treturn m.gomod.Version\n}",
+    "funcname": "Version"
+}

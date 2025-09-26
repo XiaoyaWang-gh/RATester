@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 806,
+    "focalfunc": "func (app *App) Stack() [][]*Route",
+    "funcbody": "func (app *App) Stack() [][]*Route {\n\treturn app.stack\n}",
+    "funcname": "Stack"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 287,
+    "focalfunc": "func goMinorVersion(version string) int",
+    "funcbody": "func goMinorVersion(version string) int {\n\tif strings.HasPrefix(version, \"devel\") {\n\t\treturn 9999\n\t}\n\tvar major, minor int\n\tvar trailing string\n\tn, err := fmt.Sscanf(version, \"go%d.%d%s\", &major, &minor, &trailing)\n\tif n == 2 && err == io.EOF {\n\n\t\terr = nil\n\t}\n\tif err != nil {\n\t\treturn 0\n\t}\n\treturn minor\n}",
+    "funcname": "goMinorVersion"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 1030,
+    "focalfunc": "func indirectInterface(v reflect.Value) reflect.Value",
+    "funcbody": "func indirectInterface(v reflect.Value) reflect.Value {\n\tif v.Kind() != reflect.Interface {\n\t\treturn v\n\t}\n\tif v.IsNil() {\n\t\treturn reflect.Value{}\n\t}\n\treturn v.Elem()\n}",
+    "funcname": "indirectInterface"
+}

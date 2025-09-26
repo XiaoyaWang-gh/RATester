@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 224,
+    "focalfunc": "func (r *roundrobin) get() string",
+    "funcbody": "func (r *roundrobin) get() string {\n\tr.Lock()\n\tdefer r.Unlock()\n\n\tif r.current >= len(r.pool) {\n\t\tr.current %= len(r.pool)\n\t}\n\n\tresult := r.pool[r.current]\n\tr.current++\n\treturn result\n}",
+    "funcname": "get"
+}

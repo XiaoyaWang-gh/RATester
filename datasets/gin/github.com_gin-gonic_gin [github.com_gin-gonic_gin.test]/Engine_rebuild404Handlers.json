@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 333,
+    "focalfunc": "func (engine *Engine) rebuild404Handlers()",
+    "funcbody": "func (engine *Engine) rebuild404Handlers() {\n\tengine.allNoRoute = engine.combineHandlers(engine.noRoute)\n}",
+    "funcname": "rebuild404Handlers"
+}

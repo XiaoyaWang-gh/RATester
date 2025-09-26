@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 154,
+    "focalfunc": "func WithQuery(key, value string) simpleConditionOption",
+    "funcbody": "func WithQuery(key, value string) simpleConditionOption {\n\treturn func(sc *SimpleCondition) {\n\t\tsc.query[key] = value\n\t}\n}",
+    "funcname": "WithQuery"
+}

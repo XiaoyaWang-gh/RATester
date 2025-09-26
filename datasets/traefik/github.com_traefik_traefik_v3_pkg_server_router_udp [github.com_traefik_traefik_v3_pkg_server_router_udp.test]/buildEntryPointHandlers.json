@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/router/udp/router.go",
+    "lineno": 65,
+    "focalfunc": "func (m *Manager) buildEntryPointHandlers(ctx context.Context, configs map[string]*runtime.UDPRouterInfo) []udp.Handler",
+    "funcbody": "func (m *Manager) buildEntryPointHandlers(ctx context.Context, configs map[string]*runtime.UDPRouterInfo) []udp.Handler {\n\tvar rtNames []string\n\tfor routerName := range configs {\n\t\trtNames = append(rtNames, routerName)\n\t}\n\n\tsort.Slice(rtNames, func(i, j int) bool {\n\t\treturn rtNames[i] > rtNames[j]\n\t})\n\n\tvar handlers []udp.Handler\n\n\tfor _, routerName := range rtNames {\n\t\trouterConfig := configs[routerName]\n\t\tlogger := log.Ctx(ctx).With().Str(logs.RouterName, routerName).Logger()\n\t\tctxRouter := logger.WithContext(provider.AddInContext(ctx, routerName))\n\n\t\tif routerConfig.Service == \"\" {\n\t\t\terr := errors.New(\"the service is missing on the udp router\")\n\t\t\trouterConfig.AddError(err, true)\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\n\t\thandler, err := m.serviceManager.BuildUDP(ctxRouter, routerConfig.Service)\n\t\tif err != nil {\n\t\t\trouterConfig.AddError(err, true)\n\t\t\tlogger.Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\n\t\thandlers = append(handlers, handler)\n\t}\n\n\treturn handlers\n}",
+    "funcname": "buildEntryPointHandlers"
+}

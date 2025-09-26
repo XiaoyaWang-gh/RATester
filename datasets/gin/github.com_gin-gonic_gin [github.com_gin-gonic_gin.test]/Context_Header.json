@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 914,
+    "focalfunc": "func (c *Context) Header(key, value string)",
+    "funcbody": "func (c *Context) Header(key, value string) {\n\tif value == \"\" {\n\t\tc.Writer.Header().Del(key)\n\t\treturn\n\t}\n\tc.Writer.Header().Set(key, value)\n}",
+    "funcname": "Header"
+}

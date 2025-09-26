@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 210,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Subquery(sub string, alias string) string",
+    "funcbody": "func (qb *PostgresQueryBuilder) Subquery(sub string, alias string) string {\n\treturn fmt.Sprintf(\"(%s) AS %s\", sub, alias)\n}",
+    "funcname": "Subquery"
+}

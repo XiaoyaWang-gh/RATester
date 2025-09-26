@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/mode.go",
+    "lineno": 85,
+    "focalfunc": "func EnableJsonDecoderUseNumber()",
+    "funcbody": "func EnableJsonDecoderUseNumber() {\n\tbinding.EnableDecoderUseNumber = true\n}",
+    "funcname": "EnableJsonDecoderUseNumber"
+}

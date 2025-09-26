@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 46,
+    "focalfunc": "func (l *Logger) ResetPrefixes() (old []LogPrefix)",
+    "funcbody": "func (l *Logger) ResetPrefixes() (old []LogPrefix) {\n\told = l.prefixes\n\tl.prefixes = make([]LogPrefix, 0)\n\tl.prefixString = \"\"\n\treturn\n}",
+    "funcname": "ResetPrefixes"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/models_boot.go",
+    "lineno": 39,
+    "focalfunc": "func RegisterModelWithSuffix(suffix string, models ...interface{})",
+    "funcbody": "func RegisterModelWithSuffix(suffix string, models ...interface{}) {\n\tif err := defaultModelCache.Register(suffix, false, models...); err != nil {\n\t\tpanic(err)\n\t}\n}",
+    "funcname": "RegisterModelWithSuffix"
+}

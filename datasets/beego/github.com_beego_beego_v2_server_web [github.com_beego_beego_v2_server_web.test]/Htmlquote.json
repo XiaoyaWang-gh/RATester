@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/templatefunc.go",
+    "lineno": 198,
+    "focalfunc": "func Htmlquote(text string) string",
+    "funcbody": "func Htmlquote(text string) string {\n\n\ttext = html.EscapeString(text)\n\ttext = strings.NewReplacer(\n\t\t`\u201c`, \"&ldquo;\",\n\t\t`\u201d`, \"&rdquo;\",\n\t\t` `, \"&nbsp;\",\n\t).Replace(text)\n\n\treturn strings.TrimSpace(text)\n}",
+    "funcname": "Htmlquote"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 298,
+    "focalfunc": "func (l *Listener) Name() string",
+    "funcbody": "func (l *Listener) Name() string {\n\treturn l.name\n}",
+    "funcname": "Name"
+}

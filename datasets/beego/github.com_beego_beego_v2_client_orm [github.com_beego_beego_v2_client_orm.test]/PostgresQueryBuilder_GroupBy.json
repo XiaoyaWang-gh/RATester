@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 156,
+    "focalfunc": "func (qb *PostgresQueryBuilder) GroupBy(fields ...string) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) GroupBy(fields ...string) QueryBuilder {\n\tstr := processingStr(fields)\n\tqb.tokens = append(qb.tokens, \"GROUP BY\", str)\n\treturn qb\n}",
+    "funcname": "GroupBy"
+}

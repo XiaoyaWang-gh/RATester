@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 117,
+    "focalfunc": "func (c *Context) Copy() *Context",
+    "funcbody": "func (c *Context) Copy() *Context {\n\tcp := Context{\n\t\twritermem:\tc.writermem,\n\t\tRequest:\tc.Request,\n\t\tengine:\t\tc.engine,\n\t}\n\n\tcp.writermem.ResponseWriter = nil\n\tcp.Writer = &cp.writermem\n\tcp.index = abortIndex\n\tcp.handlers = nil\n\tcp.fullPath = c.fullPath\n\n\tcKeys := c.Keys\n\tcp.Keys = make(map[string]any, len(cKeys))\n\tc.mu.RLock()\n\tfor k, v := range cKeys {\n\t\tcp.Keys[k] = v\n\t}\n\tc.mu.RUnlock()\n\n\tcParams := c.Params\n\tcp.Params = make([]Param, len(cParams))\n\tcopy(cp.Params, cParams)\n\n\treturn &cp\n}",
+    "funcname": "Copy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 250,
+    "focalfunc": "func getPreWrapper(language string, writeCounter *byteCountFlexiWriter) *preWrapper",
+    "funcbody": "func getPreWrapper(language string, writeCounter *byteCountFlexiWriter) *preWrapper {\n\treturn &preWrapper{language: language, writeCounter: writeCounter}\n}",
+    "funcname": "getPreWrapper"
+}

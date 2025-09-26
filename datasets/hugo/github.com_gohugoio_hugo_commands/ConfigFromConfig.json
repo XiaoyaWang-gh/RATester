@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/commandeer.go",
+    "lineno": 163,
+    "focalfunc": "func (r *rootCommand) ConfigFromConfig(key int32, oldConf *commonConfig) (*commonConfig, error)",
+    "funcbody": "func (r *rootCommand) ConfigFromConfig(key int32, oldConf *commonConfig) (*commonConfig, error) {\n\tcc, _, err := r.commonConfigs.GetOrCreate(key, func(key int32) (*commonConfig, error) {\n\t\tfs := oldConf.fs\n\t\tconfigs, err := allconfig.LoadConfig(\n\t\t\tallconfig.ConfigSourceDescriptor{\n\t\t\t\tFlags:\t\toldConf.cfg,\n\t\t\t\tFs:\t\tfs.Source,\n\t\t\t\tFilename:\tr.cfgFile,\n\t\t\t\tConfigDir:\tr.cfgDir,\n\t\t\t\tLogger:\t\tr.logger,\n\t\t\t\tEnvironment:\tr.environment,\n\t\t\t},\n\t\t)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tif !configs.Base.C.Clock.IsZero() {\n\n\t\t\thtime.Clock = clocks.Start(configs.Base.C.Clock)\n\t\t}\n\n\t\treturn &commonConfig{\n\t\t\tmu:\t\toldConf.mu,\n\t\t\tconfigs:\tconfigs,\n\t\t\tcfg:\t\toldConf.cfg,\n\t\t\tfs:\t\tfs,\n\t\t}, nil\n\t})\n\n\treturn cc, err\n}",
+    "funcname": "ConfigFromConfig"
+}

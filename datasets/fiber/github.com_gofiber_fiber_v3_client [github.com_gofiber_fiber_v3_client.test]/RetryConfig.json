@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 231,
+    "focalfunc": "func (c *Client) RetryConfig() *RetryConfig",
+    "funcbody": "func (c *Client) RetryConfig() *RetryConfig {\n\treturn c.retryConfig\n}",
+    "funcname": "RetryConfig"
+}

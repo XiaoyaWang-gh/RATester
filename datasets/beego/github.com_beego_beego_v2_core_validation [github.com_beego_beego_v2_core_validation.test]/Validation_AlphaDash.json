@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 205,
+    "focalfunc": "func (v *Validation) AlphaDash(obj interface{}, key string) *Result",
+    "funcbody": "func (v *Validation) AlphaDash(obj interface{}, key string) *Result {\n\treturn v.apply(AlphaDash{NoMatch{Match: Match{Regexp: alphaDashPattern}}, key}, obj)\n}",
+    "funcname": "AlphaDash"
+}

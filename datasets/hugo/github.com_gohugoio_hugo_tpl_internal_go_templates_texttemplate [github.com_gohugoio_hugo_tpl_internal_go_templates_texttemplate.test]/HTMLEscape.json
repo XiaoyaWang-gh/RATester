@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 619,
+    "focalfunc": "func HTMLEscape(w io.Writer, b []byte)",
+    "funcbody": "func HTMLEscape(w io.Writer, b []byte) {\n\tlast := 0\n\tfor i, c := range b {\n\t\tvar html []byte\n\t\tswitch c {\n\t\tcase '\\000':\n\t\t\thtml = htmlNull\n\t\tcase '\"':\n\t\t\thtml = htmlQuot\n\t\tcase '\\'':\n\t\t\thtml = htmlApos\n\t\tcase '&':\n\t\t\thtml = htmlAmp\n\t\tcase '<':\n\t\t\thtml = htmlLt\n\t\tcase '>':\n\t\t\thtml = htmlGt\n\t\tdefault:\n\t\t\tcontinue\n\t\t}\n\t\tw.Write(b[last:i])\n\t\tw.Write(html)\n\t\tlast = i + 1\n\t}\n\tw.Write(b[last:])\n}",
+    "funcname": "HTMLEscape"
+}

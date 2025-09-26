@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 157,
+    "focalfunc": "func MockCommit(err error) *Mock",
+    "funcbody": "func MockCommit(err error) *Mock {\n\treturn NewMock(NewSimpleCondition(\"\", \"Commit\"), []interface{}{err}, nil)\n}",
+    "funcname": "MockCommit"
+}

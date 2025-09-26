@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/multifile.go",
+    "lineno": 102,
+    "focalfunc": "func (f *multiFileLogWriter) WriteMsg(lm *LogMsg) error",
+    "funcbody": "func (f *multiFileLogWriter) WriteMsg(lm *LogMsg) error {\n\tif f.fullLogWriter != nil {\n\t\tf.fullLogWriter.WriteMsg(lm)\n\t}\n\tfor i := 0; i < len(f.writers)-1; i++ {\n\t\tif f.writers[i] != nil {\n\t\t\tif lm.Level == f.writers[i].Level {\n\t\t\t\tf.writers[i].WriteMsg(lm)\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

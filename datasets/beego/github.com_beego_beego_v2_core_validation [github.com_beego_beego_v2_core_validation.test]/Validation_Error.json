@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 135,
+    "focalfunc": "func (v *Validation) Error(message string, args ...interface{}) *Result",
+    "funcbody": "func (v *Validation) Error(message string, args ...interface{}) *Result {\n\tresult := (&Result{\n\t\tOk:\tfalse,\n\t\tError:\t&Error{},\n\t}).Message(message, args...)\n\tv.Errors = append(v.Errors, result.Error)\n\treturn result\n}",
+    "funcname": "Error"
+}

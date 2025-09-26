@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/predicate/predicate.go",
+    "lineno": 35,
+    "focalfunc": "func (p P[T]) Or(ps ...P[T]) P[T]",
+    "funcbody": "func (p P[T]) Or(ps ...P[T]) P[T] {\n\treturn func(v T) bool {\n\t\tfor _, pp := range ps {\n\t\t\tif pp(v) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t\tif p == nil {\n\t\t\treturn false\n\t\t}\n\t\treturn p(v)\n\t}\n}",
+    "funcname": "Or"
+}

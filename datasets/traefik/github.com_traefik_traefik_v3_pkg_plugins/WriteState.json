@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 353,
+    "focalfunc": "func (c *Client) WriteState(plugins map[string]Descriptor) error",
+    "funcbody": "func (c *Client) WriteState(plugins map[string]Descriptor) error {\n\tm := make(map[string]string)\n\n\tfor _, descriptor := range plugins {\n\t\tm[descriptor.ModuleName] = descriptor.Version\n\t}\n\n\tmp, err := json.MarshalIndent(m, \"\", \"  \")\n\tif err != nil {\n\t\treturn fmt.Errorf(\"unable to marshal plugin state: %w\", err)\n\t}\n\n\treturn os.WriteFile(c.stateFile, mp, 0o600)\n}",
+    "funcname": "WriteState"
+}

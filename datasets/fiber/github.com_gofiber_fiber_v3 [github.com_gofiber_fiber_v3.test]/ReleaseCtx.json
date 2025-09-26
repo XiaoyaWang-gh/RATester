@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx_interface.go",
+    "lineno": 66,
+    "focalfunc": "func (app *App) ReleaseCtx(c Ctx)",
+    "funcbody": "func (app *App) ReleaseCtx(c Ctx) {\n\tc.release()\n\tapp.pool.Put(c)\n}",
+    "funcname": "ReleaseCtx"
+}

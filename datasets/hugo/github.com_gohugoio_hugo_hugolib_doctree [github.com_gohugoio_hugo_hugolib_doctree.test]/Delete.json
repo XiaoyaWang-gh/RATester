@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 102,
+    "focalfunc": "func (t *TreeShiftTree[T]) Delete(key string)",
+    "funcbody": "func (t *TreeShiftTree[T]) Delete(key string) {\n\tfor _, tt := range t.trees {\n\t\ttt.tree.Delete(key)\n\t}\n}",
+    "funcname": "Delete"
+}

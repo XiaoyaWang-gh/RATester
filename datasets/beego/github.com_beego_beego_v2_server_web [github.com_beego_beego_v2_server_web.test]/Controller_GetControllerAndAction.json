@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 805,
+    "focalfunc": "func (c *Controller) GetControllerAndAction() (string, string)",
+    "funcbody": "func (c *Controller) GetControllerAndAction() (string, string) {\n\treturn c.controllerName, c.actionName\n}",
+    "funcname": "GetControllerAndAction"
+}

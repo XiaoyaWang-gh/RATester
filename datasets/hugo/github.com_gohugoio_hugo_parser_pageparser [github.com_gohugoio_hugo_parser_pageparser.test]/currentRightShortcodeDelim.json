@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 358,
+    "focalfunc": "func (l *pageLexer) currentRightShortcodeDelim() []byte",
+    "funcbody": "func (l *pageLexer) currentRightShortcodeDelim() []byte {\n\tif l.currRightDelimItem == tRightDelimScWithMarkup {\n\t\treturn rightDelimScWithMarkup\n\t}\n\treturn rightDelimScNoMarkup\n}",
+    "funcname": "currentRightShortcodeDelim"
+}

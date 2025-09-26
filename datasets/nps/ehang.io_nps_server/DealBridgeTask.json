@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 54,
+    "focalfunc": "func DealBridgeTask()",
+    "funcbody": "func DealBridgeTask() {\n\tfor {\n\t\tselect {\n\t\tcase t := <-Bridge.OpenTask:\n\t\t\tAddTask(t)\n\t\tcase t := <-Bridge.CloseTask:\n\t\t\tStopServer(t.Id)\n\t\tcase id := <-Bridge.CloseClient:\n\t\t\tDelTunnelAndHostByClientId(id, true)\n\t\t\tif v, ok := file.GetDb().JsonDb.Clients.Load(id); ok {\n\t\t\t\tif v.(*file.Client).NoStore {\n\t\t\t\t\tfile.GetDb().DelClient(id)\n\t\t\t\t}\n\t\t\t}\n\t\tcase tunnel := <-Bridge.OpenTask:\n\t\t\tStartTask(tunnel.Id)\n\t\tcase s := <-Bridge.SecretChan:\n\t\t\tlogs.Trace(\"New secret connection, addr\", s.Conn.Conn.RemoteAddr())\n\t\t\tif t := file.GetDb().GetTaskByMd5Password(s.Password); t != nil {\n\t\t\t\tif t.Status {\n\t\t\t\t\tgo proxy.NewBaseServer(Bridge, t).DealClient(s.Conn, t.Client, t.Target.TargetStr, nil, common.CONN_TCP, nil, t.Flow, t.Target.LocalProxy)\n\t\t\t\t} else {\n\t\t\t\t\ts.Conn.Close()\n\t\t\t\t\tlogs.Trace(\"This key %s cannot be processed,status is close\", s.Password)\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tlogs.Trace(\"This key %s cannot be processed\", s.Password)\n\t\t\t\ts.Conn.Close()\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "DealBridgeTask"
+}

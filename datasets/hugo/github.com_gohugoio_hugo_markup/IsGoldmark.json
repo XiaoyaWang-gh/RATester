@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup.go",
+    "lineno": 118,
+    "focalfunc": "func (r *converterRegistry) IsGoldmark(name string) bool",
+    "funcbody": "func (r *converterRegistry) IsGoldmark(name string) bool {\n\tcp := r.Get(name)\n\treturn cp != nil && cp.Name() == \"goldmark\"\n}",
+    "funcname": "IsGoldmark"
+}

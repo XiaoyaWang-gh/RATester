@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 86,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Or(cond string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Or(cond string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"OR\", cond)\n\treturn qb\n}",
+    "funcname": "Or"
+}

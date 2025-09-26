@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 650,
+    "focalfunc": "func (app *HttpServer) CtrlOptions(rootpath string, f interface{}) *HttpServer",
+    "funcbody": "func (app *HttpServer) CtrlOptions(rootpath string, f interface{}) *HttpServer {\n\tapp.Handlers.CtrlOptions(rootpath, f)\n\treturn app\n}",
+    "funcname": "CtrlOptions"
+}

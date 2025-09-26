@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 131,
+    "focalfunc": "func New(name string, funcs ...map[string]any) *Tree",
+    "funcbody": "func New(name string, funcs ...map[string]any) *Tree {\n\treturn &Tree{\n\t\tName:\tname,\n\t\tfuncs:\tfuncs,\n\t}\n}",
+    "funcname": "New"
+}

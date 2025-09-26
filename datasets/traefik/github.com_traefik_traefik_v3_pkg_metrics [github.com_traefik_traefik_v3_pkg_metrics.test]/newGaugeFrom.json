@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 570,
+    "focalfunc": "func newGaugeFrom(opts stdprometheus.GaugeOpts, labelNames []string) *gauge",
+    "funcbody": "func newGaugeFrom(opts stdprometheus.GaugeOpts, labelNames []string) *gauge {\n\tgv := stdprometheus.NewGaugeVec(opts, labelNames)\n\tg := &gauge{\n\t\tname:\topts.Name,\n\t\tgv:\tgv,\n\t}\n\n\tif len(labelNames) == 0 {\n\t\tg.collector = gv.WithLabelValues()\n\t\tg.Set(0)\n\t}\n\treturn g\n}",
+    "funcname": "newGaugeFrom"
+}

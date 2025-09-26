@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 446,
+    "focalfunc": "func (c *cachedContent) mustSource() []byte",
+    "funcbody": "func (c *cachedContent) mustSource() []byte {\n\tsource, err := c.pi.contentSource(c)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn source\n}",
+    "funcname": "mustSource"
+}

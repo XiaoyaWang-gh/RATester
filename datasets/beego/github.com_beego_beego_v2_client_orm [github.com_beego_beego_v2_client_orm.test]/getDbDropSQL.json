@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/ddl.go",
+    "lineno": 26,
+    "focalfunc": "func getDbDropSQL(mc *imodels.ModelCache, al *alias) (queries []string, err error)",
+    "funcbody": "func getDbDropSQL(mc *imodels.ModelCache, al *alias) (queries []string, err error) {\n\tif mc.Empty() {\n\t\terr = errors.New(\"no Model found, need Register your model\")\n\t\treturn\n\t}\n\n\tQ := al.DbBaser.TableQuote()\n\n\tfor _, mi := range mc.AllOrdered() {\n\t\tqueries = append(queries, fmt.Sprintf(`DROP TABLE IF EXISTS %s%s%s`, Q, mi.Table, Q))\n\t}\n\treturn queries, nil\n}",
+    "funcname": "getDbDropSQL"
+}

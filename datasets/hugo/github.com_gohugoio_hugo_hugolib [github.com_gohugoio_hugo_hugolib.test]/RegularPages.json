@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 264,
+    "focalfunc": "func (p *pageState) RegularPages() page.Pages",
+    "funcbody": "func (p *pageState) RegularPages() page.Pages {\n\tswitch p.Kind() {\n\tcase kinds.KindPage:\n\tcase kinds.KindSection, kinds.KindHome, kinds.KindTaxonomy:\n\t\treturn p.s.pageMap.getPagesInSection(\n\t\t\tpageMapQueryPagesInSection{\n\t\t\t\tpageMapQueryPagesBelowPath: pageMapQueryPagesBelowPath{\n\t\t\t\t\tPath:\t\tp.Path(),\n\t\t\t\t\tInclude:\tpagePredicates.ShouldListLocal.And(pagePredicates.KindPage),\n\t\t\t\t},\n\t\t\t},\n\t\t)\n\tcase kinds.KindTerm:\n\t\treturn p.s.pageMap.getPagesWithTerm(\n\t\t\tpageMapQueryPagesBelowPath{\n\t\t\t\tPath:\t\tp.Path(),\n\t\t\t\tInclude:\tpagePredicates.ShouldListLocal.And(pagePredicates.KindPage),\n\t\t\t},\n\t\t)\n\tdefault:\n\t\treturn p.s.RegularPages()\n\t}\n\treturn nil\n}",
+    "funcname": "RegularPages"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 39,
+    "focalfunc": "func NewLogFromConn(conn net.Conn) *xlog.Logger",
+    "funcbody": "func NewLogFromConn(conn net.Conn) *xlog.Logger {\n\tif c, ok := conn.(ContextGetter); ok {\n\t\treturn xlog.FromContextSafe(c.Context())\n\t}\n\treturn xlog.New()\n}",
+    "funcname": "NewLogFromConn"
+}

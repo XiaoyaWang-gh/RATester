@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/merge.go",
+    "lineno": 71,
+    "focalfunc": "func caseInsensitiveLookup(m, k reflect.Value) (reflect.Value, bool)",
+    "funcbody": "func caseInsensitiveLookup(m, k reflect.Value) (reflect.Value, bool) {\n\tif m.Type().Key().Kind() != reflect.String || k.Kind() != reflect.String {\n\n\t\tv := m.MapIndex(k)\n\t\treturn v, hreflect.IsTruthfulValue(v)\n\t}\n\n\tfor _, key := range m.MapKeys() {\n\t\tif strings.EqualFold(k.String(), key.String()) {\n\t\t\treturn m.MapIndex(key), true\n\t\t}\n\t}\n\n\treturn reflect.Value{}, false\n}",
+    "funcname": "caseInsensitiveLookup"
+}

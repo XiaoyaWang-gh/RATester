@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/load.go",
+    "lineno": 98,
+    "focalfunc": "func LoadFileContentWithTemplate(path string, values *Values) ([]byte, error)",
+    "funcbody": "func LoadFileContentWithTemplate(path string, values *Values) ([]byte, error) {\n\tb, err := os.ReadFile(path)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn RenderWithTemplate(b, values)\n}",
+    "funcname": "LoadFileContentWithTemplate"
+}

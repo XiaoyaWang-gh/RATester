@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/grace.go",
+    "lineno": 120,
+    "focalfunc": "func NewServer(addr string, handler http.Handler, opts ...ServerOption) (srv *Server)",
+    "funcbody": "func NewServer(addr string, handler http.Handler, opts ...ServerOption) (srv *Server) {\n\tregLock.Lock()\n\tdefer regLock.Unlock()\n\n\tif !flag.Parsed() {\n\t\tflag.Parse()\n\t}\n\tif len(socketOrder) > 0 {\n\t\tfor i, addr := range strings.Split(socketOrder, \",\") {\n\t\t\tsocketPtrOffsetMap[addr] = uint(i)\n\t\t}\n\t} else {\n\t\tsocketPtrOffsetMap[addr] = uint(len(runningServersOrder))\n\t}\n\n\tsrv = &Server{\n\t\tsigChan:\tmake(chan os.Signal),\n\t\tisChild:\tisChild,\n\t\tSignalHooks: map[int]map[os.Signal][]func(){\n\t\t\tPreSignal: {\n\t\t\t\tsyscall.SIGHUP:\t\t{},\n\t\t\t\tsyscall.SIGINT:\t\t{},\n\t\t\t\tsyscall.SIGTERM:\t{},\n\t\t\t},\n\t\t\tPostSignal: {\n\t\t\t\tsyscall.SIGHUP:\t\t{},\n\t\t\t\tsyscall.SIGINT:\t\t{},\n\t\t\t\tsyscall.SIGTERM:\t{},\n\t\t\t},\n\t\t},\n\t\tstate:\t\tStateInit,\n\t\tNetwork:\t\"tcp\",\n\t\tterminalChan:\tmake(chan error),\n\t}\n\tsrv.Server = &http.Server{\n\t\tAddr:\t\taddr,\n\t\tReadTimeout:\tDefaultReadTimeOut,\n\t\tWriteTimeout:\tDefaultWriteTimeOut,\n\t\tMaxHeaderBytes:\tDefaultMaxHeaderBytes,\n\t\tHandler:\thandler,\n\t}\n\n\tfor _, opt := range opts {\n\t\topt(srv)\n\t}\n\n\trunningServersOrder = append(runningServersOrder, addr)\n\trunningServers[addr] = srv\n\treturn srv\n}",
+    "funcname": "NewServer"
+}

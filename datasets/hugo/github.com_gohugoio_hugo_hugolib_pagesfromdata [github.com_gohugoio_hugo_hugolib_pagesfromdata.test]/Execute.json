@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 290,
+    "focalfunc": "func (p *PagesFromTemplate) Execute(ctx context.Context) (BuildInfo, error)",
+    "funcbody": "func (p *PagesFromTemplate) Execute(ctx context.Context) (BuildInfo, error) {\n\tdefer func() {\n\t\tp.buildState.PrepareNextBuild()\n\t}()\n\n\tf, err := p.GoTmplFi.Meta().Open()\n\tif err != nil {\n\t\treturn BuildInfo{}, err\n\t}\n\tdefer f.Close()\n\n\ttmpl, err := p.TmplFinder.Parse(filepath.ToSlash(p.GoTmplFi.Meta().Filename), helpers.ReaderToString(f))\n\tif err != nil {\n\t\treturn BuildInfo{}, err\n\t}\n\n\tdata := &pagesFromDataTemplateContext{\n\t\tp: p,\n\t}\n\n\tctx = tpl.Context.DependencyManagerScopedProvider.Set(ctx, p)\n\n\tif err := p.TmplExec.ExecuteWithContext(ctx, tmpl, io.Discard, data); err != nil {\n\t\treturn BuildInfo{}, err\n\t}\n\n\tif p.Watching {\n\t\tp.buildState.resolveDeletedPaths()\n\t}\n\n\tbi := BuildInfo{\n\t\tNumPagesAdded:\t\tp.buildState.NumPagesAdded,\n\t\tNumResourcesAdded:\tp.buildState.NumResourcesAdded,\n\t\tEnableAllLanguages:\tp.buildState.EnableAllLanguages,\n\t\tChangedIdentities:\tp.buildState.ChangedIdentities,\n\t\tDeletedPaths:\t\tp.buildState.DeletedPaths,\n\t\tPath:\t\t\tp.GoTmplFi.Meta().PathInfo,\n\t}\n\n\treturn bi, nil\n}",
+    "funcname": "Execute"
+}

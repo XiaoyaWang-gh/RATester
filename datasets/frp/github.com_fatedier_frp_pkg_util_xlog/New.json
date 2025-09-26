@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/xlog/xlog.go",
+    "lineno": 40,
+    "focalfunc": "func New() *Logger",
+    "funcbody": "func New() *Logger {\n\treturn &Logger{\n\t\tprefixes: make([]LogPrefix, 0),\n\t}\n}",
+    "funcname": "New"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 564,
+    "focalfunc": "func lexChar(l *lexer) stateFn",
+    "funcbody": "func lexChar(l *lexer) stateFn {\nLoop:\n\tfor {\n\t\tswitch l.next() {\n\t\tcase '\\\\':\n\t\t\tif r := l.next(); r != eof && r != '\\n' {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tfallthrough\n\t\tcase eof, '\\n':\n\t\t\treturn l.errorf(\"unterminated character constant\")\n\t\tcase '\\'':\n\t\t\tbreak Loop\n\t\t}\n\t}\n\treturn l.emit(itemCharConstant)\n}",
+    "funcname": "lexChar"
+}

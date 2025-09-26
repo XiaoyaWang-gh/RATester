@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 250,
+    "focalfunc": "func (group *RouterGroup) calculateAbsolutePath(relativePath string) string",
+    "funcbody": "func (group *RouterGroup) calculateAbsolutePath(relativePath string) string {\n\treturn joinPaths(group.basePath, relativePath)\n}",
+    "funcname": "calculateAbsolutePath"
+}

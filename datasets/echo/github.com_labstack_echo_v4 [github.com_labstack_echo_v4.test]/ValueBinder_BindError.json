@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/binder.go",
+    "lineno": 190,
+    "focalfunc": "func (b *ValueBinder) BindError() error",
+    "funcbody": "func (b *ValueBinder) BindError() error {\n\tif b.errors == nil {\n\t\treturn nil\n\t}\n\terr := b.errors[0]\n\tb.errors = nil\n\treturn err\n}",
+    "funcname": "BindError"
+}

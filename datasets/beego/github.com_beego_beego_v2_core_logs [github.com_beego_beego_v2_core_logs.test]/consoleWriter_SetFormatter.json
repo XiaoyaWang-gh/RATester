@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/console.go",
+    "lineno": 67,
+    "focalfunc": "func (c *consoleWriter) SetFormatter(f LogFormatter)",
+    "funcbody": "func (c *consoleWriter) SetFormatter(f LogFormatter) {\n\tc.formatter = f\n}",
+    "funcname": "SetFormatter"
+}

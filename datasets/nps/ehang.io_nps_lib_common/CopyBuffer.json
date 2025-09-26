@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 278,
+    "focalfunc": "func CopyBuffer(dst io.Writer, src io.Reader, label ...string) (written int64, err error)",
+    "funcbody": "func CopyBuffer(dst io.Writer, src io.Reader, label ...string) (written int64, err error) {\n\tbuf := CopyBuff.Get()\n\tdefer CopyBuff.Put(buf)\n\tfor {\n\t\tnr, er := src.Read(buf)\n\n\t\tif nr > 0 {\n\t\t\tnw, ew := dst.Write(buf[0:nr])\n\t\t\tif nw > 0 {\n\t\t\t\twritten += int64(nw)\n\t\t\t}\n\t\t\tif ew != nil {\n\t\t\t\terr = ew\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tif nr != nw {\n\t\t\t\terr = io.ErrShortWrite\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\tif er != nil {\n\t\t\terr = er\n\t\t\tbreak\n\t\t}\n\t}\n\treturn written, err\n}",
+    "funcname": "CopyBuffer"
+}

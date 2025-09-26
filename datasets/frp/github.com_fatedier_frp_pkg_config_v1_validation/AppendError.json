@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/validation.go",
+    "lineno": 63,
+    "focalfunc": "func AppendError(err error, errs ...error) error",
+    "funcbody": "func AppendError(err error, errs ...error) error {\n\tif len(errs) == 0 {\n\t\treturn err\n\t}\n\treturn errors.Join(append([]error{err}, errs...)...)\n}",
+    "funcname": "AppendError"
+}

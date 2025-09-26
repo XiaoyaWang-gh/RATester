@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_postgres.go",
+    "lineno": 106,
+    "focalfunc": "func (d *dbBasePostgres) ReplaceMarks(query *string)",
+    "funcbody": "func (d *dbBasePostgres) ReplaceMarks(query *string) {\n\tq := *query\n\tnum := 0\n\tfor _, c := range q {\n\t\tif c == '?' {\n\t\t\tnum++\n\t\t}\n\t}\n\tif num == 0 {\n\t\treturn\n\t}\n\tdata := make([]byte, 0, len(q)+num)\n\tnum = 1\n\tfor i := 0; i < len(q); i++ {\n\t\tc := q[i]\n\t\tif c == '?' {\n\t\t\tdata = append(data, '$')\n\t\t\tdata = append(data, []byte(strconv.Itoa(num))...)\n\t\t\tnum++\n\t\t} else {\n\t\t\tdata = append(data, c)\n\t\t}\n\t}\n\t*query = string(data)\n}",
+    "funcname": "ReplaceMarks"
+}

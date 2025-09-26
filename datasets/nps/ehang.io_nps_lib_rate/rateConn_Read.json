@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/rate/conn.go",
+    "lineno": 19,
+    "focalfunc": "func (s *rateConn) Read(b []byte) (n int, err error)",
+    "funcbody": "func (s *rateConn) Read(b []byte) (n int, err error) {\n\tn, err = s.conn.Read(b)\n\tif s.rate != nil {\n\t\ts.rate.Get(int64(n))\n\t}\n\treturn\n}",
+    "funcname": "Read"
+}

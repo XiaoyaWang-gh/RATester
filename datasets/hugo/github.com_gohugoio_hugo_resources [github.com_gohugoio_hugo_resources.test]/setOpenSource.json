@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 414,
+    "focalfunc": "func (l *genericResource) setOpenSource(openSource hugio.OpenReadSeekCloser)",
+    "funcbody": "func (l *genericResource) setOpenSource(openSource hugio.OpenReadSeekCloser) {\n\tl.sd.OpenReadSeekCloser = openSource\n}",
+    "funcname": "setOpenSource"
+}

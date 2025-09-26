@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_factories/create/remote.go",
+    "lineno": 377,
+    "focalfunc": "func decodeRemoteOptions(optionsm map[string]any) (fromRemoteOptions, error)",
+    "funcbody": "func decodeRemoteOptions(optionsm map[string]any) (fromRemoteOptions, error) {\n\toptions := fromRemoteOptions{\n\t\tMethod: \"GET\",\n\t}\n\n\terr := mapstructure.WeakDecode(optionsm, &options)\n\tif err != nil {\n\t\treturn options, err\n\t}\n\toptions.Method = strings.ToUpper(options.Method)\n\n\treturn options, nil\n}",
+    "funcname": "decodeRemoteOptions"
+}

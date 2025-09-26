@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 78,
+    "focalfunc": "func FromFile(fs afero.Fs, filename string) (Provider, error)",
+    "funcbody": "func FromFile(fs afero.Fs, filename string) (Provider, error) {\n\tm, err := loadConfigFromFile(fs, filename)\n\tif err != nil {\n\t\tfe := herrors.UnwrapFileError(err)\n\t\tif fe != nil {\n\t\t\tpos := fe.Position()\n\t\t\tpos.Filename = filename\n\t\t\tfe.UpdatePosition(pos)\n\t\t\treturn nil, err\n\t\t}\n\t\treturn nil, herrors.NewFileErrorFromFile(err, filename, fs, nil)\n\t}\n\treturn NewFrom(m), nil\n}",
+    "funcname": "FromFile"
+}

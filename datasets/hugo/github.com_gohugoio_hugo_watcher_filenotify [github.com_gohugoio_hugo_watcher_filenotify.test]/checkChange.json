@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 302,
+    "focalfunc": "func checkChange(fi1, fi2 os.FileInfo) fsnotify.Op",
+    "funcbody": "func checkChange(fi1, fi2 os.FileInfo) fsnotify.Op {\n\tif fi1 == nil && fi2 != nil {\n\t\treturn fsnotify.Create\n\t}\n\tif fi1 != nil && fi2 == nil {\n\t\treturn fsnotify.Remove\n\t}\n\tif fi1 == nil && fi2 == nil {\n\t\treturn 0\n\t}\n\tif fi1.IsDir() || fi2.IsDir() {\n\t\treturn 0\n\t}\n\tif fi1.Mode() != fi2.Mode() {\n\t\treturn fsnotify.Chmod\n\t}\n\tif fi1.ModTime() != fi2.ModTime() || fi1.Size() != fi2.Size() {\n\t\treturn fsnotify.Write\n\t}\n\n\treturn 0\n}",
+    "funcname": "checkChange"
+}

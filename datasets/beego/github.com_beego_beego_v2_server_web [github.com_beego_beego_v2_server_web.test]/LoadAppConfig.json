@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 738,
+    "focalfunc": "func LoadAppConfig(adapterName, configPath string) error",
+    "funcbody": "func LoadAppConfig(adapterName, configPath string) error {\n\tabsConfigPath, err := filepath.Abs(configPath)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tif !utils.FileExists(absConfigPath) {\n\t\treturn fmt.Errorf(\"the target config file: %s don't exist\", configPath)\n\t}\n\n\tappConfigPath = absConfigPath\n\tappConfigProvider = adapterName\n\n\treturn parseConfig(appConfigPath)\n}",
+    "funcname": "LoadAppConfig"
+}

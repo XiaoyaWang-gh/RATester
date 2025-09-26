@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 267,
+    "focalfunc": "func (pw *Wrapper) GetStatus() *WorkingStatus",
+    "funcbody": "func (pw *Wrapper) GetStatus() *WorkingStatus {\n\tpw.mu.RLock()\n\tdefer pw.mu.RUnlock()\n\tps := &WorkingStatus{\n\t\tName:\t\tpw.Name,\n\t\tType:\t\tpw.Type,\n\t\tPhase:\t\tpw.Phase,\n\t\tErr:\t\tpw.Err,\n\t\tCfg:\t\tpw.Cfg,\n\t\tRemoteAddr:\tpw.RemoteAddr,\n\t}\n\treturn ps\n}",
+    "funcname": "GetStatus"
+}

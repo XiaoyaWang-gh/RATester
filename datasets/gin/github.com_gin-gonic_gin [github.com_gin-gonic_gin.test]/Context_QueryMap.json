@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 495,
+    "focalfunc": "func (c *Context) QueryMap(key string) (dicts map[string]string)",
+    "funcbody": "func (c *Context) QueryMap(key string) (dicts map[string]string) {\n\tdicts, _ = c.GetQueryMap(key)\n\treturn\n}",
+    "funcname": "QueryMap"
+}

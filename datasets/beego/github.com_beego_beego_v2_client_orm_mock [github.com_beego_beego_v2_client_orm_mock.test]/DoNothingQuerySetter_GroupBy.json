@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 104,
+    "focalfunc": "func (d *DoNothingQuerySetter) GroupBy(exprs ...string) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) GroupBy(exprs ...string) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "GroupBy"
+}

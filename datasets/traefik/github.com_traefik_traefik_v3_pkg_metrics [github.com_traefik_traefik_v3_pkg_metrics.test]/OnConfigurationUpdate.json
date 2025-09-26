@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 296,
+    "focalfunc": "func OnConfigurationUpdate(conf dynamic.Configuration, entryPoints []string)",
+    "funcbody": "func OnConfigurationUpdate(conf dynamic.Configuration, entryPoints []string) {\n\tdynCfg := newDynamicConfig()\n\n\tfor _, value := range entryPoints {\n\t\tdynCfg.entryPoints[value] = true\n\t}\n\n\tif conf.HTTP == nil {\n\t\tpromState.SetDynamicConfig(dynCfg)\n\t\treturn\n\t}\n\n\tfor name := range conf.HTTP.Routers {\n\t\tdynCfg.routers[name] = true\n\t}\n\n\tfor serviceName, service := range conf.HTTP.Services {\n\t\tdynCfg.services[serviceName] = make(map[string]bool)\n\t\tif service.LoadBalancer != nil {\n\t\t\tfor _, server := range service.LoadBalancer.Servers {\n\t\t\t\tdynCfg.services[serviceName][server.URL] = true\n\t\t\t}\n\t\t}\n\t}\n\n\tpromState.SetDynamicConfig(dynCfg)\n}",
+    "funcname": "OnConfigurationUpdate"
+}

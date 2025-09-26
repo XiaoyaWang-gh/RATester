@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 122,
+    "focalfunc": "func (l PermalinkExpander) Expand(key string, p Page) (string, error)",
+    "funcbody": "func (l PermalinkExpander) Expand(key string, p Page) (string, error) {\n\texpanders, found := l.expanders[p.Kind()]\n\n\tif !found {\n\t\treturn \"\", nil\n\t}\n\n\texpand, found := expanders[key]\n\n\tif !found {\n\t\treturn \"\", nil\n\t}\n\n\treturn expand(p)\n}",
+    "funcname": "Expand"
+}

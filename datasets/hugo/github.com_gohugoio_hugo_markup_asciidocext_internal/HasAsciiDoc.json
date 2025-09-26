@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/asciidocext/internal/converter.go",
+    "lineno": 166,
+    "focalfunc": "func HasAsciiDoc() bool",
+    "funcbody": "func HasAsciiDoc() bool {\n\treturn hexec.InPath(asciiDocBinaryName)\n}",
+    "funcname": "HasAsciiDoc"
+}

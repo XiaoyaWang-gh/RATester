@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 137,
+    "focalfunc": "func (s *Conn) ReadFlag() (string, error)",
+    "funcbody": "func (s *Conn) ReadFlag() (string, error) {\n\tbuf := make([]byte, 4)\n\treturn string(buf), binary.Read(s, binary.LittleEndian, &buf)\n}",
+    "funcname": "ReadFlag"
+}

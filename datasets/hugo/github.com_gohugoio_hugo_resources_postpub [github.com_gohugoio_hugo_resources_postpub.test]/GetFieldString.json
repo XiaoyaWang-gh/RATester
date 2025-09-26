@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 80,
+    "focalfunc": "func (r *PostPublishResource) GetFieldString(pattern string) (string, bool)",
+    "funcbody": "func (r *PostPublishResource) GetFieldString(pattern string) (string, bool) {\n\tif r == nil {\n\t\tpanic(\"resource is nil\")\n\t}\n\tprefixIdx := strings.Index(pattern, r.prefix)\n\tif prefixIdx == -1 {\n\n\t\treturn \"\", false\n\t}\n\n\tfieldAccessor := pattern[prefixIdx+len(r.prefix) : strings.Index(pattern, PostProcessSuffix)]\n\n\td := r.delegate\n\tswitch {\n\tcase fieldAccessor == \"RelPermalink\":\n\t\treturn d.RelPermalink(), true\n\tcase fieldAccessor == \"Permalink\":\n\t\treturn d.Permalink(), true\n\tcase fieldAccessor == \"Name\":\n\t\treturn d.Name(), true\n\tcase fieldAccessor == \"Title\":\n\t\treturn d.Title(), true\n\tcase fieldAccessor == \"ResourceType\":\n\t\treturn d.ResourceType(), true\n\tcase fieldAccessor == \"Content\":\n\t\tcontent, err := d.(resource.ContentProvider).Content(context.Background())\n\t\tif err != nil {\n\t\t\treturn \"\", true\n\t\t}\n\t\treturn cast.ToString(content), true\n\tcase strings.HasPrefix(fieldAccessor, \"MediaType\"):\n\t\treturn r.fieldToString(d.MediaType(), fieldAccessor), true\n\tcase fieldAccessor == \"Data.Integrity\":\n\t\treturn cast.ToString((d.Data().(map[string]any)[\"Integrity\"])), true\n\tdefault:\n\t\tpanic(fmt.Sprintf(\"unknown field accessor %q\", fieldAccessor))\n\t}\n}",
+    "funcname": "GetFieldString"
+}

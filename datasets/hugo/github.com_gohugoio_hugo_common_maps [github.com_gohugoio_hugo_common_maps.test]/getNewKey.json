@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 170,
+    "focalfunc": "func (r KeyRenamer) getNewKey(keyPath string) string",
+    "funcbody": "func (r KeyRenamer) getNewKey(keyPath string) string {\n\tfor _, matcher := range r.renames {\n\t\tif matcher.pattern.Match(keyPath) {\n\t\t\treturn matcher.newKey\n\t\t}\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "getNewKey"
+}

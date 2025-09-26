@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 1017,
+    "focalfunc": "func indirect(v reflect.Value) (rv reflect.Value, isNil bool)",
+    "funcbody": "func indirect(v reflect.Value) (rv reflect.Value, isNil bool) {\n\tfor ; v.Kind() == reflect.Pointer || v.Kind() == reflect.Interface; v = v.Elem() {\n\t\tif v.IsNil() {\n\t\t\treturn v, true\n\t\t}\n\t}\n\treturn v, false\n}",
+    "funcname": "indirect"
+}

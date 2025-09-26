@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 285,
+    "focalfunc": "func (r *Request) PathParam(key string) string",
+    "funcbody": "func (r *Request) PathParam(key string) string {\n\tif val, ok := (*r.path)[key]; ok {\n\t\treturn val\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "PathParam"
+}

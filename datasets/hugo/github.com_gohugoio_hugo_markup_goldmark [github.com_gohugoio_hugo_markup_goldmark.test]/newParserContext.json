@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/convert.go",
+    "lineno": 296,
+    "focalfunc": "func (c *goldmarkConverter) newParserContext(rctx converter.RenderContext) *parserContext",
+    "funcbody": "func (c *goldmarkConverter) newParserContext(rctx converter.RenderContext) *parserContext {\n\tctx := parser.NewContext(parser.WithIDs(newIDFactory(c.cfg.MarkupConfig().Goldmark.Parser.AutoHeadingIDType)))\n\tctx.Set(tocEnableKey, rctx.RenderTOC)\n\treturn &parserContext{\n\t\tContext: ctx,\n\t}\n}",
+    "funcname": "newParserContext"
+}

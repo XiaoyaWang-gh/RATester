@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 64,
+    "focalfunc": "func (ctx *Context) PushPos(n int)",
+    "funcbody": "func (ctx *Context) PushPos(n int) {\n\tctx.positions = append(ctx.positions, n)\n}",
+    "funcname": "PushPos"
+}

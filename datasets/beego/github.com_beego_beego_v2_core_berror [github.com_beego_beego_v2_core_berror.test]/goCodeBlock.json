@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/pre_define_code.go",
+    "lineno": 46,
+    "focalfunc": "func goCodeBlock(code string) string",
+    "funcbody": "func goCodeBlock(code string) string {\n\treturn codeBlock(\"go\", code)\n}",
+    "funcname": "goCodeBlock"
+}

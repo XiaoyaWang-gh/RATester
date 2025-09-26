@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/tlsmanager.go",
+    "lineno": 292,
+    "focalfunc": "func getDefaultCertificate(ctx context.Context, tlsStore Store, st *CertificateStore) (*tls.Certificate, error)",
+    "funcbody": "func getDefaultCertificate(ctx context.Context, tlsStore Store, st *CertificateStore) (*tls.Certificate, error) {\n\tif tlsStore.DefaultCertificate != nil {\n\t\tcert, err := buildDefaultCertificate(tlsStore.DefaultCertificate)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\treturn cert, nil\n\t}\n\n\tdefaultCert, err := generate.DefaultCertificate()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif tlsStore.DefaultGeneratedCert != nil && tlsStore.DefaultGeneratedCert.Domain != nil && tlsStore.DefaultGeneratedCert.Resolver != \"\" {\n\t\tdomains, err := sanitizeDomains(*tlsStore.DefaultGeneratedCert.Domain)\n\t\tif err != nil {\n\t\t\treturn defaultCert, fmt.Errorf(\"falling back to the internal generated certificate because invalid domains: %w\", err)\n\t\t}\n\n\t\tdefaultACMECert := st.GetCertificate(domains)\n\t\tif defaultACMECert == nil {\n\t\t\treturn defaultCert, fmt.Errorf(\"unable to find certificate for domains %q: falling back to the internal generated certificate\", strings.Join(domains, \",\"))\n\t\t}\n\n\t\treturn defaultACMECert, nil\n\t}\n\n\tlog.Ctx(ctx).Debug().Msg(\"No default certificate, fallback to the internal generated certificate\")\n\treturn defaultCert, nil\n}",
+    "funcname": "getDefaultCertificate"
+}

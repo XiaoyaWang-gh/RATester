@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/wait/backoff.go",
+    "lineno": 59,
+    "focalfunc": "func NewFastBackoffManager(options FastBackoffOptions) BackoffManager",
+    "funcbody": "func NewFastBackoffManager(options FastBackoffOptions) BackoffManager {\n\treturn &fastBackoffImpl{\n\t\toptions:\t\t\toptions,\n\t\tcountsInFastRetryWindow:\t1,\n\t}\n}",
+    "funcname": "NewFastBackoffManager"
+}

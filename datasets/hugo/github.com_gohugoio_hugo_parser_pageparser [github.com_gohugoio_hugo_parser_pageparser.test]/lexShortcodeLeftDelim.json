@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 42,
+    "focalfunc": "func lexShortcodeLeftDelim(l *pageLexer) stateFunc",
+    "funcbody": "func lexShortcodeLeftDelim(l *pageLexer) stateFunc {\n\tl.pos += len(l.currentLeftShortcodeDelim())\n\tif l.hasPrefix(leftComment) {\n\t\treturn lexShortcodeComment\n\t}\n\tl.emit(l.currentLeftShortcodeDelimItem())\n\tl.elementStepNum = 0\n\tl.paramElements = 0\n\treturn lexInsideShortcode\n}",
+    "funcname": "lexShortcodeLeftDelim"
+}

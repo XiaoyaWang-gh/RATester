@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 599,
+    "focalfunc": "func (h *Header) SetHeaders(r map[string]string)",
+    "funcbody": "func (h *Header) SetHeaders(r map[string]string) {\n\tfor k, v := range r {\n\t\th.Del(k)\n\t\th.Set(k, v)\n\t}\n}",
+    "funcname": "SetHeaders"
+}

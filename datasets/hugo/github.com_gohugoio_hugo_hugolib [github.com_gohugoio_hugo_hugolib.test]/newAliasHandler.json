@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/alias.go",
+    "lineno": 40,
+    "focalfunc": "func newAliasHandler(t tpl.TemplateHandler, l loggers.Logger, allowRoot bool) aliasHandler",
+    "funcbody": "func newAliasHandler(t tpl.TemplateHandler, l loggers.Logger, allowRoot bool) aliasHandler {\n\treturn aliasHandler{t, l, allowRoot}\n}",
+    "funcname": "newAliasHandler"
+}

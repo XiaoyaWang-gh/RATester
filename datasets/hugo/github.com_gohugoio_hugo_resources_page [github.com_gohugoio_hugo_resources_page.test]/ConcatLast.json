@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_paths.go",
+    "lineno": 322,
+    "focalfunc": "func (p *pagePathBuilder) ConcatLast(s string)",
+    "funcbody": "func (p *pagePathBuilder) ConcatLast(s string) {\n\tif len(p.els) == 0 {\n\t\tp.Add(s)\n\t\treturn\n\t}\n\told := p.els[len(p.els)-1]\n\tif old == \"\" {\n\t\tp.els[len(p.els)-1] = s\n\t\treturn\n\t}\n\tif old[len(old)-1] == '/' {\n\t\told = old[:len(old)-1]\n\t}\n\tp.els[len(p.els)-1] = old + s\n}",
+    "funcname": "ConcatLast"
+}

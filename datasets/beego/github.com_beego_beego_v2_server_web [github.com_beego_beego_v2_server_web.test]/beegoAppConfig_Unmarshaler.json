@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 767,
+    "focalfunc": "func (b *beegoAppConfig) Unmarshaler(prefix string, obj interface{}, opt ...config.DecodeOption) error",
+    "funcbody": "func (b *beegoAppConfig) Unmarshaler(prefix string, obj interface{}, opt ...config.DecodeOption) error {\n\treturn b.innerConfig.Unmarshaler(prefix, obj, opt...)\n}",
+    "funcname": "Unmarshaler"
+}

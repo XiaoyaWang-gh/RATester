@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 180,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetTLSClientConfig(config *tls.Config) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetTLSClientConfig(config *tls.Config) *BeegoHTTPRequest {\n\tb.setting.TLSClientConfig = config\n\treturn b\n}",
+    "funcname": "SetTLSClientConfig"
+}

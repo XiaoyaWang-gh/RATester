@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/crypt.go",
+    "lineno": 60,
+    "focalfunc": "func Md5(s string) string",
+    "funcbody": "func Md5(s string) string {\n\th := md5.New()\n\th.Write([]byte(s))\n\treturn hex.EncodeToString(h.Sum(nil))\n}",
+    "funcname": "Md5"
+}

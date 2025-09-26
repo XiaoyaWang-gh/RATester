@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/plistener.go",
+    "lineno": 33,
+    "focalfunc": "func (pListener *PortListener) Close() error",
+    "funcbody": "func (pListener *PortListener) Close() error {\n\n\tif pListener.isClose {\n\t\treturn errors.New(\"the listener has closed\")\n\t}\n\tpListener.isClose = true\n\treturn nil\n}",
+    "funcname": "Close"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/js/js.go",
+    "lineno": 72,
+    "focalfunc": "func (ns *Namespace) Babel(args ...any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Babel(args ...any) (resource.Resource, error) {\n\tif len(args) > 2 {\n\t\treturn nil, errors.New(\"must not provide more arguments than resource object and options\")\n\t}\n\n\tr, m, err := resourcehelpers.ResolveArgs(args)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tvar options babel.Options\n\tif m != nil {\n\t\toptions, err = babel.DecodeOptions(m)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\treturn ns.babelClient.Process(r, options)\n}",
+    "funcname": "Babel"
+}

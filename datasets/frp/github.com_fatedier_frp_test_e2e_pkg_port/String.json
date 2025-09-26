@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/port/util.go",
+    "lineno": 46,
+    "focalfunc": "func (builder *nameBuilder) String() string",
+    "funcbody": "func (builder *nameBuilder) String() string {\n\tname := fmt.Sprintf(\"Port%s%s\", NameDelimiter, builder.name)\n\tif builder.rangePortFrom > 0 && builder.rangePortTo > 0 && builder.rangePortTo > builder.rangePortFrom {\n\t\tname += fmt.Sprintf(\"%s%d%s%d\", NameDelimiter, builder.rangePortFrom, NameDelimiter, builder.rangePortTo)\n\t}\n\treturn name\n}",
+    "funcname": "String"
+}

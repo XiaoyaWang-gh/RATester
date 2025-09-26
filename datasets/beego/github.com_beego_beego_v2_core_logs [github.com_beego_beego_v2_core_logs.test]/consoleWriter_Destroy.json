@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/console.go",
+    "lineno": 115,
+    "focalfunc": "func (c *consoleWriter) Destroy()",
+    "funcbody": "func (c *consoleWriter) Destroy() {\n}",
+    "funcname": "Destroy"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/metrics/metrics.go",
+    "lineno": 91,
+    "focalfunc": "func (s *Store) Reset()",
+    "funcbody": "func (s *Store) Reset() {\n\ts.mu.Lock()\n\ts.metrics = make(map[string][]time.Duration)\n\ts.mu.Unlock()\n\n\ts.diffmu.Lock()\n\ts.diffs = make(map[string]*diff)\n\ts.diffmu.Unlock()\n\n\ts.cachedmu.Lock()\n\ts.cached = make(map[string]int)\n\ts.cachedmu.Unlock()\n}",
+    "funcname": "Reset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 893,
+    "focalfunc": "func NewHTTPError(code int, message ...interface{}) *HTTPError",
+    "funcbody": "func NewHTTPError(code int, message ...interface{}) *HTTPError {\n\the := &HTTPError{Code: code, Message: http.StatusText(code)}\n\tif len(message) > 0 {\n\t\the.Message = message[0]\n\t}\n\treturn he\n}",
+    "funcname": "NewHTTPError"
+}

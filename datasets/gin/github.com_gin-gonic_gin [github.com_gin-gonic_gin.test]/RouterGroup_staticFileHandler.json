@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/routergroup.go",
+    "lineno": 181,
+    "focalfunc": "func (group *RouterGroup) staticFileHandler(relativePath string, handler HandlerFunc) IRoutes",
+    "funcbody": "func (group *RouterGroup) staticFileHandler(relativePath string, handler HandlerFunc) IRoutes {\n\tif strings.Contains(relativePath, \":\") || strings.Contains(relativePath, \"*\") {\n\t\tpanic(\"URL parameters can not be used when serving a static file\")\n\t}\n\tgroup.GET(relativePath, handler)\n\tgroup.HEAD(relativePath, handler)\n\treturn group.returnObj()\n}",
+    "funcname": "staticFileHandler"
+}

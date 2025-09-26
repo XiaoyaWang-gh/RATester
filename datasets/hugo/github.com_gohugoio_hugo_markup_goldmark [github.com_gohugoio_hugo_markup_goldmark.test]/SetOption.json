@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/render_hooks.go",
+    "lineno": 137,
+    "focalfunc": "func (r *hookedRenderer) SetOption(name renderer.OptionName, value any)",
+    "funcbody": "func (r *hookedRenderer) SetOption(name renderer.OptionName, value any) {\n\tr.Config.SetOption(name, value)\n}",
+    "funcname": "SetOption"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/render.go",
+    "lineno": 36,
+    "focalfunc": "func writeContentType(w http.ResponseWriter, value []string)",
+    "funcbody": "func writeContentType(w http.ResponseWriter, value []string) {\n\theader := w.Header()\n\tif val := header[\"Content-Type\"]; len(val) == 0 {\n\t\theader[\"Content-Type\"] = value\n\t}\n}",
+    "funcname": "writeContentType"
+}

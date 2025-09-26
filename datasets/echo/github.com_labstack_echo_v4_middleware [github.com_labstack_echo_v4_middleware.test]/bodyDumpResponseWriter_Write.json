@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/body_dump.go",
+    "lineno": 96,
+    "focalfunc": "func (w *bodyDumpResponseWriter) Write(b []byte) (int, error)",
+    "funcbody": "func (w *bodyDumpResponseWriter) Write(b []byte) (int, error) {\n\treturn w.Writer.Write(b)\n}",
+    "funcname": "Write"
+}

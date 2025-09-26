@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/jianliao.go",
+    "lineno": 31,
+    "focalfunc": "func (s *JLWriter) Init(config string) error",
+    "funcbody": "func (s *JLWriter) Init(config string) error {\n\tres := json.Unmarshal([]byte(config), s)\n\tif res == nil && len(s.Formatter) > 0 {\n\t\tfmtr, ok := GetFormatter(s.Formatter)\n\t\tif !ok {\n\t\t\treturn fmt.Errorf(\"the formatter with name: %s not found\", s.Formatter)\n\t\t}\n\t\ts.formatter = fmtr\n\t}\n\treturn res\n}",
+    "funcname": "Init"
+}

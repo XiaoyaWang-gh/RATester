@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/logger.go",
+    "lineno": 18,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\n\tzerolog.SetGlobalLevel(zerolog.ErrorLevel)\n}",
+    "funcname": "init"
+}

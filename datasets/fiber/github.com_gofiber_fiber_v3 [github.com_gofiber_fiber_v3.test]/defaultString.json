@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 209,
+    "focalfunc": "func defaultString(value string, defaultValue []string) string",
+    "funcbody": "func defaultString(value string, defaultValue []string) string {\n\tif len(value) == 0 && len(defaultValue) > 0 {\n\t\treturn defaultValue[0]\n\t}\n\treturn value\n}",
+    "funcname": "defaultString"
+}

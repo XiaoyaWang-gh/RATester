@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/static/static_config.go",
+    "lineno": 212,
+    "focalfunc": "func (t *Tracing) SetDefaults()",
+    "funcbody": "func (t *Tracing) SetDefaults() {\n\tt.ServiceName = \"traefik\"\n\tt.SampleRate = 1.0\n\n\tt.OTLP = &opentelemetry.Config{}\n\tt.OTLP.SetDefaults()\n}",
+    "funcname": "SetDefaults"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 146,
+    "focalfunc": "func (d *DoNothingOrm) BeginWithOpts(opts *sql.TxOptions) (TxOrmer, error)",
+    "funcbody": "func (d *DoNothingOrm) BeginWithOpts(opts *sql.TxOptions) (TxOrmer, error) {\n\treturn nil, nil\n}",
+    "funcname": "BeginWithOpts"
+}

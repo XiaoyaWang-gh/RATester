@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 86,
+    "focalfunc": "func MockInsertMultiWithCtx(tableName string, cnt int64, err error) *Mock",
+    "funcbody": "func MockInsertMultiWithCtx(tableName string, cnt int64, err error) *Mock {\n\treturn NewMock(NewSimpleCondition(tableName, \"InsertMultiWithCtx\"), []interface{}{cnt, err}, nil)\n}",
+    "funcname": "MockInsertMultiWithCtx"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/error.go",
+    "lineno": 291,
+    "focalfunc": "func methodNotAllowed(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func methodNotAllowed(rw http.ResponseWriter, r *http.Request) {\n\tresponseError(rw, r,\n\t\t405,\n\t\t\"<br>The method you have requested Not Allowed.\"+\n\t\t\t\"<br>Perhaps you are here because:\"+\n\t\t\t\"<br><br><ul>\"+\n\t\t\t\"<br>The method specified in the Request-Line is not allowed for the resource identified by the Request-URI\"+\n\t\t\t\"<br>The response MUST include an Allow header containing a list of valid methods for the requested resource.\"+\n\t\t\t\"</ul>\",\n\t)\n}",
+    "funcname": "methodNotAllowed"
+}

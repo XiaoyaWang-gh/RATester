@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 202,
+    "focalfunc": "func (p *Provider) addServerTCP(item itemData, loadBalancer *dynamic.TCPServersLoadBalancer) error",
+    "funcbody": "func (p *Provider) addServerTCP(item itemData, loadBalancer *dynamic.TCPServersLoadBalancer) error {\n\tif loadBalancer == nil {\n\t\treturn errors.New(\"load-balancer is not defined\")\n\t}\n\n\tif len(loadBalancer.Servers) == 0 {\n\t\tloadBalancer.Servers = []dynamic.TCPServer{{}}\n\t}\n\n\tif item.Address == \"\" {\n\t\treturn errors.New(\"address is missing\")\n\t}\n\n\tport := loadBalancer.Servers[0].Port\n\tloadBalancer.Servers[0].Port = \"\"\n\n\tif port == \"\" {\n\t\tport = item.Port\n\t}\n\n\tif port == \"\" {\n\t\treturn errors.New(\"port is missing\")\n\t}\n\n\tif item.Address == \"\" {\n\t\treturn errors.New(\"address is missing\")\n\t}\n\n\tif item.ExtraConf.ConsulCatalog.Connect {\n\t\tloadBalancer.ServersTransport = itemServersTransportKey(item)\n\t\tloadBalancer.Servers[0].TLS = true\n\t}\n\n\tloadBalancer.Servers[0].Address = net.JoinHostPort(item.Address, port)\n\n\treturn nil\n}",
+    "funcname": "addServerTCP"
+}

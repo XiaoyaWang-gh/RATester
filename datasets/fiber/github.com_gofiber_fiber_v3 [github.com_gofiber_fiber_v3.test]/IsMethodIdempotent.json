@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 693,
+    "focalfunc": "func IsMethodIdempotent(m string) bool",
+    "funcbody": "func IsMethodIdempotent(m string) bool {\n\tif IsMethodSafe(m) {\n\t\treturn true\n\t}\n\n\tswitch m {\n\tcase MethodPut, MethodDelete:\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "IsMethodIdempotent"
+}

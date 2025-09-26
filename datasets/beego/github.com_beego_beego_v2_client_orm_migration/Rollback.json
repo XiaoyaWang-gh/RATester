@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 197,
+    "focalfunc": "func Rollback(name string) error",
+    "funcbody": "func Rollback(name string) error {\n\tif v, ok := migrationMap[name]; ok {\n\t\tlogs.Info(\"start rollback\")\n\t\tv.Reset()\n\t\tv.Down()\n\t\terr := v.Exec(name, \"down\")\n\t\tif err != nil {\n\t\t\tlogs.Error(\"execute error:\", err)\n\t\t\ttime.Sleep(2 * time.Second)\n\t\t\treturn err\n\t\t}\n\t\tlogs.Info(\"end rollback\")\n\t\ttime.Sleep(2 * time.Second)\n\t\treturn nil\n\t}\n\tlogs.Error(\"not exist the migrationMap name:\" + name)\n\ttime.Sleep(2 * time.Second)\n\treturn errors.New(\"not exist the migrationMap name:\" + name)\n}",
+    "funcname": "Rollback"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/security/whitelist.go",
+    "lineno": 114,
+    "focalfunc": "func (w Whitelist) String() string",
+    "funcbody": "func (w Whitelist) String() string {\n\treturn fmt.Sprint(w.patternsStrings)\n}",
+    "funcname": "String"
+}

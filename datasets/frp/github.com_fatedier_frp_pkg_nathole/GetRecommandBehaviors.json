@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 271,
+    "focalfunc": "func (a *Analyzer) GetRecommandBehaviors(key string, c, v *NatFeature) (mode, index int, _ RecommandBehavior, _ RecommandBehavior)",
+    "funcbody": "func (a *Analyzer) GetRecommandBehaviors(key string, c, v *NatFeature) (mode, index int, _ RecommandBehavior, _ RecommandBehavior) {\n\ta.mu.Lock()\n\trecords, ok := a.records[key]\n\tif !ok {\n\t\trecords = NewMakeHoleRecords(c, v)\n\t\ta.records[key] = records\n\t}\n\ta.mu.Unlock()\n\n\tmode, index = records.Recommand()\n\tcBehavior, vBehavior := getBehaviorByModeAndIndex(mode, index)\n\n\tswitch mode {\n\tcase DetectMode1:\n\n\t\tif c.NatType == EasyNAT {\n\t\t\tcBehavior, vBehavior = vBehavior, cBehavior\n\t\t}\n\tcase DetectMode2:\n\n\t\tif c.NatType == HardNAT {\n\t\t\tcBehavior, vBehavior = vBehavior, cBehavior\n\t\t}\n\tcase DetectMode4:\n\n\t\tif !c.RegularPortsChange {\n\t\t\tcBehavior, vBehavior = vBehavior, cBehavior\n\t\t}\n\t}\n\treturn mode, index, cBehavior, vBehavior\n}",
+    "funcname": "GetRecommandBehaviors"
+}

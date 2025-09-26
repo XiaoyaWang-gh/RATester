@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/ports/ports.go",
+    "lineno": 44,
+    "focalfunc": "func NewManager(netType string, bindAddr string, allowPorts []types.PortsRange) *Manager",
+    "funcbody": "func NewManager(netType string, bindAddr string, allowPorts []types.PortsRange) *Manager {\n\tpm := &Manager{\n\t\treservedPorts:\tmake(map[string]*PortCtx),\n\t\tusedPorts:\tmake(map[int]*PortCtx),\n\t\tfreePorts:\tmake(map[int]struct{}),\n\t\tbindAddr:\tbindAddr,\n\t\tnetType:\tnetType,\n\t}\n\tif len(allowPorts) > 0 {\n\t\tfor _, pair := range allowPorts {\n\t\t\tif pair.Single > 0 {\n\t\t\t\tpm.freePorts[pair.Single] = struct{}{}\n\t\t\t} else {\n\t\t\t\tfor i := pair.Start; i <= pair.End; i++ {\n\t\t\t\t\tpm.freePorts[i] = struct{}{}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t} else {\n\t\tfor i := MinPort; i <= MaxPort; i++ {\n\t\t\tpm.freePorts[i] = struct{}{}\n\t\t}\n\t}\n\tgo pm.cleanReservedPortsWorker()\n\treturn pm\n}",
+    "funcname": "NewManager"
+}

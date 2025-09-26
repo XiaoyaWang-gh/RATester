@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/template.go",
+    "lineno": 145,
+    "focalfunc": "func (t *Template) Templates() []*Template",
+    "funcbody": "func (t *Template) Templates() []*Template {\n\tif t.common == nil {\n\t\treturn nil\n\t}\n\n\tt.muTmpl.RLock()\n\tdefer t.muTmpl.RUnlock()\n\tm := make([]*Template, 0, len(t.tmpl))\n\tfor _, v := range t.tmpl {\n\t\tm = append(m, v)\n\t}\n\treturn m\n}",
+    "funcname": "Templates"
+}

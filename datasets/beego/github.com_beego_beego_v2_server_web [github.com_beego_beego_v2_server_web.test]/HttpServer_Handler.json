@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 816,
+    "focalfunc": "func (app *HttpServer) Handler(rootpath string, h http.Handler, options ...interface{}) *HttpServer",
+    "funcbody": "func (app *HttpServer) Handler(rootpath string, h http.Handler, options ...interface{}) *HttpServer {\n\tapp.Handlers.Handler(rootpath, h, options...)\n\treturn app\n}",
+    "funcname": "Handler"
+}

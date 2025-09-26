@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 822,
+    "focalfunc": "func canBeNil(typ reflect.Type) bool",
+    "funcbody": "func canBeNil(typ reflect.Type) bool {\n\tswitch typ.Kind() {\n\tcase reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Pointer, reflect.Slice:\n\t\treturn true\n\tcase reflect.Struct:\n\t\treturn typ == reflectValueType\n\t}\n\treturn false\n}",
+    "funcname": "canBeNil"
+}

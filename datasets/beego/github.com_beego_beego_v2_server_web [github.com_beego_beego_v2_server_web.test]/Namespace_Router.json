@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 104,
+    "focalfunc": "func (n *Namespace) Router(rootpath string, c ControllerInterface, mappingMethods ...string) *Namespace",
+    "funcbody": "func (n *Namespace) Router(rootpath string, c ControllerInterface, mappingMethods ...string) *Namespace {\n\tn.handlers.Add(rootpath, c, WithRouterMethods(c, mappingMethods...))\n\treturn n\n}",
+    "funcname": "Router"
+}

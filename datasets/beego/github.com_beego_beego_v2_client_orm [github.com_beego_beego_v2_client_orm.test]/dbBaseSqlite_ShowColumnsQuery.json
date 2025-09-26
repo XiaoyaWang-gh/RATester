@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 141,
+    "focalfunc": "func (d *dbBaseSqlite) ShowColumnsQuery(table string) string",
+    "funcbody": "func (d *dbBaseSqlite) ShowColumnsQuery(table string) string {\n\treturn fmt.Sprintf(\"pragma table_info('%s')\", table)\n}",
+    "funcname": "ShowColumnsQuery"
+}

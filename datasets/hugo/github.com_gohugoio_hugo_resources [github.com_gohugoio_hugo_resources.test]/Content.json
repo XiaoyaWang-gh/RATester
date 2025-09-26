@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 432,
+    "focalfunc": "func (l *genericResource) Content(context.Context) (any, error)",
+    "funcbody": "func (l *genericResource) Content(context.Context) (any, error) {\n\tr, err := l.ReadSeekCloser()\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tdefer r.Close()\n\n\treturn hugio.ReadString(r)\n}",
+    "funcname": "Content"
+}

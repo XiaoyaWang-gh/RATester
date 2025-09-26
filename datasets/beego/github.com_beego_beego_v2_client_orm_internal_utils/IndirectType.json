@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 232,
+    "focalfunc": "func IndirectType(v reflect.Type) reflect.Type",
+    "funcbody": "func IndirectType(v reflect.Type) reflect.Type {\n\tswitch v.Kind() {\n\tcase reflect.Ptr:\n\t\treturn IndirectType(v.Elem())\n\tdefault:\n\t\treturn v\n\t}\n}",
+    "funcname": "IndirectType"
+}

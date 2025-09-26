@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/module.go",
+    "lineno": 153,
+    "focalfunc": "func (m *moduleAdapter) Time() time.Time",
+    "funcbody": "func (m *moduleAdapter) Time() time.Time {\n\tif !m.IsGoMod() || m.gomod.Time == nil {\n\t\treturn time.Time{}\n\t}\n\n\treturn *m.gomod.Time\n}",
+    "funcname": "Time"
+}

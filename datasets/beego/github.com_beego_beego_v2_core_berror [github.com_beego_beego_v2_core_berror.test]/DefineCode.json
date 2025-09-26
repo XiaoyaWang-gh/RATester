@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/codes.go",
+    "lineno": 37,
+    "focalfunc": "func DefineCode(code uint32, module string, name string, desc string) Code",
+    "funcbody": "func DefineCode(code uint32, module string, name string, desc string) Code {\n\tres := &codeDefinition{\n\t\tcode:\tcode,\n\t\tname:\tname,\n\t\tmodule:\tmodule,\n\t\tdesc:\tdesc,\n\t}\n\tdefaultCodeRegistry.lock.Lock()\n\tdefer defaultCodeRegistry.lock.Unlock()\n\n\tif _, ok := defaultCodeRegistry.codes[code]; ok {\n\t\tpanic(fmt.Sprintf(\"duplicate code, code %d has been registered\", code))\n\t}\n\tdefaultCodeRegistry.codes[code] = res\n\treturn res\n}",
+    "funcname": "DefineCode"
+}

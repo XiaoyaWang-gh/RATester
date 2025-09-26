@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 621,
+    "focalfunc": "func (c *testConn) Write(b []byte) (int, error)",
+    "funcbody": "func (c *testConn) Write(b []byte) (int, error)\t{ return c.w.Write(b) }",
+    "funcname": "Write"
+}

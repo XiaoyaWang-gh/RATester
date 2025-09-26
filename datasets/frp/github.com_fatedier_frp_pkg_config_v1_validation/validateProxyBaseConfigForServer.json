@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 67,
+    "focalfunc": "func validateProxyBaseConfigForServer(c *v1.ProxyBaseConfig) error",
+    "funcbody": "func validateProxyBaseConfigForServer(c *v1.ProxyBaseConfig) error {\n\tif err := ValidateAnnotations(c.Annotations); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "validateProxyBaseConfigForServer"
+}

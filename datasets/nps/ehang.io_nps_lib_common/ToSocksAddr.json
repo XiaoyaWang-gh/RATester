@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/netpackager.go",
+    "lineno": 206,
+    "focalfunc": "func ToSocksAddr(addr net.Addr) *Addr",
+    "funcbody": "func ToSocksAddr(addr net.Addr) *Addr {\n\thost := \"0.0.0.0\"\n\tport := 0\n\tif addr != nil {\n\t\th, p, _ := net.SplitHostPort(addr.String())\n\t\thost = h\n\t\tport, _ = strconv.Atoi(p)\n\t}\n\treturn &Addr{\n\t\tType:\tipV4,\n\t\tHost:\thost,\n\t\tPort:\tuint16(port),\n\t}\n}",
+    "funcname": "ToSocksAddr"
+}

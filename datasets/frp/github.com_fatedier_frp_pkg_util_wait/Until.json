@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/wait/backoff.go",
+    "lineno": 167,
+    "focalfunc": "func Until(f func(), period time.Duration, stopCh <-chan struct{})",
+    "funcbody": "func Until(f func(), period time.Duration, stopCh <-chan struct{}) {\n\tff := func() (bool, error) {\n\t\tf()\n\t\treturn false, nil\n\t}\n\tBackoffUntil(ff, BackoffFunc(func(time.Duration, bool) time.Duration {\n\t\treturn period\n\t}), true, stopCh)\n}",
+    "funcname": "Until"
+}

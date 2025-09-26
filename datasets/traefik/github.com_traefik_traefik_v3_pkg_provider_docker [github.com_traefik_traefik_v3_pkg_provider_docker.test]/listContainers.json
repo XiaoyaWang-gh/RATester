@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/pdocker.go",
+    "lineno": 168,
+    "focalfunc": "func (p *Provider) listContainers(ctx context.Context, dockerClient client.ContainerAPIClient) ([]dockerData, error)",
+    "funcbody": "func (p *Provider) listContainers(ctx context.Context, dockerClient client.ContainerAPIClient) ([]dockerData, error) {\n\tcontainerList, err := dockerClient.ContainerList(ctx, container.ListOptions{})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar inspectedContainers []dockerData\n\n\tfor _, c := range containerList {\n\t\tdData := inspectContainers(ctx, dockerClient, c.ID)\n\t\tif len(dData.Name) == 0 {\n\t\t\tcontinue\n\t\t}\n\n\t\textraConf, err := p.extractLabels(dData)\n\t\tif err != nil {\n\t\t\tlog.Ctx(ctx).Error().Err(err).Msgf(\"Skip container %s\", getServiceName(dData))\n\t\t\tcontinue\n\t\t}\n\n\t\tdData.ExtraConf = extraConf\n\n\t\tinspectedContainers = append(inspectedContainers, dData)\n\t}\n\n\treturn inspectedContainers, nil\n}",
+    "funcname": "listContainers"
+}

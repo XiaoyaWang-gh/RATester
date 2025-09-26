@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 167,
+    "focalfunc": "func (p Pages) Limit(n int) Pages",
+    "funcbody": "func (p Pages) Limit(n int) Pages {\n\tif len(p) > n {\n\t\treturn p[0:n]\n\t}\n\treturn p\n}",
+    "funcname": "Limit"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/mem/server.go",
+    "lineno": 33,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tServerMetrics = sm\n\tStatsCollector = sm\n\tsm.run()\n}",
+    "funcname": "init"
+}

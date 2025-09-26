@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/metric/date_counter.go",
+    "lineno": 87,
+    "focalfunc": "func (c *StandardDateCounter) Dec(count int64)",
+    "funcbody": "func (c *StandardDateCounter) Dec(count int64) {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tc.rotate(time.Now())\n\tc.counts[0] -= count\n}",
+    "funcname": "Dec"
+}

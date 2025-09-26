@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 61,
+    "focalfunc": "func (s *Conn) GetHost() (method, address string, rb []byte, err error, r *http.Request)",
+    "funcbody": "func (s *Conn) GetHost() (method, address string, rb []byte, err error, r *http.Request) {\n\tvar b [32 * 1024]byte\n\tvar n int\n\tif n, err = s.readRequest(b[:]); err != nil {\n\t\treturn\n\t}\n\trb = b[:n]\n\tr, err = http.ReadRequest(bufio.NewReader(bytes.NewReader(rb)))\n\tif err != nil {\n\t\treturn\n\t}\n\thostPortURL, err := url.Parse(r.Host)\n\tif err != nil {\n\t\taddress = r.Host\n\t\terr = nil\n\t\treturn\n\t}\n\tif hostPortURL.Opaque == \"443\" {\n\t\tif strings.Index(r.Host, \":\") == -1 {\n\t\t\taddress = r.Host + \":443\"\n\t\t} else {\n\t\t\taddress = r.Host\n\t\t}\n\t} else {\n\t\tif strings.Index(r.Host, \":\") == -1 {\n\t\t\taddress = r.Host + \":80\"\n\t\t} else {\n\t\t\taddress = r.Host\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "GetHost"
+}

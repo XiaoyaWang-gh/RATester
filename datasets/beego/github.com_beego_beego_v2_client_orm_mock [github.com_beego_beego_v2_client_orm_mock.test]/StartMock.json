@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock.go",
+    "lineno": 38,
+    "focalfunc": "func StartMock() Stub",
+    "funcbody": "func StartMock() Stub {\n\treturn stub\n}",
+    "funcname": "StartMock"
+}

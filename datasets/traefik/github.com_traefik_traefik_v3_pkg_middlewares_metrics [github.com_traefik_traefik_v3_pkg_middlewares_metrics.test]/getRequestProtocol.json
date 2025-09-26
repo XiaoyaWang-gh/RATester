@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 172,
+    "focalfunc": "func getRequestProtocol(req *http.Request) string",
+    "funcbody": "func getRequestProtocol(req *http.Request) string {\n\tswitch {\n\tcase isWebsocketRequest(req):\n\t\treturn protoWebsocket\n\tcase isSSERequest(req):\n\t\treturn protoSSE\n\tcase isGRPCWebRequest(req):\n\t\treturn protoGRPCWeb\n\tcase isGRPCRequest(req):\n\t\treturn protoGRPC\n\tdefault:\n\t\treturn protoHTTP\n\t}\n}",
+    "funcname": "getRequestProtocol"
+}

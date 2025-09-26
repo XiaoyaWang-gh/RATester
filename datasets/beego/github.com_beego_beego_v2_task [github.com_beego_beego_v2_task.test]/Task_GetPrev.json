@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 202,
+    "focalfunc": "func (t *Task) GetPrev(context.Context) time.Time",
+    "funcbody": "func (t *Task) GetPrev(context.Context) time.Time {\n\treturn t.Prev\n}",
+    "funcname": "GetPrev"
+}

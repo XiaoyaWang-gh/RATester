@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/proxy.go",
+    "lineno": 242,
+    "focalfunc": "func ValidateAnnotations(annotations map[string]string) error",
+    "funcbody": "func ValidateAnnotations(annotations map[string]string) error {\n\tif len(annotations) == 0 {\n\t\treturn nil\n\t}\n\n\tvar errs error\n\tfor k := range annotations {\n\t\tfor _, msg := range validation.IsQualifiedName(strings.ToLower(k)) {\n\t\t\terrs = AppendError(errs, fmt.Errorf(\"annotation key %s is invalid: %s\", k, msg))\n\t\t}\n\t}\n\tif err := ValidateAnnotationsSize(annotations); err != nil {\n\t\terrs = AppendError(errs, err)\n\t}\n\treturn errs\n}",
+    "funcname": "ValidateAnnotations"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/cli/loader_file.go",
+    "lineno": 20,
+    "focalfunc": "func (f *FileLoader) GetFilename() string",
+    "funcbody": "func (f *FileLoader) GetFilename() string {\n\treturn f.filename\n}",
+    "funcname": "GetFilename"
+}

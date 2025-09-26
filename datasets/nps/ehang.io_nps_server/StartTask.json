@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 218,
+    "focalfunc": "func StartTask(id int) error",
+    "funcbody": "func StartTask(id int) error {\n\tif t, err := file.GetDb().GetTask(id); err != nil {\n\t\treturn err\n\t} else {\n\t\tAddTask(t)\n\t\tt.Status = true\n\t\tfile.GetDb().UpdateTask(t)\n\t}\n\treturn nil\n}",
+    "funcname": "StartTask"
+}

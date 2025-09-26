@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/transport/tls.go",
+    "lineno": 27,
+    "focalfunc": "func newCustomTLSKeyPair(certfile, keyfile string) (*tls.Certificate, error)",
+    "funcbody": "func newCustomTLSKeyPair(certfile, keyfile string) (*tls.Certificate, error) {\n\ttlsCert, err := tls.LoadX509KeyPair(certfile, keyfile)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn &tlsCert, nil\n}",
+    "funcname": "newCustomTLSKeyPair"
+}

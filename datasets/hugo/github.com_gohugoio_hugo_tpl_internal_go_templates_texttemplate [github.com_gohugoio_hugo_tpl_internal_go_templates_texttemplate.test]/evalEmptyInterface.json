@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 987,
+    "focalfunc": "func (s *state) evalEmptyInterface(dot reflect.Value, n parse.Node) reflect.Value",
+    "funcbody": "func (s *state) evalEmptyInterface(dot reflect.Value, n parse.Node) reflect.Value {\n\ts.at(n)\n\tswitch n := n.(type) {\n\tcase *parse.BoolNode:\n\t\treturn reflect.ValueOf(n.True)\n\tcase *parse.DotNode:\n\t\treturn dot\n\tcase *parse.FieldNode:\n\t\treturn s.evalFieldNode(dot, n, nil, missingVal)\n\tcase *parse.IdentifierNode:\n\t\treturn s.evalFunction(dot, n, n, nil, missingVal)\n\tcase *parse.NilNode:\n\n\t\ts.errorf(\"evalEmptyInterface: nil (can't happen)\")\n\tcase *parse.NumberNode:\n\t\treturn s.idealConstant(n)\n\tcase *parse.StringNode:\n\t\treturn reflect.ValueOf(n.Text)\n\tcase *parse.VariableNode:\n\t\treturn s.evalVariableNode(dot, n, nil, missingVal)\n\tcase *parse.PipeNode:\n\t\treturn s.evalPipeline(dot, n)\n\t}\n\ts.errorf(\"can't handle assignment of %s to empty interface argument\", n)\n\tpanic(\"not reached\")\n}",
+    "funcname": "evalEmptyInterface"
+}

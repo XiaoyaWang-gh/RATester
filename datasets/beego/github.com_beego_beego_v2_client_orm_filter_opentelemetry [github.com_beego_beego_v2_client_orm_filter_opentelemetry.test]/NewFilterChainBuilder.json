@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/opentelemetry/filter.go",
+    "lineno": 39,
+    "focalfunc": "func NewFilterChainBuilder(options ...FilterChainOption) *FilterChainBuilder",
+    "funcbody": "func NewFilterChainBuilder(options ...FilterChainOption) *FilterChainBuilder {\n\tfcb := &FilterChainBuilder{}\n\tfor _, o := range options {\n\t\to(fcb)\n\t}\n\treturn fcb\n}",
+    "funcname": "NewFilterChainBuilder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 312,
+    "focalfunc": "func (r ranks) Len() int",
+    "funcbody": "func (r ranks) Len() int\t{ return len(r) }",
+    "funcname": "Len"
+}

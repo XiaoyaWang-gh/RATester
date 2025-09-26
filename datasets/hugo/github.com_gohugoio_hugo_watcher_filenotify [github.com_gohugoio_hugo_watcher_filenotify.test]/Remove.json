@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/poller.go",
+    "lineno": 79,
+    "focalfunc": "func (w *filePoller) remove(name string) error",
+    "funcbody": "func (w *filePoller) remove(name string) error {\n\tif w.closed {\n\t\treturn errPollerClosed\n\t}\n\n\t_, exists := w.watches[name]\n\tif !exists {\n\t\treturn errNoSuchWatch\n\t}\n\tdelete(w.watches, name)\n\treturn nil\n}",
+    "funcname": "remove"
+}

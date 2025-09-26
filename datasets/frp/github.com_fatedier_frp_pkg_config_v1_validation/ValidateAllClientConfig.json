@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/validation/client.go",
+    "lineno": 84,
+    "focalfunc": "func ValidateAllClientConfig(c *v1.ClientCommonConfig, proxyCfgs []v1.ProxyConfigurer, visitorCfgs []v1.VisitorConfigurer) (Warning, error)",
+    "funcbody": "func ValidateAllClientConfig(c *v1.ClientCommonConfig, proxyCfgs []v1.ProxyConfigurer, visitorCfgs []v1.VisitorConfigurer) (Warning, error) {\n\tvar warnings Warning\n\tif c != nil {\n\t\twarning, err := ValidateClientCommonConfig(c)\n\t\twarnings = AppendError(warnings, warning)\n\t\tif err != nil {\n\t\t\treturn warnings, err\n\t\t}\n\t}\n\n\tfor _, c := range proxyCfgs {\n\t\tif err := ValidateProxyConfigurerForClient(c); err != nil {\n\t\t\treturn warnings, fmt.Errorf(\"proxy %s: %v\", c.GetBaseConfig().Name, err)\n\t\t}\n\t}\n\n\tfor _, c := range visitorCfgs {\n\t\tif err := ValidateVisitorConfigurer(c); err != nil {\n\t\t\treturn warnings, fmt.Errorf(\"visitor %s: %v\", c.GetBaseConfig().Name, err)\n\t\t}\n\t}\n\treturn warnings, nil\n}",
+    "funcname": "ValidateAllClientConfig"
+}

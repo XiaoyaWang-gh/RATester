@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/logger.go",
+    "lineno": 131,
+    "focalfunc": "func (p *LogFormatterParams) ResetColor() string",
+    "funcbody": "func (p *LogFormatterParams) ResetColor() string {\n\treturn reset\n}",
+    "funcname": "ResetColor"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/authz/authz.go",
+    "lineno": 70,
+    "focalfunc": "func (a *BasicAuthorizer) GetUserName(r *http.Request) string",
+    "funcbody": "func (a *BasicAuthorizer) GetUserName(r *http.Request) string {\n\tusername, _, _ := r.BasicAuth()\n\treturn username\n}",
+    "funcname": "GetUserName"
+}

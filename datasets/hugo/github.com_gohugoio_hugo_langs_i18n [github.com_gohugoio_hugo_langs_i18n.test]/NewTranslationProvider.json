@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/i18n/translationProvider.go",
+    "lineno": 43,
+    "focalfunc": "func NewTranslationProvider() *TranslationProvider",
+    "funcbody": "func NewTranslationProvider() *TranslationProvider {\n\treturn &TranslationProvider{}\n}",
+    "funcname": "NewTranslationProvider"
+}

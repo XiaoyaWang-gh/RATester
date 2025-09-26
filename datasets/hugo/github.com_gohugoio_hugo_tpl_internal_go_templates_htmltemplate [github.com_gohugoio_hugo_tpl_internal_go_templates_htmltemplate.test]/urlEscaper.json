@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 58,
+    "focalfunc": "func urlEscaper(args ...any) string",
+    "funcbody": "func urlEscaper(args ...any) string {\n\treturn urlProcessor(false, args...)\n}",
+    "funcname": "urlEscaper"
+}

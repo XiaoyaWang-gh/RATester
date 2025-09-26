@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/dial.go",
+    "lineno": 24,
+    "focalfunc": "func DialHookWebsocket(protocol string, host string) libnet.AfterHookFunc",
+    "funcbody": "func DialHookWebsocket(protocol string, host string) libnet.AfterHookFunc {\n\treturn func(ctx context.Context, c net.Conn, addr string) (context.Context, net.Conn, error) {\n\t\tif protocol != \"wss\" {\n\t\t\tprotocol = \"ws\"\n\t\t}\n\t\tif host == \"\" {\n\t\t\thost = addr\n\t\t}\n\t\taddr = protocol + \"://\" + host + FrpWebsocketPath\n\t\turi, err := url.Parse(addr)\n\t\tif err != nil {\n\t\t\treturn nil, nil, err\n\t\t}\n\n\t\torigin := \"http://\" + uri.Host\n\t\tcfg, err := websocket.NewConfig(addr, origin)\n\t\tif err != nil {\n\t\t\treturn nil, nil, err\n\t\t}\n\n\t\tconn, err := websocket.NewClient(cfg, c)\n\t\tif err != nil {\n\t\t\treturn nil, nil, err\n\t\t}\n\t\treturn ctx, conn, nil\n\t}\n}",
+    "funcname": "DialHookWebsocket"
+}

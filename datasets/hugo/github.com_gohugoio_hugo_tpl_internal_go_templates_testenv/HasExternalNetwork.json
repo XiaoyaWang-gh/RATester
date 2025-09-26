@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 246,
+    "focalfunc": "func HasExternalNetwork() bool",
+    "funcbody": "func HasExternalNetwork() bool {\n\treturn !testing.Short() && runtime.GOOS != \"js\" && runtime.GOOS != \"wasip1\"\n}",
+    "funcname": "HasExternalNetwork"
+}

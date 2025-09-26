@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 102,
+    "focalfunc": "func (c *Scratch) Get(key string) any",
+    "funcbody": "func (c *Scratch) Get(key string) any {\n\tc.mu.RLock()\n\tval := c.values[key]\n\tc.mu.RUnlock()\n\n\treturn val\n}",
+    "funcname": "Get"
+}

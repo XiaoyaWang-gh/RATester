@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 45,
+    "focalfunc": "func (x FOO) String() string",
+    "funcbody": "func (x FOO) String() string {\n\treturn protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))\n}",
+    "funcname": "String"
+}

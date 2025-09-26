@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_listenconfig_unix.go",
+    "lineno": 25,
+    "focalfunc": "func controlReusePort(network, address string, c syscall.RawConn) error",
+    "funcbody": "func controlReusePort(network, address string, c syscall.RawConn) error {\n\tvar setSockOptErr error\n\terr := c.Control(func(fd uintptr) {\n\n\t\tsetSockOptErr = unix.SetsockoptInt(int(fd), unix.SOL_SOCKET, unixSOREUSEPORT, 1)\n\t\tif setSockOptErr != nil {\n\t\t\treturn\n\t\t}\n\t})\n\tif err != nil {\n\t\treturn fmt.Errorf(\"control: %w\", err)\n\t}\n\tif setSockOptErr != nil {\n\t\treturn fmt.Errorf(\"setsockopt: %w\", setSockOptErr)\n\t}\n\treturn nil\n}",
+    "funcname": "controlReusePort"
+}

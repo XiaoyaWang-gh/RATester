@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 466,
+    "focalfunc": "func randomBrightness(c color.RGBA, max uint8) color.RGBA",
+    "funcbody": "func randomBrightness(c color.RGBA, max uint8) color.RGBA {\n\tminc := min3(c.R, c.G, c.B)\n\tmaxc := max3(c.R, c.G, c.B)\n\tif maxc > max {\n\t\treturn c\n\t}\n\tn := randIntn(int(max-maxc)) - int(minc)\n\treturn color.RGBA{\n\t\tuint8(int(c.R) + n),\n\t\tuint8(int(c.G) + n),\n\t\tuint8(int(c.B) + n),\n\t\tc.A,\n\t}\n}",
+    "funcname": "randomBrightness"
+}

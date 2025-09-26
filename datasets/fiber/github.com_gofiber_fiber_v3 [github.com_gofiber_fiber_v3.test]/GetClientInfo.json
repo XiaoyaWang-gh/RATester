@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 159,
+    "focalfunc": "func (t *TLSHandler) GetClientInfo(info *tls.ClientHelloInfo) (*tls.Certificate, error)",
+    "funcbody": "func (t *TLSHandler) GetClientInfo(info *tls.ClientHelloInfo) (*tls.Certificate, error) {\n\tt.clientHelloInfo = info\n\treturn nil, nil\n}",
+    "funcname": "GetClientInfo"
+}

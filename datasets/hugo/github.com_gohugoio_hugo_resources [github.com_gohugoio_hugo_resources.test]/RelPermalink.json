@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 525,
+    "focalfunc": "func (l *genericResource) RelPermalink() string",
+    "funcbody": "func (l *genericResource) RelPermalink() string {\n\treturn l.spec.PathSpec.GetBasePath(false) + paths.PathEscape(l.paths.TargetLink())\n}",
+    "funcname": "RelPermalink"
+}

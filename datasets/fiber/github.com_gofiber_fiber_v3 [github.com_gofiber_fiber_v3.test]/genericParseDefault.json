@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 738,
+    "focalfunc": "func genericParseDefault[V GenericType](err error, parser func() V, defaultValue ...V) V",
+    "funcbody": "func genericParseDefault[V GenericType](err error, parser func() V, defaultValue ...V) V {\n\tvar v V\n\tif err != nil {\n\t\tif len(defaultValue) > 0 {\n\t\t\treturn defaultValue[0]\n\t\t}\n\t\treturn v\n\t}\n\treturn parser()\n}",
+    "funcname": "genericParseDefault"
+}

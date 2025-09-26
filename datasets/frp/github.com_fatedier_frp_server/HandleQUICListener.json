@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/service.go",
+    "lineno": 538,
+    "focalfunc": "func (svr *Service) HandleQUICListener(l *quic.Listener)",
+    "funcbody": "func (svr *Service) HandleQUICListener(l *quic.Listener) {\n\n\tfor {\n\t\tc, err := l.Accept(context.Background())\n\t\tif err != nil {\n\t\t\tlog.Warnf(\"QUICListener for incoming connections from client closed\")\n\t\t\treturn\n\t\t}\n\n\t\tgo func(ctx context.Context, frpConn quic.Connection) {\n\t\t\tfor {\n\t\t\t\tstream, err := frpConn.AcceptStream(context.Background())\n\t\t\t\tif err != nil {\n\t\t\t\t\tlog.Debugf(\"Accept new quic mux stream error: %v\", err)\n\t\t\t\t\t_ = frpConn.CloseWithError(0, \"\")\n\t\t\t\t\treturn\n\t\t\t\t}\n\t\t\t\tgo svr.handleConnection(ctx, netpkg.QuicStreamToNetConn(stream, frpConn), false)\n\t\t\t}\n\t\t}(context.Background(), c)\n\t}\n}",
+    "funcname": "HandleQUICListener"
+}

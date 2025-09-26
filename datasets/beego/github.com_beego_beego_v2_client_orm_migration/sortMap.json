@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 281,
+    "focalfunc": "func sortMap(m map[string]Migrationer) dataSlice",
+    "funcbody": "func sortMap(m map[string]Migrationer) dataSlice {\n\ts := make(dataSlice, 0, len(m))\n\tfor k, v := range m {\n\t\td := data{}\n\t\td.created = v.GetCreated()\n\t\td.name = k\n\t\td.m = v\n\t\ts = append(s, d)\n\t}\n\tsort.Sort(s)\n\treturn s\n}",
+    "funcname": "sortMap"
+}

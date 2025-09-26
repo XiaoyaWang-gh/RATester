@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 154,
+    "focalfunc": "func TotalWords(s string) int",
+    "funcbody": "func TotalWords(s string) int {\n\tn := 0\n\tinWord := false\n\tfor _, r := range s {\n\t\twasInWord := inWord\n\t\tinWord = !unicode.IsSpace(r)\n\t\tif inWord && !wasInWord {\n\t\t\tn++\n\t\t}\n\t}\n\treturn n\n}",
+    "funcname": "TotalWords"
+}

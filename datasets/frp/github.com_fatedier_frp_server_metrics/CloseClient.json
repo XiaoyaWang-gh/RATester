@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/metrics/metrics.go",
+    "lineno": 31,
+    "focalfunc": "func (noopServerMetrics) CloseClient()",
+    "funcbody": "func (noopServerMetrics) CloseClient()\t{}",
+    "funcname": "CloseClient"
+}

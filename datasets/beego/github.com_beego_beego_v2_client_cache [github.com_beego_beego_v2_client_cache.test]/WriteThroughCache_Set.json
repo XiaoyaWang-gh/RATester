@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/write_through.go",
+    "lineno": 44,
+    "focalfunc": "func (w *WriteThroughCache) Set(ctx context.Context, key string, val any, expiration time.Duration) error",
+    "funcbody": "func (w *WriteThroughCache) Set(ctx context.Context, key string, val any, expiration time.Duration) error {\n\terr := w.storeFunc(ctx, key, val)\n\tif err != nil {\n\t\treturn berror.Wrap(err, PersistCacheFailed, fmt.Sprintf(\"key: %s, val: %v\", key, val))\n\t}\n\treturn w.Cache.Put(ctx, key, val, expiration)\n}",
+    "funcname": "Set"
+}

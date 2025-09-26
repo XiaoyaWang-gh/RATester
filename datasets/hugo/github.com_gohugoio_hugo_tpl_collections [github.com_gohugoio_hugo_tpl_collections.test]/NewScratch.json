@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 776,
+    "focalfunc": "func (ns *Namespace) NewScratch() *maps.Scratch",
+    "funcbody": "func (ns *Namespace) NewScratch() *maps.Scratch {\n\treturn maps.NewScratch()\n}",
+    "funcname": "NewScratch"
+}

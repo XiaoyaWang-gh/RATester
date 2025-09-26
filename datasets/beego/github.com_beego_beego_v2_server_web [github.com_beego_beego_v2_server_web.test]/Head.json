@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 741,
+    "focalfunc": "func Head(rootpath string, f HandleFunc) *HttpServer",
+    "funcbody": "func Head(rootpath string, f HandleFunc) *HttpServer {\n\treturn BeeApp.Head(rootpath, f)\n}",
+    "funcname": "Head"
+}

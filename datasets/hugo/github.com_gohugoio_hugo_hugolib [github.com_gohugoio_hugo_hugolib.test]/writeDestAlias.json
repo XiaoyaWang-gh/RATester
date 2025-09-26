@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/alias.go",
+    "lineno": 77,
+    "focalfunc": "func (s *Site) writeDestAlias(path, permalink string, outputFormat output.Format, p page.Page) (err error)",
+    "funcbody": "func (s *Site) writeDestAlias(path, permalink string, outputFormat output.Format, p page.Page) (err error) {\n\treturn s.publishDestAlias(false, path, permalink, outputFormat, p)\n}",
+    "funcname": "writeDestAlias"
+}

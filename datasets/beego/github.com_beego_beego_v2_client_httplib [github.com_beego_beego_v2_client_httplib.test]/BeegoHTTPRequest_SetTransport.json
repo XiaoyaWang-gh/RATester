@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 222,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetTransport(transport http.RoundTripper) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetTransport(transport http.RoundTripper) *BeegoHTTPRequest {\n\tb.setting.Transport = transport\n\treturn b\n}",
+    "funcname": "SetTransport"
+}

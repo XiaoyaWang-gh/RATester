@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 165,
+    "focalfunc": "func (c *templateContext) applyTransformations(n parse.Node) (bool, error)",
+    "funcbody": "func (c *templateContext) applyTransformations(n parse.Node) (bool, error) {\n\tswitch x := n.(type) {\n\tcase *parse.ListNode:\n\t\tif x != nil {\n\t\t\tc.applyTransformationsToNodes(x.Nodes...)\n\t\t}\n\tcase *parse.ActionNode:\n\t\tc.applyTransformationsToNodes(x.Pipe)\n\tcase *parse.IfNode:\n\t\tc.applyTransformationsToNodes(x.Pipe, x.List, x.ElseList)\n\tcase *parse.WithNode:\n\t\tc.handleDefer(x)\n\t\tc.applyTransformationsToNodes(x.Pipe, x.List, x.ElseList)\n\tcase *parse.RangeNode:\n\t\tc.applyTransformationsToNodes(x.Pipe, x.List, x.ElseList)\n\tcase *parse.TemplateNode:\n\t\tsubTempl := c.getIfNotVisited(x.Name)\n\t\tif subTempl != nil {\n\t\t\tc.applyTransformationsToNodes(getParseTree(subTempl.Template).Root)\n\t\t}\n\tcase *parse.PipeNode:\n\t\tc.collectConfig(x)\n\t\tfor i, cmd := range x.Cmds {\n\t\t\tkeep, _ := c.applyTransformations(cmd)\n\t\t\tif !keep {\n\t\t\t\tx.Cmds = append(x.Cmds[:i], x.Cmds[i+1:]...)\n\t\t\t}\n\t\t}\n\n\tcase *parse.CommandNode:\n\t\tc.collectInner(x)\n\t\tkeep := c.collectReturnNode(x)\n\n\t\tfor _, elem := range x.Args {\n\t\t\tswitch an := elem.(type) {\n\t\t\tcase *parse.PipeNode:\n\t\t\t\tc.applyTransformations(an)\n\t\t\t}\n\t\t}\n\t\treturn keep, c.err\n\t}\n\n\treturn true, c.err\n}",
+    "funcname": "applyTransformations"
+}

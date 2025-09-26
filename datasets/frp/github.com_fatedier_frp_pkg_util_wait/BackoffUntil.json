@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/wait/backoff.go",
+    "lineno": 115,
+    "focalfunc": "func BackoffUntil(f func() (bool, error), backoff BackoffManager, sliding bool, stopCh <-chan struct{})",
+    "funcbody": "func BackoffUntil(f func() (bool, error), backoff BackoffManager, sliding bool, stopCh <-chan struct{}) {\n\tvar delay time.Duration\n\tpreviousError := false\n\n\tticker := time.NewTicker(backoff.Backoff(delay, previousError))\n\tdefer ticker.Stop()\n\n\tfor {\n\t\tselect {\n\t\tcase <-stopCh:\n\t\t\treturn\n\t\tdefault:\n\t\t}\n\n\t\tif !sliding {\n\t\t\tdelay = backoff.Backoff(delay, previousError)\n\t\t}\n\n\t\tif done, err := f(); done {\n\t\t\treturn\n\t\t} else if err != nil {\n\t\t\tpreviousError = true\n\t\t} else {\n\t\t\tpreviousError = false\n\t\t}\n\n\t\tif sliding {\n\t\t\tdelay = backoff.Backoff(delay, previousError)\n\t\t}\n\n\t\tticker.Reset(delay)\n\t\tselect {\n\t\tcase <-stopCh:\n\t\t\treturn\n\t\tcase <-ticker.C:\n\t\t}\n\t}\n}",
+    "funcname": "BackoffUntil"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 112,
+    "focalfunc": "func (p *pageMeta) Author() page.Author",
+    "funcbody": "func (p *pageMeta) Author() page.Author {\n\thugo.Deprecate(\".Page.Author\", \"Use taxonomies instead.\", \"v0.98.0\")\n\tauthors := p.Authors()\n\n\tfor _, author := range authors {\n\t\treturn author\n\t}\n\treturn page.Author{}\n}",
+    "funcname": "Author"
+}

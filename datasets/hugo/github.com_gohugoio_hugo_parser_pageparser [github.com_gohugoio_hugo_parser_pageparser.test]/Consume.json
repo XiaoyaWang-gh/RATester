@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pageparser.go",
+    "lineno": 194,
+    "focalfunc": "func (t *Iterator) Consume(cnt int)",
+    "funcbody": "func (t *Iterator) Consume(cnt int) {\n\tfor i := 0; i < cnt; i++ {\n\t\ttoken := t.Next()\n\t\tif token.Type == tError || token.Type == tEOF {\n\t\t\tt.Backup()\n\t\t\tbreak\n\t\t}\n\t}\n}",
+    "funcname": "Consume"
+}

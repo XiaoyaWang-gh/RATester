@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 131,
+    "focalfunc": "func (x *Test) GetType() int32",
+    "funcbody": "func (x *Test) GetType() int32 {\n\tif x != nil && x.Type != nil {\n\t\treturn *x.Type\n\t}\n\treturn Default_Test_Type\n}",
+    "funcname": "GetType"
+}

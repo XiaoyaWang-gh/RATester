@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 218,
+    "focalfunc": "func (ms *menuSorter) Less(i, j int) bool",
+    "funcbody": "func (ms *menuSorter) Less(i, j int) bool\t{ return ms.by(ms.menu[i], ms.menu[j]) }",
+    "funcname": "Less"
+}

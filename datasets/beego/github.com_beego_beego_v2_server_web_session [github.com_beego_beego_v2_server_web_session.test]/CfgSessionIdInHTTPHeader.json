@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 104,
+    "focalfunc": "func CfgSessionIdInHTTPHeader(enable bool) ManagerConfigOpt",
+    "funcbody": "func CfgSessionIdInHTTPHeader(enable bool) ManagerConfigOpt {\n\treturn func(config *ManagerConfig) {\n\t\tconfig.EnableSidInHTTPHeader = enable\n\t}\n}",
+    "funcname": "CfgSessionIdInHTTPHeader"
+}

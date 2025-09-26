@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 276,
+    "focalfunc": "func fieldAlias(field reflect.StructField, tagName string) (alias string, options tagOptions)",
+    "funcbody": "func fieldAlias(field reflect.StructField, tagName string) (alias string, options tagOptions) {\n\tif tag := field.Tag.Get(tagName); tag != \"\" {\n\t\talias, options = parseTag(tag)\n\t}\n\tif alias == \"\" {\n\t\talias = field.Name\n\t}\n\treturn alias, options\n}",
+    "funcname": "fieldAlias"
+}

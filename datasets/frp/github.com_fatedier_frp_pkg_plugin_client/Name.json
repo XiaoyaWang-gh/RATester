@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/unix_domain_socket.go",
+    "lineno": 69,
+    "focalfunc": "func (uds *UnixDomainSocketPlugin) Name() string",
+    "funcbody": "func (uds *UnixDomainSocketPlugin) Name() string {\n\treturn v1.PluginUnixDomainSocket\n}",
+    "funcname": "Name"
+}

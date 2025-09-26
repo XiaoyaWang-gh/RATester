@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 108,
+    "focalfunc": "func (r *Registering) Add(methods []string, handler Handler, middleware ...Handler) Register",
+    "funcbody": "func (r *Registering) Add(methods []string, handler Handler, middleware ...Handler) Register {\n\tr.app.register(methods, r.path, nil, handler, middleware...)\n\treturn r\n}",
+    "funcname": "Add"
+}

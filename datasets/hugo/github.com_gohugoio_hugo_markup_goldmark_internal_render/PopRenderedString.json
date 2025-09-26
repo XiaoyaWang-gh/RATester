@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/render/context.go",
+    "lineno": 75,
+    "focalfunc": "func (ctx *Context) PopRenderedString() string",
+    "funcbody": "func (ctx *Context) PopRenderedString() string {\n\tpos := ctx.PopPos()\n\ttext := string(ctx.Bytes()[pos:])\n\tctx.Truncate(pos)\n\treturn text\n}",
+    "funcname": "PopRenderedString"
+}

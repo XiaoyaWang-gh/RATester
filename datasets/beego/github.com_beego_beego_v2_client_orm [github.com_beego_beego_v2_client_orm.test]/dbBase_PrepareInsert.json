@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 268,
+    "focalfunc": "func (d *dbBase) PrepareInsert(ctx context.Context, q dbQuerier, mi *models.ModelInfo) (stmtQuerier, string, error)",
+    "funcbody": "func (d *dbBase) PrepareInsert(ctx context.Context, q dbQuerier, mi *models.ModelInfo) (stmtQuerier, string, error) {\n\tQ := d.ins.TableQuote()\n\n\tdbcols := make([]string, 0, len(mi.Fields.DBcols))\n\tmarks := make([]string, 0, len(mi.Fields.DBcols))\n\tfor _, fi := range mi.Fields.FieldsDB {\n\t\tif !fi.Auto {\n\t\t\tdbcols = append(dbcols, fi.Column)\n\t\t\tmarks = append(marks, \"?\")\n\t\t}\n\t}\n\tqmarks := strings.Join(marks, \", \")\n\tsep := fmt.Sprintf(\"%s, %s\", Q, Q)\n\tcolumns := strings.Join(dbcols, sep)\n\n\tquery := fmt.Sprintf(\"INSERT INTO %s%s%s (%s%s%s) VALUES (%s)\", Q, mi.Table, Q, Q, columns, Q, qmarks)\n\n\td.ins.ReplaceMarks(&query)\n\n\td.ins.HasReturningID(mi, &query)\n\n\tstmt, err := q.PrepareContext(ctx, query)\n\treturn stmt, query, err\n}",
+    "funcname": "PrepareInsert"
+}

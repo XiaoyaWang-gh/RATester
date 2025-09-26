@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/publisher.go",
+    "lineno": 94,
+    "focalfunc": "func (p DestinationPublisher) Publish(d Descriptor) error",
+    "funcbody": "func (p DestinationPublisher) Publish(d Descriptor) error {\n\tif d.TargetPath == \"\" {\n\t\treturn errors.New(\"Publish: must provide a TargetPath\")\n\t}\n\n\tsrc := d.Src\n\n\ttransformers := p.createTransformerChain(d)\n\n\tif len(transformers) != 0 {\n\t\tb := bp.GetBuffer()\n\t\tdefer bp.PutBuffer(b)\n\n\t\tif err := transformers.Apply(b, d.Src); err != nil {\n\t\t\treturn fmt.Errorf(\"failed to process %q: %w\", d.TargetPath, err)\n\t\t}\n\n\t\tsrc = b\n\t}\n\n\tf, err := helpers.OpenFileForWriting(p.fs, d.TargetPath)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer f.Close()\n\n\tvar w io.Writer = f\n\n\tif p.htmlElementsCollector != nil && d.OutputFormat.IsHTML {\n\t\tw = io.MultiWriter(w, newHTMLElementsCollectorWriter(p.htmlElementsCollector))\n\t}\n\n\t_, err = io.Copy(w, src)\n\tif err == nil && d.StatCounter != nil {\n\t\tatomic.AddUint64(d.StatCounter, uint64(1))\n\t}\n\n\treturn err\n}",
+    "funcname": "Publish"
+}

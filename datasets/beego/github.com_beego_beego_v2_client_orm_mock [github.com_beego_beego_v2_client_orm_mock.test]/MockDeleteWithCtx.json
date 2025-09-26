@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 101,
+    "focalfunc": "func MockDeleteWithCtx(tableName string, affectedRow int64, err error) *Mock",
+    "funcbody": "func MockDeleteWithCtx(tableName string, affectedRow int64, err error) *Mock {\n\treturn NewMock(NewSimpleCondition(tableName, \"DeleteWithCtx\"), []interface{}{affectedRow, err}, nil)\n}",
+    "funcname": "MockDeleteWithCtx"
+}

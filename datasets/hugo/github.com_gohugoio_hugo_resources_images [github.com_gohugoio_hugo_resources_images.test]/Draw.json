@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/text.go",
+    "lineno": 43,
+    "focalfunc": "func (f textFilter) Draw(dst draw.Image, src image.Image, options *gift.Options)",
+    "funcbody": "func (f textFilter) Draw(dst draw.Image, src image.Image, options *gift.Options) {\n\n\tttf := goregular.TTF\n\tif f.fontSource != nil {\n\t\trs, err := f.fontSource.ReadSeekCloser()\n\t\tif err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t\tdefer rs.Close()\n\t\tttf, err = io.ReadAll(rs)\n\t\tif err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t}\n\totf, err := opentype.Parse(ttf)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tface, err := opentype.NewFace(otf, &opentype.FaceOptions{\n\t\tSize:\t\tf.size,\n\t\tDPI:\t\t72,\n\t\tHinting:\tfont.HintingNone,\n\t})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\td := font.Drawer{\n\t\tDst:\tdst,\n\t\tSrc:\timage.NewUniform(f.color),\n\t\tFace:\tface,\n\t}\n\n\tgift.New().Draw(dst, src)\n\n\tmaxWidth := dst.Bounds().Dx() - 20\n\tfontHeight := face.Metrics().Ascent.Ceil()\n\n\tf.y = f.y + fontHeight\n\n\ty := f.y\n\td.Dot = fixed.P(f.x, f.y)\n\n\tf.text = strings.ReplaceAll(f.text, \"\\r\", \"\")\n\tfor _, line := range strings.Split(f.text, \"\\n\") {\n\t\tfor _, str := range strings.Fields(line) {\n\t\t\tstrWidth := font.MeasureString(face, str)\n\t\t\tif (d.Dot.X.Ceil() + strWidth.Ceil()) >= maxWidth {\n\t\t\t\ty = y + fontHeight + f.linespacing\n\t\t\t\td.Dot = fixed.P(f.x, y)\n\t\t\t}\n\t\t\td.DrawString(str + \" \")\n\t\t}\n\t\ty = y + fontHeight + f.linespacing\n\t\td.Dot = fixed.P(f.x, y)\n\t}\n}",
+    "funcname": "Draw"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/safe.go",
+    "lineno": 63,
+    "focalfunc": "func (ns *Namespace) URL(s any) (template.URL, error)",
+    "funcbody": "func (ns *Namespace) URL(s any) (template.URL, error) {\n\tss, err := cast.ToStringE(s)\n\treturn template.URL(ss), err\n}",
+    "funcname": "URL"
+}

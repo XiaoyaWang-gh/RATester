@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/skeletons/skeletons.go",
+    "lineno": 97,
+    "focalfunc": "func newSiteCreateConfig(fs afero.Fs, createpath string, format string) (err error)",
+    "funcbody": "func newSiteCreateConfig(fs afero.Fs, createpath string, format string) (err error) {\n\tin := map[string]string{\n\t\t\"baseURL\":\t\"https://example.org/\",\n\t\t\"title\":\t\"My New Hugo Site\",\n\t\t\"languageCode\":\t\"en-us\",\n\t}\n\n\tvar buf bytes.Buffer\n\terr = parser.InterfaceToConfig(in, metadecoders.FormatFromString(format), &buf)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn helpers.WriteToDisk(filepath.Join(createpath, \"hugo.\"+format), &buf, fs)\n}",
+    "funcname": "newSiteCreateConfig"
+}

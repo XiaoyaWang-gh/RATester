@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/timeout.go",
+    "lineno": 146,
+    "focalfunc": "func (t echoHandlerFuncWrapper) ServeHTTP(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (t echoHandlerFuncWrapper) ServeHTTP(rw http.ResponseWriter, r *http.Request) {\n\n\tt.ctx.SetRequest(r)\n\n\toriginalWriter := t.ctx.Response().Writer\n\tt.ctx.Response().Writer = rw\n\n\tdefer func() {\n\t\tif err := recover(); err != nil {\n\t\t\tt.ctx.Response().Writer = originalWriter\n\t\t\tpanic(err)\n\t\t}\n\t}()\n\n\terr := t.handler(t.ctx)\n\tif ctxErr := r.Context().Err(); ctxErr == context.DeadlineExceeded {\n\t\tif err != nil && t.errHandler != nil {\n\t\t\tt.errHandler(err, t.ctx)\n\t\t}\n\t\treturn\n\t}\n\tif err != nil {\n\n\t\tt.writer.Ignore(true)\n\t\tt.ctx.Response().Writer = originalWriter\n\n\t\tt.errChan <- err\n\t\treturn\n\t}\n\n\tt.ctx.Response().Writer = originalWriter\n}",
+    "funcname": "ServeHTTP"
+}

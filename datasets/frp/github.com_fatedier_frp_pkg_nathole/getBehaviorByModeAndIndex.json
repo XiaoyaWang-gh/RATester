@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 139,
+    "focalfunc": "func getBehaviorByModeAndIndex(mode int, index int) (RecommandBehavior, RecommandBehavior)",
+    "funcbody": "func getBehaviorByModeAndIndex(mode int, index int) (RecommandBehavior, RecommandBehavior) {\n\tbehaviors := getBehaviorByMode(mode)\n\tif index >= len(behaviors) {\n\t\treturn RecommandBehavior{}, RecommandBehavior{}\n\t}\n\treturn behaviors[index].A, behaviors[index].B\n}",
+    "funcname": "getBehaviorByModeAndIndex"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher_v2.go",
+    "lineno": 73,
+    "focalfunc": "func hostSNIV2(tree *matchersTree, hosts ...string) error",
+    "funcbody": "func hostSNIV2(tree *matchersTree, hosts ...string) error {\n\tif len(hosts) == 0 {\n\t\treturn errors.New(\"empty value for \\\"HostSNI\\\" matcher is not allowed\")\n\t}\n\n\tfor i, host := range hosts {\n\n\t\tif host == \"*\" {\n\t\t\tcontinue\n\t\t}\n\n\t\tif !hostOrIP.MatchString(host) {\n\t\t\treturn fmt.Errorf(\"invalid value for \\\"HostSNI\\\" matcher, %q is not a valid hostname or IP\", host)\n\t\t}\n\n\t\thosts[i] = strings.ToLower(host)\n\t}\n\n\ttree.matcher = func(meta ConnData) bool {\n\n\t\tif hosts[0] == \"*\" {\n\t\t\treturn true\n\t\t}\n\n\t\tif meta.serverName == \"\" {\n\t\t\treturn false\n\t\t}\n\n\t\tfor _, host := range hosts {\n\t\t\tif host == \"*\" {\n\t\t\t\treturn true\n\t\t\t}\n\n\t\t\tif host == meta.serverName {\n\t\t\t\treturn true\n\t\t\t}\n\n\t\t\thost = strings.TrimSuffix(host, \".\")\n\t\t\tif host == meta.serverName {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn nil\n}",
+    "funcname": "hostSNIV2"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 382,
+    "focalfunc": "func (p *nopPage) Prev() Page",
+    "funcbody": "func (p *nopPage) Prev() Page {\n\treturn nil\n}",
+    "funcname": "Prev"
+}

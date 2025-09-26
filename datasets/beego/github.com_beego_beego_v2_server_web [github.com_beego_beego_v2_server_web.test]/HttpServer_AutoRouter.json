@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 489,
+    "focalfunc": "func (app *HttpServer) AutoRouter(c ControllerInterface) *HttpServer",
+    "funcbody": "func (app *HttpServer) AutoRouter(c ControllerInterface) *HttpServer {\n\tapp.Handlers.AddAuto(c)\n\treturn app\n}",
+    "funcname": "AutoRouter"
+}

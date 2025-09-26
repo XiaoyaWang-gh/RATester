@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 271,
+    "focalfunc": "func (fi *dirNameOnlyFileInfo) ModTime() time.Time",
+    "funcbody": "func (fi *dirNameOnlyFileInfo) ModTime() time.Time {\n\treturn fi.modTime\n}",
+    "funcname": "ModTime"
+}

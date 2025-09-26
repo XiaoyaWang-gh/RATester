@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 126,
+    "focalfunc": "func (t *templateExecHelper) GetMethod(ctx context.Context, tmpl texttemplate.Preparer, receiver reflect.Value, name string) (method reflect.Value, firstArg reflect.Value)",
+    "funcbody": "func (t *templateExecHelper) GetMethod(ctx context.Context, tmpl texttemplate.Preparer, receiver reflect.Value, name string) (method reflect.Value, firstArg reflect.Value) {\n\tif strings.EqualFold(name, \"mainsections\") && receiver.Type() == typeParams && receiver.Pointer() == t.siteParams.Pointer() {\n\n\t\treceiver = t.site\n\t\tname = \"MainSections\"\n\t}\n\n\tif t.watching {\n\t\tctx = t.trackDependencies(ctx, tmpl, name, receiver)\n\t}\n\n\tfn := hreflect.GetMethodByName(receiver, name)\n\tif !fn.IsValid() {\n\t\treturn zero, zero\n\t}\n\n\tif fn.Type().NumIn() > 0 {\n\t\tfirst := fn.Type().In(0)\n\t\tif hreflect.IsContextType(first) {\n\n\t\t\treturn fn, reflect.ValueOf(ctx)\n\t\t}\n\t}\n\n\treturn fn, zero\n}",
+    "funcname": "GetMethod"
+}

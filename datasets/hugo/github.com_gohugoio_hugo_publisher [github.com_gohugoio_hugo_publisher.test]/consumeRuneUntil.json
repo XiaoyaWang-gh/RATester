@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 199,
+    "focalfunc": "func (w *htmlElementsCollectorWriter) consumeRuneUntil(condition func(r rune) bool, resolve htmlCollectorStateFunc) htmlCollectorStateFunc",
+    "funcbody": "func (w *htmlElementsCollectorWriter) consumeRuneUntil(condition func(r rune) bool, resolve htmlCollectorStateFunc) htmlCollectorStateFunc {\n\tvar s htmlCollectorStateFunc\n\ts = func(*htmlElementsCollectorWriter) htmlCollectorStateFunc {\n\t\tif condition(w.r) {\n\t\t\treturn resolve\n\t\t}\n\t\treturn s\n\t}\n\treturn s\n}",
+    "funcname": "consumeRuneUntil"
+}

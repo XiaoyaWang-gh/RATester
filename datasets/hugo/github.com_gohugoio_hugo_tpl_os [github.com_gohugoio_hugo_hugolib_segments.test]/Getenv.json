@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/os/os.go",
+    "lineno": 63,
+    "focalfunc": "func (ns *Namespace) Getenv(key any) (string, error)",
+    "funcbody": "func (ns *Namespace) Getenv(key any) (string, error) {\n\tskey, err := cast.ToStringE(key)\n\tif err != nil {\n\t\treturn \"\", nil\n\t}\n\n\tif err = ns.deps.ExecHelper.Sec().CheckAllowedGetEnv(skey); err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn _os.Getenv(skey), nil\n}",
+    "funcname": "Getenv"
+}

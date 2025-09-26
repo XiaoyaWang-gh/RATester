@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 359,
+    "focalfunc": "func (c *Context) GetDuration(key string) (d time.Duration)",
+    "funcbody": "func (c *Context) GetDuration(key string) (d time.Duration) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\td, _ = val.(time.Duration)\n\t}\n\treturn\n}",
+    "funcname": "GetDuration"
+}

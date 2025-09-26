@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 249,
+    "focalfunc": "func (r *Request) Cookie(key string) string",
+    "funcbody": "func (r *Request) Cookie(key string) string {\n\tif val, ok := (*r.cookies)[key]; ok {\n\t\treturn val\n\t}\n\treturn \"\"\n}",
+    "funcname": "Cookie"
+}

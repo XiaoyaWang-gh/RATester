@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 420,
+    "focalfunc": "func (r *NodeShiftTree[T]) shift(t T, exact bool) (T, bool, DimensionFlag)",
+    "funcbody": "func (r *NodeShiftTree[T]) shift(t T, exact bool) (T, bool, DimensionFlag) {\n\treturn r.shifter.Shift(t, r.dims, exact)\n}",
+    "funcname": "shift"
+}

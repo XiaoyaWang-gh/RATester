@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 55,
+    "focalfunc": "func (*Config) ParseData(data []byte) (config.Configer, error)",
+    "funcbody": "func (*Config) ParseData(data []byte) (config.Configer, error) {\n\tcnf, err := parseYML(data)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &ConfigContainer{\n\t\tdata: cnf,\n\t}, nil\n}",
+    "funcname": "ParseData"
+}

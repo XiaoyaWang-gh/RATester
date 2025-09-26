@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/css/css.go",
+    "lineno": 153,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tf := func(d *deps.Deps) *internal.TemplateFuncsNamespace {\n\t\tscssClient, err := scss.New(d.BaseFs.Assets, d.ResourceSpec)\n\t\tif err != nil {\n\t\t\tpanic(err)\n\t\t}\n\t\tctx := &Namespace{\n\t\t\td:\t\t\td,\n\t\t\tscssClientLibSass:\tscssClient,\n\t\t\tpostcssClient:\t\tcssjs.NewPostCSSClient(d.ResourceSpec),\n\t\t\ttailwindcssClient:\tcssjs.NewTailwindCSSClient(d.ResourceSpec),\n\t\t\tbabelClient:\t\tbabel.New(d.ResourceSpec),\n\t\t}\n\n\t\tns := &internal.TemplateFuncsNamespace{\n\t\t\tName:\t\tname,\n\t\t\tContext:\tfunc(cctx context.Context, args ...any) (any, error) { return ctx, nil },\n\t\t}\n\n\t\tns.AddMethodMapping(ctx.Sass,\n\t\t\t[]string{\"toCSS\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\tns.AddMethodMapping(ctx.PostCSS,\n\t\t\t[]string{\"postCSS\"},\n\t\t\t[][2]string{},\n\t\t)\n\n\t\treturn ns\n\t}\n\n\tinternal.AddTemplateFuncsNamespace(f)\n}",
+    "funcname": "init"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1059,
+    "focalfunc": "func (c *Context) ProtoBuf(code int, obj any)",
+    "funcbody": "func (c *Context) ProtoBuf(code int, obj any) {\n\tc.Render(code, render.ProtoBuf{Data: obj})\n}",
+    "funcname": "ProtoBuf"
+}

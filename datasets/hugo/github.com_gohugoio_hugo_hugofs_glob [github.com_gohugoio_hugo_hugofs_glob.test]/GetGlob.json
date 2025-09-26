@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 125,
+    "focalfunc": "func GetGlob(pattern string) (glob.Glob, error)",
+    "funcbody": "func GetGlob(pattern string) (glob.Glob, error) {\n\treturn defaultGlobCache.GetGlob(pattern)\n}",
+    "funcname": "GetGlob"
+}

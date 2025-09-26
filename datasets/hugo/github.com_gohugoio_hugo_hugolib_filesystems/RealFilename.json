@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 413,
+    "focalfunc": "func (d *SourceFilesystem) RealFilename(rel string) string",
+    "funcbody": "func (d *SourceFilesystem) RealFilename(rel string) string {\n\tfi, err := d.Fs.Stat(rel)\n\tif err != nil {\n\t\treturn rel\n\t}\n\tif realfi, ok := fi.(hugofs.FileMetaInfo); ok {\n\t\treturn realfi.Meta().Filename\n\t}\n\n\treturn rel\n}",
+    "funcname": "RealFilename"
+}

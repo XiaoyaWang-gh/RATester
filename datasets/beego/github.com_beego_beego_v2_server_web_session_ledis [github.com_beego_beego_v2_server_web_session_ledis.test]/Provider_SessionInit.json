@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 102,
+    "focalfunc": "func (lp *Provider) SessionInit(ctx context.Context, maxlifetime int64, cfgStr string) error",
+    "funcbody": "func (lp *Provider) SessionInit(ctx context.Context, maxlifetime int64, cfgStr string) error {\n\tvar err error\n\tlp.maxlifetime = maxlifetime\n\tcfgStr = strings.TrimSpace(cfgStr)\n\n\tif strings.HasPrefix(cfgStr, \"{\") {\n\t\terr = json.Unmarshal([]byte(cfgStr), lp)\n\t} else {\n\t\terr = lp.initOldStyle(cfgStr)\n\t}\n\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tcfg := new(config.Config)\n\tcfg.DataDir = lp.SavePath\n\n\tvar ledisInstance *ledis.Ledis\n\tledisInstance, err = ledis.Open(cfg)\n\tif err != nil {\n\t\treturn err\n\t}\n\tc, err = ledisInstance.Select(lp.Db)\n\treturn err\n}",
+    "funcname": "SessionInit"
+}

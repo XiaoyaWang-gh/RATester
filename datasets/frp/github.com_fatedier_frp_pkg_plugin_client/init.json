@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/unix_domain_socket.go",
+    "lineno": 30,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tRegister(v1.PluginUnixDomainSocket, NewUnixDomainSocketPlugin)\n}",
+    "funcname": "init"
+}

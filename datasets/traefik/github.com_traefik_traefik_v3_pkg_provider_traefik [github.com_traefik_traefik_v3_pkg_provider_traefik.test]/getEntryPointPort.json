@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/traefik/internal.go",
+    "lineno": 181,
+    "focalfunc": "func (i *Provider) getEntryPointPort(name string, def *static.Redirections) (string, error)",
+    "funcbody": "func (i *Provider) getEntryPointPort(name string, def *static.Redirections) (string, error) {\n\tdst, ok := i.staticCfg.EntryPoints[def.EntryPoint.To]\n\tif !ok {\n\t\treturn \"\", fmt.Errorf(\"'to' entry point field references a non-existing entry point: %s\", def.EntryPoint.To)\n\t}\n\n\t_, port, err := net.SplitHostPort(dst.GetAddress())\n\tif err != nil {\n\t\treturn \"\", fmt.Errorf(\"invalid entry point %q address %q: %w\",\n\t\t\tname, i.staticCfg.EntryPoints[def.EntryPoint.To].Address, err)\n\t}\n\n\treturn port, nil\n}",
+    "funcname": "getEntryPointPort"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 517,
+    "focalfunc": "func (p *Path) Identifiers() []string",
+    "funcbody": "func (p *Path) Identifiers() []string {\n\tids := make([]string, len(p.identifiers))\n\tfor i, id := range p.identifiers {\n\t\tids[i] = p.s[id.Low:id.High]\n\t}\n\treturn ids\n}",
+    "funcname": "Identifiers"
+}

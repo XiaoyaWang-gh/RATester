@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/limit/writer.go",
+    "lineno": 29,
+    "focalfunc": "func NewWriter(w io.Writer, limiter *rate.Limiter) *Writer",
+    "funcbody": "func NewWriter(w io.Writer, limiter *rate.Limiter) *Writer {\n\treturn &Writer{\n\t\tw:\t\tw,\n\t\tlimiter:\tlimiter,\n\t}\n}",
+    "funcname": "NewWriter"
+}

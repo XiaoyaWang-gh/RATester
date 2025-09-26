@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 234,
+    "focalfunc": "func (f *filterOrmDecorator) QueryTableWithCtx(_ context.Context, ptrStructOrTableName interface{}) QuerySeter",
+    "funcbody": "func (f *filterOrmDecorator) QueryTableWithCtx(_ context.Context, ptrStructOrTableName interface{}) QuerySeter {\n\tlogs.Warn(\"QueryTableWithCtx is DEPRECATED. Use methods with `WithCtx`on QuerySeter suffix as replacement.\")\n\treturn f.QueryTable(ptrStructOrTableName)\n}",
+    "funcname": "QueryTableWithCtx"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 102,
+    "focalfunc": "func (e *BooleanField) RawValue() interface{}",
+    "funcbody": "func (e *BooleanField) RawValue() interface{} {\n\treturn e.Value()\n}",
+    "funcname": "RawValue"
+}

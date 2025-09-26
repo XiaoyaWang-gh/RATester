@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 709,
+    "focalfunc": "func Delete(rootpath string, f HandleFunc) *HttpServer",
+    "funcbody": "func Delete(rootpath string, f HandleFunc) *HttpServer {\n\treturn BeeApp.Delete(rootpath, f)\n}",
+    "funcname": "Delete"
+}

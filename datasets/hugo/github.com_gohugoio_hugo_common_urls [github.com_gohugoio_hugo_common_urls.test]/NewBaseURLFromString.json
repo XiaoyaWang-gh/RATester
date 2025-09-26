@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/urls/baseURL.go",
+    "lineno": 91,
+    "focalfunc": "func NewBaseURLFromString(b string) (BaseURL, error)",
+    "funcbody": "func NewBaseURLFromString(b string) (BaseURL, error) {\n\tu, err := url.Parse(b)\n\tif err != nil {\n\t\treturn BaseURL{}, err\n\t}\n\treturn newBaseURLFromURL(u)\n}",
+    "funcname": "NewBaseURLFromString"
+}

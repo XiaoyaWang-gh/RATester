@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/pre_define_code.go",
+    "lineno": 50,
+    "focalfunc": "func codeBlock(lan string, code string) string",
+    "funcbody": "func codeBlock(lan string, code string) string {\n\treturn fmt.Sprintf(\"```%s\\n%s\\n```\", lan, code)\n}",
+    "funcname": "codeBlock"
+}

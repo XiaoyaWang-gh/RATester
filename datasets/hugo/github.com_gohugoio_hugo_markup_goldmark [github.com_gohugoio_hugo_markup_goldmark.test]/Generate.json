@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/autoid.go",
+    "lineno": 104,
+    "focalfunc": "func (ids *idFactory) Generate(value []byte, kind ast.NodeKind) []byte",
+    "funcbody": "func (ids *idFactory) Generate(value []byte, kind ast.NodeKind) []byte {\n\treturn sanitizeAnchorNameWithHook(value, ids.idType, func(buf *bytes.Buffer) {\n\t\tif buf.Len() == 0 {\n\t\t\tif kind == ast.KindHeading {\n\t\t\t\tbuf.WriteString(\"heading\")\n\t\t\t} else {\n\t\t\t\tbuf.WriteString(\"id\")\n\t\t\t}\n\t\t}\n\n\t\tif _, found := ids.vals[util.BytesToReadOnlyString(buf.Bytes())]; found {\n\n\t\t\tbuf.WriteRune('-')\n\t\t\tpos := buf.Len()\n\t\t\tfor i := 1; ; i++ {\n\t\t\t\tbuf.WriteString(strconv.Itoa(i))\n\t\t\t\tif _, found := ids.vals[util.BytesToReadOnlyString(buf.Bytes())]; !found {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t\tbuf.Truncate(pos)\n\t\t\t}\n\t\t}\n\n\t\tids.vals[buf.String()] = struct{}{}\n\t})\n}",
+    "funcname": "Generate"
+}

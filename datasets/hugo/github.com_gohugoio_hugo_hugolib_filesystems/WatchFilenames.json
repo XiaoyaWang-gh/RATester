@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 105,
+    "focalfunc": "func (b *BaseFs) WatchFilenames() []string",
+    "funcbody": "func (b *BaseFs) WatchFilenames() []string {\n\tvar filenames []string\n\tsourceFs := b.SourceFs\n\n\tfor _, rfs := range b.RootFss {\n\t\tfor _, component := range files.ComponentFolders {\n\t\t\tfis, err := rfs.Mounts(component)\n\t\t\tif err != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tfor _, fim := range fis {\n\t\t\t\tmeta := fim.Meta()\n\t\t\t\tif !meta.Watch {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\n\t\t\t\tif !fim.IsDir() {\n\t\t\t\t\tfilenames = append(filenames, meta.Filename)\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\n\t\t\t\tw := hugofs.NewWalkway(hugofs.WalkwayConfig{\n\t\t\t\t\tFs:\tsourceFs,\n\t\t\t\t\tRoot:\tmeta.Filename,\n\t\t\t\t\tWalkFn: func(path string, fi hugofs.FileMetaInfo) error {\n\t\t\t\t\t\tif !fi.IsDir() {\n\t\t\t\t\t\t\treturn nil\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif fi.Name() == \".git\" ||\n\t\t\t\t\t\t\tfi.Name() == \"node_modules\" || fi.Name() == \"bower_components\" {\n\t\t\t\t\t\t\treturn filepath.SkipDir\n\t\t\t\t\t\t}\n\t\t\t\t\t\tfilenames = append(filenames, fi.Meta().Filename)\n\t\t\t\t\t\treturn nil\n\t\t\t\t\t},\n\t\t\t\t})\n\n\t\t\t\tw.Walk()\n\t\t\t}\n\n\t\t}\n\t}\n\n\treturn filenames\n}",
+    "funcname": "WatchFilenames"
+}

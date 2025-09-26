@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 112,
+    "focalfunc": "func (c *JSONConfigContainer) OnChange(key string, fn func(value string))",
+    "funcbody": "func (c *JSONConfigContainer) OnChange(key string, fn func(value string)) {\n\tlogs.Warn(\"unsupported operation\")\n}",
+    "funcname": "OnChange"
+}

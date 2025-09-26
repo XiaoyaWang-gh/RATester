@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 366,
+    "focalfunc": "func (p *nopPage) PathInfo() *paths.Path",
+    "funcbody": "func (p *nopPage) PathInfo() *paths.Path {\n\treturn noOpPathInfo\n}",
+    "funcname": "PathInfo"
+}

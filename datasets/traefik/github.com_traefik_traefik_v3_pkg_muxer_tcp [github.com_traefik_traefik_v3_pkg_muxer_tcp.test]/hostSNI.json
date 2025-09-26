@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/matcher.go",
+    "lineno": 73,
+    "focalfunc": "func hostSNI(tree *matchersTree, hosts ...string) error",
+    "funcbody": "func hostSNI(tree *matchersTree, hosts ...string) error {\n\thost := hosts[0]\n\n\tif host == \"*\" {\n\n\t\ttree.matcher = func(meta ConnData) bool { return true }\n\t\treturn nil\n\t}\n\n\tif !hostOrIP.MatchString(host) {\n\t\treturn fmt.Errorf(\"invalid value for HostSNI matcher, %q is not a valid hostname\", host)\n\t}\n\n\ttree.matcher = func(meta ConnData) bool {\n\t\tif meta.serverName == \"\" {\n\t\t\treturn false\n\t\t}\n\n\t\tif host == meta.serverName {\n\t\t\treturn true\n\t\t}\n\n\t\thost = strings.TrimSuffix(host, \".\")\n\n\t\treturn host == meta.serverName\n\t}\n\n\treturn nil\n}",
+    "funcname": "hostSNI"
+}

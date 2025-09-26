@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/json/json.go",
+    "lineno": 279,
+    "focalfunc": "func (c *JSONConfigContainer) getData(key string) interface{}",
+    "funcbody": "func (c *JSONConfigContainer) getData(key string) interface{} {\n\tif len(key) == 0 {\n\t\treturn nil\n\t}\n\n\tc.RLock()\n\tdefer c.RUnlock()\n\n\tsectionKeys := strings.Split(key, \"::\")\n\tif len(sectionKeys) >= 2 {\n\t\tcurValue, ok := c.data[sectionKeys[0]]\n\t\tif !ok {\n\t\t\treturn nil\n\t\t}\n\t\tfor _, key := range sectionKeys[1:] {\n\t\t\tif v, ok := curValue.(map[string]interface{}); ok {\n\t\t\t\tif curValue, ok = v[key]; !ok {\n\t\t\t\t\treturn nil\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn curValue\n\t}\n\tif v, ok := c.data[key]; ok {\n\t\treturn v\n\t}\n\treturn nil\n}",
+    "funcname": "getData"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 160,
+    "focalfunc": "func (w *htmlElementsCollectorWriter) Write(p []byte) (int, error)",
+    "funcbody": "func (w *htmlElementsCollectorWriter) Write(p []byte) (int, error) {\n\tif p == nil {\n\t\treturn 0, nil\n\t}\n\n\tw.input = p\n\n\tfor {\n\t\tw.r = w.next()\n\t\tif w.r == eof || w.r == utf8.RuneError {\n\t\t\tbreak\n\t\t}\n\t\tw.state = w.state(w)\n\t}\n\n\tw.pos = 0\n\tw.input = nil\n\n\treturn len(p), nil\n}",
+    "funcname": "Write"
+}

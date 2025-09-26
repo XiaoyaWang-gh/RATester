@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer_shortcode.go",
+    "lineno": 299,
+    "focalfunc": "func lexInsideShortcode(l *pageLexer) stateFunc",
+    "funcbody": "func lexInsideShortcode(l *pageLexer) stateFunc {\n\tif l.hasPrefix(l.currentRightShortcodeDelim()) {\n\t\treturn lexShortcodeRightDelim\n\t}\n\tswitch r := l.next(); {\n\tcase r == eof:\n\n\t\treturn l.errorf(\"unclosed shortcode action\")\n\tcase isSpace(r), isEndOfLine(r):\n\t\tl.ignore()\n\tcase r == '=':\n\t\tl.consumeSpace()\n\t\tl.ignore()\n\t\tpeek := l.peek()\n\t\tif peek == '\"' || peek == '\\\\' {\n\t\t\treturn lexShortcodeQuotedParamVal(l, peek != '\\\\', tScParamVal)\n\t\t} else if peek == '`' {\n\t\t\treturn lexShortCodeParamRawStringVal(l, tScParamVal)\n\t\t}\n\t\treturn lexShortcodeParamVal\n\tcase r == '/':\n\t\tif l.currShortcodeName == \"\" {\n\t\t\treturn l.errorf(\"got closing shortcode, but none is open\")\n\t\t}\n\t\tl.closingState++\n\t\tl.isInline = false\n\t\tl.emit(tScClose)\n\tcase r == '\\\\':\n\t\tl.ignore()\n\t\tif l.peek() == '\"' || l.peek() == '`' {\n\t\t\treturn lexShortcodeParam(l, true)\n\t\t}\n\tcase l.elementStepNum > 0 && (isAlphaNumericOrHyphen(r) || r == '\"' || r == '`'):\n\t\tl.backup()\n\t\treturn lexShortcodeParam(l, false)\n\tcase isAlphaNumeric(r):\n\t\tl.backup()\n\t\treturn lexIdentifierInShortcode\n\tdefault:\n\t\treturn l.errorf(\"unrecognized character in shortcode action: %#U. Note: Parameters with non-alphanumeric args must be quoted\", r)\n\t}\n\treturn lexInsideShortcode\n}",
+    "funcname": "lexInsideShortcode"
+}

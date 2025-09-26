@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 171,
+    "focalfunc": "func sanitizeName(n string) string",
+    "funcbody": "func sanitizeName(n string) string {\n\treturn cookieNameSanitizer.Replace(n)\n}",
+    "funcname": "sanitizeName"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 255,
+    "focalfunc": "func slice(item reflect.Value, indexes ...reflect.Value) (reflect.Value, error)",
+    "funcbody": "func slice(item reflect.Value, indexes ...reflect.Value) (reflect.Value, error) {\n\titem = indirectInterface(item)\n\tif !item.IsValid() {\n\t\treturn reflect.Value{}, fmt.Errorf(\"slice of untyped nil\")\n\t}\n\tif len(indexes) > 3 {\n\t\treturn reflect.Value{}, fmt.Errorf(\"too many slice indexes: %d\", len(indexes))\n\t}\n\tvar cap int\n\tswitch item.Kind() {\n\tcase reflect.String:\n\t\tif len(indexes) == 3 {\n\t\t\treturn reflect.Value{}, fmt.Errorf(\"cannot 3-index slice a string\")\n\t\t}\n\t\tcap = item.Len()\n\tcase reflect.Array, reflect.Slice:\n\t\tcap = item.Cap()\n\tdefault:\n\t\treturn reflect.Value{}, fmt.Errorf(\"can't slice item of type %s\", item.Type())\n\t}\n\n\tidx := [3]int{0, item.Len()}\n\tfor i, index := range indexes {\n\t\tx, err := indexArg(index, cap)\n\t\tif err != nil {\n\t\t\treturn reflect.Value{}, err\n\t\t}\n\t\tidx[i] = x\n\t}\n\n\tif idx[0] > idx[1] {\n\t\treturn reflect.Value{}, fmt.Errorf(\"invalid slice index: %d > %d\", idx[0], idx[1])\n\t}\n\tif len(indexes) < 3 {\n\t\treturn item.Slice(idx[0], idx[1]), nil\n\t}\n\n\tif idx[1] > idx[2] {\n\t\treturn reflect.Value{}, fmt.Errorf(\"invalid slice index: %d > %d\", idx[1], idx[2])\n\t}\n\treturn item.Slice3(idx[0], idx[1], idx[2]), nil\n}",
+    "funcname": "slice"
+}

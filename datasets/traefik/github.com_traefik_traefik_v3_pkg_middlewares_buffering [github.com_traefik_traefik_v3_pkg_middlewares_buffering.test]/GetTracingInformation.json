@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/buffering/buffering.go",
+    "lineno": 51,
+    "focalfunc": "func (b *buffer) GetTracingInformation() (string, string, trace.SpanKind)",
+    "funcbody": "func (b *buffer) GetTracingInformation() (string, string, trace.SpanKind) {\n\treturn b.name, typeName, trace.SpanKindInternal\n}",
+    "funcname": "GetTracingInformation"
+}

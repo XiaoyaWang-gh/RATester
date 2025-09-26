@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/opentelemetry/opentelemetry.go",
+    "lineno": 90,
+    "focalfunc": "func (c *Config) setupHTTPExporter() (*otlptrace.Exporter, error)",
+    "funcbody": "func (c *Config) setupHTTPExporter() (*otlptrace.Exporter, error) {\n\tendpoint, err := url.Parse(c.HTTP.Endpoint)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"invalid collector endpoint %q: %w\", c.HTTP.Endpoint, err)\n\t}\n\n\topts := []otlptracehttp.Option{\n\t\totlptracehttp.WithEndpoint(endpoint.Host),\n\t\totlptracehttp.WithHeaders(c.HTTP.Headers),\n\t\totlptracehttp.WithCompression(otlptracehttp.GzipCompression),\n\t}\n\n\tif endpoint.Scheme == \"http\" {\n\t\topts = append(opts, otlptracehttp.WithInsecure())\n\t}\n\n\tif endpoint.Path != \"\" {\n\t\topts = append(opts, otlptracehttp.WithURLPath(endpoint.Path))\n\t}\n\n\tif c.HTTP.TLS != nil {\n\t\ttlsConfig, err := c.HTTP.TLS.CreateTLSConfig(context.Background())\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"creating TLS client config: %w\", err)\n\t\t}\n\n\t\topts = append(opts, otlptracehttp.WithTLSClientConfig(tlsConfig))\n\t}\n\n\treturn otlptrace.New(context.Background(), otlptracehttp.NewClient(opts...))\n}",
+    "funcname": "setupHTTPExporter"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/crypto/crypto.go",
+    "lineno": 87,
+    "focalfunc": "func (ns *Namespace) HMAC(h any, k any, m any, e ...any) (string, error)",
+    "funcbody": "func (ns *Namespace) HMAC(h any, k any, m any, e ...any) (string, error) {\n\tha, err := cast.ToStringE(h)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tvar hash func() hash.Hash\n\tswitch ha {\n\tcase \"md5\":\n\t\thash = md5.New\n\tcase \"sha1\":\n\t\thash = sha1.New\n\tcase \"sha256\":\n\t\thash = sha256.New\n\tcase \"sha512\":\n\t\thash = sha512.New\n\tdefault:\n\t\treturn \"\", fmt.Errorf(\"hmac: %s is not a supported hash function\", ha)\n\t}\n\n\tmsg, err := cast.ToStringE(m)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tkey, err := cast.ToStringE(k)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tmac := hmac.New(hash, []byte(key))\n\t_, err = mac.Write([]byte(msg))\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tencoding := \"hex\"\n\tif len(e) > 0 && e[0] != nil {\n\t\tencoding, err = cast.ToStringE(e[0])\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\tswitch encoding {\n\tcase \"binary\":\n\t\treturn string(mac.Sum(nil)[:]), nil\n\tcase \"hex\":\n\t\treturn hex.EncodeToString(mac.Sum(nil)[:]), nil\n\tdefault:\n\t\treturn \"\", fmt.Errorf(\"%q is not a supported encoding method\", encoding)\n\t}\n}",
+    "funcname": "HMAC"
+}

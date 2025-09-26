@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/append.go",
+    "lineno": 31,
+    "focalfunc": "func (ns *Namespace) Append(args ...any) (any, error)",
+    "funcbody": "func (ns *Namespace) Append(args ...any) (any, error) {\n\tif len(args) < 2 {\n\t\treturn nil, errors.New(\"need at least 2 arguments to append\")\n\t}\n\n\tto := args[len(args)-1]\n\tfrom := args[:len(args)-1]\n\n\treturn collections.Append(to, from...)\n}",
+    "funcname": "Append"
+}

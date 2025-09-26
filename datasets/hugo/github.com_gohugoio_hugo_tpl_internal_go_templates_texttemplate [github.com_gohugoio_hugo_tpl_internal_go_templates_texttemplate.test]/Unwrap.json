@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 130,
+    "focalfunc": "func (e ExecError) Unwrap() error",
+    "funcbody": "func (e ExecError) Unwrap() error {\n\treturn e.Err\n}",
+    "funcname": "Unwrap"
+}

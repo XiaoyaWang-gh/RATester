@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 16,
+    "focalfunc": "func NewDecoder() *Decoder",
+    "funcbody": "func NewDecoder() *Decoder {\n\treturn &Decoder{cache: newCache()}\n}",
+    "funcname": "NewDecoder"
+}

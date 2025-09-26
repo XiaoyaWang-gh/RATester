@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/template.go",
+    "lineno": 484,
+    "focalfunc": "func IsTrue(val any) (truth, ok bool)",
+    "funcbody": "func IsTrue(val any) (truth, ok bool) {\n\treturn template.IsTrue(val)\n}",
+    "funcname": "IsTrue"
+}

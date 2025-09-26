@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 291,
+    "focalfunc": "func (s *DbUtils) GetClientIdByVkey(vkey string) (id int, err error)",
+    "funcbody": "func (s *DbUtils) GetClientIdByVkey(vkey string) (id int, err error) {\n\tvar exist bool\n\ts.JsonDb.Clients.Range(func(key, value interface{}) bool {\n\t\tv := value.(*Client)\n\t\tif crypt.Md5(v.VerifyKey) == vkey {\n\t\t\texist = true\n\t\t\tid = v.Id\n\t\t\treturn false\n\t\t}\n\t\treturn true\n\t})\n\tif exist {\n\t\treturn\n\t}\n\terr = errors.New(\"\u672a\u627e\u5230\u5ba2\u6237\u7aef\")\n\treturn\n}",
+    "funcname": "GetClientIdByVkey"
+}

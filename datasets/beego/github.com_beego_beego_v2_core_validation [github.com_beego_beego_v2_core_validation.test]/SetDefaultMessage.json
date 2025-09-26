@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 89,
+    "focalfunc": "func SetDefaultMessage(msg map[string]string)",
+    "funcbody": "func SetDefaultMessage(msg map[string]string) {\n\tif len(msg) == 0 {\n\t\treturn\n\t}\n\n\tonce.Do(func() {\n\t\tfor name := range msg {\n\t\t\tMessageTmpls[name] = msg[name]\n\t\t}\n\t})\n\tlogs.Warn(`you must SetDefaultMessage at once`)\n}",
+    "funcname": "SetDefaultMessage"
+}

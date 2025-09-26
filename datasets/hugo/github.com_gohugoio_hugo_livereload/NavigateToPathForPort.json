@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 119,
+    "focalfunc": "func NavigateToPathForPort(path string, port int)",
+    "funcbody": "func NavigateToPathForPort(path string, port int) {\n\trefreshPathForPort(hugoNavigatePrefix+path, port)\n}",
+    "funcname": "NavigateToPathForPort"
+}

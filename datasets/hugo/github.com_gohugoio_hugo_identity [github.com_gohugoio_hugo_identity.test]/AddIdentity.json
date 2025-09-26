@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/identity.go",
+    "lineno": 380,
+    "focalfunc": "func (m *nopManager) AddIdentity(ids ...Identity)",
+    "funcbody": "func (m *nopManager) AddIdentity(ids ...Identity) {\n}",
+    "funcname": "AddIdentity"
+}

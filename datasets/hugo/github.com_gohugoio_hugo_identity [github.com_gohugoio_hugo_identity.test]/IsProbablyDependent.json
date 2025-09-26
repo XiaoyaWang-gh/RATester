@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/predicate_identity.go",
+    "lineno": 72,
+    "focalfunc": "func (id *predicateIdentity) IsProbablyDependent(other Identity) bool",
+    "funcbody": "func (id *predicateIdentity) IsProbablyDependent(other Identity) bool {\n\treturn id.probablyDependent(other)\n}",
+    "funcname": "IsProbablyDependent"
+}

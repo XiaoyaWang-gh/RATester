@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 320,
+    "focalfunc": "func (c *ConfigContainer) getData(key string) (interface{}, error)",
+    "funcbody": "func (c *ConfigContainer) getData(key string) (interface{}, error) {\n\tif key == \"\" {\n\t\treturn nil, errors.New(\"key is empty\")\n\t}\n\tc.RLock()\n\tdefer c.RUnlock()\n\n\tkeys := strings.Split(key, \".\")\n\ttmpData := c.data\n\tfor idx, k := range keys {\n\t\tif v, ok := tmpData[k]; ok {\n\t\t\tswitch val := v.(type) {\n\t\t\tcase map[string]interface{}:\n\t\t\t\ttmpData = val\n\t\t\t\tif idx == len(keys)-1 {\n\t\t\t\t\treturn tmpData, nil\n\t\t\t\t}\n\t\t\tdefault:\n\t\t\t\treturn v, nil\n\t\t\t}\n\t\t}\n\t}\n\treturn nil, fmt.Errorf(\"not exist key %q\", key)\n}",
+    "funcname": "getData"
+}

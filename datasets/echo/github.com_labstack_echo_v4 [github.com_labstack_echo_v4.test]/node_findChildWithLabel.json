@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 440,
+    "focalfunc": "func (n *node) findChildWithLabel(l byte) *node",
+    "funcbody": "func (n *node) findChildWithLabel(l byte) *node {\n\tif c := n.findStaticChild(l); c != nil {\n\t\treturn c\n\t}\n\tif l == paramLabel {\n\t\treturn n.paramChild\n\t}\n\tif l == anyLabel {\n\t\treturn n.anyChild\n\t}\n\treturn nil\n}",
+    "funcname": "findChildWithLabel"
+}

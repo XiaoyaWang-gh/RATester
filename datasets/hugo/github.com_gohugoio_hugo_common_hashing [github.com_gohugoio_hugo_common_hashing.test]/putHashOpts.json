@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hashing/hashing.go",
+    "lineno": 85,
+    "focalfunc": "func putHashOpts(opts *hashstructure.HashOptions)",
+    "funcbody": "func putHashOpts(opts *hashstructure.HashOptions) {\n\topts.Hasher.Reset()\n\thashOptsPool.Put(opts)\n}",
+    "funcname": "putHashOpts"
+}

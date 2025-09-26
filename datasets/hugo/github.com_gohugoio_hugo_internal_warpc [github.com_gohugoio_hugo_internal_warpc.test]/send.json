@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 175,
+    "focalfunc": "func (d *dispatcher[Q, R]) send(call *call[Q, R]) error",
+    "funcbody": "func (d *dispatcher[Q, R]) send(call *call[Q, R]) error {\n\td.mu.RLock()\n\tif d.closing || d.shutdown {\n\t\td.mu.RUnlock()\n\t\treturn ErrShutdown\n\t}\n\td.mu.RUnlock()\n\n\td.encMu.Lock()\n\tdefer d.encMu.Unlock()\n\terr := d.inOut.enc.Encode(call.request)\n\tif err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "send"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 267,
+    "focalfunc": "func (c *templateContext) applyTransformationsToNodes(nodes ...parse.Node)",
+    "funcbody": "func (c *templateContext) applyTransformationsToNodes(nodes ...parse.Node) {\n\tfor _, node := range nodes {\n\t\tc.applyTransformations(node)\n\t}\n}",
+    "funcname": "applyTransformationsToNodes"
+}

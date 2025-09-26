@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/watcher/filenotify/filenotify.go",
+    "lineno": 33,
+    "focalfunc": "func NewPollingWatcher(interval time.Duration) FileWatcher",
+    "funcbody": "func NewPollingWatcher(interval time.Duration) FileWatcher {\n\treturn &filePoller{\n\t\tinterval:\tinterval,\n\t\tdone:\t\tmake(chan struct{}),\n\t\tevents:\t\tmake(chan fsnotify.Event),\n\t\terrors:\t\tmake(chan error),\n\t}\n}",
+    "funcname": "NewPollingWatcher"
+}

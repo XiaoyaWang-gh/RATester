@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/decoder.go",
+    "lineno": 41,
+    "focalfunc": "func (d *Decoder) ZeroEmpty(z bool)",
+    "funcbody": "func (d *Decoder) ZeroEmpty(z bool) {\n\td.zeroEmpty = z\n}",
+    "funcname": "ZeroEmpty"
+}

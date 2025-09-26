@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 73,
+    "focalfunc": "func (c ConfigLanguage) IsMultihost() bool",
+    "funcbody": "func (c ConfigLanguage) IsMultihost() bool {\n\tif len(c.m.Languages)-len(c.config.C.DisabledLanguages) <= 1 {\n\t\treturn false\n\t}\n\treturn c.m.IsMultihost\n}",
+    "funcname": "IsMultihost"
+}

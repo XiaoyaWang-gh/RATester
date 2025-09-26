@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 692,
+    "focalfunc": "func (t *Tree) command() *CommandNode",
+    "funcbody": "func (t *Tree) command() *CommandNode {\n\tcmd := t.newCommand(t.peekNonSpace().pos)\n\tfor {\n\t\tt.peekNonSpace()\n\t\toperand := t.operand()\n\t\tif operand != nil {\n\t\t\tcmd.append(operand)\n\t\t}\n\t\tswitch token := t.next(); token.typ {\n\t\tcase itemSpace:\n\t\t\tcontinue\n\t\tcase itemRightDelim, itemRightParen:\n\t\t\tt.backup()\n\t\tcase itemPipe:\n\n\t\tdefault:\n\t\t\tt.unexpected(token, \"operand\")\n\t\t}\n\t\tbreak\n\t}\n\tif len(cmd.Args) == 0 {\n\t\tt.errorf(\"empty command\")\n\t}\n\treturn cmd\n}",
+    "funcname": "command"
+}

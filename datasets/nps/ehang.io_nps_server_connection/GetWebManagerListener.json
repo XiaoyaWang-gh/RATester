@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/connection/connection.go",
+    "lineno": 66,
+    "focalfunc": "func GetWebManagerListener() (net.Listener, error)",
+    "funcbody": "func GetWebManagerListener() (net.Listener, error) {\n\tif pMux != nil && webPort == bridgePort {\n\t\tlogs.Info(\"Web management start, access port is\", bridgePort)\n\t\treturn pMux.GetManagerListener(), nil\n\t}\n\tlogs.Info(\"web management start, access port is\", webPort)\n\treturn getTcpListener(beego.AppConfig.String(\"web_ip\"), webPort)\n}",
+    "funcname": "GetWebManagerListener"
+}

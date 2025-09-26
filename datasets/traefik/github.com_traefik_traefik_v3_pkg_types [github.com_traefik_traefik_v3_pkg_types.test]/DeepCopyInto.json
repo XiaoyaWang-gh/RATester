@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/zz_generated.deepcopy.go",
+    "lineno": 49,
+    "focalfunc": "func (in *Domain) DeepCopyInto(out *Domain)",
+    "funcbody": "func (in *Domain) DeepCopyInto(out *Domain) {\n\t*out = *in\n\tif in.SANs != nil {\n\t\tin, out := &in.SANs, &out.SANs\n\t\t*out = make([]string, len(*in))\n\t\tcopy(*out, *in)\n\t}\n\treturn\n}",
+    "funcname": "DeepCopyInto"
+}

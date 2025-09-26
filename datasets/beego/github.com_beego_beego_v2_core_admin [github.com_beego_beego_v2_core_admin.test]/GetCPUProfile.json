@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 82,
+    "focalfunc": "func GetCPUProfile(w io.Writer)",
+    "funcbody": "func GetCPUProfile(w io.Writer) {\n\tsec := 30\n\tfilename := \"cpu-\" + strconv.Itoa(pid) + \".pprof\"\n\tf, err := os.Create(filename)\n\tif err != nil {\n\t\tfmt.Fprintf(w, \"Could not enable CPU profiling: %s\\n\", err)\n\t\tlog.Fatal(\"record cpu profile failed: \", err)\n\t}\n\tpprof.StartCPUProfile(f)\n\ttime.Sleep(time.Duration(sec) * time.Second)\n\tpprof.StopCPUProfile()\n\n\tfmt.Fprintf(w, \"create cpu profile %s \\n\", filename)\n\t_, fl := path.Split(os.Args[0])\n\tfmt.Fprintf(w, \"Now you can use this to check it: go tool pprof %s %s\\n\", fl, filename)\n}",
+    "funcname": "GetCPUProfile"
+}

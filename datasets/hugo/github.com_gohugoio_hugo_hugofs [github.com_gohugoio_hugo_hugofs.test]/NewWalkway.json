@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/walk.go",
+    "lineno": 72,
+    "focalfunc": "func NewWalkway(cfg WalkwayConfig) *Walkway",
+    "funcbody": "func NewWalkway(cfg WalkwayConfig) *Walkway {\n\tif cfg.Fs == nil {\n\t\tpanic(\"fs must be set\")\n\t}\n\n\tif cfg.PathParser == nil {\n\t\tcfg.PathParser = media.DefaultPathParser\n\t}\n\n\tlogger := cfg.Logger\n\tif logger == nil {\n\t\tlogger = loggers.NewDefault()\n\t}\n\n\treturn &Walkway{\n\t\tcfg:\tcfg,\n\t\tlogger:\tlogger,\n\t}\n}",
+    "funcname": "NewWalkway"
+}

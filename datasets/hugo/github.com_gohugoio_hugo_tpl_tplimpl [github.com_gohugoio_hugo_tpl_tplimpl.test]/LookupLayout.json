@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 395,
+    "focalfunc": "func (t *templateHandler) LookupLayout(d layouts.LayoutDescriptor, f output.Format) (tpl.Template, bool, error)",
+    "funcbody": "func (t *templateHandler) LookupLayout(d layouts.LayoutDescriptor, f output.Format) (tpl.Template, bool, error) {\n\tkey := layoutCacheKey{d, f.Name}\n\tt.layoutTemplateCacheMu.RLock()\n\tif cacheVal, found := t.layoutTemplateCache[key]; found {\n\t\tt.layoutTemplateCacheMu.RUnlock()\n\t\treturn cacheVal.templ, cacheVal.found, cacheVal.err\n\t}\n\n\tt.layoutTemplateCacheMu.RUnlock()\n\n\tt.layoutTemplateCacheMu.Lock()\n\tdefer t.layoutTemplateCacheMu.Unlock()\n\n\ttempl, found, err := t.findLayout(d, f)\n\tcacheVal := layoutCacheEntry{found: found, templ: templ, err: err}\n\tt.layoutTemplateCache[key] = cacheVal\n\treturn cacheVal.templ, cacheVal.found, cacheVal.err\n}",
+    "funcname": "LookupLayout"
+}

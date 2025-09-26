@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 107,
+    "focalfunc": "func newServerCommand() *serverCommand",
+    "funcbody": "func newServerCommand() *serverCommand {\n\t// Flags.\n\tvar uninstall bool\n\n\tc := &serverCommand{\n\t\tquit:\tmake(chan bool),\n\t\tcommands: []simplecobra.Commander{\n\t\t\t&simpleCommand{\n\t\t\t\tname:\t\"trust\",\n\t\t\t\tshort:\t\"Install the local CA in the system trust store.\",\n\t\t\t\trun: func(ctx context.Context, cd *simplecobra.Commandeer, r *rootCommand, args []string) error {\n\t\t\t\t\taction := \"-install\"\n\t\t\t\t\tif uninstall {\n\t\t\t\t\t\taction = \"-uninstall\"\n\t\t\t\t\t}\n\t\t\t\t\tos.Args = []string{action}\n\t\t\t\t\treturn mclib.RunMain()\n\t\t\t\t},\n\t\t\t\twithc: func(cmd *cobra.Command, r *rootCommand) {\n\t\t\t\t\tcmd.ValidArgsFunction = cobra.NoFileCompletions\n\t\t\t\t\tcmd.Flags().BoolVar(&uninstall, \"uninstall\", false, \"Uninstall the local CA (but do not delete it).\")\n\t\t\t\t},\n\t\t\t},\n\t\t},\n\t}\n\n\treturn c\n}",
+    "funcname": "newServerCommand"
+}

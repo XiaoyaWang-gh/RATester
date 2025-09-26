@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/transform/chain.go",
+    "lineno": 56,
+    "focalfunc": "func NewEmpty() Chain",
+    "funcbody": "func NewEmpty() Chain {\n\treturn make(Chain, 0, 20)\n}",
+    "funcname": "NewEmpty"
+}

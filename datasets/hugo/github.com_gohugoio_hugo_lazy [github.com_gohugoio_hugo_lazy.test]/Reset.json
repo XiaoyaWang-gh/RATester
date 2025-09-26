@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/lazy/init.go",
+    "lineno": 147,
+    "focalfunc": "func (ini *Init) Reset()",
+    "funcbody": "func (ini *Init) Reset() {\n\tmu := ini.init.ResetWithLock()\n\tini.err = nil\n\tdefer mu.Unlock()\n\tfor _, d := range ini.children {\n\t\td.Reset()\n\t}\n}",
+    "funcname": "Reset"
+}

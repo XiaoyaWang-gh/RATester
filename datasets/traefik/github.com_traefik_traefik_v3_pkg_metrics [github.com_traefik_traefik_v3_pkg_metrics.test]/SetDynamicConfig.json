@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 347,
+    "focalfunc": "func (ps *prometheusState) SetDynamicConfig(dynamicConfig *dynamicConfig)",
+    "funcbody": "func (ps *prometheusState) SetDynamicConfig(dynamicConfig *dynamicConfig) {\n\tps.mtx.Lock()\n\tdefer ps.mtx.Unlock()\n\n\tfor ep := range ps.dynamicConfig.entryPoints {\n\t\tif _, ok := dynamicConfig.entryPoints[ep]; !ok {\n\t\t\tps.deletedEP = append(ps.deletedEP, ep)\n\t\t}\n\t}\n\n\tfor router := range ps.dynamicConfig.routers {\n\t\tif _, ok := dynamicConfig.routers[router]; !ok {\n\t\t\tps.deletedRouters = append(ps.deletedRouters, router)\n\t\t}\n\t}\n\n\tfor service, serV := range ps.dynamicConfig.services {\n\t\tactualService, ok := dynamicConfig.services[service]\n\t\tif !ok {\n\t\t\tps.deletedServices = append(ps.deletedServices, service)\n\t\t}\n\t\tfor url := range serV {\n\t\t\tif _, ok := actualService[url]; !ok {\n\t\t\t\tps.deletedURLs[service] = append(ps.deletedURLs[service], url)\n\t\t\t}\n\t\t}\n\t}\n\n\tps.dynamicConfig = dynamicConfig\n}",
+    "funcname": "SetDynamicConfig"
+}

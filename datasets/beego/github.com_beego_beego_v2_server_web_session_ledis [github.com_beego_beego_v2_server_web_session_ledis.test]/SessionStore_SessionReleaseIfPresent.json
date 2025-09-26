@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 86,
+    "focalfunc": "func (ls *SessionStore) SessionReleaseIfPresent(c context.Context, w http.ResponseWriter)",
+    "funcbody": "func (ls *SessionStore) SessionReleaseIfPresent(c context.Context, w http.ResponseWriter) {\n\tls.SessionRelease(c, w)\n}",
+    "funcname": "SessionReleaseIfPresent"
+}

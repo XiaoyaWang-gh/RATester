@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 326,
+    "focalfunc": "func (p *nopPage) RegularPages() Pages",
+    "funcbody": "func (p *nopPage) RegularPages() Pages {\n\treturn nil\n}",
+    "funcname": "RegularPages"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcp.go",
+    "lineno": 189,
+    "focalfunc": "func newTCPGroupListener(name string, group *TCPGroup, addr net.Addr) *TCPGroupListener",
+    "funcbody": "func newTCPGroupListener(name string, group *TCPGroup, addr net.Addr) *TCPGroupListener {\n\treturn &TCPGroupListener{\n\t\tgroupName:\tname,\n\t\tgroup:\t\tgroup,\n\t\taddr:\t\taddr,\n\t\tcloseCh:\tmake(chan struct{}),\n\t}\n}",
+    "funcname": "newTCPGroupListener"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 118,
+    "focalfunc": "func (m *Migration) ForeignCol(colname, foreigncol, foreigntable string) (foreign *Foreign)",
+    "funcbody": "func (m *Migration) ForeignCol(colname, foreigncol, foreigntable string) (foreign *Foreign) {\n\tforeign = &Foreign{ForeignColumn: foreigncol, ForeignTable: foreigntable}\n\tforeign.Name = colname\n\tm.AddForeign(foreign)\n\treturn foreign\n}",
+    "funcname": "ForeignCol"
+}

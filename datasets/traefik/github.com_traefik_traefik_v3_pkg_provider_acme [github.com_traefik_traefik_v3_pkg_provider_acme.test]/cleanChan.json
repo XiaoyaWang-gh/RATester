@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/challenge_tls.go",
+    "lineno": 133,
+    "focalfunc": "func (c *ChallengeTLSALPN) cleanChan(key string)",
+    "funcbody": "func (c *ChallengeTLSALPN) cleanChan(key string) {\n\tif _, ok := c.chans[key]; ok {\n\t\tclose(c.chans[key])\n\t\tdelete(c.chans, key)\n\t}\n}",
+    "funcname": "cleanChan"
+}

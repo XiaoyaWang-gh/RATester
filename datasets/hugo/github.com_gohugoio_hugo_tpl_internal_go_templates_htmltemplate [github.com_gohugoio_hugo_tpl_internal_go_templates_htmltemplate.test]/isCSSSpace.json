@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 149,
+    "focalfunc": "func isCSSSpace(b byte) bool",
+    "funcbody": "func isCSSSpace(b byte) bool {\n\tswitch b {\n\tcase '\\t', '\\n', '\\f', '\\r', ' ':\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "isCSSSpace"
+}

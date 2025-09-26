@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/ginS/gins.go",
+    "lineno": 18,
+    "focalfunc": "func engine() *gin.Engine",
+    "funcbody": "func engine() *gin.Engine {\n\tonce.Do(func() {\n\t\tinternalEngine = gin.Default()\n\t})\n\treturn internalEngine\n}",
+    "funcname": "engine"
+}

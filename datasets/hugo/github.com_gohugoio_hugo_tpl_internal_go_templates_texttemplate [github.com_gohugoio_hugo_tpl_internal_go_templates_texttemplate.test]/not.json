@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 402,
+    "focalfunc": "func not(arg reflect.Value) bool",
+    "funcbody": "func not(arg reflect.Value) bool {\n\treturn !truth(arg)\n}",
+    "funcname": "not"
+}

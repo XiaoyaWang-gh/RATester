@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 240,
+    "focalfunc": "func InstallNps() string",
+    "funcbody": "func InstallNps() string {\n\tpath := common.GetInstallPath()\n\tif common.FileExists(path) {\n\t\tMkidrDirAll(path, \"web/static\", \"web/views\")\n\t} else {\n\t\tMkidrDirAll(path, \"conf\", \"web/static\", \"web/views\")\n\n\t\tif err := CopyDir(filepath.Join(common.GetAppPath(), \"conf\"), filepath.Join(path, \"conf\")); err != nil {\n\t\t\tlog.Fatalln(err)\n\t\t}\n\t\tchMod(filepath.Join(path, \"conf\"), 0766)\n\t}\n\tbinPath := copyStaticFile(common.GetAppPath(), \"nps\")\n\tlog.Println(\"install ok!\")\n\tlog.Println(\"Static files and configuration files in the current directory will be useless\")\n\tlog.Println(\"The new configuration file is located in\", path, \"you can edit them\")\n\tif !common.IsWindows() {\n\t\tlog.Println(`You can start with:\nnps start|stop|restart|uninstall|update or nps-update update\nanywhere!`)\n\t} else {\n\t\tlog.Println(`You can copy executable files to any directory and start working with:\nnps.exe start|stop|restart|uninstall|update or nps-update.exe update\nnow!`)\n\t}\n\tchMod(common.GetLogPath(), 0777)\n\treturn binPath\n}",
+    "funcname": "InstallNps"
+}

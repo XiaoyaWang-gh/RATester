@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/fake_dns_server.go",
+    "lineno": 99,
+    "focalfunc": "func startFakeDNSServer(traefikIP string) *dns.Server",
+    "funcbody": "func startFakeDNSServer(traefikIP string) *dns.Server {\n\tsrv := &dns.Server{\n\t\tAddr:\t\t\":5053\",\n\t\tNet:\t\t\"udp\",\n\t\tHandler:\t&handler{traefikIP},\n\t}\n\n\tgo func() {\n\t\tlog.Info().Msg(\"Start a fake DNS server.\")\n\t\tif err := srv.ListenAndServe(); err != nil {\n\t\t\tlog.Fatal().Err(err).Msg(\"Failed to set udp listener\")\n\t\t}\n\t}()\n\n\treturn srv\n}",
+    "funcname": "startFakeDNSServer"
+}

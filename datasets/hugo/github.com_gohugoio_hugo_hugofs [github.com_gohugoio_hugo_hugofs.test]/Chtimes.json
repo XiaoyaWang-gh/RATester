@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/noop_fs.go",
+    "lineno": 79,
+    "focalfunc": "func (fs noOpFs) Chtimes(name string, atime time.Time, mtime time.Time) error",
+    "funcbody": "func (fs noOpFs) Chtimes(name string, atime time.Time, mtime time.Time) error {\n\tpanic(errNoOp)\n}",
+    "funcname": "Chtimes"
+}

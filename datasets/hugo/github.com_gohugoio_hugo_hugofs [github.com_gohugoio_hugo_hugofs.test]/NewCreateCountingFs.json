@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/createcounting_fs.go",
+    "lineno": 38,
+    "focalfunc": "func NewCreateCountingFs(fs afero.Fs) afero.Fs",
+    "funcbody": "func NewCreateCountingFs(fs afero.Fs) afero.Fs {\n\treturn &createCountingFs{Fs: fs, fileCount: make(map[string]int)}\n}",
+    "funcname": "NewCreateCountingFs"
+}

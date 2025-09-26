@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 226,
+    "focalfunc": "func (p *nopPage) Hugo() (h hugo.HugoInfo)",
+    "funcbody": "func (p *nopPage) Hugo() (h hugo.HugoInfo) {\n\treturn\n}",
+    "funcname": "Hugo"
+}

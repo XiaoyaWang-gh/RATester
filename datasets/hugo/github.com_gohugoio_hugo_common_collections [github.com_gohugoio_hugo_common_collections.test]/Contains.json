@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/collections/slice.go",
+    "lineno": 81,
+    "focalfunc": "func (ss SortedStringSlice) Contains(s string) bool",
+    "funcbody": "func (ss SortedStringSlice) Contains(s string) bool {\n\ti := sort.SearchStrings(ss, s)\n\treturn i < len(ss) && ss[i] == s\n}",
+    "funcname": "Contains"
+}

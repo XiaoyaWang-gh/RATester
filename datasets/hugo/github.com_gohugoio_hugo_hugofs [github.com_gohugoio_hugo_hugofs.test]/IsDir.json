@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 275,
+    "focalfunc": "func (fi *dirNameOnlyFileInfo) IsDir() bool",
+    "funcbody": "func (fi *dirNameOnlyFileInfo) IsDir() bool {\n\treturn true\n}",
+    "funcname": "IsDir"
+}

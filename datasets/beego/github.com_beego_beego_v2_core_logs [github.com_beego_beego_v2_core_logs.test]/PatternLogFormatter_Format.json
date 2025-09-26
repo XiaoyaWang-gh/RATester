@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/formatter.go",
+    "lineno": 47,
+    "focalfunc": "func (p *PatternLogFormatter) Format(lm *LogMsg) string",
+    "funcbody": "func (p *PatternLogFormatter) Format(lm *LogMsg) string {\n\treturn p.ToString(lm)\n}",
+    "funcname": "Format"
+}

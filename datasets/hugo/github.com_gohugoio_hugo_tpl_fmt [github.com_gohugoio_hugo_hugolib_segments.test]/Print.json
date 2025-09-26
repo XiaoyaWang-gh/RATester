@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/fmt/fmt.go",
+    "lineno": 46,
+    "focalfunc": "func (ns *Namespace) Print(args ...any) string",
+    "funcbody": "func (ns *Namespace) Print(args ...any) string {\n\treturn _fmt.Sprint(args...)\n}",
+    "funcname": "Print"
+}

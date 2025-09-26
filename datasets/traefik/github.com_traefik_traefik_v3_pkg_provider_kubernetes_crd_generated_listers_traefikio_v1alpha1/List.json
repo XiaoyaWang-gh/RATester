@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/listers/traefikio/v1alpha1/traefikservice.go",
+    "lineno": 90,
+    "focalfunc": "func (s traefikServiceNamespaceLister) List(selector labels.Selector) (ret []*v1alpha1.TraefikService, err error)",
+    "funcbody": "func (s traefikServiceNamespaceLister) List(selector labels.Selector) (ret []*v1alpha1.TraefikService, err error) {\n\terr = cache.ListAllByNamespace(s.indexer, s.namespace, selector, func(m interface{}) {\n\t\tret = append(ret, m.(*v1alpha1.TraefikService))\n\t})\n\treturn ret, err\n}",
+    "funcname": "List"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 631,
+    "focalfunc": "func (e *escaper) escapeTree(c context, node parse.Node, name string, line int) (context, string)",
+    "funcbody": "func (e *escaper) escapeTree(c context, node parse.Node, name string, line int) (context, string) {\n\n\tdname := c.mangle(name)\n\te.called[dname] = true\n\tif out, ok := e.output[dname]; ok {\n\n\t\treturn out, dname\n\t}\n\tt := e.template(name)\n\tif t == nil {\n\n\t\tif e.ns.set[name] != nil {\n\t\t\treturn context{\n\t\t\t\tstate:\tstateError,\n\t\t\t\terr:\terrorf(ErrNoSuchTemplate, node, line, \"%q is an incomplete or empty template\", name),\n\t\t\t}, dname\n\t\t}\n\t\treturn context{\n\t\t\tstate:\tstateError,\n\t\t\terr:\terrorf(ErrNoSuchTemplate, node, line, \"no such template %q\", name),\n\t\t}, dname\n\t}\n\tif dname != name {\n\n\t\tdt := e.template(dname)\n\t\tif dt == nil {\n\t\t\tdt = template.New(dname)\n\t\t\tdt.Tree = &parse.Tree{Name: dname, Root: t.Root.CopyList()}\n\t\t\te.derived[dname] = dt\n\t\t}\n\t\tt = dt\n\t}\n\treturn e.computeOutCtx(c, t), dname\n}",
+    "funcname": "escapeTree"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 43,
+    "focalfunc": "func (mc *ModelCache) All() map[string]*ModelInfo",
+    "funcbody": "func (mc *ModelCache) All() map[string]*ModelInfo {\n\tm := make(map[string]*ModelInfo, len(mc.cache))\n\tfor k, v := range mc.cache {\n\t\tm[k] = v\n\t}\n\treturn m\n}",
+    "funcname": "All"
+}

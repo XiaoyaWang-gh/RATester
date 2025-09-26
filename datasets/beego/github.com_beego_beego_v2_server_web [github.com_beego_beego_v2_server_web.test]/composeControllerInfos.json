@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1360,
+    "focalfunc": "func composeControllerInfos(tree *Tree, routerInfos *[]*ControllerInfo)",
+    "funcbody": "func composeControllerInfos(tree *Tree, routerInfos *[]*ControllerInfo) {\n\tif tree.fixrouters != nil {\n\t\tfor _, subTree := range tree.fixrouters {\n\t\t\tcomposeControllerInfos(subTree, routerInfos)\n\t\t}\n\t}\n\tif tree.wildcard != nil {\n\t\tcomposeControllerInfos(tree.wildcard, routerInfos)\n\t}\n\tif tree.leaves != nil {\n\t\tfor _, l := range tree.leaves {\n\t\t\tif c, ok := l.runObject.(*ControllerInfo); ok {\n\t\t\t\t*routerInfos = append(*routerInfos, c)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "composeControllerInfos"
+}

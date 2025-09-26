@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/cmd.go",
+    "lineno": 37,
+    "focalfunc": "func printHelp(errs ...string)",
+    "funcbody": "func printHelp(errs ...string) {\n\tcontent := `orm command usage:\n\n    syncdb     - auto create tables\n    sqlall     - print sql of create tables\n    help       - print this help\n`\n\n\tif len(errs) > 0 {\n\t\tfmt.Println(errs[0])\n\t}\n\tfmt.Println(content)\n\tos.Exit(2)\n}",
+    "funcname": "printHelp"
+}

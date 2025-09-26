@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 120,
+    "focalfunc": "func (c *configContainer) Int64(key string) (int64, error)",
+    "funcbody": "func (c *configContainer) Int64(key string) (int64, error) {\n\tres, err := c.get(key)\n\tif err != nil {\n\t\treturn 0, err\n\t}\n\tif res == nil {\n\t\treturn 0, config.KeyNotFoundError\n\t}\n\tif i, ok := res.(int); ok {\n\t\treturn int64(i), nil\n\t} else if i64, ok := res.(int64); ok {\n\t\treturn i64, nil\n\t} else {\n\t\treturn 0, config.InvalidValueTypeError\n\t}\n}",
+    "funcname": "Int64"
+}

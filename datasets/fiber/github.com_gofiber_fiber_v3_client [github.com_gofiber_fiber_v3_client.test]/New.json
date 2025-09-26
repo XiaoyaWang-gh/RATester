@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/client.go",
+    "lineno": 678,
+    "focalfunc": "func New() *Client",
+    "funcbody": "func New() *Client {\n\n\treturn &Client{\n\t\tfasthttp:\t&fasthttp.Client{},\n\t\theader: &Header{\n\t\t\tRequestHeader: &fasthttp.RequestHeader{},\n\t\t},\n\t\tparams: &QueryParam{\n\t\t\tArgs: fasthttp.AcquireArgs(),\n\t\t},\n\t\tcookies:\t&Cookie{},\n\t\tpath:\t\t&PathParam{},\n\n\t\tuserRequestHooks:\t[]RequestHook{},\n\t\tbuiltinRequestHooks:\t[]RequestHook{parserRequestURL, parserRequestHeader, parserRequestBody},\n\t\tuserResponseHooks:\t[]ResponseHook{},\n\t\tbuiltinResponseHooks:\t[]ResponseHook{parserResponseCookie, logger},\n\t\tjsonMarshal:\t\tjson.Marshal,\n\t\tjsonUnmarshal:\t\tjson.Unmarshal,\n\t\txmlMarshal:\t\txml.Marshal,\n\t\txmlUnmarshal:\t\txml.Unmarshal,\n\t\tlogger:\t\t\tlog.DefaultLogger(),\n\t}\n}",
+    "funcname": "New"
+}

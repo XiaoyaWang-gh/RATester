@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 400,
+    "focalfunc": "func dateAndSlugFromBaseFilename(location *time.Location, name string) (time.Time, string)",
+    "funcbody": "func dateAndSlugFromBaseFilename(location *time.Location, name string) (time.Time, string) {\n\twithoutExt, _ := paths.FileAndExt(name)\n\n\tif len(withoutExt) < 10 {\n\n\t\treturn time.Time{}, \"\"\n\t}\n\n\td, err := htime.ToTimeInDefaultLocationE(withoutExt[:10], location)\n\tif err != nil {\n\t\treturn time.Time{}, \"\"\n\t}\n\n\tslug := strings.Trim(withoutExt[10:], \" -_\")\n\n\treturn d, slug\n}",
+    "funcname": "dateAndSlugFromBaseFilename"
+}

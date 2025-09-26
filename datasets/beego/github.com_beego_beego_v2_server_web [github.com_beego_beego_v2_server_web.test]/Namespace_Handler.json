@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 181,
+    "focalfunc": "func (n *Namespace) Handler(rootpath string, h http.Handler) *Namespace",
+    "funcbody": "func (n *Namespace) Handler(rootpath string, h http.Handler) *Namespace {\n\tn.handlers.Handler(rootpath, h)\n\treturn n\n}",
+    "funcname": "Handler"
+}

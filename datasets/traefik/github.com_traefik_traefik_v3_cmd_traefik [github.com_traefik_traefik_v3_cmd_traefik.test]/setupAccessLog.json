@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 570,
+    "focalfunc": "func setupAccessLog(conf *types.AccessLog) *accesslog.Handler",
+    "funcbody": "func setupAccessLog(conf *types.AccessLog) *accesslog.Handler {\n\tif conf == nil {\n\t\treturn nil\n\t}\n\n\taccessLoggerMiddleware, err := accesslog.NewHandler(conf)\n\tif err != nil {\n\t\tlog.Warn().Err(err).Msg(\"Unable to create access logger\")\n\t\treturn nil\n\t}\n\n\treturn accessLoggerMiddleware\n}",
+    "funcname": "setupAccessLog"
+}

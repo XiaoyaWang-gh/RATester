@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_sections.go",
+    "lineno": 27,
+    "focalfunc": "func (s *Site) Home() page.Page",
+    "funcbody": "func (s *Site) Home() page.Page {\n\ts.CheckReady()\n\treturn s.s.home\n}",
+    "funcname": "Home"
+}

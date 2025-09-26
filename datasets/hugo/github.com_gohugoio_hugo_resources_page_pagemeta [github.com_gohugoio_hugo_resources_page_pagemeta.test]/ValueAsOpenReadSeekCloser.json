@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 299,
+    "focalfunc": "func (s Source) ValueAsOpenReadSeekCloser() hugio.OpenReadSeekCloser",
+    "funcbody": "func (s Source) ValueAsOpenReadSeekCloser() hugio.OpenReadSeekCloser {\n\treturn hugio.NewOpenReadSeekCloser(hugio.NewReadSeekerNoOpCloserFromString(s.ValueAsString()))\n}",
+    "funcname": "ValueAsOpenReadSeekCloser"
+}

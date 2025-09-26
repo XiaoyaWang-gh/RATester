@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 105,
+    "focalfunc": "func (r *Response) Unwrap() http.ResponseWriter",
+    "funcbody": "func (r *Response) Unwrap() http.ResponseWriter {\n\treturn r.Writer\n}",
+    "funcname": "Unwrap"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 630,
+    "focalfunc": "func (t *Tree) blockControl() Node",
+    "funcbody": "func (t *Tree) blockControl() Node {\n\tconst context = \"block clause\"\n\n\ttoken := t.nextNonSpace()\n\tname := t.parseTemplateName(token, context)\n\tpipe := t.pipeline(context, itemRightDelim)\n\n\tblock := New(name)\n\tblock.text = t.text\n\tblock.Mode = t.Mode\n\tblock.ParseName = t.ParseName\n\tblock.startParse(t.funcs, t.lex, t.treeSet)\n\tvar end Node\n\tblock.Root, end = block.itemList()\n\tif end.Type() != nodeEnd {\n\t\tt.errorf(\"unexpected %s in %s\", end, context)\n\t}\n\tblock.add()\n\tblock.stopParse()\n\n\treturn t.newTemplate(token.pos, token.line, name, pipe)\n}",
+    "funcname": "blockControl"
+}

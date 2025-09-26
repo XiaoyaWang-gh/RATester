@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/cache/lru.go",
+    "lineno": 55,
+    "focalfunc": "func (c *Cache) Get(key Key) (value interface{}, ok bool)",
+    "funcbody": "func (c *Cache) Get(key Key) (value interface{}, ok bool) {\n\tif ele, hit := c.cache.Load(key); hit {\n\t\tc.ll.MoveToFront(ele.(*list.Element))\n\t\treturn ele.(*list.Element).Value.(*entry).value, true\n\t}\n\treturn\n}",
+    "funcname": "Get"
+}

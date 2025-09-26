@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/centrifuge.go",
+    "lineno": 52,
+    "focalfunc": "func NewCentrifuge(rootPkg string) (*Centrifuge, error)",
+    "funcbody": "func NewCentrifuge(rootPkg string) (*Centrifuge, error) {\n\tfileSet := token.NewFileSet()\n\n\tpkg, err := importer.ForCompiler(fileSet, \"source\", nil).Import(rootPkg)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &Centrifuge{\n\t\tfileSet:\tfileSet,\n\t\tpkg:\t\tpkg,\n\t\trootPkg:\trootPkg,\n\n\t\tTypeCleaner: func(typ types.Type, _ string) string {\n\t\t\treturn typ.String()\n\t\t},\n\t\tPackageCleaner: func(s string) string {\n\t\t\treturn s\n\t\t},\n\t}, nil\n}",
+    "funcname": "NewCentrifuge"
+}

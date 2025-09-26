@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 370,
+    "focalfunc": "func (c *Controller) Redirect(url string, code int)",
+    "funcbody": "func (c *Controller) Redirect(url string, code int) {\n\tLogAccess(c.Ctx, nil, code)\n\tc.Ctx.Redirect(code, url)\n}",
+    "funcname": "Redirect"
+}

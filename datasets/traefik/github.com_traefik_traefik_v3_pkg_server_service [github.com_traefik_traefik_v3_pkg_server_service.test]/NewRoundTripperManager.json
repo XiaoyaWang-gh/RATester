@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/roundtripper.go",
+    "lineno": 44,
+    "focalfunc": "func NewRoundTripperManager(spiffeX509Source SpiffeX509Source) *RoundTripperManager",
+    "funcbody": "func NewRoundTripperManager(spiffeX509Source SpiffeX509Source) *RoundTripperManager {\n\treturn &RoundTripperManager{\n\t\troundTrippers:\t\tmake(map[string]http.RoundTripper),\n\t\tconfigs:\t\tmake(map[string]*dynamic.ServersTransport),\n\t\tspiffeX509Source:\tspiffeX509Source,\n\t}\n}",
+    "funcname": "NewRoundTripperManager"
+}

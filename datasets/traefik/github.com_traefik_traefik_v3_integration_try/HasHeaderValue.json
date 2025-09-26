@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/condition.go",
+    "lineno": 140,
+    "focalfunc": "func HasHeaderValue(header, value string, exactMatch bool) ResponseCondition",
+    "funcbody": "func HasHeaderValue(header, value string, exactMatch bool) ResponseCondition {\n\treturn func(res *http.Response) error {\n\t\tif _, ok := res.Header[header]; !ok {\n\t\t\treturn errors.New(\"response doesn't contain header: \" + header)\n\t\t}\n\n\t\tmatchFound := false\n\t\tfor _, hdr := range res.Header[header] {\n\t\t\tif value != hdr && exactMatch {\n\t\t\t\treturn fmt.Errorf(\"got header %s with value %s, wanted %s\", header, hdr, value)\n\t\t\t}\n\t\t\tif value == hdr {\n\t\t\t\tmatchFound = true\n\t\t\t}\n\t\t}\n\n\t\tif !matchFound {\n\t\t\treturn fmt.Errorf(\"response doesn't contain header %s with value %s\", header, value)\n\t\t}\n\t\treturn nil\n\t}\n}",
+    "funcname": "HasHeaderValue"
+}

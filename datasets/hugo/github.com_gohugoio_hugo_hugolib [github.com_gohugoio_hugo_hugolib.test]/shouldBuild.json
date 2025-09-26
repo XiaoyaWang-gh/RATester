@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 969,
+    "focalfunc": "func shouldBuild(buildFuture bool, buildExpired bool, buildDrafts bool, Draft bool,\n\tpublishDate time.Time, expiryDate time.Time,\n) bool",
+    "funcbody": "func shouldBuild(buildFuture bool, buildExpired bool, buildDrafts bool, Draft bool,\n\tpublishDate time.Time, expiryDate time.Time,\n) bool {\n\tif !(buildDrafts || !Draft) {\n\t\treturn false\n\t}\n\thnow := htime.Now()\n\tif !buildFuture && !publishDate.IsZero() && publishDate.After(hnow) {\n\t\treturn false\n\t}\n\tif !buildExpired && !expiryDate.IsZero() && expiryDate.Before(hnow) {\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "shouldBuild"
+}

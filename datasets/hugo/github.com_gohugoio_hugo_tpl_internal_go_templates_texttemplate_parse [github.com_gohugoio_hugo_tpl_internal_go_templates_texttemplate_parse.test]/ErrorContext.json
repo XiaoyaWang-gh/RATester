@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 141,
+    "focalfunc": "func (t *Tree) ErrorContext(n Node) (location, context string)",
+    "funcbody": "func (t *Tree) ErrorContext(n Node) (location, context string) {\n\tpos := int(n.Position())\n\ttree := n.tree()\n\tif tree == nil {\n\t\ttree = t\n\t}\n\ttext := tree.text[:pos]\n\tbyteNum := strings.LastIndex(text, \"\\n\")\n\tif byteNum == -1 {\n\t\tbyteNum = pos\n\t} else {\n\t\tbyteNum++\n\t\tbyteNum = pos - byteNum\n\t}\n\tlineNum := 1 + strings.Count(text, \"\\n\")\n\tcontext = n.String()\n\treturn fmt.Sprintf(\"%s:%d:%d\", tree.ParseName, lineNum, byteNum), context\n}",
+    "funcname": "ErrorContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 86,
+    "focalfunc": "func (s *SMTPWriter) SetFormatter(f LogFormatter)",
+    "funcbody": "func (s *SMTPWriter) SetFormatter(f LogFormatter) {\n\ts.formatter = f\n}",
+    "funcname": "SetFormatter"
+}

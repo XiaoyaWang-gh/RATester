@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/machine_group.go",
+    "lineno": 46,
+    "focalfunc": "func (m *MachineGroup) ListMachines() (ms []*Machine, total int, err error)",
+    "funcbody": "func (m *MachineGroup) ListMachines() (ms []*Machine, total int, err error) {\n\th := map[string]string{\n\t\t\"x-sls-bodyrawsize\": \"0\",\n\t}\n\n\turi := fmt.Sprintf(\"/machinegroups/%v/machines\", m.Name)\n\tr, err := request(m.project, \"GET\", uri, h, nil)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tbuf, err := io.ReadAll(r.Body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tif r.StatusCode != http.StatusOK {\n\t\terrMsg := &errorMessage{}\n\t\terr = json.Unmarshal(buf, errMsg)\n\t\tif err != nil {\n\t\t\terr = fmt.Errorf(\"failed to remove config from machine group\")\n\t\t\tdump, _ := httputil.DumpResponse(r, true)\n\t\t\tfmt.Println(dump)\n\t\t\treturn\n\t\t}\n\t\terr = fmt.Errorf(\"%v:%v\", errMsg.Code, errMsg.Message)\n\t\treturn\n\t}\n\n\tbody := &MachineList{}\n\terr = json.Unmarshal(buf, body)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tms = body.Machines\n\ttotal = body.Total\n\n\treturn\n}",
+    "funcname": "ListMachines"
+}

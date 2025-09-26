@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 149,
+    "focalfunc": "func tAfterName(c context, s []byte) (context, int)",
+    "funcbody": "func tAfterName(c context, s []byte) (context, int) {\n\n\ti := eatWhiteSpace(s, 0)\n\tif i == len(s) {\n\t\treturn c, len(s)\n\t} else if s[i] != '=' {\n\n\t\tc.state = stateTag\n\t\treturn c, i\n\t}\n\tc.state = stateBeforeValue\n\n\treturn c, i + 1\n}",
+    "funcname": "tAfterName"
+}

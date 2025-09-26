@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 267,
+    "focalfunc": "func (p *Provider) sendDynamicConfig()",
+    "funcbody": "func (p *Provider) sendDynamicConfig() {\n\tp.certByDomainMu.RLock()\n\tdefer p.certByDomainMu.RUnlock()\n\n\t// TODO: we always send back to traefik core the set of certificates\n\t// sorted, to make sure that two identical sets, that would be sorted\n\t// differently, do not trigger another configuration update because of the\n\t// mismatch. But in reality we should not end up sending a certificates\n\t// update if there was no new certs to generate or renew in the first\n\t// place, so this scenario should never happen, and the sorting might\n\t// actually not be needed.\n\tvar sortedDomains []string\n\tfor domain := range p.certByDomain {\n\t\tsortedDomains = append(sortedDomains, domain)\n\t}\n\tsort.Strings(sortedDomains)\n\n\tvar certs []*traefiktls.CertAndStores\n\tfor _, domain := range sortedDomains {\n\n\t\tcerts = append(certs, &traefiktls.CertAndStores{\n\t\t\tStores:\t\t[]string{traefiktls.DefaultTLSStoreName},\n\t\t\tCertificate:\tp.certByDomain[domain],\n\t\t})\n\t}\n\n\tp.dynMessages <- dynamic.Message{\n\t\tProviderName:\tp.ResolverName + \".tailscale\",\n\t\tConfiguration: &dynamic.Configuration{\n\t\t\tTLS: &dynamic.TLSConfiguration{Certificates: certs},\n\t\t},\n\t}\n}",
+    "funcname": "sendDynamicConfig"
+}

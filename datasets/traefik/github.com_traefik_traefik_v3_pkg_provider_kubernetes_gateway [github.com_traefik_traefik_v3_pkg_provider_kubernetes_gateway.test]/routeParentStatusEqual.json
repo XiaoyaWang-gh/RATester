@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 788,
+    "focalfunc": "func routeParentStatusEqual(sA, sB gatev1alpha2.RouteParentStatus) bool",
+    "funcbody": "func routeParentStatusEqual(sA, sB gatev1alpha2.RouteParentStatus) bool {\n\treturn sA.ControllerName == sB.ControllerName &&\n\t\treflect.DeepEqual(sA.ParentRef, sB.ParentRef) &&\n\t\tconditionsEqual(sA.Conditions, sB.Conditions)\n}",
+    "funcname": "routeParentStatusEqual"
+}

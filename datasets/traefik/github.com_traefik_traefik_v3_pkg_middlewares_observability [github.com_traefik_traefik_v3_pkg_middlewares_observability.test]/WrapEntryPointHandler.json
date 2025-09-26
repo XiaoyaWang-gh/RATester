@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/entrypoint.go",
+    "lineno": 36,
+    "focalfunc": "func WrapEntryPointHandler(ctx context.Context, tracer *tracing.Tracer, semConvMetricRegistry *metrics.SemConvMetricsRegistry, entryPointName string) alice.Constructor",
+    "funcbody": "func WrapEntryPointHandler(ctx context.Context, tracer *tracing.Tracer, semConvMetricRegistry *metrics.SemConvMetricsRegistry, entryPointName string) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\tif tracer == nil {\n\t\t\ttracer = tracing.NewTracer(noop.Tracer{}, nil, nil, nil)\n\t\t}\n\n\t\treturn newEntryPoint(ctx, tracer, semConvMetricRegistry, entryPointName, next), nil\n\t}\n}",
+    "funcname": "WrapEntryPointHandler"
+}

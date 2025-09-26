@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/templateProvider.go",
+    "lineno": 29,
+    "focalfunc": "func (*TemplateProvider) NewResource(dst *deps.Deps) error",
+    "funcbody": "func (*TemplateProvider) NewResource(dst *deps.Deps) error {\n\thandlers, err := newTemplateHandlers(dst)\n\tif err != nil {\n\t\treturn err\n\t}\n\tdst.SetTempl(handlers)\n\treturn nil\n}",
+    "funcname": "NewResource"
+}

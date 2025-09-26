@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/tcp/mux.go",
+    "lineno": 275,
+    "focalfunc": "func (m *matchersTree) addRule(rule *rules.Tree, funcs matcherFuncs) error",
+    "funcbody": "func (m *matchersTree) addRule(rule *rules.Tree, funcs matcherFuncs) error {\n\tswitch rule.Matcher {\n\tcase \"and\", \"or\":\n\t\tm.operator = rule.Matcher\n\t\tm.left = &matchersTree{}\n\t\terr := m.left.addRule(rule.RuleLeft, funcs)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tm.right = &matchersTree{}\n\t\treturn m.right.addRule(rule.RuleRight, funcs)\n\tdefault:\n\t\terr := rules.CheckRule(rule)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\terr = funcs[rule.Matcher](m, rule.Value...)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\tif rule.Not {\n\t\t\tmatcherFunc := m.matcher\n\t\t\tm.matcher = func(meta ConnData) bool {\n\t\t\t\treturn !matcherFunc(meta)\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "addRule"
+}

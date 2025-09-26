@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/msgpack.go",
+    "lineno": 27,
+    "focalfunc": "func (msgpackBinding) BindBody(body []byte, obj any) error",
+    "funcbody": "func (msgpackBinding) BindBody(body []byte, obj any) error {\n\treturn decodeMsgPack(bytes.NewReader(body), obj)\n}",
+    "funcname": "BindBody"
+}

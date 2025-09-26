@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 39,
+    "focalfunc": "func Panic(v ...any)",
+    "funcbody": "func Panic(v ...any) {\n\tlogger.Panic(v...)\n}",
+    "funcname": "Panic"
+}

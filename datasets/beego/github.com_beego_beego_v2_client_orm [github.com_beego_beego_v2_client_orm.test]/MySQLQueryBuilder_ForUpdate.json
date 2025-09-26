@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 38,
+    "focalfunc": "func (qb *MySQLQueryBuilder) ForUpdate() QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) ForUpdate() QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"FOR UPDATE\")\n\treturn qb\n}",
+    "funcname": "ForUpdate"
+}

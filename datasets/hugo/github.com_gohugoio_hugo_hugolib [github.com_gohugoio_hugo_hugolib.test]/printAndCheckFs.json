@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 340,
+    "focalfunc": "func (s *IntegrationTestBuilder) printAndCheckFs(fs afero.Fs, path string, w io.Writer) error",
+    "funcbody": "func (s *IntegrationTestBuilder) printAndCheckFs(fs afero.Fs, path string, w io.Writer) error {\n\tif fs == nil {\n\t\treturn nil\n\t}\n\n\treturn afero.Walk(fs, path, func(path string, info os.FileInfo, err error) error {\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"error: path %q: %s\", path, err)\n\t\t}\n\t\tpath = filepath.ToSlash(path)\n\t\tif path == \"\" {\n\t\t\tpath = \".\"\n\t\t}\n\t\tif !info.IsDir() {\n\t\t\tf, err := fs.Open(path)\n\t\t\tif err != nil {\n\t\t\t\treturn fmt.Errorf(\"error: path %q: %s\", path, err)\n\t\t\t}\n\t\t\tdefer f.Close()\n\t\t\t// This will panic if the file is a directory.\n\t\t\tvar buf [1]byte\n\t\t\tio.ReadFull(f, buf[:])\n\t\t}\n\t\tfmt.Fprintln(w, path, info.IsDir())\n\t\treturn nil\n\t})\n}",
+    "funcname": "printAndCheckFs"
+}

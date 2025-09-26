@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 99,
+    "focalfunc": "func AddLeadingAndTrailingSlash(path string) string",
+    "funcbody": "func AddLeadingAndTrailingSlash(path string) string {\n\treturn AddTrailingSlash(AddLeadingSlash(path))\n}",
+    "funcname": "AddLeadingAndTrailingSlash"
+}

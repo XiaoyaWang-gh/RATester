@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/safe.go",
+    "lineno": 33,
+    "focalfunc": "func (ns *Namespace) CSS(s any) (template.CSS, error)",
+    "funcbody": "func (ns *Namespace) CSS(s any) (template.CSS, error) {\n\tss, err := cast.ToStringE(s)\n\treturn template.CSS(ss), err\n}",
+    "funcname": "CSS"
+}

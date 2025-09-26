@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 590,
+    "focalfunc": "func isNoCache(cacheControl string) bool",
+    "funcbody": "func isNoCache(cacheControl string) bool {\n\ti := strings.Index(cacheControl, noCacheValue)\n\tif i == -1 {\n\t\treturn false\n\t}\n\n\tif i > 0 && !(cacheControl[i-1] == ' ' || cacheControl[i-1] == ',') {\n\t\treturn false\n\t}\n\n\tif i+len(noCacheValue) == len(cacheControl) {\n\t\treturn true\n\t}\n\n\tif cacheControl[i+len(noCacheValue)] != ',' {\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "isNoCache"
+}

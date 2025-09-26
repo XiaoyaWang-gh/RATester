@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger_formatters.go",
+    "lineno": 55,
+    "focalfunc": "func toLog(fields logrus.Fields, key, defaultValue string, quoted bool) interface{}",
+    "funcbody": "func toLog(fields logrus.Fields, key, defaultValue string, quoted bool) interface{} {\n\tif v, ok := fields[key]; ok {\n\t\tif v == nil {\n\t\t\treturn defaultValue\n\t\t}\n\n\t\tswitch s := v.(type) {\n\t\tcase string:\n\t\t\treturn toLogEntry(s, defaultValue, quoted)\n\n\t\tcase fmt.Stringer:\n\t\t\treturn toLogEntry(s.String(), defaultValue, quoted)\n\n\t\tdefault:\n\t\t\treturn v\n\t\t}\n\t}\n\n\treturn defaultValue\n}",
+    "funcname": "toLog"
+}

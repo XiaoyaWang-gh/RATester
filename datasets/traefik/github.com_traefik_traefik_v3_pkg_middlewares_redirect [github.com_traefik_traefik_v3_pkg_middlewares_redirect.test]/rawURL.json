@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/redirect/redirect_regex.go",
+    "lineno": 23,
+    "focalfunc": "func rawURL(req *http.Request) string",
+    "funcbody": "func rawURL(req *http.Request) string {\n\tscheme := schemeHTTP\n\thost := req.Host\n\tport := \"\"\n\turi := req.RequestURI\n\n\tif match := uriRegexp.FindStringSubmatch(req.RequestURI); len(match) > 0 {\n\t\tscheme = match[1]\n\n\t\tif len(match[2]) > 0 {\n\t\t\thost = match[2]\n\t\t}\n\n\t\tif len(match[3]) > 0 {\n\t\t\tport = match[3]\n\t\t}\n\n\t\turi = match[4]\n\t}\n\n\tif req.TLS != nil {\n\t\tscheme = schemeHTTPS\n\t}\n\n\treturn strings.Join([]string{scheme, \"://\", host, port, uri}, \"\")\n}",
+    "funcname": "rawURL"
+}

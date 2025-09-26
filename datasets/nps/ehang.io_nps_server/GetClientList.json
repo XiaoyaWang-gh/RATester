@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/server.go",
+    "lineno": 277,
+    "focalfunc": "func GetClientList(start, length int, search, sort, order string, clientId int) (list []*file.Client, cnt int)",
+    "funcbody": "func GetClientList(start, length int, search, sort, order string, clientId int) (list []*file.Client, cnt int) {\n\tlist, cnt = file.GetDb().GetClientList(start, length, search, sort, order, clientId)\n\tdealClientData()\n\treturn\n}",
+    "funcname": "GetClientList"
+}

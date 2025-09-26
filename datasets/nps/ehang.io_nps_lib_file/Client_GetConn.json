@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 83,
+    "focalfunc": "func (s *Client) GetConn() bool",
+    "funcbody": "func (s *Client) GetConn() bool {\n\tif s.MaxConn == 0 || int(s.NowConn) < s.MaxConn {\n\t\ts.CutConn()\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "GetConn"
+}

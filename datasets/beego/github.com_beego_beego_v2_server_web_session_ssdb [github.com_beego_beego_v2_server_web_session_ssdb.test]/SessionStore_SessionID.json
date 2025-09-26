@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 202,
+    "focalfunc": "func (s *SessionStore) SessionID(context.Context) string",
+    "funcbody": "func (s *SessionStore) SessionID(context.Context) string {\n\treturn s.sid\n}",
+    "funcname": "SessionID"
+}

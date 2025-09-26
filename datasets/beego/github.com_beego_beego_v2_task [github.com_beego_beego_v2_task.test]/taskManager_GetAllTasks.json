@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 667,
+    "focalfunc": "func (m *taskManager) GetAllTasks() []Tasker",
+    "funcbody": "func (m *taskManager) GetAllTasks() []Tasker {\n\tm.taskLock.RLock()\n\n\tl := make([]Tasker, 0, len(m.adminTaskList))\n\n\tfor _, t := range m.adminTaskList {\n\t\tl = append(l, t)\n\t}\n\tm.taskLock.RUnlock()\n\n\treturn l\n}",
+    "funcname": "GetAllTasks"
+}

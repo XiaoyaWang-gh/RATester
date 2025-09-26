@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagecollections.go",
+    "lineno": 36,
+    "focalfunc": "func newPageFinder(m *pageMap) *pageFinder",
+    "funcbody": "func newPageFinder(m *pageMap) *pageFinder {\n\tif m == nil {\n\t\tpanic(\"must provide a pageMap\")\n\t}\n\tc := &pageFinder{pageMap: m}\n\treturn c\n}",
+    "funcname": "newPageFinder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 125,
+    "focalfunc": "func (cj *CookieJar) SetByHost(host []byte, cookies ...*fasthttp.Cookie)",
+    "funcbody": "func (cj *CookieJar) SetByHost(host []byte, cookies ...*fasthttp.Cookie) {\n\thostStr := utils.UnsafeString(host)\n\n\tcj.mu.Lock()\n\tdefer cj.mu.Unlock()\n\n\tif cj.hostCookies == nil {\n\t\tcj.hostCookies = make(map[string][]*fasthttp.Cookie)\n\t}\n\n\thostCookies, ok := cj.hostCookies[hostStr]\n\tif !ok {\n\n\t\thostStr = string(host)\n\t}\n\n\tfor _, cookie := range cookies {\n\t\tc := searchCookieByKeyAndPath(cookie.Key(), cookie.Path(), hostCookies)\n\t\tif c == nil {\n\n\t\t\tc = fasthttp.AcquireCookie()\n\t\t\thostCookies = append(hostCookies, c)\n\t\t}\n\t\tc.CopyTo(cookie)\n\t}\n\tcj.hostCookies[hostStr] = hostCookies\n}",
+    "funcname": "SetByHost"
+}

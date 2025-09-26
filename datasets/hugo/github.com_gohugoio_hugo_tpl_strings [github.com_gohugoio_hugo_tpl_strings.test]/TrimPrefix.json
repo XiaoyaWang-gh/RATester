@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 471,
+    "focalfunc": "func (ns *Namespace) TrimPrefix(prefix, s any) (string, error)",
+    "funcbody": "func (ns *Namespace) TrimPrefix(prefix, s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tsx, err := cast.ToStringE(prefix)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn strings.TrimPrefix(ss, sx), nil\n}",
+    "funcname": "TrimPrefix"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/entrypoint.go",
+    "lineno": 47,
+    "focalfunc": "func newEntryPoint(ctx context.Context, tracer *tracing.Tracer, semConvMetricRegistry *metrics.SemConvMetricsRegistry, entryPointName string, next http.Handler) http.Handler",
+    "funcbody": "func newEntryPoint(ctx context.Context, tracer *tracing.Tracer, semConvMetricRegistry *metrics.SemConvMetricsRegistry, entryPointName string, next http.Handler) http.Handler {\n\tmiddlewares.GetLogger(ctx, \"tracing\", entryPointTypeName).Debug().Msg(\"Creating middleware\")\n\n\tif tracer == nil {\n\t\ttracer = tracing.NewTracer(noop.Tracer{}, nil, nil, nil)\n\t}\n\n\treturn &entryPointTracing{\n\t\tentryPoint:\t\tentryPointName,\n\t\ttracer:\t\t\ttracer,\n\t\tsemConvMetricRegistry:\tsemConvMetricRegistry,\n\t\tnext:\t\t\tnext,\n\t}\n}",
+    "funcname": "newEntryPoint"
+}

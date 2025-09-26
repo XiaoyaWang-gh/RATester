@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 500,
+    "focalfunc": "func (bl *BeeLogger) Notice(format string, v ...interface{})",
+    "funcbody": "func (bl *BeeLogger) Notice(format string, v ...interface{}) {\n\tif LevelNotice > bl.level {\n\t\treturn\n\t}\n\tlm := &LogMsg{\n\t\tLevel:\tLevelNotice,\n\t\tMsg:\tformat,\n\t\tWhen:\ttime.Now(),\n\t\tArgs:\tv,\n\t}\n\n\tbl.writeMsg(lm)\n}",
+    "funcname": "Notice"
+}

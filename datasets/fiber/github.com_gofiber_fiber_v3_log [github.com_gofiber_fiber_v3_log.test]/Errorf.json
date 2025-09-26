@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 49,
+    "focalfunc": "func Errorf(format string, v ...any)",
+    "funcbody": "func Errorf(format string, v ...any) {\n\tlogger.Errorf(format, v...)\n}",
+    "funcname": "Errorf"
+}

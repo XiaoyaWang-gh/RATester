@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 598,
+    "focalfunc": "func checkNewVersion()",
+    "funcbody": "func checkNewVersion() {\n\tticker := time.Tick(24 * time.Hour)\n\tsafe.Go(func() {\n\t\tfor time.Sleep(10 * time.Minute); ; <-ticker {\n\t\t\tversion.CheckNewVersion()\n\t\t}\n\t})\n}",
+    "funcname": "checkNewVersion"
+}

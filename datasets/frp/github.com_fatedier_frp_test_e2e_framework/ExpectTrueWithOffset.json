@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 77,
+    "focalfunc": "func ExpectTrueWithOffset(offset int, actual interface{}, explain ...interface{})",
+    "funcbody": "func ExpectTrueWithOffset(offset int, actual interface{}, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1+offset, actual).Should(gomega.BeTrue(), explain...)\n}",
+    "funcname": "ExpectTrueWithOffset"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 750,
+    "focalfunc": "func Error(f interface{}, v ...interface{})",
+    "funcbody": "func Error(f interface{}, v ...interface{}) {\n\tbeeLogger.Error(formatPattern(f, v...), v...)\n}",
+    "funcname": "Error"
+}

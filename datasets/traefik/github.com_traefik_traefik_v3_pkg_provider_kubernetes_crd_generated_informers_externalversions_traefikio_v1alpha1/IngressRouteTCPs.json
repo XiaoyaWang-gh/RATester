@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/informers/externalversions/traefikio/v1alpha1/interface.go",
+    "lineno": 74,
+    "focalfunc": "func (v *version) IngressRouteTCPs() IngressRouteTCPInformer",
+    "funcbody": "func (v *version) IngressRouteTCPs() IngressRouteTCPInformer {\n\treturn &ingressRouteTCPInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}\n}",
+    "funcname": "IngressRouteTCPs"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 141,
+    "focalfunc": "func (monitor *Monitor) doCheck(ctx context.Context) error",
+    "funcbody": "func (monitor *Monitor) doCheck(ctx context.Context) error {\n\tswitch monitor.checkType {\n\tcase \"tcp\":\n\t\treturn monitor.doTCPCheck(ctx)\n\tcase \"http\":\n\t\treturn monitor.doHTTPCheck(ctx)\n\tdefault:\n\t\treturn ErrHealthCheckType\n\t}\n}",
+    "funcname": "doCheck"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 191,
+    "focalfunc": "func (c ConfigLanguage) IsUglyURLs(section string) bool",
+    "funcbody": "func (c ConfigLanguage) IsUglyURLs(section string) bool {\n\treturn c.config.C.IsUglyURLSection(section)\n}",
+    "funcname": "IsUglyURLs"
+}

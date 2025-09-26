@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/xml.go",
+    "lineno": 26,
+    "focalfunc": "func (r XML) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r XML) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, xmlContentType)\n}",
+    "funcname": "WriteContentType"
+}

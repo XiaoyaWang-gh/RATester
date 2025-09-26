@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/static.go",
+    "lineno": 248,
+    "focalfunc": "func listDir(t *template.Template, name string, dir http.File, res *echo.Response) (err error)",
+    "funcbody": "func listDir(t *template.Template, name string, dir http.File, res *echo.Response) (err error) {\n\tfiles, err := dir.Readdir(-1)\n\tif err != nil {\n\t\treturn\n\t}\n\n\tres.Header().Set(echo.HeaderContentType, echo.MIMETextHTMLCharsetUTF8)\n\tdata := struct {\n\t\tName\tstring\n\t\tFiles\t[]interface{}\n\t}{\n\t\tName: name,\n\t}\n\tfor _, f := range files {\n\t\tdata.Files = append(data.Files, struct {\n\t\t\tName\tstring\n\t\t\tDir\tbool\n\t\t\tSize\tstring\n\t\t}{f.Name(), f.IsDir(), bytes.Format(f.Size())})\n\t}\n\treturn t.Execute(res, data)\n}",
+    "funcname": "listDir"
+}

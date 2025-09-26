@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/connection.go",
+    "lineno": 35,
+    "focalfunc": "func (c *connection) close()",
+    "funcbody": "func (c *connection) close() {\n\tc.closer.Do(func() {\n\t\tclose(c.send)\n\t})\n}",
+    "funcname": "close"
+}

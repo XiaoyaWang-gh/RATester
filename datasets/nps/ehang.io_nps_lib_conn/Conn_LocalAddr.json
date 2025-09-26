@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 330,
+    "focalfunc": "func (s *Conn) LocalAddr() net.Addr",
+    "funcbody": "func (s *Conn) LocalAddr() net.Addr {\n\treturn s.Conn.LocalAddr()\n}",
+    "funcname": "LocalAddr"
+}

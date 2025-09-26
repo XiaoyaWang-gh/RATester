@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 236,
+    "focalfunc": "func (l *logAdapter) InfoCommand(command string) logg.LevelLogger",
+    "funcbody": "func (l *logAdapter) InfoCommand(command string) logg.LevelLogger {\n\treturn l.infol.WithField(FieldNameCmd, command)\n}",
+    "funcname": "InfoCommand"
+}

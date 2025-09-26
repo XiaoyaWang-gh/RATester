@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 267,
+    "focalfunc": "func (c *Context) Set(key string, value any)",
+    "funcbody": "func (c *Context) Set(key string, value any) {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tif c.Keys == nil {\n\t\tc.Keys = make(map[string]any)\n\t}\n\n\tc.Keys[key] = value\n}",
+    "funcname": "Set"
+}

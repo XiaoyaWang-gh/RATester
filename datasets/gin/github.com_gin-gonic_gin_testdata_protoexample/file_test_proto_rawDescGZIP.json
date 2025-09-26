@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 225,
+    "focalfunc": "func file_test_proto_rawDescGZIP() []byte",
+    "funcbody": "func file_test_proto_rawDescGZIP() []byte {\n\tfile_test_proto_rawDescOnce.Do(func() {\n\t\tfile_test_proto_rawDescData = protoimpl.X.CompressGZIP(file_test_proto_rawDescData)\n\t})\n\treturn file_test_proto_rawDescData\n}",
+    "funcname": "file_test_proto_rawDescGZIP"
+}

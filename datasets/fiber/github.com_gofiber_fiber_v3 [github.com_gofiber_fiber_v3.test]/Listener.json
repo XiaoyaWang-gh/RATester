@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/listen.go",
+    "lineno": 225,
+    "focalfunc": "func (app *App) Listener(ln net.Listener, config ...ListenConfig) error",
+    "funcbody": "func (app *App) Listener(ln net.Listener, config ...ListenConfig) error {\n\tcfg := listenConfigDefault(config...)\n\n\tif cfg.GracefulContext != nil {\n\t\tctx, cancel := context.WithCancel(cfg.GracefulContext)\n\t\tdefer cancel()\n\n\t\tgo app.gracefulShutdown(ctx, cfg)\n\t}\n\n\tapp.startupProcess()\n\n\tapp.runOnListenHooks(app.prepareListenData(ln.Addr().String(), getTLSConfig(ln) != nil, cfg))\n\n\tapp.printMessages(cfg, ln)\n\n\tif cfg.BeforeServeFunc != nil {\n\t\tif err := cfg.BeforeServeFunc(app); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tif cfg.EnablePrefork {\n\t\tlog.Warn(\"Prefork isn't supported for custom listeners.\")\n\t}\n\n\treturn app.server.Serve(ln)\n}",
+    "funcname": "Listener"
+}

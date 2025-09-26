@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/accesslog/logger.go",
+    "lineno": 352,
+    "focalfunc": "func (h *Handler) redactHeaders(headers http.Header, fields logrus.Fields, prefix string)",
+    "funcbody": "func (h *Handler) redactHeaders(headers http.Header, fields logrus.Fields, prefix string) {\n\tfor k := range headers {\n\t\tv := h.config.Fields.KeepHeader(k)\n\t\tif v == types.AccessLogKeep {\n\t\t\tfields[prefix+k] = strings.Join(headers.Values(k), \",\")\n\t\t} else if v == types.AccessLogRedact {\n\t\t\tfields[prefix+k] = \"REDACTED\"\n\t\t}\n\t}\n}",
+    "funcname": "redactHeaders"
+}

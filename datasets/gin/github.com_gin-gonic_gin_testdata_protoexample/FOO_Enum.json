@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 39,
+    "focalfunc": "func (x FOO) Enum() *FOO",
+    "funcbody": "func (x FOO) Enum() *FOO {\n\tp := new(FOO)\n\t*p = x\n\treturn p\n}",
+    "funcname": "Enum"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 292,
+    "focalfunc": "func (l *Listener) Close() error",
+    "funcbody": "func (l *Listener) Close() error {\n\tl.mux.registryRouter.Del(l.name, l.location, l.routeByHTTPUser)\n\tclose(l.accept)\n\treturn nil\n}",
+    "funcname": "Close"
+}

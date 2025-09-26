@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/converter/converter.go",
+    "lineno": 40,
+    "focalfunc": "func (p ProviderConfig) MarkupConfig() markup_config.Config",
+    "funcbody": "func (p ProviderConfig) MarkupConfig() markup_config.Config {\n\treturn p.Conf.GetConfigSection(\"markup\").(markup_config.Config)\n}",
+    "funcname": "MarkupConfig"
+}

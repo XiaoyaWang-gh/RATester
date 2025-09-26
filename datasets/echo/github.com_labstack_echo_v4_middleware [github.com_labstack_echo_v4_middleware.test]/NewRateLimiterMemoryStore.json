@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/rate_limiter.go",
+    "lineno": 183,
+    "focalfunc": "func NewRateLimiterMemoryStore(rate rate.Limit) (store *RateLimiterMemoryStore)",
+    "funcbody": "func NewRateLimiterMemoryStore(rate rate.Limit) (store *RateLimiterMemoryStore) {\n\treturn NewRateLimiterMemoryStoreWithConfig(RateLimiterMemoryStoreConfig{\n\t\tRate: rate,\n\t})\n}",
+    "funcname": "NewRateLimiterMemoryStore"
+}

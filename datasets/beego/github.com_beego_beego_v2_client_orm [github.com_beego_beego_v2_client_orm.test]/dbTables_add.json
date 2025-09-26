@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_tables.go",
+    "lineno": 69,
+    "focalfunc": "func (t *dbTables) add(names []string, mi *models.ModelInfo, fi *models.FieldInfo, inner bool) (*dbTable, bool)",
+    "funcbody": "func (t *dbTables) add(names []string, mi *models.ModelInfo, fi *models.FieldInfo, inner bool) (*dbTable, bool) {\n\tname := strings.Join(names, ExprSep)\n\tif _, ok := t.tablesM[name]; !ok {\n\t\ti := len(t.tables) + 1\n\t\tjt := &dbTable{i, fmt.Sprintf(\"T%d\", i), name, names, false, inner, mi, fi, nil}\n\t\tt.tablesM[name] = jt\n\t\tt.tables = append(t.tables, jt)\n\t\treturn jt, true\n\t}\n\treturn t.tablesM[name], false\n}",
+    "funcname": "add"
+}

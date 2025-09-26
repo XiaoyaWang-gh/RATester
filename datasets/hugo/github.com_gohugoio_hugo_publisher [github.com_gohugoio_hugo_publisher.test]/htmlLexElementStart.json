@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/publisher/htmlElementsCollector.go",
+    "lineno": 295,
+    "focalfunc": "func htmlLexElementStart(w *htmlElementsCollectorWriter) htmlCollectorStateFunc",
+    "funcbody": "func htmlLexElementStart(w *htmlElementsCollectorWriter) htmlCollectorStateFunc {\n\tif w.r == '>' || unicode.IsSpace(w.r) {\n\t\tif w.buff.Len() < 2 || bytes.HasPrefix(w.buff.Bytes(), []byte(\"</\")) {\n\t\t\tw.buff.Reset()\n\t\t\treturn htmlLexStart\n\t\t}\n\n\t\ttagName := w.buff.Bytes()[1:]\n\t\tisSelfClosing := tagName[len(tagName)-1] == '/'\n\n\t\tswitch {\n\t\tcase !isSelfClosing && skipInnerElementRe.Match(tagName):\n\n\t\t\tw.backup()\n\n\t\t\ttagNameCopy := make([]byte, len(tagName))\n\t\t\tcopy(tagNameCopy, tagName)\n\n\t\t\treturn w.lexElementInside(\n\t\t\t\tw.consumeBuffUntil(\n\t\t\t\t\tfunc() bool {\n\t\t\t\t\t\tif w.r != '>' {\n\t\t\t\t\t\t\treturn false\n\t\t\t\t\t\t}\n\t\t\t\t\t\treturn isClosedByTag(w.buff.Bytes(), tagNameCopy)\n\t\t\t\t\t},\n\t\t\t\t\thtmlLexStart,\n\t\t\t\t))\n\t\tcase skipAllElementRe.Match(tagName):\n\n\t\t\tw.buff.Reset()\n\t\t\treturn w.consumeRuneUntil(func(r rune) bool {\n\t\t\t\treturn r == '>'\n\t\t\t}, htmlLexStart)\n\t\tdefault:\n\t\t\tw.backup()\n\t\t\treturn w.defaultLexElementInside\n\t\t}\n\t}\n\n\tw.buff.WriteRune(w.r)\n\n\tif w.r == '-' && bytes.Equal(w.buff.Bytes(), []byte(\"<!--\")) {\n\t\tw.buff.Reset()\n\t\treturn htmlLexToEndOfComment\n\t}\n\n\treturn htmlLexElementStart\n}",
+    "funcname": "htmlLexElementStart"
+}

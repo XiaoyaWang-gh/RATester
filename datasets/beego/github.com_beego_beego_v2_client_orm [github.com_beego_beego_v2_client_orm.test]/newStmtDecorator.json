@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 561,
+    "focalfunc": "func newStmtDecorator(sqlStmt *sql.Stmt) *stmtDecorator",
+    "funcbody": "func newStmtDecorator(sqlStmt *sql.Stmt) *stmtDecorator {\n\treturn &stmtDecorator{\n\t\tstmt: sqlStmt,\n\t}\n}",
+    "funcname": "newStmtDecorator"
+}

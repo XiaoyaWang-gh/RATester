@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcp.go",
+    "lineno": 37,
+    "focalfunc": "func NewTCPGroupCtl(portManager *ports.Manager) *TCPGroupCtl",
+    "funcbody": "func NewTCPGroupCtl(portManager *ports.Manager) *TCPGroupCtl {\n\treturn &TCPGroupCtl{\n\t\tgroups:\t\tmake(map[string]*TCPGroup),\n\t\tportManager:\tportManager,\n\t}\n}",
+    "funcname": "NewTCPGroupCtl"
+}

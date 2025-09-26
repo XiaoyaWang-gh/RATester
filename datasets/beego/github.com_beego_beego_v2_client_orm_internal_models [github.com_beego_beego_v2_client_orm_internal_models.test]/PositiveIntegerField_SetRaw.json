@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 589,
+    "focalfunc": "func (e *PositiveIntegerField) SetRaw(value interface{}) error",
+    "funcbody": "func (e *PositiveIntegerField) SetRaw(value interface{}) error {\n\tswitch d := value.(type) {\n\tcase uint32:\n\t\te.Set(d)\n\tcase string:\n\t\tv, err := utils.StrTo(d).Uint32()\n\t\tif err == nil {\n\t\t\te.Set(v)\n\t\t}\n\t\treturn err\n\tdefault:\n\t\treturn fmt.Errorf(\"<PositiveIntegerField.SetRaw> unknown value `%s`\", value)\n\t}\n\treturn nil\n}",
+    "funcname": "SetRaw"
+}

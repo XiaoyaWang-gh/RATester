@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 446,
+    "focalfunc": "func (c *Context) DefaultQuery(key, defaultValue string) string",
+    "funcbody": "func (c *Context) DefaultQuery(key, defaultValue string) string {\n\tif value, ok := c.GetQuery(key); ok {\n\t\treturn value\n\t}\n\treturn defaultValue\n}",
+    "funcname": "DefaultQuery"
+}

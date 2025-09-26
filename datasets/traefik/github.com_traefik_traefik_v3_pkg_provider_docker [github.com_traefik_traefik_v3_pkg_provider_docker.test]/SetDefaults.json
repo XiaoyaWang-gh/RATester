@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/pswarm.go",
+    "lineno": 41,
+    "focalfunc": "func (p *SwarmProvider) SetDefaults()",
+    "funcbody": "func (p *SwarmProvider) SetDefaults() {\n\tp.Watch = true\n\tp.ExposedByDefault = true\n\tp.Endpoint = \"unix:///var/run/docker.sock\"\n\tp.RefreshSeconds = ptypes.Duration(15 * time.Second)\n\tp.DefaultRule = DefaultTemplateRule\n}",
+    "funcname": "SetDefaults"
+}

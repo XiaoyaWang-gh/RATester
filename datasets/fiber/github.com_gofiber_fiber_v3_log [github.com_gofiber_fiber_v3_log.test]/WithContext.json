@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/fiberlog.go",
+    "lineno": 120,
+    "focalfunc": "func WithContext(ctx context.Context) CommonLogger",
+    "funcbody": "func WithContext(ctx context.Context) CommonLogger {\n\treturn logger.WithContext(ctx)\n}",
+    "funcname": "WithContext"
+}

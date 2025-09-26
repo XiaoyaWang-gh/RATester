@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/redirect_msgp.go",
+    "lineno": 211,
+    "focalfunc": "func (z redirectionMsgs) EncodeMsg(en *msgp.Writer) (err error)",
+    "funcbody": "func (z redirectionMsgs) EncodeMsg(en *msgp.Writer) (err error) {\n\terr = en.WriteArrayHeader(uint32(len(z)))\n\tif err != nil {\n\t\terr = msgp.WrapError(err)\n\t\treturn\n\t}\n\tfor zb0003 := range z {\n\t\terr = z[zb0003].EncodeMsg(en)\n\t\tif err != nil {\n\t\t\terr = msgp.WrapError(err, zb0003)\n\t\t\treturn\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "EncodeMsg"
+}

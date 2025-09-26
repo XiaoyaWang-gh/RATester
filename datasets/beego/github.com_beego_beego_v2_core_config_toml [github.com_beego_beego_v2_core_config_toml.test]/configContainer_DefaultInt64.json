@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 218,
+    "focalfunc": "func (c *configContainer) DefaultInt64(key string, defaultVal int64) int64",
+    "funcbody": "func (c *configContainer) DefaultInt64(key string, defaultVal int64) int64 {\n\tres, err := c.get(key)\n\tif err != nil {\n\t\treturn defaultVal\n\t}\n\tif i, ok := res.(int); ok {\n\t\treturn int64(i)\n\t} else if i64, ok := res.(int64); ok {\n\t\treturn i64\n\t} else {\n\t\treturn defaultVal\n\t}\n}",
+    "funcname": "DefaultInt64"
+}

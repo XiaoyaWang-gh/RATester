@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tracing/tracing.go",
+    "lineno": 115,
+    "focalfunc": "func (t TracerProvider) Tracer(name string, options ...trace.TracerOption) trace.Tracer",
+    "funcbody": "func (t TracerProvider) Tracer(name string, options ...trace.TracerOption) trace.Tracer {\n\tif name == \"github.com/traefik/traefik\" {\n\t\treturn t.tracer\n\t}\n\n\treturn t.TracerProvider.Tracer(name, options...)\n}",
+    "funcname": "Tracer"
+}

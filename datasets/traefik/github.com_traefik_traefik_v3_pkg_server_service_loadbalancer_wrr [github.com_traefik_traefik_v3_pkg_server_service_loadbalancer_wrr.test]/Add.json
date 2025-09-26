@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/wrr/wrr.go",
+    "lineno": 253,
+    "focalfunc": "func (b *Balancer) Add(name string, handler http.Handler, weight *int)",
+    "funcbody": "func (b *Balancer) Add(name string, handler http.Handler, weight *int) {\n\tw := 1\n\tif weight != nil {\n\t\tw = *weight\n\t}\n\n\tif w <= 0 {\n\t\treturn\n\t}\n\n\th := &namedHandler{Handler: handler, name: name, weight: float64(w)}\n\n\tb.handlersMu.Lock()\n\th.deadline = b.curDeadline + 1/h.weight\n\theap.Push(b, h)\n\tb.status[name] = struct{}{}\n\tb.handlerMap[name] = h\n\tb.handlerMap[hash(name)] = h\n\tb.handlersMu.Unlock()\n}",
+    "funcname": "Add"
+}

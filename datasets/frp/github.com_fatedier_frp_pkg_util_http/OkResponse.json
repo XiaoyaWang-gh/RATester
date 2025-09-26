@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/http.go",
+    "lineno": 24,
+    "focalfunc": "func OkResponse() *http.Response",
+    "funcbody": "func OkResponse() *http.Response {\n\theader := make(http.Header)\n\n\tres := &http.Response{\n\t\tStatus:\t\t\"OK\",\n\t\tStatusCode:\t200,\n\t\tProto:\t\t\"HTTP/1.1\",\n\t\tProtoMajor:\t1,\n\t\tProtoMinor:\t1,\n\t\tHeader:\t\theader,\n\t}\n\treturn res\n}",
+    "funcname": "OkResponse"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/component_fs.go",
+    "lineno": 173,
+    "focalfunc": "func (fs *componentFs) applyMeta(fi FileNameIsDir, name string) (FileMetaInfo, bool)",
+    "funcbody": "func (fs *componentFs) applyMeta(fi FileNameIsDir, name string) (FileMetaInfo, bool) {\n\tif runtime.GOOS == \"darwin\" {\n\t\tname = norm.NFC.String(name)\n\t}\n\tfim := fi.(FileMetaInfo)\n\tmeta := fim.Meta()\n\tpi := fs.opts.PathParser.Parse(fs.opts.Component, name)\n\tif pi.Disabled() {\n\t\treturn fim, false\n\t}\n\tif meta.Lang != \"\" {\n\t\tif isLangDisabled := fs.opts.PathParser.IsLangDisabled; isLangDisabled != nil && isLangDisabled(meta.Lang) {\n\t\t\treturn fim, false\n\t\t}\n\t}\n\tmeta.PathInfo = pi\n\tif !fim.IsDir() {\n\t\tif fileLang := meta.PathInfo.Lang(); fileLang != \"\" {\n\n\t\t\tmeta.Weight++\n\t\t\tmeta.Lang = fileLang\n\t\t}\n\t}\n\n\tif meta.Lang == \"\" {\n\t\tmeta.Lang = fs.opts.DefaultContentLanguage\n\t}\n\n\tlangIdx, found := fs.opts.PathParser.LanguageIndex[meta.Lang]\n\tif !found {\n\t\tpanic(\"no language found for \" + meta.Lang)\n\t}\n\tmeta.LangIndex = langIdx\n\n\tif fi.IsDir() {\n\t\tmeta.OpenFunc = func() (afero.File, error) {\n\t\t\treturn fs.Open(name)\n\t\t}\n\t}\n\n\treturn fim, true\n}",
+    "funcname": "applyMeta"
+}

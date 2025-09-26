@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/netpackager.go",
+    "lineno": 72,
+    "focalfunc": "func (addr *Addr) Encode(b []byte) (int, error)",
+    "funcbody": "func (addr *Addr) Encode(b []byte) (int, error) {\n\tb[0] = addr.Type\n\tpos := 1\n\tswitch addr.Type {\n\tcase ipV4:\n\t\tip4 := net.ParseIP(addr.Host).To4()\n\t\tif ip4 == nil {\n\t\t\tip4 = net.IPv4zero.To4()\n\t\t}\n\t\tpos += copy(b[pos:], ip4)\n\tcase domainName:\n\t\tb[pos] = byte(len(addr.Host))\n\t\tpos++\n\t\tpos += copy(b[pos:], []byte(addr.Host))\n\tcase ipV6:\n\t\tip16 := net.ParseIP(addr.Host).To16()\n\t\tif ip16 == nil {\n\t\t\tip16 = net.IPv6zero.To16()\n\t\t}\n\t\tpos += copy(b[pos:], ip16)\n\tdefault:\n\t\tb[0] = ipV4\n\t\tcopy(b[pos:pos+4], net.IPv4zero.To4())\n\t\tpos += 4\n\t}\n\tbinary.BigEndian.PutUint16(b[pos:], addr.Port)\n\tpos += 2\n\n\treturn pos, nil\n}",
+    "funcname": "Encode"
+}

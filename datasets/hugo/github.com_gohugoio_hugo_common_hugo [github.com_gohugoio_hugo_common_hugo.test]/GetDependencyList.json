@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 278,
+    "focalfunc": "func GetDependencyList() []string",
+    "funcbody": "func GetDependencyList() []string {\n\tvar deps []string\n\n\tbi := getBuildInfo()\n\tif bi == nil {\n\t\treturn deps\n\t}\n\n\tfor _, dep := range bi.Deps {\n\t\tdeps = append(deps, formatDep(dep.Path, dep.Version))\n\t}\n\n\tdeps = append(deps, GetDependencyListNonGo()...)\n\n\tsort.Strings(deps)\n\n\treturn deps\n}",
+    "funcname": "GetDependencyList"
+}

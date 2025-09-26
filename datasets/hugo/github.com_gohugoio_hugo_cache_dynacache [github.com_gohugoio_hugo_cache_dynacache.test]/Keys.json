@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 529,
+    "focalfunc": "func (p *Partition[K, V]) Keys() []K",
+    "funcbody": "func (p *Partition[K, V]) Keys() []K {\n\tvar keys []K\n\tp.c.DeleteFunc(func(key K, v V) bool {\n\t\tkeys = append(keys, key)\n\t\treturn false\n\t})\n\treturn keys\n}",
+    "funcname": "Keys"
+}

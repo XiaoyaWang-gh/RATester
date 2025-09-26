@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 275,
+    "focalfunc": "func (c *DefaultCtx) BodyRaw() []byte",
+    "funcbody": "func (c *DefaultCtx) BodyRaw() []byte {\n\treturn c.getBody()\n}",
+    "funcname": "BodyRaw"
+}

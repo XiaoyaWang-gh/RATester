@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/internal/extensions/attributes/attributes.go",
+    "lineno": 70,
+    "focalfunc": "func (a *attrParser) Trigger() []byte",
+    "funcbody": "func (a *attrParser) Trigger() []byte {\n\treturn []byte{'{'}\n}",
+    "funcname": "Trigger"
+}

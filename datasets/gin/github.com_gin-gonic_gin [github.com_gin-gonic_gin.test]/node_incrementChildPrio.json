@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/tree.go",
+    "lineno": 121,
+    "focalfunc": "func (n *node) incrementChildPrio(pos int) int",
+    "funcbody": "func (n *node) incrementChildPrio(pos int) int {\n\tcs := n.children\n\tcs[pos].priority++\n\tprio := cs[pos].priority\n\n\tnewPos := pos\n\tfor ; newPos > 0 && cs[newPos-1].priority < prio; newPos-- {\n\n\t\tcs[newPos-1], cs[newPos] = cs[newPos], cs[newPos-1]\n\t}\n\n\tif newPos != pos {\n\t\tn.indices = n.indices[:newPos] +\n\t\t\tn.indices[pos:pos+1] +\n\t\t\tn.indices[newPos:pos] + n.indices[pos+1:]\n\t}\n\n\treturn newPos\n}",
+    "funcname": "incrementChildPrio"
+}

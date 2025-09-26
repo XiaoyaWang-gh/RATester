@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob.go",
+    "lineno": 28,
+    "focalfunc": "func Glob(fs afero.Fs, pattern string, handle func(fi FileMetaInfo) (bool, error)) error",
+    "funcbody": "func Glob(fs afero.Fs, pattern string, handle func(fi FileMetaInfo) (bool, error)) error {\n\tpattern = glob.NormalizePathNoLower(pattern)\n\tif pattern == \"\" {\n\t\treturn nil\n\t}\n\troot := glob.ResolveRootDir(pattern)\n\tif !strings.HasPrefix(root, \"/\") {\n\t\troot = \"/\" + root\n\t}\n\tpattern = strings.ToLower(pattern)\n\n\tg, err := glob.GetGlob(pattern)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\thasSuperAsterisk := strings.Contains(pattern, \"**\")\n\tlevels := strings.Count(pattern, \"/\")\n\n\tdone := errors.New(\"done\")\n\n\twfn := func(p string, info FileMetaInfo) error {\n\t\tp = glob.NormalizePath(p)\n\t\tif info.IsDir() {\n\t\t\tif !hasSuperAsterisk {\n\n\t\t\t\tif p != \"\" && strings.Count(p, \"/\") >= levels {\n\t\t\t\t\treturn filepath.SkipDir\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn nil\n\t\t}\n\n\t\tif g.Match(p) {\n\t\t\td, err := handle(info)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tif d {\n\t\t\t\treturn done\n\t\t\t}\n\t\t}\n\n\t\treturn nil\n\t}\n\n\tw := NewWalkway(\n\t\tWalkwayConfig{\n\t\t\tRoot:\t\troot,\n\t\t\tFs:\t\tfs,\n\t\t\tWalkFn:\t\twfn,\n\t\t\tFailOnNotExist:\ttrue,\n\t\t})\n\n\terr = w.Walk()\n\n\tif err != done {\n\t\treturn err\n\t}\n\n\treturn nil\n}",
+    "funcname": "Glob"
+}

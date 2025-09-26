@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 54,
+    "focalfunc": "func (r *Request) Protocol(protocol string) *Request",
+    "funcbody": "func (r *Request) Protocol(protocol string) *Request {\n\tr.protocol = protocol\n\treturn r\n}",
+    "funcname": "Protocol"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 86,
+    "focalfunc": "func (h chromaHighlighter) HighlightCodeBlock(ctx hooks.CodeblockContext, opts any) (HighlightResult, error)",
+    "funcbody": "func (h chromaHighlighter) HighlightCodeBlock(ctx hooks.CodeblockContext, opts any) (HighlightResult, error) {\n\tcfg := h.cfg\n\n\tvar b strings.Builder\n\n\tattributes := ctx.(hooks.AttributesOptionsSliceProvider).AttributesSlice()\n\n\toptions := ctx.Options()\n\n\tif err := applyOptionsFromMap(options, &cfg); err != nil {\n\t\treturn HighlightResult{}, err\n\t}\n\n\tif err := applyOptions(opts, &cfg); err != nil {\n\t\treturn HighlightResult{}, err\n\t}\n\n\tif err := applyOptionsFromCodeBlockContext(ctx, &cfg); err != nil {\n\t\treturn HighlightResult{}, err\n\t}\n\n\tlow, high, err := highlight(&b, ctx.Inner(), ctx.Type(), attributes, cfg)\n\tif err != nil {\n\t\treturn HighlightResult{}, err\n\t}\n\n\thighlighted := b.String()\n\tif high == 0 {\n\t\thigh = len(highlighted)\n\t}\n\n\treturn HighlightResult{\n\t\thighlighted:\ttemplate.HTML(highlighted),\n\t\tinnerLow:\tlow,\n\t\tinnerHigh:\thigh,\n\t}, nil\n}",
+    "funcname": "HighlightCodeBlock"
+}

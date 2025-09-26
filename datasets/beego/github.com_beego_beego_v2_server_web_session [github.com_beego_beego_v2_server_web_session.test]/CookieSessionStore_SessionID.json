@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_cookie.go",
+    "lineno": 72,
+    "focalfunc": "func (st *CookieSessionStore) SessionID(context.Context) string",
+    "funcbody": "func (st *CookieSessionStore) SessionID(context.Context) string {\n\treturn st.sid\n}",
+    "funcname": "SessionID"
+}

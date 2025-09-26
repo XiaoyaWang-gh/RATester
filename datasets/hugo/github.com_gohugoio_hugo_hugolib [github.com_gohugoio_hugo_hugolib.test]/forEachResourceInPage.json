@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 481,
+    "focalfunc": "func (m *pageMap) forEachResourceInPage(\n\tps *pageState,\n\tlockType doctree.LockType,\n\texact bool,\n\thandle func(resourceKey string, n contentNodeI, match doctree.DimensionFlag) (bool, error),\n) error",
+    "funcbody": "func (m *pageMap) forEachResourceInPage(\n\tps *pageState,\n\tlockType doctree.LockType,\n\texact bool,\n\thandle func(resourceKey string, n contentNodeI, match doctree.DimensionFlag) (bool, error),\n) error {\n\tkeyPage := ps.Path()\n\tif keyPage == \"/\" {\n\t\tkeyPage = \"\"\n\t}\n\tprefix := paths.AddTrailingSlash(ps.Path())\n\tisBranch := ps.IsNode()\n\n\trw := &doctree.NodeShiftTreeWalker[contentNodeI]{\n\t\tTree:\t\tm.treeResources,\n\t\tPrefix:\t\tprefix,\n\t\tLockType:\tlockType,\n\t\tExact:\t\texact,\n\t}\n\n\trw.Handle = func(resourceKey string, n contentNodeI, match doctree.DimensionFlag) (bool, error) {\n\t\tif isBranch {\n\n\t\t\townerKey, _ := m.treePages.LongestPrefixAll(path.Dir(resourceKey))\n\t\t\tif ownerKey != keyPage {\n\n\t\t\t\trw.SkipPrefix(ownerKey + \"/\")\n\t\t\t\treturn false, nil\n\t\t\t}\n\n\t\t}\n\t\treturn handle(resourceKey, n, match)\n\t}\n\n\treturn rw.Walk(context.Background())\n}",
+    "funcname": "forEachResourceInPage"
+}

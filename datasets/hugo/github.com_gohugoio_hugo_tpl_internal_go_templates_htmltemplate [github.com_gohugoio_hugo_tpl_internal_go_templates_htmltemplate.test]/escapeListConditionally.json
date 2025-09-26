@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 587,
+    "focalfunc": "func (e *escaper) escapeListConditionally(c context, n *parse.ListNode, filter func(*escaper, context) bool) (context, bool)",
+    "funcbody": "func (e *escaper) escapeListConditionally(c context, n *parse.ListNode, filter func(*escaper, context) bool) (context, bool) {\n\te1 := makeEscaper(e.ns)\n\te1.rangeContext = e.rangeContext\n\n\tfor k, v := range e.output {\n\t\te1.output[k] = v\n\t}\n\tc = e1.escapeList(c, n)\n\tok := filter != nil && filter(&e1, c)\n\tif ok {\n\n\t\tfor k, v := range e1.output {\n\t\t\te.output[k] = v\n\t\t}\n\t\tfor k, v := range e1.derived {\n\t\t\te.derived[k] = v\n\t\t}\n\t\tfor k, v := range e1.called {\n\t\t\te.called[k] = v\n\t\t}\n\t\tfor k, v := range e1.actionNodeEdits {\n\t\t\te.editActionNode(k, v)\n\t\t}\n\t\tfor k, v := range e1.templateNodeEdits {\n\t\t\te.editTemplateNode(k, v)\n\t\t}\n\t\tfor k, v := range e1.textNodeEdits {\n\t\t\te.editTextNode(k, v)\n\t\t}\n\t}\n\treturn c, ok\n}",
+    "funcname": "escapeListConditionally"
+}

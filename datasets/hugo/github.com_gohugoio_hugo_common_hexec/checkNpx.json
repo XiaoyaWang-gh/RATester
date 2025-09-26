@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hexec/exec.go",
+    "lineno": 185,
+    "focalfunc": "func (e *Exec) checkNpx()",
+    "funcbody": "func (e *Exec) checkNpx() {\n\te.npxInit.Do(func() {\n\t\te.npxAvailable = InPath(npxBinary)\n\t})\n}",
+    "funcname": "checkNpx"
+}

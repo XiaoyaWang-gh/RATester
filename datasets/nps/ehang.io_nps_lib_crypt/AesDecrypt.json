@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/crypt/crypt.go",
+    "lineno": 29,
+    "focalfunc": "func AesDecrypt(crypted, key []byte) ([]byte, error)",
+    "funcbody": "func AesDecrypt(crypted, key []byte) ([]byte, error) {\n\tblock, err := aes.NewCipher(key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tblockSize := block.BlockSize()\n\tblockMode := cipher.NewCBCDecrypter(block, key[:blockSize])\n\torigData := make([]byte, len(crypted))\n\tblockMode.CryptBlocks(origData, crypted)\n\terr, origData = PKCS5UnPadding(origData)\n\treturn origData, err\n}",
+    "funcname": "AesDecrypt"
+}

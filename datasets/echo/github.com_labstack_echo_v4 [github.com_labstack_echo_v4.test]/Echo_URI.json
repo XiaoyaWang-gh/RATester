@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 619,
+    "focalfunc": "func (e *Echo) URI(handler HandlerFunc, params ...interface{}) string",
+    "funcbody": "func (e *Echo) URI(handler HandlerFunc, params ...interface{}) string {\n\tname := handlerName(handler)\n\treturn e.Reverse(name, params...)\n}",
+    "funcname": "URI"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 269,
+    "focalfunc": "func (p *Provider) addServer(item itemData, loadBalancer *dynamic.ServersLoadBalancer) error",
+    "funcbody": "func (p *Provider) addServer(item itemData, loadBalancer *dynamic.ServersLoadBalancer) error {\n\tif loadBalancer == nil {\n\t\treturn errors.New(\"load-balancer is not defined\")\n\t}\n\n\tif len(loadBalancer.Servers) == 0 {\n\t\tserver := dynamic.Server{}\n\t\tserver.SetDefaults()\n\n\t\tloadBalancer.Servers = []dynamic.Server{server}\n\t}\n\n\tif item.Address == \"\" {\n\t\treturn errors.New(\"address is missing\")\n\t}\n\n\tport := loadBalancer.Servers[0].Port\n\tloadBalancer.Servers[0].Port = \"\"\n\n\tif port == \"\" {\n\t\tport = item.Port\n\t}\n\n\tif port == \"\" {\n\t\treturn errors.New(\"port is missing\")\n\t}\n\n\tscheme := loadBalancer.Servers[0].Scheme\n\tloadBalancer.Servers[0].Scheme = \"\"\n\n\tif item.ExtraConf.ConsulCatalog.Connect {\n\t\tloadBalancer.ServersTransport = itemServersTransportKey(item)\n\t\tscheme = \"https\"\n\t}\n\n\tloadBalancer.Servers[0].URL = fmt.Sprintf(\"%s://%s\", scheme, net.JoinHostPort(item.Address, port))\n\n\treturn nil\n}",
+    "funcname": "addServer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/nomad/config.go",
+    "lineno": 209,
+    "focalfunc": "func (p *Provider) addServerUDP(i item, lb *dynamic.UDPServersLoadBalancer) error",
+    "funcbody": "func (p *Provider) addServerUDP(i item, lb *dynamic.UDPServersLoadBalancer) error {\n\tif lb == nil {\n\t\treturn errors.New(\"load-balancer is missing\")\n\t}\n\n\tif len(lb.Servers) == 0 {\n\t\tlb.Servers = []dynamic.UDPServer{{}}\n\t}\n\n\tif i.Address == \"\" {\n\t\treturn errors.New(\"address is missing\")\n\t}\n\n\tport := lb.Servers[0].Port\n\tlb.Servers[0].Port = \"\"\n\n\tif port == \"\" && i.Port > 0 {\n\t\tport = strconv.Itoa(i.Port)\n\t}\n\n\tif port == \"\" {\n\t\treturn errors.New(\"port is missing\")\n\t}\n\n\tlb.Servers[0].Address = net.JoinHostPort(i.Address, port)\n\n\treturn nil\n}",
+    "funcname": "addServerUDP"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 210,
+    "focalfunc": "func (r *Router) Add(method, path string, h HandlerFunc)",
+    "funcbody": "func (r *Router) Add(method, path string, h HandlerFunc) {\n\tr.insert(method, normalizePathSlash(path), h)\n}",
+    "funcname": "Add"
+}

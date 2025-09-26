@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 52,
+    "focalfunc": "func (d LayoutDescriptor) isList() bool",
+    "funcbody": "func (d LayoutDescriptor) isList() bool {\n\treturn !d.RenderingHook && d.Kind != \"page\" && d.Kind != \"404\" && d.Kind != \"sitemap\" && d.Kind != \"sitemapindex\"\n}",
+    "funcname": "isList"
+}

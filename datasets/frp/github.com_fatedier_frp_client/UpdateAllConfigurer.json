@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/service.go",
+    "lineno": 350,
+    "focalfunc": "func (svr *Service) UpdateAllConfigurer(proxyCfgs []v1.ProxyConfigurer, visitorCfgs []v1.VisitorConfigurer) error",
+    "funcbody": "func (svr *Service) UpdateAllConfigurer(proxyCfgs []v1.ProxyConfigurer, visitorCfgs []v1.VisitorConfigurer) error {\n\tsvr.cfgMu.Lock()\n\tsvr.proxyCfgs = proxyCfgs\n\tsvr.visitorCfgs = visitorCfgs\n\tsvr.cfgMu.Unlock()\n\n\tsvr.ctlMu.RLock()\n\tctl := svr.ctl\n\tsvr.ctlMu.RUnlock()\n\n\tif ctl != nil {\n\t\treturn svr.ctl.UpdateAllConfigurer(proxyCfgs, visitorCfgs)\n\t}\n\treturn nil\n}",
+    "funcname": "UpdateAllConfigurer"
+}

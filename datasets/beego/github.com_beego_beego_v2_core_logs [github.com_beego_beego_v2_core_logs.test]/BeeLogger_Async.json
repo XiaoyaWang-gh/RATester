@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 159,
+    "focalfunc": "func (bl *BeeLogger) Async(msgLen ...int64) *BeeLogger",
+    "funcbody": "func (bl *BeeLogger) Async(msgLen ...int64) *BeeLogger {\n\tbl.lock.Lock()\n\tdefer bl.lock.Unlock()\n\tif bl.asynchronous {\n\t\treturn bl\n\t}\n\tbl.asynchronous = true\n\tif len(msgLen) > 0 && msgLen[0] > 0 {\n\t\tbl.msgChanLen = msgLen[0]\n\t}\n\tbl.msgChan = make(chan *LogMsg, bl.msgChanLen)\n\tlogMsgPool = &sync.Pool{\n\t\tNew: func() interface{} {\n\t\t\treturn &LogMsg{}\n\t\t},\n\t}\n\tbl.wg.Add(1)\n\tgo bl.startLogger()\n\treturn bl\n}",
+    "funcname": "Async"
+}

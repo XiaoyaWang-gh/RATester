@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 38,
+    "focalfunc": "func (*Filters) Process(spec any) gift.Filter",
+    "funcbody": "func (*Filters) Process(spec any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(spec),\n\t\tFilter: processFilter{\n\t\t\tspec: cast.ToString(spec),\n\t\t},\n\t}\n}",
+    "funcname": "Process"
+}

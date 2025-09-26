@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/compress/compress.go",
+    "lineno": 153,
+    "focalfunc": "func (c *compress) chooseHandler(typ string, rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (c *compress) chooseHandler(typ string, rw http.ResponseWriter, req *http.Request) {\n\tswitch typ {\n\tcase zstdName:\n\t\tc.zstdHandler.ServeHTTP(rw, req)\n\tcase brotliName:\n\t\tc.brotliHandler.ServeHTTP(rw, req)\n\tcase gzipName:\n\t\tc.gzipHandler.ServeHTTP(rw, req)\n\tdefault:\n\t\tc.next.ServeHTTP(rw, req)\n\t}\n}",
+    "funcname": "chooseHandler"
+}

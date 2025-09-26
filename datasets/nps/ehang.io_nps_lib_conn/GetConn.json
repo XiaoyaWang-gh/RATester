@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 407,
+    "focalfunc": "func GetConn(conn net.Conn, cpt, snappy bool, rt *rate.Rate, isServer bool) io.ReadWriteCloser",
+    "funcbody": "func GetConn(conn net.Conn, cpt, snappy bool, rt *rate.Rate, isServer bool) io.ReadWriteCloser {\n\tif cpt {\n\t\tif isServer {\n\t\t\treturn rate.NewRateConn(crypt.NewTlsServerConn(conn), rt)\n\t\t}\n\t\treturn rate.NewRateConn(crypt.NewTlsClientConn(conn), rt)\n\t} else if snappy {\n\t\treturn rate.NewRateConn(NewSnappyConn(conn), rt)\n\t}\n\treturn rate.NewRateConn(conn, rt)\n}",
+    "funcname": "GetConn"
+}

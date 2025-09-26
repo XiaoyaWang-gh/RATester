@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/fields.go",
+    "lineno": 55,
+    "focalfunc": "func insertFieldPlaceholders(root string, m map[string]any, createPlaceholder func(s string) string)",
+    "funcbody": "func insertFieldPlaceholders(root string, m map[string]any, createPlaceholder func(s string) string) {\n\tfor k := range m {\n\t\tm[k] = createPlaceholder(root + \".\" + k)\n\t}\n}",
+    "funcname": "insertFieldPlaceholders"
+}

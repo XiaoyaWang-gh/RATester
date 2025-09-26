@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/general.go",
+    "lineno": 137,
+    "focalfunc": "func ReaderToString(lines io.Reader) string",
+    "funcbody": "func ReaderToString(lines io.Reader) string {\n\tif lines == nil {\n\t\treturn \"\"\n\t}\n\tb := bp.GetBuffer()\n\tdefer bp.PutBuffer(b)\n\tb.ReadFrom(lines)\n\treturn b.String()\n}",
+    "funcname": "ReaderToString"
+}

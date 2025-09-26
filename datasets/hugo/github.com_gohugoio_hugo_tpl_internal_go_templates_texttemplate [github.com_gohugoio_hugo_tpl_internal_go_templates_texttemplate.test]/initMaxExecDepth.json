@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 24,
+    "focalfunc": "func initMaxExecDepth() int",
+    "funcbody": "func initMaxExecDepth() int {\n\tif runtime.GOARCH == \"wasm\" {\n\t\treturn 1000\n\t}\n\treturn 100000\n}",
+    "funcname": "initMaxExecDepth"
+}

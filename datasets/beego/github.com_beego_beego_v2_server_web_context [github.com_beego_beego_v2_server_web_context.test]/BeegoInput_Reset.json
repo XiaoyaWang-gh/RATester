@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 68,
+    "focalfunc": "func (input *BeegoInput) Reset(ctx *Context)",
+    "funcbody": "func (input *BeegoInput) Reset(ctx *Context) {\n\tinput.Context = ctx\n\tinput.CruSession = nil\n\tinput.pnames = input.pnames[:0]\n\tinput.pvalues = input.pvalues[:0]\n\tinput.dataLock.Lock()\n\tinput.data = nil\n\tinput.dataLock.Unlock()\n\tinput.RequestBody = []byte{}\n}",
+    "funcname": "Reset"
+}

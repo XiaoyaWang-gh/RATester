@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/suites.go",
+    "lineno": 12,
+    "focalfunc": "func AfterSuiteActions()",
+    "funcbody": "func AfterSuiteActions() {\n\n}",
+    "funcname": "AfterSuiteActions"
+}

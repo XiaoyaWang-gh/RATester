@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 146,
+    "focalfunc": "func (i Item) IsShortcodeMarkupDelimiter() bool",
+    "funcbody": "func (i Item) IsShortcodeMarkupDelimiter() bool {\n\treturn i.Type == tLeftDelimScWithMarkup || i.Type == tRightDelimScWithMarkup\n}",
+    "funcname": "IsShortcodeMarkupDelimiter"
+}

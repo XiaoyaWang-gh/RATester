@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode.go",
+    "lineno": 229,
+    "focalfunc": "func (s shortcode) configVersion() int",
+    "funcbody": "func (s shortcode) configVersion() int {\n\tif s.info == nil {\n\n\t\treturn 2\n\t}\n\n\treturn s.info.ParseInfo().Config.Version\n}",
+    "funcname": "configVersion"
+}

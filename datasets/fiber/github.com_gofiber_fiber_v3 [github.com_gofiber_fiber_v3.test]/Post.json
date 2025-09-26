@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/register.go",
+    "lineno": 68,
+    "focalfunc": "func (r *Registering) Post(handler Handler, middleware ...Handler) Register",
+    "funcbody": "func (r *Registering) Post(handler Handler, middleware ...Handler) Register {\n\treturn r.Add([]string{MethodPost}, handler, middleware...)\n}",
+    "funcname": "Post"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter/prometheus/filter.go",
+    "lineno": 88,
+    "focalfunc": "func (builder *FilterChainBuilder) reportTxn(ctx context.Context, inv *orm.Invocation)",
+    "funcbody": "func (builder *FilterChainBuilder) reportTxn(ctx context.Context, inv *orm.Invocation) {\n\tdur := time.Since(inv.TxStartTime) / time.Millisecond\n\tsummaryVec.WithLabelValues(inv.Method, inv.TxName,\n\t\tstrconv.FormatBool(inv.InsideTx), inv.TxName).Observe(float64(dur))\n}",
+    "funcname": "reportTxn"
+}

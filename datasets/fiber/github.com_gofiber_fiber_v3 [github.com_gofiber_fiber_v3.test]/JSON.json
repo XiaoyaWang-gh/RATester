@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 872,
+    "focalfunc": "func (c *DefaultCtx) JSON(data any, ctype ...string) error",
+    "funcbody": "func (c *DefaultCtx) JSON(data any, ctype ...string) error {\n\traw, err := c.app.config.JSONEncoder(data)\n\tif err != nil {\n\t\treturn err\n\t}\n\tc.fasthttp.Response.SetBodyRaw(raw)\n\tif len(ctype) > 0 {\n\t\tc.fasthttp.Response.Header.SetContentType(ctype[0])\n\t} else {\n\t\tc.fasthttp.Response.Header.SetContentType(MIMEApplicationJSON)\n\t}\n\treturn nil\n}",
+    "funcname": "JSON"
+}

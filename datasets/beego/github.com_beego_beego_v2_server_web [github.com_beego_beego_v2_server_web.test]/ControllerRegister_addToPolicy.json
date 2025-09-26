@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/policy.go",
+    "lineno": 59,
+    "focalfunc": "func (p *ControllerRegister) addToPolicy(method, pattern string, r ...PolicyFunc)",
+    "funcbody": "func (p *ControllerRegister) addToPolicy(method, pattern string, r ...PolicyFunc) {\n\tmethod = strings.ToUpper(method)\n\tp.enablePolicy = true\n\tif !BConfig.RouterCaseSensitive {\n\t\tpattern = strings.ToLower(pattern)\n\t}\n\tif t, ok := p.policies[method]; ok {\n\t\tt.AddRouter(pattern, r)\n\t} else {\n\t\tt := NewTree()\n\t\tt.AddRouter(pattern, r)\n\t\tp.policies[method] = t\n\t}\n}",
+    "funcname": "addToPolicy"
+}

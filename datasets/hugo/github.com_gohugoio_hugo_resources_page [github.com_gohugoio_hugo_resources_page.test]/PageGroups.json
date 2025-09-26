@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 106,
+    "focalfunc": "func (p *Pager) PageGroups() PagesGroup",
+    "funcbody": "func (p *Pager) PageGroups() PagesGroup {\n\tif len(p.paginatedElements) == 0 {\n\t\treturn paginatorEmptyPageGroups\n\t}\n\n\tif groups, ok := p.element().(PagesGroup); ok {\n\t\treturn groups\n\t}\n\n\treturn paginatorEmptyPageGroups\n}",
+    "funcname": "PageGroups"
+}

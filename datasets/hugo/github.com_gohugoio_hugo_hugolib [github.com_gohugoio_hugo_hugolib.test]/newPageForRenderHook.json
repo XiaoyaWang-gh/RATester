@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/shortcode_page.go",
+    "lineno": 115,
+    "focalfunc": "func newPageForRenderHook(p *pageState) page.Page",
+    "funcbody": "func newPageForRenderHook(p *pageState) page.Page {\n\treturn &pageForRenderHooks{\n\t\tPageWithoutContent:\t\tp,\n\t\tMarkupProvider:\t\t\tpage.NopPage,\n\t\tContentProvider:\t\tpage.NopPage,\n\t\tTableOfContentsProvider:\tp,\n\t\tp:\t\t\t\tp,\n\t}\n}",
+    "funcname": "newPageForRenderHook"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 259,
+    "focalfunc": "func compareFloatWithVersion(v1 float64, v2 Version) int",
+    "funcbody": "func compareFloatWithVersion(v1 float64, v2 Version) int {\n\tmf, minf := math.Modf(v1)\n\tv1maj := int(mf)\n\tv1min := int(minf * 100)\n\n\tif v2.Major == v1maj && v2.Minor == v1min {\n\t\treturn 0\n\t}\n\n\tif v1maj > v2.Major {\n\t\treturn 1\n\t}\n\n\tif v1maj < v2.Major {\n\t\treturn -1\n\t}\n\n\tif v1min > v2.Minor {\n\t\treturn 1\n\t}\n\n\treturn -1\n}",
+    "funcname": "compareFloatWithVersion"
+}

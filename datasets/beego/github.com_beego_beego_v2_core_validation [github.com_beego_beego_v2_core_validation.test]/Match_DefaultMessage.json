@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validators.go",
+    "lineno": 512,
+    "focalfunc": "func (m Match) DefaultMessage() string",
+    "funcbody": "func (m Match) DefaultMessage() string {\n\treturn fmt.Sprintf(MessageTmpls[\"Match\"], m.Regexp.String())\n}",
+    "funcname": "DefaultMessage"
+}

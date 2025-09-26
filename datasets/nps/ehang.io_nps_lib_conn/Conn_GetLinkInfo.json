@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 170,
+    "focalfunc": "func (s *Conn) GetLinkInfo() (lk *Link, err error)",
+    "funcbody": "func (s *Conn) GetLinkInfo() (lk *Link, err error) {\n\terr = s.getInfo(&lk)\n\treturn\n}",
+    "funcname": "GetLinkInfo"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 387,
+    "focalfunc": "func (c *Client) buildArchivePath(pName, pVersion string) string",
+    "funcbody": "func (c *Client) buildArchivePath(pName, pVersion string) string {\n\treturn filepath.Join(c.archives, filepath.FromSlash(pName), pVersion+\".zip\")\n}",
+    "funcname": "buildArchivePath"
+}

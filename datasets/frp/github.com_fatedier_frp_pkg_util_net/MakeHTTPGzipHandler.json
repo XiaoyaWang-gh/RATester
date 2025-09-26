@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/http.go",
+    "lineno": 78,
+    "focalfunc": "func MakeHTTPGzipHandler(h http.Handler) http.Handler",
+    "funcbody": "func MakeHTTPGzipHandler(h http.Handler) http.Handler {\n\treturn &HTTPGzipWrapper{\n\t\th: h,\n\t}\n}",
+    "funcname": "MakeHTTPGzipHandler"
+}

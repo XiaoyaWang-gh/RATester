@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 274,
+    "focalfunc": "func (s *DbUtils) IsPubClient(id int) bool",
+    "funcbody": "func (s *DbUtils) IsPubClient(id int) bool {\n\tclient, err := s.GetClient(id)\n\tif err == nil {\n\t\treturn client.NoDisplay\n\t}\n\treturn false\n}",
+    "funcname": "IsPubClient"
+}

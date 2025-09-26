@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 415,
+    "focalfunc": "func (ln tcpKeepAliveListener) Accept() (net.Conn, error)",
+    "funcbody": "func (ln tcpKeepAliveListener) Accept() (net.Conn, error) {\n\ttc, err := ln.AcceptTCP()\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif err := tc.SetKeepAlive(true); err != nil {\n\t\treturn nil, err\n\t}\n\n\tif err := tc.SetKeepAlivePeriod(3 * time.Minute); err != nil {\n\n\t\tif !errors.Is(err, syscall.ENOPROTOOPT) {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\treturn tc, nil\n}",
+    "funcname": "Accept"
+}

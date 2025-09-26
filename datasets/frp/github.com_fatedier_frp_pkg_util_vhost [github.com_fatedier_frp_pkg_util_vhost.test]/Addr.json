@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/vhost/vhost.go",
+    "lineno": 302,
+    "focalfunc": "func (l *Listener) Addr() net.Addr",
+    "funcbody": "func (l *Listener) Addr() net.Addr {\n\treturn (*net.TCPAddr)(nil)\n}",
+    "funcname": "Addr"
+}

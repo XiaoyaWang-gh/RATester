@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/udp/conn.go",
+    "lineno": 104,
+    "focalfunc": "func (l *Listener) Shutdown(graceTimeout time.Duration) error",
+    "funcbody": "func (l *Listener) Shutdown(graceTimeout time.Duration) error {\n\tl.mu.Lock()\n\tif !l.accepting {\n\t\tl.mu.Unlock()\n\t\treturn nil\n\t}\n\tl.accepting = false\n\tl.mu.Unlock()\n\n\tretryInterval := closeRetryInterval\n\tif retryInterval > graceTimeout {\n\t\tretryInterval = graceTimeout\n\t}\n\tstart := time.Now()\n\tend := start.Add(graceTimeout)\n\tfor {\n\t\tif time.Now().After(end) {\n\t\t\tbreak\n\t\t}\n\n\t\tl.mu.RLock()\n\t\tif len(l.conns) == 0 {\n\t\t\tl.mu.RUnlock()\n\t\t\tbreak\n\t\t}\n\t\tl.mu.RUnlock()\n\n\t\ttime.Sleep(retryInterval)\n\t}\n\treturn l.close()\n}",
+    "funcname": "Shutdown"
+}

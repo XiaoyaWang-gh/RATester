@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/proxy.go",
+    "lineno": 239,
+    "focalfunc": "func BalancerForward(servers []string, clients ...*fasthttp.Client) fiber.Handler",
+    "funcbody": "func BalancerForward(servers []string, clients ...*fasthttp.Client) fiber.Handler {\n\tr := &roundrobin{\n\t\tcurrent:\t0,\n\t\tpool:\t\tservers,\n\t}\n\treturn func(c fiber.Ctx) error {\n\t\tserver := r.get()\n\t\tif !strings.HasPrefix(server, \"http\") {\n\t\t\tserver = \"http://\" + server\n\t\t}\n\t\tc.Request().Header.Add(\"X-Real-IP\", c.IP())\n\t\treturn Do(c, server+c.OriginalURL(), clients...)\n\t}\n}",
+    "funcname": "BalancerForward"
+}

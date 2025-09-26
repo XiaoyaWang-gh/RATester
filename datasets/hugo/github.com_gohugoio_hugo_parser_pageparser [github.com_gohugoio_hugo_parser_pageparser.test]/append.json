@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/pagelexer.go",
+    "lineno": 134,
+    "focalfunc": "func (l *pageLexer) append(item Item)",
+    "funcbody": "func (l *pageLexer) append(item Item) {\n\tif item.Pos() < len(l.input) {\n\t\titem.firstByte = l.input[item.Pos()]\n\t}\n\tl.items = append(l.items, item)\n}",
+    "funcname": "append"
+}

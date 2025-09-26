@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 182,
+    "focalfunc": "func AssetNames() []string",
+    "funcbody": "func AssetNames() []string {\n\tnames := make([]string, 0, len(_bindata))\n\tfor name := range _bindata {\n\t\tnames = append(names, name)\n\t}\n\treturn names\n}",
+    "funcname": "AssetNames"
+}

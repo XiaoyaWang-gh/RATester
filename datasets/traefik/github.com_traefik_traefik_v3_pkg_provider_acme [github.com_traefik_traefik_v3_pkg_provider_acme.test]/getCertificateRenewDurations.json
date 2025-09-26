@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 693,
+    "focalfunc": "func getCertificateRenewDurations(certificatesDuration int) (time.Duration, time.Duration)",
+    "funcbody": "func getCertificateRenewDurations(certificatesDuration int) (time.Duration, time.Duration) {\n\tswitch {\n\tcase certificatesDuration >= 365*24:\n\t\treturn 4 * 30 * 24 * time.Hour, 7 * 24 * time.Hour\n\tcase certificatesDuration >= 3*30*24:\n\t\treturn 30 * 24 * time.Hour, 24 * time.Hour\n\tcase certificatesDuration >= 30*24:\n\t\treturn 10 * 24 * time.Hour, 12 * time.Hour\n\tcase certificatesDuration >= 7*24:\n\t\treturn 24 * time.Hour, time.Hour\n\tcase certificatesDuration >= 24:\n\t\treturn 6 * time.Hour, 10 * time.Minute\n\tdefault:\n\t\treturn 20 * time.Minute, time.Minute\n\t}\n}",
+    "funcname": "getCertificateRenewDurations"
+}

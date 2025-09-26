@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 335,
+    "focalfunc": "func (c *Context) GetUint64(key string) (ui64 uint64)",
+    "funcbody": "func (c *Context) GetUint64(key string) (ui64 uint64) {\n\tif val, ok := c.Get(key); ok && val != nil {\n\t\tui64, _ = val.(uint64)\n\t}\n\treturn\n}",
+    "funcname": "GetUint64"
+}

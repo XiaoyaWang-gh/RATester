@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 205,
+    "focalfunc": "func (c *Client) Check(ctx context.Context, pName, pVersion, hash string) error",
+    "funcbody": "func (c *Client) Check(ctx context.Context, pName, pVersion, hash string) error {\n\tendpoint, err := c.baseURL.Parse(path.Join(c.baseURL.Path, \"validate\", pName, pVersion))\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to parse endpoint URL: %w\", err)\n\t}\n\n\treq, err := http.NewRequestWithContext(ctx, http.MethodGet, endpoint.String(), nil)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to create request: %w\", err)\n\t}\n\n\tif hash != \"\" {\n\t\treq.Header.Set(hashHeader, hash)\n\t}\n\n\tresp, err := c.HTTPClient.Do(req)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to call service: %w\", err)\n\t}\n\n\tdefer func() { _ = resp.Body.Close() }()\n\n\tif resp.StatusCode == http.StatusOK {\n\t\treturn nil\n\t}\n\n\treturn errors.New(\"plugin integrity check failed\")\n}",
+    "funcname": "Check"
+}

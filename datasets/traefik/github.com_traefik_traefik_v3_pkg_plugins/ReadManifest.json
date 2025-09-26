@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/plugins/client.go",
+    "lineno": 110,
+    "focalfunc": "func ReadManifest(goPath, moduleName string) (*Manifest, error)",
+    "funcbody": "func ReadManifest(goPath, moduleName string) (*Manifest, error) {\n\tp := filepath.Join(goPath, goPathSrc, filepath.FromSlash(moduleName), pluginManifest)\n\n\tfile, err := os.Open(p)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to open the plugin manifest %s: %w\", p, err)\n\t}\n\n\tdefer func() { _ = file.Close() }()\n\n\tm := &Manifest{}\n\terr = yaml.NewDecoder(file).Decode(m)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to decode the plugin manifest %s: %w\", p, err)\n\t}\n\n\treturn m, nil\n}",
+    "funcname": "ReadManifest"
+}

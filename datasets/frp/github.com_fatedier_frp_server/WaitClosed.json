@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/control.go",
+    "lineno": 315,
+    "focalfunc": "func (ctl *Control) WaitClosed()",
+    "funcbody": "func (ctl *Control) WaitClosed() {\n\t<-ctl.doneCh\n}",
+    "funcname": "WaitClosed"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/berror/codes.go",
+    "lineno": 59,
+    "focalfunc": "func (cr *codeRegistry) Get(code uint32) (Code, bool)",
+    "funcbody": "func (cr *codeRegistry) Get(code uint32) (Code, bool) {\n\tcr.lock.RLock()\n\tdefer cr.lock.RUnlock()\n\tc, ok := cr.codes[code]\n\treturn c, ok\n}",
+    "funcname": "Get"
+}

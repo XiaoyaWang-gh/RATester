@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/param/methodparams.go",
+    "lineno": 39,
+    "focalfunc": "func Make(list ...*MethodParam) []*MethodParam",
+    "funcbody": "func Make(list ...*MethodParam) []*MethodParam {\n\tif len(list) > 0 {\n\t\treturn list\n\t}\n\treturn nil\n}",
+    "funcname": "Make"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/ingress/kubernetes.go",
+    "lineno": 423,
+    "focalfunc": "func (p *Provider) shouldProcessIngress(ingress *netv1.Ingress, ingressClasses []*netv1.IngressClass) bool",
+    "funcbody": "func (p *Provider) shouldProcessIngress(ingress *netv1.Ingress, ingressClasses []*netv1.IngressClass) bool {\n\n\tif ingress.Spec.IngressClassName != nil {\n\t\treturn slices.ContainsFunc(ingressClasses, func(ic *netv1.IngressClass) bool {\n\t\t\treturn *ingress.Spec.IngressClassName == ic.ObjectMeta.Name\n\t\t})\n\t}\n\n\treturn p.IngressClass == ingress.Annotations[annotationKubernetesIngressClass] ||\n\t\tlen(p.IngressClass) == 0 && ingress.Annotations[annotationKubernetesIngressClass] == traefikDefaultIngressClass\n}",
+    "funcname": "shouldProcessIngress"
+}

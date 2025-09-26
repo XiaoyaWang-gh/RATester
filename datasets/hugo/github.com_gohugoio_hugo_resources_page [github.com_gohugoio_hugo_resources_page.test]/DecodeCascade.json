@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_matcher.go",
+    "lineno": 157,
+    "focalfunc": "func DecodeCascade(logger loggers.Logger, in any) (map[PageMatcher]maps.Params, error)",
+    "funcbody": "func DecodeCascade(logger loggers.Logger, in any) (map[PageMatcher]maps.Params, error) {\n\tconf, err := DecodeCascadeConfig(logger, in)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn conf.Config, nil\n}",
+    "funcname": "DecodeCascade"
+}

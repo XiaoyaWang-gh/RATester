@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/prometheus.go",
+    "lineno": 465,
+    "focalfunc": "func (d *dynamicConfig) hasService(serviceName string) bool",
+    "funcbody": "func (d *dynamicConfig) hasService(serviceName string) bool {\n\t_, ok := d.services[serviceName]\n\treturn ok\n}",
+    "funcname": "hasService"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resourcetypes.go",
+    "lineno": 268,
+    "focalfunc": "func MarkStale(os ...any)",
+    "funcbody": "func MarkStale(os ...any) {\n\tfor _, o := range os {\n\t\tif types.IsNil(o) {\n\t\t\tcontinue\n\t\t}\n\t\tif s, ok := o.(StaleMarker); ok {\n\t\t\ts.MarkStale()\n\t\t}\n\t}\n}",
+    "funcname": "MarkStale"
+}

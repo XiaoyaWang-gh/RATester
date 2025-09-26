@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 534,
+    "focalfunc": "func (c *connectionTracker) syncOpenConnectionGauge()",
+    "funcbody": "func (c *connectionTracker) syncOpenConnectionGauge() {\n\tif c.openConnectionsGauge == nil {\n\t\treturn\n\t}\n\n\tc.connsMu.RLock()\n\tc.openConnectionsGauge.Set(float64(len(c.conns)))\n\tc.connsMu.RUnlock()\n}",
+    "funcname": "syncOpenConnectionGauge"
+}

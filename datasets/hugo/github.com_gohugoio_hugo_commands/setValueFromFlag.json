@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/helpers.go",
+    "lineno": 40,
+    "focalfunc": "func setValueFromFlag(flags *pflag.FlagSet, key string, cfg config.Provider, targetKey string, force bool)",
+    "funcbody": "func setValueFromFlag(flags *pflag.FlagSet, key string, cfg config.Provider, targetKey string, force bool) {\n\tkey = strings.TrimSpace(key)\n\tif (force && flags.Lookup(key) != nil) || flags.Changed(key) {\n\t\tf := flags.Lookup(key)\n\t\tconfigKey := key\n\t\tif targetKey != \"\" {\n\t\t\tconfigKey = targetKey\n\t\t}\n\n\t\tswitch f.Value.Type() {\n\t\tcase \"bool\":\n\t\t\tbv, _ := flags.GetBool(key)\n\t\t\tcfg.Set(configKey, bv)\n\t\tcase \"string\":\n\t\t\tcfg.Set(configKey, f.Value.String())\n\t\tcase \"stringSlice\":\n\t\t\tbv, _ := flags.GetStringSlice(key)\n\t\t\tcfg.Set(configKey, bv)\n\t\tcase \"int\":\n\t\t\tiv, _ := flags.GetInt(key)\n\t\t\tcfg.Set(configKey, iv)\n\t\tdefault:\n\t\t\tpanic(fmt.Sprintf(\"update switch with %s\", f.Value.Type()))\n\t\t}\n\n\t}\n}",
+    "funcname": "setValueFromFlag"
+}

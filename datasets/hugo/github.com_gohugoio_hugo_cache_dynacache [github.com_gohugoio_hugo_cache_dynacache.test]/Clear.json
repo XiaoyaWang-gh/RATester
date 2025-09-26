@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/dynacache/dynacache.go",
+    "lineno": 577,
+    "focalfunc": "func (p *Partition[K, V]) Clear()",
+    "funcbody": "func (p *Partition[K, V]) Clear() {\n\tp.c.DeleteFunc(func(key K, v V) bool {\n\t\treturn true\n\t})\n}",
+    "funcname": "Clear"
+}

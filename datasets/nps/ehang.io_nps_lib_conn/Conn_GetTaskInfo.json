@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 222,
+    "focalfunc": "func (s *Conn) GetTaskInfo() (t *file.Tunnel, err error)",
+    "funcbody": "func (s *Conn) GetTaskInfo() (t *file.Tunnel, err error) {\n\terr = s.getInfo(&t)\n\tt.Id = int(file.GetDb().JsonDb.GetTaskId())\n\tt.NoStore = true\n\tt.Flow = new(file.Flow)\n\treturn\n}",
+    "funcname": "GetTaskInfo"
+}

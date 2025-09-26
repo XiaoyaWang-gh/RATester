@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_metadata.go",
+    "lineno": 95,
+    "focalfunc": "func cloneWithMetadataFromResourceConfigIfNeeded(rc *pagemeta.ResourceConfig, r resource.Resource) resource.Resource",
+    "funcbody": "func cloneWithMetadataFromResourceConfigIfNeeded(rc *pagemeta.ResourceConfig, r resource.Resource) resource.Resource {\n\twmp, ok := r.(resource.WithResourceMetaProvider)\n\tif !ok {\n\t\treturn r\n\t}\n\n\tif rc.Name == \"\" && rc.Title == \"\" && len(rc.Params) == 0 {\n\n\t\treturn r\n\t}\n\n\tif rc.Title == \"\" {\n\t\trc.Title = rc.Name\n\t}\n\n\twrapped := &metaResource{\n\t\tname:\trc.Name,\n\t\ttitle:\trc.Title,\n\t\tparams:\trc.Params,\n\t}\n\n\treturn wmp.WithResourceMeta(wrapped)\n}",
+    "funcname": "cloneWithMetadataFromResourceConfigIfNeeded"
+}

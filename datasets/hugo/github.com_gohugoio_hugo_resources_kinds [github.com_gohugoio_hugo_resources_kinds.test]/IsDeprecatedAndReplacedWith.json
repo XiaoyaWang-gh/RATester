@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/kinds/kinds.go",
+    "lineno": 109,
+    "focalfunc": "func IsDeprecatedAndReplacedWith(s string) string",
+    "funcbody": "func IsDeprecatedAndReplacedWith(s string) string {\n\ts = strings.ToLower(s)\n\n\tswitch s {\n\tcase \"taxonomyterm\":\n\t\treturn KindTaxonomy\n\tdefault:\n\t\treturn \"\"\n\t}\n}",
+    "funcname": "IsDeprecatedAndReplacedWith"
+}

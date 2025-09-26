@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 176,
+    "focalfunc": "func ResetColor() string",
+    "funcbody": "func ResetColor() string {\n\treturn reset\n}",
+    "funcname": "ResetColor"
+}

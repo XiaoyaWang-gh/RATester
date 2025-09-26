@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate_store.go",
+    "lineno": 121,
+    "focalfunc": "func (c *CertificateStore) GetCertificate(domains []string) *tls.Certificate",
+    "funcbody": "func (c *CertificateStore) GetCertificate(domains []string) *tls.Certificate {\n\tif c == nil {\n\t\treturn nil\n\t}\n\n\tsort.Strings(domains)\n\tdomainsKey := strings.Join(domains, \",\")\n\n\tif cert, ok := c.CertCache.Get(domainsKey); ok {\n\t\treturn cert.(*tls.Certificate)\n\t}\n\n\tif c.DynamicCerts != nil && c.DynamicCerts.Get() != nil {\n\t\tfor certDomains, cert := range c.DynamicCerts.Get().(map[string]*tls.Certificate) {\n\t\t\tif domainsKey == certDomains {\n\t\t\t\tc.CertCache.SetDefault(domainsKey, cert)\n\t\t\t\treturn cert\n\t\t\t}\n\n\t\t\tvar matchedDomains []string\n\t\t\tfor _, certDomain := range strings.Split(certDomains, \",\") {\n\t\t\t\tfor _, checkDomain := range domains {\n\t\t\t\t\tif certDomain == checkDomain {\n\t\t\t\t\t\tmatchedDomains = append(matchedDomains, certDomain)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tif len(matchedDomains) == len(domains) {\n\t\t\t\tc.CertCache.SetDefault(domainsKey, cert)\n\t\t\t\treturn cert\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "GetCertificate"
+}

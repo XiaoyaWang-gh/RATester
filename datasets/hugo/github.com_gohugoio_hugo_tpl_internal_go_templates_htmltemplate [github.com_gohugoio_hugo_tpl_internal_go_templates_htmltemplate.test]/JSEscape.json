@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 985,
+    "focalfunc": "func JSEscape(w io.Writer, b []byte)",
+    "funcbody": "func JSEscape(w io.Writer, b []byte) {\n\ttemplate.JSEscape(w, b)\n}",
+    "funcname": "JSEscape"
+}

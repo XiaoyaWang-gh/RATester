@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 183,
+    "focalfunc": "func (ctx *Context) Reset(rw http.ResponseWriter, r *http.Request)",
+    "funcbody": "func (ctx *Context) Reset(rw http.ResponseWriter, r *http.Request) {\n\tctx.Request = r\n\tif ctx.ResponseWriter == nil {\n\t\tctx.ResponseWriter = &Response{}\n\t}\n\tctx.ResponseWriter.reset(rw)\n\tctx.Input.Reset(ctx)\n\tctx.Output.Reset(ctx)\n\tctx._xsrfToken = \"\"\n}",
+    "funcname": "Reset"
+}

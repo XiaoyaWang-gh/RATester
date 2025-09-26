@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 52,
+    "focalfunc": "func (output *BeegoOutput) Reset(ctx *Context)",
+    "funcbody": "func (output *BeegoOutput) Reset(ctx *Context) {\n\toutput.Context = ctx\n\toutput.Status = 0\n}",
+    "funcname": "Reset"
+}

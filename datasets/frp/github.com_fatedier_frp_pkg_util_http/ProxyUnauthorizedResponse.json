@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/http.go",
+    "lineno": 38,
+    "focalfunc": "func ProxyUnauthorizedResponse() *http.Response",
+    "funcbody": "func ProxyUnauthorizedResponse() *http.Response {\n\theader := make(http.Header)\n\theader.Set(\"Proxy-Authenticate\", `Basic realm=\"Restricted\"`)\n\tres := &http.Response{\n\t\tStatus:\t\t\"Proxy Authentication Required\",\n\t\tStatusCode:\t407,\n\t\tProto:\t\t\"HTTP/1.1\",\n\t\tProtoMajor:\t1,\n\t\tProtoMinor:\t1,\n\t\tHeader:\t\theader,\n\t}\n\treturn res\n}",
+    "funcname": "ProxyUnauthorizedResponse"
+}

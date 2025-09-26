@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 104,
+    "focalfunc": "func (c ConfigLanguage) NoBuildLock() bool",
+    "funcbody": "func (c ConfigLanguage) NoBuildLock() bool {\n\treturn c.config.NoBuildLock\n}",
+    "funcname": "NoBuildLock"
+}

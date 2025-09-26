@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/collections.go",
+    "lineno": 61,
+    "focalfunc": "func (ns *Namespace) After(n any, l any) (any, error)",
+    "funcbody": "func (ns *Namespace) After(n any, l any) (any, error) {\n\tif n == nil || l == nil {\n\t\treturn nil, errors.New(\"both limit and seq must be provided\")\n\t}\n\n\tnv, err := cast.ToIntE(n)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif nv < 0 {\n\t\treturn nil, errors.New(\"sequence bounds out of range [\" + cast.ToString(nv) + \":]\")\n\t}\n\n\tlv := reflect.ValueOf(l)\n\tlv, isNil := indirect(lv)\n\tif isNil {\n\t\treturn nil, errors.New(\"can't iterate over a nil value\")\n\t}\n\n\tswitch lv.Kind() {\n\tcase reflect.Array, reflect.Slice, reflect.String:\n\n\tdefault:\n\t\treturn nil, errors.New(\"can't iterate over \" + reflect.ValueOf(l).Type().String())\n\t}\n\n\tif nv >= lv.Len() {\n\t\treturn lv.Slice(0, 0).Interface(), nil\n\t}\n\n\treturn lv.Slice(nv, lv.Len()).Interface(), nil\n}",
+    "funcname": "After"
+}

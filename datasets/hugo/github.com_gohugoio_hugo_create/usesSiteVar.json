@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/create/content.go",
+    "lineno": 375,
+    "focalfunc": "func (b *contentBuilder) usesSiteVar(fi hugofs.FileMetaInfo) (bool, error)",
+    "funcbody": "func (b *contentBuilder) usesSiteVar(fi hugofs.FileMetaInfo) (bool, error) {\n\tif fi == nil {\n\t\treturn false, nil\n\t}\n\tf, err := fi.Meta().Open()\n\tif err != nil {\n\t\treturn false, err\n\t}\n\tdefer f.Close()\n\tbb, err := io.ReadAll(f)\n\tif err != nil {\n\t\treturn false, fmt.Errorf(\"failed to read archetype file: %w\", err)\n\t}\n\n\treturn bytes.Contains(bb, []byte(\".Site\")) || bytes.Contains(bb, []byte(\"site.\")), nil\n}",
+    "funcname": "usesSiteVar"
+}

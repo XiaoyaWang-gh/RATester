@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 518,
+    "focalfunc": "func (ns *Namespace) Repeat(n, s any) (string, error)",
+    "funcbody": "func (ns *Namespace) Repeat(n, s any) (string, error) {\n\tss, err := cast.ToStringE(s)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tsn, err := cast.ToIntE(n)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tif sn < 0 {\n\t\treturn \"\", errors.New(\"strings: negative Repeat count\")\n\t}\n\n\treturn strings.Repeat(ss, sn), nil\n}",
+    "funcname": "Repeat"
+}

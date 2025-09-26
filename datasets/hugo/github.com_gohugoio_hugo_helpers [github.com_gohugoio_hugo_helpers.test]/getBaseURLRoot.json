@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 94,
+    "focalfunc": "func (p *PathSpec) getBaseURLRoot(path string) string",
+    "funcbody": "func (p *PathSpec) getBaseURLRoot(path string) string {\n\tif strings.HasPrefix(path, \"/\") {\n\n\t\treturn p.Cfg.BaseURL().WithoutPath\n\t} else {\n\n\t\treturn p.Cfg.BaseURL().WithPath\n\t}\n}",
+    "funcname": "getBaseURLRoot"
+}

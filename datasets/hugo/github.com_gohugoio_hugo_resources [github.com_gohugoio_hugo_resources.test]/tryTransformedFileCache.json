@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 558,
+    "focalfunc": "func (r *genericResource) tryTransformedFileCache(key string, u *transformationUpdate) io.ReadCloser",
+    "funcbody": "func (r *genericResource) tryTransformedFileCache(key string, u *transformationUpdate) io.ReadCloser {\n\tfi, f, meta, found := r.spec.ResourceCache.getFromFile(key)\n\tif !found {\n\t\treturn nil\n\t}\n\tu.sourceFilename = &fi.Name\n\tmt, _ := r.spec.MediaTypes().GetByType(meta.MediaTypeV)\n\tu.mediaType = mt\n\tu.data = meta.MetaData\n\tu.targetPath = meta.Target\n\treturn f\n}",
+    "funcname": "tryTransformedFileCache"
+}

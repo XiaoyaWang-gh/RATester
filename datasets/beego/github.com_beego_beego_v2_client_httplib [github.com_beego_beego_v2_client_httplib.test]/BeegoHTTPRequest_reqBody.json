@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 298,
+    "focalfunc": "func (b *BeegoHTTPRequest) reqBody(data []byte) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) reqBody(data []byte) *BeegoHTTPRequest {\n\tbody := io.NopCloser(bytes.NewReader(data))\n\tb.req.Body = body\n\tb.req.GetBody = func() (io.ReadCloser, error) {\n\t\treturn body, nil\n\t}\n\tb.req.ContentLength = int64(len(data))\n\tb.copyBody = func() io.ReadCloser {\n\t\treturn io.NopCloser(bytes.NewReader(data))\n\t}\n\treturn b\n}",
+    "funcname": "reqBody"
+}

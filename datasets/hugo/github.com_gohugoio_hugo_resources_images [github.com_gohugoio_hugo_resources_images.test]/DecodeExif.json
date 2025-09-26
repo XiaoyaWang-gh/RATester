@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 204,
+    "focalfunc": "func (p *ImageProcessor) DecodeExif(filename string, format imagemeta.ImageFormat, r io.Reader) (*exif.ExifInfo, error)",
+    "funcbody": "func (p *ImageProcessor) DecodeExif(filename string, format imagemeta.ImageFormat, r io.Reader) (*exif.ExifInfo, error) {\n\treturn p.exifDecoder.Decode(filename, format, r)\n}",
+    "funcname": "DecodeExif"
+}

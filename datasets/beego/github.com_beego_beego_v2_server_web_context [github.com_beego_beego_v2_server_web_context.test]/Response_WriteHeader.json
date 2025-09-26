@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 357,
+    "focalfunc": "func (r *Response) WriteHeader(code int)",
+    "funcbody": "func (r *Response) WriteHeader(code int) {\n\tif r.Status > 0 {\n\n\t\treturn\n\t}\n\tr.Status = code\n\tr.Started = true\n\tr.ResponseWriter.WriteHeader(code)\n}",
+    "funcname": "WriteHeader"
+}

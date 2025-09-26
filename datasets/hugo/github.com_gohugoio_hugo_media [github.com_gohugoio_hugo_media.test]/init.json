@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 207,
+    "focalfunc": "func (m *Type) init()",
+    "funcbody": "func (m *Type) init() {\n\tm.FirstSuffix.FullSuffix = \"\"\n\tm.FirstSuffix.Suffix = \"\"\n\tif suffixes := m.Suffixes(); suffixes != nil {\n\t\tm.FirstSuffix.Suffix = suffixes[0]\n\t\tm.FirstSuffix.FullSuffix = m.Delimiter + m.FirstSuffix.Suffix\n\t}\n}",
+    "funcname": "init"
+}

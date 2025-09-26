@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/releaser/releaser.go",
+    "lineno": 169,
+    "focalfunc": "func (r ReleaseHandler) calculateVersions() (hugo.Version, hugo.Version)",
+    "funcbody": "func (r ReleaseHandler) calculateVersions() (hugo.Version, hugo.Version) {\n\tnewVersion := hugo.MustParseVersion(r.branchVersion)\n\tfinalVersion := newVersion.Next()\n\tfinalVersion.PatchLevel = 0\n\n\tif newVersion.Suffix != \"-test\" {\n\t\tnewVersion.Suffix = \"\"\n\t}\n\n\tfinalVersion.Suffix = \"-DEV\"\n\n\treturn newVersion, finalVersion\n}",
+    "funcname": "calculateVersions"
+}

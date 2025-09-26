@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 598,
+    "focalfunc": "func ge(arg1, arg2 reflect.Value) (bool, error)",
+    "funcbody": "func ge(arg1, arg2 reflect.Value) (bool, error) {\n\n\tlessThan, err := lt(arg1, arg2)\n\tif err != nil {\n\t\treturn false, err\n\t}\n\treturn !lessThan, nil\n}",
+    "funcname": "ge"
+}

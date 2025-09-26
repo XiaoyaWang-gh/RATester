@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 427,
+    "focalfunc": "func (pco *pageContentOutput) RenderContent(ctx context.Context, content []byte, doc any) (converter.ResultRender, bool, error)",
+    "funcbody": "func (pco *pageContentOutput) RenderContent(ctx context.Context, content []byte, doc any) (converter.ResultRender, bool, error) {\n\tc, err := pco.getContentConverter()\n\tif err != nil {\n\t\treturn nil, false, err\n\t}\n\tp, ok := c.(converter.ParseRenderer)\n\tif !ok {\n\t\treturn nil, ok, nil\n\t}\n\trctx := converter.RenderContext{\n\t\tCtx:\t\tctx,\n\t\tSrc:\t\tcontent,\n\t\tRenderTOC:\ttrue,\n\t\tGetRenderer:\tpco.renderHooks.getRenderer,\n\t}\n\tr, err := p.Render(rctx, doc)\n\treturn r, ok, err\n}",
+    "funcname": "RenderContent"
+}

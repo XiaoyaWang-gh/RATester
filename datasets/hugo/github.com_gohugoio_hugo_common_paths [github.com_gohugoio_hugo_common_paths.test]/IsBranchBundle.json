@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 533,
+    "focalfunc": "func (p *Path) IsBranchBundle() bool",
+    "funcbody": "func (p *Path) IsBranchBundle() bool {\n\treturn p.bundleType == PathTypeBranch\n}",
+    "funcname": "IsBranchBundle"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 179,
+    "focalfunc": "func (d *DoNothingTxOrm) Rollback() error",
+    "funcbody": "func (d *DoNothingTxOrm) Rollback() error {\n\treturn nil\n}",
+    "funcname": "Rollback"
+}

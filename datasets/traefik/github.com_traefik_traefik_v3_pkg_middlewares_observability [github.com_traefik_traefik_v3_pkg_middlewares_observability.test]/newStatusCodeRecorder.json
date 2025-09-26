@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/observability/status_code.go",
+    "lineno": 10,
+    "focalfunc": "func newStatusCodeRecorder(rw http.ResponseWriter, status int) *statusCodeRecorder",
+    "funcbody": "func newStatusCodeRecorder(rw http.ResponseWriter, status int) *statusCodeRecorder {\n\treturn &statusCodeRecorder{rw, status}\n}",
+    "funcname": "newStatusCodeRecorder"
+}

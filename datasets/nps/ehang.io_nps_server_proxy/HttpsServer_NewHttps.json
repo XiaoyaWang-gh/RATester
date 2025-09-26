@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/https.go",
+    "lineno": 96,
+    "focalfunc": "func (https *HttpsServer) NewHttps(l net.Listener, certFile string, keyFile string)",
+    "funcbody": "func (https *HttpsServer) NewHttps(l net.Listener, certFile string, keyFile string) {\n\tgo func() {\n\t\tlogs.Error(https.NewServer(0, \"https\").ServeTLS(l, certFile, keyFile))\n\t}()\n}",
+    "funcname": "NewHttps"
+}

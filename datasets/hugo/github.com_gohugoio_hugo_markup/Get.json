@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup.go",
+    "lineno": 123,
+    "focalfunc": "func (r *converterRegistry) Get(name string) converter.Provider",
+    "funcbody": "func (r *converterRegistry) Get(name string) converter.Provider {\n\treturn r.converters[strings.ToLower(name)]\n}",
+    "funcname": "Get"
+}

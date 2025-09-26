@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/env.go",
+    "lineno": 73,
+    "focalfunc": "func SetEnvVars(oldVars *[]string, keyValues ...string)",
+    "funcbody": "func SetEnvVars(oldVars *[]string, keyValues ...string) {\n\tfor i := 0; i < len(keyValues); i += 2 {\n\t\tsetEnvVar(oldVars, keyValues[i], keyValues[i+1])\n\t}\n}",
+    "funcname": "SetEnvVars"
+}

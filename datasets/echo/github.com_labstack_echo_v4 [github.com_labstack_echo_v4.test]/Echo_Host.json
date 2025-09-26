@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 604,
+    "focalfunc": "func (e *Echo) Host(name string, m ...MiddlewareFunc) (g *Group)",
+    "funcbody": "func (e *Echo) Host(name string, m ...MiddlewareFunc) (g *Group) {\n\te.routers[name] = NewRouter(e)\n\tg = &Group{host: name, echo: e}\n\tg.Use(m...)\n\treturn\n}",
+    "funcname": "Host"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 185,
+    "focalfunc": "func (e *TimeField) FieldType() int",
+    "funcbody": "func (e *TimeField) FieldType() int {\n\treturn TypeDateField\n}",
+    "funcname": "FieldType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/prometheus/filter.go",
+    "lineno": 98,
+    "focalfunc": "func report(dur time.Duration, ctx *context.Context, vec prometheus.ObserverVec)",
+    "funcbody": "func report(dur time.Duration, ctx *context.Context, vec prometheus.ObserverVec) {\n\tstatus := ctx.Output.Status\n\tptnItf := ctx.Input.GetData(\"RouterPattern\")\n\tptn := unknownRouterPattern\n\tif ptnItf != nil {\n\t\tptn = ptnItf.(string)\n\t}\n\tms := dur / time.Millisecond\n\tvec.WithLabelValues(ptn, ctx.Input.Method(), strconv.Itoa(status)).Observe(float64(ms))\n}",
+    "funcname": "report"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/consulcatalog/config.go",
+    "lineno": 112,
+    "focalfunc": "func (p *Provider) keepContainer(ctx context.Context, item itemData) bool",
+    "funcbody": "func (p *Provider) keepContainer(ctx context.Context, item itemData) bool {\n\tlogger := log.Ctx(ctx)\n\n\tif !item.ExtraConf.Enable {\n\t\tlogger.Debug().Msg(\"Filtering disabled item\")\n\t\treturn false\n\t}\n\n\tif !p.ConnectAware && item.ExtraConf.ConsulCatalog.Connect {\n\t\tlogger.Debug().Msg(\"Filtering out Connect aware item, Connect support is not enabled\")\n\t\treturn false\n\t}\n\n\tmatches, err := constraints.MatchTags(item.Tags, p.Constraints)\n\tif err != nil {\n\t\tlogger.Error().Err(err).Msg(\"Error matching constraint expressions\")\n\t\treturn false\n\t}\n\tif !matches {\n\t\tlogger.Debug().Msgf(\"Container pruned by constraint expressions: %q\", p.Constraints)\n\t\treturn false\n\t}\n\n\tif !p.includesHealthStatus(item.Status) {\n\t\tlogger.Debug().Msgf(\"Status %q is not included in the configured strictChecks of %q\", item.Status, strings.Join(p.StrictChecks, \",\"))\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "keepContainer"
+}

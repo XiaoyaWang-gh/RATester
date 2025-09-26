@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 689,
+    "focalfunc": "func (c *Context) BindUri(obj any) error",
+    "funcbody": "func (c *Context) BindUri(obj any) error {\n\tif err := c.ShouldBindUri(obj); err != nil {\n\t\tc.AbortWithError(http.StatusBadRequest, err).SetType(ErrorTypeBind)\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "BindUri"
+}

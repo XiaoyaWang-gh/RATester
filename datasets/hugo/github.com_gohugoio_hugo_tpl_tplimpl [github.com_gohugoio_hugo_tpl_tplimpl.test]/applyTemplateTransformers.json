@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_ast_transformers.go",
+    "lineno": 87,
+    "focalfunc": "func applyTemplateTransformers(\n\tt *templateState,\n\tlookupFn func(name string) *templateState,\n) (*templateContext, error)",
+    "funcbody": "func applyTemplateTransformers(\n\tt *templateState,\n\tlookupFn func(name string) *templateState,\n) (*templateContext, error) {\n\tif t == nil {\n\t\treturn nil, errors.New(\"expected template, but none provided\")\n\t}\n\n\tc := newTemplateContext(t, lookupFn)\n\ttree := getParseTree(t.Template)\n\n\t_, err := c.applyTransformations(tree.Root)\n\n\tif err == nil && c.returnNode != nil {\n\n\t\tc.t.parseInfo.HasReturn = true\n\t\ttree.Root = c.wrapInPartialReturnWrapper(tree.Root)\n\t}\n\n\treturn c, err\n}",
+    "funcname": "applyTemplateTransformers"
+}

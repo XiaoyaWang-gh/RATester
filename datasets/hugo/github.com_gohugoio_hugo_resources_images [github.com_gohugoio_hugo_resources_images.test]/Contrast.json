@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 273,
+    "focalfunc": "func (*Filters) Contrast(percentage any) gift.Filter",
+    "funcbody": "func (*Filters) Contrast(percentage any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(percentage),\n\t\tFilter:\t\tgift.Contrast(cast.ToFloat32(percentage)),\n\t}\n}",
+    "funcname": "Contrast"
+}

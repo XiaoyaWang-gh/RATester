@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/utils/utils.go",
+    "lineno": 215,
+    "focalfunc": "func (a ArgInt) Get(i int, args ...int) (r int)",
+    "funcbody": "func (a ArgInt) Get(i int, args ...int) (r int) {\n\tif i >= 0 && i < len(a) {\n\t\tr = a[i]\n\t}\n\tif len(args) > 0 {\n\t\tr = args[0]\n\t}\n\treturn\n}",
+    "funcname": "Get"
+}

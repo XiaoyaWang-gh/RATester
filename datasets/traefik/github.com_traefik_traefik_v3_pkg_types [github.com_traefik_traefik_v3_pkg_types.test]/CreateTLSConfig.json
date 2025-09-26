@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/tls.go",
+    "lineno": 26,
+    "focalfunc": "func (c *ClientTLS) CreateTLSConfig(ctx context.Context) (*tls.Config, error)",
+    "funcbody": "func (c *ClientTLS) CreateTLSConfig(ctx context.Context) (*tls.Config, error) {\n\tif c == nil {\n\t\tlog.Ctx(ctx).Warn().Msg(\"clientTLS is nil\")\n\t\treturn nil, nil\n\t}\n\n\t// Not initialized, to rely on system bundle.\n\tvar caPool *x509.CertPool\n\n\tif c.CA != \"\" {\n\t\tvar ca []byte\n\t\tif _, errCA := os.Stat(c.CA); errCA == nil {\n\t\t\tvar err error\n\t\t\tca, err = os.ReadFile(c.CA)\n\t\t\tif err != nil {\n\t\t\t\treturn nil, fmt.Errorf(\"failed to read CA. %w\", err)\n\t\t\t}\n\t\t} else {\n\t\t\tca = []byte(c.CA)\n\t\t}\n\n\t\tcaPool = x509.NewCertPool()\n\t\tif !caPool.AppendCertsFromPEM(ca) {\n\t\t\treturn nil, errors.New(\"failed to parse CA\")\n\t\t}\n\t}\n\n\thasCert := len(c.Cert) > 0\n\thasKey := len(c.Key) > 0\n\n\tif hasCert != hasKey {\n\t\treturn nil, errors.New(\"both TLS cert and key must be defined\")\n\t}\n\n\tif !hasCert || !hasKey {\n\t\treturn &tls.Config{\n\t\t\tRootCAs:\t\tcaPool,\n\t\t\tInsecureSkipVerify:\tc.InsecureSkipVerify,\n\t\t}, nil\n\t}\n\n\tcert, err := loadKeyPair(c.Cert, c.Key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &tls.Config{\n\t\tCertificates:\t\t[]tls.Certificate{cert},\n\t\tRootCAs:\t\tcaPool,\n\t\tInsecureSkipVerify:\tc.InsecureSkipVerify,\n\t}, nil\n}",
+    "funcname": "CreateTLSConfig"
+}

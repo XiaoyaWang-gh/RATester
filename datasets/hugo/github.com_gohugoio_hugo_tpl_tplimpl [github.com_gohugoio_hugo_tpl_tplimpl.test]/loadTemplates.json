@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 824,
+    "focalfunc": "func (t *templateHandler) loadTemplates() error",
+    "funcbody": "func (t *templateHandler) loadTemplates() error {\n\twalker := func(path string, fi hugofs.FileMetaInfo) error {\n\t\tif fi.IsDir() {\n\t\t\treturn nil\n\t\t}\n\n\t\tif isDotFile(path) || isBackupFile(path) {\n\t\t\treturn nil\n\t\t}\n\n\t\tname := strings.TrimPrefix(filepath.ToSlash(path), \"/\")\n\t\tfilename := filepath.Base(path)\n\t\toutputFormats := t.Conf.GetConfigSection(\"outputFormats\").(output.Formats)\n\t\toutputFormat, found := outputFormats.FromFilename(filename)\n\n\t\tif found && outputFormat.IsPlainText {\n\t\t\tname = textTmplNamePrefix + name\n\t\t}\n\n\t\tif err := t.addTemplateFile(name, fi); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\treturn nil\n\t}\n\n\tif err := helpers.Walk(t.Layouts.Fs, \"\", walker); err != nil {\n\t\tif !herrors.IsNotExist(err) {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t}\n\n\treturn nil\n}",
+    "funcname": "loadTemplates"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/livereload/livereload.go",
+    "lineno": 147,
+    "focalfunc": "func liveReloadJS() []byte",
+    "funcbody": "func liveReloadJS() []byte {\n\treturn []byte(livereloadJS)\n}",
+    "funcname": "liveReloadJS"
+}

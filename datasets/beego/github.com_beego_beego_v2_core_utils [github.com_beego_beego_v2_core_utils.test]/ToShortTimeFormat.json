@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/time.go",
+    "lineno": 23,
+    "focalfunc": "func ToShortTimeFormat(d time.Duration) string",
+    "funcbody": "func ToShortTimeFormat(d time.Duration) string {\n\tu := uint64(d)\n\tif u < uint64(time.Second) {\n\t\tswitch {\n\t\tcase u == 0:\n\t\t\treturn \"0\"\n\t\tcase u < uint64(time.Microsecond):\n\t\t\treturn fmt.Sprintf(\"%.2fns\", float64(u))\n\t\tcase u < uint64(time.Millisecond):\n\t\t\treturn fmt.Sprintf(\"%.2fus\", float64(u)/1000)\n\t\tdefault:\n\t\t\treturn fmt.Sprintf(\"%.2fms\", float64(u)/1000/1000)\n\t\t}\n\t} else {\n\t\tswitch {\n\t\tcase u < uint64(time.Minute):\n\t\t\treturn fmt.Sprintf(\"%.2fs\", float64(u)/1000/1000/1000)\n\t\tcase u < uint64(time.Hour):\n\t\t\treturn fmt.Sprintf(\"%.2fm\", float64(u)/1000/1000/1000/60)\n\t\tdefault:\n\t\t\treturn fmt.Sprintf(\"%.2fh\", float64(u)/1000/1000/1000/60/60)\n\t\t}\n\t}\n}",
+    "funcname": "ToShortTimeFormat"
+}

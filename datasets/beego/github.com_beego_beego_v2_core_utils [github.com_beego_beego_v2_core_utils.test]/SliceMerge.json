@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 62,
+    "focalfunc": "func SliceMerge(slice1, slice2 []interface{}) (c []interface{})",
+    "funcbody": "func SliceMerge(slice1, slice2 []interface{}) (c []interface{}) {\n\tc = append(slice1, slice2...)\n\treturn\n}",
+    "funcname": "SliceMerge"
+}

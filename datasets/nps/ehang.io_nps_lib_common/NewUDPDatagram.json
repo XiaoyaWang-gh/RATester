@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/netpackager.go",
+    "lineno": 182,
+    "focalfunc": "func NewUDPDatagram(header *UDPHeader, data []byte) *UDPDatagram",
+    "funcbody": "func NewUDPDatagram(header *UDPHeader, data []byte) *UDPDatagram {\n\treturn &UDPDatagram{\n\t\tHeader:\theader,\n\t\tData:\tdata,\n\t}\n}",
+    "funcname": "NewUDPDatagram"
+}

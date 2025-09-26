@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 176,
+    "focalfunc": "func (c *Column) SetDataType(dataType string) *Column",
+    "funcbody": "func (c *Column) SetDataType(dataType string) *Column {\n\tc.DataType = dataType\n\treturn c\n}",
+    "funcname": "SetDataType"
+}

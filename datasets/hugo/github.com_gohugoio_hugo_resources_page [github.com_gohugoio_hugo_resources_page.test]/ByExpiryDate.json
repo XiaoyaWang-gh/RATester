@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 288,
+    "focalfunc": "func (p Pages) ByExpiryDate() Pages",
+    "funcbody": "func (p Pages) ByExpiryDate() Pages {\n\tconst key = \"pageSort.ByExpiryDate\"\n\n\texpDate := func(p1, p2 Page) bool {\n\t\treturn p1.ExpiryDate().Unix() < p2.ExpiryDate().Unix()\n\t}\n\n\tpages, _ := spc.get(key, pageBy(expDate).Sort, p)\n\n\treturn pages\n}",
+    "funcname": "ByExpiryDate"
+}

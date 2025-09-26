@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 1314,
+    "focalfunc": "func (p *ControllerRegister) getUrlPath(ctx *beecontext.Context) string",
+    "funcbody": "func (p *ControllerRegister) getUrlPath(ctx *beecontext.Context) string {\n\turlPath := ctx.Request.URL.Path\n\tif !p.cfg.RouterCaseSensitive {\n\t\turlPath = strings.ToLower(urlPath)\n\t}\n\treturn urlPath\n}",
+    "funcname": "getUrlPath"
+}

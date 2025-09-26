@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 263,
+    "focalfunc": "func (fi *dirNameOnlyFileInfo) Size() int64",
+    "funcbody": "func (fi *dirNameOnlyFileInfo) Size() int64 {\n\tpanic(\"not implemented\")\n}",
+    "funcname": "Size"
+}

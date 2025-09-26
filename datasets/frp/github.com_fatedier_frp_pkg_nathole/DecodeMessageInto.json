@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/utils.go",
+    "lineno": 42,
+    "focalfunc": "func DecodeMessageInto(data, key []byte, m msg.Message) error",
+    "funcbody": "func DecodeMessageInto(data, key []byte, m msg.Message) error {\n\tbuf, err := crypto.Decode(data, key)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn msg.ReadMsgInto(bytes.NewReader(buf), m)\n}",
+    "funcname": "DecodeMessageInto"
+}

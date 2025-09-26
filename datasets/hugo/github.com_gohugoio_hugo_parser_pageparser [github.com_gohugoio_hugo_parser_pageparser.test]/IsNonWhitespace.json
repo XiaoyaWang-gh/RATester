@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/pageparser/item.go",
+    "lineno": 114,
+    "focalfunc": "func (i Item) IsNonWhitespace(source []byte) bool",
+    "funcbody": "func (i Item) IsNonWhitespace(source []byte) bool {\n\treturn len(bytes.TrimSpace(i.Val(source))) > 0\n}",
+    "funcname": "IsNonWhitespace"
+}

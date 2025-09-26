@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 103,
+    "focalfunc": "func parseAccept(acceptHeader string) []string",
+    "funcbody": "func parseAccept(acceptHeader string) []string {\n\tparts := strings.Split(acceptHeader, \",\")\n\tout := make([]string, 0, len(parts))\n\tfor _, part := range parts {\n\t\tif i := strings.IndexByte(part, ';'); i > 0 {\n\t\t\tpart = part[:i]\n\t\t}\n\t\tif part = strings.TrimSpace(part); part != \"\" {\n\t\t\tout = append(out, part)\n\t\t}\n\t}\n\treturn out\n}",
+    "funcname": "parseAccept"
+}

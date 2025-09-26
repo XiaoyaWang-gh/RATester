@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 530,
+    "focalfunc": "func (bl *BeeLogger) Debug(format string, v ...interface{})",
+    "funcbody": "func (bl *BeeLogger) Debug(format string, v ...interface{}) {\n\tif LevelDebug > bl.level {\n\t\treturn\n\t}\n\tlm := &LogMsg{\n\t\tLevel:\tLevelDebug,\n\t\tMsg:\tformat,\n\t\tWhen:\ttime.Now(),\n\t\tArgs:\tv,\n\t}\n\n\tbl.writeMsg(lm)\n}",
+    "funcname": "Debug"
+}

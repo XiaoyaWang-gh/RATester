@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 261,
+    "focalfunc": "func (f *Framework) WriteTempFile(name string, content string) string",
+    "funcbody": "func (f *Framework) WriteTempFile(name string, content string) string {\n\tfilePath := filepath.Join(f.TempDirectory, name)\n\terr := os.WriteFile(filePath, []byte(content), 0o600)\n\tExpectNoError(err)\n\treturn filePath\n}",
+    "funcname": "WriteTempFile"
+}

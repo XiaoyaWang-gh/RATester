@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/https.go",
+    "lineno": 35,
+    "focalfunc": "func NewHTTPSProxy(baseProxy *BaseProxy) Proxy",
+    "funcbody": "func NewHTTPSProxy(baseProxy *BaseProxy) Proxy {\n\tunwrapped, ok := baseProxy.GetConfigurer().(*v1.HTTPSProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn &HTTPSProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t}\n}",
+    "funcname": "NewHTTPSProxy"
+}

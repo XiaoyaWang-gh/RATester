@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 1099,
+    "focalfunc": "func (c *hugoBuilder) rebuildSitesForChanges(ids []identity.Identity) error",
+    "funcbody": "func (c *hugoBuilder) rebuildSitesForChanges(ids []identity.Identity) error {\n\tc.errState.setBuildErr(nil)\n\th, err := c.hugo()\n\tif err != nil {\n\t\treturn err\n\t}\n\twhatChanged := &hugolib.WhatChanged{}\n\twhatChanged.Add(ids...)\n\terr = h.Build(hugolib.BuildCfg{NoBuildLock: true, WhatChanged: whatChanged, RecentlyVisited: c.visitedURLs, ErrRecovery: c.errState.wasErr()})\n\tc.errState.setBuildErr(err)\n\treturn err\n}",
+    "funcname": "rebuildSitesForChanges"
+}

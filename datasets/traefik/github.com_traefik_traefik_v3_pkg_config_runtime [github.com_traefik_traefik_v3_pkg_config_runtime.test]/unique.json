@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/runtime/runtime_http.go",
+    "lineno": 57,
+    "focalfunc": "func unique(src []string) []string",
+    "funcbody": "func unique(src []string) []string {\n\tvar uniq []string\n\n\tset := make(map[string]struct{})\n\tfor _, v := range src {\n\t\tif _, exist := set[v]; !exist {\n\t\t\tset[v] = struct{}{}\n\t\t\tuniq = append(uniq, v)\n\t\t}\n\t}\n\n\tsort.Strings(uniq)\n\n\treturn uniq\n}",
+    "funcname": "unique"
+}

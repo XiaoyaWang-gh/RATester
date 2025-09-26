@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 195,
+    "focalfunc": "func (p *pageMeta) Name() string",
+    "funcbody": "func (p *pageMeta) Name() string {\n\tif p.resourcePath != \"\" {\n\t\treturn p.resourcePath\n\t}\n\tif p.pageConfig.Kind == kinds.KindTerm {\n\t\treturn p.pathInfo.Unnormalized().BaseNameNoIdentifier()\n\t}\n\treturn p.Title()\n}",
+    "funcname": "Name"
+}

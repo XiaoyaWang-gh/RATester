@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/client.go",
+    "lineno": 155,
+    "focalfunc": "func (s *TRPClient) newChan()",
+    "funcbody": "func (s *TRPClient) newChan() {\n\ttunnel, err := NewConn(s.bridgeConnType, s.vKey, s.svrAddr, common.WORK_CHAN, s.proxyUrl)\n\tif err != nil {\n\t\tlogs.Error(\"connect to \", s.svrAddr, \"error:\", err)\n\t\treturn\n\t}\n\ts.tunnel = nps_mux.NewMux(tunnel.Conn, s.bridgeConnType, s.disconnectTime)\n\tfor {\n\t\tsrc, err := s.tunnel.Accept()\n\t\tif err != nil {\n\t\t\tlogs.Warn(err)\n\t\t\ts.Close()\n\t\t\tbreak\n\t\t}\n\t\tgo s.handleChan(src)\n\t}\n}",
+    "funcname": "newChan"
+}

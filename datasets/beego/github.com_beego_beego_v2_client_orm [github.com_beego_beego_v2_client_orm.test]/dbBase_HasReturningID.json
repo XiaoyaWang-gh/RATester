@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db.go",
+    "lineno": 2052,
+    "focalfunc": "func (d *dbBase) HasReturningID(*models.ModelInfo, *string) bool",
+    "funcbody": "func (d *dbBase) HasReturningID(*models.ModelInfo, *string) bool {\n\treturn false\n}",
+    "funcname": "HasReturningID"
+}

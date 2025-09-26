@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/file.go",
+    "lineno": 393,
+    "focalfunc": "func (w *fileLogWriter) deleteOldLog()",
+    "funcbody": "func (w *fileLogWriter) deleteOldLog() {\n\tdir := filepath.Dir(w.Filename)\n\tabsolutePath, err := filepath.EvalSymlinks(w.Filename)\n\tif err == nil {\n\t\tdir = filepath.Dir(absolutePath)\n\t}\n\tfilepath.Walk(dir, func(path string, info os.FileInfo, err error) (returnErr error) {\n\t\tdefer func() {\n\t\t\tif r := recover(); r != nil {\n\t\t\t\tfmt.Fprintf(os.Stderr, \"Unable to delete old log '%s', error: %v\\n\", path, r)\n\t\t\t}\n\t\t}()\n\n\t\tif info == nil {\n\t\t\treturn\n\t\t}\n\t\tif w.Hourly {\n\t\t\tif !info.IsDir() && info.ModTime().Add(1*time.Hour*time.Duration(w.MaxHours)).Before(time.Now()) {\n\t\t\t\tif strings.HasPrefix(filepath.Base(path), filepath.Base(w.fileNameOnly)) &&\n\t\t\t\t\tstrings.HasSuffix(filepath.Base(path), w.suffix) {\n\t\t\t\t\tos.Remove(path)\n\t\t\t\t}\n\t\t\t}\n\t\t} else if w.Daily {\n\t\t\tif !info.IsDir() && info.ModTime().Add(24*time.Hour*time.Duration(w.MaxDays)).Before(time.Now()) {\n\t\t\t\tif strings.HasPrefix(filepath.Base(path), filepath.Base(w.fileNameOnly)) &&\n\t\t\t\t\tstrings.HasSuffix(filepath.Base(path), w.suffix) {\n\t\t\t\t\tos.Remove(path)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn\n\t})\n}",
+    "funcname": "deleteOldLog"
+}

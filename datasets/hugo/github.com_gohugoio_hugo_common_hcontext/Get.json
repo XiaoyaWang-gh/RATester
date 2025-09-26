@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hcontext/context.go",
+    "lineno": 36,
+    "focalfunc": "func (f keyInContext[T, R]) Get(ctx context.Context) T",
+    "funcbody": "func (f keyInContext[T, R]) Get(ctx context.Context) T {\n\tv := ctx.Value(f.id)\n\tif v == nil {\n\t\treturn f.zero\n\t}\n\treturn v.(T)\n}",
+    "funcname": "Get"
+}

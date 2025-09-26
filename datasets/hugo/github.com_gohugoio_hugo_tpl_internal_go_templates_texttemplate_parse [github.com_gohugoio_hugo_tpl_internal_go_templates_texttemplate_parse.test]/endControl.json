@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 602,
+    "focalfunc": "func (t *Tree) endControl() Node",
+    "funcbody": "func (t *Tree) endControl() Node {\n\treturn t.newEnd(t.expect(itemRightDelim, \"end\").pos)\n}",
+    "funcname": "endControl"
+}

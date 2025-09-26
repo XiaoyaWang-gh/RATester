@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/load.go",
+    "lineno": 518,
+    "focalfunc": "func (l configLoader) loadConfig(configName string) (string, error)",
+    "funcbody": "func (l configLoader) loadConfig(configName string) (string, error) {\n\tbaseDir := l.BaseConfig.WorkingDir\n\tvar baseFilename string\n\tif filepath.IsAbs(configName) {\n\t\tbaseFilename = configName\n\t} else {\n\t\tbaseFilename = filepath.Join(baseDir, configName)\n\t}\n\n\tvar filename string\n\tif paths.ExtNoDelimiter(configName) != \"\" {\n\t\texists, _ := helpers.Exists(baseFilename, l.Fs)\n\t\tif exists {\n\t\t\tfilename = baseFilename\n\t\t}\n\t} else {\n\t\tfor _, ext := range config.ValidConfigFileExtensions {\n\t\t\tfilenameToCheck := baseFilename + \".\" + ext\n\t\t\texists, _ := helpers.Exists(filenameToCheck, l.Fs)\n\t\t\tif exists {\n\t\t\t\tfilename = filenameToCheck\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t}\n\n\tif filename == \"\" {\n\t\treturn \"\", ErrNoConfigFile\n\t}\n\n\tm, err := config.FromFileToMap(l.Fs, filename)\n\tif err != nil {\n\t\treturn filename, err\n\t}\n\n\tl.cfg.Set(\"\", m)\n\n\tif err := l.normalizeCfg(l.cfg); err != nil {\n\t\treturn filename, err\n\t}\n\n\tif err := l.cleanExternalConfig(l.cfg); err != nil {\n\t\treturn filename, err\n\t}\n\n\treturn filename, nil\n}",
+    "funcname": "loadConfig"
+}

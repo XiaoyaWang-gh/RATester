@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_postgres.go",
+    "lineno": 150,
+    "focalfunc": "func (qb *PostgresQueryBuilder) Offset(offset int) QueryBuilder",
+    "funcbody": "func (qb *PostgresQueryBuilder) Offset(offset int) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"OFFSET\", strconv.Itoa(offset))\n\treturn qb\n}",
+    "funcname": "Offset"
+}

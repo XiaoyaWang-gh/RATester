@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/server.go",
+    "lineno": 207,
+    "focalfunc": "func GetDefaultServerConf() ServerCommonConf",
+    "funcbody": "func GetDefaultServerConf() ServerCommonConf {\n\treturn ServerCommonConf{\n\t\tServerConfig:\t\tlegacyauth.GetDefaultServerConf(),\n\t\tDashboardAddr:\t\t\"0.0.0.0\",\n\t\tLogFile:\t\t\"console\",\n\t\tLogWay:\t\t\t\"console\",\n\t\tDetailedErrorsToClient:\ttrue,\n\t\tTCPMux:\t\t\ttrue,\n\t\tAllowPorts:\t\tmake(map[int]struct{}),\n\t\tHTTPPlugins:\t\tmake(map[string]HTTPPluginOptions),\n\t}\n}",
+    "funcname": "GetDefaultServerConf"
+}

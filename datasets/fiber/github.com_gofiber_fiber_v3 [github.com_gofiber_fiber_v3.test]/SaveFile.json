@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1463,
+    "focalfunc": "func (*DefaultCtx) SaveFile(fileheader *multipart.FileHeader, path string) error",
+    "funcbody": "func (*DefaultCtx) SaveFile(fileheader *multipart.FileHeader, path string) error {\n\treturn fasthttp.SaveMultipartFile(fileheader, path)\n}",
+    "funcname": "SaveFile"
+}

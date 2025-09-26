@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 427,
+    "focalfunc": "func (n *node) addStaticChild(c *node)",
+    "funcbody": "func (n *node) addStaticChild(c *node) {\n\tn.staticChildren = append(n.staticChildren, c)\n}",
+    "funcname": "addStaticChild"
+}

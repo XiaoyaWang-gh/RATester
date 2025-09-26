@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 78,
+    "focalfunc": "func (i *imageResource) Exif() *exif.ExifInfo",
+    "funcbody": "func (i *imageResource) Exif() *exif.ExifInfo {\n\treturn i.root.getExif()\n}",
+    "funcname": "Exif"
+}

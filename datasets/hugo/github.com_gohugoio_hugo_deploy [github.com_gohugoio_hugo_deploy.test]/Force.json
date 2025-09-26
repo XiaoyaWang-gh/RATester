@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 451,
+    "focalfunc": "func (lf *localFile) Force() bool",
+    "funcbody": "func (lf *localFile) Force() bool {\n\treturn lf.matcher != nil && lf.matcher.Force\n}",
+    "funcname": "Force"
+}

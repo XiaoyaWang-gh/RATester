@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tcp/chain.go",
+    "lineno": 55,
+    "focalfunc": "func (c Chain) Append(constructors ...Constructor) Chain",
+    "funcbody": "func (c Chain) Append(constructors ...Constructor) Chain {\n\tnewCons := make([]Constructor, 0, len(c.constructors)+len(constructors))\n\tnewCons = append(newCons, c.constructors...)\n\tnewCons = append(newCons, constructors...)\n\n\treturn Chain{newCons}\n}",
+    "funcname": "Append"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/proxy.go",
+    "lineno": 24,
+    "focalfunc": "func buildSingleHostProxy(target *url.URL, passHostHeader bool, flushInterval time.Duration, roundTripper http.RoundTripper, bufferPool httputil.BufferPool) http.Handler",
+    "funcbody": "func buildSingleHostProxy(target *url.URL, passHostHeader bool, flushInterval time.Duration, roundTripper http.RoundTripper, bufferPool httputil.BufferPool) http.Handler {\n\treturn &httputil.ReverseProxy{\n\t\tDirector:\tdirectorBuilder(target, passHostHeader),\n\t\tTransport:\troundTripper,\n\t\tFlushInterval:\tflushInterval,\n\t\tBufferPool:\tbufferPool,\n\t\tErrorHandler:\terrorHandler,\n\t}\n}",
+    "funcname": "buildSingleHostProxy"
+}

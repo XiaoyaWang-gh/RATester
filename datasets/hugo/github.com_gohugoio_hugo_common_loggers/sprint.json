@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 345,
+    "focalfunc": "func (l *logAdapter) sprint(v ...any) string",
+    "funcbody": "func (l *logAdapter) sprint(v ...any) string {\n\treturn strings.TrimRight(fmt.Sprintln(v...), \"\\n\")\n}",
+    "funcname": "sprint"
+}

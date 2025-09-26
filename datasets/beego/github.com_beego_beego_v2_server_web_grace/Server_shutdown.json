@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/grace/server.go",
+    "lineno": 301,
+    "focalfunc": "func (srv *Server) shutdown()",
+    "funcbody": "func (srv *Server) shutdown() {\n\tif srv.state != StateRunning {\n\t\treturn\n\t}\n\n\tsrv.state = StateShuttingDown\n\tlog.Println(syscall.Getpid(), \"Waiting for connections to finish...\")\n\tctx := context.Background()\n\tif DefaultTimeout >= 0 {\n\t\tvar cancel context.CancelFunc\n\t\tctx, cancel = context.WithTimeout(context.Background(), DefaultTimeout)\n\t\tdefer cancel()\n\t}\n\tfor _, shutdownCallback := range srv.shutdownCallbacks {\n\t\tshutdownCallback()\n\t}\n\tsrv.terminalChan <- srv.Server.Shutdown(ctx)\n}",
+    "funcname": "shutdown"
+}

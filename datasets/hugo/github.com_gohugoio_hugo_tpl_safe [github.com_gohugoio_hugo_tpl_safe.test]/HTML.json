@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/safe.go",
+    "lineno": 39,
+    "focalfunc": "func (ns *Namespace) HTML(s any) (template.HTML, error)",
+    "funcbody": "func (ns *Namespace) HTML(s any) (template.HTML, error) {\n\tss, err := cast.ToStringE(s)\n\treturn template.HTML(ss), err\n}",
+    "funcname": "HTML"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 216,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetCookie(cookie *http.Cookie) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetCookie(cookie *http.Cookie) *BeegoHTTPRequest {\n\tb.req.Header.Add(\"Cookie\", cookie.String())\n\treturn b\n}",
+    "funcname": "SetCookie"
+}

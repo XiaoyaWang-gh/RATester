@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 606,
+    "focalfunc": "func (c *Client) rmVendorDir(vendorDir string) error",
+    "funcbody": "func (c *Client) rmVendorDir(vendorDir string) error {\n\tmodulestxt := filepath.Join(vendorDir, vendorModulesFilename)\n\n\tif _, err := c.fs.Stat(vendorDir); err != nil {\n\t\treturn nil\n\t}\n\n\t_, err := c.fs.Stat(modulestxt)\n\tif err != nil {\n\n\t\treturn errors.New(\"found _vendor dir without modules.txt, skip delete\")\n\t}\n\n\treturn c.fs.RemoveAll(vendorDir)\n}",
+    "funcname": "rmVendorDir"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 99,
+    "focalfunc": "func GetOrCompileRegexp(pattern string) (re *regexp.Regexp, err error)",
+    "funcbody": "func GetOrCompileRegexp(pattern string) (re *regexp.Regexp, err error) {\n\treturn reCache.getOrCompileRegexp(pattern)\n}",
+    "funcname": "GetOrCompileRegexp"
+}

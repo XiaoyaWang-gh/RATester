@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 104,
+    "focalfunc": "func (c *defaultConfigProvider) GetBool(k string) bool",
+    "funcbody": "func (c *defaultConfigProvider) GetBool(k string) bool {\n\tv := c.Get(k)\n\treturn cast.ToBool(v)\n}",
+    "funcname": "GetBool"
+}

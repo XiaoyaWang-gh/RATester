@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 147,
+    "focalfunc": "func (c ConfigLanguage) ContentTypes() config.ContentTypesProvider",
+    "funcbody": "func (c ConfigLanguage) ContentTypes() config.ContentTypesProvider {\n\treturn c.config.C.ContentTypes\n}",
+    "funcname": "ContentTypes"
+}

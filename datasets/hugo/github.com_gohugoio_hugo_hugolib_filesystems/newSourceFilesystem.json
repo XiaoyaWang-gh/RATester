@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/filesystems/basefs.go",
+    "lineno": 533,
+    "focalfunc": "func (b *sourceFilesystemsBuilder) newSourceFilesystem(name string, fs afero.Fs) *SourceFilesystem",
+    "funcbody": "func (b *sourceFilesystemsBuilder) newSourceFilesystem(name string, fs afero.Fs) *SourceFilesystem {\n\treturn &SourceFilesystem{\n\t\tName:\t\tname,\n\t\tFs:\t\tfs,\n\t\tSourceFs:\tb.sourceFs,\n\t}\n}",
+    "funcname": "newSourceFilesystem"
+}

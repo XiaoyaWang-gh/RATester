@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 57,
+    "focalfunc": "func (m Message[T]) GetID() uint32",
+    "funcbody": "func (m Message[T]) GetID() uint32 {\n\treturn m.Header.ID\n}",
+    "funcname": "GetID"
+}

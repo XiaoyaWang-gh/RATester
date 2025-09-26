@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/config.go",
+    "lineno": 279,
+    "focalfunc": "func (p *Provider) getIPPort(instance ecsInstance, serverPort string) (string, string, error)",
+    "funcbody": "func (p *Provider) getIPPort(instance ecsInstance, serverPort string) (string, string, error) {\n\tvar ip, port string\n\n\tip = instance.machine.privateIP\n\tport = getPort(instance, serverPort)\n\tif len(ip) == 0 {\n\t\treturn \"\", \"\", fmt.Errorf(\"unable to find the IP address for the instance %q: the server is ignored\", instance.Name)\n\t}\n\n\treturn ip, port, nil\n}",
+    "funcname": "getIPPort"
+}

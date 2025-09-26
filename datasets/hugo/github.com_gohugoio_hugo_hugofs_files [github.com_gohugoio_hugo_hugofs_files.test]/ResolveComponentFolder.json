@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/files/classifier.go",
+    "lineno": 80,
+    "focalfunc": "func ResolveComponentFolder(filename string) string",
+    "funcbody": "func ResolveComponentFolder(filename string) string {\n\tfilename = strings.TrimPrefix(filename, string(os.PathSeparator))\n\tfor _, cf := range ComponentFolders {\n\t\tif strings.HasPrefix(filename, cf) {\n\t\t\treturn cf\n\t\t}\n\t}\n\n\treturn \"\"\n}",
+    "funcname": "ResolveComponentFolder"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/fmt/fmt.go",
+    "lineno": 51,
+    "focalfunc": "func (ns *Namespace) Printf(format string, args ...any) string",
+    "funcbody": "func (ns *Namespace) Printf(format string, args ...any) string {\n\treturn _fmt.Sprintf(format, args...)\n}",
+    "funcname": "Printf"
+}

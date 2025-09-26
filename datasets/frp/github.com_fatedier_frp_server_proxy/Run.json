@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/proxy/xtcp.go",
+    "lineno": 49,
+    "focalfunc": "func (pxy *XTCPProxy) Run() (remoteAddr string, err error)",
+    "funcbody": "func (pxy *XTCPProxy) Run() (remoteAddr string, err error) {\n\txl := pxy.xl\n\n\tif pxy.rc.NatHoleController == nil {\n\t\terr = fmt.Errorf(\"xtcp is not supported in frps\")\n\t\treturn\n\t}\n\tallowUsers := pxy.cfg.AllowUsers\n\n\tif len(allowUsers) == 0 {\n\t\tallowUsers = []string{pxy.GetUserInfo().User}\n\t}\n\tsidCh, err := pxy.rc.NatHoleController.ListenClient(pxy.GetName(), pxy.cfg.Secretkey, allowUsers)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tgo func() {\n\t\tfor {\n\t\t\tselect {\n\t\t\tcase <-pxy.closeCh:\n\t\t\t\treturn\n\t\t\tcase sid := <-sidCh:\n\t\t\t\tworkConn, errRet := pxy.GetWorkConnFromPool(nil, nil)\n\t\t\t\tif errRet != nil {\n\t\t\t\t\tcontinue\n\t\t\t\t}\n\t\t\t\tm := &msg.NatHoleSid{\n\t\t\t\t\tSid: sid,\n\t\t\t\t}\n\t\t\t\terrRet = msg.WriteMsg(workConn, m)\n\t\t\t\tif errRet != nil {\n\t\t\t\t\txl.Warnf(\"write nat hole sid package error, %v\", errRet)\n\t\t\t\t}\n\t\t\t\tworkConn.Close()\n\t\t\t}\n\t\t}\n\t}()\n\treturn\n}",
+    "funcname": "Run"
+}

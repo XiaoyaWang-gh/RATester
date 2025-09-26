@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/redirect.go",
+    "lineno": 132,
+    "focalfunc": "func redirect(config RedirectConfig, cb redirectLogic) echo.MiddlewareFunc",
+    "funcbody": "func redirect(config RedirectConfig, cb redirectLogic) echo.MiddlewareFunc {\n\tif config.Skipper == nil {\n\t\tconfig.Skipper = DefaultRedirectConfig.Skipper\n\t}\n\tif config.Code == 0 {\n\t\tconfig.Code = DefaultRedirectConfig.Code\n\t}\n\n\treturn func(next echo.HandlerFunc) echo.HandlerFunc {\n\t\treturn func(c echo.Context) error {\n\t\t\tif config.Skipper(c) {\n\t\t\t\treturn next(c)\n\t\t\t}\n\n\t\t\treq, scheme := c.Request(), c.Scheme()\n\t\t\thost := req.Host\n\t\t\tif ok, url := cb(scheme, host, req.RequestURI); ok {\n\t\t\t\treturn c.Redirect(config.Code, url)\n\t\t\t}\n\n\t\t\treturn next(c)\n\t\t}\n\t}\n}",
+    "funcname": "redirect"
+}

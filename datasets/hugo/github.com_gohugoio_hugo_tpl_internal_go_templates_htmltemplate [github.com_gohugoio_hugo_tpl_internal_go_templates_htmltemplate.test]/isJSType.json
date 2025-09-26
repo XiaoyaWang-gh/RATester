@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 451,
+    "focalfunc": "func isJSType(mimeType string) bool",
+    "funcbody": "func isJSType(mimeType string) bool {\n\n\tmimeType, _, _ = strings.Cut(mimeType, \";\")\n\tmimeType = strings.ToLower(mimeType)\n\tmimeType = strings.TrimSpace(mimeType)\n\tswitch mimeType {\n\tcase\n\t\t\"application/ecmascript\",\n\t\t\"application/javascript\",\n\t\t\"application/json\",\n\t\t\"application/ld+json\",\n\t\t\"application/x-ecmascript\",\n\t\t\"application/x-javascript\",\n\t\t\"module\",\n\t\t\"text/ecmascript\",\n\t\t\"text/javascript\",\n\t\t\"text/javascript1.0\",\n\t\t\"text/javascript1.1\",\n\t\t\"text/javascript1.2\",\n\t\t\"text/javascript1.3\",\n\t\t\"text/javascript1.4\",\n\t\t\"text/javascript1.5\",\n\t\t\"text/jscript\",\n\t\t\"text/livescript\",\n\t\t\"text/x-ecmascript\",\n\t\t\"text/x-javascript\":\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "isJSType"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/http_code_range.go",
+    "lineno": 37,
+    "focalfunc": "func (h HTTPCodeRanges) Contains(statusCode int) bool",
+    "funcbody": "func (h HTTPCodeRanges) Contains(statusCode int) bool {\n\treturn slices.ContainsFunc(h, func(block [2]int) bool {\n\t\treturn statusCode >= block[0] && statusCode <= block[1]\n\t})\n}",
+    "funcname": "Contains"
+}

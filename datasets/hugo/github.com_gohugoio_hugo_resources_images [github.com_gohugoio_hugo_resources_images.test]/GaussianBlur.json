@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/filters.go",
+    "lineno": 291,
+    "focalfunc": "func (*Filters) GaussianBlur(sigma any) gift.Filter",
+    "funcbody": "func (*Filters) GaussianBlur(sigma any) gift.Filter {\n\treturn filter{\n\t\tOptions:\tnewFilterOpts(sigma),\n\t\tFilter:\t\tgift.GaussianBlur(cast.ToFloat32(sigma)),\n\t}\n}",
+    "funcname": "GaussianBlur"
+}

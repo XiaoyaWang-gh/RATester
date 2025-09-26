@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/do_nothing_orm.go",
+    "lineno": 134,
+    "focalfunc": "func (d *DoNothingOrm) Driver() Driver",
+    "funcbody": "func (d *DoNothingOrm) Driver() Driver {\n\treturn nil\n}",
+    "funcname": "Driver"
+}

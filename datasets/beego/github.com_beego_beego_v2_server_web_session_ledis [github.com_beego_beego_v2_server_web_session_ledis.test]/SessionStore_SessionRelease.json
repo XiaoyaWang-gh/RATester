@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ledis/ledis_session.go",
+    "lineno": 71,
+    "focalfunc": "func (ls *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter)",
+    "funcbody": "func (ls *SessionStore) SessionRelease(_ context.Context, _ http.ResponseWriter) {\n\tls.lock.RLock()\n\tvalues := ls.values\n\tls.lock.RUnlock()\n\tb, err := session.EncodeGob(values)\n\tif err != nil {\n\t\treturn\n\t}\n\tc.Set([]byte(ls.sid), b)\n\tc.Expire([]byte(ls.sid), ls.maxlifetime)\n}",
+    "funcname": "SessionRelease"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 83,
+    "focalfunc": "func WrapReadWriteCloserToConn(rwc io.ReadWriteCloser, underConn net.Conn) *WrapReadWriteCloserConn",
+    "funcbody": "func WrapReadWriteCloserToConn(rwc io.ReadWriteCloser, underConn net.Conn) *WrapReadWriteCloserConn {\n\treturn &WrapReadWriteCloserConn{\n\t\tReadWriteCloser:\trwc,\n\t\tunderConn:\t\tunderConn,\n\t}\n}",
+    "funcname": "WrapReadWriteCloserToConn"
+}

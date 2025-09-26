@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/files/classifier.go",
+    "lineno": 37,
+    "focalfunc": "func IsContentDataExt(ext string) bool",
+    "funcbody": "func IsContentDataExt(ext string) bool {\n\treturn IsGoTmplExt(ext)\n}",
+    "funcname": "IsContentDataExt"
+}

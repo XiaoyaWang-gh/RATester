@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 194,
+    "focalfunc": "func (s *SessionStore) Flush(context.Context) error",
+    "funcbody": "func (s *SessionStore) Flush(context.Context) error {\n\ts.lock.Lock()\n\tdefer s.lock.Unlock()\n\ts.values = make(map[interface{}]interface{})\n\treturn nil\n}",
+    "funcname": "Flush"
+}

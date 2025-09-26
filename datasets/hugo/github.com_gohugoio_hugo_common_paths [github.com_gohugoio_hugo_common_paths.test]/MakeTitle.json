@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 105,
+    "focalfunc": "func MakeTitle(inpath string) string",
+    "funcbody": "func MakeTitle(inpath string) string {\n\treturn strings.Replace(strings.TrimSpace(inpath), \"-\", \" \", -1)\n}",
+    "funcname": "MakeTitle"
+}

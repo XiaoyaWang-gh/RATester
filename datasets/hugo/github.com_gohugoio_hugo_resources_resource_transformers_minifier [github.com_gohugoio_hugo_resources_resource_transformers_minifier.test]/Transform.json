@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/minifier/minify.go",
+    "lineno": 49,
+    "focalfunc": "func (t *minifyTransformation) Transform(ctx *resources.ResourceTransformationCtx) error",
+    "funcbody": "func (t *minifyTransformation) Transform(ctx *resources.ResourceTransformationCtx) error {\n\tctx.AddOutPathIdentifier(\".min\")\n\treturn t.m.Minify(ctx.InMediaType, ctx.To, ctx.From)\n}",
+    "funcname": "Transform"
+}

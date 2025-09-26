@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 161,
+    "focalfunc": "func (s *BaseController) GetAjaxParams() (start, limit int)",
+    "funcbody": "func (s *BaseController) GetAjaxParams() (start, limit int) {\n\treturn s.GetIntNoErr(\"offset\"), s.GetIntNoErr(\"limit\")\n}",
+    "funcname": "GetAjaxParams"
+}

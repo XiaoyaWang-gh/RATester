@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/traefik/traefik.go",
+    "lineno": 52,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\n\ttConfig := cmd.NewTraefikConfiguration()\n\n\tloaders := []cli.ResourceLoader{&tcli.DeprecationLoader{}, &tcli.FileLoader{}, &tcli.FlagLoader{}, &tcli.EnvLoader{}}\n\n\tcmdTraefik := &cli.Command{\n\t\tName:\t\"traefik\",\n\t\tDescription: `Traefik is a modern HTTP reverse proxy and load balancer made to deploy microservices with ease.\nComplete documentation is available at https://traefik.io`,\n\t\tConfiguration:\ttConfig,\n\t\tResources:\tloaders,\n\t\tRun: func(_ []string) error {\n\t\t\treturn runCmd(&tConfig.Configuration)\n\t\t},\n\t}\n\n\terr := cmdTraefik.AddCommand(healthcheck.NewCmd(&tConfig.Configuration, loaders))\n\tif err != nil {\n\t\tstdlog.Println(err)\n\t\tos.Exit(1)\n\t}\n\n\terr = cmdTraefik.AddCommand(cmdVersion.NewCmd())\n\tif err != nil {\n\t\tstdlog.Println(err)\n\t\tos.Exit(1)\n\t}\n\n\terr = cli.Execute(cmdTraefik)\n\tif err != nil {\n\t\tlog.Error().Err(err).Msg(\"Command error\")\n\t\tlogrus.Exit(1)\n\t}\n\n\tlogrus.Exit(0)\n}",
+    "funcname": "main"
+}

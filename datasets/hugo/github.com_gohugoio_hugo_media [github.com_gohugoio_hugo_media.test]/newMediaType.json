@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 216,
+    "focalfunc": "func newMediaType(main, sub string, suffixes []string) Type",
+    "funcbody": "func newMediaType(main, sub string, suffixes []string) Type {\n\tt := Type{MainType: main, SubType: sub, SuffixesCSV: strings.Join(suffixes, \",\"), Delimiter: DefaultDelimiter}\n\tt.init()\n\treturn t\n}",
+    "funcname": "newMediaType"
+}

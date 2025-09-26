@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/install/install.go",
+    "lineno": 144,
+    "focalfunc": "func UpdateNpc()",
+    "funcbody": "func UpdateNpc() {\n\tdestPath := downloadLatest(\"client\")\n\n\tcopyStaticFile(destPath, \"npc\")\n\tfmt.Println(\"Update completed, please restart\")\n}",
+    "funcname": "UpdateNpc"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 370,
+    "focalfunc": "func (bl *BeeLogger) EnableFuncCallDepth(b bool)",
+    "funcbody": "func (bl *BeeLogger) EnableFuncCallDepth(b bool) {\n\tbl.enableFuncCallDepth = b\n}",
+    "funcname": "EnableFuncCallDepth"
+}

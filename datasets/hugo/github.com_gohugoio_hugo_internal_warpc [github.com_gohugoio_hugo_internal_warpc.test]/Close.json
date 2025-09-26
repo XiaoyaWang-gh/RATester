@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 535,
+    "focalfunc": "func (d *Dispatchers) Close() error",
+    "funcbody": "func (d *Dispatchers) Close() error {\n\tvar errs []error\n\tif d.katex.started {\n\t\tif err := d.katex.dispatcher.Close(); err != nil {\n\t\t\terrs = append(errs, err)\n\t\t}\n\t}\n\tif len(errs) == 0 {\n\t\treturn nil\n\t}\n\treturn fmt.Errorf(\"%v\", errs)\n}",
+    "funcname": "Close"
+}

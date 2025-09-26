@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/configLoader.go",
+    "lineno": 55,
+    "focalfunc": "func IsValidConfigFilename(filename string) bool",
+    "funcbody": "func IsValidConfigFilename(filename string) bool {\n\text := strings.ToLower(strings.TrimPrefix(filepath.Ext(filename), \".\"))\n\treturn validConfigFileExtensionsMap[ext]\n}",
+    "funcname": "IsValidConfigFilename"
+}

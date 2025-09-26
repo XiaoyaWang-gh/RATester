@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/mail.go",
+    "lineno": 367,
+    "focalfunc": "func needsEncoding(s string) bool",
+    "funcbody": "func needsEncoding(s string) bool {\n\tfor _, b := range s {\n\t\tif (b < ' ' || b > '~') && b != '\\t' {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "needsEncoding"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 280,
+    "focalfunc": "func SafeWriteToDisk(inpath string, r io.Reader, fs afero.Fs) (err error)",
+    "funcbody": "func SafeWriteToDisk(inpath string, r io.Reader, fs afero.Fs) (err error) {\n\treturn afero.SafeWriteReader(fs, inpath, r)\n}",
+    "funcname": "SafeWriteToDisk"
+}

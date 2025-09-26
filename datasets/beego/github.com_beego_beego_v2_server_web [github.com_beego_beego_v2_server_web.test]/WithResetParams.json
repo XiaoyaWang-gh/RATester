@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter.go",
+    "lineno": 126,
+    "focalfunc": "func WithResetParams(reset bool) FilterOpt",
+    "funcbody": "func WithResetParams(reset bool) FilterOpt {\n\treturn func(opts *filterOpts) {\n\t\topts.resetParams = reset\n\t}\n}",
+    "funcname": "WithResetParams"
+}

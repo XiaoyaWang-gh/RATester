@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/lang/lang.go",
+    "lineno": 118,
+    "focalfunc": "func (ns *Namespace) castPrecisionNumber(precision, number any) (uint64, float64, error)",
+    "funcbody": "func (ns *Namespace) castPrecisionNumber(precision, number any) (uint64, float64, error) {\n\tp, err := cast.ToUint64E(precision)\n\tif err != nil {\n\t\treturn 0, 0, err\n\t}\n\n\tif p > 20 {\n\t\treturn 0, 0, fmt.Errorf(\"invalid precision: %d\", precision)\n\t}\n\n\tn, err := cast.ToFloat64E(number)\n\tif err != nil {\n\t\treturn 0, 0, err\n\t}\n\treturn p, n, nil\n}",
+    "funcname": "castPrecisionNumber"
+}

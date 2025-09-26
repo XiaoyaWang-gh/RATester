@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/binder/mapping.go",
+    "lineno": 89,
+    "focalfunc": "func parseToStruct(aliasTag string, out any, data map[string][]string) error",
+    "funcbody": "func parseToStruct(aliasTag string, out any, data map[string][]string) error {\n\n\tschemaDecoder := decoderPoolMap[aliasTag].Get().(*schema.Decoder)\n\tdefer decoderPoolMap[aliasTag].Put(schemaDecoder)\n\n\tschemaDecoder.SetAliasTag(aliasTag)\n\n\treturn schemaDecoder.Decode(out, data)\n}",
+    "funcname": "parseToStruct"
+}

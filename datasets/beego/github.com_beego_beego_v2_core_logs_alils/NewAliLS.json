@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 48,
+    "focalfunc": "func NewAliLS() logs.Logger",
+    "funcbody": "func NewAliLS() logs.Logger {\n\talils := new(aliLSWriter)\n\talils.Level = logs.LevelTrace\n\talils.formatter = alils\n\treturn alils\n}",
+    "funcname": "NewAliLS"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pprof.go",
+    "lineno": 10,
+    "focalfunc": "func InitPProfFromFile()",
+    "funcbody": "func InitPProfFromFile() {\n\tip := beego.AppConfig.String(\"pprof_ip\")\n\tp := beego.AppConfig.String(\"pprof_port\")\n\tif len(ip) > 0 && len(p) > 0 && IsPort(p) {\n\t\trunPProf(ip + \":\" + p)\n\t}\n}",
+    "funcname": "InitPProfFromFile"
+}

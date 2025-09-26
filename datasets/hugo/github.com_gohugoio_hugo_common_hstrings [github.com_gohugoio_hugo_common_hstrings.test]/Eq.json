@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hstrings/strings.go",
+    "lineno": 40,
+    "focalfunc": "func (s StringEqualFold) Eq(s2 any) bool",
+    "funcbody": "func (s StringEqualFold) Eq(s2 any) bool {\n\tswitch ss := s2.(type) {\n\tcase string:\n\t\treturn s.EqualFold(ss)\n\tcase fmt.Stringer:\n\t\treturn s.EqualFold(ss.String())\n\t}\n\n\treturn false\n}",
+    "funcname": "Eq"
+}

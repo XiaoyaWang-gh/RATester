@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 505,
+    "focalfunc": "func (p *Path) Lang() string",
+    "funcbody": "func (p *Path) Lang() string {\n\treturn p.identifierAsString(1)\n}",
+    "funcname": "Lang"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/control.go",
+    "lineno": 453,
+    "focalfunc": "func newUdpConnByAddr(addr string) (*net.UDPConn, error)",
+    "funcbody": "func newUdpConnByAddr(addr string) (*net.UDPConn, error) {\n\tudpAddr, err := net.ResolveUDPAddr(\"udp\", addr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tudpConn, err := net.ListenUDP(\"udp\", udpAddr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn udpConn, nil\n}",
+    "funcname": "newUdpConnByAddr"
+}

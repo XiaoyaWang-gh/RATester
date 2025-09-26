@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/compress.go",
+    "lineno": 196,
+    "focalfunc": "func (w *gzipResponseWriter) Unwrap() http.ResponseWriter",
+    "funcbody": "func (w *gzipResponseWriter) Unwrap() http.ResponseWriter {\n\treturn w.ResponseWriter\n}",
+    "funcname": "Unwrap"
+}

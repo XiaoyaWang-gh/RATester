@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 229,
+    "focalfunc": "func (p *pageState) CodeOwners() []string",
+    "funcbody": "func (p *pageState) CodeOwners() []string {\n\treturn p.codeowners\n}",
+    "funcname": "CodeOwners"
+}

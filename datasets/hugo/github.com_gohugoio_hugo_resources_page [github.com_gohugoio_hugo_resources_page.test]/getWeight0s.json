@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 57,
+    "focalfunc": "func getWeight0s(p1, p2 Page) (int, int)",
+    "funcbody": "func getWeight0s(p1, p2 Page) (int, int) {\n\tp1w, ok1 := p1.(resource.Weight0Provider)\n\tif !ok1 {\n\t\treturn -1, -1\n\t}\n\tp2w, ok2 := p2.(resource.Weight0Provider)\n\tif !ok2 {\n\t\treturn -1, -1\n\t}\n\n\treturn p1w.Weight0(), p2w.Weight0()\n}",
+    "funcname": "getWeight0s"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/logs/gokit.go",
+    "lineno": 8,
+    "focalfunc": "func NewGoKitWrapper(logger zerolog.Logger) kitlog.LoggerFunc",
+    "funcbody": "func NewGoKitWrapper(logger zerolog.Logger) kitlog.LoggerFunc {\n\tif logger.GetLevel() > zerolog.DebugLevel {\n\t\treturn func(args ...interface{}) error { return nil }\n\t}\n\n\treturn func(args ...interface{}) error {\n\t\tlogger.Debug().CallerSkipFrame(2).MsgFunc(msgFunc(args...))\n\t\treturn nil\n\t}\n}",
+    "funcname": "NewGoKitWrapper"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/parse.go",
+    "lineno": 46,
+    "focalfunc": "func (t *Tree) Copy() *Tree",
+    "funcbody": "func (t *Tree) Copy() *Tree {\n\tif t == nil {\n\t\treturn nil\n\t}\n\treturn &Tree{\n\t\tName:\t\tt.Name,\n\t\tParseName:\tt.ParseName,\n\t\tRoot:\t\tt.Root.CopyList(),\n\t\ttext:\t\tt.text,\n\t}\n}",
+    "funcname": "Copy"
+}

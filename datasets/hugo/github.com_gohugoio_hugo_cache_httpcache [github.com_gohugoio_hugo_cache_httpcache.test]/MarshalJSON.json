@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 103,
+    "focalfunc": "func (c PollConfig) MarshalJSON() (b []byte, err error)",
+    "funcbody": "func (c PollConfig) MarshalJSON() (b []byte, err error) {\n\t// Marshal the durations as strings.\n\ttype Alias PollConfig\n\treturn json.Marshal(&struct {\n\t\tLow\tstring\n\t\tHigh\tstring\n\t\tAlias\n\t}{\n\t\tLow:\tc.Low.String(),\n\t\tHigh:\tc.High.String(),\n\t\tAlias:\t(Alias)(c),\n\t})\n}",
+    "funcname": "MarshalJSON"
+}

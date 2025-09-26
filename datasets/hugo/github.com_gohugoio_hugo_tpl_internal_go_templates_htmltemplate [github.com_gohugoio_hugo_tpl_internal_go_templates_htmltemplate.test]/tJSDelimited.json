@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/transition.go",
+    "lineno": 385,
+    "focalfunc": "func tJSDelimited(c context, s []byte) (context, int)",
+    "funcbody": "func tJSDelimited(c context, s []byte) (context, int) {\n\tspecials := `\\\"`\n\tswitch c.state {\n\tcase stateJSSqStr:\n\t\tspecials = `\\'`\n\tcase stateJSRegexp:\n\t\tspecials = `\\/[]`\n\t}\n\n\tk, inCharset := 0, false\n\tfor {\n\t\ti := k + bytes.IndexAny(s[k:], specials)\n\t\tif i < k {\n\t\t\tbreak\n\t\t}\n\t\tswitch s[i] {\n\t\tcase '\\\\':\n\t\t\ti++\n\t\t\tif i == len(s) {\n\t\t\t\treturn context{\n\t\t\t\t\tstate:\tstateError,\n\t\t\t\t\terr:\terrorf(ErrPartialEscape, nil, 0, \"unfinished escape sequence in JS string: %q\", s),\n\t\t\t\t}, len(s)\n\t\t\t}\n\t\tcase '[':\n\t\t\tinCharset = true\n\t\tcase ']':\n\t\t\tinCharset = false\n\t\tcase '/':\n\n\t\t\tif i > 0 && i+7 <= len(s) && bytes.Equal(bytes.ToLower(s[i-1:i+7]), []byte(\"</script\")) {\n\t\t\t\ti++\n\t\t\t} else if !inCharset {\n\t\t\t\tc.state, c.jsCtx = stateJS, jsCtxDivOp\n\t\t\t\treturn c, i + 1\n\t\t\t}\n\t\tdefault:\n\n\t\t\tif !inCharset {\n\t\t\t\tc.state, c.jsCtx = stateJS, jsCtxDivOp\n\t\t\t\treturn c, i + 1\n\t\t\t}\n\t\t}\n\t\tk = i + 1\n\t}\n\n\tif inCharset {\n\n\t\treturn context{\n\t\t\tstate:\tstateError,\n\t\t\terr:\terrorf(ErrPartialCharset, nil, 0, \"unfinished JS regexp charset: %q\", s),\n\t\t}, len(s)\n\t}\n\n\treturn c, len(s)\n}",
+    "funcname": "tJSDelimited"
+}

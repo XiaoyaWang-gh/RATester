@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/org/convert.go",
+    "lineno": 72,
+    "focalfunc": "func (c *orgConverter) Supports(feature identity.Identity) bool",
+    "funcbody": "func (c *orgConverter) Supports(feature identity.Identity) bool {\n\treturn false\n}",
+    "funcname": "Supports"
+}

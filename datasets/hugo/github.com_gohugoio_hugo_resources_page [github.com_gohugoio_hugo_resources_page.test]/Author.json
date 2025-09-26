@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 85,
+    "focalfunc": "func (p *nopPage) Author() Author",
+    "funcbody": "func (p *nopPage) Author() Author {\n\treturn Author{}\n}",
+    "funcname": "Author"
+}

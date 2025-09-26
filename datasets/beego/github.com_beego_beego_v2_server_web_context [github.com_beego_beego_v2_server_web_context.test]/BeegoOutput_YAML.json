@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 216,
+    "focalfunc": "func (output *BeegoOutput) YAML(data interface{}) error",
+    "funcbody": "func (output *BeegoOutput) YAML(data interface{}) error {\n\toutput.Header(\"Content-Type\", \"application/x-yaml; charset=utf-8\")\n\tvar content []byte\n\tvar err error\n\tcontent, err = yaml.Marshal(data)\n\tif err != nil {\n\t\thttp.Error(output.Context.ResponseWriter, err.Error(), http.StatusInternalServerError)\n\t\treturn err\n\t}\n\treturn output.Body(content)\n}",
+    "funcname": "YAML"
+}

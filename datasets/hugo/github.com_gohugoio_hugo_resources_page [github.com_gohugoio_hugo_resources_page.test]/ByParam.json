@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pages_sort.go",
+    "lineno": 387,
+    "focalfunc": "func (p Pages) ByParam(paramsKey any) Pages",
+    "funcbody": "func (p Pages) ByParam(paramsKey any) Pages {\n\tif len(p) < 2 {\n\t\treturn p\n\t}\n\tparamsKeyStr := cast.ToString(paramsKey)\n\tkey := \"pageSort.ByParam.\" + paramsKeyStr\n\n\tstringLess, close := collatorStringLess(p[0])\n\tdefer close()\n\n\tparamsKeyComparator := func(p1, p2 Page) bool {\n\t\tv1, _ := p1.Param(paramsKeyStr)\n\t\tv2, _ := p2.Param(paramsKeyStr)\n\n\t\tif v1 == nil {\n\t\t\treturn false\n\t\t}\n\n\t\tif v2 == nil {\n\t\t\treturn true\n\t\t}\n\n\t\tisNumeric := func(v any) bool {\n\t\t\tswitch v.(type) {\n\t\t\tcase uint8, uint16, uint32, uint64, int, int8, int16, int32, int64, float32, float64:\n\t\t\t\treturn true\n\t\t\tdefault:\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\n\t\tif isNumeric(v1) && isNumeric(v2) {\n\t\t\treturn cast.ToFloat64(v1) < cast.ToFloat64(v2)\n\t\t}\n\n\t\ts1 := cast.ToString(v1)\n\t\ts2 := cast.ToString(v2)\n\n\t\treturn stringLess(s1, s2)\n\t}\n\n\tpages, _ := spc.get(key, pageBy(paramsKeyComparator).Sort, p)\n\n\treturn pages\n}",
+    "funcname": "ByParam"
+}

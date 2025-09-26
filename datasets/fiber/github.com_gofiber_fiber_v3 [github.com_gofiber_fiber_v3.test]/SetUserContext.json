@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 404,
+    "focalfunc": "func (c *DefaultCtx) SetUserContext(ctx context.Context)",
+    "funcbody": "func (c *DefaultCtx) SetUserContext(ctx context.Context) {\n\tc.fasthttp.SetUserValue(userContextKey, ctx)\n}",
+    "funcname": "SetUserContext"
+}

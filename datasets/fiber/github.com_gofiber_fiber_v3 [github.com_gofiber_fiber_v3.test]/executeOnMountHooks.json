@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/hooks.go",
+    "lineno": 210,
+    "focalfunc": "func (h *Hooks) executeOnMountHooks(app *App) error",
+    "funcbody": "func (h *Hooks) executeOnMountHooks(app *App) error {\n\tfor _, v := range h.onMount {\n\t\tif err := v(app); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "executeOnMountHooks"
+}

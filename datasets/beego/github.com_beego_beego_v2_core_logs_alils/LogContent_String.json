@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/log.pb.go",
+    "lineno": 68,
+    "focalfunc": "func (m *LogContent) String() string",
+    "funcbody": "func (m *LogContent) String() string\t{ return github_com_gogo_protobuf_proto.CompactTextString(m) }",
+    "funcname": "String"
+}

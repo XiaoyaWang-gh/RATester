@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 74,
+    "focalfunc": "func (w *responseWriter) WriteHeaderNow()",
+    "funcbody": "func (w *responseWriter) WriteHeaderNow() {\n\tif !w.Written() {\n\t\tw.size = 0\n\t\tw.ResponseWriter.WriteHeader(w.status)\n\t}\n}",
+    "funcname": "WriteHeaderNow"
+}

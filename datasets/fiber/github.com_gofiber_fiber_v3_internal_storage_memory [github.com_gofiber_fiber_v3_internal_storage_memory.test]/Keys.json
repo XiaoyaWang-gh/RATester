@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/storage/memory/memory.go",
+    "lineno": 147,
+    "focalfunc": "func (s *Storage) Keys() ([][]byte, error)",
+    "funcbody": "func (s *Storage) Keys() ([][]byte, error) {\n\ts.mux.RLock()\n\tdefer s.mux.RUnlock()\n\n\tif len(s.db) == 0 {\n\t\treturn nil, nil\n\t}\n\n\tts := utils.Timestamp()\n\tkeys := make([][]byte, 0, len(s.db))\n\tfor key, v := range s.db {\n\n\t\tif v.expiry == 0 || v.expiry > ts {\n\t\t\tkeys = append(keys, []byte(key))\n\t\t}\n\t}\n\n\tif len(keys) == 0 {\n\t\treturn nil, nil\n\t}\n\n\treturn keys, nil\n}",
+    "funcname": "Keys"
+}

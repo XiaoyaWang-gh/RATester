@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/proxy/config.go",
+    "lineno": 76,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tif len(config) < 1 {\n\t\treturn ConfigDefault\n\t}\n\n\tcfg := config[0]\n\n\tif cfg.Timeout <= 0 {\n\t\tcfg.Timeout = ConfigDefault.Timeout\n\t}\n\n\tif len(cfg.Servers) == 0 && cfg.Client == nil {\n\t\tpanic(\"Servers cannot be empty\")\n\t}\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

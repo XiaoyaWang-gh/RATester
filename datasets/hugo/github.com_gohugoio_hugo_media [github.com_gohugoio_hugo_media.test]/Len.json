@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/media/mediaType.go",
+    "lineno": 233,
+    "focalfunc": "func (t Types) Len() int",
+    "funcbody": "func (t Types) Len() int\t{ return len(t) }",
+    "funcname": "Len"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 799,
+    "focalfunc": "func (app *App) Handler() fasthttp.RequestHandler",
+    "funcbody": "func (app *App) Handler() fasthttp.RequestHandler {\n\n\tapp.startupProcess()\n\treturn app.requestHandler\n}",
+    "funcname": "Handler"
+}

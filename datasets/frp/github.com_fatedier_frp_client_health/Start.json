@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/health/health.go",
+    "lineno": 97,
+    "focalfunc": "func (monitor *Monitor) Start()",
+    "funcbody": "func (monitor *Monitor) Start() {\n\tgo monitor.checkWorker()\n}",
+    "funcname": "Start"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/cors/utils.go",
+    "lineno": 9,
+    "focalfunc": "func matchScheme(domain, pattern string) bool",
+    "funcbody": "func matchScheme(domain, pattern string) bool {\n\tdidx := strings.Index(domain, \":\")\n\tpidx := strings.Index(pattern, \":\")\n\treturn didx != -1 && pidx != -1 && domain[:didx] == pattern[:pidx]\n}",
+    "funcname": "matchScheme"
+}

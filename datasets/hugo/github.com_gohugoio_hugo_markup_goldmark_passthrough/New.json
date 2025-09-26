@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/goldmark/passthrough/passthrough.go",
+    "lineno": 30,
+    "focalfunc": "func New(cfg goldmark_config.Passthrough) goldmark.Extender",
+    "funcbody": "func New(cfg goldmark_config.Passthrough) goldmark.Extender {\n\tif !cfg.Enable {\n\t\treturn nil\n\t}\n\treturn &passthroughExtension{cfg: cfg}\n}",
+    "funcname": "New"
+}

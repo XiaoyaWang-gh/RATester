@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/session/data_msgp.go",
+    "lineno": 175,
+    "focalfunc": "func (z *data) Msgsize() (s int)",
+    "funcbody": "func (z *data) Msgsize() (s int) {\n\ts = 1 + 5 + msgp.MapHeaderSize\n\tif z.Data != nil {\n\t\tfor za0001, za0002 := range z.Data {\n\t\t\t_ = za0002\n\t\t\ts += msgp.StringPrefixSize + len(za0001) + msgp.GuessSize(za0002)\n\t\t}\n\t}\n\treturn\n}",
+    "funcname": "Msgsize"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 360,
+    "focalfunc": "func (p *Path) isContentPage() bool",
+    "funcbody": "func (p *Path) isContentPage() bool {\n\treturn p.BundleType() >= PathTypeContentSingle\n}",
+    "funcname": "isContentPage"
+}

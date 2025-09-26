@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 186,
+    "focalfunc": "func (input *BeegoInput) IsWebsocket() bool",
+    "funcbody": "func (input *BeegoInput) IsWebsocket() bool {\n\treturn input.Header(\"Upgrade\") == \"websocket\"\n}",
+    "funcname": "IsWebsocket"
+}

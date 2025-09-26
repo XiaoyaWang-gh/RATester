@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/url.go",
+    "lineno": 73,
+    "focalfunc": "func urlProcessor(norm bool, args ...any) string",
+    "funcbody": "func urlProcessor(norm bool, args ...any) string {\n\ts, t := stringify(args...)\n\tif t == contentTypeURL {\n\t\tnorm = true\n\t}\n\tvar b strings.Builder\n\tif processURLOnto(s, norm, &b) {\n\t\treturn b.String()\n\t}\n\treturn s\n}",
+    "funcname": "urlProcessor"
+}

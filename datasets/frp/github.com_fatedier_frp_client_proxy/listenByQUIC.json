@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/xtcp.go",
+    "lineno": 163,
+    "focalfunc": "func (pxy *XTCPProxy) listenByQUIC(listenConn *net.UDPConn, _ *net.UDPAddr, startWorkConnMsg *msg.StartWorkConn)",
+    "funcbody": "func (pxy *XTCPProxy) listenByQUIC(listenConn *net.UDPConn, _ *net.UDPAddr, startWorkConnMsg *msg.StartWorkConn) {\n\txl := pxy.xl\n\tdefer listenConn.Close()\n\n\ttlsConfig, err := transport.NewServerTLSConfig(\"\", \"\", \"\")\n\tif err != nil {\n\t\txl.Warnf(\"create tls config error: %v\", err)\n\t\treturn\n\t}\n\ttlsConfig.NextProtos = []string{\"frp\"}\n\tquicListener, err := quic.Listen(listenConn, tlsConfig,\n\t\t&quic.Config{\n\t\t\tMaxIdleTimeout:\t\ttime.Duration(pxy.clientCfg.Transport.QUIC.MaxIdleTimeout) * time.Second,\n\t\t\tMaxIncomingStreams:\tint64(pxy.clientCfg.Transport.QUIC.MaxIncomingStreams),\n\t\t\tKeepAlivePeriod:\ttime.Duration(pxy.clientCfg.Transport.QUIC.KeepalivePeriod) * time.Second,\n\t\t},\n\t)\n\tif err != nil {\n\t\txl.Warnf(\"dial quic error: %v\", err)\n\t\treturn\n\t}\n\n\tc, err := quicListener.Accept(pxy.ctx)\n\tif err != nil {\n\t\txl.Errorf(\"quic accept connection error: %v\", err)\n\t\treturn\n\t}\n\tfor {\n\t\tstream, err := c.AcceptStream(pxy.ctx)\n\t\tif err != nil {\n\t\t\txl.Debugf(\"quic accept stream error: %v\", err)\n\t\t\t_ = c.CloseWithError(0, \"\")\n\t\t\treturn\n\t\t}\n\t\tgo pxy.HandleTCPWorkConnection(netpkg.QuicStreamToNetConn(stream, c), startWorkConnMsg, []byte(pxy.cfg.Secretkey))\n\t}\n}",
+    "funcname": "listenByQUIC"
+}

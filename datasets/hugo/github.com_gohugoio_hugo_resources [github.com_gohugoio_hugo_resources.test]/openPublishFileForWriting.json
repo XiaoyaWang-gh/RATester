@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 622,
+    "focalfunc": "func (r *genericResource) openPublishFileForWriting(relTargetPath string) (io.WriteCloser, error)",
+    "funcbody": "func (r *genericResource) openPublishFileForWriting(relTargetPath string) (io.WriteCloser, error) {\n\tfilenames := r.paths.FromTargetPath(relTargetPath).TargetFilenames()\n\treturn helpers.OpenFilesForWriting(r.spec.BaseFs.PublishFs, filenames...)\n}",
+    "funcname": "openPublishFileForWriting"
+}

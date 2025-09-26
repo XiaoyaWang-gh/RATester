@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/collections/reflect_helpers.go",
+    "lineno": 185,
+    "focalfunc": "func isInt(kind reflect.Kind) bool",
+    "funcbody": "func isInt(kind reflect.Kind) bool {\n\tswitch kind {\n\tcase reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:\n\t\treturn true\n\tdefault:\n\t\treturn false\n\t}\n}",
+    "funcname": "isInt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/mysql/sess_mysql.go",
+    "lineno": 247,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tsession.Register(\"mysql\", mysqlpder)\n}",
+    "funcname": "init"
+}

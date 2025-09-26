@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 214,
+    "focalfunc": "func (i *structInfo) get(alias string) *fieldInfo",
+    "funcbody": "func (i *structInfo) get(alias string) *fieldInfo {\n\tfor _, field := range i.fields {\n\t\tif strings.EqualFold(field.alias, alias) {\n\t\t\treturn field\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "get"
+}

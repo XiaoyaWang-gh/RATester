@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/couchbase/sess_couchbase.go",
+    "lineno": 162,
+    "focalfunc": "func (cp *Provider) initOldStyle(savePath string) error",
+    "funcbody": "func (cp *Provider) initOldStyle(savePath string) error {\n\tconfigs := strings.Split(savePath, \",\")\n\tif len(configs) > 0 {\n\t\tcp.SavePath = configs[0]\n\t}\n\tif len(configs) > 1 {\n\t\tcp.Pool = configs[1]\n\t}\n\tif len(configs) > 2 {\n\t\tcp.Bucket = configs[2]\n\t}\n\n\treturn nil\n}",
+    "funcname": "initOldStyle"
+}

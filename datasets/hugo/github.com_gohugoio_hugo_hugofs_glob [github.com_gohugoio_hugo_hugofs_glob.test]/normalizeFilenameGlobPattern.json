@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/filename_filter.go",
+    "lineno": 34,
+    "focalfunc": "func normalizeFilenameGlobPattern(s string) string",
+    "funcbody": "func normalizeFilenameGlobPattern(s string) string {\n\n\ts = filepath.ToSlash(s)\n\tif !strings.HasPrefix(s, \"/\") {\n\t\ts = \"/\" + s\n\t}\n\treturn s\n}",
+    "funcname": "normalizeFilenameGlobPattern"
+}

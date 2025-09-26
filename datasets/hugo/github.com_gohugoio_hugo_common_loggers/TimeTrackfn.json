@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 375,
+    "focalfunc": "func TimeTrackfn(fn func() (logg.LevelLogger, error)) error",
+    "funcbody": "func TimeTrackfn(fn func() (logg.LevelLogger, error)) error {\n\tstart := time.Now()\n\tl, err := fn()\n\telapsed := time.Since(start)\n\tl.WithField(\"duration\", elapsed).Logf(\"\")\n\treturn err\n}",
+    "funcname": "TimeTrackfn"
+}

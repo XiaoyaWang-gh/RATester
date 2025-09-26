@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 575,
+    "focalfunc": "func (s *state) evalFieldNode(dot reflect.Value, field *parse.FieldNode, args []parse.Node, final reflect.Value) reflect.Value",
+    "funcbody": "func (s *state) evalFieldNode(dot reflect.Value, field *parse.FieldNode, args []parse.Node, final reflect.Value) reflect.Value {\n\ts.at(field)\n\treturn s.evalFieldChain(dot, dot, field, field.Ident, args, final)\n}",
+    "funcname": "evalFieldNode"
+}

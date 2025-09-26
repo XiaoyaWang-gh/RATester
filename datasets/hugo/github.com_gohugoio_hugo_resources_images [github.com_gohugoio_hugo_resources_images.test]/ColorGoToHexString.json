@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 115,
+    "focalfunc": "func ColorGoToHexString(c color.Color) string",
+    "funcbody": "func ColorGoToHexString(c color.Color) string {\n\tr, g, b, a := c.RGBA()\n\trgba := color.RGBA{uint8(r), uint8(g), uint8(b), uint8(a)}\n\tif rgba.A == 0xff {\n\t\treturn fmt.Sprintf(\"#%.2x%.2x%.2x\", rgba.R, rgba.G, rgba.B)\n\t}\n\treturn fmt.Sprintf(\"#%.2x%.2x%.2x%.2x\", rgba.R, rgba.G, rgba.B, rgba.A)\n}",
+    "funcname": "ColorGoToHexString"
+}

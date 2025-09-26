@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/siprng.go",
+    "lineno": 253,
+    "focalfunc": "func (p *siprng) Int63n(n int64) int64",
+    "funcbody": "func (p *siprng) Int63n(n int64) int64 {\n\tif n <= 0 {\n\t\tpanic(\"invalid argument to Int63n\")\n\t}\n\tmax := int64((1 << 63) - 1 - (1<<63)%uint64(n))\n\tv := p.Int63()\n\tfor v > max {\n\t\tv = p.Int63()\n\t}\n\treturn v % n\n}",
+    "funcname": "Int63n"
+}

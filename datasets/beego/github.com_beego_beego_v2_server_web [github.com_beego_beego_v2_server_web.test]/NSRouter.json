@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/namespace.go",
+    "lineno": 360,
+    "focalfunc": "func NSRouter(rootpath string, c ControllerInterface, mappingMethods ...string) LinkNamespace",
+    "funcbody": "func NSRouter(rootpath string, c ControllerInterface, mappingMethods ...string) LinkNamespace {\n\treturn func(ns *Namespace) {\n\t\tns.Router(rootpath, c, mappingMethods...)\n\t}\n}",
+    "funcname": "NSRouter"
+}

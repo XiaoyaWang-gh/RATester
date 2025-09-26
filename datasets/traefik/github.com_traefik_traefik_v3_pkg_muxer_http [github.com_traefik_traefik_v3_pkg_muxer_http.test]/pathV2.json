@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher_v2.go",
+    "lineno": 27,
+    "focalfunc": "func pathV2(tree *matchersTree, paths ...string) error",
+    "funcbody": "func pathV2(tree *matchersTree, paths ...string) error {\n\tvar routes []*mux.Route\n\n\tfor _, path := range paths {\n\t\troute := mux.NewRouter().NewRoute()\n\n\t\tif err := route.Path(path).GetError(); err != nil {\n\t\t\treturn err\n\t\t}\n\n\t\troutes = append(routes, route)\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\tfor _, route := range routes {\n\t\t\tif route.Match(req, &mux.RouteMatch{}) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\n\t\treturn false\n\t}\n\n\treturn nil\n}",
+    "funcname": "pathV2"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_mysql.go",
+    "lineno": 180,
+    "focalfunc": "func newdbBaseMysql() dbBaser",
+    "funcbody": "func newdbBaseMysql() dbBaser {\n\tb := new(dbBaseMysql)\n\tb.ins = b\n\treturn b\n}",
+    "funcname": "newdbBaseMysql"
+}

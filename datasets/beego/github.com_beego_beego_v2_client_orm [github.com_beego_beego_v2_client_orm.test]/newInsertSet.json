@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_object.go",
+    "lineno": 80,
+    "focalfunc": "func newInsertSet(ctx context.Context, orm *ormBase, mi *models.ModelInfo) (Inserter, error)",
+    "funcbody": "func newInsertSet(ctx context.Context, orm *ormBase, mi *models.ModelInfo) (Inserter, error) {\n\tbi := new(insertSet)\n\tbi.orm = orm\n\tbi.mi = mi\n\tst, query, err := orm.alias.DbBaser.PrepareInsert(ctx, orm.db, mi)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif Debug {\n\t\tbi.stmt = newStmtQueryLog(orm.alias, st, query)\n\t} else {\n\t\tbi.stmt = st\n\t}\n\treturn bi, nil\n}",
+    "funcname": "newInsertSet"
+}

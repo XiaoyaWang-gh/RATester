@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 93,
+    "focalfunc": "func (*StreamExampleReply) Descriptor() ([]byte, []int)",
+    "funcbody": "func (*StreamExampleReply) Descriptor() ([]byte, []int)\t{ return fileDescriptor0, []int{3} }",
+    "funcname": "Descriptor"
+}

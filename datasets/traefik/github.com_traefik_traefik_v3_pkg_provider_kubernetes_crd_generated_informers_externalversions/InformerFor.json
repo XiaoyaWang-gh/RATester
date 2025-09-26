@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/informers/externalversions/factory.go",
+    "lineno": 188,
+    "focalfunc": "func (f *sharedInformerFactory) InformerFor(obj runtime.Object, newFunc internalinterfaces.NewInformerFunc) cache.SharedIndexInformer",
+    "funcbody": "func (f *sharedInformerFactory) InformerFor(obj runtime.Object, newFunc internalinterfaces.NewInformerFunc) cache.SharedIndexInformer {\n\tf.lock.Lock()\n\tdefer f.lock.Unlock()\n\n\tinformerType := reflect.TypeOf(obj)\n\tinformer, exists := f.informers[informerType]\n\tif exists {\n\t\treturn informer\n\t}\n\n\tresyncPeriod, exists := f.customResync[informerType]\n\tif !exists {\n\t\tresyncPeriod = f.defaultResync\n\t}\n\n\tinformer = newFunc(f.client, resyncPeriod)\n\tinformer.SetTransform(f.transform)\n\tf.informers[informerType] = informer\n\n\treturn informer\n}",
+    "funcname": "InformerFor"
+}

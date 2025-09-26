@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/cookiejar.go",
+    "lineno": 235,
+    "focalfunc": "func searchCookieByKeyAndPath(key, path []byte, cookies []*fasthttp.Cookie) *fasthttp.Cookie",
+    "funcbody": "func searchCookieByKeyAndPath(key, path []byte, cookies []*fasthttp.Cookie) *fasthttp.Cookie {\n\tfor _, c := range cookies {\n\t\tif bytes.Equal(key, c.Key()) {\n\t\t\tif len(path) <= 1 || bytes.HasPrefix(c.Path(), path) {\n\t\t\t\treturn c\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "searchCookieByKeyAndPath"
+}

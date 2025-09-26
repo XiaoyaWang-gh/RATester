@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/strings/strings.go",
+    "lineno": 181,
+    "focalfunc": "func (ns *Namespace) Diff(oldname string, old any, newname string, new any) (string, error)",
+    "funcbody": "func (ns *Namespace) Diff(oldname string, old any, newname string, new any) (string, error) {\n\tolds, err := cast.ToStringE(old)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tnews, err := cast.ToStringE(new)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn string(diff.Diff(oldname, []byte(olds), newname, []byte(news))), nil\n}",
+    "funcname": "Diff"
+}

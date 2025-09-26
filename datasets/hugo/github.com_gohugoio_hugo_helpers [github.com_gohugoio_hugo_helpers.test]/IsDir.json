@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 408,
+    "focalfunc": "func IsDir(path string, fs afero.Fs) (bool, error)",
+    "funcbody": "func IsDir(path string, fs afero.Fs) (bool, error) {\n\treturn afero.IsDir(fs, path)\n}",
+    "funcname": "IsDir"
+}

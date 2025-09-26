@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/try/try.go",
+    "lineno": 33,
+    "focalfunc": "func Response(req *http.Request, timeout time.Duration) (*http.Response, error)",
+    "funcbody": "func Response(req *http.Request, timeout time.Duration) (*http.Response, error) {\n\treturn doTryRequest(req, timeout, nil)\n}",
+    "funcname": "Response"
+}

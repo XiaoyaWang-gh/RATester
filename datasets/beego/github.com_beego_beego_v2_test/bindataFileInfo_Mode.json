@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 64,
+    "focalfunc": "func (fi bindataFileInfo) Mode() os.FileMode",
+    "funcbody": "func (fi bindataFileInfo) Mode() os.FileMode {\n\treturn fi.mode\n}",
+    "funcname": "Mode"
+}

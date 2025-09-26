@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/template.go",
+    "lineno": 386,
+    "focalfunc": "func DelStaticPath(url string) *HttpServer",
+    "funcbody": "func DelStaticPath(url string) *HttpServer {\n\tif !strings.HasPrefix(url, \"/\") {\n\t\turl = \"/\" + url\n\t}\n\tif url != \"/\" {\n\t\turl = strings.TrimRight(url, \"/\")\n\t}\n\tdelete(BConfig.WebConfig.StaticDir, url)\n\treturn BeeApp\n}",
+    "funcname": "DelStaticPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/rst/convert.go",
+    "lineno": 114,
+    "focalfunc": "func getRstBinaryNameAndPath() (string, string)",
+    "funcbody": "func getRstBinaryNameAndPath() (string, string) {\n\tfor _, candidate := range rst2Binaries {\n\t\tif pth := hexec.LookPath(candidate); pth != \"\" {\n\t\t\treturn candidate, pth\n\t\t}\n\t}\n\treturn \"\", \"\"\n}",
+    "funcname": "getRstBinaryNameAndPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 87,
+    "focalfunc": "func (r *Request) SetURL(url string) *Request",
+    "funcbody": "func (r *Request) SetURL(url string) *Request {\n\tr.url = url\n\treturn r\n}",
+    "funcname": "SetURL"
+}

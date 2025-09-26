@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/toml/toml.go",
+    "lineno": 261,
+    "focalfunc": "func (c *configContainer) DIY(key string) (interface{}, error)",
+    "funcbody": "func (c *configContainer) DIY(key string) (interface{}, error) {\n\treturn c.get(key)\n}",
+    "funcname": "DIY"
+}

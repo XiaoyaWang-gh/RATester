@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 89,
+    "focalfunc": "func (d *Dispatcher) SendChannel() chan Message",
+    "funcbody": "func (d *Dispatcher) SendChannel() chan Message {\n\treturn d.sendCh\n}",
+    "funcname": "SendChannel"
+}

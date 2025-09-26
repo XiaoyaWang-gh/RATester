@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_tcp.go",
+    "lineno": 53,
+    "focalfunc": "func newTCPMiddlewareRepresentation(name string, mi *runtime.TCPMiddlewareInfo) tcpMiddlewareRepresentation",
+    "funcbody": "func newTCPMiddlewareRepresentation(name string, mi *runtime.TCPMiddlewareInfo) tcpMiddlewareRepresentation {\n\treturn tcpMiddlewareRepresentation{\n\t\tTCPMiddlewareInfo:\tmi,\n\t\tName:\t\t\tname,\n\t\tProvider:\t\tgetProviderName(name),\n\t\tType:\t\t\tstrings.ToLower(extractType(mi.TCPMiddleware)),\n\t}\n}",
+    "funcname": "newTCPMiddlewareRepresentation"
+}

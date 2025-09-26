@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/client.go",
+    "lineno": 710,
+    "focalfunc": "func (c *Client) shouldVendor(path string) bool",
+    "funcbody": "func (c *Client) shouldVendor(path string) bool {\n\treturn c.noVendor == nil || !c.noVendor.Match(path)\n}",
+    "funcname": "shouldVendor"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 442,
+    "focalfunc": "func (p *nopPage) Resources() resource.Resources",
+    "funcbody": "func (p *nopPage) Resources() resource.Resources {\n\treturn nil\n}",
+    "funcname": "Resources"
+}

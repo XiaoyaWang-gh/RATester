@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 270,
+    "focalfunc": "func (p *nopPage) Keywords() []string",
+    "funcbody": "func (p *nopPage) Keywords() []string {\n\treturn nil\n}",
+    "funcname": "Keywords"
+}

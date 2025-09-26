@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 271,
+    "focalfunc": "func (r *codeModifier) Header() http.Header",
+    "funcbody": "func (r *codeModifier) Header() http.Header {\n\tif r.headerSent {\n\t\treturn r.responseWriter.Header()\n\t}\n\n\tif r.headerMap == nil {\n\t\tr.headerMap = make(http.Header)\n\t}\n\n\treturn r.headerMap\n}",
+    "funcname": "Header"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/langs/language.go",
+    "lineno": 162,
+    "focalfunc": "func GetTranslator(l *Language) locales.Translator",
+    "funcbody": "func GetTranslator(l *Language) locales.Translator {\n\treturn l.translator\n}",
+    "funcname": "GetTranslator"
+}

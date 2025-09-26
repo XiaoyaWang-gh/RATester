@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/yaml.go",
+    "lineno": 29,
+    "focalfunc": "func decodeYAML(r io.Reader, obj any) error",
+    "funcbody": "func decodeYAML(r io.Reader, obj any) error {\n\tdecoder := yaml.NewDecoder(r)\n\tif err := decoder.Decode(obj); err != nil {\n\t\treturn err\n\t}\n\treturn validate(obj)\n}",
+    "funcname": "decodeYAML"
+}

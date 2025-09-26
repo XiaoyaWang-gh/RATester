@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/zz_generated.deepcopy.go",
+    "lineno": 138,
+    "focalfunc": "func (in *Store) DeepCopyInto(out *Store)",
+    "funcbody": "func (in *Store) DeepCopyInto(out *Store) {\n\t*out = *in\n\tif in.DefaultCertificate != nil {\n\t\tin, out := &in.DefaultCertificate, &out.DefaultCertificate\n\t\t*out = new(Certificate)\n\t\t**out = **in\n\t}\n\tif in.DefaultGeneratedCert != nil {\n\t\tin, out := &in.DefaultGeneratedCert, &out.DefaultGeneratedCert\n\t\t*out = new(GeneratedCert)\n\t\t(*in).DeepCopyInto(*out)\n\t}\n\treturn\n}",
+    "funcname": "DeepCopyInto"
+}

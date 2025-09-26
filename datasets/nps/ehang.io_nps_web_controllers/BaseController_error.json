@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 90,
+    "focalfunc": "func (s *BaseController) error()",
+    "funcbody": "func (s *BaseController) error() {\n\ts.Data[\"web_base_url\"] = beego.AppConfig.String(\"web_base_url\")\n\ts.Layout = \"public/layout.html\"\n\ts.TplName = \"public/error.html\"\n}",
+    "funcname": "error"
+}

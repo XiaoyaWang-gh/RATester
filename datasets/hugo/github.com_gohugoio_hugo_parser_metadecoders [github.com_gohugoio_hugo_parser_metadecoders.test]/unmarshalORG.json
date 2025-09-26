@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/parser/metadecoders/decoder.go",
+    "lineno": 240,
+    "focalfunc": "func (d Decoder) unmarshalORG(data []byte, v any) error",
+    "funcbody": "func (d Decoder) unmarshalORG(data []byte, v any) error {\n\tconfig := org.New()\n\tconfig.Log = log.Default()\n\tdocument := config.Parse(bytes.NewReader(data), \"\")\n\tif document.Error != nil {\n\t\treturn document.Error\n\t}\n\tfrontMatter := make(map[string]any, len(document.BufferSettings))\n\tfor k, v := range document.BufferSettings {\n\t\tk = strings.ToLower(k)\n\t\tif strings.HasSuffix(k, \"[]\") {\n\t\t\tfrontMatter[k[:len(k)-2]] = strings.Fields(v)\n\t\t} else if strings.Contains(v, \"\\n\") {\n\t\t\tfrontMatter[k] = strings.Split(v, \"\\n\")\n\t\t} else if k == \"date\" || k == \"lastmod\" || k == \"publishdate\" || k == \"expirydate\" {\n\t\t\tfrontMatter[k] = parseORGDate(v)\n\t\t} else {\n\t\t\tfrontMatter[k] = v\n\t\t}\n\t}\n\tswitch vv := v.(type) {\n\tcase *map[string]any:\n\t\t*vv = frontMatter\n\tcase *any:\n\t\t*vv = frontMatter\n\t}\n\treturn nil\n}",
+    "funcname": "unmarshalORG"
+}

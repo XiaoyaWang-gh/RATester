@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 334,
+    "focalfunc": "func normalizeFilename(filename string) string",
+    "funcbody": "func normalizeFilename(filename string) string {\n\tif filename == \"\" {\n\t\treturn \"\"\n\t}\n\tif runtime.GOOS == \"darwin\" {\n\n\t\treturn norm.NFC.String(filename)\n\t}\n\treturn filename\n}",
+    "funcname": "normalizeFilename"
+}

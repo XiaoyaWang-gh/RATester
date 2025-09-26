@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/internal/warpc/warpc.go",
+    "lineno": 110,
+    "focalfunc": "func putTimer(t *time.Timer)",
+    "funcbody": "func putTimer(t *time.Timer) {\n\tif !t.Stop() {\n\t\tselect {\n\t\tcase <-t.C:\n\t\tdefault:\n\t\t}\n\t}\n\ttimerPool.Put(t)\n}",
+    "funcname": "putTimer"
+}

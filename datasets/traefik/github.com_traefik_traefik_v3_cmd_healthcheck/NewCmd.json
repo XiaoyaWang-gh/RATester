@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/healthcheck/healthcheck.go",
+    "lineno": 15,
+    "focalfunc": "func NewCmd(traefikConfiguration *static.Configuration, loaders []cli.ResourceLoader) *cli.Command",
+    "funcbody": "func NewCmd(traefikConfiguration *static.Configuration, loaders []cli.ResourceLoader) *cli.Command {\n\treturn &cli.Command{\n\t\tName:\t\t\"healthcheck\",\n\t\tDescription:\t`Calls Traefik /ping endpoint (disabled by default) to check the health of Traefik.`,\n\t\tConfiguration:\ttraefikConfiguration,\n\t\tRun:\t\trunCmd(traefikConfiguration),\n\t\tResources:\tloaders,\n\t}\n}",
+    "funcname": "NewCmd"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_orm.go",
+    "lineno": 50,
+    "focalfunc": "func MockRead(tableName string, cb func(data interface{}), err error) *Mock",
+    "funcbody": "func MockRead(tableName string, cb func(data interface{}), err error) *Mock {\n\treturn NewMock(NewSimpleCondition(tableName, \"ReadWithCtx\"), []interface{}{err}, func(inv *orm.Invocation) {\n\t\tif cb != nil {\n\t\t\tcb(inv.Args[0])\n\t\t}\n\t})\n}",
+    "funcname": "MockRead"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 130,
+    "focalfunc": "func (ns *Namespace) includWithTimeout(ctx context.Context, name string, dataList ...any) includeResult",
+    "funcbody": "func (ns *Namespace) includWithTimeout(ctx context.Context, name string, dataList ...any) includeResult {\n\n\ttimeoutCtx, cancel := context.WithTimeout(context.Background(), ns.deps.Conf.Timeout())\n\tdefer cancel()\n\n\tres := make(chan includeResult, 1)\n\n\tgo func() {\n\t\tres <- ns.include(ctx, name, dataList...)\n\t}()\n\n\tselect {\n\tcase r := <-res:\n\t\treturn r\n\tcase <-timeoutCtx.Done():\n\t\terr := timeoutCtx.Err()\n\t\tif err == context.DeadlineExceeded {\n\n\t\t\terr = fmt.Errorf(\"partial %q timed out after %s. This is most likely due to infinite recursion. If this is just a slow template, you can try to increase the 'timeout' config setting.\", name, ns.deps.Conf.Timeout())\n\t\t}\n\t\treturn includeResult{err: err}\n\t}\n}",
+    "funcname": "includWithTimeout"
+}

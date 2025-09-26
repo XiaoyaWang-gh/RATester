@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/tls/certificate_store.go",
+    "lineno": 160,
+    "focalfunc": "func (c CertificateStore) ResetCache()",
+    "funcbody": "func (c CertificateStore) ResetCache() {\n\tif c.CertCache != nil {\n\t\tc.CertCache.Flush()\n\t}\n}",
+    "funcname": "ResetCache"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page_unwrap.go",
+    "lineno": 46,
+    "focalfunc": "func mustUnwrapPage(in any) page.Page",
+    "funcbody": "func mustUnwrapPage(in any) page.Page {\n\tp, err := unwrapPage(in)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\treturn p\n}",
+    "funcname": "mustUnwrapPage"
+}

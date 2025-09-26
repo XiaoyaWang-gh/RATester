@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 193,
+    "focalfunc": "func (d *dbQueryLog) BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error)",
+    "funcbody": "func (d *dbQueryLog) BeginTx(ctx context.Context, opts *sql.TxOptions) (*sql.Tx, error) {\n\ta := time.Now()\n\ttx, err := d.db.(txer).BeginTx(ctx, opts)\n\tdebugLogQueies(d.alias, \"db.BeginTx\", \"START TRANSACTION\", a, err)\n\treturn tx, err\n}",
+    "funcname": "BeginTx"
+}

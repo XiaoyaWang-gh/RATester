@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/recovery/recovery.go",
+    "lineno": 29,
+    "focalfunc": "func (re *recovery) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (re *recovery) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tdefer recoverFunc(rw, req)\n\tre.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

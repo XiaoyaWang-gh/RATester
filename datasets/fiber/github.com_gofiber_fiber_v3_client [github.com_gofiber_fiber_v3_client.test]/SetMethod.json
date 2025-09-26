@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/request.go",
+    "lineno": 76,
+    "focalfunc": "func (r *Request) SetMethod(method string) *Request",
+    "funcbody": "func (r *Request) SetMethod(method string) *Request {\n\tr.method = method\n\treturn r\n}",
+    "funcname": "SetMethod"
+}

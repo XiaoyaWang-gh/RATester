@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/xml.go",
+    "lineno": 20,
+    "focalfunc": "func (xmlBinding) Bind(req *http.Request, obj any) error",
+    "funcbody": "func (xmlBinding) Bind(req *http.Request, obj any) error {\n\treturn decodeXML(req.Body, obj)\n}",
+    "funcname": "Bind"
+}

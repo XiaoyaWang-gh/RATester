@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/internal/resourcepaths.go",
+    "lineno": 94,
+    "focalfunc": "func (d ResourcePaths) FromTargetPath(targetPath string) ResourcePaths",
+    "funcbody": "func (d ResourcePaths) FromTargetPath(targetPath string) ResourcePaths {\n\ttargetPath = filepath.ToSlash(targetPath)\n\tdir, file := path.Split(targetPath)\n\tdir = paths.ToSlashPreserveLeading(dir)\n\tif dir == \"/\" {\n\t\tdir = \"\"\n\t}\n\td.Dir = dir\n\td.File = file\n\td.BaseDirLink = \"\"\n\td.BaseDirTarget = \"\"\n\n\treturn d\n}",
+    "funcname": "FromTargetPath"
+}

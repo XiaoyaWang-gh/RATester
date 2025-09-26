@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/types/file_or_content.go",
+    "lineno": 20,
+    "focalfunc": "func (f FileOrContent) Read() ([]byte, error)",
+    "funcbody": "func (f FileOrContent) Read() ([]byte, error) {\n\tvar content []byte\n\tif f.IsPath() {\n\t\tvar err error\n\t\tcontent, err = os.ReadFile(f.String())\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t} else {\n\t\tcontent = []byte(f)\n\t}\n\treturn content, nil\n}",
+    "funcname": "Read"
+}

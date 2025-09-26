@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 153,
+    "focalfunc": "func (fc *FileCache) Get(ctx context.Context, key string) (interface{}, error)",
+    "funcbody": "func (fc *FileCache) Get(ctx context.Context, key string) (interface{}, error) {\n\tfn, err := fc.getCacheFileName(key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tfileData, err := FileGetContents(fn)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar to FileCacheItem\n\terr = GobDecode(fileData, &to)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif to.Expired.Before(time.Now()) {\n\t\treturn nil, ErrKeyExpired\n\t}\n\treturn to.Data, nil\n}",
+    "funcname": "Get"
+}

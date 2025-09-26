@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/helpers.go",
+    "lineno": 627,
+    "focalfunc": "func (*testConn) SetReadDeadline(_ time.Time) error",
+    "funcbody": "func (*testConn) SetReadDeadline(_ time.Time) error\t{ return nil }",
+    "funcname": "SetReadDeadline"
+}

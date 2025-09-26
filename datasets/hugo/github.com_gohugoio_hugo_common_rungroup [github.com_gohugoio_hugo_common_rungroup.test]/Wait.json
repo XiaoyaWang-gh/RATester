@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/rungroup/rungroup.go",
+    "lineno": 90,
+    "focalfunc": "func (r *runGroup[T]) Wait() error",
+    "funcbody": "func (r *runGroup[T]) Wait() error {\n\tclose(r.ch)\n\treturn r.g.Wait()\n}",
+    "funcname": "Wait"
+}

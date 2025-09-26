@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 433,
+    "focalfunc": "func (f *filterOrmDecorator) BeginWithCtxAndOpts(ctx context.Context, opts *sql.TxOptions) (TxOrmer, error)",
+    "funcbody": "func (f *filterOrmDecorator) BeginWithCtxAndOpts(ctx context.Context, opts *sql.TxOptions) (TxOrmer, error) {\n\tinv := &Invocation{\n\t\tMethod:\t\t\"BeginWithCtxAndOpts\",\n\t\tArgs:\t\t[]interface{}{opts},\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres, err := f.TxBeginner.BeginWithCtxAndOpts(c, opts)\n\t\t\tres = NewFilterTxOrmDecorator(res, f.root, getTxNameFromCtx(c))\n\t\t\treturn []interface{}{res, err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn res[0].(TxOrmer), f.convertError(res[1])\n}",
+    "funcname": "BeginWithCtxAndOpts"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 572,
+    "focalfunc": "func buildQueryParamRules(queryParams []gatev1.HTTPQueryParamMatch) ([]string, int)",
+    "funcbody": "func buildQueryParamRules(queryParams []gatev1.HTTPQueryParamMatch) ([]string, int) {\n\tvar (\n\t\trules\t\t[]string\n\t\tpriority\tint\n\t)\n\tfor _, qp := range queryParams {\n\t\ttyp := ptr.Deref(qp.Type, gatev1.QueryParamMatchExact)\n\t\tswitch typ {\n\t\tcase gatev1.QueryParamMatchExact:\n\t\t\trules = append(rules, fmt.Sprintf(\"Query(`%s`,`%s`)\", qp.Name, qp.Value))\n\t\tcase gatev1.QueryParamMatchRegularExpression:\n\t\t\trules = append(rules, fmt.Sprintf(\"QueryRegexp(`%s`,`%s`)\", qp.Name, qp.Value))\n\t\t}\n\t\tpriority += 10\n\t}\n\n\treturn rules, priority\n}",
+    "funcname": "buildQueryParamRules"
+}

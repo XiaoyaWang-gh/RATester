@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/kv/kv.go",
+    "lineno": 16,
+    "focalfunc": "func Decode(pairs []*store.KVPair, element interface{}, rootName string) error",
+    "funcbody": "func Decode(pairs []*store.KVPair, element interface{}, rootName string) error {\n\tif element == nil {\n\t\treturn nil\n\t}\n\n\tfilters := getRootFieldNames(rootName, element)\n\n\tnode, err := DecodeToNode(pairs, rootName, filters...)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tmetaOpts := parser.MetadataOpts{TagName: \"kv\", AllowSliceAsStruct: false}\n\terr = parser.AddMetadata(element, node, metaOpts)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\treturn parser.Fill(element, node, parser.FillerOpts{AllowSliceAsStruct: false})\n}",
+    "funcname": "Decode"
+}

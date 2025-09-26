@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 733,
+    "focalfunc": "func redirectTrailingSlash(c *Context)",
+    "funcbody": "func redirectTrailingSlash(c *Context) {\n\treq := c.Request\n\tp := req.URL.Path\n\tif prefix := path.Clean(c.Request.Header.Get(\"X-Forwarded-Prefix\")); prefix != \".\" {\n\t\tprefix = regSafePrefix.ReplaceAllString(prefix, \"\")\n\t\tprefix = regRemoveRepeatedChar.ReplaceAllString(prefix, \"/\")\n\n\t\tp = prefix + \"/\" + req.URL.Path\n\t}\n\treq.URL.Path = p + \"/\"\n\tif length := len(p); length > 1 && p[length-1] == '/' {\n\t\treq.URL.Path = p[:length-1]\n\t}\n\tredirectRequest(c)\n}",
+    "funcname": "redirectTrailingSlash"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 385,
+    "focalfunc": "func (f *filterOrmDecorator) RawWithCtx(ctx context.Context, query string, args ...interface{}) RawSeter",
+    "funcbody": "func (f *filterOrmDecorator) RawWithCtx(ctx context.Context, query string, args ...interface{}) RawSeter {\n\tinv := &Invocation{\n\t\tMethod:\t\t\"RawWithCtx\",\n\t\tArgs:\t\t[]interface{}{query, args},\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres := f.ormer.RawWithCtx(c, query, args...)\n\t\t\treturn []interface{}{res}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\n\tif res[0] == nil {\n\t\treturn nil\n\t}\n\treturn res[0].(RawSeter)\n}",
+    "funcname": "RawWithCtx"
+}

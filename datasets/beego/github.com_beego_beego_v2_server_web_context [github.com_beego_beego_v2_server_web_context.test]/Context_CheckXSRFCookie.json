@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 281,
+    "focalfunc": "func (ctx *Context) CheckXSRFCookie() bool",
+    "funcbody": "func (ctx *Context) CheckXSRFCookie() bool {\n\ttoken := ctx.Input.Query(\"_xsrf\")\n\tif token == \"\" {\n\t\ttoken = ctx.Request.Header.Get(\"X-Xsrftoken\")\n\t}\n\tif token == \"\" {\n\t\ttoken = ctx.Request.Header.Get(\"X-Csrftoken\")\n\t}\n\tif token == \"\" {\n\t\tctx.Abort(422, \"422\")\n\t\treturn false\n\t}\n\tif ctx._xsrfToken != token {\n\t\tctx.Abort(417, \"417\")\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "CheckXSRFCookie"
+}

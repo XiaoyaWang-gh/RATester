@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/safemap.go",
+    "lineno": 69,
+    "focalfunc": "func (m *BeeMap) Delete(k interface{})",
+    "funcbody": "func (m *BeeMap) Delete(k interface{}) {\n\tm.lock.Lock()\n\tdefer m.lock.Unlock()\n\tdelete(m.bm, k)\n}",
+    "funcname": "Delete"
+}

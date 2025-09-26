@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 187,
+    "focalfunc": "func (t *Task) SetNext(ctx context.Context, now time.Time)",
+    "funcbody": "func (t *Task) SetNext(ctx context.Context, now time.Time) {\n\tt.Next = t.Spec.Next(now)\n}",
+    "funcname": "SetNext"
+}

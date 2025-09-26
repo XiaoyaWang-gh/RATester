@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/response.go",
+    "lineno": 24,
+    "focalfunc": "func (s StatusCode) Render(ctx *Context)",
+    "funcbody": "func (s StatusCode) Render(ctx *Context) {\n\tctx.Output.SetStatus(int(s))\n}",
+    "funcname": "Render"
+}

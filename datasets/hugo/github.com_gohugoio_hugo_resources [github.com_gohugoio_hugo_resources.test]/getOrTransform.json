@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/transform.go",
+    "lineno": 403,
+    "focalfunc": "func (r *resourceAdapter) getOrTransform(publish, setContent bool) error",
+    "funcbody": "func (r *resourceAdapter) getOrTransform(publish, setContent bool) error {\n\tkey := r.TransformationKey()\n\tres, err := r.spec.ResourceCache.cacheResourceTransformation.GetOrCreate(key, func(string) (*resourceAdapterInner, error) {\n\t\treturn r.transform(key, publish, setContent)\n\t})\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tr.resourceAdapterInner = res\n\treturn nil\n}",
+    "funcname": "getOrTransform"
+}

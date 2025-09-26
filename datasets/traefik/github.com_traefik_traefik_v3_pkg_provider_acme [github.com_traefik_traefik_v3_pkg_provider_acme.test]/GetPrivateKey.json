@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/account.go",
+    "lineno": 57,
+    "focalfunc": "func (a *Account) GetPrivateKey() crypto.PrivateKey",
+    "funcbody": "func (a *Account) GetPrivateKey() crypto.PrivateKey {\n\tprivateKey, err := x509.ParsePKCS1PrivateKey(a.PrivateKey)\n\tif err != nil {\n\t\tlog.Error().Str(logs.ProviderName, \"acme\").\n\t\t\tErr(err).Msgf(\"Cannot unmarshal private key %+v\", a.PrivateKey)\n\t\treturn nil\n\t}\n\n\treturn privateKey\n}",
+    "funcname": "GetPrivateKey"
+}

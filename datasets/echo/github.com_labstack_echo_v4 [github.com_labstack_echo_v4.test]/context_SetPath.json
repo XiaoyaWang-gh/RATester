@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 324,
+    "focalfunc": "func (c *context) SetPath(p string)",
+    "funcbody": "func (c *context) SetPath(p string) {\n\tc.path = p\n}",
+    "funcname": "SetPath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_condition.go",
+    "lineno": 160,
+    "focalfunc": "func WithHeader(key, value string) simpleConditionOption",
+    "funcbody": "func WithHeader(key, value string) simpleConditionOption {\n\treturn func(sc *SimpleCondition) {\n\t\tsc.header[textproto.CanonicalMIMEHeaderKey(key)] = value\n\t}\n}",
+    "funcname": "WithHeader"
+}

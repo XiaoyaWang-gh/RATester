@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/tcp/inflightconn/inflight_conn.go",
+    "lineno": 27,
+    "focalfunc": "func New(ctx context.Context, next tcp.Handler, config dynamic.TCPInFlightConn, name string) (tcp.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next tcp.Handler, config dynamic.TCPInFlightConn, name string) (tcp.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\n\treturn &inFlightConn{\n\t\tname:\t\tname,\n\t\tnext:\t\tnext,\n\t\tconnections:\tmake(map[string]int64),\n\t\tmaxConnections:\tconfig.Amount,\n\t}, nil\n}",
+    "funcname": "New"
+}

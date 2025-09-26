@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/visitor_manager.go",
+    "lineno": 112,
+    "focalfunc": "func (vm *Manager) startVisitor(cfg v1.VisitorConfigurer) (err error)",
+    "funcbody": "func (vm *Manager) startVisitor(cfg v1.VisitorConfigurer) (err error) {\n\txl := xlog.FromContextSafe(vm.ctx)\n\tname := cfg.GetBaseConfig().Name\n\tvisitor := NewVisitor(vm.ctx, cfg, vm.clientCfg, vm.helper)\n\terr = visitor.Run()\n\tif err != nil {\n\t\txl.Warnf(\"start error: %v\", err)\n\t} else {\n\t\tvm.visitors[name] = visitor\n\t\txl.Infof(\"start visitor success\")\n\t}\n\treturn\n}",
+    "funcname": "startVisitor"
+}

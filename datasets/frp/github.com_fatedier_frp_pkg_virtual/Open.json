@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/virtual/client.go",
+    "lineno": 90,
+    "focalfunc": "func (pc *pipeConnector) Open() error",
+    "funcbody": "func (pc *pipeConnector) Open() error {\n\treturn nil\n}",
+    "funcname": "Open"
+}

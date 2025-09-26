@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 174,
+    "focalfunc": "func (f *fatalErrorHandler) Done() <-chan bool",
+    "funcbody": "func (f *fatalErrorHandler) Done() <-chan bool {\n\treturn f.donec\n}",
+    "funcname": "Done"
+}

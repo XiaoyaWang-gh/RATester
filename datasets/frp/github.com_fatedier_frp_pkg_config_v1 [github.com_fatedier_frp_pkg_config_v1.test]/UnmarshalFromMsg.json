@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/v1/proxy.go",
+    "lineno": 457,
+    "focalfunc": "func (c *SUDPProxyConfig) UnmarshalFromMsg(m *msg.NewProxy)",
+    "funcbody": "func (c *SUDPProxyConfig) UnmarshalFromMsg(m *msg.NewProxy) {\n\tc.ProxyBaseConfig.UnmarshalFromMsg(m)\n\n\tc.Secretkey = m.Sk\n\tc.AllowUsers = m.AllowUsers\n}",
+    "funcname": "UnmarshalFromMsg"
+}

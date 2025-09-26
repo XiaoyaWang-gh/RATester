@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/metrics/metrics.go",
+    "lineno": 188,
+    "focalfunc": "func isWebsocketRequest(req *http.Request) bool",
+    "funcbody": "func isWebsocketRequest(req *http.Request) bool {\n\treturn containsHeader(req, \"Connection\", \"upgrade\") && containsHeader(req, \"Upgrade\", \"websocket\")\n}",
+    "funcname": "isWebsocketRequest"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/commonConfig.go",
+    "lineno": 435,
+    "focalfunc": "func (c *PageConfig) CompileConfig(loggers.Logger) error",
+    "funcbody": "func (c *PageConfig) CompileConfig(loggers.Logger) error {\n\tc.NextPrevInSectionSortOrder = strings.ToLower(c.NextPrevInSectionSortOrder)\n\tc.NextPrevSortOrder = strings.ToLower(c.NextPrevSortOrder)\n\treturn nil\n}",
+    "funcname": "CompileConfig"
+}

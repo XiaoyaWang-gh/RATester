@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/websocket.go",
+    "lineno": 54,
+    "focalfunc": "func (p *WebsocketListener) Accept() (net.Conn, error)",
+    "funcbody": "func (p *WebsocketListener) Accept() (net.Conn, error) {\n\tc, ok := <-p.acceptCh\n\tif !ok {\n\t\treturn nil, ErrWebsocketListenerClosed\n\t}\n\treturn c, nil\n}",
+    "funcname": "Accept"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/xtcp.go",
+    "lineno": 45,
+    "focalfunc": "func NewXTCPProxy(baseProxy *BaseProxy, cfg v1.ProxyConfigurer) Proxy",
+    "funcbody": "func NewXTCPProxy(baseProxy *BaseProxy, cfg v1.ProxyConfigurer) Proxy {\n\tunwrapped, ok := cfg.(*v1.XTCPProxyConfig)\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn &XTCPProxy{\n\t\tBaseProxy:\tbaseProxy,\n\t\tcfg:\t\tunwrapped,\n\t}\n}",
+    "funcname": "NewXTCPProxy"
+}

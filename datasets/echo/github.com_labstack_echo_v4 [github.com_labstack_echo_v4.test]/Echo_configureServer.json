@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 779,
+    "focalfunc": "func (e *Echo) configureServer(s *http.Server) error",
+    "funcbody": "func (e *Echo) configureServer(s *http.Server) error {\n\n\te.colorer.SetOutput(e.Logger.Output())\n\ts.ErrorLog = e.StdLogger\n\ts.Handler = e\n\tif e.Debug {\n\t\te.Logger.SetLevel(log.DEBUG)\n\t}\n\n\tif !e.HideBanner {\n\t\te.colorer.Printf(banner, e.colorer.Red(\"v\"+Version), e.colorer.Blue(website))\n\t}\n\n\tif s.TLSConfig == nil {\n\t\tif e.Listener == nil {\n\t\t\tl, err := newListener(s.Addr, e.ListenerNetwork)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\te.Listener = l\n\t\t}\n\t\tif !e.HidePort {\n\t\t\te.colorer.Printf(\"\u21e8 http server started on %s\\n\", e.colorer.Green(e.Listener.Addr()))\n\t\t}\n\t\treturn nil\n\t}\n\tif e.TLSListener == nil {\n\t\tl, err := newListener(s.Addr, e.ListenerNetwork)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\te.TLSListener = tls.NewListener(l, s.TLSConfig)\n\t}\n\tif !e.HidePort {\n\t\te.colorer.Printf(\"\u21e8 https server started on %s\\n\", e.colorer.Green(e.TLSListener.Addr()))\n\t}\n\treturn nil\n}",
+    "funcname": "configureServer"
+}

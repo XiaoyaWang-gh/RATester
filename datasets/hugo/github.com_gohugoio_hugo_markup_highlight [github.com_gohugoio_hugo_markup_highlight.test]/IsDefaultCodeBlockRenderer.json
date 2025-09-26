@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 144,
+    "focalfunc": "func (h chromaHighlighter) IsDefaultCodeBlockRenderer() bool",
+    "funcbody": "func (h chromaHighlighter) IsDefaultCodeBlockRenderer() bool {\n\treturn true\n}",
+    "funcname": "IsDefaultCodeBlockRenderer"
+}

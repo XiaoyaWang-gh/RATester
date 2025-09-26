@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 277,
+    "focalfunc": "func (input *BeegoInput) ParamsLen() int",
+    "funcbody": "func (input *BeegoInput) ParamsLen() int {\n\treturn len(input.pnames)\n}",
+    "funcname": "ParamsLen"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hreflect/helpers.go",
+    "lineno": 193,
+    "focalfunc": "func IsValid(v reflect.Value) bool",
+    "funcbody": "func IsValid(v reflect.Value) bool {\n\tif !v.IsValid() {\n\t\treturn false\n\t}\n\n\tswitch v.Kind() {\n\tcase reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice:\n\t\treturn !v.IsNil()\n\t}\n\n\treturn true\n}",
+    "funcname": "IsValid"
+}

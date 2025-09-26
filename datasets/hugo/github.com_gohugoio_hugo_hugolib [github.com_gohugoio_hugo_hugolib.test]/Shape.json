@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 231,
+    "focalfunc": "func (t pageTrees) Shape(d, v int) *pageTrees",
+    "funcbody": "func (t pageTrees) Shape(d, v int) *pageTrees {\n\tt.treePages = t.treePages.Shape(d, v)\n\tt.treeResources = t.treeResources.Shape(d, v)\n\tt.treeTaxonomyEntries = t.treeTaxonomyEntries.Shape(d, v)\n\tt.treePagesFromTemplateAdapters = t.treePagesFromTemplateAdapters.Shape(d, v)\n\tt.createMutableTrees()\n\n\treturn &t\n}",
+    "funcname": "Shape"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 85,
+    "focalfunc": "func (pp *PathParser) newPath(component string) *Path",
+    "funcbody": "func (pp *PathParser) newPath(component string) *Path {\n\treturn &Path{\n\t\tcomponent:\t\tcomponent,\n\t\tposContainerLow:\t-1,\n\t\tposContainerHigh:\t-1,\n\t\tposSectionHigh:\t\t-1,\n\t\tposIdentifierLanguage:\t-1,\n\t}\n}",
+    "funcname": "newPath"
+}

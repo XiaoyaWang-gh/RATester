@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/listener.go",
+    "lineno": 11,
+    "focalfunc": "func NewTcpListenerAndProcess(addr string, f func(c net.Conn), listener *net.Listener) error",
+    "funcbody": "func NewTcpListenerAndProcess(addr string, f func(c net.Conn), listener *net.Listener) error {\n\tvar err error\n\t*listener, err = net.Listen(\"tcp\", addr)\n\tif err != nil {\n\t\treturn err\n\t}\n\tAccept(*listener, f)\n\treturn nil\n}",
+    "funcname": "NewTcpListenerAndProcess"
+}

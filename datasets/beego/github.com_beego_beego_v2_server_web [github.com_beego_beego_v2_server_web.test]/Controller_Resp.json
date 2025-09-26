@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 443,
+    "focalfunc": "func (c *Controller) Resp(data interface{}) error",
+    "funcbody": "func (c *Controller) Resp(data interface{}) error {\n\treturn c.Ctx.Resp(data)\n}",
+    "funcname": "Resp"
+}

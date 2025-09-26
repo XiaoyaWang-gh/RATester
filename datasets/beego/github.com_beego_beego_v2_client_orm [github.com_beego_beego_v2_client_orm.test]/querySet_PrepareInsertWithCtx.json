@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_queryset.go",
+    "lineno": 275,
+    "focalfunc": "func (o querySet) PrepareInsertWithCtx(ctx context.Context) (Inserter, error)",
+    "funcbody": "func (o querySet) PrepareInsertWithCtx(ctx context.Context) (Inserter, error) {\n\treturn newInsertSet(ctx, o.orm, o.mi)\n}",
+    "funcname": "PrepareInsertWithCtx"
+}

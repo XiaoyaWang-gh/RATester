@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/integration/helloworld/helloworld.pb.go",
+    "lineno": 132,
+    "focalfunc": "func NewGreeterClient(cc *grpc.ClientConn) GreeterClient",
+    "funcbody": "func NewGreeterClient(cc *grpc.ClientConn) GreeterClient {\n\treturn &greeterClient{cc}\n}",
+    "funcname": "NewGreeterClient"
+}

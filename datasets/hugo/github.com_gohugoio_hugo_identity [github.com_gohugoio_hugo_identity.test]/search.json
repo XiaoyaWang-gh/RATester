@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 268,
+    "focalfunc": "func (f *Finder) search(sid *searchID, m Manager, depth int) FinderResult",
+    "funcbody": "func (f *Finder) search(sid *searchID, m Manager, depth int) FinderResult {\n\tid := sid.id\n\n\tif id == Anonymous {\n\t\treturn FinderNotFound\n\t}\n\n\tif !f.cfg.Exact && id == GenghisKhan {\n\t\treturn FinderNotFound\n\t}\n\n\tvar r FinderResult\n\tm.forEeachIdentity(\n\t\tfunc(v Identity) bool {\n\t\t\tif r > 0 {\n\t\t\t\tpanic(\"should be terminated\")\n\t\t\t}\n\t\t\tr = f.checkOne(sid, v, depth)\n\t\t\tif r > 0 {\n\t\t\t\treturn true\n\t\t\t}\n\t\t\tm := GetDependencyManager(v)\n\t\t\tif r = f.checkManager(sid, m, depth+1); r > 0 {\n\t\t\t\treturn true\n\t\t\t}\n\t\t\treturn false\n\t\t},\n\t)\n\treturn r\n}",
+    "funcname": "search"
+}

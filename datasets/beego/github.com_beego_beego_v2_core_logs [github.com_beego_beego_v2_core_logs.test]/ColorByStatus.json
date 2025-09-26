@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/logger.go",
+    "lineno": 152,
+    "focalfunc": "func ColorByStatus(code int) string",
+    "funcbody": "func ColorByStatus(code int) string {\n\tonce.Do(initColor)\n\tswitch {\n\tcase code >= 200 && code < 300:\n\t\treturn colorMap[\"green\"]\n\tcase code >= 300 && code < 400:\n\t\treturn colorMap[\"white\"]\n\tcase code >= 400 && code < 500:\n\t\treturn colorMap[\"yellow\"]\n\tdefault:\n\t\treturn colorMap[\"red\"]\n\t}\n}",
+    "funcname": "ColorByStatus"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 253,
+    "focalfunc": "func (v *Validation) apply(chk Validator, obj interface{}) *Result",
+    "funcbody": "func (v *Validation) apply(chk Validator, obj interface{}) *Result {\n\tif nil == obj {\n\t\tif chk.IsSatisfied(obj) {\n\t\t\treturn &Result{Ok: true}\n\t\t}\n\t} else if reflect.TypeOf(obj).Kind() == reflect.Ptr {\n\t\tif reflect.ValueOf(obj).IsNil() {\n\t\t\tif chk.IsSatisfied(nil) {\n\t\t\t\treturn &Result{Ok: true}\n\t\t\t}\n\t\t} else {\n\t\t\tif chk.IsSatisfied(reflect.ValueOf(obj).Elem().Interface()) {\n\t\t\t\treturn &Result{Ok: true}\n\t\t\t}\n\t\t}\n\t} else if chk.IsSatisfied(obj) {\n\t\treturn &Result{Ok: true}\n\t}\n\n\tkey := chk.GetKey()\n\tName := key\n\tField := \"\"\n\tLabel := \"\"\n\tparts := strings.Split(key, \".\")\n\tif len(parts) == 2 {\n\t\tField = parts[0]\n\t\tName = parts[1]\n\t\tLabel = Field\n\t}\n\tif len(parts) == 3 {\n\t\tField = parts[0]\n\t\tName = parts[1]\n\t\tLabel = parts[2]\n\t\tif len(Label) == 0 {\n\t\t\tLabel = Field\n\t\t}\n\t}\n\n\terr := &Error{\n\t\tMessage:\tLabel + \" \" + chk.DefaultMessage(),\n\t\tKey:\t\tkey,\n\t\tName:\t\tName,\n\t\tField:\t\tField,\n\t\tValue:\t\tobj,\n\t\tTmpl:\t\tMessageTmpls[Name],\n\t\tLimitValue:\tchk.GetLimitValue(),\n\t\tLabel:\t\tLabel,\n\t}\n\tv.setError(err)\n\n\treturn &Result{\n\t\tOk:\tfalse,\n\t\tError:\terr,\n\t}\n}",
+    "funcname": "apply"
+}

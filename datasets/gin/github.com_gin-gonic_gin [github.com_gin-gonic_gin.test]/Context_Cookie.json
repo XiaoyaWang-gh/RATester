@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 963,
+    "focalfunc": "func (c *Context) Cookie(name string) (string, error)",
+    "funcbody": "func (c *Context) Cookie(name string) (string, error) {\n\tcookie, err := c.Request.Cookie(name)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tval, _ := url.QueryUnescape(cookie.Value)\n\treturn val, nil\n}",
+    "funcname": "Cookie"
+}

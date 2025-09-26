@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 532,
+    "focalfunc": "func (c *collector) isVendored(dir string) bool",
+    "funcbody": "func (c *collector) isVendored(dir string) bool {\n\t_, err := c.fs.Stat(filepath.Join(dir, vendord, vendorModulesFilename))\n\treturn err == nil\n}",
+    "funcname": "isVendored"
+}

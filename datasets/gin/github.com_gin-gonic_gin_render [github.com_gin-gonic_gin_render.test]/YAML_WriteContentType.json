@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/render/yaml.go",
+    "lineno": 34,
+    "focalfunc": "func (r YAML) WriteContentType(w http.ResponseWriter)",
+    "funcbody": "func (r YAML) WriteContentType(w http.ResponseWriter) {\n\twriteContentType(w, yamlContentType)\n}",
+    "funcname": "WriteContentType"
+}

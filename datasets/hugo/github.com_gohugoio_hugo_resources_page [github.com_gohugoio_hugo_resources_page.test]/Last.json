@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagination.go",
+    "lineno": 188,
+    "focalfunc": "func (p *Pager) Last() *Pager",
+    "funcbody": "func (p *Pager) Last() *Pager {\n\treturn p.pagers[len(p.pagers)-1]\n}",
+    "funcname": "Last"
+}

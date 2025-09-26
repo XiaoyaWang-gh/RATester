@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/label/label.go",
+    "lineno": 10,
+    "focalfunc": "func DecodeConfiguration(labels map[string]string) (*dynamic.Configuration, error)",
+    "funcbody": "func DecodeConfiguration(labels map[string]string) (*dynamic.Configuration, error) {\n\tconf := &dynamic.Configuration{\n\t\tHTTP:\t&dynamic.HTTPConfiguration{},\n\t\tTCP:\t&dynamic.TCPConfiguration{},\n\t\tUDP:\t&dynamic.UDPConfiguration{},\n\t\tTLS:\t&dynamic.TLSConfiguration{},\n\t}\n\n\terr := parser.Decode(labels, conf, parser.DefaultRootName, \"traefik.http\", \"traefik.tcp\", \"traefik.udp\", \"traefik.tls.stores.default\")\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn conf, nil\n}",
+    "funcname": "DecodeConfiguration"
+}

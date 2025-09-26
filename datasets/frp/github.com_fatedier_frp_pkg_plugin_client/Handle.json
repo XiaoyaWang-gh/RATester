@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/unix_domain_socket.go",
+    "lineno": 53,
+    "focalfunc": "func (uds *UnixDomainSocketPlugin) Handle(ctx context.Context, conn io.ReadWriteCloser, _ net.Conn, extra *ExtraInfo)",
+    "funcbody": "func (uds *UnixDomainSocketPlugin) Handle(ctx context.Context, conn io.ReadWriteCloser, _ net.Conn, extra *ExtraInfo) {\n\txl := xlog.FromContextSafe(ctx)\n\tlocalConn, err := net.DialUnix(\"unix\", nil, uds.UnixAddr)\n\tif err != nil {\n\t\txl.Warnf(\"dial to uds %s error: %v\", uds.UnixAddr, err)\n\t\treturn\n\t}\n\tif extra.ProxyProtocolHeader != nil {\n\t\tif _, err := extra.ProxyProtocolHeader.WriteTo(localConn); err != nil {\n\t\t\treturn\n\t\t}\n\t}\n\n\tlibio.Join(localConn, conn)\n}",
+    "funcname": "Handle"
+}

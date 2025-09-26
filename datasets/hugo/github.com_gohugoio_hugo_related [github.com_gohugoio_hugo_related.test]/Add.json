@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/related/inverted_index.go",
+    "lineno": 197,
+    "focalfunc": "func (idx *InvertedIndex) Add(ctx context.Context, docs ...Document) error",
+    "funcbody": "func (idx *InvertedIndex) Add(ctx context.Context, docs ...Document) error {\n\tif idx.finalized {\n\t\tpanic(\"index is finalized\")\n\t}\n\tvar err error\n\tfor _, config := range idx.cfg.Indices {\n\t\tif config.Weight == 0 {\n\n\t\t\tcontinue\n\t\t}\n\t\tsetm := idx.index[config.Name]\n\n\t\tfor _, doc := range docs {\n\t\t\tvar added bool\n\t\t\tvar words []Keyword\n\t\t\twords, err = doc.RelatedKeywords(config)\n\t\t\tif err != nil {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tfor _, keyword := range words {\n\t\t\t\tadded = true\n\t\t\t\tsetm[keyword] = append(setm[keyword], doc)\n\t\t\t}\n\n\t\t\tif config.Type == TypeFragments {\n\t\t\t\tif fp, ok := doc.(FragmentProvider); ok {\n\t\t\t\t\tfor _, fragment := range fp.Fragments(ctx).Identifiers {\n\t\t\t\t\t\tadded = true\n\t\t\t\t\t\tsetm[FragmentKeyword(fragment)] = append(setm[FragmentKeyword(fragment)], doc)\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tif added {\n\t\t\t\tidx.indexDocCount[config.Name]++\n\t\t\t}\n\t\t}\n\t}\n\n\treturn err\n}",
+    "funcname": "Add"
+}

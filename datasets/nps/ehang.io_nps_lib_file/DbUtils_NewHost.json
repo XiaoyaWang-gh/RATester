@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 164,
+    "focalfunc": "func (s *DbUtils) NewHost(t *Host) error",
+    "funcbody": "func (s *DbUtils) NewHost(t *Host) error {\n\tif t.Location == \"\" {\n\t\tt.Location = \"/\"\n\t}\n\tif s.IsHostExist(t) {\n\t\treturn errors.New(\"host has exist\")\n\t}\n\tt.Flow = new(Flow)\n\ts.JsonDb.Hosts.Store(t.Id, t)\n\ts.JsonDb.StoreHostToJsonFile()\n\treturn nil\n}",
+    "funcname": "NewHost"
+}

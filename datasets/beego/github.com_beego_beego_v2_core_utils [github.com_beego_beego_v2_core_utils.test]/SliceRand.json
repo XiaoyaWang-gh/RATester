@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/utils/slice.go",
+    "lineno": 76,
+    "focalfunc": "func SliceRand(a []interface{}) (b interface{})",
+    "funcbody": "func SliceRand(a []interface{}) (b interface{}) {\n\trandnum := rand.Intn(len(a))\n\tb = a[randnum]\n\treturn\n}",
+    "funcname": "SliceRand"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 157,
+    "focalfunc": "func NewKeyRenamer(patternKeys ...string) (KeyRenamer, error)",
+    "funcbody": "func NewKeyRenamer(patternKeys ...string) (KeyRenamer, error) {\n\tvar renames []keyRename\n\tfor i := 0; i < len(patternKeys); i += 2 {\n\t\tg, err := glob.Compile(strings.ToLower(patternKeys[i]), '/')\n\t\tif err != nil {\n\t\t\treturn KeyRenamer{}, err\n\t\t}\n\t\trenames = append(renames, keyRename{pattern: g, newKey: patternKeys[i+1]})\n\t}\n\n\treturn KeyRenamer{renames: renames}, nil\n}",
+    "funcname": "NewKeyRenamer"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/admin/profile.go",
+    "lineno": 139,
+    "focalfunc": "func avg(items []time.Duration) time.Duration",
+    "funcbody": "func avg(items []time.Duration) time.Duration {\n\tvar sum time.Duration\n\tfor _, item := range items {\n\t\tsum += item\n\t}\n\treturn time.Duration(int64(sum) / int64(len(items)))\n}",
+    "funcname": "avg"
+}

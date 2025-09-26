@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/segments/segments.go",
+    "lineno": 82,
+    "focalfunc": "func (sms Segments) Get(onNotFound func(s string), ss ...string) SegmentFilter",
+    "funcbody": "func (sms Segments) Get(onNotFound func(s string), ss ...string) SegmentFilter {\n\tif ss == nil {\n\t\treturn segmentFilter{coarse: matchNothing, fine: matchNothing}\n\t}\n\tvar sf segmentFilter\n\tfor _, s := range ss {\n\t\tif seg, ok := sms.s[s]; ok {\n\t\t\tif sf.coarse == nil {\n\t\t\t\tsf.coarse = seg.ShouldExcludeCoarse\n\t\t\t} else {\n\t\t\t\tsf.coarse = sf.coarse.Or(seg.ShouldExcludeCoarse)\n\t\t\t}\n\t\t\tif sf.fine == nil {\n\t\t\t\tsf.fine = seg.ShouldExcludeFine\n\t\t\t} else {\n\t\t\t\tsf.fine = sf.fine.Or(seg.ShouldExcludeFine)\n\t\t\t}\n\t\t} else if onNotFound != nil {\n\t\t\tonNotFound(s)\n\t\t}\n\t}\n\n\tif sf.coarse == nil {\n\t\tsf.coarse = matchAll\n\t}\n\tif sf.fine == nil {\n\t\tsf.fine = matchAll\n\t}\n\n\treturn sf\n}",
+    "funcname": "Get"
+}

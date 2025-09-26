@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/limit/reader.go",
+    "lineno": 29,
+    "focalfunc": "func NewReader(r io.Reader, limiter *rate.Limiter) *Reader",
+    "funcbody": "func NewReader(r io.Reader, limiter *rate.Limiter) *Reader {\n\treturn &Reader{\n\t\tr:\t\tr,\n\t\tlimiter:\tlimiter,\n\t}\n}",
+    "funcname": "NewReader"
+}

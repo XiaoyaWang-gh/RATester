@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 118,
+    "focalfunc": "func (ns *Namespace) GetRemote(args ...any) resource.Resource",
+    "funcbody": "func (ns *Namespace) GetRemote(args ...any) resource.Resource {\n\tget := func(args ...any) (resource.Resource, error) {\n\t\tif len(args) < 1 {\n\t\t\treturn nil, errors.New(\"must provide an URL\")\n\t\t}\n\n\t\tif len(args) > 2 {\n\t\t\treturn nil, errors.New(\"must not provide more arguments than URL and options\")\n\t\t}\n\n\t\turlstr, err := cast.ToStringE(args[0])\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\tvar options map[string]any\n\n\t\tif len(args) > 1 {\n\t\t\toptions, err = maps.ToStringMapE(args[1])\n\t\t\tif err != nil {\n\t\t\t\treturn nil, err\n\t\t\t}\n\t\t}\n\n\t\treturn ns.createClient.FromRemote(urlstr, options)\n\t}\n\n\tr, err := get(args...)\n\tif err != nil {\n\t\tswitch v := err.(type) {\n\t\tcase *create.HTTPError:\n\t\t\treturn resources.NewErrorResource(resource.NewResourceError(v, v.Data))\n\t\tdefault:\n\t\t\treturn resources.NewErrorResource(resource.NewResourceError(fmt.Errorf(\"error calling resources.GetRemote: %w\", err), make(map[string]any)))\n\t\t}\n\t}\n\treturn r\n}",
+    "funcname": "GetRemote"
+}

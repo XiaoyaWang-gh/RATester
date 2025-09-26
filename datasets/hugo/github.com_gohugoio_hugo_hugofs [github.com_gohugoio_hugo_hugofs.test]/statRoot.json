@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/rootmapping_fs.go",
+    "lineno": 722,
+    "focalfunc": "func (fs *RootMappingFs) statRoot(root RootMapping, filename string) (FileMetaInfo, error)",
+    "funcbody": "func (fs *RootMappingFs) statRoot(root RootMapping, filename string) (FileMetaInfo, error) {\n\tdir, name := filepath.Split(filename)\n\tif root.Meta.Rename != nil {\n\t\tn, ok := root.Meta.Rename(name, false)\n\t\tif !ok {\n\t\t\treturn nil, os.ErrNotExist\n\t\t}\n\t\tfilename = filepath.Join(dir, n)\n\t}\n\n\tif !root.Meta.InclusionFilter.Match(root.trimFrom(filename), true) {\n\t\treturn nil, os.ErrNotExist\n\t}\n\n\tfilename = root.filename(filename)\n\tfi, err := fs.Fs.Stat(filename)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar opener func() (afero.File, error)\n\tif !fi.IsDir() {\n\n\t\topener = func() (afero.File, error) {\n\t\t\treturn fs.Fs.Open(filename)\n\t\t}\n\t} else if root.Meta.Rename != nil {\n\n\t\tn, ok := root.Meta.Rename(fi.Name(), true)\n\t\tif !ok {\n\t\t\treturn nil, os.ErrNotExist\n\t\t}\n\t\tmeta := fi.(MetaProvider).Meta()\n\t\tmeta.Name = n\n\n\t\topener = func() (afero.File, error) {\n\t\t\treturn fs.Fs.Open(filename)\n\t\t}\n\t} else {\n\n\t\topener = fs.realDirOpener(filename, root.Meta)\n\t}\n\n\tfim := decorateFileInfo(fi, opener, \"\", root.Meta)\n\n\treturn fim, nil\n}",
+    "funcname": "statRoot"
+}

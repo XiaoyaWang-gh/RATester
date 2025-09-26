@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/kinds/kinds.go",
+    "lineno": 86,
+    "focalfunc": "func GetKindMain(s string) string",
+    "funcbody": "func GetKindMain(s string) string {\n\treturn kindMapMain[strings.ToLower(s)]\n}",
+    "funcname": "GetKindMain"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 135,
+    "focalfunc": "func (e *fileError) ErrorContext() *ErrorContext",
+    "funcbody": "func (e *fileError) ErrorContext() *ErrorContext {\n\treturn e.errorContext\n}",
+    "funcname": "ErrorContext"
+}

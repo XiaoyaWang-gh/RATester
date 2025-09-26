@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/text/transform.go",
+    "lineno": 51,
+    "focalfunc": "func Chomp(s string) string",
+    "funcbody": "func Chomp(s string) string {\n\treturn strings.TrimRightFunc(s, func(r rune) bool {\n\t\treturn r == '\\n' || r == '\\r'\n\t})\n}",
+    "funcname": "Chomp"
+}

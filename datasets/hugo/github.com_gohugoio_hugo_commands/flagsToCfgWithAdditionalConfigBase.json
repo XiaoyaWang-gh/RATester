@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/helpers.go",
+    "lineno": 72,
+    "focalfunc": "func flagsToCfgWithAdditionalConfigBase(cd *simplecobra.Commandeer, cfg config.Provider, additionalConfigBase string) config.Provider",
+    "funcbody": "func flagsToCfgWithAdditionalConfigBase(cd *simplecobra.Commandeer, cfg config.Provider, additionalConfigBase string) config.Provider {\n\tif cfg == nil {\n\t\tcfg = config.New()\n\t}\n\n\tkeyMap := map[string]string{\n\t\t\"minify\":\t\"minifyOutput\",\n\t\t\"destination\":\t\"publishDir\",\n\t\t\"editor\":\t\"newContentEditor\",\n\t}\n\n\tinternalKeySet := map[string]bool{\n\t\t\"quiet\":\t\ttrue,\n\t\t\"verbose\":\t\ttrue,\n\t\t\"watch\":\t\ttrue,\n\t\t\"liveReloadPort\":\ttrue,\n\t\t\"renderToMemory\":\ttrue,\n\t\t\"clock\":\t\ttrue,\n\t}\n\n\tcmd := cd.CobraCommand\n\tflags := cmd.Flags()\n\n\tflags.VisitAll(func(f *pflag.Flag) {\n\t\tif f.Changed {\n\t\t\ttargetKey := f.Name\n\t\t\tif internalKeySet[targetKey] {\n\t\t\t\ttargetKey = \"internal.\" + targetKey\n\t\t\t} else if mapped, ok := keyMap[targetKey]; ok {\n\t\t\t\ttargetKey = mapped\n\t\t\t}\n\t\t\tsetValueFromFlag(flags, f.Name, cfg, targetKey, false)\n\t\t\tif additionalConfigBase != \"\" {\n\t\t\t\tsetValueFromFlag(flags, f.Name, cfg, additionalConfigBase+\".\"+targetKey, true)\n\t\t\t}\n\t\t}\n\t})\n\n\treturn cfg\n}",
+    "funcname": "flagsToCfgWithAdditionalConfigBase"
+}

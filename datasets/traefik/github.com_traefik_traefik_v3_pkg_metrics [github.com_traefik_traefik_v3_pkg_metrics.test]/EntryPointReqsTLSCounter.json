@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/metrics.go",
+    "lineno": 244,
+    "focalfunc": "func (r *standardRegistry) EntryPointReqsTLSCounter() metrics.Counter",
+    "funcbody": "func (r *standardRegistry) EntryPointReqsTLSCounter() metrics.Counter {\n\treturn r.entryPointReqsTLSCounter\n}",
+    "funcname": "EntryPointReqsTLSCounter"
+}

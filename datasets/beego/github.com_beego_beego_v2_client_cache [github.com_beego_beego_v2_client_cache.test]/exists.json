@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 283,
+    "focalfunc": "func exists(path string) (bool, error)",
+    "funcbody": "func exists(path string) (bool, error) {\n\t_, err := os.Stat(path)\n\tif err == nil {\n\t\treturn true, nil\n\t}\n\tif os.IsNotExist(err) {\n\t\treturn false, nil\n\t}\n\treturn false, berror.Wrapf(err, InvalidFileCachePath, \"file cache path is invalid: %s\", path)\n}",
+    "funcname": "exists"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/pagemeta.go",
+    "lineno": 71,
+    "focalfunc": "func DecodeBuildConfig(m any) (BuildConfig, error)",
+    "funcbody": "func DecodeBuildConfig(m any) (BuildConfig, error) {\n\tb := DefaultBuildConfig\n\tif m == nil {\n\t\treturn b, nil\n\t}\n\n\terr := mapstructure.WeakDecode(m, &b)\n\n\tswitch b.List {\n\tcase \"0\":\n\t\tb.List = Never\n\tcase \"1\":\n\t\tb.List = Always\n\tcase Always, Never, ListLocally:\n\tdefault:\n\t\tb.List = Always\n\t}\n\n\tswitch b.Render {\n\tcase \"0\":\n\t\tb.Render = Never\n\tcase \"1\":\n\t\tb.Render = Always\n\tcase Always, Never, Link:\n\tdefault:\n\t\tb.Render = Always\n\t}\n\n\treturn b, err\n}",
+    "funcname": "DecodeBuildConfig"
+}

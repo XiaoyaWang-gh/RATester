@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 214,
+    "focalfunc": "func (p *contentParseInfo) AddReplacement(val []byte, source pageparser.Item)",
+    "funcbody": "func (p *contentParseInfo) AddReplacement(val []byte, source pageparser.Item) {\n\tp.itemsStep2 = append(p.itemsStep2, pageContentReplacement{val: val, source: source})\n}",
+    "funcname": "AddReplacement"
+}

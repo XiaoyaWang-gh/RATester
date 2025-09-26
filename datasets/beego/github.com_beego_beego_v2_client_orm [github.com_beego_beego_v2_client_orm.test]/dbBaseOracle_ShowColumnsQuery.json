@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_oracle.go",
+    "lineno": 89,
+    "focalfunc": "func (d *dbBaseOracle) ShowColumnsQuery(table string) string",
+    "funcbody": "func (d *dbBaseOracle) ShowColumnsQuery(table string) string {\n\treturn fmt.Sprintf(\"SELECT COLUMN_NAME FROM ALL_TAB_COLUMNS \"+\n\t\t\"WHERE TABLE_NAME ='%s'\", strings.ToUpper(table))\n}",
+    "funcname": "ShowColumnsQuery"
+}

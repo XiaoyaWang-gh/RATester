@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 385,
+    "focalfunc": "func NewSock5ModeServer(bridge NetBridge, task *file.Tunnel) *Sock5ModeServer",
+    "funcbody": "func NewSock5ModeServer(bridge NetBridge, task *file.Tunnel) *Sock5ModeServer {\n\ts := new(Sock5ModeServer)\n\ts.bridge = bridge\n\ts.task = task\n\treturn s\n}",
+    "funcname": "NewSock5ModeServer"
+}

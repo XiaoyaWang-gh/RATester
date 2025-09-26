@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log.go",
+    "lineno": 653,
+    "focalfunc": "func GetBeeLogger() *BeeLogger",
+    "funcbody": "func GetBeeLogger() *BeeLogger {\n\treturn beeLogger\n}",
+    "funcname": "GetBeeLogger"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 457,
+    "focalfunc": "func (c *DefaultCtx) Download(file string, filename ...string) error",
+    "funcbody": "func (c *DefaultCtx) Download(file string, filename ...string) error {\n\tvar fname string\n\tif len(filename) > 0 {\n\t\tfname = filename[0]\n\t} else {\n\t\tfname = filepath.Base(file)\n\t}\n\tc.setCanonical(HeaderContentDisposition, `attachment; filename=\"`+c.app.quoteString(fname)+`\"`)\n\treturn c.SendFile(file)\n}",
+    "funcname": "Download"
+}

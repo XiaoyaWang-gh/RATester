@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/control.go",
+    "lineno": 255,
+    "focalfunc": "func NewHttpProxyConn(url *url.URL, remoteAddr string) (net.Conn, error)",
+    "funcbody": "func NewHttpProxyConn(url *url.URL, remoteAddr string) (net.Conn, error) {\n\treq, err := http.NewRequest(\"CONNECT\", \"http://\"+remoteAddr, nil)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tpassword, _ := url.User.Password()\n\treq.Header.Set(\"Authorization\", \"Basic \"+basicAuth(strings.Trim(url.User.Username(), \" \"), password))\n\n\tproxyConn, err := net.Dial(\"tcp\", url.Host)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif err := req.Write(proxyConn); err != nil {\n\t\treturn nil, err\n\t}\n\tres, err := http.ReadResponse(bufio.NewReader(proxyConn), req)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\t_ = res.Body.Close()\n\tif res.StatusCode != 200 {\n\t\treturn nil, errors.New(\"Proxy error \" + res.Status)\n\t}\n\treturn proxyConn, nil\n}",
+    "funcname": "NewHttpProxyConn"
+}

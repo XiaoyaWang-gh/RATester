@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 1009,
+    "focalfunc": "func matchListener(listener gatewayListener, routeNamespace string, parentRef gatev1.ParentReference) bool",
+    "funcbody": "func matchListener(listener gatewayListener, routeNamespace string, parentRef gatev1.ParentReference) bool {\n\tif ptr.Deref(parentRef.Group, gatev1.GroupName) != gatev1.GroupName {\n\t\treturn false\n\t}\n\n\tif ptr.Deref(parentRef.Kind, kindGateway) != kindGateway {\n\t\treturn false\n\t}\n\n\tparentRefNamespace := string(ptr.Deref(parentRef.Namespace, gatev1.Namespace(routeNamespace)))\n\tif listener.GWNamespace != parentRefNamespace {\n\t\treturn false\n\t}\n\n\tif string(parentRef.Name) != listener.GWName {\n\t\treturn false\n\t}\n\n\tsectionName := string(ptr.Deref(parentRef.SectionName, \"\"))\n\tif sectionName != \"\" && sectionName != listener.Name {\n\t\treturn false\n\t}\n\n\treturn true\n}",
+    "funcname": "matchListener"
+}

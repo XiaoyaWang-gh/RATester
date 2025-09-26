@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 198,
+    "focalfunc": "func newTemplateState(owner *templateState, templ tpl.Template, info templateInfo, id identity.Identity) *templateState",
+    "funcbody": "func newTemplateState(owner *templateState, templ tpl.Template, info templateInfo, id identity.Identity) *templateState {\n\tif id == nil {\n\t\tid = info\n\t}\n\treturn &templateState{\n\t\towner:\t\towner,\n\t\tinfo:\t\tinfo,\n\t\ttyp:\t\tinfo.resolveType(),\n\t\tTemplate:\ttempl,\n\t\tparseInfo:\ttpl.DefaultParseInfo,\n\t\tid:\t\tid,\n\t}\n}",
+    "funcname": "newTemplateState"
+}

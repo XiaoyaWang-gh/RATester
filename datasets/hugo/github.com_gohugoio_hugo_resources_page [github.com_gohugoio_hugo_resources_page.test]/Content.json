@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 607,
+    "focalfunc": "func (c *nopContent) Content(context.Context) (template.HTML, error)",
+    "funcbody": "func (c *nopContent) Content(context.Context) (template.HTML, error) {\n\treturn \"\", nil\n}",
+    "funcname": "Content"
+}

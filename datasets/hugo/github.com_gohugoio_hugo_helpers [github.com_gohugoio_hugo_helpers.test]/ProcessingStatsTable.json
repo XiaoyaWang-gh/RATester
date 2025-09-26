@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/processing_stats.go",
+    "lineno": 87,
+    "focalfunc": "func ProcessingStatsTable(w io.Writer, stats ...*ProcessingStats)",
+    "funcbody": "func ProcessingStatsTable(w io.Writer, stats ...*ProcessingStats) {\n\tnames := make([]string, len(stats)+1)\n\n\tvar data [][]string\n\n\tfor i := 0; i < len(stats); i++ {\n\t\tstat := stats[i]\n\t\tnames[i+1] = stat.Name\n\n\t\ttitleVals := stat.toVals()\n\n\t\tif i == 0 {\n\t\t\tdata = make([][]string, len(titleVals))\n\t\t}\n\n\t\tfor j, tv := range titleVals {\n\t\t\tif i == 0 {\n\t\t\t\tdata[j] = []string{tv.name, strconv.Itoa(int(tv.val))}\n\t\t\t} else {\n\t\t\t\tdata[j] = append(data[j], strconv.Itoa(int(tv.val)))\n\t\t\t}\n\t\t}\n\n\t}\n\n\ttable := tablewriter.NewWriter(w)\n\n\ttable.AppendBulk(data)\n\ttable.SetHeader(names)\n\ttable.SetBorder(false)\n\ttable.Render()\n}",
+    "funcname": "ProcessingStatsTable"
+}

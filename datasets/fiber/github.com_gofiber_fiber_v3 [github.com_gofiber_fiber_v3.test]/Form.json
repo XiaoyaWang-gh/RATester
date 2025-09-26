@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/bind.go",
+    "lineno": 133,
+    "focalfunc": "func (b *Bind) Form(out any) error",
+    "funcbody": "func (b *Bind) Form(out any) error {\n\tif err := b.returnErr(binder.FormBinder.Bind(b.ctx.Context(), out)); err != nil {\n\t\treturn err\n\t}\n\n\treturn b.validateStruct(out)\n}",
+    "funcname": "Form"
+}

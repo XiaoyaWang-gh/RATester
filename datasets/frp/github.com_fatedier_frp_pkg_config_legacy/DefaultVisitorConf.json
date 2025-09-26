@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/legacy/visitor.go",
+    "lineno": 50,
+    "focalfunc": "func DefaultVisitorConf(visitorType VisitorType) VisitorConf",
+    "funcbody": "func DefaultVisitorConf(visitorType VisitorType) VisitorConf {\n\tv, ok := visitorConfTypeMap[visitorType]\n\tif !ok {\n\t\treturn nil\n\t}\n\treturn reflect.New(v).Interface().(VisitorConf)\n}",
+    "funcname": "DefaultVisitorConf"
+}

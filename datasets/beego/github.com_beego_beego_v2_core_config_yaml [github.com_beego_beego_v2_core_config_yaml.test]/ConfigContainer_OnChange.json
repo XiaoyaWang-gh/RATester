@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/yaml/yaml.go",
+    "lineno": 137,
+    "focalfunc": "func (*ConfigContainer) OnChange(_ string, _ func(value string))",
+    "funcbody": "func (*ConfigContainer) OnChange(_ string, _ func(value string)) {\n\n\tlogs.Warn(\"Unsupported operation: OnChange\")\n}",
+    "funcname": "OnChange"
+}

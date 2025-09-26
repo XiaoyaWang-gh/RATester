@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/retry/retry.go",
+    "lineno": 189,
+    "focalfunc": "func (r *responseWriter) ShouldRetry() bool",
+    "funcbody": "func (r *responseWriter) ShouldRetry() bool {\n\treturn r.shouldRetry\n}",
+    "funcname": "ShouldRetry"
+}

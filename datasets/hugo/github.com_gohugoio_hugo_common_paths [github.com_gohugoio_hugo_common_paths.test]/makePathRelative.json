@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/path.go",
+    "lineno": 116,
+    "focalfunc": "func makePathRelative(inPath string, possibleDirectories ...string) (string, error)",
+    "funcbody": "func makePathRelative(inPath string, possibleDirectories ...string) (string, error) {\n\tfor _, currentPath := range possibleDirectories {\n\t\tif strings.HasPrefix(inPath, currentPath) {\n\t\t\treturn strings.TrimPrefix(inPath, currentPath), nil\n\t\t}\n\t}\n\treturn inPath, errors.New(\"can't extract relative path, unknown prefix\")\n}",
+    "funcname": "makePathRelative"
+}

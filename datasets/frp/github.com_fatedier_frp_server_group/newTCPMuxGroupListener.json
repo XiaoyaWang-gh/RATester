@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/server/group/tcpmux.go",
+    "lineno": 196,
+    "focalfunc": "func newTCPMuxGroupListener(name string, group *TCPMuxGroup, addr net.Addr) *TCPMuxGroupListener",
+    "funcbody": "func newTCPMuxGroupListener(name string, group *TCPMuxGroup, addr net.Addr) *TCPMuxGroupListener {\n\treturn &TCPMuxGroupListener{\n\t\tgroupName:\tname,\n\t\tgroup:\t\tgroup,\n\t\taddr:\t\taddr,\n\t\tcloseCh:\tmake(chan struct{}),\n\t}\n}",
+    "funcname": "newTCPMuxGroupListener"
+}

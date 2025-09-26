@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/client/http_proxy.go",
+    "lineno": 240,
+    "focalfunc": "func getBadResponse() *http.Response",
+    "funcbody": "func getBadResponse() *http.Response {\n\theader := make(map[string][]string)\n\theader[\"Proxy-Authenticate\"] = []string{\"Basic\"}\n\theader[\"Connection\"] = []string{\"close\"}\n\tres := &http.Response{\n\t\tStatus:\t\t\"407 Not authorized\",\n\t\tStatusCode:\t407,\n\t\tProto:\t\t\"HTTP/1.1\",\n\t\tProtoMajor:\t1,\n\t\tProtoMinor:\t1,\n\t\tHeader:\t\theader,\n\t}\n\treturn res\n}",
+    "funcname": "getBadResponse"
+}

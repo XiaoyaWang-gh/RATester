@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 244,
+    "focalfunc": "func (c *Controller) URLMapping()",
+    "funcbody": "func (c *Controller) URLMapping()\t{}",
+    "funcname": "URLMapping"
+}

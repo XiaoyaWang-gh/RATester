@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/output.go",
+    "lineno": 349,
+    "focalfunc": "func (output *BeegoOutput) SetStatus(status int)",
+    "funcbody": "func (output *BeegoOutput) SetStatus(status int) {\n\toutput.Status = status\n}",
+    "funcname": "SetStatus"
+}

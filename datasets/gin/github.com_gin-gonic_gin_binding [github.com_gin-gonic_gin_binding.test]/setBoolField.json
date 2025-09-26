@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 309,
+    "focalfunc": "func setBoolField(val string, field reflect.Value) error",
+    "funcbody": "func setBoolField(val string, field reflect.Value) error {\n\tif val == \"\" {\n\t\tval = \"false\"\n\t}\n\tboolVal, err := strconv.ParseBool(val)\n\tif err == nil {\n\t\tfield.SetBool(boolVal)\n\t}\n\treturn err\n}",
+    "funcname": "setBoolField"
+}

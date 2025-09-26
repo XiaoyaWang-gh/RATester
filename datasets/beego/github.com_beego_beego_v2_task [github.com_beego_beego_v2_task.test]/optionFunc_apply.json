@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 220,
+    "focalfunc": "func (f optionFunc) apply(t *Task)",
+    "funcbody": "func (f optionFunc) apply(t *Task) {\n\tf(t)\n}",
+    "funcname": "apply"
+}

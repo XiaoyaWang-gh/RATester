@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 27,
+    "focalfunc": "func anonymize(baseConfig interface{}, indent bool) (string, error)",
+    "funcbody": "func anonymize(baseConfig interface{}, indent bool) (string, error) {\n\tconf, err := do(baseConfig, tagExport, true, indent)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\treturn doOnJSON(conf), nil\n}",
+    "funcname": "anonymize"
+}

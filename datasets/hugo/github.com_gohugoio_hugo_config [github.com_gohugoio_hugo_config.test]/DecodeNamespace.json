@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/namespace.go",
+    "lineno": 22,
+    "focalfunc": "func DecodeNamespace[S, C any](configSource any, buildConfig func(any) (C, any, error)) (*ConfigNamespace[S, C], error)",
+    "funcbody": "func DecodeNamespace[S, C any](configSource any, buildConfig func(any) (C, any, error)) (*ConfigNamespace[S, C], error) {\n\n\th := hashing.HashString(configSource)\n\n\tc, ext, err := buildConfig(configSource)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif ext == nil {\n\t\text = configSource\n\t}\n\n\tif ext == nil {\n\t\tpanic(\"ext is nil\")\n\t}\n\n\tns := &ConfigNamespace[S, C]{\n\t\tSourceStructure:\text,\n\t\tSourceHash:\t\th,\n\t\tConfig:\t\t\tc,\n\t}\n\n\treturn ns, nil\n}",
+    "funcname": "DecodeNamespace"
+}

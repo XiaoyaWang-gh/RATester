@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 418,
+    "focalfunc": "func imageConfigFromImage(img image.Image) image.Config",
+    "funcbody": "func imageConfigFromImage(img image.Image) image.Config {\n\tif giphy, ok := img.(Giphy); ok {\n\t\treturn giphy.GIF().Config\n\t}\n\tb := img.Bounds()\n\treturn image.Config{Width: b.Max.X, Height: b.Max.Y}\n}",
+    "funcname": "imageConfigFromImage"
+}

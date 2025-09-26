@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/prometheus/server.go",
+    "lineno": 48,
+    "focalfunc": "func (m *serverMetrics) AddTrafficIn(name string, proxyType string, trafficBytes int64)",
+    "funcbody": "func (m *serverMetrics) AddTrafficIn(name string, proxyType string, trafficBytes int64) {\n\tm.trafficIn.WithLabelValues(name, proxyType).Add(float64(trafficBytes))\n}",
+    "funcname": "AddTrafficIn"
+}

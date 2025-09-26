@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/cssjs/inline_imports.go",
+    "lineno": 210,
+    "focalfunc": "func (imp *importResolver) toFileError(output string) error",
+    "funcbody": "func (imp *importResolver) toFileError(output string) error {\n\tinErr := errors.New(output)\n\n\tmatch := cssSyntaxErrorRe.FindStringSubmatch(output)\n\tif match == nil {\n\t\treturn inErr\n\t}\n\n\tlineNum, err := strconv.Atoi(match[1])\n\tif err != nil {\n\t\treturn inErr\n\t}\n\n\tfile, ok := imp.linemap[lineNum]\n\tif !ok {\n\t\treturn inErr\n\t}\n\n\tfi, err := imp.fs.Stat(file.Filename)\n\tif err != nil {\n\t\treturn inErr\n\t}\n\n\tmeta := fi.(hugofs.FileMetaInfo).Meta()\n\trealFilename := meta.Filename\n\tf, err := meta.Open()\n\tif err != nil {\n\t\treturn inErr\n\t}\n\tdefer f.Close()\n\n\tferr := herrors.NewFileErrorFromName(inErr, realFilename)\n\tpos := ferr.Position()\n\tpos.LineNumber = file.Offset + 1\n\treturn ferr.UpdatePosition(pos).UpdateContent(f, nil)\n\n}",
+    "funcname": "toFileError"
+}

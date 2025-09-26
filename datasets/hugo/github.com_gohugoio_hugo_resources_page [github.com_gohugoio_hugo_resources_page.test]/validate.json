@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 216,
+    "focalfunc": "func (l PermalinkExpander) validate(pp string) bool",
+    "funcbody": "func (l PermalinkExpander) validate(pp string) bool {\n\tif len(pp) == 0 {\n\t\treturn false\n\t}\n\tfragments := strings.Split(pp[1:], \"/\")\n\tbail := false\n\tfor i := range fragments {\n\t\tif bail {\n\t\t\treturn false\n\t\t}\n\t\tif len(fragments[i]) == 0 {\n\t\t\tbail = true\n\t\t\tcontinue\n\t\t}\n\n\t\tmatches := attributeRegexp.FindAllStringSubmatch(fragments[i], -1)\n\t\tif matches == nil {\n\t\t\tcontinue\n\t\t}\n\n\t\tfor _, match := range matches {\n\t\t\tk := match[0][1:]\n\t\t\tif _, ok := l.callback(k); !ok {\n\t\t\t\treturn false\n\t\t\t}\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "validate"
+}

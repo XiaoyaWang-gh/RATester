@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 414,
+    "focalfunc": "func (p *pageState) Translations() page.Pages",
+    "funcbody": "func (p *pageState) Translations() page.Pages {\n\tkey := p.Path() + \"/\" + \"translations\"\n\tpages, err := p.s.pageMap.getOrCreatePagesFromCache(nil, key, func(string) (page.Pages, error) {\n\t\tvar pas page.Pages\n\t\tfor _, pp := range p.AllTranslations() {\n\t\t\tif !pp.Eq(p) {\n\t\t\t\tpas = append(pas, pp)\n\t\t\t}\n\t\t}\n\t\treturn pas, nil\n\t})\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn pages\n}",
+    "funcname": "Translations"
+}

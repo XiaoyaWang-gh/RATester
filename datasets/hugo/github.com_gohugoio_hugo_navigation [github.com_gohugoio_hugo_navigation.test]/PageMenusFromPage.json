@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/pagemenus.go",
+    "lineno": 44,
+    "focalfunc": "func PageMenusFromPage(ms any, p Page) (PageMenus, error)",
+    "funcbody": "func PageMenusFromPage(ms any, p Page) (PageMenus, error) {\n\tif ms == nil {\n\t\treturn nil, nil\n\t}\n\tpm := PageMenus{}\n\tme := MenuEntry{}\n\tSetPageValues(&me, p)\n\n\tmname, err := cast.ToStringE(ms)\n\n\tif err == nil {\n\t\tme.Menu = mname\n\t\tpm[mname] = &me\n\t\treturn pm, nil\n\t}\n\n\tmnames, err := cast.ToStringSliceE(ms)\n\n\tif err == nil {\n\t\tfor _, mname := range mnames {\n\t\t\tme.Menu = mname\n\t\t\tpm[mname] = &me\n\t\t}\n\t\treturn pm, nil\n\t}\n\n\twrapErr := func(err error) error {\n\t\treturn fmt.Errorf(\"unable to process menus for page %q: %w\", p.Path(), err)\n\t}\n\n\tmenus, err := maps.ToStringMapE(ms)\n\tif err != nil {\n\t\treturn pm, wrapErr(err)\n\t}\n\n\tfor name, menu := range menus {\n\t\tmenuEntry := MenuEntry{Menu: name}\n\t\tif menu != nil {\n\t\t\time, err := maps.ToStringMapE(menu)\n\t\t\tif err != nil {\n\t\t\t\treturn pm, wrapErr(err)\n\t\t\t}\n\t\t\tif err := mapstructure.WeakDecode(ime, &menuEntry.MenuConfig); err != nil {\n\t\t\t\treturn pm, err\n\t\t\t}\n\t\t}\n\t\tSetPageValues(&menuEntry, p)\n\t\tpm[name] = &menuEntry\n\t}\n\n\treturn pm, nil\n}",
+    "funcname": "PageMenusFromPage"
+}

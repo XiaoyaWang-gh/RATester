@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/service/loadbalancer/mirror/mirror.go",
+    "lineno": 190,
+    "focalfunc": "func (c contextStopPropagation) Done() <-chan struct{}",
+    "funcbody": "func (c contextStopPropagation) Done() <-chan struct{} {\n\treturn make(chan struct{})\n}",
+    "funcname": "Done"
+}

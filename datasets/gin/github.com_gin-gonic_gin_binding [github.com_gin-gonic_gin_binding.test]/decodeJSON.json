@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/json.go",
+    "lineno": 44,
+    "focalfunc": "func decodeJSON(r io.Reader, obj any) error",
+    "funcbody": "func decodeJSON(r io.Reader, obj any) error {\n\tdecoder := json.NewDecoder(r)\n\tif EnableDecoderUseNumber {\n\t\tdecoder.UseNumber()\n\t}\n\tif EnableDecoderDisallowUnknownFields {\n\t\tdecoder.DisallowUnknownFields()\n\t}\n\tif err := decoder.Decode(obj); err != nil {\n\t\treturn err\n\t}\n\treturn validate(obj)\n}",
+    "funcname": "decodeJSON"
+}

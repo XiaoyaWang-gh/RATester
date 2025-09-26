@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 219,
+    "focalfunc": "func (c ConfigLanguage) BuildExpired() bool",
+    "funcbody": "func (c ConfigLanguage) BuildExpired() bool {\n\treturn c.config.BuildExpired\n}",
+    "funcname": "BuildExpired"
+}

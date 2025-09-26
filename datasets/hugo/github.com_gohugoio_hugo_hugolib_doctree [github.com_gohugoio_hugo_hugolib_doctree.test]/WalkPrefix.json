@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/treeshifttree.go",
+    "lineno": 81,
+    "focalfunc": "func (t *TreeShiftTree[T]) WalkPrefix(lockType LockType, s string, f func(s string, v T) (bool, error)) error",
+    "funcbody": "func (t *TreeShiftTree[T]) WalkPrefix(lockType LockType, s string, f func(s string, v T) (bool, error)) error {\n\treturn t.trees[t.v].WalkPrefix(lockType, s, f)\n}",
+    "funcname": "WalkPrefix"
+}

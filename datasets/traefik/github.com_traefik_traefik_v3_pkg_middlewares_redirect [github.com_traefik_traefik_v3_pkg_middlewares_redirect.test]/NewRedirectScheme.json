@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/redirect/redirect_scheme.go",
+    "lineno": 27,
+    "focalfunc": "func NewRedirectScheme(ctx context.Context, next http.Handler, conf dynamic.RedirectScheme, name string) (http.Handler, error)",
+    "funcbody": "func NewRedirectScheme(ctx context.Context, next http.Handler, conf dynamic.RedirectScheme, name string) (http.Handler, error) {\n\tlogger := middlewares.GetLogger(ctx, name, typeSchemeName)\n\tlogger.Debug().Msg(\"Creating middleware\")\n\tlogger.Debug().Msgf(\"Setting up redirection to %s %s\", conf.Scheme, conf.Port)\n\n\tif len(conf.Scheme) == 0 {\n\t\treturn nil, errors.New(\"you must provide a target scheme\")\n\t}\n\n\tport := \"\"\n\tif len(conf.Port) > 0 && !(conf.Scheme == schemeHTTP && conf.Port == \"80\" || conf.Scheme == schemeHTTPS && conf.Port == \"443\") {\n\t\tport = \":\" + conf.Port\n\t}\n\n\trs := &redirectScheme{name: name}\n\n\thandler, err := newRedirect(next, uriPattern, conf.Scheme+\"://${2}\"+port+\"${4}\", conf.Permanent, rs.clientRequestURL, name)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\trs.Handler = handler\n\n\treturn rs, nil\n}",
+    "funcname": "NewRedirectScheme"
+}

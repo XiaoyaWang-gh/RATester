@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/generated/clientset/versioned/typed/traefikio/v1alpha1/fake/fake_traefikio_client.go",
+    "lineno": 47,
+    "focalfunc": "func (c *FakeTraefikV1alpha1) IngressRouteUDPs(namespace string) v1alpha1.IngressRouteUDPInterface",
+    "funcbody": "func (c *FakeTraefikV1alpha1) IngressRouteUDPs(namespace string) v1alpha1.IngressRouteUDPInterface {\n\treturn &FakeIngressRouteUDPs{c, namespace}\n}",
+    "funcname": "IngressRouteUDPs"
+}

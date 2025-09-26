@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/echo.go",
+    "lineno": 993,
+    "focalfunc": "func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error)",
+    "funcbody": "func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error) {\n\tif c, err = ln.AcceptTCP(); err != nil {\n\t\treturn\n\t} else if err = c.(*net.TCPConn).SetKeepAlive(true); err != nil {\n\t\treturn\n\t}\n\n\t_ = c.(*net.TCPConn).SetKeepAlivePeriod(3 * time.Minute)\n\treturn\n}",
+    "funcname": "Accept"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 945,
+    "focalfunc": "func (s *Site) renderForTemplate(ctx context.Context, name, outputFormat string, d any, w io.Writer, templ tpl.Template) (err error)",
+    "funcbody": "func (s *Site) renderForTemplate(ctx context.Context, name, outputFormat string, d any, w io.Writer, templ tpl.Template) (err error) {\n\tif templ == nil {\n\t\ts.logMissingLayout(name, \"\", \"\", outputFormat)\n\t\treturn nil\n\t}\n\n\tif ctx == nil {\n\t\tpanic(\"nil context\")\n\t}\n\n\tif err = s.Tmpl().ExecuteWithContext(ctx, templ, w, d); err != nil {\n\t\treturn fmt.Errorf(\"render of %q failed: %w\", name, err)\n\t}\n\treturn\n}",
+    "funcname": "renderForTemplate"
+}

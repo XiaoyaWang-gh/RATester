@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter.go",
+    "lineno": 102,
+    "focalfunc": "func (f *FilterRouter) ValidRouter(url string, ctx *context.Context) bool",
+    "funcbody": "func (f *FilterRouter) ValidRouter(url string, ctx *context.Context) bool {\n\tisOk := f.tree.Match(url, ctx)\n\tif isOk != nil {\n\t\tif b, ok := isOk.(bool); ok {\n\t\t\treturn b\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "ValidRouter"
+}

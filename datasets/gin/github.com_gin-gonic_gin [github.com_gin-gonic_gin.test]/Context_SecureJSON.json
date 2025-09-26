@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/context.go",
+    "lineno": 1008,
+    "focalfunc": "func (c *Context) SecureJSON(code int, obj any)",
+    "funcbody": "func (c *Context) SecureJSON(code int, obj any) {\n\tc.Render(code, render.SecureJSON{Prefix: c.engine.secureJSONPrefix, Data: obj})\n}",
+    "funcname": "SecureJSON"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/openapi/openapi3/openapi3.go",
+    "lineno": 57,
+    "focalfunc": "func (ns *Namespace) Unmarshal(r resource.UnmarshableResource) (*OpenAPIDocument, error)",
+    "funcbody": "func (ns *Namespace) Unmarshal(r resource.UnmarshableResource) (*OpenAPIDocument, error) {\n\tkey := r.Key()\n\tif key == \"\" {\n\t\treturn nil, errors.New(\"no Key set in Resource\")\n\t}\n\n\tv, err := ns.cache.GetOrCreate(key, func(string) (*OpenAPIDocument, error) {\n\t\tf := metadecoders.FormatFromStrings(r.MediaType().Suffixes()...)\n\t\tif f == \"\" {\n\t\t\treturn nil, fmt.Errorf(\"MIME %q not supported\", r.MediaType())\n\t\t}\n\n\t\treader, err := r.ReadSeekCloser()\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tdefer reader.Close()\n\n\t\tb, err := io.ReadAll(reader)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\ts := &kopenapi3.T{}\n\t\tswitch f {\n\t\tcase metadecoders.YAML:\n\t\t\terr = gyaml.Unmarshal(b, s)\n\t\tdefault:\n\t\t\terr = metadecoders.Default.UnmarshalTo(b, f, s)\n\t\t}\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\n\t\terr = kopenapi3.NewLoader().ResolveRefsIn(s, nil)\n\n\t\treturn &OpenAPIDocument{T: s, identityGroup: identity.FirstIdentity(r)}, err\n\t})\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn v, nil\n}",
+    "funcname": "Unmarshal"
+}

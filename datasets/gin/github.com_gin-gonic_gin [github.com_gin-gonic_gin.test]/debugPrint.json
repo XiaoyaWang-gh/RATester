@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/debug.go",
+    "lineno": 54,
+    "focalfunc": "func debugPrint(format string, values ...any)",
+    "funcbody": "func debugPrint(format string, values ...any) {\n\tif !IsDebugging() {\n\t\treturn\n\t}\n\n\tif DebugPrintFunc != nil {\n\t\tDebugPrintFunc(format, values...)\n\t\treturn\n\t}\n\n\tif !strings.HasSuffix(format, \"\\n\") {\n\t\tformat += \"\\n\"\n\t}\n\tfmt.Fprintf(DefaultWriter, \"[GIN-debug] \"+format, values...)\n}",
+    "funcname": "debugPrint"
+}

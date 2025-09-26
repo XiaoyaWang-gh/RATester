@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/binding/form_mapping.go",
+    "lineno": 401,
+    "focalfunc": "func setTimeDuration(val string, value reflect.Value) error",
+    "funcbody": "func setTimeDuration(val string, value reflect.Value) error {\n\td, err := time.ParseDuration(val)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvalue.Set(reflect.ValueOf(d))\n\treturn nil\n}",
+    "funcname": "setTimeDuration"
+}

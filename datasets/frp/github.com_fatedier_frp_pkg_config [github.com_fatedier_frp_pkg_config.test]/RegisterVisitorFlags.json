@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/config/flags.go",
+    "lineno": 128,
+    "focalfunc": "func RegisterVisitorFlags(cmd *cobra.Command, c v1.VisitorConfigurer, opts ...RegisterFlagOption)",
+    "funcbody": "func RegisterVisitorFlags(cmd *cobra.Command, c v1.VisitorConfigurer, opts ...RegisterFlagOption) {\n\tregisterVisitorBaseConfigFlags(cmd, c.GetBaseConfig(), opts...)\n\n}",
+    "funcname": "RegisterVisitorFlags"
+}

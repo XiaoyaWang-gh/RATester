@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 411,
+    "focalfunc": "func (lf *localFile) CacheControl() string",
+    "funcbody": "func (lf *localFile) CacheControl() string {\n\tif lf.matcher == nil {\n\t\treturn \"\"\n\t}\n\treturn lf.matcher.CacheControl\n}",
+    "funcname": "CacheControl"
+}

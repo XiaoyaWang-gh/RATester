@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/decorators.go",
+    "lineno": 27,
+    "focalfunc": "func decorateDirs(fs afero.Fs, meta *FileMeta) afero.Fs",
+    "funcbody": "func decorateDirs(fs afero.Fs, meta *FileMeta) afero.Fs {\n\tffs := &baseFileDecoratorFs{Fs: fs}\n\n\tdecorator := func(fi FileNameIsDir, name string) (FileNameIsDir, error) {\n\t\tif !fi.IsDir() {\n\n\t\t\treturn fi, nil\n\t\t}\n\n\t\treturn decorateFileInfo(fi, nil, \"\", meta), nil\n\t}\n\n\tffs.decorate = decorator\n\n\treturn ffs\n}",
+    "funcname": "decorateDirs"
+}

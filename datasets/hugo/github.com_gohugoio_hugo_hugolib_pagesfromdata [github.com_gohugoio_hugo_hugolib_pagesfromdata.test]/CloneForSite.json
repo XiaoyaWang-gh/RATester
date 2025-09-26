@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 271,
+    "focalfunc": "func (p PagesFromTemplate) CloneForSite(s page.Site) *PagesFromTemplate",
+    "funcbody": "func (p PagesFromTemplate) CloneForSite(s page.Site) *PagesFromTemplate {\n\n\tp.PagesFromTemplateOptions.Site = s\n\tp.PagesFromTemplateDeps = p.PagesFromTemplateOptions.DepsFromSite(s)\n\tp.buildState = &BuildState{\n\t\tsourceInfosCurrent: maps.NewCache[string, *sourceInfo](),\n\t}\n\treturn &p\n}",
+    "funcname": "CloneForSite"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/image.go",
+    "lineno": 44,
+    "focalfunc": "func NewImage(f Format, proc *ImageProcessor, img image.Image, s Spec) *Image",
+    "funcbody": "func NewImage(f Format, proc *ImageProcessor, img image.Image, s Spec) *Image {\n\tif img != nil {\n\t\treturn &Image{\n\t\t\tFormat:\tf,\n\t\t\tProc:\tproc,\n\t\t\tSpec:\ts,\n\t\t\timageConfig: &imageConfig{\n\t\t\t\tconfig:\t\timageConfigFromImage(img),\n\t\t\t\tconfigLoaded:\ttrue,\n\t\t\t},\n\t\t}\n\t}\n\treturn &Image{Format: f, Proc: proc, Spec: s, imageConfig: &imageConfig{}}\n}",
+    "funcname": "NewImage"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/influxdb2.go",
+    "lineno": 152,
+    "focalfunc": "func (w influxDB2Writer) Write(bp influxdb.BatchPoints) error",
+    "funcbody": "func (w influxDB2Writer) Write(bp influxdb.BatchPoints) error {\n\tlogger := log.With().Str(logs.MetricsProviderName, \"influxdb2\").Logger()\n\n\twps := make([]*write.Point, 0, len(bp.Points()))\n\tfor _, p := range bp.Points() {\n\t\tfields, err := p.Fields()\n\t\tif err != nil {\n\t\t\tlogger.Error().Err(err).Msgf(\"Error while getting %s point fields\", p.Name())\n\t\t\tcontinue\n\t\t}\n\n\t\twps = append(wps, influxdb2.NewPoint(\n\t\t\tp.Name(),\n\t\t\tp.Tags(),\n\t\t\tfields,\n\t\t\tp.Time(),\n\t\t))\n\t}\n\n\tctx := logger.WithContext(context.Background())\n\n\treturn w.wc.WritePoint(ctx, wps...)\n}",
+    "funcname": "Write"
+}

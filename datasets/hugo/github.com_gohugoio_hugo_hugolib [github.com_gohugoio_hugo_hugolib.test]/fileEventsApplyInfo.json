@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 493,
+    "focalfunc": "func (h *HugoSites) fileEventsApplyInfo(events []fsnotify.Event) []fileEventInfo",
+    "funcbody": "func (h *HugoSites) fileEventsApplyInfo(events []fsnotify.Event) []fileEventInfo {\n\tvar infos []fileEventInfo\n\tfor _, ev := range events {\n\t\tremoved := false\n\t\tadded := false\n\n\t\tif ev.Op&fsnotify.Remove == fsnotify.Remove {\n\t\t\tremoved = true\n\t\t}\n\n\t\tfi, statErr := h.Fs.Source.Stat(ev.Name)\n\n\t\tif ev.Op.Has(fsnotify.Rename) {\n\n\t\t\tif statErr != nil {\n\t\t\t\tremoved = true\n\t\t\t}\n\t\t}\n\t\tif ev.Op.Has(fsnotify.Create) {\n\t\t\tadded = true\n\t\t}\n\n\t\tisChangedDir := statErr == nil && fi.IsDir()\n\n\t\tinfos = append(infos, fileEventInfo{\n\t\t\tEvent:\t\tev,\n\t\t\tfi:\t\tfi,\n\t\t\tadded:\t\tadded,\n\t\t\tremoved:\tremoved,\n\t\t\tisChangedDir:\tisChangedDir,\n\t\t})\n\t}\n\n\tn := 0\n\n\tfor _, ev := range infos {\n\n\t\tkeep := true\n\t\tif ev.isChangedDir {\n\t\t\tfor _, ev2 := range infos {\n\t\t\t\tif ev2.fi != nil && !ev2.fi.IsDir() && filepath.Dir(ev2.Name) == ev.Name {\n\t\t\t\t\tkeep = false\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif keep {\n\t\t\tinfos[n] = ev\n\t\t\tn++\n\t\t}\n\t}\n\tinfos = infos[:n]\n\n\treturn infos\n}",
+    "funcname": "fileEventsApplyInfo"
+}

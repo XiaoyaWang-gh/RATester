@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/metrics/influxdb2.go",
+    "lineno": 136,
+    "focalfunc": "func newInfluxDB2Client(config *types.InfluxDB2) (influxdb2.Client, error)",
+    "funcbody": "func newInfluxDB2Client(config *types.InfluxDB2) (influxdb2.Client, error) {\n\tif config.Token == \"\" || config.Org == \"\" || config.Bucket == \"\" {\n\t\treturn nil, errors.New(\"token, org or bucket property is missing\")\n\t}\n\n\tinfluxdb2log.Log = nil\n\n\treturn influxdb2.NewClient(config.Address, config.Token), nil\n}",
+    "funcname": "newInfluxDB2Client"
+}

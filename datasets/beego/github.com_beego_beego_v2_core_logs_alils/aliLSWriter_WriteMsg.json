@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 130,
+    "focalfunc": "func (c *aliLSWriter) WriteMsg(lm *logs.LogMsg) error",
+    "funcbody": "func (c *aliLSWriter) WriteMsg(lm *logs.LogMsg) error {\n\tif lm.Level > c.Level {\n\t\treturn nil\n\t}\n\n\tvar topic string\n\tvar content string\n\tvar lg *LogGroup\n\tif c.withMap {\n\n\t\tstrs := strings.SplitN(lm.Msg, Delimiter, 2)\n\t\tif len(strs) == 2 {\n\t\t\tpos := strings.LastIndex(strs[0], \" \")\n\t\t\ttopic = strs[0][pos+1 : len(strs[0])]\n\t\t\tlg = c.groupMap[topic]\n\t\t}\n\n\t\tif lg == nil {\n\t\t\tlg = c.group[0]\n\t\t}\n\t} else {\n\t\tlg = c.group[0]\n\t}\n\n\tcontent = c.formatter.Format(lm)\n\n\tc1 := &LogContent{\n\t\tKey:\tproto.String(\"msg\"),\n\t\tValue:\tproto.String(content),\n\t}\n\n\tl := &Log{\n\t\tTime:\tproto.Uint32(uint32(lm.When.Unix())),\n\t\tContents: []*LogContent{\n\t\t\tc1,\n\t\t},\n\t}\n\n\tc.lock.Lock()\n\tlg.Logs = append(lg.Logs, l)\n\tc.lock.Unlock()\n\n\tif len(lg.Logs) >= c.FlushWhen {\n\t\tc.flush(lg)\n\t}\n\treturn nil\n}",
+    "funcname": "WriteMsg"
+}

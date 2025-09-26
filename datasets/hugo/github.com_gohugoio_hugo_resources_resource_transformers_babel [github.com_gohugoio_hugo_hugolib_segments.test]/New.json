@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource_transformers/babel/babel.go",
+    "lineno": 95,
+    "focalfunc": "func New(rs *resources.Spec) *Client",
+    "funcbody": "func New(rs *resources.Spec) *Client {\n\treturn &Client{rs: rs}\n}",
+    "funcname": "New"
+}

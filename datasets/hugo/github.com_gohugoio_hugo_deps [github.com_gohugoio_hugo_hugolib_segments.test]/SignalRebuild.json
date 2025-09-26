@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 432,
+    "focalfunc": "func (b *BuildState) SignalRebuild(ids ...identity.Identity)",
+    "funcbody": "func (b *BuildState) SignalRebuild(ids ...identity.Identity) {\n\tb.OnSignalRebuild(ids...)\n}",
+    "funcname": "SignalRebuild"
+}

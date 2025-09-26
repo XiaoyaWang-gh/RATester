@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/core.go",
+    "lineno": 35,
+    "focalfunc": "func addMissingPort(addr string, isTLS bool) string",
+    "funcbody": "func addMissingPort(addr string, isTLS bool) string {\n\tn := strings.Index(addr, \":\")\n\tif n >= 0 {\n\t\treturn addr\n\t}\n\tport := 80\n\tif isTLS {\n\t\tport = 443\n\t}\n\treturn net.JoinHostPort(addr, strconv.Itoa(port))\n}",
+    "funcname": "addMissingPort"
+}

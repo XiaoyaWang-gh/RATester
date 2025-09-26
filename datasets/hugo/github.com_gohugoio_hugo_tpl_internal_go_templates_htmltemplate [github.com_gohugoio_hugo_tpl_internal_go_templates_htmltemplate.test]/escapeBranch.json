@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/escape.go",
+    "lineno": 507,
+    "focalfunc": "func (e *escaper) escapeBranch(c context, n *parse.BranchNode, nodeName string) context",
+    "funcbody": "func (e *escaper) escapeBranch(c context, n *parse.BranchNode, nodeName string) context {\n\tif nodeName == \"range\" {\n\t\te.rangeContext = &rangeContext{outer: e.rangeContext}\n\t}\n\tc0 := e.escapeList(c, n.List)\n\tif nodeName == \"range\" {\n\t\tif c0.state != stateError {\n\t\t\tc0 = joinRange(c0, e.rangeContext)\n\t\t}\n\t\te.rangeContext = e.rangeContext.outer\n\t\tif c0.state == stateError {\n\t\t\treturn c0\n\t\t}\n\n\t\te.rangeContext = &rangeContext{outer: e.rangeContext}\n\t\tc1, _ := e.escapeListConditionally(c0, n.List, nil)\n\t\tc0 = join(c0, c1, n, nodeName)\n\t\tif c0.state == stateError {\n\t\t\te.rangeContext = e.rangeContext.outer\n\n\t\t\tc0.err.Line = n.Line\n\t\t\tc0.err.Description = \"on range loop re-entry: \" + c0.err.Description\n\t\t\treturn c0\n\t\t}\n\t\tc0 = joinRange(c0, e.rangeContext)\n\t\te.rangeContext = e.rangeContext.outer\n\t\tif c0.state == stateError {\n\t\t\treturn c0\n\t\t}\n\t}\n\tc1 := e.escapeList(c, n.ElseList)\n\treturn join(c0, c1, n, nodeName)\n}",
+    "funcname": "escapeBranch"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 129,
+    "focalfunc": "func getValidFuncs(f reflect.StructField) (vfs []ValidFunc, err error)",
+    "funcbody": "func getValidFuncs(f reflect.StructField) (vfs []ValidFunc, err error) {\n\ttag := f.Tag.Get(ValidTag)\n\tlabel := f.Tag.Get(LabelTag)\n\tif len(tag) == 0 {\n\t\treturn\n\t}\n\tif vfs, tag, err = getRegFuncs(tag, f.Name); err != nil {\n\t\treturn\n\t}\n\tfs := strings.Split(tag, \";\")\n\tfor _, vfunc := range fs {\n\t\tvar vf ValidFunc\n\t\tif len(vfunc) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tvf, err = parseFunc(vfunc, f.Name, label)\n\t\tif err != nil {\n\t\t\treturn\n\t\t}\n\t\tvfs = append(vfs, vf)\n\t}\n\treturn\n}",
+    "funcname": "getValidFuncs"
+}

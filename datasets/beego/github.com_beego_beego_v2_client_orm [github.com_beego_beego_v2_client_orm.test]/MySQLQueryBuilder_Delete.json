@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/qb_mysql.go",
+    "lineno": 152,
+    "focalfunc": "func (qb *MySQLQueryBuilder) Delete(tables ...string) QueryBuilder",
+    "funcbody": "func (qb *MySQLQueryBuilder) Delete(tables ...string) QueryBuilder {\n\tqb.tokens = append(qb.tokens, \"DELETE\")\n\tif len(tables) != 0 {\n\t\tqb.tokens = append(qb.tokens, strings.Join(tables, CommaSpace))\n\t}\n\treturn qb\n}",
+    "funcname": "Delete"
+}

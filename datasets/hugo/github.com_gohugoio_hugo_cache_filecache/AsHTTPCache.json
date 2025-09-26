@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache.go",
+    "lineno": 467,
+    "focalfunc": "func (c *Cache) AsHTTPCache() httpcache.Cache",
+    "funcbody": "func (c *Cache) AsHTTPCache() httpcache.Cache {\n\treturn &httpCache{c: c}\n}",
+    "funcname": "AsHTTPCache"
+}

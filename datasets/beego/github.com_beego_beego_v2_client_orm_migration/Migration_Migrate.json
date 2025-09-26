@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/migration.go",
+    "lineno": 104,
+    "focalfunc": "func (m *Migration) Migrate(migrationType string)",
+    "funcbody": "func (m *Migration) Migrate(migrationType string) {\n\tm.ModifyType = migrationType\n\tm.sqls = append(m.sqls, m.GetSQL())\n}",
+    "funcname": "Migrate"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock.go",
+    "lineno": 27,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tInitMockSetting()\n}",
+    "funcname": "init"
+}

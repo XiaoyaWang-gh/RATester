@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/auth/basic.go",
+    "lineno": 58,
+    "focalfunc": "func NewBasicAuthenticator(secrets SecretProvider, Realm string) web.FilterFunc",
+    "funcbody": "func NewBasicAuthenticator(secrets SecretProvider, Realm string) web.FilterFunc {\n\treturn func(ctx *context.Context) {\n\t\ta := &BasicAuth{Secrets: secrets, Realm: Realm}\n\t\tif username := a.CheckAuth(ctx.Request); username == \"\" {\n\t\t\ta.RequireAuth(ctx.ResponseWriter, ctx.Request)\n\t\t}\n\t}\n}",
+    "funcname": "NewBasicAuthenticator"
+}

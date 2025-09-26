@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/obj.go",
+    "lineno": 75,
+    "focalfunc": "func (s *Client) CutConn()",
+    "funcbody": "func (s *Client) CutConn() {\n\tatomic.AddInt32(&s.NowConn, 1)\n}",
+    "funcname": "CutConn"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 114,
+    "focalfunc": "func (v Version) ReleaseVersion() Version",
+    "funcbody": "func (v Version) ReleaseVersion() Version {\n\tv.Suffix = \"\"\n\treturn v\n}",
+    "funcname": "ReleaseVersion"
+}

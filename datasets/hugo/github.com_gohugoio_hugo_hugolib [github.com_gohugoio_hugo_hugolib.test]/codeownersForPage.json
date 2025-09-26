@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 244,
+    "focalfunc": "func (h *HugoSites) codeownersForPage(p page.Page) ([]string, error)",
+    "funcbody": "func (h *HugoSites) codeownersForPage(p page.Page) ([]string, error) {\n\tif _, err := h.init.gitInfo.Do(context.Background()); err != nil {\n\t\treturn nil, err\n\t}\n\n\tif h.codeownerInfo == nil {\n\t\treturn nil, nil\n\t}\n\n\treturn h.codeownerInfo.forPage(p), nil\n}",
+    "funcname": "codeownersForPage"
+}

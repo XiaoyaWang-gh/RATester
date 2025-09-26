@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__meta.go",
+    "lineno": 717,
+    "focalfunc": "func (p *pageMeta) shouldListAny() bool",
+    "funcbody": "func (p *pageMeta) shouldListAny() bool {\n\treturn p.shouldList(true) || p.shouldList(false)\n}",
+    "funcname": "shouldListAny"
+}

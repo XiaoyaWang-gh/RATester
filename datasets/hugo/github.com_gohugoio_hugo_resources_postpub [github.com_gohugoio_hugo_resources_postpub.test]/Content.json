@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 176,
+    "focalfunc": "func (r *PostPublishResource) Content(context.Context) (any, error)",
+    "funcbody": "func (r *PostPublishResource) Content(context.Context) (any, error) {\n\treturn r.field(\"Content\"), nil\n}",
+    "funcname": "Content"
+}

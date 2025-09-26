@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session.go",
+    "lineno": 336,
+    "focalfunc": "func (manager *Manager) GetActiveSession() int",
+    "funcbody": "func (manager *Manager) GetActiveSession() int {\n\treturn manager.provider.SessionAll(nil)\n}",
+    "funcname": "GetActiveSession"
+}

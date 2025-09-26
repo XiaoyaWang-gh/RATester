@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 433,
+    "focalfunc": "func (c *context) Get(key string) interface{}",
+    "funcbody": "func (c *context) Get(key string) interface{} {\n\tc.lock.RLock()\n\tdefer c.lock.RUnlock()\n\treturn c.store[key]\n}",
+    "funcname": "Get"
+}

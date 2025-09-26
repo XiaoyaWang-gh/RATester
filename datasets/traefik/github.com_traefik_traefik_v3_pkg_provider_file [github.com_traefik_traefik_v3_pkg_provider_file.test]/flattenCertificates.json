@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/file/file.go",
+    "lineno": 340,
+    "focalfunc": "func flattenCertificates(ctx context.Context, tlsConfig *dynamic.TLSConfiguration) []*tls.CertAndStores",
+    "funcbody": "func flattenCertificates(ctx context.Context, tlsConfig *dynamic.TLSConfiguration) []*tls.CertAndStores {\n\tvar certs []*tls.CertAndStores\n\tfor _, cert := range tlsConfig.Certificates {\n\t\tcontent, err := cert.Certificate.CertFile.Read()\n\t\tif err != nil {\n\t\t\tlog.Ctx(ctx).Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\t\tcert.Certificate.CertFile = types.FileOrContent(string(content))\n\n\t\tcontent, err = cert.Certificate.KeyFile.Read()\n\t\tif err != nil {\n\t\t\tlog.Ctx(ctx).Error().Err(err).Send()\n\t\t\tcontinue\n\t\t}\n\t\tcert.Certificate.KeyFile = types.FileOrContent(string(content))\n\n\t\tcerts = append(certs, cert)\n\t}\n\n\treturn certs\n}",
+    "funcname": "flattenCertificates"
+}

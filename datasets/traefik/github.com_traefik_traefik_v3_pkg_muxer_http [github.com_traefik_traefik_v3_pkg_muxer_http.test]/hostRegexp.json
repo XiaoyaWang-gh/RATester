@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/matcher.go",
+    "lineno": 117,
+    "focalfunc": "func hostRegexp(tree *matchersTree, hosts ...string) error",
+    "funcbody": "func hostRegexp(tree *matchersTree, hosts ...string) error {\n\thost := hosts[0]\n\n\tif !IsASCII(host) {\n\t\treturn fmt.Errorf(\"invalid value %q for HostRegexp matcher, non-ASCII characters are not allowed\", host)\n\t}\n\n\tre, err := regexp.Compile(host)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"compiling HostRegexp matcher: %w\", err)\n\t}\n\n\ttree.matcher = func(req *http.Request) bool {\n\t\treturn re.MatchString(requestdecorator.GetCanonizedHost(req.Context())) ||\n\t\t\tre.MatchString(requestdecorator.GetCNAMEFlatten(req.Context()))\n\t}\n\n\treturn nil\n}",
+    "funcname": "hostRegexp"
+}

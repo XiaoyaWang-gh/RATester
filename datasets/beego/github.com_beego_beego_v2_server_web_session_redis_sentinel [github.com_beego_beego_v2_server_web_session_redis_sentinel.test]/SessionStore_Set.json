@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/redis_sentinel/sess_redis_sentinel.go",
+    "lineno": 66,
+    "focalfunc": "func (rs *SessionStore) Set(ctx context.Context, key, value interface{}) error",
+    "funcbody": "func (rs *SessionStore) Set(ctx context.Context, key, value interface{}) error {\n\trs.lock.Lock()\n\tdefer rs.lock.Unlock()\n\trs.values[key] = value\n\treturn nil\n}",
+    "funcname": "Set"
+}

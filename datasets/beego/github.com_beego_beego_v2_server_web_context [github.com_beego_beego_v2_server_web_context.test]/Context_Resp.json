@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 107,
+    "focalfunc": "func (ctx *Context) Resp(data interface{}) error",
+    "funcbody": "func (ctx *Context) Resp(data interface{}) error {\n\taccept := ctx.Input.Header(\"Accept\")\n\tswitch accept {\n\tcase ApplicationYAML:\n\t\treturn ctx.YamlResp(data)\n\tcase ApplicationXML, TextXML:\n\t\treturn ctx.XMLResp(data)\n\tcase ApplicationProto:\n\t\treturn ctx.ProtoResp(data.(proto.Message))\n\tdefault:\n\t\treturn ctx.JSONResp(data)\n\t}\n}",
+    "funcname": "Resp"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/validation.go",
+    "lineno": 160,
+    "focalfunc": "func (v *Validation) Range(obj interface{}, min, max int, key string) *Result",
+    "funcbody": "func (v *Validation) Range(obj interface{}, min, max int, key string) *Result {\n\treturn v.apply(Range{Min{Min: min}, Max{Max: max}, key}, obj)\n}",
+    "funcname": "Range"
+}

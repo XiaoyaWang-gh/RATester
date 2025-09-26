@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/modules/collect.go",
+    "lineno": 334,
+    "focalfunc": "func (c *collector) addAndRecurse(owner *moduleAdapter) error",
+    "funcbody": "func (c *collector) addAndRecurse(owner *moduleAdapter) error {\n\tmoduleConfig := owner.Config()\n\tif owner.projectMod {\n\t\tif err := c.applyMounts(Import{}, owner); err != nil {\n\t\t\treturn fmt.Errorf(\"failed to apply mounts for project: %w\", err)\n\t\t}\n\t}\n\n\tfor _, moduleImport := range moduleConfig.Imports {\n\t\tif moduleImport.Disable {\n\t\t\tcontinue\n\t\t}\n\t\tif !c.isSeen(moduleImport.Path) {\n\t\t\ttc, err := c.add(owner, moduleImport)\n\t\t\tif err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t\tif tc == nil || moduleImport.IgnoreImports {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif err := c.addAndRecurse(tc); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "addAndRecurse"
+}

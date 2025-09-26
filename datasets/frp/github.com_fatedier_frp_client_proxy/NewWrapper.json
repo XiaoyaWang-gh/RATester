@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/proxy/proxy_wrapper.go",
+    "lineno": 88,
+    "focalfunc": "func NewWrapper(\n\tctx context.Context,\n\tcfg v1.ProxyConfigurer,\n\tclientCfg *v1.ClientCommonConfig,\n\teventHandler event.Handler,\n\tmsgTransporter transport.MessageTransporter,\n) *Wrapper",
+    "funcbody": "func NewWrapper(\n\tctx context.Context,\n\tcfg v1.ProxyConfigurer,\n\tclientCfg *v1.ClientCommonConfig,\n\teventHandler event.Handler,\n\tmsgTransporter transport.MessageTransporter,\n) *Wrapper {\n\tbaseInfo := cfg.GetBaseConfig()\n\txl := xlog.FromContextSafe(ctx).Spawn().AppendPrefix(baseInfo.Name)\n\tpw := &Wrapper{\n\t\tWorkingStatus: WorkingStatus{\n\t\t\tName:\tbaseInfo.Name,\n\t\t\tType:\tbaseInfo.Type,\n\t\t\tPhase:\tProxyPhaseNew,\n\t\t\tCfg:\tcfg,\n\t\t},\n\t\tcloseCh:\tmake(chan struct{}),\n\t\thealthNotifyCh:\tmake(chan struct{}),\n\t\thandler:\teventHandler,\n\t\tmsgTransporter:\tmsgTransporter,\n\t\txl:\t\txl,\n\t\tctx:\t\txlog.NewContext(ctx, xl),\n\t}\n\n\tif baseInfo.HealthCheck.Type != \"\" && baseInfo.LocalPort > 0 {\n\t\tpw.health = 1\n\t\taddr := net.JoinHostPort(baseInfo.LocalIP, strconv.Itoa(baseInfo.LocalPort))\n\t\tpw.monitor = health.NewMonitor(pw.ctx, baseInfo.HealthCheck, addr,\n\t\t\tpw.statusNormalCallback, pw.statusFailedCallback)\n\t\txl.Tracef(\"enable health check monitor\")\n\t}\n\n\tpw.pxy = NewProxy(pw.ctx, pw.Cfg, clientCfg, pw.msgTransporter)\n\treturn pw\n}",
+    "funcname": "NewWrapper"
+}

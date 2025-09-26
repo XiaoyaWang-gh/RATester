@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/codegen/methods.go",
+    "lineno": 505,
+    "focalfunc": "func typeName(name, pkg string) string",
+    "funcbody": "func typeName(name, pkg string) string {\n\treturn strings.TrimPrefix(name, pkg+\".\")\n}",
+    "funcname": "typeName"
+}

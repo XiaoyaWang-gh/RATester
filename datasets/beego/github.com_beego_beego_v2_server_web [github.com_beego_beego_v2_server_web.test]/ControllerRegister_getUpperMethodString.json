@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 578,
+    "focalfunc": "func (p *ControllerRegister) getUpperMethodString(method string) string",
+    "funcbody": "func (p *ControllerRegister) getUpperMethodString(method string) string {\n\tmethod = strings.ToUpper(method)\n\tif method != \"*\" && !HTTPMETHOD[method] {\n\t\tpanic(\"not support http method: \" + method)\n\t}\n\treturn method\n}",
+    "funcname": "getUpperMethodString"
+}

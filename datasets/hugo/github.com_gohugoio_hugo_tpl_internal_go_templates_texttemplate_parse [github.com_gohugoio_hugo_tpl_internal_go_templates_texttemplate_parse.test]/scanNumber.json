@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 600,
+    "focalfunc": "func (l *lexer) scanNumber() bool",
+    "funcbody": "func (l *lexer) scanNumber() bool {\n\n\tl.accept(\"+-\")\n\n\tdigits := \"0123456789_\"\n\tif l.accept(\"0\") {\n\n\t\tif l.accept(\"xX\") {\n\t\t\tdigits = \"0123456789abcdefABCDEF_\"\n\t\t} else if l.accept(\"oO\") {\n\t\t\tdigits = \"01234567_\"\n\t\t} else if l.accept(\"bB\") {\n\t\t\tdigits = \"01_\"\n\t\t}\n\t}\n\tl.acceptRun(digits)\n\tif l.accept(\".\") {\n\t\tl.acceptRun(digits)\n\t}\n\tif len(digits) == 10+1 && l.accept(\"eE\") {\n\t\tl.accept(\"+-\")\n\t\tl.acceptRun(\"0123456789_\")\n\t}\n\tif len(digits) == 16+6+1 && l.accept(\"pP\") {\n\t\tl.accept(\"+-\")\n\t\tl.acceptRun(\"0123456789_\")\n\t}\n\n\tl.accept(\"i\")\n\n\tif isAlphaNumeric(l.peek()) {\n\t\tl.next()\n\t\treturn false\n\t}\n\treturn true\n}",
+    "funcname": "scanNumber"
+}

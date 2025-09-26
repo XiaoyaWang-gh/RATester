@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/conn/conn.go",
+    "lineno": 201,
+    "focalfunc": "func (s *Conn) GetHostInfo() (h *file.Host, err error)",
+    "funcbody": "func (s *Conn) GetHostInfo() (h *file.Host, err error) {\n\terr = s.getInfo(&h)\n\th.Id = int(file.GetDb().JsonDb.GetHostId())\n\th.Flow = new(file.Flow)\n\th.NoStore = true\n\treturn\n}",
+    "funcname": "GetHostInfo"
+}

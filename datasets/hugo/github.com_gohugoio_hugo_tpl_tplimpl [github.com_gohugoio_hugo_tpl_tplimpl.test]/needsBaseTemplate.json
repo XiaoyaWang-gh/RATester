@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 88,
+    "focalfunc": "func needsBaseTemplate(templ string) bool",
+    "funcbody": "func needsBaseTemplate(templ string) bool {\n\tidx := -1\n\tinComment := false\n\tfor i := 0; i < len(templ); {\n\t\tif !inComment && strings.HasPrefix(templ[i:], \"{{/*\") {\n\t\t\tinComment = true\n\t\t\ti += 4\n\t\t} else if !inComment && strings.HasPrefix(templ[i:], \"{{- /*\") {\n\t\t\tinComment = true\n\t\t\ti += 6\n\t\t} else if inComment && strings.HasPrefix(templ[i:], \"*/}}\") {\n\t\t\tinComment = false\n\t\t\ti += 4\n\t\t} else if inComment && strings.HasPrefix(templ[i:], \"*/ -}}\") {\n\t\t\tinComment = false\n\t\t\ti += 6\n\t\t} else {\n\t\t\tr, size := utf8.DecodeRuneInString(templ[i:])\n\t\t\tif !inComment {\n\t\t\t\tif strings.HasPrefix(templ[i:], \"{{\") {\n\t\t\t\t\tidx = i\n\t\t\t\t\tbreak\n\t\t\t\t} else if !unicode.IsSpace(r) {\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t\ti += size\n\t\t}\n\t}\n\n\tif idx == -1 {\n\t\treturn false\n\t}\n\n\treturn baseTemplateDefineRe.MatchString(templ[idx:])\n}",
+    "funcname": "needsBaseTemplate"
+}

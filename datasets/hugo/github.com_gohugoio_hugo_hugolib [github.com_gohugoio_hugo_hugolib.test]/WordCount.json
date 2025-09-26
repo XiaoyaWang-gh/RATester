@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__per_output.go",
+    "lineno": 201,
+    "focalfunc": "func (pco *pageContentOutput) WordCount(ctx context.Context) int",
+    "funcbody": "func (pco *pageContentOutput) WordCount(ctx context.Context) int {\n\treturn pco.mustRender(ctx).WordCount(ctx)\n}",
+    "funcname": "WordCount"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 713,
+    "focalfunc": "func (c *DefaultCtx) Port() string",
+    "funcbody": "func (c *DefaultCtx) Port() string {\n\ttcpaddr, ok := c.fasthttp.RemoteAddr().(*net.TCPAddr)\n\tif !ok {\n\t\tpanic(errors.New(\"failed to type-assert to *net.TCPAddr\"))\n\t}\n\treturn strconv.Itoa(tcpaddr.Port)\n}",
+    "funcname": "Port"
+}

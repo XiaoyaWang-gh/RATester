@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/http/http.go",
+    "lineno": 46,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\tif p.Endpoint == \"\" {\n\t\treturn errors.New(\"non-empty endpoint is required\")\n\t}\n\n\tif p.PollInterval <= 0 {\n\t\treturn errors.New(\"poll interval must be greater than 0\")\n\t}\n\n\tp.httpClient = &http.Client{\n\t\tTimeout: time.Duration(p.PollTimeout),\n\t}\n\n\tif p.TLS != nil {\n\t\ttlsConfig, err := p.TLS.CreateTLSConfig(context.Background())\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"unable to create client TLS configuration: %w\", err)\n\t\t}\n\n\t\tp.httpClient.Transport = &http.Transport{\n\t\t\tTLSClientConfig: tlsConfig,\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

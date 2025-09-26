@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/muxer/http/mux.go",
+    "lineno": 70,
+    "focalfunc": "func GetRulePriority(rule string) int",
+    "funcbody": "func GetRulePriority(rule string) int {\n\treturn len(rule)\n}",
+    "funcname": "GetRulePriority"
+}

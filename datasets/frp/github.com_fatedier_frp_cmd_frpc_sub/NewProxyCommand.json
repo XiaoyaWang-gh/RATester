@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/cmd/frpc/sub/proxy.go",
+    "lineno": 71,
+    "focalfunc": "func NewProxyCommand(name string, c v1.ProxyConfigurer, clientCfg *v1.ClientCommonConfig) *cobra.Command",
+    "funcbody": "func NewProxyCommand(name string, c v1.ProxyConfigurer, clientCfg *v1.ClientCommonConfig) *cobra.Command {\n\treturn &cobra.Command{\n\t\tUse:\tname,\n\t\tShort:\tfmt.Sprintf(\"Run frpc with a single %s proxy\", name),\n\t\tRun: func(cmd *cobra.Command, args []string) {\n\t\t\tclientCfg.Complete()\n\t\t\tif _, err := validation.ValidateClientCommonConfig(clientCfg); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t\tos.Exit(1)\n\t\t\t}\n\n\t\t\tc.Complete(clientCfg.User)\n\t\t\tc.GetBaseConfig().Type = name\n\t\t\tif err := validation.ValidateProxyConfigurerForClient(c); err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t\tos.Exit(1)\n\t\t\t}\n\t\t\terr := startService(clientCfg, []v1.ProxyConfigurer{c}, nil, \"\")\n\t\t\tif err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t\tos.Exit(1)\n\t\t\t}\n\t\t},\n\t}\n}",
+    "funcname": "NewProxyCommand"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/server.go",
+    "lineno": 48,
+    "focalfunc": "func NewServer(cfg v1.WebServerConfig) (*Server, error)",
+    "funcbody": "func NewServer(cfg v1.WebServerConfig) (*Server, error) {\n\tassets.Load(cfg.AssetsDir)\n\n\taddr := net.JoinHostPort(cfg.Addr, strconv.Itoa(cfg.Port))\n\tif addr == \":\" {\n\t\taddr = \":http\"\n\t}\n\n\tln, err := net.Listen(\"tcp\", addr)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\trouter := mux.NewRouter()\n\ths := &http.Server{\n\t\tAddr:\t\taddr,\n\t\tHandler:\trouter,\n\t\tReadTimeout:\tdefaultReadTimeout,\n\t\tWriteTimeout:\tdefaultWriteTimeout,\n\t}\n\ts := &Server{\n\t\taddr:\taddr,\n\t\tln:\tln,\n\t\ths:\ths,\n\t\trouter:\trouter,\n\t}\n\tif cfg.PprofEnable {\n\t\ts.registerPprofHandlers()\n\t}\n\tif cfg.TLS != nil {\n\t\tcert, err := tls.LoadX509KeyPair(cfg.TLS.CertFile, cfg.TLS.KeyFile)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\ts.tlsCfg = &tls.Config{\n\t\t\tCertificates: []tls.Certificate{cert},\n\t\t}\n\t}\n\ts.authMiddleware = netpkg.NewHTTPAuthMiddleware(cfg.User, cfg.Password).SetAuthFailDelay(200 * time.Millisecond).Middleware\n\treturn s, nil\n}",
+    "funcname": "NewServer"
+}

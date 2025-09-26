@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site_render.go",
+    "lineno": 336,
+    "focalfunc": "func (s *Site) renderMainLanguageRedirect() error",
+    "funcbody": "func (s *Site) renderMainLanguageRedirect() error {\n\tif s.h.Conf.IsMultihost() || !(s.h.Conf.DefaultContentLanguageInSubdir() || s.h.Conf.IsMultilingual()) {\n\n\t\treturn nil\n\t}\n\n\thtml, found := s.conf.OutputFormats.Config.GetByName(\"html\")\n\tif found {\n\t\tmainLang := s.conf.DefaultContentLanguage\n\t\tif s.conf.DefaultContentLanguageInSubdir {\n\t\t\tmainLangURL := s.PathSpec.AbsURL(mainLang+\"/\", false)\n\t\t\ts.Log.Debugf(\"Write redirect to main language %s: %s\", mainLang, mainLangURL)\n\t\t\tif err := s.publishDestAlias(true, \"/\", mainLangURL, html, nil); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t} else {\n\t\t\tmainLangURL := s.PathSpec.AbsURL(\"\", false)\n\t\t\ts.Log.Debugf(\"Write redirect to main language %s: %s\", mainLang, mainLangURL)\n\t\t\tif err := s.publishDestAlias(true, mainLang, mainLangURL, html, nil); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "renderMainLanguageRedirect"
+}

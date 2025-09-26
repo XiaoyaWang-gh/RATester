@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/transform/unmarshal.go",
+    "lineno": 147,
+    "focalfunc": "func decodeDecoder(m map[string]any) (metadecoders.Decoder, error)",
+    "funcbody": "func decodeDecoder(m map[string]any) (metadecoders.Decoder, error) {\n\topts := metadecoders.Default\n\n\tif m == nil {\n\t\treturn opts, nil\n\t}\n\n\tfor k, v := range m {\n\t\tif strings.EqualFold(k, \"Delimiter\") {\n\t\t\tr, err := stringToRune(v)\n\t\t\tif err != nil {\n\t\t\t\treturn opts, err\n\t\t\t}\n\t\t\topts.Delimiter = r\n\t\t\tdelete(m, k)\n\n\t\t} else if strings.EqualFold(k, \"Comment\") {\n\t\t\tr, err := stringToRune(v)\n\t\t\tif err != nil {\n\t\t\t\treturn opts, err\n\t\t\t}\n\t\t\topts.Comment = r\n\t\t\tdelete(m, k)\n\t\t}\n\t}\n\n\terr := mapstructure.WeakDecode(m, &opts)\n\n\treturn opts, err\n}",
+    "funcname": "decodeDecoder"
+}

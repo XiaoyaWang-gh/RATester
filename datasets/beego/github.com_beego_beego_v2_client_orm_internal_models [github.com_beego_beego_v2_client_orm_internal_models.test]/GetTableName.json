@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_utils.go",
+    "lineno": 74,
+    "focalfunc": "func GetTableName(val reflect.Value) string",
+    "funcbody": "func GetTableName(val reflect.Value) string {\n\tif fun := val.MethodByName(\"TableName\"); fun.IsValid() {\n\t\tvals := fun.Call([]reflect.Value{})\n\n\t\tif len(vals) > 0 && vals[0].Kind() == reflect.String {\n\t\t\treturn vals[0].String()\n\t\t}\n\t}\n\treturn SnakeString(reflect.Indirect(val).Type().Name())\n}",
+    "funcname": "GetTableName"
+}

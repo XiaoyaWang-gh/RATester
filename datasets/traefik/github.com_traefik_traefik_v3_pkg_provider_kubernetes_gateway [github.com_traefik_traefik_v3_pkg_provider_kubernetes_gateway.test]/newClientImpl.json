@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/client.go",
+    "lineno": 106,
+    "focalfunc": "func newClientImpl(csKube kclientset.Interface, csGateway gateclientset.Interface) *clientWrapper",
+    "funcbody": "func newClientImpl(csKube kclientset.Interface, csGateway gateclientset.Interface) *clientWrapper {\n\treturn &clientWrapper{\n\t\tcsGateway:\t\tcsGateway,\n\t\tcsKube:\t\t\tcsKube,\n\t\tfactoriesGateway:\tmake(map[string]gateinformers.SharedInformerFactory),\n\t\tfactoriesKube:\t\tmake(map[string]kinformers.SharedInformerFactory),\n\t\tfactoriesSecret:\tmake(map[string]kinformers.SharedInformerFactory),\n\t}\n}",
+    "funcname": "newClientImpl"
+}

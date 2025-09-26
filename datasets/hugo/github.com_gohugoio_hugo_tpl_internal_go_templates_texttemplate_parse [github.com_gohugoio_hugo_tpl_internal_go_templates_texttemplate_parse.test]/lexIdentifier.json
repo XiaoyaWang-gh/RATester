@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/lex.go",
+    "lineno": 479,
+    "focalfunc": "func lexIdentifier(l *lexer) stateFn",
+    "funcbody": "func lexIdentifier(l *lexer) stateFn {\n\tfor {\n\t\tswitch r := l.next(); {\n\t\tcase isAlphaNumeric(r):\n\n\t\tdefault:\n\t\t\tl.backup()\n\t\t\tword := l.input[l.start:l.pos]\n\t\t\tif !l.atTerminator() {\n\t\t\t\treturn l.errorf(\"bad character %#U\", r)\n\t\t\t}\n\t\t\tswitch {\n\t\t\tcase key[word] > itemKeyword:\n\t\t\t\titem := key[word]\n\t\t\t\tif item == itemBreak && !l.options.breakOK || item == itemContinue && !l.options.continueOK {\n\t\t\t\t\treturn l.emit(itemIdentifier)\n\t\t\t\t}\n\t\t\t\treturn l.emit(item)\n\t\t\tcase word[0] == '.':\n\t\t\t\treturn l.emit(itemField)\n\t\t\tcase word == \"true\", word == \"false\":\n\t\t\t\treturn l.emit(itemBool)\n\t\t\tdefault:\n\t\t\t\treturn l.emit(itemIdentifier)\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "lexIdentifier"
+}

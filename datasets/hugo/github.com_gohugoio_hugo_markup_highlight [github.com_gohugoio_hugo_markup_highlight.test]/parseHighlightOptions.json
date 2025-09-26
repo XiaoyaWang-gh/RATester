@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/config.go",
+    "lineno": 191,
+    "focalfunc": "func parseHighlightOptions(in string) (map[string]any, error)",
+    "funcbody": "func parseHighlightOptions(in string) (map[string]any, error) {\n\tin = strings.Trim(in, \" \")\n\topts := make(map[string]any)\n\n\tif in == \"\" {\n\t\treturn opts, nil\n\t}\n\n\tfor _, v := range strings.Split(in, \",\") {\n\t\tkeyVal := strings.Split(v, \"=\")\n\t\tkey := strings.Trim(keyVal[0], \" \")\n\t\tif len(keyVal) != 2 {\n\t\t\treturn opts, fmt.Errorf(\"invalid Highlight option: %s\", key)\n\t\t}\n\t\topts[key] = keyVal[1]\n\n\t}\n\n\tnormalizeHighlightOptions(opts)\n\n\treturn opts, nil\n}",
+    "funcname": "parseHighlightOptions"
+}

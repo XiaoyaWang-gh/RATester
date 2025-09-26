@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 470,
+    "focalfunc": "func (p *nopPage) SectionsPath() string",
+    "funcbody": "func (p *nopPage) SectionsPath() string {\n\treturn \"\"\n}",
+    "funcname": "SectionsPath"
+}

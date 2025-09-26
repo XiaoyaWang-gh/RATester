@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 336,
+    "focalfunc": "func (p *ControllerRegister) Include(cList ...ControllerInterface)",
+    "funcbody": "func (p *ControllerRegister) Include(cList ...ControllerInterface) {\n\tfor _, c := range cList {\n\t\treflectVal := reflect.ValueOf(c)\n\t\tt := reflect.Indirect(reflectVal).Type()\n\t\tkey := t.PkgPath() + \":\" + t.Name()\n\t\tif comm, ok := GlobalControllerRouter[key]; ok {\n\t\t\tfor _, a := range comm {\n\t\t\t\tfor _, f := range a.Filters {\n\t\t\t\t\tp.InsertFilter(f.Pattern, f.Pos, f.Filter, WithReturnOnOutput(f.ReturnOnOutput), WithResetParams(f.ResetParams))\n\t\t\t\t}\n\t\t\t\tp.addWithMethodParams(a.Router, c, a.MethodParams, WithRouterMethods(c, strings.Join(a.AllowHTTPMethods, \",\")+\":\"+a.Method))\n\t\t\t}\n\t\t}\n\t}\n}",
+    "funcname": "Include"
+}

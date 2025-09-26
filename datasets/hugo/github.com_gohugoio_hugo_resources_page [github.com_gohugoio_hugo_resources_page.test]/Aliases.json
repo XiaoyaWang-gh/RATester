@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 68,
+    "focalfunc": "func (p *nopPage) Aliases() []string",
+    "funcbody": "func (p *nopPage) Aliases() []string {\n\treturn nil\n}",
+    "funcname": "Aliases"
+}

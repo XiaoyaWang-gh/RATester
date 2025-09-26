@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/http/http.go",
+    "lineno": 54,
+    "focalfunc": "func CanonicalHost(host string) (string, error)",
+    "funcbody": "func CanonicalHost(host string) (string, error) {\n\tvar err error\n\thost = strings.ToLower(host)\n\tif hasPort(host) {\n\t\thost, _, err = net.SplitHostPort(host)\n\t\tif err != nil {\n\t\t\treturn \"\", err\n\t\t}\n\t}\n\n\thost = strings.TrimSuffix(host, \".\")\n\treturn host, nil\n}",
+    "funcname": "CanonicalHost"
+}

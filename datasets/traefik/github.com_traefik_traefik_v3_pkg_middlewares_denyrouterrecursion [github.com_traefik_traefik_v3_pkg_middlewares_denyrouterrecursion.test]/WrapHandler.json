@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/denyrouterrecursion/deny_router_recursion.go",
+    "lineno": 23,
+    "focalfunc": "func WrapHandler(routerName string) alice.Constructor",
+    "funcbody": "func WrapHandler(routerName string) alice.Constructor {\n\treturn func(next http.Handler) (http.Handler, error) {\n\t\treturn New(routerName, next)\n\t}\n}",
+    "funcname": "WrapHandler"
+}

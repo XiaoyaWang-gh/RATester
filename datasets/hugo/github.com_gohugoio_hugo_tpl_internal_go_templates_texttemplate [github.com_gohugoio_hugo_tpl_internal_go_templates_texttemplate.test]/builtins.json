@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/funcs.go",
+    "lineno": 39,
+    "focalfunc": "func builtins() FuncMap",
+    "funcbody": "func builtins() FuncMap {\n\treturn FuncMap{\n\t\t\"and\":\t\tand,\n\t\t\"call\":\t\temptyCall,\n\t\t\"html\":\t\tHTMLEscaper,\n\t\t\"index\":\tindex,\n\t\t\"slice\":\tslice,\n\t\t\"js\":\t\tJSEscaper,\n\t\t\"len\":\t\tlength,\n\t\t\"not\":\t\tnot,\n\t\t\"or\":\t\tor,\n\t\t\"print\":\tfmt.Sprint,\n\t\t\"printf\":\tfmt.Sprintf,\n\t\t\"println\":\tfmt.Sprintln,\n\t\t\"urlquery\":\tURLQueryEscaper,\n\n\t\t\"eq\":\teq,\n\t\t\"ge\":\tge,\n\t\t\"gt\":\tgt,\n\t\t\"le\":\tle,\n\t\t\"lt\":\tlt,\n\t\t\"ne\":\tne,\n\t}\n}",
+    "funcname": "builtins"
+}

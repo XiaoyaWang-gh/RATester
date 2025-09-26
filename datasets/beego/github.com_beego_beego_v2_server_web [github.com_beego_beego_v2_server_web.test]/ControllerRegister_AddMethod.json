@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/router.go",
+    "lineno": 727,
+    "focalfunc": "func (p *ControllerRegister) AddMethod(method, pattern string, f HandleFunc)",
+    "funcbody": "func (p *ControllerRegister) AddMethod(method, pattern string, f HandleFunc) {\n\tmethod = p.getUpperMethodString(method)\n\n\troute := p.createRestfulRouter(f, pattern)\n\tmethods := p.getHttpMethodMapMethod(method, \"\")\n\troute.methods = methods\n\n\tp.addRouterForMethod(route)\n}",
+    "funcname": "AddMethod"
+}

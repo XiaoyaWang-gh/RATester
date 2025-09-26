@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/client.go",
+    "lineno": 384,
+    "focalfunc": "func (c *clientWrapper) GetServersTransports() []*traefikv1alpha1.ServersTransport",
+    "funcbody": "func (c *clientWrapper) GetServersTransports() []*traefikv1alpha1.ServersTransport {\n\tvar result []*traefikv1alpha1.ServersTransport\n\n\tfor ns, factory := range c.factoriesCrd {\n\t\tserversTransports, err := factory.Traefik().V1alpha1().ServersTransports().Lister().List(labels.Everything())\n\t\tif err != nil {\n\t\t\tlog.Error().Err(err).Str(\"namespace\", ns).Msg(\"Failed to list servers transport in namespace\")\n\t\t}\n\t\tresult = append(result, serversTransports...)\n\t}\n\n\treturn result\n}",
+    "funcname": "GetServersTransports"
+}

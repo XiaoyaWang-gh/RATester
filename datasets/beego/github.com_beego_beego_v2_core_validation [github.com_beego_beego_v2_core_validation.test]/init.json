@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/validation/util.go",
+    "lineno": 54,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tv := &Validation{}\n\tt := reflect.TypeOf(v)\n\tfor i := 0; i < t.NumMethod(); i++ {\n\t\tm := t.Method(i)\n\t\tif !unFuncs[m.Name] {\n\t\t\tfuncs[m.Name] = m.Func\n\t\t}\n\t}\n}",
+    "funcname": "init"
+}

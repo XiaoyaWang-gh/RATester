@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/redirect.go",
+    "lineno": 84,
+    "focalfunc": "func HTTPSNonWWWRedirectWithConfig(config RedirectConfig) echo.MiddlewareFunc",
+    "funcbody": "func HTTPSNonWWWRedirectWithConfig(config RedirectConfig) echo.MiddlewareFunc {\n\treturn redirect(config, func(scheme, host, uri string) (ok bool, url string) {\n\t\tif scheme != \"https\" {\n\t\t\thost = strings.TrimPrefix(host, www)\n\t\t\treturn true, \"https://\" + host + uri\n\t\t}\n\t\treturn false, \"\"\n\t})\n}",
+    "funcname": "HTTPSNonWWWRedirectWithConfig"
+}

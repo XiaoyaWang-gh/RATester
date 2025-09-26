@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes_http.go",
+    "lineno": 630,
+    "focalfunc": "func parseServiceProtocol(providedScheme, portName string, portNumber int32) (string, error)",
+    "funcbody": "func parseServiceProtocol(providedScheme, portName string, portNumber int32) (string, error) {\n\tswitch providedScheme {\n\tcase httpProtocol, httpsProtocol, \"h2c\":\n\t\treturn providedScheme, nil\n\tcase \"\":\n\t\tif portNumber == 443 || strings.HasPrefix(portName, httpsProtocol) {\n\t\t\treturn httpsProtocol, nil\n\t\t}\n\t\treturn httpProtocol, nil\n\t}\n\n\treturn \"\", fmt.Errorf(\"invalid scheme %q specified\", providedScheme)\n}",
+    "funcname": "parseServiceProtocol"
+}

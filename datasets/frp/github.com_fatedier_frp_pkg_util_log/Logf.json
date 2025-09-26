@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/log/log.go",
+    "lineno": 90,
+    "focalfunc": "func Logf(level log.Level, offset int, format string, v ...interface{})",
+    "funcbody": "func Logf(level log.Level, offset int, format string, v ...interface{}) {\n\tLogger.Logf(level, offset, format, v...)\n}",
+    "funcname": "Logf"
+}

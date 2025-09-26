@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 264,
+    "focalfunc": "func NewAnalyzer(dataReserveDuration time.Duration) *Analyzer",
+    "funcbody": "func NewAnalyzer(dataReserveDuration time.Duration) *Analyzer {\n\treturn &Analyzer{\n\t\trecords:\t\tmake(map[string]*MakeHoleRecords),\n\t\tdataReserveDuration:\tdataReserveDuration,\n\t}\n}",
+    "funcname": "NewAnalyzer"
+}

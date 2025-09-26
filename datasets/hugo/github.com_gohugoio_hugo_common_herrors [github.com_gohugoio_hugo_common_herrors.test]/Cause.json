@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 266,
+    "focalfunc": "func Cause(err error) error",
+    "funcbody": "func Cause(err error) error {\n\tif u := errors.Unwrap(err); u != nil {\n\t\treturn u\n\t}\n\treturn err\n}",
+    "funcname": "Cause"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/nathole/analysis.go",
+    "lineno": 122,
+    "focalfunc": "func getBehaviorByMode(mode int) []lo.Tuple2[RecommandBehavior, RecommandBehavior]",
+    "funcbody": "func getBehaviorByMode(mode int) []lo.Tuple2[RecommandBehavior, RecommandBehavior] {\n\tswitch mode {\n\tcase 0:\n\t\treturn mode0Behaviors\n\tcase 1:\n\t\treturn mode1Behaviors\n\tcase 2:\n\t\treturn mode2Behaviors\n\tcase 3:\n\t\treturn mode3Behaviors\n\tcase 4:\n\t\treturn mode4Behaviors\n\t}\n\n\treturn mode0Behaviors\n}",
+    "funcname": "getBehaviorByMode"
+}

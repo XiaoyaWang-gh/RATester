@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/log_msg.go",
+    "lineno": 36,
+    "focalfunc": "func (lm *LogMsg) OldStyleFormat() string",
+    "funcbody": "func (lm *LogMsg) OldStyleFormat() string {\n\tmsg := lm.Msg\n\n\tif len(lm.Args) > 0 {\n\t\tmsg = fmt.Sprintf(lm.Msg, lm.Args...)\n\t}\n\n\tmsg = lm.Prefix + \" \" + msg\n\n\tif lm.enableFuncCallDepth {\n\t\tfilePath := lm.FilePath\n\t\tif !lm.enableFullFilePath {\n\t\t\t_, filePath = path.Split(filePath)\n\t\t}\n\t\tmsg = fmt.Sprintf(\"[%s:%d] %s\", filePath, lm.LineNumber, msg)\n\t}\n\n\tmsg = levelPrefix[lm.Level] + \" \" + msg\n\treturn msg\n}",
+    "funcname": "OldStyleFormat"
+}

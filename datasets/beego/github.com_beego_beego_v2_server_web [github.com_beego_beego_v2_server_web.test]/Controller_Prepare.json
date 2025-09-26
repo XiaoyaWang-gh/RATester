@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 172,
+    "focalfunc": "func (c *Controller) Prepare()",
+    "funcbody": "func (c *Controller) Prepare()\t{}",
+    "funcname": "Prepare"
+}

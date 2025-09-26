@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/doctree/nodeshifttree.go",
+    "lineno": 332,
+    "focalfunc": "func (r NodeShiftTreeWalker[T]) Extend() *NodeShiftTreeWalker[T]",
+    "funcbody": "func (r NodeShiftTreeWalker[T]) Extend() *NodeShiftTreeWalker[T] {\n\tr.resetLocalState()\n\treturn &r\n}",
+    "funcname": "Extend"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/global.go",
+    "lineno": 46,
+    "focalfunc": "func Int(key string) (int, error)",
+    "funcbody": "func Int(key string) (int, error) {\n\treturn globalInstance.Int(key)\n}",
+    "funcname": "Int"
+}

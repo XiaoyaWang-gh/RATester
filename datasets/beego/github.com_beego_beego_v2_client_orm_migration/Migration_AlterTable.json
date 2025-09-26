@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/migration/ddl.go",
+    "lineno": 75,
+    "focalfunc": "func (m *Migration) AlterTable(tablename string)",
+    "funcbody": "func (m *Migration) AlterTable(tablename string) {\n\tm.TableName = tablename\n\tm.ModifyType = \"alter\"\n}",
+    "funcname": "AlterTable"
+}

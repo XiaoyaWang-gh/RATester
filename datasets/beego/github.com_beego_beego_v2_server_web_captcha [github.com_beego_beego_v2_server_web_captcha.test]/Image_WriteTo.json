@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/image.go",
+    "lineno": 329,
+    "focalfunc": "func (m *Image) WriteTo(w io.Writer) (int64, error)",
+    "funcbody": "func (m *Image) WriteTo(w io.Writer) (int64, error) {\n\tn, err := w.Write(m.encodedPNG())\n\treturn int64(n), err\n}",
+    "funcname": "WriteTo"
+}

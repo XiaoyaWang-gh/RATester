@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/markup.go",
+    "lineno": 131,
+    "focalfunc": "func (r *converterRegistry) GetMarkupConfig() markup_config.Config",
+    "funcbody": "func (r *converterRegistry) GetMarkupConfig() markup_config.Config {\n\treturn r.config.MarkupConfig()\n}",
+    "funcname": "GetMarkupConfig"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 112,
+    "focalfunc": "func (c ConfigLanguage) Timeout() time.Duration",
+    "funcbody": "func (c ConfigLanguage) Timeout() time.Duration {\n\treturn c.config.C.Timeout\n}",
+    "funcname": "Timeout"
+}

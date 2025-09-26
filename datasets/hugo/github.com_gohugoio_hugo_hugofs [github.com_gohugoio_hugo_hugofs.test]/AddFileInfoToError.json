@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 353,
+    "focalfunc": "func AddFileInfoToError(err error, fi FileMetaInfo, fs afero.Fs) error",
+    "funcbody": "func AddFileInfoToError(err error, fi FileMetaInfo, fs afero.Fs) error {\n\tif err == nil {\n\t\treturn nil\n\t}\n\n\tmeta := fi.Meta()\n\tfilename := meta.Filename\n\n\tfor _, ferr := range herrors.UnwrapFileErrors(err) {\n\t\tpos := ferr.Position()\n\t\terrfilename := pos.Filename\n\t\tif errfilename == \"\" {\n\t\t\tpos.Filename = filename\n\t\t\tferr.UpdatePosition(pos)\n\t\t}\n\n\t\tif errfilename == \"\" || errfilename == filename {\n\t\t\tif filename != \"\" && ferr.ErrorContext() == nil {\n\t\t\t\tf, ioerr := fs.Open(filename)\n\t\t\t\tif ioerr != nil {\n\t\t\t\t\treturn err\n\t\t\t\t}\n\t\t\t\tdefer f.Close()\n\t\t\t\tferr.UpdateContent(f, nil)\n\t\t\t}\n\t\t\treturn err\n\t\t}\n\t}\n\n\tlineMatcher := herrors.NopLineMatcher\n\n\tif textSegmentErr, ok := err.(*herrors.TextSegmentError); ok {\n\t\tlineMatcher = herrors.ContainsMatcher(textSegmentErr.Segment)\n\t}\n\n\treturn herrors.NewFileErrorFromFile(err, filename, fs, lineMatcher)\n}",
+    "funcname": "AddFileInfoToError"
+}

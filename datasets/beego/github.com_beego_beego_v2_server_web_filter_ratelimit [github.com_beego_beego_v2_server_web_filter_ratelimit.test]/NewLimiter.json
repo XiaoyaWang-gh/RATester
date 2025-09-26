@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/filter/ratelimit/limiter.go",
+    "lineno": 54,
+    "focalfunc": "func NewLimiter(opts ...limiterOption) web.FilterFunc",
+    "funcbody": "func NewLimiter(opts ...limiterOption) web.FilterFunc {\n\tl := &limiter{\n\t\tbuckets:\tmake(map[string]bucket),\n\t\tsessionKey:\tdefaultSessionKey,\n\t\trate:\t\ttime.Millisecond * 10,\n\t\tcapacity:\t100,\n\t\tbucketFactory:\tnewTokenBucket,\n\t\tresp:\t\tdefaultRejectionResponse,\n\t}\n\tfor _, o := range opts {\n\t\to(l)\n\t}\n\n\treturn func(ctx *context.Context) {\n\t\tif !l.take(perRequestConsumedAmount, ctx) {\n\t\t\tctx.ResponseWriter.WriteHeader(l.resp.code)\n\t\t\tctx.WriteString(l.resp.body)\n\t\t}\n\t}\n}",
+    "funcname": "NewLimiter"
+}

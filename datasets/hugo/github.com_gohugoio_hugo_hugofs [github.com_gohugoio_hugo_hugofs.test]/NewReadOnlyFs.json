@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fs.go",
+    "lineno": 235,
+    "focalfunc": "func NewReadOnlyFs(source afero.Fs) afero.Fs",
+    "funcbody": "func NewReadOnlyFs(source afero.Fs) afero.Fs {\n\treturn WrapFilesystem(afero.NewReadOnlyFs(source), source)\n}",
+    "funcname": "NewReadOnlyFs"
+}

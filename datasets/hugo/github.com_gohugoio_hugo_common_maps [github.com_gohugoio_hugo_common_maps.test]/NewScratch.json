@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/scratch.go",
+    "lineno": 171,
+    "focalfunc": "func NewScratch() *Scratch",
+    "funcbody": "func NewScratch() *Scratch {\n\treturn &Scratch{values: make(map[string]any)}\n}",
+    "funcname": "NewScratch"
+}

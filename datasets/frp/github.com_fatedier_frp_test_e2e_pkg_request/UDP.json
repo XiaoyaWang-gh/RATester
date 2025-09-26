@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/request/request.go",
+    "lineno": 64,
+    "focalfunc": "func (r *Request) UDP() *Request",
+    "funcbody": "func (r *Request) UDP() *Request {\n\tr.protocol = \"udp\"\n\treturn r\n}",
+    "funcname": "UDP"
+}

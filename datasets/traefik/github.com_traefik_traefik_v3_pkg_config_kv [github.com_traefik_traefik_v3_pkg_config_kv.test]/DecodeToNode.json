@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/kv/kv_node.go",
+    "lineno": 47,
+    "focalfunc": "func decodeToNode(root *parser.Node, path []string, value string)",
+    "funcbody": "func decodeToNode(root *parser.Node, path []string, value string) {\n\tif len(root.Name) == 0 {\n\t\troot.Name = path[0]\n\t}\n\n\tif len(path) > 1 {\n\t\tif n := containsNode(root.Children, path[1]); n != nil {\n\n\t\t\tdecodeToNode(n, path[1:], value)\n\t\t} else {\n\n\t\t\tchild := &parser.Node{Name: path[1]}\n\t\t\tdecodeToNode(child, path[1:], value)\n\t\t\troot.Children = append(root.Children, child)\n\t\t}\n\t} else {\n\t\troot.Value = value\n\t}\n}",
+    "funcname": "decodeToNode"
+}

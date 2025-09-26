@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 144,
+    "focalfunc": "func NewPagesFromTemplate(opts PagesFromTemplateOptions) *PagesFromTemplate",
+    "funcbody": "func NewPagesFromTemplate(opts PagesFromTemplateOptions) *PagesFromTemplate {\n\treturn &PagesFromTemplate{\n\t\tPagesFromTemplateOptions:\topts,\n\t\tPagesFromTemplateDeps:\t\topts.DepsFromSite(opts.Site),\n\t\tbuildState: &BuildState{\n\t\t\tsourceInfosCurrent: maps.NewCache[string, *sourceInfo](),\n\t\t},\n\t\tstore:\tmaps.NewScratch(),\n\t}\n}",
+    "funcname": "NewPagesFromTemplate"
+}

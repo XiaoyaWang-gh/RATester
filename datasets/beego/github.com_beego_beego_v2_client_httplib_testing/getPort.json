@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/testing/client.go",
+    "lineno": 35,
+    "focalfunc": "func getPort() string",
+    "funcbody": "func getPort() string {\n\tif port == \"\" {\n\t\tport = \"8080\"\n\t\treturn port\n\t}\n\treturn port\n}",
+    "funcname": "getPort"
+}

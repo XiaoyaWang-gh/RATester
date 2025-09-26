@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/csrf/storage_manager.go",
+    "lineno": 65,
+    "focalfunc": "func (m *storageManager) delRaw(key string)",
+    "funcbody": "func (m *storageManager) delRaw(key string) {\n\tif m.storage != nil {\n\t\t_ = m.storage.Delete(key)\n\t} else {\n\t\tm.memory.Delete(key)\n\t}\n}",
+    "funcname": "delRaw"
+}

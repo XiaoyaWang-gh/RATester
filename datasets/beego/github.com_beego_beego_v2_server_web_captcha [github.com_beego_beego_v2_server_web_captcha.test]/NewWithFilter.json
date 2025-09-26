@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/captcha/captcha.go",
+    "lineno": 264,
+    "focalfunc": "func NewWithFilter(urlPrefix string, store Storage) *Captcha",
+    "funcbody": "func NewWithFilter(urlPrefix string, store Storage) *Captcha {\n\tcpt := NewCaptcha(urlPrefix, store)\n\n\tweb.InsertFilter(cpt.URLPrefix+\"*\", web.BeforeRouter, cpt.Handler)\n\n\tweb.AddFuncMap(\"create_captcha\", cpt.CreateCaptchaHTML)\n\n\treturn cpt\n}",
+    "funcname": "NewWithFilter"
+}

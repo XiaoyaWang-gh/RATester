@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httplib.go",
+    "lineno": 199,
+    "focalfunc": "func (b *BeegoHTTPRequest) SetProtocolVersion(vers string) *BeegoHTTPRequest",
+    "funcbody": "func (b *BeegoHTTPRequest) SetProtocolVersion(vers string) *BeegoHTTPRequest {\n\tif vers == \"\" {\n\t\tvers = \"HTTP/1.1\"\n\t}\n\n\tmajor, minor, ok := http.ParseHTTPVersion(vers)\n\tif ok {\n\t\tb.req.Proto = vers\n\t\tb.req.ProtoMajor = major\n\t\tb.req.ProtoMinor = minor\n\t\treturn b\n\t}\n\tlogs.Error(\"%+v\", berror.Errorf(InvalidUrlProtocolVersion, \"invalid protocol: %s\", vers))\n\treturn b\n}",
+    "funcname": "SetProtocolVersion"
+}

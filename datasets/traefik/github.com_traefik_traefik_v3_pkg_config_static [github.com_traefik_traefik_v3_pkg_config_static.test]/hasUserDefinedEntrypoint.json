@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/config/static/static_config.go",
+    "lineno": 303,
+    "focalfunc": "func (c *Configuration) hasUserDefinedEntrypoint() bool",
+    "funcbody": "func (c *Configuration) hasUserDefinedEntrypoint() bool {\n\treturn len(c.EntryPoints) != 0\n}",
+    "funcname": "hasUserDefinedEntrypoint"
+}

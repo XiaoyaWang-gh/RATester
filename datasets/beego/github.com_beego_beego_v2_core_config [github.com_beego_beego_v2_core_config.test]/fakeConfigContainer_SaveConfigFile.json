@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/fake.go",
+    "lineno": 97,
+    "focalfunc": "func (c *fakeConfigContainer) SaveConfigFile(filename string) error",
+    "funcbody": "func (c *fakeConfigContainer) SaveConfigFile(filename string) error {\n\treturn errors.New(\"not implement in the fakeConfigContainer\")\n}",
+    "funcname": "SaveConfigFile"
+}

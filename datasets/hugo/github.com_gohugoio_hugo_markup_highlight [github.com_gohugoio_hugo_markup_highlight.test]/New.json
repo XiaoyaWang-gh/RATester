@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 55,
+    "focalfunc": "func New(cfg Config) Highlighter",
+    "funcbody": "func New(cfg Config) Highlighter {\n\treturn chromaHighlighter{\n\t\tcfg: cfg,\n\t}\n}",
+    "funcname": "New"
+}

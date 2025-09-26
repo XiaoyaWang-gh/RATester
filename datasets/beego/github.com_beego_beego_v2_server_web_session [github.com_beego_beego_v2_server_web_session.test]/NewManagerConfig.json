@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/session_config.go",
+    "lineno": 32,
+    "focalfunc": "func NewManagerConfig(opts ...ManagerConfigOpt) *ManagerConfig",
+    "funcbody": "func NewManagerConfig(opts ...ManagerConfigOpt) *ManagerConfig {\n\tconfig := &ManagerConfig{}\n\tfor _, opt := range opts {\n\t\topt(config)\n\t}\n\treturn config\n}",
+    "funcname": "NewManagerConfig"
+}

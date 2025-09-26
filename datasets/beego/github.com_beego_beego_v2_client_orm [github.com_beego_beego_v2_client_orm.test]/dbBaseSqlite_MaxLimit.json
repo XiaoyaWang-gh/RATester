@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_sqlite.go",
+    "lineno": 105,
+    "focalfunc": "func (d *dbBaseSqlite) MaxLimit() uint64",
+    "funcbody": "func (d *dbBaseSqlite) MaxLimit() uint64 {\n\treturn 9223372036854775807\n}",
+    "funcname": "MaxLimit"
+}

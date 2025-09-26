@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 700,
+    "focalfunc": "func (ms *MapSorter) Sort()",
+    "funcbody": "func (ms *MapSorter) Sort() {\n\tsort.Sort(ms)\n}",
+    "funcname": "Sort"
+}

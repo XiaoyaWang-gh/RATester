@@ -1,0 +1,38 @@
+package mock
+
+import (
+	"context"
+	"fmt"
+	"testing"
+)
+
+func TestOneWithCtx_1(t *testing.T) {
+	type args struct {
+		ctx       context.Context
+		container interface{}
+		cols      []string
+	}
+	tests := []struct {
+		name    string
+		d       *DoNothingQuerySetter
+		args    args
+		wantErr bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+
+			defer func() {
+				if r := recover(); r != nil {
+					fmt.Println("Recovered in main", r)
+				}
+			}()
+
+			d := &DoNothingQuerySetter{}
+			if err := d.OneWithCtx(tt.args.ctx, tt.args.container, tt.args.cols...); (err != nil) != tt.wantErr {
+				t.Errorf("OneWithCtx() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/filter/prometheus/filter.go",
+    "lineno": 40,
+    "focalfunc": "func (builder *FilterChainBuilder) FilterChain(next httplib.Filter) httplib.Filter",
+    "funcbody": "func (builder *FilterChainBuilder) FilterChain(next httplib.Filter) httplib.Filter {\n\tinitSummaryVec.Do(func() {\n\t\tsummaryVec = prometheus.NewSummaryVec(prometheus.SummaryOpts{\n\t\t\tName:\t\t\"beego\",\n\t\t\tSubsystem:\t\"remote_http_request\",\n\t\t\tConstLabels: map[string]string{\n\t\t\t\t\"server\":\tbuilder.ServerName,\n\t\t\t\t\"env\":\t\tbuilder.RunMode,\n\t\t\t\t\"appname\":\tbuilder.AppName,\n\t\t\t},\n\t\t\tHelp:\t\"The statics info for remote http requests\",\n\t\t}, []string{\"proto\", \"scheme\", \"method\", \"host\", \"path\", \"status\", \"isError\"})\n\n\t\tprometheus.MustRegister(summaryVec)\n\t})\n\n\treturn func(ctx context.Context, req *httplib.BeegoHTTPRequest) (*http.Response, error) {\n\t\tstartTime := time.Now()\n\t\tresp, err := next(ctx, req)\n\t\tendTime := time.Now()\n\t\tgo builder.report(startTime, endTime, ctx, req, resp, err)\n\t\treturn resp, err\n\t}\n}",
+    "funcname": "FilterChain"
+}

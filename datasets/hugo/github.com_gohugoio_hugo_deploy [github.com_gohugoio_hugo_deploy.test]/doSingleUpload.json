@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 311,
+    "focalfunc": "func (d *Deployer) doSingleUpload(ctx context.Context, bucket *blob.Bucket, upload *fileToUpload) error",
+    "funcbody": "func (d *Deployer) doSingleUpload(ctx context.Context, bucket *blob.Bucket, upload *fileToUpload) error {\n\td.logger.Infof(\"Uploading %v...\\n\", upload)\n\topts := &blob.WriterOptions{\n\t\tCacheControl:\t\tupload.Local.CacheControl(),\n\t\tContentEncoding:\tupload.Local.ContentEncoding(),\n\t\tContentType:\t\tupload.Local.ContentType(),\n\t\tMetadata:\t\tmap[string]string{metaMD5Hash: hex.EncodeToString(upload.Local.MD5())},\n\t}\n\tw, err := bucket.NewWriter(ctx, upload.Local.SlashPath, opts)\n\tif err != nil {\n\t\treturn err\n\t}\n\tr, err := upload.Local.Reader()\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer r.Close()\n\t_, err = io.Copy(w, r)\n\tif err != nil {\n\t\treturn err\n\t}\n\tif err := w.Close(); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}",
+    "funcname": "doSingleUpload"
+}

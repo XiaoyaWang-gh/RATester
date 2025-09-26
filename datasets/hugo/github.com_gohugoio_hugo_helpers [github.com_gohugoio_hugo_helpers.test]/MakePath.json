@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/path.go",
+    "lineno": 43,
+    "focalfunc": "func (p *PathSpec) MakePath(s string) string",
+    "funcbody": "func (p *PathSpec) MakePath(s string) string {\n\ts = paths.Sanitize(s)\n\tif p.Cfg.RemovePathAccents() {\n\t\ts = text.RemoveAccentsString(s)\n\t}\n\treturn s\n}",
+    "funcname": "MakePath"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/gin.go",
+    "lineno": 317,
+    "focalfunc": "func (engine *Engine) Use(middleware ...HandlerFunc) IRoutes",
+    "funcbody": "func (engine *Engine) Use(middleware ...HandlerFunc) IRoutes {\n\tengine.RouterGroup.Use(middleware...)\n\tengine.rebuild404Handlers()\n\tengine.rebuild405Handlers()\n\treturn engine\n}",
+    "funcname": "Use"
+}

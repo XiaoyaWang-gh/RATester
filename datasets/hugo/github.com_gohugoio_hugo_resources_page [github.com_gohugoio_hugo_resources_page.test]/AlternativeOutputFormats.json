@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 102,
+    "focalfunc": "func (p *nopPage) AlternativeOutputFormats() OutputFormats",
+    "funcbody": "func (p *nopPage) AlternativeOutputFormats() OutputFormats {\n\treturn nil\n}",
+    "funcname": "AlternativeOutputFormats"
+}

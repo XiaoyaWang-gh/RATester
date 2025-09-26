@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/types/evictingqueue.go",
+    "lineno": 67,
+    "focalfunc": "func (q *EvictingStringQueue) Contains(v string) bool",
+    "funcbody": "func (q *EvictingStringQueue) Contains(v string) bool {\n\tq.mu.Lock()\n\tdefer q.mu.Unlock()\n\treturn q.set[v]\n}",
+    "funcname": "Contains"
+}

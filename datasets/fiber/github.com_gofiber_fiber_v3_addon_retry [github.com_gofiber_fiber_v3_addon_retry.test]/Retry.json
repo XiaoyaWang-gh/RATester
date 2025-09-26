@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/addon/retry/exponential_backoff.go",
+    "lineno": 43,
+    "focalfunc": "func (e *ExponentialBackoff) Retry(f func() error) error",
+    "funcbody": "func (e *ExponentialBackoff) Retry(f func() error) error {\n\tif e.currentInterval <= 0 {\n\t\te.currentInterval = e.InitialInterval\n\t}\n\tvar err error\n\tfor i := 0; i < e.MaxRetryCount; i++ {\n\t\terr = f()\n\t\tif err == nil {\n\t\t\treturn nil\n\t\t}\n\t\tnext := e.next()\n\t\ttime.Sleep(next)\n\t}\n\treturn err\n}",
+    "funcname": "Retry"
+}

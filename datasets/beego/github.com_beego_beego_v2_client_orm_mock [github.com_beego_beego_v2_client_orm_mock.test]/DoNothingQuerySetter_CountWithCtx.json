@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 32,
+    "focalfunc": "func (d *DoNothingQuerySetter) CountWithCtx(ctx context.Context) (int64, error)",
+    "funcbody": "func (d *DoNothingQuerySetter) CountWithCtx(ctx context.Context) (int64, error) {\n\treturn 0, nil\n}",
+    "funcname": "CountWithCtx"
+}

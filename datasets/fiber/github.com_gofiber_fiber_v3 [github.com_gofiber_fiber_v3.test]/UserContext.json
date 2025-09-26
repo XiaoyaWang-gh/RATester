@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 393,
+    "focalfunc": "func (c *DefaultCtx) UserContext() context.Context",
+    "funcbody": "func (c *DefaultCtx) UserContext() context.Context {\n\tctx, ok := c.fasthttp.UserValue(userContextKey).(context.Context)\n\tif !ok {\n\t\tctx = context.Background()\n\t\tc.SetUserContext(ctx)\n\t}\n\n\treturn ctx\n}",
+    "funcname": "UserContext"
+}

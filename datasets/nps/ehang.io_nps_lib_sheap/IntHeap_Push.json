@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/sheap/heap.go",
+    "lineno": 9,
+    "focalfunc": "func (h *IntHeap) Push(x interface{})",
+    "funcbody": "func (h *IntHeap) Push(x interface{}) {\n\n\t*h = append(*h, x.(int64))\n}",
+    "funcname": "Push"
+}

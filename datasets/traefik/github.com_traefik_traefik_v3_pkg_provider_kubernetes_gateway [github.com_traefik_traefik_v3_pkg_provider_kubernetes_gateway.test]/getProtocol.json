@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/httproute.go",
+    "lineno": 705,
+    "focalfunc": "func getProtocol(portSpec corev1.ServicePort) string",
+    "funcbody": "func getProtocol(portSpec corev1.ServicePort) string {\n\tprotocol := \"http\"\n\tif portSpec.Port == 443 || strings.HasPrefix(portSpec.Name, \"https\") {\n\t\tprotocol = \"https\"\n\t}\n\n\treturn protocol\n}",
+    "funcname": "getProtocol"
+}

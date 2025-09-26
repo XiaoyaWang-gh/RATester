@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/cli/deprecation.go",
+    "lineno": 159,
+    "focalfunc": "func findTypedField(rType reflect.Type, node *parser.Node) (reflect.StructField, bool)",
+    "funcbody": "func findTypedField(rType reflect.Type, node *parser.Node) (reflect.StructField, bool) {\n\n\tif rType.Kind() != reflect.Struct {\n\t\treturn reflect.StructField{}, false\n\t}\n\n\tfor i := range rType.NumField() {\n\t\tcField := rType.Field(i)\n\n\t\tif cField.PkgPath == \"\" {\n\t\t\tif strings.EqualFold(cField.Name, node.Name) {\n\t\t\t\tnode.FieldName = cField.Name\n\t\t\t\treturn cField, true\n\t\t\t}\n\t\t}\n\t}\n\n\treturn reflect.StructField{}, false\n}",
+    "funcname": "findTypedField"
+}

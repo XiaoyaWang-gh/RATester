@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/partials/partials.go",
+    "lineno": 156,
+    "focalfunc": "func (ns *Namespace) include(ctx context.Context, name string, dataList ...any) includeResult",
+    "funcbody": "func (ns *Namespace) include(ctx context.Context, name string, dataList ...any) includeResult {\n\tvar data any\n\tif len(dataList) > 0 {\n\t\tdata = dataList[0]\n\t}\n\n\tvar n string\n\tif strings.HasPrefix(name, \"partials/\") {\n\t\tn = name\n\t} else {\n\t\tn = \"partials/\" + name\n\t}\n\n\ttempl, found := ns.deps.Tmpl().Lookup(n)\n\tif !found {\n\n\t\ttempl, found = ns.deps.Tmpl().Lookup(n + \".html\")\n\t}\n\n\tif !found {\n\t\treturn includeResult{err: fmt.Errorf(\"partial %q not found\", name)}\n\t}\n\n\tvar info tpl.ParseInfo\n\tif ip, ok := templ.(tpl.Info); ok {\n\t\tinfo = ip.ParseInfo()\n\t}\n\n\tvar w io.Writer\n\n\tif info.HasReturn {\n\n\t\tdata = &contextWrapper{\n\t\t\tArg: data,\n\t\t}\n\n\t\tw = io.Discard\n\t} else {\n\t\tb := bp.GetBuffer()\n\t\tdefer bp.PutBuffer(b)\n\t\tw = b\n\t}\n\n\tif err := ns.deps.Tmpl().ExecuteWithContext(ctx, templ, w, data); err != nil {\n\t\treturn includeResult{err: err}\n\t}\n\n\tvar result any\n\n\tif ctx, ok := data.(*contextWrapper); ok {\n\t\tresult = ctx.Result\n\t} else if _, ok := templ.(*texttemplate.Template); ok {\n\t\tresult = w.(fmt.Stringer).String()\n\t} else {\n\t\tresult = template.HTML(w.(fmt.Stringer).String())\n\t}\n\n\treturn includeResult{\n\t\tname:\ttempl.Name(),\n\t\tresult:\tresult,\n\t}\n}",
+    "funcname": "include"
+}

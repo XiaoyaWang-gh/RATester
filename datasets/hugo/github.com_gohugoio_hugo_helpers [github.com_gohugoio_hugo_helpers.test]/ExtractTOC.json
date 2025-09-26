@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/content.go",
+    "lineno": 95,
+    "focalfunc": "func ExtractTOC(content []byte) (newcontent []byte, toc []byte)",
+    "funcbody": "func ExtractTOC(content []byte) (newcontent []byte, toc []byte) {\n\tif !bytes.Contains(content, []byte(\"<nav>\")) {\n\t\treturn content, nil\n\t}\n\torigContent := make([]byte, len(content))\n\tcopy(origContent, content)\n\tfirst := []byte(`<nav>\n<ul>`)\n\n\tlast := []byte(`</ul>\n</nav>`)\n\n\treplacement := []byte(`<nav id=\"TableOfContents\">\n<ul>`)\n\n\tstartOfTOC := bytes.Index(content, first)\n\n\tpeekEnd := len(content)\n\tif peekEnd > 70+startOfTOC {\n\t\tpeekEnd = 70 + startOfTOC\n\t}\n\n\tif startOfTOC < 0 {\n\t\treturn stripEmptyNav(content), toc\n\t}\n\n\tcorrectNav := bytes.Index(content[startOfTOC:peekEnd], []byte(`<li><a href=\"#`))\n\tif correctNav < 0 {\n\t\treturn content, toc\n\t}\n\tlengthOfTOC := bytes.Index(content[startOfTOC:], last) + len(last)\n\tendOfTOC := startOfTOC + lengthOfTOC\n\n\tnewcontent = append(content[:startOfTOC], content[endOfTOC:]...)\n\ttoc = append(replacement, origContent[startOfTOC+len(first):endOfTOC]...)\n\treturn\n}",
+    "funcname": "ExtractTOC"
+}

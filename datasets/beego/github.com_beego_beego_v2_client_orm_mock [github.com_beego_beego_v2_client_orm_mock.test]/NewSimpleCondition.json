@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/condition.go",
+    "lineno": 46,
+    "focalfunc": "func NewSimpleCondition(tableName string, methodName string) Condition",
+    "funcbody": "func NewSimpleCondition(tableName string, methodName string) Condition {\n\treturn &SimpleCondition{\n\t\ttableName:\ttableName,\n\t\tmethod:\t\tmethodName,\n\t}\n}",
+    "funcname": "NewSimpleCondition"
+}

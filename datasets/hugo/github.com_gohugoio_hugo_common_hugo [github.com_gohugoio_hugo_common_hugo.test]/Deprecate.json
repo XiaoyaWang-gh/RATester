@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/hugo.go",
+    "lineno": 408,
+    "focalfunc": "func Deprecate(item, alternative string, version string)",
+    "funcbody": "func Deprecate(item, alternative string, version string) {\n\tlevel := deprecationLogLevelFromVersion(version)\n\tDeprecateLevel(item, alternative, version, level)\n}",
+    "funcname": "Deprecate"
+}

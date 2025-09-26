@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/log/default.go",
+    "lineno": 74,
+    "focalfunc": "func (l *defaultLogger) privateLogw(lv Level, format string, keysAndValues []any)",
+    "funcbody": "func (l *defaultLogger) privateLogw(lv Level, format string, keysAndValues []any) {\n\tif l.level > lv {\n\t\treturn\n\t}\n\tlevel := lv.toString()\n\tbuf := bytebufferpool.Get()\n\tbuf.WriteString(level)\n\n\tif format != \"\" {\n\t\tbuf.WriteString(format)\n\t}\n\n\tif len(keysAndValues) > 0 {\n\t\tif (len(keysAndValues) & 1) == 1 {\n\t\t\tkeysAndValues = append(keysAndValues, \"KEYVALS UNPAIRED\")\n\t\t}\n\n\t\tfor i := 0; i < len(keysAndValues); i += 2 {\n\t\t\tif i > 0 || format != \"\" {\n\t\t\t\tbuf.WriteByte(' ')\n\t\t\t}\n\t\t\tbuf.WriteString(keysAndValues[i].(string))\n\t\t\tbuf.WriteByte('=')\n\t\t\tbuf.WriteString(utils.ToString(keysAndValues[i+1]))\n\t\t}\n\t}\n\n\t_ = l.stdlog.Output(l.depth, buf.String())\n\tif lv == LevelPanic {\n\t\tpanic(buf.String())\n\t}\n\tbuf.Reset()\n\tbytebufferpool.Put(buf)\n\tif lv == LevelFatal {\n\t\tos.Exit(1)\n\t}\n}",
+    "funcname": "privateLogw"
+}

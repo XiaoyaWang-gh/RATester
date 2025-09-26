@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/plugin/server/http.go",
+    "lineno": 66,
+    "focalfunc": "func (p *httpPlugin) IsSupport(op string) bool",
+    "funcbody": "func (p *httpPlugin) IsSupport(op string) bool {\n\tfor _, v := range p.options.Ops {\n\t\tif v == op {\n\t\t\treturn true\n\t\t}\n\t}\n\treturn false\n}",
+    "funcname": "IsSupport"
+}

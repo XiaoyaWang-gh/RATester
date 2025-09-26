@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/cache/file.go",
+    "lineno": 125,
+    "focalfunc": "func (fc *FileCache) getCacheFileName(key string) (string, error)",
+    "funcbody": "func (fc *FileCache) getCacheFileName(key string) (string, error) {\n\tm := md5.New()\n\t_, _ = io.WriteString(m, key)\n\tkeyMd5 := hex.EncodeToString(m.Sum(nil))\n\tcachePath := fc.CachePath\n\tswitch fc.DirectoryLevel {\n\tcase 2:\n\t\tcachePath = filepath.Join(cachePath, keyMd5[0:2], keyMd5[2:4])\n\tcase 1:\n\t\tcachePath = filepath.Join(cachePath, keyMd5[0:2])\n\t}\n\tok, err := exists(cachePath)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\tif !ok {\n\t\terr = os.MkdirAll(cachePath, os.ModePerm)\n\t\tif err != nil {\n\t\t\treturn \"\", berror.Wrapf(err, CreateFileCacheDirFailed,\n\t\t\t\t\"could not create the directory: %s\", cachePath)\n\t\t}\n\t}\n\n\treturn filepath.Join(cachePath, fmt.Sprintf(\"%s%s\", keyMd5, fc.FileSuffix)), nil\n}",
+    "funcname": "getCacheFileName"
+}

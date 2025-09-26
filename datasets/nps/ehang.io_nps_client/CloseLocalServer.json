@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/client/local.go",
+    "lineno": 56,
+    "focalfunc": "func CloseLocalServer()",
+    "funcbody": "func CloseLocalServer() {\n\tfor _, v := range LocalServer {\n\t\tv.Close()\n\t}\n\tfor _, v := range fileServer {\n\t\tv.Close()\n\t}\n}",
+    "funcname": "CloseLocalServer"
+}

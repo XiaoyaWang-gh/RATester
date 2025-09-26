@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 918,
+    "focalfunc": "func createDigestAuthMiddleware(client Client, namespace string, digestAuth *traefikv1alpha1.DigestAuth) (*dynamic.DigestAuth, error)",
+    "funcbody": "func createDigestAuthMiddleware(client Client, namespace string, digestAuth *traefikv1alpha1.DigestAuth) (*dynamic.DigestAuth, error) {\n\tif digestAuth == nil {\n\t\treturn nil, nil\n\t}\n\n\tif digestAuth.Secret == \"\" {\n\t\treturn nil, errors.New(\"auth secret must be set\")\n\t}\n\n\tsecret, ok, err := client.GetSecret(namespace, digestAuth.Secret)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to fetch secret '%s/%s': %w\", namespace, digestAuth.Secret, err)\n\t}\n\tif !ok {\n\t\treturn nil, fmt.Errorf(\"secret '%s/%s' not found\", namespace, digestAuth.Secret)\n\t}\n\tif secret == nil {\n\t\treturn nil, fmt.Errorf(\"data for secret '%s/%s' must not be nil\", namespace, digestAuth.Secret)\n\t}\n\n\tcredentials, err := loadAuthCredentials(secret)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to load digest auth credentials: %w\", err)\n\t}\n\n\treturn &dynamic.DigestAuth{\n\t\tUsers:\t\tcredentials,\n\t\tRealm:\t\tdigestAuth.Realm,\n\t\tRemoveHeader:\tdigestAuth.RemoveHeader,\n\t\tHeaderField:\tdigestAuth.HeaderField,\n\t}, nil\n}",
+    "funcname": "createDigestAuthMiddleware"
+}

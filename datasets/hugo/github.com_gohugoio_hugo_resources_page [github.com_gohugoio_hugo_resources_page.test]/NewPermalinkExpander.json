@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/permalinks.go",
+    "lineno": 75,
+    "focalfunc": "func NewPermalinkExpander(urlize func(uri string) string, patterns map[string]map[string]string) (PermalinkExpander, error)",
+    "funcbody": "func NewPermalinkExpander(urlize func(uri string) string, patterns map[string]map[string]string) (PermalinkExpander, error) {\n\tp := PermalinkExpander{\n\t\turlize:\t\turlize,\n\t\tpatternCache:\tmaps.NewCache[string, func(Page) (string, error)](),\n\t}\n\n\tp.knownPermalinkAttributes = map[string]pageToPermaAttribute{\n\t\t\"year\":\t\t\tp.pageToPermalinkDate,\n\t\t\"month\":\t\tp.pageToPermalinkDate,\n\t\t\"monthname\":\t\tp.pageToPermalinkDate,\n\t\t\"day\":\t\t\tp.pageToPermalinkDate,\n\t\t\"weekday\":\t\tp.pageToPermalinkDate,\n\t\t\"weekdayname\":\t\tp.pageToPermalinkDate,\n\t\t\"yearday\":\t\tp.pageToPermalinkDate,\n\t\t\"section\":\t\tp.pageToPermalinkSection,\n\t\t\"sections\":\t\tp.pageToPermalinkSections,\n\t\t\"title\":\t\tp.pageToPermalinkTitle,\n\t\t\"slug\":\t\t\tp.pageToPermalinkSlugElseTitle,\n\t\t\"slugorfilename\":\tp.pageToPermalinkSlugElseFilename,\n\t\t\"filename\":\t\tp.pageToPermalinkFilename,\n\t}\n\n\tp.expanders = make(map[string]map[string]func(Page) (string, error))\n\n\tfor kind, patterns := range patterns {\n\t\te, err := p.parse(patterns)\n\t\tif err != nil {\n\t\t\treturn p, err\n\t\t}\n\t\tp.expanders[kind] = e\n\t}\n\n\treturn p, nil\n}",
+    "funcname": "NewPermalinkExpander"
+}

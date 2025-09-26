@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/healthcheck/healthcheck.go",
+    "lineno": 184,
+    "focalfunc": "func (shc *ServiceHealthChecker) newRequest(ctx context.Context, target *url.URL) (*http.Request, error)",
+    "funcbody": "func (shc *ServiceHealthChecker) newRequest(ctx context.Context, target *url.URL) (*http.Request, error) {\n\tu, err := target.Parse(shc.config.Path)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tif len(shc.config.Scheme) > 0 {\n\t\tu.Scheme = shc.config.Scheme\n\t}\n\n\tif shc.config.Port != 0 {\n\t\tu.Host = net.JoinHostPort(u.Hostname(), strconv.Itoa(shc.config.Port))\n\t}\n\n\treq, err := http.NewRequestWithContext(ctx, shc.config.Method, u.String(), http.NoBody)\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to create HTTP request: %w\", err)\n\t}\n\n\tif shc.config.Hostname != \"\" {\n\t\treq.Host = shc.config.Hostname\n\t}\n\n\tfor k, v := range shc.config.Headers {\n\t\treq.Header.Set(k, v)\n\t}\n\n\treturn req, nil\n}",
+    "funcname": "newRequest"
+}

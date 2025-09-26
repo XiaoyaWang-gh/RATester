@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/docker/shared_labels.go",
+    "lineno": 58,
+    "focalfunc": "func getStringValue(labels map[string]string, labelName, defaultValue string) string",
+    "funcbody": "func getStringValue(labels map[string]string, labelName, defaultValue string) string {\n\tif value, ok := labels[labelName]; ok && len(value) > 0 {\n\t\treturn value\n\t}\n\treturn defaultValue\n}",
+    "funcname": "getStringValue"
+}

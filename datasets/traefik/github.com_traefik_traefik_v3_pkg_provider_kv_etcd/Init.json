@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/etcd/etcd.go",
+    "lineno": 32,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\tconfig := &etcdv3.Config{\n\t\tConnectionTimeout:\t3 * time.Second,\n\t\tUsername:\t\tp.Username,\n\t\tPassword:\t\tp.Password,\n\t}\n\n\tif p.TLS != nil {\n\t\tvar err error\n\t\tconfig.TLS, err = p.TLS.CreateTLSConfig(context.Background())\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"unable to create client TLS configuration: %w\", err)\n\t\t}\n\t}\n\n\treturn p.Provider.Init(etcdv3.StoreName, \"etcd\", config)\n}",
+    "funcname": "Init"
+}

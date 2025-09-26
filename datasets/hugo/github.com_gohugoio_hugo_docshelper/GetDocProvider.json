@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/docshelper/docs.go",
+    "lineno": 31,
+    "focalfunc": "func GetDocProvider() DocProvider",
+    "funcbody": "func GetDocProvider() DocProvider {\n\tprovider := make(DocProvider)\n\n\tfor _, fn := range docProviderFuncs {\n\t\tp := fn()\n\t\tfor k, v := range p {\n\t\t\tif _, found := provider[k]; found {\n\n\t\t\t\tpanic(fmt.Sprintf(\"Duplicate doc provider key: %q\", k))\n\t\t\t}\n\t\t\tprovider[k] = v\n\t\t}\n\t}\n\n\treturn provider\n}",
+    "funcname": "GetDocProvider"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/parse/node.go",
+    "lineno": 361,
+    "focalfunc": "func (i *IdentifierNode) SetPos(pos Pos) *IdentifierNode",
+    "funcbody": "func (i *IdentifierNode) SetPos(pos Pos) *IdentifierNode {\n\ti.Pos = pos\n\treturn i\n}",
+    "funcname": "SetPos"
+}

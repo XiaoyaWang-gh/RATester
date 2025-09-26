@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/cache.go",
+    "lineno": 18,
+    "focalfunc": "func newCache() *cache",
+    "funcbody": "func newCache() *cache {\n\tc := cache{\n\t\tm:\t\tmake(map[reflect.Type]*structInfo),\n\t\tregconv:\tmake(map[reflect.Type]Converter),\n\t\ttag:\t\t\"schema\",\n\t}\n\treturn &c\n}",
+    "funcname": "newCache"
+}

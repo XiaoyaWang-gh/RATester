@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 332,
+    "focalfunc": "func GetEnvMap() map[string]string",
+    "funcbody": "func GetEnvMap() map[string]string {\n\tm := make(map[string]string)\n\tenviron := os.Environ()\n\tfor i := range environ {\n\t\ttmp := strings.Split(environ[i], \"=\")\n\t\tif len(tmp) == 2 {\n\t\t\tm[tmp[0]] = tmp[1]\n\t\t}\n\t}\n\treturn m\n}",
+    "funcname": "GetEnvMap"
+}

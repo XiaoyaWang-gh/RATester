@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/kv.go",
+    "lineno": 37,
+    "focalfunc": "func (p *Provider) Init(storeType, name string, config valkeyrie.Config) error",
+    "funcbody": "func (p *Provider) Init(storeType, name string, config valkeyrie.Config) error {\n\tctx := log.With().Str(logs.ProviderName, name).Logger().WithContext(context.Background())\n\n\tp.name = name\n\n\tkvClient, err := p.createKVClient(ctx, storeType, config)\n\tif err != nil {\n\t\treturn fmt.Errorf(\"failed to Connect to KV store: %w\", err)\n\t}\n\n\tp.kvClient = kvClient\n\n\treturn nil\n}",
+    "funcname": "Init"
+}

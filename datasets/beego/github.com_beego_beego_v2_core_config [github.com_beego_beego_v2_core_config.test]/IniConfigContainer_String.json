@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/ini.go",
+    "lineno": 302,
+    "focalfunc": "func (c *IniConfigContainer) String(key string) (string, error)",
+    "funcbody": "func (c *IniConfigContainer) String(key string) (string, error) {\n\treturn c.getdata(key), nil\n}",
+    "funcname": "String"
+}

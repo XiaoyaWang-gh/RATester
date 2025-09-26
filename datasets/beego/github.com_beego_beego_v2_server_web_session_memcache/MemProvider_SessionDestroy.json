@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/memcache/sess_memcache.go",
+    "lineno": 223,
+    "focalfunc": "func (rp *MemProvider) SessionDestroy(ctx context.Context, sid string) error",
+    "funcbody": "func (rp *MemProvider) SessionDestroy(ctx context.Context, sid string) error {\n\tif client == nil {\n\t\tif err := rp.connectInit(); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\treturn client.Delete(sid)\n}",
+    "funcname": "SessionDestroy"
+}

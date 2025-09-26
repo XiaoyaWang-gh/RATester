@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/keyauth/keyauth.go",
+    "lineno": 140,
+    "focalfunc": "func KeyFromQuery(param string) KeyLookupFunc",
+    "funcbody": "func KeyFromQuery(param string) KeyLookupFunc {\n\treturn func(c fiber.Ctx) (string, error) {\n\t\tkey := fiber.Query[string](c, param)\n\t\tif key == \"\" {\n\t\t\treturn \"\", ErrMissingOrMalformedAPIKey\n\t\t}\n\t\treturn key, nil\n\t}\n}",
+    "funcname": "KeyFromQuery"
+}

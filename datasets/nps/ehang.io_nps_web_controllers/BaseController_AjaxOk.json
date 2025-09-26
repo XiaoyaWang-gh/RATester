@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/base.go",
+    "lineno": 122,
+    "focalfunc": "func (s *BaseController) AjaxOk(str string)",
+    "funcbody": "func (s *BaseController) AjaxOk(str string) {\n\ts.Data[\"json\"] = ajax(str, 1)\n\ts.ServeJSON()\n\ts.StopRun()\n}",
+    "funcname": "AjaxOk"
+}

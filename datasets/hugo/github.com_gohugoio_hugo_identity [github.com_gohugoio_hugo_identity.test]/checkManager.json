@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 152,
+    "focalfunc": "func (f *Finder) checkManager(sid *searchID, m Manager, level int) FinderResult",
+    "funcbody": "func (f *Finder) checkManager(sid *searchID, m Manager, level int) FinderResult {\n\tif r := f.checkMaxDepth(sid, level); r >= 0 {\n\t\treturn r\n\t}\n\n\tif m == nil {\n\t\treturn FinderNotFound\n\t}\n\tif sid.seen[m] {\n\t\treturn FinderNotFound\n\t}\n\tsid.seen[m] = true\n\n\tf.muAnswers.RLock()\n\tr, ok := f.answers[ManagerIdentity{Manager: m, Identity: sid.id}]\n\tf.muAnswers.RUnlock()\n\tif ok {\n\t\treturn r\n\t}\n\n\tr = f.search(sid, m, level)\n\n\tif r == FinderFoundOneOfMany {\n\n\t\treturn r\n\t}\n\n\tf.muAnswers.Lock()\n\tf.answers[ManagerIdentity{Manager: m, Identity: sid.id}] = r\n\tf.muAnswers.Unlock()\n\n\treturn r\n}",
+    "funcname": "checkManager"
+}

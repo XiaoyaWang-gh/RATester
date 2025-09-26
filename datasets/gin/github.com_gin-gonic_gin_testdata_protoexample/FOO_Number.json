@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/testdata/protoexample/test.pb.go",
+    "lineno": 57,
+    "focalfunc": "func (x FOO) Number() protoreflect.EnumNumber",
+    "funcbody": "func (x FOO) Number() protoreflect.EnumNumber {\n\treturn protoreflect.EnumNumber(x)\n}",
+    "funcname": "Number"
+}

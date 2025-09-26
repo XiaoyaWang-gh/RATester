@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/listen.go",
+    "lineno": 472,
+    "focalfunc": "func (app *App) gracefulShutdown(ctx context.Context, cfg ListenConfig)",
+    "funcbody": "func (app *App) gracefulShutdown(ctx context.Context, cfg ListenConfig) {\n\t<-ctx.Done()\n\n\tif err := app.Shutdown(); err != nil {\n\t\tcfg.OnShutdownError(err)\n\t}\n\n\tif success := cfg.OnShutdownSuccess; success != nil {\n\t\tsuccess()\n\t}\n}",
+    "funcname": "gracefulShutdown"
+}

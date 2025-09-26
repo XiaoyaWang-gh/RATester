@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/integrationtest_builder.go",
+    "lineno": 820,
+    "focalfunc": "func (s *IntegrationTestBuilder) writeSource(filename, content string)",
+    "funcbody": "func (s *IntegrationTestBuilder) writeSource(filename, content string) {\n\ts.Helper()\n\ts.writeToFs(s.fs.Source, filename, content)\n}",
+    "funcname": "writeSource"
+}

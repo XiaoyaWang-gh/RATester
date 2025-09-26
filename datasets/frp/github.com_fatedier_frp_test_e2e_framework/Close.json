@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/mockservers.go",
+    "lineno": 62,
+    "focalfunc": "func (m *MockServers) Close()",
+    "funcbody": "func (m *MockServers) Close() {\n\tm.tcpEchoServer.Close()\n\tm.udpEchoServer.Close()\n\tm.udsEchoServer.Close()\n\tm.httpSimpleServer.Close()\n\tos.Remove(m.udsEchoServer.BindAddr())\n}",
+    "funcname": "Close"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/diagrams/goat.go",
+    "lineno": 39,
+    "focalfunc": "func (d goatDiagram) Width() int",
+    "funcbody": "func (d goatDiagram) Width() int {\n\treturn d.d.Width\n}",
+    "funcname": "Width"
+}

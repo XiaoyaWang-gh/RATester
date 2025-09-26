@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/traefikio/v1alpha1/register.go",
+    "lineno": 29,
+    "focalfunc": "func Resource(resource string) kschema.GroupResource",
+    "funcbody": "func Resource(resource string) kschema.GroupResource {\n\treturn SchemeGroupVersion.WithResource(resource).GroupResource()\n}",
+    "funcname": "Resource"
+}

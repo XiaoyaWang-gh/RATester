@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/scripts/fork_go_templates/main.go",
+    "lineno": 151,
+    "focalfunc": "func must(err error, what ...string)",
+    "funcbody": "func must(err error, what ...string) {\n\tif err != nil {\n\t\tlog.Fatal(what, \" ERROR: \", err)\n\t}\n}",
+    "funcname": "must"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models_fields.go",
+    "lineno": 670,
+    "focalfunc": "func (e *TextField) Set(d string)",
+    "funcbody": "func (e *TextField) Set(d string) {\n\t*e = TextField(d)\n}",
+    "funcname": "Set"
+}

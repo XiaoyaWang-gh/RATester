@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/navigation/menu.go",
+    "lineno": 51,
+    "focalfunc": "func (m *MenuEntry) URL() string",
+    "funcbody": "func (m *MenuEntry) URL() string {\n\n\tif !types.IsNil(m.Page) {\n\t\treturn m.Page.RelPermalink()\n\t}\n\n\treturn m.ConfiguredURL\n}",
+    "funcname": "URL"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/jwt.go",
+    "lineno": 158,
+    "focalfunc": "func JWT(key interface{}) echo.MiddlewareFunc",
+    "funcbody": "func JWT(key interface{}) echo.MiddlewareFunc {\n\tc := DefaultJWTConfig\n\tc.SigningKey = key\n\treturn JWTWithConfig(c)\n}",
+    "funcname": "JWT"
+}

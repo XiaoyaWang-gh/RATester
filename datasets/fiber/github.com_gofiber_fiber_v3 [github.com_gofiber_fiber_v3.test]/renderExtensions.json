@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1415,
+    "focalfunc": "func (c *DefaultCtx) renderExtensions(bind any)",
+    "funcbody": "func (c *DefaultCtx) renderExtensions(bind any) {\n\tif bindMap, ok := bind.(Map); ok {\n\n\t\tc.viewBindMap.Range(func(key, value any) bool {\n\t\t\tkeyValue, ok := key.(string)\n\t\t\tif !ok {\n\t\t\t\treturn true\n\t\t\t}\n\t\t\tif _, ok := bindMap[keyValue]; !ok {\n\t\t\t\tbindMap[keyValue] = value\n\t\t\t}\n\t\t\treturn true\n\t\t})\n\n\t\tif c.app.config.PassLocalsToViews {\n\n\t\t\tc.fasthttp.VisitUserValues(func(key []byte, val any) {\n\n\t\t\t\tif _, ok := bindMap[c.app.getString(key)]; !ok {\n\n\t\t\t\t\tbindMap[c.app.getString(key)] = val\n\t\t\t\t}\n\t\t\t})\n\t\t}\n\t}\n\n\tif len(c.app.mountFields.appListKeys) == 0 {\n\t\tc.app.generateAppListKeys()\n\t}\n}",
+    "funcname": "renderExtensions"
+}

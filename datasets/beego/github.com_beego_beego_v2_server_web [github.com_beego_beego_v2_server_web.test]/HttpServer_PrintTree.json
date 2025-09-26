@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 896,
+    "focalfunc": "func (app *HttpServer) PrintTree() M",
+    "funcbody": "func (app *HttpServer) PrintTree() M {\n\tvar (\n\t\tcontent\t\t= M{}\n\t\tmethods\t\t= []string{}\n\t\tmethodsData\t= make(M)\n\t)\n\tfor method, t := range app.Handlers.routers {\n\n\t\tresultList := new([][]string)\n\n\t\tprintTree(resultList, t)\n\n\t\tmethods = append(methods, template.HTMLEscapeString(method))\n\t\tmethodsData[template.HTMLEscapeString(method)] = resultList\n\t}\n\n\tcontent[\"Data\"] = methodsData\n\tcontent[\"Methods\"] = methods\n\treturn content\n}",
+    "funcname": "PrintTree"
+}

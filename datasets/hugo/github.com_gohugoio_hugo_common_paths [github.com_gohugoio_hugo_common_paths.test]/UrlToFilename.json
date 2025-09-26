@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/url.go",
+    "lineno": 164,
+    "focalfunc": "func UrlToFilename(s string) (string, bool)",
+    "funcbody": "func UrlToFilename(s string) (string, bool) {\n\tu, err := url.ParseRequestURI(s)\n\tif err != nil {\n\t\treturn filepath.FromSlash(s), false\n\t}\n\n\tp := u.Path\n\n\tif p == \"\" {\n\t\tp, _ = url.QueryUnescape(u.Opaque)\n\t\treturn filepath.FromSlash(p), true\n\t}\n\n\tp = filepath.FromSlash(p)\n\n\tif u.Host != \"\" {\n\n\t\tp = strings.ToUpper(u.Host) + \":\" + p\n\t}\n\n\treturn p, true\n}",
+    "funcname": "UrlToFilename"
+}

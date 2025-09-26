@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/context.go",
+    "lineno": 80,
+    "focalfunc": "func (ctx *Context) Bind(obj interface{}) error",
+    "funcbody": "func (ctx *Context) Bind(obj interface{}) error {\n\tct, exist := ctx.Request.Header[\"Content-Type\"]\n\tif !exist || len(ct) == 0 {\n\t\treturn ctx.BindJSON(obj)\n\t}\n\ti, l := 0, len(ct[0])\n\tfor i < l && ct[0][i] != ';' {\n\t\ti++\n\t}\n\tswitch ct[0][0:i] {\n\tcase ApplicationJSON:\n\t\treturn ctx.BindJSON(obj)\n\tcase ApplicationXML, TextXML:\n\t\treturn ctx.BindXML(obj)\n\tcase ApplicationForm:\n\t\treturn ctx.BindForm(obj)\n\tcase ApplicationProto:\n\t\treturn ctx.BindProtobuf(obj.(proto.Message))\n\tcase ApplicationYAML:\n\t\treturn ctx.BindYAML(obj)\n\tdefault:\n\t\treturn errors.New(\"Unsupported Content-Type:\" + ct[0])\n\t}\n}",
+    "funcname": "Bind"
+}

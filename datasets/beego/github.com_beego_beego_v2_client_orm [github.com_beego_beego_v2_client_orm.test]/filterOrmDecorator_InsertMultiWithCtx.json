@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/filter_orm_decorator.go",
+    "lineno": 307,
+    "focalfunc": "func (f *filterOrmDecorator) InsertMultiWithCtx(ctx context.Context, bulk int, mds interface{}) (int64, error)",
+    "funcbody": "func (f *filterOrmDecorator) InsertMultiWithCtx(ctx context.Context, bulk int, mds interface{}) (int64, error) {\n\tvar (\n\t\tmd\tinterface{}\n\t\tmi\t*models.ModelInfo\n\t)\n\n\tsind := reflect.Indirect(reflect.ValueOf(mds))\n\n\tif (sind.Kind() == reflect.Array || sind.Kind() == reflect.Slice) && sind.Len() > 0 {\n\t\tind := reflect.Indirect(sind.Index(0))\n\t\tmd = ind.Interface()\n\t\tmi, _ = defaultModelCache.GetByMd(md)\n\t}\n\n\tinv := &Invocation{\n\t\tMethod:\t\t\"InsertMultiWithCtx\",\n\t\tArgs:\t\t[]interface{}{bulk, mds},\n\t\tMd:\t\tmd,\n\t\tmi:\t\tmi,\n\t\tInsideTx:\tf.insideTx,\n\t\tTxStartTime:\tf.txStartTime,\n\t\tf: func(c context.Context) []interface{} {\n\t\t\tres, err := f.ormer.InsertMultiWithCtx(c, bulk, mds)\n\t\t\treturn []interface{}{res, err}\n\t\t},\n\t}\n\tres := f.root(ctx, inv)\n\treturn res[0].(int64), f.convertError(res[1])\n}",
+    "funcname": "InsertMultiWithCtx"
+}

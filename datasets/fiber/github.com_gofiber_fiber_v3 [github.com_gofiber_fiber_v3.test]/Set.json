@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 1673,
+    "focalfunc": "func (c *DefaultCtx) Set(key, val string)",
+    "funcbody": "func (c *DefaultCtx) Set(key, val string) {\n\tc.fasthttp.Response.Header.Set(key, val)\n}",
+    "funcname": "Set"
+}

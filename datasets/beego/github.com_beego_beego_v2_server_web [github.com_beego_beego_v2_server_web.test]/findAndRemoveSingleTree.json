@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 412,
+    "focalfunc": "func findAndRemoveSingleTree(entryPointTree *Tree)",
+    "funcbody": "func findAndRemoveSingleTree(entryPointTree *Tree) {\n\tif entryPointTree == nil {\n\t\treturn\n\t}\n\tif len(entryPointTree.fixrouters) > 0 {\n\n\t\tif len(entryPointTree.leaves) > 0 {\n\t\t\tentryPointTree.leaves[0] = nil\n\t\t\tentryPointTree.leaves = entryPointTree.leaves[1:]\n\t\t}\n\t}\n}",
+    "funcname": "findAndRemoveSingleTree"
+}

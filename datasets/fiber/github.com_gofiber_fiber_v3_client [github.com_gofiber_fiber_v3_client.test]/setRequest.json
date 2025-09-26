@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/client/response.go",
+    "lineno": 34,
+    "focalfunc": "func (r *Response) setRequest(req *Request)",
+    "funcbody": "func (r *Response) setRequest(req *Request) {\n\tr.request = req\n}",
+    "funcname": "setRequest"
+}

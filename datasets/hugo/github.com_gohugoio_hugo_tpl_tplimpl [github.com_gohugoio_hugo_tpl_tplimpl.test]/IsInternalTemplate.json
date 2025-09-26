@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template.go",
+    "lineno": 1109,
+    "focalfunc": "func (t *templateState) IsInternalTemplate() bool",
+    "funcbody": "func (t *templateState) IsInternalTemplate() bool {\n\treturn t.info.isEmbedded\n}",
+    "funcname": "IsInternalTemplate"
+}

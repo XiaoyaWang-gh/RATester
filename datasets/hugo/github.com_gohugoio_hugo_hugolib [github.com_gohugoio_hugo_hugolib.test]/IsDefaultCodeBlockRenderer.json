@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 941,
+    "focalfunc": "func (hr hookRendererTemplate) IsDefaultCodeBlockRenderer() bool",
+    "funcbody": "func (hr hookRendererTemplate) IsDefaultCodeBlockRenderer() bool {\n\treturn false\n}",
+    "funcname": "IsDefaultCodeBlockRenderer"
+}

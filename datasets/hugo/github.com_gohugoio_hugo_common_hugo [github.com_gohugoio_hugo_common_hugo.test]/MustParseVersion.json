@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/hugo/version.go",
+    "lineno": 105,
+    "focalfunc": "func MustParseVersion(s string) Version",
+    "funcbody": "func MustParseVersion(s string) Version {\n\tvv, err := ParseVersion(s)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn vv\n}",
+    "funcname": "MustParseVersion"
+}

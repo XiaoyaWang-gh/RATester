@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/tailscale/provider.go",
+    "lineno": 303,
+    "focalfunc": "func sanitizeDomains(ctx context.Context, domains []string) []string",
+    "funcbody": "func sanitizeDomains(ctx context.Context, domains []string) []string {\n\tlogger := log.Ctx(ctx)\n\n\tseen := map[string]struct{}{}\n\n\tvar sanitizedDomains []string\n\tfor _, domain := range domains {\n\t\tif _, ok := seen[domain]; ok {\n\t\t\tcontinue\n\t\t}\n\n\t\tif !isTailscaleDomain(domain) {\n\t\t\tlogger.Error().Msgf(\"Domain %s is not a valid Tailscale domain\", domain)\n\t\t\tcontinue\n\t\t}\n\n\t\tsanitizedDomains = append(sanitizedDomains, domain)\n\t\tseen[domain] = struct{}{}\n\t}\n\treturn sanitizedDomains\n}",
+    "funcname": "sanitizeDomains"
+}

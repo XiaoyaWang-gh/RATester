@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/httpserver/server.go",
+    "lineno": 34,
+    "focalfunc": "func WithBindAddr(addr string) Option",
+    "funcbody": "func WithBindAddr(addr string) Option {\n\treturn func(s *Server) *Server {\n\t\ts.bindAddr = addr\n\t\treturn s\n\t}\n}",
+    "funcname": "WithBindAddr"
+}

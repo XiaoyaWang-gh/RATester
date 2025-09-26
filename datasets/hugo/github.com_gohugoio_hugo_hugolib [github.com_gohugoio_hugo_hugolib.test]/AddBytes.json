@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page__content.go",
+    "lineno": 210,
+    "focalfunc": "func (p *contentParseInfo) AddBytes(item pageparser.Item)",
+    "funcbody": "func (p *contentParseInfo) AddBytes(item pageparser.Item) {\n\tp.itemsStep2 = append(p.itemsStep2, item)\n}",
+    "funcname": "AddBytes"
+}

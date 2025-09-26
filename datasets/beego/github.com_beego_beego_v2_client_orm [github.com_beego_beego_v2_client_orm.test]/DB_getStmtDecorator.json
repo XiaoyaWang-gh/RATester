@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/db_alias.go",
+    "lineno": 129,
+    "focalfunc": "func (d *DB) getStmtDecorator(query string) (*stmtDecorator, error)",
+    "funcbody": "func (d *DB) getStmtDecorator(query string) (*stmtDecorator, error) {\n\td.RLock()\n\tc, ok := d.stmtDecorators.Get(query)\n\tif ok {\n\t\tc.(*stmtDecorator).acquire()\n\t\td.RUnlock()\n\t\treturn c.(*stmtDecorator), nil\n\t}\n\td.RUnlock()\n\n\td.Lock()\n\tc, ok = d.stmtDecorators.Get(query)\n\tif ok {\n\t\tc.(*stmtDecorator).acquire()\n\t\td.Unlock()\n\t\treturn c.(*stmtDecorator), nil\n\t}\n\n\tstmt, err := d.Prepare(query)\n\tif err != nil {\n\t\td.Unlock()\n\t\treturn nil, err\n\t}\n\tsd := newStmtDecorator(stmt)\n\tsd.acquire()\n\td.stmtDecorators.Add(query, sd)\n\td.Unlock()\n\n\treturn sd, nil\n}",
+    "funcname": "getStmtDecorator"
+}

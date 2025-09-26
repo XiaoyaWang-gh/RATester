@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagemeta/page_frontmatter.go",
+    "lineno": 219,
+    "focalfunc": "func MarkupToMediaType(s string, mediaTypes media.Types) media.Type",
+    "funcbody": "func MarkupToMediaType(s string, mediaTypes media.Types) media.Type {\n\ts = strings.ToLower(s)\n\tmt, _ := mediaTypes.GetBestMatch(markup.ResolveMarkup(s))\n\treturn mt\n}",
+    "funcname": "MarkupToMediaType"
+}

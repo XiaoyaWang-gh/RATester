@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 827,
+    "focalfunc": "func (b *beegoAppConfig) DefaultStrings(key string, defaultVal []string) []string",
+    "funcbody": "func (b *beegoAppConfig) DefaultStrings(key string, defaultVal []string) []string {\n\tif v, err := b.Strings(key); len(v) != 0 && err == nil {\n\t\treturn v\n\t}\n\treturn defaultVal\n}",
+    "funcname": "DefaultStrings"
+}

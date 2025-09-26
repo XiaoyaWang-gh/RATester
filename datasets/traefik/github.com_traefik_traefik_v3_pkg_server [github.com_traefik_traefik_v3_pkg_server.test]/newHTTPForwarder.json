@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/server/server_entrypoint_tcp.go",
+    "lineno": 73,
+    "focalfunc": "func newHTTPForwarder(ln net.Listener) *httpForwarder",
+    "funcbody": "func newHTTPForwarder(ln net.Listener) *httpForwarder {\n\treturn &httpForwarder{\n\t\tListener:\tln,\n\t\tconnChan:\tmake(chan net.Conn),\n\t\terrChan:\tmake(chan error),\n\t}\n}",
+    "funcname": "newHTTPForwarder"
+}

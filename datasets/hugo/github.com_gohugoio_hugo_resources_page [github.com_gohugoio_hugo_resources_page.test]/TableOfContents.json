@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_nop.go",
+    "lineno": 494,
+    "focalfunc": "func (p *nopPage) TableOfContents(context.Context) template.HTML",
+    "funcbody": "func (p *nopPage) TableOfContents(context.Context) template.HTML {\n\treturn \"\"\n}",
+    "funcname": "TableOfContents"
+}

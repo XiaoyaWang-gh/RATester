@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/js.go",
+    "lineno": 432,
+    "focalfunc": "func isJSIdentPart(r rune) bool",
+    "funcbody": "func isJSIdentPart(r rune) bool {\n\tswitch {\n\tcase r == '$':\n\t\treturn true\n\tcase '0' <= r && r <= '9':\n\t\treturn true\n\tcase 'A' <= r && r <= 'Z':\n\t\treturn true\n\tcase r == '_':\n\t\treturn true\n\tcase 'a' <= r && r <= 'z':\n\t\treturn true\n\t}\n\treturn false\n}",
+    "funcname": "isJSIdentPart"
+}

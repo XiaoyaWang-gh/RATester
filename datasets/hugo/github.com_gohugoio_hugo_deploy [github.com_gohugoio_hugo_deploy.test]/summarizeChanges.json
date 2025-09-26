@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/deploy.go",
+    "lineno": 302,
+    "focalfunc": "func summarizeChanges(uploads []*fileToUpload, deletes []string) string",
+    "funcbody": "func summarizeChanges(uploads []*fileToUpload, deletes []string) string {\n\tuploadSize := int64(0)\n\tfor _, u := range uploads {\n\t\tuploadSize += u.Local.UploadSize\n\t}\n\treturn fmt.Sprintf(\"Identified %d file(s) to upload, totaling %s, and %d file(s) to delete.\", len(uploads), humanize.Bytes(uint64(uploadSize)), len(deletes))\n}",
+    "funcname": "summarizeChanges"
+}

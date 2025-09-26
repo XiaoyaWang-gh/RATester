@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_map_page.go",
+    "lineno": 219,
+    "focalfunc": "func (t *pageTrees) DeletePageAndResourcesBelow(ss ...string)",
+    "funcbody": "func (t *pageTrees) DeletePageAndResourcesBelow(ss ...string) {\n\tcommit1 := t.resourceTrees.Lock(true)\n\tdefer commit1()\n\tcommit2 := t.treePages.Lock(true)\n\tdefer commit2()\n\tfor _, s := range ss {\n\t\tt.resourceTrees.DeletePrefix(paths.AddTrailingSlash(s))\n\t\tt.treePages.Delete(s)\n\t}\n}",
+    "funcname": "DeletePageAndResourcesBelow"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/file_error.go",
+    "lineno": 171,
+    "focalfunc": "func NewFileError(err error) FileError",
+    "funcbody": "func NewFileError(err error) FileError {\n\n\tfileType, pos := extractFileTypePos(err)\n\treturn &fileError{cause: err, fileType: fileType, position: pos}\n}",
+    "funcname": "NewFileError"
+}

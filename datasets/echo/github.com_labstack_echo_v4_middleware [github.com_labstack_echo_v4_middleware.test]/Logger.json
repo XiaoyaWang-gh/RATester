@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/middleware/logger.go",
+    "lineno": 89,
+    "focalfunc": "func Logger() echo.MiddlewareFunc",
+    "funcbody": "func Logger() echo.MiddlewareFunc {\n\treturn LoggerWithConfig(DefaultLoggerConfig)\n}",
+    "funcname": "Logger"
+}

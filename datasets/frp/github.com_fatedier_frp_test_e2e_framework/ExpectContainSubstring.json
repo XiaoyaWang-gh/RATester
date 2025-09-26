@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/expect.go",
+    "lineno": 46,
+    "focalfunc": "func ExpectContainSubstring(actual, substr string, explain ...interface{})",
+    "funcbody": "func ExpectContainSubstring(actual, substr string, explain ...interface{}) {\n\tgomega.ExpectWithOffset(1, actual).To(gomega.ContainSubstring(substr), explain...)\n}",
+    "funcname": "ExpectContainSubstring"
+}

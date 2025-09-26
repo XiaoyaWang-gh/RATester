@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 241,
+    "focalfunc": "func ExpandValueEnvForMap(m map[string]interface{}) map[string]interface{}",
+    "funcbody": "func ExpandValueEnvForMap(m map[string]interface{}) map[string]interface{} {\n\tfor k, v := range m {\n\t\tswitch value := v.(type) {\n\t\tcase string:\n\t\t\tm[k] = ExpandValueEnv(value)\n\t\tcase map[string]interface{}:\n\t\t\tm[k] = ExpandValueEnvForMap(value)\n\t\tcase map[string]string:\n\t\t\tfor k2, v2 := range value {\n\t\t\t\tvalue[k2] = ExpandValueEnv(v2)\n\t\t\t}\n\t\t\tm[k] = value\n\t\tcase map[interface{}]interface{}:\n\t\t\ttmp := make(map[string]interface{}, len(value))\n\t\t\tfor k2, v2 := range value {\n\t\t\t\ttmp[k2.(string)] = v2\n\t\t\t}\n\t\t\tm[k] = ExpandValueEnvForMap(tmp)\n\t\t}\n\t}\n\treturn m\n}",
+    "funcname": "ExpandValueEnvForMap"
+}

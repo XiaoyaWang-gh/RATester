@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/httpclient.go",
+    "lineno": 169,
+    "focalfunc": "func (c *Client) Head(value interface{}, path string, opts ...BeegoHTTPRequestOption) error",
+    "funcbody": "func (c *Client) Head(value interface{}, path string, opts ...BeegoHTTPRequestOption) error {\n\treq := Head(c.Endpoint + path)\n\tc.customReq(req, opts)\n\treturn c.handleResponse(value, req)\n}",
+    "funcname": "Head"
+}

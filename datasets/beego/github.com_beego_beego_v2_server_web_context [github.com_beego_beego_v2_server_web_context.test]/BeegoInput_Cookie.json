@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 352,
+    "focalfunc": "func (input *BeegoInput) Cookie(key string) string",
+    "funcbody": "func (input *BeegoInput) Cookie(key string) string {\n\tck, err := input.Context.Request.Cookie(key)\n\tif err != nil {\n\t\treturn \"\"\n\t}\n\treturn ck.Value\n}",
+    "funcname": "Cookie"
+}

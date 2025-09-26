@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/msg/handler.go",
+    "lineno": 38,
+    "focalfunc": "func NewDispatcher(rw io.ReadWriter) *Dispatcher",
+    "funcbody": "func NewDispatcher(rw io.ReadWriter) *Dispatcher {\n\treturn &Dispatcher{\n\t\trw:\t\trw,\n\t\tsendCh:\t\tmake(chan Message, 100),\n\t\tdoneCh:\t\tmake(chan struct{}),\n\t\tmsgHandlers:\tmake(map[reflect.Type]func(Message)),\n\t}\n}",
+    "funcname": "NewDispatcher"
+}

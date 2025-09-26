@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/alils/alils.go",
+    "lineno": 189,
+    "focalfunc": "func (c *aliLSWriter) Destroy()",
+    "funcbody": "func (c *aliLSWriter) Destroy() {\n}",
+    "funcname": "Destroy"
+}

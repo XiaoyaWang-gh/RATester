@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/utils.go",
+    "lineno": 78,
+    "focalfunc": "func assert1(guard bool, text string)",
+    "funcbody": "func assert1(guard bool, text string) {\n\tif !guard {\n\t\tpanic(text)\n\t}\n}",
+    "funcname": "assert1"
+}

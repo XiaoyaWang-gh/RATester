@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/schema/encoder.go",
+    "lineno": 39,
+    "focalfunc": "func (e *Encoder) SetAliasTag(tag string)",
+    "funcbody": "func (e *Encoder) SetAliasTag(tag string) {\n\te.cache.tag = tag\n}",
+    "funcname": "SetAliasTag"
+}

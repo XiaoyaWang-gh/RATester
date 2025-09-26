@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/response.go",
+    "lineno": 48,
+    "focalfunc": "func (r *Response) After(fn func())",
+    "funcbody": "func (r *Response) After(fn func()) {\n\tr.afterFuncs = append(r.afterFuncs, fn)\n}",
+    "funcname": "After"
+}

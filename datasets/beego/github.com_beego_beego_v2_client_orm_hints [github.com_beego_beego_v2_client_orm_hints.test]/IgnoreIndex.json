@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/hints/db_hints.go",
+    "lineno": 63,
+    "focalfunc": "func IgnoreIndex(indexes ...string) *Hint",
+    "funcbody": "func IgnoreIndex(indexes ...string) *Hint {\n\treturn NewHint(KeyIgnoreIndex, indexes)\n}",
+    "funcname": "IgnoreIndex"
+}

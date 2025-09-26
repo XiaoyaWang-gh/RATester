@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/text.go",
+    "lineno": 107,
+    "focalfunc": "func (f textFilter) Bounds(srcBounds image.Rectangle) image.Rectangle",
+    "funcbody": "func (f textFilter) Bounds(srcBounds image.Rectangle) image.Rectangle {\n\treturn image.Rect(0, 0, srcBounds.Dx(), srcBounds.Dy())\n}",
+    "funcname": "Bounds"
+}

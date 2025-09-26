@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/data/resources.go",
+    "lineno": 108,
+    "focalfunc": "func (ns *Namespace) getResource(cache *filecache.Cache, unmarshal func(b []byte) (bool, error), req *http.Request) error",
+    "funcbody": "func (ns *Namespace) getResource(cache *filecache.Cache, unmarshal func(b []byte) (bool, error), req *http.Request) error {\n\tswitch req.URL.Scheme {\n\tcase \"\":\n\t\turl, err := url.QueryUnescape(req.URL.String())\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tb, err := getLocal(ns.deps.Conf.BaseConfig().WorkingDir, url, ns.deps.Fs.Source)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = unmarshal(b)\n\t\treturn err\n\tdefault:\n\t\treturn ns.getRemote(cache, unmarshal, req)\n\t}\n}",
+    "funcname": "getResource"
+}

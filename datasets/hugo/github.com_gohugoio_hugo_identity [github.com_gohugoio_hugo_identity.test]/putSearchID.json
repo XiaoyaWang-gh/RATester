@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/identity/finder.go",
+    "lineno": 39,
+    "focalfunc": "func putSearchID(sid *searchID)",
+    "funcbody": "func putSearchID(sid *searchID) {\n\tsid.id = nil\n\tsid.isDp = false\n\tsid.isPeq = false\n\tsid.hasEqer = false\n\tsid.maxDepth = 0\n\tsid.dp = nil\n\tsid.peq = nil\n\tsid.eqer = nil\n\tfor k := range sid.seen {\n\t\tdelete(sid.seen, k)\n\t}\n\tsearchIDPool.Put(sid)\n}",
+    "funcname": "putSearchID"
+}

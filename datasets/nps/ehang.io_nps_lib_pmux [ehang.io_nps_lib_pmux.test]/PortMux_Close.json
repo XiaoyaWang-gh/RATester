@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/pmux/pmux.go",
+    "lineno": 140,
+    "focalfunc": "func (pMux *PortMux) Close() error",
+    "funcbody": "func (pMux *PortMux) Close() error {\n\tif pMux.isClose {\n\t\treturn errors.New(\"the port pmux has closed\")\n\t}\n\tpMux.isClose = true\n\tclose(pMux.clientConn)\n\tclose(pMux.httpsConn)\n\tclose(pMux.httpConn)\n\tclose(pMux.managerConn)\n\treturn pMux.Listener.Close()\n}",
+    "funcname": "Close"
+}

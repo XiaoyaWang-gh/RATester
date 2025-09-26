@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/content_factory.go",
+    "lineno": 106,
+    "focalfunc": "func (f ContentFactory) CreateContentPlaceHolder(filename string, force bool) (string, error)",
+    "funcbody": "func (f ContentFactory) CreateContentPlaceHolder(filename string, force bool) (string, error) {\n\tfilename = filepath.Clean(filename)\n\t_, abs, err := f.h.AbsProjectContentDir(filename)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tplaceholder := `---\ntitle: \"Content Placeholder\"\n_build:\n  render: never\n  list: never\n  publishResources: false\n---\n\n`\n\n\tif force {\n\t\treturn abs, afero.WriteReader(f.h.Fs.Source, abs, strings.NewReader(placeholder))\n\t}\n\treturn abs, afero.SafeWriteReader(f.h.Fs.Source, abs, strings.NewReader(placeholder))\n}",
+    "funcname": "CreateContentPlaceHolder"
+}

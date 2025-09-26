@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/redactor/redactor.go",
+    "lineno": 47,
+    "focalfunc": "func do(baseConfig interface{}, tag string, redactByDefault, indent bool) (string, error)",
+    "funcbody": "func do(baseConfig interface{}, tag string, redactByDefault, indent bool) (string, error) {\n\tanomConfig, err := copystructure.Copy(baseConfig)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tval := reflect.ValueOf(anomConfig)\n\n\terr = doOnStruct(val, tag, redactByDefault)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\tconfigJSON, err := marshal(anomConfig, indent)\n\tif err != nil {\n\t\treturn \"\", err\n\t}\n\n\treturn string(configJSON), nil\n}",
+    "funcname": "do"
+}

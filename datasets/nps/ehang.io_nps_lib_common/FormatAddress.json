@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/util.go",
+    "lineno": 252,
+    "focalfunc": "func FormatAddress(s string) string",
+    "funcbody": "func FormatAddress(s string) string {\n\tif strings.Contains(s, \":\") {\n\t\treturn s\n\t}\n\treturn \"127.0.0.1:\" + s\n}",
+    "funcname": "FormatAddress"
+}

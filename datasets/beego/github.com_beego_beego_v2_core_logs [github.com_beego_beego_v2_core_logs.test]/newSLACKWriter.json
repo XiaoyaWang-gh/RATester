@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/slack.go",
+    "lineno": 19,
+    "focalfunc": "func newSLACKWriter() Logger",
+    "funcbody": "func newSLACKWriter() Logger {\n\tres := &SLACKWriter{Level: LevelTrace}\n\tres.formatter = res\n\treturn res\n}",
+    "funcname": "newSLACKWriter"
+}

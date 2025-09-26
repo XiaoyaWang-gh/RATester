@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/task/task.go",
+    "lineno": 602,
+    "focalfunc": "func (m *taskManager) GracefulShutdown() <-chan struct{}",
+    "funcbody": "func (m *taskManager) GracefulShutdown() <-chan struct{} {\n\tdone := make(chan struct{})\n\tgo func() {\n\t\tm.stop <- true\n\t\tm.wait.Wait()\n\t\tclose(done)\n\t}()\n\treturn done\n}",
+    "funcname": "GracefulShutdown"
+}

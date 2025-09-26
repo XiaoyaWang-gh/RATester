@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/site.go",
+    "lineno": 797,
+    "focalfunc": "func (s *Site) errorCollator(results <-chan error, errs chan<- error)",
+    "funcbody": "func (s *Site) errorCollator(results <-chan error, errs chan<- error) {\n\tvar errors []error\n\tfor e := range results {\n\t\terrors = append(errors, e)\n\t}\n\n\terrs <- s.h.pickOneAndLogTheRest(errors)\n\n\tclose(errs)\n}",
+    "funcname": "errorCollator"
+}

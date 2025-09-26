@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/router.go",
+    "lineno": 453,
+    "focalfunc": "func (n *node) addMethod(method string, h *routeMethod)",
+    "funcbody": "func (n *node) addMethod(method string, h *routeMethod) {\n\tswitch method {\n\tcase http.MethodConnect:\n\t\tn.methods.connect = h\n\tcase http.MethodDelete:\n\t\tn.methods.delete = h\n\tcase http.MethodGet:\n\t\tn.methods.get = h\n\tcase http.MethodHead:\n\t\tn.methods.head = h\n\tcase http.MethodOptions:\n\t\tn.methods.options = h\n\tcase http.MethodPatch:\n\t\tn.methods.patch = h\n\tcase http.MethodPost:\n\t\tn.methods.post = h\n\tcase PROPFIND:\n\t\tn.methods.propfind = h\n\tcase http.MethodPut:\n\t\tn.methods.put = h\n\tcase http.MethodTrace:\n\t\tn.methods.trace = h\n\tcase REPORT:\n\t\tn.methods.report = h\n\tcase RouteNotFound:\n\t\tn.notFoundHandler = h\n\t\treturn\n\tdefault:\n\t\tif n.methods.anyOther == nil {\n\t\t\tn.methods.anyOther = make(map[string]*routeMethod)\n\t\t}\n\t\tif h.handler == nil {\n\t\t\tdelete(n.methods.anyOther, method)\n\t\t} else {\n\t\t\tn.methods.anyOther[method] = h\n\t\t}\n\t}\n\n\tn.methods.updateAllowHeader()\n\tn.isHandler = true\n}",
+    "funcname": "addMethod"
+}

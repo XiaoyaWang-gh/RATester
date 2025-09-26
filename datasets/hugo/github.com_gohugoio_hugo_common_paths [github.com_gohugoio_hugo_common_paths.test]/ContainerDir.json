@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/paths/pathparser.go",
+    "lineno": 337,
+    "focalfunc": "func (p *Path) ContainerDir() string",
+    "funcbody": "func (p *Path) ContainerDir() string {\n\tif p.posContainerLow == -1 || !p.IsBundle() {\n\t\treturn p.Dir()\n\t}\n\treturn p.norm(p.s[:p.posContainerLow-1])\n}",
+    "funcname": "ContainerDir"
+}

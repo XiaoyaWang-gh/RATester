@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/jsconfig/jsconfig.go",
+    "lineno": 85,
+    "focalfunc": "func newJSConfig() *Config",
+    "funcbody": "func newJSConfig() *Config {\n\treturn &Config{\n\t\tCompilerOptions: CompilerOptions{\n\t\t\tBaseURL:\t\".\",\n\t\t\tPaths:\t\tmake(map[string][]string),\n\t\t},\n\t}\n}",
+    "funcname": "newJSConfig"
+}

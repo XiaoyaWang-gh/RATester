@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 843,
+    "focalfunc": "func (app *App) ShutdownWithContext(ctx context.Context) error",
+    "funcbody": "func (app *App) ShutdownWithContext(ctx context.Context) error {\n\tif app.hooks != nil {\n\n\t\tapp.hooks.executeOnShutdownHooks()\n\t}\n\n\tapp.mutex.Lock()\n\tdefer app.mutex.Unlock()\n\tif app.server == nil {\n\t\treturn ErrNotRunning\n\t}\n\treturn app.server.ShutdownWithContext(ctx)\n}",
+    "funcname": "ShutdownWithContext"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/htmltemplate/css.go",
+    "lineno": 158,
+    "focalfunc": "func cssEscaper(args ...any) string",
+    "funcbody": "func cssEscaper(args ...any) string {\n\ts, _ := stringify(args...)\n\tvar b strings.Builder\n\tr, w, written := rune(0), 0, 0\n\tfor i := 0; i < len(s); i += w {\n\n\t\tr, w = utf8.DecodeRuneInString(s[i:])\n\t\tvar repl string\n\t\tswitch {\n\t\tcase int(r) < len(cssReplacementTable) && cssReplacementTable[r] != \"\":\n\t\t\trepl = cssReplacementTable[r]\n\t\tdefault:\n\t\t\tcontinue\n\t\t}\n\t\tif written == 0 {\n\t\t\tb.Grow(len(s))\n\t\t}\n\t\tb.WriteString(s[written:i])\n\t\tb.WriteString(repl)\n\t\twritten = i + w\n\t\tif repl != `\\\\` && (written == len(s) || isHex(s[written]) || isCSSSpace(s[written])) {\n\t\t\tb.WriteByte(' ')\n\t\t}\n\t}\n\tif written == 0 {\n\t\treturn s\n\t}\n\tb.WriteString(s[written:])\n\treturn b.String()\n}",
+    "funcname": "cssEscaper"
+}

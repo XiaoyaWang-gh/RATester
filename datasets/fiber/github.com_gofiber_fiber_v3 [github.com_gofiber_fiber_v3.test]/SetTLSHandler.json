@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/app.go",
+    "lineno": 564,
+    "focalfunc": "func (app *App) SetTLSHandler(tlsHandler *TLSHandler)",
+    "funcbody": "func (app *App) SetTLSHandler(tlsHandler *TLSHandler) {\n\n\tapp.mutex.Lock()\n\tapp.tlsHandler = tlsHandler\n\tapp.mutex.Unlock()\n}",
+    "funcname": "SetTLSHandler"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/openfiles_fs.go",
+    "lineno": 105,
+    "focalfunc": "func (fs *OpenFilesFs) OpenFiles() map[string]int",
+    "funcbody": "func (fs *OpenFilesFs) OpenFiles() map[string]int {\n\tfs.mu.Lock()\n\tdefer fs.mu.Unlock()\n\n\treturn fs.openFiles\n}",
+    "funcname": "OpenFiles"
+}

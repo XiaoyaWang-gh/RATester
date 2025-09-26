@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context_fs.go",
+    "lineno": 14,
+    "focalfunc": "func (c *context) File(file string) error",
+    "funcbody": "func (c *context) File(file string) error {\n\treturn fsFile(c, file, c.echo.Filesystem)\n}",
+    "funcname": "File"
+}

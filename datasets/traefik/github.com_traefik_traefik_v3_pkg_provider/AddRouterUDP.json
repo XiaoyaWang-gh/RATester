@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/configuration.go",
+    "lineno": 325,
+    "focalfunc": "func AddRouterUDP(configuration *dynamic.UDPConfiguration, routerName string, router *dynamic.UDPRouter) bool",
+    "funcbody": "func AddRouterUDP(configuration *dynamic.UDPConfiguration, routerName string, router *dynamic.UDPRouter) bool {\n\tif _, ok := configuration.Routers[routerName]; !ok {\n\t\tconfiguration.Routers[routerName] = router\n\t\treturn true\n\t}\n\n\treturn reflect.DeepEqual(configuration.Routers[routerName], router)\n}",
+    "funcname": "AddRouterUDP"
+}

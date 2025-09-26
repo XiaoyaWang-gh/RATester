@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/handler_http.go",
+    "lineno": 157,
+    "focalfunc": "func (h Handler) getService(rw http.ResponseWriter, request *http.Request)",
+    "funcbody": "func (h Handler) getService(rw http.ResponseWriter, request *http.Request) {\n\tscapedServiceID := mux.Vars(request)[\"serviceID\"]\n\n\tserviceID, err := url.PathUnescape(scapedServiceID)\n\tif err != nil {\n\t\twriteError(rw, fmt.Sprintf(\"unable to decode serviceID %q: %s\", scapedServiceID, err), http.StatusBadRequest)\n\t\treturn\n\t}\n\n\trw.Header().Add(\"Content-Type\", \"application/json\")\n\n\tservice, ok := h.runtimeConfiguration.Services[serviceID]\n\tif !ok {\n\t\twriteError(rw, fmt.Sprintf(\"service not found: %s\", serviceID), http.StatusNotFound)\n\t\treturn\n\t}\n\n\tresult := newServiceRepresentation(serviceID, service)\n\n\terr = json.NewEncoder(rw).Encode(result)\n\tif err != nil {\n\t\tlog.Ctx(request.Context()).Error().Err(err).Send()\n\t\twriteError(rw, err.Error(), http.StatusInternalServerError)\n\t}\n}",
+    "funcname": "getService"
+}

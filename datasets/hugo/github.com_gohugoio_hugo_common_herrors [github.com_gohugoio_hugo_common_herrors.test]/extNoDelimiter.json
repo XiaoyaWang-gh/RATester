@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/herrors/error_locator.go",
+    "lineno": 101,
+    "focalfunc": "func extNoDelimiter(filename string) string",
+    "funcbody": "func extNoDelimiter(filename string) string {\n\treturn strings.TrimPrefix(filepath.Ext(filename), \".\")\n}",
+    "funcname": "extNoDelimiter"
+}

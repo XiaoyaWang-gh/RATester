@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 289,
+    "focalfunc": "func (p *pageState) Pages() page.Pages",
+    "funcbody": "func (p *pageState) Pages() page.Pages {\n\tswitch p.Kind() {\n\tcase kinds.KindPage:\n\tcase kinds.KindSection, kinds.KindHome:\n\t\treturn p.s.pageMap.getPagesInSection(\n\t\t\tpageMapQueryPagesInSection{\n\t\t\t\tpageMapQueryPagesBelowPath: pageMapQueryPagesBelowPath{\n\t\t\t\t\tPath:\t\tp.Path(),\n\t\t\t\t\tKeyPart:\t\"page-section\",\n\t\t\t\t\tInclude: pagePredicates.ShouldListLocal.And(\n\t\t\t\t\t\tpagePredicates.KindPage.Or(pagePredicates.KindSection),\n\t\t\t\t\t),\n\t\t\t\t},\n\t\t\t},\n\t\t)\n\tcase kinds.KindTerm:\n\t\treturn p.s.pageMap.getPagesWithTerm(\n\t\t\tpageMapQueryPagesBelowPath{\n\t\t\t\tPath: p.Path(),\n\t\t\t},\n\t\t)\n\tcase kinds.KindTaxonomy:\n\t\treturn p.s.pageMap.getPagesInSection(\n\t\t\tpageMapQueryPagesInSection{\n\t\t\t\tpageMapQueryPagesBelowPath: pageMapQueryPagesBelowPath{\n\t\t\t\t\tPath:\t\tp.Path(),\n\t\t\t\t\tKeyPart:\t\"term\",\n\t\t\t\t\tInclude:\tpagePredicates.ShouldListLocal.And(pagePredicates.KindTerm),\n\t\t\t\t},\n\t\t\t\tRecursive:\ttrue,\n\t\t\t},\n\t\t)\n\tdefault:\n\t\treturn p.s.Pages()\n\t}\n\treturn nil\n}",
+    "funcname": "Pages"
+}

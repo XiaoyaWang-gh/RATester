@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/url.go",
+    "lineno": 116,
+    "focalfunc": "func (p *PathSpec) RelURL(in string, addLanguage bool) string",
+    "funcbody": "func (p *PathSpec) RelURL(in string, addLanguage bool) string {\n\tisAbs, err := p.IsAbsURL(in)\n\tif err != nil {\n\t\treturn in\n\t}\n\tbaseURL := p.getBaseURLRoot(in)\n\tcanonifyURLs := p.Cfg.CanonifyURLs()\n\n\tif (!strings.HasPrefix(in, baseURL) && isAbs) || strings.HasPrefix(in, \"//\") {\n\t\treturn in\n\t}\n\n\tu := in\n\n\tif strings.HasPrefix(in, baseURL) {\n\t\tu = strings.TrimPrefix(u, baseURL)\n\t}\n\n\tif addLanguage {\n\t\tprefix := p.GetLanguagePrefix()\n\t\tif prefix != \"\" {\n\t\t\thasPrefix := false\n\n\t\t\tin2 := in\n\t\t\tif strings.HasPrefix(in, \"/\") {\n\t\t\t\tin2 = in[1:]\n\t\t\t}\n\t\t\tif in2 == prefix {\n\t\t\t\thasPrefix = true\n\t\t\t} else {\n\t\t\t\thasPrefix = strings.HasPrefix(in2, prefix+\"/\")\n\t\t\t}\n\n\t\t\tif !hasPrefix {\n\t\t\t\thadSlash := strings.HasSuffix(u, \"/\")\n\n\t\t\t\tu = path.Join(prefix, u)\n\n\t\t\t\tif hadSlash {\n\t\t\t\t\tu += \"/\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n\tif !canonifyURLs {\n\t\tu = paths.AddContextRoot(baseURL, u)\n\t}\n\n\tif in == \"\" && !strings.HasSuffix(u, \"/\") && strings.HasSuffix(baseURL, \"/\") {\n\t\tu += \"/\"\n\t}\n\n\tif !strings.HasPrefix(u, \"/\") {\n\t\tu = \"/\" + u\n\t}\n\n\treturn u\n}",
+    "funcname": "RelURL"
+}

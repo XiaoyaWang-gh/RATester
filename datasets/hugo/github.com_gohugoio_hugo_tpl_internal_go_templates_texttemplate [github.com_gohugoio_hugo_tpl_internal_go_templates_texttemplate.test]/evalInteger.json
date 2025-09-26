@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 944,
+    "focalfunc": "func (s *state) evalInteger(typ reflect.Type, n parse.Node) reflect.Value",
+    "funcbody": "func (s *state) evalInteger(typ reflect.Type, n parse.Node) reflect.Value {\n\ts.at(n)\n\tif n, ok := n.(*parse.NumberNode); ok && n.IsInt {\n\t\tvalue := reflect.New(typ).Elem()\n\t\tvalue.SetInt(n.Int64)\n\t\treturn value\n\t}\n\ts.errorf(\"expected integer; found %s\", n)\n\tpanic(\"not reached\")\n}",
+    "funcname": "evalInteger"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/ssdb/sess_ssdb.go",
+    "lineno": 176,
+    "focalfunc": "func (s *SessionStore) Get(ctx context.Context, key interface{}) interface{}",
+    "funcbody": "func (s *SessionStore) Get(ctx context.Context, key interface{}) interface{} {\n\ts.lock.Lock()\n\tdefer s.lock.Unlock()\n\tif value, ok := s.values[key]; ok {\n\t\treturn value\n\t}\n\treturn nil\n}",
+    "funcname": "Get"
+}

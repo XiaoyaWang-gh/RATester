@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/mock/mock_querySetter.go",
+    "lineno": 116,
+    "focalfunc": "func (d *DoNothingQuerySetter) UseIndex(indexes ...string) orm.QuerySeter",
+    "funcbody": "func (d *DoNothingQuerySetter) UseIndex(indexes ...string) orm.QuerySeter {\n\treturn d\n}",
+    "funcname": "UseIndex"
+}

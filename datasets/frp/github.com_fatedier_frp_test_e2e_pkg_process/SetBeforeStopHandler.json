@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/pkg/process/process.go",
+    "lineno": 64,
+    "focalfunc": "func (p *Process) SetBeforeStopHandler(fn func())",
+    "funcbody": "func (p *Process) SetBeforeStopHandler(fn func()) {\n\tp.beforeStopHandler = fn\n}",
+    "funcname": "SetBeforeStopHandler"
+}

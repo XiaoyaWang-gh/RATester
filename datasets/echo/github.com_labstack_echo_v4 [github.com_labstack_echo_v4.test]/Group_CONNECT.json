@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/group.go",
+    "lineno": 36,
+    "focalfunc": "func (g *Group) CONNECT(path string, h HandlerFunc, m ...MiddlewareFunc) *Route",
+    "funcbody": "func (g *Group) CONNECT(path string, h HandlerFunc, m ...MiddlewareFunc) *Route {\n\treturn g.Add(http.MethodConnect, path, h, m...)\n}",
+    "funcname": "CONNECT"
+}

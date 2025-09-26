@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/common/pool.go",
+    "lineno": 89,
+    "focalfunc": "func newPool()",
+    "funcbody": "func newPool() {\n\tCopyBuff.New()\n}",
+    "funcname": "newPool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/helpers/emoji.go",
+    "lineno": 80,
+    "focalfunc": "func initEmoji()",
+    "funcbody": "func initEmoji() {\n\temojiMap := emoji.CodeMap()\n\n\tfor k, v := range emojiMap {\n\t\temojis[k] = []byte(v)\n\n\t\tif len(k) > emojiMaxSize {\n\t\t\temojiMaxSize = len(k)\n\t\t}\n\t}\n}",
+    "funcname": "initEmoji"
+}

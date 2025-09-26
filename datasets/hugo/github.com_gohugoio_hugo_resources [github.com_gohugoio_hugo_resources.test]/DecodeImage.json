@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/image.go",
+    "lineno": 439,
+    "focalfunc": "func (i *imageResource) DecodeImage() (image.Image, error)",
+    "funcbody": "func (i *imageResource) DecodeImage() (image.Image, error) {\n\tf, err := i.ReadSeekCloser()\n\tif err != nil {\n\t\treturn nil, fmt.Errorf(\"failed to open image for decode: %w\", err)\n\t}\n\tdefer f.Close()\n\n\tif i.Format == images.GIF {\n\t\tg, err := gif.DecodeAll(f)\n\t\tif err != nil {\n\t\t\treturn nil, fmt.Errorf(\"failed to decode gif: %w\", err)\n\t\t}\n\t\treturn &giphy{gif: g, Image: g.Image[0]}, nil\n\t}\n\timg, _, err := image.Decode(f)\n\treturn img, err\n}",
+    "funcname": "DecodeImage"
+}

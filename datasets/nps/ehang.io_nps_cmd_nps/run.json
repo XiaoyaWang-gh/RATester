@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/cmd/nps/nps.go",
+    "lineno": 192,
+    "focalfunc": "func run()",
+    "funcbody": "func run() {\n\trouters.Init()\n\ttask := &file.Tunnel{\n\t\tMode: \"webServer\",\n\t}\n\tbridgePort, err := beego.AppConfig.Int(\"bridge_port\")\n\tif err != nil {\n\t\tlogs.Error(\"Getting bridge_port error\", err)\n\t\tos.Exit(0)\n\t}\n\tlogs.Info(\"the version of server is %s ,allow client core version to be %s\", version.VERSION, version.GetVersion())\n\tconnection.InitConnectionService()\n\n\tcrypt.InitTls()\n\ttool.InitAllowPort()\n\ttool.StartSystemInfo()\n\ttimeout, err := beego.AppConfig.Int(\"disconnect_timeout\")\n\tif err != nil {\n\t\ttimeout = 60\n\t}\n\tgo server.StartNewServer(bridgePort, task, beego.AppConfig.String(\"bridge_type\"), timeout)\n}",
+    "funcname": "run"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/loggers/logger.go",
+    "lineno": 244,
+    "focalfunc": "func (l *logAdapter) Infoln(v ...any)",
+    "funcbody": "func (l *logAdapter) Infoln(v ...any) {\n\tl.infol.Logf(l.sprint(v...))\n}",
+    "funcname": "Infoln"
+}

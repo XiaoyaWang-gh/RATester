@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/internal/models/models.go",
+    "lineno": 51,
+    "focalfunc": "func (mc *ModelCache) Empty() bool",
+    "funcbody": "func (mc *ModelCache) Empty() bool {\n\treturn len(mc.cache) == 0\n}",
+    "funcname": "Empty"
+}

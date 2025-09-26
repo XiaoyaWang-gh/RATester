@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 49,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tfor k, v := range chromaHighlightProcessingAttributes {\n\t\tchromaHighlightProcessingAttributes[strings.ToLower(k)] = v\n\t}\n}",
+    "funcname": "init"
+}

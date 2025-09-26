@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/metrics/aggregate/server.go",
+    "lineno": 77,
+    "focalfunc": "func (m *serverMetrics) CloseConnection(name string, proxyType string)",
+    "funcbody": "func (m *serverMetrics) CloseConnection(name string, proxyType string) {\n\tfor _, v := range m.ms {\n\t\tv.CloseConnection(name, proxyType)\n\t}\n}",
+    "funcname": "CloseConnection"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource/resources.go",
+    "lineno": 57,
+    "focalfunc": "func (r Resources) Get(name any) Resource",
+    "funcbody": "func (r Resources) Get(name any) Resource {\n\tif r == nil {\n\t\treturn nil\n\t}\n\tnamestr, err := cast.ToStringE(name)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\n\tnamestr = paths.AddLeadingSlash(namestr)\n\n\tfor _, resource := range r {\n\t\tif strings.EqualFold(namestr, paths.AddLeadingSlash(resource.Name())) {\n\t\t\treturn resource\n\t\t}\n\t}\n\n\tfor _, resource := range r {\n\t\tif nop, ok := resource.(NameNormalizedProvider); ok {\n\t\t\tif strings.EqualFold(namestr, paths.AddLeadingSlash(nop.NameNormalized())) {\n\t\t\t\treturn resource\n\t\t\t}\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "Get"
+}

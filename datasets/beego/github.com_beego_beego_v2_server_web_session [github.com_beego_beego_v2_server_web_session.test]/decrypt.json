@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/session/sess_utils.go",
+    "lineno": 103,
+    "focalfunc": "func decrypt(block cipher.Block, value []byte) ([]byte, error)",
+    "funcbody": "func decrypt(block cipher.Block, value []byte) ([]byte, error) {\n\tsize := block.BlockSize()\n\tif len(value) > size {\n\n\t\tiv := value[:size]\n\n\t\tvalue = value[size:]\n\n\t\tstream := cipher.NewCTR(block, iv)\n\t\tstream.XORKeyStream(value, value)\n\t\treturn value, nil\n\t}\n\treturn nil, errors.New(\"decrypt: the value could not be decrypted\")\n}",
+    "funcname": "decrypt"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/web/controllers/index.go",
+    "lineno": 32,
+    "focalfunc": "func (s *IndexController) Udp()",
+    "funcbody": "func (s *IndexController) Udp() {\n\ts.SetInfo(\"udp\")\n\ts.SetType(\"udp\")\n\ts.display(\"index/list\")\n}",
+    "funcname": "Udp"
+}

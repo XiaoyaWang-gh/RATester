@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/echo/context.go",
+    "lineno": 554,
+    "focalfunc": "func (c *context) XML(code int, i interface{}) (err error)",
+    "funcbody": "func (c *context) XML(code int, i interface{}) (err error) {\n\tindent := \"\"\n\tif _, pretty := c.QueryParams()[\"pretty\"]; c.echo.Debug || pretty {\n\t\tindent = defaultIndent\n\t}\n\treturn c.xml(code, i, indent)\n}",
+    "funcname": "XML"
+}

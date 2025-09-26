@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/lib/file/db.go",
+    "lineno": 239,
+    "focalfunc": "func (s *DbUtils) VerifyVkey(vkey string, id int) (res bool)",
+    "funcbody": "func (s *DbUtils) VerifyVkey(vkey string, id int) (res bool) {\n\tres = true\n\ts.JsonDb.Clients.Range(func(key, value interface{}) bool {\n\t\tv := value.(*Client)\n\t\tif v.VerifyKey == vkey && v.Id != id {\n\t\t\tres = false\n\t\t\treturn false\n\t\t}\n\t\treturn true\n\t})\n\treturn res\n}",
+    "funcname": "VerifyVkey"
+}

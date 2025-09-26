@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/requestid/requestid.go",
+    "lineno": 46,
+    "focalfunc": "func FromContext(c fiber.Ctx) string",
+    "funcbody": "func FromContext(c fiber.Ctx) string {\n\tif rid, ok := c.Locals(requestIDKey).(string); ok {\n\t\treturn rid\n\t}\n\treturn \"\"\n}",
+    "funcname": "FromContext"
+}

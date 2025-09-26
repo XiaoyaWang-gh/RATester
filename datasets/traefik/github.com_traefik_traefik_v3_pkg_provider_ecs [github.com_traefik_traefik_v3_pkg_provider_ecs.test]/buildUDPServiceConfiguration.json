@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/ecs/config.go",
+    "lineno": 113,
+    "focalfunc": "func (p *Provider) buildUDPServiceConfiguration(instance ecsInstance, configuration *dynamic.UDPConfiguration) error",
+    "funcbody": "func (p *Provider) buildUDPServiceConfiguration(instance ecsInstance, configuration *dynamic.UDPConfiguration) error {\n\tserviceName := getServiceName(instance)\n\n\tif len(configuration.Services) == 0 {\n\t\tconfiguration.Services = make(map[string]*dynamic.UDPService)\n\t\tlb := &dynamic.UDPServersLoadBalancer{}\n\t\tconfiguration.Services[serviceName] = &dynamic.UDPService{\n\t\t\tLoadBalancer: lb,\n\t\t}\n\t}\n\n\tfor name, service := range configuration.Services {\n\t\terr := p.addServerUDP(instance, service.LoadBalancer)\n\t\tif err != nil {\n\t\t\treturn fmt.Errorf(\"service %q error: %w\", name, err)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "buildUDPServiceConfiguration"
+}

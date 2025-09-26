@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/context/input.go",
+    "lineno": 573,
+    "focalfunc": "func (input *BeegoInput) bindBool(val string, typ reflect.Type) reflect.Value",
+    "funcbody": "func (input *BeegoInput) bindBool(val string, typ reflect.Type) reflect.Value {\n\tval = strings.TrimSpace(strings.ToLower(val))\n\tswitch val {\n\tcase \"true\", \"on\", \"1\":\n\t\treturn reflect.ValueOf(true)\n\t}\n\treturn reflect.ValueOf(false)\n}",
+    "funcname": "bindBool"
+}

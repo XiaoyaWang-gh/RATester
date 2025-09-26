@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/encryptcookie/config.go",
+    "lineno": 47,
+    "focalfunc": "func configDefault(config ...Config) Config",
+    "funcbody": "func configDefault(config ...Config) Config {\n\n\tcfg := ConfigDefault\n\n\tif len(config) > 0 {\n\t\tcfg = config[0]\n\n\t\tif cfg.Next == nil {\n\t\t\tcfg.Next = ConfigDefault.Next\n\t\t}\n\n\t\tif cfg.Except == nil {\n\t\t\tcfg.Except = ConfigDefault.Except\n\t\t}\n\n\t\tif cfg.Encryptor == nil {\n\t\t\tcfg.Encryptor = ConfigDefault.Encryptor\n\t\t}\n\n\t\tif cfg.Decryptor == nil {\n\t\t\tcfg.Decryptor = ConfigDefault.Decryptor\n\t\t}\n\t}\n\n\tif cfg.Key == \"\" {\n\t\tpanic(\"fiber: encrypt cookie middleware requires key\")\n\t}\n\n\treturn cfg\n}",
+    "funcname": "configDefault"
+}

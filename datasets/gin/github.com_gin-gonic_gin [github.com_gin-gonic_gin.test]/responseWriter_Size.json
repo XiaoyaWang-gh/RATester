@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 99,
+    "focalfunc": "func (w *responseWriter) Size() int",
+    "funcbody": "func (w *responseWriter) Size() int {\n\treturn w.size\n}",
+    "funcname": "Size"
+}

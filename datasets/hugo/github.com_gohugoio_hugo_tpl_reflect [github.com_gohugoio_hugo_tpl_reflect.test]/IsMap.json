@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/reflect/reflect.go",
+    "lineno": 29,
+    "focalfunc": "func (ns *Namespace) IsMap(v any) bool",
+    "funcbody": "func (ns *Namespace) IsMap(v any) bool {\n\treturn reflect.ValueOf(v).Kind() == reflect.Map\n}",
+    "funcname": "IsMap"
+}

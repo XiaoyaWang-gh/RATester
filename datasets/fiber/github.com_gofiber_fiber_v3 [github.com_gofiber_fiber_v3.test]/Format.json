@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/ctx.go",
+    "lineno": 488,
+    "focalfunc": "func (c *DefaultCtx) Format(handlers ...ResFmt) error",
+    "funcbody": "func (c *DefaultCtx) Format(handlers ...ResFmt) error {\n\tif len(handlers) == 0 {\n\t\treturn ErrNoHandlers\n\t}\n\n\tc.Vary(HeaderAccept)\n\n\tif c.Get(HeaderAccept) == \"\" {\n\t\tc.Response().Header.SetContentType(handlers[0].MediaType)\n\t\treturn handlers[0].Handler(c)\n\t}\n\n\ttypes := make([]string, 0, 8)\n\tvar defaultHandler Handler\n\tfor _, h := range handlers {\n\t\tif h.MediaType == \"default\" {\n\t\t\tdefaultHandler = h.Handler\n\t\t\tcontinue\n\t\t}\n\t\ttypes = append(types, h.MediaType)\n\t}\n\taccept := c.Accepts(types...)\n\n\tif accept == \"\" {\n\t\tif defaultHandler == nil {\n\t\t\treturn c.SendStatus(StatusNotAcceptable)\n\t\t}\n\t\treturn defaultHandler(c)\n\t}\n\n\tfor _, h := range handlers {\n\t\tif h.MediaType == accept {\n\t\t\tc.Response().Header.SetContentType(h.MediaType)\n\t\t\treturn h.Handler(c)\n\t\t}\n\t}\n\n\treturn fmt.Errorf(\"%w: format: an Accept was found but no handler was called\", errUnreachable)\n}",
+    "funcname": "Format"
+}

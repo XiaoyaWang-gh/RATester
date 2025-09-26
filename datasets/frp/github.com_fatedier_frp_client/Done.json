@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 217,
+    "focalfunc": "func (ctl *Control) Done() <-chan struct{}",
+    "funcbody": "func (ctl *Control) Done() <-chan struct{} {\n\treturn ctl.doneCh\n}",
+    "funcname": "Done"
+}

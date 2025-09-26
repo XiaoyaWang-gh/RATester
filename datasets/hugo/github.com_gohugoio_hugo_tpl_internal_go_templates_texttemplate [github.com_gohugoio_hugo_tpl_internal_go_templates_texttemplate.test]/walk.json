@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/texttemplate/exec.go",
+    "lineno": 261,
+    "focalfunc": "func (s *state) walk(dot reflect.Value, node parse.Node)",
+    "funcbody": "func (s *state) walk(dot reflect.Value, node parse.Node) {\n\ts.at(node)\n\tswitch node := node.(type) {\n\tcase *parse.ActionNode:\n\n\t\tval := s.evalPipeline(dot, node.Pipe)\n\t\tif len(node.Pipe.Decl) == 0 {\n\t\t\ts.printValue(node, val)\n\t\t}\n\tcase *parse.BreakNode:\n\t\tpanic(walkBreak)\n\tcase *parse.CommentNode:\n\tcase *parse.ContinueNode:\n\t\tpanic(walkContinue)\n\tcase *parse.IfNode:\n\t\ts.walkIfOrWith(parse.NodeIf, dot, node.Pipe, node.List, node.ElseList)\n\tcase *parse.ListNode:\n\t\tfor _, node := range node.Nodes {\n\t\t\ts.walk(dot, node)\n\t\t}\n\tcase *parse.RangeNode:\n\t\ts.walkRange(dot, node)\n\tcase *parse.TemplateNode:\n\t\ts.walkTemplate(dot, node)\n\tcase *parse.TextNode:\n\t\tif _, err := s.wr.Write(node.Text); err != nil {\n\t\t\ts.writeError(err)\n\t\t}\n\tcase *parse.WithNode:\n\t\ts.walkIfOrWith(parse.NodeWith, dot, node.Pipe, node.List, node.ElseList)\n\tdefault:\n\t\ts.errorf(\"unknown node: %s\", node)\n\t}\n}",
+    "funcname": "walk"
+}

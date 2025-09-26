@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/filecache/filecache_pruner.go",
+    "lineno": 52,
+    "focalfunc": "func (c *Cache) Prune(force bool) (int, error)",
+    "funcbody": "func (c *Cache) Prune(force bool) (int, error) {\n\tif c.pruneAllRootDir != \"\" {\n\t\treturn c.pruneRootDir(force)\n\t}\n\tif err := c.init(); err != nil {\n\t\treturn 0, err\n\t}\n\n\tcounter := 0\n\n\terr := afero.Walk(c.Fs, \"\", func(name string, info os.FileInfo, err error) error {\n\t\tif info == nil {\n\t\t\treturn nil\n\t\t}\n\n\t\tname = cleanID(name)\n\n\t\tif info.IsDir() {\n\t\t\tf, err := c.Fs.Open(name)\n\t\t\tif err != nil {\n\n\t\t\t\treturn nil\n\t\t\t}\n\t\t\t_, err = f.Readdirnames(1)\n\t\t\tf.Close()\n\t\t\tif err == io.EOF {\n\n\t\t\t\tif name == \".\" {\n\n\t\t\t\t\terr = nil\n\t\t\t\t} else {\n\t\t\t\t\terr = c.Fs.Remove(name)\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tif err != nil && !herrors.IsNotExist(err) {\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t\treturn nil\n\t\t}\n\n\t\tshouldRemove := force || c.isExpired(info.ModTime())\n\n\t\tif !shouldRemove && len(c.nlocker.seen) > 0 {\n\n\t\t\t_, seen := c.nlocker.seen[name]\n\t\t\tshouldRemove = !seen\n\t\t}\n\n\t\tif shouldRemove {\n\t\t\terr := c.Fs.Remove(name)\n\t\t\tif err == nil {\n\t\t\t\tcounter++\n\t\t\t}\n\n\t\t\tif err != nil && !herrors.IsNotExist(err) {\n\t\t\t\treturn err\n\t\t\t}\n\n\t\t}\n\n\t\treturn nil\n\t})\n\n\treturn counter, err\n}",
+    "funcname": "Prune"
+}

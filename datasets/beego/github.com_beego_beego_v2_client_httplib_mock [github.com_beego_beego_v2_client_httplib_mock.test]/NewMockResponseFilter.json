@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/httplib/mock/mock_filter.go",
+    "lineno": 30,
+    "focalfunc": "func NewMockResponseFilter() *MockResponseFilter",
+    "funcbody": "func NewMockResponseFilter() *MockResponseFilter {\n\treturn &MockResponseFilter{\n\t\tms: make([]*Mock, 0, 1),\n\t}\n}",
+    "funcname": "NewMockResponseFilter"
+}

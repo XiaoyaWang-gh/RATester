@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/pkg/util/net/conn.go",
+    "lineno": 230,
+    "focalfunc": "func NewCryptoReadWriter(rw io.ReadWriter, key []byte) (io.ReadWriter, error)",
+    "funcbody": "func NewCryptoReadWriter(rw io.ReadWriter, key []byte) (io.ReadWriter, error) {\n\tencReader := crypto.NewReader(rw, key)\n\tencWriter, err := crypto.NewWriter(rw, key)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\treturn struct {\n\t\tio.Reader\n\t\tio.Writer\n\t}{\n\t\tReader:\tencReader,\n\t\tWriter:\tencWriter,\n\t}, nil\n}",
+    "funcname": "NewCryptoReadWriter"
+}

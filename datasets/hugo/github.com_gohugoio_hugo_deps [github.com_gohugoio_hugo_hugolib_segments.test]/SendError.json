@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deps/deps.go",
+    "lineno": 281,
+    "focalfunc": "func (e *globalErrHandler) SendError(err error)",
+    "funcbody": "func (e *globalErrHandler) SendError(err error) {\n\tif e.buildErrors != nil {\n\t\tselect {\n\t\tcase <-e.quit:\n\t\tcase e.buildErrors <- err:\n\t\tdefault:\n\t\t}\n\t\treturn\n\t}\n\te.logger.Errorln(err)\n}",
+    "funcname": "SendError"
+}

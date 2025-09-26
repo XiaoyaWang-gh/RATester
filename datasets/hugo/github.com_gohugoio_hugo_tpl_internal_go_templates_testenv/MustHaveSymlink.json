@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/internal/go_templates/testenv/testenv.go",
+    "lineno": 338,
+    "focalfunc": "func MustHaveSymlink(t testing.TB)",
+    "funcbody": "func MustHaveSymlink(t testing.TB) {\n\tok, reason := hasSymlink()\n\tif !ok {\n\t\tt.Skipf(\"skipping test: cannot make symlinks on %s/%s: %s\", runtime.GOOS, runtime.GOARCH, reason)\n\t}\n}",
+    "funcname": "MustHaveSymlink"
+}

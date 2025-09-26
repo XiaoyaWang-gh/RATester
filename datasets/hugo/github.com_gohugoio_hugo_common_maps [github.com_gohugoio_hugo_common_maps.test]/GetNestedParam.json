@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/params.go",
+    "lineno": 186,
+    "focalfunc": "func GetNestedParam(keyStr, separator string, candidates ...Params) (any, error)",
+    "funcbody": "func GetNestedParam(keyStr, separator string, candidates ...Params) (any, error) {\n\tkeyStr = strings.ToLower(keyStr)\n\n\tfor _, m := range candidates {\n\t\tif v, ok := m[keyStr]; ok {\n\t\t\treturn v, nil\n\t\t}\n\t}\n\n\tkeySegments := strings.Split(keyStr, separator)\n\tfor _, m := range candidates {\n\t\tif v := m.GetNested(keySegments...); v != nil {\n\t\t\treturn v, nil\n\t\t}\n\t}\n\n\treturn nil, nil\n}",
+    "funcname": "GetNestedParam"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/passtlsclientcert/pass_tls_client_cert.go",
+    "lineno": 146,
+    "focalfunc": "func (p *passTLSClientCert) ServeHTTP(rw http.ResponseWriter, req *http.Request)",
+    "funcbody": "func (p *passTLSClientCert) ServeHTTP(rw http.ResponseWriter, req *http.Request) {\n\tlogger := middlewares.GetLogger(req.Context(), p.name, typeName)\n\tctx := logger.WithContext(req.Context())\n\n\tif p.pem {\n\t\tif req.TLS != nil && len(req.TLS.PeerCertificates) > 0 {\n\t\t\treq.Header.Set(xForwardedTLSClientCert, getCertificates(ctx, req.TLS.PeerCertificates))\n\t\t} else {\n\t\t\tlogger.Warn().Msg(\"Tried to extract a certificate on a request without mutual TLS\")\n\t\t}\n\t}\n\n\tif p.info != nil {\n\t\tif req.TLS != nil && len(req.TLS.PeerCertificates) > 0 {\n\t\t\theaderContent := p.getCertInfo(ctx, req.TLS.PeerCertificates)\n\t\t\treq.Header.Set(xForwardedTLSClientCertInfo, url.QueryEscape(headerContent))\n\t\t} else {\n\t\t\tlogger.Warn().Msg(\"Tried to extract a certificate on a request without mutual TLS\")\n\t\t}\n\t}\n\n\tp.next.ServeHTTP(rw, req)\n}",
+    "funcname": "ServeHTTP"
+}

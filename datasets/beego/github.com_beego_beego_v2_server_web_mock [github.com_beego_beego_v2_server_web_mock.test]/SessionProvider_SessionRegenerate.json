@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/mock/session.go",
+    "lineno": 64,
+    "focalfunc": "func (s *SessionProvider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error)",
+    "funcbody": "func (s *SessionProvider) SessionRegenerate(ctx context.Context, oldsid, sid string) (session.Store, error) {\n\ts.Store = newSessionStore()\n\treturn s.Store, nil\n}",
+    "funcname": "SessionRegenerate"
+}

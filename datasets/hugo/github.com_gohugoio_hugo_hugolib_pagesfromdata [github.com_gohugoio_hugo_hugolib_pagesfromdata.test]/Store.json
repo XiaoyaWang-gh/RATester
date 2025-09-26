@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/pagesfromdata/pagesfromgotmpl.go",
+    "lineno": 135,
+    "focalfunc": "func (p *pagesFromDataTemplateContext) Store() *maps.Scratch",
+    "funcbody": "func (p *pagesFromDataTemplateContext) Store() *maps.Scratch {\n\treturn p.p.store\n}",
+    "funcname": "Store"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/resource.go",
+    "lineno": 215,
+    "focalfunc": "func (t transformerNotAvailable) Transform(ctx *ResourceTransformationCtx) error",
+    "funcbody": "func (t transformerNotAvailable) Transform(ctx *ResourceTransformationCtx) error {\n\treturn herrors.ErrFeatureNotAvailable\n}",
+    "funcname": "Transform"
+}

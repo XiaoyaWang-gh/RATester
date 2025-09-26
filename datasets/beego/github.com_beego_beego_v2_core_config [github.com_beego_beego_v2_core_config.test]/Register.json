@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/config/config.go",
+    "lineno": 210,
+    "focalfunc": "func Register(name string, adapter Config)",
+    "funcbody": "func Register(name string, adapter Config) {\n\tif adapter == nil {\n\t\tpanic(\"config: Register adapter is nil\")\n\t}\n\tif _, ok := adapters[name]; ok {\n\t\tpanic(\"config: Register called twice for adapter \" + name)\n\t}\n\tadapters[name] = adapter\n}",
+    "funcname": "Register"
+}

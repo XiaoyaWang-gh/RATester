@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/aggregator/ring_channel.go",
+    "lineno": 35,
+    "focalfunc": "func (ch *RingChannel) ringBuffer()",
+    "funcbody": "func (ch *RingChannel) ringBuffer() {\n\tvar input, output chan dynamic.Message\n\tvar next dynamic.Message\n\tinput = ch.input\n\n\tfor input != nil || output != nil {\n\t\tselect {\n\n\t\tcase output <- next:\n\t\t\tch.buffer = nil\n\t\tdefault:\n\t\t\tselect {\n\t\t\tcase elem, open := <-input:\n\t\t\t\tif !open {\n\t\t\t\t\tinput = nil\n\t\t\t\t\tbreak\n\t\t\t\t}\n\n\t\t\t\tch.buffer = &elem\n\t\t\tcase output <- next:\n\t\t\t\tch.buffer = nil\n\t\t\t}\n\t\t}\n\n\t\tif ch.buffer == nil {\n\t\t\toutput = nil\n\t\t\tcontinue\n\t\t}\n\n\t\toutput = ch.output\n\t\tnext = *ch.buffer\n\t}\n\n\tclose(ch.output)\n}",
+    "funcname": "ringBuffer"
+}

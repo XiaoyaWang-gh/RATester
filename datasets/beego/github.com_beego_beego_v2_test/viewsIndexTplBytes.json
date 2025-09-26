@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/test/bindata.go",
+    "lineno": 122,
+    "focalfunc": "func viewsIndexTplBytes() ([]byte, error)",
+    "funcbody": "func viewsIndexTplBytes() ([]byte, error) {\n\treturn bindataRead(\n\t\t_viewsIndexTpl,\n\t\t\"views/index.tpl\",\n\t)\n}",
+    "funcname": "viewsIndexTplBytes"
+}

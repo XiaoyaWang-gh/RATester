@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/configlanguage.go",
+    "lineno": 203,
+    "focalfunc": "func (c ConfigLanguage) RemovePathAccents() bool",
+    "funcbody": "func (c ConfigLanguage) RemovePathAccents() bool {\n\treturn c.config.RemovePathAccents\n}",
+    "funcname": "RemovePathAccents"
+}

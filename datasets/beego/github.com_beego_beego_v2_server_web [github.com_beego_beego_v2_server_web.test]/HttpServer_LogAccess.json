@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/server.go",
+    "lineno": 860,
+    "focalfunc": "func (app *HttpServer) LogAccess(ctx *beecontext.Context, startTime *time.Time, statusCode int)",
+    "funcbody": "func (app *HttpServer) LogAccess(ctx *beecontext.Context, startTime *time.Time, statusCode int) {\n\n\tif !app.Cfg.Log.AccessLogs {\n\t\treturn\n\t}\n\n\tif !app.Cfg.Log.EnableStaticLogs && DefaultAccessLogFilter.Filter(ctx) {\n\t\treturn\n\t}\n\tvar (\n\t\trequestTime\ttime.Time\n\t\telapsedTime\ttime.Duration\n\t\tr\t\t= ctx.Request\n\t)\n\tif startTime != nil {\n\t\trequestTime = *startTime\n\t\telapsedTime = time.Since(*startTime)\n\t}\n\trecord := &logs.AccessLogRecord{\n\t\tRemoteAddr:\tctx.Input.IP(),\n\t\tRequestTime:\trequestTime,\n\t\tRequestMethod:\tr.Method,\n\t\tRequest:\tfmt.Sprintf(\"%s %s %s\", r.Method, r.RequestURI, r.Proto),\n\t\tServerProtocol:\tr.Proto,\n\t\tHost:\t\tr.Host,\n\t\tStatus:\t\tstatusCode,\n\t\tElapsedTime:\telapsedTime,\n\t\tHTTPReferrer:\tr.Header.Get(\"Referer\"),\n\t\tHTTPUserAgent:\tr.Header.Get(\"User-Agent\"),\n\t\tRemoteUser:\tr.Header.Get(\"Remote-User\"),\n\t\tBodyBytesSent:\tr.ContentLength,\n\t}\n\tlogs.AccessLog(record, app.Cfg.Log.AccessLogsFormat)\n}",
+    "funcname": "LogAccess"
+}

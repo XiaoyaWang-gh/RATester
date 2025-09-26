@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/pagegroup.go",
+    "lineno": 433,
+    "focalfunc": "func ToPagesGroup(seq any) (PagesGroup, bool, error)",
+    "funcbody": "func ToPagesGroup(seq any) (PagesGroup, bool, error) {\n\tswitch v := seq.(type) {\n\tcase nil:\n\t\treturn nil, true, nil\n\tcase PagesGroup:\n\t\treturn v, true, nil\n\tcase []PageGroup:\n\t\treturn PagesGroup(v), true, nil\n\tcase []any:\n\t\tl := len(v)\n\t\tif l == 0 {\n\t\t\tbreak\n\t\t}\n\t\tswitch v[0].(type) {\n\t\tcase PageGroup:\n\t\t\tpagesGroup := make(PagesGroup, l)\n\t\t\tfor i, ipg := range v {\n\t\t\t\tif pg, ok := ipg.(PageGroup); ok {\n\t\t\t\t\tpagesGroup[i] = pg\n\t\t\t\t} else {\n\t\t\t\t\treturn nil, false, fmt.Errorf(\"unsupported type in paginate from slice, got %T instead of PageGroup\", ipg)\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn pagesGroup, true, nil\n\t\t}\n\t}\n\n\treturn nil, false, nil\n}",
+    "funcname": "ToPagesGroup"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/smtp.go",
+    "lineno": 173,
+    "focalfunc": "func init()",
+    "funcbody": "func init() {\n\tRegister(AdapterMail, newSMTPWriter)\n}",
+    "funcname": "init"
+}

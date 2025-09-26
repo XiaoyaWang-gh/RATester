@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/server.go",
+    "lineno": 668,
+    "focalfunc": "func (c *serverCommand) createCertificates(conf *commonConfig) error",
+    "funcbody": "func (c *serverCommand) createCertificates(conf *commonConfig) error {\n\thostname := \"localhost\"\n\tif c.r.baseURL != \"\" {\n\t\tu, err := url.Parse(c.r.baseURL)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\thostname = u.Hostname()\n\t}\n\n\tkeyDir := filepath.Join(conf.configs.LoadingInfo.BaseConfig.CacheDir, \"_mkcerts\")\n\n\tif _, err := os.Stat(keyDir); os.IsNotExist(err) {\n\t\tif err := os.MkdirAll(keyDir, 0o777); err != nil {\n\t\t\treturn err\n\t\t}\n\t}\n\n\tc.tlsCertFile = filepath.Join(keyDir, fmt.Sprintf(\"%s.pem\", hostname))\n\tc.tlsKeyFile = filepath.Join(keyDir, fmt.Sprintf(\"%s-key.pem\", hostname))\n\n\tcertPEM, err := os.ReadFile(c.tlsCertFile)\n\tif err == nil {\n\t\trootPem, err := os.ReadFile(filepath.Join(mclib.GetCAROOT(), \"rootCA.pem\"))\n\t\tif err == nil {\n\t\t\tif err := c.verifyCert(rootPem, certPEM, hostname); err == nil {\n\t\t\t\tc.r.Println(\"Using existing\", c.tlsCertFile, \"and\", c.tlsKeyFile)\n\t\t\t\treturn nil\n\t\t\t}\n\t\t}\n\t}\n\n\tc.r.Println(\"Creating TLS certificates in\", keyDir)\n\n\tos.Args = []string{\"-cert-file\", c.tlsCertFile, \"-key-file\", c.tlsKeyFile, hostname}\n\treturn mclib.RunMain()\n}",
+    "funcname": "createCertificates"
+}

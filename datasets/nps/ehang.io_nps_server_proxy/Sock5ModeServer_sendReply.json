@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/socks5.go",
+    "lineno": 88,
+    "focalfunc": "func (s *Sock5ModeServer) sendReply(c net.Conn, rep uint8)",
+    "funcbody": "func (s *Sock5ModeServer) sendReply(c net.Conn, rep uint8) {\n\treply := []byte{\n\t\t5,\n\t\trep,\n\t\t0,\n\t\t1,\n\t}\n\n\tlocalAddr := c.LocalAddr().String()\n\tlocalHost, localPort, _ := net.SplitHostPort(localAddr)\n\tipBytes := net.ParseIP(localHost).To4()\n\tnPort, _ := strconv.Atoi(localPort)\n\treply = append(reply, ipBytes...)\n\tportBytes := make([]byte, 2)\n\tbinary.BigEndian.PutUint16(portBytes, uint16(nPort))\n\treply = append(reply, portBytes...)\n\n\tc.Write(reply)\n}",
+    "funcname": "sendReply"
+}

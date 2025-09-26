@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/keyauth/keyauth.go",
+    "lineno": 81,
+    "focalfunc": "func MultipleKeySourceLookup(keyLookups []string, authScheme string) (KeyLookupFunc, error)",
+    "funcbody": "func MultipleKeySourceLookup(keyLookups []string, authScheme string) (KeyLookupFunc, error) {\n\tsubExtractors := map[string]KeyLookupFunc{}\n\tvar err error\n\tfor _, keyLookup := range keyLookups {\n\t\tsubExtractors[keyLookup], err = DefaultKeyLookup(keyLookup, authScheme)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\treturn func(c fiber.Ctx) (string, error) {\n\t\tfor keyLookup, subExtractor := range subExtractors {\n\t\t\tres, err := subExtractor(c)\n\t\t\tif err == nil && res != \"\" {\n\t\t\t\treturn res, nil\n\t\t\t}\n\t\t\tif !errors.Is(err, ErrMissingOrMalformedAPIKey) {\n\n\t\t\t\treturn \"\", fmt.Errorf(\"[%s] %w\", keyLookup, err)\n\t\t\t}\n\t\t}\n\t\treturn \"\", ErrMissingOrMalformedAPIKey\n\t}, nil\n}",
+    "funcname": "MultipleKeySourceLookup"
+}

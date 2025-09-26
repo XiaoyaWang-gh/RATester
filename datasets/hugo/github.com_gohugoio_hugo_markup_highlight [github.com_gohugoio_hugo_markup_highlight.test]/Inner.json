@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/markup/highlight/highlight.go",
+    "lineno": 161,
+    "focalfunc": "func (h HighlightResult) Inner() template.HTML",
+    "funcbody": "func (h HighlightResult) Inner() template.HTML {\n\treturn h.highlighted[h.innerLow:h.innerHigh]\n}",
+    "funcname": "Inner"
+}

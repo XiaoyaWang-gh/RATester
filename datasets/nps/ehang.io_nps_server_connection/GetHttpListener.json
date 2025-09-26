@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/connection/connection.go",
+    "lineno": 48,
+    "focalfunc": "func GetHttpListener() (net.Listener, error)",
+    "funcbody": "func GetHttpListener() (net.Listener, error) {\n\tif pMux != nil && httpPort == bridgePort {\n\t\tlogs.Info(\"start http listener, port is\", bridgePort)\n\t\treturn pMux.GetHttpListener(), nil\n\t}\n\tlogs.Info(\"start http listener, port is\", httpPort)\n\treturn getTcpListener(beego.AppConfig.String(\"http_proxy_ip\"), httpPort)\n}",
+    "funcname": "GetHttpListener"
+}

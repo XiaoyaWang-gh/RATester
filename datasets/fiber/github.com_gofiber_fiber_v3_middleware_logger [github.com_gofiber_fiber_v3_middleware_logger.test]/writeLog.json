@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/middleware/logger/default_logger.go",
+    "lineno": 158,
+    "focalfunc": "func writeLog(w io.Writer, msg []byte)",
+    "funcbody": "func writeLog(w io.Writer, msg []byte) {\n\tif _, err := w.Write(msg); err != nil {\n\n\t\tif _, err := w.Write([]byte(err.Error())); err != nil {\n\n\t\t\t_, _ = fmt.Fprintf(os.Stderr, \"Failed to write to log, %v\\n\", err)\n\t\t}\n\t}\n}",
+    "funcname": "writeLog"
+}

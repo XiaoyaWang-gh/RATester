@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/gendoc.go",
+    "lineno": 88,
+    "focalfunc": "func labelsWrite(outputDir string, element *dynamic.Configuration) error",
+    "funcbody": "func labelsWrite(outputDir string, element *dynamic.Configuration) error {\n\tcleanServers(element)\n\n\tetnOpts := parser.EncoderToNodeOpts{OmitEmpty: true, TagName: parser.TagLabel, AllowSliceAsStruct: true}\n\tnode, err := parser.EncodeToNode(element, parser.DefaultRootName, etnOpts)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tmetaOpts := parser.MetadataOpts{TagName: parser.TagLabel, AllowSliceAsStruct: true}\n\terr = parser.AddMetadata(element, node, metaOpts)\n\tif err != nil {\n\t\treturn err\n\t}\n\n\tlabels := make(map[string]string)\n\tencodeNode(labels, node.Name, node)\n\n\tvar keys []string\n\tfor k := range labels {\n\t\tkeys = append(keys, k)\n\t}\n\n\tsort.Strings(keys)\n\n\tdockerLabels, err := os.Create(filepath.Join(outputDir, \"docker-labels.yml\"))\n\tif err != nil {\n\t\treturn err\n\t}\n\tdefer dockerLabels.Close()\n\n\tif _, err := dockerLabels.WriteString(commentGenerated); err != nil {\n\t\treturn err\n\t}\n\n\tfor _, k := range keys {\n\t\tv := labels[k]\n\t\tif v != \"\" {\n\t\t\tif v == \"42000000000\" {\n\t\t\t\tv = \"42s\"\n\t\t\t}\n\t\t\tfmt.Fprintln(dockerLabels, `- \"`+strings.ToLower(k)+`=`+v+`\"`)\n\t\t}\n\t}\n\n\treturn nil\n}",
+    "funcname": "labelsWrite"
+}

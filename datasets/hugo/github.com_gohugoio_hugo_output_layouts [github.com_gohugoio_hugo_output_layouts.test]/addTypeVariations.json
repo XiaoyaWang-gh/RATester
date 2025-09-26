@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/output/layouts/layout.go",
+    "lineno": 109,
+    "focalfunc": "func (l *layoutBuilder) addTypeVariations(vars ...string)",
+    "funcbody": "func (l *layoutBuilder) addTypeVariations(vars ...string) {\n\tfor _, typeVar := range vars {\n\t\tif !reservedSections[typeVar] {\n\t\t\tif l.d.RenderingHook {\n\t\t\t\ttypeVar = typeVar + renderingHookRoot\n\t\t\t}\n\t\t\tl.typeVariations = append(l.typeVariations, typeVar)\n\t\t}\n\t}\n}",
+    "funcname": "addTypeVariations"
+}

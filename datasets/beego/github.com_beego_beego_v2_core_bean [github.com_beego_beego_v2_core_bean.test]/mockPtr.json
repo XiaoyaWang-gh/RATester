@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/bean/mock.go",
+    "lineno": 136,
+    "focalfunc": "func mockPtr(pvv reflect.Value, ptt reflect.Type) (err error)",
+    "funcbody": "func mockPtr(pvv reflect.Value, ptt reflect.Type) (err error) {\n\tif pvv.IsNil() {\n\t\tpvv.Set(reflect.New(ptt))\n\t}\n\terr = mock(pvv)\n\treturn\n}",
+    "funcname": "mockPtr"
+}

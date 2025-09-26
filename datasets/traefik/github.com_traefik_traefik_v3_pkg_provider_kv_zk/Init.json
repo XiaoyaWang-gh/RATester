@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kv/zk/zk.go",
+    "lineno": 28,
+    "focalfunc": "func (p *Provider) Init() error",
+    "funcbody": "func (p *Provider) Init() error {\n\tconfig := &zookeeper.Config{\n\t\tConnectionTimeout:\t3 * time.Second,\n\t\tUsername:\t\tp.Username,\n\t\tPassword:\t\tp.Password,\n\t}\n\n\treturn p.Provider.Init(zookeeper.StoreName, \"zookeeper\", config)\n}",
+    "funcname": "Init"
+}

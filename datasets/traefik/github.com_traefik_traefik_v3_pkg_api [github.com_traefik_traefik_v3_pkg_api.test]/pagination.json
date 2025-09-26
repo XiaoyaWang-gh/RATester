@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/api/criterion.go",
+    "lineno": 96,
+    "focalfunc": "func pagination(request *http.Request, maximum int) (pageInfo, error)",
+    "funcbody": "func pagination(request *http.Request, maximum int) (pageInfo, error) {\n\tperPage, err := getIntParam(request, \"per_page\", defaultPerPage)\n\tif err != nil {\n\t\treturn pageInfo{}, err\n\t}\n\n\tpage, err := getIntParam(request, \"page\", defaultPage)\n\tif err != nil {\n\t\treturn pageInfo{}, err\n\t}\n\n\tstartIndex := (page - 1) * perPage\n\tif startIndex != 0 && startIndex >= maximum {\n\t\treturn pageInfo{}, fmt.Errorf(\"invalid request: page: %d, per_page: %d\", page, perPage)\n\t}\n\n\tendIndex := startIndex + perPage\n\tif endIndex >= maximum {\n\t\tendIndex = maximum\n\t}\n\n\tnextPage := 1\n\tif page*perPage < maximum {\n\t\tnextPage = page + 1\n\t}\n\n\treturn pageInfo{startIndex: startIndex, endIndex: endIndex, nextPage: nextPage}, nil\n}",
+    "funcname": "pagination"
+}

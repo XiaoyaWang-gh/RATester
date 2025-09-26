@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/client/orm/orm_log.go",
+    "lineno": 214,
+    "focalfunc": "func (d *dbQueryLog) RollbackUnlessCommit() error",
+    "funcbody": "func (d *dbQueryLog) RollbackUnlessCommit() error {\n\ta := time.Now()\n\terr := d.db.(txEnder).RollbackUnlessCommit()\n\tdebugLogQueies(d.alias, \"tx.RollbackUnlessCommit\", \"ROLLBACK UNLESS COMMIT\", a, err)\n\treturn err\n}",
+    "funcname": "RollbackUnlessCommit"
+}

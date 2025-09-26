@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/postpub/postpub.go",
+    "lineno": 147,
+    "focalfunc": "func (r *PostPublishResource) Data() any",
+    "funcbody": "func (r *PostPublishResource) Data() any {\n\tm := map[string]any{\n\t\t\"Integrity\": \"\",\n\t}\n\tinsertFieldPlaceholders(\"Data\", m, r.field)\n\treturn m\n}",
+    "funcname": "Data"
+}

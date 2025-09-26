@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/fiber/internal/memory/memory.go",
+    "lineno": 56,
+    "focalfunc": "func (s *Storage) Delete(key string)",
+    "funcbody": "func (s *Storage) Delete(key string) {\n\ts.Lock()\n\tdelete(s.data, key)\n\ts.Unlock()\n}",
+    "funcname": "Delete"
+}

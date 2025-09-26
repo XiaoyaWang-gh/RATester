@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/defaultConfigProvider.go",
+    "lineno": 148,
+    "focalfunc": "func (c *defaultConfigProvider) GetStringSlice(k string) []string",
+    "funcbody": "func (c *defaultConfigProvider) GetStringSlice(k string) []string {\n\tv := c.Get(k)\n\treturn cast.ToStringSlice(v)\n}",
+    "funcname": "GetStringSlice"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/crd/kubernetes.go",
+    "lineno": 625,
+    "focalfunc": "func createCircuitBreakerMiddleware(circuitBreaker *traefikv1alpha1.CircuitBreaker) (*dynamic.CircuitBreaker, error)",
+    "funcbody": "func createCircuitBreakerMiddleware(circuitBreaker *traefikv1alpha1.CircuitBreaker) (*dynamic.CircuitBreaker, error) {\n\tif circuitBreaker == nil {\n\t\treturn nil, nil\n\t}\n\n\tcb := &dynamic.CircuitBreaker{Expression: circuitBreaker.Expression}\n\tcb.SetDefaults()\n\n\tif circuitBreaker.CheckPeriod != nil {\n\t\tif err := cb.CheckPeriod.Set(circuitBreaker.CheckPeriod.String()); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tif circuitBreaker.FallbackDuration != nil {\n\t\tif err := cb.FallbackDuration.Set(circuitBreaker.FallbackDuration.String()); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tif circuitBreaker.RecoveryDuration != nil {\n\t\tif err := cb.RecoveryDuration.Set(circuitBreaker.RecoveryDuration.String()); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\n\tif circuitBreaker.ResponseCode != 0 {\n\t\tcb.ResponseCode = circuitBreaker.ResponseCode\n\t}\n\n\treturn cb, nil\n}",
+    "funcname": "createCircuitBreakerMiddleware"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/internal/release/release.go",
+    "lineno": 12,
+    "focalfunc": "func main()",
+    "funcbody": "func main() {\n\tif len(os.Args) < 2 {\n\t\tlog.Fatal(\"GOOS should be provided as a CLI argument\")\n\t}\n\n\tgoos := strings.TrimSpace(os.Args[1])\n\tif goos == \"\" {\n\t\tlog.Fatal(\"GOOS should be provided as a CLI argument\")\n\t}\n\n\ttmpl := template.Must(\n\t\ttemplate.New(\".goreleaser.yml.tmpl\").\n\t\t\tDelims(\"[[\", \"]]\").\n\t\t\tParseFiles(\"./.goreleaser.yml.tmpl\"),\n\t)\n\n\toutputPath := path.Join(os.TempDir(), fmt.Sprintf(\".goreleaser_%s.yml\", goos))\n\n\toutput, err := os.Create(outputPath)\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\terr = tmpl.Execute(output, map[string]string{\"GOOS\": goos})\n\tif err != nil {\n\t\tlog.Fatal(err)\n\t}\n\n\tfmt.Print(outputPath)\n}",
+    "funcname": "main"
+}

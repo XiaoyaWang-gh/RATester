@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/resources/resources.go",
+    "lineno": 213,
+    "focalfunc": "func (ns *Namespace) Concat(targetPathIn any, r any) (resource.Resource, error)",
+    "funcbody": "func (ns *Namespace) Concat(targetPathIn any, r any) (resource.Resource, error) {\n\ttargetPath, err := cast.ToStringE(targetPathIn)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tvar rr resource.Resources\n\n\tswitch v := r.(type) {\n\tcase resource.Resources:\n\t\trr = v\n\tcase resource.ResourcesConverter:\n\t\trr = v.ToResources()\n\tdefault:\n\t\treturn nil, fmt.Errorf(\"expected slice of Resource objects, received %T instead\", r)\n\t}\n\n\tif len(rr) == 0 {\n\t\treturn nil, errors.New(\"must provide one or more Resource objects to concat\")\n\t}\n\n\treturn ns.bundlerClient.Concat(targetPath, rr)\n}",
+    "funcname": "Concat"
+}

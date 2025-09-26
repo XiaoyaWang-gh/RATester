@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/gin/response_writer.go",
+    "lineno": 95,
+    "focalfunc": "func (w *responseWriter) Status() int",
+    "funcbody": "func (w *responseWriter) Status() int {\n\treturn w.status\n}",
+    "funcname": "Status"
+}

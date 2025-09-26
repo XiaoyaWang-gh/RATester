@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/controller.go",
+    "lineno": 613,
+    "focalfunc": "func (c *Controller) GetBool(key string, def ...bool) (bool, error)",
+    "funcbody": "func (c *Controller) GetBool(key string, def ...bool) (bool, error) {\n\tstrv := c.Ctx.Input.Query(key)\n\tif len(strv) == 0 && len(def) > 0 {\n\t\treturn def[0], nil\n\t}\n\treturn strconv.ParseBool(strv)\n}",
+    "funcname": "GetBool"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/kubernetes/gateway/kubernetes.go",
+    "lineno": 774,
+    "focalfunc": "func (p *Provider) entryPointName(port gatev1.PortNumber, protocol gatev1.ProtocolType) (string, error)",
+    "funcbody": "func (p *Provider) entryPointName(port gatev1.PortNumber, protocol gatev1.ProtocolType) (string, error) {\n\tportStr := strconv.FormatInt(int64(port), 10)\n\n\tfor name, entryPoint := range p.EntryPoints {\n\t\tif strings.HasSuffix(entryPoint.Address, \":\"+portStr) {\n\n\t\t\tif protocol == gatev1.HTTPProtocolType && entryPoint.HasHTTPTLSConf {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\treturn name, nil\n\t\t}\n\t}\n\n\treturn \"\", fmt.Errorf(\"no matching entryPoint for port %d and protocol %q\", port, protocol)\n}",
+    "funcname": "entryPointName"
+}

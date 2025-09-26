@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/glob/glob.go",
+    "lineno": 133,
+    "focalfunc": "func NormalizePathNoLower(p string) string",
+    "funcbody": "func NormalizePathNoLower(p string) string {\n\treturn strings.Trim(path.Clean(filepath.ToSlash(p)), \"/.\")\n}",
+    "funcname": "NormalizePathNoLower"
+}

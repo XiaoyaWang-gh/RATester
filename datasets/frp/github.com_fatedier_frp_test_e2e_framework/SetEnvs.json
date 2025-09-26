@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/framework/framework.go",
+    "lineno": 257,
+    "focalfunc": "func (f *Framework) SetEnvs(envs []string)",
+    "funcbody": "func (f *Framework) SetEnvs(envs []string) {\n\tf.osEnvs = envs\n}",
+    "funcname": "SetEnvs"
+}

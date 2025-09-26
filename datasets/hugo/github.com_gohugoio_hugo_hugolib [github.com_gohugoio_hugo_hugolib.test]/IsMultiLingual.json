@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites.go",
+    "lineno": 290,
+    "focalfunc": "func (h *HugoSites) isMultilingual() bool",
+    "funcbody": "func (h *HugoSites) isMultilingual() bool {\n\treturn len(h.Sites) > 1\n}",
+    "funcname": "isMultilingual"
+}

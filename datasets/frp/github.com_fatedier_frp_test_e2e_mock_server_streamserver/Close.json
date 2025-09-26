@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/test/e2e/mock/server/streamserver/server.go",
+    "lineno": 93,
+    "focalfunc": "func (s *Server) Close() error",
+    "funcbody": "func (s *Server) Close() error {\n\tif s.l != nil {\n\t\treturn s.l.Close()\n\t}\n\treturn nil\n}",
+    "funcname": "Close"
+}

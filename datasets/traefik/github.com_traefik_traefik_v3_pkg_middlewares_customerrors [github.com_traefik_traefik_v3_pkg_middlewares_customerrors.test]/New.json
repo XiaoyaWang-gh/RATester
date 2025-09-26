@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/middlewares/customerrors/custom_errors.go",
+    "lineno": 43,
+    "focalfunc": "func New(ctx context.Context, next http.Handler, config dynamic.ErrorPage, serviceBuilder serviceBuilder, name string) (http.Handler, error)",
+    "funcbody": "func New(ctx context.Context, next http.Handler, config dynamic.ErrorPage, serviceBuilder serviceBuilder, name string) (http.Handler, error) {\n\tmiddlewares.GetLogger(ctx, name, typeName).Debug().Msg(\"Creating middleware\")\n\n\thttpCodeRanges, err := types.NewHTTPCodeRanges(config.Status)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\tbackend, err := serviceBuilder.BuildHTTP(ctx, config.Service)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\n\treturn &customErrors{\n\t\tname:\t\tname,\n\t\tnext:\t\tnext,\n\t\tbackendHandler:\tbackend,\n\t\thttpCodeRanges:\thttpCodeRanges,\n\t\tbackendQuery:\tconfig.Query,\n\t}, nil\n}",
+    "funcname": "New"
+}

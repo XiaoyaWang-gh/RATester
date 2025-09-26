@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/page_generate/generate_page_wrappers.go",
+    "lineno": 99,
+    "focalfunc": "func importsString(imps []string) string",
+    "funcbody": "func importsString(imps []string) string {\n\tif len(imps) == 0 {\n\t\treturn \"\"\n\t}\n\n\tif len(imps) == 1 {\n\t\treturn fmt.Sprintf(\"import %q\", imps[0])\n\t}\n\n\timpsStr := \"import (\\n\"\n\tfor _, imp := range imps {\n\t\timpsStr += fmt.Sprintf(\"%q\\n\", imp)\n\t}\n\n\treturn impsStr + \")\"\n}",
+    "funcname": "importsString"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugofs/fileinfo.go",
+    "lineno": 127,
+    "focalfunc": "func (f *FileMeta) JoinStat(name string) (FileMetaInfo, error)",
+    "funcbody": "func (f *FileMeta) JoinStat(name string) (FileMetaInfo, error) {\n\tif f.JoinStatFunc == nil {\n\t\treturn nil, os.ErrNotExist\n\t}\n\treturn f.JoinStatFunc(name)\n}",
+    "funcname": "JoinStat"
+}

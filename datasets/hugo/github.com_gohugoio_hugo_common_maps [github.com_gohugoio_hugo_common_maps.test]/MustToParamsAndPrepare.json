@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/common/maps/maps.go",
+    "lineno": 59,
+    "focalfunc": "func MustToParamsAndPrepare(in any) Params",
+    "funcbody": "func MustToParamsAndPrepare(in any) Params {\n\tp, err := ToParamsAndPrepare(in)\n\tif err != nil {\n\t\tpanic(fmt.Sprintf(\"cannot convert %T to maps.Params: %s\", in, err))\n\t}\n\treturn p\n}",
+    "funcname": "MustToParamsAndPrepare"
+}

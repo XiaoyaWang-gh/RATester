@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/commands/hugobuilder.go",
+    "lineno": 429,
+    "focalfunc": "func (c *hugoBuilder) copyStatic() (map[string]uint64, error)",
+    "funcbody": "func (c *hugoBuilder) copyStatic() (map[string]uint64, error) {\n\tm, err := c.doWithPublishDirs(c.copyStaticTo)\n\tif err == nil || herrors.IsNotExist(err) {\n\t\treturn m, nil\n\t}\n\treturn m, err\n}",
+    "funcname": "copyStatic"
+}

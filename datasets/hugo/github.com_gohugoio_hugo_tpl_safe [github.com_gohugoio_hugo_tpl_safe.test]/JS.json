@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/safe/safe.go",
+    "lineno": 51,
+    "focalfunc": "func (ns *Namespace) JS(s any) (template.JS, error)",
+    "funcbody": "func (ns *Namespace) JS(s any) (template.JS, error) {\n\tss, err := cast.ToStringE(s)\n\treturn template.JS(ss), err\n}",
+    "funcname": "JS"
+}

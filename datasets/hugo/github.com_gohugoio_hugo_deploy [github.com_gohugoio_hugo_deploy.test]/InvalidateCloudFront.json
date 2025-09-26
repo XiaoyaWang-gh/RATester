@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/cloudfront.go",
+    "lineno": 42,
+    "focalfunc": "func InvalidateCloudFront(ctx context.Context, target *deployconfig.Target) error",
+    "funcbody": "func InvalidateCloudFront(ctx context.Context, target *deployconfig.Target) error {\n\tu, err := url.Parse(target.URL)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvals := u.Query()\n\n\tfor k := range vals {\n\t\tif !v2ConfigValidParams[k] {\n\t\t\tvals.Del(k)\n\t\t}\n\t}\n\n\tcfg, err := gcaws.V2ConfigFromURLParams(ctx, vals)\n\tif err != nil {\n\t\treturn err\n\t}\n\tcf := cloudfront.NewFromConfig(cfg)\n\treq := &cloudfront.CreateInvalidationInput{\n\t\tDistributionId:\taws.String(target.CloudFrontDistributionID),\n\t\tInvalidationBatch: &types.InvalidationBatch{\n\t\t\tCallerReference:\taws.String(time.Now().Format(\"20060102150405\")),\n\t\t\tPaths: &types.Paths{\n\t\t\t\tItems:\t\t[]string{\"/*\"},\n\t\t\t\tQuantity:\taws.Int32(1),\n\t\t\t},\n\t\t},\n\t}\n\t_, err = cf.CreateInvalidation(ctx, req)\n\treturn err\n}",
+    "funcname": "InvalidateCloudFront"
+}

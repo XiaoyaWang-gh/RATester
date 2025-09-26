@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/hugo_sites_build.go",
+    "lineno": 1125,
+    "focalfunc": "func (s *Site) handleContentAdapterChanges(bi pagesfromdata.BuildInfo, buildConfig *BuildCfg)",
+    "funcbody": "func (s *Site) handleContentAdapterChanges(bi pagesfromdata.BuildInfo, buildConfig *BuildCfg) {\n\tif !s.h.isRebuild() {\n\t\treturn\n\t}\n\n\tif len(bi.ChangedIdentities) > 0 {\n\t\tbuildConfig.WhatChanged.Add(bi.ChangedIdentities...)\n\t\tbuildConfig.WhatChanged.needsPagesAssembly = true\n\t}\n\n\tfor _, p := range bi.DeletedPaths {\n\t\tpp := path.Join(bi.Path.Base(), p)\n\t\tif v, ok := s.pageMap.treePages.Delete(pp); ok {\n\t\t\tbuildConfig.WhatChanged.Add(v.GetIdentity())\n\t\t}\n\t}\n}",
+    "funcname": "handleContentAdapterChanges"
+}

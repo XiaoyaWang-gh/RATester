@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/control.go",
+    "lineno": 197,
+    "focalfunc": "func (ctl *Control) closeSession()",
+    "funcbody": "func (ctl *Control) closeSession() {\n\tctl.sessionCtx.Conn.Close()\n\tctl.sessionCtx.Connector.Close()\n}",
+    "funcname": "closeSession"
+}

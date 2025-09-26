@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/cache/httpcache/httpcache.go",
+    "lineno": 139,
+    "focalfunc": "func (c *ConfigCompiled) IsPollingDisabled() bool",
+    "funcbody": "func (c *ConfigCompiled) IsPollingDisabled() bool {\n\tfor _, pc := range c.PollConfigs {\n\t\tif !pc.Config.Disable {\n\t\t\treturn false\n\t\t}\n\t}\n\treturn true\n}",
+    "funcname": "IsPollingDisabled"
+}

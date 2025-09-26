@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/images/color.go",
+    "lineno": 67,
+    "focalfunc": "func (c Color) Hash() (uint64, error)",
+    "funcbody": "func (c Color) Hash() (uint64, error) {\n\th := fnv.New64a()\n\th.Write([]byte(c.hex))\n\treturn h.Sum64(), nil\n}",
+    "funcname": "Hash"
+}

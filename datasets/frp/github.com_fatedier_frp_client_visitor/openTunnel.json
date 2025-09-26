@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/frp/client/visitor/xtcp.go",
+    "lineno": 216,
+    "focalfunc": "func (sv *XTCPVisitor) openTunnel(ctx context.Context) (conn net.Conn, err error)",
+    "funcbody": "func (sv *XTCPVisitor) openTunnel(ctx context.Context) (conn net.Conn, err error) {\n\txl := xlog.FromContextSafe(sv.ctx)\n\tticker := time.NewTicker(500 * time.Millisecond)\n\tdefer ticker.Stop()\n\n\ttimeoutC := time.After(20 * time.Second)\n\timmediateTrigger := make(chan struct{}, 1)\n\tdefer close(immediateTrigger)\n\timmediateTrigger <- struct{}{}\n\n\tfor {\n\t\tselect {\n\t\tcase <-sv.ctx.Done():\n\t\t\treturn nil, sv.ctx.Err()\n\t\tcase <-ctx.Done():\n\t\t\treturn nil, ctx.Err()\n\t\tcase <-immediateTrigger:\n\t\t\tconn, err = sv.getTunnelConn()\n\t\tcase <-ticker.C:\n\t\t\tconn, err = sv.getTunnelConn()\n\t\tcase <-timeoutC:\n\t\t\treturn nil, fmt.Errorf(\"open tunnel timeout\")\n\t\t}\n\n\t\tif err != nil {\n\t\t\tif err != ErrNoTunnelSession {\n\t\t\t\txl.Warnf(\"get tunnel connection error: %v\", err)\n\t\t\t}\n\t\t\tcontinue\n\t\t}\n\t\treturn conn, nil\n\t}\n}",
+    "funcname": "openTunnel"
+}

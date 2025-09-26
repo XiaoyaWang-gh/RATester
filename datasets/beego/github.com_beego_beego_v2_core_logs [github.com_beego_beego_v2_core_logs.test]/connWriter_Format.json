@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/core/logs/conn.go",
+    "lineno": 46,
+    "focalfunc": "func (c *connWriter) Format(lm *LogMsg) string",
+    "funcbody": "func (c *connWriter) Format(lm *LogMsg) string {\n\treturn lm.OldStyleFormat()\n}",
+    "funcname": "Format"
+}

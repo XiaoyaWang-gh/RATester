@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/nps/server/proxy/http.go",
+    "lineno": 265,
+    "focalfunc": "func (s *httpServer) NewServer(port int, scheme string) *http.Server",
+    "funcbody": "func (s *httpServer) NewServer(port int, scheme string) *http.Server {\n\treturn &http.Server{\n\t\tAddr:\t\":\" + strconv.Itoa(port),\n\t\tHandler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {\n\t\t\tr.URL.Scheme = scheme\n\t\t\ts.handleTunneling(w, r)\n\t\t}),\n\n\t\tTLSNextProto:\tmake(map[string]func(*http.Server, *tls.Conn, http.Handler)),\n\t}\n}",
+    "funcname": "NewServer"
+}

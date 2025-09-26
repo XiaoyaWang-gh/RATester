@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/resources/page/site.go",
+    "lineno": 498,
+    "focalfunc": "func NewDummyHugoSite(conf config.AllProvider) Site",
+    "funcbody": "func NewDummyHugoSite(conf config.AllProvider) Site {\n\treturn testSite{\n\t\th:\thugo.NewInfo(conf, nil),\n\t\tl: &langs.Language{\n\t\t\tLang: \"en\",\n\t\t},\n\t}\n}",
+    "funcname": "NewDummyHugoSite"
+}

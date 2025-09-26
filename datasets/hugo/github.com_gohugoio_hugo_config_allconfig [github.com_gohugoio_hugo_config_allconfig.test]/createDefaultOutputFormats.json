@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 1039,
+    "focalfunc": "func createDefaultOutputFormats(allFormats output.Formats) map[string][]string",
+    "funcbody": "func createDefaultOutputFormats(allFormats output.Formats) map[string][]string {\n\tif len(allFormats) == 0 {\n\t\tpanic(\"no output formats\")\n\t}\n\trssOut, rssFound := allFormats.GetByName(output.RSSFormat.Name)\n\thtmlOut, _ := allFormats.GetByName(output.HTMLFormat.Name)\n\n\tdefaultListTypes := []string{htmlOut.Name}\n\tif rssFound {\n\t\tdefaultListTypes = append(defaultListTypes, rssOut.Name)\n\t}\n\n\tm := map[string][]string{\n\t\tkinds.KindPage:\t\t{htmlOut.Name},\n\t\tkinds.KindHome:\t\tdefaultListTypes,\n\t\tkinds.KindSection:\tdefaultListTypes,\n\t\tkinds.KindTerm:\t\tdefaultListTypes,\n\t\tkinds.KindTaxonomy:\tdefaultListTypes,\n\t}\n\n\tif rssFound {\n\t\tm[\"rss\"] = []string{rssOut.Name}\n\t}\n\n\treturn m\n}",
+    "funcname": "createDefaultOutputFormats"
+}

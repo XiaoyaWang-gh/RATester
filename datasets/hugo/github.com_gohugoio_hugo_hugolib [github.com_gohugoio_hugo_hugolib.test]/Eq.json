@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/hugolib/page.go",
+    "lineno": 189,
+    "focalfunc": "func (p *pageState) Eq(other any) bool",
+    "funcbody": "func (p *pageState) Eq(other any) bool {\n\tpp, err := unwrapPage(other)\n\tif err != nil {\n\t\treturn false\n\t}\n\n\treturn p == pp\n}",
+    "funcname": "Eq"
+}

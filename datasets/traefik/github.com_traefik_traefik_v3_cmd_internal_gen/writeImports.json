@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/cmd/internal/gen/centrifuge.go",
+    "lineno": 311,
+    "focalfunc": "func (f fileWriter) writeImports(b io.StringWriter, imports []string)",
+    "funcbody": "func (f fileWriter) writeImports(b io.StringWriter, imports []string) {\n\tif len(imports) == 0 {\n\t\treturn\n\t}\n\n\tuniq := map[string]struct{}{}\n\n\tsort.Strings(imports)\n\n\t_, _ = b.WriteString(\"import (\\n\")\n\tfor _, s := range imports {\n\t\tif _, exist := uniq[s]; exist {\n\t\t\tcontinue\n\t\t}\n\n\t\tuniq[s] = struct{}{}\n\n\t\t_, _ = b.WriteString(fmt.Sprintf(`\t\"%s\"`+\"\\n\", s))\n\t}\n\n\t_, _ = b.WriteString(\")\\n\")\n}",
+    "funcname": "writeImports"
+}

@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/tpl/tplimpl/template_funcs.go",
+    "lineno": 178,
+    "focalfunc": "func (t *templateExecHelper) trackDependencies(ctx context.Context, tmpl texttemplate.Preparer, name string, receiver reflect.Value) context.Context",
+    "funcbody": "func (t *templateExecHelper) trackDependencies(ctx context.Context, tmpl texttemplate.Preparer, name string, receiver reflect.Value) context.Context {\n\tif tmpl == nil {\n\t\tpanic(\"must provide a template\")\n\t}\n\n\tidm := tpl.Context.GetDependencyManagerInCurrentScope(ctx)\n\tif idm == nil {\n\t\treturn ctx\n\t}\n\n\tif info, ok := tmpl.(identity.IdentityProvider); ok {\n\t\tidm.AddIdentity(info.GetIdentity())\n\t}\n\n\tif hreflect.IsValid(receiver) {\n\t\tin := receiver.Interface()\n\n\t\tif idlp, ok := in.(identity.ForEeachIdentityByNameProvider); ok {\n\n\t\t\tidlp.ForEeachIdentityByName(name, func(id identity.Identity) bool {\n\t\t\t\tidm.AddIdentity(id)\n\t\t\t\treturn false\n\t\t\t})\n\t\t} else {\n\t\t\tidentity.WalkIdentitiesShallow(in, func(level int, id identity.Identity) bool {\n\t\t\t\tidm.AddIdentity(id)\n\t\t\t\treturn false\n\t\t\t})\n\t\t}\n\t}\n\n\treturn ctx\n}",
+    "funcname": "trackDependencies"
+}

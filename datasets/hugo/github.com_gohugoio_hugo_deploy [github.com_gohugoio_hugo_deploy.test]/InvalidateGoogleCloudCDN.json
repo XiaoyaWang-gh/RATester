@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/deploy/google.go",
+    "lineno": 28,
+    "focalfunc": "func InvalidateGoogleCloudCDN(ctx context.Context, origin string) error",
+    "funcbody": "func InvalidateGoogleCloudCDN(ctx context.Context, origin string) error {\n\tparts := strings.Split(origin, \"/\")\n\tif len(parts) != 2 {\n\t\treturn fmt.Errorf(\"origin must be <project>/<origin>\")\n\t}\n\tservice, err := compute.NewService(ctx)\n\tif err != nil {\n\t\treturn err\n\t}\n\trule := &compute.CacheInvalidationRule{Path: \"/*\"}\n\t_, err = service.UrlMaps.InvalidateCache(parts[0], parts[1], rule).Context(ctx).Do()\n\treturn err\n}",
+    "funcname": "InvalidateGoogleCloudCDN"
+}

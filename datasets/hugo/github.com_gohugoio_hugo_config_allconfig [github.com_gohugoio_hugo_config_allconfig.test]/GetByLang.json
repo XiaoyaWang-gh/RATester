@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 851,
+    "focalfunc": "func (c Configs) GetByLang(lang string) config.AllProvider",
+    "funcbody": "func (c Configs) GetByLang(lang string) config.AllProvider {\n\tfor _, l := range c.configLangs {\n\t\tif l.Language().Lang == lang {\n\t\t\treturn l\n\t\t}\n\t}\n\treturn nil\n}",
+    "funcname": "GetByLang"
+}

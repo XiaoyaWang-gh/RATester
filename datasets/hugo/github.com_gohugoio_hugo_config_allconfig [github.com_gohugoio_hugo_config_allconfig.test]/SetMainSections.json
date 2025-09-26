@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/hugo/config/allconfig/allconfig.go",
+    "lineno": 459,
+    "focalfunc": "func (c *ConfigCompiled) SetMainSections(sections []string)",
+    "funcbody": "func (c *ConfigCompiled) SetMainSections(sections []string) {\n\tc.mu.Lock()\n\tdefer c.mu.Unlock()\n\tc.MainSections = sections\n}",
+    "funcname": "SetMainSections"
+}

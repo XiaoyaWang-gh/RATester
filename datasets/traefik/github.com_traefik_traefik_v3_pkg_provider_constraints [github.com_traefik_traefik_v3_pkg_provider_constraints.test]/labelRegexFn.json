@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/constraints/constraints_labels.go",
+    "lineno": 54,
+    "focalfunc": "func labelRegexFn(name, expr string) constraintLabelFunc",
+    "funcbody": "func labelRegexFn(name, expr string) constraintLabelFunc {\n\treturn func(labels map[string]string) bool {\n\t\tmatched, err := regexp.MatchString(expr, labels[name])\n\t\tif err != nil {\n\t\t\treturn false\n\t\t}\n\t\treturn matched\n\t}\n}",
+    "funcname": "labelRegexFn"
+}

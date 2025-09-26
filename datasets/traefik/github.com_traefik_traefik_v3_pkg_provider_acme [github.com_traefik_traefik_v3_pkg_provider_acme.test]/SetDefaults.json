@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/traefik/pkg/provider/acme/provider.go",
+    "lineno": 52,
+    "focalfunc": "func (a *Configuration) SetDefaults()",
+    "funcbody": "func (a *Configuration) SetDefaults() {\n\ta.CAServer = lego.LEDirectoryProduction\n\ta.Storage = \"acme.json\"\n\ta.KeyType = \"RSA4096\"\n\ta.CertificatesDuration = 3 * 30 * 24\n}",
+    "funcname": "SetDefaults"
+}

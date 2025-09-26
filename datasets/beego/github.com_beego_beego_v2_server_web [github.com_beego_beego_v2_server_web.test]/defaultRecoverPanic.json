@@ -1,0 +1,7 @@
+{
+    "relpath": "./projects/beego/server/web/config.go",
+    "lineno": 485,
+    "focalfunc": "func defaultRecoverPanic(ctx *context.Context, cfg *Config)",
+    "funcbody": "func defaultRecoverPanic(ctx *context.Context, cfg *Config) {\n\tif err := recover(); err != nil {\n\t\tif err == ErrAbort {\n\t\t\treturn\n\t\t}\n\t\tif !cfg.RecoverPanic {\n\t\t\tpanic(err)\n\t\t}\n\t\tif cfg.EnableErrorsShow {\n\t\t\tif _, ok := ErrorMaps[fmt.Sprint(err)]; ok {\n\t\t\t\texception(fmt.Sprint(err), ctx)\n\t\t\t\treturn\n\t\t\t}\n\t\t}\n\t\tvar stack string\n\t\tlogs.Critical(\"the request url is \", ctx.Input.URL())\n\t\tlogs.Critical(\"Handler crashed with error\", err)\n\t\tfor i := 1; ; i++ {\n\t\t\t_, file, line, ok := runtime.Caller(i)\n\t\t\tif !ok {\n\t\t\t\tbreak\n\t\t\t}\n\t\t\tlogs.Critical(fmt.Sprintf(\"%s:%d\", file, line))\n\t\t\tstack += fmt.Sprintf(\"%s:%d\\n\", file, line)\n\t\t}\n\n\t\tif ctx.Output.Status != 0 {\n\t\t\tctx.ResponseWriter.WriteHeader(ctx.Output.Status)\n\t\t} else {\n\t\t\tctx.ResponseWriter.WriteHeader(500)\n\t\t}\n\n\t\tif cfg.RunMode == DEV && cfg.EnableErrorsRender {\n\t\t\tshowErr(err, ctx, stack)\n\t\t}\n\t}\n}",
+    "funcname": "defaultRecoverPanic"
+}
