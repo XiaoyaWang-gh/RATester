@@ -222,11 +222,10 @@ func readModulePath(goModPath string) (string, error) {
 }
 
 func buildDatasetItem(reposRoot string, row targetRow, modulePath string) (datasetItem, string, string, error) {
-	repoRelativeFile := filepath.ToSlash(row.SourceFile)
-	if !strings.HasPrefix(repoRelativeFile, row.Repo+"/") {
-		repoRelativeFile = pathJoinSlash(row.Repo, repoRelativeFile)
+	repoRelativeFile, absPath, err := resolveSourcePath(reposRoot, row)
+	if err != nil {
+		return datasetItem{}, "", "", err
 	}
-	absPath := filepath.Join(reposRoot, filepath.FromSlash(repoRelativeFile))
 	src, err := os.ReadFile(absPath)
 	if err != nil {
 		return datasetItem{}, "", "", err
@@ -328,4 +327,28 @@ func pathJoinSlash(parts ...string) string {
 		trimmed = append(trimmed, strings.Trim(part, "/"))
 	}
 	return strings.Join(trimmed, "/")
+}
+
+func resolveSourcePath(reposRoot string, row targetRow) (string, string, error) {
+	trimmed := strings.Trim(filepath.ToSlash(row.SourceFile), "/")
+	candidates := []string{
+		trimmed,
+		pathJoinSlash(row.Repo, trimmed),
+		pathJoinSlash(row.Repo, strings.TrimPrefix(trimmed, row.Repo+"/")),
+	}
+	seen := map[string]struct{}{}
+	for _, rel := range candidates {
+		if rel == "" {
+			continue
+		}
+		if _, ok := seen[rel]; ok {
+			continue
+		}
+		seen[rel] = struct{}{}
+		abs := filepath.Join(reposRoot, filepath.FromSlash(rel))
+		if _, err := os.Stat(abs); err == nil {
+			return rel, abs, nil
+		}
+	}
+	return "", "", fmt.Errorf("no existing source path matched %q", row.SourceFile)
 }
