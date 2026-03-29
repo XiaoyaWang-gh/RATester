@@ -1,11 +1,11 @@
 {
-  "completion_tokens": 37359,
-  "generation_rounds": 49,
-  "items": 48,
-  "latency_ms": 880684,
-  "llm_calls": 49,
+  "completion_tokens": 42530,
+  "generation_rounds": 60,
+  "items": 60,
+  "latency_ms": 758671,
+  "llm_calls": 60,
   "model": "Doubao-Seed-Code",
   "project": "gin",
-  "prompt_tokens": 44341,
-  "total_tokens": 81700
+  "prompt_tokens": 50557,
+  "total_tokens": 93087
 }
