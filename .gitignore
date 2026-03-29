@@ -5,3 +5,4 @@ error/
 datasets_aligned/
 .pydeps_ark/
 .venv_ark/
+results/*/metrics/

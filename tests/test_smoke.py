@@ -5,6 +5,7 @@ import unittest
 import json
 import importlib.util
 import os
+import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -46,6 +47,7 @@ class SmokeTests(unittest.TestCase):
         self.assertIn('--ark-endpoint-id', result.stdout)
         self.assertIn('--ark-api-key-env', result.stdout)
         self.assertIn('--gopls-endpoint', result.stdout)
+        self.assertIn('--results-root', result.stdout)
         self.assertIn('Doubao-Seed-Code', result.stdout)
 
     def test_run_test_uses_ratester_prefix(self):
@@ -137,6 +139,61 @@ class SmokeTests(unittest.TestCase):
                 os.environ.pop("GOPLS_ENDPOINT", None)
             else:
                 os.environ["GOPLS_ENDPOINT"] = previous
+
+    def test_build_metrics_paths_follow_results_layout(self):
+        main = load_main_module()
+
+        jsonl_path, summary_path = main.build_metrics_paths("./results", "Doubao-Seed-Code", "gin")
+
+        self.assertTrue(jsonl_path.endswith("results/RATester_Doubao-Seed-Code/metrics/gin.jsonl"))
+        self.assertTrue(summary_path.endswith("results/RATester_Doubao-Seed-Code/metrics/gin.summary.json"))
+
+    def test_extract_usage_defaults_missing_usage_to_zero(self):
+        main = load_main_module()
+
+        usage = main.extract_usage(object())
+
+        self.assertEqual(
+            usage,
+            {
+                "prompt_tokens": 0,
+                "completion_tokens": 0,
+                "total_tokens": 0,
+            },
+        )
+
+    def test_persist_metrics_record_appends_and_updates_summary(self):
+        main = load_main_module()
+        with tempfile.TemporaryDirectory() as root:
+            record = {
+                "project": "gin",
+                "dataset_dir": "codec_json_MarshalIndent",
+                "llm_calls": 2,
+                "prompt_tokens": 11,
+                "completion_tokens": 7,
+                "total_tokens": 18,
+                "generation_rounds": 2,
+                "latency_ms": 123,
+            }
+
+            main.persist_metrics_record(str(root), "Doubao-Seed-Code", "gin", record)
+
+            jsonl_path = pathlib.Path(root) / "RATester_Doubao-Seed-Code" / "metrics" / "gin.jsonl"
+            summary_path = pathlib.Path(root) / "RATester_Doubao-Seed-Code" / "metrics" / "gin.summary.json"
+
+            self.assertTrue(jsonl_path.exists())
+            self.assertTrue(summary_path.exists())
+
+            jsonl_lines = jsonl_path.read_text().strip().splitlines()
+            self.assertEqual(len(jsonl_lines), 1)
+            self.assertEqual(json.loads(jsonl_lines[0])["dataset_dir"], "codec_json_MarshalIndent")
+
+            summary = json.loads(summary_path.read_text())
+            self.assertEqual(summary["items"], 1)
+            self.assertEqual(summary["llm_calls"], 2)
+            self.assertEqual(summary["prompt_tokens"], 11)
+            self.assertEqual(summary["completion_tokens"], 7)
+            self.assertEqual(summary["total_tokens"], 18)
 
 if __name__ == '__main__':
     unittest.main()

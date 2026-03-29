@@ -3,6 +3,7 @@ import re
 import json
 import random
 import argparse
+import time
 from glob import glob
 
 try:
@@ -193,6 +194,12 @@ def build_parser():
         default=os.environ.get("GOPLS_ENDPOINT", "http://127.0.0.1:2000"),
         help="jsonrpc gopls service endpoint, use a unique port per concurrent project run",
     )
+    parser.add_argument(
+        "--results-root",
+        type=str,
+        default="./results",
+        help="results root directory used for generated tests metadata and metrics outputs",
+    )
     return parser
 
 
@@ -248,6 +255,52 @@ def extract_prompt_identifiers(text, funcname):
 
 def resolve_project_path(path):
     return os.path.abspath(path)
+
+
+def build_metrics_paths(results_root, model_name, project):
+    metrics_dir = os.path.join(results_root, f"RATester_{model_name}", "metrics")
+    jsonl_path = os.path.join(metrics_dir, f"{project}.jsonl")
+    summary_path = os.path.join(metrics_dir, f"{project}.summary.json")
+    return jsonl_path, summary_path
+
+
+def extract_usage(response):
+    usage = getattr(response, "usage", None)
+    return {
+        "prompt_tokens": int(getattr(usage, "prompt_tokens", 0) or 0),
+        "completion_tokens": int(getattr(usage, "completion_tokens", 0) or 0),
+        "total_tokens": int(getattr(usage, "total_tokens", 0) or 0),
+    }
+
+
+def persist_metrics_record(results_root, model_name, project, record):
+    jsonl_path, summary_path = build_metrics_paths(results_root, model_name, project)
+    os.makedirs(os.path.dirname(jsonl_path), exist_ok=True)
+
+    with open(jsonl_path, "a") as metrics_file:
+        metrics_file.write(json.dumps(record, sort_keys=True) + "\n")
+
+    items = []
+    with open(jsonl_path, "r") as metrics_file:
+        for line in metrics_file:
+            line = line.strip()
+            if not line:
+                continue
+            items.append(json.loads(line))
+
+    summary = {
+        "project": project,
+        "model": model_name,
+        "items": len(items),
+        "llm_calls": sum(item.get("llm_calls", 0) for item in items),
+        "prompt_tokens": sum(item.get("prompt_tokens", 0) for item in items),
+        "completion_tokens": sum(item.get("completion_tokens", 0) for item in items),
+        "total_tokens": sum(item.get("total_tokens", 0) for item in items),
+        "generation_rounds": sum(item.get("generation_rounds", 0) for item in items),
+        "latency_ms": sum(item.get("latency_ms", 0) for item in items),
+    }
+    with open(summary_path, "w") as summary_file:
+        json.dump(summary, summary_file, indent=2, sort_keys=True)
 
 
 def load_local_model(model_name):
@@ -342,7 +395,11 @@ def generate_local_chunk(tokenizer, model, prompt, stopping_criteria, temperatur
         stopping_criteria=stopping_criteria,
     )
     output = tokenizer.decode(output[0], skip_special_tokens=True)
-    return output[len(prompt):]
+    return output[len(prompt):], {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0,
+    }
 
 
 def generate_ark_chunk(client, args, prompt):
@@ -352,7 +409,7 @@ def generate_ark_chunk(client, args, prompt):
         temperature=args.temperature,
         extra_headers=EXTRA_HEADERS,
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content, extract_usage(response)
 
 
 def should_stop_generation(test_class, output, stopping_criteria, model_name):
@@ -447,13 +504,22 @@ def main():
                         test_class = "package {}\nfunc Test{}_{}(t *testing.T) {{\n".format(package, funcname[0].upper() + funcname[1:], funcnames[funcname.lower()])
                         file.write(test_class)
                         generation_round = 0
+                        item_started_at = time.perf_counter()
+                        llm_calls = 0
+                        prompt_tokens = 0
+                        completion_tokens = 0
+                        total_tokens = 0
                         while True:
                             generation_round += 1
                             prompt = prefix + suffix
                             if args.model in LOCAL_MODELS:
-                                output = generate_local_chunk(tokenizer, model, prompt, stopping_criteria, args.temperature)
+                                output, usage = generate_local_chunk(tokenizer, model, prompt, stopping_criteria, args.temperature)
                             else:
-                                output = generate_ark_chunk(ark_client, args, prompt)
+                                output, usage = generate_ark_chunk(ark_client, args, prompt)
+                            llm_calls += 1
+                            prompt_tokens += usage["prompt_tokens"]
+                            completion_tokens += usage["completion_tokens"]
+                            total_tokens += usage["total_tokens"]
                             suffix += output
                             test_class += output
                             file.write(output) 
@@ -471,6 +537,26 @@ def main():
                             if definition != "" and "invalid type" not in definition and not definition.startswith("var") and not definition.startswith("package"):
                                 prefix += "### CONTEXT_{}\n{}\n\n".format(context_num, definition.strip())
                                 context_num += 1
+                    persist_metrics_record(
+                        args.results_root,
+                        args.model,
+                        project,
+                        {
+                            "project": project,
+                            "dataset_dir": os.path.basename(source),
+                            "dataset_item": file_name,
+                            "source_file": relpath,
+                            "target_file_path": target_file_path,
+                            "func_name": funcname,
+                            "line": item["lineno"],
+                            "llm_calls": llm_calls,
+                            "prompt_tokens": prompt_tokens,
+                            "completion_tokens": completion_tokens,
+                            "total_tokens": total_tokens,
+                            "generation_rounds": generation_round,
+                            "latency_ms": int((time.perf_counter() - item_started_at) * 1000),
+                        },
+                    )
                     processed_items += 1
 
 

@@ -36,7 +36,7 @@ Example usage to run RATester:
 model: Model to use for unit test generation, should be one of [CodeLlama, DeepSeek-Coder, Magicoder].
 
 ```
-python main.py --model DeepSeek-Coder --gopls-endpoint http://127.0.0.1:2000
+python main.py --model DeepSeek-Coder --gopls-endpoint http://127.0.0.1:2000 --results-root ./results
 ```
 
 ## Execute the unit test
@@ -82,3 +82,15 @@ RATester
 ├── run_test.sh
 ├── README.md
 ```
+
+For formal runs, RATester also writes per-project generation metrics to:
+
+```
+results/
+└── RATester_<model>/
+    └── metrics/
+        ├── <project>.jsonl
+        └── <project>.summary.json
+```
+
+Each JSONL record corresponds to one generated target and includes `llm_calls`, token usage, generation rounds, and end-to-end latency.
