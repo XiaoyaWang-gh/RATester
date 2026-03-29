@@ -152,10 +152,22 @@ def build_parser():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--temperature", type=float, default=1.0)
     parser.add_argument(
+        "--datasets-root",
+        type=str,
+        default="./datasets",
+        help="dataset root directory; formal aligned runs should point to generated selected-package datasets",
+    )
+    parser.add_argument(
         "--project",
         type=str,
         default="",
         help="optional project name to restrict dataset traversal",
+    )
+    parser.add_argument(
+        "--dataset-dir",
+        action="append",
+        default=[],
+        help="optional dataset directory basename whitelist; can be passed multiple times",
     )
     parser.add_argument(
         "--max-items",
@@ -294,6 +306,14 @@ def build_ark_messages(prompt):
     ]
 
 
+def iter_dataset_sources(datasets_root, project, selected_dirs):
+    sources = sorted(glob(os.path.join(datasets_root, project, "*")))
+    if not selected_dirs:
+        return sources
+    allowed = set(selected_dirs)
+    return [source for source in sources if os.path.basename(source) in allowed]
+
+
 def generate_local_chunk(tokenizer, model, prompt, stopping_criteria, temperature):
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(model.device)
     output = model.generate(
@@ -347,10 +367,10 @@ def main():
 
     last_workspace = None
     processed_items = 0
-    projects = [args.project] if args.project else sorted(os.listdir("./datasets"))
+    projects = [args.project] if args.project else sorted(os.listdir(args.datasets_root))
     for project in projects:
         funcnames = dict()
-        for source in sorted(glob(f"./datasets/{project}/*")):
+        for source in iter_dataset_sources(args.datasets_root, project, args.dataset_dir):
             for file_name in sorted(os.listdir(source)):
                 if args.max_items and processed_items >= args.max_items:
                     return

@@ -2,3 +2,6 @@ __pycache__/
 tests/__pycache__/
 projects/
 error/
+datasets_aligned/
+.pydeps_ark/
+.venv_ark/

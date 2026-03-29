@@ -38,8 +38,10 @@ class SmokeTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, msg=result.stderr)
         self.assertIn('--temperature', result.stdout)
+        self.assertIn('--datasets-root', result.stdout)
         self.assertIn('--project', result.stdout)
         self.assertIn('--max-items', result.stdout)
+        self.assertIn('--dataset-dir', result.stdout)
         self.assertIn('--ark-endpoint-id', result.stdout)
         self.assertIn('--ark-api-key-env', result.stdout)
         self.assertIn('Doubao-Seed-Code', result.stdout)
@@ -98,6 +100,21 @@ class SmokeTests(unittest.TestCase):
         self.assertIn("Do not include markdown fences", messages[0]["content"])
         self.assertIn("Do not explain", messages[0]["content"])
         self.assertEqual(messages[1], {"role": "user", "content": "PROMPT"})
+
+    def test_iter_dataset_sources_uses_custom_root_and_filter(self):
+        main = load_main_module()
+
+        root = ROOT / 'tests' / 'tmp_datasets_root'
+        source_a = root / 'demo' / 'pkg_a'
+        source_b = root / 'demo' / 'pkg_b'
+        source_a.mkdir(parents=True, exist_ok=True)
+        source_b.mkdir(parents=True, exist_ok=True)
+
+        all_sources = main.iter_dataset_sources(str(root), 'demo', [])
+        filtered_sources = main.iter_dataset_sources(str(root), 'demo', ['pkg_b'])
+
+        self.assertEqual([pathlib.Path(p).name for p in all_sources], ['pkg_a', 'pkg_b'])
+        self.assertEqual([pathlib.Path(p).name for p in filtered_sources], ['pkg_b'])
 
 if __name__ == '__main__':
     unittest.main()
