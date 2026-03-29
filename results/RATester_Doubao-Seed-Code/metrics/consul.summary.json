@@ -1,0 +1,11 @@
+{
+  "completion_tokens": 38863,
+  "generation_rounds": 58,
+  "items": 58,
+  "latency_ms": 911339,
+  "llm_calls": 58,
+  "model": "Doubao-Seed-Code",
+  "project": "consul",
+  "prompt_tokens": 12171,
+  "total_tokens": 51034
+}
