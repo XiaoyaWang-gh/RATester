@@ -1,0 +1,11 @@
+{
+  "completion_tokens": 71152,
+  "generation_rounds": 71,
+  "items": 71,
+  "latency_ms": 1646382,
+  "llm_calls": 71,
+  "model": "Doubao-Seed-Code",
+  "project": "hugo",
+  "prompt_tokens": 56814,
+  "total_tokens": 127966
+}
