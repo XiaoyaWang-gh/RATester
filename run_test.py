@@ -7,6 +7,18 @@ from tqdm import tqdm
 from glob import glob
 
 
+def resolve_goimports():
+    for candidate in ["goimports", "/Users/bytedance/go/bin/goimports"]:
+        resolved = shutil.which(candidate) if "/" not in candidate else candidate
+        if resolved and os.path.exists(resolved):
+            return resolved
+    raise FileNotFoundError("goimports not found in PATH or /Users/bytedance/go/bin/goimports")
+
+
+def package_dir_for_generated_test(file_path, model):
+    return os.path.dirname(file_path)
+
+
 def find_file(filename, start_dir):
     for root, dirs, files in os.walk(start_dir):
         if filename in files:
@@ -18,10 +30,11 @@ def run_import(model, project):
     files = glob(f"./projects/{project}/**/RATester_{model}_*_test.go", recursive=True)
     files = sorted(files)
     packages = set()
+    goimports = resolve_goimports()
 
     for file_path in tqdm(files):
-        packages.add(file_path.split(f"{model}_")[0])
-        subprocess.run(["goimports", "-w", file_path], capture_output=True, text=True)
+        packages.add(package_dir_for_generated_test(file_path, model))
+        subprocess.run([goimports, "-w", file_path], capture_output=True, text=True)
     return packages
 
 

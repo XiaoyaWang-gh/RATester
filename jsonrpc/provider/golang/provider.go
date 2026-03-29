@@ -53,6 +53,13 @@ func NewGolangProvider(config lib.Config) *golangProvider {
 	}
 }
 
+func (p *golangProvider) commandName() string {
+	if p.config.BinaryLocation != "" {
+		return p.config.BinaryLocation
+	}
+	return "gopls"
+}
+
 func (p *golangProvider) Capabilities() ([]string, error) {
 	return []string{
 		"referenced",
@@ -96,7 +103,7 @@ func (p *golangProvider) Init(ctx context.Context, workspace string) error {
 	fmt.Printf(workspace)
 	var returnErr error
 	// p.once.Do(func() {
-	cmd := exec.CommandContext(ctx, "gopls")
+	cmd := exec.CommandContext(ctx, p.commandName())
 	stdin, err := cmd.StdinPipe()
 	if err != nil {
 		returnErr = err
