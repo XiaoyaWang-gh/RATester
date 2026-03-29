@@ -168,6 +168,7 @@ class SmokeTests(unittest.TestCase):
             record = {
                 "project": "gin",
                 "dataset_dir": "codec_json_MarshalIndent",
+                "dataset_item": "MarshalIndent__L12.json",
                 "llm_calls": 2,
                 "prompt_tokens": 11,
                 "completion_tokens": 7,
@@ -194,6 +195,101 @@ class SmokeTests(unittest.TestCase):
             self.assertEqual(summary["prompt_tokens"], 11)
             self.assertEqual(summary["completion_tokens"], 7)
             self.assertEqual(summary["total_tokens"], 18)
+
+    def test_persist_metrics_record_replaces_duplicate_dataset_item(self):
+        main = load_main_module()
+        with tempfile.TemporaryDirectory() as root:
+            first = {
+                "project": "gin",
+                "dataset_dir": "codec_json_MarshalIndent",
+                "dataset_item": "MarshalIndent__L12.json",
+                "llm_calls": 2,
+                "prompt_tokens": 11,
+                "completion_tokens": 7,
+                "total_tokens": 18,
+                "generation_rounds": 2,
+                "latency_ms": 123,
+            }
+            second = {
+                "project": "gin",
+                "dataset_dir": "codec_json_MarshalIndent",
+                "dataset_item": "MarshalIndent__L12.json",
+                "llm_calls": 5,
+                "prompt_tokens": 21,
+                "completion_tokens": 9,
+                "total_tokens": 30,
+                "generation_rounds": 3,
+                "latency_ms": 456,
+            }
+
+            main.persist_metrics_record(str(root), "Doubao-Seed-Code", "gin", first)
+            main.persist_metrics_record(str(root), "Doubao-Seed-Code", "gin", second)
+
+            jsonl_path = pathlib.Path(root) / "RATester_Doubao-Seed-Code" / "metrics" / "gin.jsonl"
+            summary_path = pathlib.Path(root) / "RATester_Doubao-Seed-Code" / "metrics" / "gin.summary.json"
+
+            jsonl_lines = jsonl_path.read_text().strip().splitlines()
+            self.assertEqual(len(jsonl_lines), 1)
+            record = json.loads(jsonl_lines[0])
+            self.assertEqual(record["dataset_item"], "MarshalIndent__L12.json")
+            self.assertEqual(record["llm_calls"], 5)
+
+            summary = json.loads(summary_path.read_text())
+            self.assertEqual(summary["items"], 1)
+            self.assertEqual(summary["llm_calls"], 5)
+            self.assertEqual(summary["prompt_tokens"], 21)
+            self.assertEqual(summary["completion_tokens"], 9)
+            self.assertEqual(summary["total_tokens"], 30)
+
+    def test_load_completed_dataset_items_reads_existing_metrics(self):
+        main = load_main_module()
+        with tempfile.TemporaryDirectory() as root:
+            records = [
+                {
+                    "project": "gin",
+                    "dataset_dir": "codec_json_MarshalIndent",
+                    "dataset_item": "MarshalIndent__L12.json",
+                },
+                {
+                    "project": "gin",
+                    "dataset_dir": "codec_json_Marshal",
+                    "dataset_item": "Marshal__L30.json",
+                },
+            ]
+            for record in records:
+                main.persist_metrics_record(str(root), "Doubao-Seed-Code", "gin", record)
+
+            completed = main.load_completed_dataset_items(str(root), "Doubao-Seed-Code", "gin")
+
+            self.assertEqual(
+                completed,
+                {
+                    ("codec_json_MarshalIndent", "MarshalIndent__L12.json"),
+                    ("codec_json_Marshal", "Marshal__L30.json"),
+                },
+            )
+
+    def test_build_target_file_path_uses_stable_dataset_item_name(self):
+        main = load_main_module()
+
+        path = main.build_target_file_path(
+            "/tmp/project/codec/json",
+            "Doubao-Seed-Code",
+            "MarshalIndent",
+            "MarshalIndent__L12.json",
+        )
+
+        self.assertEqual(
+            path,
+            "/tmp/project/codec/json/RATester_Doubao-Seed-Code_MarshalIndent__L12_test.go",
+        )
+
+    def test_build_test_function_name_uses_stable_dataset_item_name(self):
+        main = load_main_module()
+
+        name = main.build_test_function_name("MarshalIndent", "MarshalIndent__L12.json")
+
+        self.assertEqual(name, "TestMarshalIndent__L12")
 
 if __name__ == '__main__':
     unittest.main()

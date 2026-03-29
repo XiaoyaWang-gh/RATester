@@ -273,20 +273,62 @@ def extract_usage(response):
     }
 
 
-def persist_metrics_record(results_root, model_name, project, record):
-    jsonl_path, summary_path = build_metrics_paths(results_root, model_name, project)
-    os.makedirs(os.path.dirname(jsonl_path), exist_ok=True)
+def metrics_record_key(record):
+    return (
+        record.get("dataset_dir", ""),
+        record.get("dataset_item", ""),
+    )
 
-    with open(jsonl_path, "a") as metrics_file:
-        metrics_file.write(json.dumps(record, sort_keys=True) + "\n")
 
-    items = []
+def load_metrics_records(results_root, model_name, project):
+    jsonl_path, _ = build_metrics_paths(results_root, model_name, project)
+    records = {}
+    if not os.path.exists(jsonl_path):
+        return records
+
     with open(jsonl_path, "r") as metrics_file:
         for line in metrics_file:
             line = line.strip()
             if not line:
                 continue
-            items.append(json.loads(line))
+            record = json.loads(line)
+            key = metrics_record_key(record)
+            if key == ("", ""):
+                continue
+            records[key] = record
+    return records
+
+
+def load_completed_dataset_items(results_root, model_name, project):
+    return set(load_metrics_records(results_root, model_name, project).keys())
+
+
+def write_metrics_records(jsonl_path, records):
+    with open(jsonl_path, "w") as metrics_file:
+        for record in records.values():
+            metrics_file.write(json.dumps(record, sort_keys=True) + "\n")
+
+
+def build_target_file_path(workspace, model_name, funcname, dataset_item):
+    del funcname
+    stem = os.path.splitext(os.path.basename(dataset_item))[0]
+    return os.path.join(workspace, f"RATester_{model_name}_{stem}_test.go")
+
+
+def build_test_function_name(funcname, dataset_item):
+    del funcname
+    stem = os.path.splitext(os.path.basename(dataset_item))[0]
+    sanitized = re.sub(r"[^0-9A-Za-z_]", "_", stem)
+    return f"Test{sanitized}"
+
+
+def persist_metrics_record(results_root, model_name, project, record):
+    jsonl_path, summary_path = build_metrics_paths(results_root, model_name, project)
+    os.makedirs(os.path.dirname(jsonl_path), exist_ok=True)
+    records = load_metrics_records(results_root, model_name, project)
+    records[metrics_record_key(record)] = record
+    write_metrics_records(jsonl_path, records)
+    items = list(records.values())
 
     summary = {
         "project": project,
@@ -444,9 +486,12 @@ def main():
     processed_items = 0
     projects = [args.project] if args.project else sorted(os.listdir(args.datasets_root))
     for project in projects:
+        completed_items = load_completed_dataset_items(args.results_root, args.model, project)
         funcnames = dict()
         for source in iter_dataset_sources(args.datasets_root, project, args.dataset_dir):
             for file_name in sorted(os.listdir(source)):
+                if (os.path.basename(source), file_name) in completed_items:
+                    continue
                 if args.max_items and processed_items >= args.max_items:
                     return
                 with open(source + "/" + file_name, 'r') as file:
@@ -478,8 +523,7 @@ def main():
                         funcnames[funcname.lower()] = 0
                     funcnames[funcname.lower()] += 1
                     workspace = relpath.rsplit('/', 1)[0]
-                    
-                    target_file_path = workspace + "/" + f"RATester_{args.model}_{funcname}_{funcnames[funcname.lower()]}_test.go"
+                    target_file_path = build_target_file_path(workspace, args.model, funcname, file_name)
 
                     if last_workspace != workspace:
                         last_workspace = workspace
@@ -501,7 +545,10 @@ def main():
 
                     with open(target_file_path, 'w') as file:
                         print(target_file_path)
-                        test_class = "package {}\nfunc Test{}_{}(t *testing.T) {{\n".format(package, funcname[0].upper() + funcname[1:], funcnames[funcname.lower()])
+                        test_class = "package {}\nfunc {}(t *testing.T) {{\n".format(
+                            package,
+                            build_test_function_name(funcname, file_name),
+                        )
                         file.write(test_class)
                         generation_round = 0
                         item_started_at = time.perf_counter()

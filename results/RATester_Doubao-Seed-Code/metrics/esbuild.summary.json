@@ -1,11 +1,11 @@
 {
-  "completion_tokens": 5132,
-  "generation_rounds": 6,
-  "items": 6,
-  "latency_ms": 114745,
-  "llm_calls": 6,
+  "completion_tokens": 133411,
+  "generation_rounds": 123,
+  "items": 122,
+  "latency_ms": 3163890,
+  "llm_calls": 123,
   "model": "Doubao-Seed-Code",
   "project": "esbuild",
-  "prompt_tokens": 3223,
-  "total_tokens": 8355
+  "prompt_tokens": 132973,
+  "total_tokens": 266384
 }
