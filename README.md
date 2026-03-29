@@ -28,7 +28,7 @@ Configure the gopls address in ./jsonrpc/provider_settings.json.
 
 ```
 cd jsonrpc
-go run gopls.go
+go run gopls.go --listen 127.0.0.1:2000
 ```
 
 ## Generate the unit tests
@@ -36,7 +36,7 @@ Example usage to run RATester:
 model: Model to use for unit test generation, should be one of [CodeLlama, DeepSeek-Coder, Magicoder].
 
 ```
-python main.py --model DeepSeek-Coder
+python main.py --model DeepSeek-Coder --gopls-endpoint http://127.0.0.1:2000
 ```
 
 ## Execute the unit test

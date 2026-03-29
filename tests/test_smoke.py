@@ -4,6 +4,7 @@ import sys
 import unittest
 import json
 import importlib.util
+import os
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -44,6 +45,7 @@ class SmokeTests(unittest.TestCase):
         self.assertIn('--dataset-dir', result.stdout)
         self.assertIn('--ark-endpoint-id', result.stdout)
         self.assertIn('--ark-api-key-env', result.stdout)
+        self.assertIn('--gopls-endpoint', result.stdout)
         self.assertIn('Doubao-Seed-Code', result.stdout)
 
     def test_run_test_uses_ratester_prefix(self):
@@ -115,6 +117,26 @@ class SmokeTests(unittest.TestCase):
 
         self.assertEqual([pathlib.Path(p).name for p in all_sources], ['pkg_a', 'pkg_b'])
         self.assertEqual([pathlib.Path(p).name for p in filtered_sources], ['pkg_b'])
+
+    def test_resolve_project_path_returns_absolute_path(self):
+        main = load_main_module()
+
+        resolved = main.resolve_project_path("./projects/gin/codec/json/json.go")
+
+        self.assertTrue(pathlib.Path(resolved).is_absolute())
+        self.assertTrue(resolved.endswith("/projects/gin/codec/json/json.go"))
+
+    def test_gopls_base_url_uses_env_and_trims_trailing_slash(self):
+        main = load_main_module()
+        previous = os.environ.get("GOPLS_ENDPOINT")
+        try:
+            os.environ["GOPLS_ENDPOINT"] = "http://127.0.0.1:24567/"
+            self.assertEqual(main.gopls_base_url(), "http://127.0.0.1:24567")
+        finally:
+            if previous is None:
+                os.environ.pop("GOPLS_ENDPOINT", None)
+            else:
+                os.environ["GOPLS_ENDPOINT"] = previous
 
 if __name__ == '__main__':
     unittest.main()

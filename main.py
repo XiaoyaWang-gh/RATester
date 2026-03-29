@@ -98,7 +98,7 @@ def get_row_and_column(input_string, identifier):
 def init_gopls(workspace):
     import requests
 
-    url = "http://localhost:2000/init"
+    url = f"{gopls_base_url()}/init"
     data = {
         "workspace": workspace,
     }
@@ -118,7 +118,7 @@ def init_gopls(workspace):
 def send_completion_request(row, column, file_path):
     import requests
 
-    url = "http://localhost:2000/definition"
+    url = f"{gopls_base_url()}/definition"
     data = {
         "row": row,
         "column": column,
@@ -187,7 +187,20 @@ def build_parser():
         default="ARK_API_KEY",
         help="environment variable name that stores the Ark API key",
     )
+    parser.add_argument(
+        "--gopls-endpoint",
+        type=str,
+        default=os.environ.get("GOPLS_ENDPOINT", "http://127.0.0.1:2000"),
+        help="jsonrpc gopls service endpoint, use a unique port per concurrent project run",
+    )
     return parser
+
+
+def gopls_base_url():
+    base_url = getattr(globals().get("ARGS"), "gopls_endpoint", None)
+    if not base_url:
+        base_url = os.environ.get("GOPLS_ENDPOINT", "http://127.0.0.1:2000")
+    return base_url.rstrip("/")
 
 
 def extract_new_identifier(text, generated_identifiers):
@@ -231,6 +244,10 @@ def extract_prompt_identifiers(text, funcname):
         if identifier not in GO_KEYWORDS and identifier != funcname and identifier not in seen:
             identifiers.append((identifier, row, idx))
     return identifiers
+
+
+def resolve_project_path(path):
+    return os.path.abspath(path)
 
 
 def load_local_model(model_name):
@@ -349,6 +366,7 @@ def should_stop_generation(test_class, output, stopping_criteria, model_name):
 def main():
     parser = build_parser()
     args = parser.parse_args()
+    globals()["ARGS"] = args
 
     set_seed(args.seed)
 
@@ -376,7 +394,7 @@ def main():
                     return
                 with open(source + "/" + file_name, 'r') as file:
                     item = json.load(file)
-                    relpath = item["relpath"]
+                    relpath = resolve_project_path(item["relpath"])
 
                     stopping_criteria = None
                     if args.model in LOCAL_MODELS:

@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"net/http"
 	"os"
@@ -29,6 +30,9 @@ type Request struct {
 }
 
 func main() {
+	listenAddr := flag.String("listen", "127.0.0.1:2000", "listen address for the jsonrpc gopls service")
+	flag.Parse()
+
 	ctx := context.Background()
 
 	// Get the configs
@@ -113,6 +117,9 @@ func main() {
 		json.NewEncoder(w).Encode(res)
 	})
 
-	fmt.Println("Server started at :2000")
-	http.ListenAndServe(":2000", nil)
+	fmt.Printf("Server started at %s\n", *listenAddr)
+	if err := http.ListenAndServe(*listenAddr, nil); err != nil {
+		fmt.Printf("\n%v\n", err)
+		os.Exit(1)
+	}
 }
