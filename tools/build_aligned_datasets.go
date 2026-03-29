@@ -257,7 +257,7 @@ func buildDatasetItem(reposRoot string, row targetRow, modulePath string) (datas
 		importPath += "/" + filepath.ToSlash(repoRelativeDir)
 	}
 	datasetDir := sanitizeImportPath(importPath)
-	fileName := fmt.Sprintf("%s__L%d.json", sanitizeFileStem(row.FuncName), row.Line)
+	fileName := buildDatasetFileName(row)
 	return datasetItem{
 		RelPath:   "./projects/" + repoRelativeFile,
 		LineNo:    row.Line,
@@ -316,6 +316,16 @@ func sanitizeFileStem(name string) string {
 		return "target"
 	}
 	return cleaned
+}
+
+func buildDatasetFileName(row targetRow) string {
+	base := strings.TrimSuffix(filepath.Base(row.SourceFile), filepath.Ext(row.SourceFile))
+	parts := []string{sanitizeFileStem(base)}
+	if row.Receiver != "" {
+		parts = append(parts, sanitizeFileStem(row.Receiver))
+	}
+	parts = append(parts, sanitizeFileStem(row.FuncName), fmt.Sprintf("L%d", row.Line))
+	return strings.Join(parts, "__") + ".json"
 }
 
 func pathJoinSlash(parts ...string) string {

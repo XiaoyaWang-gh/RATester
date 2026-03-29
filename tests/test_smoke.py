@@ -6,6 +6,7 @@ import json
 import importlib.util
 import os
 import tempfile
+import csv
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -24,6 +25,151 @@ def load_run_test_module():
     return module
 
 class SmokeTests(unittest.TestCase):
+    def run_build_aligned_datasets(self, target_csv, repos_root, datasets_root, projects_root, repo):
+        return subprocess.run(
+            [
+                "/opt/homebrew/bin/go",
+                "run",
+                str(ROOT / "tools" / "build_aligned_datasets.go"),
+                "--target-csv",
+                str(target_csv),
+                "--repos-root",
+                str(repos_root),
+                "--datasets-root",
+                str(datasets_root),
+                "--projects-root",
+                str(projects_root),
+                "--only-repo",
+                repo,
+            ],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+        )
+
+    def write_target_manifest(self, csv_path, rows):
+        with csv_path.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=["repo", "source_file", "line", "receiver", "func_name"],
+            )
+            writer.writeheader()
+            writer.writerows(rows)
+
+    def test_build_aligned_datasets_keeps_distinct_receiver_variants(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = pathlib.Path(root)
+            repos_root = root / "repos"
+            datasets_root = root / "datasets"
+            projects_root = root / "projects"
+            repo_root = repos_root / "demo"
+            pkg_dir = repo_root / "pkg"
+            pkg_dir.mkdir(parents=True)
+
+            (repo_root / "go.mod").write_text("module example.com/demo\n\ngo 1.24\n")
+            (pkg_dir / "a.go").write_text(
+                "package pkg\n\n"
+                "type A struct{}\n\n"
+                "func (A) Handle() {}\n"
+            )
+            (pkg_dir / "b.go").write_text(
+                "package pkg\n\n"
+                "type B struct{}\n\n"
+                "func (B) Handle() {}\n"
+            )
+
+            target_csv = root / "targets.csv"
+            self.write_target_manifest(
+                target_csv,
+                [
+                    {
+                        "repo": "demo",
+                        "source_file": "pkg/a.go",
+                        "line": "5",
+                        "receiver": "A",
+                        "func_name": "Handle",
+                    },
+                    {
+                        "repo": "demo",
+                        "source_file": "pkg/b.go",
+                        "line": "5",
+                        "receiver": "B",
+                        "func_name": "Handle",
+                    },
+                ],
+            )
+
+            result = self.run_build_aligned_datasets(
+                target_csv, repos_root, datasets_root, projects_root, "demo"
+            )
+
+            self.assertEqual(result.returncode, 0, msg=result.stderr)
+            files = sorted(p.name for p in datasets_root.rglob("*.json"))
+            self.assertEqual(
+                files,
+                [
+                    "a__A__Handle__L5.json",
+                    "b__B__Handle__L5.json",
+                ],
+            )
+
+    def test_build_aligned_datasets_keeps_distinct_build_tag_variants(self):
+        with tempfile.TemporaryDirectory() as root:
+            root = pathlib.Path(root)
+            repos_root = root / "repos"
+            datasets_root = root / "datasets"
+            projects_root = root / "projects"
+            repo_root = repos_root / "demo"
+            pkg_dir = repo_root / "pkg"
+            pkg_dir.mkdir(parents=True)
+
+            (repo_root / "go.mod").write_text("module example.com/demo\n\ngo 1.24\n")
+            (pkg_dir / "lock_darwin.go").write_text(
+                "//go:build darwin\n\n"
+                "package pkg\n\n"
+                "func New() {}\n"
+            )
+            (pkg_dir / "lock_linux.go").write_text(
+                "//go:build linux\n\n"
+                "package pkg\n\n"
+                "func New() {}\n"
+            )
+
+            target_csv = root / "targets.csv"
+            self.write_target_manifest(
+                target_csv,
+                [
+                    {
+                        "repo": "demo",
+                        "source_file": "pkg/lock_darwin.go",
+                        "line": "5",
+                        "receiver": "",
+                        "func_name": "New",
+                    },
+                    {
+                        "repo": "demo",
+                        "source_file": "pkg/lock_linux.go",
+                        "line": "5",
+                        "receiver": "",
+                        "func_name": "New",
+                    },
+                ],
+            )
+
+            result = self.run_build_aligned_datasets(
+                target_csv, repos_root, datasets_root, projects_root, "demo"
+            )
+
+            self.assertEqual(result.returncode, 0, msg=result.stderr)
+            files = sorted(p.name for p in datasets_root.rglob("*.json"))
+            self.assertEqual(
+                files,
+                [
+                    "lock_darwin__New__L5.json",
+                    "lock_linux__New__L5.json",
+                ],
+            )
+
     def test_run_test_script_compiles(self):
         result = subprocess.run(
             [sys.executable, '-m', 'py_compile', str(ROOT / 'run_test.py')],
