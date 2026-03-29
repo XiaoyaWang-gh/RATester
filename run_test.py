@@ -15,7 +15,7 @@ def find_file(filename, start_dir):
 
 
 def run_import(model, project):
-    files = glob(f"./projects/{project}/**/IntelliTester_{model}_*_test.go", recursive=True)
+    files = glob(f"./projects/{project}/**/RATester_{model}_*_test.go", recursive=True)
     files = sorted(files)
     packages = set()
 
@@ -26,7 +26,7 @@ def run_import(model, project):
 
 
 def run_test(model, project, packages):
-    pattern = rf"IntelliTester_{model}.*_test\.go"
+    pattern = rf"RATester_{model}.*_test\.go"
     for package in packages:
         while True:
             result = subprocess.run(["go", "test", "-timeout", "30s"], cwd=package, capture_output=True, text=True, errors='ignore')
@@ -54,7 +54,7 @@ def run_test(model, project, packages):
                 if not os.path.exists(source_path):
                     source_path = find_file(file_name, f"./projects/{project}")
                 if source_path == None: continue
-                model_dir = source_path.split(f"/IntelliTester_{model}_")[0].replace(f"./projects", f"./error/IntelliTester_{model}")
+                model_dir = source_path.split(f"/RATester_{model}_")[0].replace(f"./projects", f"./error/RATester_{model}")
                 model_path = os.path.join(model_dir, file_name)
                 if not os.path.exists(model_path):
                     os.makedirs(model_dir, exist_ok=True)
@@ -65,7 +65,7 @@ def run_test(model, project, packages):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Process some parameters.")
     parser.add_argument('--model', help='model to use for unit test generation. should be one of [CodeLlama, DeepSeek-Coder, Magicoder]', required=True, type=str)
-    parser.add_argument('--project', type=str, help='project to be tested. should be one of [beego, echo, fiber, frp, gin, hugo, nps, traefik]', required=True, type=str)
+    parser.add_argument('--project', help='project to be tested. should be one of [beego, echo, fiber, frp, gin, hugo, nps, traefik]', required=True, type=str)
     args = parser.parse_args()
     model = args.model
     project = args.project

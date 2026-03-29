@@ -115,6 +115,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', help='model to use for unit test generation. should be one of [CodeLlama, DeepSeek-Coder, Magicoder]', required=True, type=str)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--temperature", type=float, default=1.0)
     args = parser.parse_args()  
 
     set_seed(args.seed)
