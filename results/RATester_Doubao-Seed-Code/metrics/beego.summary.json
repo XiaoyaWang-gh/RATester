@@ -1,0 +1,11 @@
+{
+  "completion_tokens": 75684,
+  "generation_rounds": 111,
+  "items": 111,
+  "latency_ms": 1173419,
+  "llm_calls": 111,
+  "model": "Doubao-Seed-Code",
+  "project": "beego",
+  "prompt_tokens": 76111,
+  "total_tokens": 151795
+}
