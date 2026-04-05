@@ -1,0 +1,11 @@
+{
+  "completion_tokens": 111192,
+  "generation_rounds": 101,
+  "items": 101,
+  "latency_ms": 1712193,
+  "llm_calls": 101,
+  "model": "Doubao-Seed-Code",
+  "project": "fzf",
+  "prompt_tokens": 51945,
+  "total_tokens": 163137
+}
