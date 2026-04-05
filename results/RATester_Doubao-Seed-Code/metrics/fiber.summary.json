@@ -1,0 +1,11 @@
+{
+  "completion_tokens": 80755,
+  "generation_rounds": 112,
+  "items": 112,
+  "latency_ms": 1260271,
+  "llm_calls": 112,
+  "model": "Doubao-Seed-Code",
+  "project": "fiber",
+  "prompt_tokens": 23830,
+  "total_tokens": 104585
+}
