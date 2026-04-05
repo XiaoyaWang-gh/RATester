@@ -1,0 +1,11 @@
+{
+  "completion_tokens": 100098,
+  "generation_rounds": 113,
+  "items": 113,
+  "latency_ms": 1525209,
+  "llm_calls": 113,
+  "model": "Doubao-Seed-Code",
+  "project": "gorm",
+  "prompt_tokens": 142393,
+  "total_tokens": 242491
+}
